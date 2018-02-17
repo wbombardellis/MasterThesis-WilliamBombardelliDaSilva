@@ -1,0 +1,9 @@
+.settings
+.classpath
+.project
+*.aux
+*.log
+*.out
+*.pdf
+*.gz
+*.*~

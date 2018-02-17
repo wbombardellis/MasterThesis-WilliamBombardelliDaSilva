@@ -1,0 +1,3 @@
+https://en.wikipedia.org/wiki/Semi-Thue_system
+
+The simple artifice of partitioning the alphabet in terminals and non-terminals is a powerful one; it allows the definition of the Chomsky hierarchy based on what combination of terminals and non-terminals rules contain. This was a crucial development in the theory of formal languages.
