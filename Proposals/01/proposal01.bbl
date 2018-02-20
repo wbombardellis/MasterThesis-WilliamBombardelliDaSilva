@@ -1,0 +1,24 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Ehrig {\em et~al.\ }\relax, }2015]{ehrig2015graph}
+Ehrig, Hartmut, Ermel, Claudia, Golas, Ulrike, \& Hermann, Frank. 2015.
+\newblock Graph and Model Transformation.
+
+\bibitem[\protect\citename{Gilroy {\em et~al.\ }\relax,
+  }2017]{gilroy2017parsing}
+Gilroy, Sorcha, Lopez, Adam, \& Maneth, Sebastian. 2017.
+\newblock Parsing Graphs with Regular Graph Grammars.
+\newblock {\em Pages  199--208 of:} {\em Proceedings of the 6th Joint
+  Conference on Lexical and Computational Semantics (* SEM 2017)}.
+
+\bibitem[\protect\citename{Rekers \& Sch{\"u}rr, }1995]{rekers1995parsing}
+Rekers, Jan, \& Sch{\"u}rr, A. 1995.
+\newblock {\em A parsing algorithm for context-sensitive graph grammars}.
+\newblock Rijksuniversiteit Leiden. Vakgroep Informatica.
+
+\bibitem[\protect\citename{Rekers \& Sch{\"u}rr, }1997]{rekers1997defining}
+Rekers, Jan, \& Sch{\"u}rr, Andy. 1997.
+\newblock Defining and parsing visual languages with layered graph grammars.
+\newblock {\em Journal of Visual Languages \& Computing}, {\bf 8}(1), 27--55.
+
+\end{thebibliography}
