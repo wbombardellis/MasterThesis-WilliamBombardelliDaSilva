@@ -7,3 +7,6 @@
 #*.pdf
 *.gz
 *.*~
+
+Papers/*.pdf
+Papers/*/*.pdf

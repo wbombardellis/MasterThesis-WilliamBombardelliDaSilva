@@ -1,0 +1,27 @@
+=====Publishers====
+https://ieeexplore.ieee.org/Xplore/home.jsp
+https://www.elsevier.com/about/open-science (https://www.sciencedirect.com/)
+https://dl.acm.org/
+https://link.springer.com/
+
+
+=====Conferences====
+MODELS
+MODELSWARD
+MoDRE
+
+ICGT
+ICMT
+BigMDE
+
+
+ICALP
+DLT
+
+
+=====Journals=====
+Journal of Visual Languages and Computing
+Electronic Notes in Theoretical Computer Science
+Theoretical Computer Science
+
+

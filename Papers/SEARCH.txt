@@ -1,0 +1,178 @@
+======IEEEXPLORE=====
+(("graph grammar") AND parsing)
+1998-2018
+28 publications
+
+https://ieeexplore.ieee.org/document/4410422/
+https://ieeexplore.ieee.org/document/6963105/
+https://ieeexplore.ieee.org/document/6046868/
+https://ieeexplore.ieee.org/document/1509513/
+https://ieeexplore.ieee.org/document/1372305/
+https://ieeexplore.ieee.org/document/795908/
+https://ieeexplore.ieee.org/document/5751774/
+https://ieeexplore.ieee.org/document/4031903/
+https://ieeexplore.ieee.org/document/7395225/
+https://ieeexplore.ieee.org/document/1544932/
+https://ieeexplore.ieee.org/document/8129648/
+https://ieeexplore.ieee.org/document/801202/
+https://ieeexplore.ieee.org/document/6065296/
+https://ieeexplore.ieee.org/document/812390/
+https://ieeexplore.ieee.org/document/874374/
+https://ieeexplore.ieee.org/document/6933050/
+
+======Science Direct / Elsevier=====
+"graph grammar", "parsing"
+1998-2018
+185 results
+
+https://www.sciencedirect.com/science/article/pii/S1574013716301009
+https://www.sciencedirect.com/science/article/pii/S1877750314000283
+https://www.sciencedirect.com/science/article/pii/S1045926X15300604
+https://www.sciencedirect.com/science/article/pii/S0304397512001909
+https://www.sciencedirect.com/science/article/pii/S0167865508000937
+https://www.sciencedirect.com/science/article/pii/S0304397597002120
+https://www.sciencedirect.com/science/article/pii/S0167865506002522
+https://www.sciencedirect.com/science/article/pii/S1045926X13000451
+https://www.sciencedirect.com/science/article/pii/S1045926X07000778
+https://www.sciencedirect.com/science/article/pii/S0031320310003420
+https://www.sciencedirect.com/science/article/pii/S1477842415000287
+https://www.sciencedirect.com/science/article/pii/S0031320305000257
+https://www.sciencedirect.com/science/article/pii/S0164121208001593
+https://www.sciencedirect.com/science/article/pii/S0304397510002550
+https://www.sciencedirect.com/science/article/pii/S1877050915017342
+https://www.sciencedirect.com/science/article/pii/S1045926X10000741
+https://www.sciencedirect.com/science/article/pii/S0304397518301750
+https://www.sciencedirect.com/science/article/pii/S1571066106000417
+https://www.sciencedirect.com/science/article/pii/S1045926X06000371
+https://www.sciencedirect.com/science/article/pii/S1045926X05000339
+https://www.sciencedirect.com/science/article/pii/S0022000017302866
+https://www.sciencedirect.com/science/article/pii/S1045926X14001141
+https://www.sciencedirect.com/science/article/pii/S1571066108002442
+https://www.sciencedirect.com/science/article/pii/S1571066105001829
+https://www.sciencedirect.com/science/article/pii/S1571066109000905
+https://www.sciencedirect.com/science/article/pii/S1045926X15000701
+https://www.sciencedirect.com/science/article/pii/S016412121500120X
+
+======ACM=====
++"graph grammar" +parsing
+1976-2018
+9 publications
+
+https://dl.acm.org/citation.cfm?id=3191803
+https://dl.acm.org/citation.cfm?id=1165739
+https://dl.acm.org/citation.cfm?id=322649
+https://dl.acm.org/citation.cfm?id=75465
+https://dl.acm.org/citation.cfm?id=3105983
+https://dl.acm.org/citation.cfm?id=811547
+https://dl.acm.org/citation.cfm?id=512958
+https://dl.acm.org/citation.cfm?id=980601
+https://dl.acm.org/citation.cfm?id=1164115
+
+======Springer=====
+"graph grammar" parsing
+1998-2018
+488 publications
+
+https://link.springer.com/chapter/10.1007/978-3-319-25751-8_53	
+https://link.springer.com/chapter/10.1007/978-1-4419-0312-9_8
+https://link.springer.com/chapter/10.1007/978-0-387-68257-0_2
+https://link.springer.com/chapter/10.1007/978-1-4615-0457-3_1
+https://link.springer.com/article/10.1007/s10270-013-0380-2
+https://link.springer.com/chapter/10.1007/BFb0052321
+https://link.springer.com/chapter/10.1007/978-3-319-61470-0_7
+https://link.springer.com/chapter/10.1007/978-1-4612-1676-6_2
+https://link.springer.com/chapter/10.1007/978-1-4612-1676-6_5
+https://link.springer.com/chapter/10.1007/978-0-387-68257-0_3
+https://link.springer.com/chapter/10.1007/978-3-642-17322-6_8
+https://link.springer.com/chapter/10.1007/3-540-45523-X_3
+https://link.springer.com/chapter/10.1007/978-3-319-21145-9_2
+https://link.springer.com/chapter/10.1007/978-3-319-11331-9_24
+https://link.springer.com/chapter/10.1007/978-0-387-39388-9_33
+https://link.springer.com/chapter/10.1007/978-3-540-85373-2_1
+https://link.springer.com/chapter/10.1007/978-3-319-30000-9_40
+https://link.springer.com/chapter/10.1007/978-3-540-87405-8_50
+https://link.springer.com/chapter/10.1007/978-3-319-61473-1_3
+https://link.springer.com/chapter/10.1007/978-3-642-04425-0_18
+https://link.springer.com/chapter/10.1007/978-1-4612-1676-6_7
+https://link.springer.com/chapter/10.1007/978-0-387-68257-0_8
+https://link.springer.com/chapter/10.1007/978-3-319-09108-2_9
+https://link.springer.com/article/10.1007/s10270-012-0309-1
+https://link.springer.com/chapter/10.1007/11812289_12
+https://link.springer.com/chapter/10.1007/978-3-540-24721-0_16
+https://link.springer.com/chapter/10.1007/978-3-319-74730-9_7
+https://link.springer.com/chapter/10.1007/978-1-4612-1676-6_4
+https://link.springer.com/chapter/10.1007/3-540-46037-3_13
+https://link.springer.com/article/10.1007/s11086-005-0042-4
+https://link.springer.com/chapter/10.1007/11841883_11
+https://link.springer.com/chapter/10.1007/978-3-642-15928-2_11
+https://link.springer.com/chapter/10.1007/978-3-642-38209-3_1
+https://link.springer.com/chapter/10.1007/978-3-319-42064-6_7
+https://link.springer.com/chapter/10.1007/978-3-540-31984-9_5
+https://link.springer.com/chapter/10.1007/978-3-642-24485-8_49
+https://link.springer.com/article/10.1007/s10270-012-0247-y
+https://link.springer.com/article/10.1007/s10270-008-0089-9
+https://link.springer.com/chapter/10.1007/978-3-319-21145-9_6
+https://link.springer.com/chapter/10.1007/978-1-4612-1676-6_6
+https://link.springer.com/chapter/10.1007/978-3-642-16145-2_8
+https://link.springer.com/chapter/10.1007/978-3-662-55751-8_18
+https://link.springer.com/chapter/10.1007/978-3-319-62569-0_10
+https://link.springer.com/chapter/10.1007/11767978_22
+https://link.springer.com/chapter/10.1007/978-3-540-87405-8_13
+https://link.springer.com/chapter/10.1007/978-3-540-31847-7_6
+https://link.springer.com/chapter/10.1007/978-3-540-87405-8_25
+https://link.springer.com/article/10.1007/PL00013320
+https://link.springer.com/chapter/10.1007/978-3-642-54804-8_24
+
+
+
+======Science Direct=====
+"graph grammar", nonterminal
+1998-2018
+61 publications
+
+https://www.sciencedirect.com/science/article/pii/S0304397515002674
+https://www.sciencedirect.com/science/article/pii/S0304397511005925
+https://www.sciencedirect.com/science/article/pii/S0304397504007170
+
+======Springer=====
+"graph grammar" nonterminal
+1998-2018
+137 publications
+
+https://link.springer.com/chapter/10.1007/978-3-540-46464-8_4
+https://link.springer.com/article/10.1007/s00224-001-1015-5
+https://link.springer.com/chapter/10.1007/978-3-319-75396-6_2
+https://link.springer.com/chapter/10.1007/978-3-540-46464-8_2
+https://link.springer.com/chapter/10.1007/978-3-642-13089-2_50
+
+======Google Scholar=====
+"graph grammar" parsing
+..-2018
+3100 results (But only saw 10 first pages)
+
+21_
+34_
+
+https://ieeexplore.ieee.org/abstract/document/238844/
+https://www.worldscientific.com/doi/abs/10.1142/S0218001404003204
+https://ieeexplore.ieee.org/abstract/document/520826/
+https://link.springer.com/chapter/10.1007/978-3-540-87405-8_28
+https://link.springer.com/chapter/10.1007/BFb0000108
+https://www.sciencedirect.com/science/article/pii/S0022000071800168
+https://dl.acm.org/citation.cfm?id=39944
+https://www.sciencedirect.com/science/article/pii/0031320393900839
+https://www.sciencedirect.com/science/article/pii/0031320388900349
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,212 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.mus
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+%\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{float}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage[colorlinks=true, pdfborder={0 0 0}, urlcolor=blue, linkcolor=black]{hyperref}
+\usepackage{natbib}
+
+\graphicspath{ {img/} }
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+%\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+\rhead{\hmwkClass: \hmwkTitle} % Top center header
+%\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continues in next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continuation)}{#1 continues in next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continuation)}{#1 continues in next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][\arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argumen
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Proposal for Master Thesis 02} % Assignment title
+\newcommand{\hmwkDueDate}{24 April 2018} % Due date
+\newcommand{\hmwkClass}{} % Course/class
+\newcommand{\hmwkClassFull}{} % Course/class
+\newcommand{\hmwkClassTime}{} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{William Bombardelli da Silva} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+%\vspace{2in}
+\Large\textmd{\textbf{\hmwkClassFull}}\\
+\normalsize{\textbf{\hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{\hmwkDueDate}\\
+%\vspace{0.1in}
+\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+%\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%\maketitle
+{\centering
+\Large\textmd{\textbf{\hmwkClassFull}}\\
+\normalsize{\textbf{\hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{\hmwkDueDate}\\
+%\vspace{0.1in}
+\large\textbf{\hmwkAuthorName}
+%\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}\\
+
+}
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+%\newpage
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}[Properties of Triple Graph Grammars with Non-Terminal Symbols]
+	\begin{section}{Introduction}
+		With the objective to enhance software quality, research and industry have proposed some modeling techniques that utilize graphical modeling languages (e.g. UML). These modeling languages can be viewed as graph languages, which in turn can be described by graph grammars.
+		
+		In this context, a common problem is the transformation of graphs from different languages based on their grammars. A quite popular approach to this problem is the triple graph grammar, which aims to describe the transformation between two languages in terms of their grammars. Even though TGGs have shown some positive results, the efficiency of transformation algorithms and the usability of the formalism are still some drawbacks \citep{Schurr2008}. Nevertheless, we believe that TGGs could profit from some concepts of the theory of formal languages and graph grammars, in special the realm of visual languages.
+		
+		More specifically, we judge that the TGG formalism is more expressive than it needs to be for the practical use in model transformations, this affects negatively its usability and efficiency. So we propose a restriction on the syntax of the grammar production rules so to create a family of grammars, that is potentially a proper subset of the general TGG. This restriction on the form of the rules includes the concept of non-terminal symbols, analogous to the non-terminal symbols of regular and context-free grammars of Chomsky. Then, we aim to devise a parsing/ transformation algorithm with smaller time and spatial complexity.
+		
+		\paragraph{Motivation. } The restriction on the form of the rules of TGGs may increase significantly its usability, as it reduces the minimum amount of rules necessary to describe a language, and increase the efficiency of the transformation algorithm, like it happens in the context of programming language compilers with the LL languages. This can, in turn, encourage more the use of triple graph grammars in practice and ease the solution of model transformation problems.
+		\paragraph{Key-words. } Graph Grammars, Triple Graph Grammars, Parsing, Graph Transformation, Model Transformation, Model-driven Engineering, Software Engineering.
+	\end{section}
+	
+	\begin{section}{Methodology}
+		This work is divided into several phases, presented in Table \ref{tb:TimeSchedule}. First, we intend to use graph theory, formal languages and abstract algebra concepts to define abstract syntax and semantics of our family of triple graph grammars with non-terminal symbols. This part is heavily supported by the current literature. %TODO: CITE
+		
+		Second, we plan to create a specialized parsing/ transformation algorithm and analyze its complexity. After that we intend to study the expressiveness of our formalism, specially in comparison with other current triple graph grammar techniques. Finally, we want to evaluate its practical use in some examples comparing the amount of rules used in the grammars and the efficiency of parsing and transformation algorithms in terms of run-time.
+		
+		A possible extension of this work could be the characterization of an equivalence between several families of triple graph grammars with different computational models (e.g. finite automata, turing machine), like it exists for the classical formal languages.
+		
+		\paragraph{Threats. } One possible obstacle for this work is the creation of an efficient parsing algorithm. Even though there exist well-known parsing algorithms for string grammars, translating their concepts into our definitions of graph grammar might be difficult. Moreover, we are aware of possible termination problems in the case of directed cyclic graphs.
+		
+		\begin{table}[h]
+			\centering
+			\begin{tabular}{l | l }
+				\textbf{Start and End Dates} & \textbf{Activities} \\ \hline
+				12/02/2018 to 11/03/2018 &	Initial research; first drafts on the idea; \\
+				&  problem concretization; approach definition and validation\\ \hline
+				12/03/2018 to 11/04/2018 &	Vacations\\ \hline
+				12/04/2018 to 11/05/2018 &	Definition of the approach; search of literature; proposal; \\ \hline
+				12/05/2018 to 11/06/2018 &	Theoretical definitions; sketch of parsing algorithm; \\
+				& write literature review; 1st review\\ \hline
+				12/06/2018 to 11/07/2018 &	Parsing algorithm and expressiveness; write introduction; 2nd review\\ \hline
+				12/07/2018 to 11/08/2018 &	Algorithm's analysis; further theoretical considerations; write the main chapter\\ \hline
+				12/08/2018 to 11/09/2018 &	Evaluation of results; write evaluation; 3rd review \\ \hline
+				12/09/2018 to 11/10/2018 &	Finalize writing; prepare presentation/ defense\\ \hline
+			\end{tabular}
+			\caption{Plan for the researching, developing and writing of the master thesis. This schedule is organized in months, where each month has its respective activities planed.}
+			\label{tb:TimeSchedule}
+		\end{table}
+	\end{section}
+	
+	\begin{section}{Related Work}
+		There exists an extensive literature on graph transformation and rewriting systems, specially on the algebraic approach to graph grammars \citep{ehrig2015graph}, and triple graph grammars \citep{schurr1994specification}. Moreover, there are several proposals of families of graph grammars applied to the context of visual languages, including regular \citep{gilroy2017parsing}, context-free \citep{rekers1997defining}, and context-sensitive grammars \citep{Zhang2001, adachi1999nce, Drewes2010}. \cite{Marriott1997} proposed a hierarchy for classes of graph grammars, Flasiński in (\citeyear{Flasinski1998}) associated several types of graph grammars with the respective complexity to parse and in (\citeyear{Flasinski1993}) presented a parsing algorithm with complexity $O(n^2)$.
+		
+		\cite{Shi2016} proposed a method for simplifying graph grammars. And several authors report the use of TGGs to solve model transformations \citep{Gottmann2016}. But we have not found any publication that tries to enhance TGGs' efficiency and expressiveness/ usability by means of restrictions on the form of the grammar rules.
+	\end{section}
+	
+	\bibliographystyle{authordate1}
+	\bibliography{bibliography}
+\end{homeworkProblem}
+
+\end{document}
+

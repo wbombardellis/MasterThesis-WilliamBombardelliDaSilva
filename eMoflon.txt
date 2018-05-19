@@ -1,0 +1,24 @@
+# Installing eMoflon
+1. Download and install Eclipse Oxygen for modelling
+2. Help > Install New Software > Add
+	* eMoflonCore - https://raw.githubusercontent.com/eMoflon/emoflon-core-updatesite/emoflon-core_1.2.0/stable/updatesite/
+	* eMoflon - https://github.com/eMoflon/eMoflon.github.io/raw/emoflon-tool-updatesite_3.2.0/eclipse-plugin/beta/updatesite
+
+# Running Example
+1. Follow the instruction in the handbook
+	* Maybe it is necessary to add the dependencies manually to the MANIFEST.MF of the plug-in (All moflon and the metamodels' packages)
+	* Maybe it is necessaru to add the properties "Meta Model Project" manually to the moflon.properties.xmi file with the same name of the one in the metamodels' properties file
+
+#Reasons to use eMoflon
+* Works with a more recent version of eclipse (Oxygen)
+* Extensive and up-to-date documentation (2017)
+* A lot of publication reporting the workings of the tool
+* Occurence of the tool in surveys
+* Formalism very near to the ones of the communities' publications
+
+# References
+* eMoflon website: https://emoflon.org/
+* eMoflon-tool github: https://github.com/eMoflon/emoflon-tool/releases/tag/emoflon_3.2.0
+* eMoflon-core github: https://github.com/eMoflon/emoflon-core/releases/tag/emoflon-core_1.2.0
+* eMoflon Handbook: https://github.com/eMoflon/emoflon-docu/releases/download/emoflon_2.32.0/eMoflonHandbook_2.32.0.pdf
+

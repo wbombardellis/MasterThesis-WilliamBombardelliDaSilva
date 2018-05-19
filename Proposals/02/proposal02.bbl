@@ -1,0 +1,83 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Adachi {\em et~al.\ }\relax, }1999]{adachi1999nce}
+Adachi, Yoshihiro, Kobayashi, Suguru, Tsuchida, Kensei, \& Yaku, Takeo. 1999.
+\newblock An NCE context-sensitive graph grammar for visual design languages.
+\newblock {\em Pages  228--235 of:} {\em Visual Languages, 1999. Proceedings.
+  1999 IEEE Symposium on}.
+\newblock IEEE.
+
+\bibitem[\protect\citename{Drewes {\em et~al.\ }\relax, }2010]{Drewes2010}
+Drewes, Frank, Hoffmann, Berthold, Janssens, Dirk, \& Minas, Mark. 2010.
+\newblock {Adaptive star grammars and their languages}.
+\newblock {\em Theoretical Computer Science}, {\bf 411}(34-36), 3090--3109.
+
+\bibitem[\protect\citename{Ehrig {\em et~al.\ }\relax, }2015]{ehrig2015graph}
+Ehrig, Hartmut, Ermel, Claudia, Golas, Ulrike, \& Hermann, Frank. 2015.
+\newblock Graph and Model Transformation.
+
+\bibitem[\protect\citename{Flasi{\'{n}}ski, }1993]{Flasinski1993}
+Flasi{\'{n}}ski, Mariusz. 1993.
+\newblock {On the parsing of deterministic graph languages for syntactic
+  pattern recognition}.
+\newblock {\em Pattern Recognition}, {\bf 26}(1), 1--16.
+
+\bibitem[\protect\citename{Flasiński, }1998]{Flasinski1998}
+Flasiński, M. 1998.
+\newblock {Power properties of NLC graph grammars with a polynomial membership
+  problem}.
+\newblock {\em Theoretical Computer Science}, {\bf 201}(8), 189--231.
+
+\bibitem[\protect\citename{Gilroy {\em et~al.\ }\relax,
+  }2017]{gilroy2017parsing}
+Gilroy, Sorcha, Lopez, Adam, \& Maneth, Sebastian. 2017.
+\newblock {Parsing Graphs with Regular Graph Grammars}.
+\newblock {\em Pages  199--208 of:} {\em Proceedings of the 6th Joint
+  Conference on Lexical and Computational Semantics (* SEM 2017)}.
+
+\bibitem[\protect\citename{Gottmann {\em et~al.\ }\relax, }2016]{Gottmann2016}
+Gottmann, Susann, Nachtigall, Nico, Engel, Thomas, Ermel, Claudia, \& Hermann,
+  Frank. 2016.
+\newblock {Towards the propagation of model updates along different views in
+  multi-view models}.
+\newblock {\em CEUR Workshop Proceedings}, {\bf 1571}(Bx), 45--60.
+
+\bibitem[\protect\citename{Marriott \& Meyer, }1997]{Marriott1997}
+Marriott, Kim, \& Meyer, Bernd. 1997.
+\newblock {On the classification of visual languages by grammar hierarchies}.
+\newblock {\em Journal of Visual Languages and Computing}, {\bf 8}(4),
+  375--402.
+
+\bibitem[\protect\citename{Rekers \& Sch{\"{u}}rr, }1997]{rekers1997defining}
+Rekers, Jan, \& Sch{\"{u}}rr, Andy. 1997.
+\newblock {Defining and parsing visual languages with layered graph grammars}.
+\newblock {\em Journal of Visual Languages {\&} Computing}, {\bf 8}(1), 27--55.
+
+\bibitem[\protect\citename{Sch{\"u}rr, }1994]{schurr1994specification}
+Sch{\"u}rr, Andy. 1994.
+\newblock Specification of graph translators with triple graph grammars.
+\newblock {\em Pages  151--163 of:} {\em International Workshop on
+  Graph-Theoretic Concepts in Computer Science}.
+\newblock Springer.
+
+\bibitem[\protect\citename{Sch{\"{u}}rr \& Klar, }2008]{Schurr2008}
+Sch{\"{u}}rr, Andy, \& Klar, Felix. 2008.
+\newblock {15 Years of triple graph grammars: Research challenges, new
+  contributions, open problems}.
+\newblock {\em Lecture Notes in Computer Science}, {\bf 5214 LNCS}, 411--425.
+
+\bibitem[\protect\citename{Shi {\em et~al.\ }\relax, }2016]{Shi2016}
+Shi, Zhan, Zeng, Xiaoqin, Huang, Song, Qi, Zekun, Li, Hui, Hu, Bin, Zhang,
+  Sainan, Liu, Yanyun, \& Wang, Cailing. 2016.
+\newblock {A method to simplify description and implementation of Graph
+  Grammars}.
+\newblock {\em 6th International Conference on Computing, Communications and
+  Networking Technologies, ICCCNT 2015},  2--7.
+
+\bibitem[\protect\citename{Zhang {\em et~al.\ }\relax, }2001]{Zhang2001}
+Zhang, Da~Qian, Zhang, Kang, \& Cao, Jiannong. 2001.
+\newblock {A context-sensitive graph grammar formalism for the specification of
+  visual languages}.
+\newblock {\em Computer Journal}, {\bf 44}(3), 186--200.
+
+\end{thebibliography}
