@@ -1,0 +1,36 @@
+// Add imports here
+#import "platform:/plugin/org.wbsilva.mm.statemachine/model/Statemachine.ecore"
+#import "platform:/plugin/org.wbsilva.mm.petrinet/model/Petrinet.ecore"
+
+#schema org.wbsilva.bx.statemachine2petrinet
+
+#source {
+	statemachine
+}
+
+#target {
+	petrinet
+}
+
+#correspondence {
+	SM2PN{
+		#src->SM
+		#trg->PNGraph
+	}
+	S2P{
+		#src->State
+		#trg->Place
+	}
+	T2T{
+		#src->Transition
+		#trg->Transition
+	}
+	T2A{
+		#src->Transition
+		#trg->Arc
+	}
+}
+
+#attributeConditions {
+
+}

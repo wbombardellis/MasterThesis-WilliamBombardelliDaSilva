@@ -1,0 +1,23 @@
+#using org.wbsilva.bx.class2sdlblock.*
+#using AttrCondDefLibrary.*
+
+#rule diagram2system #with org.wbsilva.bx.class2sdlblock
+
+#source {
+	++ cd: ClassDiagram
+}
+
+#target {
+	++ s: System
+}
+
+#correspondence {
+	++ cd2s: CD2S{
+		#src->cd
+		#trg->s
+	}
+}
+
+#attributeConditions {
+
+}

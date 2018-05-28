@@ -1,0 +1,64 @@
+#using org.wbsilva.bx.statemachine2petrinet.*
+#using AttrCondDefLibrary.*
+
+#rule transition2arctransarc #with org.wbsilva.bx.statemachine2petrinet
+
+#source {
+	sm: SM{
+		++ -transitions->st
+	}
+	s1: State
+	s2: State
+	++ st: Transition{
+		++ -from-> s1
+		++ -to-> s2
+	}
+}
+
+#target {
+	png: PNGraph{
+		++ -transitions-> pt
+	}
+	p1: Place
+	p2: Place
+	++ pt: Transition
+	++ a1: Arc{
+		++ -from->p1
+		++ -to->pt
+	}
+	++ a2: Arc{
+		++ -from->pt
+		++ -to->p2
+	}
+}
+
+#correspondence {
+	sm2pn: SM2PN{
+		#src->sm
+		#trg->png
+	}
+	s12p1: S2P{
+		#src->s1
+		#trg->p1
+	}
+	s22p2: S2P{
+		#src->s2
+		#trg->p2
+	}
+	++ st2pt: T2T{
+		#src->st
+		#trg->pt
+	}
+	++ st2a1: T2A{
+		#src->st
+		#trg->a1
+	}
+	++ st2a2: T2A{
+		#src->st
+		#trg->a2
+	}
+}
+
+#attributeConditions {
+
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:org.wbsilva.bx.statemachine2petrinet="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore">
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2petrinet:SM2PN">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#//@potentialRoots.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2petrinet:S2P">
+    <source href="fwd.src.xmi#1"/>
+    <target href="fwd.trg.xmi#1"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2petrinet:T2A">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target href="fwd.trg.xmi#//@potentialRoots.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2petrinet:T2A">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target href="fwd.trg.xmi#//@potentialRoots.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2petrinet:T2T">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target href="fwd.trg.xmi#//@potentialRoots.0/@transitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2petrinet:S2P">
+    <source href="fwd.src.xmi#2"/>
+    <target href="fwd.trg.xmi#2"/>
+  </correspondences>
+  <source href="fwd.src.xmi#/"/>
+  <target href="fwd.trg.xmi#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.statemachine2petrinet.Statemachine2petrinetPackage" genModel="model/Statemachine2petrinet.genmodel" uri="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.statemachine2petrinet.Rules.RulesPackage" genModel="model/Statemachine2petrinet.genmodel" uri="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules"/>
+  </extension>
+</plugin>

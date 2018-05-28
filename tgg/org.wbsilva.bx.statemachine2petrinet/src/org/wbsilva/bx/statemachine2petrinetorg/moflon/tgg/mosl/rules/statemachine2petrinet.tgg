@@ -1,0 +1,23 @@
+#using org.wbsilva.bx.statemachine2petrinet.*
+#using AttrCondDefLibrary.*
+
+#rule statemachine2petrinet #with org.wbsilva.bx.statemachine2petrinet
+
+#source {
+	++ sm: SM
+}
+
+#target {
+	++ png: PNGraph
+}
+
+#correspondence {
+	++ sm2pn: SM2PN{
+		#src->sm
+		#trg->png
+	}
+}
+
+#attributeConditions {
+
+}

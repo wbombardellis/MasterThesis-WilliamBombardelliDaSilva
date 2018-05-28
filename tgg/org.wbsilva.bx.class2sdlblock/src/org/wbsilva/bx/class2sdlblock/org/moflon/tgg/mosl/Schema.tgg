@@ -1,0 +1,32 @@
+// Add imports here
+#import "platform:/plugin/org.wbsilva.mm.class/model/Class.ecore"
+#import "platform:/plugin/org.wbsilva.mm.sdlblock/model/Sdlblock.ecore"
+
+#schema org.wbsilva.bx.class2sdlblock
+
+#source {
+	class
+}
+
+#target {
+	sdlblock	
+}
+
+#correspondence {
+	CD2S{
+		#src->ClassDiagram
+		#trg->System
+	}
+	C2B{
+		#src->Clazz
+		#trg->Block
+	}
+	A2C{
+		#src->Association
+		#trg->Connection
+	}
+}
+
+#attributeConditions {
+
+}

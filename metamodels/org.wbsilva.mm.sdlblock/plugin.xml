@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="sdlblock.SdlblockPackage" genModel="model/Sdlblock.genmodel" uri="platform:/plugin/org.wbsilva.mm.sdlblock/model/Sdlblock.ecore"/>
+  </extension>
+</plugin>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.class2sdlblock.Class2sdlblockPackage" genModel="model/Class2sdlblock.genmodel" uri="platform:/plugin/org.wbsilva.bx.class2sdlblock/model/Class2sdlblock.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.class2sdlblock.Rules.RulesPackage" genModel="model/Class2sdlblock.genmodel" uri="platform:/plugin/org.wbsilva.bx.class2sdlblock/model/Class2sdlblock.ecore#//Rules"/>
+  </extension>
+</plugin>

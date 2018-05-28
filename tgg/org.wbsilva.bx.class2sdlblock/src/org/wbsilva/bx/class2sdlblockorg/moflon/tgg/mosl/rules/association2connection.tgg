@@ -1,0 +1,46 @@
+#using org.wbsilva.bx.class2sdlblock.*
+#using AttrCondDefLibrary.*
+
+#rule association2connection #with org.wbsilva.bx.class2sdlblock
+
+#source {
+	cd: ClassDiagram{
+		++ -associations->a
+		-classes->c1
+		-classes->c2
+	}
+	c1: Clazz
+	c2: Clazz
+	++ a: Association{
+		++ -source->c1
+		++ -target->c2
+	}
+}
+
+#target {
+	b1: Block
+	b2: Block
+	++ conn: Connection{
+		++ -source->b1
+		++ -target->b2
+	}
+}
+
+#correspondence {
+	c12b1: C2B{
+		#src->c1
+		#trg->b1
+	}
+	c22b2: C2B{
+		#src->c2
+		#trg->b2
+	}
+	++ a2conn: A2C{
+		#src->a
+		#trg->conn
+	}
+}
+
+#attributeConditions {
+
+}

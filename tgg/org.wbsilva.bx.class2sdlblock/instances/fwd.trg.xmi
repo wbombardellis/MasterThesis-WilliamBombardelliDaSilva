@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<algorithm:TempOutputContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:algorithm="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//algorithm" xmlns:org.wbsilva.mm.sdlblock="platform:/plugin/org.wbsilva.mm.sdlblock/model/Sdlblock.ecore">
+  <potentialRoots xsi:type="org.wbsilva.mm.sdlblock:System">
+    <children xsi:type="org.wbsilva.mm.sdlblock:Block"/>
+    <children xsi:type="org.wbsilva.mm.sdlblock:Block"/>
+  </potentialRoots>
+  <potentialRoots xsi:type="org.wbsilva.mm.sdlblock:Connection" source="//@potentialRoots.0/@children.0" target="//@potentialRoots.0/@children.1"/>
+</algorithm:TempOutputContainer>

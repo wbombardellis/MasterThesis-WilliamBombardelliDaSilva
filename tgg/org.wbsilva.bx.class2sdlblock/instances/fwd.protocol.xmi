@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:PrecedenceStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <tripleMatches children="//@tripleMatches.3 //@tripleMatches.2 //@tripleMatches.1" ruleName="diagram2system">
+    <sourceElements href="fwd.src.xmi#/"/>
+    <nodeMappings nodeName="cd">
+      <node href="fwd.src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="s">
+      <node href="fwd.trg.xmi#//@potentialRoots.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="cd2s">
+      <node href="fwd.corr.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="fwd.corr.xmi#//@correspondences.0"/>
+      <trg href="fwd.src.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="fwd.corr.xmi#//@correspondences.0"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.0"/>
+    </containedEdges>
+    <targetElements href="fwd.trg.xmi#//@potentialRoots.0"/>
+    <correspondenceElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <correspondenceElements href="fwd.corr.xmi#//@correspondences.0"/>
+    <correspondenceElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <createdElements href="fwd.trg.xmi#//@potentialRoots.0"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <createdElements href="fwd.corr.xmi#//@correspondences.0"/>
+    <createdElements href="fwd.src.xmi#/"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.3" ruleName="class2block" number="1">
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.6"/>
+    <sourceElements href="fwd.src.xmi#/"/>
+    <sourceElements href="fwd.src.xmi#//@classes.0"/>
+    <contextElements href="fwd.trg.xmi#//@potentialRoots.0"/>
+    <contextElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <contextElements href="fwd.corr.xmi#//@correspondences.0"/>
+    <contextElements href="fwd.src.xmi#/"/>
+    <contextElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <nodeMappings nodeName="cd">
+      <node href="fwd.src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="b">
+      <node href="fwd.trg.xmi#//@potentialRoots.0/@children.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c2b">
+      <node href="fwd.corr.xmi#//@correspondences.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c">
+      <node href="fwd.src.xmi#//@classes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="s">
+      <node href="fwd.trg.xmi#//@potentialRoots.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="cd2s">
+      <node href="fwd.corr.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="fwd.corr.xmi#//@correspondences.0"/>
+      <trg href="fwd.src.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="fwd.corr.xmi#//@correspondences.0"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="fwd.corr.xmi#//@correspondences.1"/>
+      <trg href="fwd.src.xmi#//@classes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="fwd.src.xmi#/"/>
+      <trg href="fwd.src.xmi#//@classes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="fwd.corr.xmi#//@correspondences.1"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.0/@children.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="children">
+      <src href="fwd.trg.xmi#//@potentialRoots.0"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.0/@children.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="fwd.src.xmi#/"/>
+      <trg href="fwd.src.xmi#//@classes.0"/>
+    </containedEdges>
+    <targetElements href="fwd.trg.xmi#//@potentialRoots.0"/>
+    <targetElements href="fwd.trg.xmi#//@potentialRoots.0/@children.0"/>
+    <targetElements href="#//@tripleMatches.1/@containedEdges.5"/>
+    <correspondenceElements href="fwd.corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="#//@tripleMatches.1/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <correspondenceElements href="fwd.corr.xmi#//@correspondences.0"/>
+    <correspondenceElements href="#//@tripleMatches.1/@containedEdges.4"/>
+    <correspondenceElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <createdElements href="fwd.corr.xmi#//@correspondences.1"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.3"/>
+    <createdElements href="fwd.trg.xmi#//@potentialRoots.0/@children.0"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.4"/>
+    <createdElements href="fwd.src.xmi#//@classes.0"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.5"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.4 //@tripleMatches.3" ruleName="class2block" number="2">
+    <sourceElements href="fwd.src.xmi#/"/>
+    <sourceElements href="fwd.src.xmi#//@classes.1"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.6"/>
+    <contextElements href="fwd.trg.xmi#//@potentialRoots.0"/>
+    <contextElements href="#//@tripleMatches.2/@containedEdges.0"/>
+    <contextElements href="fwd.corr.xmi#//@correspondences.0"/>
+    <contextElements href="fwd.src.xmi#/"/>
+    <contextElements href="#//@tripleMatches.2/@containedEdges.1"/>
+    <nodeMappings nodeName="cd">
+      <node href="fwd.src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="b">
+      <node href="fwd.trg.xmi#//@potentialRoots.0/@children.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c2b">
+      <node href="fwd.corr.xmi#//@correspondences.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c">
+      <node href="fwd.src.xmi#//@classes.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="s">
+      <node href="fwd.trg.xmi#//@potentialRoots.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="cd2s">
+      <node href="fwd.corr.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="fwd.corr.xmi#//@correspondences.0"/>
+      <trg href="fwd.src.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="fwd.corr.xmi#//@correspondences.0"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="fwd.corr.xmi#//@correspondences.2"/>
+      <trg href="fwd.src.xmi#//@classes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="fwd.corr.xmi#//@correspondences.2"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.0/@children.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="fwd.src.xmi#/"/>
+      <trg href="fwd.src.xmi#//@classes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="children">
+      <src href="fwd.trg.xmi#//@potentialRoots.0"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.0/@children.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="fwd.src.xmi#/"/>
+      <trg href="fwd.src.xmi#//@classes.1"/>
+    </containedEdges>
+    <targetElements href="fwd.trg.xmi#//@potentialRoots.0"/>
+    <targetElements href="fwd.trg.xmi#//@potentialRoots.0/@children.1"/>
+    <targetElements href="#//@tripleMatches.2/@containedEdges.5"/>
+    <correspondenceElements href="fwd.corr.xmi#//@correspondences.2"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.0"/>
+    <correspondenceElements href="fwd.corr.xmi#//@correspondences.0"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.1"/>
+    <createdElements href="fwd.corr.xmi#//@correspondences.2"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.2"/>
+    <createdElements href="fwd.src.xmi#//@classes.1"/>
+    <createdElements href="fwd.trg.xmi#//@potentialRoots.0/@children.1"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.5"/>
+  </tripleMatches>
+  <tripleMatches ruleName="association2connection" number="3">
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.13"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.14"/>
+    <sourceElements href="fwd.src.xmi#/"/>
+    <sourceElements href="fwd.src.xmi#//@classes.1"/>
+    <sourceElements href="fwd.src.xmi#//@associations.0"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.15"/>
+    <sourceElements href="fwd.src.xmi#//@classes.0"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.16"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.17"/>
+    <contextElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <contextElements href="fwd.src.xmi#//@classes.1"/>
+    <contextElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <contextElements href="fwd.corr.xmi#//@correspondences.2"/>
+    <contextElements href="fwd.corr.xmi#//@correspondences.1"/>
+    <contextElements href="#//@tripleMatches.3/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.3/@containedEdges.3"/>
+    <contextElements href="fwd.trg.xmi#//@potentialRoots.0/@children.0"/>
+    <contextElements href="fwd.src.xmi#/"/>
+    <contextElements href="fwd.trg.xmi#//@potentialRoots.0/@children.1"/>
+    <contextElements href="fwd.src.xmi#//@classes.0"/>
+    <contextElements href="#//@tripleMatches.3/@containedEdges.4"/>
+    <contextElements href="#//@tripleMatches.3/@containedEdges.5"/>
+    <nodeMappings nodeName="b2">
+      <node href="fwd.trg.xmi#//@potentialRoots.0/@children.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="cd">
+      <node href="fwd.src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="a">
+      <node href="fwd.src.xmi#//@associations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="conn">
+      <node href="fwd.trg.xmi#//@potentialRoots.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="a2conn">
+      <node href="fwd.corr.xmi#//@correspondences.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c22b2">
+      <node href="fwd.corr.xmi#//@correspondences.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c12b1">
+      <node href="fwd.corr.xmi#//@correspondences.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c1">
+      <node href="fwd.src.xmi#//@classes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="b1">
+      <node href="fwd.trg.xmi#//@potentialRoots.0/@children.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c2">
+      <node href="fwd.src.xmi#//@classes.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="fwd.corr.xmi#//@correspondences.2"/>
+      <trg href="fwd.src.xmi#//@classes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="fwd.corr.xmi#//@correspondences.1"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.0/@children.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="fwd.corr.xmi#//@correspondences.1"/>
+      <trg href="fwd.src.xmi#//@classes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="fwd.src.xmi#/"/>
+      <trg href="fwd.src.xmi#//@classes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="fwd.corr.xmi#//@correspondences.2"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.0/@children.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="fwd.src.xmi#/"/>
+      <trg href="fwd.src.xmi#//@classes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="fwd.trg.xmi#//@potentialRoots.1"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.0/@children.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="fwd.src.xmi#//@associations.0"/>
+      <trg href="fwd.src.xmi#//@classes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="fwd.corr.xmi#//@correspondences.3"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="fwd.corr.xmi#//@correspondences.3"/>
+      <trg href="fwd.src.xmi#//@associations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="fwd.src.xmi#//@associations.0"/>
+      <trg href="fwd.src.xmi#//@classes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="associations">
+      <src href="fwd.src.xmi#/"/>
+      <trg href="fwd.src.xmi#//@associations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="fwd.trg.xmi#//@potentialRoots.1"/>
+      <trg href="fwd.trg.xmi#//@potentialRoots.0/@children.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="fwd.src.xmi#/"/>
+      <trg href="fwd.src.xmi#//@classes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="fwd.src.xmi#//@associations.0"/>
+      <trg href="fwd.src.xmi#//@classes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="fwd.src.xmi#//@associations.0"/>
+      <trg href="fwd.src.xmi#//@classes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="associations">
+      <src href="fwd.src.xmi#/"/>
+      <trg href="fwd.src.xmi#//@associations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="fwd.src.xmi#/"/>
+      <trg href="fwd.src.xmi#//@classes.1"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.3/@containedEdges.6"/>
+    <targetElements href="fwd.trg.xmi#//@potentialRoots.0/@children.0"/>
+    <targetElements href="fwd.trg.xmi#//@potentialRoots.0/@children.1"/>
+    <targetElements href="fwd.trg.xmi#//@potentialRoots.1"/>
+    <targetElements href="#//@tripleMatches.3/@containedEdges.12"/>
+    <correspondenceElements href="fwd.corr.xmi#//@correspondences.2"/>
+    <correspondenceElements href="fwd.corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.8"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.9"/>
+    <correspondenceElements href="fwd.corr.xmi#//@correspondences.3"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.9"/>
+    <createdElements href="fwd.corr.xmi#//@correspondences.3"/>
+    <createdElements href="fwd.src.xmi#//@associations.0"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.10"/>
+    <createdElements href="fwd.trg.xmi#//@potentialRoots.1"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.11"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.12"/>
+  </tripleMatches>
+  <tripleMatches ruleName="attribute2nothing" number="4">
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.1"/>
+    <sourceElements href="fwd.src.xmi#//@classes.1/@attribute.0"/>
+    <sourceElements href="fwd.src.xmi#//@classes.1"/>
+    <contextElements href="fwd.src.xmi#//@classes.1"/>
+    <nodeMappings nodeName="a">
+      <node href="fwd.src.xmi#//@classes.1/@attribute.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="c">
+      <node href="fwd.src.xmi#//@classes.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="attribute">
+      <src href="fwd.src.xmi#//@classes.1"/>
+      <trg href="fwd.src.xmi#//@classes.1/@attribute.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="attribute">
+      <src href="fwd.src.xmi#//@classes.1"/>
+      <trg href="fwd.src.xmi#//@classes.1/@attribute.0"/>
+    </containedEdges>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <createdElements href="fwd.src.xmi#//@classes.1/@attribute.0"/>
+  </tripleMatches>
+</org.moflon.tgg.runtime:PrecedenceStructure>

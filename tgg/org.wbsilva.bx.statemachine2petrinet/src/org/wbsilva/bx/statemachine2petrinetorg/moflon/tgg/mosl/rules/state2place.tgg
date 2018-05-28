@@ -1,0 +1,33 @@
+#using org.wbsilva.bx.statemachine2petrinet.*
+#using AttrCondDefLibrary.*
+
+#rule state2place #with org.wbsilva.bx.statemachine2petrinet
+
+#source {
+	sm: SM{
+		++ -states->s
+	}
+	++ s: State
+}
+
+#target {
+	png: PNGraph{
+		++ -places-> p
+	}
+	++ p:Place
+}
+
+#correspondence {
+	sm2pn: SM2PN{
+		#src->sm
+		#trg->png
+	}
+	++ s2p: S2P{
+		#src->s
+		#trg->p
+	}
+}
+
+#attributeConditions {
+	eq(s.id, p.id)
+}

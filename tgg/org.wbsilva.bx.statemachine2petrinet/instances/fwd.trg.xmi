@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<algorithm:TempOutputContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:algorithm="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//algorithm" xmlns:org.wbsilva.mm.petrinet="platform:/plugin/org.wbsilva.mm.petrinet/model/Petrinet.ecore">
+  <potentialRoots xsi:type="org.wbsilva.mm.petrinet:PNGraph">
+    <places id="1"/>
+    <places id="2"/>
+    <transitions/>
+  </potentialRoots>
+  <potentialRoots xsi:type="org.wbsilva.mm.petrinet:Arc" from="1" to="//@potentialRoots.0/@transitions.0"/>
+  <potentialRoots xsi:type="org.wbsilva.mm.petrinet:Arc" from="//@potentialRoots.0/@transitions.0" to="1"/>
+</algorithm:TempOutputContainer>

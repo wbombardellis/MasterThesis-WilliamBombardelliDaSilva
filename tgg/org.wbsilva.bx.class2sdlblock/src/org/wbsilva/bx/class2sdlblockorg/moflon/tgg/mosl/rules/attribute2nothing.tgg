@@ -1,0 +1,23 @@
+#using org.wbsilva.bx.class2sdlblock.*
+#using AttrCondDefLibrary.*
+
+#rule attribute2nothing #with org.wbsilva.bx.class2sdlblock
+
+#source {
+	c: Clazz{
+		++ -attribute->a
+	}
+	++ a: Attribute
+}
+
+#target {
+
+}
+
+#correspondence {
+
+}
+
+#attributeConditions {
+
+}
