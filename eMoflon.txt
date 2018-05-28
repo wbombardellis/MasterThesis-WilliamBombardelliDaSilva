@@ -6,7 +6,7 @@
 
 # Running Example
 1. Follow the instruction in the handbook
-	* Maybe it is necessary to add the dependencies manually to the MANIFEST.MF of the plug-in (All moflon and the metamodels' packages)
+	* Maybe it is necessary to add the dependencies manually to the MANIFEST.MF of the plug-in (All moflon and the metamodels' packages, including SDMLanguage)
 	* Maybe it is necessaru to add the properties "Meta Model Project" manually to the moflon.properties.xmi file with the same name of the one in the metamodels' properties file
 
 #Reasons to use eMoflon

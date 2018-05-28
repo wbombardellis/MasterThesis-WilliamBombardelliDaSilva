@@ -411,8 +411,8 @@
 				\draw (7.5,-2) node[t] (v9) {e};
 				\draw (9,-2) node[nont] (v10) {F};
 				\draw (10,-1) node[t] (v11) {fi};
-				\draw (11,-1) node[t] (v12) {e};
-				\draw (12,-1) node[nont] (v13) {F};
+				\draw (11.5,-1) node[t] (v12) {e};
+				\draw (13,-1) node[nont] (v13) {F};
 				
 				
 				\draw[edge] (v6) -- (v7);
@@ -613,6 +613,7 @@
 		%TODO: Present the concrete syntax
 		\begin{example}{Class Diagram to Java}
 			$TGG = (\{S,C,A,I,m,p,k,a,prg,pck,cls,imp,att\}, \{m,p,k,a,prg,pck,$ $cls,imp,att,m_p,p_p,k_c,a_i,a_a,b_a\}, P, S)\}$, where $P$ is
+			
 			%TODO: Write the embedding in
 			\begin{tikzpicture}[grammar]
 				%The LHS
@@ -677,6 +678,31 @@
 			\\
 			
 			\begin{tikzpicture}[grammar]
+			%The LHS
+			\draw (-0,0) node[lhs] (lhs) {A-A-I ::=};
+			
+			%The RHS graph
+			\draw (1.5,0) node[t] (s1) {a};
+			\draw (1.5,-1.5) node[nont] (s2) {C};
+			
+			\draw (4,0) node[t] (c1) {$a_i$};
+			\draw (4,-1.5) node[nont] (c2) {C};
+			
+			\draw (6.5,0) node[t] (t1) {$imp$};
+			\draw (6.5,-1.5) node[nont] (t2) {P};
+			
+			\draw[edge] (s1) -- (s2);
+			
+			\draw[edge] (t1) -- (t2);
+			
+			\draw[morph] (c1) -- (s1);
+			\draw[morph] (c1) -- (t1);
+			\draw[morph] (c2) -- (s2);
+			\draw[morph] (c2) -- (t2);
+			\end{tikzpicture}
+			\\
+			
+			\begin{tikzpicture}[grammar]
 				%The LHS
 				\draw (-0,0) node[lhs] (lhs) {C-C-C ::=};
 				
@@ -712,31 +738,6 @@
 				\draw[morph] (c3) -- (t3);
 				\draw[morph] (c4) -- (s2);
 				\draw[morph] (c4) -- (t4);
-			\end{tikzpicture}
-			\\
-			
-			\begin{tikzpicture}[grammar]
-				%The LHS
-				\draw (-0,0) node[lhs] (lhs) {A-A-I ::=};
-				
-				%The RHS graph
-				\draw (1.5,0) node[t] (s1) {a};
-				\draw (1.5,-1.5) node[nont] (s2) {C};
-				
-				\draw (4,0) node[t] (c1) {$a_i$};
-				\draw (4,-1.5) node[nont] (c2) {C};
-				
-				\draw (6.5,0) node[t] (t1) {$imp$};
-				\draw (6.5,-1.5) node[nont] (t2) {P};
-				
-				\draw[edge] (s1) -- (s2);
-				
-				\draw[edge] (t1) -- (t2);
-				
-				\draw[morph] (c1) -- (s1);
-				\draw[morph] (c1) -- (t1);
-				\draw[morph] (c2) -- (s2);
-				\draw[morph] (c2) -- (t2);
 			\end{tikzpicture}
 			\\
 			
@@ -813,6 +814,36 @@
 	\end{section}
 	
 	\begin{section}{Evaluation}
+		To evaluate our extension of the TGG approach we compare the amount of rules necessary to describe the most researched transformations of the literature in B-NLC TGG and standard TGG. Furthermore, we also report on the runtime for forward and backward batch transformations in a Intel Core i3 2.3GHz 4x 64bit with 4GB RAM. The standard TGG version of the transformations were executed using the eMoflon Tool \cite{leblebici2014developing}. Table \ref{tab:evaluation} presents these results.
+		
+		\begin{table}[h]
+			\centering
+			\begin{tabular}{l r r r r r r }
+				Transformation 	& TGG Rules & B-NLC Rules & TGG Fwd & B-NLC Fwd & TGG Bwd & B-NLC Bwd\\
+				\hline
+				Class2ER									& 	&	&	&	\\
+				Activity2ControlFlow						& 	&	&	&	\\
+				StateMachine2PetriNets						& 	&	&	&	\\
+				UMLClass2SDLBlock \\
+				\citep{Giese2009}			& 	&	&	&	\\
+				Code2ControlFlow \\
+				\citep{Pratt1971}	& 	&	&	&	\\
+				BPMN2BPEL \\
+				\citep{Shi2014}					& 	&	&	&	\\
+				Activity2CSP \\
+				\citep{Bisztray2009}			& 	&	&	&	\\
+				StateMachine2Java \\
+				\citep{Striewe2008}		& 	&	&	&	\\
+				Tree2XTree									& 	&	&	&	\\
+				Star2Wheel									& 	&	&	&	\\
+				LogicExpr2LogicCircuit						& 	&	&	&	\\
+				NeuralNet2Function	 						& 	&	&	&	\\
+				\hline
+			\end{tabular}
+			\caption{Results of the empirical evaluation of the B-NLC TGG in comparison with standard TGG}
+			\label{tab:evaluation}
+		\end{table}
+		
 	\end{section}
 	
 	\bibliographystyle{authordate1}
