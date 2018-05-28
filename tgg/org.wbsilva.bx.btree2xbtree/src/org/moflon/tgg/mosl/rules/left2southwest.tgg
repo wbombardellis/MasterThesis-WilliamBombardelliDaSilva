@@ -1,0 +1,37 @@
+#using org.wbsilva.bx.btree2xbtree.*
+#using AttrCondDefLibrary.*
+
+#rule left2southwest #with org.wbsilva.bx.btree2xbtree
+
+#source {
+	n: BTNode {
+		++ -l->c		
+	}
+	++ c: BTNode {
+		
+	}
+}
+
+#target {
+	xn: XBTNode {
+		++ -sw->xc
+	}
+	++ xc: XBTNode {
+		
+	}
+}
+
+#correspondence {
+	n2xn: BTNode2XBTnode {
+		#src->n
+		#trg->xn
+	}
+	++ l2sw: BTNode2XBTnode {
+		#src->c
+		#trg->xc
+	}
+}
+
+#attributeConditions {
+
+}

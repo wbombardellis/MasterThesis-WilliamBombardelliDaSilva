@@ -1,0 +1,24 @@
+// Add imports here
+#import "platform:/plugin/org.wbsilva.mm.btree/model/Btree.ecore"
+#import "platform:/plugin/org.wbsilva.mm.xbtree/model/Xbtree.ecore"
+
+#schema org.wbsilva.bx.btree2xbtree
+
+#source {
+	btree
+}
+
+#target {
+	xbtree
+}
+
+#correspondence {
+	BTNode2XBTnode {
+		#src->BTNode
+		#trg->XBTNode
+	}
+}
+
+#attributeConditions {
+
+}

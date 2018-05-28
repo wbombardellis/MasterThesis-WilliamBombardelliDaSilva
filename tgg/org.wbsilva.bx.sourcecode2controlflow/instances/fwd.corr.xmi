@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:org.wbsilva.bx.sourcecode2controlflow="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore" xmlns:org.wbsilva.mm.controlflow="platform:/plugin/org.wbsilva.mm.controlflow/model/Controlflow.ecore" xmlns:org.wbsilva.mm.sourcecode="platform:/plugin/org.wbsilva.mm.sourcecode/model/Sourcecode.ecore">
+  <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:P2G">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#//@potentialRoots.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2B">
+    <source xsi:type="org.wbsilva.mm.sourcecode:While" href="fwd.src.xmi#//@first"/>
+    <target href="fwd.trg.xmi#//@potentialRoots.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2N">
+    <source xsi:type="org.wbsilva.mm.sourcecode:Assignment" href="fwd.src.xmi#//@first/@first/@next"/>
+    <target xsi:type="org.wbsilva.mm.controlflow:Command" href="fwd.trg.xmi#//@potentialRoots.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2B">
+    <source xsi:type="org.wbsilva.mm.sourcecode:While" href="fwd.src.xmi#//@first/@next"/>
+    <target href="fwd.trg.xmi#//@potentialRoots.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2N">
+    <source xsi:type="org.wbsilva.mm.sourcecode:Assignment" href="fwd.src.xmi#//@first/@next/@first/@next"/>
+    <target xsi:type="org.wbsilva.mm.controlflow:Command" href="fwd.trg.xmi#//@potentialRoots.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2N">
+    <source xsi:type="org.wbsilva.mm.sourcecode:Assignment" href="fwd.src.xmi#//@first/@first"/>
+    <target xsi:type="org.wbsilva.mm.controlflow:Command" href="fwd.trg.xmi#//@potentialRoots.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2N">
+    <source xsi:type="org.wbsilva.mm.sourcecode:Assignment" href="fwd.src.xmi#//@first/@next/@first"/>
+    <target xsi:type="org.wbsilva.mm.controlflow:Command" href="fwd.trg.xmi#//@potentialRoots.6"/>
+  </correspondences>
+  <source href="fwd.src.xmi#/"/>
+  <target href="fwd.trg.xmi#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:org.wbsilva.bx.star2wheel="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore">
+  <correspondences xsi:type="org.wbsilva.bx.star2wheel:G2G">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.star2wheel:Node2Node">
+    <source href="fwd.src.xmi#//@node.2"/>
+    <target href="fwd.trg.xmi#//@node.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.star2wheel:Node2Node">
+    <source href="fwd.src.xmi#//@node.0"/>
+    <target href="fwd.trg.xmi#//@node.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.star2wheel:Node2Node">
+    <source href="fwd.src.xmi#//@node.1"/>
+    <target href="fwd.trg.xmi#//@node.0"/>
+  </correspondences>
+  <source href="fwd.src.xmi#/"/>
+  <target href="fwd.trg.xmi#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>

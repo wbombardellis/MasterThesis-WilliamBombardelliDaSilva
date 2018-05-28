@@ -1,0 +1,33 @@
+#using org.wbsilva.bx.sourcecode2controlflow.*
+#using AttrCondDefLibrary.*
+
+#rule whilea2branchc #with org.wbsilva.bx.sourcecode2controlflow
+
+#source {
+	w: While{
+		++ -first->a
+	}
+	++ a: Assignment
+}
+
+#target {
+	i: Branch{
+		++ -positive->x
+	}
+	++ x: Command
+}
+
+#correspondence {
+	w2i: S2B{
+		#src->w
+		#trg->i
+	}
+	++ a2x: S2N{
+		#src->a
+		#trg->x
+	}
+}
+
+#attributeConditions {
+
+}

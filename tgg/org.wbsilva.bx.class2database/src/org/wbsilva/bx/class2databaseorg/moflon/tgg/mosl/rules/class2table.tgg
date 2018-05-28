@@ -1,0 +1,34 @@
+#using org.wbsilva.bx.class2database.*
+#using AttrCondDefLibrary.*
+
+#rule class2table #with org.wbsilva.bx.class2database
+
+#source {
+	cd: ClassDiagram {
+		++ -classes->c
+	}
+	++ c: Clazz{
+	}
+}
+
+#target {
+	db: DB{
+		++ -table->t
+	}
+	++ t: Table
+}
+
+#correspondence {
+	cd2db: CD2D{
+		#src->cd
+		#trg->db
+	}
+	++ c2t: C2T{
+		#src->c
+		#trg->t
+	}
+}
+
+#attributeConditions {
+
+}

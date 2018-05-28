@@ -1,0 +1,55 @@
+#using org.wbsilva.bx.class2database.*
+#using AttrCondDefLibrary.*
+
+#rule association2column #with org.wbsilva.bx.class2database
+
+#source {
+	cd: ClassDiagram {
+		++ -associations->as
+		-classes->c
+		-classes->b
+	}
+	c: Clazz
+	b: Clazz
+	++ as: Association{
+		++ -source->c
+		++ -target->b
+	}
+}
+
+#target {
+	db: DB {
+		-table->t
+		-table->u
+	}
+	t: Table{
+		++ -column->fk
+	}
+	u: Table
+	++ fk: Column{
+		++ -reference->u
+	}
+}
+
+#correspondence {
+	cd2db: CD2D{
+		#src->cd
+		#trg->db
+	}
+	c2t: C2T{
+		#src->c
+		#trg->t
+	}
+	b2u: C2T{
+		#src->b
+		#trg->u
+	}
+	++ as2fk: AS2C{
+		#src->as
+		#trg->fk
+	}
+}
+
+#attributeConditions {
+
+}

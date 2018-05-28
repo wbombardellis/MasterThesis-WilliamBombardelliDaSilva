@@ -1,0 +1,36 @@
+// Add imports here
+#import "platform:/plugin/org.wbsilva.mm.class/model/Class.ecore"
+#import "platform:/plugin/org.wbsilva.mm.database/model/Database.ecore"
+
+#schema org.wbsilva.bx.class2database
+
+#source {
+	class
+}
+
+#target {
+	database
+}
+
+#correspondence {
+	CD2D{
+		#src->ClassDiagram
+		#trg->DB
+	}
+	C2T{
+		#src->Clazz
+		#trg->Table
+	}
+	A2C{
+		#src->Attribute
+		#trg->Column
+	}
+	AS2C{
+		#src->Association
+		#trg->Column
+	}
+}
+
+#attributeConditions {
+
+}

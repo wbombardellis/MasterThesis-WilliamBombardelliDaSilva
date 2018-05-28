@@ -1,0 +1,33 @@
+#using org.wbsilva.bx.class2database.*
+#using AttrCondDefLibrary.*
+
+#rule attribute2column #with org.wbsilva.bx.class2database
+
+#source {
+	c: Clazz{
+		++ -attribute->a
+	}
+	++ a: Attribute
+}
+
+#target {
+	t: Table{
+		++ -column->co
+	}
+	++ co: Column
+}
+
+#correspondence {
+	c2t: C2T{
+		#src->c
+		#trg->t
+	}
+	++ a2co: A2C{
+		#src->a
+		#trg->co
+	}
+}
+
+#attributeConditions {
+
+}

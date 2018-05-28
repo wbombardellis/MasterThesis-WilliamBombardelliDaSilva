@@ -1,0 +1,42 @@
+#using org.wbsilva.bx.star2wheel.*
+#using AttrCondDefLibrary.*
+
+#rule sn2sn #with org.wbsilva.bx.star2wheel
+
+#source {
+	g: G{
+		++ -node->s
+		! -node->n
+	}
+	++ s: Node {
+	}
+	! n: Node{
+		! -out->s
+	}
+}
+
+#target {
+	h: G{
+		++ -node->w
+		! -node->m
+	}
+	++ w: Node
+	! m: Node{
+		! -out->w
+	}
+}
+
+#correspondence {
+	g2h: G2G{
+		#src->g
+		#trg->h
+	}
+	++ s2w: Node2Node{
+		#src->s
+		#trg->w
+	}
+}
+
+#attributeConditions {
+
+}

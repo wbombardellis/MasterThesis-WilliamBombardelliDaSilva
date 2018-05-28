@@ -1,0 +1,41 @@
+#using org.wbsilva.bx.sourcecode2controlflow.*
+#using AttrCondDefLibrary.*
+
+#rule decassdec2branchcmdbranch #with org.wbsilva.bx.sourcecode2controlflow
+
+#source {
+	d: Decision{
+		++ -positive->a
+		++ -negative->b
+	}
+	++ a: Assignment
+	++ b: Decision
+}
+
+#target {
+	c: Branch{
+		++ -positive->x
+		++ -negative->y
+	}
+	++ x: Command
+	++ y: Branch
+}
+
+#correspondence {
+	d2c: S2B{
+		#src->d
+		#trg->c
+	}
+	++ a2x: S2N{
+		#src->a
+		#trg->x
+	}
+	++ b2y: S2B{
+		#src->b
+		#trg->y
+	}
+}
+
+#attributeConditions {
+
+}

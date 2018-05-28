@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.class2database.Class2databasePackage" genModel="model/Class2database.genmodel" uri="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.class2database.Rules.RulesPackage" genModel="model/Class2database.genmodel" uri="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules"/>
+  </extension>
+</plugin>

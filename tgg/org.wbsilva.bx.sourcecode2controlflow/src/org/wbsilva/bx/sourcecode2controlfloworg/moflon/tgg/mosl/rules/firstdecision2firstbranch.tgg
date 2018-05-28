@@ -1,0 +1,34 @@
+#using org.wbsilva.bx.sourcecode2controlflow.*
+#using AttrCondDefLibrary.*
+
+#rule firstdecision2firstbranch #with org.wbsilva.bx.sourcecode2controlflow
+
+#source {
+	p: Program{
+		++ -first->d
+	}
+	++ d: Decision
+}
+
+#target {
+	g: Graph{
+		++ -root->b
+	}
+	++ b: Branch
+}
+
+#correspondence {
+	p2g: P2G{
+		#src->p
+		#trg->g
+	}
+	++ f2r: S2B{
+		#src->d
+		#trg->b
+	}
+}
+
+
+#attributeConditions {
+
+}

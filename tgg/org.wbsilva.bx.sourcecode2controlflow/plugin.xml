@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.sourcecode2controlflow.Sourcecode2controlflowPackage" genModel="model/Sourcecode2controlflow.genmodel" uri="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.sourcecode2controlflow.Rules.RulesPackage" genModel="model/Sourcecode2controlflow.genmodel" uri="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules"/>
+  </extension>
+</plugin>

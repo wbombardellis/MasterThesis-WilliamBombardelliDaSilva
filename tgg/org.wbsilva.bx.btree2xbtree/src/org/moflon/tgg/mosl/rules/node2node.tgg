@@ -1,0 +1,27 @@
+#using org.wbsilva.bx.btree2xbtree.*
+#using AttrCondDefLibrary.*
+
+#rule node2node #with org.wbsilva.bx.btree2xbtree
+
+#source {
+	++n : BTNode {
+		
+	}
+}
+
+#target {
+	++xn: XBTNode {
+		
+	}
+}
+
+#correspondence {
+	++ n2xn: BTNode2XBTnode{
+		#src->n
+		#trg->xn
+	}
+}
+
+#attributeConditions {
+
+}

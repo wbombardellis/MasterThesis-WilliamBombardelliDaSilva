@@ -1,0 +1,43 @@
+#using org.wbsilva.bx.sourcecode2controlflow.*
+#using AttrCondDefLibrary.*
+
+#rule firstwhile2rootbranch #with org.wbsilva.bx.sourcecode2controlflow
+
+#source {
+	p: Program{
+		++ -first->w
+	}
+	++ w: While{
+		++ -last->l
+	}
+	++ l: Assignment
+}
+
+#target {
+	g: Graph{
+		++ -root->b
+	}
+	++ b: Branch
+	++ d: Command {
+		++ -next->b
+	}
+}
+
+#correspondence {
+	p2g: P2G{
+		#src->p
+		#trg->g
+	}
+	++ f2r: S2B{
+		#src->w
+		#trg->b
+	}
+	++ l2d: S2N{
+		#src->l
+		#trg->d
+	}
+}
+
+#attributeConditions {
+
+}

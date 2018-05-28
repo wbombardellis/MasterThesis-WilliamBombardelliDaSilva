@@ -1,0 +1,33 @@
+#using org.wbsilva.bx.sourcecode2controlflow.*
+#using AttrCondDefLibrary.*
+
+#rule decision2branch #with org.wbsilva.bx.sourcecode2controlflow
+
+#source {
+	s: Statement{
+		++ -next->d
+	}
+	++ d: Decision
+}
+
+#target {
+	n: Node{
+		++ -next->c
+	}
+	++ c: Branch
+}
+
+#correspondence {
+	s2n: S2N{
+		#src->s
+		#trg->n
+	}
+	++ a2c: S2B{
+		#src->d
+		#trg->c
+	}
+}
+
+#attributeConditions {
+
+}

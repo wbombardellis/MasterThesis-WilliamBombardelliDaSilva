@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.wbsilva.mm.graph:G xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.wbsilva.mm.graph="platform:/plugin/org.wbsilva.mm.graph/model/Graph.ecore">
+  <node out="//@node.1 //@node.2"/>
+  <node out="//@node.2" in="//@node.0"/>
+  <node in="//@node.0 //@node.1"/>
+</org.wbsilva.mm.graph:G>

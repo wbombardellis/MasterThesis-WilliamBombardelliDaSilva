@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:org.wbsilva.bx.class2database="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore">
+  <correspondences xsi:type="org.wbsilva.bx.class2database:CD2D">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.class2database:C2T">
+    <source href="fwd.src.xmi#//@classes.2"/>
+    <target href="fwd.trg.xmi#//@table.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.class2database:C2T">
+    <source href="fwd.src.xmi#//@classes.0"/>
+    <target href="fwd.trg.xmi#//@table.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.class2database:C2T">
+    <source href="fwd.src.xmi#//@classes.1"/>
+    <target href="fwd.trg.xmi#//@table.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.class2database:AS2C">
+    <source href="fwd.src.xmi#//@associations.0"/>
+    <target href="fwd.trg.xmi#//@table.0/@column.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.class2database:A2C">
+    <source href="fwd.src.xmi#//@classes.0/@attribute.0"/>
+    <target href="fwd.trg.xmi#//@table.1/@column.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.class2database:AS2C">
+    <source href="fwd.src.xmi#//@associations.1"/>
+    <target href="fwd.trg.xmi#//@table.1/@column.1"/>
+  </correspondences>
+  <source href="fwd.src.xmi#/"/>
+  <target href="fwd.trg.xmi#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>

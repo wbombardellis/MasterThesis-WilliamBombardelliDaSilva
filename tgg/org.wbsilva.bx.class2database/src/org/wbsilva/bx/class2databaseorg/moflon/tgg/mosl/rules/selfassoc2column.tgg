@@ -1,0 +1,48 @@
+#using org.wbsilva.bx.class2database.*
+#using AttrCondDefLibrary.*
+
+#rule selfassoc2column #with org.wbsilva.bx.class2database
+
+#source {
+	cd: ClassDiagram {
+		++ -associations->sas
+		-classes->c
+	}
+	c: Clazz
+	++ sas: Association{
+		++ -source->c
+		++ -target->c
+	}
+}
+
+#target {
+	db: DB {
+		-table->t
+	}
+	t: Table{
+		++ -column->fk
+	}
+	++ fk: Column{
+		++ -reference->t
+	}
+}
+
+#correspondence {
+	cd2db: CD2D{
+		#src->cd
+		#trg->db
+	}
+	c2t: C2T{
+		#src->c
+		#trg->t
+	}
+	++ sas2fk: AS2C{
+		#src->sas
+		#trg->fk
+	}
+}
+
+#attributeConditions {
+
+}
+

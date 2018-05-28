@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.btree2xbtree.Btree2xbtreePackage" genModel="model/Btree2xbtree.genmodel" uri="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.btree2xbtree.Rules.RulesPackage" genModel="model/Btree2xbtree.genmodel" uri="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules"/>
+  </extension>
+</plugin>

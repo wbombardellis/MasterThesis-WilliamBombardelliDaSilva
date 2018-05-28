@@ -1,0 +1,32 @@
+// Add imports here
+#import "platform:/plugin/org.wbsilva.mm.sourcecode/model/Sourcecode.ecore"
+#import "platform:/plugin/org.wbsilva.mm.controlflow/model/Controlflow.ecore"
+
+#schema org.wbsilva.bx.sourcecode2controlflow
+
+#source {
+	sourcecode
+}
+
+#target {
+	controlflow
+}
+
+#correspondence {
+	P2G {
+		#src->Program
+		#trg->Graph
+	}
+	S2N {
+		#src->Statement
+		#trg->Node
+	}
+	S2B {
+		#src->Statement
+		#trg->Branch
+	}
+}
+
+#attributeConditions {
+
+}

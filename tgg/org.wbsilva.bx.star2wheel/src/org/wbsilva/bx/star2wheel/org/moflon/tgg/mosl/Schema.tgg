@@ -1,0 +1,27 @@
+// Add imports here
+#import "platform:/plugin/org.wbsilva.mm.graph/model/Graph.ecore"
+
+#schema org.wbsilva.bx.star2wheel
+
+#source {
+	graph
+}
+
+#target {
+	graph
+}
+
+#correspondence {
+	Node2Node {
+		#src->Node
+		#trg->Node
+	}
+	G2G {
+		#src->G
+		#trg->G
+	}
+}
+
+#attributeConditions {
+
+}

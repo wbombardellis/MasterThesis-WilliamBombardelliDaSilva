@@ -1,0 +1,33 @@
+#using org.wbsilva.bx.sourcecode2controlflow.*
+#using AttrCondDefLibrary.*
+
+#rule firstass2rootcmd #with org.wbsilva.bx.sourcecode2controlflow
+
+#source {
+	p: Program{
+		++ -first->a
+	}
+	++ a: Assignment
+}
+
+#target {
+	g: Graph{
+		++ -root->c
+	}
+	++ c: Command
+}
+
+#correspondence {
+	p2g: P2G{
+		#src->p
+		#trg->g
+	}
+	++ f2r: S2N{
+		#src->a
+		#trg->c
+	}
+}
+
+#attributeConditions {
+
+}

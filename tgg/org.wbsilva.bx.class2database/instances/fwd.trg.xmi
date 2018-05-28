@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.wbsilva.mm.database:DB xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.wbsilva.mm.database="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore">
+  <table>
+    <column reference="//@table.1"/>
+  </table>
+  <table>
+    <column/>
+    <column reference="//@table.1"/>
+  </table>
+</org.wbsilva.mm.database:DB>

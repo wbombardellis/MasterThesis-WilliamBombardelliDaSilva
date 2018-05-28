@@ -1,0 +1,23 @@
+#using org.wbsilva.bx.class2database.*
+#using AttrCondDefLibrary.*
+
+#rule cd2db #with org.wbsilva.bx.class2database
+
+#source {
+	++ cd: ClassDiagram
+}
+
+#target {
+	++ db: DB
+}
+
+#correspondence {
+	++ cd2db: CD2D{
+		#src->cd
+		#trg->db
+	}
+}
+
+#attributeConditions {
+
+}

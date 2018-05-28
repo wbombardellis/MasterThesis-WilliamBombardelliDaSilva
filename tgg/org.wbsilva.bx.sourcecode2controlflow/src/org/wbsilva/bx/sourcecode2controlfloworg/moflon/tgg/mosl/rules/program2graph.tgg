@@ -1,0 +1,23 @@
+#using org.wbsilva.bx.sourcecode2controlflow.*
+#using AttrCondDefLibrary.*
+
+#rule program2graph #with org.wbsilva.bx.sourcecode2controlflow
+
+#source {
+	++ p: Program
+}
+
+#target {
+	++ g: Graph
+}
+
+#correspondence {
+	++ p2g: P2G{
+		#src->p
+		#trg->g
+	}
+}
+
+#attributeConditions {
+
+}
