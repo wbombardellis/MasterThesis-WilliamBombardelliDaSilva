@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="controlflow" nsURI="platform:/plugin/org.wbsilva.mm.controlflow/model/Controlflow.ecore"
+    nsPrefix="org.wbsilva.mm.controlflow">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="TODO: Add documentation for controlflow. Hint: You may copy this element in the Ecore editor to add documentation to EClasses, EOperations, ..."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Graph">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" ordered="false"
+        upperBound="-1" eType="#//Node" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Command" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Branch" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positive" eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="negative" eType="#//Node"/>
+  </eClassifiers>
+</ecore:EPackage>

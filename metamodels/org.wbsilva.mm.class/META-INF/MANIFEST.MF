@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.wbsilva.mm.class;singleton:=true
+Export-Package: class_.util,
+ class_.impl,
+ class_
+Bundle-Name: org.wbsilva.mm.class
+Bundle-Version: 0.0.1.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: 

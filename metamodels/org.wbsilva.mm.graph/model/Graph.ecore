@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graph" nsURI="platform:/plugin/org.wbsilva.mm.graph/model/Graph.ecore"
+    nsPrefix="org.wbsilva.mm.graph">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="TODO: Add documentation for graph. Hint: You may copy this element in the Ecore editor to add documentation to EClasses, EOperations, ..."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="out" ordered="false" upperBound="-1"
+        eType="#//Node" eOpposite="#//Node/in"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="in" ordered="false" upperBound="-1"
+        eType="#//Node" eOpposite="#//Node/out"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="G">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" ordered="false" upperBound="-1"
+        eType="#//Node" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
