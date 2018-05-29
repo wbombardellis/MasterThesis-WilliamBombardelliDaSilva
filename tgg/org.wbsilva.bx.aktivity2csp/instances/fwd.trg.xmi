@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.wbsilva.mm.cspp:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.wbsilva.mm.cspp="platform:/plugin/org.wbsilva.mm.cspp/model/Cspp.ecore" first="//@processAssignments.0">
+  <processAssignments>
+    <lhs id="A"/>
+    <rhs xsi:type="org.wbsilva.mm.cspp:Identity" process="A"/>
+  </processAssignments>
+</org.wbsilva.mm.cspp:System>

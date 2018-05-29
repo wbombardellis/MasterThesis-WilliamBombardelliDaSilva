@@ -1,0 +1,23 @@
+#using org.wbsilva.bx.aktivity2csp.*
+#using AttrCondDefLibrary.*
+
+#rule activitydiagram2system #with org.wbsilva.bx.aktivity2csp
+
+#source {
+	++ ad: ActivityDiagram
+}
+
+#target {
+	++ s: System
+}
+
+#correspondence {
+	++ ad2s: AD2S{
+		#src->ad
+		#trg->s
+	}
+}
+
+#attributeConditions {
+
+}

@@ -1,0 +1,40 @@
+#using org.wbsilva.bx.aktivity2csp.*
+#using AttrCondDefLibrary.*
+
+#rule final2skip #with org.wbsilva.bx.aktivity2csp
+
+#source {
+	ad: ActivityDiagram{
+		++ -nodes->a
+	}
+	++ a: FinalNode
+}
+
+#target {
+	s: System{
+		++ -processAssignments->pa
+	}
+	++ pa: ProcessAssignment{
+		++ -lhs->p
+	}
+	++ p: Skip
+}
+
+#correspondence {
+	ad2s: AD2S{
+		#src->ad
+		#trg->s
+	}
+	++ a2pa: N2PA{
+		#src->a
+		#trg->pa
+	}
+	++ a2p: N2P{
+		#src->a
+		#trg->p
+	}
+}
+
+#attributeConditions {
+	eq(a.id, p.id)
+}

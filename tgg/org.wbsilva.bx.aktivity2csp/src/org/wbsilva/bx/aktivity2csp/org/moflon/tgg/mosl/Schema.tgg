@@ -1,0 +1,52 @@
+// Add imports here
+#import "platform:/plugin/org.wbsilva.mm.aktivity/model/Aktivity.ecore"
+#import "platform:/plugin/org.wbsilva.mm.cspp/model/Cspp.ecore"
+
+#schema org.wbsilva.bx.aktivity2csp
+
+#source {
+	aktivity	
+}
+
+#target {
+	cspp
+}
+
+#correspondence {
+	AD2S{
+		#src->ActivityDiagram
+		#trg->System
+	}
+	N2PA{
+		#src->Node
+		#trg->ProcessAssignment
+	}
+	N2P{
+		#src->Node
+		#trg->Process
+	}
+	E2PX{
+		#src->Edge
+		#trg->Prefix
+	}
+	L2EV{
+		#src->Label
+		#trg->Event
+	}
+	E2EC{
+		#src->Edge
+		#trg->ExternalChoice
+	}
+	E2ID{
+		#src->Edge
+		#trg->Identity
+	}
+	L2P{
+		#src->Label
+		#trg->Process
+	}
+}
+
+#attributeConditions {
+
+}

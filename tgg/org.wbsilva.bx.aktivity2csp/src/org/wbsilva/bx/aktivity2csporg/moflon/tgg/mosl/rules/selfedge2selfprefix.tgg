@@ -1,0 +1,61 @@
+#using org.wbsilva.bx.aktivity2csp.*
+#using AttrCondDefLibrary.*
+
+#rule selfedge2selfprefix #with org.wbsilva.bx.aktivity2csp
+
+#source {
+	ad: ActivityDiagram{
+		-nodes->a1
+		++ -edges->e
+	}
+	a1: Action
+	++ e: Edge{
+		++ -source->a1
+		++ -target->a1
+		++ -label->l
+	}
+	++ l: Label
+}
+
+#target {
+	s: System{
+		-processAssignments->pa1
+	}
+	pa1: ProcessAssignment{
+		-lhs->p1
+		++ -rhs->px
+	}
+	p1: Process
+	++ px: Prefix{
+		++ -event->ev
+		++ -process->p1
+	}
+	++ ev: Event
+}
+
+#correspondence {
+	ad2s: AD2S{
+		#src->ad
+		#trg->s
+	}
+	a12pa1: N2PA{
+		#src->a1
+		#trg->pa1
+	}
+	a12p1: N2P{
+		#src->a1
+		#trg->p1
+	}
+	++ e2px: E2PX{
+		#src->e
+		#trg->px
+	}
+	++ l2ev: L2EV{
+		#src->l
+		#trg->ev
+	}
+}
+
+#attributeConditions {
+	eq(l.id, ev.id)
+}

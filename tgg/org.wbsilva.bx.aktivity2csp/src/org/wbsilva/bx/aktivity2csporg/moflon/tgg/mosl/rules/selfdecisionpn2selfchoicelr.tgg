@@ -1,0 +1,101 @@
+#using org.wbsilva.bx.aktivity2csp.*
+#using AttrCondDefLibrary.*
+
+#rule selfdecisionpn2selfchoicelr #with org.wbsilva.bx.aktivity2csp
+
+#source {
+	ad: ActivityDiagram{
+		-nodes->a1
+		++ -nodes->dec
+		++ -edges->el
+		++ -edges->er
+		++ -edges->e1
+	}
+	a1: Action
+	++ e1: Edge{
+		++ -source->a1
+		++ -target->dec
+	}
+	++ dec: Decision{
+		++ -positive->el
+		++ -negative->er		
+	}
+	++ el: Edge{
+		++ -source->dec
+		++ -target->a1
+		++ -label->l
+	}
+	++ l: Label
+	++ er: Edge{
+		++ -source->dec
+		++ -target->a1
+		++ -label->r
+	}
+	++ r: Label
+}
+
+#target {
+	s: System{
+		-processAssignments->pa1
+	}
+	pa1: ProcessAssignment{
+		-lhs->p1
+		++ -rhs->ec
+	}
+	p1: Process
+	++ ec: ExternalChoice{
+		++ -left->pxl
+		++ -right->pxr
+	}
+	++ pxl: Prefix{
+		++ -event->evl
+		++ -process->p1
+	}
+	++ pxr: Prefix{
+		++ -event->evr
+		++ -process->p1
+	}
+	++ evl: Event
+	++ evr: Event
+}
+
+#correspondence {
+	ad2s: AD2S{
+		#src->ad
+		#trg->s
+	}
+	a12pa1: N2PA{
+		#src->a1
+		#trg->pa1
+	}
+	a12p1: N2P{
+		#src->a1
+		#trg->p1
+	}
+	++ e12ec: E2EC{
+		#src->e1
+		#trg->ec
+	}
+	++ el2px: E2PX{
+		#src->el
+		#trg->pxl
+	}
+	++ er2px: E2PX{
+		#src->er
+		#trg->pxr
+	}
+	++ l2ev: L2EV{
+		#src->l
+		#trg->evl
+	}
+	++ r2ev: L2EV{
+		#src->r
+		#trg->evr
+	}
+}
+
+#attributeConditions {
+	eq(l.id, evl.id)
+	eq(r.id, evr.id)
+}
+

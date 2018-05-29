@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.aktivity2csp.Aktivity2cspPackage" genModel="model/Aktivity2csp.genmodel" uri="platform:/plugin/org.wbsilva.bx.aktivity2csp/model/Aktivity2csp.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.wbsilva.bx.aktivity2csp.Rules.RulesPackage" genModel="model/Aktivity2csp.genmodel" uri="platform:/plugin/org.wbsilva.bx.aktivity2csp/model/Aktivity2csp.ecore#//Rules"/>
+  </extension>
+</plugin>

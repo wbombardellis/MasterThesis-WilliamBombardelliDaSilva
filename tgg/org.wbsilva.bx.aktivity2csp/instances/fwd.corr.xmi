@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:org.wbsilva.bx.aktivity2csp="platform:/plugin/org.wbsilva.bx.aktivity2csp/model/Aktivity2csp.ecore" xmlns:org.wbsilva.mm.aktivity="platform:/plugin/org.wbsilva.mm.aktivity/model/Aktivity.ecore">
+  <correspondences xsi:type="org.wbsilva.bx.aktivity2csp:AD2S">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.aktivity2csp:N2P">
+    <source xsi:type="org.wbsilva.mm.aktivity:Action" href="fwd.src.xmi#A"/>
+    <target href="fwd.trg.xmi#A"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.aktivity2csp:N2PA">
+    <source xsi:type="org.wbsilva.mm.aktivity:Action" href="fwd.src.xmi#A"/>
+    <target href="fwd.trg.xmi#//@processAssignments.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.aktivity2csp:E2ID">
+    <source href="fwd.src.xmi#//@edges.0"/>
+    <target href="fwd.trg.xmi#//@processAssignments.0/@rhs"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.aktivity2csp:E2ID">
+    <source href="fwd.src.xmi#//@edges.0"/>
+    <target href="fwd.trg.xmi#//@processAssignments.0/@rhs"/>
+  </correspondences>
+  <source href="fwd.src.xmi#/"/>
+  <target href="fwd.trg.xmi#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>
