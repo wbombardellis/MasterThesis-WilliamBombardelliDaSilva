@@ -1,0 +1,46 @@
+#using org.wbsilva.bx.statemachine2while.*
+#using AttrCondDefLibrary.*
+
+#rule initialstate2valueassignment #with org.wbsilva.bx.statemachine2while
+
+#source {
+	sm: SM{
+		++ -states->s
+		++ -initial->s
+	}
+	++ s: State
+}
+
+#target {
+	p: Program{
+		++ -literals->val
+		-variables->svar
+		++ -first->vass
+	}
+	svar: Var
+	++ val: Val
+	++ vass: Assignment{
+		++ -var->svar
+		++ -exp->val
+	}
+}
+
+#correspondence {
+	sm2p: SM2P{
+		#src->sm
+		#trg->p
+	}
+	sm2svar: SM2V{
+		#src->sm
+		#trg->svar
+	}
+	++ s2val: S2V{
+		#src->s
+		#trg->val
+	}
+}
+
+#attributeConditions {
+	eq(s.id, val.id)
+}
+

@@ -1,0 +1,36 @@
+// Add imports here
+#import "platform:/plugin/org.wbsilva.mm.statemachine/model/Statemachine.ecore"
+#import "platform:/plugin/org.wbsilva.mm.while/model/While.ecore"
+
+#schema org.wbsilva.bx.statemachine2while
+
+#source {
+	statemachine
+}
+
+#target {
+	while
+}
+
+#correspondence {
+	SM2P{
+		#src->SM
+		#trg->Program
+	}
+	SM2V{
+		#src->SM
+		#trg->Var
+	}
+	S2V{
+		#src->State
+		#trg->Val
+	}
+	E2V{
+		#src->Event
+		#trg->Val
+	}
+}
+
+#attributeConditions {
+
+}

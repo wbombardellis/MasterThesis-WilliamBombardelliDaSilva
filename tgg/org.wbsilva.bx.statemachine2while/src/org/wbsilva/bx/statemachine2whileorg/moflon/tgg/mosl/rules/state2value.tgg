@@ -1,0 +1,33 @@
+#using org.wbsilva.bx.statemachine2while.*
+#using AttrCondDefLibrary.*
+
+#rule state2value #with org.wbsilva.bx.statemachine2while
+
+#source {
+	sm: SM{
+		++ -states->s
+	}
+	++ s: State
+}
+
+#target {
+	p: Program{
+		++ -literals->val
+	}
+	++ val: Val
+}
+
+#correspondence {
+	sm2p: SM2P{
+		#src->sm
+		#trg->p
+	}
+	++ s2val: S2V{
+		#src->s
+		#trg->val
+	}
+}
+
+#attributeConditions {
+	eq(s.id, val.id)
+}

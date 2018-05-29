@@ -1,0 +1,35 @@
+#using org.wbsilva.bx.statemachine2while.*
+#using AttrCondDefLibrary.*
+
+#rule statemachine2program #with org.wbsilva.bx.statemachine2while
+
+#source {
+	++ sm: SM
+}
+
+#target {
+	++ p: Program {
+		++ -variables->svar
+		++ -variables->invar
+	}
+	++ svar: Var
+	++ invar: Var
+}
+
+#correspondence {
+	++ sm2p: SM2P{
+		#src->sm
+		#trg->p
+	}
+	++ sm2svar: SM2V{
+		#src->sm
+		#trg->svar
+	}
+	++ sm2invar: SM2V{
+		#src->sm
+		#trg->invar
+	}
+}
+
+#attributeConditions {
+}
