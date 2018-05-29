@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cspp" nsURI="platform:/plugin/org.wbsilva.mm.cspp/model/Cspp.ecore"
+    nsPrefix="org.wbsilva.mm.cspp">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="TODO: Add documentation for csp. Hint: You may copy this element in the Ecore editor to add documentation to EClasses, EOperations, ..."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processAssignments" ordered="false"
+        upperBound="-1" eType="#//ProcessAssignment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//ProcessAssignment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessAssignment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="#//Process"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//ProcessExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Process">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessExpression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Prefix" eSuperTypes="#//ProcessExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//Event"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//Process"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Skip" eSuperTypes="#//Process"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Stop" eSuperTypes="#//Process"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalChoice" eSuperTypes="#//ProcessExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Prefix"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Prefix"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Identity" eSuperTypes="#//ProcessExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//Process"/>
+  </eClassifiers>
+</ecore:EPackage>
