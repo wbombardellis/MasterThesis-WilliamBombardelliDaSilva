@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:org.wbsilva.bx.statemachine2while="platform:/plugin/org.wbsilva.bx.statemachine2while/model/Statemachine2while.ecore" xmlns:org.wbsilva.mm.while="platform:/plugin/org.wbsilva.mm.while/model/While.ecore">
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:SM2VAR">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#in"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:SM2VAR">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#s"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:SM2P">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2E">
+    <source href="fwd.src.xmi#s0"/>
+    <target xsi:type="org.wbsilva.mm.while:Val" href="fwd.trg.xmi#s0"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:SM2VAL">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#null"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:SM2E">
+    <source href="fwd.src.xmi#/"/>
+    <target xsi:type="org.wbsilva.mm.while:NEqExp" href="fwd.trg.xmi#//@first/@next/@condition"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:SM2W">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#//@first/@next"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:SM2E">
+    <source href="fwd.src.xmi#/"/>
+    <target xsi:type="org.wbsilva.mm.while:VarExp" href="fwd.trg.xmi#//@first/@next/@condition/@lhs"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2A">
+    <source href="fwd.src.xmi#s0"/>
+    <target href="fwd.trg.xmi#//@first"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2E">
+    <source href="fwd.src.xmi#s0"/>
+    <target xsi:type="org.wbsilva.mm.while:Val" href="fwd.trg.xmi#s0"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2S">
+    <source href="fwd.src.xmi#s0"/>
+    <target xsi:type="org.wbsilva.mm.while:Ret" href="fwd.trg.xmi#//@first/@next/@next/@then"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2E">
+    <source href="fwd.src.xmi#s0"/>
+    <target xsi:type="org.wbsilva.mm.while:Val" href="fwd.trg.xmi#true"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2IF">
+    <source href="fwd.src.xmi#s0"/>
+    <target href="fwd.trg.xmi#//@first/@next/@next"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2E">
+    <source href="fwd.src.xmi#s0"/>
+    <target xsi:type="org.wbsilva.mm.while:VarExp" href="fwd.trg.xmi#//@first/@next/@next/@condition/@lhs"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2E">
+    <source href="fwd.src.xmi#s0"/>
+    <target xsi:type="org.wbsilva.mm.while:EqExp" href="fwd.trg.xmi#//@first/@next/@next/@condition"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:T2IF">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target href="fwd.trg.xmi#//@first/@next/@then"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:T2E">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target xsi:type="org.wbsilva.mm.while:Val" href="fwd.trg.xmi#a"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:T2E">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target xsi:type="org.wbsilva.mm.while:EqExp" href="fwd.trg.xmi#//@first/@next/@then/@condition/@rhs"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:T2E">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target xsi:type="org.wbsilva.mm.while:Val" href="fwd.trg.xmi#s1"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:T2A">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target href="fwd.trg.xmi#//@first/@next/@then/@then"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:T2E">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target xsi:type="org.wbsilva.mm.while:EqExp" href="fwd.trg.xmi#//@first/@next/@then/@condition/@lhs"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:T2E">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target xsi:type="org.wbsilva.mm.while:VarExp" href="fwd.trg.xmi#//@first/@next/@then/@condition/@lhs/@lhs"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:T2E">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target xsi:type="org.wbsilva.mm.while:Val" href="fwd.trg.xmi#s0"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:T2E">
+    <source href="fwd.src.xmi#//@transitions.0"/>
+    <target xsi:type="org.wbsilva.mm.while:VarExp" href="fwd.trg.xmi#//@first/@next/@then/@condition/@rhs/@lhs"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2E">
+    <source href="fwd.src.xmi#s1"/>
+    <target xsi:type="org.wbsilva.mm.while:Val" href="fwd.trg.xmi#s1"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2S">
+    <source href="fwd.src.xmi#s1"/>
+    <target xsi:type="org.wbsilva.mm.while:Ret" href="fwd.trg.xmi#//@first/@next/@next/@next/@then"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2E">
+    <source href="fwd.src.xmi#s1"/>
+    <target xsi:type="org.wbsilva.mm.while:Val" href="fwd.trg.xmi#true"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2E">
+    <source href="fwd.src.xmi#s1"/>
+    <target xsi:type="org.wbsilva.mm.while:VarExp" href="fwd.trg.xmi#//@first/@next/@next/@next/@condition/@lhs"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2E">
+    <source href="fwd.src.xmi#s1"/>
+    <target xsi:type="org.wbsilva.mm.while:EqExp" href="fwd.trg.xmi#//@first/@next/@next/@next/@condition"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.statemachine2while:S2IF">
+    <source href="fwd.src.xmi#s1"/>
+    <target href="fwd.trg.xmi#//@first/@next/@next/@next"/>
+  </correspondences>
+  <source href="fwd.src.xmi#/"/>
+  <target href="fwd.trg.xmi#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>

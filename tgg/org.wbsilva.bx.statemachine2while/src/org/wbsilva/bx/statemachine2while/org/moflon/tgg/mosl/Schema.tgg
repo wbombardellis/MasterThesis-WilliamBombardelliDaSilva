@@ -17,17 +17,51 @@
 		#src->SM
 		#trg->Program
 	}
-	SM2V{
+	SM2VAR{
 		#src->SM
 		#trg->Var
 	}
-	S2V{
-		#src->State
+	SM2W{
+		#src->SM
+		#trg->While
+	}
+	SM2E{
+		#src->SM
+		#trg->Exp
+	}
+	SM2VAL{
+		#src->SM
 		#trg->Val
 	}
-	E2V{
-		#src->Event
-		#trg->Val
+	
+	S2A{
+		#src->State
+		#trg->Assignment
+	}
+	S2E{
+		#src->State
+		#trg->Exp
+	}
+	S2S{
+		#src->State
+		#trg->Statement
+	}
+	S2IF{
+		#src->State
+		#trg->If
+	}
+	
+	T2IF{
+		#src->Transition
+		#trg->If
+	}
+	T2E{
+		#src->Transition
+		#trg->Exp
+	}
+	T2A{
+		#src->Transition
+		#trg->Assignment
 	}
 }
 

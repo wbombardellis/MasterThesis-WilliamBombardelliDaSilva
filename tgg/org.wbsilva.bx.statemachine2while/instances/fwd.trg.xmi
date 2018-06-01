@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.wbsilva.mm.while:Program xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.wbsilva.mm.while="platform:/plugin/org.wbsilva.mm.while/model/While.ecore">
+  <first xsi:type="org.wbsilva.mm.while:Assignment" var="s">
+    <next xsi:type="org.wbsilva.mm.while:While">
+      <next xsi:type="org.wbsilva.mm.while:If">
+        <next xsi:type="org.wbsilva.mm.while:If">
+          <condition xsi:type="org.wbsilva.mm.while:EqExp">
+            <lhs xsi:type="org.wbsilva.mm.while:VarExp" var="s"/>
+            <rhs xsi:type="org.wbsilva.mm.while:Val" id="s1"/>
+          </condition>
+          <then xsi:type="org.wbsilva.mm.while:Ret">
+            <exp xsi:type="org.wbsilva.mm.while:Val" id="true"/>
+          </then>
+        </next>
+        <condition xsi:type="org.wbsilva.mm.while:EqExp">
+          <lhs xsi:type="org.wbsilva.mm.while:VarExp" var="s"/>
+          <rhs xsi:type="org.wbsilva.mm.while:Val" id="s0"/>
+        </condition>
+        <then xsi:type="org.wbsilva.mm.while:Ret">
+          <exp xsi:type="org.wbsilva.mm.while:Val" id="true"/>
+        </then>
+      </next>
+      <condition xsi:type="org.wbsilva.mm.while:NEqExp">
+        <lhs xsi:type="org.wbsilva.mm.while:VarExp" var="s"/>
+        <rhs xsi:type="org.wbsilva.mm.while:Val" id="null"/>
+      </condition>
+      <then xsi:type="org.wbsilva.mm.while:If">
+        <condition xsi:type="org.wbsilva.mm.while:AndExp">
+          <lhs xsi:type="org.wbsilva.mm.while:EqExp">
+            <lhs xsi:type="org.wbsilva.mm.while:VarExp" var="in"/>
+            <rhs xsi:type="org.wbsilva.mm.while:Val" id="a"/>
+          </lhs>
+          <rhs xsi:type="org.wbsilva.mm.while:EqExp">
+            <lhs xsi:type="org.wbsilva.mm.while:VarExp" var="s"/>
+            <rhs xsi:type="org.wbsilva.mm.while:Val" id="s0"/>
+          </rhs>
+        </condition>
+        <then xsi:type="org.wbsilva.mm.while:Assignment" var="s">
+          <exp xsi:type="org.wbsilva.mm.while:Val" id="s1"/>
+        </then>
+      </then>
+    </next>
+    <exp xsi:type="org.wbsilva.mm.while:Val" id="s0"/>
+  </first>
+  <variables id="s"/>
+  <variables id="in"/>
+</org.wbsilva.mm.while:Program>

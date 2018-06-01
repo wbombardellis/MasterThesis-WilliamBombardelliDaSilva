@@ -13,16 +13,28 @@
 
 #target {
 	p: Program{
-		++ -literals->val
 		-variables->svar
 		++ -first->vass
 	}
 	svar: Var
-	++ val: Val
 	++ vass: Assignment{
 		++ -var->svar
 		++ -exp->val
+		++ -next->wh
 	}
+	++ val: Val
+	
+	++ wh: While{
+		++ -condition->inNotNull
+	}
+	++ inNotNull: NEqExp{
+		++ -lhs->svarexp
+		++ -rhs->nullLit
+	}
+	++ svarexp: VarExp{
+		++ -var->svar
+	}
+	++ nullLit: Val
 }
 
 #correspondence {
@@ -30,17 +42,40 @@
 		#src->sm
 		#trg->p
 	}
-	sm2svar: SM2V{
+	sm2svar: SM2VAR{
 		#src->sm
 		#trg->svar
 	}
-	++ s2val: S2V{
+	++ sm2wh: SM2W{
+		#src->sm
+		#trg->wh
+	}
+	++ sm2inNotNull: SM2E{
+		#src->sm
+		#trg->inNotNull
+	}
+	++ sm2nullLit: SM2VAL{
+		#src->sm
+		#trg->nullLit
+	}
+	++ e2svarexp: SM2E{
+		#src->sm
+		#trg->svarexp
+	}
+	
+	++ s2val: S2E{
 		#src->s
 		#trg->val
+	}
+	++ s2vass: S2A{
+		#src->s
+		#trg->vass
 	}
 }
 
 #attributeConditions {
 	eq(s.id, val.id)
+	eq(svar.id, "s")
+	eq(nullLit.id, "null")
 }
 

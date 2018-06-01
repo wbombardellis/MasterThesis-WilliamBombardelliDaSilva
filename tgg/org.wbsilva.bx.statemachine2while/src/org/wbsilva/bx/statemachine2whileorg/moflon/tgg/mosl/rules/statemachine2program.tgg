@@ -21,15 +21,17 @@
 		#src->sm
 		#trg->p
 	}
-	++ sm2svar: SM2V{
+	++ sm2svar: SM2VAR{
 		#src->sm
 		#trg->svar
 	}
-	++ sm2invar: SM2V{
+	++ sm2invar: SM2VAR{
 		#src->sm
 		#trg->invar
 	}
 }
 
 #attributeConditions {
+	eq(svar.id, "s")
+	eq(invar.id, "in")
 }

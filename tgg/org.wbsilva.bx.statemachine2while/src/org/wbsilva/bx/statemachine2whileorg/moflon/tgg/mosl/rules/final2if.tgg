@@ -1,0 +1,93 @@
+#using org.wbsilva.bx.statemachine2while.*
+#using AttrCondDefLibrary.*
+
+#rule final2if #with org.wbsilva.bx.statemachine2while
+
+#source {
+	sm: SM{
+		-states->sg
+		-final->sg
+		-states->sf
+		++ -final->sf
+	}
+	sf: State
+	sg: State
+}
+
+#target {
+	p: Program{
+		-variables->svar
+	}
+	svar: Var
+	
+	ifsg: If{
+		++ -next->iffin
+		! -next->ifsgn
+	}
+	! ifsgn: If
+	
+	++ iffin: If{
+		++ -condition->iffinc
+		++ -then->ret
+	}
+	++ iffinc: EqExp{
+		++ -lhs->svarexp
+		++ -rhs->sfval
+	}
+	++ svarexp: VarExp{
+		++ -var->svar
+	}
+	++ sfval: Val
+	
+	++ ret: Ret{
+		++ -exp->trueLit
+	}
+	++ trueLit: Val
+}
+
+#correspondence {
+	sm2p: SM2P{
+		#src->sm
+		#trg->p
+	}
+	sm2svar: SM2VAR{
+		#src->sm
+		#trg->svar
+	}
+	
+	sg2ifsg: S2IF{
+		#src->sg
+		#trg->ifsg
+	}
+	
+	++ sf2iffin: S2IF{
+		#src->sf
+		#trg->iffin
+	}
+	++ sf2iffinc: S2E{
+		#src->sf
+		#trg->iffinc
+	}
+	++ sf2svarexp: S2E{
+		#src->sf
+		#trg->svarexp
+	}
+	++ sf2sfval: S2E{
+		#src->sf
+		#trg->sfval
+	}
+	++ sf2ret: S2S{
+		#src->sf
+		#trg->ret
+	}
+	++ sf2trueLit: S2E{
+		#src->sf
+		#trg->trueLit
+	}
+}
+
+#attributeConditions {
+	eq(sf.id, sfval.id)
+	eq(svar.id, "s")
+	eq(trueLit.id, "true")
+}

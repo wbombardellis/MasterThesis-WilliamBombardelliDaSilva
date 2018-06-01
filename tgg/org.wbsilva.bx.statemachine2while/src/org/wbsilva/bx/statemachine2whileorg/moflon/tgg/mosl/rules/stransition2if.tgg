@@ -1,0 +1,134 @@
+#using org.wbsilva.bx.statemachine2while.*
+#using AttrCondDefLibrary.*
+
+#rule stransition2if #with org.wbsilva.bx.statemachine2while
+
+#source {
+	sm: SM{
+		++ -transitions->t
+		-transitions->tf
+		
+		-states->sf
+		-states->st
+		++ -events->e
+	}
+	sf: State
+	st: State
+	++ e: Event
+	
+	++ t: Transition{
+		++ -from->sf
+		++ -to->st
+		++ -event->e
+	}
+	tf: Transition
+}
+
+#target {
+	p: Program{
+		-variables->svar
+	}
+	ifff: If {
+		++ -next->iff
+		! -next->iffn
+	}
+	! iffn: If
+	
+	++ iff: If{
+		++ -condition->ifc
+		++ -then->svarass
+	}
+	++ ifc: AndExp{
+		++ -lhs->ifec
+		++ -rhs->ifsc 
+	}
+	++ ifec: EqExp{
+		++ -lhs->invarexp
+		++ -rhs->eval
+	}
+	++ invarexp: VarExp{
+		++ -var->invar
+	}
+	invar: Var
+	++ eval: Val
+	
+	++ ifsc: EqExp{
+		++ -lhs->svarexp
+		++ -rhs->sfval
+	}
+	++ svarexp: VarExp{
+		++ -var->svar
+	}
+	svar: Var
+	++ sfval: Val
+	
+	++ svarass: Assignment{
+		++ -var->svar
+		++ -exp->stval
+	}
+	++ stval: Val
+}
+
+#correspondence {
+	sm2p: SM2P{
+		#src->sm
+		#trg->p
+	}
+	sm2svar: SM2VAR{
+		#src->sm
+		#trg->svar
+	}
+	sm2invar: SM2VAR{
+		#src->sm
+		#trg->invar
+	}
+	tf2ifff: T2IF{
+		#src->tf
+		#trg->ifff
+	}
+	
+	++ t2iff: T2IF{
+		#src->t
+		#trg->iff
+	}
+	++ t2ifec: T2E{
+		#src->t
+		#trg->ifec
+	}
+	++ t2ifsc: T2E{
+		#src->t
+		#trg->ifsc
+	}
+	++ t2invarexp: T2E{
+		#src->t
+		#trg->invarexp
+	}
+	++ t2svarexp: T2E{
+		#src->t
+		#trg->svarexp
+	}
+	++ t2eval: T2E{
+		#src->t
+		#trg->eval
+	}
+	++ t2sfval: T2E{
+		#src->t
+		#trg->sfval
+	}
+	++ t2svarass: T2A{
+		#src->t
+		#trg->svarass
+	}
+	++ t2stval: T2E{
+		#src->t
+		#trg->stval
+	}
+}
+
+#attributeConditions {
+	eq(sf.id, sfval.id)
+	eq(st.id, stval.id)
+	eq(e.id, eval.id)
+	eq(svar.id, "s")
+	eq(invar.id, "in")
+}

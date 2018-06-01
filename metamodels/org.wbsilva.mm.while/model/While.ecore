@@ -31,17 +31,23 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="#//Statement"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EqExp" eSuperTypes="#//BinaryBoolExp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BinaryBoolExp" abstract="true" eSuperTypes="#//Exp">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="#//BoolExp"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//BoolExp"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EqExp" eSuperTypes="#//BinaryExp #//BoolExp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NEqExp" eSuperTypes="#//BinaryExp #//BoolExp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryExp" abstract="true" eSuperTypes="#//Exp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="#//Exp" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//Exp" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Exp" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="BoolExp" eSuperTypes="#//Exp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AndExp" eSuperTypes="#//BinaryExp #//BoolExp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VarExp" eSuperTypes="#//Exp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Var"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Var"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Exp" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ret" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Exp" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Var">
