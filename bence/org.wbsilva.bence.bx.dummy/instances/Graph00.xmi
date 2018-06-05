@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.wbsilva.bence.graphgrammar:Graph
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar"
+    xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore">
+  <vertices>
+    <label name="a"/>
+  </vertices>
+</org.wbsilva.bence.graphgrammar:Graph>
