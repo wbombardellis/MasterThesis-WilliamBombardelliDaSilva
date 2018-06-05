@@ -69,7 +69,7 @@ public class Main {
 			
 			//Bureaucratic tasks of initialization
 			TransformerUtil.registerFactories();
-			ResourceSet resSet = new ResourceSetImpl();
+			final ResourceSet resSet = new ResourceSetImpl();
 			try {
 				TransformerUtil.registerPackages(resSet, GRAPHGRAMMAR_MM_PATH);
 			} catch (Exception e) {
@@ -93,7 +93,7 @@ public class Main {
 				return;
 			} else {
 				//Grammar resource's first element must be a grammar
-				EObject root = grammarResource.getContents().get(0);
+				final EObject root = grammarResource.getContents().get(0);
 				
 				if (root instanceof Grammar) {
 					grammar = (Grammar) root;
@@ -124,7 +124,7 @@ public class Main {
 				return;
 			} else {
 				//Graph resource's first element must be a graph
-				EObject root = inputGraphResource.getContents().get(0);
+				final EObject root = inputGraphResource.getContents().get(0);
 				
 				if (root instanceof Graph) {
 					graph = (Graph) root;
@@ -136,6 +136,9 @@ public class Main {
 				}
 			}
 			assert graph != null;
+			
+			//TODO: Call transformer
+			
 			
 			UIUtil.printSuccess();
 	}
