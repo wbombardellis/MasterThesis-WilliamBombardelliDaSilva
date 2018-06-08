@@ -62,7 +62,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Graph">
     <eOperations name="neighbors" ordered="false" upperBound="-1" eType="#//Vertex">
-      <eParameters name="vertices" upperBound="-1" eType="#//Vertex"/>
+      <eParameters name="vertices" ordered="false" upperBound="-1" eType="#//Vertex"/>
+    </eOperations>
+    <eOperations name="isomorphicTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="graph" eType="#//Graph"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>

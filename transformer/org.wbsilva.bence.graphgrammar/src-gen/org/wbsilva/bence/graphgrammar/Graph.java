@@ -86,8 +86,16 @@ public interface Graph extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ordered="false" verticesMany="true"
+	 * @model ordered="false" verticesMany="true" verticesOrdered="false"
 	 * @generated
 	 */
 	EList<Vertex> neighbors(EList<Vertex> vertices);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean isomorphicTo(Graph graph);
 } // Graph

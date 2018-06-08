@@ -525,13 +525,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int GRAPH___NEIGHBORS__ELIST = 0;
 
 	/**
+	 * The operation id for the '<em>Isomorphic To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH___ISOMORPHIC_TO__GRAPH = 1;
+
+	/**
 	 * The number of operations of the '<em>Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_OPERATION_COUNT = 1;
+	int GRAPH_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
@@ -1087,6 +1096,16 @@ public interface GraphgrammarPackage extends EPackage {
 	EOperation getGraph__Neighbors__EList();
 
 	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#isomorphicTo(org.wbsilva.bence.graphgrammar.Graph) <em>Isomorphic To</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Isomorphic To</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Graph#isomorphicTo(org.wbsilva.bence.graphgrammar.Graph)
+	 * @generated
+	 */
+	EOperation getGraph__IsomorphicTo__Graph();
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Vertex <em>Vertex</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1485,6 +1504,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation GRAPH___NEIGHBORS__ELIST = eINSTANCE.getGraph__Neighbors__EList();
+		/**
+		 * The meta object literal for the '<em><b>Isomorphic To</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GRAPH___ISOMORPHIC_TO__GRAPH = eINSTANCE.getGraph__IsomorphicTo__Graph();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
 		 * <!-- begin-user-doc -->

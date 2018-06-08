@@ -153,6 +153,17 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isomorphicTo(Graph graph) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -256,6 +267,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 		switch (operationID) {
 		case GraphgrammarPackage.GRAPH___NEIGHBORS__ELIST:
 			return neighbors((EList<Vertex>) arguments.get(0));
+		case GraphgrammarPackage.GRAPH___ISOMORPHIC_TO__GRAPH:
+			return isomorphicTo((Graph) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

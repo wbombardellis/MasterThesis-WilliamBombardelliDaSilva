@@ -491,6 +491,15 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getGraph__IsomorphicTo__Graph() {
+		return graphEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVertex() {
 		return vertexEClass;
 	}
@@ -648,6 +657,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(graphEClass, GRAPH__VERTICES);
 		createEReference(graphEClass, GRAPH__EDGES);
 		createEOperation(graphEClass, GRAPH___NEIGHBORS__ELIST);
+		createEOperation(graphEClass, GRAPH___ISOMORPHIC_TO__GRAPH);
 
 		vertexEClass = createEClass(VERTEX);
 		createEAttribute(vertexEClass, VERTEX__ID);
@@ -792,7 +802,11 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 				!IS_ORDERED);
 
 		op = initEOperation(getGraph__Neighbors__EList(), this.getVertex(), "neighbors", 0, -1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getVertex(), "vertices", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getVertex(), "vertices", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getGraph__IsomorphicTo__Graph(), ecorePackage.getEBoolean(), "isomorphicTo", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getGraph(), "graph", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(vertexEClass, Vertex.class, "Vertex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVertex_Id(), ecorePackage.getEString(), "id", null, 0, 1, Vertex.class, !IS_TRANSIENT,

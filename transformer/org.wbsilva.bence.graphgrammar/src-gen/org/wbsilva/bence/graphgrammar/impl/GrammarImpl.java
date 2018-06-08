@@ -4,6 +4,9 @@ package org.wbsilva.bence.graphgrammar.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -15,7 +18,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
@@ -266,12 +271,31 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean derives(Graph prev, Graph next, Vertex vertex, Graph rhs) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		//TODO: Assert grammar is validated
+		final Set<Rule> possibleRules = this.getRules().stream()
+				.filter(r -> r.getLhs().equals(vertex.getLabel()) && r.getRhs().isomorphicTo(rhs))
+				.collect(Collectors.toSet());
+		
+		final Set<Vertex> possibleVertices = prev.getVertices().stream()
+			.filter(v -> v.getLabel().equals(vertex.getLabel()))
+			.collect(Collectors.toSet());
+		
+		
+		
+		for (Vertex v: possibleVertices) {
+			final Set<Edge> vEdges = prev.getEdges().stream()
+					.filter(e -> e.getFrom().equals(v) || e.getTo().equals(v))
+					.collect(Collectors.toSet());
+			
+			final Graph g = EcoreUtil.copy(prev); //TODO: Assure depth is at least 2
+			g.getVertices().remove(v);
+			g.getEdges().removeAll(vEdges);
+			//TODO: Go on from here
+		}
+
 	}
 
 	/**
