@@ -14,6 +14,7 @@ import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
+import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
@@ -39,26 +40,23 @@ public class BeNCEParser {
 	public Derivation parse(final Graph graph){
 		assert graph != null;
 		
-		final EList<Symbol> alphabet = grammar.getAlphabet();
+		//Sanitize ids
+		ensureUniqueIds(graph);
 		
 		//Create bottom-up parse set
-		final Bup bup = new Bup(graph.getVertices().stream()
-			.map((Vertex v) -> {
-				final ZoneVertex z = GraphgrammarFactory.eINSTANCE.createZoneVertex();
-				z.getVertices().add(EcoreUtil.copy(v));
-				return z;
-			})
-			.collect(Collectors.toSet()));
+		final Bup bup = new Bup(zoneVertices(graph.getVertices()));
 		
-		
-		//TODO: return case that graph is empty (or invalid)
+		final ZoneVertex rootZV = GraphgrammarFactory.eINSTANCE.createZoneVertex();
+		rootZV.setId(EcoreUtil.generateUUID());
+		rootZV.setLabel(grammar.getInitial());
+		rootZV.getVertices().addAll(graph.getVertices());
 		
 		//Bottom-up loop to create all possible derivations
-		while(bup.hasNext()){
+		while(bup.hasNext() && !bup.contains(rootZV)){
 			//Select a handle
 			final Set<ZoneVertex> handle = bup.next();					//R
 			
-			for (final Symbol d : alphabet) {
+			for (final Symbol d : grammar.getNonterminals()) {
 				final Graph handleGraph = zoneGraph(graph, handle);		//Z(R)
 				final Graph rhs = induce(handleGraph, handle);			//Y(R)
 				
@@ -69,28 +67,46 @@ public class BeNCEParser {
 				if (grammar.derives(reducedGraph, handleGraph, lhs, rhs)) {
 					//possible derivation step found
 					bup.add(lhs);
+					//TODO: Construct derivation
 				}
 			}
 		}
-		
-		final ZoneVertex rootZV = GraphgrammarFactory.eINSTANCE.createZoneVertex();
-		rootZV.setLabel(grammar.getInitial());
-		rootZV.getVertices().addAll(graph.getVertices());
-		
-		//bup.contains(rootZV); //TODO: compare with equals?
 
 		return null;
 	}
 
-	private Graph zoneGraph(final Graph graph, final Set<ZoneVertex> vertices) {
-		final Graph zoneGraph = GraphgrammarFactory.eINSTANCE.createGraph();
+	private void ensureUniqueIds(final Graph graph) {
+		//IDs for the host graph
+		graph.setId(EcoreUtil.generateUUID());
+		for (Vertex v : graph.getVertices()) {
+			v.setId(EcoreUtil.generateUUID());
+		}
 		
-		zoneGraph.getVertices().addAll(vertices.stream()
-				.flatMap((ZoneVertex zv) -> zv.getVertices().stream().map(w -> EcoreUtil.copy(w)))
+		//IDs for the right hand side of grammar rules
+		grammar.setId(EcoreUtil.generateUUID());
+		for (Rule r : grammar.getRules()) {
+			r.setId(EcoreUtil.generateUUID());
+			r.getRhs().setId(EcoreUtil.generateUUID());
+			for (Vertex v : r.getRhs().getVertices()) {
+				v.setId(EcoreUtil.generateUUID());
+			}
+		}
+	}
+
+	private Graph zoneGraph(final Graph graph, final Set<ZoneVertex> zoneVertices) {
+		final Graph zoneGraph = GraphgrammarFactory.eINSTANCE.createGraph();
+		zoneGraph.setId(EcoreUtil.generateUUID());
+		
+		//Add main zoneVertices R
+		zoneGraph.getVertices().addAll(zoneVertices.stream()
+				.map((ZoneVertex zv) -> EcoreUtil.copy(zv))
 				.collect(Collectors.toSet()));
 		
-		final Set<Vertex> vs = merge(vertices);
-		zoneGraph.getVertices().addAll(graph.neighbors(new BasicEList<Vertex>(vs)));
+		//V(R)
+		final Set<Vertex> vs = merge(zoneVertices);
+		
+		//Add the set of all neighbors of V(R)
+		zoneGraph.getVertices().addAll(zoneVertices(graph.neighbors(new BasicEList<Vertex>(vs))));
 		
 		for(Vertex v : zoneGraph.getVertices()) {
 			final Set<Edge> newEdges = zoneGraph.getVertices().stream()
@@ -103,6 +119,18 @@ public class BeNCEParser {
 		return zoneGraph;
 	}
 	
+	private Set<ZoneVertex> zoneVertices(final EList<Vertex> simpleVertices) {
+		return simpleVertices.stream()
+			.map((Vertex v) -> {
+				final ZoneVertex z = GraphgrammarFactory.eINSTANCE.createZoneVertex();
+				z.setId(EcoreUtil.generateUUID());
+				z.getVertices().add(EcoreUtil.copy(v));
+				z.setLabel(EcoreUtil.copy(v.getLabel()));
+				return z;
+			})
+			.collect(Collectors.toSet());
+	}
+
 	private boolean edgeBetween(final Edge e, final Vertex v, final Vertex w){
 		return (e.getFrom().getId().equals(v.getId()) && e.getTo().getId().equals(w.getId()))
 				|| (e.getTo().getId().equals(v.getId()) && e.getFrom().getId().equals(w.getId()));
@@ -129,6 +157,7 @@ public class BeNCEParser {
 	private ZoneVertex contract(final Symbol label, final Set<ZoneVertex> zoneVertices) {
 		//TODO: Assert zoneVertices are disjunct
 		final ZoneVertex zone = GraphgrammarFactory.eINSTANCE.createZoneVertex();
+		zone.setId(EcoreUtil.generateUUID());
 		zone.setLabel(EcoreUtil.copy(label));
 		
 		//Merge all vertices from zoneVertices and copy them

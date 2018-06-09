@@ -165,4 +165,12 @@ public interface Rule extends EObject {
 	 */
 	EList<Vertex> getPac();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" edgesMany="true" edgesOrdered="false"
+	 * @generated
+	 */
+	EList<Edge> embed(Graph graph, EList<Edge> edges);
+
 } // Rule

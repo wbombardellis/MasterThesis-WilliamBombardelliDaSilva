@@ -2,10 +2,15 @@
  */
 package org.wbsilva.bence.graphgrammar.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
@@ -18,7 +23,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Graph;
+import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
@@ -312,6 +319,51 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Edge> embed(Graph graph, EList<Edge> edges) {
+		return new BasicEList<Edge>(edges.stream()
+				.flatMap(e -> {
+					//Vertices that should receive an incoming edge 
+					Stream<Vertex> toVs = graph.getVertices().stream()
+							.filter(v -> {
+								VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
+								k.setVertex(v);
+								k.setEdgeLabel(e.getLabel());
+								return embedding.get(k).contains(e.getFrom().getLabel());
+							});
+					//Vertices that should receive an outgoing edge
+					Stream<Vertex> fromVs = graph.getVertices().stream()
+							.filter(v -> {
+								VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
+								k.setVertex(v);
+								k.setEdgeLabel(e.getLabel());
+								return embedding.get(k).contains(e.getTo().getLabel());
+							});
+					//create incoming edges
+					Set<Edge> es = toVs.map((Vertex v) -> {
+								Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+								newE.setFrom(e.getFrom());
+								newE.setTo(v);
+								return newE;
+							})
+							.collect(Collectors.toSet());
+					//create outgoing edges
+					es.addAll(fromVs.map((Vertex v) -> {
+								Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+								newE.setFrom(v);
+								newE.setTo(e.getTo());
+								return newE;
+							})
+							.collect(Collectors.toSet()));
+					return es.stream();
+				})
+				.collect(Collectors.toSet()));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -438,6 +490,21 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 			return pac != null && !pac.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case GraphgrammarPackage.RULE___EMBED__GRAPH_ELIST:
+			return embed((Graph) arguments.get(0), (EList<Edge>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

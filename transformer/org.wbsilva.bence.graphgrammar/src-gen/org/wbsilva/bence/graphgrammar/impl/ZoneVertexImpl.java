@@ -2,6 +2,7 @@
  */
 package org.wbsilva.bence.graphgrammar.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -9,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.Vertex;
@@ -68,6 +70,16 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 					GraphgrammarPackage.ZONE_VERTEX__VERTICES);
 		}
 		return vertices;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean equivalates(ZoneVertex other) {
+		return other != null && EcoreUtil.equals(this.getLabel(), other.getLabel()) 
+				&& EcoreUtil.equals(this.getVertices(),other.getVertices());
 	}
 
 	/**
@@ -142,6 +154,20 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 			return vertices != null && !vertices.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case GraphgrammarPackage.ZONE_VERTEX___EQUIVALATES__ZONEVERTEX:
+			return equivalates((ZoneVertex) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ZoneVertexImpl

@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
@@ -163,6 +164,18 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphgrammarPackage.GRAMMAR__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getName() {
 		return name;
 	}
@@ -275,25 +288,45 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 */
 	public boolean derives(Graph prev, Graph next, Vertex vertex, Graph rhs) {
 		//TODO: Assert grammar is validated
-		final Set<Rule> possibleRules = this.getRules().stream()
-				.filter(r -> r.getLhs().equals(vertex.getLabel()) && r.getRhs().isomorphicTo(rhs))
-				.collect(Collectors.toSet());
-		
-		final Set<Vertex> possibleVertices = prev.getVertices().stream()
-			.filter(v -> v.getLabel().equals(vertex.getLabel()))
-			.collect(Collectors.toSet());
-		
-		
-		
-		for (Vertex v: possibleVertices) {
-			final Set<Edge> vEdges = prev.getEdges().stream()
-					.filter(e -> e.getFrom().equals(v) || e.getTo().equals(v))
-					.collect(Collectors.toSet());
-			
-			final Graph g = EcoreUtil.copy(prev); //TODO: Assure depth is at least 2
-			g.getVertices().remove(v);
-			g.getEdges().removeAll(vEdges);
-			//TODO: Go on from here
+		//TODO: Select also based on the rhs
+		final Rule rule = this.getRules().stream()
+				.filter(r -> EcoreUtil.equals(r.getLhs(), vertex.getLabel()) /*&& r.getRhs().isomorphicTo(rhs)*/)
+				.findAny().orElse(null);
+
+		if (rule == null) {
+			return false;
+		} else {
+			final Set<Vertex> possibleVertices = prev.getVertices().stream()
+					.filter(v -> EcoreUtil.equals(v.getLabel(), vertex.getLabel())).collect(Collectors.toSet());
+
+			for (Vertex v : possibleVertices) {
+				final Graph g = EcoreUtil.copy(prev);
+
+				//TODO: assert unique ids
+				final Set<Edge> vEdges = g.getEdges().stream()
+						.filter(e -> e.getFrom().getId().equals(v.getId()) || e.getTo().getId().equals(v.getId()))
+						.collect(Collectors.toSet());
+
+				final Vertex gV = g.getVertices().stream().filter(w -> w.getId().equals(v.getId())).findAny()
+						.orElse(null);
+				assert gV != null;
+
+				g.getVertices().remove(gV);
+
+				g.getEdges().removeAll(vEdges);
+
+				g.getVertices().addAll(rhs.getVertices()); //TODO: Copy and guarantee unique ids
+
+				g.getEdges().addAll(rhs.getEdges()); //TODO: Copy and guarantee unique ids
+
+				g.getEdges().addAll(rule.embed(prev, new BasicEList<Edge>(vEdges))); //TODO: Copy?
+
+				//TODO: temporary wrong implementation. I guess it is enough to check the vEdges correspondence between the 2 graphs
+				if (g.getVertices().size() == next.getVertices().size()) {
+					return true;
+				}
+			}
+			return false;
 		}
 
 	}
@@ -351,6 +384,9 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case GraphgrammarPackage.GRAMMAR__ID:
+			setId((String) newValue);
+			return;
 		case GraphgrammarPackage.GRAMMAR__NAME:
 			setName((String) newValue);
 			return;
@@ -385,6 +421,9 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case GraphgrammarPackage.GRAMMAR__ID:
+			setId(ID_EDEFAULT);
+			return;
 		case GraphgrammarPackage.GRAMMAR__NAME:
 			setName(NAME_EDEFAULT);
 			return;

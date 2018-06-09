@@ -37,4 +37,12 @@ public interface ZoneVertex extends Vertex {
 	 * @generated
 	 */
 	EList<Vertex> getVertices();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean equivalates(ZoneVertex other);
 } // ZoneVertex

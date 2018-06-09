@@ -90,12 +90,4 @@ public interface Graph extends EObject {
 	 * @generated
 	 */
 	EList<Vertex> neighbors(EList<Vertex> vertices);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	boolean isomorphicTo(Graph graph);
 } // Graph

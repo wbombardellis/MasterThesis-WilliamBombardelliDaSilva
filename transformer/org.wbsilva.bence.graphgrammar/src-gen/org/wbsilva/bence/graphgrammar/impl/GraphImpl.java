@@ -4,8 +4,13 @@ package org.wbsilva.bence.graphgrammar.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
@@ -140,23 +145,24 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Vertex> neighbors(EList<Vertex> vertices) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+		Function<Vertex, Set<Vertex>> neigh = (Vertex v) -> {
+			Set<Vertex> out = this.getEdges().stream().filter(e -> e.getFrom().getId().equals(v.getId()))
+					.map(e -> e.getTo()).distinct().collect(Collectors.toSet());
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isomorphicTo(Graph graph) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+			Set<Vertex> in = this.getEdges().stream().filter(e -> e.getTo().getId().equals(v.getId()))
+					.map(e -> e.getFrom()).distinct().collect(Collectors.toSet());
+
+			out.addAll(in);
+			return out;
+		};
+
+		return new BasicEList<Vertex>(vertices.stream().map(neigh).reduce((a, b) -> {
+			a.retainAll(b);
+			return a;
+		}).orElse(new HashSet<Vertex>(0)));
 	}
 
 	/**
@@ -267,8 +273,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 		switch (operationID) {
 		case GraphgrammarPackage.GRAPH___NEIGHBORS__ELIST:
 			return neighbors((EList<Vertex>) arguments.get(0));
-		case GraphgrammarPackage.GRAPH___ISOMORPHIC_TO__GRAPH:
-			return isomorphicTo((Graph) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

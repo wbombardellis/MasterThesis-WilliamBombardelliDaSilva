@@ -231,13 +231,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int RULE_FEATURE_COUNT = 6;
 
 	/**
+	 * The operation id for the '<em>Embed</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE___EMBED__GRAPH_ELIST = 0;
+
+	/**
 	 * The number of operations of the '<em>Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_OPERATION_COUNT = 0;
+	int RULE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairImpl <em>Vertex Label Pair</em>}' class.
@@ -525,22 +534,13 @@ public interface GraphgrammarPackage extends EPackage {
 	int GRAPH___NEIGHBORS__ELIST = 0;
 
 	/**
-	 * The operation id for the '<em>Isomorphic To</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH___ISOMORPHIC_TO__GRAPH = 1;
-
-	/**
 	 * The number of operations of the '<em>Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_OPERATION_COUNT = 2;
+	int GRAPH_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
@@ -635,13 +635,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int ZONE_VERTEX_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Equivalates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZONE_VERTEX___EQUIVALATES__ZONEVERTEX = VERTEX_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Zone Vertex</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZONE_VERTEX_OPERATION_COUNT = VERTEX_OPERATION_COUNT + 0;
+	int ZONE_VERTEX_OPERATION_COUNT = VERTEX_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.EdgeImpl <em>Edge</em>}' class.
@@ -881,6 +890,16 @@ public interface GraphgrammarPackage extends EPackage {
 	EReference getRule_Pac();
 
 	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#embed(org.wbsilva.bence.graphgrammar.Graph, org.eclipse.emf.common.util.EList) <em>Embed</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Embed</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Rule#embed(org.wbsilva.bence.graphgrammar.Graph, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getRule__Embed__Graph_EList();
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.VertexLabelPair <em>Vertex Label Pair</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1096,16 +1115,6 @@ public interface GraphgrammarPackage extends EPackage {
 	EOperation getGraph__Neighbors__EList();
 
 	/**
-	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#isomorphicTo(org.wbsilva.bence.graphgrammar.Graph) <em>Isomorphic To</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Isomorphic To</em>' operation.
-	 * @see org.wbsilva.bence.graphgrammar.Graph#isomorphicTo(org.wbsilva.bence.graphgrammar.Graph)
-	 * @generated
-	 */
-	EOperation getGraph__IsomorphicTo__Graph();
-
-	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Vertex <em>Vertex</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1157,6 +1166,16 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getZoneVertex_Vertices();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.ZoneVertex#equivalates(org.wbsilva.bence.graphgrammar.ZoneVertex) <em>Equivalates</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Equivalates</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.ZoneVertex#equivalates(org.wbsilva.bence.graphgrammar.ZoneVertex)
+	 * @generated
+	 */
+	EOperation getZoneVertex__Equivalates__ZoneVertex();
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Edge <em>Edge</em>}'.
@@ -1353,6 +1372,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EReference RULE__PAC = eINSTANCE.getRule_Pac();
 		/**
+		 * The meta object literal for the '<em><b>Embed</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RULE___EMBED__GRAPH_ELIST = eINSTANCE.getRule__Embed__Graph_EList();
+		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairImpl <em>Vertex Label Pair</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1505,13 +1531,6 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EOperation GRAPH___NEIGHBORS__ELIST = eINSTANCE.getGraph__Neighbors__EList();
 		/**
-		 * The meta object literal for the '<em><b>Isomorphic To</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation GRAPH___ISOMORPHIC_TO__GRAPH = eINSTANCE.getGraph__IsomorphicTo__Graph();
-		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1550,6 +1569,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ZONE_VERTEX__VERTICES = eINSTANCE.getZoneVertex_Vertices();
+		/**
+		 * The meta object literal for the '<em><b>Equivalates</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ZONE_VERTEX___EQUIVALATES__ZONEVERTEX = eINSTANCE.getZoneVertex__Equivalates__ZoneVertex();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.EdgeImpl <em>Edge</em>}' class.
 		 * <!-- begin-user-doc -->

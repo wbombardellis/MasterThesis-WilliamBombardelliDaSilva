@@ -9,7 +9,7 @@
       <eParameters name="rhs" eType="#//Graph"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" defaultValueLiteral="" iD="true"/>
+        defaultValueLiteral="" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="alphabet" ordered="false"
         upperBound="-1" eType="#//Symbol" containment="true"/>
@@ -22,6 +22,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="initial" eType="#//Symbol"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rule">
+    <eOperations name="embed" ordered="false" upperBound="-1" eType="#//Edge">
+      <eParameters name="graph" eType="#//Graph"/>
+      <eParameters name="edges" ordered="false" upperBound="-1" eType="#//Edge"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -64,11 +68,8 @@
     <eOperations name="neighbors" ordered="false" upperBound="-1" eType="#//Vertex">
       <eParameters name="vertices" ordered="false" upperBound="-1" eType="#//Vertex"/>
     </eOperations>
-    <eOperations name="isomorphicTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="graph" eType="#//Graph"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
+        defaultValueLiteral="" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" ordered="false"
         upperBound="-1" eType="#//Vertex" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="edges" ordered="false"
@@ -81,6 +82,9 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ZoneVertex" eSuperTypes="#//Vertex">
+    <eOperations name="equivalates" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="other" eType="#//ZoneVertex"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" upperBound="-1"
         eType="#//Vertex" containment="true"/>
   </eClassifiers>
