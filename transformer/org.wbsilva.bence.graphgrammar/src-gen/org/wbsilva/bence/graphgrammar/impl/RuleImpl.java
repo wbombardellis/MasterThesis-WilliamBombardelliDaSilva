@@ -322,43 +322,39 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * @generated NOT
 	 */
 	public EList<Edge> embed(Graph graph, EList<Edge> edges) {
-		return new BasicEList<Edge>(edges.stream()
-				.flatMap(e -> {
-					//Vertices that should receive an incoming edge 
-					Stream<Vertex> toVs = graph.getVertices().stream()
-							.filter(v -> {
-								VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
-								k.setVertex(v);
-								k.setEdgeLabel(e.getLabel());
-								return embedding.get(k).contains(e.getFrom().getLabel());
-							});
-					//Vertices that should receive an outgoing edge
-					Stream<Vertex> fromVs = graph.getVertices().stream()
-							.filter(v -> {
-								VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
-								k.setVertex(v);
-								k.setEdgeLabel(e.getLabel());
-								return embedding.get(k).contains(e.getTo().getLabel());
-							});
-					//create incoming edges
-					Set<Edge> es = toVs.map((Vertex v) -> {
-								Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
-								newE.setFrom(e.getFrom());
-								newE.setTo(v);
-								return newE;
-							})
-							.collect(Collectors.toSet());
-					//create outgoing edges
-					es.addAll(fromVs.map((Vertex v) -> {
-								Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
-								newE.setFrom(v);
-								newE.setTo(e.getTo());
-								return newE;
-							})
-							.collect(Collectors.toSet()));
-					return es.stream();
-				})
-				.collect(Collectors.toSet()));
+		return new BasicEList<Edge>(edges.stream().flatMap(e -> {
+			//Vertices that should receive an incoming edge 
+			Stream<Vertex> toVs = graph.getVertices().stream().filter(v -> {
+				VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
+				k.setVertex(v);
+				k.setEdgeLabel(e.getLabel());
+				//TODO: Check if map works like this
+				return embedding.get(k).contains(e.getFrom().getLabel());
+			});
+			//Vertices that should receive an outgoing edge
+			Stream<Vertex> fromVs = graph.getVertices().stream().filter(v -> {
+				VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
+				k.setVertex(v);
+				k.setEdgeLabel(e.getLabel());
+				//TODO: Check if map works like this
+				return embedding.get(k).contains(e.getTo().getLabel());
+			});
+			//create incoming edges
+			Set<Edge> es = toVs.map((Vertex v) -> {
+				Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+				newE.setFrom(e.getFrom());
+				newE.setTo(v);
+				return newE;
+			}).collect(Collectors.toSet());
+			//create outgoing edges
+			es.addAll(fromVs.map((Vertex v) -> {
+				Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+				newE.setFrom(v);
+				newE.setTo(e.getTo());
+				return newE;
+			}).collect(Collectors.toSet()));
+			return es.stream();
+		}).collect(Collectors.toSet()));
 	}
 
 	/**

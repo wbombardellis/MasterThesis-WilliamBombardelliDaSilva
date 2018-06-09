@@ -75,7 +75,7 @@ public class BeNCEParser {
 		return null;
 	}
 
-	private void ensureUniqueIds(final Graph graph) {
+	private synchronized void ensureUniqueIds(final Graph graph) {
 		//IDs for the host graph
 		graph.setId(EcoreUtil.generateUUID());
 		for (Vertex v : graph.getVertices()) {

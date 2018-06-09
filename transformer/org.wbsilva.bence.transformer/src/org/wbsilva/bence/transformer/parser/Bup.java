@@ -65,7 +65,7 @@ public class Bup {
 
 		final int lastPhase = p - 1;
 		final Set<Set<ZoneVertex>> oldPhaseSubsets = subsets.get(lastPhase);
-		//TODO: add asserions about existance of subsets and queues
+		//TODO: add assertions about existence of subsets and queues
 		
 		//TODO: newQueueSize = bupSet.size() chooses phase
 		final HashSet<Set<ZoneVertex>> newSubsets = new HashSet<>();
@@ -105,7 +105,7 @@ public class Bup {
 	}
 	
 	public synchronized void add(final ZoneVertex zoneVertex) {
-		//TODO: add assertions about existance of subsets and queues
+		//TODO: add assertions about existence of subsets and queues
 		
 		boolean added = contains(zoneVertex);
 		

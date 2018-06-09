@@ -27,6 +27,7 @@ public interface Graph extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
@@ -36,7 +37,7 @@ public interface Graph extends EObject {
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
 	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getGraph_Id()
-	 * @model id="true"
+	 * @model default="" id="true"
 	 * @generated
 	 */
 	String getId();

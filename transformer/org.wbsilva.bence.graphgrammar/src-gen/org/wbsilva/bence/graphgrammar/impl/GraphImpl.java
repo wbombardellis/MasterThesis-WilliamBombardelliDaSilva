@@ -49,7 +49,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ID_EDEFAULT = null;
+	protected static final String ID_EDEFAULT = "";
 	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -148,7 +148,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 * @generated NOT
 	 */
 	public EList<Vertex> neighbors(EList<Vertex> vertices) {
-		Function<Vertex, Set<Vertex>> neigh = (Vertex v) -> {
+		//TODO: Assure graph is valid
+		final Function<Vertex, Set<Vertex>> neigh = (Vertex v) -> {
 			Set<Vertex> out = this.getEdges().stream().filter(e -> e.getFrom().getId().equals(v.getId()))
 					.map(e -> e.getTo()).distinct().collect(Collectors.toSet());
 

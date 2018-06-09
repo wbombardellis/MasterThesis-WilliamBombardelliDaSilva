@@ -78,8 +78,8 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 	 * @generated NOT
 	 */
 	public boolean equivalates(ZoneVertex other) {
-		return other != null && EcoreUtil.equals(this.getLabel(), other.getLabel()) 
-				&& EcoreUtil.equals(this.getVertices(),other.getVertices());
+		return other != null && EcoreUtil.equals(this.getLabel(), other.getLabel())
+				&& EcoreUtil.equals(this.getVertices(), other.getVertices());
 	}
 
 	/**
