@@ -178,5 +178,5 @@ public interface Grammar extends EObject {
 	 * @model
 	 * @generated
 	 */
-	boolean derives(Graph prev, Graph next, Vertex vertex, Graph rhs);
+	Rule derives(Graph prev, Graph next, Vertex vertex, Graph rhs);
 } // Grammar

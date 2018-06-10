@@ -10,10 +10,12 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.wbsilva.bence.graphgrammar.Derivation;
+import org.wbsilva.bence.graphgrammar.DerivationStep;
 import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
+import org.wbsilva.bence.graphgrammar.ParsingTree;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.Vertex;
@@ -38,7 +40,7 @@ public class BeNCEParser {
 	 * @param graph
 	 * @return
 	 */
-	public Derivation parse(final Graph graph){
+	public ParsingTree parse(final Graph graph){
 		assert graph != null;
 		
 		//Sanitize ids
@@ -46,6 +48,9 @@ public class BeNCEParser {
 		
 		//Create bottom-up parse set
 		final Bup bup = new Bup(zoneVertices(graph.getVertices()));
+		
+		//Forest of possible parsing trees
+		final Set<ParsingTree> parsingForest = new HashSet<ParsingTree>();
 		
 		final ZoneVertex rootZV = GraphgrammarFactory.eINSTANCE.createZoneVertex();
 		rootZV.setId(EcoreUtil.generateUUID());
@@ -64,16 +69,42 @@ public class BeNCEParser {
 				final ZoneVertex lhs = contract(d, handle);				//(d,V(R))
 				final Graph reducedGraph = zoneGraph(graph, new HashSet<ZoneVertex>(Arrays.asList(lhs)));	//Z({(d,V(R)})
 				
-				//if handle can be reduced with rule (lhs -> rhs). I.e. if reducedGraph=>handleGraph
-				if (grammar.derives(reducedGraph, handleGraph, lhs, rhs)) {
-					//possible derivation step found
+				//If handle can be reduced with rule (lhs -> rhs). I.e. if reducedGraph=>handleGraph
+				Rule rule = grammar.derives(reducedGraph, handleGraph, lhs, rhs);
+				if (rule != null) {					
+					//Possible derivation step found
 					bup.add(lhs);
-					//TODO: Construct derivation
+					
+					final DerivationStep newDS = GraphgrammarFactory.eINSTANCE.createDerivationStep();
+					newDS.setId(EcoreUtil.generateUUID());
+					newDS.setVertex(EcoreUtil.copy(lhs));
+					newDS.setRule(rule);
+					
+					//Construct parsing tree bottom-up 
+					final ParsingTree parsingTreeNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
+					parsingTreeNode.setZoneVertex(lhs);
+					parsingTreeNode.setDerivationStep(newDS);
+					parsingTreeNode.getChildren().addAll(parsingForest.stream()
+							.filter(pt -> handle.contains(pt.getZoneVertex()))
+							.collect(Collectors.toSet()));
+					//TODO: assert amount of children
+					parsingForest.add(parsingTreeNode);
 				}
 			}
 		}
 
-		return null;
+		//Successfully parsed
+		if (bup.contains(rootZV)) {
+			final ParsingTree parsingTree = parsingForest.parallelStream()
+					.filter(pt -> pt.getZoneVertex().equivalates(rootZV))
+					.findAny()
+					.orElse(null);
+			assert parsingTree != null;
+			
+			return parsingTree;
+		} else {
+			return null;
+		}
 	}
 
 	private synchronized void ensureUniqueIds(final Graph graph) {

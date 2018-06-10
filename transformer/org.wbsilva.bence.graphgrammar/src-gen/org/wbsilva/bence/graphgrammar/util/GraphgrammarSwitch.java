@@ -118,6 +118,13 @@ public class GraphgrammarSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case GraphgrammarPackage.PARSING_TREE: {
+			ParsingTree parsingTree = (ParsingTree) theEObject;
+			T result = caseParsingTree(parsingTree);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case GraphgrammarPackage.GRAPH: {
 			Graph graph = (Graph) theEObject;
 			T result = caseGraph(graph);
@@ -255,6 +262,21 @@ public class GraphgrammarSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDerivation(Derivation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parsing Tree</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parsing Tree</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParsingTree(ParsingTree object) {
 		return null;
 	}
 

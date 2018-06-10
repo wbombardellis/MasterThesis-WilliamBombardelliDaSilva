@@ -104,6 +104,11 @@ public class GraphgrammarAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseParsingTree(ParsingTree object) {
+			return createParsingTreeAdapter();
+		}
+
+		@Override
 		public Adapter caseGraph(Graph object) {
 			return createGraphAdapter();
 		}
@@ -237,6 +242,20 @@ public class GraphgrammarAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDerivationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bence.graphgrammar.ParsingTree <em>Parsing Tree</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bence.graphgrammar.ParsingTree
+	 * @generated
+	 */
+	public Adapter createParsingTreeAdapter() {
 		return null;
 	}
 

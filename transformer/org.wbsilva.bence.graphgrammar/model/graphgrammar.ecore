@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphgrammar" nsURI="org.wbsilva.bence.graphgrammar" nsPrefix="org.wbsilva.bence.graphgrammar">
   <eClassifiers xsi:type="ecore:EClass" name="Grammar">
-    <eOperations name="derives" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="derives" eType="#//Rule">
       <eParameters name="prev" eType="#//Graph"/>
       <eParameters name="next" eType="#//Graph"/>
       <eParameters name="vertex" eType="#//Vertex"/>
@@ -63,6 +63,14 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
         eType="#//DerivationStep" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParsingTree">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="zoneVertex" eType="#//ZoneVertex"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derivationStep" eType="#//DerivationStep"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" ordered="false"
+        upperBound="-1" eType="#//ParsingTree" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Graph">
     <eOperations name="neighbors" ordered="false" upperBound="-1" eType="#//Vertex">

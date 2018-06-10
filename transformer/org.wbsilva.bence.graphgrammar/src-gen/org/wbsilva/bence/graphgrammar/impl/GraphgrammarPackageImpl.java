@@ -18,6 +18,7 @@ import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
+import org.wbsilva.bence.graphgrammar.ParsingTree;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.Vertex;
@@ -74,6 +75,13 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	private EClass derivationEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parsingTreeEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -455,6 +463,42 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getParsingTree() {
+		return parsingTreeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParsingTree_ZoneVertex() {
+		return (EReference) parsingTreeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParsingTree_DerivationStep() {
+		return (EReference) parsingTreeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParsingTree_Children() {
+		return (EReference) parsingTreeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getGraph() {
 		return graphEClass;
 	}
@@ -698,6 +742,11 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEAttribute(derivationEClass, DERIVATION__ID);
 		createEReference(derivationEClass, DERIVATION__STEPS);
 
+		parsingTreeEClass = createEClass(PARSING_TREE);
+		createEReference(parsingTreeEClass, PARSING_TREE__ZONE_VERTEX);
+		createEReference(parsingTreeEClass, PARSING_TREE__DERIVATION_STEP);
+		createEReference(parsingTreeEClass, PARSING_TREE__CHILDREN);
+
 		graphEClass = createEClass(GRAPH);
 		createEAttribute(graphEClass, GRAPH__ID);
 		createEReference(graphEClass, GRAPH__VERTICES);
@@ -776,8 +825,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getGrammar__Derives__Graph_Graph_Vertex_Graph(), ecorePackage.getEBoolean(),
-				"derives", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getGrammar__Derives__Graph_Graph_Vertex_Graph(), this.getRule(), "derives", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getGraph(), "prev", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getGraph(), "next", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -844,6 +893,18 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		initEReference(getDerivation_Steps(), this.getDerivationStep(), null, "steps", null, 0, -1, Derivation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parsingTreeEClass, ParsingTree.class, "ParsingTree", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParsingTree_ZoneVertex(), this.getZoneVertex(), null, "zoneVertex", null, 0, 1,
+				ParsingTree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParsingTree_DerivationStep(), this.getDerivationStep(), null, "derivationStep", null, 0, 1,
+				ParsingTree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParsingTree_Children(), this.getParsingTree(), null, "children", null, 0, -1,
+				ParsingTree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(graphEClass, Graph.class, "Graph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGraph_Id(), ecorePackage.getEString(), "id", "", 0, 1, Graph.class, !IS_TRANSIENT,

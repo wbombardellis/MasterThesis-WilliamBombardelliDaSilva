@@ -72,6 +72,8 @@ public class GraphgrammarFactoryImpl extends EFactoryImpl implements Graphgramma
 			return createDerivationStep();
 		case GraphgrammarPackage.DERIVATION:
 			return createDerivation();
+		case GraphgrammarPackage.PARSING_TREE:
+			return createParsingTree();
 		case GraphgrammarPackage.GRAPH:
 			return createGraph();
 		case GraphgrammarPackage.VERTEX:
@@ -153,6 +155,16 @@ public class GraphgrammarFactoryImpl extends EFactoryImpl implements Graphgramma
 	public Derivation createDerivation() {
 		DerivationImpl derivation = new DerivationImpl();
 		return derivation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ParsingTree createParsingTree() {
+		ParsingTreeImpl parsingTree = new ParsingTreeImpl();
+		return parsingTree;
 	}
 
 	/**

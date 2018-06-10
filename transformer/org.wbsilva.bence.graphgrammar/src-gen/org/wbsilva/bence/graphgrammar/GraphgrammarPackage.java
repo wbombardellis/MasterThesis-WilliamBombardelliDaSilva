@@ -479,6 +479,61 @@ public interface GraphgrammarPackage extends EPackage {
 	int DERIVATION_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.ParsingTreeImpl <em>Parsing Tree</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bence.graphgrammar.impl.ParsingTreeImpl
+	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getParsingTree()
+	 * @generated
+	 */
+	int PARSING_TREE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Zone Vertex</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARSING_TREE__ZONE_VERTEX = 0;
+
+	/**
+	 * The feature id for the '<em><b>Derivation Step</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARSING_TREE__DERIVATION_STEP = 1;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARSING_TREE__CHILDREN = 2;
+
+	/**
+	 * The number of structural features of the '<em>Parsing Tree</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARSING_TREE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Parsing Tree</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARSING_TREE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.GraphImpl <em>Graph</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -486,7 +541,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getGraph()
 	 * @generated
 	 */
-	int GRAPH = 7;
+	int GRAPH = 8;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -577,7 +632,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertex()
 	 * @generated
 	 */
-	int VERTEX = 8;
+	int VERTEX = 9;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -623,7 +678,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getZoneVertex()
 	 * @generated
 	 */
-	int ZONE_VERTEX = 9;
+	int ZONE_VERTEX = 10;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -687,7 +742,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getEdge()
 	 * @generated
 	 */
-	int EDGE = 10;
+	int EDGE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1096,6 +1151,49 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDerivation_Steps();
+
+	/**
+	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.ParsingTree <em>Parsing Tree</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parsing Tree</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.ParsingTree
+	 * @generated
+	 */
+	EClass getParsingTree();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.ParsingTree#getZoneVertex <em>Zone Vertex</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Zone Vertex</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.ParsingTree#getZoneVertex()
+	 * @see #getParsingTree()
+	 * @generated
+	 */
+	EReference getParsingTree_ZoneVertex();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.ParsingTree#getDerivationStep <em>Derivation Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Derivation Step</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.ParsingTree#getDerivationStep()
+	 * @see #getParsingTree()
+	 * @generated
+	 */
+	EReference getParsingTree_DerivationStep();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.wbsilva.bence.graphgrammar.ParsingTree#getChildren <em>Children</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Children</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.ParsingTree#getChildren()
+	 * @see #getParsingTree()
+	 * @generated
+	 */
+	EReference getParsingTree_Children();
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Graph <em>Graph</em>}'.
@@ -1569,6 +1667,36 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DERIVATION__STEPS = eINSTANCE.getDerivation_Steps();
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.ParsingTreeImpl <em>Parsing Tree</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bence.graphgrammar.impl.ParsingTreeImpl
+		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getParsingTree()
+		 * @generated
+		 */
+		EClass PARSING_TREE = eINSTANCE.getParsingTree();
+		/**
+		 * The meta object literal for the '<em><b>Zone Vertex</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARSING_TREE__ZONE_VERTEX = eINSTANCE.getParsingTree_ZoneVertex();
+		/**
+		 * The meta object literal for the '<em><b>Derivation Step</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARSING_TREE__DERIVATION_STEP = eINSTANCE.getParsingTree_DerivationStep();
+		/**
+		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARSING_TREE__CHILDREN = eINSTANCE.getParsingTree_Children();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.GraphImpl <em>Graph</em>}' class.
 		 * <!-- begin-user-doc -->

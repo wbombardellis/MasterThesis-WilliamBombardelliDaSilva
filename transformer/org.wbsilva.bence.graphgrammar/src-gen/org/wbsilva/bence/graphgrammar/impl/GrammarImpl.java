@@ -287,15 +287,14 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean derives(Graph prev, Graph next, Vertex vertex, Graph rhs) {
+	public Rule derives(Graph prev, Graph next, Vertex vertex, Graph rhs) {
 		//TODO: Assert grammar is validated
 		final Rule rule = this.getRules().stream()
-				.filter(r -> EcoreUtil.equals(r.getLhs(), vertex.getLabel()) 
-						&& r.getRhs().isomorphicTo(rhs))
-				.findAny().orElse(null);
+				.filter(r -> EcoreUtil.equals(r.getLhs(), vertex.getLabel()) && r.getRhs().isomorphicTo(rhs)).findAny()
+				.orElse(null);
 
 		if (rule == null) {
-			return false;
+			return null;
 		} else {
 			final Set<Vertex> possibleVertices = prev.getVertices().stream()
 					.filter(v -> EcoreUtil.equals(v.getLabel(), vertex.getLabel())).collect(Collectors.toSet());
@@ -316,24 +315,21 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 
 				g.getEdges().removeAll(vEdges);
 
-				g.getVertices().addAll(rhs.getVertices().stream()
-						.map(w -> EcoreUtil.copy(w))
-						.collect(Collectors.toSet()));
+				g.getVertices()
+						.addAll(rhs.getVertices().stream().map(w -> EcoreUtil.copy(w)).collect(Collectors.toSet()));
 
-				g.getEdges().addAll(rhs.getEdges().stream()
-						.map(e -> EcoreUtil.copy(e))
-						.collect(Collectors.toSet()));
+				g.getEdges().addAll(rhs.getEdges().stream().map(e -> EcoreUtil.copy(e)).collect(Collectors.toSet()));
 
 				g.getEdges().addAll(rule.embed(g, new BasicEList<Edge>(vEdges)));
-				
+
 				GraphgrammarUtil.ensureUniqueIds(g);
 
 				//TODO: temporary costly implementation. I guess it is enough to check the vEdges correspondence between the 2 graphs
 				if (g.isomorphicTo(next)) {
-					return true;
+					return rule;
 				}
 			}
-			return false;
+			return null;
 		}
 
 	}

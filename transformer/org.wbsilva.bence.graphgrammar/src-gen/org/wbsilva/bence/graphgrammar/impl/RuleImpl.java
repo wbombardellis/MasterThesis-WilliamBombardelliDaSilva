@@ -324,35 +324,27 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 */
 	public EList<Edge> embed(Graph graph, EList<Edge> edges) {
 		//TODO: Assert unique ids
-		
+
 		return new BasicEList<Edge>(edges.stream().flatMap(e -> {
-			
+
 			//Vertices that should receive an incoming edge 
-			Stream<Optional<Vertex>> toVs = rhs.getVertices().stream()
-					.filter(v -> {
-						VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
-						k.setVertex(v);
-						k.setEdgeLabel(e.getLabel());
-						//TODO: Check if map works like this
-						return embedding.get(k).contains(e.getFrom().getLabel());
-					})
-					.map(v -> graph.getVertices().parallelStream()
-							.filter(w -> w.getId().equals(v.getId()))
-							.findAny());
-			
+			Stream<Optional<Vertex>> toVs = rhs.getVertices().stream().filter(v -> {
+				VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
+				k.setVertex(v);
+				k.setEdgeLabel(e.getLabel());
+				//TODO: Check if map works like this
+				return embedding.get(k).contains(e.getFrom().getLabel());
+			}).map(v -> graph.getVertices().parallelStream().filter(w -> w.getId().equals(v.getId())).findAny());
+
 			//Vertices that should receive an outgoing edge
-			Stream<Optional<Vertex>> fromVs = rhs.getVertices().stream()
-					.filter(v -> {
-						VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
-						k.setVertex(v);
-						k.setEdgeLabel(e.getLabel());
-						//TODO: Check if map works like this
-						return embedding.get(k).contains(e.getTo().getLabel());
-					})
-					.map(v -> graph.getVertices().parallelStream()
-							.filter(w -> w.getId().equals(v.getId()))
-							.findAny());
-			
+			Stream<Optional<Vertex>> fromVs = rhs.getVertices().stream().filter(v -> {
+				VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
+				k.setVertex(v);
+				k.setEdgeLabel(e.getLabel());
+				//TODO: Check if map works like this
+				return embedding.get(k).contains(e.getTo().getLabel());
+			}).map(v -> graph.getVertices().parallelStream().filter(w -> w.getId().equals(v.getId())).findAny());
+
 			//create incoming edges
 			Set<Edge> es = toVs.map(v -> {
 				if (v.isPresent()) {
@@ -364,9 +356,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 					assert false;
 					return null;
 				}
-			})
-			.collect(Collectors.toSet());
-			
+			}).collect(Collectors.toSet());
+
 			//create outgoing edges
 			es.addAll(fromVs.map(v -> {
 				if (v.isPresent()) {
@@ -378,11 +369,10 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 					assert false;
 					return null;
 				}
-			})
-			.collect(Collectors.toSet()));
-			
+			}).collect(Collectors.toSet()));
+
 			return es.stream();
-			
+
 		}).collect(Collectors.toSet()));
 	}
 

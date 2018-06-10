@@ -76,6 +76,15 @@ public interface GraphgrammarFactory extends EFactory {
 	Derivation createDerivation();
 
 	/**
+	 * Returns a new object of class '<em>Parsing Tree</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parsing Tree</em>'.
+	 * @generated
+	 */
+	ParsingTree createParsingTree();
+
+	/**
 	 * Returns a new object of class '<em>Graph</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
