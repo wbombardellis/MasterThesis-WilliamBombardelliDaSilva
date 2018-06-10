@@ -128,4 +128,12 @@ public interface Edge extends EObject {
 	 * @generated
 	 */
 	void setLabel(Symbol value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	int compareTo(Edge other);
 } // Edge

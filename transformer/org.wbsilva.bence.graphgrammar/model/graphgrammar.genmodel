@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.wbsilva.bence.graphgrammar/src-gen" creationIcons="false"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.wbsilva.bence.graphgrammar/src-gen" creationIcons="false"
     editDirectory="/org.wbsilva.bence.graphgrammar.edit/src-gen" editorDirectory="/org.wbsilva.bence.graphgrammar.editor/src-gen"
     modelPluginID="org.wbsilva.bence.graphgrammar" modelName="Graphgrammar" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
@@ -8,5 +9,86 @@
   <foreignModel>graphgrammar.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Graphgrammar" basePackage="org.wbsilva.bence" disposableProviderFactory="true"
-      ecorePackage="graphgrammar.ecore#/"/>
+      ecorePackage="graphgrammar.ecore#/">
+    <genClasses ecoreClass="graphgrammar.ecore#//Grammar">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphgrammar.ecore#//Grammar/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphgrammar.ecore#//Grammar/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Grammar/alphabet"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Grammar/terminals"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Grammar/nonterminals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Grammar/rules"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Grammar/initial"/>
+      <genOperations ecoreOperation="graphgrammar.ecore#//Grammar/derives">
+        <genParameters ecoreParameter="graphgrammar.ecore#//Grammar/derives/prev"/>
+        <genParameters ecoreParameter="graphgrammar.ecore#//Grammar/derives/next"/>
+        <genParameters ecoreParameter="graphgrammar.ecore#//Grammar/derives/vertex"/>
+        <genParameters ecoreParameter="graphgrammar.ecore#//Grammar/derives/rhs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="graphgrammar.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphgrammar.ecore#//Rule/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphgrammar.ecore#//Rule/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Rule/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Rule/rhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Rule/embedding"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Rule/pac"/>
+      <genOperations ecoreOperation="graphgrammar.ecore#//Rule/embed">
+        <genParameters ecoreParameter="graphgrammar.ecore#//Rule/embed/graph"/>
+        <genParameters ecoreParameter="graphgrammar.ecore#//Rule/embed/edges"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="graphgrammar.ecore#//VertexLabelPair">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//VertexLabelPair/vertex"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//VertexLabelPair/edgeLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="graphgrammar.ecore#//VertexLabelPairToSymbolMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//VertexLabelPairToSymbolMap/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//VertexLabelPairToSymbolMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="graphgrammar.ecore#//Symbol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphgrammar.ecore#//Symbol/name"/>
+    </genClasses>
+    <genClasses ecoreClass="graphgrammar.ecore#//DerivationStep">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphgrammar.ecore#//DerivationStep/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//DerivationStep/rule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//DerivationStep/vertex"/>
+    </genClasses>
+    <genClasses ecoreClass="graphgrammar.ecore#//Derivation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphgrammar.ecore#//Derivation/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Derivation/steps"/>
+    </genClasses>
+    <genClasses ecoreClass="graphgrammar.ecore#//Graph">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphgrammar.ecore#//Graph/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Graph/vertices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Graph/edges"/>
+      <genOperations ecoreOperation="graphgrammar.ecore#//Graph/neighbors">
+        <genParameters ecoreParameter="graphgrammar.ecore#//Graph/neighbors/vertices"/>
+      </genOperations>
+      <genOperations ecoreOperation="graphgrammar.ecore#//Graph/inEdges">
+        <genParameters ecoreParameter="graphgrammar.ecore#//Graph/inEdges/vertex"/>
+      </genOperations>
+      <genOperations ecoreOperation="graphgrammar.ecore#//Graph/outEdges">
+        <genParameters ecoreParameter="graphgrammar.ecore#//Graph/outEdges/vertex"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="graphgrammar.ecore#//Vertex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphgrammar.ecore#//Vertex/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Vertex/label"/>
+    </genClasses>
+    <genClasses ecoreClass="graphgrammar.ecore#//ZoneVertex">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//ZoneVertex/vertices"/>
+      <genOperations ecoreOperation="graphgrammar.ecore#//ZoneVertex/equivalates">
+        <genParameters ecoreParameter="graphgrammar.ecore#//ZoneVertex/equivalates/other"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="graphgrammar.ecore#//Edge">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphgrammar.ecore#//Edge/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Edge/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Edge/to"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphgrammar.ecore#//Edge/label"/>
+      <genOperations ecoreOperation="graphgrammar.ecore#//Edge/compareTo">
+        <genParameters ecoreParameter="graphgrammar.ecore#//Edge/compareTo/other"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
 </genmodel:GenModel>

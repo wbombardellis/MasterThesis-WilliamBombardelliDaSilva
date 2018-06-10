@@ -500,6 +500,33 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getGraph__IsomorphicTo__Graph() {
+		return graphEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getGraph__InEdges__Vertex() {
+		return graphEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getGraph__OutEdges__Vertex() {
+		return graphEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVertex() {
 		return vertexEClass;
 	}
@@ -599,6 +626,15 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getEdge__CompareTo__Edge() {
+		return edgeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GraphgrammarFactory getGraphgrammarFactory() {
 		return (GraphgrammarFactory) getEFactoryInstance();
 	}
@@ -667,6 +703,9 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(graphEClass, GRAPH__VERTICES);
 		createEReference(graphEClass, GRAPH__EDGES);
 		createEOperation(graphEClass, GRAPH___NEIGHBORS__ELIST);
+		createEOperation(graphEClass, GRAPH___ISOMORPHIC_TO__GRAPH);
+		createEOperation(graphEClass, GRAPH___IN_EDGES__VERTEX);
+		createEOperation(graphEClass, GRAPH___OUT_EDGES__VERTEX);
 
 		vertexEClass = createEClass(VERTEX);
 		createEAttribute(vertexEClass, VERTEX__ID);
@@ -681,6 +720,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(edgeEClass, EDGE__FROM);
 		createEReference(edgeEClass, EDGE__TO);
 		createEReference(edgeEClass, EDGE__LABEL);
+		createEOperation(edgeEClass, EDGE___COMPARE_TO__EDGE);
 	}
 
 	/**
@@ -818,6 +858,16 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		op = initEOperation(getGraph__Neighbors__EList(), this.getVertex(), "neighbors", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertices", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getGraph__IsomorphicTo__Graph(), ecorePackage.getEBoolean(), "isomorphicTo", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getGraph(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getGraph__InEdges__Vertex(), this.getEdge(), "inEdges", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getGraph__OutEdges__Vertex(), this.getEdge(), "outEdges", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(vertexEClass, Vertex.class, "Vertex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVertex_Id(), ecorePackage.getEString(), "id", null, 0, 1, Vertex.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -846,6 +896,10 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		initEReference(getEdge_Label(), this.getSymbol(), null, "label", null, 0, 1, Edge.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		op = initEOperation(getEdge__CompareTo__Edge(), ecorePackage.getEInt(), "compareTo", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+		addEParameter(op, this.getEdge(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

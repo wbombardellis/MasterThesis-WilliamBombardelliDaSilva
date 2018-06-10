@@ -91,4 +91,28 @@ public interface Graph extends EObject {
 	 * @generated
 	 */
 	EList<Vertex> neighbors(EList<Vertex> vertices);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean isomorphicTo(Graph other);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Edge> inEdges(Vertex vertex);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Edge> outEdges(Vertex vertex);
 } // Graph

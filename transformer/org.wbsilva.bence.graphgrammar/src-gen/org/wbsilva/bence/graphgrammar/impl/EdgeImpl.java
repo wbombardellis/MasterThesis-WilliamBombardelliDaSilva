@@ -2,8 +2,10 @@
  */
 package org.wbsilva.bence.graphgrammar.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
@@ -247,6 +249,49 @@ public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public int compareTo(Edge other) {
+		//TODO: assert not null edges and labels
+		//If this.label < other.label
+		if (this.getLabel().getName().compareTo(other.getLabel().getName()) < 0) {
+			return -1;
+		}
+		//If this.label > other.label
+		else if (this.getLabel().getName().compareTo(other.getLabel().getName()) > 0) {
+			return 1;
+		}
+		//If this.label == other.label
+		else {
+			//If this.from.label < other.from.label
+			if (this.getFrom().getLabel().getName().compareTo(other.getFrom().getLabel().getName()) < 0) {
+				return -1;
+			}
+			//If this.from.label > other.from.label
+			else if (this.getFrom().getLabel().getName().compareTo(other.getFrom().getLabel().getName()) > 0) {
+				return 1;
+			}
+			//If this.from.label == other.from.label
+			else {
+				//If this.to.label < other.to.label
+				if (this.getTo().getLabel().getName().compareTo(other.getFrom().getLabel().getName()) < 0) {
+					return -1;
+				}
+				//If this.to.label > other.to.label
+				else if (this.getTo().getLabel().getName().compareTo(other.getFrom().getLabel().getName()) > 0) {
+					return 1;
+				}
+				//If this.to.label == other.to.label
+				else {
+					return 0;
+				}
+			}
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -348,6 +393,20 @@ public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
 			return label != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case GraphgrammarPackage.EDGE___COMPARE_TO__EDGE:
+			return compareTo((Edge) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

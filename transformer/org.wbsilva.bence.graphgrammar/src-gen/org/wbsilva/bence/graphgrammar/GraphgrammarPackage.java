@@ -534,13 +534,40 @@ public interface GraphgrammarPackage extends EPackage {
 	int GRAPH___NEIGHBORS__ELIST = 0;
 
 	/**
+	 * The operation id for the '<em>Isomorphic To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH___ISOMORPHIC_TO__GRAPH = 1;
+
+	/**
+	 * The operation id for the '<em>In Edges</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH___IN_EDGES__VERTEX = 2;
+
+	/**
+	 * The operation id for the '<em>Out Edges</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH___OUT_EDGES__VERTEX = 3;
+
+	/**
 	 * The number of operations of the '<em>Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_OPERATION_COUNT = 1;
+	int GRAPH_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
@@ -708,13 +735,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int EDGE_FEATURE_COUNT = 4;
 
 	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE___COMPARE_TO__EDGE = 0;
+
+	/**
 	 * The number of operations of the '<em>Edge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_OPERATION_COUNT = 0;
+	int EDGE_OPERATION_COUNT = 1;
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Grammar <em>Grammar</em>}'.
@@ -1115,6 +1151,36 @@ public interface GraphgrammarPackage extends EPackage {
 	EOperation getGraph__Neighbors__EList();
 
 	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#isomorphicTo(org.wbsilva.bence.graphgrammar.Graph) <em>Isomorphic To</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Isomorphic To</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Graph#isomorphicTo(org.wbsilva.bence.graphgrammar.Graph)
+	 * @generated
+	 */
+	EOperation getGraph__IsomorphicTo__Graph();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#inEdges(org.wbsilva.bence.graphgrammar.Vertex) <em>In Edges</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>In Edges</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Graph#inEdges(org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getGraph__InEdges__Vertex();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#outEdges(org.wbsilva.bence.graphgrammar.Vertex) <em>Out Edges</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Out Edges</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Graph#outEdges(org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getGraph__OutEdges__Vertex();
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Vertex <em>Vertex</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1230,6 +1296,16 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEdge_Label();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Edge#compareTo(org.wbsilva.bence.graphgrammar.Edge) <em>Compare To</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Compare To</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Edge#compareTo(org.wbsilva.bence.graphgrammar.Edge)
+	 * @generated
+	 */
+	EOperation getEdge__CompareTo__Edge();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1531,6 +1607,27 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EOperation GRAPH___NEIGHBORS__ELIST = eINSTANCE.getGraph__Neighbors__EList();
 		/**
+		 * The meta object literal for the '<em><b>Isomorphic To</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GRAPH___ISOMORPHIC_TO__GRAPH = eINSTANCE.getGraph__IsomorphicTo__Graph();
+		/**
+		 * The meta object literal for the '<em><b>In Edges</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GRAPH___IN_EDGES__VERTEX = eINSTANCE.getGraph__InEdges__Vertex();
+		/**
+		 * The meta object literal for the '<em><b>Out Edges</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GRAPH___OUT_EDGES__VERTEX = eINSTANCE.getGraph__OutEdges__Vertex();
+		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1613,6 +1710,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EDGE__LABEL = eINSTANCE.getEdge_Label();
+		/**
+		 * The meta object literal for the '<em><b>Compare To</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EDGE___COMPARE_TO__EDGE = eINSTANCE.getEdge__CompareTo__Edge();
 
 	}
 

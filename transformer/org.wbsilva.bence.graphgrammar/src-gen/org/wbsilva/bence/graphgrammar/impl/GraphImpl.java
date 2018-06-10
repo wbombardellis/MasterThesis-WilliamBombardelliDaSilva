@@ -5,9 +5,11 @@ package org.wbsilva.bence.graphgrammar.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -19,11 +21,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.Vertex;
+import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -169,6 +173,50 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean isomorphicTo(Graph other) {
+		//TODO: assertions
+		//Candidates for a mapping's image of each vertex of this 
+		final List<Set<Vertex>> candidates = this.getVertices().stream()
+				.map(v -> other.getVertices().stream()
+						.filter(w -> EcoreUtil.equals(v.getLabel(), w.getLabel())
+								&& GraphgrammarUtil.isomorphicEdges(this.inEdges(v), other.inEdges(w))
+								&& GraphgrammarUtil.isomorphicEdges(this.outEdges(v), other.outEdges(w)))
+						.collect(Collectors.toSet()))
+				.collect(Collectors.toList());
+
+		//TODO: For optimization order the candidate sets by size increasingly
+		//candidates.sort();
+
+		return GraphgrammarUtil.anyBijectiveMapping(candidates);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Edge> inEdges(Vertex vertex) {
+		//TODO: add assertions
+		return new BasicEList<>(
+				this.getEdges().stream().filter(e -> e.getTo().equals(vertex)).collect(Collectors.toList()));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Edge> outEdges(Vertex vertex) {
+		//TODO: add assertions
+		return new BasicEList<>(
+				this.getEdges().stream().filter(e -> e.getFrom().equals(vertex)).collect(Collectors.toList()));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -274,6 +322,12 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 		switch (operationID) {
 		case GraphgrammarPackage.GRAPH___NEIGHBORS__ELIST:
 			return neighbors((EList<Vertex>) arguments.get(0));
+		case GraphgrammarPackage.GRAPH___ISOMORPHIC_TO__GRAPH:
+			return isomorphicTo((Graph) arguments.get(0));
+		case GraphgrammarPackage.GRAPH___IN_EDGES__VERTEX:
+			return inEdges((Vertex) arguments.get(0));
+		case GraphgrammarPackage.GRAPH___OUT_EDGES__VERTEX:
+			return outEdges((Vertex) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

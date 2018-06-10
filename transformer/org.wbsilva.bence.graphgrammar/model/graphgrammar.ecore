@@ -68,6 +68,15 @@
     <eOperations name="neighbors" ordered="false" upperBound="-1" eType="#//Vertex">
       <eParameters name="vertices" ordered="false" upperBound="-1" eType="#//Vertex"/>
     </eOperations>
+    <eOperations name="isomorphicTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="other" eType="#//Graph"/>
+    </eOperations>
+    <eOperations name="inEdges" ordered="false" upperBound="-1" eType="#//Edge">
+      <eParameters name="vertex" eType="#//Vertex"/>
+    </eOperations>
+    <eOperations name="outEdges" ordered="false" upperBound="-1" eType="#//Edge">
+      <eParameters name="vertex" eType="#//Vertex"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" ordered="false"
@@ -89,6 +98,9 @@
         eType="#//Vertex" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Edge">
+    <eOperations name="compareTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="other" eType="#//Edge"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Vertex"/>

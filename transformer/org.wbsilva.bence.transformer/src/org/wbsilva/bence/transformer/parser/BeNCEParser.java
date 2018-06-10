@@ -18,6 +18,7 @@ import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
+import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 
 /**
  * TODO
@@ -77,10 +78,7 @@ public class BeNCEParser {
 
 	private synchronized void ensureUniqueIds(final Graph graph) {
 		//IDs for the host graph
-		graph.setId(EcoreUtil.generateUUID());
-		for (Vertex v : graph.getVertices()) {
-			v.setId(EcoreUtil.generateUUID());
-		}
+		GraphgrammarUtil.ensureUniqueIds(graph);
 		
 		//IDs for the right hand side of grammar rules
 		grammar.setId(EcoreUtil.generateUUID());
