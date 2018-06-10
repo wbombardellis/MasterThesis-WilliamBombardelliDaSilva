@@ -13,6 +13,8 @@
       name="a"/>
   <alphabet
       name="S"/>
+  <alphabet
+      name="b"/>
   <rules name="r0">
     <lhs name="S"/>
     <rhs>
@@ -20,6 +22,10 @@
           id="0">
         <label
             name="a"/>
+      </vertices>
+      <vertices>
+        <label
+            name="b"/>
       </vertices>
     </rhs>
   </rules>

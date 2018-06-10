@@ -8,4 +8,7 @@
   <vertices>
     <label name="a"/>
   </vertices>
+  <vertices>
+    <label name="b"/>
+  </vertices>
 </org.wbsilva.bence.graphgrammar:Graph>
