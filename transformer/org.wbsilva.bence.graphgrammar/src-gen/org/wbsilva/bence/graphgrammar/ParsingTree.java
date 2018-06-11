@@ -93,4 +93,12 @@ public interface ParsingTree extends EObject {
 	 */
 	EList<ParsingTree> getChildren();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	Derivation derivation();
+
 } // ParsingTree

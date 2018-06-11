@@ -2,7 +2,9 @@
  */
 package org.wbsilva.bence.graphgrammar.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,12 +18,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.wbsilva.bence.graphgrammar.Derivation;
 import org.wbsilva.bence.graphgrammar.DerivationStep;
+import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.ParsingTree;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
+import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -204,6 +210,22 @@ public class ParsingTreeImpl extends MinimalEObjectImpl.Container implements Par
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Derivation derivation() {
+		final Derivation derivation = GraphgrammarFactory.eINSTANCE.createDerivation();
+		
+		derivation.getSteps().add(EcoreUtil.copy(this.getDerivationStep()));
+		derivation.getSteps().addAll(this.getChildren().stream()
+										.flatMap(pt -> pt.derivation().getSteps().stream())
+										.collect(Collectors.toList()));
+		
+		return derivation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -297,6 +319,20 @@ public class ParsingTreeImpl extends MinimalEObjectImpl.Container implements Par
 			return children != null && !children.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case GraphgrammarPackage.PARSING_TREE___DERIVATION:
+			return derivation();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ParsingTreeImpl

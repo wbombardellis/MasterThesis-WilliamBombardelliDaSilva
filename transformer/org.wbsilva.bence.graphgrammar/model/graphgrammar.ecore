@@ -65,6 +65,7 @@
         eType="#//DerivationStep" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParsingTree">
+    <eOperations name="derivation" eType="#//Derivation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="zoneVertex" eType="#//ZoneVertex"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="derivationStep" eType="#//DerivationStep"
@@ -114,6 +115,54 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Vertex"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//Vertex"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//Symbol"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TripleGrammar">
+    <eOperations name="produce">
+      <eParameters name="tripleGraph" eType="#//TripleGraph"/>
+      <eParameters name="tripleRule" eType="#//TripleRule"/>
+      <eParameters name="forward" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alphabet" ordered="false"
+        upperBound="-1" eType="#//Symbol" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terminals" ordered="false"
+        upperBound="-1" eType="#//Symbol"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nonterminals" ordered="false"
+        upperBound="-1" eType="#//Symbol"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tripleRules" ordered="false"
+        upperBound="-1" eType="#//TripleRule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initial" eType="#//Symbol"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TripleRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Rule"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="corr" eType="#//Rule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Rule"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ms" ordered="false" upperBound="-1"
+        eType="#//VertexToVertexMap" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mt" ordered="false" upperBound="-1"
+        eType="#//VertexToVertexMap" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TripleGraph">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Graph"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="corr" eType="#//Graph"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Graph"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ms" upperBound="-1" eType="#//VertexToVertexMap"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mt" upperBound="-1" eType="#//VertexToVertexMap"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VertexToVertexMap" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//Vertex"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Vertex"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -129,6 +129,26 @@ public class GraphgrammarAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseTripleGrammar(TripleGrammar object) {
+			return createTripleGrammarAdapter();
+		}
+
+		@Override
+		public Adapter caseTripleRule(TripleRule object) {
+			return createTripleRuleAdapter();
+		}
+
+		@Override
+		public Adapter caseTripleGraph(TripleGraph object) {
+			return createTripleGraphAdapter();
+		}
+
+		@Override
+		public Adapter caseVertexToVertexMap(Map.Entry<Vertex, Vertex> object) {
+			return createVertexToVertexMapAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -312,6 +332,62 @@ public class GraphgrammarAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEdgeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bence.graphgrammar.TripleGrammar <em>Triple Grammar</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar
+	 * @generated
+	 */
+	public Adapter createTripleGrammarAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bence.graphgrammar.TripleRule <em>Triple Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bence.graphgrammar.TripleRule
+	 * @generated
+	 */
+	public Adapter createTripleRuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bence.graphgrammar.TripleGraph <em>Triple Graph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGraph
+	 * @generated
+	 */
+	public Adapter createTripleGraphAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Vertex To Vertex Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createVertexToVertexMapAdapter() {
 		return null;
 	}
 

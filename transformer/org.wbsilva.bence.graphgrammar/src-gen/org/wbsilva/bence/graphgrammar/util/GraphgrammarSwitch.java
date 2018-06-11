@@ -155,6 +155,35 @@ public class GraphgrammarSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case GraphgrammarPackage.TRIPLE_GRAMMAR: {
+			TripleGrammar tripleGrammar = (TripleGrammar) theEObject;
+			T result = caseTripleGrammar(tripleGrammar);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case GraphgrammarPackage.TRIPLE_RULE: {
+			TripleRule tripleRule = (TripleRule) theEObject;
+			T result = caseTripleRule(tripleRule);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case GraphgrammarPackage.TRIPLE_GRAPH: {
+			TripleGraph tripleGraph = (TripleGraph) theEObject;
+			T result = caseTripleGraph(tripleGraph);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case GraphgrammarPackage.VERTEX_TO_VERTEX_MAP: {
+			@SuppressWarnings("unchecked")
+			Map.Entry<Vertex, Vertex> vertexToVertexMap = (Map.Entry<Vertex, Vertex>) theEObject;
+			T result = caseVertexToVertexMap(vertexToVertexMap);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -337,6 +366,66 @@ public class GraphgrammarSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEdge(Edge object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Triple Grammar</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Triple Grammar</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTripleGrammar(TripleGrammar object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Triple Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Triple Rule</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTripleRule(TripleRule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Triple Graph</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Triple Graph</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTripleGraph(TripleGraph object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vertex To Vertex Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vertex To Vertex Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVertexToVertexMap(Map.Entry<Vertex, Vertex> object) {
 		return null;
 	}
 

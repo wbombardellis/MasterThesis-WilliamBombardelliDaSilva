@@ -82,6 +82,14 @@ public class GraphgrammarFactoryImpl extends EFactoryImpl implements Graphgramma
 			return createZoneVertex();
 		case GraphgrammarPackage.EDGE:
 			return createEdge();
+		case GraphgrammarPackage.TRIPLE_GRAMMAR:
+			return createTripleGrammar();
+		case GraphgrammarPackage.TRIPLE_RULE:
+			return createTripleRule();
+		case GraphgrammarPackage.TRIPLE_GRAPH:
+			return createTripleGraph();
+		case GraphgrammarPackage.VERTEX_TO_VERTEX_MAP:
+			return (EObject) createVertexToVertexMap();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -205,6 +213,46 @@ public class GraphgrammarFactoryImpl extends EFactoryImpl implements Graphgramma
 	public Edge createEdge() {
 		EdgeImpl edge = new EdgeImpl();
 		return edge;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TripleGrammar createTripleGrammar() {
+		TripleGrammarImpl tripleGrammar = new TripleGrammarImpl();
+		return tripleGrammar;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TripleRule createTripleRule() {
+		TripleRuleImpl tripleRule = new TripleRuleImpl();
+		return tripleRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TripleGraph createTripleGraph() {
+		TripleGraphImpl tripleGraph = new TripleGraphImpl();
+		return tripleGraph;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<Vertex, Vertex> createVertexToVertexMap() {
+		VertexToVertexMapImpl vertexToVertexMap = new VertexToVertexMapImpl();
+		return vertexToVertexMap;
 	}
 
 	/**

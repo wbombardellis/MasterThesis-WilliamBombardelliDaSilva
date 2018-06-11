@@ -121,6 +121,33 @@ public interface GraphgrammarFactory extends EFactory {
 	Edge createEdge();
 
 	/**
+	 * Returns a new object of class '<em>Triple Grammar</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Triple Grammar</em>'.
+	 * @generated
+	 */
+	TripleGrammar createTripleGrammar();
+
+	/**
+	 * Returns a new object of class '<em>Triple Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Triple Rule</em>'.
+	 * @generated
+	 */
+	TripleRule createTripleRule();
+
+	/**
+	 * Returns a new object of class '<em>Triple Graph</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Triple Graph</em>'.
+	 * @generated
+	 */
+	TripleGraph createTripleGraph();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

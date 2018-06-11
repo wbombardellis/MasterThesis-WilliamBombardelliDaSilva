@@ -21,6 +21,9 @@ import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.ParsingTree;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
+import org.wbsilva.bence.graphgrammar.TripleGrammar;
+import org.wbsilva.bence.graphgrammar.TripleGraph;
+import org.wbsilva.bence.graphgrammar.TripleRule;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.VertexLabelPair;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
@@ -106,6 +109,34 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	private EClass edgeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tripleGrammarEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tripleRuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tripleGraphEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass vertexToVertexMapEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -499,6 +530,15 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getParsingTree__Derivation() {
+		return parsingTreeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getGraph() {
 		return graphEClass;
 	}
@@ -679,6 +719,222 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTripleGrammar() {
+		return tripleGrammarEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTripleGrammar_Id() {
+		return (EAttribute) tripleGrammarEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTripleGrammar_Name() {
+		return (EAttribute) tripleGrammarEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleGrammar_Alphabet() {
+		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleGrammar_Terminals() {
+		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleGrammar_Nonterminals() {
+		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleGrammar_TripleRules() {
+		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleGrammar_Initial() {
+		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTripleGrammar__Produce__TripleGraph_TripleRule_boolean() {
+		return tripleGrammarEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTripleRule() {
+		return tripleRuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleRule_Source() {
+		return (EReference) tripleRuleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleRule_Corr() {
+		return (EReference) tripleRuleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleRule_Target() {
+		return (EReference) tripleRuleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleRule_Ms() {
+		return (EReference) tripleRuleEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleRule_Mt() {
+		return (EReference) tripleRuleEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTripleGraph() {
+		return tripleGraphEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleGraph_Source() {
+		return (EReference) tripleGraphEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleGraph_Corr() {
+		return (EReference) tripleGraphEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleGraph_Target() {
+		return (EReference) tripleGraphEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleGraph_Ms() {
+		return (EReference) tripleGraphEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTripleGraph_Mt() {
+		return (EReference) tripleGraphEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getVertexToVertexMap() {
+		return vertexToVertexMapEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVertexToVertexMap_Key() {
+		return (EReference) vertexToVertexMapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVertexToVertexMap_Value() {
+		return (EReference) vertexToVertexMapEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GraphgrammarFactory getGraphgrammarFactory() {
 		return (GraphgrammarFactory) getEFactoryInstance();
 	}
@@ -746,6 +1002,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(parsingTreeEClass, PARSING_TREE__ZONE_VERTEX);
 		createEReference(parsingTreeEClass, PARSING_TREE__DERIVATION_STEP);
 		createEReference(parsingTreeEClass, PARSING_TREE__CHILDREN);
+		createEOperation(parsingTreeEClass, PARSING_TREE___DERIVATION);
 
 		graphEClass = createEClass(GRAPH);
 		createEAttribute(graphEClass, GRAPH__ID);
@@ -770,6 +1027,34 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(edgeEClass, EDGE__TO);
 		createEReference(edgeEClass, EDGE__LABEL);
 		createEOperation(edgeEClass, EDGE___COMPARE_TO__EDGE);
+
+		tripleGrammarEClass = createEClass(TRIPLE_GRAMMAR);
+		createEAttribute(tripleGrammarEClass, TRIPLE_GRAMMAR__ID);
+		createEAttribute(tripleGrammarEClass, TRIPLE_GRAMMAR__NAME);
+		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__ALPHABET);
+		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__TERMINALS);
+		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__NONTERMINALS);
+		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__TRIPLE_RULES);
+		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__INITIAL);
+		createEOperation(tripleGrammarEClass, TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_TRIPLERULE_BOOLEAN);
+
+		tripleRuleEClass = createEClass(TRIPLE_RULE);
+		createEReference(tripleRuleEClass, TRIPLE_RULE__SOURCE);
+		createEReference(tripleRuleEClass, TRIPLE_RULE__CORR);
+		createEReference(tripleRuleEClass, TRIPLE_RULE__TARGET);
+		createEReference(tripleRuleEClass, TRIPLE_RULE__MS);
+		createEReference(tripleRuleEClass, TRIPLE_RULE__MT);
+
+		tripleGraphEClass = createEClass(TRIPLE_GRAPH);
+		createEReference(tripleGraphEClass, TRIPLE_GRAPH__SOURCE);
+		createEReference(tripleGraphEClass, TRIPLE_GRAPH__CORR);
+		createEReference(tripleGraphEClass, TRIPLE_GRAPH__TARGET);
+		createEReference(tripleGraphEClass, TRIPLE_GRAPH__MS);
+		createEReference(tripleGraphEClass, TRIPLE_GRAPH__MT);
+
+		vertexToVertexMapEClass = createEClass(VERTEX_TO_VERTEX_MAP);
+		createEReference(vertexToVertexMapEClass, VERTEX_TO_VERTEX_MAP__KEY);
+		createEReference(vertexToVertexMapEClass, VERTEX_TO_VERTEX_MAP__VALUE);
 	}
 
 	/**
@@ -906,6 +1191,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 				ParsingTree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEOperation(getParsingTree__Derivation(), this.getDerivation(), "derivation", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(graphEClass, Graph.class, "Graph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGraph_Id(), ecorePackage.getEString(), "id", "", 0, 1, Graph.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -961,6 +1248,79 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		op = initEOperation(getEdge__CompareTo__Edge(), ecorePackage.getEInt(), "compareTo", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 		addEParameter(op, this.getEdge(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(tripleGrammarEClass, TripleGrammar.class, "TripleGrammar", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTripleGrammar_Id(), ecorePackage.getEString(), "id", null, 0, 1, TripleGrammar.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTripleGrammar_Name(), ecorePackage.getEString(), "name", null, 0, 1, TripleGrammar.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTripleGrammar_Alphabet(), this.getSymbol(), null, "alphabet", null, 0, -1,
+				TripleGrammar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTripleGrammar_Terminals(), this.getSymbol(), null, "terminals", null, 0, -1,
+				TripleGrammar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTripleGrammar_Nonterminals(), this.getSymbol(), null, "nonterminals", null, 0, -1,
+				TripleGrammar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTripleGrammar_TripleRules(), this.getTripleRule(), null, "tripleRules", null, 0, -1,
+				TripleGrammar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTripleGrammar_Initial(), this.getSymbol(), null, "initial", null, 0, 1, TripleGrammar.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getTripleGrammar__Produce__TripleGraph_TripleRule_boolean(), null, "produce", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTripleGraph(), "tripleGraph", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTripleRule(), "tripleRule", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "forward", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(tripleRuleEClass, TripleRule.class, "TripleRule", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTripleRule_Source(), this.getRule(), null, "source", null, 0, 1, TripleRule.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTripleRule_Corr(), this.getRule(), null, "corr", null, 0, 1, TripleRule.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getTripleRule_Target(), this.getRule(), null, "target", null, 0, 1, TripleRule.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTripleRule_Ms(), this.getVertexToVertexMap(), null, "ms", null, 0, -1, TripleRule.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTripleRule_Mt(), this.getVertexToVertexMap(), null, "mt", null, 0, -1, TripleRule.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(tripleGraphEClass, TripleGraph.class, "TripleGraph", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTripleGraph_Source(), this.getGraph(), null, "source", null, 0, 1, TripleGraph.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTripleGraph_Corr(), this.getGraph(), null, "corr", null, 0, 1, TripleGraph.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTripleGraph_Target(), this.getGraph(), null, "target", null, 0, 1, TripleGraph.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTripleGraph_Ms(), this.getVertexToVertexMap(), null, "ms", null, 0, -1, TripleGraph.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTripleGraph_Mt(), this.getVertexToVertexMap(), null, "mt", null, 0, -1, TripleGraph.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(vertexToVertexMapEClass, Map.Entry.class, "VertexToVertexMap", !IS_ABSTRACT, !IS_INTERFACE,
+				!IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVertexToVertexMap_Key(), this.getVertex(), null, "key", null, 0, 1, Map.Entry.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVertexToVertexMap_Value(), this.getVertex(), null, "value", null, 0, 1, Map.Entry.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

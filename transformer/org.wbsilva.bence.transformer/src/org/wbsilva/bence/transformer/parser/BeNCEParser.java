@@ -44,7 +44,7 @@ public class BeNCEParser {
 		assert graph != null;
 		
 		//Sanitize ids
-		ensureUniqueIds(graph);
+		//ensureUniqueIds(graph);
 		
 		//Create bottom-up parse set
 		final Bup bup = new Bup(zoneVertices(graph.getVertices()));
@@ -104,21 +104,6 @@ public class BeNCEParser {
 			return parsingTree;
 		} else {
 			return null;
-		}
-	}
-
-	private synchronized void ensureUniqueIds(final Graph graph) {
-		//IDs for the host graph
-		GraphgrammarUtil.ensureUniqueIds(graph);
-		
-		//IDs for the right hand side of grammar rules
-		grammar.setId(EcoreUtil.generateUUID());
-		for (Rule r : grammar.getRules()) {
-			r.setId(EcoreUtil.generateUUID());
-			r.getRhs().setId(EcoreUtil.generateUUID());
-			for (Vertex v : r.getRhs().getVertices()) {
-				v.setId(EcoreUtil.generateUUID());
-			}
 		}
 	}
 

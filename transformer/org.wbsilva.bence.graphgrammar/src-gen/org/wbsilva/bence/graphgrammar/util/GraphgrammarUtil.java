@@ -8,8 +8,12 @@ import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.wbsilva.bence.graphgrammar.Edge;
+import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
+import org.wbsilva.bence.graphgrammar.Rule;
+import org.wbsilva.bence.graphgrammar.TripleGrammar;
+import org.wbsilva.bence.graphgrammar.TripleRule;
 import org.wbsilva.bence.graphgrammar.Vertex;
 
 /**
@@ -78,6 +82,34 @@ public class GraphgrammarUtil {
 		graph.setId(EcoreUtil.generateUUID());
 		for (Vertex v : graph.getVertices()) {
 			v.setId(EcoreUtil.generateUUID());
+		}
+	}
+	
+	public static void ensureUniqueIds(final Graph graph, final TripleGrammar grammar) {
+		//IDs for the host graph
+		GraphgrammarUtil.ensureUniqueIds(graph);
+		
+		//IDs for the right hand side of grammar rules
+		grammar.setId(EcoreUtil.generateUUID());
+		for (TripleRule r : grammar.getTripleRules()) {
+			final String id = EcoreUtil.generateUUID();
+			
+			r.getSource().setId(id);
+			r.getCorr().setId(id);
+			r.getTarget().setId(id);
+			
+			r.getSource().getRhs().setId(EcoreUtil.generateUUID());
+			for (Vertex v : r.getSource().getRhs().getVertices()) {
+				v.setId(EcoreUtil.generateUUID());
+			}
+			r.getCorr().getRhs().setId(EcoreUtil.generateUUID());
+			for (Vertex v : r.getCorr().getRhs().getVertices()) {
+				v.setId(EcoreUtil.generateUUID());
+			}
+			r.getTarget().getRhs().setId(EcoreUtil.generateUUID());
+			for (Vertex v : r.getTarget().getRhs().getVertices()) {
+				v.setId(EcoreUtil.generateUUID());
+			}
 		}
 	}
 }

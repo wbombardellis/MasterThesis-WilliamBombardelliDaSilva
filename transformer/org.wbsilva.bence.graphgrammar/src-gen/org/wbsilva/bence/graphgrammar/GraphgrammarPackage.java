@@ -525,13 +525,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int PARSING_TREE_FEATURE_COUNT = 3;
 
 	/**
+	 * The operation id for the '<em>Derivation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARSING_TREE___DERIVATION = 0;
+
+	/**
 	 * The number of operations of the '<em>Parsing Tree</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARSING_TREE_OPERATION_COUNT = 0;
+	int PARSING_TREE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.GraphImpl <em>Graph</em>}' class.
@@ -806,6 +815,298 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDGE_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.TripleGrammarImpl <em>Triple Grammar</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bence.graphgrammar.impl.TripleGrammarImpl
+	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getTripleGrammar()
+	 * @generated
+	 */
+	int TRIPLE_GRAMMAR = 12;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAMMAR__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAMMAR__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Alphabet</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAMMAR__ALPHABET = 2;
+
+	/**
+	 * The feature id for the '<em><b>Terminals</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAMMAR__TERMINALS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Nonterminals</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAMMAR__NONTERMINALS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Triple Rules</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAMMAR__TRIPLE_RULES = 5;
+
+	/**
+	 * The feature id for the '<em><b>Initial</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAMMAR__INITIAL = 6;
+
+	/**
+	 * The number of structural features of the '<em>Triple Grammar</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAMMAR_FEATURE_COUNT = 7;
+
+	/**
+	 * The operation id for the '<em>Produce</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_TRIPLERULE_BOOLEAN = 0;
+
+	/**
+	 * The number of operations of the '<em>Triple Grammar</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAMMAR_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.TripleRuleImpl <em>Triple Rule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bence.graphgrammar.impl.TripleRuleImpl
+	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getTripleRule()
+	 * @generated
+	 */
+	int TRIPLE_RULE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_RULE__SOURCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Corr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_RULE__CORR = 1;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_RULE__TARGET = 2;
+
+	/**
+	 * The feature id for the '<em><b>Ms</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_RULE__MS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Mt</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_RULE__MT = 4;
+
+	/**
+	 * The number of structural features of the '<em>Triple Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_RULE_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Triple Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_RULE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.TripleGraphImpl <em>Triple Graph</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bence.graphgrammar.impl.TripleGraphImpl
+	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getTripleGraph()
+	 * @generated
+	 */
+	int TRIPLE_GRAPH = 14;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAPH__SOURCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Corr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAPH__CORR = 1;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAPH__TARGET = 2;
+
+	/**
+	 * The feature id for the '<em><b>Ms</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAPH__MS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Mt</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAPH__MT = 4;
+
+	/**
+	 * The number of structural features of the '<em>Triple Graph</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAPH_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Triple Graph</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAPH_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexToVertexMapImpl <em>Vertex To Vertex Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bence.graphgrammar.impl.VertexToVertexMapImpl
+	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertexToVertexMap()
+	 * @generated
+	 */
+	int VERTEX_TO_VERTEX_MAP = 15;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX_TO_VERTEX_MAP__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX_TO_VERTEX_MAP__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Vertex To Vertex Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX_TO_VERTEX_MAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Vertex To Vertex Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX_TO_VERTEX_MAP_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Grammar <em>Grammar</em>}'.
@@ -1196,6 +1497,16 @@ public interface GraphgrammarPackage extends EPackage {
 	EReference getParsingTree_Children();
 
 	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.ParsingTree#derivation() <em>Derivation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Derivation</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.ParsingTree#derivation()
+	 * @generated
+	 */
+	EOperation getParsingTree__Derivation();
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Graph <em>Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1404,6 +1715,267 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getEdge__CompareTo__Edge();
+
+	/**
+	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.TripleGrammar <em>Triple Grammar</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Triple Grammar</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar
+	 * @generated
+	 */
+	EClass getTripleGrammar();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#getId()
+	 * @see #getTripleGrammar()
+	 * @generated
+	 */
+	EAttribute getTripleGrammar_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#getName()
+	 * @see #getTripleGrammar()
+	 * @generated
+	 */
+	EAttribute getTripleGrammar_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#getAlphabet <em>Alphabet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Alphabet</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#getAlphabet()
+	 * @see #getTripleGrammar()
+	 * @generated
+	 */
+	EReference getTripleGrammar_Alphabet();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#getTerminals <em>Terminals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Terminals</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#getTerminals()
+	 * @see #getTripleGrammar()
+	 * @generated
+	 */
+	EReference getTripleGrammar_Terminals();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#getNonterminals <em>Nonterminals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Nonterminals</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#getNonterminals()
+	 * @see #getTripleGrammar()
+	 * @generated
+	 */
+	EReference getTripleGrammar_Nonterminals();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#getTripleRules <em>Triple Rules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Triple Rules</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#getTripleRules()
+	 * @see #getTripleGrammar()
+	 * @generated
+	 */
+	EReference getTripleGrammar_TripleRules();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#getInitial <em>Initial</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Initial</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#getInitial()
+	 * @see #getTripleGrammar()
+	 * @generated
+	 */
+	EReference getTripleGrammar_Initial();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#produce(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.TripleRule, boolean) <em>Produce</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Produce</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#produce(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.TripleRule, boolean)
+	 * @generated
+	 */
+	EOperation getTripleGrammar__Produce__TripleGraph_TripleRule_boolean();
+
+	/**
+	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.TripleRule <em>Triple Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Triple Rule</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleRule
+	 * @generated
+	 */
+	EClass getTripleRule();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.TripleRule#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Source</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleRule#getSource()
+	 * @see #getTripleRule()
+	 * @generated
+	 */
+	EReference getTripleRule_Source();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.TripleRule#getCorr <em>Corr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Corr</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleRule#getCorr()
+	 * @see #getTripleRule()
+	 * @generated
+	 */
+	EReference getTripleRule_Corr();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.TripleRule#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Target</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleRule#getTarget()
+	 * @see #getTripleRule()
+	 * @generated
+	 */
+	EReference getTripleRule_Target();
+
+	/**
+	 * Returns the meta object for the map '{@link org.wbsilva.bence.graphgrammar.TripleRule#getMs <em>Ms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>Ms</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleRule#getMs()
+	 * @see #getTripleRule()
+	 * @generated
+	 */
+	EReference getTripleRule_Ms();
+
+	/**
+	 * Returns the meta object for the map '{@link org.wbsilva.bence.graphgrammar.TripleRule#getMt <em>Mt</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>Mt</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleRule#getMt()
+	 * @see #getTripleRule()
+	 * @generated
+	 */
+	EReference getTripleRule_Mt();
+
+	/**
+	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.TripleGraph <em>Triple Graph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Triple Graph</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGraph
+	 * @generated
+	 */
+	EClass getTripleGraph();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.TripleGraph#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Source</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGraph#getSource()
+	 * @see #getTripleGraph()
+	 * @generated
+	 */
+	EReference getTripleGraph_Source();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.TripleGraph#getCorr <em>Corr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Corr</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGraph#getCorr()
+	 * @see #getTripleGraph()
+	 * @generated
+	 */
+	EReference getTripleGraph_Corr();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.TripleGraph#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Target</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGraph#getTarget()
+	 * @see #getTripleGraph()
+	 * @generated
+	 */
+	EReference getTripleGraph_Target();
+
+	/**
+	 * Returns the meta object for the map '{@link org.wbsilva.bence.graphgrammar.TripleGraph#getMs <em>Ms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>Ms</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGraph#getMs()
+	 * @see #getTripleGraph()
+	 * @generated
+	 */
+	EReference getTripleGraph_Ms();
+
+	/**
+	 * Returns the meta object for the map '{@link org.wbsilva.bence.graphgrammar.TripleGraph#getMt <em>Mt</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>Mt</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGraph#getMt()
+	 * @see #getTripleGraph()
+	 * @generated
+	 */
+	EReference getTripleGraph_Mt();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Vertex To Vertex Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Vertex To Vertex Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyType="org.wbsilva.bence.graphgrammar.Vertex" keyContainment="true"
+	 *        valueType="org.wbsilva.bence.graphgrammar.Vertex" valueContainment="true"
+	 * @generated
+	 */
+	EClass getVertexToVertexMap();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getVertexToVertexMap()
+	 * @generated
+	 */
+	EReference getVertexToVertexMap_Key();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getVertexToVertexMap()
+	 * @generated
+	 */
+	EReference getVertexToVertexMap_Value();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1698,6 +2270,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EReference PARSING_TREE__CHILDREN = eINSTANCE.getParsingTree_Children();
 		/**
+		 * The meta object literal for the '<em><b>Derivation</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PARSING_TREE___DERIVATION = eINSTANCE.getParsingTree__Derivation();
+		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.GraphImpl <em>Graph</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1845,6 +2424,183 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation EDGE___COMPARE_TO__EDGE = eINSTANCE.getEdge__CompareTo__Edge();
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.TripleGrammarImpl <em>Triple Grammar</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bence.graphgrammar.impl.TripleGrammarImpl
+		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getTripleGrammar()
+		 * @generated
+		 */
+		EClass TRIPLE_GRAMMAR = eINSTANCE.getTripleGrammar();
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRIPLE_GRAMMAR__ID = eINSTANCE.getTripleGrammar_Id();
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRIPLE_GRAMMAR__NAME = eINSTANCE.getTripleGrammar_Name();
+		/**
+		 * The meta object literal for the '<em><b>Alphabet</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_GRAMMAR__ALPHABET = eINSTANCE.getTripleGrammar_Alphabet();
+		/**
+		 * The meta object literal for the '<em><b>Terminals</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_GRAMMAR__TERMINALS = eINSTANCE.getTripleGrammar_Terminals();
+		/**
+		 * The meta object literal for the '<em><b>Nonterminals</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_GRAMMAR__NONTERMINALS = eINSTANCE.getTripleGrammar_Nonterminals();
+		/**
+		 * The meta object literal for the '<em><b>Triple Rules</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_GRAMMAR__TRIPLE_RULES = eINSTANCE.getTripleGrammar_TripleRules();
+		/**
+		 * The meta object literal for the '<em><b>Initial</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_GRAMMAR__INITIAL = eINSTANCE.getTripleGrammar_Initial();
+		/**
+		 * The meta object literal for the '<em><b>Produce</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_TRIPLERULE_BOOLEAN = eINSTANCE
+				.getTripleGrammar__Produce__TripleGraph_TripleRule_boolean();
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.TripleRuleImpl <em>Triple Rule</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bence.graphgrammar.impl.TripleRuleImpl
+		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getTripleRule()
+		 * @generated
+		 */
+		EClass TRIPLE_RULE = eINSTANCE.getTripleRule();
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_RULE__SOURCE = eINSTANCE.getTripleRule_Source();
+		/**
+		 * The meta object literal for the '<em><b>Corr</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_RULE__CORR = eINSTANCE.getTripleRule_Corr();
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_RULE__TARGET = eINSTANCE.getTripleRule_Target();
+		/**
+		 * The meta object literal for the '<em><b>Ms</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_RULE__MS = eINSTANCE.getTripleRule_Ms();
+		/**
+		 * The meta object literal for the '<em><b>Mt</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_RULE__MT = eINSTANCE.getTripleRule_Mt();
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.TripleGraphImpl <em>Triple Graph</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bence.graphgrammar.impl.TripleGraphImpl
+		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getTripleGraph()
+		 * @generated
+		 */
+		EClass TRIPLE_GRAPH = eINSTANCE.getTripleGraph();
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_GRAPH__SOURCE = eINSTANCE.getTripleGraph_Source();
+		/**
+		 * The meta object literal for the '<em><b>Corr</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_GRAPH__CORR = eINSTANCE.getTripleGraph_Corr();
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_GRAPH__TARGET = eINSTANCE.getTripleGraph_Target();
+		/**
+		 * The meta object literal for the '<em><b>Ms</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_GRAPH__MS = eINSTANCE.getTripleGraph_Ms();
+		/**
+		 * The meta object literal for the '<em><b>Mt</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIPLE_GRAPH__MT = eINSTANCE.getTripleGraph_Mt();
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexToVertexMapImpl <em>Vertex To Vertex Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bence.graphgrammar.impl.VertexToVertexMapImpl
+		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertexToVertexMap()
+		 * @generated
+		 */
+		EClass VERTEX_TO_VERTEX_MAP = eINSTANCE.getVertexToVertexMap();
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VERTEX_TO_VERTEX_MAP__KEY = eINSTANCE.getVertexToVertexMap_Key();
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VERTEX_TO_VERTEX_MAP__VALUE = eINSTANCE.getVertexToVertexMap_Value();
 
 	}
 
