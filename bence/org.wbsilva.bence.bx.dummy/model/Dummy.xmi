@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<org.wbsilva.bence.graphgrammar:Grammar
+<org.wbsilva.bence.graphgrammar:TripleGrammar
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar"
     xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore"
-    name="dummy"
-    terminals="//@alphabet.0"
-    nonterminals="//@alphabet.1"
-    initial="//@alphabet.1">
-  <alphabet
-      name="a"/>
+    name="a2b"
+    terminals="//@alphabet.1 //@alphabet.2"
+    nonterminals="//@alphabet.0"
+    initial="//@alphabet.0">
   <alphabet
       name="S"/>
   <alphabet
+      name="a"/>
+  <alphabet
       name="b"/>
-  <rules name="r0">
-    <lhs name="S"/>
-    <rhs>
-      <vertices
-          id="0">
-        <label
-            name="a"/>
-      </vertices>
-      <vertices>
-        <label
-            name="b"/>
-      </vertices>
-    </rhs>
-  </rules>
-</org.wbsilva.bence.graphgrammar:Grammar>
+  <tripleRules>
+    <source
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="a">
+          <label
+              name="a"/>
+        </vertices>
+      </rhs>
+    </source>
+    <corr name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="a">
+          <label
+              name="a"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="b">
+          <label
+              name="b"/>
+        </vertices>
+      </rhs>
+    </target>
+  </tripleRules>
+</org.wbsilva.bence.graphgrammar:TripleGrammar>
