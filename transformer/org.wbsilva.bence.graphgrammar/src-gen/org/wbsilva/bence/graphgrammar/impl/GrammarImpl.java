@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
@@ -21,14 +21,14 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.wbsilva.bence.graphgrammar.Edge;
+import org.wbsilva.bence.graphgrammar.DerivationStep;
 import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
+import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.Vertex;
-import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -287,7 +287,7 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public Rule derives(Graph prev, Graph next, Vertex vertex, Graph rhs) {
+	public DerivationStep derives(Graph prev, Graph next, Vertex vertex, Graph rhs) {
 		//TODO: Assert grammar is validated
 		final Rule rule = this.getRules().stream()
 				.filter(r -> EcoreUtil.equals(r.getLhs(), vertex.getLabel()) && r.getRhs().isomorphicTo(rhs)).findAny()
@@ -302,31 +302,19 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 			for (Vertex v : possibleVertices) {
 				final Graph g = EcoreUtil.copy(prev);
 
-				//TODO: assert unique ids
-				final Set<Edge> vEdges = g.getEdges().stream()
-						.filter(e -> e.getFrom().getId().equals(v.getId()) || e.getTo().getId().equals(v.getId()))
-						.collect(Collectors.toSet());
-
-				final Vertex gV = g.getVertices().stream().filter(w -> w.getId().equals(v.getId())).findAny()
-						.orElse(null);
-				assert gV != null;
-
-				g.getVertices().remove(gV);
-
-				g.getEdges().removeAll(vEdges);
-
-				g.getVertices()
-						.addAll(rhs.getVertices().stream().map(w -> EcoreUtil.copy(w)).collect(Collectors.toSet()));
-
-				g.getEdges().addAll(rhs.getEdges().stream().map(e -> EcoreUtil.copy(e)).collect(Collectors.toSet()));
-
-				g.getEdges().addAll(rule.embed(g, new BasicEList<Edge>(vEdges)));
-
-				GraphgrammarUtil.ensureUniqueIds(g);
+				EMap<Vertex,Vertex> unifier = rule.apply(g, v);
 
 				//TODO: temporary costly implementation. I guess it is enough to check the vEdges correspondence between the 2 graphs
 				if (g.isomorphicTo(next)) {
-					return rule;
+					final DerivationStep newDS = GraphgrammarFactory.eINSTANCE.createDerivationStep();
+					newDS.setId(EcoreUtil.generateUUID());
+					newDS.setVertex(EcoreUtil.copy(vertex));
+					newDS.setRule(EcoreUtil.copy(rule));
+					newDS.setPrevious(prev);
+					newDS.setNext(g);
+					newDS.getUnifier().putAll(unifier);
+
+					return newDS;
 				}
 			}
 			return null;

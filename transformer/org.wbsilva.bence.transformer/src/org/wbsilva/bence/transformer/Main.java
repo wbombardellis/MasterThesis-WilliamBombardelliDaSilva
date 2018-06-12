@@ -1,7 +1,10 @@
 package org.wbsilva.bence.transformer;
 
+import java.util.Optional;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -40,6 +43,7 @@ public class Main {
 		
 			final String tripleGrammarPath;
 			final String inputGraphPath;
+			final String outputGraphPath;
 			boolean backward = false;
 			final boolean forward;
 			
@@ -60,11 +64,13 @@ public class Main {
 					i++;
 				}
 				
-				if (args.length == i+2) {
+				if (args.length == i+3) {
 					logger.debug("Path to triple graph grammar: " + args[i]);
 					logger.debug("Path to input graph: " + args[i+1]);
+					logger.debug("Path to output graph: " + args[i+2]);
 					tripleGrammarPath = args[i];
 					inputGraphPath = args[i+1];
+					outputGraphPath = args[i+2];
 				} else {
 					logger.error("Too much input arguments. Got "+args.length+" arguments. Aborting");
 					UIUtil.printUsage();
@@ -78,6 +84,7 @@ public class Main {
 			forward = !backward;
 			assert tripleGrammarPath != null;
 			assert inputGraphPath != null;
+			assert outputGraphPath != null;
 			
 			UIUtil.printStartReading();
 			
@@ -151,79 +158,30 @@ public class Main {
 			}
 			assert inputGraph != null;
 			
-			//TODO: Assert grammar is valid
-			GraphgrammarUtil.ensureUniqueIds(inputGraph, tripleGrammar);
+			final BeNCETransformer transformer = new BeNCETransformer(tripleGrammar);
+			final Optional<TransformationResult> result = transformer.transform(inputGraph, forward);
 			
-			//Construct source (or target) input grammar for the parsing of the input graph
-			final Grammar inputGrammar;
-			inputGrammar = GraphgrammarFactory.eINSTANCE.createGrammar();
-			inputGrammar.getTerminals().addAll(EcoreUtil.copyAll(tripleGrammar.getTerminals()));
-			inputGrammar.getNonterminals().addAll(EcoreUtil.copyAll(tripleGrammar.getNonterminals()));
-			inputGrammar.getAlphabet().addAll(inputGrammar.getTerminals());
-			inputGrammar.getAlphabet().addAll(inputGrammar.getNonterminals());
-			inputGrammar.setInitial(inputGrammar.getNonterminals().parallelStream()
-					.filter(s -> EcoreUtil.equals(s, tripleGrammar.getInitial()))
-					.findAny()
-					.orElse(null));
-			assert inputGrammar.getInitial() != null;
-			
-			if (forward) {
-				inputGrammar.setName(tripleGrammar.getName().concat(" - source"));
+			//Save generated triple graph to file
+			if (result.isPresent()) {
+				final Resource outputGraphResource = resSet.createResource(URI.createURI(outputGraphPath));
+				outputGraphResource.getContents().add(result.get().getTripleGraph());
+				outputGraphResource.getContents().add(result.get().getParsingTree());
 				
-				for (TripleRule tr : tripleGrammar.getTripleRules()) {
-					inputGrammar.getRules().add(EcoreUtil.copy(tr.getSource())); //TODO: Assure deeeeep copy here
-				}
-				logger.debug("Source grammar generated");
-			} else {				
-				inputGrammar.setName(tripleGrammar.getName().concat(" - target"));
+				logger.debug(String.format("Saving generated output triple graph and parsing tree to file %s", outputGraphPath));
 				
-				for (TripleRule tr : tripleGrammar.getTripleRules()) {
-					inputGrammar.getRules().add(EcoreUtil.copy(tr.getTarget())); //TODO: Assure deeeeep copy here
+				try {
+					TransformerUtil.saveResourceToFile(outputGraphResource);
+				} catch (Exception e) {
+					UIUtil.printFail();
+					return;
 				}
-				logger.debug("Target grammar generated");
-			}
-			
-			//Parse input graph
-			final BeNCEParser parser = new BeNCEParser(inputGrammar);
-			final ParsingTree parsingTree = parser.parse(inputGraph);
-			
-			//Construct output graph in form of a triple graph
-			if (parsingTree != null) {
-				final Derivation derivation = parsingTree.derivation();
+				logger.debug("Results saved successfully to output file");
 				
-				final TripleGraph tripleGraph = GraphgrammarFactory.eINSTANCE.createTripleGraph();
-				logger.debug("Starting final triple graph assembly");
-				if (forward) {
-					tripleGraph.setSource(inputGraph);
-					logger.debug(String.format("Source part added to triple graph: id= %s", inputGraph.getId()));
-				} else {
-					tripleGraph.setTarget(inputGraph);
-					logger.debug(String.format("Target part added to triple graph: id= %s", inputGraph.getId()));
-				}
-				
-				//Produce for each rule used in the parsing the respective target (or source) part of the triple graph
-				for (DerivationStep dStep : derivation.getSteps()) {
-					final TripleRule tripleRule = tripleGrammar.getTripleRules().parallelStream()
-						.filter(tr -> forward ? 
-								tr.getSource().getId().equals(dStep.getRule().getId())
-								: tr.getTarget().getId().equals(dStep.getRule().getId()))
-						.findAny()
-						.orElse(null);
-					assert tripleRule != null;
-					
-					tripleGrammar.produce(tripleGraph, tripleRule, forward);
-					
-					if (forward)
-						logger.debug(String.format("Rule [id= %s, name= %s] applied to the triple graph. Target graph size= %s", tripleRule.getSource().getId(), tripleRule.getSource().getName(), tripleGraph.getTarget().getVertices().size()));
-					else
-						logger.debug(String.format("Rule [id= %s, name= %s] applied to the triple graph. Source graph size= %s", tripleRule.getTarget().getId(), tripleRule.getTarget().getName(), tripleGraph.getSource().getVertices().size()));
-					
-
-					//TODO: Save triple graph to file
-					//TODO: Save Derivation to file
-				}
+				UIUtil.printFinishSaving();				
 			} else {
-				logger.debug("Could not parse input graph using the input grammar");
+				logger.debug("Transformation finished withouth success. Nothing to save as output.");
+				
+				UIUtil.printTransformationFail();
 			}
 			
 			UIUtil.printSuccess();

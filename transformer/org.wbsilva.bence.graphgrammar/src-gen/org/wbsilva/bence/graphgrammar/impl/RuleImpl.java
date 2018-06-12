@@ -4,14 +4,16 @@ package org.wbsilva.bence.graphgrammar.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.Optional;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreEMap;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Graph;
@@ -32,6 +35,7 @@ import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.VertexLabelPair;
+import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -379,6 +383,46 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EMap<Vertex, Vertex> apply(Graph graph, Vertex vertex) {
+		//TODO: What if rule cannot be applied
+		//TODO: assert unique ids
+		final Set<Edge> vEdges = graph.getEdges().stream()
+				.filter(e -> e.getFrom().getId().equals(vertex.getId()) || e.getTo().getId().equals(vertex.getId()))
+				.collect(Collectors.toSet());
+
+		final Vertex gV = graph.getVertices().stream().filter(w -> w.getId().equals(vertex.getId())).findAny()
+				.orElse(null);
+		assert gV != null;
+
+		graph.getVertices().remove(gV);
+
+		graph.getEdges().removeAll(vEdges);
+
+		final int newVerticesSize = this.getRhs().getVertices().size();
+		final EMap<Vertex,Vertex> unifier = new BasicEMap<Vertex, Vertex>(newVerticesSize);
+		final Set<Vertex> newVertices = new HashSet<Vertex>(newVerticesSize);
+		for (Vertex w : this.getRhs().getVertices()) {
+			final Vertex newW = EcoreUtil.copy(w);
+			unifier.put(w, newW);
+			newVertices.add(newW);
+		}
+		GraphgrammarUtil.ensureUniqueIds(newVertices);
+
+		graph.getVertices().addAll(newVertices);
+
+		graph.getEdges()
+				.addAll(this.getRhs().getEdges().stream().map(e -> EcoreUtil.copy(e)).collect(Collectors.toSet()));
+
+		graph.getEdges().addAll(this.embed(graph, new BasicEList<Edge>(vEdges)));
+		
+		return unifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -518,6 +562,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 		switch (operationID) {
 		case GraphgrammarPackage.RULE___EMBED__GRAPH_ELIST:
 			return embed((Graph) arguments.get(0), (EList<Edge>) arguments.get(1));
+		case GraphgrammarPackage.RULE___APPLY__GRAPH_VERTEX:
+			return apply((Graph) arguments.get(0), (Vertex) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

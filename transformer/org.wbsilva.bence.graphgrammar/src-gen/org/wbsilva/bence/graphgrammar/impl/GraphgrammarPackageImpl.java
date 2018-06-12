@@ -359,6 +359,15 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getRule__Apply__Graph_Vertex() {
+		return ruleEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVertexLabelPair() {
 		return vertexLabelPairEClass;
 	}
@@ -460,6 +469,33 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 */
 	public EReference getDerivationStep_Vertex() {
 		return (EReference) derivationStepEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDerivationStep_Previous() {
+		return (EReference) derivationStepEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDerivationStep_Next() {
+		return (EReference) derivationStepEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDerivationStep_Unifier() {
+		return (EReference) derivationStepEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -791,7 +827,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTripleGrammar__Produce__TripleGraph_TripleRule_boolean() {
+	public EOperation getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean() {
 		return tripleGrammarEClass.getEOperations().get(0);
 	}
 
@@ -908,6 +944,24 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getTripleGraph__InvMs__Vertex() {
+		return tripleGraphEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTripleGraph__InvMt__Vertex() {
+		return tripleGraphEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVertexToVertexMap() {
 		return vertexToVertexMapEClass;
 	}
@@ -977,6 +1031,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(ruleEClass, RULE__EMBEDDING);
 		createEReference(ruleEClass, RULE__PAC);
 		createEOperation(ruleEClass, RULE___EMBED__GRAPH_ELIST);
+		createEOperation(ruleEClass, RULE___APPLY__GRAPH_VERTEX);
 
 		vertexLabelPairEClass = createEClass(VERTEX_LABEL_PAIR);
 		createEReference(vertexLabelPairEClass, VERTEX_LABEL_PAIR__VERTEX);
@@ -993,6 +1048,9 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEAttribute(derivationStepEClass, DERIVATION_STEP__ID);
 		createEReference(derivationStepEClass, DERIVATION_STEP__RULE);
 		createEReference(derivationStepEClass, DERIVATION_STEP__VERTEX);
+		createEReference(derivationStepEClass, DERIVATION_STEP__PREVIOUS);
+		createEReference(derivationStepEClass, DERIVATION_STEP__NEXT);
+		createEReference(derivationStepEClass, DERIVATION_STEP__UNIFIER);
 
 		derivationEClass = createEClass(DERIVATION);
 		createEAttribute(derivationEClass, DERIVATION__ID);
@@ -1036,7 +1094,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__NONTERMINALS);
 		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__TRIPLE_RULES);
 		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__INITIAL);
-		createEOperation(tripleGrammarEClass, TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_TRIPLERULE_BOOLEAN);
+		createEOperation(tripleGrammarEClass, TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_DERIVATIONSTEP_BOOLEAN);
 
 		tripleRuleEClass = createEClass(TRIPLE_RULE);
 		createEReference(tripleRuleEClass, TRIPLE_RULE__SOURCE);
@@ -1051,6 +1109,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(tripleGraphEClass, TRIPLE_GRAPH__TARGET);
 		createEReference(tripleGraphEClass, TRIPLE_GRAPH__MS);
 		createEReference(tripleGraphEClass, TRIPLE_GRAPH__MT);
+		createEOperation(tripleGraphEClass, TRIPLE_GRAPH___INV_MS__VERTEX);
+		createEOperation(tripleGraphEClass, TRIPLE_GRAPH___INV_MT__VERTEX);
 
 		vertexToVertexMapEClass = createEClass(VERTEX_TO_VERTEX_MAP);
 		createEReference(vertexToVertexMapEClass, VERTEX_TO_VERTEX_MAP__KEY);
@@ -1110,8 +1170,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getGrammar__Derives__Graph_Graph_Vertex_Graph(), this.getRule(), "derives", 0, 1,
-				IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getGrammar__Derives__Graph_Graph_Vertex_Graph(), this.getDerivationStep(),
+				"derives", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getGraph(), "prev", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getGraph(), "next", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1137,6 +1197,11 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		op = initEOperation(getRule__Embed__Graph_EList(), this.getEdge(), "embed", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getGraph(), "graph", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEdge(), "edges", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getRule__Apply__Graph_Vertex(), this.getVertexToVertexMap(), "apply", 0, -1, IS_UNIQUE,
+				!IS_ORDERED);
+		addEParameter(op, this.getGraph(), "graph", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(vertexLabelPairEClass, VertexLabelPair.class, "VertexLabelPair", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1170,6 +1235,15 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		initEReference(getDerivationStep_Vertex(), this.getVertex(), null, "vertex", null, 0, 1, DerivationStep.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDerivationStep_Previous(), this.getGraph(), null, "previous", null, 0, 1,
+				DerivationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDerivationStep_Next(), this.getGraph(), null, "next", null, 0, 1, DerivationStep.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDerivationStep_Unifier(), this.getVertexToVertexMap(), null, "unifier", null, 0, -1,
+				DerivationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(derivationEClass, Derivation.class, "Derivation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1271,10 +1345,10 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getTripleGrammar__Produce__TripleGraph_TripleRule_boolean(), null, "produce", 0, 1,
+		op = initEOperation(getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean(), null, "produce", 0, 1,
 				IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTripleGraph(), "tripleGraph", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTripleRule(), "tripleRule", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDerivationStep(), "derivationStep", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "forward", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(tripleRuleEClass, TripleRule.class, "TripleRule", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1312,6 +1386,12 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		initEReference(getTripleGraph_Mt(), this.getVertexToVertexMap(), null, "mt", null, 0, -1, TripleGraph.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getTripleGraph__InvMs__Vertex(), this.getVertex(), "invMs", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getVertex(), "sourceVertex", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTripleGraph__InvMt__Vertex(), this.getVertex(), "invMt", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getVertex(), "targetVertex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(vertexToVertexMapEClass, Map.Entry.class, "VertexToVertexMap", !IS_ABSTRACT, !IS_INTERFACE,
 				!IS_GENERATED_INSTANCE_CLASS);

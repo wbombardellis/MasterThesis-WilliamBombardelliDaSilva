@@ -1,6 +1,8 @@
 package org.wbsilva.bence.transformer.util;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.Collections;
 import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
@@ -126,5 +128,23 @@ public class TransformerUtil {
 			logger.error(ex);
 			throw ex;
 		}
+	}
+
+	/**
+	 * Save the resource {@code resource} to the file at its URI
+	 * If no exceptions is thrown, it is guaranteed that the resource is successfully saved
+	 * @param resource	
+	 * 			The resource to be saved
+	 * @throws IOException 
+	 * 			In case of problem by the saving the output file
+	 */
+	public static void saveResourceToFile(final Resource resource) throws IOException {
+		try {
+        	resource.save(Collections.EMPTY_MAP);
+        } catch (IOException ex) {
+        	logger.error("Could not save resource to file "+ resource.getURI());
+			logger.error(ex);
+			throw ex;
+        }
 	}
 }

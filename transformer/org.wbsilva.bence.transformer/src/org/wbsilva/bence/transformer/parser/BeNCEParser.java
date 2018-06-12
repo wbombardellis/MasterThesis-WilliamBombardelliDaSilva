@@ -3,9 +3,12 @@ package org.wbsilva.bence.transformer.parser;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -21,6 +24,7 @@ import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
 import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
+import org.wbsilva.bence.transformer.BeNCETransformer;
 
 /**
  * TODO
@@ -28,6 +32,8 @@ import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
  *
  */
 public class BeNCEParser {
+	
+	static final Logger logger = LogManager.getLogger(BeNCEParser.class);
 	
 	final Grammar grammar;
 	
@@ -40,8 +46,10 @@ public class BeNCEParser {
 	 * @param graph
 	 * @return
 	 */
-	public ParsingTree parse(final Graph graph){
+	public Optional<ParsingTree> parse(final Graph graph){
 		assert graph != null;
+		
+		logger.debug(String.format("Starting parsing of the graph %s", graph.getId()));
 		
 		//Sanitize ids
 		//ensureUniqueIds(graph);
@@ -62,7 +70,14 @@ public class BeNCEParser {
 			//Select a handle
 			final Set<ZoneVertex> handle = bup.next();					//R
 			
+			logger.debug(String.format("Selected handle {%s}", handle.stream()
+					.map(z -> z.getLabel().getName()+", ")
+					.reduce(String::concat)));
+			
 			for (final Symbol d : grammar.getNonterminals()) {
+				
+				logger.debug(String.format("Trying to reduce with symbol %s", d.getName()));
+				
 				final Graph handleGraph = zoneGraph(graph, handle);		//Z(R)
 				final Graph rhs = induce(handleGraph, handle);			//Y(R)
 				
@@ -70,15 +85,12 @@ public class BeNCEParser {
 				final Graph reducedGraph = zoneGraph(graph, new HashSet<ZoneVertex>(Arrays.asList(lhs)));	//Z({(d,V(R)})
 				
 				//If handle can be reduced with rule (lhs -> rhs). I.e. if reducedGraph=>handleGraph
-				Rule rule = grammar.derives(reducedGraph, handleGraph, lhs, rhs);
-				if (rule != null) {					
+				final DerivationStep newDS = grammar.derives(reducedGraph, handleGraph, lhs, rhs);
+				if (newDS != null) {
 					//Possible derivation step found
 					bup.add(lhs);
 					
-					final DerivationStep newDS = GraphgrammarFactory.eINSTANCE.createDerivationStep();
-					newDS.setId(EcoreUtil.generateUUID());
-					newDS.setVertex(EcoreUtil.copy(lhs));
-					newDS.setRule(rule);
+					logger.debug(String.format("Can reduce. Derivation step %s, %s", newDS.getRule().getName(), newDS.getVertex().getId()));
 					
 					//Construct parsing tree bottom-up 
 					final ParsingTree parsingTreeNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
@@ -89,10 +101,15 @@ public class BeNCEParser {
 							.collect(Collectors.toSet()));
 					//TODO: assert amount of children
 					parsingForest.add(parsingTreeNode);
+					
+					logger.debug(String.format("Adding to the parsing forest the parsing tree %s => %s", newDS.getVertex().getId(),
+							parsingTreeNode.getChildren().stream()
+								.map(pt -> pt.getZoneVertex().getId()+", ")
+								.reduce(String::concat)));
 				}
 			}
 		}
-
+		
 		//Successfully parsed
 		if (bup.contains(rootZV)) {
 			final ParsingTree parsingTree = parsingForest.parallelStream()
@@ -101,9 +118,11 @@ public class BeNCEParser {
 					.orElse(null);
 			assert parsingTree != null;
 			
-			return parsingTree;
+			logger.debug("Parsing finished successfully");
+			return Optional.of(parsingTree);
 		} else {
-			return null;
+			logger.debug("Parsing finished unsuccessfully");
+			return Optional.empty();
 		}
 	}
 

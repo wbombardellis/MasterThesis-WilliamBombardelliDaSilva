@@ -49,4 +49,12 @@ public class UIUtil {
 		
 		//TODO: Print short license
 	}
+
+	public static void printFinishSaving() {
+		System.out.println("Transformation finished and data saved to output file successfully.");
+	}
+
+	public static void printTransformationFail() {
+		System.out.println("Transformation finished without success. Nothing to save. See error logs for more details.");
+	}
 }

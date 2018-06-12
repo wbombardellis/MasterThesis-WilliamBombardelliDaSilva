@@ -2,6 +2,7 @@
  */
 package org.wbsilva.bence.graphgrammar;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EObject;
@@ -138,5 +139,21 @@ public interface TripleGraph extends EObject {
 	 * @generated
 	 */
 	EMap<Vertex, Vertex> getMt();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Vertex> invMs(Vertex sourceVertex);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Vertex> invMt(Vertex targetVertex);
 
 } // TripleGraph

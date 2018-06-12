@@ -2,6 +2,7 @@ package org.wbsilva.bence.graphgrammar.util;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -78,11 +79,15 @@ public class GraphgrammarUtil {
 		}
 	}
 
-	public static void ensureUniqueIds(Graph graph) {
-		graph.setId(EcoreUtil.generateUUID());
-		for (Vertex v : graph.getVertices()) {
+	public static void ensureUniqueIds(final Collection<Vertex> vertices) {
+		for (Vertex v : vertices) {
 			v.setId(EcoreUtil.generateUUID());
 		}
+	}
+	
+	public static void ensureUniqueIds(Graph graph) {
+		graph.setId(EcoreUtil.generateUUID());
+		ensureUniqueIds(graph.getVertices());
 	}
 	
 	public static void ensureUniqueIds(final Graph graph, final TripleGrammar grammar) {
@@ -98,18 +103,10 @@ public class GraphgrammarUtil {
 			r.getCorr().setId(id);
 			r.getTarget().setId(id);
 			
-			r.getSource().getRhs().setId(EcoreUtil.generateUUID());
-			for (Vertex v : r.getSource().getRhs().getVertices()) {
-				v.setId(EcoreUtil.generateUUID());
-			}
-			r.getCorr().getRhs().setId(EcoreUtil.generateUUID());
-			for (Vertex v : r.getCorr().getRhs().getVertices()) {
-				v.setId(EcoreUtil.generateUUID());
-			}
-			r.getTarget().getRhs().setId(EcoreUtil.generateUUID());
-			for (Vertex v : r.getTarget().getRhs().getVertices()) {
-				v.setId(EcoreUtil.generateUUID());
-			}
+			ensureUniqueIds(r.getSource().getRhs());
+			ensureUniqueIds(r.getCorr().getRhs());
+			ensureUniqueIds(r.getTarget().getRhs());
 		}
 	}
+
 }

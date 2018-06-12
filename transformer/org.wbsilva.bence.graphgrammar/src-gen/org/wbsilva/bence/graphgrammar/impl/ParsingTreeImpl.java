@@ -27,7 +27,6 @@ import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.ParsingTree;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
-import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -214,12 +213,11 @@ public class ParsingTreeImpl extends MinimalEObjectImpl.Container implements Par
 	 */
 	public Derivation derivation() {
 		final Derivation derivation = GraphgrammarFactory.eINSTANCE.createDerivation();
-		
+
 		derivation.getSteps().add(EcoreUtil.copy(this.getDerivationStep()));
-		derivation.getSteps().addAll(this.getChildren().stream()
-										.flatMap(pt -> pt.derivation().getSteps().stream())
-										.collect(Collectors.toList()));
-		
+		derivation.getSteps().addAll(this.getChildren().stream().flatMap(pt -> pt.derivation().getSteps().stream())
+				.collect(Collectors.toList()));
+
 		return derivation;
 	}
 

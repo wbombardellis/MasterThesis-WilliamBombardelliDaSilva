@@ -177,6 +177,6 @@ public interface TripleGrammar extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void produce(TripleGraph tripleGraph, TripleRule tripleRule, boolean forward);
+	void produce(TripleGraph tripleGraph, DerivationStep derivationStep, boolean forward);
 
 } // TripleGrammar

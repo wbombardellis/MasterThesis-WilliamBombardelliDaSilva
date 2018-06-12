@@ -240,13 +240,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int RULE___EMBED__GRAPH_ELIST = 0;
 
 	/**
+	 * The operation id for the '<em>Apply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE___APPLY__GRAPH_VERTEX = 1;
+
+	/**
 	 * The number of operations of the '<em>Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_OPERATION_COUNT = 1;
+	int RULE_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairImpl <em>Vertex Label Pair</em>}' class.
@@ -415,13 +424,40 @@ public interface GraphgrammarPackage extends EPackage {
 	int DERIVATION_STEP__VERTEX = 2;
 
 	/**
+	 * The feature id for the '<em><b>Previous</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVATION_STEP__PREVIOUS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Next</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVATION_STEP__NEXT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Unifier</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVATION_STEP__UNIFIER = 5;
+
+	/**
 	 * The number of structural features of the '<em>Derivation Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DERIVATION_STEP_FEATURE_COUNT = 3;
+	int DERIVATION_STEP_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Derivation Step</em>' class.
@@ -905,7 +941,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_TRIPLERULE_BOOLEAN = 0;
+	int TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_DERIVATIONSTEP_BOOLEAN = 0;
 
 	/**
 	 * The number of operations of the '<em>Triple Grammar</em>' class.
@@ -1054,13 +1090,31 @@ public interface GraphgrammarPackage extends EPackage {
 	int TRIPLE_GRAPH_FEATURE_COUNT = 5;
 
 	/**
+	 * The operation id for the '<em>Inv Ms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAPH___INV_MS__VERTEX = 0;
+
+	/**
+	 * The operation id for the '<em>Inv Mt</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAPH___INV_MT__VERTEX = 1;
+
+	/**
 	 * The number of operations of the '<em>Triple Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_GRAPH_OPERATION_COUNT = 0;
+	int TRIPLE_GRAPH_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexToVertexMapImpl <em>Vertex To Vertex Map</em>}' class.
@@ -1292,6 +1346,16 @@ public interface GraphgrammarPackage extends EPackage {
 	EOperation getRule__Embed__Graph_EList();
 
 	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#apply(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex) <em>Apply</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Apply</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Rule#apply(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getRule__Apply__Graph_Vertex();
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.VertexLabelPair <em>Vertex Label Pair</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1420,6 +1484,39 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDerivationStep_Vertex();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.DerivationStep#getPrevious <em>Previous</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Previous</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.DerivationStep#getPrevious()
+	 * @see #getDerivationStep()
+	 * @generated
+	 */
+	EReference getDerivationStep_Previous();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.DerivationStep#getNext <em>Next</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Next</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.DerivationStep#getNext()
+	 * @see #getDerivationStep()
+	 * @generated
+	 */
+	EReference getDerivationStep_Next();
+
+	/**
+	 * Returns the meta object for the map '{@link org.wbsilva.bence.graphgrammar.DerivationStep#getUnifier <em>Unifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>Unifier</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.DerivationStep#getUnifier()
+	 * @see #getDerivationStep()
+	 * @generated
+	 */
+	EReference getDerivationStep_Unifier();
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Derivation <em>Derivation</em>}'.
@@ -1804,14 +1901,14 @@ public interface GraphgrammarPackage extends EPackage {
 	EReference getTripleGrammar_Initial();
 
 	/**
-	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#produce(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.TripleRule, boolean) <em>Produce</em>}' operation.
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#produce(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.DerivationStep, boolean) <em>Produce</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Produce</em>' operation.
-	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#produce(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.TripleRule, boolean)
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#produce(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.DerivationStep, boolean)
 	 * @generated
 	 */
-	EOperation getTripleGrammar__Produce__TripleGraph_TripleRule_boolean();
+	EOperation getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean();
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.TripleRule <em>Triple Rule</em>}'.
@@ -1942,6 +2039,26 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTripleGraph_Mt();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.TripleGraph#invMs(org.wbsilva.bence.graphgrammar.Vertex) <em>Inv Ms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Inv Ms</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGraph#invMs(org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getTripleGraph__InvMs__Vertex();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.TripleGraph#invMt(org.wbsilva.bence.graphgrammar.Vertex) <em>Inv Mt</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Inv Mt</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGraph#invMt(org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getTripleGraph__InvMt__Vertex();
 
 	/**
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Vertex To Vertex Map</em>}'.
@@ -2125,6 +2242,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EOperation RULE___EMBED__GRAPH_ELIST = eINSTANCE.getRule__Embed__Graph_EList();
 		/**
+		 * The meta object literal for the '<em><b>Apply</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RULE___APPLY__GRAPH_VERTEX = eINSTANCE.getRule__Apply__Graph_Vertex();
+		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairImpl <em>Vertex Label Pair</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2216,6 +2340,27 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DERIVATION_STEP__VERTEX = eINSTANCE.getDerivationStep_Vertex();
+		/**
+		 * The meta object literal for the '<em><b>Previous</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DERIVATION_STEP__PREVIOUS = eINSTANCE.getDerivationStep_Previous();
+		/**
+		 * The meta object literal for the '<em><b>Next</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DERIVATION_STEP__NEXT = eINSTANCE.getDerivationStep_Next();
+		/**
+		 * The meta object literal for the '<em><b>Unifier</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DERIVATION_STEP__UNIFIER = eINSTANCE.getDerivationStep_Unifier();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.DerivationImpl <em>Derivation</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -2488,8 +2633,8 @@ public interface GraphgrammarPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_TRIPLERULE_BOOLEAN = eINSTANCE
-				.getTripleGrammar__Produce__TripleGraph_TripleRule_boolean();
+		EOperation TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_DERIVATIONSTEP_BOOLEAN = eINSTANCE
+				.getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.TripleRuleImpl <em>Triple Rule</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -2578,6 +2723,20 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRIPLE_GRAPH__MT = eINSTANCE.getTripleGraph_Mt();
+		/**
+		 * The meta object literal for the '<em><b>Inv Ms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TRIPLE_GRAPH___INV_MS__VERTEX = eINSTANCE.getTripleGraph__InvMs__Vertex();
+		/**
+		 * The meta object literal for the '<em><b>Inv Mt</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TRIPLE_GRAPH___INV_MT__VERTEX = eINSTANCE.getTripleGraph__InvMt__Vertex();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexToVertexMapImpl <em>Vertex To Vertex Map</em>}' class.
 		 * <!-- begin-user-doc -->

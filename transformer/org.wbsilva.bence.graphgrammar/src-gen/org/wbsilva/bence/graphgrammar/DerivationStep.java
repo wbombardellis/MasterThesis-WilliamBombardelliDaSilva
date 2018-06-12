@@ -2,6 +2,7 @@
  */
 package org.wbsilva.bence.graphgrammar;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.wbsilva.bence.graphgrammar.DerivationStep#getId <em>Id</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.DerivationStep#getRule <em>Rule</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.DerivationStep#getVertex <em>Vertex</em>}</li>
+ *   <li>{@link org.wbsilva.bence.graphgrammar.DerivationStep#getPrevious <em>Previous</em>}</li>
+ *   <li>{@link org.wbsilva.bence.graphgrammar.DerivationStep#getNext <em>Next</em>}</li>
+ *   <li>{@link org.wbsilva.bence.graphgrammar.DerivationStep#getUnifier <em>Unifier</em>}</li>
  * </ul>
  *
  * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getDerivationStep()
@@ -101,4 +105,73 @@ public interface DerivationStep extends EObject {
 	 * @generated
 	 */
 	void setVertex(Vertex value);
+
+	/**
+	 * Returns the value of the '<em><b>Previous</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Previous</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Previous</em>' containment reference.
+	 * @see #setPrevious(Graph)
+	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getDerivationStep_Previous()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Graph getPrevious();
+
+	/**
+	 * Sets the value of the '{@link org.wbsilva.bence.graphgrammar.DerivationStep#getPrevious <em>Previous</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Previous</em>' containment reference.
+	 * @see #getPrevious()
+	 * @generated
+	 */
+	void setPrevious(Graph value);
+
+	/**
+	 * Returns the value of the '<em><b>Next</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Next</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Next</em>' containment reference.
+	 * @see #setNext(Graph)
+	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getDerivationStep_Next()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Graph getNext();
+
+	/**
+	 * Sets the value of the '{@link org.wbsilva.bence.graphgrammar.DerivationStep#getNext <em>Next</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Next</em>' containment reference.
+	 * @see #getNext()
+	 * @generated
+	 */
+	void setNext(Graph value);
+
+	/**
+	 * Returns the value of the '<em><b>Unifier</b></em>' map.
+	 * The key is of type {@link org.wbsilva.bence.graphgrammar.Vertex},
+	 * and the value is of type {@link org.wbsilva.bence.graphgrammar.Vertex},
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Unifier</em>' map isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Unifier</em>' map.
+	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getDerivationStep_Unifier()
+	 * @model mapType="org.wbsilva.bence.graphgrammar.VertexToVertexMap&lt;org.wbsilva.bence.graphgrammar.Vertex, org.wbsilva.bence.graphgrammar.Vertex&gt;" ordered="false"
+	 * @generated
+	 */
+	EMap<Vertex, Vertex> getUnifier();
 } // DerivationStep
