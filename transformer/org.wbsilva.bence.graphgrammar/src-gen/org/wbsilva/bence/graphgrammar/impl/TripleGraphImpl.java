@@ -3,7 +3,6 @@
 package org.wbsilva.bence.graphgrammar.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashSet;
 import java.util.Map.Entry;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -297,7 +296,7 @@ public class TripleGraphImpl extends MinimalEObjectImpl.Container implements Tri
 	 */
 	public EList<Vertex> invMs(Vertex sourceVertex) {
 		final BasicEList<Vertex> image = new BasicEList<Vertex>();
-		for (Entry<Vertex,Vertex> entry : this.getMs().entrySet()) {
+		for (Entry<Vertex, Vertex> entry : this.getMs().entrySet()) {
 			if (entry.getValue() == sourceVertex) {
 				image.add(entry.getKey());
 			}
@@ -312,7 +311,7 @@ public class TripleGraphImpl extends MinimalEObjectImpl.Container implements Tri
 	 */
 	public EList<Vertex> invMt(Vertex targetVertex) {
 		final BasicEList<Vertex> image = new BasicEList<Vertex>();
-		for (Entry<Vertex,Vertex> entry : this.getMt().entrySet()) {
+		for (Entry<Vertex, Vertex> entry : this.getMt().entrySet()) {
 			if (entry.getValue() == targetVertex) {
 				image.add(entry.getKey());
 			}

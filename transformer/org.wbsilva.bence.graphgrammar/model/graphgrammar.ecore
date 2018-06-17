@@ -176,9 +176,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VertexToVertexMap" instanceClassName="java.util.Map$Entry">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//Vertex"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Vertex"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//Vertex"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Vertex"/>
   </eClassifiers>
 </ecore:EPackage>

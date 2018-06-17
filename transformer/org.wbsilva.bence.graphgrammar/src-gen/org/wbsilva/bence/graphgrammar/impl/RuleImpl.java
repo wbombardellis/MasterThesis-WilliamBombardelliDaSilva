@@ -401,7 +401,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 		graph.getEdges().removeAll(vEdges);
 
 		final int newVerticesSize = this.getRhs().getVertices().size();
-		final EMap<Vertex,Vertex> unifier = new BasicEMap<Vertex, Vertex>(newVerticesSize);
+		final EMap<Vertex, Vertex> unifier = new BasicEMap<Vertex, Vertex>(newVerticesSize);
 		final Set<Vertex> newVertices = new HashSet<Vertex>(newVerticesSize);
 		for (Vertex w : this.getRhs().getVertices()) {
 			final Vertex newW = EcoreUtil.copy(w);
@@ -416,7 +416,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 				.addAll(this.getRhs().getEdges().stream().map(e -> EcoreUtil.copy(e)).collect(Collectors.toSet()));
 
 		graph.getEdges().addAll(this.embed(graph, new BasicEList<Edge>(vEdges)));
-		
+
 		return unifier;
 	}
 

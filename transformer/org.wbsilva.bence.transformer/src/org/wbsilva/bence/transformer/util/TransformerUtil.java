@@ -110,7 +110,7 @@ public class TransformerUtil {
 		if (fileUrl != null) {
 			path = fileUrl.getPath();
 		} else {			
-			logger.debug("Could not load file %s with class loader. Trying without it");
+			logger.debug(String.format("Could not load file %s with class loader. Trying without it", filePath));
 			path = filePath;
 		}
 		

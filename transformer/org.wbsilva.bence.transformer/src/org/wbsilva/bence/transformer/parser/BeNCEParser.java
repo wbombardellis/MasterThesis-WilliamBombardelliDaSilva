@@ -57,6 +57,8 @@ public class BeNCEParser {
 		//Create bottom-up parse set
 		final Bup bup = new Bup(zoneVertices(graph.getVertices()));
 		
+		//TODO: add these zone vertices to the parsing forest
+		
 		//Forest of possible parsing trees
 		final Set<ParsingTree> parsingForest = new HashSet<ParsingTree>();
 		
@@ -71,8 +73,9 @@ public class BeNCEParser {
 			final Set<ZoneVertex> handle = bup.next();					//R
 			
 			logger.debug(String.format("Selected handle {%s}", handle.stream()
-					.map(z -> z.getLabel().getName()+", ")
-					.reduce(String::concat)));
+					.map(z -> z.getLabel().getName())
+					.reduce((a,b) -> a.concat(", ").concat(b))
+					.orElse("")));
 			
 			for (final Symbol d : grammar.getNonterminals()) {
 				
@@ -102,10 +105,11 @@ public class BeNCEParser {
 					//TODO: assert amount of children
 					parsingForest.add(parsingTreeNode);
 					
-					logger.debug(String.format("Adding to the parsing forest the parsing tree %s => %s", newDS.getVertex().getId(),
+					logger.debug(String.format("Adding to the parsing forest the parsing tree %s => [%s]", newDS.getVertex().getId(),
 							parsingTreeNode.getChildren().stream()
-								.map(pt -> pt.getZoneVertex().getId()+", ")
-								.reduce(String::concat)));
+								.map(pt -> pt.getZoneVertex().getId())
+								.reduce((a,b) -> a.concat(", ").concat(b))
+								.orElse("")));
 				}
 			}
 		}

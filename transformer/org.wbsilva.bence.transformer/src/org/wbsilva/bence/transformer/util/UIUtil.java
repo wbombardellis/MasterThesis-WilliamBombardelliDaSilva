@@ -35,8 +35,8 @@ public class UIUtil {
 		System.out.println("This program transforms a labelled graph into another according to a B-eNCE triple graph grammar");
 		System.out.println("JAR_FILE is the name of this jar file being executed");
 		System.out.println("GRAMMAR_FILE is the relative or absolute path to the XMI file containing the B-eNCE triple graph grammar");
-		System.out.println("INPUT_GRAPH_FILE is relative ot absolute path to the XMI file containing the input graph");
-		System.out.println("OUTPUT_GRAPH_FILE is relative ot absolute path to the XMI file to be saved with the transformed graph");
+		System.out.println("INPUT_GRAPH_FILE is relative or absolute path to the XMI file containing the input graph");
+		System.out.println("OUTPUT_GRAPH_FILE is relative or absolute path to the XMI file to be saved with the transformed graph");
 		System.out.println();
 		
 		System.out.println("OPTIONS are:");

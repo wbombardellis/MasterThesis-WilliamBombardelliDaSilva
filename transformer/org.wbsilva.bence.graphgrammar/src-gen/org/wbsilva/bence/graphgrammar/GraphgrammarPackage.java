@@ -1127,7 +1127,7 @@ public interface GraphgrammarPackage extends EPackage {
 	int VERTEX_TO_VERTEX_MAP = 15;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' containment reference.
+	 * The feature id for the '<em><b>Key</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1136,7 +1136,7 @@ public interface GraphgrammarPackage extends EPackage {
 	int VERTEX_TO_VERTEX_MAP__KEY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * The feature id for the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2066,17 +2066,17 @@ public interface GraphgrammarPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Vertex To Vertex Map</em>'.
 	 * @see java.util.Map.Entry
-	 * @model keyType="org.wbsilva.bence.graphgrammar.Vertex" keyContainment="true"
-	 *        valueType="org.wbsilva.bence.graphgrammar.Vertex" valueContainment="true"
+	 * @model keyType="org.wbsilva.bence.graphgrammar.Vertex"
+	 *        valueType="org.wbsilva.bence.graphgrammar.Vertex"
 	 * @generated
 	 */
 	EClass getVertexToVertexMap();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Key</em>'.
+	 * @return the meta object for the reference '<em>Key</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getVertexToVertexMap()
 	 * @generated
@@ -2084,10 +2084,10 @@ public interface GraphgrammarPackage extends EPackage {
 	EReference getVertexToVertexMap_Key();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @return the meta object for the reference '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getVertexToVertexMap()
 	 * @generated
@@ -2747,14 +2747,14 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EClass VERTEX_TO_VERTEX_MAP = eINSTANCE.getVertexToVertexMap();
 		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Key</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference VERTEX_TO_VERTEX_MAP__KEY = eINSTANCE.getVertexToVertexMap_Key();
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -301,15 +301,16 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 
 			for (Vertex v : possibleVertices) {
 				final Graph g = EcoreUtil.copy(prev);
+				final Rule r = EcoreUtil.copy(rule);
 
-				EMap<Vertex,Vertex> unifier = rule.apply(g, v);
+				final EMap<Vertex, Vertex> unifier = r.apply(g, v);
 
 				//TODO: temporary costly implementation. I guess it is enough to check the vEdges correspondence between the 2 graphs
 				if (g.isomorphicTo(next)) {
 					final DerivationStep newDS = GraphgrammarFactory.eINSTANCE.createDerivationStep();
 					newDS.setId(EcoreUtil.generateUUID());
 					newDS.setVertex(EcoreUtil.copy(vertex));
-					newDS.setRule(EcoreUtil.copy(rule));
+					newDS.setRule(r);
 					newDS.setPrevious(prev);
 					newDS.setNext(g);
 					newDS.getUnifier().putAll(unifier);

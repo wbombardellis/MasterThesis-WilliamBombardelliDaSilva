@@ -3,8 +3,6 @@
 package org.wbsilva.bence.graphgrammar.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EMap;
 
@@ -34,7 +32,7 @@ import org.wbsilva.bence.graphgrammar.Vertex;
  */
 public class VertexToVertexMapImpl extends MinimalEObjectImpl.Container implements BasicEMap.Entry<Vertex, Vertex> {
 	/**
-	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' containment reference.
+	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypedKey()
@@ -44,7 +42,7 @@ public class VertexToVertexMapImpl extends MinimalEObjectImpl.Container implemen
 	protected Vertex key;
 
 	/**
-	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' containment reference.
+	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypedValue()
@@ -78,6 +76,15 @@ public class VertexToVertexMapImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public Vertex getTypedKey() {
+		if (key != null && key.eIsProxy()) {
+			InternalEObject oldKey = (InternalEObject) key;
+			key = (Vertex) eResolveProxy(oldKey);
+			if (key != oldKey) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__KEY, oldKey, key));
+			}
+		}
 		return key;
 	}
 
@@ -86,18 +93,8 @@ public class VertexToVertexMapImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTypedKey(Vertex newKey, NotificationChain msgs) {
-		Vertex oldKey = key;
-		key = newKey;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__KEY, oldKey, newKey);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public Vertex basicGetTypedKey() {
+		return key;
 	}
 
 	/**
@@ -106,20 +103,11 @@ public class VertexToVertexMapImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void setTypedKey(Vertex newKey) {
-		if (newKey != key) {
-			NotificationChain msgs = null;
-			if (key != null)
-				msgs = ((InternalEObject) key).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__KEY, null, msgs);
-			if (newKey != null)
-				msgs = ((InternalEObject) newKey).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__KEY, null, msgs);
-			msgs = basicSetTypedKey(newKey, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__KEY, newKey,
-					newKey));
+		Vertex oldKey = key;
+		key = newKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__KEY, oldKey,
+					key));
 	}
 
 	/**
@@ -128,6 +116,15 @@ public class VertexToVertexMapImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public Vertex getTypedValue() {
+		if (value != null && value.eIsProxy()) {
+			InternalEObject oldValue = (InternalEObject) value;
+			value = (Vertex) eResolveProxy(oldValue);
+			if (value != oldValue) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__VALUE, oldValue, value));
+			}
+		}
 		return value;
 	}
 
@@ -136,18 +133,8 @@ public class VertexToVertexMapImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTypedValue(Vertex newValue, NotificationChain msgs) {
-		Vertex oldValue = value;
-		value = newValue;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__VALUE, oldValue, newValue);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public Vertex basicGetTypedValue() {
+		return value;
 	}
 
 	/**
@@ -156,36 +143,11 @@ public class VertexToVertexMapImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void setTypedValue(Vertex newValue) {
-		if (newValue != value) {
-			NotificationChain msgs = null;
-			if (value != null)
-				msgs = ((InternalEObject) value).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__VALUE, null, msgs);
-			if (newValue != null)
-				msgs = ((InternalEObject) newValue).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__VALUE, null, msgs);
-			msgs = basicSetTypedValue(newValue, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		Vertex oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__VALUE,
-					newValue, newValue));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__KEY:
-			return basicSetTypedKey(null, msgs);
-		case GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__VALUE:
-			return basicSetTypedValue(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+					oldValue, value));
 	}
 
 	/**
@@ -197,9 +159,13 @@ public class VertexToVertexMapImpl extends MinimalEObjectImpl.Container implemen
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__KEY:
-			return getTypedKey();
+			if (resolve)
+				return getTypedKey();
+			return basicGetTypedKey();
 		case GraphgrammarPackage.VERTEX_TO_VERTEX_MAP__VALUE:
-			return getTypedValue();
+			if (resolve)
+				return getTypedValue();
+			return basicGetTypedValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
