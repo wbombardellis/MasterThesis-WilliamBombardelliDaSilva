@@ -53,40 +53,58 @@ public class Bup {
 	private ArrayList<ArrayDeque<Set<ZoneVertex>>> queues;
 	
 	/**
-	 * Initialize the bup with {@code initialSet}
+	 * Initialize the bup with {@code initialSet}. If it is null, treat it as an empty set.
 	 * @param initialSet		The initial set of zone vertices to be used as bup set
 	 */
 	public Bup(final Set<ZoneVertex> initialSet) {
-		bupSet = new HashSet<>(initialSet);
+		if (initialSet != null)
+			bupSet = new HashSet<>(initialSet);
+		else
+			bupSet = new HashSet<>();
+		
 		phase = 1;
 		
 		subsets = new ArrayList<>();
 		queues = new ArrayList<>();
+		
 		//Phase zero's queue consists of the empty set
 		final HashSet<Set<ZoneVertex>> ss0 = new HashSet<>(1);
 		ss0.add (new HashSet<>(0));
 		subsets.add(ss0); 
 		queues.add(new ArrayDeque<>(0));
+		
+		if (phase <= lastPhase()) {
+			//Add new subsets and queues
+			final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(phase, bupSet);
+			addNewSubsetQueue(newDinjunctSubsets);
+			assert subsets.size() > 1;
+			assert subsets.get(0).size() > 0;
+			assert phase == subsets.size() - 1;
+		}
 	}
 	
 	/**
-	 * Retrieve the next subset of bup.
-	 * It supposes that it has a next.
+	 * Retrieve the next subset of bup, if it has a next.
 	 * 
-	 * @return		The next subset of zone vertices of bup
+	 * @return		The next subset of zone vertices of bup or null
 	 */
 	public synchronized Set<ZoneVertex> next() {
-		assert hasNext();
-		
-		final Set<ZoneVertex> ret = queues.get(phase).poll();
-		assert ret != null;
-		
-		//No more element in this phase. Go to the next
-		if (queues.get(phase).isEmpty()) {
-			phase++;
+		if(hasNext()) {
+			assert queues.get(phase) != null;
+			assert phase > 0;
+			
+			final Set<ZoneVertex> ret = queues.get(phase).poll();
+			assert ret != null;
+			
+			//No more element in this phase. Go to the next
+			if (queues.get(phase).isEmpty()) {
+				phase++;
+			}
+			
+			return ret;
+		} else {
+			return null;
 		}
-		
-		return ret;
 	}
 
 	/**
@@ -95,7 +113,8 @@ public class Bup {
 	 * 
 	 * @param newSubsets	The set of subsets of zone vertices to be added to the end of the {@code subsets} and {@code queues} lists
 	 */
-	private synchronized void addNewSubsetQueue(final Set<Set<ZoneVertex>> newSubsets) {		
+	private synchronized void addNewSubsetQueue(final Set<Set<ZoneVertex>> newSubsets) {
+		assert newSubsets != null;
 		subsets.add(newSubsets);
 		queues.add(new ArrayDeque<Set<ZoneVertex>>(newSubsets));
 	}
@@ -111,12 +130,17 @@ public class Bup {
 	 * @return					The set of new subsets of bup for phase {@code p} for the new zone vertices {@code zoneVertices}
 	 */
 	private synchronized Set<Set<ZoneVertex>> createNewSubsets(final int p, final HashSet<ZoneVertex> zoneVertices) {
-
-		final int lastPhase = p - 1;
-		final Set<Set<ZoneVertex>> oldPhaseSubsets = subsets.get(lastPhase);
-		//TODO: add assertions about existence of subsets and queues
+		assert zoneVertices != null;
+		assert p > 0;
+		assert p <= lastPhase() + 1;
 		
-		//TODO: newQueueSize = bupSet.size() chooses phase
+		final int lastPhase = p - 1;
+		assert subsets.size() >= lastPhase;
+		assert queues.size() >= lastPhase;
+		
+		final Set<Set<ZoneVertex>> oldPhaseSubsets = subsets.get(lastPhase);
+		
+		//newQueueSize = bupSet.size() chooses phase
 		final HashSet<Set<ZoneVertex>> newSubsets = new HashSet<>();
 		
 		//For each subset of the last phase
@@ -128,13 +152,14 @@ public class Bup {
 			final Iterator<ZoneVertex> itt = zoneVertices.iterator();
 			while(itt.hasNext()) {
 				final ZoneVertex bup = itt.next();
+				assert bup != null;
 				
 				//Add it if current subset still does not have it
 				if (!ss.contains(bup)) {
 					final HashSet<ZoneVertex> newSs = new HashSet<>(ss);
 					newSs.add(bup);
 					
-					newSubsets.add(newSs); //TODO: are two sets with same bups equal?
+					newSubsets.add(newSs); //two sets with same bups are equal
 				}
 			}
 		}
@@ -151,26 +176,30 @@ public class Bup {
 
 	/**
 	 * Same contract as {@link Bup#createNewSubsets(int, HashSet)} with the difference that only one zone vertex is the new one.
-	 * {@code zoneVertex} is copied.
 	 * 
-	 * @param zoneVertex	The new zone vertex of bup for which to create new subsets for phase {@code p}
+	 * @param zoneVertex	The new zone vertex of bup for which to create new subsets for phase {@code p}. Cannot be null.
 	 * @see Bup#createNewSubsets(int, HashSet)
 	 */
 	private Set<Set<ZoneVertex>> createNewSubsets(int p, final ZoneVertex zoneVertex) {
+		assert zoneVertex != null;
 		return createNewSubsets(p, new HashSet<ZoneVertex>(Arrays.asList(zoneVertex)));
 	}
 	
 	/**
 	 * Add a new zone vertex {@code zoneVertex} to {@link Bup#bupSet}, if it has not been added yet
 	 * and care to create new subsets for it.
-	 * @param zoneVertex		The new zone vertex to be added
+	 * @param zoneVertex		The new zone vertex to be added. Cannot be null.
 	 */
 	public synchronized void add(final ZoneVertex zoneVertex) {
-		//TODO: add assertions about existence of subsets and queues
+		assert zoneVertex != null;
 		
 		boolean added = contains(zoneVertex);
 		
 		if (!added) {
+			assert phase > 0;
+			assert phase <= subsets.size();
+			assert phase <= lastPhase() + 1;
+			
 			//If it had already exhausted all phases
 			if (phase > lastPhase()) {
 				addNewSubsetQueue(new HashSet<Set<ZoneVertex>>(1));
@@ -181,9 +210,14 @@ public class Bup {
 			phase = 1;
 			bupSet.add(zoneVertex);
 			
+			assert subsets.size() == oldPhase + 1;
+			assert queues.size() == oldPhase + 1;
+			
 			//Regenerate all previous phases' subsets and queues
 			for (int p = 1; p <= oldPhase; p++) {
-				final Set<Set<ZoneVertex>> newSubsets = createNewSubsets(p, zoneVertex);			
+				final Set<Set<ZoneVertex>> newSubsets = createNewSubsets(p, zoneVertex);
+				assert newSubsets.size() > 0;
+				
 				subsets.get(p).addAll(newSubsets);
 				queues.get(p).addAll(newSubsets);
 			}
@@ -208,13 +242,21 @@ public class Bup {
 	 * @see Bup#lastPhase()
 	 */
 	public synchronized boolean hasNext() {
-		//TODO: add assertions about phase
+		assert phase >= 0;
+		assert phase <= subsets.size();
 
 		//If we are at the next phase 
 		if (phase >= subsets.size() && phase <= lastPhase()) {
 			//Add new subsets and queues
 			final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(phase, bupSet);
 			addNewSubsetQueue(newDinjunctSubsets);
+			
+			assert subsets.size() > 1;
+			assert subsets.get(phase).size() > 0;
+			assert phase == subsets.size() - 1;
+			assert queues.size() > 1;
+			assert queues.get(phase).size() > 0;
+			assert phase == queues.size() - 1;
 		}
 		
 		//If current phase is beyond the last phase, i.e. all subsets has been retrieved, then it has no next and returns false
@@ -223,11 +265,12 @@ public class Bup {
 
 	/**
 	 * Return true iff {@code zoneVertex} or any equivalent zone vertex is contained by the {@link Bup#bupSet}.
-	 * @param zoneVertex	The zone vertex to be tested
+	 * @param zoneVertex	The zone vertex to be tested. Cannot be null.
 	 * @return				True if {@link Bup#bupSet} contains any zone vertex equivalent to {@code zoneVertex}, false otherwise. 
 	 * @see ZoneVertex#equivalates(ZoneVertex)
 	 */
 	public synchronized boolean contains(final ZoneVertex zoneVertex) {
+		assert zoneVertex != null;
 		return bupSet.parallelStream().anyMatch(zv -> zoneVertex.equivalates(zv));
 	}
 }

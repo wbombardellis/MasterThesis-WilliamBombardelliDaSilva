@@ -109,7 +109,7 @@ public class GraphgrammarUtil {
 	 * Set new unique IDs for each vertex in {@code vertices}
 	 * @param vertices		Vertices which IDs are to be set uniquely
 	 */
-	public static void ensureUniqueIds(final Collection<Vertex> vertices) {
+	public static void ensureUniqueIds(final Collection<? extends Vertex> vertices) {
 		for (Vertex v : vertices) {
 			v.setId(EcoreUtil.generateUUID());
 		}
