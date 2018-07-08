@@ -12,22 +12,18 @@ import org.apache.logging.log4j.Logger;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.wbsilva.bence.graphgrammar.Derivation;
 import org.wbsilva.bence.graphgrammar.DerivationStep;
 import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.ParsingTree;
-import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
-import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
-import org.wbsilva.bence.transformer.BeNCETransformer;
 
 /**
- * TODO
+ * This class implements a B-eNCE graph parser.
  * @author wbombardellis
  *
  */
@@ -42,9 +38,14 @@ public class BeNCEParser {
 	}
 	
 	/**
-	 * TODO
-	 * @param graph
-	 * @return
+	 * Parse the input {@code graph} according to the {@code grammar} of this class.
+	 * Returns a parsing tree if {@code graph} belongs to the language defined with the {@code grammar},
+	 * otherwise empty.
+	 * The parser works even if the grammar is ambiguous, in which case only one parsing tree is returned by this method.
+	 *  
+	 * @param graph			The graph to be parsed. Cannot be null
+	 * @return				The parsing tree for the input {@code graph} and the {@code grammar} of this class. 
+	 * 						Or empty if it is not part of the language.
 	 */
 	public Optional<ParsingTree> parse(final Graph graph){
 		assert graph != null;
@@ -130,6 +131,16 @@ public class BeNCEParser {
 		}
 	}
 
+	/**
+	 * Create the zone graph for the zone vertices {@code zoneVertices} from {@code graph}.
+	 * That is, Z(R) with R being the zone vertices.
+	 * If {@code zoneVertices} are empty, than return an empty graph (not null).
+	 *  
+	 * @param graph				The graph containing the vertices referred by the zone vertices. Cannot be null.
+	 * @param zoneVertices		The zone vertices that go into the zone graph. Cannot be null. May be empty.
+	 * @return					The zone graph with the zone vertices {@code zoneVertices} 
+	 * 							plus their neighbors in {@code graph}.
+	 */
 	private Graph zoneGraph(final Graph graph, final Set<ZoneVertex> zoneVertices) {
 		final Graph zoneGraph = GraphgrammarFactory.eINSTANCE.createGraph();
 		zoneGraph.setId(EcoreUtil.generateUUID());
@@ -156,6 +167,13 @@ public class BeNCEParser {
 		return zoneGraph;
 	}
 	
+	/**
+	 * Return a set of zone vertices, one for each {@code simpleVertices}, with new IDs and copied vertex and label.
+	 * If {@code simpleVertices} are empty, return an empty set.
+	 * 
+	 * @param simpleVertices	The list of (not zone) vertices that are to be copied into zone vertices. Cannot be null.
+	 * @return					The set of zone vertices.
+	 */
 	private Set<ZoneVertex> zoneVertices(final EList<Vertex> simpleVertices) {
 		return simpleVertices.stream()
 			.map((Vertex v) -> {
@@ -168,11 +186,30 @@ public class BeNCEParser {
 			.collect(Collectors.toSet());
 	}
 
+	/**
+	 * Return true iff the edge {@code e} is between the vertices {@code v} and {@code w}.
+	 * That is, true if e = (v,w) or e = (w,v). False otherwise.
+	 * @param e		The edge. Cannot be null.
+	 * @param v		The one vertex. Cannot be null.
+	 * @param w		The other vertex. Cannot be null.
+	 * @return		True iff {@code e} is an edge connecting {@code v} and {@code w}
+	 */
 	private boolean edgeBetween(final Edge e, final Vertex v, final Vertex w){
 		return (e.getFrom().getId().equals(v.getId()) && e.getTo().getId().equals(w.getId()))
 				|| (e.getTo().getId().equals(v.getId()) && e.getFrom().getId().equals(w.getId()));
 	}
 
+	/**
+	 * Return the zone graph induced by the IDs of the zone vertices in {@code retainSet} from the graph {@code graph}.
+	 * That is, Y(R) where R is the zone vertices in {@code retainSet}.
+	 * The induction of a graph consists basically of creating a new zone graph using only 
+	 * the vertices in {@code retainSet} (without the inclusion of further neighbors).
+	 * If {@code retainSet} is empty, then return an empty zone graph.
+	 *    
+	 * @param graph			The graph containing the vertices used to induce the new zone graph. Cannot be null.
+	 * @param retainSet		The zone vertices with the IDs of the vertices used to induce the new zone graph. Cannot be null.
+	 * @return				The zone graph induced from {@code graph} by the vertices with IDs in {@code retainSet}
+	 */
 	@SuppressWarnings("unchecked")
 	private Graph induce(final Graph graph, final Set<ZoneVertex> retainSet) {
 		//TODO: assert unique ids
@@ -191,6 +228,15 @@ public class BeNCEParser {
 		return zoneGraph(graph, zv);
 	}
 
+	/**
+	 * Contract the vertices in {@code zoneVertices} into a new zone vertex with label {@code label}.
+	 * Return a new zone vertex, in which both the label and the vertices are copied from the arguments.
+	 * If {@code zoneVertices} are emtpy, return a new zone vertex with no vertices inside.
+	 * 
+	 * @param label				The label of the new zone vertex. Cannot be null.
+	 * @param zoneVertices		The set of zone vertices, from which to obtain the vertices that go into the new zone vertex. Cannot be null.
+	 * @return					A new zone vertex containing copies of the vertices that are in the zone vertices {@code zoneVertices} and label {@code label}
+	 */
 	private ZoneVertex contract(final Symbol label, final Set<ZoneVertex> zoneVertices) {
 		//TODO: Assert zoneVertices are disjunct
 		final ZoneVertex zone = GraphgrammarFactory.eINSTANCE.createZoneVertex();
@@ -203,6 +249,13 @@ public class BeNCEParser {
 		return zone;
 	}
 
+	/**
+	 * Return the set of vertices that are contained by the zone vertices {@code zoneVertices}.
+	 * Vertices are copied.
+	 * 
+	 * @param zoneVertices		The zone vertices from which to obtain the vertices. Cannot be null.
+	 * @return					The set of vertices copied from {@code zoneVertices}
+	 */
 	private Set<Vertex> merge(final Set<ZoneVertex> zoneVertices) {
 		//TODO: assert the vertices of zone vertices are not zone vertices
 		return zoneVertices.stream()

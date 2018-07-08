@@ -19,10 +19,9 @@ import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 import org.wbsilva.bence.transformer.parser.BeNCEParser;
 
-import javafx.util.Pair;
-
 /**
- * TODO
+ * This class implements a B-eNCE triple graph grammar transformer, that transforms an input graph (source or target)
+ * into an output graph (target or source) according to the relations described by a triple graph grammar.
  * @author wbombardellis
  *
  */
@@ -36,11 +35,22 @@ public class BeNCETransformer {
 	}
 	
 	/**
-	 * TODO
-	 * @param inputGraph
-	 * @param forward
+	 * Use {@code inputGraph} to create an output graph such that the triple graph composed of these graphs 
+	 * conforms to the {@code tripleGrammar} of this class.
+	 * That is, this method transforms the {@code inputGraph} into an output graph and returns 
+	 * the triple graph containing a copy of boths. The id's of the {@code inputGraph}'s copy are changed and unique, 
+	 * so this transformation is not incremental because both sides are created from scratch.
+	 * If {@code forward} is true, then {@code inputGraph} is used as source graph and it creates a target graph.
+	 * Otherwise, {@code inputGraph} is used as target graph and a source graph is created.
+	 * 
+	 * @param inputGraph		The input graph to be transformed. Cannot be null.
+	 * @param forward			Flag to signalize whether it is a forward or backward transformation 
+	 * @return 					An optional of a transformation result containing the created triple graph and 
+	 * 							the parsing tree generated during parsing of the input, in case of success. Empty otherwise.
 	 */
 	public Optional<TransformationResult> transform (final Graph inputGraph, boolean forward){
+		assert inputGraph != null;
+		
 		//TODO: Assert grammar is valid
 		GraphgrammarUtil.ensureUniqueIds(inputGraph, tripleGrammar);
 		
@@ -118,7 +128,20 @@ public class BeNCETransformer {
 		}
 	}
 
+	/**
+	 * Create a trivial consistent triple graph containing a copy of the first graph of the correct {@code derivation}
+	 * as the source part if {@code forward} is true and as the target part otherwise. IDs are maintained equal.
+	 * Notice that the if the derivation is correct, the first graph should be a graph with only one vertex labeled with the initial symbol.
+	 * 
+	 * The resulting triple graph contains also the correspondence part and morphisms.
+	 * 
+	 * @param derivation		The derivation of a parsing, from which the source or target graph are obtained. Cannot be null.
+	 * @param forward			Flag to signalize whether to use the first graph from the {@code derivation} as source or target.
+	 * 							If true, than as source. Otherwise as target 
+	 * @return					The created triple graph
+	 */
 	private TripleGraph createInitialTripleGraph(final Derivation derivation, final boolean forward) {
+		//TODO assert on the derivation
 		//Input graph set-up
 		final Graph inputGraph = EcoreUtil.copy(derivation.getSteps().get(0).getPrevious());
 		final TripleGraph tripleGraph = GraphgrammarFactory.eINSTANCE.createTripleGraph();

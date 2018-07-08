@@ -1,6 +1,5 @@
 package org.wbsilva.bence.transformer;
 
-import org.wbsilva.bence.graphgrammar.Derivation;
 import org.wbsilva.bence.graphgrammar.ParsingTree;
 import org.wbsilva.bence.graphgrammar.TripleGraph;
 

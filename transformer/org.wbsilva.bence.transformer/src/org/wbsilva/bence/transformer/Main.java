@@ -9,18 +9,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.wbsilva.bence.graphgrammar.Derivation;
-import org.wbsilva.bence.graphgrammar.DerivationStep;
-import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
-import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
-import org.wbsilva.bence.graphgrammar.ParsingTree;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
-import org.wbsilva.bence.graphgrammar.TripleGraph;
-import org.wbsilva.bence.graphgrammar.TripleRule;
-import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
-import org.wbsilva.bence.transformer.parser.BeNCEParser;
 import org.wbsilva.bence.transformer.util.TransformerUtil;
 import org.wbsilva.bence.transformer.util.UIUtil;
 
