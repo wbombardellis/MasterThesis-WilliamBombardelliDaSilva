@@ -10,6 +10,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Grammar</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An eNCE graph grammar
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -175,6 +179,12 @@ public interface Grammar extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return a derivation step for the current graph prev, 
+	 * when applied a rule with right hand side rhs and left hand side vertex,
+	 * resulting in the next graph next, if such derivation is possible,
+	 * Otherwise return null.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */

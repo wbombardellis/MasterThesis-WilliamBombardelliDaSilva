@@ -12,6 +12,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Triple Graph</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A triple edge and node labeled graph
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -143,6 +147,10 @@ public interface TripleGraph extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The image of inverse function of the morphism ms applied to sourceVertex. 
+	 * As ms is bijective, this inverse exists, is unique and also bijective.
+	 * <!-- end-model-doc -->
 	 * @model ordered="false"
 	 * @generated
 	 */
@@ -151,6 +159,10 @@ public interface TripleGraph extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The image of the inverse function of the morphism mt applied to targetVertex.
+	 * As mt is bijective, this inverse exists, is unique and bijective.
+	 * <!-- end-model-doc -->
 	 * @model ordered="false"
 	 * @generated
 	 */

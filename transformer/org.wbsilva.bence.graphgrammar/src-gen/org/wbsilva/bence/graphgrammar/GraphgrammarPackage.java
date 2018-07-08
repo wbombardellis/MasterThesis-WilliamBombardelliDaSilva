@@ -625,13 +625,13 @@ public interface GraphgrammarPackage extends EPackage {
 	int GRAPH_FEATURE_COUNT = 3;
 
 	/**
-	 * The operation id for the '<em>Neighbors</em>' operation.
+	 * The operation id for the '<em>Neighborhood</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH___NEIGHBORS__ELIST = 0;
+	int GRAPH___NEIGHBORHOOD__ELIST = 0;
 
 	/**
 	 * The operation id for the '<em>Isomorphic To</em>' operation.
@@ -1647,14 +1647,14 @@ public interface GraphgrammarPackage extends EPackage {
 	EReference getGraph_Edges();
 
 	/**
-	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#neighbors(org.eclipse.emf.common.util.EList) <em>Neighbors</em>}' operation.
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#neighborhood(org.eclipse.emf.common.util.EList) <em>Neighborhood</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Neighbors</em>' operation.
-	 * @see org.wbsilva.bence.graphgrammar.Graph#neighbors(org.eclipse.emf.common.util.EList)
+	 * @return the meta object for the '<em>Neighborhood</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Graph#neighborhood(org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
-	EOperation getGraph__Neighbors__EList();
+	EOperation getGraph__Neighborhood__EList();
 
 	/**
 	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#isomorphicTo(org.wbsilva.bence.graphgrammar.Graph) <em>Isomorphic To</em>}' operation.
@@ -2452,12 +2452,12 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EReference GRAPH__EDGES = eINSTANCE.getGraph_Edges();
 		/**
-		 * The meta object literal for the '<em><b>Neighbors</b></em>' operation.
+		 * The meta object literal for the '<em><b>Neighborhood</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation GRAPH___NEIGHBORS__ELIST = eINSTANCE.getGraph__Neighbors__EList();
+		EOperation GRAPH___NEIGHBORHOOD__ELIST = eINSTANCE.getGraph__Neighborhood__EList();
 		/**
 		 * The meta object literal for the '<em><b>Isomorphic To</b></em>' operation.
 		 * <!-- begin-user-doc -->

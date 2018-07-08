@@ -356,23 +356,20 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 
 		for (Vertex corrV : tripleRule.getCorr().getRhs().getVertices()) {
 			final Vertex newCorrV = corrUnifier.get(corrV);
-			
+
 			final EMap<Vertex, Vertex> ruleOutputMorphism = forward ? tripleRule.getMt() : tripleRule.getMs();
 			final EMap<Vertex, Vertex> ruleInputMorphism = forward ? tripleRule.getMs() : tripleRule.getMt();
 
 			//TODO: Add assertions for the morphism  and for the vertices below (can they be empty?)
-			
+
 			//Get vertex object of the just added output part
 			final Vertex outputV = ruleOutputMorphism.get(corrV);
 			final Vertex newOutputV = outputUnifier.get(outputV);
 
 			//Get vertex object of the input part
 			final Vertex inputV = ruleInputMorphism.get(corrV);
-			final Vertex newInputV = inputUnifier.get(
-					inputRule.getRhs().getVertices().parallelStream()
-					.filter(w -> w.getId().equals(inputV.getId()))
-					.findAny()
-					.orElse(null));
+			final Vertex newInputV = inputUnifier.get(inputRule.getRhs().getVertices().parallelStream()
+					.filter(w -> w.getId().equals(inputV.getId())).findAny().orElse(null));
 
 			inputMorphism.put(newCorrV, newInputV);
 			outputMorphism.put(newCorrV, newOutputV);

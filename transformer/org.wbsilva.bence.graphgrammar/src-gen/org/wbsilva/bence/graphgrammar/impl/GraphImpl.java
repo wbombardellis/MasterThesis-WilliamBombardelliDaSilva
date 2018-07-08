@@ -151,7 +151,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<Vertex> neighbors(EList<Vertex> vertices) {
+	public EList<Vertex> neighborhood(EList<Vertex> vertices) {
 		//TODO: Assure graph is valid
 		final Function<Vertex, Set<Vertex>> neigh = (Vertex v) -> {
 			Set<Vertex> out = this.getEdges().stream().filter(e -> e.getFrom().getId().equals(v.getId()))
@@ -164,6 +164,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 			return out;
 		};
 
+		//TODO: It should exclude the vertices from "vertices" 
 		return new BasicEList<Vertex>(vertices.stream().map(neigh).reduce((a, b) -> {
 			a.retainAll(b);
 			return a;
@@ -320,8 +321,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case GraphgrammarPackage.GRAPH___NEIGHBORS__ELIST:
-			return neighbors((EList<Vertex>) arguments.get(0));
+		case GraphgrammarPackage.GRAPH___NEIGHBORHOOD__ELIST:
+			return neighborhood((EList<Vertex>) arguments.get(0));
 		case GraphgrammarPackage.GRAPH___ISOMORPHIC_TO__GRAPH:
 			return isomorphicTo((Graph) arguments.get(0));
 		case GraphgrammarPackage.GRAPH___IN_EDGES__VERTEX:

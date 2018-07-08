@@ -611,7 +611,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getGraph__Neighbors__EList() {
+	public EOperation getGraph__Neighborhood__EList() {
 		return graphEClass.getEOperations().get(0);
 	}
 
@@ -1066,7 +1066,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEAttribute(graphEClass, GRAPH__ID);
 		createEReference(graphEClass, GRAPH__VERTICES);
 		createEReference(graphEClass, GRAPH__EDGES);
-		createEOperation(graphEClass, GRAPH___NEIGHBORS__ELIST);
+		createEOperation(graphEClass, GRAPH___NEIGHBORHOOD__ELIST);
 		createEOperation(graphEClass, GRAPH___ISOMORPHIC_TO__GRAPH);
 		createEOperation(graphEClass, GRAPH___IN_EDGES__VERTEX);
 		createEOperation(graphEClass, GRAPH___OUT_EDGES__VERTEX);
@@ -1277,7 +1277,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				!IS_ORDERED);
 
-		op = initEOperation(getGraph__Neighbors__EList(), this.getVertex(), "neighbors", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getGraph__Neighborhood__EList(), this.getVertex(), "neighborhood", 0, -1, IS_UNIQUE,
+				!IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertices", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getGraph__IsomorphicTo__Graph(), ecorePackage.getEBoolean(), "isomorphicTo", 0, 1,

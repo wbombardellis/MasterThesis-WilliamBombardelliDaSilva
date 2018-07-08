@@ -11,6 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Triple Grammar</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An eNCE triple graph grammar
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -174,6 +178,12 @@ public interface TripleGrammar extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Produce the target part of the triple graph tripleGraph if forward is true,
+	 * otherwise the source part. Produce moreover, the correspondence part,
+	 * according to the derivation step derivationStep from the parsing process
+	 * of the input graph, if this is compatible with this triple grammar.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */

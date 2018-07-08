@@ -9,6 +9,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Edge</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A labeled edge of a graph
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -132,6 +136,12 @@ public interface Edge extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Compare this edge to other, creating a total order.
+	 * If this < other then return -1
+	 * if this > other then return 1
+	 * else return 0
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */

@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getVertexLabelPair()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/GenModel documenation='A pair of a vertex and an edge label'"
  * @generated
  */
 public interface VertexLabelPair extends EObject {

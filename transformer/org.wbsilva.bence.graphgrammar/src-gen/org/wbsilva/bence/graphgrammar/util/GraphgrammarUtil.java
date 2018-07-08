@@ -1,33 +1,37 @@
 package org.wbsilva.bence.graphgrammar.util;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.wbsilva.bence.graphgrammar.Edge;
-import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
-import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
 import org.wbsilva.bence.graphgrammar.TripleRule;
 import org.wbsilva.bence.graphgrammar.Vertex;
 
 /**
- * TODO
+ * Utilities for the graph grammar metamodel
  * @author wbombardellis
  *
  */
 public class GraphgrammarUtil {
 
-	public static boolean anyBijectiveMapping(final List<Set<Vertex>> candidates) {
-		return anyBijectiveMapping(new ArrayList<Vertex>(0), candidates);
-	}
-	
+	/**
+	 * Return true iff a {@code mapping} represents part of a bijective mapping constructed from the list of candidates 
+	 * for each vertex {@code candidates}.
+	 * Each element i of this list holds the set of candidate vertices for the mapping's image of the i-th vertex
+	 * and each element i of the list {@code mapping} holds the chosen image for the i-th vertex.
+	 * This method supposes that the union of all candidate vertices belongs to the n vertices of the mapping's domain.
+	 * 
+	 * @param mapping			The partial mapping constructed so far
+	 * @param candidates		The set of candidate vertices for image of each of the n vertices 
+	 * @return					True if mapping is part of a bijection from the n vertices (each one represented 
+	 * 							by each position of the candidates list) to the candidate vertices, false otherwise.
+	 */
 	private static boolean anyBijectiveMapping(final List<Vertex> mapping, final List<Set<Vertex>> candidates) {
 		//if mapping is complete (it got to a leaf of the search space)
 		if (mapping.size() == candidates.size()) {
@@ -62,6 +66,28 @@ public class GraphgrammarUtil {
 		}
 	}
 	
+	/**
+	 * Return true iff a bijective mapping can be constructed from the list of candidates for each vertex {@code candidates}.
+	 * Each element i of this list holds the set of candidate vertices for the mapping's image of the i-th vertex.
+	 * This method supposes that the union of all candidate vertices belongs to the n vertices of the mapping's domain.
+	 * 
+	 * @param candidates		The set of candidate vertices for image of each of the n vertices 
+	 * @return					True if there is a bijection from the n vertices (each one represented 
+	 * 							by each position of the candidates list) to the candidate vertices, false otherwise. 
+	 */
+	public static boolean anyBijectiveMapping(final List<Set<Vertex>> candidates) {
+		return anyBijectiveMapping(new ArrayList<Vertex>(0), candidates);
+	}
+	
+	/**
+	 * Return true iff the edges {@code e} and {@code f} are isomorphic. Edges are compared one-by-one according to their order.
+	 * If any of them is null, return false.
+	 * 
+	 * @param e		One list of edges
+	 * @param f		Other list of edges
+	 * @return		True if the list of edges {@code e} and {@code f} are isomorphic one-by-one, false otherwise.
+	 * @see Edge#compareTo(Edge)
+	 */
 	public static boolean isomorphicEdges(final List<Edge> e, final List<Edge> f) {
 		//TODO: asserts
 		if (e != null && f != null && e.size() == f.size()) {
@@ -79,17 +105,31 @@ public class GraphgrammarUtil {
 		}
 	}
 
+	/**
+	 * Set new unique IDs for each vertex in {@code vertices}
+	 * @param vertices		Vertices which IDs are to be set uniquely
+	 */
 	public static void ensureUniqueIds(final Collection<Vertex> vertices) {
 		for (Vertex v : vertices) {
 			v.setId(EcoreUtil.generateUUID());
 		}
 	}
 	
+	/**
+	 * Set new unique ID for the graph {@code graph} and its vertices
+	 * @param graph			Graph to be set with unique IDs
+	 * @see GraphgrammarUtil#ensureUniqueIds(Collection)
+	 */
 	public static void ensureUniqueIds(Graph graph) {
 		graph.setId(EcoreUtil.generateUUID());
 		ensureUniqueIds(graph.getVertices());
 	}
 	
+	/**
+	 * Set new unique ID for the graph {@code graph} and for the grammar {@code grammar} as well as for its rules.
+	 * @param graph			Graph to be set with unique IDs
+	 * @param grammar		Grammar to be set with unique IDs
+	 */
 	public static void ensureUniqueIds(final Graph graph, final TripleGrammar grammar) {
 		//IDs for the host graph
 		GraphgrammarUtil.ensureUniqueIds(graph);

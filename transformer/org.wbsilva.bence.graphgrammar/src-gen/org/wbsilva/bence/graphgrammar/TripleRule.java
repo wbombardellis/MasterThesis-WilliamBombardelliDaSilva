@@ -11,6 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Triple Rule</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A triple rule of a triple graph grammar
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

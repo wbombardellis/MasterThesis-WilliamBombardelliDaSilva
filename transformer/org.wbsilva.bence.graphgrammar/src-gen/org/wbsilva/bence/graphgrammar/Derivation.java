@@ -10,6 +10,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Derivation</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Derivation as a list of derivation steps
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

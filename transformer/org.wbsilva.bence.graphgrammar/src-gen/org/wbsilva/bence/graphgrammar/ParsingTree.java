@@ -11,6 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Parsing Tree</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The parsing tree of a graph parsed by a graph grammar
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -96,6 +100,9 @@ public interface ParsingTree extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return a derivation corresponding to this parsing tree
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */

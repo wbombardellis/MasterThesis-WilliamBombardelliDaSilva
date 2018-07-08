@@ -11,6 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Rule</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Rule of a graph grammar
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -168,6 +172,12 @@ public interface Rule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Given the graph and a list of edges belonging to it, return a list of edges
+	 * that should be added to it for the embedding of the application of this rule.
+	 * This method can be used after adding the RHS of this rule to the graph to
+	 * connect it with the rest of the graph.
+	 * <!-- end-model-doc -->
 	 * @model ordered="false" edgesMany="true" edgesOrdered="false"
 	 * @generated
 	 */
@@ -176,6 +186,10 @@ public interface Rule extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Apply this rule to the graph, substituting vertex by the RHS of this rule and
+	 * embedding it to the rest of the graph
+	 * <!-- end-model-doc -->
 	 * @model mapType="org.wbsilva.bence.graphgrammar.VertexToVertexMap&lt;org.wbsilva.bence.graphgrammar.Vertex, org.wbsilva.bence.graphgrammar.Vertex&gt;" ordered="false"
 	 * @generated
 	 */

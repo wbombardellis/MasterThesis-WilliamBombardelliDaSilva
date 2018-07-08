@@ -9,6 +9,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Zone Vertex</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Zone vertex of a zone graph, containing zero or more vetices
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -41,6 +45,9 @@ public interface ZoneVertex extends Vertex {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return true iff this zone vertex is equivalent to other
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */

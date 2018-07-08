@@ -10,6 +10,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Graph</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A directed edge and node labeled graph
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -87,14 +91,21 @@ public interface Graph extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return the set of vertices that are neighbors of any vertex from the set 
+	 * vertices, except for vertices that are already in vertices
+	 * <!-- end-model-doc -->
 	 * @model ordered="false" verticesMany="true" verticesOrdered="false"
 	 * @generated
 	 */
-	EList<Vertex> neighbors(EList<Vertex> vertices);
+	EList<Vertex> neighborhood(EList<Vertex> vertices);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return true iff this graph is isomorphic to other
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -103,6 +114,9 @@ public interface Graph extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The incoming edges of vertex
+	 * <!-- end-model-doc -->
 	 * @model ordered="false"
 	 * @generated
 	 */
@@ -111,6 +125,9 @@ public interface Graph extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The outgoing edges of vertex
+	 * <!-- end-model-doc -->
 	 * @model ordered="false"
 	 * @generated
 	 */

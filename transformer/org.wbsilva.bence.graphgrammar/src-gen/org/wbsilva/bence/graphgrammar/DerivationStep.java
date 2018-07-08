@@ -10,6 +10,12 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Derivation Step</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Derivation step of the application of a rule on a vertex of the graph previous, 
+ * resulting in the graph next. The unifier propery maps the vertex of the 
+ * applied rule to the vertices of the next graph.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

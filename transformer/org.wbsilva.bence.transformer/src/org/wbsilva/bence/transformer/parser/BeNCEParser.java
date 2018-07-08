@@ -154,7 +154,7 @@ public class BeNCEParser {
 		final Set<Vertex> vs = merge(zoneVertices);
 		
 		//Add the set of all neighbors of V(R)
-		zoneGraph.getVertices().addAll(zoneVertices(graph.neighbors(new BasicEList<Vertex>(vs))));
+		zoneGraph.getVertices().addAll(zoneVertices(graph.neighborhood(new BasicEList<Vertex>(vs))));
 		
 		for(Vertex v : zoneGraph.getVertices()) {
 			final Set<Edge> newEdges = zoneGraph.getVertices().stream()
