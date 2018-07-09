@@ -31,9 +31,9 @@ class BupTest {
 		Symbol l1 = GraphgrammarFactory.eINSTANCE.createSymbol();
 		l1.setName("1");
 		Symbol l2 = GraphgrammarFactory.eINSTANCE.createSymbol();
-		l1.setName("2");
+		l2.setName("2");
 		Symbol l3 = GraphgrammarFactory.eINSTANCE.createSymbol();
-		l1.setName("3");
+		l3.setName("3");
 		
 		zv1.setLabel(l1);
 		zv2.setLabel(l2);

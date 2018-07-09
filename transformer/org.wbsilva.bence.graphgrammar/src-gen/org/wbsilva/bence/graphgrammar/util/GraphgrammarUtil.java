@@ -7,6 +7,7 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.wbsilva.bence.graphgrammar.Edge;
+import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
@@ -147,6 +148,16 @@ public class GraphgrammarUtil {
 			ensureUniqueIds(r.getCorr().getRhs());
 			ensureUniqueIds(r.getTarget().getRhs());
 		}
+	}
+
+	public static boolean isValidGrammar(final Grammar grammar) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public static boolean isValidGraph(final Graph graph) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

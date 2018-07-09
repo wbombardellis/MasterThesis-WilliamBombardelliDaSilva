@@ -303,6 +303,7 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 				final Graph g = EcoreUtil.copy(prev);
 				final Rule r = EcoreUtil.copy(rule);
 
+				//TODO: Somehow has to manage application of rules to zone graphs (hot to do embedding of edges with no labels in a consistent way?)
 				final EMap<Vertex, Vertex> unifier = r.apply(g, v);
 
 				//TODO: temporary costly implementation. I guess it is enough to check the vEdges correspondence between the 2 graphs
