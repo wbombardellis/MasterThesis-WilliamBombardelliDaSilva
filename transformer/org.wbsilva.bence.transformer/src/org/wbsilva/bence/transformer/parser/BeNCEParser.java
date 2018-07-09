@@ -32,7 +32,7 @@ public class BeNCEParser {
 	
 	static final Logger logger = LogManager.getLogger(BeNCEParser.class);
 	
-	final Grammar grammar;
+	private final Grammar grammar;
 	
 	public BeNCEParser(final Grammar grammar){
 		assert grammar != null;

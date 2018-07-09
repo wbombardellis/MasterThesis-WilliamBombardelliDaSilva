@@ -11,6 +11,7 @@ import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
+import org.wbsilva.bence.graphgrammar.TripleGraph;
 import org.wbsilva.bence.graphgrammar.TripleRule;
 import org.wbsilva.bence.graphgrammar.Vertex;
 
@@ -152,12 +153,22 @@ public class GraphgrammarUtil {
 
 	public static boolean isValidGrammar(final Grammar grammar) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	public static boolean isValidGraph(final Graph graph) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
+	}
+
+	public static boolean isValidTripleGrammar(TripleGrammar tripleGrammar) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	public static boolean isValidTripleGraph(TripleGraph tripleGraph) {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 }
