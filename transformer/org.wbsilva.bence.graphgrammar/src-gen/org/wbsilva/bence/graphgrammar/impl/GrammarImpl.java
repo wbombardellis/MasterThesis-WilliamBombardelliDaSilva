@@ -38,7 +38,6 @@ import org.wbsilva.bence.graphgrammar.Vertex;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.wbsilva.bence.graphgrammar.impl.GrammarImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.GrammarImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.GrammarImpl#getAlphabet <em>Alphabet</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.GrammarImpl#getTerminals <em>Terminals</em>}</li>
@@ -50,24 +49,6 @@ import org.wbsilva.bence.graphgrammar.Vertex;
  * @generated
  */
 public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar {
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = "";
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -149,27 +130,6 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	@Override
 	protected EClass eStaticClass() {
 		return GraphgrammarPackage.Literals.GRAMMAR;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphgrammarPackage.GRAMMAR__ID, oldId, id));
 	}
 
 	/**
@@ -309,7 +269,6 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 				//TODO: temporary costly implementation. I guess it is enough to check the vEdges correspondence between the 2 graphs
 				if (g.isomorphicTo(next)) {
 					final DerivationStep newDS = GraphgrammarFactory.eINSTANCE.createDerivationStep();
-					newDS.setId(EcoreUtil.generateUUID());
 					newDS.setVertex(EcoreUtil.copy(vertex));
 					newDS.setRule(r);
 					newDS.setPrevious(prev);
@@ -348,8 +307,6 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case GraphgrammarPackage.GRAMMAR__ID:
-			return getId();
 		case GraphgrammarPackage.GRAMMAR__NAME:
 			return getName();
 		case GraphgrammarPackage.GRAMMAR__ALPHABET:
@@ -377,9 +334,6 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case GraphgrammarPackage.GRAMMAR__ID:
-			setId((String) newValue);
-			return;
 		case GraphgrammarPackage.GRAMMAR__NAME:
 			setName((String) newValue);
 			return;
@@ -414,9 +368,6 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.GRAMMAR__ID:
-			setId(ID_EDEFAULT);
-			return;
 		case GraphgrammarPackage.GRAMMAR__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -447,8 +398,6 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.GRAMMAR__ID:
-			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case GraphgrammarPackage.GRAMMAR__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case GraphgrammarPackage.GRAMMAR__ALPHABET:
@@ -491,9 +440,7 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();

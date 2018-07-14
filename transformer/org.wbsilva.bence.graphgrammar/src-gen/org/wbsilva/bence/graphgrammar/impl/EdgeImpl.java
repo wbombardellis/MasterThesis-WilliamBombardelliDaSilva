@@ -25,7 +25,6 @@ import org.wbsilva.bence.graphgrammar.Vertex;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.wbsilva.bence.graphgrammar.impl.EdgeImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.EdgeImpl#getFrom <em>From</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.EdgeImpl#getTo <em>To</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.EdgeImpl#getLabel <em>Label</em>}</li>
@@ -34,24 +33,6 @@ import org.wbsilva.bence.graphgrammar.Vertex;
  * @generated
  */
 public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -97,27 +78,6 @@ public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
 	@Override
 	protected EClass eStaticClass() {
 		return GraphgrammarPackage.Literals.EDGE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphgrammarPackage.EDGE__ID, oldId, id));
 	}
 
 	/**
@@ -274,11 +234,11 @@ public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
 			//If this.from.label == other.from.label
 			else {
 				//If this.to.label < other.to.label
-				if (this.getTo().getLabel().getName().compareTo(other.getFrom().getLabel().getName()) < 0) {
+				if (this.getTo().getLabel().getName().compareTo(other.getTo().getLabel().getName()) < 0) {
 					return -1;
 				}
 				//If this.to.label > other.to.label
-				else if (this.getTo().getLabel().getName().compareTo(other.getFrom().getLabel().getName()) > 0) {
+				else if (this.getTo().getLabel().getName().compareTo(other.getTo().getLabel().getName()) > 0) {
 					return 1;
 				}
 				//If this.to.label == other.to.label
@@ -311,8 +271,6 @@ public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case GraphgrammarPackage.EDGE__ID:
-			return getId();
 		case GraphgrammarPackage.EDGE__FROM:
 			if (resolve)
 				return getFrom();
@@ -335,9 +293,6 @@ public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case GraphgrammarPackage.EDGE__ID:
-			setId((String) newValue);
-			return;
 		case GraphgrammarPackage.EDGE__FROM:
 			setFrom((Vertex) newValue);
 			return;
@@ -359,9 +314,6 @@ public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.EDGE__ID:
-			setId(ID_EDEFAULT);
-			return;
 		case GraphgrammarPackage.EDGE__FROM:
 			setFrom((Vertex) null);
 			return;
@@ -383,8 +335,6 @@ public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.EDGE__ID:
-			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case GraphgrammarPackage.EDGE__FROM:
 			return from != null;
 		case GraphgrammarPackage.EDGE__TO:
@@ -407,23 +357,6 @@ public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
 			return compareTo((Edge) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(')');
-		return result.toString();
 	}
 
 } //EdgeImpl

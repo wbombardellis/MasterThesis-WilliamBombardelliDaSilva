@@ -215,7 +215,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGrammar_Id() {
+	public EAttribute getGrammar_Name() {
 		return (EAttribute) grammarEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -224,17 +224,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGrammar_Name() {
-		return (EAttribute) grammarEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getGrammar_Alphabet() {
-		return (EReference) grammarEClass.getEStructuralFeatures().get(2);
+		return (EReference) grammarEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -243,7 +234,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getGrammar_Terminals() {
-		return (EReference) grammarEClass.getEStructuralFeatures().get(3);
+		return (EReference) grammarEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -252,7 +243,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getGrammar_Nonterminals() {
-		return (EReference) grammarEClass.getEStructuralFeatures().get(4);
+		return (EReference) grammarEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -261,7 +252,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getGrammar_Rules() {
-		return (EReference) grammarEClass.getEStructuralFeatures().get(5);
+		return (EReference) grammarEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -270,7 +261,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getGrammar_Initial() {
-		return (EReference) grammarEClass.getEStructuralFeatures().get(6);
+		return (EReference) grammarEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -449,17 +440,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDerivationStep_Id() {
-		return (EAttribute) derivationStepEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getDerivationStep_Rule() {
-		return (EReference) derivationStepEClass.getEStructuralFeatures().get(1);
+		return (EReference) derivationStepEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -468,7 +450,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getDerivationStep_Vertex() {
-		return (EReference) derivationStepEClass.getEStructuralFeatures().get(2);
+		return (EReference) derivationStepEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -477,7 +459,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getDerivationStep_Previous() {
-		return (EReference) derivationStepEClass.getEStructuralFeatures().get(3);
+		return (EReference) derivationStepEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -486,7 +468,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getDerivationStep_Next() {
-		return (EReference) derivationStepEClass.getEStructuralFeatures().get(4);
+		return (EReference) derivationStepEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -495,7 +477,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getDerivationStep_Unifier() {
-		return (EReference) derivationStepEClass.getEStructuralFeatures().get(5);
+		return (EReference) derivationStepEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -512,17 +494,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDerivation_Id() {
-		return (EAttribute) derivationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getDerivation_Steps() {
-		return (EReference) derivationEClass.getEStructuralFeatures().get(1);
+		return (EReference) derivationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -584,17 +557,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGraph_Id() {
-		return (EAttribute) graphEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getGraph_Vertices() {
-		return (EReference) graphEClass.getEStructuralFeatures().get(1);
+		return (EReference) graphEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -603,7 +567,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getGraph_Edges() {
-		return (EReference) graphEClass.getEStructuralFeatures().get(2);
+		return (EReference) graphEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -710,17 +674,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEdge_Id() {
-		return (EAttribute) edgeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getEdge_From() {
-		return (EReference) edgeEClass.getEStructuralFeatures().get(1);
+		return (EReference) edgeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -729,7 +684,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getEdge_To() {
-		return (EReference) edgeEClass.getEStructuralFeatures().get(2);
+		return (EReference) edgeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -738,7 +693,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getEdge_Label() {
-		return (EReference) edgeEClass.getEStructuralFeatures().get(3);
+		return (EReference) edgeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -764,7 +719,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTripleGrammar_Id() {
+	public EAttribute getTripleGrammar_Name() {
 		return (EAttribute) tripleGrammarEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -773,17 +728,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTripleGrammar_Name() {
-		return (EAttribute) tripleGrammarEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTripleGrammar_Alphabet() {
-		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(2);
+		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -792,7 +738,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getTripleGrammar_Terminals() {
-		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(3);
+		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -801,7 +747,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getTripleGrammar_Nonterminals() {
-		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(4);
+		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -810,7 +756,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getTripleGrammar_TripleRules() {
-		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(5);
+		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -819,7 +765,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	public EReference getTripleGrammar_Initial() {
-		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(6);
+		return (EReference) tripleGrammarEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1014,7 +960,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 
 		// Create classes and their features
 		grammarEClass = createEClass(GRAMMAR);
-		createEAttribute(grammarEClass, GRAMMAR__ID);
 		createEAttribute(grammarEClass, GRAMMAR__NAME);
 		createEReference(grammarEClass, GRAMMAR__ALPHABET);
 		createEReference(grammarEClass, GRAMMAR__TERMINALS);
@@ -1045,7 +990,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEAttribute(symbolEClass, SYMBOL__NAME);
 
 		derivationStepEClass = createEClass(DERIVATION_STEP);
-		createEAttribute(derivationStepEClass, DERIVATION_STEP__ID);
 		createEReference(derivationStepEClass, DERIVATION_STEP__RULE);
 		createEReference(derivationStepEClass, DERIVATION_STEP__VERTEX);
 		createEReference(derivationStepEClass, DERIVATION_STEP__PREVIOUS);
@@ -1053,7 +997,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(derivationStepEClass, DERIVATION_STEP__UNIFIER);
 
 		derivationEClass = createEClass(DERIVATION);
-		createEAttribute(derivationEClass, DERIVATION__ID);
 		createEReference(derivationEClass, DERIVATION__STEPS);
 
 		parsingTreeEClass = createEClass(PARSING_TREE);
@@ -1063,7 +1006,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEOperation(parsingTreeEClass, PARSING_TREE___DERIVATION);
 
 		graphEClass = createEClass(GRAPH);
-		createEAttribute(graphEClass, GRAPH__ID);
 		createEReference(graphEClass, GRAPH__VERTICES);
 		createEReference(graphEClass, GRAPH__EDGES);
 		createEOperation(graphEClass, GRAPH___NEIGHBORHOOD__ELIST);
@@ -1080,14 +1022,12 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEOperation(zoneVertexEClass, ZONE_VERTEX___EQUIVALATES__ZONEVERTEX);
 
 		edgeEClass = createEClass(EDGE);
-		createEAttribute(edgeEClass, EDGE__ID);
 		createEReference(edgeEClass, EDGE__FROM);
 		createEReference(edgeEClass, EDGE__TO);
 		createEReference(edgeEClass, EDGE__LABEL);
 		createEOperation(edgeEClass, EDGE___COMPARE_TO__EDGE);
 
 		tripleGrammarEClass = createEClass(TRIPLE_GRAMMAR);
-		createEAttribute(tripleGrammarEClass, TRIPLE_GRAMMAR__ID);
 		createEAttribute(tripleGrammarEClass, TRIPLE_GRAMMAR__NAME);
 		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__ALPHABET);
 		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__TERMINALS);
@@ -1150,8 +1090,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(grammarEClass, Grammar.class, "Grammar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGrammar_Id(), ecorePackage.getEString(), "id", "", 0, 1, Grammar.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGrammar_Name(), ecorePackage.getEString(), "name", null, 0, 1, Grammar.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGrammar_Alphabet(), this.getSymbol(), null, "alphabet", null, 0, -1, Grammar.class,
@@ -1227,8 +1165,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 
 		initEClass(derivationStepEClass, DerivationStep.class, "DerivationStep", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDerivationStep_Id(), ecorePackage.getEString(), "id", null, 0, 1, DerivationStep.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDerivationStep_Rule(), this.getRule(), null, "rule", null, 0, 1, DerivationStep.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1247,8 +1183,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 
 		initEClass(derivationEClass, Derivation.class, "Derivation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDerivation_Id(), ecorePackage.getEString(), "id", null, 0, 1, Derivation.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDerivation_Steps(), this.getDerivationStep(), null, "steps", null, 0, -1, Derivation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1268,8 +1202,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		initEOperation(getParsingTree__Derivation(), this.getDerivation(), "derivation", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(graphEClass, Graph.class, "Graph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGraph_Id(), ecorePackage.getEString(), "id", "", 0, 1, Graph.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGraph_Vertices(), this.getVertex(), null, "vertices", null, 0, -1, Graph.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				!IS_ORDERED);
@@ -1309,8 +1241,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		addEParameter(op, this.getZoneVertex(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(edgeEClass, Edge.class, "Edge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEdge_Id(), ecorePackage.getEString(), "id", null, 0, 1, Edge.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEdge_From(), this.getVertex(), null, "from", null, 0, 1, Edge.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
@@ -1326,8 +1256,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 
 		initEClass(tripleGrammarEClass, TripleGrammar.class, "TripleGrammar", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTripleGrammar_Id(), ecorePackage.getEString(), "id", null, 0, 1, TripleGrammar.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTripleGrammar_Name(), ecorePackage.getEString(), "name", null, 0, 1, TripleGrammar.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTripleGrammar_Alphabet(), this.getSymbol(), null, "alphabet", null, 0, -1,

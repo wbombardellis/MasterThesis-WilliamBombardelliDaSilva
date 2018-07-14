@@ -14,8 +14,6 @@
       <eParameters name="vertex" eType="#//Vertex"/>
       <eParameters name="rhs" eType="#//Graph"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="alphabet" ordered="false"
         upperBound="-1" eType="#//Symbol" containment="true"/>
@@ -83,8 +81,6 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Derivation step of the application of a rule on a vertex of the graph previous, &#xA;resulting in the graph next. The unifier propery maps the vertex of the &#xA;applied rule to the vertices of the next graph."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rule" eType="#//Rule" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vertex" eType="#//Vertex"
         containment="true"/>
@@ -99,8 +95,6 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Derivation as a list of derivation steps"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
         eType="#//DerivationStep" containment="true"/>
   </eClassifiers>
@@ -148,8 +142,6 @@
       </eAnnotations>
       <eParameters name="vertex" eType="#//Vertex"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" ordered="false"
         upperBound="-1" eType="#//Vertex" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="edges" ordered="false"
@@ -187,8 +179,6 @@
       </eAnnotations>
       <eParameters name="other" eType="#//Edge"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Vertex"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//Vertex"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//Symbol"
@@ -206,8 +196,6 @@
       <eParameters name="derivationStep" eType="#//DerivationStep"/>
       <eParameters name="forward" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="alphabet" ordered="false"
         upperBound="-1" eType="#//Symbol" containment="true"/>

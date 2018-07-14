@@ -68,22 +68,13 @@ public interface GraphgrammarPackage extends EPackage {
 	int GRAMMAR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAMMAR__ID = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAMMAR__NAME = 1;
+	int GRAMMAR__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Alphabet</b></em>' containment reference list.
@@ -92,7 +83,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAMMAR__ALPHABET = 2;
+	int GRAMMAR__ALPHABET = 1;
 
 	/**
 	 * The feature id for the '<em><b>Terminals</b></em>' reference list.
@@ -101,7 +92,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAMMAR__TERMINALS = 3;
+	int GRAMMAR__TERMINALS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Nonterminals</b></em>' reference list.
@@ -110,7 +101,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAMMAR__NONTERMINALS = 4;
+	int GRAMMAR__NONTERMINALS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
@@ -119,7 +110,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAMMAR__RULES = 5;
+	int GRAMMAR__RULES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Initial</b></em>' reference.
@@ -128,7 +119,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAMMAR__INITIAL = 6;
+	int GRAMMAR__INITIAL = 5;
 
 	/**
 	 * The number of structural features of the '<em>Grammar</em>' class.
@@ -137,7 +128,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAMMAR_FEATURE_COUNT = 7;
+	int GRAMMAR_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Derives</em>' operation.
@@ -397,22 +388,13 @@ public interface GraphgrammarPackage extends EPackage {
 	int DERIVATION_STEP = 5;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DERIVATION_STEP__ID = 0;
-
-	/**
 	 * The feature id for the '<em><b>Rule</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DERIVATION_STEP__RULE = 1;
+	int DERIVATION_STEP__RULE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Vertex</b></em>' containment reference.
@@ -421,7 +403,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DERIVATION_STEP__VERTEX = 2;
+	int DERIVATION_STEP__VERTEX = 1;
 
 	/**
 	 * The feature id for the '<em><b>Previous</b></em>' containment reference.
@@ -430,7 +412,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DERIVATION_STEP__PREVIOUS = 3;
+	int DERIVATION_STEP__PREVIOUS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Next</b></em>' containment reference.
@@ -439,7 +421,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DERIVATION_STEP__NEXT = 4;
+	int DERIVATION_STEP__NEXT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Unifier</b></em>' map.
@@ -448,7 +430,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DERIVATION_STEP__UNIFIER = 5;
+	int DERIVATION_STEP__UNIFIER = 4;
 
 	/**
 	 * The number of structural features of the '<em>Derivation Step</em>' class.
@@ -457,7 +439,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DERIVATION_STEP_FEATURE_COUNT = 6;
+	int DERIVATION_STEP_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Derivation Step</em>' class.
@@ -479,22 +461,13 @@ public interface GraphgrammarPackage extends EPackage {
 	int DERIVATION = 6;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DERIVATION__ID = 0;
-
-	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DERIVATION__STEPS = 1;
+	int DERIVATION__STEPS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Derivation</em>' class.
@@ -503,7 +476,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DERIVATION_FEATURE_COUNT = 2;
+	int DERIVATION_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Derivation</em>' class.
@@ -589,22 +562,13 @@ public interface GraphgrammarPackage extends EPackage {
 	int GRAPH = 8;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH__ID = 0;
-
-	/**
 	 * The feature id for the '<em><b>Vertices</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH__VERTICES = 1;
+	int GRAPH__VERTICES = 0;
 
 	/**
 	 * The feature id for the '<em><b>Edges</b></em>' containment reference list.
@@ -613,7 +577,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH__EDGES = 2;
+	int GRAPH__EDGES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Graph</em>' class.
@@ -622,7 +586,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_FEATURE_COUNT = 3;
+	int GRAPH_FEATURE_COUNT = 2;
 
 	/**
 	 * The operation id for the '<em>Neighborhood</em>' operation.
@@ -790,22 +754,13 @@ public interface GraphgrammarPackage extends EPackage {
 	int EDGE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDGE__ID = 0;
-
-	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__FROM = 1;
+	int EDGE__FROM = 0;
 
 	/**
 	 * The feature id for the '<em><b>To</b></em>' reference.
@@ -814,7 +769,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__TO = 2;
+	int EDGE__TO = 1;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' containment reference.
@@ -823,7 +778,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__LABEL = 3;
+	int EDGE__LABEL = 2;
 
 	/**
 	 * The number of structural features of the '<em>Edge</em>' class.
@@ -832,7 +787,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_FEATURE_COUNT = 4;
+	int EDGE_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Compare To</em>' operation.
@@ -863,22 +818,13 @@ public interface GraphgrammarPackage extends EPackage {
 	int TRIPLE_GRAMMAR = 12;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRIPLE_GRAMMAR__ID = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_GRAMMAR__NAME = 1;
+	int TRIPLE_GRAMMAR__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Alphabet</b></em>' containment reference list.
@@ -887,7 +833,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_GRAMMAR__ALPHABET = 2;
+	int TRIPLE_GRAMMAR__ALPHABET = 1;
 
 	/**
 	 * The feature id for the '<em><b>Terminals</b></em>' reference list.
@@ -896,7 +842,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_GRAMMAR__TERMINALS = 3;
+	int TRIPLE_GRAMMAR__TERMINALS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Nonterminals</b></em>' reference list.
@@ -905,7 +851,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_GRAMMAR__NONTERMINALS = 4;
+	int TRIPLE_GRAMMAR__NONTERMINALS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Triple Rules</b></em>' containment reference list.
@@ -914,7 +860,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_GRAMMAR__TRIPLE_RULES = 5;
+	int TRIPLE_GRAMMAR__TRIPLE_RULES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Initial</b></em>' reference.
@@ -923,7 +869,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_GRAMMAR__INITIAL = 6;
+	int TRIPLE_GRAMMAR__INITIAL = 5;
 
 	/**
 	 * The number of structural features of the '<em>Triple Grammar</em>' class.
@@ -932,7 +878,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_GRAMMAR_FEATURE_COUNT = 7;
+	int TRIPLE_GRAMMAR_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Produce</em>' operation.
@@ -1171,17 +1117,6 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getGrammar();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.wbsilva.bence.graphgrammar.Grammar#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see org.wbsilva.bence.graphgrammar.Grammar#getId()
-	 * @see #getGrammar()
-	 * @generated
-	 */
-	EAttribute getGrammar_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.wbsilva.bence.graphgrammar.Grammar#getName <em>Name</em>}'.
@@ -1453,17 +1388,6 @@ public interface GraphgrammarPackage extends EPackage {
 	EClass getDerivationStep();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.wbsilva.bence.graphgrammar.DerivationStep#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see org.wbsilva.bence.graphgrammar.DerivationStep#getId()
-	 * @see #getDerivationStep()
-	 * @generated
-	 */
-	EAttribute getDerivationStep_Id();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.DerivationStep#getRule <em>Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1527,17 +1451,6 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDerivation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.wbsilva.bence.graphgrammar.Derivation#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see org.wbsilva.bence.graphgrammar.Derivation#getId()
-	 * @see #getDerivation()
-	 * @generated
-	 */
-	EAttribute getDerivation_Id();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.wbsilva.bence.graphgrammar.Derivation#getSteps <em>Steps</em>}'.
@@ -1612,17 +1525,6 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getGraph();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.wbsilva.bence.graphgrammar.Graph#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see org.wbsilva.bence.graphgrammar.Graph#getId()
-	 * @see #getGraph()
-	 * @generated
-	 */
-	EAttribute getGraph_Id();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.wbsilva.bence.graphgrammar.Graph#getVertices <em>Vertices</em>}'.
@@ -1760,17 +1662,6 @@ public interface GraphgrammarPackage extends EPackage {
 	EClass getEdge();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.wbsilva.bence.graphgrammar.Edge#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see org.wbsilva.bence.graphgrammar.Edge#getId()
-	 * @see #getEdge()
-	 * @generated
-	 */
-	EAttribute getEdge_Id();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.wbsilva.bence.graphgrammar.Edge#getFrom <em>From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1822,17 +1713,6 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTripleGrammar();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#getId()
-	 * @see #getTripleGrammar()
-	 * @generated
-	 */
-	EAttribute getTripleGrammar_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#getName <em>Name</em>}'.
@@ -2127,13 +2007,6 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EClass GRAMMAR = eINSTANCE.getGrammar();
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GRAMMAR__ID = eINSTANCE.getGrammar_Id();
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2320,13 +2193,6 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EClass DERIVATION_STEP = eINSTANCE.getDerivationStep();
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DERIVATION_STEP__ID = eINSTANCE.getDerivationStep_Id();
-		/**
 		 * The meta object literal for the '<em><b>Rule</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2370,13 +2236,6 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DERIVATION = eINSTANCE.getDerivation();
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DERIVATION__ID = eINSTANCE.getDerivation_Id();
 		/**
 		 * The meta object literal for the '<em><b>Steps</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
@@ -2430,13 +2289,6 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EClass GRAPH = eINSTANCE.getGraph();
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GRAPH__ID = eINSTANCE.getGraph_Id();
 		/**
 		 * The meta object literal for the '<em><b>Vertices</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
@@ -2535,13 +2387,6 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EClass EDGE = eINSTANCE.getEdge();
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EDGE__ID = eINSTANCE.getEdge_Id();
-		/**
 		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2578,13 +2423,6 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRIPLE_GRAMMAR = eINSTANCE.getTripleGrammar();
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRIPLE_GRAMMAR__ID = eINSTANCE.getTripleGrammar_Id();
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->

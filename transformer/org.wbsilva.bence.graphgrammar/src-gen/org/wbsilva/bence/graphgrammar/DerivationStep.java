@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.wbsilva.bence.graphgrammar.DerivationStep#getId <em>Id</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.DerivationStep#getRule <em>Rule</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.DerivationStep#getVertex <em>Vertex</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.DerivationStep#getPrevious <em>Previous</em>}</li>
@@ -33,32 +32,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface DerivationStep extends EObject {
-
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getDerivationStep_Id()
-	 * @model id="true"
-	 * @generated
-	 */
-	String getId();
-
-	/**
-	 * Sets the value of the '{@link org.wbsilva.bence.graphgrammar.DerivationStep#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Rule</b></em>' containment reference.

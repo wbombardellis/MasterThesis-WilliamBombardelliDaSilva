@@ -108,7 +108,7 @@ public class Main {
 				
 				if (root instanceof TripleGrammar) {
 					tripleGrammar = (TripleGrammar) root;
-					logger.debug("Triple Grammar model read successfully. Using: "+ tripleGrammar.getId() +", name: "+ tripleGrammar.getName());
+					logger.debug("Triple Grammar model read successfully. Using: "+ tripleGrammar.getName());
 				} else {
 					logger.error("Missing triple grammar model. The resource file's first element should be a triple grammar, found a "+ root.eClass()+ ". Aborting");
 					UIUtil.printFail();
@@ -139,7 +139,7 @@ public class Main {
 				
 				if (root instanceof Graph) {
 					inputGraph = (Graph) root;
-					logger.debug("Graph model read successfully. Using graph: "+ inputGraph.getId());
+					logger.debug("Graph model read successfully. Using graph: "+ inputGraph);
 				} else {
 					logger.error("Missing graph model. The graph resource file's first element should be a graph, found a "+ root.eClass()+ ". Aborting");
 					UIUtil.printFail();

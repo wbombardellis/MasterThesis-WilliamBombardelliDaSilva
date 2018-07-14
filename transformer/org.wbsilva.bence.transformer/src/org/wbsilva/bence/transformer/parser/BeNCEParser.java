@@ -54,7 +54,7 @@ public class BeNCEParser {
 		assert GraphgrammarUtil.isValidGrammar(this.grammar);
 		assert GraphgrammarUtil.isValidGraph(graph);
 		
-		logger.debug(String.format("Starting parsing of the graph %s", graph.getId()));
+		logger.debug(String.format("Starting parsing of the graph %s", graph));
 		
 		//Create bottom-up parse set
 		final Set<ZoneVertex> initialZoneVertices = zoneVertices(graph.getVertices());		
@@ -164,7 +164,6 @@ public class BeNCEParser {
 		assert zoneVertices != null;
 		
 		final Graph zoneGraph = GraphgrammarFactory.eINSTANCE.createGraph();
-		zoneGraph.setId(EcoreUtil.generateUUID());
 		
 		assert zoneVertices.parallelStream().map(v -> v.getId()).distinct().count() == 
 				zoneVertices.size();
@@ -197,7 +196,6 @@ public class BeNCEParser {
 						final Edge e = GraphgrammarFactory.eINSTANCE.createEdge();
 						e.setFrom(v);
 						e.setTo(w);
-						e.setId(EcoreUtil.generateUUID());
 						//TODO: Which label does it have?
 						
 						es.add(e);

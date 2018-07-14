@@ -58,9 +58,9 @@ public class BeNCETransformer {
 		assert GraphgrammarUtil.isValidGraph(inputGraph);
 		
 		if (forward)
-			logger.debug(String.format("Stating forward transformation with input graph %s", inputGraph.getId()));
+			logger.debug(String.format("Stating forward transformation with input graph %s", inputGraph));
 		else
-			logger.debug(String.format("Stating backward transformation with input graph %s", inputGraph.getId()));
+			logger.debug(String.format("Stating backward transformation with input graph %s", inputGraph));
 		
 		//Construct source (or target) input grammar for the parsing of the input graph
 		final Grammar inputGrammar;
@@ -179,7 +179,6 @@ public class BeNCETransformer {
 		rootCorrVertex.setLabel(EcoreUtil.copy(this.tripleGrammar.getInitial()));
 		
 		final Graph initialCorrGraph = GraphgrammarFactory.eINSTANCE.createGraph();
-		initialCorrGraph.setId(EcoreUtil.generateUUID());
 		initialCorrGraph.getVertices().add(rootCorrVertex);
 		
 		tripleGraph.setCorr(initialCorrGraph);
@@ -190,7 +189,6 @@ public class BeNCETransformer {
 		rootOutputVertex.setLabel(EcoreUtil.copy(this.tripleGrammar.getInitial()));
 		
 		final Graph initialOutputGraph = GraphgrammarFactory.eINSTANCE.createGraph();
-		initialOutputGraph.setId(EcoreUtil.generateUUID());
 		initialOutputGraph.getVertices().add(rootOutputVertex);
 		
 		if (forward)

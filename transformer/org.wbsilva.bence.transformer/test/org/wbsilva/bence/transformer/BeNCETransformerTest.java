@@ -10,6 +10,7 @@ import org.wbsilva.bence.graphgrammar.DerivationStep;
 import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
+import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
 import org.wbsilva.bence.graphgrammar.TripleGraph;
 import org.wbsilva.bence.graphgrammar.Vertex;
@@ -26,6 +27,12 @@ class BeNCETransformerTest {
 	
 	@BeforeAll
 	static void init() {
+		Symbol i = GraphgrammarFactory.eINSTANCE.createSymbol();
+		i.setName("S");
+		tgg0.getAlphabet().add(i);
+		tgg0.getNonterminals().add(i);
+		tgg0.setInitial(i);
+		
 		transformer = new BeNCETransformer(tgg0);
 		
 		d0 = GraphgrammarFactory.eINSTANCE.createDerivation();
@@ -33,6 +40,9 @@ class BeNCETransformerTest {
 		DerivationStep s0 = GraphgrammarFactory.eINSTANCE.createDerivationStep();
 		Graph g0 = GraphgrammarFactory.eINSTANCE.createGraph();
 		Vertex v0 = GraphgrammarFactory.eINSTANCE.createVertex();
+		v0.setLabel(EcoreUtil.copy(tgg0.getInitial()));
+		v0.setId(EcoreUtil.generateUUID());
+		
 		g0.getVertices().add(v0);
 		
 		s0.setPrevious(g0);

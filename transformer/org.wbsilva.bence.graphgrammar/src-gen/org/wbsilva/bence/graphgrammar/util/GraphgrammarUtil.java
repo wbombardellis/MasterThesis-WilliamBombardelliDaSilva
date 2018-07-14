@@ -5,11 +5,15 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
+import org.wbsilva.bence.graphgrammar.Rule;
+import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
 import org.wbsilva.bence.graphgrammar.TripleGraph;
 import org.wbsilva.bence.graphgrammar.TripleRule;
@@ -78,11 +82,13 @@ public class GraphgrammarUtil {
 	 * 							by each position of the candidates list) to the candidate vertices, false otherwise. 
 	 */
 	public static boolean anyBijectiveMapping(final List<Set<Vertex>> candidates) {
+		assert candidates != null;
 		return anyBijectiveMapping(new ArrayList<Vertex>(0), candidates);
 	}
 	
 	/**
 	 * Return true iff the edges {@code e} and {@code f} are isomorphic. Edges are compared one-by-one according to their order.
+	 * Two edges are isomorphic, iff they have the equal label and their incident vertices have also equal labels.
 	 * If any of them is null, return false.
 	 * 
 	 * @param e		One list of edges
@@ -91,7 +97,6 @@ public class GraphgrammarUtil {
 	 * @see Edge#compareTo(Edge)
 	 */
 	public static boolean isomorphicEdges(final List<Edge> e, final List<Edge> f) {
-		//TODO: asserts
 		if (e != null && f != null && e.size() == f.size()) {
 			//Since edges can be canonically ordered, it suffices to order them and check each one for equality
 			e.sort(Edge::compareTo);
@@ -123,7 +128,6 @@ public class GraphgrammarUtil {
 	 * @see GraphgrammarUtil#ensureUniqueIds(Collection)
 	 */
 	public static void ensureUniqueIds(Graph graph) {
-		graph.setId(EcoreUtil.generateUUID());
 		ensureUniqueIds(graph.getVertices());
 	}
 	
@@ -137,7 +141,6 @@ public class GraphgrammarUtil {
 		GraphgrammarUtil.ensureUniqueIds(graph);
 		
 		//IDs for the right hand side of grammar rules
-		grammar.setId(EcoreUtil.generateUUID());
 		for (TripleRule r : grammar.getTripleRules()) {
 			final String id = EcoreUtil.generateUUID();
 			
@@ -151,23 +154,199 @@ public class GraphgrammarUtil {
 		}
 	}
 
+	/**
+	 * Checks that a grammar is concise
+	 * @param grammar	Grammar to test
+	 * @return			True iff {@code grammar} is valid
+	 */
 	public static boolean isValidGrammar(final Grammar grammar) {
-		// TODO Auto-generated method stub
+		if (grammar == null)
+			return false;
+		
+		EList<Symbol> ab = grammar.getAlphabet();
+		if (ab == null || ab.isEmpty())
+			return false;
+		
+		EList<Symbol> n = grammar.getNonterminals();
+		if (n == null || n.isEmpty())
+			return false;
+		
+		EList<Symbol> t = grammar.getTerminals();
+		if (t == null || t.isEmpty())
+			return false;
+		
+		if (n.parallelStream().anyMatch(s -> !ab.contains(s)) || t.parallelStream().anyMatch(s -> !ab.contains(s)))
+			return false;
+		
+		Symbol ini = grammar.getInitial();
+		if (ini == null || ini.getName() == null || ini.getName().isEmpty() || !n.contains(ini))
+			return false;
+		
+		EList<Rule> r = grammar.getRules();
+		if (r == null || r.isEmpty())
+			return false;
+		
+		if (r.parallelStream().map(rr -> rr.getId()).distinct().count() != r.size())
+			return false;
+		if (r.parallelStream().anyMatch(rr -> !isValidRule(ab, rr)))
+			return false;
+		
 		return true;
 	}
 
+	/**
+	 * Checks if a rule is concise
+	 * @param alphabet		The alphabet to which the rule refers 
+	 * @param rule			The rule to test		
+	 * @return				True iff {@code rule} is valid
+	 */
+	private static boolean isValidRule(final EList<Symbol> alphabet, final Rule rule) {
+		if (rule.getLhs() == null || rule.getRhs() == null || !isValidGraph(rule.getRhs()))
+			return false;
+		if (rule.getEmbedding() == null || 
+				rule.getEmbedding().entrySet().parallelStream()
+					.anyMatch(e -> e.getValue() == null || e.getValue().isEmpty() || !inAlphabet(alphabet, e.getValue())) ||
+					rule.getEmbedding().entrySet().parallelStream()
+					.anyMatch(e -> !rule.getRhs().getVertices().contains(e.getKey().getVertex()) || !inAlphabet(alphabet, e.getKey().getEdgeLabel())))
+				return false;
+		return true;
+	}
+
+	/**
+	 * Checks if a symbol is in the alphabet (compares using the name of the symbol, not the object)
+	 * @param alphabet	Alphabet to test
+	 * @param symbol	Symbol to test
+	 * @return			True iff {@code symbol} is in the {@code alphabet}
+	 */
+	private static boolean inAlphabet(final EList<Symbol> alphabet, final Symbol symbol) {
+		return alphabet.parallelStream().anyMatch(s -> s.getName().equals(symbol.getName()));
+	}
+
+	/**
+	 * Checks if all symbols are in the alphabet (compares using the name of the symbol, not the object)
+	 * @param alphabet	Alphabet to test
+	 * @param symbols	Symbols to test
+	 * @return			True iff all {@code symbols} are in the {@code alphabet}
+	 */
+	private static boolean inAlphabet(final EList<Symbol> alphabet, final EList<Symbol> symbols) {
+		return symbols.parallelStream().allMatch(s -> inAlphabet(alphabet, s));
+	}
+
+	/**
+	 * Checks that a graph is concise
+	 * @param graph		Graph to test
+	 * @return			True iff {@code graph} is valid
+	 */
 	public static boolean isValidGraph(final Graph graph) {
-		// TODO Auto-generated method stub
+		if (graph == null)
+			return false;
+		
+		if (graph.getVertices() == null || 
+				graph.getVertices().parallelStream().anyMatch(v -> v.getLabel() == null || v.getLabel().getName().isEmpty()))
+			return false;
+		if (graph.getVertices().parallelStream().map(v -> v.getId()).distinct().count() != graph.getVertices().size())
+			return false;
+		
+		if (graph.getEdges().parallelStream().anyMatch(e -> !graph.getVertices().contains(e.getFrom()) || graph.getVertices().contains(e.getTo())))
+			return false;
+		
 		return true;
 	}
 
-	public static boolean isValidTripleGrammar(TripleGrammar tripleGrammar) {
-		// TODO Auto-generated method stub
+	/**
+	 * Checks if a triple grammar is concise
+	 * @param tripleGrammar		The triple grammar to test
+	 * @return					True iff {@code tripleGrammar} is valid
+	 */
+	public static boolean isValidTripleGrammar(final TripleGrammar tripleGrammar) {
+		if (tripleGrammar == null)
+			return false;
+		
+		EList<Symbol> ab = tripleGrammar.getAlphabet();
+		if (ab == null || ab.isEmpty())
+			return false;
+		
+		EList<Symbol> n = tripleGrammar.getNonterminals();
+		if (n == null || n.isEmpty())
+			return false;
+		
+		EList<Symbol> t = tripleGrammar.getTerminals();
+		if (t == null || t.isEmpty())
+			return false;
+		
+		if (n.parallelStream().anyMatch(s -> !ab.contains(s)) || t.parallelStream().anyMatch(s -> !ab.contains(s)))
+			return false;
+		
+		Symbol ini = tripleGrammar.getInitial();
+		if (ini == null || ini.getName() == null || ini.getName().isEmpty() || !n.contains(ini))
+			return false;
+		
+		EList<TripleRule> r = tripleGrammar.getTripleRules();
+		if (r == null || r.isEmpty())
+			return false;
+		
+		if (r.parallelStream().anyMatch(rr -> !isValidRule(ab, rr.getSource()) || !isValidRule(ab, rr.getCorr()) || !isValidRule(ab, rr.getTarget())))
+				return false;
+		
+		if (r.parallelStream().anyMatch(rr -> !isTotal(rr.getCorr().getRhs().getVertices(), rr.getMs()) ||
+				!isInjective(rr.getMs()) ||
+				!isSurjective(rr.getSource().getRhs().getVertices(), rr.getMs()) || 
+				!isTotal(rr.getCorr().getRhs().getVertices(), rr.getMt()) ||
+				!isInjective(rr.getMt()) ||
+				!isSurjective(rr.getTarget().getRhs().getVertices(), rr.getMt())))
+				return false;
 		return true;
 	}
 
-	public static boolean isValidTripleGraph(TripleGraph tripleGraph) {
-		// TODO Auto-generated method stub
+	/**
+	 * Checks is a mapping is surjective
+	 * @param counterDomain		The counter domain
+	 * @param map				The function
+	 * @return					True iff {@code map} is surjective
+	 */
+	private static boolean isSurjective(final EList<Vertex> counterDomain, final EMap<Vertex, Vertex> map) {
+		return counterDomain.parallelStream().anyMatch(cd -> !map.containsValue(cd)) ? false : true;
+	}
+
+	/**
+	 * Checks is a mapping is total
+	 * @param domain			The domain
+	 * @param map				The function
+	 * @return					True iff {@code map} is total
+	 */
+	private static boolean isTotal(final EList<Vertex> domain, final EMap<Vertex, Vertex> map) {
+		return domain.parallelStream().anyMatch(d -> !map.containsKey(d)) ? false : true;
+	}
+
+	/**
+	 * Checks is a mapping is injective
+	 * @param map				The function
+	 * @return					True iff {@code map} is injective
+	 */
+	private static boolean isInjective(final EMap<Vertex, Vertex> map) {
+		return map.values().parallelStream().distinct().count() != map.size() ? false : true;
+	}
+
+	/**
+	 * Checks if a triple graph is concise
+	 * @param tripleGraph		The triple graph to test
+	 * @return					True iff {@code tripleGraph} is valid
+	 */
+	public static boolean isValidTripleGraph(final TripleGraph tripleGraph) {
+		if (tripleGraph == null)
+			return false;
+		
+		if (!isValidGraph(tripleGraph.getCorr()) || !isValidGraph(tripleGraph.getSource()) || !isValidGraph(tripleGraph.getTarget()))
+			return false;
+		
+		if (!isTotal(tripleGraph.getCorr().getVertices(), tripleGraph.getMs()) ||
+				!isInjective(tripleGraph.getMs()) ||
+				!isSurjective(tripleGraph.getSource().getVertices(), tripleGraph.getMs()) || 
+				!isTotal(tripleGraph.getCorr().getVertices(),tripleGraph.getMt()) ||
+				!isInjective(tripleGraph.getMt()) ||
+				!isSurjective(tripleGraph.getTarget().getVertices(), tripleGraph.getMt()))
+				return false;
+		
 		return true;
 	}
 

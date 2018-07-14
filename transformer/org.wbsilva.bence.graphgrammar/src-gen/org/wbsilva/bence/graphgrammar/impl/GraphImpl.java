@@ -9,15 +9,12 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -37,7 +34,6 @@ import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.wbsilva.bence.graphgrammar.impl.GraphImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.GraphImpl#getVertices <em>Vertices</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.GraphImpl#getEdges <em>Edges</em>}</li>
  * </ul>
@@ -45,24 +41,6 @@ import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
  * @generated
  */
 public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = "";
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getVertices() <em>Vertices</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -99,27 +77,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	@Override
 	protected EClass eStaticClass() {
 		return GraphgrammarPackage.Literals.GRAPH;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphgrammarPackage.GRAPH__ID, oldId, id));
 	}
 
 	/**
@@ -239,8 +196,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case GraphgrammarPackage.GRAPH__ID:
-			return getId();
 		case GraphgrammarPackage.GRAPH__VERTICES:
 			return getVertices();
 		case GraphgrammarPackage.GRAPH__EDGES:
@@ -258,9 +213,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case GraphgrammarPackage.GRAPH__ID:
-			setId((String) newValue);
-			return;
 		case GraphgrammarPackage.GRAPH__VERTICES:
 			getVertices().clear();
 			getVertices().addAll((Collection<? extends Vertex>) newValue);
@@ -281,9 +233,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.GRAPH__ID:
-			setId(ID_EDEFAULT);
-			return;
 		case GraphgrammarPackage.GRAPH__VERTICES:
 			getVertices().clear();
 			return;
@@ -302,8 +251,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.GRAPH__ID:
-			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case GraphgrammarPackage.GRAPH__VERTICES:
 			return vertices != null && !vertices.isEmpty();
 		case GraphgrammarPackage.GRAPH__EDGES:
@@ -331,23 +278,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 			return outEdges((Vertex) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(')');
-		return result.toString();
 	}
 
 } //GraphImpl

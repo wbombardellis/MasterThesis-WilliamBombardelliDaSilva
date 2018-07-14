@@ -28,7 +28,6 @@ import org.wbsilva.bence.graphgrammar.Vertex;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.wbsilva.bence.graphgrammar.impl.DerivationStepImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.DerivationStepImpl#getRule <em>Rule</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.DerivationStepImpl#getVertex <em>Vertex</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.DerivationStepImpl#getPrevious <em>Previous</em>}</li>
@@ -39,24 +38,6 @@ import org.wbsilva.bence.graphgrammar.Vertex;
  * @generated
  */
 public class DerivationStepImpl extends MinimalEObjectImpl.Container implements DerivationStep {
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getRule() <em>Rule</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -122,27 +103,6 @@ public class DerivationStepImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	protected EClass eStaticClass() {
 		return GraphgrammarPackage.Literals.DERIVATION_STEP;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphgrammarPackage.DERIVATION_STEP__ID, oldId, id));
 	}
 
 	/**
@@ -388,8 +348,6 @@ public class DerivationStepImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case GraphgrammarPackage.DERIVATION_STEP__ID:
-			return getId();
 		case GraphgrammarPackage.DERIVATION_STEP__RULE:
 			return getRule();
 		case GraphgrammarPackage.DERIVATION_STEP__VERTEX:
@@ -415,9 +373,6 @@ public class DerivationStepImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case GraphgrammarPackage.DERIVATION_STEP__ID:
-			setId((String) newValue);
-			return;
 		case GraphgrammarPackage.DERIVATION_STEP__RULE:
 			setRule((Rule) newValue);
 			return;
@@ -445,9 +400,6 @@ public class DerivationStepImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.DERIVATION_STEP__ID:
-			setId(ID_EDEFAULT);
-			return;
 		case GraphgrammarPackage.DERIVATION_STEP__RULE:
 			setRule((Rule) null);
 			return;
@@ -475,8 +427,6 @@ public class DerivationStepImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.DERIVATION_STEP__ID:
-			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case GraphgrammarPackage.DERIVATION_STEP__RULE:
 			return rule != null;
 		case GraphgrammarPackage.DERIVATION_STEP__VERTEX:
@@ -489,23 +439,6 @@ public class DerivationStepImpl extends MinimalEObjectImpl.Container implements 
 			return unifier != null && !unifier.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DerivationStepImpl
