@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -109,8 +111,9 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 * @generated NOT
 	 */
 	public EList<Vertex> neighborhood(EList<Vertex> vertices) {
-		//TODO: Assure graph is valid
-		final Function<Vertex, Set<Vertex>> neigh = (Vertex v) -> {
+		assert GraphgrammarUtil.isValidGraph(this);
+		
+		final Function<Vertex, Stream<Vertex>> neigh = (Vertex v) -> {
 			Set<Vertex> out = this.getEdges().stream().filter(e -> e.getFrom().getId().equals(v.getId()))
 					.map(e -> e.getTo()).distinct().collect(Collectors.toSet());
 
@@ -118,14 +121,14 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 					.map(e -> e.getFrom()).distinct().collect(Collectors.toSet());
 
 			out.addAll(in);
-			return out;
+			return out.stream();
 		};
 
-		//TODO: It should exclude the vertices from "vertices" 
-		return new BasicEList<Vertex>(vertices.stream().map(neigh).reduce((a, b) -> {
-			a.retainAll(b);
-			return a;
-		}).orElse(new HashSet<Vertex>(0)));
+		return new BasicEList<Vertex>(vertices.stream()
+				.flatMap(neigh)
+				.distinct()
+				.filter(v -> !vertices.contains(v)) //exclude the vertices from "vertices"
+				.collect(Collectors.toSet()));
 	}
 
 	/**
@@ -134,7 +137,9 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 * @generated NOT
 	 */
 	public boolean isomorphicTo(Graph other) {
-		//TODO: assertions
+		assert GraphgrammarUtil.isValidGraph(this);
+		assert GraphgrammarUtil.isValidGraph(other);
+		
 		//Candidates for a mapping's image of each vertex of this 
 		final List<Set<Vertex>> candidates = this.getVertices().stream()
 				.map(v -> other.getVertices().stream()
@@ -143,11 +148,16 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 								&& GraphgrammarUtil.isomorphicEdges(this.outEdges(v), other.outEdges(w)))
 						.collect(Collectors.toSet()))
 				.collect(Collectors.toList());
-
-		//TODO: For optimization order the candidate sets by size increasingly
-		//candidates.sort();
-
-		return GraphgrammarUtil.anyBijectiveMapping(candidates);
+		
+		final long allCandidatesCount = candidates.parallelStream().flatMap(c -> c.stream()).distinct().count();
+		
+		//If each vertex has at least one candidate and all candidates united form the other's vertices 
+		if (candidates.size() == this.getVertices().size()
+				&& allCandidatesCount == other.getVertices().size()) {
+			return GraphgrammarUtil.anyBijectiveMapping(candidates);
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -156,7 +166,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 * @generated NOT
 	 */
 	public EList<Edge> inEdges(Vertex vertex) {
-		//TODO: add assertions
+		assert vertex != null;
+		assert this.getEdges() != null && this.getEdges().parallelStream().allMatch(e -> e.getTo() != null);
 		return new BasicEList<>(
 				this.getEdges().stream().filter(e -> e.getTo().equals(vertex)).collect(Collectors.toList()));
 	}
@@ -167,7 +178,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 * @generated NOT
 	 */
 	public EList<Edge> outEdges(Vertex vertex) {
-		//TODO: add assertions
+		assert vertex != null;
+		assert this.getEdges() != null && this.getEdges().parallelStream().allMatch(e -> e.getFrom() != null);
 		return new BasicEList<>(
 				this.getEdges().stream().filter(e -> e.getFrom().equals(vertex)).collect(Collectors.toList()));
 	}

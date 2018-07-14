@@ -52,9 +52,12 @@ public class BeNCEParser {
 	public Optional<ParsingTree> parse(final Graph graph){
 		assert graph != null;
 		assert GraphgrammarUtil.isValidGrammar(this.grammar);
+		assert GraphgrammarUtil.isBoundaryGrammar(this.grammar);
 		assert GraphgrammarUtil.isValidGraph(graph);
 		
 		logger.debug(String.format("Starting parsing of the graph %s", graph));
+		
+		//TODO: If not all labels are terminals, return false right away
 		
 		//Create bottom-up parse set
 		final Set<ZoneVertex> initialZoneVertices = zoneVertices(graph.getVertices());		
@@ -96,6 +99,7 @@ public class BeNCEParser {
 				
 				final Graph rhs = induce(handleGraph, handle);			//Y(R)
 				assert !rhs.getVertices().isEmpty();
+				assert GraphgrammarUtil.isBoundaryGraph(rhs, this.grammar.getNonterminals());
 				
 				final ZoneVertex lhs = contract(d, handle);				//(d,V(R))
 				assert !lhs.getVertices().isEmpty();

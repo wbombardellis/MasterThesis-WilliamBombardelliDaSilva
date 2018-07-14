@@ -247,7 +247,7 @@ public class GraphgrammarUtil {
 		if (graph.getVertices().parallelStream().map(v -> v.getId()).distinct().count() != graph.getVertices().size())
 			return false;
 		
-		if (graph.getEdges().parallelStream().anyMatch(e -> !graph.getVertices().contains(e.getFrom()) || graph.getVertices().contains(e.getTo())))
+		if (graph.getEdges().parallelStream().anyMatch(e -> !graph.getVertices().contains(e.getFrom()) || !graph.getVertices().contains(e.getTo())))
 			return false;
 		
 		return true;
@@ -348,6 +348,16 @@ public class GraphgrammarUtil {
 				return false;
 		
 		return true;
+	}
+
+	public static boolean isBoundaryGrammar(Grammar grammar) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public static boolean isBoundaryGraph(Graph rhs, EList<Symbol> nonterminals) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
