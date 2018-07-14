@@ -212,7 +212,14 @@ public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
 	 * @generated NOT
 	 */
 	public int compareTo(Edge other) {
-		//TODO: assert not null edges and labels
+		assert other != null;
+		assert this.getLabel() != null && this.getLabel().getName() != null;
+		assert other.getLabel() != null && other.getLabel().getName() != null;
+		assert this.getFrom() != null && this.getFrom().getLabel() != null;
+		assert other.getFrom() != null && other.getFrom().getLabel() != null;
+		assert this.getTo() != null && this.getTo().getLabel() != null;
+		assert other.getTo() != null && other.getTo().getLabel() != null;
+
 		//If this.label < other.label
 		if (this.getLabel().getName().compareTo(other.getLabel().getName()) < 0) {
 			return -1;
