@@ -76,6 +76,17 @@ public interface Graph extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * Return the set of vertices that are neighbors of the vertex
+	 * <!-- end-model-doc -->
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Vertex> neighborhood(Vertex vertex);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
 	 * Return true iff this graph is isomorphic to other
 	 * <!-- end-model-doc -->
 	 * @model

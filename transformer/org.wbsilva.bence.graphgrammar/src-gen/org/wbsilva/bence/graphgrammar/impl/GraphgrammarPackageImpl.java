@@ -584,7 +584,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getGraph__IsomorphicTo__Graph() {
+	public EOperation getGraph__Neighborhood__Vertex() {
 		return graphEClass.getEOperations().get(1);
 	}
 
@@ -593,7 +593,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getGraph__InEdges__Vertex() {
+	public EOperation getGraph__IsomorphicTo__Graph() {
 		return graphEClass.getEOperations().get(2);
 	}
 
@@ -602,8 +602,17 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getGraph__OutEdges__Vertex() {
+	public EOperation getGraph__InEdges__Vertex() {
 		return graphEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getGraph__OutEdges__Vertex() {
+		return graphEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -1009,6 +1018,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(graphEClass, GRAPH__VERTICES);
 		createEReference(graphEClass, GRAPH__EDGES);
 		createEOperation(graphEClass, GRAPH___NEIGHBORHOOD__ELIST);
+		createEOperation(graphEClass, GRAPH___NEIGHBORHOOD__VERTEX);
 		createEOperation(graphEClass, GRAPH___ISOMORPHIC_TO__GRAPH);
 		createEOperation(graphEClass, GRAPH___IN_EDGES__VERTEX);
 		createEOperation(graphEClass, GRAPH___OUT_EDGES__VERTEX);
@@ -1212,6 +1222,10 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		op = initEOperation(getGraph__Neighborhood__EList(), this.getVertex(), "neighborhood", 0, -1, IS_UNIQUE,
 				!IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertices", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getGraph__Neighborhood__Vertex(), this.getVertex(), "neighborhood", 0, -1, IS_UNIQUE,
+				!IS_ORDERED);
+		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getGraph__IsomorphicTo__Graph(), ecorePackage.getEBoolean(), "isomorphicTo", 0, 1,
 				IS_UNIQUE, IS_ORDERED);

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+import java.util.function.BiFunction;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
@@ -350,14 +354,48 @@ public class GraphgrammarUtil {
 		return true;
 	}
 
-	public static boolean isBoundaryGrammar(Grammar grammar) {
-		// TODO Auto-generated method stub
-		return false;
+	/**
+	 * Checks if a grammar is a boundary grammar
+	 * @param grammar		The grammar to check
+	 * @return				True iff {@code grammar} is boundary
+	 */
+	public static boolean isBoundaryGrammar(final Grammar grammar) {
+		
+		//if any rule's graph is not boundary 
+		if (grammar.getRules().parallelStream()
+			.anyMatch(r -> !isBoundaryGraph(r.getRhs(), grammar.getNonterminals())))
+			return false;
+		
+		return true;
 	}
 
-	public static boolean isBoundaryGraph(Graph rhs, EList<Symbol> nonterminals) {
-		// TODO Auto-generated method stub
-		return false;
+	/**
+	 * Checks if a graph is a G-boundary graph
+	 * @param grammar		The graph to check
+	 * @param g				The G set used to check the boundaryness
+	 * @return				True iff {@code graph} is {@code g}-boundary
+	 */
+	public static boolean isBoundaryGraph(final Graph graph, final EList<Symbol> g) {
+		//if the graph has G-labeled vertices as neighbors
+		if(graph.getEdges().parallelStream()
+				.anyMatch(e -> inAlphabet(g, e.getFrom().getLabel()) &&
+						inAlphabet(g, e.getTo().getLabel()))
+				//or it is not (weakly) connected
+				|| !isWeaklyConnectedGraph(graph))
+			//then it is not G-boundary
+			return false;
+		
+		return true;
+	}
+	
+	/**
+	 * Checks if a directed graph is weakly connected
+	 * @param grammar		The graph to check
+	 * @return				True iff {@code graph} is weakly connected
+	 */
+	private static boolean isWeaklyConnectedGraph(final Graph graph) {
+		//TODO
+		return true;
 	}
 
 }

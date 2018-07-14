@@ -598,13 +598,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int GRAPH___NEIGHBORHOOD__ELIST = 0;
 
 	/**
+	 * The operation id for the '<em>Neighborhood</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH___NEIGHBORHOOD__VERTEX = 1;
+
+	/**
 	 * The operation id for the '<em>Isomorphic To</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH___ISOMORPHIC_TO__GRAPH = 1;
+	int GRAPH___ISOMORPHIC_TO__GRAPH = 2;
 
 	/**
 	 * The operation id for the '<em>In Edges</em>' operation.
@@ -613,7 +622,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH___IN_EDGES__VERTEX = 2;
+	int GRAPH___IN_EDGES__VERTEX = 3;
 
 	/**
 	 * The operation id for the '<em>Out Edges</em>' operation.
@@ -622,7 +631,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH___OUT_EDGES__VERTEX = 3;
+	int GRAPH___OUT_EDGES__VERTEX = 4;
 
 	/**
 	 * The number of operations of the '<em>Graph</em>' class.
@@ -631,7 +640,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_OPERATION_COUNT = 4;
+	int GRAPH_OPERATION_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
@@ -1559,6 +1568,16 @@ public interface GraphgrammarPackage extends EPackage {
 	EOperation getGraph__Neighborhood__EList();
 
 	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#neighborhood(org.wbsilva.bence.graphgrammar.Vertex) <em>Neighborhood</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Neighborhood</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Graph#neighborhood(org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getGraph__Neighborhood__Vertex();
+
+	/**
 	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#isomorphicTo(org.wbsilva.bence.graphgrammar.Graph) <em>Isomorphic To</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2310,6 +2329,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation GRAPH___NEIGHBORHOOD__ELIST = eINSTANCE.getGraph__Neighborhood__EList();
+		/**
+		 * The meta object literal for the '<em><b>Neighborhood</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GRAPH___NEIGHBORHOOD__VERTEX = eINSTANCE.getGraph__Neighborhood__Vertex();
 		/**
 		 * The meta object literal for the '<em><b>Isomorphic To</b></em>' operation.
 		 * <!-- begin-user-doc -->

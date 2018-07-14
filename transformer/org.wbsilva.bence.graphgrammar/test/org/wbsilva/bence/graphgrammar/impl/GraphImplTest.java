@@ -187,13 +187,13 @@ class GraphImplTest {
 	
 	@Test
 	void testNeighborhoodEmptyExtern() {
-		EList<Vertex> n = g0.neighborhood(new BasicEList<Vertex>(Arrays.asList(v0)));
+		EList<Vertex> n = g0.neighborhood(v0);
 		assertTrue(n.isEmpty());
 	}
 	
 	@Test
 	void testNeighborhoodEmptyIntern() {
-		EList<Vertex> n = g0.neighborhood(new BasicEList<Vertex>(Arrays.asList(v1)));
+		EList<Vertex> n = g0.neighborhood(v1);
 		assertTrue(n.isEmpty());
 	}
 	

@@ -124,6 +124,12 @@
       </eAnnotations>
       <eParameters name="vertices" ordered="false" upperBound="-1" eType="#//Vertex"/>
     </eOperations>
+    <eOperations name="neighborhood" ordered="false" upperBound="-1" eType="#//Vertex">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return the set of vertices that are neighbors of the vertex"/>
+      </eAnnotations>
+      <eParameters name="vertex" eType="#//Vertex"/>
+    </eOperations>
     <eOperations name="isomorphicTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Return true iff this graph is isomorphic to other"/>

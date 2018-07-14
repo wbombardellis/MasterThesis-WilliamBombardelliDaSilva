@@ -3,8 +3,8 @@
 package org.wbsilva.bence.graphgrammar.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
@@ -112,7 +112,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 */
 	public EList<Vertex> neighborhood(EList<Vertex> vertices) {
 		assert GraphgrammarUtil.isValidGraph(this);
-		
+
 		final Function<Vertex, Stream<Vertex>> neigh = (Vertex v) -> {
 			Set<Vertex> out = this.getEdges().stream().filter(e -> e.getFrom().getId().equals(v.getId()))
 					.map(e -> e.getTo()).distinct().collect(Collectors.toSet());
@@ -124,11 +124,17 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 			return out.stream();
 		};
 
-		return new BasicEList<Vertex>(vertices.stream()
-				.flatMap(neigh)
-				.distinct()
-				.filter(v -> !vertices.contains(v)) //exclude the vertices from "vertices"
+		return new BasicEList<Vertex>(vertices.stream().flatMap(neigh).distinct().filter(v -> !vertices.contains(v)) //exclude the vertices from "vertices"
 				.collect(Collectors.toSet()));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Vertex> neighborhood(Vertex vertex) {
+		return neighborhood(new BasicEList<Vertex>(Arrays.asList(vertex)));
 	}
 
 	/**
@@ -139,7 +145,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	public boolean isomorphicTo(Graph other) {
 		assert GraphgrammarUtil.isValidGraph(this);
 		assert GraphgrammarUtil.isValidGraph(other);
-		
+
 		//Candidates for a mapping's image of each vertex of this 
 		final List<Set<Vertex>> candidates = this.getVertices().stream()
 				.map(v -> other.getVertices().stream()
@@ -148,12 +154,11 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 								&& GraphgrammarUtil.isomorphicEdges(this.outEdges(v), other.outEdges(w)))
 						.collect(Collectors.toSet()))
 				.collect(Collectors.toList());
-		
+
 		final long allCandidatesCount = candidates.parallelStream().flatMap(c -> c.stream()).distinct().count();
-		
+
 		//If each vertex has at least one candidate and all candidates united form the other's vertices 
-		if (candidates.size() == this.getVertices().size()
-				&& allCandidatesCount == other.getVertices().size()) {
+		if (candidates.size() == this.getVertices().size() && allCandidatesCount == other.getVertices().size()) {
 			return GraphgrammarUtil.anyBijectiveMapping(candidates);
 		} else {
 			return false;
@@ -282,6 +287,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 		switch (operationID) {
 		case GraphgrammarPackage.GRAPH___NEIGHBORHOOD__ELIST:
 			return neighborhood((EList<Vertex>) arguments.get(0));
+		case GraphgrammarPackage.GRAPH___NEIGHBORHOOD__VERTEX:
+			return neighborhood((Vertex) arguments.get(0));
 		case GraphgrammarPackage.GRAPH___ISOMORPHIC_TO__GRAPH:
 			return isomorphicTo((Graph) arguments.get(0));
 		case GraphgrammarPackage.GRAPH___IN_EDGES__VERTEX:
