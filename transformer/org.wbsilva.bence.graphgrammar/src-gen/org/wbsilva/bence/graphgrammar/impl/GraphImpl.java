@@ -131,7 +131,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Vertex> neighborhood(Vertex vertex) {
 		return neighborhood(new BasicEList<Vertex>(Arrays.asList(vertex)));

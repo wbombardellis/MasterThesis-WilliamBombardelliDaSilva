@@ -2,8 +2,12 @@
  */
 package org.wbsilva.bence.graphgrammar.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,36 +15,28 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.Symbol;
-import org.wbsilva.bence.graphgrammar.Vertex;
-import org.wbsilva.bence.graphgrammar.VertexLabelPair;
+import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Vertex Label Pair</b></em>'.
+ * An implementation of the model object '<em><b>Symbol Symbols Pair</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairImpl#getVertex <em>Vertex</em>}</li>
- *   <li>{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairImpl#getEdgeLabel <em>Edge Label</em>}</li>
+ *   <li>{@link org.wbsilva.bence.graphgrammar.impl.SymbolSymbolsPairImpl#getEdgeLabel <em>Edge Label</em>}</li>
+ *   <li>{@link org.wbsilva.bence.graphgrammar.impl.SymbolSymbolsPairImpl#getVertexLabels <em>Vertex Labels</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VertexLabelPairImpl extends MinimalEObjectImpl.Container implements VertexLabelPair {
-	/**
-	 * The cached value of the '{@link #getVertex() <em>Vertex</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVertex()
-	 * @generated
-	 * @ordered
-	 */
-	protected Vertex vertex;
-
+public class SymbolSymbolsPairImpl extends MinimalEObjectImpl.Container implements SymbolSymbolsPair {
 	/**
 	 * The cached value of the '{@link #getEdgeLabel() <em>Edge Label</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -52,11 +48,21 @@ public class VertexLabelPairImpl extends MinimalEObjectImpl.Container implements
 	protected Symbol edgeLabel;
 
 	/**
+	 * The cached value of the '{@link #getVertexLabels() <em>Vertex Labels</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVertexLabels()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Symbol> vertexLabels;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VertexLabelPairImpl() {
+	protected SymbolSymbolsPairImpl() {
 		super();
 	}
 
@@ -67,47 +73,7 @@ public class VertexLabelPairImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return GraphgrammarPackage.Literals.VERTEX_LABEL_PAIR;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Vertex getVertex() {
-		if (vertex != null && vertex.eIsProxy()) {
-			InternalEObject oldVertex = (InternalEObject) vertex;
-			vertex = (Vertex) eResolveProxy(oldVertex);
-			if (vertex != oldVertex) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							GraphgrammarPackage.VERTEX_LABEL_PAIR__VERTEX, oldVertex, vertex));
-			}
-		}
-		return vertex;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Vertex basicGetVertex() {
-		return vertex;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setVertex(Vertex newVertex) {
-		Vertex oldVertex = vertex;
-		vertex = newVertex;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphgrammarPackage.VERTEX_LABEL_PAIR__VERTEX,
-					oldVertex, vertex));
+		return GraphgrammarPackage.Literals.SYMBOL_SYMBOLS_PAIR;
 	}
 
 	/**
@@ -129,7 +95,7 @@ public class VertexLabelPairImpl extends MinimalEObjectImpl.Container implements
 		edgeLabel = newEdgeLabel;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					GraphgrammarPackage.VERTEX_LABEL_PAIR__EDGE_LABEL, oldEdgeLabel, newEdgeLabel);
+					GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__EDGE_LABEL, oldEdgeLabel, newEdgeLabel);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -148,16 +114,29 @@ public class VertexLabelPairImpl extends MinimalEObjectImpl.Container implements
 			NotificationChain msgs = null;
 			if (edgeLabel != null)
 				msgs = ((InternalEObject) edgeLabel).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - GraphgrammarPackage.VERTEX_LABEL_PAIR__EDGE_LABEL, null, msgs);
+						EOPPOSITE_FEATURE_BASE - GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__EDGE_LABEL, null, msgs);
 			if (newEdgeLabel != null)
 				msgs = ((InternalEObject) newEdgeLabel).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - GraphgrammarPackage.VERTEX_LABEL_PAIR__EDGE_LABEL, null, msgs);
+						EOPPOSITE_FEATURE_BASE - GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__EDGE_LABEL, null, msgs);
 			msgs = basicSetEdgeLabel(newEdgeLabel, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphgrammarPackage.VERTEX_LABEL_PAIR__EDGE_LABEL,
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__EDGE_LABEL,
 					newEdgeLabel, newEdgeLabel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Symbol> getVertexLabels() {
+		if (vertexLabels == null) {
+			vertexLabels = new EObjectContainmentEList<Symbol>(Symbol.class, this,
+					GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__VERTEX_LABELS);
+		}
+		return vertexLabels;
 	}
 
 	/**
@@ -168,8 +147,10 @@ public class VertexLabelPairImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR__EDGE_LABEL:
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__EDGE_LABEL:
 			return basicSetEdgeLabel(null, msgs);
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__VERTEX_LABELS:
+			return ((InternalEList<?>) getVertexLabels()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -182,12 +163,10 @@ public class VertexLabelPairImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR__VERTEX:
-			if (resolve)
-				return getVertex();
-			return basicGetVertex();
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR__EDGE_LABEL:
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__EDGE_LABEL:
 			return getEdgeLabel();
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__VERTEX_LABELS:
+			return getVertexLabels();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -197,14 +176,16 @@ public class VertexLabelPairImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR__VERTEX:
-			setVertex((Vertex) newValue);
-			return;
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR__EDGE_LABEL:
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__EDGE_LABEL:
 			setEdgeLabel((Symbol) newValue);
+			return;
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__VERTEX_LABELS:
+			getVertexLabels().clear();
+			getVertexLabels().addAll((Collection<? extends Symbol>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -218,11 +199,11 @@ public class VertexLabelPairImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR__VERTEX:
-			setVertex((Vertex) null);
-			return;
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR__EDGE_LABEL:
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__EDGE_LABEL:
 			setEdgeLabel((Symbol) null);
+			return;
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__VERTEX_LABELS:
+			getVertexLabels().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -236,12 +217,12 @@ public class VertexLabelPairImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR__VERTEX:
-			return vertex != null;
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR__EDGE_LABEL:
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__EDGE_LABEL:
 			return edgeLabel != null;
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR__VERTEX_LABELS:
+			return vertexLabels != null && !vertexLabels.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //VertexLabelPairImpl
+} //SymbolSymbolsPairImpl

@@ -6,10 +6,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -33,8 +31,8 @@ import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
+import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
 import org.wbsilva.bence.graphgrammar.Vertex;
-import org.wbsilva.bence.graphgrammar.VertexLabelPair;
 import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 
 /**
@@ -124,7 +122,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<VertexLabelPair, EList<Symbol>> embedding;
+	protected EMap<Vertex, EList<SymbolSymbolsPair>> embedding;
 
 	/**
 	 * The cached value of the '{@link #getPac() <em>Pac</em>}' reference list.
@@ -300,11 +298,11 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<VertexLabelPair, EList<Symbol>> getEmbedding() {
+	public EMap<Vertex, EList<SymbolSymbolsPair>> getEmbedding() {
 		if (embedding == null) {
-			embedding = new EcoreEMap<VertexLabelPair, EList<Symbol>>(
-					GraphgrammarPackage.Literals.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP, VertexLabelPairToSymbolMapImpl.class,
-					this, GraphgrammarPackage.RULE__EMBEDDING);
+			embedding = new EcoreEMap<Vertex, EList<SymbolSymbolsPair>>(
+					GraphgrammarPackage.Literals.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP,
+					VertexToSymbolSymbolsPairMapImpl.class, this, GraphgrammarPackage.RULE__EMBEDDING);
 		}
 		return embedding;
 	}
@@ -326,98 +324,130 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<Edge> embed(Graph graph, EList<Edge> edges) {
-		//TODO: Assert unique ids
+	public EList<Edge> embed(Graph graph, Vertex vertex, EList<Edge> edges, EMap<Vertex, Vertex> unifier) {
+		assert GraphgrammarUtil.isValidGraph(graph);
+		assert vertex != null;
+		assert edges != null;
+		assert edges.parallelStream().allMatch(e -> e.getFrom() == vertex || e.getTo() == vertex);
+		//assert graph.getEdges().containsAll(edges);
+		assert GraphgrammarUtil.isValidRule(this);
+		assert unifier != null;
+		assert unifier.size() == rhs.getVertices().size();
+		assert rhs.getVertices().parallelStream()
+				.allMatch(v -> unifier.get(v) != null && graph.getVertices().contains(unifier.get(v)));
 
 		return new BasicEList<Edge>(edges.stream().flatMap(e -> {
 
-			//Vertices that should receive an incoming edge 
-			Stream<Optional<Vertex>> toVs = rhs.getVertices().stream().filter(v -> {
-				VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
-				k.setVertex(v);
-				k.setEdgeLabel(e.getLabel());
-				//TODO: Check if map works like this
-				return embedding.get(k).contains(e.getFrom().getLabel());
-			}).map(v -> graph.getVertices().parallelStream().filter(w -> w.getId().equals(v.getId())).findAny());
+			final Vertex targetVertex;
+			if (e.getFrom() != vertex) {
+				//Edge go from another vertex to the pivot
+				targetVertex = e.getFrom();
+			}
+			else if (e.getTo() != vertex) {
+				//Edge go from pivot vertex to another 
+				targetVertex = e.getTo();
+			}
+			else {
+				//Edge is a loop
+				return new HashSet<Edge>().stream();
+			}
+			
+			Stream<Vertex> vs = rhs.getVertices().stream().filter(v -> {
+				final EList<SymbolSymbolsPair> emb = this.embedding.get(v);
+				if (emb != null && emb.parallelStream()
+						.anyMatch(em -> EcoreUtil.equals(em.getEdgeLabel(), e.getLabel()) && em.getVertexLabels()
+								.parallelStream().anyMatch(l -> EcoreUtil.equals(l, targetVertex.getLabel()))))
+					return true;
+				else
+					return false;
+			}).map(v -> unifier.get(v));
 
-			//Vertices that should receive an outgoing edge
-			Stream<Optional<Vertex>> fromVs = rhs.getVertices().stream().filter(v -> {
-				VertexLabelPair k = GraphgrammarFactory.eINSTANCE.createVertexLabelPair();
-				k.setVertex(v);
-				k.setEdgeLabel(e.getLabel());
-				//TODO: Check if map works like this
-				return embedding.get(k).contains(e.getTo().getLabel());
-			}).map(v -> graph.getVertices().parallelStream().filter(w -> w.getId().equals(v.getId())).findAny());
-
-			//create incoming edges
-			Set<Edge> es = toVs.map(v -> {
-				if (v.isPresent()) {
+			Set<Edge> es = new HashSet<Edge>();
+			if (e.getFrom() != vertex) {
+				//Vertices should receive an incoming edge
+				//create incoming edges
+				es = vs.map(v -> {
+					assert v != null;
 					Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
 					newE.setFrom(e.getFrom());
-					newE.setTo(v.get());
+					newE.setTo(v);
+					newE.setLabel(EcoreUtil.copy(e.getLabel()));
 					return newE;
-				} else {
-					assert false;
-					return null;
-				}
-			}).collect(Collectors.toSet());
-
-			//create outgoing edges
-			es.addAll(fromVs.map(v -> {
-				if (v.isPresent()) {
+				}).collect(Collectors.toSet());				
+			}
+			else if (e.getTo() != vertex) {
+				//Vertices should receive an outgoing edge
+				//create outgoing edges
+				es = vs.map(v -> {
+					assert v != null;
 					Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
-					newE.setFrom(v.get());
+					newE.setFrom(v);
 					newE.setTo(e.getTo());
+					newE.setLabel(EcoreUtil.copy(e.getLabel()));
 					return newE;
-				} else {
-					assert false;
-					return null;
-				}
-			}).collect(Collectors.toSet()));
+				}).collect(Collectors.toSet());
+			}
 
 			return es.stream();
 
 		}).collect(Collectors.toSet()));
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public EMap<Vertex, Vertex> apply(Graph graph, Vertex vertex) {
-		//TODO: What if rule cannot be applied
-		//TODO: assert unique ids
-		final Set<Edge> vEdges = graph.getEdges().stream()
-				.filter(e -> e.getFrom().getId().equals(vertex.getId()) || e.getTo().getId().equals(vertex.getId()))
-				.collect(Collectors.toSet());
+		assert GraphgrammarUtil.isValidGraph(graph);
+		assert vertex != null;
+		assert GraphgrammarUtil.isValidRule(this);
 
 		final Vertex gV = graph.getVertices().stream().filter(w -> w.getId().equals(vertex.getId())).findAny()
 				.orElse(null);
-		assert gV != null;
-
-		graph.getVertices().remove(gV);
-
-		graph.getEdges().removeAll(vEdges);
-
-		final int newVerticesSize = this.getRhs().getVertices().size();
-		final EMap<Vertex, Vertex> unifier = new BasicEMap<Vertex, Vertex>(newVerticesSize);
-		final Set<Vertex> newVertices = new HashSet<Vertex>(newVerticesSize);
-		for (Vertex w : this.getRhs().getVertices()) {
-			final Vertex newW = EcoreUtil.copy(w);
-			unifier.put(w, newW);
-			newVertices.add(newW);
+		
+		//Found the pivot vertex to be replaced by the rhs of this rule
+		if (gV != null) {
+			final Set<Edge> vEdges = graph.getEdges().stream()
+					.filter(e -> e.getFrom().getId().equals(vertex.getId()) || e.getTo().getId().equals(vertex.getId()))
+					.collect(Collectors.toSet());
+			
+			graph.getVertices().remove(gV);
+			
+			graph.getEdges().removeAll(vEdges);
+			
+			final int newVerticesSize = this.getRhs().getVertices().size();
+			final EMap<Vertex, Vertex> unifier = new BasicEMap<Vertex, Vertex>(newVerticesSize);
+			final Set<Vertex> newVertices = new HashSet<Vertex>(newVerticesSize);
+			for (Vertex w : this.getRhs().getVertices()) {
+				final Vertex newW = EcoreUtil.copy(w);
+				unifier.put(w, newW);
+				newVertices.add(newW);
+			}
+			GraphgrammarUtil.ensureUniqueIds(newVertices);
+			
+			graph.getVertices().addAll(newVertices);
+			
+			graph.getEdges()
+			.addAll(this.getRhs().getEdges()
+					.stream()
+					.map(e -> {
+						Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+						newE.setFrom(unifier.get(e.getFrom()));
+						newE.setTo(unifier.get(e.getTo()));
+						newE.setLabel(EcoreUtil.copy(e.getLabel()));
+						return newE;
+					})
+					.collect(Collectors.toSet()));
+			
+			graph.getEdges().addAll(this.embed(graph, gV, new BasicEList<Edge>(vEdges), unifier));
+			
+			return unifier;
+		} else {
+			//Do not apply rule, do not change graph
+			return new BasicEMap<Vertex, Vertex>(0);
 		}
-		GraphgrammarUtil.ensureUniqueIds(newVertices);
 
-		graph.getVertices().addAll(newVertices);
-
-		graph.getEdges()
-				.addAll(this.getRhs().getEdges().stream().map(e -> EcoreUtil.copy(e)).collect(Collectors.toSet()));
-
-		graph.getEdges().addAll(this.embed(graph, new BasicEList<Edge>(vEdges)));
-
-		return unifier;
 	}
 
 	/**
@@ -560,8 +590,9 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case GraphgrammarPackage.RULE___EMBED__GRAPH_ELIST:
-			return embed((Graph) arguments.get(0), (EList<Edge>) arguments.get(1));
+		case GraphgrammarPackage.RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP:
+			return embed((Graph) arguments.get(0), (Vertex) arguments.get(1), (EList<Edge>) arguments.get(2),
+					(EMap<Vertex, Vertex>) arguments.get(3));
 		case GraphgrammarPackage.RULE___APPLY__GRAPH_VERTEX:
 			return apply((Graph) arguments.get(0), (Vertex) arguments.get(1));
 		}

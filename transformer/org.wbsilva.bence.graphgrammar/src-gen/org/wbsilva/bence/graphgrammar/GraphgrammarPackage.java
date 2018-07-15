@@ -228,7 +228,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE___EMBED__GRAPH_ELIST = 0;
+	int RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP = 0;
 
 	/**
 	 * The operation id for the '<em>Apply</em>' operation.
@@ -249,23 +249,14 @@ public interface GraphgrammarPackage extends EPackage {
 	int RULE_OPERATION_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairImpl <em>Vertex Label Pair</em>}' class.
+	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.SymbolSymbolsPairImpl <em>Symbol Symbols Pair</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.wbsilva.bence.graphgrammar.impl.VertexLabelPairImpl
-	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertexLabelPair()
+	 * @see org.wbsilva.bence.graphgrammar.impl.SymbolSymbolsPairImpl
+	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getSymbolSymbolsPair()
 	 * @generated
 	 */
-	int VERTEX_LABEL_PAIR = 2;
-
-	/**
-	 * The feature id for the '<em><b>Vertex</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERTEX_LABEL_PAIR__VERTEX = 0;
+	int SYMBOL_SYMBOLS_PAIR = 2;
 
 	/**
 	 * The feature id for the '<em><b>Edge Label</b></em>' containment reference.
@@ -274,44 +265,53 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_LABEL_PAIR__EDGE_LABEL = 1;
+	int SYMBOL_SYMBOLS_PAIR__EDGE_LABEL = 0;
 
 	/**
-	 * The number of structural features of the '<em>Vertex Label Pair</em>' class.
+	 * The feature id for the '<em><b>Vertex Labels</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_LABEL_PAIR_FEATURE_COUNT = 2;
+	int SYMBOL_SYMBOLS_PAIR__VERTEX_LABELS = 1;
 
 	/**
-	 * The number of operations of the '<em>Vertex Label Pair</em>' class.
+	 * The number of structural features of the '<em>Symbol Symbols Pair</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_LABEL_PAIR_OPERATION_COUNT = 0;
+	int SYMBOL_SYMBOLS_PAIR_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairToSymbolMapImpl <em>Vertex Label Pair To Symbol Map</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.wbsilva.bence.graphgrammar.impl.VertexLabelPairToSymbolMapImpl
-	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertexLabelPairToSymbolMap()
-	 * @generated
-	 */
-	int VERTEX_LABEL_PAIR_TO_SYMBOL_MAP = 3;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' containment reference.
+	 * The number of operations of the '<em>Symbol Symbols Pair</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY = 0;
+	int SYMBOL_SYMBOLS_PAIR_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexToSymbolSymbolsPairMapImpl <em>Vertex To Symbol Symbols Pair Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bence.graphgrammar.impl.VertexToSymbolSymbolsPairMapImpl
+	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertexToSymbolSymbolsPairMap()
+	 * @generated
+	 */
+	int VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP = 3;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__KEY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -320,25 +320,25 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__VALUE = 1;
+	int VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__VALUE = 1;
 
 	/**
-	 * The number of structural features of the '<em>Vertex Label Pair To Symbol Map</em>' class.
+	 * The number of structural features of the '<em>Vertex To Symbol Symbols Pair Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_LABEL_PAIR_TO_SYMBOL_MAP_FEATURE_COUNT = 2;
+	int VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Vertex Label Pair To Symbol Map</em>' class.
+	 * The number of operations of the '<em>Vertex To Symbol Symbols Pair Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_LABEL_PAIR_TO_SYMBOL_MAP_OPERATION_COUNT = 0;
+	int VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.SymbolImpl <em>Symbol</em>}' class.
@@ -1280,14 +1280,14 @@ public interface GraphgrammarPackage extends EPackage {
 	EReference getRule_Pac();
 
 	/**
-	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#embed(org.wbsilva.bence.graphgrammar.Graph, org.eclipse.emf.common.util.EList) <em>Embed</em>}' operation.
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#embed(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EMap) <em>Embed</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Embed</em>' operation.
-	 * @see org.wbsilva.bence.graphgrammar.Rule#embed(org.wbsilva.bence.graphgrammar.Graph, org.eclipse.emf.common.util.EList)
+	 * @see org.wbsilva.bence.graphgrammar.Rule#embed(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EMap)
 	 * @generated
 	 */
-	EOperation getRule__Embed__Graph_EList();
+	EOperation getRule__Embed__Graph_Vertex_EList_EMap();
 
 	/**
 	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#apply(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex) <em>Apply</em>}' operation.
@@ -1300,59 +1300,59 @@ public interface GraphgrammarPackage extends EPackage {
 	EOperation getRule__Apply__Graph_Vertex();
 
 	/**
-	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.VertexLabelPair <em>Vertex Label Pair</em>}'.
+	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.SymbolSymbolsPair <em>Symbol Symbols Pair</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Vertex Label Pair</em>'.
-	 * @see org.wbsilva.bence.graphgrammar.VertexLabelPair
+	 * @return the meta object for class '<em>Symbol Symbols Pair</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.SymbolSymbolsPair
 	 * @generated
 	 */
-	EClass getVertexLabelPair();
+	EClass getSymbolSymbolsPair();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.wbsilva.bence.graphgrammar.VertexLabelPair#getVertex <em>Vertex</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Vertex</em>'.
-	 * @see org.wbsilva.bence.graphgrammar.VertexLabelPair#getVertex()
-	 * @see #getVertexLabelPair()
-	 * @generated
-	 */
-	EReference getVertexLabelPair_Vertex();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.VertexLabelPair#getEdgeLabel <em>Edge Label</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.wbsilva.bence.graphgrammar.SymbolSymbolsPair#getEdgeLabel <em>Edge Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Edge Label</em>'.
-	 * @see org.wbsilva.bence.graphgrammar.VertexLabelPair#getEdgeLabel()
-	 * @see #getVertexLabelPair()
+	 * @see org.wbsilva.bence.graphgrammar.SymbolSymbolsPair#getEdgeLabel()
+	 * @see #getSymbolSymbolsPair()
 	 * @generated
 	 */
-	EReference getVertexLabelPair_EdgeLabel();
+	EReference getSymbolSymbolsPair_EdgeLabel();
 
 	/**
-	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Vertex Label Pair To Symbol Map</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.wbsilva.bence.graphgrammar.SymbolSymbolsPair#getVertexLabels <em>Vertex Labels</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Vertex Label Pair To Symbol Map</em>'.
-	 * @see java.util.Map.Entry
-	 * @model keyType="org.wbsilva.bence.graphgrammar.VertexLabelPair" keyContainment="true"
-	 *        valueType="org.wbsilva.bence.graphgrammar.Symbol" valueContainment="true" valueMany="true" valueOrdered="false"
+	 * @return the meta object for the containment reference list '<em>Vertex Labels</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.SymbolSymbolsPair#getVertexLabels()
+	 * @see #getSymbolSymbolsPair()
 	 * @generated
 	 */
-	EClass getVertexLabelPairToSymbolMap();
+	EReference getSymbolSymbolsPair_VertexLabels();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Vertex To Symbol Symbols Pair Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Key</em>'.
+	 * @return the meta object for class '<em>Vertex To Symbol Symbols Pair Map</em>'.
 	 * @see java.util.Map.Entry
-	 * @see #getVertexLabelPairToSymbolMap()
+	 * @model keyType="org.wbsilva.bence.graphgrammar.Vertex"
+	 *        valueType="org.wbsilva.bence.graphgrammar.SymbolSymbolsPair" valueContainment="true" valueMany="true" valueOrdered="false"
 	 * @generated
 	 */
-	EReference getVertexLabelPairToSymbolMap_Key();
+	EClass getVertexToSymbolSymbolsPairMap();
+
+	/**
+	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getVertexToSymbolSymbolsPairMap()
+	 * @generated
+	 */
+	EReference getVertexToSymbolSymbolsPairMap_Key();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link java.util.Map.Entry <em>Value</em>}'.
@@ -1360,10 +1360,10 @@ public interface GraphgrammarPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Value</em>'.
 	 * @see java.util.Map.Entry
-	 * @see #getVertexLabelPairToSymbolMap()
+	 * @see #getVertexToSymbolSymbolsPairMap()
 	 * @generated
 	 */
-	EReference getVertexLabelPairToSymbolMap_Value();
+	EReference getVertexToSymbolSymbolsPairMap_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Symbol <em>Symbol</em>}'.
@@ -2132,7 +2132,7 @@ public interface GraphgrammarPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RULE___EMBED__GRAPH_ELIST = eINSTANCE.getRule__Embed__Graph_EList();
+		EOperation RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP = eINSTANCE.getRule__Embed__Graph_Vertex_EList_EMap();
 		/**
 		 * The meta object literal for the '<em><b>Apply</b></em>' operation.
 		 * <!-- begin-user-doc -->
@@ -2141,51 +2141,51 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EOperation RULE___APPLY__GRAPH_VERTEX = eINSTANCE.getRule__Apply__Graph_Vertex();
 		/**
-		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairImpl <em>Vertex Label Pair</em>}' class.
+		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.SymbolSymbolsPairImpl <em>Symbol Symbols Pair</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.wbsilva.bence.graphgrammar.impl.VertexLabelPairImpl
-		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertexLabelPair()
+		 * @see org.wbsilva.bence.graphgrammar.impl.SymbolSymbolsPairImpl
+		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getSymbolSymbolsPair()
 		 * @generated
 		 */
-		EClass VERTEX_LABEL_PAIR = eINSTANCE.getVertexLabelPair();
-		/**
-		 * The meta object literal for the '<em><b>Vertex</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VERTEX_LABEL_PAIR__VERTEX = eINSTANCE.getVertexLabelPair_Vertex();
+		EClass SYMBOL_SYMBOLS_PAIR = eINSTANCE.getSymbolSymbolsPair();
 		/**
 		 * The meta object literal for the '<em><b>Edge Label</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VERTEX_LABEL_PAIR__EDGE_LABEL = eINSTANCE.getVertexLabelPair_EdgeLabel();
+		EReference SYMBOL_SYMBOLS_PAIR__EDGE_LABEL = eINSTANCE.getSymbolSymbolsPair_EdgeLabel();
 		/**
-		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairToSymbolMapImpl <em>Vertex Label Pair To Symbol Map</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.wbsilva.bence.graphgrammar.impl.VertexLabelPairToSymbolMapImpl
-		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertexLabelPairToSymbolMap()
-		 * @generated
-		 */
-		EClass VERTEX_LABEL_PAIR_TO_SYMBOL_MAP = eINSTANCE.getVertexLabelPairToSymbolMap();
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Vertex Labels</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY = eINSTANCE.getVertexLabelPairToSymbolMap_Key();
+		EReference SYMBOL_SYMBOLS_PAIR__VERTEX_LABELS = eINSTANCE.getSymbolSymbolsPair_VertexLabels();
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexToSymbolSymbolsPairMapImpl <em>Vertex To Symbol Symbols Pair Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bence.graphgrammar.impl.VertexToSymbolSymbolsPairMapImpl
+		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertexToSymbolSymbolsPairMap()
+		 * @generated
+		 */
+		EClass VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP = eINSTANCE.getVertexToSymbolSymbolsPairMap();
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__KEY = eINSTANCE.getVertexToSymbolSymbolsPairMap_Key();
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__VALUE = eINSTANCE.getVertexLabelPairToSymbolMap_Value();
+		EReference VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__VALUE = eINSTANCE.getVertexToSymbolSymbolsPairMap_Value();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.SymbolImpl <em>Symbol</em>}' class.
 		 * <!-- begin-user-doc -->

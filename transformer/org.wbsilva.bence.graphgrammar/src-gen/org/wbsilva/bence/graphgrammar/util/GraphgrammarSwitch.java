@@ -82,17 +82,17 @@ public class GraphgrammarSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR: {
-			VertexLabelPair vertexLabelPair = (VertexLabelPair) theEObject;
-			T result = caseVertexLabelPair(vertexLabelPair);
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR: {
+			SymbolSymbolsPair symbolSymbolsPair = (SymbolSymbolsPair) theEObject;
+			T result = caseSymbolSymbolsPair(symbolSymbolsPair);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP: {
+		case GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP: {
 			@SuppressWarnings("unchecked")
-			Map.Entry<VertexLabelPair, EList<Symbol>> vertexLabelPairToSymbolMap = (Map.Entry<VertexLabelPair, EList<Symbol>>) theEObject;
-			T result = caseVertexLabelPairToSymbolMap(vertexLabelPairToSymbolMap);
+			Map.Entry<Vertex, EList<SymbolSymbolsPair>> vertexToSymbolSymbolsPairMap = (Map.Entry<Vertex, EList<SymbolSymbolsPair>>) theEObject;
+			T result = caseVertexToSymbolSymbolsPairMap(vertexToSymbolSymbolsPairMap);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -220,32 +220,32 @@ public class GraphgrammarSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Vertex Label Pair</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Symbol Symbols Pair</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Vertex Label Pair</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Symbol Symbols Pair</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVertexLabelPair(VertexLabelPair object) {
+	public T caseSymbolSymbolsPair(SymbolSymbolsPair object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Vertex Label Pair To Symbol Map</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Vertex To Symbol Symbols Pair Map</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Vertex Label Pair To Symbol Map</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Vertex To Symbol Symbols Pair Map</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVertexLabelPairToSymbolMap(Map.Entry<VertexLabelPair, EList<Symbol>> object) {
+	public T caseVertexToSymbolSymbolsPairMap(Map.Entry<Vertex, EList<SymbolSymbolsPair>> object) {
 		return null;
 	}
 

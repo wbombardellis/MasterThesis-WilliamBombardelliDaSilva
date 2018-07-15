@@ -3,6 +3,7 @@
 package org.wbsilva.bence.graphgrammar.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -19,35 +20,36 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
-import org.wbsilva.bence.graphgrammar.Symbol;
-import org.wbsilva.bence.graphgrammar.VertexLabelPair;
+import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
+import org.wbsilva.bence.graphgrammar.Vertex;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Vertex Label Pair To Symbol Map</b></em>'.
+ * An implementation of the model object '<em><b>Vertex To Symbol Symbols Pair Map</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairToSymbolMapImpl#getTypedKey <em>Key</em>}</li>
- *   <li>{@link org.wbsilva.bence.graphgrammar.impl.VertexLabelPairToSymbolMapImpl#getTypedValue <em>Value</em>}</li>
+ *   <li>{@link org.wbsilva.bence.graphgrammar.impl.VertexToSymbolSymbolsPairMapImpl#getTypedKey <em>Key</em>}</li>
+ *   <li>{@link org.wbsilva.bence.graphgrammar.impl.VertexToSymbolSymbolsPairMapImpl#getTypedValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
-		implements BasicEMap.Entry<VertexLabelPair, EList<Symbol>> {
+public class VertexToSymbolSymbolsPairMapImpl extends MinimalEObjectImpl.Container
+		implements BasicEMap.Entry<Vertex, EList<SymbolSymbolsPair>> {
 	/**
-	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' containment reference.
+	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypedKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected VertexLabelPair key;
+	protected Vertex key;
 
 	/**
 	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' containment reference list.
@@ -57,14 +59,14 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Symbol> value;
+	protected EList<SymbolSymbolsPair> value;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VertexLabelPairToSymbolMapImpl() {
+	protected VertexToSymbolSymbolsPairMapImpl() {
 		super();
 	}
 
@@ -75,7 +77,7 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return GraphgrammarPackage.Literals.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP;
+		return GraphgrammarPackage.Literals.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP;
 	}
 
 	/**
@@ -83,7 +85,16 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VertexLabelPair getTypedKey() {
+	public Vertex getTypedKey() {
+		if (key != null && key.eIsProxy()) {
+			InternalEObject oldKey = (InternalEObject) key;
+			key = (Vertex) eResolveProxy(oldKey);
+			if (key != oldKey) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__KEY, oldKey, key));
+			}
+		}
 		return key;
 	}
 
@@ -92,40 +103,21 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTypedKey(VertexLabelPair newKey, NotificationChain msgs) {
-		VertexLabelPair oldKey = key;
+	public Vertex basicGetTypedKey() {
+		return key;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTypedKey(Vertex newKey) {
+		Vertex oldKey = key;
 		key = newKey;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY, oldKey, newKey);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTypedKey(VertexLabelPair newKey) {
-		if (newKey != key) {
-			NotificationChain msgs = null;
-			if (key != null)
-				msgs = ((InternalEObject) key).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY, null, msgs);
-			if (newKey != null)
-				msgs = ((InternalEObject) newKey).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY, null, msgs);
-			msgs = basicSetTypedKey(newKey, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY, newKey, newKey));
+					GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__KEY, oldKey, key));
 	}
 
 	/**
@@ -133,10 +125,10 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Symbol> getTypedValue() {
+	public EList<SymbolSymbolsPair> getTypedValue() {
 		if (value == null) {
-			value = new EObjectContainmentEList<Symbol>(Symbol.class, this,
-					GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__VALUE);
+			value = new EObjectContainmentEList<SymbolSymbolsPair>(SymbolSymbolsPair.class, this,
+					GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__VALUE);
 		}
 		return value;
 	}
@@ -149,9 +141,7 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY:
-			return basicSetTypedKey(null, msgs);
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__VALUE:
+		case GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__VALUE:
 			return ((InternalEList<?>) getTypedValue()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -165,9 +155,11 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY:
-			return getTypedKey();
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__VALUE:
+		case GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__KEY:
+			if (resolve)
+				return getTypedKey();
+			return basicGetTypedKey();
+		case GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__VALUE:
 			return getTypedValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -182,12 +174,12 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY:
-			setTypedKey((VertexLabelPair) newValue);
+		case GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__KEY:
+			setTypedKey((Vertex) newValue);
 			return;
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__VALUE:
+		case GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__VALUE:
 			getTypedValue().clear();
-			getTypedValue().addAll((Collection<? extends Symbol>) newValue);
+			getTypedValue().addAll((Collection<? extends SymbolSymbolsPair>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -201,10 +193,10 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY:
-			setTypedKey((VertexLabelPair) null);
+		case GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__KEY:
+			setTypedKey((Vertex) null);
 			return;
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__VALUE:
+		case GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__VALUE:
 			getTypedValue().clear();
 			return;
 		}
@@ -219,9 +211,9 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY:
+		case GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__KEY:
 			return key != null;
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__VALUE:
+		case GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__VALUE:
 			return value != null && !value.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -261,7 +253,7 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VertexLabelPair getKey() {
+	public Vertex getKey() {
 		return getTypedKey();
 	}
 
@@ -270,7 +262,7 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setKey(VertexLabelPair key) {
+	public void setKey(Vertex key) {
 		setTypedKey(key);
 	}
 
@@ -279,7 +271,7 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Symbol> getValue() {
+	public EList<SymbolSymbolsPair> getValue() {
 		return getTypedValue();
 	}
 
@@ -288,8 +280,8 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Symbol> setValue(EList<Symbol> value) {
-		EList<Symbol> oldValue = getValue();
+	public EList<SymbolSymbolsPair> setValue(EList<SymbolSymbolsPair> value) {
+		EList<SymbolSymbolsPair> oldValue = getValue();
 		getTypedValue().clear();
 		getTypedValue().addAll(value);
 		return oldValue;
@@ -301,9 +293,10 @@ public class VertexLabelPairToSymbolMapImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EMap<VertexLabelPair, EList<Symbol>> getEMap() {
+	public EMap<Vertex, EList<SymbolSymbolsPair>> getEMap() {
 		EObject container = eContainer();
-		return container == null ? null : (EMap<VertexLabelPair, EList<Symbol>>) container.eGet(eContainmentFeature());
+		return container == null ? null
+				: (EMap<Vertex, EList<SymbolSymbolsPair>>) container.eGet(eContainmentFeature());
 	}
 
-} //VertexLabelPairToSymbolMapImpl
+} //VertexToSymbolSymbolsPairMapImpl

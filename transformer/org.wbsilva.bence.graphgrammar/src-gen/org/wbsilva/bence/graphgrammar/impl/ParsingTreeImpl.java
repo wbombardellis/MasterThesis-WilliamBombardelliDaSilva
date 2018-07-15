@@ -214,7 +214,7 @@ public class ParsingTreeImpl extends MinimalEObjectImpl.Container implements Par
 	public Derivation derivation() {
 		assert this.getDerivationStep() != null;
 		assert this.getZoneVertex() != null;
-		
+
 		final Derivation derivation = GraphgrammarFactory.eINSTANCE.createDerivation();
 
 		derivation.getSteps().add(EcoreUtil.copy(this.getDerivationStep()));

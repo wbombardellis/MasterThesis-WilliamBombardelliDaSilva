@@ -138,8 +138,8 @@ public interface Rule extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Embedding</b></em>' map.
-	 * The key is of type {@link org.wbsilva.bence.graphgrammar.VertexLabelPair},
-	 * and the value is of type list of {@link org.wbsilva.bence.graphgrammar.Symbol},
+	 * The key is of type {@link org.wbsilva.bence.graphgrammar.Vertex},
+	 * and the value is of type list of {@link org.wbsilva.bence.graphgrammar.SymbolSymbolsPair},
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Embedding</em>' map isn't clear,
@@ -148,10 +148,10 @@ public interface Rule extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Embedding</em>' map.
 	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getRule_Embedding()
-	 * @model mapType="org.wbsilva.bence.graphgrammar.VertexLabelPairToSymbolMap&lt;org.wbsilva.bence.graphgrammar.VertexLabelPair, org.wbsilva.bence.graphgrammar.Symbol&gt;"
+	 * @model mapType="org.wbsilva.bence.graphgrammar.VertexToSymbolSymbolsPairMap&lt;org.wbsilva.bence.graphgrammar.Vertex, org.wbsilva.bence.graphgrammar.SymbolSymbolsPair&gt;"
 	 * @generated
 	 */
-	EMap<VertexLabelPair, EList<Symbol>> getEmbedding();
+	EMap<Vertex, EList<SymbolSymbolsPair>> getEmbedding();
 
 	/**
 	 * Returns the value of the '<em><b>Pac</b></em>' reference list.
@@ -173,15 +173,18 @@ public interface Rule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Given the graph and a list of edges belonging to it, return a list of edges
-	 * that should be added to it for the embedding of the application of this rule.
+	 * Given the graph and a list of edges (possibly not belonging to it),
+	 * and a vertex (possibly not belonging to it), return a list of edges
+	 * that should be added to it for the embedding of the application of this rule
+	 * on the vertex.
 	 * This method can be used after adding the RHS of this rule to the graph to
-	 * connect it with the rest of the graph.
+	 * connect it with the rest of the graph. The unifier maps between the rule's 
+	 * and the graph's vertices.
 	 * <!-- end-model-doc -->
-	 * @model ordered="false" edgesMany="true" edgesOrdered="false"
+	 * @model ordered="false" edgesMany="true" edgesOrdered="false" unifierMapType="org.wbsilva.bence.graphgrammar.VertexToVertexMap&lt;org.wbsilva.bence.graphgrammar.Vertex, org.wbsilva.bence.graphgrammar.Vertex&gt;"
 	 * @generated
 	 */
-	EList<Edge> embed(Graph graph, EList<Edge> edges);
+	EList<Edge> embed(Graph graph, Vertex vertex, EList<Edge> edges, EMap<Vertex, Vertex> unifier);
 
 	/**
 	 * <!-- begin-user-doc -->

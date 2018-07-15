@@ -79,13 +79,13 @@ public class GraphgrammarAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseVertexLabelPair(VertexLabelPair object) {
-			return createVertexLabelPairAdapter();
+		public Adapter caseSymbolSymbolsPair(SymbolSymbolsPair object) {
+			return createSymbolSymbolsPairAdapter();
 		}
 
 		@Override
-		public Adapter caseVertexLabelPairToSymbolMap(Map.Entry<VertexLabelPair, EList<Symbol>> object) {
-			return createVertexLabelPairToSymbolMapAdapter();
+		public Adapter caseVertexToSymbolSymbolsPairMap(Map.Entry<Vertex, EList<SymbolSymbolsPair>> object) {
+			return createVertexToSymbolSymbolsPairMapAdapter();
 		}
 
 		@Override
@@ -196,21 +196,21 @@ public class GraphgrammarAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bence.graphgrammar.VertexLabelPair <em>Vertex Label Pair</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bence.graphgrammar.SymbolSymbolsPair <em>Symbol Symbols Pair</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.wbsilva.bence.graphgrammar.VertexLabelPair
+	 * @see org.wbsilva.bence.graphgrammar.SymbolSymbolsPair
 	 * @generated
 	 */
-	public Adapter createVertexLabelPairAdapter() {
+	public Adapter createSymbolSymbolsPairAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Vertex Label Pair To Symbol Map</em>}'.
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Vertex To Symbol Symbols Pair Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
@@ -219,7 +219,7 @@ public class GraphgrammarAdapterFactory extends AdapterFactoryImpl {
 	 * @see java.util.Map.Entry
 	 * @generated
 	 */
-	public Adapter createVertexLabelPairToSymbolMapAdapter() {
+	public Adapter createVertexToSymbolSymbolsPairMapAdapter() {
 		return null;
 	}
 

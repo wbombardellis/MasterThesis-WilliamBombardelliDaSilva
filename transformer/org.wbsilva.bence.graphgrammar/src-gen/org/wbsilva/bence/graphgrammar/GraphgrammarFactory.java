@@ -40,13 +40,13 @@ public interface GraphgrammarFactory extends EFactory {
 	Rule createRule();
 
 	/**
-	 * Returns a new object of class '<em>Vertex Label Pair</em>'.
+	 * Returns a new object of class '<em>Symbol Symbols Pair</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Vertex Label Pair</em>'.
+	 * @return a new object of class '<em>Symbol Symbols Pair</em>'.
 	 * @generated
 	 */
-	VertexLabelPair createVertexLabelPair();
+	SymbolSymbolsPair createSymbolSymbolsPair();
 
 	/**
 	 * Returns a new object of class '<em>Symbol</em>'.

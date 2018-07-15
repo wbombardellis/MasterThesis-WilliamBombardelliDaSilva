@@ -267,7 +267,7 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 				final EMap<Vertex, Vertex> unifier = r.apply(g, v);
 
 				//TODO: temporary costly implementation. I guess it is enough to check the vEdges correspondence between the 2 graphs
-				if (g.isomorphicTo(next)) {
+				if (!unifier.isEmpty() && g.isomorphicTo(next)) {
 					final DerivationStep newDS = GraphgrammarFactory.eINSTANCE.createDerivationStep();
 					newDS.setVertex(EcoreUtil.copy(vertex));
 					newDS.setRule(r);

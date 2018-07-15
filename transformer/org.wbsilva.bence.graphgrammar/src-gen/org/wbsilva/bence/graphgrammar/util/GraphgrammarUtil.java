@@ -199,19 +199,36 @@ public class GraphgrammarUtil {
 	}
 
 	/**
-	 * Checks if a rule is concise
+	 * Checks if a rule is concise, also checking it against the grammar's alphabet
 	 * @param alphabet		The alphabet to which the rule refers 
 	 * @param rule			The rule to test		
 	 * @return				True iff {@code rule} is valid
 	 */
-	private static boolean isValidRule(final EList<Symbol> alphabet, final Rule rule) {
+	public static boolean isValidRule(final EList<Symbol> alphabet, final Rule rule) {
 		if (rule.getLhs() == null || rule.getRhs() == null || !isValidGraph(rule.getRhs()))
 			return false;
 		if (rule.getEmbedding() == null || 
 				rule.getEmbedding().entrySet().parallelStream()
-					.anyMatch(e -> e.getValue() == null || e.getValue().isEmpty() || !inAlphabet(alphabet, e.getValue())) ||
-					rule.getEmbedding().entrySet().parallelStream()
-					.anyMatch(e -> !rule.getRhs().getVertices().contains(e.getKey().getVertex()) || !inAlphabet(alphabet, e.getKey().getEdgeLabel())))
+					.anyMatch(e -> !rule.getRhs().getVertices().contains(e.getKey()) 
+							|| e.getValue() == null || e.getValue().isEmpty()
+							|| e.getValue().parallelStream().anyMatch(ss -> !inAlphabet(alphabet, ss.getEdgeLabel())
+									|| !inAlphabet(alphabet, ss.getVertexLabels()))))
+				return false;
+		return true;
+	}
+	
+	/**
+	 * Checks if a rule is concise 
+	 * @param rule			The rule to test		
+	 * @return				True iff {@code rule} is valid
+	 */
+	public static boolean isValidRule(final Rule rule) {
+		if (rule.getLhs() == null || rule.getRhs() == null || !isValidGraph(rule.getRhs()))
+			return false;
+		if (rule.getEmbedding() == null || 
+				rule.getEmbedding().entrySet().parallelStream()
+					.anyMatch(e -> !rule.getRhs().getVertices().contains(e.getKey())
+							|| e.getValue() == null || e.getValue().isEmpty()))
 				return false;
 		return true;
 	}

@@ -62,10 +62,10 @@ public class GraphgrammarFactoryImpl extends EFactoryImpl implements Graphgramma
 			return createGrammar();
 		case GraphgrammarPackage.RULE:
 			return createRule();
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR:
-			return createVertexLabelPair();
-		case GraphgrammarPackage.VERTEX_LABEL_PAIR_TO_SYMBOL_MAP:
-			return (EObject) createVertexLabelPairToSymbolMap();
+		case GraphgrammarPackage.SYMBOL_SYMBOLS_PAIR:
+			return createSymbolSymbolsPair();
+		case GraphgrammarPackage.VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP:
+			return (EObject) createVertexToSymbolSymbolsPairMap();
 		case GraphgrammarPackage.SYMBOL:
 			return createSymbol();
 		case GraphgrammarPackage.DERIVATION_STEP:
@@ -120,9 +120,9 @@ public class GraphgrammarFactoryImpl extends EFactoryImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VertexLabelPair createVertexLabelPair() {
-		VertexLabelPairImpl vertexLabelPair = new VertexLabelPairImpl();
-		return vertexLabelPair;
+	public SymbolSymbolsPair createSymbolSymbolsPair() {
+		SymbolSymbolsPairImpl symbolSymbolsPair = new SymbolSymbolsPairImpl();
+		return symbolSymbolsPair;
 	}
 
 	/**
@@ -130,9 +130,9 @@ public class GraphgrammarFactoryImpl extends EFactoryImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map.Entry<VertexLabelPair, EList<Symbol>> createVertexLabelPairToSymbolMap() {
-		VertexLabelPairToSymbolMapImpl vertexLabelPairToSymbolMap = new VertexLabelPairToSymbolMapImpl();
-		return vertexLabelPairToSymbolMap;
+	public Map.Entry<Vertex, EList<SymbolSymbolsPair>> createVertexToSymbolSymbolsPairMap() {
+		VertexToSymbolSymbolsPairMapImpl vertexToSymbolSymbolsPairMap = new VertexToSymbolSymbolsPairMapImpl();
+		return vertexToSymbolSymbolsPairMap;
 	}
 
 	/**

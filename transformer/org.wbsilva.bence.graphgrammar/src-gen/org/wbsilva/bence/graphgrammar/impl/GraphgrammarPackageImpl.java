@@ -21,11 +21,11 @@ import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.ParsingTree;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
+import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
 import org.wbsilva.bence.graphgrammar.TripleGraph;
 import org.wbsilva.bence.graphgrammar.TripleRule;
 import org.wbsilva.bence.graphgrammar.Vertex;
-import org.wbsilva.bence.graphgrammar.VertexLabelPair;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
 
 /**
@@ -53,13 +53,15 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass vertexLabelPairEClass = null;
+	private EClass symbolSymbolsPairEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass vertexLabelPairToSymbolMapEClass = null;
+	private EClass vertexToSymbolSymbolsPairMapEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -341,7 +343,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRule__Embed__Graph_EList() {
+	public EOperation getRule__Embed__Graph_Vertex_EList_EMap() {
 		return ruleEClass.getEOperations().get(0);
 	}
 
@@ -359,8 +361,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVertexLabelPair() {
-		return vertexLabelPairEClass;
+	public EClass getSymbolSymbolsPair() {
+		return symbolSymbolsPairEClass;
 	}
 
 	/**
@@ -368,8 +370,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVertexLabelPair_Vertex() {
-		return (EReference) vertexLabelPairEClass.getEStructuralFeatures().get(0);
+	public EReference getSymbolSymbolsPair_EdgeLabel() {
+		return (EReference) symbolSymbolsPairEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -377,8 +379,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVertexLabelPair_EdgeLabel() {
-		return (EReference) vertexLabelPairEClass.getEStructuralFeatures().get(1);
+	public EReference getSymbolSymbolsPair_VertexLabels() {
+		return (EReference) symbolSymbolsPairEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -386,8 +388,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVertexLabelPairToSymbolMap() {
-		return vertexLabelPairToSymbolMapEClass;
+	public EClass getVertexToSymbolSymbolsPairMap() {
+		return vertexToSymbolSymbolsPairMapEClass;
 	}
 
 	/**
@@ -395,8 +397,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVertexLabelPairToSymbolMap_Key() {
-		return (EReference) vertexLabelPairToSymbolMapEClass.getEStructuralFeatures().get(0);
+	public EReference getVertexToSymbolSymbolsPairMap_Key() {
+		return (EReference) vertexToSymbolSymbolsPairMapEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -404,8 +406,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVertexLabelPairToSymbolMap_Value() {
-		return (EReference) vertexLabelPairToSymbolMapEClass.getEStructuralFeatures().get(1);
+	public EReference getVertexToSymbolSymbolsPairMap_Value() {
+		return (EReference) vertexToSymbolSymbolsPairMapEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -984,16 +986,16 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(ruleEClass, RULE__RHS);
 		createEReference(ruleEClass, RULE__EMBEDDING);
 		createEReference(ruleEClass, RULE__PAC);
-		createEOperation(ruleEClass, RULE___EMBED__GRAPH_ELIST);
+		createEOperation(ruleEClass, RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP);
 		createEOperation(ruleEClass, RULE___APPLY__GRAPH_VERTEX);
 
-		vertexLabelPairEClass = createEClass(VERTEX_LABEL_PAIR);
-		createEReference(vertexLabelPairEClass, VERTEX_LABEL_PAIR__VERTEX);
-		createEReference(vertexLabelPairEClass, VERTEX_LABEL_PAIR__EDGE_LABEL);
+		symbolSymbolsPairEClass = createEClass(SYMBOL_SYMBOLS_PAIR);
+		createEReference(symbolSymbolsPairEClass, SYMBOL_SYMBOLS_PAIR__EDGE_LABEL);
+		createEReference(symbolSymbolsPairEClass, SYMBOL_SYMBOLS_PAIR__VERTEX_LABELS);
 
-		vertexLabelPairToSymbolMapEClass = createEClass(VERTEX_LABEL_PAIR_TO_SYMBOL_MAP);
-		createEReference(vertexLabelPairToSymbolMapEClass, VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__KEY);
-		createEReference(vertexLabelPairToSymbolMapEClass, VERTEX_LABEL_PAIR_TO_SYMBOL_MAP__VALUE);
+		vertexToSymbolSymbolsPairMapEClass = createEClass(VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP);
+		createEReference(vertexToSymbolSymbolsPairMapEClass, VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__KEY);
+		createEReference(vertexToSymbolSymbolsPairMapEClass, VERTEX_TO_SYMBOL_SYMBOLS_PAIR_MAP__VALUE);
 
 		symbolEClass = createEClass(SYMBOL);
 		createEAttribute(symbolEClass, SYMBOL__NAME);
@@ -1135,37 +1137,40 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 				IS_ORDERED);
 		initEReference(getRule_Rhs(), this.getGraph(), null, "rhs", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRule_Embedding(), this.getVertexLabelPairToSymbolMap(), null, "embedding", null, 0, -1,
+		initEReference(getRule_Embedding(), this.getVertexToSymbolSymbolsPairMap(), null, "embedding", null, 0, -1,
 				Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRule_Pac(), this.getVertex(), null, "pac", null, 0, -1, Rule.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				!IS_ORDERED);
 
-		op = initEOperation(getRule__Embed__Graph_EList(), this.getEdge(), "embed", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRule__Embed__Graph_Vertex_EList_EMap(), this.getEdge(), "embed", 0, -1, IS_UNIQUE,
+				!IS_ORDERED);
 		addEParameter(op, this.getGraph(), "graph", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEdge(), "edges", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getVertexToVertexMap(), "unifier", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getRule__Apply__Graph_Vertex(), this.getVertexToVertexMap(), "apply", 0, -1, IS_UNIQUE,
 				!IS_ORDERED);
 		addEParameter(op, this.getGraph(), "graph", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(vertexLabelPairEClass, VertexLabelPair.class, "VertexLabelPair", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(symbolSymbolsPairEClass, SymbolSymbolsPair.class, "SymbolSymbolsPair", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVertexLabelPair_Vertex(), this.getVertex(), null, "vertex", null, 0, 1, VertexLabelPair.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVertexLabelPair_EdgeLabel(), this.getSymbol(), null, "edgeLabel", null, 0, 1,
-				VertexLabelPair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEReference(getSymbolSymbolsPair_EdgeLabel(), this.getSymbol(), null, "edgeLabel", null, 0, 1,
+				SymbolSymbolsPair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSymbolSymbolsPair_VertexLabels(), this.getSymbol(), null, "vertexLabels", null, 0, -1,
+				SymbolSymbolsPair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(vertexLabelPairToSymbolMapEClass, Map.Entry.class, "VertexLabelPairToSymbolMap", !IS_ABSTRACT,
+		initEClass(vertexToSymbolSymbolsPairMapEClass, Map.Entry.class, "VertexToSymbolSymbolsPairMap", !IS_ABSTRACT,
 				!IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVertexLabelPairToSymbolMap_Key(), this.getVertexLabelPair(), null, "key", null, 0, 1,
-				Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEReference(getVertexToSymbolSymbolsPairMap_Key(), this.getVertex(), null, "key", null, 0, 1,
+				Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVertexLabelPairToSymbolMap_Value(), this.getSymbol(), null, "value", null, 0, -1,
+		initEReference(getVertexToSymbolSymbolsPairMap_Value(), this.getSymbolSymbolsPair(), null, "value", null, 0, -1,
 				Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
