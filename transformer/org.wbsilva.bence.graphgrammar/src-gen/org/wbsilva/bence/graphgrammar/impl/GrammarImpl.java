@@ -2,6 +2,9 @@
  */
 package org.wbsilva.bence.graphgrammar.impl;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Set;
@@ -29,6 +32,7 @@ import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.Vertex;
+import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -248,7 +252,12 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 	 * @generated NOT
 	 */
 	public DerivationStep derives(Graph prev, Graph next, Vertex vertex, Graph rhs) {
-		//TODO: Assert grammar is validated
+		assert GraphgrammarUtil.isValidGrammar(this);
+		assert GraphgrammarUtil.isValidGraph(prev);
+		assert GraphgrammarUtil.isValidGraph(next);
+		assert vertex != null && vertex.getLabel() != null;
+		assert GraphgrammarUtil.isValidGraph(rhs);
+		
 		final Rule rule = this.getRules().stream()
 				.filter(r -> EcoreUtil.equals(r.getLhs(), vertex.getLabel()) && r.getRhs().isomorphicTo(rhs)).findAny()
 				.orElse(null);
@@ -263,11 +272,17 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 				final Graph g = EcoreUtil.copy(prev);
 				final Rule r = EcoreUtil.copy(rule);
 
-				//TODO: Somehow has to manage application of rules to zone graphs (hot to do embedding of edges with no labels in a consistent way?)
+				//TODO: Somehow has to manage application of rules to zone graphs (how to do embedding of edges with no labels in a consistent way?)
 				final EMap<Vertex, Vertex> unifier = r.apply(g, v);
+				assert GraphgrammarUtil.isValidGraph(g);
 
 				//TODO: temporary costly implementation. I guess it is enough to check the vEdges correspondence between the 2 graphs
 				if (!unifier.isEmpty() && g.isomorphicTo(next)) {
+					assert unifier.size() == r.getRhs().getVertices().size();
+					assert unifier.values().parallelStream().distinct().count() == r.getRhs().getVertices().size();
+					assert r.getRhs().getVertices().parallelStream()
+								.allMatch(w -> g.getVertices().contains(unifier.get(w)));
+					
 					final DerivationStep newDS = GraphgrammarFactory.eINSTANCE.createDerivationStep();
 					newDS.setVertex(EcoreUtil.copy(vertex));
 					newDS.setRule(r);

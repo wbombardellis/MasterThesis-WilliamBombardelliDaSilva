@@ -29,6 +29,7 @@ import org.wbsilva.bence.graphgrammar.TripleGrammar;
 import org.wbsilva.bence.graphgrammar.TripleGraph;
 import org.wbsilva.bence.graphgrammar.TripleRule;
 import org.wbsilva.bence.graphgrammar.Vertex;
+import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -258,14 +259,16 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 	 * @generated NOT
 	 */
 	public void produce(TripleGraph tripleGraph, DerivationStep derivationStep, boolean forward) {
-
+		assert GraphgrammarUtil.isValidTripleGrammar(this);
+		assert GraphgrammarUtil.isValidTripleGraph(tripleGraph);
+		assert derivationStep != null;
+		assert GraphgrammarUtil.isValidRule(this.getAlphabet(), derivationStep.getRule());
+		
 		final TripleRule tripleRule = this.getTripleRules().parallelStream()
 				.filter(tr -> forward ? tr.getSource().getId().equals(derivationStep.getRule().getId())
 						: tr.getTarget().getId().equals(derivationStep.getRule().getId()))
 				.findAny().orElse(null);
 		assert tripleRule != null;
-
-		//TODO: Assure derivationStep.prev == inputgraph
 
 		final Graph inputGraph = forward ? tripleGraph.getSource() : tripleGraph.getTarget();
 		final Graph outputGraph = forward ? tripleGraph.getTarget() : tripleGraph.getSource();
@@ -273,8 +276,9 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		final Rule outputRule = forward ? tripleRule.getTarget() : tripleRule.getSource();
 		final EMap<Vertex, Vertex> inputMorphism = forward ? tripleGraph.getMs() : tripleGraph.getMt();
 		final EMap<Vertex, Vertex> outputMorphism = forward ? tripleGraph.getMt() : tripleGraph.getMs();
-
-		//TODO: assert unique ids
+		
+		assert GraphgrammarUtil.isValidRule(inputRule);
+		assert EcoreUtil.equals(derivationStep.getPrevious(), inputGraph);
 
 		//The vertex of the input graph used as LHS in this derivation step
 		final Vertex inputVertex = inputGraph.getVertices().parallelStream()
@@ -284,7 +288,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		//The correspondence vertex for the input vertex
 		final Vertex corrVertex = tripleGraph.getCorr().getVertices().parallelStream()
 				.filter(v -> this.getNonterminals().parallelStream()
-						.anyMatch(s -> s.getName().equals(v.getLabel().getName()))) //TODO: Assert there is one
+						.anyMatch(s -> s.getName().equals(v.getLabel().getName())))
 				.filter(v -> forward ? tripleGraph.invMs(inputVertex).contains(v)
 						: tripleGraph.invMt(inputVertex).contains(v))
 				.findAny().orElse(null);
@@ -301,37 +305,44 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		inputGraph.getVertices().clear();
 		inputGraph.getVertices().addAll(EcoreUtil.copyAll(derivationStep.getNext().getVertices()));
 		final EMap<Vertex, Vertex> inputUnifier = derivationStep.getUnifier();
-
+		assert inputUnifier != null && inputUnifier.size() == derivationStep.getRule().getRhs().getVertices().size();
+		
 		//Generate next output graph using output vertex as LHS for the output rule application 
 		final EMap<Vertex, Vertex> outputUnifier = outputRule.apply(outputGraph, outputVertex);
+		assert outputUnifier != null && outputUnifier.size() == outputRule.getRhs().getVertices().size();
 
 		//Generate next correspondence graph using correspondence vertex as LHS for the output rule application
 		final EMap<Vertex, Vertex> corrUnifier = tripleRule.getCorr().apply(tripleGraph.getCorr(), corrVertex);
-
+		assert corrUnifier != null && corrUnifier.size() == tripleRule.getCorr().getRhs().getVertices().size();
+		
 		//Adjust correspondence morphism ms and mt of the tripleGraph according to the tripleRule
 		inputMorphism.removeKey(corrVertex);
 		outputMorphism.removeKey(corrVertex);
 
 		for (Vertex corrV : tripleRule.getCorr().getRhs().getVertices()) {
 			final Vertex newCorrV = corrUnifier.get(corrV);
+			assert newCorrV != null;
 
 			final EMap<Vertex, Vertex> ruleOutputMorphism = forward ? tripleRule.getMt() : tripleRule.getMs();
 			final EMap<Vertex, Vertex> ruleInputMorphism = forward ? tripleRule.getMs() : tripleRule.getMt();
 
-			//TODO: Add assertions for the morphism  and for the vertices below (can they be empty?)
-
 			//Get vertex object of the just added output part
 			final Vertex outputV = ruleOutputMorphism.get(corrV);
 			final Vertex newOutputV = outputUnifier.get(outputV);
+			assert outputV != null;
+			assert newOutputV != null;
 
 			//Get vertex object of the input part
 			final Vertex inputV = ruleInputMorphism.get(corrV);
 			final Vertex newInputV = inputUnifier.get(inputRule.getRhs().getVertices().parallelStream()
 					.filter(w -> w.getId().equals(inputV.getId())).findAny().orElse(null));
+			assert inputV != null;
+			assert newInputV != null;
 
 			inputMorphism.put(newCorrV, newInputV);
 			outputMorphism.put(newCorrV, newOutputV);
 		}
+		assert GraphgrammarUtil.isValidTripleGraph(tripleGraph);
 	}
 
 	/**
