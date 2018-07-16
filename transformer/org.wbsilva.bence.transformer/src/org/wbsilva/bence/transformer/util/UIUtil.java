@@ -47,7 +47,21 @@ public class UIUtil {
 		System.out.println("If conflicting options occur, then the last ones will be used.");
 		System.out.println();
 		
-		//TODO: Print short license
+		System.out.println("Author: William Bombardelli da Silva, wbombardellis@win.tu-berlin.de");
+		System.out.println("Creation Date: Apr 2018");
+		System.out.println("Copyright © 2018 William Bombardelli da Silva");
+		System.out.println("This program is free software: you can redistribute it and/or modify\n" + 
+				"    it under the terms of the GNU General Public License as published by\n" + 
+				"    the Free Software Foundation, either version 3 of the License, or\n" + 
+				"    (at your option) any later version.\n" + 
+				"\n" + 
+				"    This program is distributed in the hope that it will be useful,\n" + 
+				"    but WITHOUT ANY WARRANTY; without even the implied warranty of\n" + 
+				"    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n" + 
+				"    GNU General Public License for more details.\n" + 
+				"\n" + 
+				"    You should have received a copy of the GNU General Public License\n" + 
+				"    along with this program.  If not, see <https://www.gnu.org/licenses/>.");
 	}
 
 	public static void printFinishSaving() {

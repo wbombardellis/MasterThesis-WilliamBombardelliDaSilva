@@ -6,8 +6,8 @@
 ##TITLE
 
 - **Author:**     William Bombardelli da Silva
-- **Advisor:**    ...
-- **Reviewer:**   Prof. Dr. ...
+- **Advisor:**    Max Bureck
+- **Reviewer:**   Prof. Dr.-Ing. Ina Schieferdecker
 
 This work is licensed under the Creative Commons 
 Attribution-NonCommercial-ShareAlike 3.0 Unported License.
