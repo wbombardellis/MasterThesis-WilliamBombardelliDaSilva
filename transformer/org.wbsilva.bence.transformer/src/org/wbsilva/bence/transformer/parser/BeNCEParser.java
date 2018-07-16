@@ -57,99 +57,108 @@ public class BeNCEParser {
 		
 		logger.debug(String.format("Starting parsing of the graph %s", graph));
 		
-		//TODO: If not all labels are terminals, return false right away
-		
-		//Create bottom-up parse set
-		final Set<ZoneVertex> initialZoneVertices = zoneVertices(graph.getVertices());		
-		final Bup bup = new Bup(initialZoneVertices);
-		
-		//Forest of possible parsing trees
-		final Set<ParsingTree> parsingForest = new HashSet<ParsingTree>();
-		
-		//Add these zone vertices to the parsing forest
-		parsingForest.addAll(initialZoneVertices.parallelStream().map(iZV -> {
-			final ParsingTree pTNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
-			pTNode.setZoneVertex(iZV);
-			return pTNode;
-		}).collect(Collectors.toSet()));
-		
-		
-		final ZoneVertex rootZV = GraphgrammarFactory.eINSTANCE.createZoneVertex();
-		rootZV.setId(EcoreUtil.generateUUID());
-		rootZV.setLabel(grammar.getInitial());
-		rootZV.getVertices().addAll(graph.getVertices());
-		
-		//Bottom-up loop to create all possible derivations
-		while(bup.hasNext() && !bup.contains(rootZV)){
-			//Select a handle
-			final Set<ZoneVertex> handle = bup.next();					//R
-			assert !handle.isEmpty();
+		//If not all labels are terminals, return fail right away
+		if (graph.getVertices().parallelStream()
+				.anyMatch(v -> !grammar.getTerminals().parallelStream()
+						.map(l -> l.getName())
+						.anyMatch(n -> n.equals(v.getLabel().getName())))) {
+			logger.debug("Not all vertices of the graph %s is a terminal vertex. Cannot parse.");
+			return Optional.empty();
 			
-			logger.debug(String.format("Selected handle {%s}", handle.stream()
-					.map(z -> z.getLabel().getName())
-					.reduce((a,b) -> a.concat(", ").concat(b))
-					.orElse("")));
+		} else {
 			
-			for (final Symbol d : grammar.getNonterminals()) {
+			//Create bottom-up parse set
+			final Set<ZoneVertex> initialZoneVertices = zoneVertices(graph.getVertices());		
+			final Bup bup = new Bup(initialZoneVertices);
+			
+			//Forest of possible parsing trees
+			final Set<ParsingTree> parsingForest = new HashSet<ParsingTree>();
+			
+			//Add these zone vertices to the parsing forest
+			parsingForest.addAll(initialZoneVertices.parallelStream().map(iZV -> {
+				final ParsingTree pTNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
+				pTNode.setZoneVertex(iZV);
+				return pTNode;
+			}).collect(Collectors.toSet()));
+			
+			
+			final ZoneVertex rootZV = GraphgrammarFactory.eINSTANCE.createZoneVertex();
+			rootZV.setId(EcoreUtil.generateUUID());
+			rootZV.setLabel(EcoreUtil.copy(grammar.getInitial()));
+			rootZV.getVertices().addAll(graph.getVertices());
+			
+			//Bottom-up loop to create all possible derivations
+			while(bup.hasNext() && !bup.contains(rootZV)){
+				//Select a handle
+				final Set<ZoneVertex> handle = bup.next();					//R
+				assert !handle.isEmpty();
 				
-				logger.debug(String.format("Trying to reduce with symbol %s", d.getName()));
+				logger.debug(String.format("Selected handle {%s}", handle.stream()
+						.map(z -> z.getLabel().getName())
+						.reduce((a,b) -> a.concat(", ").concat(b))
+						.orElse("")));
 				
-				final Graph handleGraph = zoneGraph(graph, handle);		//Z(R)
-				assert !handleGraph.getVertices().isEmpty();
-				
-				final Graph rhs = induce(handleGraph, handle);			//Y(R)
-				assert !rhs.getVertices().isEmpty();
-				assert GraphgrammarUtil.isBoundaryGraph(rhs, this.grammar.getNonterminals());
-				
-				final ZoneVertex lhs = contract(d, handle);				//(d,V(R))
-				assert !lhs.getVertices().isEmpty();
-				
-				final Graph reducedGraph = zoneGraph(graph, new HashSet<ZoneVertex>(Arrays.asList(lhs)));	//Z({(d,V(R)})
-				assert !reducedGraph.getVertices().isEmpty();
-				
-				//If handle can be reduced with rule (lhs -> rhs). I.e. if reducedGraph=>handleGraph
-				final DerivationStep newDS = grammar.derives(reducedGraph, handleGraph, lhs, rhs);
-				if (newDS != null) {
-					//Possible derivation step found
-					bup.add(lhs);
+				for (final Symbol d : grammar.getNonterminals()) {
 					
-					logger.debug(String.format("Can reduce. Derivation step %s, %s", newDS.getRule().getName(), newDS.getVertex().getId()));
+					logger.debug(String.format("Trying to reduce with symbol %s", d.getName()));
 					
-					//Construct parsing tree bottom-up 
-					final ParsingTree parsingTreeNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
-					parsingTreeNode.setZoneVertex(lhs);
-					parsingTreeNode.setDerivationStep(newDS);
-					parsingTreeNode.getChildren().addAll(parsingForest.stream()
-							.filter(pt -> handle.contains(pt.getZoneVertex()))
-							.collect(Collectors.toSet()));
-					assert parsingTreeNode.getChildren().size() == rhs.getVertices().size();
+					final Graph handleGraph = zoneGraph(graph, handle);		//Z(R)
+					assert !handleGraph.getVertices().isEmpty();
 					
-					parsingForest.add(parsingTreeNode);
+					final Graph rhs = induce(handleGraph, handle);			//Y(R)
+					assert !rhs.getVertices().isEmpty();
+					assert GraphgrammarUtil.isBoundaryGraph(rhs, this.grammar.getNonterminals());
 					
-					logger.debug(String.format("Adding to the parsing forest the parsing tree %s => [%s]", newDS.getVertex().getId(),
-							parsingTreeNode.getChildren().stream()
-								.map(pt -> pt.getZoneVertex().getId())
-								.reduce((a,b) -> a.concat(", ").concat(b))
-								.orElse("")));
+					final ZoneVertex lhs = contract(d, handle);				//(d,V(R))
+					assert !lhs.getVertices().isEmpty();
+					
+					final Graph reducedGraph = zoneGraph(graph, new HashSet<ZoneVertex>(Arrays.asList(lhs)));	//Z({(d,V(R)})
+					assert !reducedGraph.getVertices().isEmpty();
+					
+					//If handle can be reduced with rule (lhs -> rhs). I.e. if reducedGraph=>handleGraph
+					final DerivationStep newDS = grammar.derives(reducedGraph, handleGraph, lhs, rhs);
+					if (newDS != null) {
+						//Possible derivation step found
+						bup.add(lhs);
+						
+						logger.debug(String.format("Can reduce. Derivation step %s, %s", newDS.getRule().getName(), newDS.getVertex().getId()));
+						
+						//Construct parsing tree bottom-up 
+						final ParsingTree parsingTreeNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
+						parsingTreeNode.setZoneVertex(lhs);
+						parsingTreeNode.setDerivationStep(newDS);
+						parsingTreeNode.getChildren().addAll(parsingForest.stream()
+								.filter(pt -> handle.contains(pt.getZoneVertex()))
+								.collect(Collectors.toSet()));
+						assert parsingTreeNode.getChildren().size() == rhs.getVertices().size();
+						
+						parsingForest.add(parsingTreeNode);
+						
+						logger.debug(String.format("Adding to the parsing forest the parsing tree %s => [%s]", newDS.getVertex().getId(),
+								parsingTreeNode.getChildren().stream()
+									.map(pt -> pt.getZoneVertex().getId())
+									.reduce((a,b) -> a.concat(", ").concat(b))
+									.orElse("")));
+					}
 				}
 			}
-		}
-		
-		//Successfully parsed
-		if (bup.contains(rootZV)) {
-			final ParsingTree parsingTree = parsingForest.parallelStream()
-					.filter(pt -> pt.getZoneVertex().equivalates(rootZV))
-					.findAny()
-					.orElse(null);
-			assert parsingTree != null;
-			assert !parsingTree.getChildren().isEmpty();
-			assert parsingTree.getDerivationStep() != null;
 			
-			logger.debug("Parsing finished successfully");
-			return Optional.of(parsingTree);
-		} else {
-			logger.debug("Parsing finished unsuccessfully");
-			return Optional.empty();
+			//Successfully parsed
+			if (bup.contains(rootZV)) {
+				final ParsingTree parsingTree = parsingForest.parallelStream()
+						.filter(pt -> pt.getZoneVertex().equivalates(rootZV))
+						.findAny()
+						.orElse(null);
+				assert parsingTree != null;
+				assert !parsingTree.getChildren().isEmpty();
+				assert parsingTree.getDerivationStep() != null;
+				
+				logger.debug("Parsing finished successfully");
+				return Optional.of(parsingTree);
+			} else {
+				logger.debug("Parsing finished unsuccessfully");
+				return Optional.empty();
+			}
 		}
 	}
 

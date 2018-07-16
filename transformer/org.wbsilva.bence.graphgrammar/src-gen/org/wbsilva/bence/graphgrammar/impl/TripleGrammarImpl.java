@@ -322,22 +322,34 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		for (Vertex corrV : tripleRule.getCorr().getRhs().getVertices()) {
 			final Vertex newCorrV = corrUnifier.get(corrV);
 			assert newCorrV != null;
+			assert tripleGraph.getCorr().getVertices().contains(newCorrV);
 
 			final EMap<Vertex, Vertex> ruleOutputMorphism = forward ? tripleRule.getMt() : tripleRule.getMs();
 			final EMap<Vertex, Vertex> ruleInputMorphism = forward ? tripleRule.getMs() : tripleRule.getMt();
 
 			//Get vertex object of the just added output part
 			final Vertex outputV = ruleOutputMorphism.get(corrV);
-			final Vertex newOutputV = outputUnifier.get(outputV);
 			assert outputV != null;
+			assert outputRule.getRhs().getVertices().contains(outputV);
+			final Vertex newOutputV = outputUnifier.get(outputV);
 			assert newOutputV != null;
+			assert outputGraph.getVertices().contains(newOutputV);
 
 			//Get vertex object of the input part
 			final Vertex inputV = ruleInputMorphism.get(corrV);
-			final Vertex newInputV = inputUnifier.get(inputRule.getRhs().getVertices().parallelStream()
-					.filter(w -> w.getId().equals(inputV.getId())).findAny().orElse(null));
 			assert inputV != null;
+			assert forward ? tripleRule.getSource().getRhs().getVertices().contains(inputV) : tripleRule.getTarget().getRhs().getVertices().contains(inputV);
+			final Vertex derivationInputV = inputUnifier.get(inputRule.getRhs().getVertices().parallelStream()
+														.filter(w -> w.getId().equals(inputV.getId()))
+														.findAny()
+														.orElse(null));
+			assert derivationStep.getNext().getVertices().contains(derivationInputV);
+			final Vertex newInputV = inputGraph.getVertices().parallelStream()
+					.filter(v -> v.getId().equals(derivationInputV.getId()))
+					.findAny()
+					.orElse(null);
 			assert newInputV != null;
+			assert inputGraph.getVertices().contains(newInputV);
 
 			inputMorphism.put(newCorrV, newInputV);
 			outputMorphism.put(newCorrV, newOutputV);

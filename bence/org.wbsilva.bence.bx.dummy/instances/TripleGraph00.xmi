@@ -1,60 +1,68 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar">
   <org.wbsilva.bence.graphgrammar:TripleGraph>
-    <source id="_pBtkwYHmEeiBHrMaI1NntA">
-      <vertices id="_pB7nMIHmEeiBHrMaI1NntA">
+    <source>
+      <vertices id="_BCfUcIj-EeirAvvRn1c2EQ">
         <label name="a"/>
       </vertices>
     </source>
-    <corr id="_pCKQsYHmEeiBHrMaI1NntA">
-      <vertices id="_pCQXUYHmEeiBHrMaI1NntA">
+    <corr>
+      <vertices id="_BC15wIj-EeirAvvRn1c2EQ">
         <label name="a2b"/>
       </vertices>
     </corr>
-    <target id="_pCKQs4HmEeiBHrMaI1NntA">
-      <vertices id="_pCQXUIHmEeiBHrMaI1NntA">
+    <target>
+      <vertices id="_BC0roIj-EeirAvvRn1c2EQ">
         <label name="b"/>
       </vertices>
     </target>
-    <ms key="_pCQXUYHmEeiBHrMaI1NntA" value="_pB7nMIHmEeiBHrMaI1NntA"/>
-    <mt key="_pCQXUYHmEeiBHrMaI1NntA" value="_pCQXUIHmEeiBHrMaI1NntA"/>
+    <ms key="_BC15wIj-EeirAvvRn1c2EQ" value="_BCfUcIj-EeirAvvRn1c2EQ"/>
+    <mt key="_BC15wIj-EeirAvvRn1c2EQ" value="_BC0roIj-EeirAvvRn1c2EQ"/>
   </org.wbsilva.bence.graphgrammar:TripleGraph>
   <org.wbsilva.bence.graphgrammar:ParsingTree>
-    <zoneVertex id="_pBtkwIHmEeiBHrMaI1NntA">
+    <zoneVertex id="_BCTHMIj-EeirAvvRn1c2EQ">
       <label name="S"/>
-      <vertices id="_o_7cEYHmEeiBHrMaI1NntA">
+      <vertices id="_BALnUIj-EeirAvvRn1c2EQ">
         <label name="a"/>
       </vertices>
     </zoneVertex>
-    <derivationStep id="_pB-qgIHmEeiBHrMaI1NntA">
-      <rule id="_o_7cE4HmEeiBHrMaI1NntA" name="r0">
+    <derivationStep>
+      <rule id="_BALnUYj-EeirAvvRn1c2EQ" name="r0">
         <lhs name="S"/>
-        <rhs id="_o_7cFIHmEeiBHrMaI1NntA">
-          <vertices id="_o_7cFYHmEeiBHrMaI1NntA">
+        <rhs>
+          <vertices id="_BALnUoj-EeirAvvRn1c2EQ">
             <label name="a"/>
           </vertices>
         </rhs>
       </rule>
-      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_pBtkwIHmEeiBHrMaI1NntA">
+      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_BCTHMIj-EeirAvvRn1c2EQ">
         <label name="S"/>
-        <vertices id="_o_7cEYHmEeiBHrMaI1NntA">
+        <vertices id="_BALnUIj-EeirAvvRn1c2EQ">
           <label name="a"/>
         </vertices>
       </vertex>
-      <previous id="_pBtkwYHmEeiBHrMaI1NntA">
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_pBtkwIHmEeiBHrMaI1NntA">
+      <previous>
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_BCTHMIj-EeirAvvRn1c2EQ">
           <label name="S"/>
-          <vertices id="_o_7cEYHmEeiBHrMaI1NntA">
+          <vertices id="_BALnUIj-EeirAvvRn1c2EQ">
             <label name="a"/>
           </vertices>
         </vertices>
       </previous>
-      <next id="_pBtkwYHmEeiBHrMaI1NntA">
-        <vertices id="_pB7nMIHmEeiBHrMaI1NntA">
+      <next>
+        <vertices id="_BCfUcIj-EeirAvvRn1c2EQ">
           <label name="a"/>
         </vertices>
       </next>
-      <unifier key="_o_7cFYHmEeiBHrMaI1NntA" value="_pB7nMIHmEeiBHrMaI1NntA"/>
+      <unifier key="_BALnUoj-EeirAvvRn1c2EQ" value="_BCfUcIj-EeirAvvRn1c2EQ"/>
     </derivationStep>
+    <children>
+      <zoneVertex id="_BB760Ij-EeirAvvRn1c2EQ">
+        <label name="a"/>
+        <vertices id="_BALnUIj-EeirAvvRn1c2EQ">
+          <label name="a"/>
+        </vertices>
+      </zoneVertex>
+    </children>
   </org.wbsilva.bence.graphgrammar:ParsingTree>
 </xmi:XMI>

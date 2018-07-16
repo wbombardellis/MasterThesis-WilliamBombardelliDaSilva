@@ -415,4 +415,20 @@ public class GraphgrammarUtil {
 		return true;
 	}
 
+	/**
+	 * Checks if a triple grammar is a boundary triple grammar
+	 * @param tripleGrammar		The triple grammar to check
+	 * @return					True iff {@code tripleGrammar} is boundary
+	 */
+	public static boolean isBoundaryTripleGrammar(final TripleGrammar tripleGrammar) {
+		//if any triple rule's graph is not boundary 
+		if (tripleGrammar.getTripleRules().parallelStream()
+			.anyMatch(tr -> !isBoundaryGraph(tr.getSource().getRhs(), tripleGrammar.getNonterminals())
+					|| !isBoundaryGraph(tr.getCorr().getRhs(), tripleGrammar.getNonterminals())
+					|| !isBoundaryGraph(tr.getTarget().getRhs(), tripleGrammar.getNonterminals())))
+			return false;
+		
+		return true;
+	}
+
 }

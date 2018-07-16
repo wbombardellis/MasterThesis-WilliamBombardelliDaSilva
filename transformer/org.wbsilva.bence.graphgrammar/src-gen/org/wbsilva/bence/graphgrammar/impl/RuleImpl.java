@@ -442,6 +442,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 			
 			graph.getEdges().addAll(this.embed(graph, gV, new BasicEList<Edge>(vEdges), unifier));
 			
+			assert GraphgrammarUtil.isValidGraph(graph);
+			
 			return unifier;
 		} else {
 			//Do not apply rule, do not change graph
