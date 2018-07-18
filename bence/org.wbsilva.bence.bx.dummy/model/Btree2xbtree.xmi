@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.wbsilva.bence.graphgrammar:TripleGrammar
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar"
+    xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore"
+    name="BTree 2 XBTree"
+    terminals="//@alphabet.2 //@alphabet.3 //@alphabet.1 //@alphabet.4 //@alphabet.5"
+    nonterminals="//@alphabet.0"
+    initial="//@alphabet.0">
+  <alphabet
+      name="S"/>
+  <alphabet
+      name="BTNode"/>
+  <alphabet
+      name="BTNode2XBTnode"/>
+  <alphabet
+      name="XBTNode"/>
+  <alphabet
+      name="l"/>
+  <alphabet
+      name="r"/>
+  <tripleRules>
+    <source
+        id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="n">
+          <label
+              name="BTNode"/>
+        </vertices>
+      </rhs>
+    </source>
+    <corr id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="n2xn">
+          <label
+              name="BTNode2XBTnode"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="xn">
+          <label
+              name="XBTNode"/>
+        </vertices>
+      </rhs>
+    </target>
+    <ms key="n2xn"
+        value="n"/>
+    <mt key="n2xn"
+        value="xn"/>
+  </tripleRules>
+</org.wbsilva.bence.graphgrammar:TripleGrammar>
