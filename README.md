@@ -3,7 +3,7 @@
 - FAKULTÄT IV ELEKTROTECHNIK UND INFORMATIK
 - MASTER - COMPUTER SCIENCE
 
-##TITLE
+## TITLE
 
 - **Author:**     William Bombardelli da Silva
 - **Advisor:**    Max Bureck
