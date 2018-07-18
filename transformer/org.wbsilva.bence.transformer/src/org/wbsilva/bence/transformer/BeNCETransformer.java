@@ -54,7 +54,7 @@ public class BeNCETransformer {
 	public Optional<TransformationResult> transform (final Graph inputGraph, boolean forward){
 		assert inputGraph != null;
 		
-		GraphgrammarUtil.ensureUniqueIds(inputGraph, tripleGrammar);
+		//GraphgrammarUtil.ensureUniqueIds(inputGraph, tripleGrammar);
 		
 		if (!GraphgrammarUtil.isValidTripleGrammar(tripleGrammar)) {
 			logger.warn(String.format("Triple Grammar %s is not valid. Cannot transform. Aborting.", tripleGrammar.getName()));

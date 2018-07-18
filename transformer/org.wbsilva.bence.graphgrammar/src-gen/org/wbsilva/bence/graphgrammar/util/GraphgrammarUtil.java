@@ -205,6 +205,8 @@ public class GraphgrammarUtil {
 	 * @return				True iff {@code rule} is valid
 	 */
 	public static boolean isValidRule(final EList<Symbol> alphabet, final Rule rule) {
+		if (rule.getId() == null)
+			return false;
 		if (rule.getLhs() == null || rule.getRhs() == null || !isValidGraph(rule.getRhs()))
 			return false;
 		if (rule.getEmbedding() == null || 

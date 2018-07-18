@@ -8,6 +8,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -51,43 +53,57 @@ public class TransformerUtil {
 	 * @throws Exception 
 	 * 			In case of problem by the reading of the graph grammar file
 	 */
-	public static void registerPackages(final ResourceSet resSet, final String graphGrammarPath) throws TransformationException, Exception{
-		assert resSet != null && graphGrammarPath != null;
+	public static void registerPackages(final ResourceSet resSet) throws TransformationException, Exception{
+		assert resSet != null;
 		
 		// Register the graph grammar package in the package registry
 		GraphgrammarPackage.eINSTANCE.eClass();
+	}
+	
+	/**
+	 * Adds packages required for working with models of a metamodel to the resourceSet
+	 * If no exceptions is thrown, it is guaranteed that the packages will be registered
+	 * @param resSet	
+	 * 			The resource set in which to register the necessary ePackages
+	 * @param metamodelFilePath
+	 * 			The path to the metamodel of interest
+	 * @throws TransformationException 
+	 * 			In case that the input resource of the metamodel is not in the format it was expected
+	 * @throws Exception 
+	 * 			In case of problem by the reading of the graph grammar file
+	 */
+	public static void registerPackages(final ResourceSet resSet, final String metamodelFilePath) throws TransformationException, Exception{
+		assert resSet != null && metamodelFilePath != null;
+		
+		// Get the metamodel's resource
+		Resource mmResource = getResourceFromFile(resSet, metamodelFilePath);
+		assert mmResource != null;
 
-		/*
-		// Get the graph grammar's resource
-		Resource ggResource = getResourceFromFile(resSet, graphGrammarPath);
-		assert ggResource != null;
-
-		final EPackage graphGrammarPackage;
-		//Access the ePackage of the graph grammar metamodel to register it	
-		if (ggResource.getContents().size() != 1){
-			TransformationException ex = new TransformationException("Graph grammar metamodel resource should contain only one root element. Found "+ggResource.getContents().size());
+		final EPackage metamodelPackage;
+		//Access the ePackage of the metamodel to register it	
+		if (mmResource.getContents().size() != 1){
+			TransformationException ex = new TransformationException("Metamodel resource should contain only one root element. Found "+mmResource.getContents().size());
 			logger.error(ex);
 			throw ex;
 		} else {
 			//Access the root ePackage
-			EObject root = ggResource.getContents().get(0);
+			EObject root = mmResource.getContents().get(0);
 			if (!(root instanceof EPackage)){
-				TransformationException ex = new TransformationException("Root element of Graph grammar resource should be an ePackage. Found "+root.getClass());
+				TransformationException ex = new TransformationException("Root element of the metamodel resource should be an ePackage. Found "+root.getClass());
 				logger.error(ex);
 				throw ex;
 			} else {
-				//Access the graph grammar profile
-				graphGrammarPackage = (EPackage) root;
+				//Access the metamodel's profile
+				metamodelPackage = (EPackage) root;
 				
-				logger.debug("Graph grammar resource read successfully, using following ePackage: "+graphGrammarPackage.getName());
+				logger.debug("Metamodel resource read successfully, using following ePackage: "+metamodelPackage.getName());
 			}
 		}
-		assert graphGrammarPackage != null;
+		assert metamodelPackage != null;
 			
-		// Register the graph grammar package in the package registry (necessary for loading the graph models)
-		resSet.getPackageRegistry().put(graphGrammarPackage.getNsURI(), graphGrammarPackage);
-		//logger.debug("Graph grammar's ePackage registered successfully, using following URI: "+graphGrammarPackage.getNsURI());
-		*/			
+		// Register the metamodel's package in the package registry (necessary for loading its models)
+		resSet.getPackageRegistry().put(metamodelPackage.getNsURI(), metamodelPackage);
+		logger.debug("Metamodel's ePackage registered successfully, using following URI: "+metamodelPackage.getNsURI());
 	}
 
 	/**

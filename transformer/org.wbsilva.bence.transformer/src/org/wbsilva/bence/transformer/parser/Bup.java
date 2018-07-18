@@ -154,7 +154,7 @@ public class Bup {
 				final ZoneVertex bup = itt.next();
 				assert bup != null;
 				
-				//Add it if current subset still does not have it
+				//Add it, if current subset still does not have it
 				if (!ss.contains(bup)) {
 					final HashSet<ZoneVertex> newSs = new HashSet<>(ss);
 					newSs.add(bup);
@@ -166,9 +166,11 @@ public class Bup {
 		
 		return newSubsets.stream()
 			.filter(ss -> {
+				//Filter zone vertices with non-disjunct vertices out
 				final int count = ss.stream().mapToInt(v -> v.getVertices().size()).reduce(0, (a,b)-> a+b);
 				return count == ss.stream()
-							.flatMap(zv -> zv.getVertices().stream())
+							.flatMap(zv -> zv.getVertices().stream().map(z -> z.getId()))
+							.distinct()
 							.collect(Collectors.toSet()).size();
 			})
 			.collect(Collectors.toSet());
@@ -216,7 +218,7 @@ public class Bup {
 			//Regenerate all previous phases' subsets and queues
 			for (int p = 1; p <= oldPhase; p++) {
 				final Set<Set<ZoneVertex>> newSubsets = createNewSubsets(p, zoneVertex);
-				assert newSubsets.size() > 0;
+				//assert newSubsets.size() > 0;
 				
 				subsets.get(p).addAll(newSubsets);
 				queues.get(p).addAll(newSubsets);
@@ -252,10 +254,10 @@ public class Bup {
 			addNewSubsetQueue(newDinjunctSubsets);
 			
 			assert subsets.size() > 1;
-			assert subsets.get(phase).size() > 0;
+			//assert subsets.get(phase).size() > 0;
 			assert phase == subsets.size() - 1;
 			assert queues.size() > 1;
-			assert queues.get(phase).size() > 0;
+			//assert queues.get(phase).size() > 0;
 			assert phase == queues.size() - 1;
 		}
 		

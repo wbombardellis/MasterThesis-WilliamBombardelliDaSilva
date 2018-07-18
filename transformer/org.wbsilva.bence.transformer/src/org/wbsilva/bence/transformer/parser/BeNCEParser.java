@@ -62,7 +62,7 @@ public class BeNCEParser {
 				.anyMatch(v -> !grammar.getTerminals().parallelStream()
 						.map(l -> l.getName())
 						.anyMatch(n -> n.equals(v.getLabel().getName())))) {
-			logger.debug("Not all vertices of the graph %s is a terminal vertex. Cannot parse.");
+			logger.debug(String.format("Not all vertices of the graph %s are terminal vertices. Cannot parse.", graph));
 			return Optional.empty();
 			
 		} else {
@@ -85,7 +85,7 @@ public class BeNCEParser {
 			final ZoneVertex rootZV = GraphgrammarFactory.eINSTANCE.createZoneVertex();
 			rootZV.setId(EcoreUtil.generateUUID());
 			rootZV.setLabel(EcoreUtil.copy(grammar.getInitial()));
-			rootZV.getVertices().addAll(graph.getVertices());
+			rootZV.getVertices().addAll(EcoreUtil.copyAll(graph.getVertices()));
 			
 			//Bottom-up loop to create all possible derivations
 			while(bup.hasNext() && !bup.contains(rootZV)){
@@ -94,7 +94,10 @@ public class BeNCEParser {
 				assert !handle.isEmpty();
 				
 				logger.debug(String.format("Selected handle {%s}", handle.stream()
-						.map(z -> z.getLabel().getName())
+						.map(z -> String.format("(%s, {%s})", z.getLabel().getName(), z.getVertices().stream()
+																.map(v -> v.getId())
+																.reduce((a,b) -> a.concat(", ").concat(b))
+																.orElse("")))
 						.reduce((a,b) -> a.concat(", ").concat(b))
 						.orElse("")));
 				
@@ -139,6 +142,8 @@ public class BeNCEParser {
 									.map(pt -> pt.getZoneVertex().getId())
 									.reduce((a,b) -> a.concat(", ").concat(b))
 									.orElse("")));
+					} else {
+						logger.debug(String.format("Cannot reduce with symbol %s", d.getName()));
 					}
 				}
 			}

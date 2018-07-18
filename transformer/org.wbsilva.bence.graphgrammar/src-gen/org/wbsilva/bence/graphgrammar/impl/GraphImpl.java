@@ -157,8 +157,9 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 
 		final long allCandidatesCount = candidates.parallelStream().flatMap(c -> c.stream()).distinct().count();
 
-		//If each vertex has at least one candidate and all candidates united form the other's vertices 
-		if (candidates.size() == this.getVertices().size() && allCandidatesCount == other.getVertices().size()) {
+		//If each vertex has at least one candidate and all candidates united form the other graph's vertices and both graphs have the same amount of vertices  
+		if (candidates.size() == this.getVertices().size() && allCandidatesCount == other.getVertices().size()
+				&& this.getVertices().size() == other.getVertices().size()) {
 			return GraphgrammarUtil.anyBijectiveMapping(candidates);
 		} else {
 			return false;

@@ -29,13 +29,14 @@ public class UIUtil {
 	}
 
 	public static void printUsage() {
-		System.out.println("java -jar JAR_FILE [OPTIONS] GRAMMAR_FILE INPUT_GRAPH_FILE OUTPUT_GRAPH_FILE");
+		System.out.println("java -jar JAR_FILE [OPTIONS] GRAMMAR_FILE INPUT_METAMODEL_FILE INPUT_MODEL_FILE OUTPUT_GRAPH_FILE");
 		System.out.println();
 		
 		System.out.println("This program transforms a labelled graph into another according to a B-eNCE triple graph grammar");
 		System.out.println("JAR_FILE is the name of this jar file being executed");
 		System.out.println("GRAMMAR_FILE is the relative or absolute path to the XMI file containing the B-eNCE triple graph grammar");
-		System.out.println("INPUT_GRAPH_FILE is relative or absolute path to the XMI file containing the input graph");
+		System.out.println("INPUT_METAMODEL_FILE is relative or absolute path to the XMI file containing the input model's metamodel");
+		System.out.println("INPUT_MODEL_FILE is relative or absolute path to the XMI file containing the input model");
 		System.out.println("OUTPUT_GRAPH_FILE is relative or absolute path to the XMI file to be saved with the transformed graph");
 		System.out.println();
 		
@@ -49,8 +50,10 @@ public class UIUtil {
 		
 		System.out.println("Author: William Bombardelli da Silva, wbombardellis@win.tu-berlin.de");
 		System.out.println("Creation Date: Apr 2018");
-		System.out.println("Copyright © 2018 William Bombardelli da Silva");
-		System.out.println("This program is free software: you can redistribute it and/or modify\n" + 
+		System.out.println();
+		System.out.println("    Copyright © 2018 William Bombardelli da Silva");
+		System.out.println();
+		System.out.println("    This program is free software: you can redistribute it and/or modify\n" + 
 				"    it under the terms of the GNU General Public License as published by\n" + 
 				"    the Free Software Foundation, either version 3 of the License, or\n" + 
 				"    (at your option) any later version.\n" + 

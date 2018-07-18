@@ -49,7 +49,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 			final String tripleGrammarPath;
-			final String inputGraphPath;
+			final String inputModelPath;
+			final String inputMetamodelPath;
 			final String outputGraphPath;
 			boolean backward = false;
 			final boolean forward;
@@ -71,15 +72,17 @@ public class Main {
 					i++;
 				}
 				
-				if (args.length == i+3) {
+				if (args.length == i+4) {
 					logger.debug("Path to triple graph grammar: " + args[i]);
-					logger.debug("Path to input graph: " + args[i+1]);
-					logger.debug("Path to output graph: " + args[i+2]);
+					logger.debug("Path to input metamodel: " + args[i+1]);
+					logger.debug("Path to input model: " + args[i+2]);
+					logger.debug("Path to output graph: " + args[i+3]);
 					tripleGrammarPath = args[i];
-					inputGraphPath = args[i+1];
-					outputGraphPath = args[i+2];
+					inputMetamodelPath = args[i+1];
+					inputModelPath = args[i+2];
+					outputGraphPath = args[i+3];
 				} else {
-					logger.error("Too much input arguments. Got "+args.length+" arguments. Aborting");
+					logger.error("Wrong amoung of input arguments. Got "+args.length+" arguments. Aborting");
 					UIUtil.printUsage();
 					return;
 				}
@@ -90,7 +93,8 @@ public class Main {
 			}
 			forward = !backward;
 			assert tripleGrammarPath != null;
-			assert inputGraphPath != null;
+			assert inputMetamodelPath != null;
+			assert inputModelPath != null;
 			assert outputGraphPath != null;
 			
 			UIUtil.printStartReading();
@@ -99,7 +103,7 @@ public class Main {
 			TransformerUtil.registerFactories();
 			final ResourceSet resSet = new ResourceSetImpl();
 			try {
-				TransformerUtil.registerPackages(resSet, GRAPHGRAMMAR_MM_PATH);
+				TransformerUtil.registerPackages(resSet);
 			} catch (Exception e) {
 				UIUtil.printFail();
 				return;
@@ -123,6 +127,10 @@ public class Main {
 				//Grammar resource's first element must be a grammar
 				final EObject root = tripleGrammarResource.getContents().get(0);
 				
+				if (tripleGrammarResource.getContents().size() > 1) {
+					logger.warn("The grammar file has more than one root element. Only the first one will be used. Ignoring the others.");
+				}
+				
 				if (root instanceof TripleGrammar) {
 					tripleGrammar = (TripleGrammar) root;
 					logger.debug("Triple Grammar model read successfully. Using: "+ tripleGrammar.getName());
@@ -134,37 +142,43 @@ public class Main {
 			}
 			assert tripleGrammar != null;
 			
-			//TODO: Read an instance of a model and transform it into a graph
-			
-			// Read graph model
-			final Resource inputGraphResource;
+			//More Bureaucracy for reading input model with correct metamodel
 			try {
-				inputGraphResource = TransformerUtil.getResourceFromFile(resSet, inputGraphPath);
+				TransformerUtil.registerPackages(resSet, inputMetamodelPath);
 			} catch (Exception e) {
 				UIUtil.printFail();
 				return;
 			}
-			final Graph inputGraph;
+			// Read graph model
+			final Resource inputGraphResource;
+			try {
+				inputGraphResource = TransformerUtil.getResourceFromFile(resSet, inputModelPath);
+			} catch (Exception e) {
+				UIUtil.printFail();
+				return;
+			}
+			final EObject inputModel;
 			
 			if (inputGraphResource.getContents().size() < 1){
-				logger.error("The input graph model is empty. Aborting. Used URL: "+ inputGraphPath);
+				logger.error("The input graph model is empty. Aborting. Used URL: "+ inputModelPath);
 				UIUtil.printFail();
 				return;
 			} else {
-				//Graph resource's first element must be a graph
-				final EObject root = inputGraphResource.getContents().get(0);
-				
-				if (root instanceof Graph) {
-					inputGraph = (Graph) root;
-					logger.debug("Graph model read successfully. Using graph: "+ inputGraph);
-				} else {
-					logger.error("Missing graph model. The graph resource file's first element should be a graph, found a "+ root.eClass()+ ". Aborting");
-					UIUtil.printFail();
-					return;
+				if (inputGraphResource.getContents().size() > 1) {
+					logger.warn("The input graph file has more than one root element. Only the first one will be used. Ignoring the others.");
 				}
+				
+				//Graph resource's first element is the model
+				inputModel = inputGraphResource.getContents().get(0);
+				
+				logger.debug("Graph model read successfully. Using model: "+ inputModel);
 			}
-			assert inputGraph != null;
+			assert inputModel != null;
 			
+			//Transform the instance of the input model into a graph
+			final Graph inputGraph = new ECore2GraphTransformer().transform(inputModel);
+			
+			//The actual TGG-driven transformation
 			final BeNCETransformer transformer = new BeNCETransformer(tripleGrammar);
 			final Optional<TransformationResult> result = transformer.transform(inputGraph, forward);
 			
