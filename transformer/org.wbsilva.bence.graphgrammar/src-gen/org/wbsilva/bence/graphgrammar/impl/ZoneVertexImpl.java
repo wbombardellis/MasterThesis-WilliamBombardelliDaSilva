@@ -79,7 +79,10 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 	 */
 	public boolean equivalates(ZoneVertex other) {
 		return other != null && EcoreUtil.equals(this.getLabel(), other.getLabel())
-				&& EcoreUtil.equals(this.getVertices(), other.getVertices());
+				&& this.getVertices().parallelStream()
+						.allMatch(v -> other.getVertices().parallelStream().anyMatch(w -> EcoreUtil.equals(v, w)))
+				&& other.getVertices().parallelStream()
+						.allMatch(v -> this.getVertices().parallelStream().anyMatch(w -> EcoreUtil.equals(v, w)));
 	}
 
 	/**
