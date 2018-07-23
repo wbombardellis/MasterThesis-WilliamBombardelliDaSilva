@@ -44,7 +44,6 @@ public class UIUtil {
 		System.out.println(String.format("\t %s\t Prints this help", HELP_OPTION));
 		System.out.println(String.format("\t %s\t Default. Uses input graph as source graph and generates the target graph", FWD_OPTION));
 		System.out.println(String.format("\t %s\t Uses input graph as target graph and generates the source graph", BWD_OPTION));
-		//TODO: Add usage for incremental
 		System.out.println("If conflicting options occur, then the last ones will be used.");
 		System.out.println();
 		
