@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
@@ -257,7 +258,7 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 		assert GraphgrammarUtil.isValidGraph(next);
 		assert vertex != null && vertex.getLabel() != null;
 		assert GraphgrammarUtil.isValidGraph(rhs);
-		
+
 		final Rule rule = this.getRules().stream()
 				.filter(r -> EcoreUtil.equals(r.getLhs(), vertex.getLabel()) && r.getRhs().isomorphicTo(rhs)).findAny()
 				.orElse(null);
@@ -272,23 +273,30 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 				final Graph g = EcoreUtil.copy(prev);
 				final Rule r = EcoreUtil.copy(rule);
 
-				//TODO: Somehow has to manage application of rules to zone graphs (how to do embedding of edges with no labels in a consistent way?)
-				final EMap<Vertex, Vertex> unifier = r.apply(g, v);
+				final EMap<Vertex, Vertex> r2gUnifier = r.apply(g, v);
 				assert GraphgrammarUtil.isValidGraph(g);
 
-				//TODO: temporary costly implementation. I guess it is enough to check the vEdges correspondence between the 2 graphs
-				if (!unifier.isEmpty() && g.isomorphicTo(next)) {
-					assert unifier.size() == r.getRhs().getVertices().size();
-					assert unifier.values().parallelStream().distinct().count() == r.getRhs().getVertices().size();
+				//If result of rule application is isomorphic to next, then success
+				final EMap<Vertex, Vertex> g2nextIsomorphism = g.isomorphism(next);
+				if (!r2gUnifier.isEmpty() && g2nextIsomorphism != null) {
+					assert !g2nextIsomorphism.isEmpty();
+					assert r2gUnifier.size() == r.getRhs().getVertices().size();
+					assert r2gUnifier.values().parallelStream().distinct().count() == r.getRhs().getVertices().size();
 					assert r.getRhs().getVertices().parallelStream()
-								.allMatch(w -> g.getVertices().contains(unifier.get(w)));
-					
+							.allMatch(w -> g.getVertices().contains(r2gUnifier.get(w)));
+
+					//Adjust unifier to map from rule to next
+					final EMap<Vertex, Vertex> r2nextUnifier = new BasicEMap<Vertex, Vertex>(r2gUnifier.size());
+					r2gUnifier.parallelStream().forEach(r2g ->{
+						r2nextUnifier.put(r2g.getKey(), g2nextIsomorphism.get(r2g.getValue()));
+					});
+
 					final DerivationStep newDS = GraphgrammarFactory.eINSTANCE.createDerivationStep();
-					newDS.setVertex(EcoreUtil.copy(vertex));
+					newDS.setVertex(EcoreUtil.copy(v));
 					newDS.setRule(r);
 					newDS.setPrevious(prev);
-					newDS.setNext(g);
-					newDS.getUnifier().putAll(unifier);
+					newDS.setNext(next);
+					newDS.getUnifier().putAll(r2nextUnifier);
 
 					return newDS;
 				}
