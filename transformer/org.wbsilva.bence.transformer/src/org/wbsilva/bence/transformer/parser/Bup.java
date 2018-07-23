@@ -202,8 +202,8 @@ public class Bup {
 			assert phase <= subsets.size();
 			assert phase <= lastPhase() + 1;
 			
-			//If it had already exhausted all phases
-			if (phase > lastPhase()) {
+			//If it had already exhausted all phases or all subsets
+			if (phase > lastPhase() || phase >= subsets.size()) {
 				addNewSubsetQueue(new HashSet<Set<ZoneVertex>>(1));
 			}
 			
@@ -212,8 +212,8 @@ public class Bup {
 			phase = 1;
 			bupSet.add(zoneVertex);
 			
-			assert subsets.size() == oldPhase + 1;
-			assert queues.size() == oldPhase + 1;
+			assert subsets.size() > oldPhase;
+			assert queues.size() > oldPhase;
 			
 			//Regenerate all previous phases' subsets and queues
 			for (int p = 1; p <= oldPhase; p++) {
