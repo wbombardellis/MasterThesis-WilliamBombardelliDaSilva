@@ -7,7 +7,7 @@
     xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore"
     name="BTree 2 XBTree"
     terminals="//@alphabet.2 //@alphabet.3 //@alphabet.1 //@alphabet.4 //@alphabet.5"
-    nonterminals="//@alphabet.0"
+    nonterminals="//@alphabet.0 //@alphabet.6"
     initial="//@alphabet.0">
   <alphabet
       name="S"/>
@@ -21,6 +21,8 @@
       name="l"/>
   <alphabet
       name="r"/>
+  <alphabet
+      name="A"/>
   <tripleRules>
     <source
         id="r0"
@@ -61,5 +63,142 @@
         value="n"/>
     <mt key="n2xn"
         value="xn"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r1"
+        name="r1">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="n1">
+          <label
+              name="BTNode"/>
+        </vertices>
+        <vertices
+            id="A1">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="n1"
+            to="A1">
+          <label
+              name="l"/>
+        </edges>
+      </rhs>
+    </source>
+    <corr id="r1"
+        name="r1">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="n12xn1">
+          <label
+              name="BTNode2XBTnode"/>
+        </vertices>
+        <vertices
+            id="A12xA1">
+          <label
+              name="A"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r1"
+        name="r1">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="xn1">
+          <label
+              name="XBTNode"/>
+        </vertices>
+        <vertices
+            id="xA1">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="xn1"
+            to="xA1">
+          <label
+              name="l"/>
+        </edges>
+        <edges
+            from="xn1"
+            to="xA1">
+          <label
+              name="r"/>
+        </edges>
+      </rhs>
+    </target>
+    <ms key="n12xn1"
+        value="n1"/>
+    <ms key="A12xA1"
+        value="A1"/>
+    <mt key="n12xn1"
+        value="xn1"/>
+    <mt key="A12xA1"
+        value="xA1"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r2"
+        name="r2">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="n2">
+          <label
+              name="BTNode"/>
+        </vertices>
+      </rhs>
+      <embedding
+          key="n2">
+        <value>
+          <edgeLabel
+              name="l"/>
+          <vertexLabels
+              name="BTNode"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r2"
+        name="r2">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="n22xn2">
+          <label
+              name="BTNode2XBTNode"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r2"
+        name="r2">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="xn2">
+          <label
+              name="XBTNode"/>
+        </vertices>
+      </rhs>
+      <embedding
+          key="xn2">
+        <value>
+          <edgeLabel
+              name="l"/>
+          <vertexLabels
+              name="XBTNode"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="n22xn2"
+        value="n2"/>
+    <mt key="n22xn2"
+        value="xn2"/>
   </tripleRules>
 </org.wbsilva.bence.graphgrammar:TripleGrammar>
