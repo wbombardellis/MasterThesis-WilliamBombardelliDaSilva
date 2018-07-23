@@ -44,6 +44,8 @@ public class BeNCEParser {
 	 * Returns a parsing tree if {@code graph} belongs to the language defined with the {@code grammar},
 	 * otherwise empty.
 	 * The parser works even if the grammar is ambiguous, in which case only one parsing tree is returned by this method.
+	 * The graph has to be a valid boundary graph.
+	 * The grammar has also to be valid and neighborhood preserving boundary.
 	 *  
 	 * @param graph			The graph to be parsed. Cannot be null
 	 * @return				The parsing tree for the input {@code graph} and the {@code grammar} of this class. 
@@ -88,13 +90,14 @@ public class BeNCEParser {
 			rootZV.getVertices().addAll(EcoreUtil.copyAll(graph.getVertices()));
 			
 			//Bottom-up loop to create all possible derivations
+			//TODO: Add extra stop condition
 			while(bup.hasNext() && !bup.contains(rootZV)){
 				//Select a handle
 				final Set<ZoneVertex> handle = bup.next();					//R
 				assert !handle.isEmpty();
 				
 				logger.debug(String.format("Selected handle {%s}", handle.stream()
-						.map(z -> String.format("(%s, {%s})", z.getLabel().getName(), z.getVertices().stream()
+						.map(z -> String.format("%s:(%s, {%s})", z.getId(), z.getLabel().getName(), z.getVertices().stream()
 																.map(v -> v.getId())
 																.reduce((a,b) -> a.concat(", ").concat(b))
 																.orElse("")))
@@ -106,21 +109,33 @@ public class BeNCEParser {
 					logger.debug(String.format("Trying to reduce with symbol %s", d.getName()));
 					
 					final Graph handleGraph = zoneGraph(graph, handle);		//Z(R)
+					assert GraphgrammarUtil.isValidGraph(handleGraph);
 					assert !handleGraph.getVertices().isEmpty();
+					assert GraphgrammarUtil.isWeaklyConnectedGraph(handleGraph);
+					//assert GraphgrammarUtil.isBoundaryGraph(handleGraph, this.grammar.getNonterminals());
 					
 					final Graph rhs = induce(handleGraph, handle);			//Y(R)
+					assert GraphgrammarUtil.isValidGraph(rhs);
 					assert !rhs.getVertices().isEmpty();
-					assert GraphgrammarUtil.isBoundaryGraph(rhs, this.grammar.getNonterminals());
+					//assert GraphgrammarUtil.isBoundaryGraph(rhs, this.grammar.getNonterminals());
 					
 					final ZoneVertex lhs = contract(d, handle);				//(d,V(R))
 					assert !lhs.getVertices().isEmpty();
 					
 					final Graph reducedGraph = zoneGraph(graph, new HashSet<ZoneVertex>(Arrays.asList(lhs)));	//Z({(d,V(R)})
+					assert GraphgrammarUtil.isValidGraph(reducedGraph);
 					assert !reducedGraph.getVertices().isEmpty();
+					assert GraphgrammarUtil.isWeaklyConnectedGraph(reducedGraph);
+					//assert GraphgrammarUtil.isBoundaryGraph(reducedGraph, this.grammar.getNonterminals());
 					
 					//If handle can be reduced with rule (lhs -> rhs). I.e. if reducedGraph=>handleGraph
 					final DerivationStep newDS = grammar.derives(reducedGraph, handleGraph, lhs, rhs);
+					
 					if (newDS != null) {
+						//Derivation must be neighborhood preserving
+						assert GraphgrammarUtil.isValidDerivationStep(newDS);
+						assert GraphgrammarUtil.isNeighborhoodPreserving(newDS);
+						
 						//Possible derivation step found
 						bup.add(lhs);
 						
@@ -130,14 +145,14 @@ public class BeNCEParser {
 						final ParsingTree parsingTreeNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
 						parsingTreeNode.setZoneVertex(lhs);
 						parsingTreeNode.setDerivationStep(newDS);
-						parsingTreeNode.getChildren().addAll(parsingForest.stream()
+						parsingTreeNode.getChildren().addAll(EcoreUtil.copyAll(parsingForest.stream()
 								.filter(pt -> handle.contains(pt.getZoneVertex()))
-								.collect(Collectors.toSet()));
+								.collect(Collectors.toSet())));
 						assert parsingTreeNode.getChildren().size() == rhs.getVertices().size();
 						
 						parsingForest.add(parsingTreeNode);
 						
-						logger.debug(String.format("Adding to the parsing forest the parsing tree %s => [%s]", newDS.getVertex().getId(),
+						logger.debug(String.format("Adding to the parsing forest the parsing tree %s => [%s]", parsingTreeNode.getZoneVertex().getId(),
 								parsingTreeNode.getChildren().stream()
 									.map(pt -> pt.getZoneVertex().getId())
 									.reduce((a,b) -> a.concat(", ").concat(b))
@@ -206,17 +221,20 @@ public class BeNCEParser {
 					final ZoneVertex zv = ((ZoneVertex)v);
 					final Set<Edge> es = new HashSet<Edge>(1);
 					
-					if (zw.getVertices().parallelStream()
-						.anyMatch(ww -> zv.getVertices().parallelStream()
-								.anyMatch(vv -> graph.inEdges(ww).parallelStream()
-										.anyMatch(ie -> ie.getFrom().getId().equals(vv.getId()))))) {
-						
-						final Edge e = GraphgrammarFactory.eINSTANCE.createEdge();
-						e.setFrom(v);
-						e.setTo(w);
-						//TODO: Which label does it have?
-						
-						es.add(e);
+					for (Vertex ww : zw.getVertices()) {
+						for (Vertex vv : zv.getVertices()) {
+							//Do only for in edges to not create duplicates
+							es.addAll(graph.inEdges(ww).parallelStream()
+								.filter(ie -> ie.getFrom().getId().equals(vv.getId()))
+								.map(ie -> {
+									final Edge e = GraphgrammarFactory.eINSTANCE.createEdge();
+									e.setFrom(v);
+									e.setTo(w);
+									e.setLabel(EcoreUtil.copy(ie.getLabel()));
+									return e;
+								})
+								.collect(Collectors.toSet()));
+						}
 					}
 					return es.stream();
 				})
@@ -305,13 +323,40 @@ public class BeNCEParser {
 				.collect(Collectors.toSet());
 		assert retainIds.size() == retainSet.size();
 		
+		//R
 		final Set<Vertex> retainedVertices = graph.getVertices().stream()
 			.filter(v -> retainIds.contains(v.getId()))
 			.collect(Collectors.toSet());
 		
-		Set<ZoneVertex> zv = new HashSet<ZoneVertex>((Collection<? extends ZoneVertex>) retainedVertices);
 		
-		return zoneGraph(graph, zv);
+		final Graph zoneGraph = GraphgrammarFactory.eINSTANCE.createGraph();
+		
+		//Add main zoneVertices R
+		zoneGraph.getVertices().addAll(retainedVertices.stream()
+				.map(zv -> EcoreUtil.copy(zv))
+				.collect(Collectors.toSet()));
+		
+		//The edges within R
+		final Set<Edge> retainedEdges = graph.getEdges().stream()
+				.filter(e -> retainedVertices.contains(e.getFrom()) && retainedVertices.contains(e.getTo()))
+				.map(e -> {
+					final Edge ee = EcoreUtil.copy(e);
+					ee.setFrom(zoneGraph.getVertices().stream()
+							.filter(v -> v.getId().equals(e.getFrom().getId()))
+							.findAny()
+							.orElse(null));
+					ee.setTo(zoneGraph.getVertices().stream()
+							.filter(v -> v.getId().equals(e.getTo().getId()))
+							.findAny()
+							.orElse(null));
+					return ee;
+				})
+				.collect(Collectors.toSet());
+		
+		zoneGraph.getEdges().addAll(retainedEdges);
+		
+		
+		return zoneGraph;
 	}
 
 	/**
