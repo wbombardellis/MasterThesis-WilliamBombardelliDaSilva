@@ -6,6 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -13,7 +14,9 @@ import java.util.stream.Stream;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
@@ -124,7 +127,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 			return out.stream();
 		};
 
-		return new BasicEList<Vertex>(vertices.stream().flatMap(neigh).distinct().filter(v -> !vertices.contains(v)) //exclude the vertices from "vertices"
+		return new BasicEList<Vertex>(vertices.stream().flatMap(neigh).distinct()
+				.filter(v -> !vertices.parallelStream().anyMatch(w -> w.getId().equals(v.getId()))) //exclude the vertices from "vertices"
 				.collect(Collectors.toSet()));
 	}
 
@@ -143,6 +147,15 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 * @generated NOT
 	 */
 	public boolean isomorphicTo(Graph other) {
+		return isomorphism(other) != null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EMap<Vertex, Vertex> isomorphism(Graph other) {
 		assert GraphgrammarUtil.isValidGraph(this);
 		assert GraphgrammarUtil.isValidGraph(other);
 
@@ -160,9 +173,23 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 		//If each vertex has at least one candidate and all candidates united form the other graph's vertices and both graphs have the same amount of vertices  
 		if (candidates.size() == this.getVertices().size() && allCandidatesCount == other.getVertices().size()
 				&& this.getVertices().size() == other.getVertices().size()) {
-			return GraphgrammarUtil.anyBijectiveMapping(candidates);
+			
+			final Optional<List<Vertex>> listMapping = GraphgrammarUtil.anyBijectiveMapping(candidates);
+			if (listMapping.isPresent()) {
+				
+				//Each vertex has its target at the same index it occupies in the vertex list
+				assert listMapping.get().size() == this.getVertices().size();
+				final EMap<Vertex, Vertex> isomorphism = new BasicEMap<Vertex, Vertex>(listMapping.get().size());
+				
+				for (int i = 0; i < this.getVertices().size(); i++) {
+					isomorphism.put(this.getVertices().get(i), listMapping.get().get(i));
+				}
+				return isomorphism;
+			} else {
+				return null;
+			}
 		} else {
-			return false;
+			return null;
 		}
 	}
 
@@ -174,8 +201,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	public EList<Edge> inEdges(Vertex vertex) {
 		assert vertex != null;
 		assert this.getEdges() != null && this.getEdges().parallelStream().allMatch(e -> e.getTo() != null);
-		return new BasicEList<>(
-				this.getEdges().stream().filter(e -> e.getTo().equals(vertex)).collect(Collectors.toList()));
+		return new BasicEList<>(this.getEdges().stream().filter(e -> e.getTo().getId().equals(vertex.getId()))
+				.collect(Collectors.toList()));
 	}
 
 	/**
@@ -186,8 +213,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	public EList<Edge> outEdges(Vertex vertex) {
 		assert vertex != null;
 		assert this.getEdges() != null && this.getEdges().parallelStream().allMatch(e -> e.getFrom() != null);
-		return new BasicEList<>(
-				this.getEdges().stream().filter(e -> e.getFrom().equals(vertex)).collect(Collectors.toList()));
+		return new BasicEList<>(this.getEdges().stream().filter(e -> e.getFrom().getId().equals(vertex.getId()))
+				.collect(Collectors.toList()));
 	}
 
 	/**
@@ -292,6 +319,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 			return neighborhood((Vertex) arguments.get(0));
 		case GraphgrammarPackage.GRAPH___ISOMORPHIC_TO__GRAPH:
 			return isomorphicTo((Graph) arguments.get(0));
+		case GraphgrammarPackage.GRAPH___ISOMORPHISM__GRAPH:
+			return isomorphism((Graph) arguments.get(0));
 		case GraphgrammarPackage.GRAPH___IN_EDGES__VERTEX:
 			return inEdges((Vertex) arguments.get(0));
 		case GraphgrammarPackage.GRAPH___OUT_EDGES__VERTEX:
