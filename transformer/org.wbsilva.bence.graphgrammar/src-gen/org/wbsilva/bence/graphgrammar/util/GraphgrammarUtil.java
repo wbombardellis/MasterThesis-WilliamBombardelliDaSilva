@@ -461,6 +461,7 @@ public class GraphgrammarUtil {
 	 * 						If False, then {@code grammar} may or may not be neighborhood preserving.
 	 */
 	public static boolean isNeighborhoodPreserving(final Grammar grammar) {
+		//TODO: Has to be stricter then this: Neighborhood by edge labels has to be equal
 		final HashMap<String, Set<String>> maxContext = new HashMap<>(grammar.getNonterminals().size());
 		final HashMap<Vertex, Set<String>> embeddingContext = new HashMap<>();
 

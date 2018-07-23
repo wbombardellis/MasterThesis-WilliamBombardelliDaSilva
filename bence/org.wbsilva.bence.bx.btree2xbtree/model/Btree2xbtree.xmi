@@ -86,6 +86,12 @@
           <label
               name="l"/>
         </edges>
+        <edges
+            from="n1"
+            to="A1">
+          <label
+              name="r"/>
+        </edges>
       </rhs>
     </source>
     <corr id="r1"

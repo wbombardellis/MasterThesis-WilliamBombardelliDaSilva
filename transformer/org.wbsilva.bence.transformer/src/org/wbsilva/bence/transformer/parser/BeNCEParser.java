@@ -90,7 +90,6 @@ public class BeNCEParser {
 			rootZV.getVertices().addAll(EcoreUtil.copyAll(graph.getVertices()));
 			
 			//Bottom-up loop to create all possible derivations
-			//TODO: Add extra stop condition
 			while(bup.hasNext() && !bup.contains(rootZV)){
 				//Select a handle
 				final Set<ZoneVertex> handle = bup.next();					//R
