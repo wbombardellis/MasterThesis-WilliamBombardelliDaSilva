@@ -616,13 +616,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int GRAPH___ISOMORPHIC_TO__GRAPH = 2;
 
 	/**
+	 * The operation id for the '<em>Isomorphism</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH___ISOMORPHISM__GRAPH = 3;
+
+	/**
 	 * The operation id for the '<em>In Edges</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH___IN_EDGES__VERTEX = 3;
+	int GRAPH___IN_EDGES__VERTEX = 4;
 
 	/**
 	 * The operation id for the '<em>Out Edges</em>' operation.
@@ -631,7 +640,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH___OUT_EDGES__VERTEX = 4;
+	int GRAPH___OUT_EDGES__VERTEX = 5;
 
 	/**
 	 * The number of operations of the '<em>Graph</em>' class.
@@ -640,7 +649,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_OPERATION_COUNT = 5;
+	int GRAPH_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
@@ -1588,6 +1597,16 @@ public interface GraphgrammarPackage extends EPackage {
 	EOperation getGraph__IsomorphicTo__Graph();
 
 	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#isomorphism(org.wbsilva.bence.graphgrammar.Graph) <em>Isomorphism</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Isomorphism</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Graph#isomorphism(org.wbsilva.bence.graphgrammar.Graph)
+	 * @generated
+	 */
+	EOperation getGraph__Isomorphism__Graph();
+
+	/**
 	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#inEdges(org.wbsilva.bence.graphgrammar.Vertex) <em>In Edges</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2343,6 +2362,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation GRAPH___ISOMORPHIC_TO__GRAPH = eINSTANCE.getGraph__IsomorphicTo__Graph();
+		/**
+		 * The meta object literal for the '<em><b>Isomorphism</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GRAPH___ISOMORPHISM__GRAPH = eINSTANCE.getGraph__Isomorphism__Graph();
 		/**
 		 * The meta object literal for the '<em><b>In Edges</b></em>' operation.
 		 * <!-- begin-user-doc -->

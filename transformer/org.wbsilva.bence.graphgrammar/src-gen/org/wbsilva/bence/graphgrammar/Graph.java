@@ -3,6 +3,7 @@
 package org.wbsilva.bence.graphgrammar;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -93,6 +94,17 @@ public interface Graph extends EObject {
 	 * @generated
 	 */
 	boolean isomorphicTo(Graph other);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return an isomorphism between this and other iff this graph is isomorphic to other
+	 * <!-- end-model-doc -->
+	 * @model mapType="org.wbsilva.bence.graphgrammar.VertexToVertexMap&lt;org.wbsilva.bence.graphgrammar.Vertex, org.wbsilva.bence.graphgrammar.Vertex&gt;" ordered="false"
+	 * @generated
+	 */
+	EMap<Vertex, Vertex> isomorphism(Graph other);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -604,7 +604,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getGraph__InEdges__Vertex() {
+	public EOperation getGraph__Isomorphism__Graph() {
 		return graphEClass.getEOperations().get(3);
 	}
 
@@ -613,8 +613,17 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getGraph__OutEdges__Vertex() {
+	public EOperation getGraph__InEdges__Vertex() {
 		return graphEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getGraph__OutEdges__Vertex() {
+		return graphEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -1022,6 +1031,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEOperation(graphEClass, GRAPH___NEIGHBORHOOD__ELIST);
 		createEOperation(graphEClass, GRAPH___NEIGHBORHOOD__VERTEX);
 		createEOperation(graphEClass, GRAPH___ISOMORPHIC_TO__GRAPH);
+		createEOperation(graphEClass, GRAPH___ISOMORPHISM__GRAPH);
 		createEOperation(graphEClass, GRAPH___IN_EDGES__VERTEX);
 		createEOperation(graphEClass, GRAPH___OUT_EDGES__VERTEX);
 
@@ -1234,6 +1244,10 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 
 		op = initEOperation(getGraph__IsomorphicTo__Graph(), ecorePackage.getEBoolean(), "isomorphicTo", 0, 1,
 				IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getGraph(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getGraph__Isomorphism__Graph(), this.getVertexToVertexMap(), "isomorphism", 0, -1,
+				IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getGraph(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getGraph__InEdges__Vertex(), this.getEdge(), "inEdges", 0, -1, IS_UNIQUE, !IS_ORDERED);
