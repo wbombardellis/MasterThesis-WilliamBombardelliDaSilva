@@ -147,7 +147,7 @@ class GraphgrammarUtilTest {
 		List<Set<Vertex>> candidates = new ArrayList<Set<Vertex>>();
 		candidates.add(0, new HashSet<Vertex>(Arrays.asList(v0)));
 		
-		assertTrue(GraphgrammarUtil.anyBijectiveMapping(candidates));
+		assertTrue(GraphgrammarUtil.anyBijectiveMapping(candidates).isPresent());
 	}
 	
 	@Test
@@ -158,7 +158,7 @@ class GraphgrammarUtilTest {
 		candidates.add(2, new HashSet<Vertex>(Arrays.asList(v2)));
 		candidates.add(3, new HashSet<Vertex>(Arrays.asList(v3)));
 		
-		assertTrue(GraphgrammarUtil.anyBijectiveMapping(candidates));
+		assertTrue(GraphgrammarUtil.anyBijectiveMapping(candidates).isPresent());
 	}
 	
 	@Test
@@ -169,7 +169,7 @@ class GraphgrammarUtilTest {
 		candidates.add(2, new HashSet<Vertex>(Arrays.asList(v0, v1, v2, v3)));
 		candidates.add(3, new HashSet<Vertex>(Arrays.asList(v0, v1, v2, v3)));
 		
-		assertTrue(GraphgrammarUtil.anyBijectiveMapping(candidates));
+		assertTrue(GraphgrammarUtil.anyBijectiveMapping(candidates).isPresent());
 	}
 	
 	@Test
@@ -180,7 +180,7 @@ class GraphgrammarUtilTest {
 		candidates.add(2, new HashSet<Vertex>(Arrays.asList(v0, v2)));
 		candidates.add(3, new HashSet<Vertex>(Arrays.asList(v3, v0)));
 		
-		assertTrue(GraphgrammarUtil.anyBijectiveMapping(candidates));
+		assertTrue(GraphgrammarUtil.anyBijectiveMapping(candidates).isPresent());
 	}
 
 

@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -230,12 +231,31 @@ class GraphImplTest {
 	void testIsomorphicToEmpty() {
 		assertFalse(g0.isomorphicTo(g1));
 		assertFalse(g1.isomorphicTo(g0));
+		
+		assertTrue(g0.isomorphism(g1) == null);
+		assertTrue(g1.isomorphism(g0) == null);
 	}
 	
 	@Test
 	void testIsomorphicToTrue() {
 		assertTrue(g0.isomorphicTo(g2));
 		assertTrue(g2.isomorphicTo(g0));
+		
+		EMap<Vertex, Vertex> i = g0.isomorphism(g2);
+		assertTrue(i != null);
+		assertTrue(i.get(v1) == v5);
+		assertTrue(i.get(v2) == v6);
+		assertTrue(i.get(v3) == v7);
+		assertTrue(i.get(v4) == v8);
+		assertEquals(4, i.size());
+		
+		EMap<Vertex, Vertex> j = g2.isomorphism(g0);
+		assertTrue(j != null);
+		assertTrue(j.get(v5) == v1);
+		assertTrue(j.get(v6) == v2);
+		assertTrue(j.get(v7) == v3);
+		assertTrue(j.get(v8) == v4);
+		assertEquals(4, j.size());
 	}
 	
 	@Test
@@ -297,6 +317,12 @@ class GraphImplTest {
 		
 		assertTrue(g3.isomorphicTo(g4));
 		assertTrue(g4.isomorphicTo(g3));
+		
+		EMap<Vertex, Vertex> i = g3.isomorphism(g4);
+		assertTrue(i != null);
+		assertTrue(i.get(va) == vc || i.get(va) == vd);
+		assertTrue(i.get(vb) == vc || i.get(vb) == vd);
+		assertEquals(2, i.size());
 	}
 	
 	@Test
@@ -358,6 +384,8 @@ class GraphImplTest {
 		
 		assertFalse(g3.isomorphicTo(g4));
 		assertFalse(g4.isomorphicTo(g3));
+		
+		assertTrue(g3.isomorphism(g4) == null);
 	}
 	
 	@Test
@@ -386,6 +414,10 @@ class GraphImplTest {
 		assertTrue(g.isomorphicTo(h));
 		assertTrue(h.isomorphicTo(g));
 		
+		EMap<Vertex, Vertex> i = g.isomorphism(h);
+		assertTrue(i != null);
+		assertTrue(i.get(va) == vc);
+		assertEquals(1, i.size());
 	}
 	
 	@Test
@@ -422,6 +454,11 @@ class GraphImplTest {
 		assertTrue(g.isomorphicTo(h));
 		assertTrue(h.isomorphicTo(g));
 		
+		EMap<Vertex, Vertex> i = g.isomorphism(h);
+		assertTrue(i != null);
+		assertTrue(i.get(va) == vc || i.get(va) == vd);
+		assertTrue(i.get(vb) == vc || i.get(vb) == vd);
+		assertEquals(2, i.size());
 	}
 
 }
