@@ -111,7 +111,7 @@ public class ECore2GraphTransformer {
 			}
 			
 			//Processing of the other (not contained) children
-			final List<EReference> nonContainments = eClass.getEAllReferences().parallelStream()
+			final List<EReference> nonContainments = eClass.getEAllReferences().stream()
 					.filter(r -> !r.isContainment())
 					.collect(Collectors.toList());
 			for (final EReference reference : nonContainments) {

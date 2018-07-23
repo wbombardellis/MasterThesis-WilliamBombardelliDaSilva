@@ -265,7 +265,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		assert derivationStep != null;
 		assert GraphgrammarUtil.isValidRule(this.getAlphabet(), derivationStep.getRule());
 
-		final TripleRule tripleRule = this.getTripleRules().parallelStream()
+		final TripleRule tripleRule = this.getTripleRules().stream()
 				.filter(tr -> forward ? tr.getSource().getId().equals(derivationStep.getRule().getId())
 						: tr.getTarget().getId().equals(derivationStep.getRule().getId()))
 				.findAny().orElse(null);
@@ -281,13 +281,13 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		assert GraphgrammarUtil.isValidRule(inputRule);
 
 		//The vertex of the input graph used as LHS in this derivation step
-		final Vertex inputVertex = inputGraph.getVertices().parallelStream()
+		final Vertex inputVertex = inputGraph.getVertices().stream()
 				.filter(v -> v.getId().equals(derivationStep.getVertex().getId())).findAny().orElse(null);
 		assert inputVertex != null;
 
 		//The correspondence vertex for the input vertex
-		final Vertex corrVertex = tripleGraph.getCorr().getVertices().parallelStream()
-				.filter(v -> this.getNonterminals().parallelStream()
+		final Vertex corrVertex = tripleGraph.getCorr().getVertices().stream()
+				.filter(v -> this.getNonterminals().stream()
 						.anyMatch(s -> s.getName().equals(v.getLabel().getName())))
 				.filter(v -> forward ? tripleGraph.invMs(inputVertex).contains(v)
 						: tripleGraph.invMt(inputVertex).contains(v))
@@ -295,7 +295,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		assert corrVertex != null;
 
 		//The output vertex for it, which is already at the output graph 
-		final Vertex outputVertex = outputGraph.getVertices().parallelStream()
+		final Vertex outputVertex = outputGraph.getVertices().stream()
 				.filter(v -> v == outputMorphism.get(corrVertex)).findAny().orElse(null);
 		assert corrVertex != null;
 
@@ -305,10 +305,10 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 				&& inputUnifier.size() == derivationStep.getUnifier().size();
 
 		final Map<Vertex, Vertex> rename = new HashMap<Vertex, Vertex>(inputUnifier.size());
-		inputUnifier.parallelStream().forEach(iU -> {
+		inputUnifier.stream().forEach(iU -> {
 			rename.put(iU.getValue(), derivationStep.getUnifier().get(iU.getKey()));
 		});
-		inputGraph.getVertices().parallelStream().filter(v -> rename.get(v) != null)
+		inputGraph.getVertices().stream().filter(v -> rename.get(v) != null)
 				.forEach(v -> v.setId(rename.get(v).getId()));
 
 		//Generate next output graph using output vertex as LHS for the output rule application 
@@ -347,7 +347,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 			assert forward ? tripleRule.getSource().getRhs().getVertices().contains(inputV)
 					: tripleRule.getTarget().getRhs().getVertices().contains(inputV);
 
-			final Vertex newInputV = inputUnifier.get(inputRule.getRhs().getVertices().parallelStream()
+			final Vertex newInputV = inputUnifier.get(inputRule.getRhs().getVertices().stream()
 					.filter(w -> w.getId().equals(inputV.getId())).findAny().orElse(null));
 			assert newInputV != null;
 			assert inputGraph.getVertices().contains(newInputV);

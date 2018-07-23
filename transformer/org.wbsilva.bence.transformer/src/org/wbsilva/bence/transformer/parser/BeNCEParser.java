@@ -60,8 +60,8 @@ public class BeNCEParser {
 		logger.debug(String.format("Starting parsing of the graph %s", graph));
 		
 		//If not all labels are terminals, return fail right away
-		if (graph.getVertices().parallelStream()
-				.anyMatch(v -> !grammar.getTerminals().parallelStream()
+		if (graph.getVertices().stream()
+				.anyMatch(v -> !grammar.getTerminals().stream()
 						.map(l -> l.getName())
 						.anyMatch(n -> n.equals(v.getLabel().getName())))) {
 			logger.debug(String.format("Not all vertices of the graph %s are terminal vertices. Cannot parse.", graph));
@@ -77,7 +77,7 @@ public class BeNCEParser {
 			final Set<ParsingTree> parsingForest = new HashSet<ParsingTree>();
 			
 			//Add these zone vertices to the parsing forest
-			parsingForest.addAll(initialZoneVertices.parallelStream().map(iZV -> {
+			parsingForest.addAll(initialZoneVertices.stream().map(iZV -> {
 				final ParsingTree pTNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
 				pTNode.setZoneVertex(iZV);
 				return pTNode;
@@ -165,7 +165,7 @@ public class BeNCEParser {
 			
 			//Successfully parsed
 			if (bup.contains(rootZV)) {
-				final ParsingTree parsingTree = parsingForest.parallelStream()
+				final ParsingTree parsingTree = parsingForest.stream()
 						.filter(pt -> pt.getZoneVertex().equivalates(rootZV))
 						.findAny()
 						.orElse(null);
@@ -198,7 +198,7 @@ public class BeNCEParser {
 		
 		final Graph zoneGraph = GraphgrammarFactory.eINSTANCE.createGraph();
 		
-		assert zoneVertices.parallelStream().map(v -> v.getId()).distinct().count() == 
+		assert zoneVertices.stream().map(v -> v.getId()).distinct().count() == 
 				zoneVertices.size();
 		
 		//Add main zoneVertices R
@@ -224,7 +224,7 @@ public class BeNCEParser {
 					for (Vertex ww : zw.getVertices()) {
 						for (Vertex vv : zv.getVertices()) {
 							//Do only for in edges to not create duplicates
-							es.addAll(graph.inEdges(ww).parallelStream()
+							es.addAll(graph.inEdges(ww).stream()
 								.filter(ie -> ie.getFrom().getId().equals(vv.getId()))
 								.map(ie -> {
 									final Edge e = GraphgrammarFactory.eINSTANCE.createEdge();
@@ -311,11 +311,11 @@ public class BeNCEParser {
 		assert retainSet != null;
 		
 		//Assert unique ids
-		assert graph.getVertices().parallelStream().map(v -> v.getId()).distinct().count() == 
+		assert graph.getVertices().stream().map(v -> v.getId()).distinct().count() == 
 				graph.getVertices().size();
 		
 		//Assert graph is a zone graph
-		assert graph.getVertices().parallelStream()
+		assert graph.getVertices().stream()
 			.allMatch(v -> v instanceof ZoneVertex);
 		
 		final Set<String> retainIds = retainSet.stream()
@@ -379,7 +379,7 @@ public class BeNCEParser {
 		//Merge all vertices from zoneVertices and copy them
 		final Set<Vertex> mergedVertices = merge(zoneVertices);
 		//Assert zoneVertices are disjunct
-		assert mergedVertices.parallelStream()
+		assert mergedVertices.stream()
 			.map(zv -> zv.getId()).distinct().count() == mergedVertices.size();
 		
 		zone.getVertices().addAll(mergedVertices);
@@ -396,7 +396,7 @@ public class BeNCEParser {
 	 */
 	Set<Vertex> merge(final Set<ZoneVertex> zoneVertices) {
 		assert zoneVertices != null;
-		assert zoneVertices.parallelStream().noneMatch(zv -> zv.getVertices() instanceof ZoneVertex);
+		assert zoneVertices.stream().noneMatch(zv -> zv.getVertices() instanceof ZoneVertex);
 		
 		return zoneVertices.stream()
 			.flatMap(v -> v.getVertices().stream().map(w -> EcoreUtil.copy(w))) 

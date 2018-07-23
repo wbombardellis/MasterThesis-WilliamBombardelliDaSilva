@@ -84,7 +84,7 @@ class ECore2GraphTransformerTest {
 		
 		assertTrue(GraphgrammarUtil.isValidGraph(g0));
 		assertEquals(2, g0.getVertices().size());
-		assertTrue(g0.getVertices().parallelStream().allMatch(v -> v.getLabel().getName().equals("A")));
+		assertTrue(g0.getVertices().stream().allMatch(v -> v.getLabel().getName().equals("A")));
 		
 		assertEquals(1, g0.getEdges().size());
 		assertEquals("C", g0.getEdges().get(0).getLabel().getName());
@@ -97,10 +97,10 @@ class ECore2GraphTransformerTest {
 		
 		assertTrue(GraphgrammarUtil.isValidGraph(g0));
 		assertEquals(3, g0.getVertices().size());
-		assertTrue(g0.getVertices().parallelStream().allMatch(v -> v.getLabel().getName().equals("A")));
+		assertTrue(g0.getVertices().stream().allMatch(v -> v.getLabel().getName().equals("A")));
 		
 		assertEquals(3, g0.getEdges().size());
-		assertTrue(g0.getEdges().parallelStream()
+		assertTrue(g0.getEdges().stream()
 				.allMatch(e -> e.getLabel().getName().equals("B") || e.getLabel().getName().equals("C")));
 	}
 	
@@ -111,10 +111,10 @@ class ECore2GraphTransformerTest {
 		
 		assertTrue(GraphgrammarUtil.isValidGraph(g0));
 		assertEquals(4, g0.getVertices().size());
-		assertTrue(g0.getVertices().parallelStream().allMatch(v -> v.getLabel().getName().equals("A")));
+		assertTrue(g0.getVertices().stream().allMatch(v -> v.getLabel().getName().equals("A")));
 		
 		assertEquals(5, g0.getEdges().size());
-		assertTrue(g0.getEdges().parallelStream()
+		assertTrue(g0.getEdges().stream()
 				.allMatch(e -> e.getLabel().getName().equals("B") || e.getLabel().getName().equals("C")));
 	}
 }

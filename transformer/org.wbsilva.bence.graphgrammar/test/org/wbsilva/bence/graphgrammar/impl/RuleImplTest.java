@@ -324,7 +324,7 @@ class RuleImplTest {
 		e3_7.setTo(v7);
 		e3_7.setLabel(EcoreUtil.copy(sU));
 		
-		assertTrue(fs0.parallelStream().allMatch(f -> EcoreUtil.equals(e1_9, f) || EcoreUtil.equals(e2_9, f) ||
+		assertTrue(fs0.stream().allMatch(f -> EcoreUtil.equals(e1_9, f) || EcoreUtil.equals(e2_9, f) ||
 				 EcoreUtil.equals(e2_9M, f) || EcoreUtil.equals(e8_2, f) || EcoreUtil.equals(e3_7, f)));
 	}
 	
@@ -352,8 +352,8 @@ class RuleImplTest {
 		
 		EMap<Vertex, Vertex> un = r0.apply(h0, v0);
 		assertEquals(4, un.size());
-		assertEquals(4, un.values().parallelStream().distinct().count());
-		assertTrue(r0.getRhs().getVertices().parallelStream()
+		assertEquals(4, un.values().stream().distinct().count());
+		assertTrue(r0.getRhs().getVertices().stream()
 					.allMatch(v -> h0.getVertices().contains(un.get(v))));
 
 		assertTrue(h0.isomorphicTo(r0.getRhs()));
@@ -407,8 +407,8 @@ class RuleImplTest {
 		
 		EMap<Vertex, Vertex> un = r0.apply(h0, v0);
 		assertEquals(4, un.size());
-		assertEquals(4, un.values().parallelStream().distinct().count());
-		assertTrue(r0.getRhs().getVertices().parallelStream()
+		assertEquals(4, un.values().stream().distinct().count());
+		assertTrue(r0.getRhs().getVertices().stream()
 					.allMatch(v -> h0.getVertices().contains(un.get(v))));
 		
 		
@@ -425,10 +425,10 @@ class RuleImplTest {
 		v4.setId("4");
 		v4.setLabel(EcoreUtil.copy(sT));
 		
-		Vertex vv0 = i0.getVertices().parallelStream().filter(v -> v.getId().equals("0")).findAny().orElse(null);
-		Vertex vv7 = i0.getVertices().parallelStream().filter(v -> v.getId().equals("7")).findAny().orElse(null);
-		Vertex vv8 = i0.getVertices().parallelStream().filter(v -> v.getId().equals("8")).findAny().orElse(null);
-		Vertex vv9 = i0.getVertices().parallelStream().filter(v -> v.getId().equals("9")).findAny().orElse(null);
+		Vertex vv0 = i0.getVertices().stream().filter(v -> v.getId().equals("0")).findAny().orElse(null);
+		Vertex vv7 = i0.getVertices().stream().filter(v -> v.getId().equals("7")).findAny().orElse(null);
+		Vertex vv8 = i0.getVertices().stream().filter(v -> v.getId().equals("8")).findAny().orElse(null);
+		Vertex vv9 = i0.getVertices().stream().filter(v -> v.getId().equals("9")).findAny().orElse(null);
 		
 		Edge e1_9 = GraphgrammarFactory.eINSTANCE.createEdge();
 		e1_9.setFrom(v1);
@@ -471,7 +471,7 @@ class RuleImplTest {
 		i0.getVertices().add(v3);
 		i0.getVertices().add(v4);
 		
-		i0.getEdges().removeAll(i0.getEdges().parallelStream().filter(e -> e.getFrom() == vv0 || e.getTo() == vv0).collect(Collectors.toList()));
+		i0.getEdges().removeAll(i0.getEdges().stream().filter(e -> e.getFrom() == vv0 || e.getTo() == vv0).collect(Collectors.toList()));
 		i0.getEdges().add(e1_9);
 		i0.getEdges().add(e2_9);
 		i0.getEdges().add(e2_9M);

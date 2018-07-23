@@ -106,8 +106,8 @@ class BeNCEParserTest {
 		Set<Vertex> s = parser.merge(set2);
 		assertEquals(3, s.size());
 		
-		assertTrue(s.parallelStream().allMatch(v -> EcoreUtil.equals(v1, v) || EcoreUtil.equals(v2, v) || EcoreUtil.equals(v3, v)));
-		assertTrue(s.parallelStream().allMatch(v -> v1 != v && v2 !=  v && v3 != v));
+		assertTrue(s.stream().allMatch(v -> EcoreUtil.equals(v1, v) || EcoreUtil.equals(v2, v) || EcoreUtil.equals(v3, v)));
+		assertTrue(s.stream().allMatch(v -> v1 != v && v2 !=  v && v3 != v));
 	}
 	
 	@Test
@@ -161,9 +161,9 @@ class BeNCEParserTest {
 		Set<ZoneVertex> zV = parser.zoneVertices(sV);
 		
 		assertEquals(2, zV.size());
-		assertTrue(zV.parallelStream()
+		assertTrue(zV.stream()
 				.allMatch(z -> z.getVertices().size() == 1));
-		assertTrue(zV.parallelStream()
+		assertTrue(zV.stream()
 				.allMatch(z -> EcoreUtil.equals(z.getLabel(), v1.getLabel()) && EcoreUtil.equals(z.getVertices().get(0), v1)
 						|| EcoreUtil.equals(z.getLabel(), v2.getLabel()) && EcoreUtil.equals(z.getVertices().get(0), v2)));
 	}
@@ -199,7 +199,7 @@ class BeNCEParserTest {
 		
 		assertTrue(EcoreUtil.equals(l, z.getLabel()));
 		assertEquals(3, z.getVertices().size());
-		assertTrue(z.getVertices().parallelStream()
+		assertTrue(z.getVertices().stream()
 				.allMatch(v -> EcoreUtil.equals(v1, v) 
 						|| EcoreUtil.equals(v2, v)
 						|| EcoreUtil.equals(v3, v)));
@@ -272,7 +272,7 @@ class BeNCEParserTest {
 		Graph zG = parser.zoneGraph(g0, set2);
 		
 		assertEquals(3, zG.getVertices().size());
-		assertTrue(zG.getVertices().parallelStream()
+		assertTrue(zG.getVertices().stream()
 				.allMatch(z -> EcoreUtil.equals(zv1, z) || EcoreUtil.equals(zv2, z) || EcoreUtil.equals(zv3, z)));
 	}
 	
@@ -332,7 +332,7 @@ class BeNCEParserTest {
 		Graph i = parser.induce(g0, set4);
 		
 		assertEquals(2, i.getVertices().size());
-		assertTrue(i.getVertices().parallelStream()
+		assertTrue(i.getVertices().stream()
 				.allMatch(z -> EcoreUtil.equals(zv1, z) || EcoreUtil.equals(zv2, z)));
 	}
 }

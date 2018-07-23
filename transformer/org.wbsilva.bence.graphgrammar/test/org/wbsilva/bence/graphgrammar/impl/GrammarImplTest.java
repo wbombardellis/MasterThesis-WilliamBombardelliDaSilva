@@ -213,8 +213,8 @@ class GrammarImplTest {
 		assertTrue(EcoreUtil.equals(r0 , dStep.getRule()));
 
 		assertEquals(4, dStep.getUnifier().size());
-		assertEquals(4, dStep.getUnifier().values().parallelStream().distinct().count());
-		assertTrue(dStep.getRule().getRhs().getVertices().parallelStream()
+		assertEquals(4, dStep.getUnifier().values().stream().distinct().count());
+		assertTrue(dStep.getRule().getRhs().getVertices().stream()
 					.allMatch(v -> dStep.getNext().getVertices().contains(dStep.getUnifier().get(v))));
 	}
 

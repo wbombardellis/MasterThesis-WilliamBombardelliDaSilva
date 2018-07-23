@@ -328,12 +328,12 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 		assert GraphgrammarUtil.isValidGraph(graph);
 		assert vertex != null;
 		assert edges != null;
-		assert edges.parallelStream().allMatch(e -> e.getFrom() == vertex || e.getTo() == vertex);
+		assert edges.stream().allMatch(e -> e.getFrom() == vertex || e.getTo() == vertex);
 		//assert graph.getEdges().containsAll(edges);
 		assert GraphgrammarUtil.isValidRule(this);
 		assert unifier != null;
 		assert unifier.size() == rhs.getVertices().size();
-		assert rhs.getVertices().parallelStream()
+		assert rhs.getVertices().stream()
 				.allMatch(v -> unifier.get(v) != null && graph.getVertices().contains(unifier.get(v)));
 
 		return new BasicEList<Edge>(edges.stream().flatMap(e -> {
@@ -354,9 +354,9 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 			
 			Stream<Vertex> vs = rhs.getVertices().stream().filter(v -> {
 				final EList<SymbolSymbolsPair> emb = this.embedding.get(v);
-				if (emb != null && emb.parallelStream()
+				if (emb != null && emb.stream()
 						.anyMatch(em -> EcoreUtil.equals(em.getEdgeLabel(), e.getLabel()) && em.getVertexLabels()
-								.parallelStream().anyMatch(l -> EcoreUtil.equals(l, targetVertex.getLabel()))))
+								.stream().anyMatch(l -> EcoreUtil.equals(l, targetVertex.getLabel()))))
 					return true;
 				else
 					return false;

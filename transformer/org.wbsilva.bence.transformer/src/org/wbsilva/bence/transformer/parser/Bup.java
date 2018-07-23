@@ -273,6 +273,6 @@ public class Bup {
 	 */
 	public synchronized boolean contains(final ZoneVertex zoneVertex) {
 		assert zoneVertex != null;
-		return bupSet.parallelStream().anyMatch(zv -> zoneVertex.equivalates(zv));
+		return bupSet.stream().anyMatch(zv -> zoneVertex.equivalates(zv));
 	}
 }

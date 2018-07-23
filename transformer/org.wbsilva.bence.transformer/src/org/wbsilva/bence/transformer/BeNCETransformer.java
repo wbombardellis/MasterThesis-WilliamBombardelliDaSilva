@@ -87,7 +87,7 @@ public class BeNCETransformer {
 			inputGrammar.getNonterminals().addAll(EcoreUtil.copyAll(tripleGrammar.getNonterminals()));
 			inputGrammar.getAlphabet().addAll(inputGrammar.getTerminals());
 			inputGrammar.getAlphabet().addAll(inputGrammar.getNonterminals());
-			inputGrammar.setInitial(inputGrammar.getNonterminals().parallelStream()
+			inputGrammar.setInitial(inputGrammar.getNonterminals().stream()
 					.filter(s -> EcoreUtil.equals(s, tripleGrammar.getInitial()))
 					.findAny()
 					.orElse(null));

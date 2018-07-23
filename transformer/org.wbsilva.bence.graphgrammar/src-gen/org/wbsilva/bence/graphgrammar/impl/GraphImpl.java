@@ -128,7 +128,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 		};
 
 		return new BasicEList<Vertex>(vertices.stream().flatMap(neigh).distinct()
-				.filter(v -> !vertices.parallelStream().anyMatch(w -> w.getId().equals(v.getId()))) //exclude the vertices from "vertices"
+				.filter(v -> !vertices.stream().anyMatch(w -> w.getId().equals(v.getId()))) //exclude the vertices from "vertices"
 				.collect(Collectors.toSet()));
 	}
 
@@ -168,7 +168,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 						.collect(Collectors.toSet()))
 				.collect(Collectors.toList());
 
-		final long allCandidatesCount = candidates.parallelStream().flatMap(c -> c.stream()).distinct().count();
+		final long allCandidatesCount = candidates.stream().flatMap(c -> c.stream()).distinct().count();
 
 		//If each vertex has at least one candidate and all candidates united form the other graph's vertices and both graphs have the same amount of vertices  
 		if (candidates.size() == this.getVertices().size() && allCandidatesCount == other.getVertices().size()
@@ -200,7 +200,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 */
 	public EList<Edge> inEdges(Vertex vertex) {
 		assert vertex != null;
-		assert this.getEdges() != null && this.getEdges().parallelStream().allMatch(e -> e.getTo() != null);
+		assert this.getEdges() != null && this.getEdges().stream().allMatch(e -> e.getTo() != null);
 		return new BasicEList<>(this.getEdges().stream().filter(e -> e.getTo().getId().equals(vertex.getId()))
 				.collect(Collectors.toList()));
 	}
@@ -212,7 +212,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	 */
 	public EList<Edge> outEdges(Vertex vertex) {
 		assert vertex != null;
-		assert this.getEdges() != null && this.getEdges().parallelStream().allMatch(e -> e.getFrom() != null);
+		assert this.getEdges() != null && this.getEdges().stream().allMatch(e -> e.getFrom() != null);
 		return new BasicEList<>(this.getEdges().stream().filter(e -> e.getFrom().getId().equals(vertex.getId()))
 				.collect(Collectors.toList()));
 	}

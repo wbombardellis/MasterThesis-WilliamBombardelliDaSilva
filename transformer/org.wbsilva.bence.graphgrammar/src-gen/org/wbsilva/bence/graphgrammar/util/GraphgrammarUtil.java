@@ -187,7 +187,7 @@ public class GraphgrammarUtil {
 		if (t == null || t.isEmpty())
 			return false;
 		
-		if (n.parallelStream().anyMatch(s -> !ab.contains(s)) || t.parallelStream().anyMatch(s -> !ab.contains(s)))
+		if (n.stream().anyMatch(s -> !ab.contains(s)) || t.stream().anyMatch(s -> !ab.contains(s)))
 			return false;
 		
 		Symbol ini = grammar.getInitial();
@@ -198,9 +198,9 @@ public class GraphgrammarUtil {
 		if (r == null || r.isEmpty())
 			return false;
 		
-		if (r.parallelStream().map(rr -> rr.getId()).distinct().count() != r.size())
+		if (r.stream().map(rr -> rr.getId()).distinct().count() != r.size())
 			return false;
-		if (r.parallelStream().anyMatch(rr -> !isValidRule(ab, rr)))
+		if (r.stream().anyMatch(rr -> !isValidRule(ab, rr)))
 			return false;
 		
 		return true;
@@ -218,10 +218,10 @@ public class GraphgrammarUtil {
 		if (rule.getLhs() == null || rule.getRhs() == null || !isValidGraph(rule.getRhs()))
 			return false;
 		if (rule.getEmbedding() == null || 
-				rule.getEmbedding().entrySet().parallelStream()
+				rule.getEmbedding().entrySet().stream()
 					.anyMatch(e -> !rule.getRhs().getVertices().contains(e.getKey()) 
 							|| e.getValue() == null || e.getValue().isEmpty()
-							|| e.getValue().parallelStream().anyMatch(ss -> !inAlphabet(alphabet, ss.getEdgeLabel())
+							|| e.getValue().stream().anyMatch(ss -> !inAlphabet(alphabet, ss.getEdgeLabel())
 									|| !inAlphabet(alphabet, ss.getVertexLabels()))))
 				return false;
 		return true;
@@ -236,7 +236,7 @@ public class GraphgrammarUtil {
 		if (rule.getLhs() == null || rule.getRhs() == null || !isValidGraph(rule.getRhs()))
 			return false;
 		if (rule.getEmbedding() == null || 
-				rule.getEmbedding().entrySet().parallelStream()
+				rule.getEmbedding().entrySet().stream()
 					.anyMatch(e -> !rule.getRhs().getVertices().contains(e.getKey())
 							|| e.getValue() == null || e.getValue().isEmpty()))
 				return false;
@@ -250,7 +250,7 @@ public class GraphgrammarUtil {
 	 * @return			True iff {@code symbol} is in the {@code alphabet}
 	 */
 	private static boolean inAlphabet(final EList<Symbol> alphabet, final Symbol symbol) {
-		return alphabet.parallelStream().anyMatch(s -> s.getName().equals(symbol.getName()));
+		return alphabet.stream().anyMatch(s -> s.getName().equals(symbol.getName()));
 	}
 
 	/**
@@ -260,7 +260,7 @@ public class GraphgrammarUtil {
 	 * @return			True iff all {@code symbols} are in the {@code alphabet}
 	 */
 	private static boolean inAlphabet(final EList<Symbol> alphabet, final EList<Symbol> symbols) {
-		return symbols.parallelStream().allMatch(s -> inAlphabet(alphabet, s));
+		return symbols.stream().allMatch(s -> inAlphabet(alphabet, s));
 	}
 
 	/**
@@ -273,12 +273,12 @@ public class GraphgrammarUtil {
 			return false;
 		
 		if (graph.getVertices() == null || 
-				graph.getVertices().parallelStream().anyMatch(v -> v.getLabel() == null || v.getLabel().getName().isEmpty()))
+				graph.getVertices().stream().anyMatch(v -> v.getLabel() == null || v.getLabel().getName().isEmpty()))
 			return false;
-		if (graph.getVertices().parallelStream().map(v -> v.getId()).distinct().count() != graph.getVertices().size())
+		if (graph.getVertices().stream().map(v -> v.getId()).distinct().count() != graph.getVertices().size())
 			return false;
 		
-		if (graph.getEdges().parallelStream()
+		if (graph.getEdges().stream()
 				.anyMatch(e -> !graph.getVertices().contains(e.getFrom()) 
 							|| !graph.getVertices().contains(e.getTo())
 							|| e.getLabel() == null || e.getLabel().getName().isEmpty()
@@ -309,7 +309,7 @@ public class GraphgrammarUtil {
 		if (t == null || t.isEmpty())
 			return false;
 		
-		if (n.parallelStream().anyMatch(s -> !ab.contains(s)) || t.parallelStream().anyMatch(s -> !ab.contains(s)))
+		if (n.stream().anyMatch(s -> !ab.contains(s)) || t.stream().anyMatch(s -> !ab.contains(s)))
 			return false;
 		
 		Symbol ini = tripleGrammar.getInitial();
@@ -320,7 +320,7 @@ public class GraphgrammarUtil {
 		if (r == null || r.isEmpty())
 			return false;
 		
-		if (r.parallelStream().anyMatch(rr -> !isValidRule(ab, rr.getSource()) || !isValidRule(ab, rr.getCorr()) || !isValidRule(ab, rr.getTarget())))
+		if (r.stream().anyMatch(rr -> !isValidRule(ab, rr.getSource()) || !isValidRule(ab, rr.getCorr()) || !isValidRule(ab, rr.getTarget())))
 				return false;
 		
 		if (r.stream().anyMatch(rr -> !isTotal(rr.getCorr().getRhs().getVertices(), rr.getMs()) ||
@@ -391,18 +391,18 @@ public class GraphgrammarUtil {
 	 * @return				True iff {@code grammar} is boundary
 	 */
 	public static boolean isBoundaryGrammar(final Grammar grammar) {
-		final Set<String> terminals = grammar.getTerminals().parallelStream()
+		final Set<String> terminals = grammar.getTerminals().stream()
 				.map(l -> l.getName())
 				.collect(Collectors.toSet());
 		
 		//if any rule's graph is not boundary 
-		if (grammar.getRules().parallelStream()
+		if (grammar.getRules().stream()
 			.anyMatch(r -> !isBoundaryGraph(r.getRhs(), grammar.getNonterminals())					
 					//Check range of the embedding function
-					|| !r.getEmbedding().values().parallelStream()
-							.allMatch(e -> e.parallelStream()
+					|| !r.getEmbedding().values().stream()
+							.allMatch(e -> e.stream()
 									.allMatch(ssP -> ssP
-											.getVertexLabels().parallelStream()
+											.getVertexLabels().stream()
 												.allMatch(l -> terminals.contains(l.getName()))))))
 			return false;
 		
@@ -417,7 +417,7 @@ public class GraphgrammarUtil {
 	 */
 	public static boolean isBoundaryGraph(final Graph graph, final EList<Symbol> g) {
 		//if the graph has G-labeled vertices as neighbors
-		if(graph.getEdges().parallelStream()
+		if(graph.getEdges().stream()
 				.anyMatch(e -> inAlphabet(g, e.getFrom().getLabel()) &&
 						inAlphabet(g, e.getTo().getLabel())))
 			//then it is not G-boundary
@@ -443,7 +443,7 @@ public class GraphgrammarUtil {
 	 */
 	public static boolean isBoundaryTripleGrammar(final TripleGrammar tripleGrammar) {
 		//if any triple rule's graph is not boundary 
-		if (tripleGrammar.getTripleRules().parallelStream()
+		if (tripleGrammar.getTripleRules().stream()
 			.anyMatch(tr -> !isBoundaryGraph(tr.getSource().getRhs(), tripleGrammar.getNonterminals())
 					|| !isBoundaryGraph(tr.getCorr().getRhs(), tripleGrammar.getNonterminals())
 					|| !isBoundaryGraph(tr.getTarget().getRhs(), tripleGrammar.getNonterminals())))
@@ -478,18 +478,18 @@ public class GraphgrammarUtil {
 				if (embedding == null) {
 					vertexEmbeddingContext = new HashSet<>(0);
 				} else {
-					vertexEmbeddingContext = embedding.parallelStream()
-						.flatMap(ssp -> ssp.getVertexLabels().parallelStream()
+					vertexEmbeddingContext = embedding.stream()
+						.flatMap(ssp -> ssp.getVertexLabels().stream()
 								.map(s -> s.getName()))
 						.collect(Collectors.toSet());
 				}
 				embeddingContext.put(v, vertexEmbeddingContext);
 				
-				if (grammar.getNonterminals().parallelStream().anyMatch(l -> EcoreUtil.equals(l, v.getLabel()))) {
+				if (grammar.getNonterminals().stream().anyMatch(l -> EcoreUtil.equals(l, v.getLabel()))) {
 					final Set<String> ntContext = maxContext.get(v.getLabel().getName());
 					
 					//The real context of each nonterminal vertex of the RHS of each rule
-					ntContext.addAll(r.getRhs().neighborhood(v).parallelStream()
+					ntContext.addAll(r.getRhs().neighborhood(v).stream()
 							.map(w -> w.getLabel().getName())
 							.collect(Collectors.toSet()));
 					
@@ -499,8 +499,8 @@ public class GraphgrammarUtil {
 		}
 		
 		//If any rule's embedding context does not contain all LHS's maximal context
-		if (grammar.getRules().parallelStream()
-				.anyMatch(r -> !r.getRhs().getVertices().parallelStream()
+		if (grammar.getRules().stream()
+				.anyMatch(r -> !r.getRhs().getVertices().stream()
 						.flatMap(v -> embeddingContext.get(v).stream())
 						.collect(Collectors.toSet())
 						.containsAll(maxContext.get(r.getLhs().getName()))))
@@ -516,7 +516,7 @@ public class GraphgrammarUtil {
 	 * @return			True iff {@code ds} is neighborhood preserving.
 	 */
 	public static boolean isNeighborhoodPreserving(final DerivationStep ds) {
-		final Vertex vertex = ds.getPrevious().getVertices().parallelStream().filter(w -> w.getId().equals(ds.getVertex().getId())).findAny().orElse(null);
+		final Vertex vertex = ds.getPrevious().getVertices().stream().filter(w -> w.getId().equals(ds.getVertex().getId())).findAny().orElse(null);
 		assert vertex != null;
 		
 		//iff neighbors of vertex are equal to neighbors of the RHS neigh_prev(vertex) = neigh_next(V_Y)
@@ -563,12 +563,12 @@ public class GraphgrammarUtil {
 			return false;
 		if (!GraphgrammarUtil.isValidRule(dS.getRule()))
 			return false;
-		if (dS.getVertex() == null || !dS.getPrevious().getVertices().parallelStream().anyMatch(v -> EcoreUtil.equals(v, dS.getVertex())))
+		if (dS.getVertex() == null || !dS.getPrevious().getVertices().stream().anyMatch(v -> EcoreUtil.equals(v, dS.getVertex())))
 			return false;
 		if (dS.getUnifier() == null || dS.getUnifier().size() != dS.getRule().getRhs().getVertices().size()
 				|| !isInjective(dS.getUnifier())
 				|| !isTotal(dS.getRule().getRhs().getVertices(), dS.getUnifier())
-				|| !dS.getUnifier().parallelStream().allMatch(u -> dS.getNext().getVertices().contains(u.getValue())))
+				|| !dS.getUnifier().stream().allMatch(u -> dS.getNext().getVertices().contains(u.getValue())))
 			return false;
 		return true;
 	}
