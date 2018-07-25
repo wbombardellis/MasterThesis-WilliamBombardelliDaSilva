@@ -433,6 +433,24 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSymbol_Subscript() {
+		return (EAttribute) symbolEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getSymbol__Equivalates__Symbol() {
+		return symbolEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDerivationStep() {
 		return derivationStepEClass;
 	}
@@ -624,6 +642,15 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 */
 	public EOperation getGraph__OutEdges__Vertex() {
 		return graphEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getGraph__Edges__Vertex() {
+		return graphEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -1008,6 +1035,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 
 		symbolEClass = createEClass(SYMBOL);
 		createEAttribute(symbolEClass, SYMBOL__NAME);
+		createEAttribute(symbolEClass, SYMBOL__SUBSCRIPT);
+		createEOperation(symbolEClass, SYMBOL___EQUIVALATES__SYMBOL);
 
 		derivationStepEClass = createEClass(DERIVATION_STEP);
 		createEReference(derivationStepEClass, DERIVATION_STEP__RULE);
@@ -1034,6 +1063,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEOperation(graphEClass, GRAPH___ISOMORPHISM__GRAPH);
 		createEOperation(graphEClass, GRAPH___IN_EDGES__VERTEX);
 		createEOperation(graphEClass, GRAPH___OUT_EDGES__VERTEX);
+		createEOperation(graphEClass, GRAPH___EDGES__VERTEX);
 
 		vertexEClass = createEClass(VERTEX);
 		createEAttribute(vertexEClass, VERTEX__ID);
@@ -1187,6 +1217,13 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		initEClass(symbolEClass, Symbol.class, "Symbol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSymbol_Name(), ecorePackage.getEString(), "name", null, 0, 1, Symbol.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSymbol_Subscript(), ecorePackage.getEString(), "subscript", null, 0, -1, Symbol.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+
+		op = initEOperation(getSymbol__Equivalates__Symbol(), ecorePackage.getEBoolean(), "equivalates", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSymbol(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(derivationStepEClass, DerivationStep.class, "DerivationStep", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1254,6 +1291,9 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getGraph__OutEdges__Vertex(), this.getEdge(), "outEdges", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getGraph__Edges__Vertex(), this.getEdge(), "edges", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(vertexEClass, Vertex.class, "Vertex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

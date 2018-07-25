@@ -360,13 +360,31 @@ public interface GraphgrammarPackage extends EPackage {
 	int SYMBOL__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL__SUBSCRIPT = 1;
+
+	/**
 	 * The number of structural features of the '<em>Symbol</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_FEATURE_COUNT = 1;
+	int SYMBOL_FEATURE_COUNT = 2;
+
+	/**
+	 * The operation id for the '<em>Equivalates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL___EQUIVALATES__SYMBOL = 0;
 
 	/**
 	 * The number of operations of the '<em>Symbol</em>' class.
@@ -375,7 +393,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_OPERATION_COUNT = 0;
+	int SYMBOL_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.DerivationStepImpl <em>Derivation Step</em>}' class.
@@ -643,13 +661,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int GRAPH___OUT_EDGES__VERTEX = 5;
 
 	/**
+	 * The operation id for the '<em>Edges</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH___EDGES__VERTEX = 6;
+
+	/**
 	 * The number of operations of the '<em>Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_OPERATION_COUNT = 6;
+	int GRAPH_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
@@ -1396,6 +1423,27 @@ public interface GraphgrammarPackage extends EPackage {
 	EAttribute getSymbol_Name();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link org.wbsilva.bence.graphgrammar.Symbol#getSubscript <em>Subscript</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Subscript</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.Symbol#getSubscript()
+	 * @see #getSymbol()
+	 * @generated
+	 */
+	EAttribute getSymbol_Subscript();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Symbol#equivalates(org.wbsilva.bence.graphgrammar.Symbol) <em>Equivalates</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Equivalates</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Symbol#equivalates(org.wbsilva.bence.graphgrammar.Symbol)
+	 * @generated
+	 */
+	EOperation getSymbol__Equivalates__Symbol();
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.DerivationStep <em>Derivation Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1625,6 +1673,16 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getGraph__OutEdges__Vertex();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#edges(org.wbsilva.bence.graphgrammar.Vertex) <em>Edges</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Edges</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Graph#edges(org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getGraph__Edges__Vertex();
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Vertex <em>Vertex</em>}'.
@@ -2222,6 +2280,20 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EAttribute SYMBOL__NAME = eINSTANCE.getSymbol_Name();
 		/**
+		 * The meta object literal for the '<em><b>Subscript</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL__SUBSCRIPT = eINSTANCE.getSymbol_Subscript();
+		/**
+		 * The meta object literal for the '<em><b>Equivalates</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SYMBOL___EQUIVALATES__SYMBOL = eINSTANCE.getSymbol__Equivalates__Symbol();
+		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.DerivationStepImpl <em>Derivation Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2383,6 +2455,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation GRAPH___OUT_EDGES__VERTEX = eINSTANCE.getGraph__OutEdges__Vertex();
+		/**
+		 * The meta object literal for the '<em><b>Edges</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GRAPH___EDGES__VERTEX = eINSTANCE.getGraph__Edges__Vertex();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
 		 * <!-- begin-user-doc -->

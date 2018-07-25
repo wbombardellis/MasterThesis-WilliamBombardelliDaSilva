@@ -127,4 +127,15 @@ public interface Graph extends EObject {
 	 * @generated
 	 */
 	EList<Edge> outEdges(Vertex vertex);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The adjacent edges of vertex
+	 * <!-- end-model-doc -->
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Edge> edges(Vertex vertex);
 } // Graph
