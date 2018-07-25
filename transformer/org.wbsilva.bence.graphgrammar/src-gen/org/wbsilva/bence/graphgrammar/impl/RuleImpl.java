@@ -342,21 +342,18 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 			if (e.getFrom() != vertex) {
 				//Edge go from another vertex to the pivot
 				targetVertex = e.getFrom();
-			}
-			else if (e.getTo() != vertex) {
+			} else if (e.getTo() != vertex) {
 				//Edge go from pivot vertex to another 
 				targetVertex = e.getTo();
-			}
-			else {
+			} else {
 				//Edge is a loop
 				return new HashSet<Edge>().stream();
 			}
-			
+
 			Stream<Vertex> vs = rhs.getVertices().stream().filter(v -> {
 				final EList<SymbolSymbolsPair> emb = this.embedding.get(v);
-				if (emb != null && emb.stream()
-						.anyMatch(em -> EcoreUtil.equals(em.getEdgeLabel(), e.getLabel()) && em.getVertexLabels()
-								.stream().anyMatch(l -> EcoreUtil.equals(l, targetVertex.getLabel()))))
+				if (emb != null && emb.stream().anyMatch(em -> EcoreUtil.equals(em.getEdgeLabel(), e.getLabel())
+						&& em.getVertexLabels().stream().anyMatch(l -> EcoreUtil.equals(l, targetVertex.getLabel()))))
 					return true;
 				else
 					return false;
@@ -373,9 +370,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 					newE.setTo(v);
 					newE.setLabel(EcoreUtil.copy(e.getLabel()));
 					return newE;
-				}).collect(Collectors.toSet());				
-			}
-			else if (e.getTo() != vertex) {
+				}).collect(Collectors.toSet());
+			} else if (e.getTo() != vertex) {
 				//Vertices should receive an outgoing edge
 				//create outgoing edges
 				es = vs.map(v -> {
@@ -392,7 +388,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 
 		}).collect(Collectors.toSet()));
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -405,17 +401,17 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 
 		final Vertex gV = graph.getVertices().stream().filter(w -> w.getId().equals(vertex.getId())).findAny()
 				.orElse(null);
-		
+
 		//Found the pivot vertex to be replaced by the rhs of this rule
 		if (gV != null) {
 			final Set<Edge> vEdges = graph.getEdges().stream()
 					.filter(e -> e.getFrom().getId().equals(vertex.getId()) || e.getTo().getId().equals(vertex.getId()))
 					.collect(Collectors.toSet());
-			
+
 			graph.getVertices().remove(gV);
-			
+
 			graph.getEdges().removeAll(vEdges);
-			
+
 			final int newVerticesSize = this.getRhs().getVertices().size();
 			final EMap<Vertex, Vertex> unifier = new BasicEMap<Vertex, Vertex>(newVerticesSize);
 			final Set<Vertex> newVertices = new HashSet<Vertex>(newVerticesSize);
@@ -425,25 +421,21 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 				newVertices.add(newW);
 			}
 			GraphgrammarUtil.ensureUniqueIds(newVertices);
-			
+
 			graph.getVertices().addAll(newVertices);
-			
-			graph.getEdges()
-			.addAll(this.getRhs().getEdges()
-					.stream()
-					.map(e -> {
-						Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
-						newE.setFrom(unifier.get(e.getFrom()));
-						newE.setTo(unifier.get(e.getTo()));
-						newE.setLabel(EcoreUtil.copy(e.getLabel()));
-						return newE;
-					})
-					.collect(Collectors.toSet()));
-			
+
+			graph.getEdges().addAll(this.getRhs().getEdges().stream().map(e -> {
+				Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+				newE.setFrom(unifier.get(e.getFrom()));
+				newE.setTo(unifier.get(e.getTo()));
+				newE.setLabel(EcoreUtil.copy(e.getLabel()));
+				return newE;
+			}).collect(Collectors.toSet()));
+
 			graph.getEdges().addAll(this.embed(graph, gV, new BasicEList<Edge>(vEdges), unifier));
-			
+
 			assert GraphgrammarUtil.isValidGraph(graph);
-			
+
 			return unifier;
 		} else {
 			//Do not apply rule, do not change graph

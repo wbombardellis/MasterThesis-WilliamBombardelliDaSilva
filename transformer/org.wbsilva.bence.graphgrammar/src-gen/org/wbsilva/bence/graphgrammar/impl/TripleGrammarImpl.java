@@ -287,16 +287,15 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 
 		//The correspondence vertex for the input vertex
 		final Vertex corrVertex = tripleGraph.getCorr().getVertices().stream()
-				.filter(v -> this.getNonterminals().stream()
-						.anyMatch(s -> s.getName().equals(v.getLabel().getName())))
+				.filter(v -> this.getNonterminals().stream().anyMatch(s -> s.getName().equals(v.getLabel().getName())))
 				.filter(v -> forward ? tripleGraph.invMs(inputVertex).contains(v)
 						: tripleGraph.invMt(inputVertex).contains(v))
 				.findAny().orElse(null);
 		assert corrVertex != null;
 
 		//The output vertex for it, which is already at the output graph 
-		final Vertex outputVertex = outputGraph.getVertices().stream()
-				.filter(v -> v == outputMorphism.get(corrVertex)).findAny().orElse(null);
+		final Vertex outputVertex = outputGraph.getVertices().stream().filter(v -> v == outputMorphism.get(corrVertex))
+				.findAny().orElse(null);
 		assert corrVertex != null;
 
 		//Generate next input graph by applying rule and ensuring correct IDs for next veertices

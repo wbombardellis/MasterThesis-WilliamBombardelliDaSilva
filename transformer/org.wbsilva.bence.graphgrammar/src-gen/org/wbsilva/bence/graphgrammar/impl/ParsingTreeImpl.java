@@ -4,7 +4,6 @@ package org.wbsilva.bence.graphgrammar.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -215,16 +214,13 @@ public class ParsingTreeImpl extends MinimalEObjectImpl.Container implements Par
 	public Derivation derivation() {
 		assert this.getZoneVertex() != null;
 
-		if (this.getDerivationStep() != null) {			
+		if (this.getDerivationStep() != null) {
 			final Derivation derivation = GraphgrammarFactory.eINSTANCE.createDerivation();
-			
+
 			derivation.getSteps().add(EcoreUtil.copy(this.getDerivationStep()));
-			derivation.getSteps().addAll(this.getChildren().stream()
-					.map(pt -> pt.derivation())
-					.filter(d-> d != null)
-					.flatMap(d -> d.getSteps().stream())
-					.collect(Collectors.toList()));
-			
+			derivation.getSteps().addAll(this.getChildren().stream().map(pt -> pt.derivation()).filter(d -> d != null)
+					.flatMap(d -> d.getSteps().stream()).collect(Collectors.toList()));
+
 			return derivation;
 		} else {
 			return null;
