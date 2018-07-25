@@ -173,14 +173,14 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 		//If each vertex has at least one candidate and all candidates united form the other graph's vertices and both graphs have the same amount of vertices  
 		if (candidates.size() == this.getVertices().size() && allCandidatesCount == other.getVertices().size()
 				&& this.getVertices().size() == other.getVertices().size()) {
-			
+
 			final Optional<List<Vertex>> listMapping = GraphgrammarUtil.anyBijectiveMapping(candidates);
 			if (listMapping.isPresent()) {
-				
+
 				//Each vertex has its target at the same index it occupies in the vertex list
 				assert listMapping.get().size() == this.getVertices().size();
 				final EMap<Vertex, Vertex> isomorphism = new BasicEMap<Vertex, Vertex>(listMapping.get().size());
-				
+
 				for (int i = 0; i < this.getVertices().size(); i++) {
 					isomorphism.put(this.getVertices().get(i), listMapping.get().get(i));
 				}
@@ -215,6 +215,19 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 		assert this.getEdges() != null && this.getEdges().stream().allMatch(e -> e.getFrom() != null);
 		return new BasicEList<>(this.getEdges().stream().filter(e -> e.getFrom().getId().equals(vertex.getId()))
 				.collect(Collectors.toList()));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Edge> edges(Vertex vertex) {
+		assert vertex != null;
+		assert this.getEdges() != null && this.getEdges().stream().allMatch(e -> e.getFrom() != e.getTo());
+		EList<Edge> es = inEdges(vertex);
+		es.addAll(outEdges(vertex));
+		return es;
 	}
 
 	/**
@@ -325,6 +338,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 			return inEdges((Vertex) arguments.get(0));
 		case GraphgrammarPackage.GRAPH___OUT_EDGES__VERTEX:
 			return outEdges((Vertex) arguments.get(0));
+		case GraphgrammarPackage.GRAPH___EDGES__VERTEX:
+			return edges((Vertex) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

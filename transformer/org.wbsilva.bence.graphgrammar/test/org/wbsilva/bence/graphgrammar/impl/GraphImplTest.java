@@ -187,6 +187,21 @@ class GraphImplTest {
 	}
 	
 	@Test
+	void testEdgesEmpty() {
+		assertTrue(g0.edges(v0).isEmpty());
+		assertTrue(g0.edges(v1).isEmpty());
+	}
+	
+	@Test
+	void testEdgesMany() {
+		EList<Edge> e = g0.edges(v3);
+		assertEquals(3, e.size());
+		assertTrue(e.contains(e2_3));
+		assertTrue(e.contains(e3_2));
+		assertTrue(e.contains(e3_4));
+	}
+	
+	@Test
 	void testNeighborhoodEmptyExtern() {
 		EList<Vertex> n = g0.neighborhood(v0);
 		assertTrue(n.isEmpty());
