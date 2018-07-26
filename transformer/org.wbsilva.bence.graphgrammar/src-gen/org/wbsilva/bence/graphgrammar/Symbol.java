@@ -66,7 +66,7 @@ public interface Symbol extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subscript</em>' attribute list.
 	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getSymbol_Subscript()
-	 * @model
+	 * @model unique="false"
 	 * @generated
 	 */
 	EList<String> getSubscript();
@@ -82,7 +82,7 @@ public interface Symbol extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Superscript</em>' attribute list.
 	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getSymbol_Superscript()
-	 * @model
+	 * @model unique="false"
 	 * @generated
 	 */
 	EList<String> getSuperscript();

@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.Symbol;
 
@@ -117,7 +117,7 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 */
 	public EList<String> getSubscript() {
 		if (subscript == null) {
-			subscript = new EDataTypeUniqueEList<String>(String.class, this, GraphgrammarPackage.SYMBOL__SUBSCRIPT);
+			subscript = new EDataTypeEList<String>(String.class, this, GraphgrammarPackage.SYMBOL__SUBSCRIPT);
 		}
 		return subscript;
 	}
@@ -129,7 +129,7 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 */
 	public EList<String> getSuperscript() {
 		if (superscript == null) {
-			superscript = new EDataTypeUniqueEList<String>(String.class, this, GraphgrammarPackage.SYMBOL__SUPERSCRIPT);
+			superscript = new EDataTypeEList<String>(String.class, this, GraphgrammarPackage.SYMBOL__SUPERSCRIPT);
 		}
 		return superscript;
 	}
@@ -186,7 +186,7 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 		assert other != null;
 		assert this.getName() != null;
 		assert other.getName() != null;
-		
+
 		//If this.name < other.name
 		if (this.getName().compareTo(other.getName()) < 0) {
 			return -1;
@@ -202,27 +202,27 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 			for (i = 0; i < other.getSubscript().size(); i++) {
 				if (i >= this.getSubscript().size())
 					return -1;
-				
+
 				int c = this.getSubscript().get(i).compareTo(other.getSubscript().get(i));
 				if (c != 0)
 					return c;
 			}
 			if (i < this.getSubscript().size())
 				return 1;
-			
+
 			//this.superscript against other.superscript
 			int j;
 			for (j = 0; j < other.getSuperscript().size(); j++) {
 				if (j >= this.getSuperscript().size())
 					return -1;
-				
+
 				int c = this.getSuperscript().get(j).compareTo(other.getSuperscript().get(j));
 				if (c != 0)
 					return c;
 			}
 			if (j < this.getSuperscript().size())
 				return 1;
-			
+
 			//this == other
 			return 0;
 		}
