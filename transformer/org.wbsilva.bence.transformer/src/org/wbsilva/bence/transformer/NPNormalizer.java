@@ -19,15 +19,19 @@ import org.wbsilva.bence.graphgrammar.util.SymbolMap;
 import org.wbsilva.bence.graphgrammar.util.SymbolSet;
 
 /**
- * TODO
+ * This class implements a neighborhood preserving (NP) normalizer, that is able to transform
+ * any valid boundary grammar into an equivalent valid boundary neighborhood preserving grammar.
  * @author wbombardellis
  *
  */
 public class NPNormalizer {
 
 	/**
-	 * TODO
-	 * @param grammar
+	 * Transform {@code grammar} into its neighborhood preserving normal form.
+	 * This method possibly modifies the original grammar adding and removing rules and symbols to the alphabet.
+	 * 
+	 * @param grammar		A valid boundary grammar
+	 * @see GraphgrammarUtil#getNonNPRules(Grammar)
 	 */
 	public void normalize(final Grammar grammar){	
 		assert GraphgrammarUtil.isValidGrammar(grammar);
@@ -79,12 +83,14 @@ public class NPNormalizer {
 	}
 	
 	/**
-	 * TODO
-	 * @param grammar
-	 * @param rule
-	 * @param v
-	 * @param e
-	 * @return 
+	 * Given a host {@code rule} containing a {@code vertex} that contains at least one of the missing context
+	 * in {@code context}, creates the necessary new rules without such missing contexts.
+	 *  
+	 * @param rule		The host rule containing the vertex to be modified
+	 * @param vertex	The vertex which to change its context, to fix the rule 
+	 * @param context	The missing context of the {@code vertex}'s label
+	 * @return			One new rule for each missing context removal from {@code vertex}
+	 * @see NPNormalizer#createNewHostRule(Rule, Vertex, Symbol, Edge, Symbol)
 	 */
 	private Set<Rule> fixHostRule(final Rule rule, final Vertex vertex, final SymbolMap<SymbolSet> context) {
 		assert rule.getRhs().getVertices().contains(vertex);
@@ -135,34 +141,40 @@ public class NPNormalizer {
 	/**
 	 * Same method as {@link NPNormalizer#createNewRules(Rule, Rule, Vertex, Symbol, Edge, Symbol)},
 	 * with the difference that it sends only an symbol to it, without an edge.
-	 * @see NPNormalizer#createNewRules(Rule, Rule, Vertex, Symbol, Edge, Symbol)
+	 * @see NPNormalizer#createNewHostRule(Rule, Vertex, Symbol, Edge, Symbol)
 	 */
-	Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol ignoredLabel, final Symbol edgeLabel) {
-		return createNewHostRule(rule, vertex, ignoredLabel, null, edgeLabel);
+	Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol vertexLabel, final Symbol edgeLabel) {
+		return createNewHostRule(rule, vertex, vertexLabel, null, edgeLabel);
 	}
 	
 	/**
 	 * Same method as {@link NPNormalizer#createNewRules(Rule, Rule, Vertex, Symbol, Edge, Symbol)},
 	 * with the difference that it sends only an edge to it, without sending an extra symbol.
-	 * @see NPNormalizer#createNewRules(Rule, Rule, Vertex, Symbol, Edge, Symbol)
+	 * @see NPNormalizer#createNewHostRule(Rule, Vertex, Symbol, Edge, Symbol)
 	 */
-	Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol ignoredLabel, final Edge edge) {
-		return createNewHostRule(rule, vertex, ignoredLabel, edge, null);
+	Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol vertexLabel, final Edge edge) {
+		return createNewHostRule(rule, vertex, vertexLabel, edge, null);
 	}
 	
 	/**
-	 * TODO
-	 * @param nonNPRule
-	 * @param rule
-	 * @param vertex
-	 * @param ignoredLabel
-	 * @param edge
-	 * @return
+	 * Effectively create a new rule for the host rule {@code rule} containing {@code vertex} with context
+	 * {@code edgeLabel}-{@code vertexLabel} (i.e. an edge or embedding with label {@code edgeLabel} to a vertex 
+	 * with label {@code vertexLabel}).
+	 * If {@code edge} is not null, then create new rule without it. Otherwise only remove the embedding.
+	 * 	 
+	 * @param rule			The host rule containing the vertex to be modified
+	 * @param vertex		The vertex which to change its context (embedding and optionally edge)
+	 * @param vertexLabel	The part of the missing context corresponding to the vertex
+	 * @param edge			The edge with label {@code edgeLabel} to/from a vertex  with label {@code vertexLabel}
+	 * 						adjacent to {@code vertex}, to be removed in the new rule
+	 * @param edgeLabel		The part of the missing context corresponding to the edge
+	 * @return				A new rule corresponding to the modification of {@code rule} without the missing context
+	 * 						on {@code vertex} with {@code edgeLabel} and {@code vertexLabel}
 	 */
-	private Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol ignoredLabel, final Edge edge, Symbol edgeLabel) {
+	private Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol vertexLabel, final Edge edge, Symbol edgeLabel) {
 		assert rule.getRhs().getVertices().contains(vertex);
 		assert edge == null || rule.getRhs().getEdges().contains(edge);
-		assert edge == null || edge.getFrom().getLabel().equivalates(ignoredLabel) || edge.getTo().getLabel().equivalates(ignoredLabel);
+		assert edge == null || edge.getFrom().getLabel().equivalates(vertexLabel) || edge.getTo().getLabel().equivalates(vertexLabel);
 		
 		final Rule modifiedRule = EcoreUtil.copy(rule);
 		final Vertex v = modifiedRule.getRhs().getVertices().stream()
@@ -184,14 +196,14 @@ public class NPNormalizer {
 		if (modifiedRule.getEmbedding().get(v) != null) {
 			for (SymbolSymbolsPair embeds : modifiedRule.getEmbedding().get(v)) {
 				if (embeds.getEdgeLabel().equivalates(edgeLabel)) {
-					embeds.getVertexLabels().removeIf(l -> l.equivalates(ignoredLabel));
+					embeds.getVertexLabels().removeIf(l -> l.equivalates(vertexLabel));
 				}
 			}
 		}
 		
 		//Change v's label
 		v.getLabel().getSuperscript().add(edgeLabel.getName());
-		v.getLabel().getSubscript().add(ignoredLabel.getName());
+		v.getLabel().getSubscript().add(vertexLabel.getName());
 
 		modifiedRule.setId(rule.getId().concat("___"+EcoreUtil.generateUUID()));
 		
@@ -201,17 +213,21 @@ public class NPNormalizer {
 	}
 	
 	/**
-	 * TODO
-	 * @param nonNPRule
-	 * @param edgeLabel
-	 * @param ignoredLabel
-	 * @return
+	 * Effectively create a new rule for the guest non neighborhood preserving rule {@code nonNPRule} 
+	 * and missing context consisting of {@code edgeLabel}-{@code vertexLabel}. That is, this rule
+	 * lacks the an embedding with edge label {@code edgeLabel} to a vertex with label {@code vertexLabel}).
+	 * 
+	 * @param nonNPRule		The guest rule to be modified with new LHS, so that it does not miss the context anymore
+	 * @param edgeLabel		The part of the missing context corresponding to the edge
+	 * @param vertexLabel	The part of the missing context corresponding to the vertex
+	 * @return				A new rule corresponding to the modification of {@code nonNPRule} 
+	 * 						with modified LHS and without the missing context {@code edgeLabel} and {@code vertexLabel}
 	 */
-	Rule createNewGuestRule(final Rule nonNPRule, final Symbol edgeLabel, final Symbol ignoredLabel){		
+	Rule createNewGuestRule(final Rule nonNPRule, final Symbol edgeLabel, final Symbol vertexLabel){		
 		//Add new neighborhood preserving rule for the new label
 		final Rule newRule = EcoreUtil.copy(nonNPRule);
 		newRule.getLhs().getSuperscript().add(edgeLabel.getName());
-		newRule.getLhs().getSubscript().add(ignoredLabel.getName());
+		newRule.getLhs().getSubscript().add(vertexLabel.getName());
 		
 		newRule.setId(nonNPRule.getId().concat("___("+newRule.getLhs()+")"));
 		
@@ -224,7 +240,7 @@ public class NPNormalizer {
 			
 			for (SymbolSymbolsPair ssP : embedding.getValue()) {
 				if (ssP.getEdgeLabel().equivalates(edgeLabel)) {
-					ssP.getVertexLabels().removeIf(vL -> vL.equivalates(ignoredLabel));
+					ssP.getVertexLabels().removeIf(vL -> vL.equivalates(vertexLabel));
 					
 					if (ssP.getVertexLabels().isEmpty())
 						ssPRemoval.add(ssP);

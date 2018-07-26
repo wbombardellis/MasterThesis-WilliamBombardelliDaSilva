@@ -554,9 +554,18 @@ public class GraphgrammarUtil {
 	}
 	
 	/**
-	 * TODO
-	 * @param grammar
-	 * @return
+	 * Returns the rules of the {@code grammar} that are not neighborhood preserving (NP) together with
+	 * their respective missing contexts in form of a {@link SymbolMap} from edge labels to a set
+	 * of vertex labels in a {@link SymbolSet}.
+	 * So for example, if a vertex with label A is connected to another with label n by edge 1 (or has no embedding 1-n), 
+	 * but a rule A->R does not include the embedding 1-n, then this rule is non NP and this method
+	 * gives it together with the missing embedding 1-n
+	 * 
+	 * @param grammar		The grammar to check. Has to be valid
+	 * @return				A map from each non neighborhood preserving {@link Rule} in {@code grammar}
+	 * 						accompanied with the missing embeddings of it (that make it non NP)
+	 * @see SymbolMap
+	 * @see SymbolSet
 	 */
 	static public Map<Rule, SymbolMap<SymbolSet>> getNonNPRules(final Grammar grammar){
 		final SymbolMap<SymbolMap<SymbolSet>> maxContext = new SymbolMap<>(grammar.getNonterminals().size());
