@@ -244,7 +244,7 @@ public class NPNormalizer {
 	 * @param grammar
 	 * @return
 	 */
-	Map<Rule, SymbolMap<SymbolSet>> getNonNPRules(final Grammar grammar){
+	private Map<Rule, SymbolMap<SymbolSet>> getNonNPRules(final Grammar grammar){
 		final SymbolMap<SymbolMap<SymbolSet>> maxContext = new SymbolMap<>(grammar.getNonterminals().size());
 		final HashMap<Vertex, SymbolMap<SymbolSet>> embeddingContext = new HashMap<>();
 
@@ -368,7 +368,7 @@ public class NPNormalizer {
 	 * @param v
 	 * @param e
 	 */
-	void fixRule(final Grammar grammar, final Rule nonNPRule, final Rule rule, final Vertex vertex, final SymbolMap<SymbolSet> context) {
+	private void fixRule(final Grammar grammar, final Rule nonNPRule, final Rule rule, final Vertex vertex, final SymbolMap<SymbolSet> context) {
 		assert rule.getRhs().getVertices().contains(vertex);
 		assert nonNPRule.getLhs().equivalates(vertex.getLabel());
 		
@@ -465,6 +465,7 @@ public class NPNormalizer {
 		}
 		
 		//Change v's label
+		v.getLabel().getSuperscript().add(edgeLabel.getName());
 		v.getLabel().getSubscript().add(ignoredLabel.getName());
 		
 		assert GraphgrammarUtil.isValidRule(modifiedRule);
@@ -472,8 +473,28 @@ public class NPNormalizer {
 		//Add new neighborhood preserving rule for the new label
 		final Rule newRule = EcoreUtil.copy(nonNPRule);
 		newRule.setId(nonNPRule.getId().concat("_"+ignoredLabel));
+		newRule.getLhs().getSuperscript().add(edgeLabel.getName());
 		newRule.getLhs().getSubscript().add(ignoredLabel.getName());
 		GraphgrammarUtil.ensureUniqueIds(newRule.getRhs());
+		
+		final HashSet<Vertex> embedRemoval = new HashSet<>();
+		//Remove embeddings to make it surely neighborhood preserving
+		for (Entry<Vertex, EList<SymbolSymbolsPair>> embedding : newRule.getEmbedding().entrySet()) {
+			final HashSet<SymbolSymbolsPair> ssPRemoval = new HashSet<>();
+			
+			for (SymbolSymbolsPair ssP : embedding.getValue()) {
+				if (ssP.getEdgeLabel().equivalates(edgeLabel)) {
+					ssP.getVertexLabels().removeIf(vL -> vL.equivalates(ignoredLabel));
+					
+					if (ssP.getVertexLabels().isEmpty())
+						ssPRemoval.add(ssP);
+				}
+			}
+			ssPRemoval.forEach(ssP -> embedding.getValue().remove(ssP));
+			if (embedding.getValue().isEmpty())
+				embedRemoval.add(embedding.getKey());
+		}
+		embedRemoval.forEach(w -> newRule.getEmbedding().removeKey(w));
 		
 		assert GraphgrammarUtil.isValidRule(newRule);
 		
