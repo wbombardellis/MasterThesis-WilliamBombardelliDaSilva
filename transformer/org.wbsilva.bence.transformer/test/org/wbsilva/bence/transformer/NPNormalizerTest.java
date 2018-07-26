@@ -3,9 +3,6 @@ package org.wbsilva.bence.transformer;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -19,9 +16,6 @@ import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
 import org.wbsilva.bence.graphgrammar.Vertex;
-import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
-import org.wbsilva.bence.transformer.NPNormalizer.SymbolMap;
-import org.wbsilva.bence.transformer.NPNormalizer.SymbolSet;
 
 class NPNormalizerTest {
 
@@ -328,25 +322,6 @@ class NPNormalizerTest {
 									.allMatch(ssP -> !ssP.getEdgeLabel().equivalates(l2))));
 		assertTrue(nr4.getRhs().getVertices().stream()
 							.allMatch(v -> v.getLabel().equivalates(lD) || v.getLabel().equivalates(lE)));
-	}
-	
-	@Test
-	void testGetNonNPRules() {
-		Map<Rule, SymbolMap<SymbolSet>> map = npn.getNonNPRules(gg0);
-		
-		assertEquals(2, map.size());
-		
-		assertEquals(1, map.get(r1).entrySet().size());
-		assertEquals(1, map.get(r1).get(l1).size());
-		assertTrue(map.get(r1).get(l1).contains(ln));
-		
-		assertEquals(2, map.get(r3).entrySet().size());
-		assertEquals(2, map.get(r3).get(l1).size());
-		assertTrue(map.get(r3).get(l1).contains(ln));
-		assertTrue(map.get(r3).get(l1).contains(lm));
-		assertEquals(2, map.get(r3).get(l2).size());
-		assertTrue(map.get(r3).get(l2).contains(ln));
-		assertTrue(map.get(r3).get(l2).contains(lm));
 	}
 	
 	@Test

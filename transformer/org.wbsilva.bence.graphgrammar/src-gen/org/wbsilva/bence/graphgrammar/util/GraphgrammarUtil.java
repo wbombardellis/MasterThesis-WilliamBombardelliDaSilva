@@ -1,10 +1,12 @@
 package org.wbsilva.bence.graphgrammar.util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -475,55 +477,7 @@ public class GraphgrammarUtil {
 	 * 						If False, then {@code grammar} may or may not be neighborhood preserving.
 	 */
 	public static boolean isNeighborhoodPreserving(final Grammar grammar) {
-		//TODO: Has to be stricter then this: Neighborhood by edge labels has to be equal
-		//TODO: cheeck also subsription of labels and 5 conditions form the paper
-		final HashMap<String, Set<String>> maxContext = new HashMap<>(grammar.getNonterminals().size());
-		final HashMap<Vertex, Set<String>> embeddingContext = new HashMap<>();
-
-		for (Symbol l: grammar.getNonterminals()) {
-			maxContext.put(l.getName(), new HashSet<String>());
-		}
-		
-		//Determine the maximal context of each nonterminal symbol
-		for (Rule r : grammar.getRules()) {
-			for (Vertex v : r.getRhs().getVertices()) {
-				
-				//The embedding context of each vertex of the RHS of each rule
-				final EList<SymbolSymbolsPair> embedding = r.getEmbedding().get(v);
-				final Set<String> vertexEmbeddingContext;
-				if (embedding == null) {
-					vertexEmbeddingContext = new HashSet<>(0);
-				} else {
-					vertexEmbeddingContext = embedding.stream()
-						.flatMap(ssp -> ssp.getVertexLabels().stream()
-								.map(s -> s.getName()))
-						.collect(Collectors.toSet());
-				}
-				embeddingContext.put(v, vertexEmbeddingContext);
-				
-				if (grammar.getNonterminals().stream().anyMatch(l -> l.equivalates(v.getLabel()))) {
-					final Set<String> ntContext = maxContext.get(v.getLabel().getName());
-					
-					//The real context of each nonterminal vertex of the RHS of each rule
-					ntContext.addAll(r.getRhs().neighborhood(v).stream()
-							.map(w -> w.getLabel().getName())
-							.collect(Collectors.toSet()));
-					
-					ntContext.addAll(vertexEmbeddingContext);
-				}
-			}
-		}
-		
-		//If any rule's embedding context does not contain all LHS's maximal context
-		if (grammar.getRules().stream()
-				.anyMatch(r -> !r.getRhs().getVertices().stream()
-						.flatMap(v -> embeddingContext.get(v).stream())
-						.collect(Collectors.toSet())
-						.containsAll(maxContext.get(r.getLhs().getName()))))
-			//Then it may not be a neighborhood preserving grammar
-			return false;
-		else
-			return true;
+		return getNonNPRules(grammar).isEmpty();
 	}
 
 	/**
@@ -587,6 +541,130 @@ public class GraphgrammarUtil {
 				|| !dS.getUnifier().stream().allMatch(u -> dS.getNext().getVertices().contains(u.getValue())))
 			return false;
 		return true;
+	}
+	
+	/**
+	 * TODO
+	 * @param grammar
+	 * @return
+	 */
+	static public Map<Rule, SymbolMap<SymbolSet>> getNonNPRules(final Grammar grammar){
+		final SymbolMap<SymbolMap<SymbolSet>> maxContext = new SymbolMap<>(grammar.getNonterminals().size());
+		final HashMap<Vertex, SymbolMap<SymbolSet>> embeddingContext = new HashMap<>();
+
+		for (Symbol l: grammar.getNonterminals()) {
+			maxContext.put(l, new SymbolMap<SymbolSet>());
+		}
+		
+		//Determine the maximal context of each nonterminal symbol
+		for (Rule r : grammar.getRules()) {
+			for (Vertex v : r.getRhs().getVertices()) {
+				
+				//The embedding context of each vertex of the RHS of each rule
+				final EList<SymbolSymbolsPair> embedding = r.getEmbedding().get(v);
+				final SymbolMap<SymbolSet> vContext = new SymbolMap<>();
+				if (embedding != null) {
+					for (SymbolSymbolsPair ssP : embedding) {
+						final SymbolSet vLabels = new SymbolSet(ssP.getVertexLabels());
+						
+						final SymbolSet context = vContext.get(ssP.getEdgeLabel());
+						if (context == null) {
+							vContext.put(ssP.getEdgeLabel(), vLabels);
+						} else {
+							context.addAll(vLabels);
+						}
+					}
+				}
+				embeddingContext.put(v, vContext);
+				
+				if (grammar.getNonterminals().stream().anyMatch(l -> l.equivalates(v.getLabel()))) {
+					final SymbolMap<SymbolSet> ntContext = maxContext.get(v.getLabel());
+					
+					//The real context of each nonterminal vertex of the RHS of each rule
+					for(Edge e: r.getRhs().inEdges(v)) {
+						final SymbolSet context = ntContext.get(e.getLabel());
+						if (context == null) {
+							ntContext.put(e.getLabel(), 
+									new SymbolSet(Arrays.asList(e.getFrom().getLabel())));
+						}
+						else 
+							context.add(e.getFrom().getLabel());
+					}
+					for(Edge e: r.getRhs().outEdges(v)) {
+						final SymbolSet context = ntContext.get(e.getLabel());
+						if (context == null) {
+							ntContext.put(e.getLabel(), 
+									new SymbolSet(Arrays.asList(e.getTo().getLabel())));
+						}
+						else 
+							context.add(e.getTo().getLabel());
+					}
+					
+					for (Entry<Symbol,SymbolSet> vContextEntry : vContext.entrySet()) {
+						final SymbolSet context = ntContext.get(vContextEntry.getKey());
+						if (context == null) {
+							ntContext.put(vContextEntry.getKey(), vContextEntry.getValue());
+						}
+						else 
+							context.addAll(vContextEntry.getValue());
+					}
+				}
+			}
+		}
+		
+		//Build rule's embedding context
+		final HashMap<Rule, SymbolMap<SymbolSet>> nonNPRulesContext = new HashMap<>(grammar.getRules().size());
+		for (Rule r : grammar.getRules()) {
+			final SymbolMap<SymbolSet> ruleContext = new SymbolMap<>();
+			
+			for (Vertex v : r.getRhs().getVertices()) {
+				final SymbolMap<SymbolSet> vContext = embeddingContext.get(v);
+				for (Entry<Symbol,SymbolSet> vContextEntry : vContext.entrySet()) {
+					final SymbolSet context = ruleContext.get(vContextEntry.getKey());
+					if (context == null) {
+						ruleContext.put(vContextEntry.getKey(), vContextEntry.getValue());
+					}
+					else 
+						context.addAll(vContextEntry.getValue());
+				}	
+			}
+			//If the rule's embedding context does not contain all LHS's maximal context
+			for (Entry<Symbol,SymbolSet> maxContextEntry : maxContext.get(r.getLhs()).entrySet()) {
+				
+				final SymbolMap<SymbolSet> missingRuleContext = nonNPRulesContext.get(r);
+				
+				final SymbolSet context = ruleContext.get(maxContextEntry.getKey());
+				if (context == null && maxContextEntry.getValue() != null) {
+					//non neighborhood preserving
+					if (missingRuleContext == null) {
+						final SymbolMap<SymbolSet> sMap = new SymbolMap<>();
+						sMap.put(maxContextEntry.getKey(), maxContextEntry.getValue());
+						nonNPRulesContext.put(r, sMap);
+					}
+					else 
+						missingRuleContext.put(maxContextEntry.getKey(), maxContextEntry.getValue());
+					
+				} else {
+					if (maxContextEntry.getValue() != null) {
+
+						//Calculate the missing context
+						final SymbolSet missingContextLabels = maxContextEntry.getValue().subtract(context);
+						if (!missingContextLabels.isEmpty()) {
+							//non neighborhood preserving
+						
+							if (missingRuleContext == null) {
+								final SymbolMap<SymbolSet> sMap = new SymbolMap<>();
+								sMap.put(maxContextEntry.getKey(), missingContextLabels);
+								nonNPRulesContext.put(r, sMap);
+							}
+							else 
+								missingRuleContext.put(maxContextEntry.getKey(), missingContextLabels);
+						}
+					}
+				}
+			}
+		}
+		return nonNPRulesContext;
 	}
 
 }
