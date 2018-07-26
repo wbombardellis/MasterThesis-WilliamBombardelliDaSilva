@@ -39,7 +39,7 @@ public class NPNormalizer {
 	 * @param <T>	The counter-domain of this map
 	 * @see HashMap 
 	 */
-	private class SymbolMap<T> {
+	class SymbolMap<T> {
 		private static final long serialVersionUID = -2809876795959619437L;
 		
 		final private HashMap<Symbol, T> map;
@@ -98,7 +98,12 @@ public class NPNormalizer {
 		}
 	}
 	
-	private class SymbolSet implements Iterable<Symbol>{
+	/**
+	 * TODO
+	 * @author wbombardellis
+	 *
+	 */
+	class SymbolSet implements Iterable<Symbol>{
 		final private Set<Symbol> set;
 		
 		/**
@@ -164,6 +169,13 @@ public class NPNormalizer {
 		public boolean isEmpty() {
 			return this.set.isEmpty();
 		}
+		
+		/**
+		 * @see HashSet#size() 
+		 */
+		public int size() {
+			return this.set.size();
+		}
 
 		/**
 		 * Return the set difference between this set and {@code other}. That is, this.set \ other.set
@@ -216,6 +228,7 @@ public class NPNormalizer {
 		while (!nonNPRulesContext.isEmpty()) {
 			assert nonNPRulesContext.size() <= grammar.getRules().size();
 			
+			final Set<Rule> newRules = new HashSet<Rule>(2);
 			//For each non neighborhood preserving rule A->R
 			for (Entry<Rule, SymbolMap< SymbolSet>> rEntry : nonNPRulesContext.entrySet()) {
 				final SymbolMap<SymbolSet> missingContext = rEntry.getValue();
@@ -227,11 +240,29 @@ public class NPNormalizer {
 						if (v.getLabel().equivalates(nonNPRule.getLhs())) {
 							
 							//Fix the rule where this vertex occurs for this missing context
-							fixRule(grammar, nonNPRule, rule, v, missingContext);
+							newRules.addAll(fixHostRule(rule, v, missingContext));
 						}
 					}
 				}
+				//For each missing context
+				for (Entry<Symbol, SymbolSet> cEntry : missingContext.entrySet()) {
+					for (Symbol ignoringLabel : cEntry.getValue()) {
+						//Fix the actual non neighborhood preserving rule
+						newRules.add(createNewGuestRule(nonNPRule, cEntry.getKey(), ignoringLabel));
+					}
+				}
 			}
+			
+			//Remove non neighborhood preserving rules
+			grammar.getRules().removeAll(nonNPRulesContext.keySet());
+			grammar.getRules().addAll(newRules);
+			for (Rule r : newRules) {
+				if (!grammar.getNonterminals().stream().anyMatch(n -> n.equivalates(r.getLhs()))){
+					grammar.getNonterminals().add(EcoreUtil.copy(r.getLhs()));
+					grammar.getAlphabet().add(EcoreUtil.copy(r.getLhs()));
+				}
+			}
+			assert GraphgrammarUtil.isValidGrammar(grammar);
 			
 			//Get new non neighborhood preserving rules
 			nonNPRulesContext = getNonNPRules(grammar);
@@ -244,7 +275,7 @@ public class NPNormalizer {
 	 * @param grammar
 	 * @return
 	 */
-	private Map<Rule, SymbolMap<SymbolSet>> getNonNPRules(final Grammar grammar){
+	Map<Rule, SymbolMap<SymbolSet>> getNonNPRules(final Grammar grammar){
 		final SymbolMap<SymbolMap<SymbolSet>> maxContext = new SymbolMap<>(grammar.getNonterminals().size());
 		final HashMap<Vertex, SymbolMap<SymbolSet>> embeddingContext = new HashMap<>();
 
@@ -259,14 +290,16 @@ public class NPNormalizer {
 				//The embedding context of each vertex of the RHS of each rule
 				final EList<SymbolSymbolsPair> embedding = r.getEmbedding().get(v);
 				final SymbolMap<SymbolSet> vContext = new SymbolMap<>();
-				for (SymbolSymbolsPair ssP : embedding) {
-					final SymbolSet vLabels = new SymbolSet(ssP.getVertexLabels());
-					
-					final SymbolSet context = vContext.get(ssP.getEdgeLabel());
-					if (context == null) {
-						vContext.put(ssP.getEdgeLabel(), vLabels);
-					} else {
-						context.addAll(vLabels);
+				if (embedding != null) {
+					for (SymbolSymbolsPair ssP : embedding) {
+						final SymbolSet vLabels = new SymbolSet(ssP.getVertexLabels());
+						
+						final SymbolSet context = vContext.get(ssP.getEdgeLabel());
+						if (context == null) {
+							vContext.put(ssP.getEdgeLabel(), vLabels);
+						} else {
+							context.addAll(vLabels);
+						}
 					}
 				}
 				embeddingContext.put(v, vContext);
@@ -367,45 +400,52 @@ public class NPNormalizer {
 	 * @param rule
 	 * @param v
 	 * @param e
+	 * @return 
 	 */
-	private void fixRule(final Grammar grammar, final Rule nonNPRule, final Rule rule, final Vertex vertex, final SymbolMap<SymbolSet> context) {
+	private Set<Rule> fixHostRule(final Rule rule, final Vertex vertex, final SymbolMap<SymbolSet> context) {
 		assert rule.getRhs().getVertices().contains(vertex);
-		assert nonNPRule.getLhs().equivalates(vertex.getLabel());
+		
+		//Remember of what is still to be processed 
+		final SymbolMap<SymbolSet> toProccessContext = new SymbolMap<>(context.map.size());
+		for (Entry<Symbol, SymbolSet> c : context.entrySet()) {
+			toProccessContext.put(c.getKey(), new SymbolSet(c.getValue().set));
+		}
 		
 		//For each edge of this vertex
 		final List<Edge> vEdges = rule.getRhs().edges(vertex);
+		final Set<Rule> newFixedRules = new HashSet<Rule>(4);
 		for (Edge e : vEdges) {
 			final Symbol ignoredLabel = e.getFrom() == vertex ? 
 					e.getTo().getLabel() : e.getFrom().getLabel();
 					
 			//If it connects to one of the missing contexts	
 			final SymbolSet missingLabels = context.get(e.getLabel());
-			if (missingLabels != null && missingLabels.contains(e.getFrom().getLabel())) {
-				final List<Rule> newFixedRules = createNewRules(nonNPRule, rule, vertex, ignoredLabel, e);
-				assert newFixedRules.size() == 2;
-				
-				grammar.getRules().addAll(newFixedRules);
+			if (missingLabels != null && missingLabels.contains(ignoredLabel)) {
+				//New fix
+				newFixedRules.add(createNewHostRule(rule, vertex, ignoredLabel, e));
+				//Context processed
+				toProccessContext.get(e.getLabel()).set.remove(ignoredLabel);
 			}
 		}
 		
 		//For each embedding of this vertex
-		for (SymbolSymbolsPair embeds : rule.getEmbedding().get(vertex)) {
-			
-			//If it connects to one of the missing contexts	
-			final SymbolSet missingLabels = context.get(embeds.getEdgeLabel());
-			if (missingLabels != null) {
-				final SymbolSet missIntersection = missingLabels.intersect(embeds.getVertexLabels());
+		final EList<SymbolSymbolsPair> embedding = rule.getEmbedding().get(vertex);
+		if (embedding != null) {
+			for (SymbolSymbolsPair embeds : embedding) {
 				
-				for (Symbol ignoredLabel : missIntersection) {
-					final List<Rule> newFixedRules = createNewRules(nonNPRule, rule, vertex, ignoredLabel, embeds.getEdgeLabel());
-					assert newFixedRules.size() == 2;
+				//If it connects to one of the missing contexts	
+				final SymbolSet missingLabels = toProccessContext.get(embeds.getEdgeLabel());
+				if (missingLabels != null) {
+					final SymbolSet missIntersection = missingLabels.intersect(embeds.getVertexLabels());
 					
-					grammar.getRules().addAll(newFixedRules);
+					for (Symbol ignoredLabel : missIntersection) {
+						newFixedRules.add(createNewHostRule(rule, vertex, ignoredLabel, embeds.getEdgeLabel()));
+					}
 				}
 			}
 		}
 		
-		assert GraphgrammarUtil.isValidGrammar(grammar);
+		return newFixedRules;
 	}
 	
 	/**
@@ -413,8 +453,8 @@ public class NPNormalizer {
 	 * with the difference that it sends only an symbol to it, withou an edge.
 	 * @see NPNormalizer#createNewRules(Rule, Rule, Vertex, Symbol, Edge, Symbol)
 	 */
-	List<Rule> createNewRules(final Rule nonNPRule, final Rule rule, final Vertex vertex, final Symbol ignoredLabel, final Symbol edgeLabel) {
-		return createNewRules(nonNPRule, rule, vertex, ignoredLabel, null, edgeLabel);
+	Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol ignoredLabel, final Symbol edgeLabel) {
+		return createNewHostRule(rule, vertex, ignoredLabel, null, edgeLabel);
 	}
 	
 	/**
@@ -422,8 +462,8 @@ public class NPNormalizer {
 	 * with the difference that it sends only an edge to it, without sending an extra symbol.
 	 * @see NPNormalizer#createNewRules(Rule, Rule, Vertex, Symbol, Edge, Symbol)
 	 */
-	List<Rule> createNewRules(final Rule nonNPRule, final Rule rule, final Vertex vertex, final Symbol ignoredLabel, final Edge edge) {
-		return createNewRules(nonNPRule, rule, vertex, ignoredLabel, edge, null);
+	Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol ignoredLabel, final Edge edge) {
+		return createNewHostRule(rule, vertex, ignoredLabel, edge, null);
 	}
 	
 	/**
@@ -435,10 +475,10 @@ public class NPNormalizer {
 	 * @param edge
 	 * @return
 	 */
-	private List<Rule> createNewRules(final Rule nonNPRule, final Rule rule, final Vertex vertex, final Symbol ignoredLabel, final Edge edge, Symbol edgeLabel) {
+	private Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol ignoredLabel, final Edge edge, Symbol edgeLabel) {
 		assert rule.getRhs().getVertices().contains(vertex);
 		assert edge == null || rule.getRhs().getEdges().contains(edge);
-		assert nonNPRule.getLhs().equivalates(vertex.getLabel());
+		assert edge == null || edge.getFrom().getLabel().equivalates(ignoredLabel) || edge.getTo().getLabel().equivalates(ignoredLabel);
 		
 		final Rule modifiedRule = EcoreUtil.copy(rule);
 		final Vertex v = modifiedRule.getRhs().getVertices().stream()
@@ -454,6 +494,7 @@ public class NPNormalizer {
 			
 			edgeLabel = edge.getLabel();
 		}
+		assert edgeLabel != null;
 		
 		//Remove the embedding for this edge and vertex labels
 		if (modifiedRule.getEmbedding().get(v) != null) {
@@ -467,14 +508,29 @@ public class NPNormalizer {
 		//Change v's label
 		v.getLabel().getSuperscript().add(edgeLabel.getName());
 		v.getLabel().getSubscript().add(ignoredLabel.getName());
+
+		modifiedRule.setId(rule.getId().concat("___"+EcoreUtil.generateUUID()));
 		
 		assert GraphgrammarUtil.isValidRule(modifiedRule);
 		
+		return modifiedRule;
+	}
+	
+	/**
+	 * TODO
+	 * @param nonNPRule
+	 * @param edgeLabel
+	 * @param ignoredLabel
+	 * @return
+	 */
+	Rule createNewGuestRule(final Rule nonNPRule, final Symbol edgeLabel, final Symbol ignoredLabel){		
 		//Add new neighborhood preserving rule for the new label
 		final Rule newRule = EcoreUtil.copy(nonNPRule);
-		newRule.setId(nonNPRule.getId().concat("_"+ignoredLabel));
 		newRule.getLhs().getSuperscript().add(edgeLabel.getName());
 		newRule.getLhs().getSubscript().add(ignoredLabel.getName());
+		
+		newRule.setId(nonNPRule.getId().concat("___("+newRule.getLhs()+")"));
+		
 		GraphgrammarUtil.ensureUniqueIds(newRule.getRhs());
 		
 		final HashSet<Vertex> embedRemoval = new HashSet<>();
@@ -498,6 +554,6 @@ public class NPNormalizer {
 		
 		assert GraphgrammarUtil.isValidRule(newRule);
 		
-		return Arrays.asList(modifiedRule, newRule);
+		return newRule;
 	}
 }
