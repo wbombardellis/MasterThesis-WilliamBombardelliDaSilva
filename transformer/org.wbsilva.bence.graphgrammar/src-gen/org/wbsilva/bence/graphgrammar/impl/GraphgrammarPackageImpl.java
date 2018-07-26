@@ -460,6 +460,15 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getSymbol__CompareTo__Symbol() {
+		return symbolEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDerivationStep() {
 		return derivationStepEClass;
 	}
@@ -687,6 +696,15 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 */
 	public EReference getVertex_Label() {
 		return (EReference) vertexEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getVertex__Equivalates__Vertex() {
+		return vertexEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1047,6 +1065,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEAttribute(symbolEClass, SYMBOL__SUBSCRIPT);
 		createEAttribute(symbolEClass, SYMBOL__SUPERSCRIPT);
 		createEOperation(symbolEClass, SYMBOL___EQUIVALATES__SYMBOL);
+		createEOperation(symbolEClass, SYMBOL___COMPARE_TO__SYMBOL);
 
 		derivationStepEClass = createEClass(DERIVATION_STEP);
 		createEReference(derivationStepEClass, DERIVATION_STEP__RULE);
@@ -1078,6 +1097,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		vertexEClass = createEClass(VERTEX);
 		createEAttribute(vertexEClass, VERTEX__ID);
 		createEReference(vertexEClass, VERTEX__LABEL);
+		createEOperation(vertexEClass, VERTEX___EQUIVALATES__VERTEX);
 
 		zoneVertexEClass = createEClass(ZONE_VERTEX);
 		createEReference(zoneVertexEClass, ZONE_VERTEX__VERTICES);
@@ -1236,6 +1256,10 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 				IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSymbol(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getSymbol__CompareTo__Symbol(), ecorePackage.getEInt(), "compareTo", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+		addEParameter(op, this.getSymbol(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(derivationStepEClass, DerivationStep.class, "DerivationStep", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDerivationStep_Rule(), this.getRule(), null, "rule", null, 0, 1, DerivationStep.class,
@@ -1313,6 +1337,10 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		initEReference(getVertex_Label(), this.getSymbol(), null, "label", null, 0, 1, Vertex.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		op = initEOperation(getVertex__Equivalates__Vertex(), ecorePackage.getEBoolean(), "equivalates", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getVertex(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(zoneVertexEClass, ZoneVertex.class, "ZoneVertex", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

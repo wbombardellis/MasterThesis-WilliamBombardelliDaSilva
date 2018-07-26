@@ -213,39 +213,39 @@ public class EdgeImpl extends MinimalEObjectImpl.Container implements Edge {
 	 */
 	public int compareTo(Edge other) {
 		assert other != null;
-		assert this.getLabel() != null && this.getLabel().getName() != null;
-		assert other.getLabel() != null && other.getLabel().getName() != null;
+		assert this.getLabel() != null;
+		assert other.getLabel() != null;
 		assert this.getFrom() != null && this.getFrom().getLabel() != null;
 		assert other.getFrom() != null && other.getFrom().getLabel() != null;
 		assert this.getTo() != null && this.getTo().getLabel() != null;
 		assert other.getTo() != null && other.getTo().getLabel() != null;
 
 		//If this.label < other.label
-		if (this.getLabel().getName().compareTo(other.getLabel().getName()) < 0) {
+		if (this.getLabel().compareTo(other.getLabel()) < 0) {
 			return -1;
 		}
 		//If this.label > other.label
-		else if (this.getLabel().getName().compareTo(other.getLabel().getName()) > 0) {
+		else if (this.getLabel().compareTo(other.getLabel()) > 0) {
 			return 1;
 		}
 		//If this.label == other.label
 		else {
 			//If this.from.label < other.from.label
-			if (this.getFrom().getLabel().getName().compareTo(other.getFrom().getLabel().getName()) < 0) {
+			if (this.getFrom().getLabel().compareTo(other.getFrom().getLabel()) < 0) {
 				return -1;
 			}
 			//If this.from.label > other.from.label
-			else if (this.getFrom().getLabel().getName().compareTo(other.getFrom().getLabel().getName()) > 0) {
+			else if (this.getFrom().getLabel().compareTo(other.getFrom().getLabel()) > 0) {
 				return 1;
 			}
 			//If this.from.label == other.from.label
 			else {
 				//If this.to.label < other.to.label
-				if (this.getTo().getLabel().getName().compareTo(other.getTo().getLabel().getName()) < 0) {
+				if (this.getTo().getLabel().compareTo(other.getTo().getLabel()) < 0) {
 					return -1;
 				}
 				//If this.to.label > other.to.label
-				else if (this.getTo().getLabel().getName().compareTo(other.getTo().getLabel().getName()) > 0) {
+				else if (this.getTo().getLabel().compareTo(other.getTo().getLabel()) > 0) {
 					return 1;
 				}
 				//If this.to.label == other.to.label

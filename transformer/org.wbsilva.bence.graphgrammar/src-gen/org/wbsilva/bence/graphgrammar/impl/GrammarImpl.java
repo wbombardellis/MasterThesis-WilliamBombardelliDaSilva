@@ -260,14 +260,14 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 		assert GraphgrammarUtil.isValidGraph(rhs);
 
 		final Rule rule = this.getRules().stream()
-				.filter(r -> EcoreUtil.equals(r.getLhs(), vertex.getLabel()) && r.getRhs().isomorphicTo(rhs)).findAny()
+				.filter(r -> r.getLhs().equivalates(vertex.getLabel()) && r.getRhs().isomorphicTo(rhs)).findAny()
 				.orElse(null);
 
 		if (rule == null) {
 			return null;
 		} else {
 			final Set<Vertex> possibleVertices = prev.getVertices().stream()
-					.filter(v -> EcoreUtil.equals(v.getLabel(), vertex.getLabel())).collect(Collectors.toSet());
+					.filter(v -> v.getLabel().equivalates(vertex.getLabel())).collect(Collectors.toSet());
 
 			for (Vertex v : possibleVertices) {
 				final Graph g = EcoreUtil.copy(prev);

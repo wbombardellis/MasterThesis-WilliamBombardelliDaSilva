@@ -83,6 +83,12 @@
       </eAnnotations>
       <eParameters name="other" eType="#//Symbol"/>
     </eOperations>
+    <eOperations name="compareTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Compare this symbol to other, creating a total order.&#xA;If this &lt; other then return -1&#xA;if this > other then return 1&#xA;else return 0"/>
+      </eAnnotations>
+      <eParameters name="other" eType="#//Symbol"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="subscript" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -181,6 +187,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A labeled vertex of a graph"/>
     </eAnnotations>
+    <eOperations name="equivalates" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return true iff this vertex is equivalent to other"/>
+      </eAnnotations>
+      <eParameters name="other" eType="#//Vertex"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//Symbol"

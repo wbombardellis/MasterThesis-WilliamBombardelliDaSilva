@@ -88,7 +88,7 @@ public class BeNCETransformer {
 			inputGrammar.getAlphabet().addAll(inputGrammar.getTerminals());
 			inputGrammar.getAlphabet().addAll(inputGrammar.getNonterminals());
 			inputGrammar.setInitial(inputGrammar.getNonterminals().stream()
-					.filter(s -> EcoreUtil.equals(s, tripleGrammar.getInitial()))
+					.filter(s -> s.equivalates(tripleGrammar.getInitial()))
 					.findAny()
 					.orElse(null));
 			
@@ -178,9 +178,9 @@ public class BeNCETransformer {
 	TripleGraph createInitialTripleGraph(final Derivation derivation, final boolean forward) {
 		assert derivation != null;
 		assert !derivation.getSteps().isEmpty();
-		assert EcoreUtil.equals(tripleGrammar.getInitial(), derivation.getSteps().get(0).getVertex().getLabel());
+		assert tripleGrammar.getInitial().equivalates(derivation.getSteps().get(0).getVertex().getLabel());
 		assert derivation.getSteps().get(0).getPrevious().getVertices().size() == 1;
-		assert EcoreUtil.equals(derivation.getSteps().get(0).getPrevious().getVertices().get(0), derivation.getSteps().get(0).getVertex());
+		assert derivation.getSteps().get(0).getPrevious().getVertices().get(0).equivalates(derivation.getSteps().get(0).getVertex());
 		
 		//Input graph set-up
 		final Graph inputGraph = EcoreUtil.copy(derivation.getSteps().get(0).getPrevious());

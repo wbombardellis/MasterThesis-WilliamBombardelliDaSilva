@@ -2,8 +2,10 @@
  */
 package org.wbsilva.bence.graphgrammar.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
@@ -150,6 +152,29 @@ public class VertexImpl extends MinimalEObjectImpl.Container implements Vertex {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean equivalates(Vertex other) {
+		if (this.getId() == null) {
+			if (other.getId() != null)
+				return false;
+		} else {
+			if (!this.getId().equals(other.getId()))
+				return false;
+			if (this.getLabel() == null) {
+				if (other.getLabel() != null)
+					return false;
+			} else {
+				if (!this.getLabel().equivalates(other.getLabel()))
+					return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -227,6 +252,20 @@ public class VertexImpl extends MinimalEObjectImpl.Container implements Vertex {
 			return label != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case GraphgrammarPackage.VERTEX___EQUIVALATES__VERTEX:
+			return equivalates((Vertex) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

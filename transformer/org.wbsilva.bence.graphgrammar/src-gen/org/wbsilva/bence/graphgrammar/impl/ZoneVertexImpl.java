@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.Vertex;
@@ -78,11 +77,11 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 	 * @generated NOT
 	 */
 	public boolean equivalates(ZoneVertex other) {
-		return other != null && EcoreUtil.equals(this.getLabel(), other.getLabel())
+		return other != null && this.getLabel().equivalates(other.getLabel())
 				&& this.getVertices().stream()
-						.allMatch(v -> other.getVertices().stream().anyMatch(w -> EcoreUtil.equals(v, w)))
+						.allMatch(v -> other.getVertices().stream().anyMatch(w -> v.equivalates(w)))
 				&& other.getVertices().stream()
-						.allMatch(v -> this.getVertices().stream().anyMatch(w -> EcoreUtil.equals(v, w)));
+						.allMatch(v -> this.getVertices().stream().anyMatch(w -> v.equivalates(w)));
 	}
 
 	/**

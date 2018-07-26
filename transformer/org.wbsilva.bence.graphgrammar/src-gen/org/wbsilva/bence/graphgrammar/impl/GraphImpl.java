@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Graph;
@@ -162,7 +161,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 		//Candidates for a mapping's image of each vertex of this 
 		final List<Set<Vertex>> candidates = this.getVertices().stream()
 				.map(v -> other.getVertices().stream()
-						.filter(w -> EcoreUtil.equals(v.getLabel(), w.getLabel())
+						.filter(w -> v.getLabel().equivalates(w.getLabel())
 								&& GraphgrammarUtil.isomorphicEdges(this.inEdges(v), other.inEdges(w))
 								&& GraphgrammarUtil.isomorphicEdges(this.outEdges(v), other.outEdges(w)))
 						.collect(Collectors.toSet()))

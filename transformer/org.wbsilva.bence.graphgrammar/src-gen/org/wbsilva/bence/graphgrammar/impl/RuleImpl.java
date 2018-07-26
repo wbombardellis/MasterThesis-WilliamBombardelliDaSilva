@@ -352,8 +352,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 
 			Stream<Vertex> vs = rhs.getVertices().stream().filter(v -> {
 				final EList<SymbolSymbolsPair> emb = this.embedding.get(v);
-				if (emb != null && emb.stream().anyMatch(em -> EcoreUtil.equals(em.getEdgeLabel(), e.getLabel())
-						&& em.getVertexLabels().stream().anyMatch(l -> EcoreUtil.equals(l, targetVertex.getLabel()))))
+				if (emb != null && emb.stream().anyMatch(em -> em.getEdgeLabel().equivalates(e.getLabel())
+						&& em.getVertexLabels().stream().anyMatch(l -> l.equivalates(targetVertex.getLabel()))))
 					return true;
 				else
 					return false;

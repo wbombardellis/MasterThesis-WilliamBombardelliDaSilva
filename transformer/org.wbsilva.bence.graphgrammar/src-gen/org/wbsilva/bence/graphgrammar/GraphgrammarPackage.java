@@ -396,13 +396,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int SYMBOL___EQUIVALATES__SYMBOL = 0;
 
 	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL___COMPARE_TO__SYMBOL = 1;
+
+	/**
 	 * The number of operations of the '<em>Symbol</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_OPERATION_COUNT = 1;
+	int SYMBOL_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.DerivationStepImpl <em>Derivation Step</em>}' class.
@@ -725,13 +734,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int VERTEX_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>Equivalates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX___EQUIVALATES__VERTEX = 0;
+
+	/**
 	 * The number of operations of the '<em>Vertex</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_OPERATION_COUNT = 0;
+	int VERTEX_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.ZoneVertexImpl <em>Zone Vertex</em>}' class.
@@ -778,6 +796,15 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @ordered
 	 */
 	int ZONE_VERTEX_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Equivalates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZONE_VERTEX___EQUIVALATES__VERTEX = VERTEX___EQUIVALATES__VERTEX;
 
 	/**
 	 * The operation id for the '<em>Equivalates</em>' operation.
@@ -1464,6 +1491,16 @@ public interface GraphgrammarPackage extends EPackage {
 	EOperation getSymbol__Equivalates__Symbol();
 
 	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Symbol#compareTo(org.wbsilva.bence.graphgrammar.Symbol) <em>Compare To</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Compare To</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Symbol#compareTo(org.wbsilva.bence.graphgrammar.Symbol)
+	 * @generated
+	 */
+	EOperation getSymbol__CompareTo__Symbol();
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.DerivationStep <em>Derivation Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1735,6 +1772,16 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVertex_Label();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Vertex#equivalates(org.wbsilva.bence.graphgrammar.Vertex) <em>Equivalates</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Equivalates</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Vertex#equivalates(org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getVertex__Equivalates__Vertex();
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.ZoneVertex <em>Zone Vertex</em>}'.
@@ -2321,6 +2368,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EOperation SYMBOL___EQUIVALATES__SYMBOL = eINSTANCE.getSymbol__Equivalates__Symbol();
 		/**
+		 * The meta object literal for the '<em><b>Compare To</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SYMBOL___COMPARE_TO__SYMBOL = eINSTANCE.getSymbol__CompareTo__Symbol();
+		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.DerivationStepImpl <em>Derivation Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2512,6 +2566,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VERTEX__LABEL = eINSTANCE.getVertex_Label();
+		/**
+		 * The meta object literal for the '<em><b>Equivalates</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation VERTEX___EQUIVALATES__VERTEX = eINSTANCE.getVertex__Equivalates__Vertex();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.ZoneVertexImpl <em>Zone Vertex</em>}' class.
 		 * <!-- begin-user-doc -->

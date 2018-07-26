@@ -4,8 +4,6 @@ package org.wbsilva.bence.graphgrammar.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import java.util.HashSet;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -182,6 +180,57 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public int compareTo(Symbol other) {
+		assert other != null;
+		assert this.getName() != null;
+		assert other.getName() != null;
+		
+		//If this.name < other.name
+		if (this.getName().compareTo(other.getName()) < 0) {
+			return -1;
+		}
+		//If this.name > other.name
+		else if (this.getName().compareTo(other.getName()) > 0) {
+			return 1;
+		}
+		//If this.name == other.name
+		else {
+			//this.subscript against other.subscript
+			int i;
+			for (i = 0; i < other.getSubscript().size(); i++) {
+				if (i < this.getSubscript().size())
+					return -1;
+				
+				int c = this.getSubscript().get(i).compareTo(other.getSubscript().get(i));
+				if (c != 0)
+					return c;
+			}
+			if (i < this.getSubscript().size())
+				return 1;
+			
+			//this.superscript against other.superscript
+			int j;
+			for (j = 0; j < other.getSuperscript().size(); j++) {
+				if (j < this.getSuperscript().size())
+					return -1;
+				
+				int c = this.getSuperscript().get(j).compareTo(other.getSuperscript().get(j));
+				if (c != 0)
+					return c;
+			}
+			if (i < this.getSuperscript().size())
+				return 1;
+			
+			//this == other
+			return 0;
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -270,6 +319,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 		switch (operationID) {
 		case GraphgrammarPackage.SYMBOL___EQUIVALATES__SYMBOL:
 			return equivalates((Symbol) arguments.get(0));
+		case GraphgrammarPackage.SYMBOL___COMPARE_TO__SYMBOL:
+			return compareTo((Symbol) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -277,14 +328,14 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		/*StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", subscript: ");
@@ -292,7 +343,16 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 		result.append(", superscript: ");
 		result.append(superscript);
 		result.append(')');
-		return result.toString();
+		return result.toString();*/
+		final String superS = this.getSuperscript().isEmpty() ? ""
+				: String.format("^{%s}",
+						this.getSuperscript().stream().reduce((a, b) -> a.concat(", ").concat(b)).orElse(""));
+
+		final String subS = this.getSubscript().isEmpty() ? ""
+				: String.format("^{%s}",
+						this.getSubscript().stream().reduce((a, b) -> a.concat(", ").concat(b)).orElse(""));
+
+		return this.getName() + superS + subS;
 	}
 
 } //SymbolImpl

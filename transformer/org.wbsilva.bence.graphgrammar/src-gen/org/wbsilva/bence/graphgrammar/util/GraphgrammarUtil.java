@@ -187,7 +187,7 @@ public class GraphgrammarUtil {
 		if (t == null || t.isEmpty())
 			return false;
 		
-		if (n.stream().anyMatch(s -> !ab.contains(s)) || t.stream().anyMatch(s -> !ab.contains(s)))
+		if (n.stream().anyMatch(s -> !contains(ab, s)) || t.stream().anyMatch(s -> !contains(ab, s)))
 			return false;
 		
 		Symbol ini = grammar.getInitial();
@@ -204,6 +204,20 @@ public class GraphgrammarUtil {
 			return false;
 		
 		return true;
+	}
+
+	/**
+	 * Return true if collection {@code c} contains the symbol {@code s} or any equivalent symbol,
+	 * false otherwise. If {@code s} is null, look for a null entry in {@code c}.
+	 * 
+	 * @param c			The collection to test for containment. Never null
+	 * @param s			The symbol to test
+	 * @return			Return true iff {@code c} contains {@code s} using the equivalence relation in {@link Symbol#equivalates(Symbol)}
+	 * @see Symbol#equivalates(Symbol)
+	 */
+	private static boolean contains(final Collection<Symbol> c, final Symbol s) {
+		return c.stream()
+				.anyMatch(t -> s == null ? t == null : s.equivalates(t));
 	}
 
 	/**
@@ -250,7 +264,7 @@ public class GraphgrammarUtil {
 	 * @return			True iff {@code symbol} is in the {@code alphabet}
 	 */
 	private static boolean inAlphabet(final EList<Symbol> alphabet, final Symbol symbol) {
-		return alphabet.stream().anyMatch(s -> s.getName().equals(symbol.getName()));
+		return alphabet.stream().anyMatch(s -> symbol == null ? s == null : symbol.equivalates(s));
 	}
 
 	/**
@@ -309,7 +323,7 @@ public class GraphgrammarUtil {
 		if (t == null || t.isEmpty())
 			return false;
 		
-		if (n.stream().anyMatch(s -> !ab.contains(s)) || t.stream().anyMatch(s -> !ab.contains(s)))
+		if (n.stream().anyMatch(s -> !contains(ab, s)) || t.stream().anyMatch(s -> !contains(ab, s)))
 			return false;
 		
 		Symbol ini = tripleGrammar.getInitial();
@@ -462,6 +476,7 @@ public class GraphgrammarUtil {
 	 */
 	public static boolean isNeighborhoodPreserving(final Grammar grammar) {
 		//TODO: Has to be stricter then this: Neighborhood by edge labels has to be equal
+		//TODO: cheeck also subsription of labels and 5 conditions form the paper
 		final HashMap<String, Set<String>> maxContext = new HashMap<>(grammar.getNonterminals().size());
 		final HashMap<Vertex, Set<String>> embeddingContext = new HashMap<>();
 
@@ -486,7 +501,7 @@ public class GraphgrammarUtil {
 				}
 				embeddingContext.put(v, vertexEmbeddingContext);
 				
-				if (grammar.getNonterminals().stream().anyMatch(l -> EcoreUtil.equals(l, v.getLabel()))) {
+				if (grammar.getNonterminals().stream().anyMatch(l -> l.equivalates(v.getLabel()))) {
 					final Set<String> ntContext = maxContext.get(v.getLabel().getName());
 					
 					//The real context of each nonterminal vertex of the RHS of each rule
@@ -564,7 +579,7 @@ public class GraphgrammarUtil {
 			return false;
 		if (!GraphgrammarUtil.isValidRule(dS.getRule()))
 			return false;
-		if (dS.getVertex() == null || !dS.getPrevious().getVertices().stream().anyMatch(v -> EcoreUtil.equals(v, dS.getVertex())))
+		if (dS.getVertex() == null || !dS.getPrevious().getVertices().stream().anyMatch(v -> v.equivalates(dS.getVertex())))
 			return false;
 		if (dS.getUnifier() == null || dS.getUnifier().size() != dS.getRule().getRhs().getVertices().size()
 				|| !isInjective(dS.getUnifier())

@@ -62,8 +62,7 @@ public class BeNCEParser {
 		//If not all labels are terminals, return fail right away
 		if (graph.getVertices().stream()
 				.anyMatch(v -> !grammar.getTerminals().stream()
-						.map(l -> l.getName())
-						.anyMatch(n -> n.equals(v.getLabel().getName())))) {
+								.anyMatch(t -> t.equivalates(v.getLabel())))) {
 			logger.debug(String.format("Not all vertices of the graph %s are terminal vertices. Cannot parse.", graph));
 			return Optional.empty();
 			
@@ -96,7 +95,7 @@ public class BeNCEParser {
 				assert !handle.isEmpty();
 				
 				logger.debug(String.format("Selected handle {%s}", handle.stream()
-						.map(z -> String.format("%s:(%s, {%s})", z.getId(), z.getLabel().getName(), z.getVertices().stream()
+						.map(z -> String.format("%s:(%s, {%s})", z.getId(), z.getLabel(), z.getVertices().stream()
 																.map(v -> v.getId())
 																.reduce((a,b) -> a.concat(", ").concat(b))
 																.orElse("")))
@@ -105,7 +104,7 @@ public class BeNCEParser {
 				
 				for (final Symbol d : grammar.getNonterminals()) {
 					
-					logger.debug(String.format("Trying to reduce with symbol %s", d.getName()));
+					logger.debug(String.format("Trying to reduce with symbol %s", d));
 					
 					final Graph handleGraph = zoneGraph(graph, handle);		//Z(R)
 					assert GraphgrammarUtil.isValidGraph(handleGraph);
@@ -157,7 +156,7 @@ public class BeNCEParser {
 									.reduce((a,b) -> a.concat(", ").concat(b))
 									.orElse("")));
 					} else {
-						logger.debug(String.format("Cannot reduce with symbol %s", d.getName()));
+						logger.debug(String.format("Cannot reduce with symbol %s", d));
 					}
 				}
 			}

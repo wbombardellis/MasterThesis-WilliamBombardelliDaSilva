@@ -97,4 +97,18 @@ public interface Symbol extends EObject {
 	 * @generated
 	 */
 	boolean equivalates(Symbol other);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Compare this symbol to other, creating a total order.
+	 * If this < other then return -1
+	 * if this > other then return 1
+	 * else return 0
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	int compareTo(Symbol other);
 } // Symbol

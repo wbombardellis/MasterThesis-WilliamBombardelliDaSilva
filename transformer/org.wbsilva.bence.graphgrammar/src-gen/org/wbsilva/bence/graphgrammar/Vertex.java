@@ -78,4 +78,15 @@ public interface Vertex extends EObject {
 	 * @generated
 	 */
 	void setLabel(Symbol value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return true iff this vertex is equivalent to other
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean equivalates(Vertex other);
 } // Vertex

@@ -287,7 +287,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 
 		//The correspondence vertex for the input vertex
 		final Vertex corrVertex = tripleGraph.getCorr().getVertices().stream()
-				.filter(v -> this.getNonterminals().stream().anyMatch(s -> s.getName().equals(v.getLabel().getName())))
+				.filter(v -> this.getNonterminals().stream().anyMatch(s -> s.equivalates(v.getLabel())))
 				.filter(v -> forward ? tripleGraph.invMs(inputVertex).contains(v)
 						: tripleGraph.invMt(inputVertex).contains(v))
 				.findAny().orElse(null);
