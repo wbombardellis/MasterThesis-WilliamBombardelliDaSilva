@@ -200,7 +200,7 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 			//this.subscript against other.subscript
 			int i;
 			for (i = 0; i < other.getSubscript().size(); i++) {
-				if (i < this.getSubscript().size())
+				if (i >= this.getSubscript().size())
 					return -1;
 				
 				int c = this.getSubscript().get(i).compareTo(other.getSubscript().get(i));
@@ -213,14 +213,14 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 			//this.superscript against other.superscript
 			int j;
 			for (j = 0; j < other.getSuperscript().size(); j++) {
-				if (j < this.getSuperscript().size())
+				if (j >= this.getSuperscript().size())
 					return -1;
 				
 				int c = this.getSuperscript().get(j).compareTo(other.getSuperscript().get(j));
 				if (c != 0)
 					return c;
 			}
-			if (i < this.getSuperscript().size())
+			if (j < this.getSuperscript().size())
 				return 1;
 			
 			//this == other
