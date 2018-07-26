@@ -109,7 +109,7 @@ class ECore2GraphTransformerTest {
 		ECore2GraphTransformer transformer = new ECore2GraphTransformer();
 		Graph g0 = transformer.transform(obj4);
 		
-		assertTrue(GraphgrammarUtil.isValidGraph(g0));
+		assertTrue(GraphgrammarUtil.isValidGraph(g0, true));
 		assertEquals(4, g0.getVertices().size());
 		assertTrue(g0.getVertices().stream().allMatch(v -> v.getLabel().getName().equals("A")));
 		

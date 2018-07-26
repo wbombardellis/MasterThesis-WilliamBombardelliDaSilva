@@ -281,10 +281,11 @@ public class GraphgrammarUtil {
 
 	/**
 	 * Checks that a graph is concise
-	 * @param graph		Graph to test
+	 * @param graph			Graph to test
+	 * @param acceptLoops 	If true, than loops are allowed to occur (A loop is an edge from and to the same vertex)
 	 * @return			True iff {@code graph} is valid
 	 */
-	public static boolean isValidGraph(final Graph graph) {
+	public static boolean isValidGraph(final Graph graph, boolean acceptLoops) {
 		if (graph == null)
 			return false;
 		
@@ -298,10 +299,19 @@ public class GraphgrammarUtil {
 				.anyMatch(e -> !graph.getVertices().contains(e.getFrom()) 
 							|| !graph.getVertices().contains(e.getTo())
 							|| e.getLabel() == null || e.getLabel().getName().isEmpty()
-							|| e.getFrom() == e.getTo()))
+							|| (!acceptLoops && e.getFrom() == e.getTo())))
 			return false;
 		
 		return true;
+	}
+	
+	/**
+	 * Checks that a graph is concise. Does not accept loops
+	 * @param graph			Graph to test
+	 * @return			True iff {@code graph} is valid
+	 */
+	public static boolean isValidGraph(final Graph graph) {
+		return isValidGraph(graph, false);
 	}
 
 	/**

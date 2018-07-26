@@ -247,6 +247,9 @@ class BeNCEParserTest {
 		Edge e = GraphgrammarFactory.eINSTANCE.createEdge();
 		e.setFrom(v2c);
 		e.setTo(v3c);
+		Symbol l = GraphgrammarFactory.eINSTANCE.createSymbol();
+		l.setName("l");
+		e.setLabel(l);
 		g0.getEdges().add(e);
 		
 		Graph zG = parser.zoneGraph(g0, set3);
@@ -267,6 +270,9 @@ class BeNCEParserTest {
 		Edge e = GraphgrammarFactory.eINSTANCE.createEdge();
 		e.setFrom(v2c);
 		e.setTo(v3c);
+		Symbol l = GraphgrammarFactory.eINSTANCE.createSymbol();
+		l.setName("l");
+		e.setLabel(l);
 		g0.getEdges().add(e);
 		
 		Graph zG = parser.zoneGraph(g0, set2);

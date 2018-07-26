@@ -47,7 +47,7 @@ public class ECore2GraphTransformer {
 
 		transformVertex(vertices, symbols, graph, inputModel);
 		
-		assert GraphgrammarUtil.isValidGraph(graph);
+		assert GraphgrammarUtil.isValidGraph(graph, true);
 		return graph;
 	}
 
