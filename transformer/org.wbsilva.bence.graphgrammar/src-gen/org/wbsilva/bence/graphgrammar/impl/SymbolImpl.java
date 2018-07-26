@@ -3,8 +3,16 @@
 package org.wbsilva.bence.graphgrammar.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.AbstractMap;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.NotificationImpl;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
@@ -140,41 +148,7 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 * @generated NOT
 	 */
 	public boolean equivalates(Symbol other) {
-		if (other == null) {
-			return false;
-		}
-		if (this.getName() != null) {
-			if (other.getName() == null) {
-				return false;
-			} else if (!this.getName().equals(other.getName())) {
-				return false;
-			}
-		} else if (other.getName() != null) {
-			return false;
-		}
-		if (this.getSubscript() != null) {
-			if (other.getSubscript() == null) {
-				return false;
-			} else {
-				if (!this.getSubscript().equals(other.getSubscript())) {
-					return false;
-				}
-			}
-		} else if (other.getSubscript() != null) {
-			return false;
-		}
-		if (this.getSuperscript() != null) {
-			if (other.getSuperscript() == null) {
-				return false;
-			} else {
-				if (!this.getSuperscript().equals(other.getSuperscript())) {
-					return false;
-				}
-			}
-		} else if (other.getSuperscript() != null) {
-			return false;
-		}
-		return true;
+		return this.compareTo(other) == 0;
 	}
 
 	/**
@@ -183,49 +157,79 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 * @generated NOT
 	 */
 	public int compareTo(Symbol other) {
-		assert other != null;
-		assert this.getName() != null;
-		assert other.getName() != null;
-
-		//If this.name < other.name
-		if (this.getName().compareTo(other.getName()) < 0) {
-			return -1;
-		}
-		//If this.name > other.name
-		else if (this.getName().compareTo(other.getName()) > 0) {
+		if (other == null) {
 			return 1;
 		}
-		//If this.name == other.name
-		else {
-			//this.subscript against other.subscript
-			int i;
-			for (i = 0; i < other.getSubscript().size(); i++) {
-				if (i >= this.getSubscript().size())
-					return -1;
-
-				int c = this.getSubscript().get(i).compareTo(other.getSubscript().get(i));
-				if (c != 0)
-					return c;
+		if (this.getName() != null) {
+			if (other.getName() == null) {
+				return -1;
 			}
-			if (i < this.getSubscript().size())
-				return 1;
-
-			//this.superscript against other.superscript
-			int j;
-			for (j = 0; j < other.getSuperscript().size(); j++) {
-				if (j >= this.getSuperscript().size())
-					return -1;
-
-				int c = this.getSuperscript().get(j).compareTo(other.getSuperscript().get(j));
-				if (c != 0)
-					return c;
+			//If this.name < other.name
+			else if (this.getName().compareTo(other.getName()) < 0) {
+				return -1;
 			}
-			if (j < this.getSuperscript().size())
+			//If this.name > other.name
+			else if (this.getName().compareTo(other.getName()) > 0) {
 				return 1;
+			}
+			//If this.name == other.name
+			else {
+				assert this.getSubscript().size() == this.getSuperscript().size();
+				assert other.getSubscript().size() == other.getSuperscript().size();
+				//this.subscript against other.subscript - Compare using the pairs of respective sub and superscripts
+				
+				final ArrayList<Entry<String, String>> thisPairs = new ArrayList<>(this.getSubscript().size());
+				for (int i = 0; i < this.getSubscript().size(); i++) {
+					thisPairs.add(new AbstractMap.SimpleEntry<>(this.getSubscript().get(i), this.getSuperscript().get(i)));
+				}
+				
+				final ArrayList<Entry<String, String>> otherPairs = new ArrayList<>(this.getSubscript().size());
+				for (int i = 0; i < other.getSubscript().size(); i++) {
+					otherPairs.add(new AbstractMap.SimpleEntry<>(other.getSubscript().get(i), other.getSuperscript().get(i)));
+				}
+				
+				final List<Entry<String, String>> thisPairsSorted = thisPairs.stream()
+					.distinct()
+					.sorted((a,b) -> {
+						if (a.getKey().compareTo(b.getKey()) == 0)
+							return a.getValue().compareTo(b.getValue());
+						else
+							return a.getKey().compareTo(b.getKey());
+					})
+					.collect(Collectors.toList());
+				final List<Entry<String, String>> otherPairsSorted = otherPairs.stream()
+						.distinct()
+						.sorted((a,b) -> {
+							if (a.getKey().compareTo(b.getKey()) == 0)
+								return a.getValue().compareTo(b.getValue());
+							else
+								return a.getKey().compareTo(b.getKey());
+						})
+						.collect(Collectors.toList());
 
-			//this == other
-			return 0;
+				//thisPairsSorted against otherPairsSorted
+				int j;
+				for (j = 0; j < otherPairsSorted.size(); j++) {
+					if (j >= thisPairsSorted.size())
+						return -1;
+
+					int c = thisPairsSorted.get(j).getKey().compareTo(otherPairsSorted.get(j).getKey());
+					if (c == 0) {
+						int d = thisPairsSorted.get(j).getValue().compareTo(otherPairsSorted.get(j).getValue());
+						if (d != 0)
+							return d;
+					}
+					else
+						return c;
+				}
+				if (j < thisPairsSorted.size())
+					return 1;
+			}
+		} else if (other.getName() != null) {
+			return 1;
 		}
+		//this == other
+		return 0;
 	}
 
 	/**

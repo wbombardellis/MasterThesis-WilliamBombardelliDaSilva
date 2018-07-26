@@ -48,9 +48,13 @@ class SymbolImplTest {
 		l2.setName("L");
 		
 		l1.getSubscript().add("A");
+		l1.getSuperscript().add("1");
 		l1.getSubscript().add("B");
+		l1.getSuperscript().add("1");
 		l2.getSubscript().add("A");
+		l2.getSuperscript().add("1");
 		l2.getSubscript().add("B");
+		l2.getSuperscript().add("1");
 		
 		assertTrue(l1.equivalates(l2));
 	}
@@ -84,8 +88,11 @@ class SymbolImplTest {
 		l2.setName("L");
 		
 		l1.getSubscript().add("A");
+		l1.getSuperscript().add("1");
 		l1.getSubscript().add("B");
+		l1.getSuperscript().add("1");
 		l2.getSubscript().add("A");
+		l2.getSuperscript().add("1");
 		
 		assertFalse(l1.equivalates(l2));
 	}
@@ -99,7 +106,9 @@ class SymbolImplTest {
 		l2.setName("L");
 		
 		l1.getSubscript().add("A");
+		l1.getSuperscript().add("1");
 		l2.getSubscript().add("B");
+		l2.getSuperscript().add("A");
 		
 		assertFalse(l1.equivalates(l2));
 	}
@@ -174,6 +183,26 @@ class SymbolImplTest {
 		l2.getSuperscript().add("2");
 		
 		assertEquals(1, l1.compareTo(l2));
+	}
+	
+	@Test
+	void testCompareToEqualsDifferentOrderMany() {
+		Symbol l1 = GraphgrammarFactory.eINSTANCE.createSymbol();
+		Symbol l2 = GraphgrammarFactory.eINSTANCE.createSymbol();
+		
+		l1.setName("L");
+		l2.setName("L");
+		
+		l1.getSubscript().add("A");
+		l1.getSuperscript().add("2");
+		l1.getSubscript().add("B");
+		l1.getSuperscript().add("1");
+		l2.getSubscript().add("B");
+		l2.getSuperscript().add("1");
+		l2.getSubscript().add("A");
+		l2.getSuperscript().add("2");
+		
+		assertEquals(0, l1.compareTo(l2));
 	}
 	
 	@Test
