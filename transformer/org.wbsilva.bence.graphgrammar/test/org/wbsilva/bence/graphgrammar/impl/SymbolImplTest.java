@@ -64,9 +64,13 @@ class SymbolImplTest {
 		l2.setName("L");
 		
 		l1.getSubscript().add("A");
+		l1.getSuperscript().add("1");
 		l1.getSubscript().add("B");
-		l2.getSubscript().add("B");
+		l1.getSuperscript().add("2");
 		l2.getSubscript().add("A");
+		l2.getSuperscript().add("1");
+		l2.getSubscript().add("B");
+		l2.getSuperscript().add("2");
 		
 		assertTrue(l1.equivalates(l2));
 	}
@@ -96,6 +100,22 @@ class SymbolImplTest {
 		
 		l1.getSubscript().add("A");
 		l2.getSubscript().add("B");
+		
+		assertFalse(l1.equivalates(l2));
+	}
+	
+	@Test
+	void testEquivalatesFalseWithSuperscriptsDifferent() {
+		Symbol l1 = GraphgrammarFactory.eINSTANCE.createSymbol();
+		Symbol l2 = GraphgrammarFactory.eINSTANCE.createSymbol();
+		
+		l1.setName("L");
+		l2.setName("L");
+		
+		l1.getSubscript().add("A");
+		l1.getSuperscript().add("1");
+		l2.getSubscript().add("A");
+		l1.getSuperscript().add("2");
 		
 		assertFalse(l1.equivalates(l2));
 	}

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.wbsilva.bence.graphgrammar.Symbol#getName <em>Name</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.Symbol#getSubscript <em>Subscript</em>}</li>
+ *   <li>{@link org.wbsilva.bence.graphgrammar.Symbol#getSuperscript <em>Superscript</em>}</li>
  * </ul>
  *
  * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getSymbol()
@@ -65,10 +66,26 @@ public interface Symbol extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subscript</em>' attribute list.
 	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getSymbol_Subscript()
-	 * @model ordered="false"
+	 * @model
 	 * @generated
 	 */
 	EList<String> getSubscript();
+
+	/**
+	 * Returns the value of the '<em><b>Superscript</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Superscript</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Superscript</em>' attribute list.
+	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getSymbol_Superscript()
+	 * @model
+	 * @generated
+	 */
+	EList<String> getSuperscript();
 
 	/**
 	 * <!-- begin-user-doc -->

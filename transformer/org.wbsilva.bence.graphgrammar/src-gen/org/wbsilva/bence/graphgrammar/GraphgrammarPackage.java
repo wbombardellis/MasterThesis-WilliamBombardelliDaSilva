@@ -369,13 +369,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int SYMBOL__SUBSCRIPT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Superscript</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL__SUPERSCRIPT = 2;
+
+	/**
 	 * The number of structural features of the '<em>Symbol</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_FEATURE_COUNT = 2;
+	int SYMBOL_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Equivalates</em>' operation.
@@ -1434,6 +1443,17 @@ public interface GraphgrammarPackage extends EPackage {
 	EAttribute getSymbol_Subscript();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link org.wbsilva.bence.graphgrammar.Symbol#getSuperscript <em>Superscript</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Superscript</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.Symbol#getSuperscript()
+	 * @see #getSymbol()
+	 * @generated
+	 */
+	EAttribute getSymbol_Superscript();
+
+	/**
 	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Symbol#equivalates(org.wbsilva.bence.graphgrammar.Symbol) <em>Equivalates</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2286,6 +2306,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SYMBOL__SUBSCRIPT = eINSTANCE.getSymbol_Subscript();
+		/**
+		 * The meta object literal for the '<em><b>Superscript</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL__SUPERSCRIPT = eINSTANCE.getSymbol_Superscript();
 		/**
 		 * The meta object literal for the '<em><b>Equivalates</b></em>' operation.
 		 * <!-- begin-user-doc -->

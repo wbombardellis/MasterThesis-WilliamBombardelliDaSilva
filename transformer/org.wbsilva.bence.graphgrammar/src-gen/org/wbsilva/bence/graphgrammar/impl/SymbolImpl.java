@@ -27,6 +27,7 @@ import org.wbsilva.bence.graphgrammar.Symbol;
  * <ul>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.SymbolImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.SymbolImpl#getSubscript <em>Subscript</em>}</li>
+ *   <li>{@link org.wbsilva.bence.graphgrammar.impl.SymbolImpl#getSuperscript <em>Superscript</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,6 +61,16 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	 * @ordered
 	 */
 	protected EList<String> subscript;
+
+	/**
+	 * The cached value of the '{@link #getSuperscript() <em>Superscript</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSuperscript()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> superscript;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,6 +127,18 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<String> getSuperscript() {
+		if (superscript == null) {
+			superscript = new EDataTypeUniqueEList<String>(String.class, this, GraphgrammarPackage.SYMBOL__SUPERSCRIPT);
+		}
+		return superscript;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public boolean equivalates(Symbol other) {
@@ -135,13 +158,22 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 			if (other.getSubscript() == null) {
 				return false;
 			} else {
-				final HashSet<String> thisSet = new HashSet<>(this.getSubscript());
-				final HashSet<String> otherSet = new HashSet<>(other.getSubscript());
-				if (!thisSet.equals(otherSet)) {
+				if (!this.getSubscript().equals(other.getSubscript())) {
 					return false;
 				}
 			}
 		} else if (other.getSubscript() != null) {
+			return false;
+		}
+		if (this.getSuperscript() != null) {
+			if (other.getSuperscript() == null) {
+				return false;
+			} else {
+				if (!this.getSuperscript().equals(other.getSuperscript())) {
+					return false;
+				}
+			}
+		} else if (other.getSuperscript() != null) {
 			return false;
 		}
 		return true;
@@ -159,6 +191,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 			return getName();
 		case GraphgrammarPackage.SYMBOL__SUBSCRIPT:
 			return getSubscript();
+		case GraphgrammarPackage.SYMBOL__SUPERSCRIPT:
+			return getSuperscript();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -179,6 +213,10 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 			getSubscript().clear();
 			getSubscript().addAll((Collection<? extends String>) newValue);
 			return;
+		case GraphgrammarPackage.SYMBOL__SUPERSCRIPT:
+			getSuperscript().clear();
+			getSuperscript().addAll((Collection<? extends String>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -197,6 +235,9 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 		case GraphgrammarPackage.SYMBOL__SUBSCRIPT:
 			getSubscript().clear();
 			return;
+		case GraphgrammarPackage.SYMBOL__SUPERSCRIPT:
+			getSuperscript().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -213,6 +254,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case GraphgrammarPackage.SYMBOL__SUBSCRIPT:
 			return subscript != null && !subscript.isEmpty();
+		case GraphgrammarPackage.SYMBOL__SUPERSCRIPT:
+			return superscript != null && !superscript.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -246,6 +289,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 		result.append(name);
 		result.append(", subscript: ");
 		result.append(subscript);
+		result.append(", superscript: ");
+		result.append(superscript);
 		result.append(')');
 		return result.toString();
 	}
