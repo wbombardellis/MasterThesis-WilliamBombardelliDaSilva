@@ -1,11 +1,16 @@
 package org.wbsilva.bence.transformer;
 
+import java.util.AbstractMap;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.stream.Collectors;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.wbsilva.bence.graphgrammar.Edge;
@@ -13,6 +18,8 @@ import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
+import org.wbsilva.bence.graphgrammar.TripleGrammar;
+import org.wbsilva.bence.graphgrammar.TripleRule;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 import org.wbsilva.bence.graphgrammar.util.NPUtil;
@@ -22,32 +29,51 @@ import org.wbsilva.bence.graphgrammar.util.SymbolSet;
 /**
  * This class implements a neighborhood preserving (NP) normalizer, that is able to transform
  * any valid boundary grammar into an equivalent valid boundary neighborhood preserving grammar.
+ * Moreover, it also normalizes the correspondent valid boundary triple graph grammar (TGG) to make it 
+ * a valid boundary TGG with a neighborhood preserving input part.
+ * 
  * @author wbombardellis
  *
  */
 public class NPNormalizer {
+	
+	static final Logger logger = LogManager.getLogger(NPNormalizer.class);
 
 	/**
-	 * Transform {@code grammar} into its neighborhood preserving normal form.
-	 * This method possibly modifies the original grammar adding and removing rules and symbols to the alphabet.
+	 * Transform {@code grammar} into its neighborhood preserving (NP) normal form.
+	 * Moreover plugs correctly the fixed NP grammar into its corresponding triple grammar {@code tripleGrammar}
+	 * Where it is plugged depends on the value of {@code forward}. If true, then it is plugged in the source part,
+	 * otherwise in the target part.
+	 * Attention: This method possibly modifies the original grammar and triple grammar 
+	 * adding and removing rules and symbols to the alphabet.
 	 * 
-	 * @param grammar		A valid boundary grammar
-	 * @see GraphgrammarUtil#getNonNPRules(Grammar)
+	 * @param tripleGrammar		A valid triple graph grammar
+	 * @param grammar			A valid boundary grammar that is part (source or target) of the {@code tripleGrammar}
+	 * @param forward			Signalizes in which part of the {@code tripleGrammar} {@code grammar} is,
+	 * 							If true, then in the source part, otherwise in the target part
+	 * @see NPUtil#getNonNPRules(Grammar)
 	 */
-	public void normalize(final Grammar grammar){	
+	public void normalize(final TripleGrammar tripleGrammar, final Grammar grammar, final boolean forward){	
+		assert GraphgrammarUtil.isValidTripleGrammar(tripleGrammar);
 		assert GraphgrammarUtil.isValidGrammar(grammar);
 		assert GraphgrammarUtil.isBoundaryGrammar(grammar);
 		assert GraphgrammarUtil.isSimpleLabeledGrammar(grammar);
+		
+		logger.debug(String.format("Starting neighborhood preserving (NP) normalization for grammar %s", grammar.getName()));
 
 		Map<Rule, SymbolMap<SymbolSet>> nonNPRulesContext = NPUtil.getNonNPRules(grammar);
 		while (!nonNPRulesContext.isEmpty()) {
 			assert nonNPRulesContext.size() <= grammar.getRules().size();
 			
-			final Set<Rule> newRules = new HashSet<Rule>(2);
+			logger.debug(String.format("Found %d non NP rules. Fixing it", nonNPRulesContext.size()));
+			
 			//For each non neighborhood preserving rule A->R
 			for (Entry<Rule, SymbolMap<SymbolSet>> rEntry : nonNPRulesContext.entrySet()) {
 				final SymbolMap<SymbolSet> missingContext = rEntry.getValue();
 				final Rule nonNPRule = rEntry.getKey();
+				
+				final Map<Rule, Map<Rule, Map<String, Vertex>>> newRules = new HashMap<>();
+				logger.debug(String.format("Fixing non NP rule [id= %s, name= %s]", nonNPRule.getId(), nonNPRule.getName()));
 				
 				//For each vertex in the grammar with label A
 				for (Rule rule : grammar.getRules()) {
@@ -55,7 +81,8 @@ public class NPNormalizer {
 						if (v.getLabel().equivalates(nonNPRule.getLhs())) {
 							
 							//Fix the rule where this vertex occurs for this missing context
-							newRules.addAll(fixHostRule(rule, v, missingContext));
+							final Map<Rule, Map<String, Vertex>> newHosts = fixHostRule(rule, v, missingContext);
+							newRules.put(rule, newHosts);
 						}
 					}
 				}
@@ -63,25 +90,94 @@ public class NPNormalizer {
 				for (Entry<Symbol, SymbolSet> cEntry : missingContext.entrySet()) {
 					for (Symbol ignoringLabel : cEntry.getValue()) {
 						//Fix the actual non neighborhood preserving rule
-						newRules.add(createNewGuestRule(nonNPRule, cEntry.getKey(), ignoringLabel));
+						final Entry<Rule, Map<String, Vertex>> newGuest = createNewGuestRule(nonNPRule, cEntry.getKey(), ignoringLabel);
+						
+						final Map<Rule, Map<String, Vertex>> nREntry = newRules.get(nonNPRule);
+						if (nREntry == null) {
+							final Map<Rule, Map<String, Vertex>> m = new HashMap<>();
+							m.put(newGuest.getKey(), newGuest.getValue());
+							newRules.put(nonNPRule, m);
+						}
+						else
+							nREntry.put(newGuest.getKey(), newGuest.getValue());
 					}
 				}
-			}
-			
-			//Remove non neighborhood preserving rules
-			grammar.getRules().removeAll(nonNPRulesContext.keySet());
-			grammar.getRules().addAll(newRules);
-			for (Rule r : newRules) {
-				if (!grammar.getNonterminals().stream().anyMatch(n -> n.equivalates(r.getLhs()))){
-					grammar.getNonterminals().add(EcoreUtil.copy(r.getLhs()));
-					grammar.getAlphabet().add(EcoreUtil.copy(r.getLhs()));
+
+				//Remove non neighborhood preserving rule from grammars
+				grammar.getRules().remove(nonNPRule);
+				//Add new fixed rules to the grammar
+				final Set<Rule> newRs = newRules.values().stream()
+						.flatMap(m -> m.keySet().stream())
+						.collect(Collectors.toSet());
+				grammar.getRules().addAll(EcoreUtil.copyAll(newRs));
+				for (Rule r : newRs) {
+					if (!grammar.getNonterminals().stream().anyMatch(n -> n.equivalates(r.getLhs()))){
+						grammar.getNonterminals().add(EcoreUtil.copy(r.getLhs()));
+						grammar.getAlphabet().add(EcoreUtil.copy(r.getLhs()));
+					}
 				}
+				assert GraphgrammarUtil.isValidGrammar(grammar);
+				
+				//Add new fixed rules to the triple grammar
+				//For each old/ modified rule
+				for (Entry<Rule,Map<Rule,Map<String,Vertex>>> oREntry : newRules.entrySet()) {
+					final String oldId = oREntry.getKey().getId();
+					final TripleRule oldTR = tripleGrammar.getTripleRules().stream()
+						.filter(tr -> forward ? tr.getSource().getId()==oldId : tr.getTarget().getId()==oldId)
+						.findAny()
+						.orElse(null);
+					assert oldTR != null;
+					
+					//For each new/ fixed rule of this old rule
+					for (Entry<Rule,Map<String,Vertex>> nREntry : oREntry.getValue().entrySet()) {
+						//Create respective new triple rule
+						final TripleRule newTR = EcoreUtil.copy(oldTR);
+						final Rule newR = nREntry.getKey();
+						
+						//With fixed morphism
+						final Map<String, Vertex> oldId2Vertex = nREntry.getValue();
+						for (Vertex cV : newTR.getCorr().getRhs().getVertices()) {
+							final Vertex newRV = forward ? oldId2Vertex.get(newTR.getMs().get(cV).getId())
+									: oldId2Vertex.get(newTR.getMt().get(cV).getId());
+							assert newRV != null && newR.getRhs().getVertices().contains(newRV);
+							
+							if (forward)
+								newTR.getMs().put(cV, newRV);
+							else 
+								newTR.getMt().put(cV, newRV);
+						}
+						//Fixed graph
+						if (forward)
+							newTR.setSource(newR);
+						else 
+							newTR.setTarget(newR);
+						//Fixed Ids
+						newTR.getSource().setId(newR.getId());
+						newTR.getCorr().setId(newR.getId());
+						newTR.getTarget().setId(newR.getId());
+						//Add it to the triple grammar
+						tripleGrammar.getTripleRules().add(newTR);
+						
+						if (!tripleGrammar.getNonterminals().stream().anyMatch(n -> n.equivalates(newR.getLhs()))){
+							tripleGrammar.getNonterminals().add(EcoreUtil.copy(newR.getLhs()));
+							tripleGrammar.getAlphabet().add(EcoreUtil.copy(newR.getLhs()));
+						}
+					}
+				}
+				//Remove non NP rule from triple grammar
+				tripleGrammar.getTripleRules()
+					.removeIf(tr -> forward ? tr.getSource().getId().equals(nonNPRule.getId()) 
+							: tr.getTarget().getId().equals(nonNPRule.getId()));
+
+				assert GraphgrammarUtil.isValidTripleGrammar(tripleGrammar);
+				
+				logger.debug(String.format("%d new rules created for non NP rule [id= %s, name= %s]", newRules.size(), nonNPRule.getId(), nonNPRule.getName()));
 			}
-			assert GraphgrammarUtil.isValidGrammar(grammar);
-			
 			//Get new non neighborhood preserving rules
 			nonNPRulesContext = NPUtil.getNonNPRules(grammar);
 		}
+		
+		logger.debug(String.format("NP normalization for grammar %s finished with success", grammar.getName()));
 		
 		assert GraphgrammarUtil.isValidGrammar(grammar);
 		assert GraphgrammarUtil.isBoundaryGrammar(grammar);
@@ -96,9 +192,11 @@ public class NPNormalizer {
 	 * @param vertex	The vertex which to change its context, to fix the rule 
 	 * @param context	The missing context of the {@code vertex}'s label
 	 * @return			One new rule for each missing context removal from {@code vertex}
+	 * 					mapped to the respective map between the old vertices's id to the new vertices
+	 * 					of its RHS
 	 * @see NPNormalizer#createNewHostRule(Rule, Vertex, Symbol, Edge, Symbol)
 	 */
-	private Set<Rule> fixHostRule(final Rule rule, final Vertex vertex, final SymbolMap<SymbolSet> context) {
+	private Map<Rule, Map<String, Vertex>> fixHostRule(final Rule rule, final Vertex vertex, final SymbolMap<SymbolSet> context) {
 		assert rule.getRhs().getVertices().contains(vertex);
 		
 		//Remember of what is still to be processed 
@@ -109,7 +207,7 @@ public class NPNormalizer {
 		
 		//For each edge of this vertex
 		final List<Edge> vEdges = rule.getRhs().edges(vertex);
-		final Set<Rule> newFixedRules = new HashSet<Rule>(4);
+		final Map<Rule, Map<String, Vertex>> newFixedRules = new HashMap<>();
 		for (Edge e : vEdges) {
 			final Symbol ignoredLabel = e.getFrom() == vertex ? 
 					e.getTo().getLabel() : e.getFrom().getLabel();
@@ -118,7 +216,8 @@ public class NPNormalizer {
 			final SymbolSet missingLabels = context.get(e.getLabel());
 			if (missingLabels != null && missingLabels.contains(ignoredLabel)) {
 				//New fix
-				newFixedRules.add(createNewHostRule(rule, vertex, ignoredLabel, e));
+				final Entry<Rule, Map<String, Vertex>> newEntry = createNewHostRule(rule, vertex, ignoredLabel, e);
+				newFixedRules.put(newEntry.getKey(), newEntry.getValue());
 				//Context processed
 				toProccessContext.get(e.getLabel()).remove(ignoredLabel);
 			}
@@ -135,30 +234,32 @@ public class NPNormalizer {
 					final SymbolSet missIntersection = missingLabels.intersect(embeds.getVertexLabels());
 					
 					for (Symbol ignoredLabel : missIntersection) {
-						newFixedRules.add(createNewHostRule(rule, vertex, ignoredLabel, embeds.getEdgeLabel()));
+						final Entry<Rule, Map<String, Vertex>> newEntry = createNewHostRule(rule, vertex, ignoredLabel, embeds.getEdgeLabel()); 
+						newFixedRules.put(newEntry.getKey(), newEntry.getValue());
 					}
 				}
 			}
 		}
+		assert !newFixedRules.isEmpty();
 		
 		return newFixedRules;
 	}
 	
 	/**
-	 * Same method as {@link NPNormalizer#createNewRules(Rule, Rule, Vertex, Symbol, Edge, Symbol)},
+	 * Same method as {@link NPNormalizer#createNewHostRule(Rule, Vertex, Symbol, Edge, Symbol)},
 	 * with the difference that it sends only an symbol to it, without an edge.
 	 * @see NPNormalizer#createNewHostRule(Rule, Vertex, Symbol, Edge, Symbol)
 	 */
-	Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol vertexLabel, final Symbol edgeLabel) {
+	Entry<Rule,Map<String, Vertex>> createNewHostRule(final Rule rule, final Vertex vertex, final Symbol vertexLabel, final Symbol edgeLabel) {
 		return createNewHostRule(rule, vertex, vertexLabel, null, edgeLabel);
 	}
 	
 	/**
-	 * Same method as {@link NPNormalizer#createNewRules(Rule, Rule, Vertex, Symbol, Edge, Symbol)},
+	 * Same method as {@link NPNormalizer#createNewHostRule(Rule, Vertex, Symbol, Edge, Symbol)},
 	 * with the difference that it sends only an edge to it, without sending an extra symbol.
 	 * @see NPNormalizer#createNewHostRule(Rule, Vertex, Symbol, Edge, Symbol)
 	 */
-	Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol vertexLabel, final Edge edge) {
+	Entry<Rule,Map<String, Vertex>> createNewHostRule(final Rule rule, final Vertex vertex, final Symbol vertexLabel, final Edge edge) {
 		return createNewHostRule(rule, vertex, vertexLabel, edge, null);
 	}
 	
@@ -175,9 +276,11 @@ public class NPNormalizer {
 	 * 						adjacent to {@code vertex}, to be removed in the new rule
 	 * @param edgeLabel		The part of the missing context corresponding to the edge
 	 * @return				A new rule corresponding to the modification of {@code rule} without the missing context
-	 * 						on {@code vertex} with {@code edgeLabel} and {@code vertexLabel}
+	 * 						on {@code vertex} with {@code edgeLabel} and {@code vertexLabel} accompanied of the 
+	 * 						respective map between the old vertices's id to the new vertices of its RHS
+	 * @see NPNormalizer#createNewGuestRule(Rule, Symbol, Symbol)
 	 */
-	private Rule createNewHostRule(final Rule rule, final Vertex vertex, final Symbol vertexLabel, final Edge edge, Symbol edgeLabel) {
+	private Entry<Rule, Map<String, Vertex>> createNewHostRule(final Rule rule, final Vertex vertex, final Symbol vertexLabel, final Edge edge, Symbol edgeLabel) {
 		assert rule.getRhs().getVertices().contains(vertex);
 		assert edge == null || rule.getRhs().getEdges().contains(edge);
 		assert edge == null || edge.getFrom().getLabel().equivalates(vertexLabel) || edge.getTo().getLabel().equivalates(vertexLabel);
@@ -188,7 +291,8 @@ public class NPNormalizer {
 				.findAny()
 				.orElse(null);
 		assert v != null;
-		GraphgrammarUtil.ensureUniqueIds(modifiedRule.getRhs());
+		
+		final Map<String, Vertex> old2newMap = GraphgrammarUtil.ensureUniqueIds(modifiedRule.getRhs());
 		
 		if (edge != null) {
 			//Remove the edge
@@ -215,7 +319,7 @@ public class NPNormalizer {
 		
 		assert GraphgrammarUtil.isValidRule(modifiedRule);
 		
-		return modifiedRule;
+		return new AbstractMap.SimpleEntry<>(modifiedRule, old2newMap);
 	}
 	
 	/**
@@ -227,9 +331,12 @@ public class NPNormalizer {
 	 * @param edgeLabel		The part of the missing context corresponding to the edge
 	 * @param vertexLabel	The part of the missing context corresponding to the vertex
 	 * @return				A new rule corresponding to the modification of {@code nonNPRule} 
-	 * 						with modified LHS and without the missing context {@code edgeLabel} and {@code vertexLabel}
+	 * 						with modified LHS and without the missing context {@code edgeLabel} 
+	 * 						and {@code vertexLabel} accompanied of the respective map between 
+	 * 						the old vertices's id to the new vertices of its RHS
+	 * @see NPNormalizer#createNewHostRule(Rule, Vertex, Symbol, Edge, Symbol)
 	 */
-	Rule createNewGuestRule(final Rule nonNPRule, final Symbol edgeLabel, final Symbol vertexLabel){		
+	Entry<Rule, Map<String, Vertex>> createNewGuestRule(final Rule nonNPRule, final Symbol edgeLabel, final Symbol vertexLabel){		
 		//Add new neighborhood preserving rule for the new label
 		final Rule newRule = EcoreUtil.copy(nonNPRule);
 		newRule.getLhs().getSuperscript().add(edgeLabel.getName());
@@ -237,7 +344,7 @@ public class NPNormalizer {
 		
 		newRule.setId(nonNPRule.getId().concat("___("+newRule.getLhs()+")"));
 		
-		GraphgrammarUtil.ensureUniqueIds(newRule.getRhs());
+		final Map<String, Vertex> old2newMap = GraphgrammarUtil.ensureUniqueIds(newRule.getRhs());
 		
 		final HashSet<Vertex> embedRemoval = new HashSet<>();
 		//Remove embeddings to make it surely neighborhood preserving
@@ -260,6 +367,6 @@ public class NPNormalizer {
 		
 		assert GraphgrammarUtil.isValidRule(newRule);
 		
-		return newRule;
+		return new AbstractMap.SimpleEntry<>(newRule, old2newMap);
 	}
 }

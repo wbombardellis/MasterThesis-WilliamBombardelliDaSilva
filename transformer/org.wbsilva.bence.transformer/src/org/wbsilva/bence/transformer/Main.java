@@ -179,8 +179,8 @@ public class Main {
 			final Graph inputGraph = new ECore2GraphTransformer().transform(inputModel);
 			
 			//The actual TGG-driven transformation
-			final BeNCETransformer transformer = new BeNCETransformer(tripleGrammar);
-			final Optional<TransformationResult> result = transformer.transform(inputGraph, forward);
+			final BeNCETransformer transformer = new BeNCETransformer(tripleGrammar, forward);
+			final Optional<TransformationResult> result = transformer.transform(inputGraph);
 			
 			//Save generated triple graph to file
 			if (result.isPresent()) {

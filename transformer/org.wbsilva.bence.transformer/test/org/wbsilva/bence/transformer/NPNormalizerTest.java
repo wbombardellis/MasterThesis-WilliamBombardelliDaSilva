@@ -3,6 +3,8 @@ package org.wbsilva.bence.transformer;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -231,20 +233,27 @@ class NPNormalizerTest {
 	
 	@Test
 	void testCreateNewHostRuleWithOneEdge() {
-		Rule mr0 = npn.createNewHostRule(r0, v1, ln, e0_1);
+		Entry<Rule, Map<String, Vertex>> entry = npn.createNewHostRule(r0, v1, ln, e0_1);
 		
+		Rule mr0 = entry.getKey();
 		assertTrue(mr0.getLhs().equivalates(r0.getLhs()));
 		assertEquals(2, mr0.getRhs().getVertices().size());
 		assertEquals(0, mr0.getRhs().getEdges().size());
 		assertEquals(0, mr0.getEmbedding().size());
 		assertTrue(mr0.getRhs().getVertices().stream()
 				.allMatch(v -> v.getLabel().equivalates(lA_n1) || v.getLabel().equivalates(ln)));
+		
+		assertEquals(2, entry.getValue().size());
+		assertTrue(mr0.getRhs().getVertices().contains(entry.getValue().get("v0")));
+		assertTrue(mr0.getRhs().getVertices().contains(entry.getValue().get("v1")));
 	}
 	
 	@Test
 	void createNewGuestRuleWithOneEdge(){
 		Rule cr1 = EcoreUtil.copy(r1);
-		Rule nr1 = npn.createNewGuestRule(cr1, e0_1.getLabel(), ln);
+		Entry<Rule, Map<String, Vertex>> entry = npn.createNewGuestRule(cr1, e0_1.getLabel(), ln);
+		
+		Rule nr1 = entry.getKey(); 
 		assertTrue(EcoreUtil.equals(r1, cr1));
 		assertTrue(nr1.getLhs().getName().equals("A"));
 		assertTrue(nr1.getLhs().getSuperscript().get(0).equals(e0_1.getLabel().getName()));
@@ -253,12 +262,17 @@ class NPNormalizerTest {
 		assertEquals(0, nr1.getRhs().getEdges().size());
 		assertEquals(0, nr1.getEmbedding().size());
 		assertTrue(nr1.getRhs().getVertices().get(0).getLabel().equivalates(lm));
+		
+		assertEquals(1, entry.getValue().size());
+		assertTrue(nr1.getRhs().getVertices().contains(entry.getValue().get("v2")));
 	}
 	
 	@Test
 	void testCreateNewHostRuleWithEmbedding() {
 		
-		Rule mr2 = npn.createNewHostRule(r2, v4, ln, l1);
+		Entry<Rule, Map<String, Vertex>> entry = npn.createNewHostRule(r2, v4, ln, l1);
+		
+		Rule mr2 = entry.getKey(); 
 		assertTrue(mr2.getLhs().equivalates(r2.getLhs()));
 		assertEquals(2, mr2.getRhs().getVertices().size());
 		assertEquals(2, mr2.getRhs().getEdges().size());
@@ -267,12 +281,18 @@ class NPNormalizerTest {
 							.allMatch(e -> e.getValue().size() == 2));
 		assertTrue(mr2.getRhs().getVertices().stream()
 				.allMatch(v -> v.getLabel().equivalates(lB_n1) || v.getLabel().equivalates(lm)));
+		
+		assertEquals(2, entry.getValue().size());
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v3")));
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v4")));
 	}
 	
 	@Test
 	void testCreateNewGuestRuleWithEmbedding() {
 		Rule cr3 = EcoreUtil.copy(r3);
-		Rule nr3 = npn.createNewGuestRule(cr3, l1, ln);
+		Entry<Rule, Map<String, Vertex>> entry = npn.createNewGuestRule(cr3, l1, ln);
+		
+		Rule nr3 = entry.getKey(); 
 		assertTrue(EcoreUtil.equals(r3, cr3));
 		assertTrue(nr3.getLhs().getName().equals("B"));
 		assertTrue(nr3.getLhs().getSuperscript().get(0).equals(l1.getName()));
@@ -281,11 +301,16 @@ class NPNormalizerTest {
 		assertEquals(0, nr3.getRhs().getEdges().size());
 		assertEquals(0, nr3.getEmbedding().size());
 		assertTrue(nr3.getRhs().getVertices().get(0).getLabel().equivalates(lC));
+		
+		assertEquals(1, entry.getValue().size());
+		assertTrue(nr3.getRhs().getVertices().contains(entry.getValue().get("v5")));
 	}
 	
 	@Test
 	void testCreateNewHostRuleWithTwoEdges() {
-		Rule mr2 = npn.createNewHostRule(r2, v4, lm, e4_3);
+		Entry<Rule, Map<String, Vertex>> entry = npn.createNewHostRule(r2, v4, lm, e4_3);
+		
+		Rule mr2 = entry.getKey();
 		assertTrue(mr2.getLhs().equivalates(r2.getLhs()));
 		assertEquals(2, mr2.getRhs().getVertices().size());
 		assertEquals(1, mr2.getRhs().getEdges().size());
@@ -298,12 +323,18 @@ class NPNormalizerTest {
 							.allMatch(e -> e.getValue().size() == 2));
 		assertTrue(mr2.getRhs().getVertices().stream()
 				.allMatch(v -> v.getLabel().equivalates(lB_m2) || v.getLabel().equivalates(lm)));
+		
+		assertEquals(2, entry.getValue().size());
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v3")));
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v4")));
 	}
 
 	@Test
 	void testCreateNewGuestRuleWithTwoEdges() {
 		Rule cr4 = EcoreUtil.copy(r4);
-		Rule nr4 = npn.createNewGuestRule(cr4, e4_3.getLabel(), lm);
+		Entry<Rule, Map<String, Vertex>> entry = npn.createNewGuestRule(cr4, e4_3.getLabel(), lm);
+		
+		Rule nr4 = entry.getKey();
 		assertTrue(EcoreUtil.equals(r4, cr4));
 		assertTrue(nr4.getLhs().getName().equals("B"));
 		assertTrue(nr4.getLhs().getSubscript().get(0).equals("m"));
@@ -322,10 +353,10 @@ class NPNormalizerTest {
 									.allMatch(ssP -> !ssP.getEdgeLabel().equivalates(l2))));
 		assertTrue(nr4.getRhs().getVertices().stream()
 							.allMatch(v -> v.getLabel().equivalates(lD) || v.getLabel().equivalates(lE)));
+		
+		assertEquals(2, entry.getValue().size());
+		assertTrue(nr4.getRhs().getVertices().contains(entry.getValue().get("v6")));
+		assertTrue(nr4.getRhs().getVertices().contains(entry.getValue().get("v7")));
 	}
 	
-	@Test
-	void testNormalize() {
-		npn.normalize(gg0);
-	}
 }

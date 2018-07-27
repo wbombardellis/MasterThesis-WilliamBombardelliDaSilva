@@ -19,7 +19,8 @@ import org.wbsilva.bence.transformer.parser.BeNCEParser;
 
 class BeNCETransformerTest {
 
-	private static BeNCETransformer transformer;
+	private static BeNCETransformer ftransformer;
+	private static BeNCETransformer btransformer;
 	
 	static private TripleGrammar tgg0 = GraphgrammarFactory.eINSTANCE.createTripleGrammar();
 
@@ -29,11 +30,16 @@ class BeNCETransformerTest {
 	static void init() {
 		Symbol i = GraphgrammarFactory.eINSTANCE.createSymbol();
 		i.setName("S");
+		Symbol t = GraphgrammarFactory.eINSTANCE.createSymbol();
+		t.setName("t");
 		tgg0.getAlphabet().add(i);
+		tgg0.getAlphabet().add(t);
 		tgg0.getNonterminals().add(i);
+		tgg0.getTerminals().add(t);
 		tgg0.setInitial(i);
 		
-		transformer = new BeNCETransformer(tgg0);
+		ftransformer = new BeNCETransformer(tgg0, true);
+		btransformer = new BeNCETransformer(tgg0, false);
 		
 		d0 = GraphgrammarFactory.eINSTANCE.createDerivation();
 		
@@ -53,7 +59,7 @@ class BeNCETransformerTest {
 	@Test
 	void testCreateInitialTripleGraphForward() {
 		
-		TripleGraph tgg = transformer.createInitialTripleGraph(d0, true);
+		TripleGraph tgg = ftransformer.createInitialTripleGraph(d0);
 		
 		assertTrue(GraphgrammarUtil.isValidTripleGraph(tgg));
 		
@@ -74,7 +80,8 @@ class BeNCETransformerTest {
 	@Test
 	void testCreateInitialTripleGraphBackward() {
 		
-		TripleGraph tgg = transformer.createInitialTripleGraph(d0, false);
+		
+		TripleGraph tgg = btransformer.createInitialTripleGraph(d0);
 		
 		assertTrue(GraphgrammarUtil.isValidTripleGraph(tgg));
 		
