@@ -353,7 +353,7 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 						this.getSuperscript().stream().reduce((a, b) -> a.concat(", ").concat(b)).orElse(""));
 
 		final String subS = this.getSubscript().isEmpty() ? ""
-				: String.format("^{%s}",
+				: String.format("_{%s}",
 						this.getSubscript().stream().reduce((a, b) -> a.concat(", ").concat(b)).orElse(""));
 
 		return this.getName() + superS + subS;
