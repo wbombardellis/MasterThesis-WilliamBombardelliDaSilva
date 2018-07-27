@@ -15,6 +15,7 @@ import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
+import org.wbsilva.bence.graphgrammar.util.NPUtil;
 import org.wbsilva.bence.graphgrammar.util.SymbolMap;
 import org.wbsilva.bence.graphgrammar.util.SymbolSet;
 
@@ -36,8 +37,9 @@ public class NPNormalizer {
 	public void normalize(final Grammar grammar){	
 		assert GraphgrammarUtil.isValidGrammar(grammar);
 		assert GraphgrammarUtil.isBoundaryGrammar(grammar);
+		assert GraphgrammarUtil.isSimpleLabeledGrammar(grammar);
 
-		Map<Rule, SymbolMap<SymbolSet>> nonNPRulesContext = GraphgrammarUtil.getNonNPRules(grammar);
+		Map<Rule, SymbolMap<SymbolSet>> nonNPRulesContext = NPUtil.getNonNPRules(grammar);
 		while (!nonNPRulesContext.isEmpty()) {
 			assert nonNPRulesContext.size() <= grammar.getRules().size();
 			
@@ -78,8 +80,12 @@ public class NPNormalizer {
 			assert GraphgrammarUtil.isValidGrammar(grammar);
 			
 			//Get new non neighborhood preserving rules
-			nonNPRulesContext = GraphgrammarUtil.getNonNPRules(grammar);
+			nonNPRulesContext = NPUtil.getNonNPRules(grammar);
 		}
+		
+		assert GraphgrammarUtil.isValidGrammar(grammar);
+		assert GraphgrammarUtil.isBoundaryGrammar(grammar);
+		assert NPUtil.isNeighborhoodPreserving(grammar);
 	}
 	
 	/**

@@ -196,6 +196,13 @@ public class GraphgrammarUtil {
 		if (ini == null || ini.getName() == null || ini.getName().isEmpty() || !n.contains(ini))
 			return false;
 		
+		if (t.stream().anyMatch(l -> !l.getSubscript().isEmpty() || !l.getSuperscript().isEmpty()))
+			return false;
+		
+		if (n.stream().anyMatch(l -> l.getSubscript().stream().anyMatch(s -> !contains(t, s)) 
+								  || l.getSuperscript().stream().anyMatch(s -> !contains(t, s))))
+			return false;
+		
 		EList<Rule> r = grammar.getRules();
 		if (r == null || r.isEmpty())
 			return false;
@@ -220,6 +227,20 @@ public class GraphgrammarUtil {
 	private static boolean contains(final Collection<Symbol> c, final Symbol s) {
 		return c.stream()
 				.anyMatch(t -> s == null ? t == null : s.equivalates(t));
+	}
+	
+	/**
+	 * Return true if collection {@code c} contains the symbol with name {@code s},
+	 * false otherwise. If {@code s} is null, look for a null entry in {@code c}.
+	 * 
+	 * @param c			The collection to test for containment. Never null
+	 * @param s			The string to test
+	 * @return			Return true iff {@code c} contains a symbol named {@code s}
+	 * @see GraphgrammarUtil#contains(Collection, Symbol)
+	 */
+	private static boolean contains(final Collection<Symbol> c, final String s) {
+		return c.stream()
+				.anyMatch(t -> s == null ? t == null : s.equals(t.getName()));
 	}
 
 	/**
@@ -298,10 +319,30 @@ public class GraphgrammarUtil {
 		if (graph.getEdges().stream()
 				.anyMatch(e -> !graph.getVertices().contains(e.getFrom()) 
 							|| !graph.getVertices().contains(e.getTo())
-							|| e.getLabel() == null || e.getLabel().getName().isEmpty()
+							|| e.getLabel() == null || e.getLabel().getName().isEmpty() 
+							|| !e.getLabel().getSubscript().isEmpty()
+							|| !e.getLabel().getSuperscript().isEmpty()
 							|| (!acceptLoops && e.getFrom() == e.getTo())))
 			return false;
 		
+		return true;
+	}
+	
+	/**
+	 * Checks that a grammar is simple labeled. I.e. no vertex of no rule has sub or super scripts in its label
+	 * @param grammar			Grammar to test. Has to be valid.
+	 * @return					True iff {@code grammar} has only simple labels
+	 */
+	public static boolean isSimpleLabeledGrammar(final Grammar grammar) {
+		if (grammar.getAlphabet().stream()
+				.anyMatch(l -> !l.getSubscript().isEmpty() || !l.getSuperscript().isEmpty()))
+			return false;
+
+		if (grammar.getRules().stream()
+				.anyMatch(r -> r.getRhs().getVertices().stream()
+									.anyMatch(v -> !v.getLabel().getSubscript().isEmpty() 
+												|| !v.getLabel().getSuperscript().isEmpty())))
+			return false;
 		return true;
 	}
 	
@@ -478,40 +519,7 @@ public class GraphgrammarUtil {
 		return true;
 	}
 
-	/**
-	 * Checks a sufficient (but not necessary) condition for a grammar to be neighborhood preserving.
-	 * Does not say anything about it not being neighborhood preserving.
-	 * 
-	 * @param grammar		The grammar to check. Has to be valid
-	 * @return				If True, then {@code grammar} is neighborhood preserving.
-	 * 						If False, then {@code grammar} may or may not be neighborhood preserving.
-	 */
-	public static boolean isNeighborhoodPreserving(final Grammar grammar) {
-		return getNonNPRules(grammar).isEmpty();
-	}
-
-	/**
-	 * Checks if {@code ds} is neighborhood preserving
-	 * @param ds		The derivation step to be checked. Has to be valid
-	 * @return			True iff {@code ds} is neighborhood preserving.
-	 */
-	public static boolean isNeighborhoodPreserving(final DerivationStep ds) {
-		final Vertex vertex = ds.getPrevious().getVertices().stream().filter(w -> w.getId().equals(ds.getVertex().getId())).findAny().orElse(null);
-		assert vertex != null;
-		
-		//iff neighbors of vertex are equal to neighbors of the RHS neigh_prev(vertex) = neigh_next(V_Y)
-		final EList<Vertex> n1 = ds.getPrevious().neighborhood(vertex);
-		final EList<Vertex> n2 = ds.getNext().neighborhood(new BasicEList<>(ds.getRule().getRhs().getVertices().stream()
-				.map(v -> ds.getUnifier().get(v))
-				.collect(Collectors.toSet())));
-		
-		final Graph g1 = GraphgrammarFactory.eINSTANCE.createGraph();
-		g1.getVertices().addAll(EcoreUtil.copyAll(n1));
-		final Graph g2 = GraphgrammarFactory.eINSTANCE.createGraph();
-		g2.getVertices().addAll(EcoreUtil.copyAll(n2));
-		
-		return g1.isomorphicTo(g2);
-	}
+	
 
 	/**
 	 * Checks if a derivation is valid or not (It does not check each derivation step fully validity)
@@ -551,139 +559,6 @@ public class GraphgrammarUtil {
 				|| !dS.getUnifier().stream().allMatch(u -> dS.getNext().getVertices().contains(u.getValue())))
 			return false;
 		return true;
-	}
-	
-	/**
-	 * Returns the rules of the {@code grammar} that are not neighborhood preserving (NP) together with
-	 * their respective missing contexts in form of a {@link SymbolMap} from edge labels to a set
-	 * of vertex labels in a {@link SymbolSet}.
-	 * So for example, if a vertex with label A is connected to another with label n by edge 1 (or has no embedding 1-n), 
-	 * but a rule A->R does not include the embedding 1-n, then this rule is non NP and this method
-	 * gives it together with the missing embedding 1-n
-	 * 
-	 * @param grammar		The grammar to check. Has to be valid
-	 * @return				A map from each non neighborhood preserving {@link Rule} in {@code grammar}
-	 * 						accompanied with the missing embeddings of it (that make it non NP)
-	 * @see SymbolMap
-	 * @see SymbolSet
-	 */
-	static public Map<Rule, SymbolMap<SymbolSet>> getNonNPRules(final Grammar grammar){
-		final SymbolMap<SymbolMap<SymbolSet>> maxContext = new SymbolMap<>(grammar.getNonterminals().size());
-		final HashMap<Vertex, SymbolMap<SymbolSet>> embeddingContext = new HashMap<>();
-
-		for (Symbol l: grammar.getNonterminals()) {
-			maxContext.put(l, new SymbolMap<SymbolSet>());
-		}
-		
-		//Determine the maximal context of each nonterminal symbol
-		for (Rule r : grammar.getRules()) {
-			for (Vertex v : r.getRhs().getVertices()) {
-				
-				//The embedding context of each vertex of the RHS of each rule
-				final EList<SymbolSymbolsPair> embedding = r.getEmbedding().get(v);
-				final SymbolMap<SymbolSet> vContext = new SymbolMap<>();
-				if (embedding != null) {
-					for (SymbolSymbolsPair ssP : embedding) {
-						final SymbolSet vLabels = new SymbolSet(ssP.getVertexLabels());
-						
-						final SymbolSet context = vContext.get(ssP.getEdgeLabel());
-						if (context == null) {
-							vContext.put(ssP.getEdgeLabel(), vLabels);
-						} else {
-							context.addAll(vLabels);
-						}
-					}
-				}
-				embeddingContext.put(v, vContext);
-				
-				if (grammar.getNonterminals().stream().anyMatch(l -> l.equivalates(v.getLabel()))) {
-					final SymbolMap<SymbolSet> ntContext = maxContext.get(v.getLabel());
-					
-					//The real context of each nonterminal vertex of the RHS of each rule
-					for(Edge e: r.getRhs().inEdges(v)) {
-						final SymbolSet context = ntContext.get(e.getLabel());
-						if (context == null) {
-							ntContext.put(e.getLabel(), 
-									new SymbolSet(Arrays.asList(e.getFrom().getLabel())));
-						}
-						else 
-							context.add(e.getFrom().getLabel());
-					}
-					for(Edge e: r.getRhs().outEdges(v)) {
-						final SymbolSet context = ntContext.get(e.getLabel());
-						if (context == null) {
-							ntContext.put(e.getLabel(), 
-									new SymbolSet(Arrays.asList(e.getTo().getLabel())));
-						}
-						else 
-							context.add(e.getTo().getLabel());
-					}
-					
-					for (Entry<Symbol,SymbolSet> vContextEntry : vContext.entrySet()) {
-						final SymbolSet context = ntContext.get(vContextEntry.getKey());
-						if (context == null) {
-							ntContext.put(vContextEntry.getKey(), vContextEntry.getValue());
-						}
-						else 
-							context.addAll(vContextEntry.getValue());
-					}
-				}
-			}
-		}
-		
-		//Build rule's embedding context
-		final HashMap<Rule, SymbolMap<SymbolSet>> nonNPRulesContext = new HashMap<>(grammar.getRules().size());
-		for (Rule r : grammar.getRules()) {
-			final SymbolMap<SymbolSet> ruleContext = new SymbolMap<>();
-			
-			for (Vertex v : r.getRhs().getVertices()) {
-				final SymbolMap<SymbolSet> vContext = embeddingContext.get(v);
-				for (Entry<Symbol,SymbolSet> vContextEntry : vContext.entrySet()) {
-					final SymbolSet context = ruleContext.get(vContextEntry.getKey());
-					if (context == null) {
-						ruleContext.put(vContextEntry.getKey(), vContextEntry.getValue());
-					}
-					else 
-						context.addAll(vContextEntry.getValue());
-				}	
-			}
-			//If the rule's embedding context does not contain all LHS's maximal context
-			for (Entry<Symbol,SymbolSet> maxContextEntry : maxContext.get(r.getLhs()).entrySet()) {
-				
-				final SymbolMap<SymbolSet> missingRuleContext = nonNPRulesContext.get(r);
-				
-				final SymbolSet context = ruleContext.get(maxContextEntry.getKey());
-				if (context == null && maxContextEntry.getValue() != null) {
-					//non neighborhood preserving
-					if (missingRuleContext == null) {
-						final SymbolMap<SymbolSet> sMap = new SymbolMap<>();
-						sMap.put(maxContextEntry.getKey(), maxContextEntry.getValue());
-						nonNPRulesContext.put(r, sMap);
-					}
-					else 
-						missingRuleContext.put(maxContextEntry.getKey(), maxContextEntry.getValue());
-					
-				} else {
-					if (maxContextEntry.getValue() != null) {
-
-						//Calculate the missing context
-						final SymbolSet missingContextLabels = maxContextEntry.getValue().subtract(context);
-						if (!missingContextLabels.isEmpty()) {
-							//non neighborhood preserving
-						
-							if (missingRuleContext == null) {
-								final SymbolMap<SymbolSet> sMap = new SymbolMap<>();
-								sMap.put(maxContextEntry.getKey(), missingContextLabels);
-								nonNPRulesContext.put(r, sMap);
-							}
-							else 
-								missingRuleContext.put(maxContextEntry.getKey(), missingContextLabels);
-						}
-					}
-				}
-			}
-		}
-		return nonNPRulesContext;
 	}
 
 }

@@ -4,7 +4,6 @@ import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.wbsilva.bence.graphgrammar.Derivation;
@@ -18,6 +17,7 @@ import org.wbsilva.bence.graphgrammar.TripleGraph;
 import org.wbsilva.bence.graphgrammar.TripleRule;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
+import org.wbsilva.bence.graphgrammar.util.NPUtil;
 import org.wbsilva.bence.transformer.parser.BeNCEParser;
 
 /**
@@ -113,7 +113,7 @@ public class BeNCETransformer {
 			
 			assert GraphgrammarUtil.isValidGrammar(inputGrammar);
 			assert GraphgrammarUtil.isBoundaryGrammar(inputGrammar);
-			assert GraphgrammarUtil.isNeighborhoodPreserving(inputGrammar);
+			assert NPUtil.isNeighborhoodPreserving(inputGrammar);
 			
 			//Parse input graph
 			final BeNCEParser parser = new BeNCEParser(inputGrammar);
