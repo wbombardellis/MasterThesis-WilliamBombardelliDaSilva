@@ -1,7 +1,6 @@
 package org.wbsilva.bence.transformer.parser;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -22,6 +21,7 @@ import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
 import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
+import org.wbsilva.bence.graphgrammar.util.NPUtil;
 
 /**
  * This class implements a B-eNCE graph parser.
@@ -132,7 +132,7 @@ public class BeNCEParser {
 					if (newDS != null) {
 						//Derivation must be neighborhood preserving
 						assert GraphgrammarUtil.isValidDerivationStep(newDS);
-						assert GraphgrammarUtil.isNeighborhoodPreserving(newDS);
+						assert NPUtil.isNeighborhoodPreserving(newDS);
 						
 						//Possible derivation step found
 						bup.add(lhs);
