@@ -129,20 +129,25 @@ public class GraphgrammarUtil {
 	/**
 	 * Set new unique IDs for each vertex in {@code vertices}
 	 * @param vertices		Vertices which IDs are to be set uniquely
+	 * @return				A map from the old ids to the respective vertices
 	 */
-	public static void ensureUniqueIds(final Collection<? extends Vertex> vertices) {
+	public static Map<String, Vertex> ensureUniqueIds(final Collection<? extends Vertex> vertices) {
+		final Map<String, Vertex> old2newMap = new HashMap<>(vertices.size());
 		for (Vertex v : vertices) {
+			old2newMap.put(v.getId(), v);
 			v.setId(EcoreUtil.generateUUID());
 		}
+		return old2newMap;
 	}
 	
 	/**
 	 * Set new unique ID for the graph {@code graph} and its vertices
 	 * @param graph			Graph to be set with unique IDs
+	 * @return				A map from the old ids to the respective vertices
 	 * @see GraphgrammarUtil#ensureUniqueIds(Collection)
 	 */
-	public static void ensureUniqueIds(Graph graph) {
-		ensureUniqueIds(graph.getVertices());
+	public static Map<String, Vertex> ensureUniqueIds(Graph graph) {
+		return ensureUniqueIds(graph.getVertices());
 	}
 	
 	/**
@@ -204,7 +209,7 @@ public class GraphgrammarUtil {
 			return false;
 		
 		EList<Rule> r = grammar.getRules();
-		if (r == null || r.isEmpty())
+		if (r == null)
 			return false;
 		
 		if (r.stream().map(rr -> rr.getId()).distinct().count() != r.size())
@@ -384,7 +389,7 @@ public class GraphgrammarUtil {
 			return false;
 		
 		EList<TripleRule> r = tripleGrammar.getTripleRules();
-		if (r == null || r.isEmpty())
+		if (r == null)
 			return false;
 		
 		if (r.stream().anyMatch(rr -> !isValidRule(ab, rr.getSource()) || !isValidRule(ab, rr.getCorr()) || !isValidRule(ab, rr.getTarget())))
