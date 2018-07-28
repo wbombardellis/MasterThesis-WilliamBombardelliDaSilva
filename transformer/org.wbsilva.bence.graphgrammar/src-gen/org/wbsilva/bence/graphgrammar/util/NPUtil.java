@@ -249,10 +249,10 @@ public class NPUtil {
 						if (eContext.get(superr).contains(sub))
 							return false;
 					}
-					if (rContext.get(superr) != null) {
+					/*if (rContext.get(superr) != null) {
 						if (rContext.get(superr).contains(sub))
 							return false;
-					}
+					}*/
 				}
 			}
 		}
