@@ -1,6 +1,7 @@
 package org.wbsilva.bence.transformer;
 
 import java.util.AbstractMap;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -67,30 +68,20 @@ public class NPNormalizer {
 			
 			logger.debug(String.format("Found %d non NP rules. Fixing it", nonNPRulesContext.size()));
 			
+			Map<Rule, Map<Rule, Map<String, Vertex>>> newRules = new HashMap<>();
+			final ArrayList<Rule> rulesToProcess = new ArrayList<>(grammar.getRules());
+			
 			//For each non neighborhood preserving rule A->R
 			for (Entry<Rule, SymbolMap<SymbolSet>> rEntry : nonNPRulesContext.entrySet()) {
-				final SymbolMap<SymbolSet> missingContext = rEntry.getValue();
 				final Rule nonNPRule = rEntry.getKey();
+				final SymbolMap<SymbolSet> missingContext = rEntry.getValue();
 				
-				final Map<Rule, Map<Rule, Map<String, Vertex>>> newRules = new HashMap<>();
-				logger.debug(String.format("Fixing non NP rule [id= %s, name= %s]", nonNPRule.getId(), nonNPRule.getName()));
-				
-				//For each vertex in the grammar with label A
-				for (Rule rule : grammar.getRules()) {
-					for (Vertex v: rule.getRhs().getVertices()) {
-						if (v.getLabel().equivalates(nonNPRule.getLhs())) {
-							
-							//Fix the rule where this vertex occurs for this missing context
-							final Map<Rule, Map<String, Vertex>> newHosts = fixHostRule(rule, v, missingContext);
-							newRules.put(rule, newHosts);
-						}
-					}
-				}
 				//For each missing context
 				for (Entry<Symbol, SymbolSet> cEntry : missingContext.entrySet()) {
 					for (Symbol ignoringLabel : cEntry.getValue()) {
 						//Fix the actual non neighborhood preserving rule
 						final Entry<Rule, Map<String, Vertex>> newGuest = createNewGuestRule(nonNPRule, cEntry.getKey(), ignoringLabel);
+						assert newGuest != null;
 						
 						final Map<Rule, Map<String, Vertex>> nREntry = newRules.get(nonNPRule);
 						if (nREntry == null) {
@@ -102,85 +93,141 @@ public class NPNormalizer {
 							nREntry.put(newGuest.getKey(), newGuest.getValue());
 					}
 				}
-
-				//Remove non neighborhood preserving rule from grammars
-				grammar.getRules().remove(nonNPRule);
-				//Add new fixed rules to the grammar
-				final Set<Rule> newRs = newRules.values().stream()
-						.flatMap(m -> m.keySet().stream())
-						.collect(Collectors.toSet());
-				grammar.getRules().addAll(EcoreUtil.copyAll(newRs));
-				for (Rule r : newRs) {
-					if (!grammar.getNonterminals().stream().anyMatch(n -> n.equivalates(r.getLhs()))){
-						grammar.getNonterminals().add(EcoreUtil.copy(r.getLhs()));
-						grammar.getAlphabet().add(EcoreUtil.copy(r.getLhs()));
-					}
-				}
-				assert GraphgrammarUtil.isValidGrammar(grammar);
 				
-				//Add new fixed rules to the triple grammar
-				//For each old/ modified rule
-				for (Entry<Rule,Map<Rule,Map<String,Vertex>>> oREntry : newRules.entrySet()) {
-					final String oldId = oREntry.getKey().getId();
-					final TripleRule oldTR = tripleGrammar.getTripleRules().stream()
-						.filter(tr -> forward ? tr.getSource().getId()==oldId : tr.getTarget().getId()==oldId)
-						.findAny()
-						.orElse(null);
-					assert oldTR != null;
-					
-					//For each new/ fixed rule of this old rule
-					for (Entry<Rule,Map<String,Vertex>> nREntry : oREntry.getValue().entrySet()) {
-						//Create respective new triple rule
-						final TripleRule newTR = EcoreUtil.copy(oldTR);
-						final Rule newR = nREntry.getKey();
-						
-						//With fixed morphism
-						final Map<String, Vertex> oldId2Vertex = nREntry.getValue();
-						for (Vertex cV : newTR.getCorr().getRhs().getVertices()) {
-							final Vertex newRV = forward ? oldId2Vertex.get(newTR.getMs().get(cV).getId())
-									: oldId2Vertex.get(newTR.getMt().get(cV).getId());
-							assert newRV != null && newR.getRhs().getVertices().contains(newRV);
-							
-							if (forward)
-								newTR.getMs().put(cV, newRV);
-							else 
-								newTR.getMt().put(cV, newRV);
-						}
-						//Fixed graph
-						if (forward)
-							newTR.setSource(newR);
-						else 
-							newTR.setTarget(newR);
-						//Fixed Ids
-						newTR.getSource().setId(newR.getId());
-						newTR.getCorr().setId(newR.getId());
-						newTR.getTarget().setId(newR.getId());
-						//Add it to the triple grammar
-						tripleGrammar.getTripleRules().add(newTR);
-						
-						if (!tripleGrammar.getNonterminals().stream().anyMatch(n -> n.equivalates(newR.getLhs()))){
-							tripleGrammar.getNonterminals().add(EcoreUtil.copy(newR.getLhs()));
-							tripleGrammar.getAlphabet().add(EcoreUtil.copy(newR.getLhs()));
-						}
-					}
-				}
-				//Remove non NP rule from triple grammar
-				tripleGrammar.getTripleRules()
-					.removeIf(tr -> forward ? tr.getSource().getId().equals(nonNPRule.getId()) 
-							: tr.getTarget().getId().equals(nonNPRule.getId()));
-
-				assert GraphgrammarUtil.isValidTripleGrammar(tripleGrammar);
-				
-				logger.debug(String.format("%d new rules created for non NP rule [id= %s, name= %s]", newRules.size(), nonNPRule.getId(), nonNPRule.getName()));
+				logger.debug(String.format("Fixing non NP rule [id= %s, name= %s]: %d new guest rule(s) to be added", nonNPRule.getId(), 
+						nonNPRule.getName(), newRules.get(nonNPRule).size()));
 			}
+
+			assert newRules.size() == nonNPRulesContext.size();
+			assert rulesToProcess.size() == grammar.getRules().size();
+			
+			//If there are rules to be processed (at first, there is always the grammar rules)
+			while(!rulesToProcess.isEmpty()) {
+				final ArrayList<Rule> nextRulesToProcess = new ArrayList<>();
+				
+				//For each non neighborhood preserving rule A->R (again)
+				for (Entry<Rule, SymbolMap<SymbolSet>> rEntry : nonNPRulesContext.entrySet()) {
+					final Rule nonNPRule = rEntry.getKey();
+					final SymbolMap<SymbolSet> missingContext = rEntry.getValue();
+					int numCreatedRules = 0;
+					
+					logger.debug(String.format("Fixing occurrences of LHS %s (rule [id= %s, name= %s]). %s rules to evaluate", nonNPRule.getLhs(),
+							nonNPRule.getId(), nonNPRule.getName(), rulesToProcess.size()));
+					 
+					//For each rule to be processed
+					for (Rule rule: rulesToProcess) {
+						for (Vertex v: rule.getRhs().getVertices()) {
+							//Occurrence of label A
+							if (v.getLabel().equivalates(nonNPRule.getLhs())) {
+								
+								//Fix the rule where this vertex occurs for this missing context
+								final Map<Rule, Map<String, Vertex>> newHosts = fixHostRule(rule, v, missingContext);
+
+								newRules.merge(rule, newHosts, (a,b) -> {
+									a.putAll(b);
+									return a;
+								});
+								numCreatedRules += newHosts.size();
+							}
+						}
+					}
+	
+					//Add new fixed rules to the grammar
+					final Set<Rule> newRs = newRules.values().stream()
+							.flatMap(m -> m.keySet().stream())
+							.collect(Collectors.toSet());
+					grammar.getRules().addAll(EcoreUtil.copyAll(newRs));
+					//Adapt alphabet
+					for (Rule r : newRs) {
+						assert GraphgrammarUtil.isValidRule(r);
+						if (!grammar.getNonterminals().stream().anyMatch(n -> n.equivalates(r.getLhs()))){
+							grammar.getNonterminals().add(EcoreUtil.copy(r.getLhs()));
+							grammar.getAlphabet().add(EcoreUtil.copy(r.getLhs()));
+						}
+					}
+					
+					nextRulesToProcess.addAll(newRs);
+					
+					//Add new fixed rules to the triple grammar
+					//For each old/ modified rule
+					for (Entry<Rule,Map<Rule,Map<String,Vertex>>> oREntry : newRules.entrySet()) {
+						final String oldId = oREntry.getKey().getId();
+						final TripleRule oldTR = tripleGrammar.getTripleRules().stream()
+							.filter(tr -> forward ? tr.getSource().getId()==oldId : tr.getTarget().getId()==oldId)
+							.findAny()
+							.orElse(null);
+						assert oldTR != null;
+						
+						//For each new/ fixed rule of this old rule
+						for (Entry<Rule,Map<String,Vertex>> nREntry : oREntry.getValue().entrySet()) {
+							//Create respective new triple rule
+							final TripleRule newTR = EcoreUtil.copy(oldTR);
+							final Rule newR = nREntry.getKey();
+							
+							//With fixed morphism
+							final Map<String, Vertex> oldId2Vertex = nREntry.getValue();
+							for (Vertex cV : newTR.getCorr().getRhs().getVertices()) {
+								final Vertex newRV = forward ? oldId2Vertex.get(newTR.getMs().get(cV).getId())
+										: oldId2Vertex.get(newTR.getMt().get(cV).getId());
+								assert newRV != null && newR.getRhs().getVertices().contains(newRV);
+								
+								if (forward)
+									newTR.getMs().put(cV, newRV);
+								else 
+									newTR.getMt().put(cV, newRV);
+							}
+							//Fixed graph
+							if (forward)
+								newTR.setSource(newR);
+							else 
+								newTR.setTarget(newR);
+							//Fixed Ids
+							newTR.getSource().setId(newR.getId());
+							newTR.getCorr().setId(newR.getId());
+							newTR.getTarget().setId(newR.getId());
+							//Add it to the triple grammar
+							tripleGrammar.getTripleRules().add(EcoreUtil.copy(newTR));
+							//Adapt alphabet
+							if (!tripleGrammar.getNonterminals().stream().anyMatch(n -> n.equivalates(newR.getLhs()))){
+								tripleGrammar.getNonterminals().add(EcoreUtil.copy(newR.getLhs()));
+								tripleGrammar.getAlphabet().add(EcoreUtil.copy(newR.getLhs()));
+							}
+						}
+					}
+					
+					logger.debug(String.format("%d new rules created for the LHS %s", numCreatedRules, nonNPRule.getLhs()));
+					newRules.clear();
+				}
+
+				rulesToProcess.clear();
+				rulesToProcess.addAll(nextRulesToProcess);
+			}
+			
+			//Remove non neighborhood preserving rules from grammars
+			logger.debug(String.format("Removing the %d non NP rules", nonNPRulesContext.size()));
+			for (Rule removedRule : nonNPRulesContext.keySet()) {
+				boolean removed = grammar.getRules().remove(removedRule);
+				assert removed;
+
+				//May only remove here, because it can be used in the creation of new rules in the TGG
+				removed = tripleGrammar.getTripleRules()
+					.removeIf(tr -> forward ? tr.getSource().getId().equals(removedRule.getId()) 
+							: tr.getTarget().getId().equals(removedRule.getId()));
+				assert removed;
+			}
+			
+			assert GraphgrammarUtil.isValidGrammar(grammar);
+			assert GraphgrammarUtil.isBoundaryGrammar(grammar);
+			assert GraphgrammarUtil.isValidTripleGrammar(tripleGrammar);
+			assert GraphgrammarUtil.isBoundaryTripleGrammar(tripleGrammar);
+			
 			//Get new non neighborhood preserving rules
 			nonNPRulesContext = NPUtil.getNonNPRules(grammar);
 		}
+		assert grammar.getRules().size() == tripleGrammar.getTripleRules().size();
 		
-		logger.debug(String.format("NP normalization for grammar %s finished with success", grammar.getName()));
-		
-		assert GraphgrammarUtil.isValidGrammar(grammar);
-		assert GraphgrammarUtil.isBoundaryGrammar(grammar);
+		logger.debug(String.format("NP normalization for grammar %s finished with success. New size %s", grammar.getName(), grammar.getRules().size()));
+
 		assert NPUtil.isNeighborhoodPreserving(grammar);
 	}
 	
@@ -296,7 +343,13 @@ public class NPNormalizer {
 		
 		if (edge != null) {
 			//Remove the edge
-			modifiedRule.getRhs().getEdges().removeIf(e -> e.compareTo(edge) == 0);
+			final Edge edgeToRemove = modifiedRule.getRhs().edges(v).stream()
+				.filter(e -> e.compareTo(edge) == 0)
+				.findAny()
+				.orElse(null);
+			assert edgeToRemove != null;
+			
+			modifiedRule.getRhs().getEdges().remove(edgeToRemove);
 			
 			edgeLabel = edge.getLabel();
 		}
@@ -315,7 +368,7 @@ public class NPNormalizer {
 		v.getLabel().getSuperscript().add(edgeLabel.getName());
 		v.getLabel().getSubscript().add(vertexLabel.getName());
 
-		modifiedRule.setId(rule.getId().concat("___"+EcoreUtil.generateUUID()));
+		modifiedRule.setId(modifiedRule.getId().concat("___"+EcoreUtil.generateUUID()));
 		
 		assert GraphgrammarUtil.isValidRule(modifiedRule);
 		
@@ -342,7 +395,7 @@ public class NPNormalizer {
 		newRule.getLhs().getSuperscript().add(edgeLabel.getName());
 		newRule.getLhs().getSubscript().add(vertexLabel.getName());
 		
-		newRule.setId(nonNPRule.getId().concat("___("+newRule.getLhs()+")"));
+		newRule.setId(newRule.getId().concat("___("+newRule.getLhs()+")"));
 		
 		final Map<String, Vertex> old2newMap = GraphgrammarUtil.ensureUniqueIds(newRule.getRhs());
 		

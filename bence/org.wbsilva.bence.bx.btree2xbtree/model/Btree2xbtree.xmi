@@ -448,4 +448,106 @@
     <mt key="mA42xmA4"
         value="xmA4"/>
   </tripleRules>
+  <tripleRules>
+    <source
+        id="r5"
+        name="r5">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="n5">
+          <label
+              name="BTNode"/>
+        </vertices>
+        <vertices
+            id="nA5">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="n5"
+            to="nA5">
+          <label
+              name="l"/>
+        </edges>
+        <edges
+            from="n5"
+            to="nA5">
+          <label
+              name="r"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="n5">
+        <value>
+          <edgeLabel
+              name="l"/>
+          <vertexLabels
+              name="BTNode"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r5"
+        name="r5">
+      <lhs/>
+      <rhs>
+        <vertices
+            id="n52xn5">
+          <label
+              name="BTNode2XBTNode"/>
+        </vertices>
+        <vertices
+            id="nA52xnA5">
+          <label
+              name="A"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r5"
+        name="r5">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="xn5">
+          <label
+              name="XBTNode"/>
+        </vertices>
+        <vertices
+            id="xnA5">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="xn5"
+            to="xnA5">
+          <label
+              name="l"/>
+        </edges>
+        <edges
+            from="xn5"
+            to="xnA5">
+          <label
+              name="r"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="xnA5">
+        <value>
+          <edgeLabel
+              name="l"/>
+          <vertexLabels
+              name="XBTNode"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="n52xn5"
+        value="n5"/>
+    <ms key="nA52xnA5"
+        value="nA5"/>
+    <mt key="n52xn5"
+        value="xn5"/>
+    <mt key="nA52xnA5"
+        value="xnA5"/>
+  </tripleRules>
 </org.wbsilva.bence.graphgrammar:TripleGrammar>
