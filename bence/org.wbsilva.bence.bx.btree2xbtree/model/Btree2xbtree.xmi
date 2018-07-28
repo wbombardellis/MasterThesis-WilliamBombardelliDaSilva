@@ -14,7 +14,7 @@
   <alphabet
       name="BTNode"/>
   <alphabet
-      name="BTNode2XBTnode"/>
+      name="BTNode2XBTNode"/>
   <alphabet
       name="XBTNode"/>
   <alphabet
@@ -43,7 +43,7 @@
         <vertices
             id="n2xn">
           <label
-              name="BTNode2XBTnode"/>
+              name="BTNode2XBTNode"/>
         </vertices>
       </rhs>
     </corr>
@@ -101,7 +101,7 @@
         <vertices
             id="n12xn1">
           <label
-              name="BTNode2XBTnode"/>
+              name="BTNode2XBTNode"/>
         </vertices>
         <vertices
             id="A12xA1">
@@ -206,5 +206,246 @@
         value="n2"/>
     <mt key="n22xn2"
         value="xn2"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r3"
+        name="r3">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="n3">
+          <label
+              name="BTNode"/>
+        </vertices>
+      </rhs>
+      <embedding
+          key="n3">
+        <value>
+          <edgeLabel
+              name="r"/>
+          <vertexLabels
+              name="BTNode"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r3"
+        name="r3">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="n32xn3">
+          <label
+              name="BTNode2XBTNode"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r3"
+        name="r3">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="xn3">
+          <label
+              name="XBTNode"/>
+        </vertices>
+      </rhs>
+      <embedding
+          key="xn3">
+        <value>
+          <edgeLabel
+              name="r"/>
+          <vertexLabels
+              name="XBTNode"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="n32xn3"
+        value="n3"/>
+    <mt key="n32xn3"
+        value="xn3"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r4"
+        name="r4">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="n4">
+          <label
+              name="BTNode"/>
+        </vertices>
+        <vertices
+            id="m4">
+          <label
+              name="BTNode"/>
+        </vertices>
+        <vertices
+            id="nA4">
+          <label
+              name="A"/>
+        </vertices>
+        <vertices
+            id="mA4">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="n4"
+            to="nA4">
+          <label
+              name="l"/>
+        </edges>
+        <edges
+            from="n4"
+            to="nA4">
+          <label
+              name="r"/>
+        </edges>
+        <edges
+            from="m4"
+            to="mA4">
+          <label
+              name="l"/>
+        </edges>
+        <edges
+            from="m4"
+            to="mA4">
+          <label
+              name="r"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="n4">
+        <value>
+          <edgeLabel
+              name="l"/>
+          <vertexLabels
+              name="BTNode"/>
+        </value>
+      </embedding>
+      <embedding
+          key="m4">
+        <value>
+          <edgeLabel
+              name="r"/>
+          <vertexLabels
+              name="BTNode"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r4"
+        name="r4">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="n42xn4">
+          <label
+              name="BTNode2XBTNode"/>
+        </vertices>
+        <vertices
+            id="m42xm4">
+          <label
+              name="BTNode2XBTNode"/>
+        </vertices>
+        <vertices
+            id="nA42xnA4">
+          <label
+              name="A"/>
+        </vertices>
+        <vertices
+            id="mA42xmA4">
+          <label
+              name="A"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r4"
+        name="r4">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="xn4">
+          <label
+              name="XBTNode"/>
+        </vertices>
+        <vertices
+            id="xm4">
+          <label
+              name="XBTNode"/>
+        </vertices>
+        <vertices
+            id="xnA4">
+          <label
+              name="A"/>
+        </vertices>
+        <vertices
+            id="xmA4">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="xn4"
+            to="xnA4">
+          <label
+              name="l"/>
+        </edges>
+        <edges
+            from="xm4"
+            to="xmA4">
+          <label
+              name="r"/>
+        </edges>
+        <edges
+            from="xn4"
+            to="xm4">
+          <label
+              name="e"/>
+        </edges>
+        <edges
+            from="xm4"
+            to="xn4">
+          <label
+              name="w"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="xn4">
+        <value>
+          <edgeLabel
+              name="l"/>
+          <vertexLabels
+              name="XBTNode"/>
+        </value>
+      </embedding>
+      <embedding
+          key="xm4">
+        <value>
+          <edgeLabel
+              name="r"/>
+          <vertexLabels
+              name="XBTNode"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="n42xn4"
+        value="n4"/>
+    <ms key="m42xm4"
+        value="m4"/>
+    <ms key="nA42xnA4"
+        value="nA4"/>
+    <ms key="mA42xmA4"
+        value="mA4"/>
+    <mt key="n42xn4"
+        value="xn4"/>
+    <mt key="m42xm4"
+        value="xm4"/>
+    <mt key="nA42xnA4"
+        value="xnA4"/>
+    <mt key="mA42xmA4"
+        value="xmA4"/>
   </tripleRules>
 </org.wbsilva.bence.graphgrammar:TripleGrammar>
