@@ -78,6 +78,7 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 	 */
 	public boolean equivalates(ZoneVertex other) {
 		return other != null && this.getLabel().equivalates(other.getLabel())
+				&& this.getVertices().size() == other.getVertices().size()
 				&& this.getVertices().stream()
 						.allMatch(v -> other.getVertices().stream().anyMatch(w -> v.equivalates(w)))
 				&& other.getVertices().stream()
