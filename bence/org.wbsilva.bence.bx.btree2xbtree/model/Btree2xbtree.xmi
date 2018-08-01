@@ -394,6 +394,18 @@
               name="l"/>
         </edges>
         <edges
+            from="xn4"
+            to="xnA4">
+          <label
+              name="r"/>
+        </edges>
+        <edges
+            from="xm4"
+            to="xmA4">
+          <label
+              name="l"/>
+        </edges>
+        <edges
             from="xm4"
             to="xmA4">
           <label
