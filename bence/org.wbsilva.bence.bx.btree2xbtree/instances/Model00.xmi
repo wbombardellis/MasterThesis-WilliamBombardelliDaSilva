@@ -8,4 +8,9 @@
   <l>
     <l/>
   </l>
+  <r>
+    <l>
+      <r/>
+    </l>
+  </r>
 </org.wbsilva.mm.btree:BTNode>

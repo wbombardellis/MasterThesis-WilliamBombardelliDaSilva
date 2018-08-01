@@ -1,6 +1,7 @@
-.settings
-.classpath
-.project
+#.settings
+#.classpath
+#.project
+
 *.aux
 *.log
 *.out

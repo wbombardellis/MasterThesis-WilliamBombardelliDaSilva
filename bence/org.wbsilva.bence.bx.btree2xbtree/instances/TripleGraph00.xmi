@@ -2,348 +2,1048 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar">
   <org.wbsilva.bence.graphgrammar:TripleGraph>
     <source>
-      <vertices id="_urNu4JKEEeiDU93O2kqBDA">
+      <vertices id="_x-ah8JNpEei6ao3fdMlbVg">
         <label name="BTNode"/>
       </vertices>
-      <vertices id="_urNu4ZKEEeiDU93O2kqBDA">
+      <vertices id="_x-ah8ZNpEei6ao3fdMlbVg">
         <label name="BTNode"/>
       </vertices>
-      <vertices id="_urNu4pKEEeiDU93O2kqBDA">
+      <vertices id="_x-ah8pNpEei6ao3fdMlbVg">
         <label name="BTNode"/>
       </vertices>
-      <edges from="_urNu4JKEEeiDU93O2kqBDA" to="_urNu4ZKEEeiDU93O2kqBDA">
-        <label name="l"/>
+      <vertices id="_x-ah85NpEei6ao3fdMlbVg">
+        <label name="BTNode"/>
+      </vertices>
+      <vertices id="_x-ah9JNpEei6ao3fdMlbVg">
+        <label name="BTNode"/>
+      </vertices>
+      <vertices id="_x-ah9ZNpEei6ao3fdMlbVg">
+        <label name="BTNode"/>
+      </vertices>
+      <vertices id="_x-ah9pNpEei6ao3fdMlbVg">
+        <label name="BTNode"/>
+      </vertices>
+      <edges from="_x-ah8JNpEei6ao3fdMlbVg" to="_x-ah8ZNpEei6ao3fdMlbVg">
+        <label name="r"/>
       </edges>
-      <edges from="_urNu4ZKEEeiDU93O2kqBDA" to="_urNu4pKEEeiDU93O2kqBDA">
-        <label name="l"/>
+      <edges from="_x-ah8ZNpEei6ao3fdMlbVg" to="_x-ah8pNpEei6ao3fdMlbVg">
+        <label name="r"/>
+      </edges>
+      <edges from="_x-ah8pNpEei6ao3fdMlbVg" to="_x-ah85NpEei6ao3fdMlbVg">
+        <label name="r"/>
+      </edges>
+      <edges from="_x-ah85NpEei6ao3fdMlbVg" to="_x-ah9JNpEei6ao3fdMlbVg">
+        <label name="r"/>
+      </edges>
+      <edges from="_x-ah9JNpEei6ao3fdMlbVg" to="_x-ah9ZNpEei6ao3fdMlbVg">
+        <label name="r"/>
+      </edges>
+      <edges from="_x-ah9ZNpEei6ao3fdMlbVg" to="_x-ah9pNpEei6ao3fdMlbVg">
+        <label name="r"/>
       </edges>
     </source>
     <corr>
-      <vertices id="_u0ltUpKEEeiDU93O2kqBDA">
+      <vertices id="_zQQkUpNpEei6ao3fdMlbVg">
         <label name="BTNode2XBTNode"/>
       </vertices>
-      <vertices id="_u0tCEpKEEeiDU93O2kqBDA">
+      <vertices id="_zQgb8pNpEei6ao3fdMlbVg">
         <label name="BTNode2XBTNode"/>
       </vertices>
-      <vertices id="_u0zIsJKEEeiDU93O2kqBDA">
+      <vertices id="_zQueYZNpEei6ao3fdMlbVg">
+        <label name="BTNode2XBTNode"/>
+      </vertices>
+      <vertices id="_zRBZUJNpEei6ao3fdMlbVg">
+        <label name="BTNode2XBTNode"/>
+      </vertices>
+      <vertices id="_zRZMwZNpEei6ao3fdMlbVg">
+        <label name="BTNode2XBTNode"/>
+      </vertices>
+      <vertices id="_zR9NcJNpEei6ao3fdMlbVg">
+        <label name="BTNode2XBTNode"/>
+      </vertices>
+      <vertices id="_zSMeAJNpEei6ao3fdMlbVg">
         <label name="BTNode2XBTNode"/>
       </vertices>
     </corr>
     <target>
-      <vertices id="_u0ltUJKEEeiDU93O2kqBDA">
+      <vertices id="_zQQkUZNpEei6ao3fdMlbVg">
         <label name="XBTNode"/>
       </vertices>
-      <vertices id="_u0tCEJKEEeiDU93O2kqBDA">
+      <vertices id="_zQgb8JNpEei6ao3fdMlbVg">
         <label name="XBTNode"/>
       </vertices>
-      <vertices id="_u0yhoZKEEeiDU93O2kqBDA">
+      <vertices id="_zQt3UJNpEei6ao3fdMlbVg">
         <label name="XBTNode"/>
       </vertices>
-      <edges from="_u0ltUJKEEeiDU93O2kqBDA" to="_u0yhoZKEEeiDU93O2kqBDA">
-        <label name="l"/>
+      <vertices id="_zRAyQJNpEei6ao3fdMlbVg">
+        <label name="XBTNode"/>
+      </vertices>
+      <vertices id="_zRYlsZNpEei6ao3fdMlbVg">
+        <label name="XBTNode"/>
+      </vertices>
+      <vertices id="_zR7_UJNpEei6ao3fdMlbVg">
+        <label name="XBTNode"/>
+      </vertices>
+      <vertices id="_zSL28ZNpEei6ao3fdMlbVg">
+        <label name="XBTNode"/>
+      </vertices>
+      <edges from="_zQgb8JNpEei6ao3fdMlbVg" to="_zSL28ZNpEei6ao3fdMlbVg">
+        <label name="r"/>
       </edges>
-      <edges from="_u0tCEJKEEeiDU93O2kqBDA" to="_u0yhoZKEEeiDU93O2kqBDA">
-        <label name="l"/>
+      <edges from="_zR7_UJNpEei6ao3fdMlbVg" to="_zSL28ZNpEei6ao3fdMlbVg">
+        <label name="r"/>
+      </edges>
+      <edges from="_zRYlsZNpEei6ao3fdMlbVg" to="_zSL28ZNpEei6ao3fdMlbVg">
+        <label name="r"/>
+      </edges>
+      <edges from="_zQQkUZNpEei6ao3fdMlbVg" to="_zSL28ZNpEei6ao3fdMlbVg">
+        <label name="r"/>
+      </edges>
+      <edges from="_zRAyQJNpEei6ao3fdMlbVg" to="_zSL28ZNpEei6ao3fdMlbVg">
+        <label name="r"/>
+      </edges>
+      <edges from="_zQt3UJNpEei6ao3fdMlbVg" to="_zSL28ZNpEei6ao3fdMlbVg">
+        <label name="r"/>
       </edges>
     </target>
-    <ms key="_u0ltUpKEEeiDU93O2kqBDA" value="_urNu4JKEEeiDU93O2kqBDA"/>
-    <ms key="_u0tCEpKEEeiDU93O2kqBDA" value="_urNu4ZKEEeiDU93O2kqBDA"/>
-    <ms key="_u0zIsJKEEeiDU93O2kqBDA" value="_urNu4pKEEeiDU93O2kqBDA"/>
-    <mt key="_u0ltUpKEEeiDU93O2kqBDA" value="_u0ltUJKEEeiDU93O2kqBDA"/>
-    <mt key="_u0tCEpKEEeiDU93O2kqBDA" value="_u0tCEJKEEeiDU93O2kqBDA"/>
-    <mt key="_u0zIsJKEEeiDU93O2kqBDA" value="_u0yhoZKEEeiDU93O2kqBDA"/>
+    <ms key="_zQQkUpNpEei6ao3fdMlbVg" value="_x-ah8JNpEei6ao3fdMlbVg"/>
+    <ms key="_zQgb8pNpEei6ao3fdMlbVg" value="_x-ah8ZNpEei6ao3fdMlbVg"/>
+    <ms key="_zQueYZNpEei6ao3fdMlbVg" value="_x-ah8pNpEei6ao3fdMlbVg"/>
+    <ms key="_zRBZUJNpEei6ao3fdMlbVg" value="_x-ah85NpEei6ao3fdMlbVg"/>
+    <ms key="_zRZMwZNpEei6ao3fdMlbVg" value="_x-ah9JNpEei6ao3fdMlbVg"/>
+    <ms key="_zR9NcJNpEei6ao3fdMlbVg" value="_x-ah9ZNpEei6ao3fdMlbVg"/>
+    <ms key="_zSMeAJNpEei6ao3fdMlbVg" value="_x-ah9pNpEei6ao3fdMlbVg"/>
+    <mt key="_zQQkUpNpEei6ao3fdMlbVg" value="_zQQkUZNpEei6ao3fdMlbVg"/>
+    <mt key="_zQgb8pNpEei6ao3fdMlbVg" value="_zQgb8JNpEei6ao3fdMlbVg"/>
+    <mt key="_zQueYZNpEei6ao3fdMlbVg" value="_zQt3UJNpEei6ao3fdMlbVg"/>
+    <mt key="_zRBZUJNpEei6ao3fdMlbVg" value="_zRAyQJNpEei6ao3fdMlbVg"/>
+    <mt key="_zRZMwZNpEei6ao3fdMlbVg" value="_zRYlsZNpEei6ao3fdMlbVg"/>
+    <mt key="_zR9NcJNpEei6ao3fdMlbVg" value="_zR7_UJNpEei6ao3fdMlbVg"/>
+    <mt key="_zSMeAJNpEei6ao3fdMlbVg" value="_zSL28ZNpEei6ao3fdMlbVg"/>
   </org.wbsilva.bence.graphgrammar:TripleGraph>
   <org.wbsilva.bence.graphgrammar:ParsingTree>
-    <zoneVertex id="_uz8NEJKEEeiDU93O2kqBDA">
+    <zoneVertex id="_zOHPQJNpEei6ao3fdMlbVg">
       <label name="S"/>
-      <vertices id="_uhJM4JKEEeiDU93O2kqBDA">
+      <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
         <label name="BTNode"/>
       </vertices>
-      <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+      <vertices id="_xveHAJNpEei6ao3fdMlbVg">
         <label name="BTNode"/>
       </vertices>
-      <vertices id="_uhGJkJKEEeiDU93O2kqBDA">
+      <vertices id="_xvXZUJNpEei6ao3fdMlbVg">
+        <label name="BTNode"/>
+      </vertices>
+      <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+        <label name="BTNode"/>
+      </vertices>
+      <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+        <label name="BTNode"/>
+      </vertices>
+      <vertices id="_xvbqwJNpEei6ao3fdMlbVg">
+        <label name="BTNode"/>
+      </vertices>
+      <vertices id="_xvc44JNpEei6ao3fdMlbVg">
         <label name="BTNode"/>
       </vertices>
     </zoneVertex>
     <derivationStep>
-      <rule id="r1____ukvTcJKEEeiDU93O2kqBDA" name="r1">
+      <rule id="r1____x2_EQJNpEei6ao3fdMlbVg" name="r1">
         <lhs name="S"/>
         <rhs>
-          <vertices id="_ukuFUJKEEeiDU93O2kqBDA">
+          <vertices id="_x29PEJNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
           </vertices>
-          <vertices id="_ukuFUZKEEeiDU93O2kqBDA">
+          <vertices id="_x29PEZNpEei6ao3fdMlbVg">
             <label name="A">
               <subscript>BTNode</subscript>
-              <superscript>r</superscript>
+              <superscript>l</superscript>
             </label>
           </vertices>
-          <edges from="_ukuFUJKEEeiDU93O2kqBDA" to="_ukuFUZKEEeiDU93O2kqBDA">
-            <label name="l"/>
+          <edges from="_x29PEJNpEei6ao3fdMlbVg" to="_x29PEZNpEei6ao3fdMlbVg">
+            <label name="r"/>
           </edges>
         </rhs>
       </rule>
-      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_uz8NEJKEEeiDU93O2kqBDA">
+      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zOHPQJNpEei6ao3fdMlbVg">
         <label name="S"/>
-        <vertices id="_uhJM4JKEEeiDU93O2kqBDA">
+        <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
           <label name="BTNode"/>
         </vertices>
-        <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+        <vertices id="_xveHAJNpEei6ao3fdMlbVg">
           <label name="BTNode"/>
         </vertices>
-        <vertices id="_uhGJkJKEEeiDU93O2kqBDA">
+        <vertices id="_xvXZUJNpEei6ao3fdMlbVg">
+          <label name="BTNode"/>
+        </vertices>
+        <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+          <label name="BTNode"/>
+        </vertices>
+        <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+          <label name="BTNode"/>
+        </vertices>
+        <vertices id="_xvbqwJNpEei6ao3fdMlbVg">
+          <label name="BTNode"/>
+        </vertices>
+        <vertices id="_xvc44JNpEei6ao3fdMlbVg">
           <label name="BTNode"/>
         </vertices>
       </vertex>
       <previous>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_uz8NEJKEEeiDU93O2kqBDA">
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zOHPQJNpEei6ao3fdMlbVg">
           <label name="S"/>
-          <vertices id="_uhJM4JKEEeiDU93O2kqBDA">
+          <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
           </vertices>
-          <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+          <vertices id="_xveHAJNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
           </vertices>
-          <vertices id="_uhGJkJKEEeiDU93O2kqBDA">
+          <vertices id="_xvXZUJNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvbqwJNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvc44JNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
           </vertices>
         </vertices>
       </previous>
       <next>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_urNu4JKEEeiDU93O2kqBDA">
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_x-ah8JNpEei6ao3fdMlbVg">
           <label name="BTNode"/>
-          <vertices id="_uhGJkJKEEeiDU93O2kqBDA">
+          <vertices id="_xvXZUJNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
           </vertices>
         </vertices>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_uvS9oJKEEeiDU93O2kqBDA">
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zNaEoJNpEei6ao3fdMlbVg">
           <label name="A">
             <subscript>BTNode</subscript>
-            <superscript>r</superscript>
+            <superscript>l</superscript>
           </label>
-          <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+          <vertices id="_xvc44JNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
           </vertices>
-          <vertices id="_uhJM4JKEEeiDU93O2kqBDA">
+          <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvbqwJNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xveHAJNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
           </vertices>
         </vertices>
-        <edges from="_urNu4JKEEeiDU93O2kqBDA" to="_uvS9oJKEEeiDU93O2kqBDA">
-          <label name="l"/>
+        <edges from="_x-ah8JNpEei6ao3fdMlbVg" to="_zNaEoJNpEei6ao3fdMlbVg">
+          <label name="r"/>
         </edges>
       </next>
-      <unifier key="_ukuFUJKEEeiDU93O2kqBDA" value="_urNu4JKEEeiDU93O2kqBDA"/>
-      <unifier key="_ukuFUZKEEeiDU93O2kqBDA" value="_uvS9oJKEEeiDU93O2kqBDA"/>
+      <unifier key="_x29PEJNpEei6ao3fdMlbVg" value="_x-ah8JNpEei6ao3fdMlbVg"/>
+      <unifier key="_x29PEZNpEei6ao3fdMlbVg" value="_zNaEoJNpEei6ao3fdMlbVg"/>
     </derivationStep>
     <children>
-      <zoneVertex id="_uvS9oJKEEeiDU93O2kqBDA">
-        <label name="A">
-          <subscript>BTNode</subscript>
-          <superscript>r</superscript>
-        </label>
-        <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+      <zoneVertex id="_x-ah8JNpEei6ao3fdMlbVg">
+        <label name="BTNode"/>
+        <vertices id="_xvXZUJNpEei6ao3fdMlbVg">
           <label name="BTNode"/>
         </vertices>
-        <vertices id="_uhJM4JKEEeiDU93O2kqBDA">
+      </zoneVertex>
+    </children>
+    <children>
+      <zoneVertex id="_zNaEoJNpEei6ao3fdMlbVg">
+        <label name="A">
+          <subscript>BTNode</subscript>
+          <superscript>l</superscript>
+        </label>
+        <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+          <label name="BTNode"/>
+        </vertices>
+        <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+          <label name="BTNode"/>
+        </vertices>
+        <vertices id="_xvbqwJNpEei6ao3fdMlbVg">
+          <label name="BTNode"/>
+        </vertices>
+        <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+          <label name="BTNode"/>
+        </vertices>
+        <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+          <label name="BTNode"/>
+        </vertices>
+        <vertices id="_xveHAJNpEei6ao3fdMlbVg">
           <label name="BTNode"/>
         </vertices>
       </zoneVertex>
       <derivationStep>
-        <rule id="r5___(A^{r}_{BTNode})____ultj0pKEEeiDU93O2kqBDA" name="r5">
+        <rule id="r6___(A^{l}_{BTNode})____x5dJcJNpEei6ao3fdMlbVg" name="r6">
           <lhs name="A">
             <subscript>BTNode</subscript>
-            <superscript>r</superscript>
+            <superscript>l</superscript>
           </lhs>
           <rhs>
-            <vertices id="_ultj0JKEEeiDU93O2kqBDA">
+            <vertices id="_x5ciYJNpEei6ao3fdMlbVg">
               <label name="BTNode"/>
             </vertices>
-            <vertices id="_ultj0ZKEEeiDU93O2kqBDA">
+            <vertices id="_x5ciYZNpEei6ao3fdMlbVg">
               <label name="A">
                 <subscript>BTNode</subscript>
-                <superscript>r</superscript>
+                <superscript>l</superscript>
               </label>
             </vertices>
-            <edges from="_ultj0JKEEeiDU93O2kqBDA" to="_ultj0ZKEEeiDU93O2kqBDA">
-              <label name="l"/>
+            <edges from="_x5ciYJNpEei6ao3fdMlbVg" to="_x5ciYZNpEei6ao3fdMlbVg">
+              <label name="r"/>
             </edges>
           </rhs>
-          <embedding key="_ultj0JKEEeiDU93O2kqBDA">
+          <embedding key="_x5ciYJNpEei6ao3fdMlbVg">
             <value>
-              <edgeLabel name="l"/>
+              <edgeLabel name="r"/>
               <vertexLabels name="BTNode"/>
             </value>
           </embedding>
         </rule>
-        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_uvS9oJKEEeiDU93O2kqBDA">
+        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zNaEoJNpEei6ao3fdMlbVg">
           <label name="A">
             <subscript>BTNode</subscript>
-            <superscript>r</superscript>
+            <superscript>l</superscript>
           </label>
-          <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+          <vertices id="_xvc44JNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
           </vertices>
-          <vertices id="_uhJM4JKEEeiDU93O2kqBDA">
+          <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvbqwJNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xveHAJNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
           </vertices>
         </vertex>
         <previous>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_uvS9oJKEEeiDU93O2kqBDA">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zNaEoJNpEei6ao3fdMlbVg">
             <label name="A">
               <subscript>BTNode</subscript>
-              <superscript>r</superscript>
+              <superscript>l</superscript>
             </label>
-            <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+            <vertices id="_xvc44JNpEei6ao3fdMlbVg">
               <label name="BTNode"/>
             </vertices>
-            <vertices id="_uhJM4JKEEeiDU93O2kqBDA">
+            <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xvbqwJNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xveHAJNpEei6ao3fdMlbVg">
               <label name="BTNode"/>
             </vertices>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_uvS9oZKEEeiDU93O2kqBDA">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zNarsJNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
-            <vertices id="_uhGJkJKEEeiDU93O2kqBDA">
+            <vertices id="_xvXZUJNpEei6ao3fdMlbVg">
               <label name="BTNode"/>
             </vertices>
           </vertices>
-          <edges from="_uvS9oZKEEeiDU93O2kqBDA" to="_uvS9oJKEEeiDU93O2kqBDA">
-            <label name="l"/>
+          <edges from="_zNarsJNpEei6ao3fdMlbVg" to="_zNaEoJNpEei6ao3fdMlbVg">
+            <label name="r"/>
           </edges>
         </previous>
         <next>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_utKPoZKEEeiDU93O2kqBDA">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zJo-8ZNpEei6ao3fdMlbVg">
             <label name="A">
               <subscript>BTNode</subscript>
-              <superscript>r</superscript>
+              <superscript>l</superscript>
             </label>
-            <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+            <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
               <label name="BTNode"/>
             </vertices>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_urNu4ZKEEeiDU93O2kqBDA">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_x-ah8ZNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
-            <vertices id="_uhJM4JKEEeiDU93O2kqBDA">
+            <vertices id="_xvbqwJNpEei6ao3fdMlbVg">
               <label name="BTNode"/>
             </vertices>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_uvSWkJKEEeiDU93O2kqBDA">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zNSv4JNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
-            <vertices id="_uhGJkJKEEeiDU93O2kqBDA">
+            <vertices id="_xvXZUJNpEei6ao3fdMlbVg">
               <label name="BTNode"/>
             </vertices>
           </vertices>
-          <edges from="_urNu4ZKEEeiDU93O2kqBDA" to="_utKPoZKEEeiDU93O2kqBDA">
-            <label name="l"/>
+          <edges from="_x-ah8ZNpEei6ao3fdMlbVg" to="_zJo-8ZNpEei6ao3fdMlbVg">
+            <label name="r"/>
           </edges>
-          <edges from="_uvSWkJKEEeiDU93O2kqBDA" to="_urNu4ZKEEeiDU93O2kqBDA">
-            <label name="l"/>
+          <edges from="_zNSv4JNpEei6ao3fdMlbVg" to="_x-ah8ZNpEei6ao3fdMlbVg">
+            <label name="r"/>
           </edges>
         </next>
-        <unifier key="_ultj0JKEEeiDU93O2kqBDA" value="_urNu4ZKEEeiDU93O2kqBDA"/>
-        <unifier key="_ultj0ZKEEeiDU93O2kqBDA" value="_utKPoZKEEeiDU93O2kqBDA"/>
+        <unifier key="_x5ciYJNpEei6ao3fdMlbVg" value="_x-ah8ZNpEei6ao3fdMlbVg"/>
+        <unifier key="_x5ciYZNpEei6ao3fdMlbVg" value="_zJo-8ZNpEei6ao3fdMlbVg"/>
       </derivationStep>
       <children>
-        <zoneVertex id="_urNu4ZKEEeiDU93O2kqBDA">
+        <zoneVertex id="_x-ah8ZNpEei6ao3fdMlbVg">
           <label name="BTNode"/>
-          <vertices id="_uhJM4JKEEeiDU93O2kqBDA">
+          <vertices id="_xvbqwJNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
           </vertices>
         </zoneVertex>
       </children>
       <children>
-        <zoneVertex id="_utKPoZKEEeiDU93O2kqBDA">
+        <zoneVertex id="_zJo-8ZNpEei6ao3fdMlbVg">
           <label name="A">
             <subscript>BTNode</subscript>
-            <superscript>r</superscript>
+            <superscript>l</superscript>
           </label>
-          <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+          <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+            <label name="BTNode"/>
+          </vertices>
+          <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
           </vertices>
         </zoneVertex>
         <derivationStep>
-          <rule id="r2___(A^{r}_{BTNode})" name="r2">
+          <rule id="r6___(A^{l}_{BTNode})____x5dJcJNpEei6ao3fdMlbVg" name="r6">
             <lhs name="A">
               <subscript>BTNode</subscript>
-              <superscript>r</superscript>
+              <superscript>l</superscript>
             </lhs>
             <rhs>
-              <vertices id="_ukCv4JKEEeiDU93O2kqBDA">
+              <vertices id="_x5ciYJNpEei6ao3fdMlbVg">
                 <label name="BTNode"/>
               </vertices>
+              <vertices id="_x5ciYZNpEei6ao3fdMlbVg">
+                <label name="A">
+                  <subscript>BTNode</subscript>
+                  <superscript>l</superscript>
+                </label>
+              </vertices>
+              <edges from="_x5ciYJNpEei6ao3fdMlbVg" to="_x5ciYZNpEei6ao3fdMlbVg">
+                <label name="r"/>
+              </edges>
             </rhs>
-            <embedding key="_ukCv4JKEEeiDU93O2kqBDA">
+            <embedding key="_x5ciYJNpEei6ao3fdMlbVg">
               <value>
-                <edgeLabel name="l"/>
+                <edgeLabel name="r"/>
                 <vertexLabels name="BTNode"/>
               </value>
             </embedding>
           </rule>
-          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_utKPoZKEEeiDU93O2kqBDA">
+          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zJo-8ZNpEei6ao3fdMlbVg">
             <label name="A">
               <subscript>BTNode</subscript>
-              <superscript>r</superscript>
+              <superscript>l</superscript>
             </label>
-            <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+            <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
               <label name="BTNode"/>
             </vertices>
           </vertex>
           <previous>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_utKPoZKEEeiDU93O2kqBDA">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zJo-8ZNpEei6ao3fdMlbVg">
               <label name="A">
                 <subscript>BTNode</subscript>
-                <superscript>r</superscript>
+                <superscript>l</superscript>
               </label>
-              <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+              <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
                 <label name="BTNode"/>
               </vertices>
             </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_utKPopKEEeiDU93O2kqBDA">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zJpmAJNpEei6ao3fdMlbVg">
               <label name="BTNode"/>
-              <vertices id="_uhJM4JKEEeiDU93O2kqBDA">
+              <vertices id="_xvbqwJNpEei6ao3fdMlbVg">
                 <label name="BTNode"/>
               </vertices>
             </vertices>
-            <edges from="_utKPopKEEeiDU93O2kqBDA" to="_utKPoZKEEeiDU93O2kqBDA">
-              <label name="l"/>
+            <edges from="_zJpmAJNpEei6ao3fdMlbVg" to="_zJo-8ZNpEei6ao3fdMlbVg">
+              <label name="r"/>
             </edges>
           </previous>
           <next>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_urNu4pKEEeiDU93O2kqBDA">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_x-ah8pNpEei6ao3fdMlbVg">
               <label name="BTNode"/>
-              <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+              <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
                 <label name="BTNode"/>
               </vertices>
             </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_utKPoJKEEeiDU93O2kqBDA">
-              <label name="BTNode"/>
-              <vertices id="_uhJM4JKEEeiDU93O2kqBDA">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zDtWEZNpEei6ao3fdMlbVg">
+              <label name="A">
+                <subscript>BTNode</subscript>
+                <superscript>l</superscript>
+              </label>
+              <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xveHAJNpEei6ao3fdMlbVg">
                 <label name="BTNode"/>
               </vertices>
             </vertices>
-            <edges from="_utKPoJKEEeiDU93O2kqBDA" to="_urNu4pKEEeiDU93O2kqBDA">
-              <label name="l"/>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zJo-8JNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+              <vertices id="_xvbqwJNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+            </vertices>
+            <edges from="_x-ah8pNpEei6ao3fdMlbVg" to="_zDtWEZNpEei6ao3fdMlbVg">
+              <label name="r"/>
+            </edges>
+            <edges from="_zJo-8JNpEei6ao3fdMlbVg" to="_x-ah8pNpEei6ao3fdMlbVg">
+              <label name="r"/>
             </edges>
           </next>
-          <unifier key="_ukCv4JKEEeiDU93O2kqBDA" value="_urNu4pKEEeiDU93O2kqBDA"/>
+          <unifier key="_x5ciYJNpEei6ao3fdMlbVg" value="_x-ah8pNpEei6ao3fdMlbVg"/>
+          <unifier key="_x5ciYZNpEei6ao3fdMlbVg" value="_zDtWEZNpEei6ao3fdMlbVg"/>
         </derivationStep>
         <children>
-          <zoneVertex id="_urNu4pKEEeiDU93O2kqBDA">
+          <zoneVertex id="_zDtWEZNpEei6ao3fdMlbVg">
+            <label name="A">
+              <subscript>BTNode</subscript>
+              <superscript>l</superscript>
+            </label>
+            <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+            <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+            </vertices>
+          </zoneVertex>
+          <derivationStep>
+            <rule id="r6___(A^{l}_{BTNode})____x5dJcJNpEei6ao3fdMlbVg" name="r6">
+              <lhs name="A">
+                <subscript>BTNode</subscript>
+                <superscript>l</superscript>
+              </lhs>
+              <rhs>
+                <vertices id="_x5ciYJNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+                <vertices id="_x5ciYZNpEei6ao3fdMlbVg">
+                  <label name="A">
+                    <subscript>BTNode</subscript>
+                    <superscript>l</superscript>
+                  </label>
+                </vertices>
+                <edges from="_x5ciYJNpEei6ao3fdMlbVg" to="_x5ciYZNpEei6ao3fdMlbVg">
+                  <label name="r"/>
+                </edges>
+              </rhs>
+              <embedding key="_x5ciYJNpEei6ao3fdMlbVg">
+                <value>
+                  <edgeLabel name="r"/>
+                  <vertexLabels name="BTNode"/>
+                </value>
+              </embedding>
+            </rule>
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zDtWEZNpEei6ao3fdMlbVg">
+              <label name="A">
+                <subscript>BTNode</subscript>
+                <superscript>l</superscript>
+              </label>
+              <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+            </vertex>
+            <previous>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zDtWEZNpEei6ao3fdMlbVg">
+                <label name="A">
+                  <subscript>BTNode</subscript>
+                  <superscript>l</superscript>
+                </label>
+                <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+                <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+                <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+                <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zDt9IJNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+                <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+              </vertices>
+              <edges from="_zDt9IJNpEei6ao3fdMlbVg" to="_zDtWEZNpEei6ao3fdMlbVg">
+                <label name="r"/>
+              </edges>
+            </previous>
+            <next>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zBd6YJNpEei6ao3fdMlbVg">
+                <label name="A">
+                  <subscript>BTNode</subscript>
+                  <superscript>l</superscript>
+                </label>
+                <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+                <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+                <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_x-ah85NpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+                <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zDtWEJNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+                <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+              </vertices>
+              <edges from="_x-ah85NpEei6ao3fdMlbVg" to="_zBd6YJNpEei6ao3fdMlbVg">
+                <label name="r"/>
+              </edges>
+              <edges from="_zDtWEJNpEei6ao3fdMlbVg" to="_x-ah85NpEei6ao3fdMlbVg">
+                <label name="r"/>
+              </edges>
+            </next>
+            <unifier key="_x5ciYJNpEei6ao3fdMlbVg" value="_x-ah85NpEei6ao3fdMlbVg"/>
+            <unifier key="_x5ciYZNpEei6ao3fdMlbVg" value="_zBd6YJNpEei6ao3fdMlbVg"/>
+          </derivationStep>
+          <children>
+            <zoneVertex id="_x-ah85NpEei6ao3fdMlbVg">
+              <label name="BTNode"/>
+              <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+            </zoneVertex>
+          </children>
+          <children>
+            <zoneVertex id="_zBd6YJNpEei6ao3fdMlbVg">
+              <label name="A">
+                <subscript>BTNode</subscript>
+                <superscript>l</superscript>
+              </label>
+              <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+              <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+              </vertices>
+            </zoneVertex>
+            <derivationStep>
+              <rule id="r6___(A^{l}_{BTNode})____x5dJcJNpEei6ao3fdMlbVg" name="r6">
+                <lhs name="A">
+                  <subscript>BTNode</subscript>
+                  <superscript>l</superscript>
+                </lhs>
+                <rhs>
+                  <vertices id="_x5ciYJNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                  <vertices id="_x5ciYZNpEei6ao3fdMlbVg">
+                    <label name="A">
+                      <subscript>BTNode</subscript>
+                      <superscript>l</superscript>
+                    </label>
+                  </vertices>
+                  <edges from="_x5ciYJNpEei6ao3fdMlbVg" to="_x5ciYZNpEei6ao3fdMlbVg">
+                    <label name="r"/>
+                  </edges>
+                </rhs>
+                <embedding key="_x5ciYJNpEei6ao3fdMlbVg">
+                  <value>
+                    <edgeLabel name="r"/>
+                    <vertexLabels name="BTNode"/>
+                  </value>
+                </embedding>
+              </rule>
+              <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zBd6YJNpEei6ao3fdMlbVg">
+                <label name="A">
+                  <subscript>BTNode</subscript>
+                  <superscript>l</superscript>
+                </label>
+                <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+                <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+                <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+              </vertex>
+              <previous>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zBd6YJNpEei6ao3fdMlbVg">
+                  <label name="A">
+                    <subscript>BTNode</subscript>
+                    <superscript>l</superscript>
+                  </label>
+                  <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                  <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                  <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zBd6YZNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                  <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                </vertices>
+                <edges from="_zBd6YZNpEei6ao3fdMlbVg" to="_zBd6YJNpEei6ao3fdMlbVg">
+                  <label name="r"/>
+                </edges>
+              </previous>
+              <next>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_x-ah9JNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                  <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_yvHmIJNpEei6ao3fdMlbVg">
+                  <label name="A">
+                    <subscript>BTNode</subscript>
+                    <superscript>l</superscript>
+                  </label>
+                  <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                  <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_zBdTUJNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                  <vertices id="_xvc44JNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                </vertices>
+                <edges from="_x-ah9JNpEei6ao3fdMlbVg" to="_yvHmIJNpEei6ao3fdMlbVg">
+                  <label name="r"/>
+                </edges>
+                <edges from="_zBdTUJNpEei6ao3fdMlbVg" to="_x-ah9JNpEei6ao3fdMlbVg">
+                  <label name="r"/>
+                </edges>
+              </next>
+              <unifier key="_x5ciYJNpEei6ao3fdMlbVg" value="_x-ah9JNpEei6ao3fdMlbVg"/>
+              <unifier key="_x5ciYZNpEei6ao3fdMlbVg" value="_yvHmIJNpEei6ao3fdMlbVg"/>
+            </derivationStep>
+            <children>
+              <zoneVertex id="_x-ah9JNpEei6ao3fdMlbVg">
+                <label name="BTNode"/>
+                <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+              </zoneVertex>
+            </children>
+            <children>
+              <zoneVertex id="_yvHmIJNpEei6ao3fdMlbVg">
+                <label name="A">
+                  <subscript>BTNode</subscript>
+                  <superscript>l</superscript>
+                </label>
+                <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+                <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                </vertices>
+              </zoneVertex>
+              <derivationStep>
+                <rule id="r6___(A^{l}_{BTNode})____x5dJcJNpEei6ao3fdMlbVg" name="r6">
+                  <lhs name="A">
+                    <subscript>BTNode</subscript>
+                    <superscript>l</superscript>
+                  </lhs>
+                  <rhs>
+                    <vertices id="_x5ciYJNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                    </vertices>
+                    <vertices id="_x5ciYZNpEei6ao3fdMlbVg">
+                      <label name="A">
+                        <subscript>BTNode</subscript>
+                        <superscript>l</superscript>
+                      </label>
+                    </vertices>
+                    <edges from="_x5ciYJNpEei6ao3fdMlbVg" to="_x5ciYZNpEei6ao3fdMlbVg">
+                      <label name="r"/>
+                    </edges>
+                  </rhs>
+                  <embedding key="_x5ciYJNpEei6ao3fdMlbVg">
+                    <value>
+                      <edgeLabel name="r"/>
+                      <vertexLabels name="BTNode"/>
+                    </value>
+                  </embedding>
+                </rule>
+                <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_yvHmIJNpEei6ao3fdMlbVg">
+                  <label name="A">
+                    <subscript>BTNode</subscript>
+                    <superscript>l</superscript>
+                  </label>
+                  <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                  <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                </vertex>
+                <previous>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_yvHmIJNpEei6ao3fdMlbVg">
+                    <label name="A">
+                      <subscript>BTNode</subscript>
+                      <superscript>l</superscript>
+                    </label>
+                    <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                    </vertices>
+                    <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                    </vertices>
+                  </vertices>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_yvINMJNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                    <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                    </vertices>
+                  </vertices>
+                  <edges from="_yvINMJNpEei6ao3fdMlbVg" to="_yvHmIJNpEei6ao3fdMlbVg">
+                    <label name="r"/>
+                  </edges>
+                </previous>
+                <next>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_x-ah9ZNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                    <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                    </vertices>
+                  </vertices>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_yBSPwJNpEei6ao3fdMlbVg">
+                    <label name="A">
+                      <subscript>BTNode</subscript>
+                      <superscript>l</superscript>
+                    </label>
+                    <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                    </vertices>
+                  </vertices>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_yvG_EJNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                    <vertices id="_xvc44ZNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                    </vertices>
+                  </vertices>
+                  <edges from="_x-ah9ZNpEei6ao3fdMlbVg" to="_yBSPwJNpEei6ao3fdMlbVg">
+                    <label name="r"/>
+                  </edges>
+                  <edges from="_yvG_EJNpEei6ao3fdMlbVg" to="_x-ah9ZNpEei6ao3fdMlbVg">
+                    <label name="r"/>
+                  </edges>
+                </next>
+                <unifier key="_x5ciYJNpEei6ao3fdMlbVg" value="_x-ah9ZNpEei6ao3fdMlbVg"/>
+                <unifier key="_x5ciYZNpEei6ao3fdMlbVg" value="_yBSPwJNpEei6ao3fdMlbVg"/>
+              </derivationStep>
+              <children>
+                <zoneVertex id="_x-ah9ZNpEei6ao3fdMlbVg">
+                  <label name="BTNode"/>
+                  <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                </zoneVertex>
+              </children>
+              <children>
+                <zoneVertex id="_yBSPwJNpEei6ao3fdMlbVg">
+                  <label name="A">
+                    <subscript>BTNode</subscript>
+                    <superscript>l</superscript>
+                  </label>
+                  <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                  </vertices>
+                </zoneVertex>
+                <derivationStep>
+                  <rule id="r3___(A^{l}_{BTNode})" name="r3">
+                    <lhs name="A">
+                      <subscript>BTNode</subscript>
+                      <superscript>l</superscript>
+                    </lhs>
+                    <rhs>
+                      <vertices id="_x1PX0JNpEei6ao3fdMlbVg">
+                        <label name="BTNode"/>
+                      </vertices>
+                    </rhs>
+                    <embedding key="_x1PX0JNpEei6ao3fdMlbVg">
+                      <value>
+                        <edgeLabel name="r"/>
+                        <vertexLabels name="BTNode"/>
+                      </value>
+                    </embedding>
+                  </rule>
+                  <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_yBSPwJNpEei6ao3fdMlbVg">
+                    <label name="A">
+                      <subscript>BTNode</subscript>
+                      <superscript>l</superscript>
+                    </label>
+                    <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                    </vertices>
+                  </vertex>
+                  <previous>
+                    <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_yBSPwJNpEei6ao3fdMlbVg">
+                      <label name="A">
+                        <subscript>BTNode</subscript>
+                        <superscript>l</superscript>
+                      </label>
+                      <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                        <label name="BTNode"/>
+                      </vertices>
+                    </vertices>
+                    <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_yBSPwZNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                      <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                        <label name="BTNode"/>
+                      </vertices>
+                    </vertices>
+                    <edges from="_yBSPwZNpEei6ao3fdMlbVg" to="_yBSPwJNpEei6ao3fdMlbVg">
+                      <label name="r"/>
+                    </edges>
+                  </previous>
+                  <next>
+                    <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_x-ah9pNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                      <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                        <label name="BTNode"/>
+                      </vertices>
+                    </vertices>
+                    <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_yBRosJNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                      <vertices id="_xvdf8JNpEei6ao3fdMlbVg">
+                        <label name="BTNode"/>
+                      </vertices>
+                    </vertices>
+                    <edges from="_yBRosJNpEei6ao3fdMlbVg" to="_x-ah9pNpEei6ao3fdMlbVg">
+                      <label name="r"/>
+                    </edges>
+                  </next>
+                  <unifier key="_x1PX0JNpEei6ao3fdMlbVg" value="_x-ah9pNpEei6ao3fdMlbVg"/>
+                </derivationStep>
+                <children>
+                  <zoneVertex id="_x-ah9pNpEei6ao3fdMlbVg">
+                    <label name="BTNode"/>
+                    <vertices id="_xveHAJNpEei6ao3fdMlbVg">
+                      <label name="BTNode"/>
+                    </vertices>
+                  </zoneVertex>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+        <children>
+          <zoneVertex id="_x-ah8pNpEei6ao3fdMlbVg">
             <label name="BTNode"/>
-            <vertices id="_uhJz8JKEEeiDU93O2kqBDA">
+            <vertices id="_xvcR0JNpEei6ao3fdMlbVg">
               <label name="BTNode"/>
             </vertices>
           </zoneVertex>
         </children>
       </children>
-    </children>
-    <children>
-      <zoneVertex id="_urNu4JKEEeiDU93O2kqBDA">
-        <label name="BTNode"/>
-        <vertices id="_uhGJkJKEEeiDU93O2kqBDA">
-          <label name="BTNode"/>
-        </vertices>
-      </zoneVertex>
     </children>
   </org.wbsilva.bence.graphgrammar:ParsingTree>
 </xmi:XMI>
