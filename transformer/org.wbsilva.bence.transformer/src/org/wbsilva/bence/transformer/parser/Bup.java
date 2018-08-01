@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
+import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 
 /**
  * This class implements the bottom-up parsing set.
@@ -154,13 +155,9 @@ public class Bup {
 				final ZoneVertex bup = itt.next();
 				assert bup != null;
 				
-				//Add it, if current subset still does not have it
-				if (!ss.contains(bup)) {
-					final HashSet<ZoneVertex> newSs = new HashSet<>(ss);
-					newSs.add(bup);
-					
-					newSubsets.add(newSs); //two sets with same bups are equal
-				}
+				final HashSet<ZoneVertex> newSs = new HashSet<>(ss);
+				newSs.add(bup);
+				newSubsets.add(newSs); //two sets with same bups are equal
 			}
 		}
 		
