@@ -94,12 +94,15 @@ public class NPNormalizer {
 					}
 				}
 				
+				//No need to process non NP rule. Only has to process its new versions
+				rulesToProcess.remove(nonNPRule);
+				
 				logger.debug(String.format("Fixing non NP rule [id= %s, name= %s]: %d new guest rule(s) to be added", nonNPRule.getId(), 
 						nonNPRule.getName(), newRules.get(nonNPRule).size()));
 			}
 
 			assert newRules.size() == nonNPRulesContext.size();
-			assert rulesToProcess.size() == grammar.getRules().size();
+			assert rulesToProcess.size() == grammar.getRules().size() - nonNPRulesContext.size();
 			
 			//If there are rules to be processed (at first, there is always the grammar rules)
 			while(!rulesToProcess.isEmpty()) {
