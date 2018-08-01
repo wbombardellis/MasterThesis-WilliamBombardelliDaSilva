@@ -91,18 +91,40 @@ public class Bup {
 	 */
 	public synchronized Set<ZoneVertex> next() {
 		if(hasNext()) {
+			//If we are at the next phase 
+			if (phase >= subsets.size() && phase <= lastPhase()) {
+				//Add new subsets and queues
+				final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(phase, bupSet);
+				addNewSubsetQueue(newDinjunctSubsets);
+				
+				assert subsets.size() > 1;
+				//assert subsets.get(phase).size() > 0;
+				assert phase == subsets.size() - 1;
+				assert queues.size() > 1;
+				//assert queues.get(phase).size() > 0;
+				assert phase == queues.size() - 1;
+			}
+			
 			assert queues.get(phase) != null;
 			assert phase > 0;
-			
-			final Set<ZoneVertex> ret = queues.get(phase).poll();
-			assert ret != null;
 			
 			//No more element in this phase. Go to the next
 			if (queues.get(phase).isEmpty()) {
 				phase++;
+				//Recursive call to get the next at the next phase
+				return next();
+			} else {
+				//Surely the recusion ends, because the phase will scale until the last phase,
+				//when the queue consists of only one subset containing all elements of bubSet 
+				final Set<ZoneVertex> ret = queues.get(phase).poll();
+				assert ret != null;
+				
+				if (queues.get(phase).isEmpty()) {
+					phase++;
+				}
+				
+				return ret;
 			}
-			
-			return ret;
 		} else {
 			return null;
 		}
@@ -155,9 +177,11 @@ public class Bup {
 				final ZoneVertex bup = itt.next();
 				assert bup != null;
 				
-				final HashSet<ZoneVertex> newSs = new HashSet<>(ss);
-				newSs.add(bup);
-				newSubsets.add(newSs); //two sets with same bups are equal
+				if(!ss.contains(bup)) {
+					final HashSet<ZoneVertex> newSs = new HashSet<>(ss);
+					newSs.add(bup);
+					newSubsets.add(newSs); //two sets with same bups are equal
+				}
 			}
 		}
 		
@@ -244,22 +268,8 @@ public class Bup {
 		assert phase >= 0;
 		assert phase <= subsets.size();
 
-		//If we are at the next phase 
-		if (phase >= subsets.size() && phase <= lastPhase()) {
-			//Add new subsets and queues
-			final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(phase, bupSet);
-			addNewSubsetQueue(newDinjunctSubsets);
-			
-			assert subsets.size() > 1;
-			//assert subsets.get(phase).size() > 0;
-			assert phase == subsets.size() - 1;
-			assert queues.size() > 1;
-			//assert queues.get(phase).size() > 0;
-			assert phase == queues.size() - 1;
-		}
-		
 		//If current phase is beyond the last phase, i.e. all subsets has been retrieved, then it has no next and returns false
-		return phase <= lastPhase() && !queues.get(phase).isEmpty();
+		return phase <= lastPhase() /*&& !queues.get(phase).isEmpty()*/;
 	}
 
 	/**
