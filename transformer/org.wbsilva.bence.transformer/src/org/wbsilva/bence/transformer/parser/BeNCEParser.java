@@ -31,12 +31,26 @@ import org.wbsilva.bence.graphgrammar.util.NPUtil;
 public class BeNCEParser {
 	
 	static final Logger logger = LogManager.getLogger(BeNCEParser.class);
+
+	public enum Strategy{
+		NAIVE,
+		GREEDY;
+	};
 	
 	private final Grammar grammar;
+
+	private final Strategy strategy;
 	
 	public BeNCEParser(final Grammar grammar){
+		this(grammar, Strategy.GREEDY);
+	}
+	
+	public BeNCEParser(final Grammar grammar, final Strategy strategy){
 		assert grammar != null;
+		assert strategy != null;
+		
 		this.grammar = grammar;
+		this.strategy = strategy;
 	}
 	
 	/**
@@ -69,8 +83,21 @@ public class BeNCEParser {
 		} else {
 			
 			//Create bottom-up parse set
-			final Set<ZoneVertex> initialZoneVertices = zoneVertices(graph.getVertices());		
-			final Bup bup = new Bup(initialZoneVertices);
+			final Set<ZoneVertex> initialZoneVertices = zoneVertices(graph.getVertices());
+			
+			final IBup bup;
+			switch(this.strategy) {
+			case NAIVE:
+				bup = new Bup(initialZoneVertices);
+			break;
+			case GREEDY:
+				bup = new GreedyBup(initialZoneVertices);
+			break;
+			default:
+				logger.debug(String.format("Chosen strategy %s not implemented, falling back to %s.", this.strategy, Strategy.GREEDY));
+				bup = new GreedyBup(initialZoneVertices);
+			}
+			logger.debug(String.format("Using strategy %s", this.strategy));
 			
 			//Forest of possible parsing trees
 			final Set<ParsingTree> parsingForest = new HashSet<ParsingTree>();
