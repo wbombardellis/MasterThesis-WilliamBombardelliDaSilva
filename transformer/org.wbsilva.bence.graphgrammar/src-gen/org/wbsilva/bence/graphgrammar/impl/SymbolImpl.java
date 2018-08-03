@@ -7,12 +7,10 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.NotificationImpl;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
@@ -177,35 +175,31 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 				assert this.getSubscript().size() == this.getSuperscript().size();
 				assert other.getSubscript().size() == other.getSuperscript().size();
 				//this.subscript against other.subscript - Compare using the pairs of respective sub and superscripts
-				
+
 				final ArrayList<Entry<String, String>> thisPairs = new ArrayList<>(this.getSubscript().size());
 				for (int i = 0; i < this.getSubscript().size(); i++) {
-					thisPairs.add(new AbstractMap.SimpleEntry<>(this.getSubscript().get(i), this.getSuperscript().get(i)));
+					thisPairs.add(
+							new AbstractMap.SimpleEntry<>(this.getSubscript().get(i), this.getSuperscript().get(i)));
 				}
-				
+
 				final ArrayList<Entry<String, String>> otherPairs = new ArrayList<>(this.getSubscript().size());
 				for (int i = 0; i < other.getSubscript().size(); i++) {
-					otherPairs.add(new AbstractMap.SimpleEntry<>(other.getSubscript().get(i), other.getSuperscript().get(i)));
+					otherPairs.add(
+							new AbstractMap.SimpleEntry<>(other.getSubscript().get(i), other.getSuperscript().get(i)));
 				}
-				
-				final List<Entry<String, String>> thisPairsSorted = thisPairs.stream()
-					.distinct()
-					.sorted((a,b) -> {
-						if (a.getKey().compareTo(b.getKey()) == 0)
-							return a.getValue().compareTo(b.getValue());
-						else
-							return a.getKey().compareTo(b.getKey());
-					})
-					.collect(Collectors.toList());
-				final List<Entry<String, String>> otherPairsSorted = otherPairs.stream()
-						.distinct()
-						.sorted((a,b) -> {
-							if (a.getKey().compareTo(b.getKey()) == 0)
-								return a.getValue().compareTo(b.getValue());
-							else
-								return a.getKey().compareTo(b.getKey());
-						})
-						.collect(Collectors.toList());
+
+				final List<Entry<String, String>> thisPairsSorted = thisPairs.stream().distinct().sorted((a, b) -> {
+					if (a.getKey().compareTo(b.getKey()) == 0)
+						return a.getValue().compareTo(b.getValue());
+					else
+						return a.getKey().compareTo(b.getKey());
+				}).collect(Collectors.toList());
+				final List<Entry<String, String>> otherPairsSorted = otherPairs.stream().distinct().sorted((a, b) -> {
+					if (a.getKey().compareTo(b.getKey()) == 0)
+						return a.getValue().compareTo(b.getValue());
+					else
+						return a.getKey().compareTo(b.getKey());
+				}).collect(Collectors.toList());
 
 				//thisPairsSorted against otherPairsSorted
 				int j;
@@ -218,8 +212,7 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol {
 						int d = thisPairsSorted.get(j).getValue().compareTo(otherPairsSorted.get(j).getValue());
 						if (d != 0)
 							return d;
-					}
-					else
+					} else
 						return c;
 				}
 				if (j < thisPairsSorted.size())

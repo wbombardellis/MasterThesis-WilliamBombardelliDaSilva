@@ -33,8 +33,7 @@ public class BeNCEParser {
 	static final Logger logger = LogManager.getLogger(BeNCEParser.class);
 
 	public enum Strategy{
-		NAIVE,
-		GREEDY;
+		NAIVE, GREEDY, CONNECTED;
 	};
 	
 	private final Grammar grammar;
@@ -102,6 +101,9 @@ public class BeNCEParser {
 			break;
 			case GREEDY:
 				bup = new GreedyBup(initialZoneVertices, this.maxr);
+			break;
+			case CONNECTED:
+				bup = new ConnectedBup(initialZoneVertices, this.maxr, graph);
 			break;
 			default:
 				logger.debug(String.format("Chosen strategy %s not implemented, falling back to %s.", this.strategy, Strategy.GREEDY));

@@ -138,7 +138,7 @@ public class BeNCETransformer {
 				logger.debug(String.format("Stating backward transformation with input graph %s", inputGraph));
 			
 			//Parse input graph
-			final BeNCEParser parser = new BeNCEParser(this.inputGrammarNP, Strategy.NAIVE);
+			final BeNCEParser parser = new BeNCEParser(this.inputGrammarNP, Strategy.CONNECTED);
 			final Optional<ParsingTree> parsingTree = parser.parse(inputGraph);
 			assert parsingTree != null;
 			

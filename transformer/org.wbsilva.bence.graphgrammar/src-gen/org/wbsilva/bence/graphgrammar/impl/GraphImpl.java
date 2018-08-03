@@ -232,6 +232,17 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean areNeighbors(Vertex a, Vertex b) {
+		return this.getEdges().stream()
+			.anyMatch(e -> (e.getFrom().getId().equals(a.getId()) && e.getTo().getId().equals(b.getId()))
+						|| (e.getFrom().getId().equals(b.getId()) && e.getTo().getId().equals(a.getId())));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -339,6 +350,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph {
 			return outEdges((Vertex) arguments.get(0));
 		case GraphgrammarPackage.GRAPH___EDGES__VERTEX:
 			return edges((Vertex) arguments.get(0));
+		case GraphgrammarPackage.GRAPH___ARE_NEIGHBORS__VERTEX_VERTEX:
+			return areNeighbors((Vertex) arguments.get(0), (Vertex) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

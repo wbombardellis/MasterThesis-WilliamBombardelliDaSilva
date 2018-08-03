@@ -138,4 +138,16 @@ public interface Graph extends EObject {
 	 * @generated
 	 */
 	EList<Edge> edges(Vertex vertex);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return true iff vertices a and b are neighbors, independently of the 
+	 * direction of the eventual edge between them
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean areNeighbors(Vertex a, Vertex b);
 } // Graph

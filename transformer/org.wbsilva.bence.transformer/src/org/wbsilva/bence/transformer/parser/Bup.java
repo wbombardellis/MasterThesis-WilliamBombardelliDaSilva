@@ -146,11 +146,15 @@ public class Bup implements IBup{
 				
 				if(!ss.contains(bup)) {
 					final HashSet<ZoneVertex> newSs = new HashSet<>(ss);
-					newSs.add(bup);
 					
-					//Do not add, if newSS is already in the current phase's subsets
-					if (!thisPhaseSubsets.contains(newSs)) {
-						newSubsets.add(newSs); //two sets with same bups are equal
+					//Only add, if bup passes the restriction filter
+					if (passRestriction(bup, newSs)) {
+						newSs.add(bup);
+						
+						//Only add, if newSS is not in the current phase's subsets yet
+						if (!thisPhaseSubsets.contains(newSs)) {
+							newSubsets.add(newSs); //two sets with same bups are equal
+						}
 					}
 				}
 			}
@@ -177,6 +181,18 @@ public class Bup implements IBup{
 	protected Set<Set<ZoneVertex>> createNewSubsets(int p, final ZoneVertex zoneVertex) {
 		assert zoneVertex != null;
 		return createNewSubsets(p, new HashSet<ZoneVertex>(Arrays.asList(zoneVertex)));
+	}
+	
+	/**
+	 * Evaluate if zone vertex {@code zv} can be added in {@code subset}
+	 * 
+	 * @param zv		The zone vertex to be evaluated
+	 * @param subset	The subset to be evaluated
+	 * @return			True iff, {@code zv} may be added to {@code subset}
+	 */
+	protected boolean passRestriction(final ZoneVertex zv, final Set<ZoneVertex> subset) {
+		//Extensions of this class could extend this method 
+		return true;
 	}
 	
 	/**

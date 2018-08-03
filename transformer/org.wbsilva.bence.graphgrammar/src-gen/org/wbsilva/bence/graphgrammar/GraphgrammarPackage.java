@@ -688,13 +688,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int GRAPH___EDGES__VERTEX = 6;
 
 	/**
+	 * The operation id for the '<em>Are Neighbors</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH___ARE_NEIGHBORS__VERTEX_VERTEX = 7;
+
+	/**
 	 * The number of operations of the '<em>Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_OPERATION_COUNT = 7;
+	int GRAPH_OPERATION_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
@@ -1742,6 +1751,16 @@ public interface GraphgrammarPackage extends EPackage {
 	EOperation getGraph__Edges__Vertex();
 
 	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Graph#areNeighbors(org.wbsilva.bence.graphgrammar.Vertex, org.wbsilva.bence.graphgrammar.Vertex) <em>Are Neighbors</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Are Neighbors</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Graph#areNeighbors(org.wbsilva.bence.graphgrammar.Vertex, org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getGraph__AreNeighbors__Vertex_Vertex();
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Vertex <em>Vertex</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2543,6 +2562,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation GRAPH___EDGES__VERTEX = eINSTANCE.getGraph__Edges__Vertex();
+		/**
+		 * The meta object literal for the '<em><b>Are Neighbors</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GRAPH___ARE_NEIGHBORS__VERTEX_VERTEX = eINSTANCE.getGraph__AreNeighbors__Vertex_Vertex();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexImpl <em>Vertex</em>}' class.
 		 * <!-- begin-user-doc -->
