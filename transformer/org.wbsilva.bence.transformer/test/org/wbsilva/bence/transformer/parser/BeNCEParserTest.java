@@ -41,9 +41,6 @@ class BeNCEParserTest {
 	
 	@BeforeAll
 	static void init() {
-		
-		parser = new BeNCEParser(gg0);
-		
 		Symbol l1 = GraphgrammarFactory.eINSTANCE.createSymbol();
 		l1.setName("1");
 		Symbol l2 = GraphgrammarFactory.eINSTANCE.createSymbol();
@@ -58,16 +55,39 @@ class BeNCEParserTest {
 		Symbol l33 = GraphgrammarFactory.eINSTANCE.createSymbol();
 		l33.setName("v3");
 		
-		zv1.setLabel(l1);
-		zv2.setLabel(l2);
+		Symbol i = GraphgrammarFactory.eINSTANCE.createSymbol();
+		i.setName("S");
+		
+		gg0.getAlphabet().add(i);
+		gg0.getAlphabet().add(l1);
+		gg0.getAlphabet().add(l2);
+		gg0.getAlphabet().add(l3);
+		gg0.getAlphabet().add(l11);
+		gg0.getAlphabet().add(l22);
+		gg0.getAlphabet().add(l33);
+		gg0.getNonterminals().add(i);
+		gg0.getTerminals().add(l1);
+		gg0.getTerminals().add(l2);
+		gg0.getTerminals().add(l3);
+		gg0.getTerminals().add(l11);
+		gg0.getTerminals().add(l22);
+		gg0.getTerminals().add(l33);
+		gg0.setInitial(i);
+		
+		parser = new BeNCEParser(gg0);
+		
+		
+		
+		zv1.setLabel(EcoreUtil.copy(l1));
+		zv2.setLabel(EcoreUtil.copy(l2));
 		zv2.getVertices().add(v1);
 		zv2.getVertices().add(v2);
-		zv3.setLabel(l3);
+		zv3.setLabel(EcoreUtil.copy(l3));
 		zv3.getVertices().add(v3);
 		
-		v1.setLabel(l11);
-		v2.setLabel(l22);
-		v3.setLabel(l33);
+		v1.setLabel(EcoreUtil.copy(l11));
+		v2.setLabel(EcoreUtil.copy(l22));
+		v3.setLabel(EcoreUtil.copy(l33));
 		
 		set1.add(zv1);
 		

@@ -38,6 +38,11 @@ public class BeNCEParser {
 	};
 	
 	private final Grammar grammar;
+	
+	/**
+	 * The maximal size of the grammar's rules
+	 */
+	private final int maxr;
 
 	private final Strategy strategy;
 	
@@ -48,9 +53,16 @@ public class BeNCEParser {
 	public BeNCEParser(final Grammar grammar, final Strategy strategy){
 		assert grammar != null;
 		assert strategy != null;
+		assert GraphgrammarUtil.isValidGrammar(grammar);
+		assert GraphgrammarUtil.isBoundaryGrammar(grammar);
 		
 		this.grammar = grammar;
 		this.strategy = strategy;
+		
+		this.maxr = this.grammar.getRules().stream()
+				.mapToInt(r -> r.getRhs().getVertices().size())
+				.max()
+				.orElse(0);
 	}
 	
 	/**
@@ -67,8 +79,6 @@ public class BeNCEParser {
 	 */
 	public Optional<ParsingTree> parse(final Graph graph){
 		assert graph != null;
-		assert GraphgrammarUtil.isValidGrammar(this.grammar);
-		assert GraphgrammarUtil.isBoundaryGrammar(this.grammar);
 		assert GraphgrammarUtil.isValidGraph(graph);
 		
 		logger.debug(String.format("Starting parsing of the graph %s", graph));
@@ -88,14 +98,14 @@ public class BeNCEParser {
 			final IBup bup;
 			switch(this.strategy) {
 			case NAIVE:
-				bup = new Bup(initialZoneVertices);
+				bup = new Bup(initialZoneVertices, this.maxr);
 			break;
 			case GREEDY:
-				bup = new GreedyBup(initialZoneVertices);
+				bup = new GreedyBup(initialZoneVertices, this.maxr);
 			break;
 			default:
 				logger.debug(String.format("Chosen strategy %s not implemented, falling back to %s.", this.strategy, Strategy.GREEDY));
-				bup = new GreedyBup(initialZoneVertices);
+				bup = new GreedyBup(initialZoneVertices, this.maxr);
 			}
 			logger.debug(String.format("Using strategy %s", this.strategy));
 			
@@ -115,10 +125,11 @@ public class BeNCEParser {
 			rootZV.setLabel(EcoreUtil.copy(grammar.getInitial()));
 			rootZV.getVertices().addAll(EcoreUtil.copyAll(graph.getVertices()));
 			
-			//Bottom-up loop to create all possible derivations
-			while(bup.hasNext() && !bup.contains(rootZV)){
-				//Select a handle
-				final Set<ZoneVertex> handle = bup.next();					//R
+			//Bottom-up loop to create possible derivations
+			Optional<Set<ZoneVertex>> nextHandle = bup.next();
+			boolean successfullyParsed = false;
+			while(nextHandle.isPresent()){
+				final Set<ZoneVertex> handle = nextHandle.get(); 			//R
 				assert !handle.isEmpty();
 				
 				logger.debug(String.format("Selected handle {%s}", handle.stream()
@@ -183,6 +194,12 @@ public class BeNCEParser {
 										.map(pt -> pt.getZoneVertex().getId())
 										.reduce((a,b) -> a.concat(", ").concat(b))
 										.orElse("")));
+				 			
+							//Got at the initial symbol, successfully parsed
+							if (bup.contains(rootZV)) {
+								successfullyParsed  = true;
+								break;
+							}
 						} else {
 							logger.debug(String.format("Could reduce, but derivation step %s, %s is not neighborhood preserving", newDS.getRule().getName(), newDS.getVertex().getId()));
 						}
@@ -190,10 +207,13 @@ public class BeNCEParser {
 						logger.debug(String.format("Cannot reduce with symbol %s", d));
 					}
 				}
+
+				//Select next handle
+				nextHandle = bup.next();
 			}
 			
-			//Successfully parsed
-			if (bup.contains(rootZV)) {
+			
+			if (successfullyParsed) {
 				final ParsingTree parsingTree = parsingForest.stream()
 						.filter(pt -> pt.getZoneVertex().equivalates(rootZV))
 						.findAny()

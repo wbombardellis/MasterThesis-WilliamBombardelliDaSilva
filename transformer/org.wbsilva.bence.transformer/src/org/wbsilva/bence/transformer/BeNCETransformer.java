@@ -19,6 +19,7 @@ import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 import org.wbsilva.bence.graphgrammar.util.NPUtil;
 import org.wbsilva.bence.transformer.parser.BeNCEParser;
+import org.wbsilva.bence.transformer.parser.BeNCEParser.Strategy;
 
 /**
  * This class implements a B-eNCE triple graph grammar transformer, that transforms an input graph (source or target)
@@ -137,7 +138,7 @@ public class BeNCETransformer {
 				logger.debug(String.format("Stating backward transformation with input graph %s", inputGraph));
 			
 			//Parse input graph
-			final BeNCEParser parser = new BeNCEParser(this.inputGrammarNP);
+			final BeNCEParser parser = new BeNCEParser(this.inputGrammarNP, Strategy.NAIVE);
 			final Optional<ParsingTree> parsingTree = parser.parse(inputGraph);
 			assert parsingTree != null;
 			
