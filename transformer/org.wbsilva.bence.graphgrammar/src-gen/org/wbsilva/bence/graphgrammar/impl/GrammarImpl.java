@@ -2,9 +2,6 @@
  */
 package org.wbsilva.bence.graphgrammar.impl;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Set;
@@ -16,11 +13,9 @@ import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -271,13 +266,14 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 
 			for (Vertex v : possibleVertices) {
 				final Graph g = EcoreUtil.copy(prev);
+				final Graph n = EcoreUtil.copy(next);
 				final Rule r = EcoreUtil.copy(rule);
 
 				final EMap<Vertex, Vertex> r2gUnifier = r.apply(g, v);
 				assert GraphgrammarUtil.isValidGraph(g);
 
 				//If result of rule application is isomorphic to next, then success
-				final EMap<Vertex, Vertex> g2nextIsomorphism = g.isomorphism(next);
+				final EMap<Vertex, Vertex> g2nextIsomorphism = g.isomorphism(n);
 				if (!r2gUnifier.isEmpty() && g2nextIsomorphism != null) {
 					assert !g2nextIsomorphism.isEmpty();
 					assert r2gUnifier.size() == r.getRhs().getVertices().size();
@@ -285,17 +281,17 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 					assert r.getRhs().getVertices().stream().allMatch(w -> g.getVertices().contains(r2gUnifier.get(w)));
 
 					//Adjust unifier to map from rule to next
-					final EMap<Vertex, Vertex> r2nextUnifier = new BasicEMap<Vertex, Vertex>(r2gUnifier.size());
+					final EMap<Vertex, Vertex> r2nUnifier = new BasicEMap<Vertex, Vertex>(r2gUnifier.size());
 					r2gUnifier.stream().forEach(r2g -> {
-						r2nextUnifier.put(r2g.getKey(), g2nextIsomorphism.get(r2g.getValue()));
+						r2nUnifier.put(r2g.getKey(), g2nextIsomorphism.get(r2g.getValue()));
 					});
 
 					final DerivationStep newDS = GraphgrammarFactory.eINSTANCE.createDerivationStep();
 					newDS.setVertex(EcoreUtil.copy(v));
 					newDS.setRule(r);
 					newDS.setPrevious(prev);
-					newDS.setNext(next);
-					newDS.getUnifier().putAll(r2nextUnifier);
+					newDS.setNext(n);
+					newDS.getUnifier().putAll(r2nUnifier);
 
 					return newDS;
 				}

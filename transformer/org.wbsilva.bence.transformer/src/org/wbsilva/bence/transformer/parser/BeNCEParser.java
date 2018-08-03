@@ -139,10 +139,6 @@ public class BeNCEParser {
 																.orElse("")))
 						.reduce((a,b) -> a.concat(", ").concat(b))
 						.orElse("")));
-				
-				for (final Symbol d : grammar.getNonterminals()) {
-					
-					logger.debug(String.format("Trying to reduce with symbol %s", d));
 					
 					final Graph handleGraph = zoneGraph(graph, handle);		//Z(R)
 					assert GraphgrammarUtil.isValidGraph(handleGraph);
@@ -154,6 +150,9 @@ public class BeNCEParser {
 					assert GraphgrammarUtil.isValidGraph(rhs);
 					assert !rhs.getVertices().isEmpty();
 					//assert GraphgrammarUtil.isBoundaryGraph(rhs, this.grammar.getNonterminals());
+					
+				for (final Symbol d : grammar.getNonterminals()) {
+					logger.debug(String.format("Trying to reduce with symbol %s", d));
 					
 					final ZoneVertex lhs = contract(d, handle);				//(d,V(R))
 					assert !lhs.getVertices().isEmpty();
