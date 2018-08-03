@@ -73,4 +73,12 @@ public class UIUtil {
 	public static void printTransformationFail() {
 		System.out.println("Transformation finished without success. Nothing to save. See error logs for more details.");
 	}
+
+	public static void printAdaptingInput() {
+		System.out.println("Input models read. Adapting input models.");
+	}
+
+	public static void printStartTransforming() {
+		System.out.println("Model adapted. Transforming input model.");
+	}
 }

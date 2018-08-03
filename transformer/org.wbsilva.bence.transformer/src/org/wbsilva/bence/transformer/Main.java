@@ -175,8 +175,12 @@ public class Main {
 			}
 			assert inputModel != null;
 			
+			UIUtil.printAdaptingInput();
+			
 			//Transform the instance of the input model into a graph
 			final Graph inputGraph = new ECore2GraphTransformer().transform(inputModel);
+			
+			UIUtil.printStartTransforming();
 			
 			//The actual TGG-driven transformation
 			final BeNCETransformer transformer = new BeNCETransformer(tripleGrammar, forward);
