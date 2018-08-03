@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -50,179 +51,172 @@ class BupTest {
 
 	@Test
 	void testBupNull() {
-		Bup bup = new Bup(null);
-		assertFalse(bup.hasNext());
+		Bup bup = new Bup(null, 1);
+		assertFalse(bup.next().isPresent());
+	}
+	
+	@Test
+	void testBupNonEmptyZero() {
+		Bup bup = new Bup(set1, 0);
+		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testBupNonEmpty() {
-		Bup bup = new Bup(set1);
-		assertTrue(bup.hasNext());
+		Bup bup = new Bup(set1, 1);
+		assertTrue(bup.next().isPresent());
 	}
 
 	@Test
 	void testHasNextEmpty() {
-		Bup bup = new Bup(set0);
-		assertFalse(bup.hasNext());
+		Bup bup = new Bup(set0, 1);
+		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testHasNextAfterAdd() {
-		Bup bup = new Bup(set0);
-		assertFalse(bup.hasNext());
+		Bup bup = new Bup(set0, 1);
+		assertFalse(bup.next().isPresent());
 		
 		bup.add(zv1);
-		assertTrue(bup.hasNext());
+		assertTrue(bup.next().isPresent());
 	}
 	
 	@Test
 	void testNextEmpty() {
-		Bup bup = new Bup(set0);
-		assertNull(bup.next());
+		Bup bup = new Bup(set0, 1);
+		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testNextNonEmpty() {
-		Bup bup = new Bup(set1);
-		Set<ZoneVertex> next = bup.next();
-		assertEquals(1, next.size());
-		assertTrue(next.contains(zv1));
+		Bup bup = new Bup(set1, 1);
+		Optional<Set<ZoneVertex>> next = bup.next();
+		assertEquals(1, next.get().size());
+		assertTrue(next.get().contains(zv1));
 	}
 	
 	@Test
 	void testNextAfterAdd() {
-		Bup bup = new Bup(set0);
+		Bup bup = new Bup(set0, 1);
 		bup.add(zv1);
-		Set<ZoneVertex> next = bup.next();
-		assertEquals(1, next.size());
-		assertTrue(next.contains(zv1));
+		Optional<Set<ZoneVertex>> next = bup.next();
+		assertEquals(1, next.get().size());
+		assertTrue(next.get().contains(zv1));
 	}
 	
 	@Test
 	void testNextAfterNextAfterAdd() {
-		Bup bup = new Bup(set1);
+		Bup bup = new Bup(set1, 2);
 		bup.add(zv2);
 		
-		Set<ZoneVertex> next = bup.next();
-		assertEquals(1, next.size());
-		assertTrue(next.contains(zv1) || next.contains(zv2));
-		assertTrue(bup.hasNext());
+		Optional<Set<ZoneVertex>> next = bup.next();
+		assertEquals(1, next.get().size());
+		assertTrue(next.get().contains(zv1) || next.get().contains(zv2));
 		
-		Set<ZoneVertex> newNext = bup.next();
-		assertEquals(1, newNext.size());
-		assertTrue(newNext.contains(zv1) || newNext.contains(zv2));
-		assertNotEquals(newNext, next);
-		assertTrue(bup.hasNext());
+		Optional<Set<ZoneVertex>> newNext = bup.next();
+		assertEquals(1, newNext.get().size());
+		assertTrue(newNext.get().contains(zv1) || newNext.get().contains(zv2));
+		assertNotEquals(newNext.get(), next.get());
 		
 		next = bup.next();
-		assertEquals(2, next.size());
-		assertTrue(next.contains(zv1) && next.contains(zv2));
-		assertFalse(bup.hasNext());
-		assertNull(bup.next());
+		assertEquals(2, next.get().size());
+		assertTrue(next.get().contains(zv1) && next.get().contains(zv2));
+		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testNextAfterAddNextAfter() {
-		Bup bup = new Bup(set1);
+		Bup bup = new Bup(set1,3);
 		
-		Set<ZoneVertex> next = bup.next();
-		assertEquals(1, next.size());
-		assertTrue(next.contains(zv1));
-		assertFalse(bup.hasNext());
+		Optional<Set<ZoneVertex>> next = bup.next();
+		assertEquals(1, next.get().size());
+		assertTrue(next.get().contains(zv1));
 		
 		bup.add(zv2);
 		
-		Set<ZoneVertex> newNext = bup.next();
-		assertEquals(1, newNext.size());
-		assertTrue(newNext.contains(zv2));
-		assertTrue(bup.hasNext());
+		Optional<Set<ZoneVertex>> newNext = bup.next();
+		assertEquals(1, newNext.get().size());
+		assertTrue(newNext.get().contains(zv2));
 		
 		next = bup.next();
-		assertEquals(2, next.size());
-		assertTrue(next.contains(zv1) && next.contains(zv2));
-		assertFalse(bup.hasNext());
-		assertNull(bup.next());
+		assertEquals(2, next.get().size());
+		assertTrue(next.get().contains(zv1) && next.get().contains(zv2));
+		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testNextBigSet() {
-		Bup bup = new Bup(set2);
+		Bup bup = new Bup(set2,3);
 		
-		Set<ZoneVertex> next = bup.next();
-		assertEquals(1, next.size());
-		assertTrue(next.contains(zv1) || next.contains(zv2) || next.contains(zv3));
-		assertTrue(bup.hasNext());
+		Optional<Set<ZoneVertex>> next = bup.next();
+		assertEquals(1, next.get().size());
+		assertTrue(next.get().contains(zv1) || next.get().contains(zv2) || next.get().contains(zv3));
 		
-		Set<ZoneVertex> newNext = bup.next();
-		assertEquals(1, newNext.size());
-		assertTrue(newNext.contains(zv1) || newNext.contains(zv2) || newNext.contains(zv3));
-		assertNotEquals(newNext, next);
-		assertTrue(bup.hasNext());
+		Optional<Set<ZoneVertex>> newNext = bup.next();
+		assertEquals(1, newNext.get().size());
+		assertTrue(newNext.get().contains(zv1) || newNext.get().contains(zv2) || newNext.get().contains(zv3));
+		assertNotEquals(newNext.get(), next.get());
 		
-		Set<ZoneVertex> anotherNewnext = bup.next();
-		assertEquals(1, next.size());
-		assertTrue(anotherNewnext.contains(zv1) || anotherNewnext.contains(zv2) || anotherNewnext.contains(zv3));
-		assertNotEquals(anotherNewnext, next);
-		assertNotEquals(anotherNewnext, newNext);
-		assertTrue(bup.hasNext());
+		Optional<Set<ZoneVertex>> anotherNewnext = bup.next();
+		assertEquals(1, anotherNewnext.get().size());
+		assertTrue(anotherNewnext.get().contains(zv1) || anotherNewnext.get().contains(zv2) || anotherNewnext.get().contains(zv3));
+		assertNotEquals(anotherNewnext.get(), next.get());
+		assertNotEquals(anotherNewnext.get(), newNext.get());
 		
 		next = bup.next();
-		assertEquals(2, next.size());
-		assertTrue(bup.hasNext());
+		assertEquals(2, next.get().size());
 		
 		next = bup.next();
-		assertEquals(2, next.size());
-		assertTrue(bup.hasNext());
+		assertEquals(2, next.get().size());
 		
 		next = bup.next();
-		assertEquals(2, next.size());
-		assertTrue(bup.hasNext());
+		assertEquals(2, next.get().size());
 		
 		next = bup.next();
-		assertEquals(3, next.size());
-		assertTrue(next.contains(zv1) && next.contains(zv2) && next.contains(zv3));
-		assertFalse(bup.hasNext());
-		assertNull(bup.next());
+		assertEquals(3, next.get().size());
+		assertTrue(next.get().contains(zv1) && next.get().contains(zv2) && next.get().contains(zv3));
+		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testContainsTrue() {
-		Bup bup = new Bup(set1);
+		Bup bup = new Bup(set1, 1);
 		assertTrue(bup.contains(zv1));
 	}
 	
 	@Test
 	void testContainsTrueAfterAdd() {
-		Bup bup = new Bup(set0);
+		Bup bup = new Bup(set0, 1);
 		bup.add(zv1);
 		assertTrue(bup.contains(zv1));
 	}
 	
 	@Test
 	void testContainsTrueAfterNext() {
-		Bup bup = new Bup(set1);
+		Bup bup = new Bup(set1, 1);
 		bup.next();
 		assertTrue(bup.contains(zv1));
 	}
 	
 	@Test
 	void testContainsFalse() {
-		Bup bup = new Bup(set1);
+		Bup bup = new Bup(set1, 1);
 		assertFalse(bup.contains(zv2));
 	}
 	
 	@Test
 	void testContainsFalseEmpty() {
-		Bup bup = new Bup(set0);
+		Bup bup = new Bup(set0, 1);
 		assertFalse(bup.contains(zv1));
 	}
 	
 	@Test
 	void testAddExistant() {
-		Bup bup = new Bup(set1);
+		Bup bup = new Bup(set1, 1);
 		bup.add(zv1);
 		bup.next();
-		assertFalse(bup.hasNext());
+		assertFalse(bup.next().isPresent());
 	}
 
 }

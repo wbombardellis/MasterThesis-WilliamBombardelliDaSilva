@@ -1,18 +1,19 @@
 package org.wbsilva.bence.transformer.parser;
 
+import java.util.Optional;
 import java.util.Set;
 
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
 
+/**
+ * This is the interface for the bottom-up parsing set.
+ * It basically stores a set of zone vertices generated during parsing
+ * and retrieves subsets of it.
+ * 
+ * @author wbombardellis
+ *
+ */
 interface IBup {
-
-	/**
-	 * Return if it has a next subset to be retrieved according to the current state
-	 * 
-	 * @return				True if there is at least one subset to be retrieved, false otherwise.
-	 * @see IBup#lastPhase()
-	 */
-	public boolean hasNext();
 
 	/**
 	 * Return true iff {@code zoneVertex} or any equivalent zone vertex is contained by this Bup.
@@ -31,9 +32,9 @@ interface IBup {
 	public boolean add(final ZoneVertex zoneVertex);
 	
 	/**
-	 * Retrieve the next subset of this Bup, if it has a next.
+	 * Retrieve the next subset of this Bup, if it has a next. . Empty otherwise
 	 * 
-	 * @return		The next subset of zone vertices of Bup or null
+	 * @return		The next subset of zone vertices of Bup or empty
 	 */
-	public Set<ZoneVertex> next();
+	public Optional<Set<ZoneVertex>> next();
 }
