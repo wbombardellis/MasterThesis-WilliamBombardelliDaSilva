@@ -88,6 +88,7 @@ public class BeNCETransformer {
 			this.tripleGrammarNP = EcoreUtil.copy(tripleGrammar);
 			
 			//Make grammar neighborhood preserving
+			//TODO: Enhance normalizer to reduce the grammar size
 			new NPNormalizer().normalize(this.tripleGrammarNP, this.inputGrammarNP, forward);
 			
 			assert GraphgrammarUtil.isValidGrammar(this.inputGrammarNP);
@@ -138,7 +139,7 @@ public class BeNCETransformer {
 				logger.debug(String.format("Stating backward transformation with input graph %s", inputGraph));
 			
 			//Parse input graph
-			final BeNCEParser parser = new BeNCEParser(this.inputGrammarNP, Strategy.NAIVE);
+			final BeNCEParser parser = new BeNCEParser(this.inputGrammarNP, Strategy.GREEDY);
 			final Optional<ParsingTree> parsingTree = parser.parse(inputGraph);
 			assert parsingTree != null;
 			

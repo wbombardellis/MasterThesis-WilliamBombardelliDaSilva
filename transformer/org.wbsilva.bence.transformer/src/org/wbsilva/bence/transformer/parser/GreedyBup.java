@@ -1,14 +1,18 @@
 package org.wbsilva.bence.transformer.parser;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Optional;
+import java.util.PriorityQueue;
 import java.util.Set;
 
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
 
 /**
  * This extension of {@linkplain Bup} implements a greedy strategy that creates subsets of different sizes
- * upon the addition of a new zone vertex and retrieves them from the greatest to the smallest.
+ * upon the addition of a new zone vertex and retrieves them ordered by the amount of vertices inside it. 
+ * That is, sets with zone vertices containing more vertices are retrieved first
  * 
  * @author wbombardellis
  *
@@ -16,9 +20,46 @@ import org.wbsilva.bence.graphgrammar.ZoneVertex;
 class GreedyBup extends Bup {
 	
 	/**
-	 * topPhase holds the phase with currently biggest subsets that are to be returned through {@link GreedyBup#next()} 
+	 * The central queue holds all generated but not yet consumed subsets ordered in their size
+	 * The size is the amount of vertices in each set of zone vertices
+	 * 
+	 * @example centralQueue = [{a,b},{a,b,c},{a},{b}]
 	 */
-	private int topPhase;
+	final protected PriorityQueue<Set<ZoneVertex>> centralQueue;
+	
+	/**
+	 * The comparator for the sets of zone vertices. The more vertices the zone vertices of a set has,
+	 * the smaller it is in this total order. If two sets have the same amount of vertices in their
+	 * zone vertices, then they are equal.
+	 * This order is not consistent with equals
+	 */
+	static final private Comparator<Set<ZoneVertex>> ZVSET_COMPARATOR = new Comparator<Set<ZoneVertex>>() {
+
+		/**
+		 * This method imposes a total order on the sets of zone vertices.
+		 * Semi formally the order is defined as follows
+		 * a < b iff a.zoneVertices.vertices.size > b.zoneVertices.vertices.size
+		 * a = b iff a.zoneVertices.vertices.size = b.zoneVertices.vertices.size
+		 * a > b iff a.zoneVertices.vertices.size < b.zoneVertices.vertices.size
+		 */
+		@Override
+		public int compare(final Set<ZoneVertex> a, final Set<ZoneVertex> b) {
+			assert a != null;
+			assert b != null;
+			
+			final int aSize = a.stream()
+								.mapToInt(z -> z.getVertices().size())
+								.reduce(Integer::sum)
+								.orElse(0);
+			final int bSize = b.stream()
+					.mapToInt(z -> z.getVertices().size())
+					.reduce(Integer::sum)
+					.orElse(0);
+			
+			//A bigger set a is smaller in our order, so that it goes in the beginning of the queue
+			return aSize > bSize ? -1 : aSize == bSize ? 0 : 1;
+		}
+	};
 	
 	/**
 	 * Same contract as {@link Bup#Bup(Set, int)}
@@ -26,17 +67,35 @@ class GreedyBup extends Bup {
 	 */
 	public GreedyBup(final Set<ZoneVertex> initialSet, final int maximalSubsetSize) {
 		super(initialSet, maximalSubsetSize);
-		this.topPhase = this.phase;
+		
+		//The central queue holds all generated but not yet consumed subsets ordered in their size
+		this.centralQueue = new PriorityQueue<>(ZVSET_COMPARATOR);
+		
+		if (phase <= lastPhase()) {
+			assert this.queues.size() > 0;
+			
+			this.centralQueue.addAll(this.queues.get(this.phase));
+		}
+	}
+	
+	/**
+	 * Add new subsets to the {@code subsets}  at the end of it, that is, at the position corresponding to a phase.
+	 * as well as to the {@code centralQueue} according to the priority criteria.
+	 * 
+	 * @param newSubsets	The set of subsets of zone vertices to be added to the end of the {@code subsets} and {@code centralQueue}
+	 */
+	protected synchronized void addNewSubsetQueue(final Set<Set<ZoneVertex>> newSubsets) {
+		assert newSubsets != null;
+		this.subsets.add(newSubsets);
+		this.centralQueue.addAll(newSubsets);
 	}
 
 	@Override
 	public synchronized boolean add(final ZoneVertex zoneVertex) {
 		assert zoneVertex != null;
 		assert this.phase > 0;
-		assert this.topPhase >= this.phase;
-		assert this.topPhase <= lastPhase();
+		assert this.phase <= lastPhase();
 		assert this.subsets.size() >= this.phase;
-		assert this.queues.size() == this.subsets.size();
 		
 		final boolean contains = this.contains(zoneVertex);
 		
@@ -59,13 +118,10 @@ class GreedyBup extends Bup {
 						addNewSubsetQueue(newSubsets);
 					} else {
 						this.subsets.get(p).addAll(newSubsets);
-						this.queues.get(p).addAll(newSubsets);
+						this.centralQueue.addAll(newSubsets);
 					}
 				}
 			} while((p + 1) <= lastPhase() && !newSubsets.isEmpty());
-			
-			//Top phase climb up
-			this.topPhase = this.subsets.size() - 1;
 			
 			return true;
 			
@@ -75,36 +131,22 @@ class GreedyBup extends Bup {
 	}
 
 	@Override
-	public synchronized Optional<Set<ZoneVertex>> next() {
+	public synchronized Optional<Set<ZoneVertex>> next() {		
 		assert this.phase > 0;
-		assert this.topPhase >= this.phase - 1;
-		assert this.topPhase <= lastPhase();
+		assert this.phase <= lastPhase();
 		assert this.subsets.size() >= this.phase;
-		assert this.subsets.size() == this.queues.size();
 		
 		//Greedy strategy trying to get bigger subsets first
-		if (this.topPhase >= this.phase) {
+		if (!this.centralQueue.isEmpty()) {
+			//Take the biggest element from the queue
+			final Set<ZoneVertex> ret = this.centralQueue.poll();
+			assert ret != null;
 			
-			final ArrayDeque<Set<ZoneVertex>> topQueue = this.queues.get(this.topPhase);
-			
-			if(!topQueue.isEmpty()) {
-				//Take an element from the toppest queue
-				final Set<ZoneVertex> ret = topQueue.poll();
-				assert ret != null;
-				
-				return Optional.of(ret);
-			} else {
-				//No element on the toppest queue, go down for the smaller subsets
-				this.topPhase--;
-				return next();
-				//Surely the recursion ends, because topPhase will go down until phase -1
-				//when either a new queue will be created or it will have reached the last phase and will stop
-			}
+			return Optional.of(ret);
 		} else {
-			//Exhausted all generated queues
-			assert this.topPhase == this.phase - 1;
+			//Exhausted all the generated queue
 			
-			//Generated new queue/ subsets and advances phase until generates a phase with non empty subsets or reaches the last phase
+			//Generated new subsets and advances phase until generates a phase with non empty subsets or reaches the last phase
 			int p = this.phase - 1;
 			Set<Set<ZoneVertex>> newSubsets;
 			do {
@@ -115,21 +157,19 @@ class GreedyBup extends Bup {
 					addNewSubsetQueue(newSubsets);
 				} else {
 					this.subsets.get(p).addAll(newSubsets);
-					this.queues.get(p).addAll(newSubsets);
+					this.centralQueue.addAll(newSubsets);
 				}
 			} while ((p + 1) <= lastPhase() && newSubsets.isEmpty());
+			
 			this.phase = p;
-			this.topPhase = this.phase;
 			
 			//Reached the last phase
 			if (newSubsets.isEmpty()) {
 				return Optional.empty();
 			} else {
-				assert this.topPhase <= lastPhase();
 				assert this.subsets.size() >= this.phase;
-				assert this.subsets.size() == this.queues.size();
 				
-				final Set<ZoneVertex> ret = this.queues.get(this.phase).poll();
+				final Set<ZoneVertex> ret = this.centralQueue.poll();
 				assert ret != null;
 				
 				return Optional.of(ret);

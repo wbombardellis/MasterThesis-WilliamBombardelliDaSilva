@@ -60,7 +60,7 @@ public class Bup implements IBup{
 	 * 
 	 * @example queues[0] = []; queues[1] = [{a},{b}]; queues[2] = [{a,b}]
 	 */
-	protected ArrayList<ArrayDeque<Set<ZoneVertex>>> queues;
+	 protected final ArrayList<ArrayDeque<Set<ZoneVertex>>> queues;
 	
 	/**
 	 * Initialize the bup with {@code initialSet}. If it is null, treat it as an empty set.
@@ -89,7 +89,8 @@ public class Bup implements IBup{
 		if (phase <= lastPhase()) {
 			//Add new subsets and queues
 			final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(phase, bupSet);
-			addNewSubsetQueue(newDinjunctSubsets);
+			subsets.add(newDinjunctSubsets);
+			queues.add(new ArrayDeque<Set<ZoneVertex>>(newDinjunctSubsets));
 			assert subsets.size() > 1;
 			assert subsets.get(0).size() > 0;
 			assert phase == subsets.size() - 1;
@@ -125,7 +126,7 @@ public class Bup implements IBup{
 		
 		final int previousPhase = p - 1;
 		assert subsets.size() >= previousPhase;
-		assert queues.size() >= previousPhase;
+		//assert queues.size() >= previousPhase;
 		
 		final Set<Set<ZoneVertex>> oldPhaseSubsets = subsets.get(previousPhase);
 		final Set<Set<ZoneVertex>> thisPhaseSubsets = p < subsets.size() ? subsets.get(p) : new HashSet<>(0);
