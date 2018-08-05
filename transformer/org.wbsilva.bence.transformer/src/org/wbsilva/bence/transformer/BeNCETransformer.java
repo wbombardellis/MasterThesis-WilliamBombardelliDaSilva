@@ -88,7 +88,6 @@ public class BeNCETransformer {
 			this.tripleGrammarNP = EcoreUtil.copy(tripleGrammar);
 			
 			//Make grammar neighborhood preserving
-			//TODO: Enhance normalizer to reduce the grammar size
 			new NPNormalizer().normalize(this.tripleGrammarNP, this.inputGrammarNP, forward);
 			
 			assert GraphgrammarUtil.isValidGrammar(this.inputGrammarNP);
