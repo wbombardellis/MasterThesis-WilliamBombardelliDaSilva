@@ -3,6 +3,7 @@ package org.wbsilva.bence.graphgrammar.util;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.function.BiFunction;
 
 import org.wbsilva.bence.graphgrammar.Symbol;
 
@@ -74,9 +75,32 @@ public class SymbolMap<T> {
 	}
 
 	/**
-	 * @see HashMap#size()()
+	 * @see HashMap#size()
 	 */
 	public int size() {
 		return this.map.size();
+	}
+
+	/**
+	 * @see HashMap#merge(Object, Object, BiFunction)
+	 */
+	public T merge(final Symbol key, final T value, final BiFunction<? super T,? super T,? extends T> remappingFunction) {
+		final Entry<Symbol, T> entry = this.map.entrySet().stream()
+				.filter(e -> e.getKey().equivalates(key))
+				.findAny()
+				.orElse(null);
+		
+		if (entry != null) {
+			T newValue = remappingFunction.apply(entry.getValue(), value);
+			if (newValue != null)
+				this.map.replace(entry.getKey(), newValue);
+			else 
+				this.map.remove(entry.getKey());
+			return newValue;
+		}
+		else {
+			this.map.put(key, value);
+			return value;
+		}
 	}
 }

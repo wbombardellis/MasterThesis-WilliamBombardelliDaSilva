@@ -104,24 +104,41 @@ public class NPNormalizer {
 			assert newRules.size() == nonNPRulesContext.size();
 			assert rulesToProcess.size() == grammar.getRules().size() - nonNPRulesContext.size();
 			
+			//Get a distinct set of nonNP contexts (to avoid unnecessary addition of duplicate rules)
+			final SymbolMap<SymbolMap<SymbolSet>> nonNPContexts = new SymbolMap<>(nonNPRulesContext.size());
+			for (Entry<Rule, SymbolMap<SymbolSet>> rEntry : nonNPRulesContext.entrySet()) {
+				final Rule nonNPRule = rEntry.getKey();
+				final SymbolMap<SymbolSet> missingContext = rEntry.getValue();
+				
+				nonNPContexts.merge(nonNPRule.getLhs(), missingContext, (a,b) -> {
+					for (Entry<Symbol, SymbolSet> e : b.entrySet()) {
+						a.merge(e.getKey(), e.getValue(), (x,y) -> {
+							x.addAll(y);
+							return x;
+						});
+					}
+					return a;
+				});
+			}
+			
+			
 			//If there are rules to be processed (at first, there is always the grammar rules)
 			while(!rulesToProcess.isEmpty()) {
 				final ArrayList<Rule> nextRulesToProcess = new ArrayList<>();
 				
 				//For each non neighborhood preserving rule A->R (again)
-				for (Entry<Rule, SymbolMap<SymbolSet>> rEntry : nonNPRulesContext.entrySet()) {
-					final Rule nonNPRule = rEntry.getKey();
+				for (Entry<Symbol, SymbolMap<SymbolSet>> rEntry : nonNPContexts.entrySet()) {
+					final Symbol nonNPLhs = rEntry.getKey();
 					final SymbolMap<SymbolSet> missingContext = rEntry.getValue();
 					int numCreatedRules = 0;
 					
-					logger.debug(String.format("Fixing occurrences of LHS %s (rule [id= %s, name= %s]). %s rules to evaluate", nonNPRule.getLhs(),
-							nonNPRule.getId(), nonNPRule.getName(), rulesToProcess.size()));
+					logger.debug(String.format("Fixing occurrences of LHS %s. %s rules to evaluate", nonNPLhs, rulesToProcess.size()));
 					 
 					//For each rule to be processed
 					for (Rule rule: rulesToProcess) {
 						for (Vertex v: rule.getRhs().getVertices()) {
 							//Occurrence of label A
-							if (v.getLabel().equivalates(nonNPRule.getLhs())) {
+							if (v.getLabel().equivalates(nonNPLhs)) {
 								
 								//Fix the rule where this vertex occurs for this missing context
 								final Map<Rule, Map<String, Vertex>> newHosts = fixHostRule(rule, v, missingContext);
@@ -198,7 +215,7 @@ public class NPNormalizer {
 						}
 					}
 					
-					logger.debug(String.format("%d new rules created for the LHS %s", numCreatedRules, nonNPRule.getLhs()));
+					logger.debug(String.format("%d new rules created for the LHS %s", numCreatedRules, nonNPLhs));
 					newRules.clear();
 				}
 
