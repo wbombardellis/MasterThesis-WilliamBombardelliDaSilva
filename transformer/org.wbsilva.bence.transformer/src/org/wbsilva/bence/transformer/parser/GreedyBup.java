@@ -62,11 +62,11 @@ class GreedyBup extends Bup {
 	};
 	
 	/**
-	 * Same contract as {@link Bup#Bup(Set, int)}
+	 * Same contract as {@link Bup#Bup(Set, int, ZoneVertex)}
 	 * @see Bup
 	 */
-	public GreedyBup(final Set<ZoneVertex> initialSet, final int maximalSubsetSize) {
-		super(initialSet, maximalSubsetSize);
+	public GreedyBup(final Set<ZoneVertex> initialSet, final int maximalSubsetSize, final ZoneVertex root) {
+		super(initialSet, maximalSubsetSize, root);
 		
 		//The central queue holds all generated but not yet consumed subsets ordered in their size
 		this.centralQueue = new PriorityQueue<>(ZVSET_COMPARATOR);
@@ -122,6 +122,8 @@ class GreedyBup extends Bup {
 					}
 				}
 			} while((p + 1) <= lastPhase() && !newSubsets.isEmpty());
+			
+			checkIsParsed(zoneVertex);
 			
 			return true;
 			
