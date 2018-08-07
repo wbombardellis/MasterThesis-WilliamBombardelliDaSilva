@@ -287,7 +287,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 
 		//The correspondence vertex for the input vertex
 		final Vertex corrVertex = tripleGraph.getCorr().getVertices().stream()
-				.filter(v -> this.getNonterminals().stream().anyMatch(s -> s.equivalates(v.getLabel())))
+				//.filter(v -> this.getNonterminals().stream().anyMatch(s -> s.equivalates(v.getLabel())))
 				.filter(v -> forward ? tripleGraph.invMs(inputVertex).contains(v)
 						: tripleGraph.invMt(inputVertex).contains(v))
 				.findAny().orElse(null);
@@ -296,7 +296,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		//The output vertex for it, which is already at the output graph 
 		final Vertex outputVertex = outputGraph.getVertices().stream().filter(v -> v == outputMorphism.get(corrVertex))
 				.findAny().orElse(null);
-		assert corrVertex != null;
+		assert outputVertex != null;
 
 		//Generate next input graph by applying rule and ensuring correct IDs for next veertices
 		final EMap<Vertex, Vertex> inputUnifier = inputRule.apply(inputGraph, inputVertex);
@@ -313,12 +313,10 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		//Generate next output graph using output vertex as LHS for the output rule application 
 		final EMap<Vertex, Vertex> outputUnifier = outputRule.apply(outputGraph, outputVertex);
 		assert outputUnifier != null && outputUnifier.size() == outputRule.getRhs().getVertices().size();
-		//TODO: Here shouldn't be assertions. Istead ifs, that return an error
 
 		//Generate next correspondence graph using correspondence vertex as LHS for the output rule application
 		final EMap<Vertex, Vertex> corrUnifier = tripleRule.getCorr().apply(tripleGraph.getCorr(), corrVertex);
 		assert corrUnifier != null && corrUnifier.size() == tripleRule.getCorr().getRhs().getVertices().size();
-		//TODO: Here shouldn't be assertions. Istead ifs, that return an error
 
 		//Adjust correspondence morphism ms and mt of the tripleGraph according to the tripleRule
 		inputMorphism.removeKey(corrVertex);

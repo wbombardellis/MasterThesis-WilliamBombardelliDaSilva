@@ -389,19 +389,38 @@ public class GraphgrammarUtil {
 			return false;
 		
 		EList<TripleRule> r = tripleGrammar.getTripleRules();
-		if (r == null)
+		if (r == null || r.stream().anyMatch(rr -> !isValidTripleRule(ab, rr)))
 			return false;
 		
-		if (r.stream().anyMatch(rr -> !isValidRule(ab, rr.getSource()) || !isValidRule(ab, rr.getCorr()) || !isValidRule(ab, rr.getTarget())))
+		if (!r.stream().anyMatch(rr -> rr.getSource().getLhs().equivalates(tripleGrammar.getInitial())
+									&& rr.getCorr().getLhs().equivalates(tripleGrammar.getInitial())
+									&& rr.getTarget().getLhs().equivalates(tripleGrammar.getInitial())))
+			return false;
+		
+		return true;
+	}
+
+	/**
+	 * Checks if a triple grammar rule is concise
+	 * @param ab				The alphabet of the grammar
+	 * @param rr				The triple rule to test
+	 * @return					True iff {@code rr} is valid
+	 */
+	private static boolean isValidTripleRule(final EList<Symbol> ab, final TripleRule rr) {
+		if (!isValidRule(ab, rr.getSource()) || !isValidRule(ab, rr.getCorr()) || !isValidRule(ab, rr.getTarget()))
+			return false;
+		
+		if (!rr.getSource().getId().equals(rr.getTarget().getId()))
+			return false;
+		
+		if (!isTotal(rr.getCorr().getRhs().getVertices(), rr.getMs()) ||
+			!isInjective(rr.getMs()) ||
+			!isSurjective(rr.getSource().getRhs().getVertices(), rr.getMs()) || 
+			!isTotal(rr.getCorr().getRhs().getVertices(), rr.getMt()) ||
+			!isInjective(rr.getMt()) ||
+			!isSurjective(rr.getTarget().getRhs().getVertices(), rr.getMt()))
 				return false;
 		
-		if (r.stream().anyMatch(rr -> !isTotal(rr.getCorr().getRhs().getVertices(), rr.getMs()) ||
-				!isInjective(rr.getMs()) ||
-				!isSurjective(rr.getSource().getRhs().getVertices(), rr.getMs()) || 
-				!isTotal(rr.getCorr().getRhs().getVertices(), rr.getMt()) ||
-				!isInjective(rr.getMt()) ||
-				!isSurjective(rr.getTarget().getRhs().getVertices(), rr.getMt())))
-				return false;
 		return true;
 	}
 
