@@ -61,13 +61,23 @@ public class Bup implements IBup{
 	 * @example queues[0] = []; queues[1] = [{a},{b}]; queues[2] = [{a,b}]
 	 */
 	 protected final ArrayList<ArrayDeque<Set<ZoneVertex>>> queues;
+
+	/**
+	 * The root zone vertex for this Bup. If it generates something equivalent to {@code rootZV}, 
+	 * then it means that is is finished parsing and it sets {@code successfullyParsed} as true
+	 * 
+	 *  @inv this->bupSet->contains(z | z.equivalates(rootZV)) == successfullyParsed
+	 */
+	private final ZoneVertex rootZV;
+	private boolean successfullyParsed;
 	
 	/**
 	 * Initialize the bup with {@code initialSet}. If it is null, treat it as an empty set.
 	 * @param initialSet			The initial set of zone vertices to be used as bup set
 	 * @param maximalSubsetSize		The desired maximal size for the bup's subsets that will be retrieved through {@link Bup#next()}
+	 * @param root					The root zone vertex for this bup, so that it knows when it has successfuly finished the parsing
 	 */
-	public Bup(final Set<ZoneVertex> initialSet, final int maximalSubsetSize) {
+	public Bup(final Set<ZoneVertex> initialSet, final int maximalSubsetSize, final ZoneVertex root) {
 		if (initialSet != null)
 			bupSet = new HashSet<>(initialSet);
 		else
@@ -76,6 +86,8 @@ public class Bup implements IBup{
 		this.maximalSubsetSize = maximalSubsetSize; 
 		
 		phase = 1;
+		successfullyParsed = false;
+		rootZV = root;
 		
 		subsets = new ArrayList<>();
 		queues = new ArrayList<>();
@@ -187,20 +199,20 @@ public class Bup implements IBup{
 	protected int lastPhase() {
 		return this.maximalSubsetSize;
 	}
-
+	
 	/**
-	 * Return if it has a next subset to be retrieved according to the current state of {@link Bup#bupSet}.
-	 * This method takes care of creating new subsets, if it hasn't been created yet.
+	 * Check if this Bup is done with parsing, i.e. if it is has just inserted some zone vertex equivalent to {@code Bup#rootZV}
+	 * If true, then set {@code Bup#successfullyParsed} as true, otherwise do nothing.
 	 * 
-	 * @return				True if there is at least one subset to be retrieved, false otherwise.
-	 * @see Bup#lastPhase()
+	 * @param zoneVertex		The just added zone vertex to compare against the root {@code Bup#rootZV}
+	 * @see Bup#isParsed()
 	 */
-	private synchronized boolean hasNext() {
-		assert phase >= 0;
-		assert phase <= subsets.size();
-
-		//If current phase is beyond the last phase, i.e. all subsets has been retrieved, then it has no next and returns false
-		return phase <= lastPhase() /*&& !queues.get(phase).isEmpty()*/;
+	protected void checkIsParsed(final ZoneVertex zoneVertex) {
+		//Got at the initial symbol, successfully parsed
+		if (zoneVertex.equivalates(this.rootZV)) {
+			this.successfullyParsed = true;
+			assert this.contains(this.rootZV);
+		}
 	}
 
 	/**
@@ -233,31 +245,34 @@ public class Bup implements IBup{
 			assert phase <= lastPhase() + 1;
 			
 			//If it had already exhausted all phases or all subsets
-			if (phase > lastPhase() || phase >= subsets.size()) {
-				addNewSubsetQueue(new HashSet<Set<ZoneVertex>>(1));
-			}
+			//if (phase > lastPhase() || phase >= subsets.size()) {
+				//addNewSubsetQueue(new HashSet<Set<ZoneVertex>>(1));
+			//}
 			
 			//Go back to the first phase and add new element to the bupSet
-			int oldPhase = phase;
+			//int oldPhase = phase;
 			phase = 1;
 			bupSet.add(zoneVertex);
 			
-			assert subsets.size() > oldPhase;
-			assert queues.size() > oldPhase;
+			//assert subsets.size() > oldPhase;
+			//assert queues.size() > oldPhase;
 			
 			//Regenerate all previous phases' subsets and queues
-			for (int p = 1; p <= oldPhase; p++) {
+			for (int p = 1; p < subsets.size(); p++) {
 				final Set<Set<ZoneVertex>> newSubsets = createNewSubsets(p, zoneVertex);
 				
 				subsets.get(p).addAll(newSubsets);
 				queues.get(p).addAll(newSubsets);
 			}
+			
+			checkIsParsed(zoneVertex);
+			
 			return true;
 		} else { 
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Retrieve the next subset of bup, if it has a next. Empty otherwise
 	 * 
@@ -265,44 +280,45 @@ public class Bup implements IBup{
 	 */
 	@Override
 	public synchronized Optional<Set<ZoneVertex>> next() {
-		if(hasNext()) {
-			//If we are at the next phase 
-			if (phase >= subsets.size() && phase <= lastPhase()) {
-				//Add new subsets and queues
-				final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(phase, bupSet);
-				addNewSubsetQueue(newDinjunctSubsets);
-				
-				assert subsets.size() > 1;
-				//assert subsets.get(phase).size() > 0;
-				assert phase == subsets.size() - 1;
-				assert queues.size() > 1;
-				//assert queues.get(phase).size() > 0;
-				assert phase == queues.size() - 1;
-			}
+		//If we are at the next phase 
+		if (phase >= subsets.size() && phase <= lastPhase()) {
+			//Add new subsets and queues
+			final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(phase, bupSet);
+			addNewSubsetQueue(newDinjunctSubsets);
 			
-			assert queues.get(phase) != null;
-			assert phase > 0;
-			
-			//No more element in this phase. Go to the next
-			if (queues.get(phase).isEmpty()) {
-				phase++;
-				//Recursive call to get the next at the next phase
-				return next();
-			} else {
-				//Surely the recursion ends, because the phase will scale until the last phase,
-				//when the queue consists of only one subset containing all elements of bubSet 
-				final Set<ZoneVertex> ret = queues.get(phase).poll();
-				assert ret != null;
-				
-				if (queues.get(phase).isEmpty()) {
-					phase++;
-				}
-				
-				return Optional.of(ret);
-			}
-		} else {
-			return Optional.empty();
+			assert subsets.size() > 1;
+			//assert subsets.get(phase).size() > 0;
+			assert phase == subsets.size() - 1;
+			assert queues.size() > 1;
+			//assert queues.get(phase).size() > 0;
+			assert phase == queues.size() - 1;
 		}
+		
+		assert queues.get(phase) != null;
+		assert phase > 0;
+		
+		//No more element in this phase. Go to the next
+		if (queues.get(phase).isEmpty()) {
+			phase++;
+			//Recursive call to get the next at the next phase
+			return next();
+		} else {
+			//Surely the recursion ends, because the phase will scale until the last phase,
+			//when it stops
+			final Set<ZoneVertex> ret = queues.get(phase).poll();
+			assert ret != null;
+			
+			return Optional.of(ret);
+		}
+	}
+
+	/**
+	 * Return true iff this Bup has generated the root subset, and thus has finished the parsing
+	 * @return			True if this Bup is finished parsing, false otherwise 
+	 */
+	@Override
+	public boolean isParsed() {
+		return this.successfullyParsed;
 	}
 
 }

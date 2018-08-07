@@ -1,7 +1,9 @@
 package org.wbsilva.bence.transformer.parser;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -32,6 +34,8 @@ public class BeNCEParser {
 	
 	static final Logger logger = LogManager.getLogger(BeNCEParser.class);
 
+	private static final int DEFAULT_THREAD_COUNT = 4;
+
 	public enum Strategy{
 		NAIVE,
 		GREEDY;
@@ -45,6 +49,115 @@ public class BeNCEParser {
 	private final int maxr;
 
 	private final Strategy strategy;
+	
+	/**
+	 * The thread that performs the main loop of the parsing, trying to reduce the handles 
+	 * and create the parsing forest. 
+	 */
+	private class BupReducer extends Thread {
+		private final IBup bup;
+		private final Graph graph;
+		private final Grammar grammar;
+		private final Set<ParsingTree> parsingForest;
+		
+		private BupReducer(final IBup bup, final Graph graph, final Grammar grammar, final Set<ParsingTree> parsingForest) {
+			this.bup = bup;
+			this.graph = graph;
+			this.grammar = grammar;
+			this.parsingForest = parsingForest;
+		}
+		
+		/**
+		 * Consume the subsets from {@code BupReducer#bup}, that is shared with other BupReduces threads and that produces new subsets
+		 * under necessity and according to its strategy.
+		 * If it find a reduction, then add the handle to {@code BupReducer#bup} and add a parsing tree to {@code BupReducer#parsingForest}
+		 * This implementation is deadlock-free and takes care to keep shared data consistent between the threads,
+		 * although the execution order is non-deterministic. 
+		 */
+		public void run() {
+			Optional<Set<ZoneVertex>> nextHandle = this.bup.next();
+			while(nextHandle.isPresent() && !this.bup.isParsed()){
+				final Set<ZoneVertex> handle = nextHandle.get(); 			//R
+				assert !handle.isEmpty();
+				
+				logger.debug(String.format("Selected handle {%s}", handle.stream()
+						.map(z -> String.format("%s:(%s, {%s})", z.getId(), z.getLabel(), z.getVertices().stream()
+																.map(v -> v.getId())
+																.reduce((a,b) -> a.concat(", ").concat(b))
+																.orElse("")))
+						.reduce((a,b) -> a.concat(", ").concat(b))
+						.orElse("")));
+					
+				final Graph handleGraph = zoneGraph(this.graph, handle);		//Z(R)
+				assert GraphgrammarUtil.isValidGraph(handleGraph);
+				assert !handleGraph.getVertices().isEmpty();
+				assert GraphgrammarUtil.isWeaklyConnectedGraph(handleGraph);
+				//assert GraphgrammarUtil.isBoundaryGraph(handleGraph, this.grammar.getNonterminals());
+				
+				final Graph rhs = induce(handleGraph, handle);			//Y(R)
+				assert GraphgrammarUtil.isValidGraph(rhs);
+				assert !rhs.getVertices().isEmpty();
+				//assert GraphgrammarUtil.isBoundaryGraph(rhs, this.grammar.getNonterminals());
+					
+				for (final Symbol d : this.grammar.getNonterminals()) {
+					logger.debug(String.format("Trying to reduce with symbol %s", d));
+					
+					final ZoneVertex lhs = contract(d, handle);				//(d,V(R))
+					assert !lhs.getVertices().isEmpty();
+					
+					final Graph reducedGraph = zoneGraph(this.graph, new HashSet<ZoneVertex>(Arrays.asList(lhs)));	//Z({(d,V(R)})
+					assert GraphgrammarUtil.isValidGraph(reducedGraph);
+					assert !reducedGraph.getVertices().isEmpty();
+					assert GraphgrammarUtil.isWeaklyConnectedGraph(reducedGraph);
+					//assert GraphgrammarUtil.isBoundaryGraph(reducedGraph, this.grammar.getNonterminals());
+					
+					//If handle can be reduced with rule (lhs -> rhs). I.e. if reducedGraph=>handleGraph
+					final DerivationStep newDS = this.grammar.derives(reducedGraph, handleGraph, lhs, rhs);
+					
+					if (newDS != null) {
+						assert GraphgrammarUtil.isValidDerivationStep(newDS);
+						
+						//Derivation must be neighborhood preserving
+						if (NPUtil.isNeighborhoodPreserving(newDS)) {
+						
+							synchronized(this.parsingForest) {
+								//Possible derivation step found
+								this.bup.add(lhs);
+								
+								logger.debug(String.format("Can reduce. Derivation step %s, %s", newDS.getRule().getId(), newDS.getVertex().getId()));
+								
+								//Construct parsing tree bottom-up 
+								final ParsingTree parsingTreeNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
+								parsingTreeNode.setZoneVertex(lhs);
+								parsingTreeNode.setDerivationStep(newDS);
+							
+								parsingTreeNode.getChildren().addAll(EcoreUtil.copyAll(this.parsingForest.stream()
+										.filter(pt -> handle.contains(pt.getZoneVertex()))
+										.collect(Collectors.toSet())));
+								assert parsingTreeNode.getChildren().size() == rhs.getVertices().size();
+								
+								this.parsingForest.add(parsingTreeNode);
+							
+								logger.debug(String.format("Adding to the parsing forest the parsing tree %s => [%s]", parsingTreeNode.getZoneVertex().getId(),
+									parsingTreeNode.getChildren().stream()
+										.map(pt -> pt.getZoneVertex().getId())
+										.reduce((a,b) -> a.concat(", ").concat(b))
+										.orElse("")));
+							}
+						} else {
+							logger.debug(String.format("Could reduce, but derivation step %s, %s is not neighborhood preserving", newDS.getRule().getName(), newDS.getVertex().getId()));
+						}
+					} else {
+						logger.debug(String.format("Cannot reduce with symbol %s", d));
+					}
+				}
+
+				//Select next handle
+				nextHandle = this.bup.next();
+			}
+			assert !nextHandle.isPresent() || this.bup.isParsed();
+		}
+	}
 	
 	public BeNCEParser(final Grammar grammar){
 		this(grammar, Strategy.GREEDY);
@@ -74,12 +187,17 @@ public class BeNCEParser {
 	 * The grammar has also to be valid and neighborhood preserving boundary.
 	 *  
 	 * @param graph			The graph to be parsed. Cannot be null
+	 * @param threadCount	The amount of thread to use for the parsing
 	 * @return				The parsing tree for the input {@code graph} and the {@code grammar} of this class. 
 	 * 						Or empty if it is not part of the language.
 	 */
-	public Optional<ParsingTree> parse(final Graph graph){
+	public Optional<ParsingTree> parse(final Graph graph, int threadCount) {
 		assert graph != null;
 		assert GraphgrammarUtil.isValidGraph(graph);
+		
+		if (threadCount <= 0) {
+			threadCount = DEFAULT_THREAD_COUNT;
+		}
 		
 		logger.debug(String.format("Starting parsing of the graph %s", graph));
 		
@@ -95,13 +213,18 @@ public class BeNCEParser {
 			//Create bottom-up parse set
 			final Set<ZoneVertex> initialZoneVertices = zoneVertices(graph.getVertices());
 			
+			final ZoneVertex rootZV = GraphgrammarFactory.eINSTANCE.createZoneVertex();
+			rootZV.setId(EcoreUtil.generateUUID());
+			rootZV.setLabel(EcoreUtil.copy(grammar.getInitial()));
+			rootZV.getVertices().addAll(EcoreUtil.copyAll(graph.getVertices()));
+			
 			final IBup bup;
 			switch(this.strategy) {
 			case NAIVE:
-				bup = new Bup(initialZoneVertices, this.maxr);
+				bup = new Bup(initialZoneVertices, this.maxr, rootZV);
 			break;
 			case GREEDY:
-				bup = new GreedyBup(initialZoneVertices, this.maxr);
+				bup = new GreedyBup(initialZoneVertices, this.maxr); //TODO
 			break;
 			default:
 				logger.debug(String.format("Chosen strategy %s not implemented, falling back to %s.", this.strategy, Strategy.GREEDY));
@@ -119,100 +242,26 @@ public class BeNCEParser {
 				return pTNode;
 			}).collect(Collectors.toSet()));
 			
-			
-			final ZoneVertex rootZV = GraphgrammarFactory.eINSTANCE.createZoneVertex();
-			rootZV.setId(EcoreUtil.generateUUID());
-			rootZV.setLabel(EcoreUtil.copy(grammar.getInitial()));
-			rootZV.getVertices().addAll(EcoreUtil.copyAll(graph.getVertices()));
-			
-			//Bottom-up loop to create possible derivations
-			Optional<Set<ZoneVertex>> nextHandle = bup.next();
-			boolean successfullyParsed = false;
-			while(nextHandle.isPresent()){
-				final Set<ZoneVertex> handle = nextHandle.get(); 			//R
-				assert !handle.isEmpty();
-				
-				logger.debug(String.format("Selected handle {%s}", handle.stream()
-						.map(z -> String.format("%s:(%s, {%s})", z.getId(), z.getLabel(), z.getVertices().stream()
-																.map(v -> v.getId())
-																.reduce((a,b) -> a.concat(", ").concat(b))
-																.orElse("")))
-						.reduce((a,b) -> a.concat(", ").concat(b))
-						.orElse("")));
-					
-					final Graph handleGraph = zoneGraph(graph, handle);		//Z(R)
-					assert GraphgrammarUtil.isValidGraph(handleGraph);
-					assert !handleGraph.getVertices().isEmpty();
-					assert GraphgrammarUtil.isWeaklyConnectedGraph(handleGraph);
-					//assert GraphgrammarUtil.isBoundaryGraph(handleGraph, this.grammar.getNonterminals());
-					
-					final Graph rhs = induce(handleGraph, handle);			//Y(R)
-					assert GraphgrammarUtil.isValidGraph(rhs);
-					assert !rhs.getVertices().isEmpty();
-					//assert GraphgrammarUtil.isBoundaryGraph(rhs, this.grammar.getNonterminals());
-					
-				for (final Symbol d : grammar.getNonterminals()) {
-					logger.debug(String.format("Trying to reduce with symbol %s", d));
-					
-					final ZoneVertex lhs = contract(d, handle);				//(d,V(R))
-					assert !lhs.getVertices().isEmpty();
-					
-					final Graph reducedGraph = zoneGraph(graph, new HashSet<ZoneVertex>(Arrays.asList(lhs)));	//Z({(d,V(R)})
-					assert GraphgrammarUtil.isValidGraph(reducedGraph);
-					assert !reducedGraph.getVertices().isEmpty();
-					assert GraphgrammarUtil.isWeaklyConnectedGraph(reducedGraph);
-					//assert GraphgrammarUtil.isBoundaryGraph(reducedGraph, this.grammar.getNonterminals());
-					
-					//If handle can be reduced with rule (lhs -> rhs). I.e. if reducedGraph=>handleGraph
-					final DerivationStep newDS = grammar.derives(reducedGraph, handleGraph, lhs, rhs);
-					
-					if (newDS != null) {
-						assert GraphgrammarUtil.isValidDerivationStep(newDS);
-						
-						//Derivation must be neighborhood preserving
-						if (NPUtil.isNeighborhoodPreserving(newDS)) {
-						
-							//Possible derivation step found
-							bup.add(lhs);
-							
-							logger.debug(String.format("Can reduce. Derivation step %s, %s", newDS.getRule().getId(), newDS.getVertex().getId()));
-							
-							//Construct parsing tree bottom-up 
-							final ParsingTree parsingTreeNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
-							parsingTreeNode.setZoneVertex(lhs);
-							parsingTreeNode.setDerivationStep(newDS);
-							parsingTreeNode.getChildren().addAll(EcoreUtil.copyAll(parsingForest.stream()
-									.filter(pt -> handle.contains(pt.getZoneVertex()))
-									.collect(Collectors.toSet())));
-							assert parsingTreeNode.getChildren().size() == rhs.getVertices().size();
-							
-							parsingForest.add(parsingTreeNode);
-							
-							logger.debug(String.format("Adding to the parsing forest the parsing tree %s => [%s]", parsingTreeNode.getZoneVertex().getId(),
-									parsingTreeNode.getChildren().stream()
-										.map(pt -> pt.getZoneVertex().getId())
-										.reduce((a,b) -> a.concat(", ").concat(b))
-										.orElse("")));
-				 			
-							//Got at the initial symbol, successfully parsed
-							if (bup.contains(rootZV)) {
-								successfullyParsed  = true;
-								break;
-							}
-						} else {
-							logger.debug(String.format("Could reduce, but derivation step %s, %s is not neighborhood preserving", newDS.getRule().getName(), newDS.getVertex().getId()));
-						}
-					} else {
-						logger.debug(String.format("Cannot reduce with symbol %s", d));
-					}
-				}
-
-				//Select next handle
-				nextHandle = bup.next();
+			//Parallel bottom-up loop to create possible derivations
+			final List<BupReducer> bupReducers = new ArrayList<>(threadCount);
+			for (int i = 0; i < threadCount; i++) {
+				bupReducers.add(new BupReducer(bup, graph, this.grammar, parsingForest));
 			}
 			
+			//Start actual parsing
+			bupReducers.forEach(b -> b.start());
 			
-			if (successfullyParsed) {
+			//Wait for all to finish
+			for (BupReducer b : bupReducers) {
+				try {
+					b.join();
+				} catch (InterruptedException e) {
+					//Log and survive for failure tolerance
+					logger.error(e);
+				}
+			}
+
+			if (bup.isParsed()) {
 				final ParsingTree parsingTree = parsingForest.stream()
 						.filter(pt -> pt.getZoneVertex().equivalates(rootZV))
 						.findAny()
@@ -228,6 +277,14 @@ public class BeNCEParser {
 				return Optional.empty();
 			}
 		}
+	}
+	
+	/**
+	 * Same contract as {@link BeNCEParser#parse(Graph, int)} except that it uses the default thread count
+	 * @see BeNCEParser#parse(Graph, int)
+	 */
+	public Optional<ParsingTree> parse(final Graph graph) {
+		return this.parse(graph, DEFAULT_THREAD_COUNT);
 	}
 
 	/**
@@ -353,7 +410,6 @@ public class BeNCEParser {
 	 * @param retainSet		The zone vertices with the IDs of the vertices used to induce the new zone graph. Cannot be null.
 	 * @return				The zone graph induced from {@code graph} by the vertices with IDs in {@code retainSet}
 	 */
-	@SuppressWarnings("unchecked")
 	Graph induce(final Graph graph, final Set<ZoneVertex> retainSet) {
 		assert graph != null;
 		assert retainSet != null;
