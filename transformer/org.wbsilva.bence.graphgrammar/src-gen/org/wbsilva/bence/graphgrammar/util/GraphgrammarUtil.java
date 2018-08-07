@@ -497,16 +497,6 @@ public class GraphgrammarUtil {
 		
 		return true;
 	}
-	
-	/**
-	 * Checks if a directed graph is weakly connected
-	 * @param grammar		The graph to check. Has to be valid
-	 * @return				True iff {@code graph} is weakly connected
-	 */
-	public static boolean isWeaklyConnectedGraph(final Graph graph) {
-		//TODO
-		return true;
-	}
 
 	/**
 	 * Checks if a triple grammar is a boundary triple grammar

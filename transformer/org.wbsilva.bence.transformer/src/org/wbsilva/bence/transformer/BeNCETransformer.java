@@ -128,10 +128,6 @@ public class BeNCETransformer {
 			return Optional.empty();
 		} else {
 			
-			if (!GraphgrammarUtil.isWeaklyConnectedGraph(inputGraph)) {
-				logger.warn(String.format("Input graph %s is not weakly connected. Transformation in polynomial time not guaranteed. Continuing.", inputGraph));
-			}			
-			
 			if (this.forward)
 				logger.debug(String.format("Stating forward transformation with input graph %s", inputGraph));
 			else
