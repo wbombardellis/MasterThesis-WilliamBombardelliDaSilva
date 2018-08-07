@@ -280,35 +280,41 @@ public class Bup implements IBup{
 	 */
 	@Override
 	public synchronized Optional<Set<ZoneVertex>> next() {
-		//If we are at the next phase 
-		if (phase >= subsets.size() && phase <= lastPhase()) {
-			//Add new subsets and queues
-			final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(phase, bupSet);
-			addNewSubsetQueue(newDinjunctSubsets);
-			
-			assert subsets.size() > 1;
-			//assert subsets.get(phase).size() > 0;
-			assert phase == subsets.size() - 1;
-			assert queues.size() > 1;
-			//assert queues.get(phase).size() > 0;
-			assert phase == queues.size() - 1;
-		}
+		assert this.phase > 0;
+		assert this.subsets.size() >= this.phase;
+		assert this.queues.size() == this.subsets.size();
 		
-		assert queues.get(phase) != null;
-		assert phase > 0;
-		
-		//No more element in this phase. Go to the next
-		if (queues.get(phase).isEmpty()) {
-			phase++;
-			//Recursive call to get the next at the next phase
-			return next();
-		} else {
-			//Surely the recursion ends, because the phase will scale until the last phase,
-			//when it stops
-			final Set<ZoneVertex> ret = queues.get(phase).poll();
-			assert ret != null;
+		if (phase > lastPhase()) {
+			return Optional.empty();
+		} else { 
+			assert this.phase <= lastPhase();
 			
-			return Optional.of(ret);
+			//If we are at the next phase 
+			if (phase >= subsets.size()) {
+				//Add new subsets and queues
+				final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(phase, bupSet);
+				addNewSubsetQueue(newDinjunctSubsets);
+				
+				assert subsets.size() > 1;
+				assert phase == subsets.size() - 1;
+				assert queues.size() == subsets.size();
+			}
+			
+			assert queues.get(phase) != null;
+			
+			//No more element in this phase. Go to the next
+			if (queues.get(phase).isEmpty()) {
+				phase++;
+				//Recursive call to get the next at the next phase
+				return next();
+			} else {
+				//Surely the recursion ends, because the phase will scale until the last phase,
+				//when it stops
+				final Set<ZoneVertex> ret = queues.get(phase).poll();
+				assert ret != null;
+				
+				return Optional.of(ret);
+			}
 		}
 	}
 

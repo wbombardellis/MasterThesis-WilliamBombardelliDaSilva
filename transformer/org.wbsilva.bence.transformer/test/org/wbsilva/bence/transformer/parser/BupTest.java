@@ -51,31 +51,31 @@ class BupTest {
 
 	@Test
 	void testBupNull() {
-		Bup bup = new Bup(null, 1);
+		Bup bup = new Bup(null, 1, zv1);
 		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testBupNonEmptyZero() {
-		Bup bup = new Bup(set1, 0);
+		Bup bup = new Bup(set1, 0, zv1);
 		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testBupNonEmpty() {
-		Bup bup = new Bup(set1, 1);
+		Bup bup = new Bup(set1, 1, zv1);
 		assertTrue(bup.next().isPresent());
 	}
 
 	@Test
 	void testHasNextEmpty() {
-		Bup bup = new Bup(set0, 1);
+		Bup bup = new Bup(set0, 1, zv1);
 		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testHasNextAfterAdd() {
-		Bup bup = new Bup(set0, 1);
+		Bup bup = new Bup(set0, 1, zv1);
 		assertFalse(bup.next().isPresent());
 		
 		bup.add(zv1);
@@ -84,13 +84,13 @@ class BupTest {
 	
 	@Test
 	void testNextEmpty() {
-		Bup bup = new Bup(set0, 1);
+		Bup bup = new Bup(set0, 1, zv1);
 		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testNextNonEmpty() {
-		Bup bup = new Bup(set1, 1);
+		Bup bup = new Bup(set1, 1, zv1);
 		Optional<Set<ZoneVertex>> next = bup.next();
 		assertEquals(1, next.get().size());
 		assertTrue(next.get().contains(zv1));
@@ -98,7 +98,7 @@ class BupTest {
 	
 	@Test
 	void testNextAfterAdd() {
-		Bup bup = new Bup(set0, 1);
+		Bup bup = new Bup(set0, 1, zv1);
 		bup.add(zv1);
 		Optional<Set<ZoneVertex>> next = bup.next();
 		assertEquals(1, next.get().size());
@@ -107,7 +107,7 @@ class BupTest {
 	
 	@Test
 	void testNextAfterNextAfterAdd() {
-		Bup bup = new Bup(set1, 2);
+		Bup bup = new Bup(set1, 2, zv1);
 		bup.add(zv2);
 		
 		Optional<Set<ZoneVertex>> next = bup.next();
@@ -127,7 +127,7 @@ class BupTest {
 	
 	@Test
 	void testNextAfterAddNextAfter() {
-		Bup bup = new Bup(set1,3);
+		Bup bup = new Bup(set1, 3, zv1);
 		
 		Optional<Set<ZoneVertex>> next = bup.next();
 		assertEquals(1, next.get().size());
@@ -147,7 +147,7 @@ class BupTest {
 	
 	@Test
 	void testNextBigSet() {
-		Bup bup = new Bup(set2,3);
+		Bup bup = new Bup(set2, 3, zv1);
 		
 		Optional<Set<ZoneVertex>> next = bup.next();
 		assertEquals(1, next.get().size());
@@ -181,39 +181,39 @@ class BupTest {
 	
 	@Test
 	void testContainsTrue() {
-		Bup bup = new Bup(set1, 1);
+		Bup bup = new Bup(set1, 1, zv1);
 		assertTrue(bup.contains(zv1));
 	}
 	
 	@Test
 	void testContainsTrueAfterAdd() {
-		Bup bup = new Bup(set0, 1);
+		Bup bup = new Bup(set0, 1, zv1);
 		bup.add(zv1);
 		assertTrue(bup.contains(zv1));
 	}
 	
 	@Test
 	void testContainsTrueAfterNext() {
-		Bup bup = new Bup(set1, 1);
+		Bup bup = new Bup(set1, 1, zv1);
 		bup.next();
 		assertTrue(bup.contains(zv1));
 	}
 	
 	@Test
 	void testContainsFalse() {
-		Bup bup = new Bup(set1, 1);
+		Bup bup = new Bup(set1, 1, zv1);
 		assertFalse(bup.contains(zv2));
 	}
 	
 	@Test
 	void testContainsFalseEmpty() {
-		Bup bup = new Bup(set0, 1);
+		Bup bup = new Bup(set0, 1, zv1);
 		assertFalse(bup.contains(zv1));
 	}
 	
 	@Test
 	void testAddExistant() {
-		Bup bup = new Bup(set1, 1);
+		Bup bup = new Bup(set1, 1, zv1);
 		bup.add(zv1);
 		bup.next();
 		assertFalse(bup.next().isPresent());
