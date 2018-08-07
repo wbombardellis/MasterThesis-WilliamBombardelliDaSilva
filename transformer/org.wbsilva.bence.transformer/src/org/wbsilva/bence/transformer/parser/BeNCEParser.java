@@ -91,13 +91,10 @@ public class BeNCEParser {
 				final Graph handleGraph = zoneGraph(this.graph, handle);		//Z(R)
 				assert GraphgrammarUtil.isValidGraph(handleGraph);
 				assert !handleGraph.getVertices().isEmpty();
-				assert GraphgrammarUtil.isWeaklyConnectedGraph(handleGraph);
-				//assert GraphgrammarUtil.isBoundaryGraph(handleGraph, this.grammar.getNonterminals());
 				
 				final Graph rhs = induce(handleGraph, handle);			//Y(R)
 				assert GraphgrammarUtil.isValidGraph(rhs);
 				assert !rhs.getVertices().isEmpty();
-				//assert GraphgrammarUtil.isBoundaryGraph(rhs, this.grammar.getNonterminals());
 					
 				for (final Symbol d : this.grammar.getNonterminals()) {
 					logger.debug(String.format("Trying to reduce with symbol %s", d));
@@ -108,8 +105,6 @@ public class BeNCEParser {
 					final Graph reducedGraph = zoneGraph(this.graph, new HashSet<ZoneVertex>(Arrays.asList(lhs)));	//Z({(d,V(R)})
 					assert GraphgrammarUtil.isValidGraph(reducedGraph);
 					assert !reducedGraph.getVertices().isEmpty();
-					assert GraphgrammarUtil.isWeaklyConnectedGraph(reducedGraph);
-					//assert GraphgrammarUtil.isBoundaryGraph(reducedGraph, this.grammar.getNonterminals());
 					
 					//If handle can be reduced with rule (lhs -> rhs). I.e. if reducedGraph=>handleGraph
 					final DerivationStep newDS = this.grammar.derives(reducedGraph, handleGraph, lhs, rhs);
@@ -119,6 +114,7 @@ public class BeNCEParser {
 						
 						//Derivation must be neighborhood preserving
 						if (NPUtil.isNeighborhoodPreserving(newDS)) {
+							assert GraphgrammarUtil.isBoundaryGraph(reducedGraph, this.grammar.getNonterminals());
 						
 							synchronized(this.parsingForest) {
 								//Possible derivation step found
