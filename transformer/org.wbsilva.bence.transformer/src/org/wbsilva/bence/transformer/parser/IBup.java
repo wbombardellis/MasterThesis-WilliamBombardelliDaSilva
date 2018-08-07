@@ -37,4 +37,10 @@ interface IBup {
 	 * @return		The next subset of zone vertices of Bup or empty
 	 */
 	public Optional<Set<ZoneVertex>> next();
+
+	/**
+	 * Return true iff this Bup has generated the root subset, and thus has finished the parsing
+	 * @return			True if this Bup is finished parsing, false otherwise 
+	 */
+	public boolean isParsed();
 }
