@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.wbsilva.bence.graphgrammar:TripleGrammar
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar"
+    xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore"
+    name="star2wheel"
+    terminals="//@alphabet.4 //@alphabet.5 //@alphabet.6 //@alphabet.11 //@alphabet.12 //@alphabet.7 //@alphabet.13"
+    nonterminals="//@alphabet.0 //@alphabet.1 //@alphabet.2 //@alphabet.3 //@alphabet.8 //@alphabet.9 //@alphabet.10"
+    initial="//@alphabet.0">
+  <alphabet
+      name="S"/>
+  <alphabet
+      name="R"/>
+  <alphabet
+      name="T"/>
+  <alphabet
+      name="C"/>
+  <alphabet
+      name="G"/>
+  <alphabet
+      name="Node"/>
+  <alphabet
+      name="G2G"/>
+  <alphabet
+      name="Node2Node"/>
+  <alphabet
+      name="C2C"/>
+  <alphabet
+      name="R2R"/>
+  <alphabet
+      name="T2T"/>
+  <alphabet
+      name="out"/>
+  <alphabet
+      name="in"/>
+  <alphabet
+      name="node"/>
+  <tripleRules>
+    <source
+        id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="G0">
+          <label
+              name="G"/>
+        </vertices>
+        <vertices
+            id="C0">
+          <label
+              name="C"/>
+        </vertices>
+        <edges
+            from="G0"
+            to="C0">
+          <label
+              name="node"/>
+        </edges>
+      </rhs>
+    </source>
+    <corr id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="G02G00">
+          <label
+              name="G2G"/>
+        </vertices>
+        <vertices
+            id="C02C00">
+          <label
+              name="C2C"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="G00">
+          <label
+              name="G"/>
+        </vertices>
+        <vertices
+            id="C00">
+          <label
+              name="C"/>
+        </vertices>
+        <edges
+            from="G00"
+            to="C00">
+          <label
+              name="node"/>
+        </edges>
+      </rhs>
+    </target>
+    <ms key="G02G00"
+        value="G0"/>
+    <ms key="C02C00"
+        value="C0"/>
+    <mt key="G02G00"
+        value="G00"/>
+    <mt key="C02C00"
+        value="C00"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r1"
+        name="r1">
+      <lhs name="C"/>
+      <rhs>
+        <vertices
+            id="n1">
+          <label
+              name="Node"/>
+        </vertices>
+        <vertices
+            id="R1">
+          <label
+              name="R"/>
+        </vertices>
+        <edges
+            from="n1"
+            to="R1">
+          <label
+              name="out"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="n1">
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+      <embedding
+          key="R1">
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r1"
+        name="r1">
+      <lhs name="C"/>
+      <rhs>
+        <vertices
+            id="n12n01">
+          <label
+              name="Node2Node"/>
+        </vertices>
+        <vertices
+            id="R12R01">
+          <label
+              name="R2R"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r1"
+        name="r1">
+      <lhs name="C"/>
+      <rhs>
+        <vertices
+            id="n01">
+          <label
+              name="Node"/>
+        </vertices>
+        <vertices
+            id="R01">
+          <label
+              name="R"/>
+        </vertices>
+        <edges
+            from="n01"
+            to="R01">
+          <label
+              name="out"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="n01">
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+      <embedding
+          key="R01">
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="R"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="n12n01"
+        value="n1"/>
+    <ms key="R12R01"
+        value="R1"/>
+    <mt key="n12n01"
+        value="n01"/>
+    <mt key="R12R01"
+        value="R01"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r2"
+        name="r2">
+      <lhs name="R"/>
+      <rhs>
+        <vertices
+            id="n2">
+          <label
+              name="Node"/>
+        </vertices>
+      </rhs>
+      <embedding
+          key="n2">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Node"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r2"
+        name="r2">
+      <lhs name="R"/>
+      <rhs>
+        <vertices
+            id="n22n02">
+          <label
+              name="Node2Node"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r2"
+        name="r2">
+      <lhs name="R"/>
+      <rhs>
+        <vertices
+            id="n02">
+          <label
+              name="Node"/>
+        </vertices>
+      </rhs>
+      <embedding
+          key="n02">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Node"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="n22n02"
+        value="n2"/>
+    <mt key="n22n02"
+        value="n02"/>
+  </tripleRules>
+</org.wbsilva.bence.graphgrammar:TripleGrammar>
