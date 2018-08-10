@@ -24,6 +24,7 @@ import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
 import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 import org.wbsilva.bence.graphgrammar.util.NPUtil;
+import org.wbsilva.bence.graphgrammar.util.SymbolSet;
 
 /**
  * This class implements a B-eNCE graph parser.
@@ -321,20 +322,27 @@ public class BeNCEParser {
 					final ZoneVertex zw = ((ZoneVertex)w);
 					final ZoneVertex zv = ((ZoneVertex)v);
 					final Set<Edge> es = new HashSet<Edge>(1);
+					final SymbolSet addedLabels = new SymbolSet();
 					
 					for (Vertex ww : zw.getVertices()) {
 						for (Vertex vv : zv.getVertices()) {
 							//Do only for in edges to not create duplicates
-							es.addAll(graph.inEdges(ww).stream()
-								.filter(ie -> ie.getFrom().getId().equals(vv.getId()))
-								.map(ie -> {
-									final Edge e = GraphgrammarFactory.eINSTANCE.createEdge();
-									e.setFrom(v);
-									e.setTo(w);
-									e.setLabel(EcoreUtil.copy(ie.getLabel()));
-									return e;
-								})
-								.collect(Collectors.toSet()));
+							final Set<Edge> newEs = graph.inEdges(ww).stream()
+									.filter(ie -> ie.getFrom().getId().equals(vv.getId()))
+									.filter(ie -> !addedLabels.contains(ie.getLabel()))
+									.map(ie -> {
+										final Edge e = GraphgrammarFactory.eINSTANCE.createEdge();
+										e.setFrom(zv);
+										e.setTo(zw);
+										e.setLabel(EcoreUtil.copy(ie.getLabel()));
+										return e;
+									})
+									.collect(Collectors.toSet());
+							es.addAll(newEs);
+							//Remember added labels between zw and zv to disallow duplicate vertices (multivertices)
+							addedLabels.addAll(newEs.stream()
+									.map(e -> e.getLabel())
+									.collect(Collectors.toSet()));
 						}
 					}
 					return es.stream();

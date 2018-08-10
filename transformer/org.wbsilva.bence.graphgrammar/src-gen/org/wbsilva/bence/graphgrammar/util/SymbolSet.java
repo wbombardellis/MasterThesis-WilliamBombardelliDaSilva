@@ -74,8 +74,16 @@ public class SymbolSet implements Iterable<Symbol>{
 	 * @see HashSet#addAll(Collection)
 	 */
 	public boolean addAll(final SymbolSet other) {
+		return this.addAll(other.set);
+	}
+	
+	/**
+	 * Same contract as {@link HashSet#addAll(Collection)}
+	 * @see HashSet#addAll(Collection)
+	 */
+	public boolean addAll(Set<Symbol> other) {
 		boolean modified = false;
-		for (Symbol s : other.set) {
+		for (Symbol s : other) {
 			if (this.add(s))
 				modified = true;
 		}
