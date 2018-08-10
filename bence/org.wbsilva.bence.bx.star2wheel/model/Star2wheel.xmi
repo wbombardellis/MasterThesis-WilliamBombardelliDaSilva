@@ -6,8 +6,8 @@
     xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar"
     xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore"
     name="star2wheel"
-    terminals="//@alphabet.4 //@alphabet.5 //@alphabet.6 //@alphabet.11 //@alphabet.12 //@alphabet.7 //@alphabet.13"
-    nonterminals="//@alphabet.0 //@alphabet.1 //@alphabet.2 //@alphabet.3 //@alphabet.8 //@alphabet.9 //@alphabet.10"
+    terminals="//@alphabet.4 //@alphabet.5 //@alphabet.8 //@alphabet.9 //@alphabet.7 //@alphabet.10 //@alphabet.6"
+    nonterminals="//@alphabet.0 //@alphabet.1 //@alphabet.2 //@alphabet.3"
     initial="//@alphabet.0">
   <alphabet
       name="S"/>
@@ -20,17 +20,11 @@
   <alphabet
       name="G"/>
   <alphabet
-      name="Node"/>
+      name="Center"/>
   <alphabet
-      name="G2G"/>
+      name="Boundary"/>
   <alphabet
       name="Node2Node"/>
-  <alphabet
-      name="C2C"/>
-  <alphabet
-      name="R2R"/>
-  <alphabet
-      name="T2T"/>
   <alphabet
       name="out"/>
   <alphabet
@@ -68,12 +62,12 @@
         <vertices
             id="G02G00">
           <label
-              name="G2G"/>
+              name="G"/>
         </vertices>
         <vertices
             id="C02C00">
           <label
-              name="C2C"/>
+              name="C"/>
         </vertices>
       </rhs>
     </corr>
@@ -118,7 +112,7 @@
         <vertices
             id="n1">
           <label
-              name="Node"/>
+              name="Center"/>
         </vertices>
         <vertices
             id="R1">
@@ -163,7 +157,7 @@
         <vertices
             id="R12R01">
           <label
-              name="R2R"/>
+              name="R"/>
         </vertices>
       </rhs>
     </corr>
@@ -175,7 +169,7 @@
         <vertices
             id="n01">
           <label
-              name="Node"/>
+              name="Center"/>
         </vertices>
         <vertices
             id="R01">
@@ -204,7 +198,7 @@
           <edgeLabel
               name="node"/>
           <vertexLabels
-              name="R"/>
+              name="G"/>
         </value>
       </embedding>
     </target>
@@ -226,7 +220,7 @@
         <vertices
             id="n2">
           <label
-              name="Node"/>
+              name="Boundary"/>
         </vertices>
       </rhs>
       <embedding
@@ -235,7 +229,7 @@
           <edgeLabel
               name="out"/>
           <vertexLabels
-              name="Node"/>
+              name="Center"/>
         </value>
         <value>
           <edgeLabel
@@ -264,7 +258,7 @@
         <vertices
             id="n02">
           <label
-              name="Node"/>
+              name="Boundary"/>
         </vertices>
       </rhs>
       <embedding
@@ -273,7 +267,7 @@
           <edgeLabel
               name="out"/>
           <vertexLabels
-              name="Node"/>
+              name="Center"/>
         </value>
         <value>
           <edgeLabel
@@ -287,5 +281,358 @@
         value="n2"/>
     <mt key="n22n02"
         value="n02"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r3"
+        name="r3">
+      <lhs name="R"/>
+      <rhs>
+        <vertices
+            id="n3">
+          <label
+              name="Boundary"/>
+        </vertices>
+        <vertices
+            id="T3">
+          <label
+              name="T"/>
+        </vertices>
+      </rhs>
+      <embedding
+          key="n3">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Center"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+      <embedding
+          key="T3">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Center"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r3"
+        name="r3">
+      <lhs name="R"/>
+      <rhs>
+        <vertices
+            id="n32n03">
+          <label
+              name="Node2Node"/>
+        </vertices>
+        <vertices
+            id="T32T03">
+          <label
+              name="T"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r3"
+        name="r3">
+      <lhs name="R"/>
+      <rhs>
+        <vertices
+            id="n03">
+          <label
+              name="Boundary"/>
+        </vertices>
+        <vertices
+            id="T03">
+          <label
+              name="T"/>
+        </vertices>
+        <edges
+            from="n03"
+            to="T03">
+          <label
+              name="out"/>
+        </edges>
+        <edges
+            from="T03"
+            to="n03">
+          <label
+              name="in"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="n03">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Center"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+      <embedding
+          key="T03">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Center"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="n32n03"
+        value="n3"/>
+    <ms key="T32T03"
+        value="T3"/>
+    <mt key="n32n03"
+        value="n03"/>
+    <mt key="T32T03"
+        value="T03"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r4"
+        name="r4">
+      <lhs name="T"/>
+      <rhs>
+        <vertices
+            id="n4">
+          <label
+              name="Boundary"/>
+        </vertices>
+      </rhs>
+      <embedding
+          key="n4">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Center"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r4"
+        name="r4">
+      <lhs name="T"/>
+      <rhs>
+        <vertices
+            id="n42n04">
+          <label
+              name="Node2Node"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r4"
+        name="r4">
+      <lhs name="T"/>
+      <rhs>
+        <vertices
+            id="n04">
+          <label
+              name="Boundary"/>
+        </vertices>
+      </rhs>
+      <embedding
+          key="n04">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Center"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Boundary"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="in"/>
+          <vertexLabels
+              name="Boundary"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="n42n04"
+        value="n4"/>
+    <mt key="n42n04"
+        value="n04"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r5"
+        name="r5">
+      <lhs name="T"/>
+      <rhs>
+        <vertices
+            id="n5">
+          <label
+              name="Boundary"/>
+        </vertices>
+        <vertices
+            id="T5">
+          <label
+              name="T"/>
+        </vertices>
+      </rhs>
+      <embedding
+          key="n5">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Center"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+      <embedding
+          key="T5">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Center"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r5"
+        name="r5">
+      <lhs name="T"/>
+      <rhs>
+        <vertices
+            id="n52n05">
+          <label
+              name="Node2Node"/>
+        </vertices>
+        <vertices
+            id="T52T05">
+          <label
+              name="T"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r5"
+        name="r5">
+      <lhs name="T"/>
+      <rhs>
+        <vertices
+            id="n05">
+          <label
+              name="Boundary"/>
+        </vertices>
+        <vertices
+            id="T05">
+          <label
+              name="T"/>
+        </vertices>
+        <edges
+            from="n05"
+            to="T05">
+          <label
+              name="out"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="n05">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Center"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Boundary"/>
+        </value>
+      </embedding>
+      <embedding
+          key="T05">
+        <value>
+          <edgeLabel
+              name="out"/>
+          <vertexLabels
+              name="Center"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="node"/>
+          <vertexLabels
+              name="G"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="in"/>
+          <vertexLabels
+              name="Boundary"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="n52n05"
+        value="n5"/>
+    <ms key="T52T05"
+        value="T5"/>
+    <mt key="n52n05"
+        value="n05"/>
+    <mt key="T52T05"
+        value="T05"/>
   </tripleRules>
 </org.wbsilva.bence.graphgrammar:TripleGrammar>
