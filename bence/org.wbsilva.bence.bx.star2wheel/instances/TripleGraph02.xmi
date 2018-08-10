@@ -1,0 +1,1913 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar">
+  <org.wbsilva.bence.graphgrammar:TripleGraph>
+    <source>
+      <vertices id="_B9_yQJy5Eeivub9KIXtxqA">
+        <label name="G"/>
+      </vertices>
+      <vertices id="_B9_yQZy5Eeivub9KIXtxqA">
+        <label name="Center"/>
+      </vertices>
+      <vertices id="_B-AZU5y5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B-BAYJy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B-AZUpy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B-AZVZy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B-AZUZy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B-AZUJy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B-AZVJy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B-AZVpy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <edges from="_B9_yQJy5Eeivub9KIXtxqA" to="_B9_yQZy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_B9_yQZy5Eeivub9KIXtxqA" to="_B-AZU5y5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_B9_yQJy5Eeivub9KIXtxqA" to="_B-AZU5y5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_B9_yQJy5Eeivub9KIXtxqA" to="_B-BAYJy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_B9_yQZy5Eeivub9KIXtxqA" to="_B-BAYJy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_B9_yQZy5Eeivub9KIXtxqA" to="_B-AZUpy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_B9_yQJy5Eeivub9KIXtxqA" to="_B-AZUpy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_B9_yQJy5Eeivub9KIXtxqA" to="_B-AZVZy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_B9_yQZy5Eeivub9KIXtxqA" to="_B-AZVZy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_B9_yQZy5Eeivub9KIXtxqA" to="_B-AZUZy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_B9_yQJy5Eeivub9KIXtxqA" to="_B-AZUZy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_B9_yQZy5Eeivub9KIXtxqA" to="_B-AZUJy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_B9_yQJy5Eeivub9KIXtxqA" to="_B-AZUJy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_B9_yQJy5Eeivub9KIXtxqA" to="_B-AZVJy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_B9_yQZy5Eeivub9KIXtxqA" to="_B-AZVJy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_B9_yQJy5Eeivub9KIXtxqA" to="_B-AZVpy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_B9_yQZy5Eeivub9KIXtxqA" to="_B-AZVpy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+    </source>
+    <corr>
+      <vertices id="_CM0RY5y5Eeivub9KIXtxqA">
+        <label name="G"/>
+      </vertices>
+      <vertices id="_CM37wJy5Eeivub9KIXtxqA">
+        <label name="Node2Node"/>
+      </vertices>
+      <vertices id="_CM6YAJy5Eeivub9KIXtxqA">
+        <label name="Node2Node"/>
+      </vertices>
+      <vertices id="_CM-CYZy5Eeivub9KIXtxqA">
+        <label name="Node2Node"/>
+      </vertices>
+      <vertices id="_CNBswZy5Eeivub9KIXtxqA">
+        <label name="Node2Node"/>
+      </vertices>
+      <vertices id="_CNEJAZy5Eeivub9KIXtxqA">
+        <label name="Node2Node"/>
+      </vertices>
+      <vertices id="_CNHMUZy5Eeivub9KIXtxqA">
+        <label name="Node2Node"/>
+      </vertices>
+      <vertices id="_CNJokJy5Eeivub9KIXtxqA">
+        <label name="Node2Node"/>
+      </vertices>
+      <vertices id="_CNME0Jy5Eeivub9KIXtxqA">
+        <label name="Node2Node"/>
+      </vertices>
+      <vertices id="_CNOhEJy5Eeivub9KIXtxqA">
+        <label name="Node2Node"/>
+      </vertices>
+    </corr>
+    <target>
+      <vertices id="_CM0RYJy5Eeivub9KIXtxqA">
+        <label name="G"/>
+      </vertices>
+      <vertices id="_CM3UsJy5Eeivub9KIXtxqA">
+        <label name="Center"/>
+      </vertices>
+      <vertices id="_CM5w8Jy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_CM80QJy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_CM_3kJy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_CNDh8Jy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_CNF-MZy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_CNIacZy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_CNLdwJy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_CNN6AJy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <edges from="_CM0RYJy5Eeivub9KIXtxqA" to="_CM3UsJy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_CM0RYJy5Eeivub9KIXtxqA" to="_CM5w8Jy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_CM3UsJy5Eeivub9KIXtxqA" to="_CM5w8Jy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM0RYJy5Eeivub9KIXtxqA" to="_CM80QJy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_CM5w8Jy5Eeivub9KIXtxqA" to="_CM80QJy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM3UsJy5Eeivub9KIXtxqA" to="_CM80QJy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM80QJy5Eeivub9KIXtxqA" to="_CM_3kJy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM0RYJy5Eeivub9KIXtxqA" to="_CM_3kJy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_CM3UsJy5Eeivub9KIXtxqA" to="_CM_3kJy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM_3kJy5Eeivub9KIXtxqA" to="_CNDh8Jy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM3UsJy5Eeivub9KIXtxqA" to="_CNDh8Jy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM0RYJy5Eeivub9KIXtxqA" to="_CNDh8Jy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_CM3UsJy5Eeivub9KIXtxqA" to="_CNF-MZy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CNDh8Jy5Eeivub9KIXtxqA" to="_CNF-MZy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM0RYJy5Eeivub9KIXtxqA" to="_CNF-MZy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_CNF-MZy5Eeivub9KIXtxqA" to="_CNIacZy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM3UsJy5Eeivub9KIXtxqA" to="_CNIacZy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM0RYJy5Eeivub9KIXtxqA" to="_CNIacZy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_CM0RYJy5Eeivub9KIXtxqA" to="_CNLdwJy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_CM3UsJy5Eeivub9KIXtxqA" to="_CNLdwJy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CNIacZy5Eeivub9KIXtxqA" to="_CNLdwJy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM3UsJy5Eeivub9KIXtxqA" to="_CNN6AJy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CNLdwJy5Eeivub9KIXtxqA" to="_CNN6AJy5Eeivub9KIXtxqA">
+        <label name="out"/>
+      </edges>
+      <edges from="_CM0RYJy5Eeivub9KIXtxqA" to="_CNN6AJy5Eeivub9KIXtxqA">
+        <label name="node"/>
+      </edges>
+      <edges from="_CNN6AJy5Eeivub9KIXtxqA" to="_CM5w8Jy5Eeivub9KIXtxqA">
+        <label name="in"/>
+      </edges>
+    </target>
+    <ms key="_CM0RY5y5Eeivub9KIXtxqA" value="_B9_yQJy5Eeivub9KIXtxqA"/>
+    <ms key="_CM37wJy5Eeivub9KIXtxqA" value="_B9_yQZy5Eeivub9KIXtxqA"/>
+    <ms key="_CM6YAJy5Eeivub9KIXtxqA" value="_B-AZU5y5Eeivub9KIXtxqA"/>
+    <ms key="_CM-CYZy5Eeivub9KIXtxqA" value="_B-BAYJy5Eeivub9KIXtxqA"/>
+    <ms key="_CNBswZy5Eeivub9KIXtxqA" value="_B-AZUpy5Eeivub9KIXtxqA"/>
+    <ms key="_CNEJAZy5Eeivub9KIXtxqA" value="_B-AZVZy5Eeivub9KIXtxqA"/>
+    <ms key="_CNHMUZy5Eeivub9KIXtxqA" value="_B-AZUZy5Eeivub9KIXtxqA"/>
+    <ms key="_CNJokJy5Eeivub9KIXtxqA" value="_B-AZUJy5Eeivub9KIXtxqA"/>
+    <ms key="_CNME0Jy5Eeivub9KIXtxqA" value="_B-AZVJy5Eeivub9KIXtxqA"/>
+    <ms key="_CNOhEJy5Eeivub9KIXtxqA" value="_B-AZVpy5Eeivub9KIXtxqA"/>
+    <mt key="_CM0RY5y5Eeivub9KIXtxqA" value="_CM0RYJy5Eeivub9KIXtxqA"/>
+    <mt key="_CM37wJy5Eeivub9KIXtxqA" value="_CM3UsJy5Eeivub9KIXtxqA"/>
+    <mt key="_CM6YAJy5Eeivub9KIXtxqA" value="_CM5w8Jy5Eeivub9KIXtxqA"/>
+    <mt key="_CM-CYZy5Eeivub9KIXtxqA" value="_CM80QJy5Eeivub9KIXtxqA"/>
+    <mt key="_CNBswZy5Eeivub9KIXtxqA" value="_CM_3kJy5Eeivub9KIXtxqA"/>
+    <mt key="_CNEJAZy5Eeivub9KIXtxqA" value="_CNDh8Jy5Eeivub9KIXtxqA"/>
+    <mt key="_CNHMUZy5Eeivub9KIXtxqA" value="_CNF-MZy5Eeivub9KIXtxqA"/>
+    <mt key="_CNJokJy5Eeivub9KIXtxqA" value="_CNIacZy5Eeivub9KIXtxqA"/>
+    <mt key="_CNME0Jy5Eeivub9KIXtxqA" value="_CNLdwJy5Eeivub9KIXtxqA"/>
+    <mt key="_CNOhEJy5Eeivub9KIXtxqA" value="_CNN6AJy5Eeivub9KIXtxqA"/>
+  </org.wbsilva.bence.graphgrammar:TripleGraph>
+  <org.wbsilva.bence.graphgrammar:ParsingTree>
+    <zoneVertex id="_CK4-wJy5Eeivub9KIXtxqA">
+      <label name="S"/>
+      <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+        <label name="G"/>
+      </vertices>
+      <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+        <label name="Center"/>
+      </vertices>
+      <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+      <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+        <label name="Boundary"/>
+      </vertices>
+    </zoneVertex>
+    <derivationStep>
+      <rule id="r0" name="r0">
+        <lhs name="S"/>
+        <rhs>
+          <vertices id="G0">
+            <label name="G"/>
+          </vertices>
+          <vertices id="C0">
+            <label name="C"/>
+          </vertices>
+          <edges from="G0" to="C0">
+            <label name="node"/>
+          </edges>
+        </rhs>
+      </rule>
+      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CK4-wJy5Eeivub9KIXtxqA">
+        <label name="S"/>
+        <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+          <label name="G"/>
+        </vertices>
+        <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+          <label name="Center"/>
+        </vertices>
+        <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+      </vertex>
+      <previous>
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CK4-wJy5Eeivub9KIXtxqA">
+          <label name="S"/>
+          <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+            <label name="G"/>
+          </vertices>
+          <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+            <label name="Center"/>
+          </vertices>
+          <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+        </vertices>
+      </previous>
+      <next>
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CJCkoJy5Eeivub9KIXtxqA">
+          <label name="C"/>
+          <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+            <label name="Center"/>
+          </vertices>
+          <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+        </vertices>
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B9_yQJy5Eeivub9KIXtxqA">
+          <label name="G"/>
+          <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+            <label name="G"/>
+          </vertices>
+        </vertices>
+        <edges from="_B9_yQJy5Eeivub9KIXtxqA" to="_CJCkoJy5Eeivub9KIXtxqA">
+          <label name="node"/>
+        </edges>
+      </next>
+      <unifier key="G0" value="_B9_yQJy5Eeivub9KIXtxqA"/>
+      <unifier key="C0" value="_CJCkoJy5Eeivub9KIXtxqA"/>
+    </derivationStep>
+    <children>
+      <zoneVertex id="_B9_yQJy5Eeivub9KIXtxqA">
+        <label name="G"/>
+        <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+          <label name="G"/>
+        </vertices>
+      </zoneVertex>
+    </children>
+    <children>
+      <zoneVertex id="_CJCkoJy5Eeivub9KIXtxqA">
+        <label name="C"/>
+        <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+          <label name="Center"/>
+        </vertices>
+        <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+        <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+          <label name="Boundary"/>
+        </vertices>
+      </zoneVertex>
+      <derivationStep>
+        <rule id="r1" name="r1">
+          <lhs name="C"/>
+          <rhs>
+            <vertices id="n1">
+              <label name="Center"/>
+            </vertices>
+            <vertices id="R1">
+              <label name="R"/>
+            </vertices>
+            <edges from="n1" to="R1">
+              <label name="out"/>
+            </edges>
+          </rhs>
+          <embedding key="n1">
+            <value>
+              <edgeLabel name="node"/>
+              <vertexLabels name="G"/>
+            </value>
+          </embedding>
+          <embedding key="R1">
+            <value>
+              <edgeLabel name="node"/>
+              <vertexLabels name="G"/>
+            </value>
+          </embedding>
+        </rule>
+        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CJCkoJy5Eeivub9KIXtxqA">
+          <label name="C"/>
+          <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+            <label name="Center"/>
+          </vertices>
+          <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+        </vertex>
+        <previous>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CJCkoJy5Eeivub9KIXtxqA">
+            <label name="C"/>
+            <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+              <label name="Center"/>
+            </vertices>
+            <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CJJSUJy5Eeivub9KIXtxqA">
+            <label name="G"/>
+            <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+              <label name="G"/>
+            </vertices>
+          </vertices>
+          <edges from="_CJJSUJy5Eeivub9KIXtxqA" to="_CJCkoJy5Eeivub9KIXtxqA">
+            <label name="node"/>
+          </edges>
+        </previous>
+        <next>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B9_yQZy5Eeivub9KIXtxqA">
+            <label name="Center"/>
+            <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+              <label name="Center"/>
+            </vertices>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CIgZIJy5Eeivub9KIXtxqA">
+            <label name="R"/>
+            <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CI7P4Zy5Eeivub9KIXtxqA">
+            <label name="G"/>
+            <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+              <label name="G"/>
+            </vertices>
+          </vertices>
+          <edges from="_B9_yQZy5Eeivub9KIXtxqA" to="_CIgZIJy5Eeivub9KIXtxqA">
+            <label name="out"/>
+          </edges>
+          <edges from="_CI7P4Zy5Eeivub9KIXtxqA" to="_CIgZIJy5Eeivub9KIXtxqA">
+            <label name="node"/>
+          </edges>
+          <edges from="_CI7P4Zy5Eeivub9KIXtxqA" to="_B9_yQZy5Eeivub9KIXtxqA">
+            <label name="node"/>
+          </edges>
+        </next>
+        <unifier key="n1" value="_B9_yQZy5Eeivub9KIXtxqA"/>
+        <unifier key="R1" value="_CIgZIJy5Eeivub9KIXtxqA"/>
+      </derivationStep>
+      <children>
+        <zoneVertex id="_B9_yQZy5Eeivub9KIXtxqA">
+          <label name="Center"/>
+          <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+            <label name="Center"/>
+          </vertices>
+        </zoneVertex>
+      </children>
+      <children>
+        <zoneVertex id="_CIgZIJy5Eeivub9KIXtxqA">
+          <label name="R"/>
+          <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+          <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+          </vertices>
+        </zoneVertex>
+        <derivationStep>
+          <rule id="r3" name="r3">
+            <lhs name="R"/>
+            <rhs>
+              <vertices id="n3">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="T3">
+                <label name="T"/>
+              </vertices>
+            </rhs>
+            <embedding key="n3">
+              <value>
+                <edgeLabel name="out"/>
+                <vertexLabels name="Center"/>
+              </value>
+              <value>
+                <edgeLabel name="node"/>
+                <vertexLabels name="G"/>
+              </value>
+            </embedding>
+            <embedding key="T3">
+              <value>
+                <edgeLabel name="out"/>
+                <vertexLabels name="Center"/>
+              </value>
+              <value>
+                <edgeLabel name="node"/>
+                <vertexLabels name="G"/>
+              </value>
+            </embedding>
+          </rule>
+          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CIgZIJy5Eeivub9KIXtxqA">
+            <label name="R"/>
+            <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+          </vertex>
+          <previous>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CIgZIJy5Eeivub9KIXtxqA">
+              <label name="R"/>
+              <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CIhAMZy5Eeivub9KIXtxqA">
+              <label name="G"/>
+              <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                <label name="G"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CIhAMJy5Eeivub9KIXtxqA">
+              <label name="Center"/>
+              <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                <label name="Center"/>
+              </vertices>
+            </vertices>
+            <edges from="_CIhAMZy5Eeivub9KIXtxqA" to="_CIhAMJy5Eeivub9KIXtxqA">
+              <label name="node"/>
+            </edges>
+            <edges from="_CIhAMZy5Eeivub9KIXtxqA" to="_CIgZIJy5Eeivub9KIXtxqA">
+              <label name="node"/>
+            </edges>
+            <edges from="_CIhAMJy5Eeivub9KIXtxqA" to="_CIgZIJy5Eeivub9KIXtxqA">
+              <label name="out"/>
+            </edges>
+          </previous>
+          <next>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CHpdgpy5Eeivub9KIXtxqA">
+              <label name="T"/>
+              <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B-AZU5y5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+              <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CIUL4Zy5Eeivub9KIXtxqA">
+              <label name="G"/>
+              <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                <label name="G"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CIUL4Jy5Eeivub9KIXtxqA">
+              <label name="Center"/>
+              <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                <label name="Center"/>
+              </vertices>
+            </vertices>
+            <edges from="_CIUL4Zy5Eeivub9KIXtxqA" to="_CHpdgpy5Eeivub9KIXtxqA">
+              <label name="node"/>
+            </edges>
+            <edges from="_CIUL4Zy5Eeivub9KIXtxqA" to="_B-AZU5y5Eeivub9KIXtxqA">
+              <label name="node"/>
+            </edges>
+            <edges from="_CIUL4Zy5Eeivub9KIXtxqA" to="_CIUL4Jy5Eeivub9KIXtxqA">
+              <label name="node"/>
+            </edges>
+            <edges from="_CIUL4Jy5Eeivub9KIXtxqA" to="_B-AZU5y5Eeivub9KIXtxqA">
+              <label name="out"/>
+            </edges>
+            <edges from="_CIUL4Jy5Eeivub9KIXtxqA" to="_CHpdgpy5Eeivub9KIXtxqA">
+              <label name="out"/>
+            </edges>
+          </next>
+          <unifier key="n3" value="_B-AZU5y5Eeivub9KIXtxqA"/>
+          <unifier key="T3" value="_CHpdgpy5Eeivub9KIXtxqA"/>
+        </derivationStep>
+        <children>
+          <zoneVertex id="_B-AZU5y5Eeivub9KIXtxqA">
+            <label name="Boundary"/>
+            <vertices id="_B6ub0Zy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+          </zoneVertex>
+        </children>
+        <children>
+          <zoneVertex id="_CHpdgpy5Eeivub9KIXtxqA">
+            <label name="T"/>
+            <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+            <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+            </vertices>
+          </zoneVertex>
+          <derivationStep>
+            <rule id="r5" name="r5">
+              <lhs name="T"/>
+              <rhs>
+                <vertices id="n5">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="T5">
+                  <label name="T"/>
+                </vertices>
+              </rhs>
+              <embedding key="n5">
+                <value>
+                  <edgeLabel name="out"/>
+                  <vertexLabels name="Center"/>
+                </value>
+                <value>
+                  <edgeLabel name="node"/>
+                  <vertexLabels name="G"/>
+                </value>
+              </embedding>
+              <embedding key="T5">
+                <value>
+                  <edgeLabel name="out"/>
+                  <vertexLabels name="Center"/>
+                </value>
+                <value>
+                  <edgeLabel name="node"/>
+                  <vertexLabels name="G"/>
+                </value>
+              </embedding>
+            </rule>
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CHpdgpy5Eeivub9KIXtxqA">
+              <label name="T"/>
+              <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+            </vertex>
+            <previous>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CHpdgpy5Eeivub9KIXtxqA">
+                <label name="T"/>
+                <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CHu9EZy5Eeivub9KIXtxqA">
+                <label name="G"/>
+                <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                  <label name="G"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CHu9EJy5Eeivub9KIXtxqA">
+                <label name="Center"/>
+                <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                  <label name="Center"/>
+                </vertices>
+              </vertices>
+              <edges from="_CHu9EZy5Eeivub9KIXtxqA" to="_CHpdgpy5Eeivub9KIXtxqA">
+                <label name="node"/>
+              </edges>
+              <edges from="_CHu9EZy5Eeivub9KIXtxqA" to="_CHu9EJy5Eeivub9KIXtxqA">
+                <label name="node"/>
+              </edges>
+              <edges from="_CHu9EJy5Eeivub9KIXtxqA" to="_CHpdgpy5Eeivub9KIXtxqA">
+                <label name="out"/>
+              </edges>
+            </previous>
+            <next>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B-BAYJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+                <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CGm7sJy5Eeivub9KIXtxqA">
+                <label name="T"/>
+                <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CHK8YZy5Eeivub9KIXtxqA">
+                <label name="G"/>
+                <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                  <label name="G"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CHK8YJy5Eeivub9KIXtxqA">
+                <label name="Center"/>
+                <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                  <label name="Center"/>
+                </vertices>
+              </vertices>
+              <edges from="_CHK8YZy5Eeivub9KIXtxqA" to="_CHK8YJy5Eeivub9KIXtxqA">
+                <label name="node"/>
+              </edges>
+              <edges from="_CHK8YZy5Eeivub9KIXtxqA" to="_CGm7sJy5Eeivub9KIXtxqA">
+                <label name="node"/>
+              </edges>
+              <edges from="_CHK8YZy5Eeivub9KIXtxqA" to="_B-BAYJy5Eeivub9KIXtxqA">
+                <label name="node"/>
+              </edges>
+              <edges from="_CHK8YJy5Eeivub9KIXtxqA" to="_CGm7sJy5Eeivub9KIXtxqA">
+                <label name="out"/>
+              </edges>
+              <edges from="_CHK8YJy5Eeivub9KIXtxqA" to="_B-BAYJy5Eeivub9KIXtxqA">
+                <label name="out"/>
+              </edges>
+            </next>
+            <unifier key="n5" value="_B-BAYJy5Eeivub9KIXtxqA"/>
+            <unifier key="T5" value="_CGm7sJy5Eeivub9KIXtxqA"/>
+          </derivationStep>
+          <children>
+            <zoneVertex id="_B-BAYJy5Eeivub9KIXtxqA">
+              <label name="Boundary"/>
+              <vertices id="_B6wRAJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+            </zoneVertex>
+          </children>
+          <children>
+            <zoneVertex id="_CGm7sJy5Eeivub9KIXtxqA">
+              <label name="T"/>
+              <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+              <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+              </vertices>
+            </zoneVertex>
+            <derivationStep>
+              <rule id="r5" name="r5">
+                <lhs name="T"/>
+                <rhs>
+                  <vertices id="n5">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="T5">
+                    <label name="T"/>
+                  </vertices>
+                </rhs>
+                <embedding key="n5">
+                  <value>
+                    <edgeLabel name="out"/>
+                    <vertexLabels name="Center"/>
+                  </value>
+                  <value>
+                    <edgeLabel name="node"/>
+                    <vertexLabels name="G"/>
+                  </value>
+                </embedding>
+                <embedding key="T5">
+                  <value>
+                    <edgeLabel name="out"/>
+                    <vertexLabels name="Center"/>
+                  </value>
+                  <value>
+                    <edgeLabel name="node"/>
+                    <vertexLabels name="G"/>
+                  </value>
+                </embedding>
+              </rule>
+              <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CGm7sJy5Eeivub9KIXtxqA">
+                <label name="T"/>
+                <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+              </vertex>
+              <previous>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CGm7sJy5Eeivub9KIXtxqA">
+                  <label name="T"/>
+                  <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CGniwZy5Eeivub9KIXtxqA">
+                  <label name="G"/>
+                  <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                    <label name="G"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CGniwJy5Eeivub9KIXtxqA">
+                  <label name="Center"/>
+                  <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                    <label name="Center"/>
+                  </vertices>
+                </vertices>
+                <edges from="_CGniwZy5Eeivub9KIXtxqA" to="_CGniwJy5Eeivub9KIXtxqA">
+                  <label name="node"/>
+                </edges>
+                <edges from="_CGniwZy5Eeivub9KIXtxqA" to="_CGm7sJy5Eeivub9KIXtxqA">
+                  <label name="node"/>
+                </edges>
+                <edges from="_CGniwJy5Eeivub9KIXtxqA" to="_CGm7sJy5Eeivub9KIXtxqA">
+                  <label name="out"/>
+                </edges>
+              </previous>
+              <next>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CF2twJy5Eeivub9KIXtxqA">
+                  <label name="T"/>
+                  <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B-AZUpy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                  <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CGY5QZy5Eeivub9KIXtxqA">
+                  <label name="G"/>
+                  <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                    <label name="G"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CGY5QJy5Eeivub9KIXtxqA">
+                  <label name="Center"/>
+                  <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                    <label name="Center"/>
+                  </vertices>
+                </vertices>
+                <edges from="_CGY5QZy5Eeivub9KIXtxqA" to="_CF2twJy5Eeivub9KIXtxqA">
+                  <label name="node"/>
+                </edges>
+                <edges from="_CGY5QZy5Eeivub9KIXtxqA" to="_CGY5QJy5Eeivub9KIXtxqA">
+                  <label name="node"/>
+                </edges>
+                <edges from="_CGY5QZy5Eeivub9KIXtxqA" to="_B-AZUpy5Eeivub9KIXtxqA">
+                  <label name="node"/>
+                </edges>
+                <edges from="_CGY5QJy5Eeivub9KIXtxqA" to="_CF2twJy5Eeivub9KIXtxqA">
+                  <label name="out"/>
+                </edges>
+                <edges from="_CGY5QJy5Eeivub9KIXtxqA" to="_B-AZUpy5Eeivub9KIXtxqA">
+                  <label name="out"/>
+                </edges>
+              </next>
+              <unifier key="n5" value="_B-AZUpy5Eeivub9KIXtxqA"/>
+              <unifier key="T5" value="_CF2twJy5Eeivub9KIXtxqA"/>
+            </derivationStep>
+            <children>
+              <zoneVertex id="_B-AZUpy5Eeivub9KIXtxqA">
+                <label name="Boundary"/>
+                <vertices id="_B6ub0Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+              </zoneVertex>
+            </children>
+            <children>
+              <zoneVertex id="_CF2twJy5Eeivub9KIXtxqA">
+                <label name="T"/>
+                <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+                <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                </vertices>
+              </zoneVertex>
+              <derivationStep>
+                <rule id="r5" name="r5">
+                  <lhs name="T"/>
+                  <rhs>
+                    <vertices id="n5">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="T5">
+                      <label name="T"/>
+                    </vertices>
+                  </rhs>
+                  <embedding key="n5">
+                    <value>
+                      <edgeLabel name="out"/>
+                      <vertexLabels name="Center"/>
+                    </value>
+                    <value>
+                      <edgeLabel name="node"/>
+                      <vertexLabels name="G"/>
+                    </value>
+                  </embedding>
+                  <embedding key="T5">
+                    <value>
+                      <edgeLabel name="out"/>
+                      <vertexLabels name="Center"/>
+                    </value>
+                    <value>
+                      <edgeLabel name="node"/>
+                      <vertexLabels name="G"/>
+                    </value>
+                  </embedding>
+                </rule>
+                <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CF2twJy5Eeivub9KIXtxqA">
+                  <label name="T"/>
+                  <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                </vertex>
+                <previous>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CF2twJy5Eeivub9KIXtxqA">
+                    <label name="T"/>
+                    <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                  </vertices>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CF3U0Jy5Eeivub9KIXtxqA">
+                    <label name="Center"/>
+                    <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                      <label name="Center"/>
+                    </vertices>
+                  </vertices>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CF3U0Zy5Eeivub9KIXtxqA">
+                    <label name="G"/>
+                    <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                      <label name="G"/>
+                    </vertices>
+                  </vertices>
+                  <edges from="_CF3U0Jy5Eeivub9KIXtxqA" to="_CF2twJy5Eeivub9KIXtxqA">
+                    <label name="out"/>
+                  </edges>
+                  <edges from="_CF3U0Zy5Eeivub9KIXtxqA" to="_CF3U0Jy5Eeivub9KIXtxqA">
+                    <label name="node"/>
+                  </edges>
+                  <edges from="_CF3U0Zy5Eeivub9KIXtxqA" to="_CF2twJy5Eeivub9KIXtxqA">
+                    <label name="node"/>
+                  </edges>
+                </previous>
+                <next>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B-AZVZy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                    <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                  </vertices>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CEajUJy5Eeivub9KIXtxqA">
+                    <label name="T"/>
+                    <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                  </vertices>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CFVwYZy5Eeivub9KIXtxqA">
+                    <label name="Center"/>
+                    <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                      <label name="Center"/>
+                    </vertices>
+                  </vertices>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CFVwYpy5Eeivub9KIXtxqA">
+                    <label name="G"/>
+                    <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                      <label name="G"/>
+                    </vertices>
+                  </vertices>
+                  <edges from="_CFVwYZy5Eeivub9KIXtxqA" to="_CEajUJy5Eeivub9KIXtxqA">
+                    <label name="out"/>
+                  </edges>
+                  <edges from="_CFVwYZy5Eeivub9KIXtxqA" to="_B-AZVZy5Eeivub9KIXtxqA">
+                    <label name="out"/>
+                  </edges>
+                  <edges from="_CFVwYpy5Eeivub9KIXtxqA" to="_B-AZVZy5Eeivub9KIXtxqA">
+                    <label name="node"/>
+                  </edges>
+                  <edges from="_CFVwYpy5Eeivub9KIXtxqA" to="_CFVwYZy5Eeivub9KIXtxqA">
+                    <label name="node"/>
+                  </edges>
+                  <edges from="_CFVwYpy5Eeivub9KIXtxqA" to="_CEajUJy5Eeivub9KIXtxqA">
+                    <label name="node"/>
+                  </edges>
+                </next>
+                <unifier key="n5" value="_B-AZVZy5Eeivub9KIXtxqA"/>
+                <unifier key="T5" value="_CEajUJy5Eeivub9KIXtxqA"/>
+              </derivationStep>
+              <children>
+                <zoneVertex id="_B-AZVZy5Eeivub9KIXtxqA">
+                  <label name="Boundary"/>
+                  <vertices id="_B6vp8Jy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                </zoneVertex>
+              </children>
+              <children>
+                <zoneVertex id="_CEajUJy5Eeivub9KIXtxqA">
+                  <label name="T"/>
+                  <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                  <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                  </vertices>
+                </zoneVertex>
+                <derivationStep>
+                  <rule id="r5" name="r5">
+                    <lhs name="T"/>
+                    <rhs>
+                      <vertices id="n5">
+                        <label name="Boundary"/>
+                      </vertices>
+                      <vertices id="T5">
+                        <label name="T"/>
+                      </vertices>
+                    </rhs>
+                    <embedding key="n5">
+                      <value>
+                        <edgeLabel name="out"/>
+                        <vertexLabels name="Center"/>
+                      </value>
+                      <value>
+                        <edgeLabel name="node"/>
+                        <vertexLabels name="G"/>
+                      </value>
+                    </embedding>
+                    <embedding key="T5">
+                      <value>
+                        <edgeLabel name="out"/>
+                        <vertexLabels name="Center"/>
+                      </value>
+                      <value>
+                        <edgeLabel name="node"/>
+                        <vertexLabels name="G"/>
+                      </value>
+                    </embedding>
+                  </rule>
+                  <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CEajUJy5Eeivub9KIXtxqA">
+                    <label name="T"/>
+                    <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                  </vertex>
+                  <previous>
+                    <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CEajUJy5Eeivub9KIXtxqA">
+                      <label name="T"/>
+                      <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                      <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                      <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                      <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                    </vertices>
+                    <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CEc_kJy5Eeivub9KIXtxqA">
+                      <label name="G"/>
+                      <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                        <label name="G"/>
+                      </vertices>
+                    </vertices>
+                    <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CEcYgpy5Eeivub9KIXtxqA">
+                      <label name="Center"/>
+                      <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                        <label name="Center"/>
+                      </vertices>
+                    </vertices>
+                    <edges from="_CEc_kJy5Eeivub9KIXtxqA" to="_CEcYgpy5Eeivub9KIXtxqA">
+                      <label name="node"/>
+                    </edges>
+                    <edges from="_CEc_kJy5Eeivub9KIXtxqA" to="_CEajUJy5Eeivub9KIXtxqA">
+                      <label name="node"/>
+                    </edges>
+                    <edges from="_CEcYgpy5Eeivub9KIXtxqA" to="_CEajUJy5Eeivub9KIXtxqA">
+                      <label name="out"/>
+                    </edges>
+                  </previous>
+                  <next>
+                    <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CCyLoJy5Eeivub9KIXtxqA">
+                      <label name="T"/>
+                      <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                      <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                      <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                    </vertices>
+                    <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B-AZUZy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                      <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                    </vertices>
+                    <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CD5l8Zy5Eeivub9KIXtxqA">
+                      <label name="G"/>
+                      <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                        <label name="G"/>
+                      </vertices>
+                    </vertices>
+                    <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CD5l8Jy5Eeivub9KIXtxqA">
+                      <label name="Center"/>
+                      <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                        <label name="Center"/>
+                      </vertices>
+                    </vertices>
+                    <edges from="_CD5l8Zy5Eeivub9KIXtxqA" to="_CD5l8Jy5Eeivub9KIXtxqA">
+                      <label name="node"/>
+                    </edges>
+                    <edges from="_CD5l8Zy5Eeivub9KIXtxqA" to="_B-AZUZy5Eeivub9KIXtxqA">
+                      <label name="node"/>
+                    </edges>
+                    <edges from="_CD5l8Zy5Eeivub9KIXtxqA" to="_CCyLoJy5Eeivub9KIXtxqA">
+                      <label name="node"/>
+                    </edges>
+                    <edges from="_CD5l8Jy5Eeivub9KIXtxqA" to="_CCyLoJy5Eeivub9KIXtxqA">
+                      <label name="out"/>
+                    </edges>
+                    <edges from="_CD5l8Jy5Eeivub9KIXtxqA" to="_B-AZUZy5Eeivub9KIXtxqA">
+                      <label name="out"/>
+                    </edges>
+                  </next>
+                  <unifier key="n5" value="_B-AZUZy5Eeivub9KIXtxqA"/>
+                  <unifier key="T5" value="_CCyLoJy5Eeivub9KIXtxqA"/>
+                </derivationStep>
+                <children>
+                  <zoneVertex id="_B-AZUZy5Eeivub9KIXtxqA">
+                    <label name="Boundary"/>
+                    <vertices id="_B6t0wJy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                  </zoneVertex>
+                </children>
+                <children>
+                  <zoneVertex id="_CCyLoJy5Eeivub9KIXtxqA">
+                    <label name="T"/>
+                    <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                    <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                    </vertices>
+                  </zoneVertex>
+                  <derivationStep>
+                    <rule id="r5" name="r5">
+                      <lhs name="T"/>
+                      <rhs>
+                        <vertices id="n5">
+                          <label name="Boundary"/>
+                        </vertices>
+                        <vertices id="T5">
+                          <label name="T"/>
+                        </vertices>
+                      </rhs>
+                      <embedding key="n5">
+                        <value>
+                          <edgeLabel name="out"/>
+                          <vertexLabels name="Center"/>
+                        </value>
+                        <value>
+                          <edgeLabel name="node"/>
+                          <vertexLabels name="G"/>
+                        </value>
+                      </embedding>
+                      <embedding key="T5">
+                        <value>
+                          <edgeLabel name="out"/>
+                          <vertexLabels name="Center"/>
+                        </value>
+                        <value>
+                          <edgeLabel name="node"/>
+                          <vertexLabels name="G"/>
+                        </value>
+                      </embedding>
+                    </rule>
+                    <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CCyLoJy5Eeivub9KIXtxqA">
+                      <label name="T"/>
+                      <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                      <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                      <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                    </vertex>
+                    <previous>
+                      <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CCyLoJy5Eeivub9KIXtxqA">
+                        <label name="T"/>
+                        <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                        </vertices>
+                        <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                        </vertices>
+                        <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                        </vertices>
+                      </vertices>
+                      <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CCyysJy5Eeivub9KIXtxqA">
+                        <label name="Center"/>
+                        <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                          <label name="Center"/>
+                        </vertices>
+                      </vertices>
+                      <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CCyysZy5Eeivub9KIXtxqA">
+                        <label name="G"/>
+                        <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                          <label name="G"/>
+                        </vertices>
+                      </vertices>
+                      <edges from="_CCyysJy5Eeivub9KIXtxqA" to="_CCyLoJy5Eeivub9KIXtxqA">
+                        <label name="out"/>
+                      </edges>
+                      <edges from="_CCyysZy5Eeivub9KIXtxqA" to="_CCyLoJy5Eeivub9KIXtxqA">
+                        <label name="node"/>
+                      </edges>
+                      <edges from="_CCyysZy5Eeivub9KIXtxqA" to="_CCyysJy5Eeivub9KIXtxqA">
+                        <label name="node"/>
+                      </edges>
+                    </previous>
+                    <next>
+                      <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B-AZUJy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                        <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                        </vertices>
+                      </vertices>
+                      <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CBkqsJy5Eeivub9KIXtxqA">
+                        <label name="T"/>
+                        <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                        </vertices>
+                        <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                        </vertices>
+                      </vertices>
+                      <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CCOyAZy5Eeivub9KIXtxqA">
+                        <label name="G"/>
+                        <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                          <label name="G"/>
+                        </vertices>
+                      </vertices>
+                      <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CCOyAJy5Eeivub9KIXtxqA">
+                        <label name="Center"/>
+                        <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                          <label name="Center"/>
+                        </vertices>
+                      </vertices>
+                      <edges from="_CCOyAZy5Eeivub9KIXtxqA" to="_B-AZUJy5Eeivub9KIXtxqA">
+                        <label name="node"/>
+                      </edges>
+                      <edges from="_CCOyAZy5Eeivub9KIXtxqA" to="_CCOyAJy5Eeivub9KIXtxqA">
+                        <label name="node"/>
+                      </edges>
+                      <edges from="_CCOyAZy5Eeivub9KIXtxqA" to="_CBkqsJy5Eeivub9KIXtxqA">
+                        <label name="node"/>
+                      </edges>
+                      <edges from="_CCOyAJy5Eeivub9KIXtxqA" to="_CBkqsJy5Eeivub9KIXtxqA">
+                        <label name="out"/>
+                      </edges>
+                      <edges from="_CCOyAJy5Eeivub9KIXtxqA" to="_B-AZUJy5Eeivub9KIXtxqA">
+                        <label name="out"/>
+                      </edges>
+                    </next>
+                    <unifier key="n5" value="_B-AZUJy5Eeivub9KIXtxqA"/>
+                    <unifier key="T5" value="_CBkqsJy5Eeivub9KIXtxqA"/>
+                  </derivationStep>
+                  <children>
+                    <zoneVertex id="_CBkqsJy5Eeivub9KIXtxqA">
+                      <label name="T"/>
+                      <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                      <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                    </zoneVertex>
+                    <derivationStep>
+                      <rule id="r5" name="r5">
+                        <lhs name="T"/>
+                        <rhs>
+                          <vertices id="n5">
+                            <label name="Boundary"/>
+                          </vertices>
+                          <vertices id="T5">
+                            <label name="T"/>
+                          </vertices>
+                        </rhs>
+                        <embedding key="n5">
+                          <value>
+                            <edgeLabel name="out"/>
+                            <vertexLabels name="Center"/>
+                          </value>
+                          <value>
+                            <edgeLabel name="node"/>
+                            <vertexLabels name="G"/>
+                          </value>
+                        </embedding>
+                        <embedding key="T5">
+                          <value>
+                            <edgeLabel name="out"/>
+                            <vertexLabels name="Center"/>
+                          </value>
+                          <value>
+                            <edgeLabel name="node"/>
+                            <vertexLabels name="G"/>
+                          </value>
+                        </embedding>
+                      </rule>
+                      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CBkqsJy5Eeivub9KIXtxqA">
+                        <label name="T"/>
+                        <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                        </vertices>
+                        <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                        </vertices>
+                      </vertex>
+                      <previous>
+                        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CBkqsJy5Eeivub9KIXtxqA">
+                          <label name="T"/>
+                          <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                            <label name="Boundary"/>
+                          </vertices>
+                          <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                            <label name="Boundary"/>
+                          </vertices>
+                        </vertices>
+                        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CBl40Zy5Eeivub9KIXtxqA">
+                          <label name="G"/>
+                          <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                            <label name="G"/>
+                          </vertices>
+                        </vertices>
+                        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CBl40Jy5Eeivub9KIXtxqA">
+                          <label name="Center"/>
+                          <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                            <label name="Center"/>
+                          </vertices>
+                        </vertices>
+                        <edges from="_CBl40Zy5Eeivub9KIXtxqA" to="_CBkqsJy5Eeivub9KIXtxqA">
+                          <label name="node"/>
+                        </edges>
+                        <edges from="_CBl40Zy5Eeivub9KIXtxqA" to="_CBl40Jy5Eeivub9KIXtxqA">
+                          <label name="node"/>
+                        </edges>
+                        <edges from="_CBl40Jy5Eeivub9KIXtxqA" to="_CBkqsJy5Eeivub9KIXtxqA">
+                          <label name="out"/>
+                        </edges>
+                      </previous>
+                      <next>
+                        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B-AZVJy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                          <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                            <label name="Boundary"/>
+                          </vertices>
+                        </vertices>
+                        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CAUtgJy5Eeivub9KIXtxqA">
+                          <label name="T"/>
+                          <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                            <label name="Boundary"/>
+                          </vertices>
+                        </vertices>
+                        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CA3gEZy5Eeivub9KIXtxqA">
+                          <label name="Center"/>
+                          <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                            <label name="Center"/>
+                          </vertices>
+                        </vertices>
+                        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CA4HIpy5Eeivub9KIXtxqA">
+                          <label name="G"/>
+                          <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                            <label name="G"/>
+                          </vertices>
+                        </vertices>
+                        <edges from="_CA3gEZy5Eeivub9KIXtxqA" to="_CAUtgJy5Eeivub9KIXtxqA">
+                          <label name="out"/>
+                        </edges>
+                        <edges from="_CA3gEZy5Eeivub9KIXtxqA" to="_B-AZVJy5Eeivub9KIXtxqA">
+                          <label name="out"/>
+                        </edges>
+                        <edges from="_CA4HIpy5Eeivub9KIXtxqA" to="_B-AZVJy5Eeivub9KIXtxqA">
+                          <label name="node"/>
+                        </edges>
+                        <edges from="_CA4HIpy5Eeivub9KIXtxqA" to="_CAUtgJy5Eeivub9KIXtxqA">
+                          <label name="node"/>
+                        </edges>
+                        <edges from="_CA4HIpy5Eeivub9KIXtxqA" to="_CA3gEZy5Eeivub9KIXtxqA">
+                          <label name="node"/>
+                        </edges>
+                      </next>
+                      <unifier key="n5" value="_B-AZVJy5Eeivub9KIXtxqA"/>
+                      <unifier key="T5" value="_CAUtgJy5Eeivub9KIXtxqA"/>
+                    </derivationStep>
+                    <children>
+                      <zoneVertex id="_B-AZVJy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                        <vertices id="_B6vC4Jy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                        </vertices>
+                      </zoneVertex>
+                    </children>
+                    <children>
+                      <zoneVertex id="_CAUtgJy5Eeivub9KIXtxqA">
+                        <label name="T"/>
+                        <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                        </vertices>
+                      </zoneVertex>
+                      <derivationStep>
+                        <rule id="r4" name="r4">
+                          <lhs name="T"/>
+                          <rhs>
+                            <vertices id="n4">
+                              <label name="Boundary"/>
+                            </vertices>
+                          </rhs>
+                          <embedding key="n4">
+                            <value>
+                              <edgeLabel name="out"/>
+                              <vertexLabels name="Center"/>
+                            </value>
+                            <value>
+                              <edgeLabel name="node"/>
+                              <vertexLabels name="G"/>
+                            </value>
+                          </embedding>
+                        </rule>
+                        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CAUtgJy5Eeivub9KIXtxqA">
+                          <label name="T"/>
+                          <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                            <label name="Boundary"/>
+                          </vertices>
+                        </vertex>
+                        <previous>
+                          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CAUtgJy5Eeivub9KIXtxqA">
+                            <label name="T"/>
+                            <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                              <label name="Boundary"/>
+                            </vertices>
+                          </vertices>
+                          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CAVUkJy5Eeivub9KIXtxqA">
+                            <label name="G"/>
+                            <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                              <label name="G"/>
+                            </vertices>
+                          </vertices>
+                          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_CAUtgpy5Eeivub9KIXtxqA">
+                            <label name="Center"/>
+                            <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                              <label name="Center"/>
+                            </vertices>
+                          </vertices>
+                          <edges from="_CAVUkJy5Eeivub9KIXtxqA" to="_CAUtgJy5Eeivub9KIXtxqA">
+                            <label name="node"/>
+                          </edges>
+                          <edges from="_CAVUkJy5Eeivub9KIXtxqA" to="_CAUtgpy5Eeivub9KIXtxqA">
+                            <label name="node"/>
+                          </edges>
+                          <edges from="_CAUtgpy5Eeivub9KIXtxqA" to="_CAUtgJy5Eeivub9KIXtxqA">
+                            <label name="out"/>
+                          </edges>
+                        </previous>
+                        <next>
+                          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B-AZVpy5Eeivub9KIXtxqA">
+                            <label name="Boundary"/>
+                            <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                              <label name="Boundary"/>
+                            </vertices>
+                          </vertices>
+                          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B-wnQpy5Eeivub9KIXtxqA">
+                            <label name="Center"/>
+                            <vertices id="_B35xUJy5Eeivub9KIXtxqA">
+                              <label name="Center"/>
+                            </vertices>
+                          </vertices>
+                          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_B-wnQ5y5Eeivub9KIXtxqA">
+                            <label name="G"/>
+                            <vertices id="_B32G8Jy5Eeivub9KIXtxqA">
+                              <label name="G"/>
+                            </vertices>
+                          </vertices>
+                          <edges from="_B-wnQpy5Eeivub9KIXtxqA" to="_B-AZVpy5Eeivub9KIXtxqA">
+                            <label name="out"/>
+                          </edges>
+                          <edges from="_B-wnQ5y5Eeivub9KIXtxqA" to="_B-wnQpy5Eeivub9KIXtxqA">
+                            <label name="node"/>
+                          </edges>
+                          <edges from="_B-wnQ5y5Eeivub9KIXtxqA" to="_B-AZVpy5Eeivub9KIXtxqA">
+                            <label name="node"/>
+                          </edges>
+                        </next>
+                        <unifier key="n4" value="_B-AZVpy5Eeivub9KIXtxqA"/>
+                      </derivationStep>
+                      <children>
+                        <zoneVertex id="_B-AZVpy5Eeivub9KIXtxqA">
+                          <label name="Boundary"/>
+                          <vertices id="_B6vp8Zy5Eeivub9KIXtxqA">
+                            <label name="Boundary"/>
+                          </vertices>
+                        </zoneVertex>
+                      </children>
+                    </children>
+                  </children>
+                  <children>
+                    <zoneVertex id="_B-AZUJy5Eeivub9KIXtxqA">
+                      <label name="Boundary"/>
+                      <vertices id="_B6tNsJy5Eeivub9KIXtxqA">
+                        <label name="Boundary"/>
+                      </vertices>
+                    </zoneVertex>
+                  </children>
+                </children>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+    </children>
+  </org.wbsilva.bence.graphgrammar:ParsingTree>
+</xmi:XMI>
