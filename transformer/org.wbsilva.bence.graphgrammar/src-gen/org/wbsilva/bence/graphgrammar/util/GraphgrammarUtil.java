@@ -392,7 +392,7 @@ public class GraphgrammarUtil {
 		if (r == null || r.stream().anyMatch(rr -> !isValidTripleRule(ab, rr)))
 			return false;
 		
-		if (!r.stream().anyMatch(rr -> rr.getSource().getLhs().equivalates(tripleGrammar.getInitial())
+		if (!r.isEmpty() && !r.stream().anyMatch(rr -> rr.getSource().getLhs().equivalates(tripleGrammar.getInitial())
 									&& rr.getCorr().getLhs().equivalates(tripleGrammar.getInitial())
 									&& rr.getTarget().getLhs().equivalates(tripleGrammar.getInitial())))
 			return false;
