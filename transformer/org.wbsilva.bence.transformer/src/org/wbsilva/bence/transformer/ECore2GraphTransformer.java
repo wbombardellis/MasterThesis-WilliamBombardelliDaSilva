@@ -106,7 +106,7 @@ public class ECore2GraphTransformer {
 						transformEdge(symbols, graph, vertex, childVertex, containment);
 					}
 				} else {
-					logger.warn(String.format("Child object %s is not an EObject. Skipping it.", childObject));
+					logger.warn(String.format("Child object %s is not an EObject nor a EList. Skipping it.", childObject));
 				}
 			}
 			
@@ -127,8 +127,17 @@ public class ECore2GraphTransformer {
 					
 					transformEdge(symbols, graph, vertex, childVertex, reference);
 					
+				} else if (childObject instanceof EList<?>){
+					@SuppressWarnings("unchecked")
+					EList<EObject> children = (EList<EObject>)childObject;
+					for (EObject child : children) {
+						final Vertex childVertex = transformVertex(vertices, symbols, graph, child);
+						assert childVertex != null;
+						
+						transformEdge(symbols, graph, vertex, childVertex, reference);
+					}
 				} else {
-					logger.debug(String.format("Child object %s is not an EObject. Skipping it.", childObject));
+					logger.debug(String.format("Child object %s is not an EObject nor a EList. Skipping it.", childObject));
 				}
 			}
 		} else {
@@ -150,7 +159,6 @@ public class ECore2GraphTransformer {
 	 * @return					The new edge. Never null.
 	 */
 	private Edge transformEdge(final ConcurrentHashMap<EObject, Symbol> symbols, final Graph graph, final Vertex from, final Vertex to, final EReference reference) {
-		logger.debug(String.format("Transforing edge from %s to %s", from.getId(), to.getId()));
 		
 		final Edge edge = GraphgrammarFactory.eINSTANCE.createEdge();
 		edge.setFrom(from);
@@ -164,6 +172,8 @@ public class ECore2GraphTransformer {
 			
 			symbols.put(reference, edgeLabel);
 		}
+		
+		logger.debug(String.format("Transforing edge from %s to %s with label %s", from.getId(), to.getId(), edgeLabel.getName()));
 		
 		edge.setLabel(EcoreUtil.copy(edgeLabel));
 		graph.getEdges().add(edge);
