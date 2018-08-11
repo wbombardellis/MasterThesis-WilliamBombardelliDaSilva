@@ -1,0 +1,80 @@
+\renewcommand{\.}{. \;}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\pto}{\nrightarrow}
+
+\newcommand{\allgraphs}[1]{\mathcal{G}_{#1}}
+\newcommand{\alltgraphs}[1]{\mathcal{TG}_{#1}}
+\newcommand{\emptyGraph}{\varepsilon}
+\newcommand{\pro}{\to}
+
+\newcommand{\st}{\; | \;}
+\newcommand{\isomorph}{\cong}
+\newcommand{\ms}[1]{\overset{#1}{\leftarrow}}
+\newcommand{\mt}[1]{\overset{#1}{\rightarrow}}
+\newcommand{\?}{\operatorname{?}}
+\newcommand{\cderiv}[3]{
+	\ifx&#2&%
+	\overset{#1}{\Rrightarrow}_{#3}
+	\else
+	\overset{#1,#2}{\Rrightarrow}_{#3}
+	\fi
+}
+\newcommand{\deriv}[3]{
+	\ifx&#2&%
+	\overset{#1}{\Rightarrow}_{#3}
+	\else
+	\overset{#1,#2}{\Rightarrow}_{#3}
+	\fi
+}
+\newcommand{\derivtr}[3]{
+	\ifx&#2&%
+	\overset{#1}{\Rightarrow^*}_{#3}
+	\else
+	\overset{#1,#2}{\Rightarrow^*}_{#3}
+	\fi
+}
+\newcommand{\tcderiv}[3]{
+	\ifx&#2&%
+	\overset{#1}{\Rrightarrow}_{#3}
+	\else
+	\overset{#1,#2}{\Rrightarrow}_{#3}
+	\fi
+}
+\newcommand{\tderiv}[3]{
+	\ifx&#2&%
+	\overset{#1}{\Rightarrow}_{#3}
+	\else
+	\overset{#1,#2}{\Rightarrow}_{#3}
+	\fi
+}
+\newcommand{\tderivtr}[3]{
+	\ifx&#2&%
+	\overset{#1}{\Rightarrow^*}_{#3}
+	\else
+	\overset{#1,#2}{\Rightarrow^*}_{#3}
+	\fi
+}
+
+\tikzstyle{grammar}=[shorten >=1pt,->,draw=black!50]
+\tikzstyle{graph}=[shorten >=1pt,->,draw=black!50]
+\tikzstyle{rid} = [align=left, anchor=east]
+\tikzstyle{nont}=[rectangle,inner sep=5pt, draw, fill=white, minimum width=20pt]
+\tikzstyle{t}=[circle,inner sep=3pt, draw, fill=white, minimum width=15pt]
+\tikzstyle{g}=[inner sep=3pt, fill=white]
+\tikzstyle{lhs}=[inner sep=5pt, fill=white]
+\tikzstyle{w}=[circle, inner sep=2pt, below=8pt, draw, fill=white]
+\tikzstyle{edge}=[->, very thick, -latex]
+\tikzstyle{edgeLabel}=[midway, above]
+\tikzstyle{wedge}=[-, thick]
+\tikzstyle{biedge}=[-, very thick]
+\tikzstyle{pipe}=[-, very thick]
+\tikzstyle{morph}=[-, very thick, dashed, -latex]

@@ -1,0 +1,211 @@
+\begin{example}{Activity diagrams.}
+	$GG = (\{S,A,F,D,L,a,c,e,if\}, \{a,c,e,if\}, P, S)$, where $P$ is\\
+	
+	\noindent
+	\begin{tikzpicture}[grammar]
+	%The LHS
+	\draw (0,0) node[lhs] (lhs) {S ::=};
+	
+	%The RHS graph
+	\draw (1,0) node[nont] (v1) {A};
+	
+	%The next rule separator
+	\draw[pipe] (2,-0.5) -- (2,0.5);
+	
+	%The second RHS graph
+	\draw (3,0) node[g] (v2) {$\emptyGraph$};
+	\end{tikzpicture}
+	
+	\begin{tikzpicture}[grammar]
+	%The LHS
+	\draw (0,0) node[lhs] (lhs) {A ::=};
+	
+	%The RHS graph
+	\draw (1,0) node[t] (v1) {a};
+	\draw (2.5,0) node[nont] (v2) {F};
+	
+	\draw[edge] (v1) -- (v2);
+	
+	%The next rule separator
+	\draw[pipe] (3.5,-0.5) -- (3.5,0.5);
+	
+	%The second RHS graph
+	\draw (4.5,0) node[t] (v3) {a};
+	\end{tikzpicture}
+	
+	\begin{tikzpicture}[grammar]
+	%The LHS
+	\draw (0,0) node[lhs] (lhs) {F ::=};
+	
+	%The RHS graph
+	\draw (1,0) node[t] (v1) {c};
+	\draw (2.5,0) node[t] (v2) {e};
+	\draw (4,0) node[nont] (v3) {F};
+	
+	\draw[edge] (v1) -- (v2);
+	\draw[edge] (v2) -- (v3);
+	
+	\draw node[w, label=0:$a$] at (v1.south) (w-v1) {}
+	[wedge] (v1) -- (w-v1);
+	\draw node[w, label=0:$a$] at (v2.south) (w-v2) {}
+	[wedge] (v2) -- (w-v2);
+	\draw node[w, label=0:$a$] at (v3.south) (w-v3) {}
+	[wedge] (v3) -- (w-v3);
+	
+	%The next rule separator
+	\draw[pipe] (5,-0.75) -- (5,0.5);
+	
+	%The second RHS graph
+	\draw (6,0) node[t] (v4) {a};
+	\draw node[w, label=0:$a$] at (v4.south) (w-v4) {}
+	[wedge] (v4) -- (w-v4);
+	
+	%The next rule separator
+	\draw[pipe] (7,-0.75) -- (7,0.5);
+	
+	%The second RHS graph
+	\draw (8,0) node[nont] (v5) {D};
+	\draw node[w, label=0:$a$] at (v5.south) (w-v5) {}
+	[wedge] (v5) -- (w-v5);
+	
+	%The next rule separator
+	\draw[pipe] (9,-0.75) -- (9,0.5);
+	
+	%The second RHS graph
+	\draw (10,0) node[nont] (v6) {L};
+	\draw node[w, label=0:$a$] at (v6.south) (w-v6) {}
+	[wedge] (v6) -- (w-v6);
+	\end{tikzpicture}
+	
+	\begin{tikzpicture}[grammar]
+	%The LHS
+	\draw (0,0) node[lhs] (lhs) {D ::=};
+	
+	%The RHS graph
+	\draw (1,0) node[t] (v1) {if};
+	\draw (2.5,0) node[t] (v2) {e};
+	\draw (4,0) node[nont] (v3) {F};
+	\draw (2.5,-2) node[t] (v4) {e};
+	\draw (4,-2) node[nont] (v5) {F};
+	
+	\draw[edge] (v1) -- (v2);
+	\draw[edge] (v2) -- (v3);
+	\draw[edge] (v1) -- (v4);
+	\draw[edge] (v4) -- (v5);
+	
+	\draw node[w, label=0:$a$] at (v1.south) (w-v1) {}
+	[wedge] (v1) -- (w-v1);
+	\draw node[w, label=0:$a$] at (v2.south) (w-v2) {}
+	[wedge] (v2) -- (w-v2);
+	\draw node[w, label=0:$a$] at (v3.south) (w-v3) {}
+	[wedge] (v3) -- (w-v3);
+	\draw node[w, label=0:$a$] at (v4.south) (w-v4) {}
+	[wedge] (v4) -- (w-v4);
+	\draw node[w, label=0:$a$] at (v5.south) (w-v5) {}
+	[wedge] (v5) -- (w-v5);
+	
+	%The next rule separator
+	\draw[pipe] (5,-3) -- (5,0.5);
+	
+	%The second RHS graph
+	\draw (6,0) node[t] (v6) {if};
+	\draw (7.5,0) node[t] (v7) {e};
+	\draw (9,0) node[nont] (v8) {F};
+	\draw (7.5,-2) node[t] (v9) {e};
+	\draw (9,-2) node[nont] (v10) {F};
+	\draw (10,-1) node[t] (v11) {fi};
+	\draw (11.5,-1) node[t] (v12) {e};
+	\draw (13,-1) node[nont] (v13) {F};
+	
+	
+	\draw[edge] (v6) -- (v7);
+	\draw[edge] (v7) -- (v8);
+	\draw[edge] (v6) -- (v9);
+	\draw[edge] (v9) -- (v10);
+	\draw[edge] (v10) -- (v11);
+	\draw[edge] (v8) -- (v11);
+	\draw[edge] (v11) -- (v12);
+	\draw[edge] (v12) -- (v13);
+	
+	\draw node[w, label=0:$a$] at (v6.south) (w-v6) {}
+	[wedge] (v6) -- (w-v6);
+	\draw node[w, label=0:$a$] at (v7.south) (w-v7) {}
+	[wedge] (v7) -- (w-v7);
+	\draw node[w, label=0:$a$] at (v8.south) (w-v8) {}
+	[wedge] (v8) -- (w-v8);
+	\draw node[w, label=0:$a$] at (v9.south) (w-v9) {}
+	[wedge] (v9) -- (w-v9);
+	\draw node[w, label=0:$a$] at (v10.south) (w-v10) {}
+	[wedge] (v10) -- (w-v10);
+	\draw node[w, label=0:$a$] at (v11.south) (w-v11) {}
+	[wedge] (v11) -- (w-v11);
+	\draw node[w, label=0:$a$] at (v12.south) (w-v12) {}
+	[wedge] (v12) -- (w-v12);
+	\draw node[w, label=0:$a$] at (v13.south) (w-v13) {}
+	[wedge] (v13) -- (w-v13);
+	\end{tikzpicture}
+	
+	\begin{tikzpicture}[grammar]
+	%The LHS
+	\draw (0,0) node[lhs] (lhs) {L ::=};
+	
+	%The RHS graph
+	\draw (1,0) node[t] (v1) {if};
+	\draw (2.5,0) node[t] (v2) {e};
+	\draw (4,0) node[nont] (v3) {F};
+	\draw (5.5,0) node[t] (v4) {e};
+	\draw (7,0) node[nont] (v5) {F};
+	\draw (2.5,-2) node[nont] (v6) {e};
+	
+	\draw[edge] (v1) -- (v2);
+	\draw[edge] (v2) -- (v3);
+	\draw[edge] (v3) -- (v4);
+	\draw[edge] (v4) -- (v5);
+	\draw[edge] (v3) -- (v6);
+	\draw[edge] (v6) -- (v1);
+	
+	\draw node[w, label=0:$a$] at (v1.south) (w-v1) {}
+	[wedge] (v1) -- (w-v1);
+	\draw node[w, label=0:$a$] at (v2.south) (w-v2) {}
+	[wedge] (v2) -- (w-v2);
+	\draw node[w, label=0:$a$] at (v3.south) (w-v3) {}
+	[wedge] (v3) -- (w-v3);
+	\draw node[w, label=0:$a$] at (v4.south) (w-v4) {}
+	[wedge] (v4) -- (w-v4);
+	\draw node[w, label=0:$a$] at (v5.south) (w-v5) {}
+	[wedge] (v5) -- (w-v5);
+	\draw node[w, label=0:$a$] at (v6.south) (w-v6) {}
+	[wedge] (v6) -- (w-v6);
+	
+	%The next rule separator
+	\draw[pipe] (8,-3) -- (8,0.5);
+	
+	%The second RHS graph
+	\draw (10,0) node[nont] (v7) {F};
+	\draw (11.5,0) node[t] (v8) {e};
+	\draw (13,0) node[t] (v9) {if};
+	\draw (14.5,0) node[t] (v10) {e};
+	\draw (16,0) node[nont] (v11) {F};
+	\draw (11.5,-2) node[nont] (v12) {e};
+	
+	\draw[edge] (v7) -- (v8);
+	\draw[edge] (v8) -- (v9);
+	\draw[edge] (v9) -- (v10);
+	\draw[edge] (v10) -- (v11);
+	\draw[edge] (v9) -- (v12);
+	\draw[edge] (v12) -- (v7);
+	
+	\draw node[w, label=0:$a$] at (v7.south) (w-v7) {}
+	[wedge] (v7) -- (w-v7);
+	\draw node[w, label=0:$a$] at (v8.south) (w-v8) {}
+	[wedge] (v8) -- (w-v8);
+	\draw node[w, label=0:$a$] at (v9.south) (w-v9) {}
+	[wedge] (v9) -- (w-v9);
+	\draw node[w, label=0:$a$] at (v10.south) (w-v10) {}
+	[wedge] (v10) -- (w-v10);
+	\draw node[w, label=0:$a$] at (v11.south) (w-v11) {}
+	[wedge] (v11) -- (w-v11);
+	\draw node[w, label=0:$a$] at (v12.south) (w-v12) {}
+	[wedge] (v12) -- (w-v12);
+	\end{tikzpicture}
+\end{example}
