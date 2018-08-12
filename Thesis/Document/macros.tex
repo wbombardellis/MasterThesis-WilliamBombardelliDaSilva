@@ -10,17 +10,25 @@
 \newtheorem*{remark}{Remark}
 
 \newcommand{\pto}{\nrightarrow}
+\newcommand{\ptree}[3]{
+	\ifx&#2&%
+	(#1 \rightrightarrows #3)
+	\else
+	(#1^#2 \rightrightarrows #3)
+	\fi
+}
 
 \newcommand{\allgraphs}[1]{\mathcal{G}_{#1}}
 \newcommand{\alltgraphs}[1]{\mathcal{TG}_{#1}}
 \newcommand{\emptyGraph}{\varepsilon}
+\newcommand{\startG}[1]{Z_{#1}}
+\newcommand{\startTG}[1]{Z_{#1}}
 \newcommand{\pro}{\to}
 
 \newcommand{\st}{\; | \;}
 \newcommand{\isomorph}{\cong}
 \newcommand{\ms}[1]{\overset{#1}{\leftarrow}}
 \newcommand{\mt}[1]{\overset{#1}{\rightarrow}}
-\newcommand{\?}{\operatorname{?}}
 \newcommand{\cderiv}[3]{
 	\ifx&#2&%
 	\overset{#1}{\Rrightarrow}_{#3}
@@ -63,6 +71,10 @@
 	\overset{#1,#2}{\Rightarrow^*}_{#3}
 	\fi
 }
+
+\newcommand{\?}{\operatorname{\textbf{?}}}
+\renewcommand{\:}{\operatorname{\textbf{:}}}
+\newcommand{\Break}{\textbf{break}}
 
 \tikzstyle{grammar}=[shorten >=1pt,->,draw=black!50]
 \tikzstyle{graph}=[shorten >=1pt,->,draw=black!50]
