@@ -7,12 +7,20 @@
 \title{}
 \author{William Bombardelli da Silva}
 
-
 \begin{document}
 \maketitle
 
 \begin{abstract}
 \end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+Overview of the MDE. Potential and problems of it. The challenge of model transformation. A solution: Triple Graph Grammars (TGG) (justification). A problem of TGG (usability/ amount of grammar rules). Our solution for this problem: TGG with non-terminal nodes. Overview of our approach (graph grammars with non-terminal nodes, NCE grammars, graph language, parsing, transformation). Short summary of the results. Remainder.
+
+\section{Related Work}
+TGG main references and reviews. Usability enhancements proposed for TGG. Graph grammar main references. NCE and B-eNCE graph grammar. Alternative proposal of graph grammars.
 
 \section{Theoretical Review}
 In this section, we introduce the theoretical concepts used along this thesis. The definitions below are taken from the works of ...%TODO: cite 27, 54,s_99.
@@ -270,6 +278,7 @@ The parsing algorithm posed in this section is an imperative view of the method 
 , which is basically a version fro graphs of the well-known CYK (Cocke-Young-Kassami) algorithm for parsing of strings with a context-free (string) grammar. Preliminarily to the actual algorithm's presentation, we introduce some necessary concepts that are used by it. The first of them is the neighborhood preserving normal form.
 
 \begin{definition}
+	\label{def:np}
 	A BNCE graph grammar $GG = (\Sigma, \Delta, S, P)$ is neighborhood preserving (NP), if and only if, the embedding of each rule with left-hand side $A$ is greater or equal than the context of each $A$-labeled vertex in the grammar. That is, let 
 	\[\cont{(A \pro R,\omega)}{v} =\{(l,\phi_{R}(w)) \st (v,l,w) \in E_R \text { or } (w,l,v) \in E_R \} \cup \omega(v) \]
 	be the context of $v$ in the rule $(A \pro R,\omega)$ and
@@ -366,7 +375,11 @@ Now, let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar such that $G \
 Furthermore, consider the following definitions.
 
 \begin{definition}
-	Let $r = ((A,B,C) \pro (G_s \ms{} G_c \mt{} G_t), \omega_s, \omega_t)$ be a production rule of a triple graph grammar, $\source(r) = (A \pro G_s,\omega_s)$ gives the source part of $r$. Moreover, for any triple graph grammar $TGG = (\Sigma, \Delta, S, P)$, define the source grammar $S(TGG) = (\Sigma, \Delta, S, SP)$, where $SP = source(P)$.
+	Let $r = ((A,B,C) \pro (G_s \ms{} G_c \mt{} G_t), \omega_s, \omega_t)$ be a production rule of a triple graph grammar, $\source(r) = (A \pro G_s,\omega_s)$ gives the source part of $r$. Moreover, for any triple graph grammar $TGG = (\Sigma, \Delta, S, P)$, define the source grammar $\Source(TGG) = (\Sigma, \Delta, S, SP)$, where $SP = \source(P)$. Analogously, $\target(r) = (C \pro G_t,\omega_t)$ and $\Target(TGG) = (\Sigma, \Delta, S, TP)$, where $TP = \target(P)$
+\end{definition}
+
+\begin{definition}
+	By extension of the Definition \ref{def:np}, a BNCE triple graph grammar $TGG$ is neighborhood preserving if and only if, $S(TGG)$ and $T(TGG)$ are neighborhood preserving.
 \end{definition}
 
 \begin{theorem}
@@ -379,9 +392,11 @@ Furthermore, consider the following definitions.
 
 Then, by Theorem \ref{thm:one_d_enough}, the problem of finding a derivation $D = \startTG{TGG} \tderivtr{}{}{TGG} G \ms{} C \mt{} T$ is reduced to finding a derivation $\overline{D} = \startG{S(TGG)} \deriv{}{}{S(TGG)} G$, what can be done with the already presented parsing algorithm \ref{alg:parse}. The final construction of the triple graph $G \ms{} C \mt{} T$ becomes then just a matter of creating $D$ out of $\overline{D}$.
 
-The complete transformation procedure is presented in the Algorithm \ref{alg:transform}. Thereby, the input TGG is required to be neighborhood preserving, what 
+%TODO: Comment about the backward case, should be trivial
 
-%TODO: Comment NP BNCE TGG, trivial.
+The complete transformation procedure is presented in the Algorithm \ref{alg:transform}. Thereby it is required that the TGG be neighborhood preserving, what poses no problem to our procedure, once any TGG can be transformed into the neighborhood preserving normal form. 
+
+%TODO: Maybe talk more about the normalization for TGGs
 
 \begin{algorithm}[!h]
 	\caption{Transformation Algorithm for NP BNCE Triple Graph Grammars}
@@ -405,5 +420,17 @@ The complete transformation procedure is presented in the Algorithm \ref{alg:tra
 
 %Incremental and Synchhronization
 %TODO: discourse about incremental transformation and synchronization
+
+\section{An Extension of BNCE Triple Graph Grammars with Look-ahead}
+Problem with B-eNCE TGG. Solution with look-ahead. Critical view. Examples
+
+\section{Implementation}
+Concrete implementation. Critical view.
+
+\section{Evaluation}
+Evaluation of the results (mainly the usability gain of the new formalism B-eNCE TGG in comparison to the state-of-the-art). Critical discussion. Positive and negative aspects of the proposed approach. Future work.
+
+\section{Conclusion}
+Summary and closing words.
 
 \end{document}          
