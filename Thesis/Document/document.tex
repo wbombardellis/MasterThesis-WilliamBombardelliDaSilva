@@ -32,7 +32,7 @@ We start presenting our notation for graphs and grammars, accompanied by example
 	
 	If $\phi_G(v) = a$ we say $v$ is labeled by $a$. Two vertices $v$ and $w$ are neighbors (also adjacent) iff there is one or more edges between them, that is, $(v,\_,w) \in E_G \lor (w,\_,v) \in E_G$. Two graphs $G$ and $H$ are disjoint iff $V_G \cap V_H = \emptyset$.
 	
-	We define also de function $neigh_G: 2^{V_G} \to 2^{V_G}$, that applied to $U$ gives the set of neighbors of vertices in $U$ minus $U$. That is $neigh_G(U) = \{ v \in V_G \setminus U \st \text{ exists a } (v,l,u) \in E_G \text{ or a } (u,l,v) \in E_G \text{ with } u \in U \}$
+	We define also de function $\neigh{G}: 2^{V_G} \to 2^{V_G}$, that applied to $U$ gives the set of neighbors of vertices in $U$ minus $U$. That is $\neigh{G}(U) = \{ v \in V_G \setminus U \st \text{ exists a } (v,l,u) \in E_G \text{ or a } (u,l,v) \in E_G \text{ with } u \in U \}$
 \end{definition}
 
 \begin{definition}
@@ -71,6 +71,7 @@ We start presenting our notation for graphs and grammars, accompanied by example
 \end{definition}
 
 %TODO: comments on grammars: why? intuition...
+%TODO: comment about hyperedge replacement grammars
 
 %%%%%% Concrete Syntax %%%%%%
 In the following, we present our concrete syntax inspired by the well-known backus-naur form to denote BNCE graph grammar rules. Let $GG = (\{A,a,b,c\},$ $\{a,b,c\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\}, \{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, $\omega = \{v_1 \mapsto \{(l,a), (l,b), (m,c)\}\}$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$ and $\zeta = \emptyset$, we denote $p$ and $q$ together as\\
@@ -79,6 +80,8 @@ In the following, we present our concrete syntax inspired by the well-known back
 \input{misc/concrete-syntax}
 
 Notice that, we use squares for non-terminal vertices, circles for terminal vertices, position the respective label inside the shape and the (possibly omitted) identifier over it. Over each edge is positioned its respective label. To depict the embedding function, we place below the respective vertex a small circle labeled with the image pairs of the embedding function for this node aligned vertically and separated by semi-colons.
+
+%TODO: comment on the different notation compared to the literature that uses attributed graphs and squares, etc...
 
 %%%%%% Semantics %%%%%%
 With these syntactic notions of the formalism presented, we introduce below its semantics by means of the concepts of derivation step, derivation and language.
@@ -194,8 +197,10 @@ Below we start introducing the standard definition of TGG of the current researc
 	A triple graph grammar $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, analogously to graph grammars (see \ref{def:gg}), an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $L \pro R$ with $L = L_s \ms{} L_c \mt{} L_t$ and $R = R_s \ms{} R_c \mt{} R_t$ and $L \subseteq R.$
 \end{definition}
 
+%TODO: comment: using SPO, do not confuse with DPO of the algebraic approach.
+
 \begin{definition}
-	A triple graph grammar with neighborhood-controlled embedding (NCE TGG) $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $((A,B,C) \pro R_s \ms{} R_c \mt{} R_t, \omega_s, \omega_t)$ with $A,B,C \in \Gamma$ being the left-hand side, $(R_s \ms{} R_c \mt{} R_t) \in \alltgraphs{\Sigma}$ the right-hand side and $\omega_s : V_{R_s} \pto 2^{\Sigma \times \Sigma}$ and $\omega_t : V_{R_t} \pto 2^{\Sigma \times \Sigma}$ the partial embedding functions from the right-hand side's vertices to pairs of edge and label symbols. We might refer to the complete embedding function by $\omega:= \omega_s \cup \omega_t$.
+	A triple graph grammar with neighborhood-controlled embedding (NCE TGG) $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $((A,B,C) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t)$ with $A,B,C \in \Gamma$ being the left-hand side, $(R_s \ms{} R_c \mt{} R_t) \in \alltgraphs{\Sigma}$ the right-hand side and $\omega_s : V_{R_s} \pto 2^{\Sigma \times \Sigma}$ and $\omega_t : V_{R_t} \pto 2^{\Sigma \times \Sigma}$ the partial embedding functions from the right-hand side's vertices to pairs of edge and label symbols. We might refer to the complete embedding function by $\omega:= \omega_s \cup \omega_t$.
 	
 	For convenience, define the start triple graph of $TGG$ as $\startTG{TGG} := Z_s \ms{} Z_c \mt{} Z_t$ where $Z_s = (\{s_0\},\emptyset,\{s_0 \mapsto S\})$, $Z_c = (\{c_0\},\emptyset,\{c_0 \mapsto S\})$ and $Z_t = (\{t_0\},\emptyset,\{t_0 \mapsto S\})$.
 	
@@ -204,12 +209,12 @@ Below we start introducing the standard definition of TGG of the current researc
 \end{definition}
 
 \begin{definition}
-	A boundary triple graph grammar with neighborhood-controlled embedding (BNCE TGG) $TGG$ is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the triple graph grammar $TGG$ is boundary iff all its rules' right-hand sides are $\Gamma\text{-boundary}$ triple graphs.
+	A boundary triple graph grammar with neighborhood-controlled embedding (BNCE TGG) is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the triple graph grammar $TGG$ is boundary iff all its rules' right-hand sides are $\Gamma\text{-boundary}$ triple graphs.
 \end{definition}
 
 %TODO: Comment the difference between the two. Say it is one of our contribution (make it clear). Refer to a later discussion on the expressiviness
 %TODO: Also relate with the typed TGG and the equivalence with labeled TGG
-%TODO: comments on TGG: why? intuition...
+%TODO: comments on TGG: why? intuition... Run away from nacs and tacs
 
 %%%%%% Semantics %%%%%%
 In the following, the semantics for NCE TGG is presented analogously to the semantics for NCE graph grammars.
@@ -241,6 +246,7 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 \end{definition}
 
 \begin{definition}
+	\label{def:tlanguage}
 	The language $L(TGG)$ generated by the triple grammar $TGG$ is the set of all triple graphs containing only terminal vertices derived from the start triple graph $\startTG{TGG}$, that is
 	\[
 	L(TGG) = \{H \st \phi_H(V_H) \subseteq \Delta \land \startTG{TGG} \tderivtr{}{}{} H\}
@@ -258,12 +264,23 @@ Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and
 \section{Parsing of Graphs with BNCE Graph Grammars}
 In the last section we cleared how the concepts of graphs and languages fit together. In this section we are interested in the problem of deciding, given a BNCE graph grammar $GG$ and a graph $G$, whether $G \in L(GG)$. This is sometimes called the \textit{membership} problem and can be solved through a recognizer algorithm that always finishes answering yes if and only if $G \in L(GG)$ and no otherwise. A slight extension of this problem is the \textit{parsing} problem, which consists of deciding if $G \in L(GG)$ and finding a derivation $\startG{GG} \derivtr{}{}{} G$.
 
-The parsing algorithm posed in the following is an imperative view of the method proposed by ()%TODO: cite 27
-This method is basically a version of the well-known CYK (Cocke-Young-Kassami) algorithm for parsing of strings with a context-free (string) grammar. Preliminarily to the actual algorithm's presentation, we introduce some necessary concepts that are used by it.
+%TODO: The practical use of it: model checking... model validation
 
-%TODO: Normal forms
+The parsing algorithm posed in this section is an imperative view of the method proposed by ()%TODO: cite 27
+, which is basically a version fro graphs of the well-known CYK (Cocke-Young-Kassami) algorithm for parsing of strings with a context-free (string) grammar. Preliminarily to the actual algorithm's presentation, we introduce some necessary concepts that are used by it. The first of them is the neighborhood preserving normal form.
 
-The next paragraphs present zone vertices and zone graphs, that are our understanding of the concepts found in () %TODO: cite 27
+\begin{definition}
+	A BNCE graph grammar $GG = (\Sigma, \Delta, S, P)$ is neighborhood preserving (NP), if and only if, the embedding of each rule with left-hand side $A$ is greater or equal than the context of each $A$-labeled vertex in the grammar. That is, let 
+	\[\cont{(A \pro R,\omega)}{v} =\{(l,\phi_{R}(w)) \st (v,l,w) \in E_R \text { or } (w,l,v) \in E_R \} \cup \omega(v) \]
+	be the context of $v$ in the rule $(A \pro R,\omega)$ and
+	\[\scont{GG}{A} = \bigcup_{(B \pro Q,\zeta) \in P, v \in V_Q, \phi_Q(v) = A} \cont{B \pro Q,\zeta}{v} \] 
+	be the context of the symbol $A$ in the grammar $GG$, then $GG$ is a NP BNCE graph grammar, if and only if,
+	\[ \forall r = (A \pro R,\omega) \in P \. \scont{GG}{A} \subseteq \bigcup_{v \ in V_R} \omega(v) \]
+\end{definition}
+
+The NP property is important to the correctness of the parsing algorithm. Furthermore, it is guaranteed that any BNCE graph grammar can be transformed in an equivalent NP BNCE graph grammar in polynomial time. More details in () %TODO: cite 27
+
+The next paragraphs present zone vertices and zone graphs, that are our understanding of the concepts also from %TODO: cite 27
 
 \begin{definition}
 	A zone vertex $h$ of a graph $G$ over $\Sigma$ is a pair $(\sigma \in \Sigma, U \subseteq V_G)$, that is, a symbol from $\Sigma$ and a subset of the vertices of $G$.
@@ -291,12 +308,12 @@ The next paragraphs present zone vertices and zone graphs, that are our understa
 	%TODO: Write D(pt) more formally
 \end{definition}
 
-Finally, the Algorithm \ref{alg:parse} displays the parsing algorithm of graphs with a BNCE graph grammar. Informally, the procedure follows a bottom-up strategy that tries to find production rules in $GG$ that generate zone graphs of $G$ until it finds a rule that generates a zone graph containing all vertices of $G$ and finishes answering yes and returning a valid derivation for $G$ or it exhausts all the possibilities and finishes answering no.
+Finally, the Algorithm \ref{alg:parse} displays the parsing algorithm of graphs with a NP BNCE graph grammar. Informally, the procedure follows a bottom-up strategy that tries to find production rules in $GG$ that generate zone graphs of $G$ until it finds a rule that generates a zone graph containing all vertices of $G$ and finishes answering yes and returning a valid derivation for $G$ or it exhausts all the possibilities and finishes answering no.
 
 \begin{algorithm}[!h]
-	\caption{Parsing Algorithm for BNCE Graph Grammars}
+	\caption{Parsing Algorithm for NP BNCE Graph Grammars}
 	\begin{algorithmic}[!ht]
-		\Require $GG \text{ is a valid BNCE graph grammar}$
+		\Require $GG \text{ is a valid NP BNCE graph grammar}$
 		\Require $G \text{ is a valid graph over } \Sigma$
 		\Function{$parse$}{$GG=(\Sigma, \Delta, S, P), G=(V_G,E_G,\phi_G)$}{$:Derivation$}
 			\If {$\phi_G(V_G) \nsubseteq \Delta$}
@@ -341,8 +358,52 @@ If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that
 %TODO: Comment on spatial and time complexity
 %TODO: Nevertheless, the grammar's ambiguity does not compromise the correctness of our algorithms presented in the following.
 
-\section{Transformation of Graphs with BNCE Triple Graph Grammars}
-%Transformation Algorithm
-%A consensus between the researchers of TGG is that the formalism aims at describing a consistency relation between two metamodels. In order to use it for transformation, it is necessary to operationalize it. In our case, the operationalization of the B-NLC TGG consists of deriving source and target rules from the production rules, which allows us to parse our input model and find a respective derivation using the Algorithm \ref{alg:parse}, to, then, generate the consistent triple graph containing the input and output models.
+\section{Model Transformation with BNCE Triple Graph Grammars}
+Given a graph $G$ over $\Delta$, one may be interested in finding another graph $T$ over $\Delta$ that is somehow consistent to $G$, write $G \rel T$. One example of such a situation is the compilation of a source-code, represented abstractly by $G$, into a machine-code, represented by $T$. Since, very often, $T$ can be generated from $G$, following some specification, this problem is referred to as model transformation problem.
+
+Now, let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar such that $G \rel T$ if and only if, $G \ms{} C \mt{} T \in L(TGG)$, that is, if we interpret $TGG$ as the descriptor of the consistency relation between $G$ and $T$, then the model transformation problem is reduced to finding a triple graph $G \ms{} C \mt{} T$ that belongs to $L(TGG)$. This is, by the definition of triple graph language (see \ref{def:tlanguage}) equivalent to finding a derivation $\startTG{TGG} \tderivtr{}{}{TGG} G \ms{} C \mt{} T$.
+
+Furthermore, consider the following definitions.
+
+\begin{definition}
+	Let $r = ((A,B,C) \pro (G_s \ms{} G_c \mt{} G_t), \omega_s, \omega_t)$ be a production rule of a triple graph grammar, $\source(r) = (A \pro G_s,\omega_s)$ gives the source part of $r$. Moreover, for any triple graph grammar $TGG = (\Sigma, \Delta, S, P)$, define the source grammar $S(TGG) = (\Sigma, \Delta, S, SP)$, where $SP = source(P)$.
+\end{definition}
+
+\begin{theorem}
+	\label{thm:one_d_enough}
+	Let $TGG = (\Sigma, \Delta, S, P)$ and $D = \startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G_1 \tderiv{r_1}{s_1,c_1,t_1}{TGG} \dots \tderiv{r_{k-1}}{s_{k-1},c_{k-1},t_{k-1}}{TGG} G_k$ be a derivation in $TGG$, $D$ can equivalently be rewritten as $\overline{D} = \startG{S(TGG)} \deriv{s(r_0)}{s_0}{S(TGG)} \overline{G_1} \deriv{s(r_1)}{s_1}{S(TGG)} \dots \deriv{s(r_{k-1})}{s_{k-1}}{S(TGG)} \overline{G_k} $
+\end{theorem}
+\begin{proof}
+	...
+\end{proof}
+
+Then, by Theorem \ref{thm:one_d_enough}, the problem of finding a derivation $D = \startTG{TGG} \tderivtr{}{}{TGG} G \ms{} C \mt{} T$ is reduced to finding a derivation $\overline{D} = \startG{S(TGG)} \deriv{}{}{S(TGG)} G$, what can be done with the already presented parsing algorithm \ref{alg:parse}. The final construction of the triple graph $G \ms{} C \mt{} T$ becomes then just a matter of creating $D$ out of $\overline{D}$.
+
+The complete transformation procedure is presented in the Algorithm \ref{alg:transform}. Thereby, the input TGG is required to be neighborhood preserving, what 
+
+%TODO: Comment NP BNCE TGG, trivial.
+
+\begin{algorithm}[!h]
+	\caption{Transformation Algorithm for NP BNCE Triple Graph Grammars}
+	\begin{algorithmic}[!ht]
+		\Require $TGG \text{ is a valid NP BNCE triple graph grammar}$
+		\Require $G \text{ is a valid graph over } \Sigma$
+		\Function{$transform$}{$TGG=(\Sigma, \Delta, S, P), G=(V_G,E_G,\phi_G)$}{$:Graph$}
+		\State $GG \gets S(TGG)$
+		\State $\overline{D} \gets parse(GG,G)$
+		\If{$\overline{D} = \startG{S(TGG)} \derivtr{}{}{S(TGG)} G$}
+		\State from $\overline{D}$ construct $D = \startTG{TGG} \derivtr{}{}{TGG} G \ms{} C \mt{} T$
+		\State \Return {$T$}
+		\Else
+		\State \Return {$empty$}
+		\EndIf
+		\EndFunction 
+		\Ensure $return \text{ is either } empty \text{ or } T \text{, such that } (G \ms{} C \mt{} T) \in L(TGG)$
+	\end{algorithmic}
+	\label{alg:transform}
+\end{algorithm}
+
+%Incremental and Synchhronization
+%TODO: discourse about incremental transformation and synchronization
 
 \end{document}          
