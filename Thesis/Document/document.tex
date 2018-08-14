@@ -95,6 +95,8 @@ Notice that, we use squares for non-terminal vertices, circles for terminal vert
 With these syntactic notions of the formalism presented, we introduce below its semantics by means of the concepts of derivation step, derivation and language.
 
 \begin{definition}
+	%TODO: Maybe define dstep more formally
+	\label{def:gg_dstep}
 	Let $GG = (\Sigma, \Delta, S, P)$ be a graph grammar and $G$ and $H$ be two graphs over $\Sigma$ disjoint from any right-hand side from $P$, $G$ concretely derives in one step into $H$ with rule $r$ and vertex $v$, we write $G \cderiv{r}{v}{GG} H$ and call it a concrete derivation step, if, and only if, the following holds:
 	\begin{align*}
 		r & = (A \pro R, \omega) \in P \text{ and } A = \phi_G(v) \text{ and} \\
@@ -103,7 +105,7 @@ With these syntactic notions of the formalism presented, we introduce below its 
 		& \cup E_R \\
 		& \cup \{(w,l,t) \st (w,l,v) \in E_G \land (l,\phi_G(w)) \in \omega(t)\} \\
 		& \cup \{(t,l,w) \st (v,l,w) \in E_G \land (l,\phi_G(w)) \in \omega(t)\} \text{ and} \\
-		\phi_H & = (\phi_G \setminus \{(v,x) \st x \in V_G \}) \cup \phi_R
+		\phi_H & = (\phi_G \setminus \{(v,x)\}) \cup \phi_R
 	\end{align*}
 	Notice that, without loss of generalization, we set $\omega(t) = \emptyset$ for all vertices $t$ without an image defined in $\omega$.
 	
@@ -191,6 +193,7 @@ Building upon the concepts of graphs and graph grammars, we present, in the foll
 \begin{definition}
 	A directed labeled triple graph $TG = G_s \ms{m_s} G_c \mt{m_t} G_t$ over $\Sigma$ consists of three disjoint directed labeled graphs over $\Sigma$ (see \ref{def:graph}), respectively, the source graph $G_s$, the correspondence graph $G_c$ and the target graph $G_t$, together with two injective morphisms (see \ref{def:morphism}) $m_s: V_{G_c} \to V_{G_s}$ and $m_t : V_{G_c} \to G_{G_t}$. Directed labeled triple graphs are often referred to simply as triple graphs and we might omit the morphisms' names in the notation. Moreover, we denote the set of all triple graphs over $\Sigma$ as $\alltgraphs{\Sigma}$. We might refer to all vertices of $TG$ by $V_{TG}:= V_s \cup V_c \cup V_t$, all edges by $E_{TG}:= E_s \cup E_c \cup E_t$ and the complete labeling function by $\phi_{TG}:= \phi_{G_s} \cup \phi_{G_c} \cup \phi_{G_t}$.
 	%TODO: Do we need empty triple graph?
+	%TODO: mabe use format S \pro Gs .... without three symbols in the lhs
 \end{definition}
 
 \begin{definition}
@@ -208,7 +211,7 @@ Below we start introducing the standard definition of TGG of the current researc
 %TODO: comment: using SPO, do not confuse with DPO of the algebraic approach.
 
 \begin{definition}
-	A triple graph grammar with neighborhood-controlled embedding (NCE TGG) $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $((A,B,C) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t)$ with $A,B,C \in \Gamma$ being the left-hand side, $(R_s \ms{} R_c \mt{} R_t) \in \alltgraphs{\Sigma}$ the right-hand side and $\omega_s : V_{R_s} \pto 2^{\Sigma \times \Sigma}$ and $\omega_t : V_{R_t} \pto 2^{\Sigma \times \Sigma}$ the partial embedding functions from the right-hand side's vertices to pairs of edge and label symbols. We might refer to the complete embedding function by $\omega:= \omega_s \cup \omega_t$.
+	A triple graph grammar with neighborhood-controlled embedding (NCE TGG) $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $((A,A,A) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t)$ with $A \in \Gamma$ being the left-hand side, $(R_s \ms{} R_c \mt{} R_t) \in \alltgraphs{\Sigma}$ the right-hand side and $\omega_s : V_{R_s} \pto 2^{\Sigma \times \Sigma}$ and $\omega_t : V_{R_t} \pto 2^{\Sigma \times \Sigma}$ the partial embedding functions from the right-hand side's vertices to pairs of edge and label symbols. We might refer to the complete embedding function by $\omega:= \omega_s \cup \omega_t$.
 	
 	For convenience, define the start triple graph of $TGG$ as $\startTG{TGG} := Z_s \ms{} Z_c \mt{} Z_t$ where $Z_s = (\{s_0\},\emptyset,\{s_0 \mapsto S\})$, $Z_c = (\{c_0\},\emptyset,\{c_0 \mapsto S\})$ and $Z_t = (\{t_0\},\emptyset,\{t_0 \mapsto S\})$.
 	
@@ -228,16 +231,25 @@ Below we start introducing the standard definition of TGG of the current researc
 In the following, the semantics for NCE TGG is presented analogously to the semantics for NCE graph grammars.
 
 \begin{definition}
+	%TODO: Maybe define dstep more formally
+	\label{def:tgg_dstep}
 	Let $TGG = (\Sigma, \Delta, S, P)$ be a NCE TGG and $G$ and $H$ be two triple graphs over $\Sigma$ disjoint from any right-hand side from $P$, $G$ concretely derives in one step into $H$ with rule $r$ and distinct vertices $v_s, v_c, v_t$, we write $G \tcderiv{r}{v_s,v_c,v_t}{TGG} H$ if, and only if, the following holds:
 	\begin{align*}
-	r & = ((A,B,C) \pro R, \omega_s, \omega_t) \in P \text{ and } \\
-	A & = \phi_{G_s}(v_s) \text{ and } B = \phi_{G_c}(v_c) \text{ and } C = \phi_{G_t}(v_t)\\
-	V_H  & = (V_G \setminus \{v_s,v_c,v_t\}) \cup V_R \text{ and}\\
-	E_H & = (E_G \setminus \{(w,l,t) \in E_G \st w \in \{v_s,v_c,v_t\} \lor t \in \{v_s,v_c,v_t\} \})  \\
-	& \cup E_R \\
-	& \cup \{(w,l,t) \st (w,l,v) \in E_G \land (l,\phi_G(w)) \in \omega(t)\} \\
-	& \cup \{(t,l,w) \st (v,l,w) \in E_G \land (l,\phi_G(w)) \in \omega(t)\} \text{ and} \\
-	\phi_H & = (\phi_G \setminus \{(v_s,x),(v_c,x),(v_t,x) \st x \in V_G\}) \cup \phi_R
+	r & = ((A,A,A) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P \text{ and } \\
+	A & = \phi_{G_s}(v_s) , A = \phi_{G_c}(v_c) , A = \phi_{G_t}(v_t) \text{ and}\\
+	V_{H_s}  & = (V_{G_s} \setminus \{v_s\}) \cup V_{R_s} \text{ and}\\
+	V_{H_c}  & = (V_{G_c} \setminus \{v_c\}) \cup V_{R_c} \text{ and}\\
+	V_{H_t}  & = (V_{G_t} \setminus \{v_t\}) \cup V_{R_t} \text{ and}\\
+	E_{H_s} & = (E_{G_s} \setminus \{(w,l,t) \in E_{G_s} \st w \in \{v_s\} \lor t \in \{v_s\} \}) \cup E_{R_s} \\
+	& \cup \{(w,l,t) \st (w,l,v) \in E_{G_s} \land (l,\phi_{G_s}(w)) \in \omega_{s}(t)\} \\
+	& \cup \{(t,l,w) \st (v,l,w) \in E_{G_s} \land (l,\phi_{G_s}(w)) \in \omega_{s}(t)\} \text{ and} \\
+	E_{H_c} & = (E_{G_c} \setminus \{(w,l,t) \in E_{G_c} \st w = v_c \lor t = v_c \}) \cup E_{R_c} \text{ and} \\
+	E_{H_t} & = (E_{G_t} \setminus \{(w,l,t) \in E_{G_t} \st w = v_t \lor t = v_t \}) \cup E_{R_t} \\
+	& \cup \{(w,l,t) \st (w,l,v) \in E_{G_t} \land (l,\phi_{G_t}(w)) \in \omega_{t}(t)\} \\
+	& \cup \{(t,l,w) \st (v,l,w) \in E_{G_t} \land (l,\phi_{G_t}(w)) \in \omega_{t}(t)\} \text{ and} \\
+	\phi_{H_s} & = (\phi_{G_s} \setminus \{(v_s,x)\}) \cup \phi_{R_s} \text{ and}\\
+	\phi_{H_c} & = (\phi_{G_c} \setminus \{(v_c,x)\}) \cup \phi_{R_c} \text{ and}\\
+	\phi_{H_t} & = (\phi_{G_t} \setminus \{(v_t,x)\}) \cup \phi_{R_t}\\
 	\end{align*}
 	Notice that, without loss of generalization, we set $\omega(t) = \emptyset$ for all vertices $t$ without an image defined in $\omega$.
 	
@@ -245,6 +257,7 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 \end{definition}
 
 %TODO: give intuition for the rule application
+%TODO: comment the non necessitu of embedding for the correspondence graph
 
 \begin{definition}
 	A derivation $D$ in $TGG$ is a sequence of derivation steps
@@ -375,22 +388,51 @@ Now, let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar such that $G \
 Furthermore, consider the following definitions.
 
 \begin{definition}
-	Let $r = ((A,B,C) \pro (G_s \ms{} G_c \mt{} G_t), \omega_s, \omega_t)$ be a production rule of a triple graph grammar, $\source(r) = (A \pro G_s,\omega_s)$ gives the source part of $r$. Moreover, for any triple graph grammar $TGG = (\Sigma, \Delta, S, P)$, define the source grammar $\Source(TGG) = (\Sigma, \Delta, S, SP)$, where $SP = \source(P)$. Analogously, $\target(r) = (C \pro G_t,\omega_t)$ and $\Target(TGG) = (\Sigma, \Delta, S, TP)$, where $TP = \target(P)$
+	By extension of the Definition \ref{def:np}, a BNCE triple graph grammar $TGG$ is neighborhood preserving if and only if, $S(TGG)$ and $T(TGG)$ are neighborhood preserving.
 \end{definition}
 
 \begin{definition}
-	By extension of the Definition \ref{def:np}, a BNCE triple graph grammar $TGG$ is neighborhood preserving if and only if, $S(TGG)$ and $T(TGG)$ are neighborhood preserving.
+	\label{def:source}
+	Let $r = ((A,A,A) \pro (G_s \ms{} G_c \mt{} G_t), \omega_s, \omega_t)$ be a production rule of a triple graph grammar, $\source(r) = (A \pro G_s,\omega_s)$ gives the source part of $r$ (symmetrically, $\source^-1((A \pro G_s,\omega_s)) = r$). Moreover, for any triple graph grammar $TGG = (\Sigma, \Delta, S, P)$, define the source grammar $\Source(TGG) = (\Sigma, \Delta, S, SP)$, where $SP = \source(P)$. Analogously, $\target(r) = (C \pro G_t,\omega_t)$, $\target^-1((C \pro G_t,\omega_t)) = r$ and $\Target(TGG) = (\Sigma, \Delta, S, TP)$, where $TP = \target(P)$.
+\end{definition}
+
+\begin{definition}
+	A triple graph $G_s \ms{ms} G_c \mt{mt} G_t$ is $\Gamma\text{-consistent}$ if and only if, 
+$\forall c \in V_{G_c} \. \text{if } \phi_{G_c}(c) \in \Gamma \text{ then } \phi_{G_c}(c) = \phi_{G_s}(ms(c)) = \phi_{G_t}(mt(c))$ and for the sets $N_s = \{v \st \phi_{G_s}(v) \in \Gamma\}$ and $N_t = \{v \st \phi_{G_t}(v) \in \Gamma\}$, the range-restricted functions $(ms \rrestr N_s)$ and $(mt \rrestr N_t)$ are bijective.
+\end{definition}
+
+\begin{definition}
+	A triple graph grammar $TGG = (\Sigma, \Delta, S, P)$ is non-terminal consistent (NTC) if and only if, all rules $r \in P$ are $\Gamma\text{-consistent}$.
 \end{definition}
 
 \begin{theorem}
 	\label{thm:one_d_enough}
-	Let $TGG = (\Sigma, \Delta, S, P)$ and $D = \startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G_1 \tderiv{r_1}{s_1,c_1,t_1}{TGG} \dots \tderiv{r_{k-1}}{s_{k-1},c_{k-1},t_{k-1}}{TGG} G_k$ be a derivation in $TGG$, $D$ can equivalently be rewritten as $\overline{D} = \startG{S(TGG)} \deriv{s(r_0)}{s_0}{S(TGG)} \overline{G_1} \deriv{s(r_1)}{s_1}{S(TGG)} \dots \deriv{s(r_{k-1})}{s_{k-1}}{S(TGG)} \overline{G_k} $
+	Let $TGG = (\Sigma, \Delta, S, P)$ be a NTC TGG, $SG = S(TGG) = (\Sigma, \Delta, S, SP)$ its source grammar and $D = \startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1 \tderiv{r_1}{s_1,c_1,t_1}{TGG} \dots \tderiv{r_{k-1}}{s_{k-1},c_{k-1},t_{k-1}}{TGG} G^k$ be a derivation in $TGG$, $D$ can equivalently be rewritten as the derivation in $SG$, $\overline{D} = \startG{SG} \deriv{s(r_0)}{s_0}{SG} G^1_s \deriv{s(r_1)}{s_1}{SG} \dots \deriv{s(r_{k-1})}{s_{k-1}}{SG} G^k_s $.
 \end{theorem}
 \begin{proof}
-	...
+	%TODO: Maybe rewrite it using align and referencing to each condition from the gg_dstep abd tgg_dstep definitions
+	We want to show that if $D$ is a derivation in $TGG$, then $\overline{D}$ is a derivation in $SG$, and vice-versa. We prove it by induction in the following.
+	
+	First, if $\startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1$, that is $Z_s \ms{} Z_c \mt{} Z_t \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1_s \ms{} G^1_c \mt{} G^1_t$, then, by Definition \ref{def:tgg_dstep}, $r_0 = ((S,S,S) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P$, and by Definition \ref{def:source}, $\source(r_0) = (S \pro R_s, \omega_s) \in SP$, hence, using it, the configuration of $\phi_{Z_s}(s_0)$, $V_{G^1_s}$, $E_{G^1_s}$ and $\phi_{G^1_s}$ and the equality $Z_s = \startG{S(TGG)}$, we have $\startG{S(TGG)} \deriv{\source(r_0)}{s_0}{SG} G^1_s$.
+	
+	In the other direction, we choose $c_0, t_0$ from the definition of $\startTG{TGG}$, with $\phi_{Z_c}(c_0) = S$ and  $\phi_{Z_t}(t_0) = S$. In this case, if $\startG{SG} \deriv{s(r_0)}{s_0}{SG} G^1_s$, then by Definition \ref{def:gg_dstep}, we have $\source(r_0) = (S \pro R_s, \omega_s) \in SP$ and using the bijectivity of $\source$, we get $r_0 = \source^{-1}(s(r_0)) = ((S,S,S) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P$. Hence, using it, the configuration of $\phi_{\startG{SG}}(s_0)$, $V_{G^1_s}$, $E_{G^1_s}$ and $\phi_{G^1_s}$, the equality $Z_s = \startG{SG}$ and constructing $V_{G^1_c}$, $V_{G^1_t}$, $E_{G^1_c}$, $E_{G^1_t}$, $\phi_{G^1_c}$, $\phi_{G^1_t}$ from $Z_c$ and $Z_t$ according to the Definition \ref{def:tgg_dstep}, we have $\startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1_s \ms{} G^1_c \mt{} G^1_t$
+	
+	Now, for the induction step, we want to show that if $\startTG{TGG} \tderivtr{}{}{TGG} G^i \tderiv{r_{i}}{s_{i},c_{i},t_{i}}{TGG} G^{i+1}$ is a derivation in $TGG$, then $\startG{TGG} \derivtr{}{}{SG} G^i_s \deriv{s(r_{i})}{s_{i}}{SG} G^{i+1}_s$ is a derivation in $SG$ and vice-versa. By induction hypothesis it holds for the first $i$ steps, so we just have to show it for the step $i+1$.
+	
+	So, if $G^i \tderiv{r_{i}}{s_{i},c_{i},t_{i}}{TGG} G^{i+1}$, that is $G^i_s \ms{ms_i} G^i_c \mt{mt_i} G^i_t \tderiv{r_i}{s_i,c_i,t_i}{TGG} G^{i+1}_s \ms{} G^{i+1}_c \mt{} G^{i+1}_t$, then, by Definition \ref{def:tgg_dstep}, $r_i = ((S,S,S) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P$, and by Definition \ref{def:source}, $\source(r_i) = (S \pro R_s, \omega_s) \in SP$, hence, using it and the configuration of $\phi_{G^i_s}(s_i)$, $V_{G^{i+1}_s}$, $E_{G^{i+1}_s}$ and $\phi_{G^{i+1}_s}$, we have $G^i \deriv{\source(r_i)}{s_i}{SG} G^{i+1}_s$.
+	
+	In the other direction, we choose, using the bijectivity from the range-restricted $\source$ stemming from the NTC property, $c_i = ms_i^{-1}(s_i), t_i = mt_i(c_i)$. Moreover, since $TGG$ is NTC, and because $\startTG{TGG} \tderivtr{}{}{TGG} G^i$ is a derivation in $TGG$ it is clear that $G^i$ is NTC, thus $\phi_{G^i_s}(s_0) = \phi_{G^i_c}(c_0) = \phi_{G^i_t}(t_i)$.
+	%TODO: Maybe it is not so evident and we need an extra lemma for it
+	
+	In this case, if $G^{i}_s \deriv{s(r_i)}{s_i}{SG} G^{i+1}_s$, then by Definition \ref{def:gg_dstep}, we have $\source(r_i) = (A \pro R_s, \omega_s) \in SP$ and using the bijectivity of $\source$, we get $r_i = \source^{-1}(s(r_i)) = ((A,A,A) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P$. 
+	
+	Hence, using, additionally, the configuration of $\phi_{G^i_s}(s_i)$, $\phi_{G^i_c}(c_i)$, $\phi_{G^i_t}(t_i)$ $V_{G^{i+1}_s}$, $E_{G^{i+1}_s}$ and $\phi_{G^{i+1}_s}$ and constructing $V_{G^{i+1}_c}$, $V_{G^{i+1}_t}$, $E_{G^{i+1}_c}$, $E_{G^{i+1}_t}$, $\phi_{G^{i+1}_c}$, $\phi_{G^{i+1}_t}$ from $G^i_c$ and $G^i_t$ according to the Definition \ref{def:tgg_dstep}, we have $ G^i_s \ms{} G^i_c \mt{} G^i_t \tderiv{r_i}{s_i,c_i,t_i}{TGG} G^{i+1}_s \ms{} G^{i+1}_c \mt{} G^{i+1}_t$.
+	
+	This finishes the proof.
+	
 \end{proof}
 
-Then, by Theorem \ref{thm:one_d_enough}, the problem of finding a derivation $D = \startTG{TGG} \tderivtr{}{}{TGG} G \ms{} C \mt{} T$ is reduced to finding a derivation $\overline{D} = \startG{S(TGG)} \deriv{}{}{S(TGG)} G$, what can be done with the already presented parsing algorithm \ref{alg:parse}. The final construction of the triple graph $G \ms{} C \mt{} T$ becomes then just a matter of creating $D$ out of $\overline{D}$.
+Therefore, by Theorem \ref{thm:one_d_enough}, the problem of finding a derivation $D = \startTG{TGG} \tderivtr{}{}{TGG} G \ms{} C \mt{} T$ is reduced to finding a derivation $\overline{D} = \startG{S(TGG)} \deriv{}{}{S(TGG)} G$, what can be done with the already presented parsing algorithm \ref{alg:parse}. The final construction of the triple graph $G \ms{} C \mt{} T$ becomes then just a matter of creating $D$ out of $\overline{D}$.
 
 %TODO: Comment about the backward case, should be trivial
 
@@ -399,18 +441,18 @@ The complete transformation procedure is presented in the Algorithm \ref{alg:tra
 %TODO: Maybe talk more about the normalization for TGGs
 
 \begin{algorithm}[!h]
-	\caption{Transformation Algorithm for NP BNCE Triple Graph Grammars}
+	\caption{Transformation Algorithm for NP NTC BNCE TGGs}
 	\begin{algorithmic}[!ht]
-		\Require $TGG \text{ is a valid NP BNCE triple graph grammar}$
+		\Require $TGG \text{ is a valid NP NTC BNCE triple graph grammar}$
 		\Require $G \text{ is a valid graph over } \Sigma$
 		\Function{$transform$}{$TGG=(\Sigma, \Delta, S, P), G=(V_G,E_G,\phi_G)$}{$:Graph$}
-		\State $GG \gets S(TGG)$
-		\State $\overline{D} \gets parse(GG,G)$
-		\If{$\overline{D} = \startG{S(TGG)} \derivtr{}{}{S(TGG)} G$}
+		\State $GG \gets S(TGG)$ \Comment{see \ref{def:source}}
+		\State $\overline{D} \gets parse(GG,G)$ \Comment{use algorithm \ref{alg:parse}}
+		\If{$\overline{D} = \startG{S(TGG)} \derivtr{}{}{S(TGG)} G$} \Comment{if parsed successfully}
 		\State from $\overline{D}$ construct $D = \startTG{TGG} \derivtr{}{}{TGG} G \ms{} C \mt{} T$
 		\State \Return {$T$}
 		\Else
-		\State \Return {$empty$}
+		\State \Return {$empty$} \Comment{no $T$ satisfies $(G \ms{} C \mt{} T) \in L(TGG)$}
 		\EndIf
 		\EndFunction 
 		\Ensure $return \text{ is either } empty \text{ or } T \text{, such that } (G \ms{} C \mt{} T) \in L(TGG)$
