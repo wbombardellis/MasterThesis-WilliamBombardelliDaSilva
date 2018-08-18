@@ -350,7 +350,7 @@ Finally, the Algorithm \ref{alg:parse} displays the parsing algorithm of graphs 
 				\EndIf
 				\State $used \gets used \cup \{handle\}$ \Comment{$handle$ consumed}
 				\ForAll{$d \in \Gamma$} \Comment{for each non-terminal symbol}
-					\State $r \gets \text{any } \{(d \pro R,\omega) \in P \st R \isomorph Y(H) \}$
+					\State $r \gets \text{any } \{(d \pro R,\omega) \in P \st R \isomorph Y(handle) \}$
 					\State $l \gets (d,V(handle))$
 					\If{$Z(\{l\}) \deriv{r}{l}{} Z(handle)$}
 						\State $bup \gets bup \cup \{l\}$ \Comment{new zone vertex found}
