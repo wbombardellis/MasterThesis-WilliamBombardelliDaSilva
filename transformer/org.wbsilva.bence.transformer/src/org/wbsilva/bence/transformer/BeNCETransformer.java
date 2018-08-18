@@ -119,8 +119,7 @@ public class BeNCETransformer {
 		if (this.tripleGrammarNP == null || this.inputGrammarNP == null) {
 			logger.warn(String.format("Transformer has not been initialized correctly. Cannot transform. Aborting."));
 			return Optional.empty();
-		}
-		if (!GraphgrammarUtil.isValidGraph(inputGraph)) {
+		} else if (!GraphgrammarUtil.isValidGraph(inputGraph)) {
 			logger.warn(String.format("Input graph %s is not valid. Cannot transform. Aborting.", inputGraph));
 			return Optional.empty();
 		} else if (!GraphgrammarUtil.isBoundaryGraph(inputGraph, this.tripleGrammarNP.getNonterminals())) {

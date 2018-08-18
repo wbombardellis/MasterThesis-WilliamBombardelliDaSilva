@@ -71,7 +71,7 @@ public class BeNCEParser {
 		/**
 		 * Consume the subsets from {@code BupReducer#bup}, that is shared with other BupReduces threads and that produces new subsets
 		 * under necessity and according to its strategy.
-		 * If it find a reduction, then add the handle to {@code BupReducer#bup} and add a parsing tree to {@code BupReducer#parsingForest}
+		 * If it finds a reduction, then add the handle to {@code BupReducer#bup} and add a parsing tree to {@code BupReducer#parsingForest}
 		 * This implementation is deadlock-free and takes care to keep shared data consistent between the threads,
 		 * although the execution order is non-deterministic. 
 		 */
