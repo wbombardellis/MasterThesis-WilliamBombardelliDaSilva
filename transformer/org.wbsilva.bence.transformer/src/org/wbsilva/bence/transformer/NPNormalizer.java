@@ -16,6 +16,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Grammar;
+import org.wbsilva.bence.graphgrammar.Graph;
+import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
@@ -236,21 +238,24 @@ public class NPNormalizer {
 				assert removed;
 			}
 			
-			assert GraphgrammarUtil.isValidGrammar(grammar);
-			assert GraphgrammarUtil.isBoundaryGrammar(grammar);
-			assert GraphgrammarUtil.isValidTripleGrammar(tripleGrammar);
-			assert GraphgrammarUtil.isBoundaryTripleGrammar(tripleGrammar);
-			
 			//Get new non neighborhood preserving rules
 			nonNPRulesContext = NPUtil.getNonNPRules(grammar);
 		}
 		assert grammar.getRules().size() == tripleGrammar.getTripleRules().size();
 		
-		logger.debug(String.format("NP normalization for grammar %s finished with success. New size %s", grammar.getName(), grammar.getRules().size()));
-
+		removeUselessRules(tripleGrammar, grammar);
+		
+		assureStartRule(tripleGrammar, grammar);
+		
+		assert GraphgrammarUtil.isValidGrammar(grammar);
+		assert GraphgrammarUtil.isBoundaryGrammar(grammar);
+		assert GraphgrammarUtil.isValidTripleGrammar(tripleGrammar);
+		assert GraphgrammarUtil.isBoundaryTripleGrammar(tripleGrammar);
 		assert NPUtil.isNeighborhoodPreserving(grammar);
+		
+		logger.debug(String.format("NP normalization for grammar %s finished with success. New size %s", grammar.getName(), grammar.getRules().size()));
 	}
-	
+
 	/**
 	 * Given a host {@code rule} containing a {@code vertex} that contains at least one of the missing context
 	 * in {@code context}, creates the necessary new rules without such missing contexts.
@@ -441,5 +446,112 @@ public class NPNormalizer {
 		assert GraphgrammarUtil.isValidRule(newRule);
 		
 		return new AbstractMap.SimpleEntry<>(newRule, old2newMap);
+	}
+	
+	/**
+	 * Remove from {@code tripleGrammar} and from {@code grammar} useless rules where there is at least one
+	 * vertex in the RHS whose label does not occur in any rule.
+	 * This method postentially modifies the parameters @code tripleGrammar} and {@code grammar}.
+	 * Moreover, remove also from the alphabets these vertices' labels.
+	 * 
+	 * @param tripleGrammar			A valid triple grammar to be minimized
+	 * @param grammar				A valid grammar that is part (source or target) of the {@code tripleGrammar} to be minimized
+	 */
+	private void removeUselessRules(final TripleGrammar tripleGrammar, final Grammar grammar) {
+		final SymbolSet orphanLabels = new SymbolSet();
+		final Set<String> rulesToRemove = new HashSet<>();
+		
+		final Symbol initial = grammar.getInitial();
+		assert tripleGrammar.getInitial().equivalates(initial);
+		
+		for (Rule r : grammar.getRules()) {
+			for (Vertex v : r.getRhs().getVertices()) {
+				//If v is a non terminal vertex with label A, where no rule A->R exists in the grammar
+				if (grammar.getNonterminals().stream().anyMatch(s -> s.equivalates(v.getLabel())
+						&& grammar.getRules().stream().noneMatch(t -> t.getLhs().equivalates(v.getLabel())))) {
+					
+					if (!v.getLabel().equivalates(grammar.getInitial())) {
+						orphanLabels.add(v.getLabel());
+					}
+					rulesToRemove.add(r.getId());
+				}
+			}
+		}
+		
+		logger.debug(String.format("Removing %d useless rules", rulesToRemove.size()));
+		
+		grammar.getRules()
+			.removeIf(r -> rulesToRemove.contains(r.getId()));
+		tripleGrammar.getTripleRules()
+			.removeIf(tr -> rulesToRemove.contains(tr.getSource().getId()));
+		
+		logger.debug(String.format("Removing %d useless non-terminal symbols", orphanLabels.size()));
+		
+		grammar.getAlphabet()
+			.removeIf(nt -> orphanLabels.contains(nt));
+		tripleGrammar.getAlphabet()
+			.removeIf(nt -> orphanLabels.contains(nt));
+	}
+	
+
+	/**
+	 * Create new rules of the form S -> (S^x_y), where S is the initial symbol of {@code grammar} and S^x_y is in the alphabet.
+	 * Perform the analogous operation also in the {@code tripleGrammar}.
+	 * This is necessary when the initial symbol was in a non NP rule and was added with a sub and superscript.
+	 * 
+	 * @param tripleGrammar			A valid triple grammar to be fixed
+	 * @param grammar				A valid grammar that is part (source or target) of the {@code tripleGrammar} to be fixed
+	 */
+	private void assureStartRule(final TripleGrammar tripleGrammar, final Grammar grammar) {
+		final Symbol initial = grammar.getInitial();
+		assert tripleGrammar.getInitial().equivalates(initial);
+		
+		final Set<Symbol> pseudoInitials = grammar.getNonterminals().stream()
+			.filter(nt -> !nt.equivalates(initial))
+			.filter(nt -> nt.getName().equals(initial.getName()))
+			.collect(Collectors.toSet());
+		
+	
+		for (Symbol pInitial : pseudoInitials) {
+			logger.debug(String.format("Creating new initial rule %s -> (%s)", initial, pInitial));
+			
+			//New source rule S -> v(S^l_n)
+			final Rule newRule = GraphgrammarFactory.eINSTANCE.createRule();
+			newRule.setLhs(EcoreUtil.copy(initial));
+			newRule.setId(EcoreUtil.generateUUID());
+			newRule.setName("i");
+			
+			final Graph newG = GraphgrammarFactory.eINSTANCE.createGraph();
+			final Vertex newV = GraphgrammarFactory.eINSTANCE.createVertex();
+			newV.setId("s_"+newRule.getId());
+			newV.setLabel(EcoreUtil.copy(pInitial));
+			
+			newG.getVertices().add(newV);
+			newRule.setRhs(newG);
+			
+			grammar.getRules().add(newRule);
+			
+			//New triple rule analogous to the new rule
+			final TripleRule newTR = GraphgrammarFactory.eINSTANCE.createTripleRule();
+			final Rule newS = EcoreUtil.copy(newRule);
+			final Vertex s = newS.getRhs().getVertices().get(0);
+			
+			final Rule newC = EcoreUtil.copy(newRule);
+			final Vertex c = newC.getRhs().getVertices().get(0);
+			c.setId("c_"+newC.getId());
+			
+			final Rule newT = EcoreUtil.copy(newRule);
+			final Vertex t = newT.getRhs().getVertices().get(0);
+			t.setId("t_"+newT.getId());
+			
+			newTR.setSource(newS);
+			newTR.setCorr(newC);
+			newTR.setTarget(newT);
+			
+			newTR.getMs().put(c, s);
+			newTR.getMt().put(c, t);
+			
+			tripleGrammar.getTripleRules().add(newTR);
+		}
 	}
 }
