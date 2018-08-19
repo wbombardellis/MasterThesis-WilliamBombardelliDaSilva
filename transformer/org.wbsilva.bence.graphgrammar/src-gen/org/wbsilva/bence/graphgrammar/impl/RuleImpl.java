@@ -439,7 +439,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 			return unifier;
 		} else {
 			//Do not apply rule, do not change graph
-			return new BasicEMap<Vertex, Vertex>(0);
+			return null;
 		}
 
 	}

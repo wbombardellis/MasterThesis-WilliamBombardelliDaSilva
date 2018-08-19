@@ -337,7 +337,7 @@ class RuleImplTest {
 		
 		Graph i0 = EcoreUtil.copy(h0);
 		EMap<Vertex, Vertex> un = r0.apply(i0, v0);
-		assertTrue(un.isEmpty());
+		assertNull(un);
 		assertTrue(EcoreUtil.equals(h0, i0));
 	}
 	

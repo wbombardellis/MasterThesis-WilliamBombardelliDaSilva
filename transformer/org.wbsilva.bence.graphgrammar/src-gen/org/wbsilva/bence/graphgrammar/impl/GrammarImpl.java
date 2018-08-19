@@ -274,8 +274,8 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 
 				//If result of rule application is isomorphic to next, then success
 				final EMap<Vertex, Vertex> g2nextIsomorphism = g.isomorphism(n);
-				if (!r2gUnifier.isEmpty() && g2nextIsomorphism != null) {
-					assert !g2nextIsomorphism.isEmpty();
+				if (r2gUnifier != null && g2nextIsomorphism != null) {
+					//assert !g2nextIsomorphism.isEmpty();
 					assert r2gUnifier.size() == r.getRhs().getVertices().size();
 					assert r2gUnifier.values().stream().distinct().count() == r.getRhs().getVertices().size();
 					assert r.getRhs().getVertices().stream().allMatch(w -> g.getVertices().contains(r2gUnifier.get(w)));

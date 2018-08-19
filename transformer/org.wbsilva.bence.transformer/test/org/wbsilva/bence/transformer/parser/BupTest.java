@@ -52,12 +52,14 @@ class BupTest {
 	@Test
 	void testBupNull() {
 		Bup bup = new Bup(null, 1, zv1);
+		assertEquals(0, bup.next().get().size());
 		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testBupNonEmptyZero() {
 		Bup bup = new Bup(set1, 0, zv1);
+		assertEquals(0, bup.next().get().size());
 		assertFalse(bup.next().isPresent());
 	}
 	
@@ -70,12 +72,14 @@ class BupTest {
 	@Test
 	void testHasNextEmpty() {
 		Bup bup = new Bup(set0, 1, zv1);
+		assertEquals(0, bup.next().get().size());
 		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testHasNextAfterAdd() {
 		Bup bup = new Bup(set0, 1, zv1);
+		assertEquals(0, bup.next().get().size());
 		assertFalse(bup.next().isPresent());
 		
 		bup.add(zv1);
@@ -85,12 +89,15 @@ class BupTest {
 	@Test
 	void testNextEmpty() {
 		Bup bup = new Bup(set0, 1, zv1);
+		assertEquals(0, bup.next().get().size());
 		assertFalse(bup.next().isPresent());
 	}
 	
 	@Test
 	void testNextNonEmpty() {
 		Bup bup = new Bup(set1, 1, zv1);
+		assertEquals(0, bup.next().get().size());
+
 		Optional<Set<ZoneVertex>> next = bup.next();
 		assertEquals(1, next.get().size());
 		assertTrue(next.get().contains(zv1));
@@ -99,6 +106,7 @@ class BupTest {
 	@Test
 	void testNextAfterAdd() {
 		Bup bup = new Bup(set0, 1, zv1);
+		assertEquals(0, bup.next().get().size());
 		bup.add(zv1);
 		Optional<Set<ZoneVertex>> next = bup.next();
 		assertEquals(1, next.get().size());
@@ -128,6 +136,7 @@ class BupTest {
 	@Test
 	void testNextAfterAddNextAfter() {
 		Bup bup = new Bup(set1, 3, zv1);
+		assertEquals(0, bup.next().get().size());
 		
 		Optional<Set<ZoneVertex>> next = bup.next();
 		assertEquals(1, next.get().size());
@@ -148,6 +157,7 @@ class BupTest {
 	@Test
 	void testNextBigSet() {
 		Bup bup = new Bup(set2, 3, zv1);
+		assertEquals(0, bup.next().get().size());
 		
 		Optional<Set<ZoneVertex>> next = bup.next();
 		assertEquals(1, next.get().size());
@@ -215,6 +225,7 @@ class BupTest {
 	void testAddExistant() {
 		Bup bup = new Bup(set1, 1, zv1);
 		bup.add(zv1);
+		bup.next();
 		bup.next();
 		assertFalse(bup.next().isPresent());
 	}

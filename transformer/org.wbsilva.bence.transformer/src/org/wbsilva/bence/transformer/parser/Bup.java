@@ -58,7 +58,7 @@ public class Bup implements IBup{
 	 * It serves to retrieved only unique subsets.
 	 * Each element i of the list keeps the queue of subsets of bupSet with size i
 	 * 
-	 * @example queues[0] = []; queues[1] = [{a},{b}]; queues[2] = [{a,b}]
+	 * @example queues[0] = [{}]; queues[1] = [{a},{b}]; queues[2] = [{a,b}]
 	 */
 	 protected final ArrayList<ArrayDeque<Set<ZoneVertex>>> queues;
 
@@ -85,7 +85,7 @@ public class Bup implements IBup{
 		
 		this.maximalSubsetSize = maximalSubsetSize; 
 		
-		phase = 1;
+		phase = 0;
 		successfullyParsed = false;
 		rootZV = root;
 		
@@ -96,17 +96,17 @@ public class Bup implements IBup{
 		final HashSet<Set<ZoneVertex>> ss0 = new HashSet<>(1);
 		ss0.add (new HashSet<>(0));
 		subsets.add(ss0); 
-		queues.add(new ArrayDeque<>(0));
+		queues.add(new ArrayDeque<>(ss0));
 		
-		if (phase <= lastPhase()) {
+		/*if (1 <= lastPhase()) {
 			//Add new subsets and queues
-			final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(phase, bupSet);
+			final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(1, bupSet);
 			subsets.add(newDinjunctSubsets);
 			queues.add(new ArrayDeque<Set<ZoneVertex>>(newDinjunctSubsets));
 			assert subsets.size() > 1;
 			assert subsets.get(0).size() > 0;
-			assert phase == subsets.size() - 1;
-		}
+			assert 1 == subsets.size() - 1;
+		}*/
 	}
 
 	/**
@@ -240,7 +240,7 @@ public class Bup implements IBup{
 		boolean contained = contains(zoneVertex);
 		
 		if (!contained) {
-			assert phase > 0;
+			assert phase >= 0;
 			assert phase <= subsets.size();
 			assert phase <= lastPhase() + 1;
 			
@@ -280,7 +280,7 @@ public class Bup implements IBup{
 	 */
 	@Override
 	public synchronized Optional<Set<ZoneVertex>> next() {
-		assert this.phase > 0;
+		assert this.phase >= 0;
 		assert this.subsets.size() >= this.phase;
 		assert this.queues.size() == this.subsets.size();
 		

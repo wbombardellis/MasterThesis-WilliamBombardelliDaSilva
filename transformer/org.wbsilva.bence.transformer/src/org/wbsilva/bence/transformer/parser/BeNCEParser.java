@@ -79,7 +79,6 @@ public class BeNCEParser {
 			Optional<Set<ZoneVertex>> nextHandle = this.bup.next();
 			while(nextHandle.isPresent() && !this.bup.isParsed()){
 				final Set<ZoneVertex> handle = nextHandle.get(); 			//R
-				assert !handle.isEmpty();
 				
 				logger.debug(String.format("Selected handle {%s}", handle.stream()
 						.map(z -> String.format("%s:(%s, {%s})", z.getId(), z.getLabel(), z.getVertices().stream()
@@ -91,21 +90,18 @@ public class BeNCEParser {
 					
 				final Graph handleGraph = zoneGraph(this.graph, handle);		//Z(R)
 				assert GraphgrammarUtil.isValidGraph(handleGraph);
-				assert !handleGraph.getVertices().isEmpty();
 				
 				final Graph rhs = induce(handleGraph, handle);			//Y(R)
 				assert GraphgrammarUtil.isValidGraph(rhs);
-				assert !rhs.getVertices().isEmpty();
 					
 				for (final Symbol d : this.grammar.getNonterminals()) {
 					logger.debug(String.format("Trying to reduce with symbol %s", d));
 					
 					final ZoneVertex lhs = contract(d, handle);				//(d,V(R))
-					assert !lhs.getVertices().isEmpty();
+					assert lhs != null;
 					
 					final Graph reducedGraph = zoneGraph(this.graph, new HashSet<ZoneVertex>(Arrays.asList(lhs)));	//Z({(d,V(R)})
 					assert GraphgrammarUtil.isValidGraph(reducedGraph);
-					assert !reducedGraph.getVertices().isEmpty();
 					
 					//If handle can be reduced with rule (lhs -> rhs). I.e. if reducedGraph=>handleGraph
 					final DerivationStep newDS = this.grammar.derives(reducedGraph, handleGraph, lhs, rhs);

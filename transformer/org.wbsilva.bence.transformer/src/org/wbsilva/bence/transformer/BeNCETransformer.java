@@ -133,7 +133,7 @@ public class BeNCETransformer {
 				logger.debug(String.format("Stating backward transformation with input graph %s", inputGraph));
 			
 			//Parse input graph
-			final BeNCEParser parser = new BeNCEParser(this.inputGrammarNP, Strategy.GREEDY);
+			final BeNCEParser parser = new BeNCEParser(this.inputGrammarNP, Strategy.NAIVE);
 			final Optional<ParsingTree> parsingTree = parser.parse(inputGraph);
 			assert parsingTree != null;
 			
@@ -153,13 +153,7 @@ public class BeNCETransformer {
 				for (DerivationStep dStep : derivation.getSteps()) {
 					assert dStep != null;
 					
-					final int oldTargetSize = this.forward ? tripleGraph.getTarget().getVertices().size()
-							: tripleGraph.getSource().getVertices().size();
-					
 					this.tripleGrammarNP.produce(tripleGraph, dStep, this.forward);
-					
-					assert this.forward ? tripleGraph.getTarget().getVertices().size() >= oldTargetSize 
-							: tripleGraph.getSource().getVertices().size()  >= oldTargetSize;
 					
 					if (this.forward)
 						logger.debug(String.format("Rule [id = %s, name = %s] applied to the triple graph. Target graph size = %s", dStep.getRule().getId(), dStep.getRule().getName(), tripleGraph.getTarget().getVertices().size()));

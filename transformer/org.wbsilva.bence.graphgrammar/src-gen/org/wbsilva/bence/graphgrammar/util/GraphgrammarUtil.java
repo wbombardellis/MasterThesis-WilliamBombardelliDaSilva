@@ -191,7 +191,7 @@ public class GraphgrammarUtil {
 			return false;
 		
 		EList<Symbol> t = grammar.getTerminals();
-		if (t == null || t.isEmpty())
+		if (t == null)
 			return false;
 		
 		if (n.stream().anyMatch(s -> !contains(ab, s)) || t.stream().anyMatch(s -> !contains(ab, s)))
@@ -378,7 +378,7 @@ public class GraphgrammarUtil {
 			return false;
 		
 		EList<Symbol> t = tripleGrammar.getTerminals();
-		if (t == null || t.isEmpty())
+		if (t == null)
 			return false;
 		
 		if (n.stream().anyMatch(s -> !contains(ab, s)) || t.stream().anyMatch(s -> !contains(ab, s)))
