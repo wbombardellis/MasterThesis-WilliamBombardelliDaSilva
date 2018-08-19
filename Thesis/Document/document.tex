@@ -344,7 +344,7 @@ Finally, the Algorithm \ref{alg:parse} displays the parsing algorithm of graphs 
 			\State $bup \gets \{(\phi_G(x),\{x\}) \st x \in V_G\}$ \Comment{start $bup$ with trivial zone vertices}
 			\State $pf \gets \{ \ptree{b}{}{\emptyset} \st b \in bup \}$
 			\Repeat
-				\State $handle \gets \text{any } \{h \subseteq bup \st h \neq \emptyset \text{ and } h \notin used \text{ and for all } U_i, U_j \in h \text{ with } i \neq j \. U_i \cap U_j = \emptyset \}$
+				\State $handle \gets \text{any } \{h \subseteq bup \st h \notin used \text{ and for all } U_i, U_j \in h \text{ with } i \neq j \. U_i \cap U_j = \emptyset \}$
 				\If {$handle = empty$}
 					\State \Break \Comment{if consumed all $bups$, stop}
 				\EndIf
@@ -372,6 +372,7 @@ The $handle$ is any subset from $bup$ chosen to be evaluated for the search of n
 
 If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that the whole graph $G$ can be produced through the application of a derivation starting from the start graph $\startG{GG}$ and thus $G \in L(GG)$. This derivation is, namely, the result of a depth-first walk in the parsing tree whose root is $(S, V_G)$. If, otherwise, all possibilities for $handle$ were exhausted without inferring such zone vertex, then $empty$ is returned, what means that $G$ cannot de parsed with $GG$ and therefore $G \notin L(GG)$.
 
+%TODO: Talk about the empty productions, that are allowed
 %TODO: Talk about the isomorphism in the reduction test
 
 %TODO: We beleieve this imperative view is also a contribution of our work
