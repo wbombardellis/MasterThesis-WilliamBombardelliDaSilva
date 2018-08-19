@@ -491,6 +491,10 @@ public class NPNormalizer {
 			.removeIf(nt -> orphanLabels.contains(nt));
 		tripleGrammar.getAlphabet()
 			.removeIf(nt -> orphanLabels.contains(nt));
+		grammar.getNonterminals()
+			.removeIf(nt -> orphanLabels.contains(nt));
+		tripleGrammar.getNonterminals()
+			.removeIf(nt -> orphanLabels.contains(nt));
 	}
 	
 
