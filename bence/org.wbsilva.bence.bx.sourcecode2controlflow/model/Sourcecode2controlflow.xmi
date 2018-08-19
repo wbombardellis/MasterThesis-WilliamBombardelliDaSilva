@@ -6,7 +6,7 @@
     xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar"
     xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore"
     name="SourceCode 2 ControlFlow"
-    terminals="//@alphabet.2 //@alphabet.3 //@alphabet.4 //@alphabet.5 //@alphabet.6 //@alphabet.7 //@alphabet.8 //@alphabet.9 //@alphabet.10 //@alphabet.11 //@alphabet.14 //@alphabet.16"
+    terminals="//@alphabet.2 //@alphabet.3 //@alphabet.4 //@alphabet.5 //@alphabet.6 //@alphabet.7 //@alphabet.8 //@alphabet.9 //@alphabet.10 //@alphabet.11 //@alphabet.14 //@alphabet.16 //@alphabet.12 //@alphabet.13 //@alphabet.15 //@alphabet.17 //@alphabet.18 //@alphabet.19"
     nonterminals="//@alphabet.0 //@alphabet.1"
     initial="//@alphabet.0">
   <alphabet
@@ -46,9 +46,9 @@
   <alphabet
       name="a2c"/>
   <alphabet
-      name="b2d"/>
+      name="d2b"/>
   <alphabet
-      name="b2w"/>
+      name="w2b"/>
   <tripleRules>
     <source
         id="r0"
@@ -181,6 +181,18 @@
           <vertexLabels
               name="While"/>
         </value>
+        <value>
+          <edgeLabel
+              name="positive"/>
+          <vertexLabels
+              name="Decision"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="negative"/>
+          <vertexLabels
+              name="Decision"/>
+        </value>
       </embedding>
     </source>
     <corr id="r2"
@@ -239,6 +251,18 @@
         </value>
         <value>
           <edgeLabel
+              name="positive"/>
+          <vertexLabels
+              name="Branch"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="negative"/>
+          <vertexLabels
+              name="Branch"/>
+        </value>
+        <value>
+          <edgeLabel
               name="nodes"/>
           <vertexLabels
               name="Graph"/>
@@ -253,5 +277,232 @@
         value="c2"/>
     <mt key="A2A2_"
         value="A2_"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r3"
+        name="r3">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="d3">
+          <label
+              name="Decision"/>
+        </vertices>
+        <vertices
+            id="pA3">
+          <label
+              name="A"/>
+        </vertices>
+        <vertices
+            id="nA3">
+          <label
+              name="A"/>
+        </vertices>
+        <vertices
+            id="xA3">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="d3"
+            to="pA3">
+          <label
+              name="positive"/>
+        </edges>
+        <edges
+            from="d3"
+            to="nA3">
+          <label
+              name="negative"/>
+        </edges>
+        <edges
+            from="d3"
+            to="xA3">
+          <label
+              name="next"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="d3">
+        <value>
+          <edgeLabel
+              name="first"/>
+          <vertexLabels
+              name="Program"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="next"/>
+          <vertexLabels
+              name="Assignment"/>
+          <vertexLabels
+              name="Decision"/>
+          <vertexLabels
+              name="While"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="positive"/>
+          <vertexLabels
+              name="Decision"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="negative"/>
+          <vertexLabels
+              name="Decision"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r3"
+        name="r3">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="d32b3">
+          <label
+              name="d2b"/>
+        </vertices>
+        <vertices
+            id="pA32pA3_">
+          <label
+              name="A"/>
+        </vertices>
+        <vertices
+            id="nA32nA3_">
+          <label
+              name="A"/>
+        </vertices>
+        <vertices
+            id="xA32xA3_">
+          <label
+              name="A"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r3"
+        name="r3">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="b3">
+          <label
+              name="Branch"/>
+        </vertices>
+        <vertices
+            id="pA3_">
+          <label
+              name="A"/>
+        </vertices>
+        <vertices
+            id="nA3_">
+          <label
+              name="A"/>
+        </vertices>
+        <vertices
+            id="xA3_">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="b3"
+            to="pA3_">
+          <label
+              name="positive"/>
+        </edges>
+        <edges
+            from="b3"
+            to="nA3_">
+          <label
+              name="negative"/>
+        </edges>
+        <edges
+            from="b3"
+            to="xA3_">
+          <label
+              name="next"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="b3">
+        <value>
+          <edgeLabel
+              name="nodes"/>
+          <vertexLabels
+              name="Graph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="next"/>
+          <vertexLabels
+              name="Command"/>
+          <vertexLabels
+              name="Branch"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="positive"/>
+          <vertexLabels
+              name="Branch"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="negative"/>
+          <vertexLabels
+              name="Branch"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="root"/>
+          <vertexLabels
+              name="Graph"/>
+        </value>
+      </embedding>
+      <embedding
+          key="pA3_">
+        <value>
+          <edgeLabel
+              name="nodes"/>
+          <vertexLabels
+              name="Graph"/>
+        </value>
+      </embedding>
+      <embedding
+          key="nA3_">
+        <value>
+          <edgeLabel
+              name="nodes"/>
+          <vertexLabels
+              name="Graph"/>
+        </value>
+      </embedding>
+      <embedding
+          key="xA3_">
+        <value>
+          <edgeLabel
+              name="nodes"/>
+          <vertexLabels
+              name="Graph"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="d32b3"
+        value="d3"/>
+    <ms key="pA32pA3_"
+        value="pA3"/>
+    <ms key="nA32nA3_"
+        value="nA3"/>
+    <ms key="xA32xA3_"
+        value="xA3"/>
+    <mt key="d32b3"
+        value="b3"/>
+    <mt key="pA32pA3_"
+        value="pA3_"/>
+    <mt key="nA32nA3_"
+        value="nA3_"/>
+    <mt key="xA32xA3_"
+        value="xA3_"/>
   </tripleRules>
 </org.wbsilva.bence.graphgrammar:TripleGrammar>
