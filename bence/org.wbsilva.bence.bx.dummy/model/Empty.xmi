@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.wbsilva.bence.graphgrammar:TripleGrammar
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar"
+    xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore"
+    name="Empty"
+    terminals="//@alphabet.1 //@alphabet.2"
+    nonterminals="//@alphabet.0"
+    initial="//@alphabet.0">
+  <alphabet
+      name="S"/>
+  <alphabet
+      name="BTNode"/>
+  <alphabet
+      name="l"/>
+  <tripleRules>
+    <source
+        id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="v0">
+          <label
+              name="BTNode"/>
+        </vertices>
+        <vertices
+            id="v1">
+          <label
+              name="S"/>
+        </vertices>
+        <edges
+            from="v0"
+            to="v1">
+          <label
+              name="l"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="v0">
+        <value>
+          <edgeLabel
+              name="l"/>
+          <vertexLabels
+              name="BTNode"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="v02u0">
+          <label
+              name="BTNode"/>
+        </vertices>
+        <vertices
+            id="v12u1">
+          <label
+              name="S"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="u0">
+          <label
+              name="BTNode"/>
+        </vertices>
+        <vertices
+            id="u1">
+          <label
+              name="S"/>
+        </vertices>
+        <edges
+            from="u0"
+            to="u1">
+          <label
+              name="l"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="u0">
+        <value>
+          <edgeLabel
+              name="l"/>
+          <vertexLabels
+              name="BTNode"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="v02u0"
+        value="v0"/>
+    <ms key="v12u1"
+        value="v1"/>
+    <mt key="v02u0"
+        value="u0"/>
+    <mt key="v12u1"
+        value="u1"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r1"
+        name="r1">
+      <lhs name="S"/>
+      <rhs/>
+    </source>
+    <corr id="r1"
+        name="r1">
+      <lhs name="S"/>
+      <rhs/>
+    </corr>
+    <target
+        id="r1"
+        name="r1">
+      <lhs name="S"/>
+      <rhs/>
+    </target>
+  </tripleRules>
+</org.wbsilva.bence.graphgrammar:TripleGrammar>
