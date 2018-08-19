@@ -123,7 +123,7 @@ public class NPNormalizer {
 			
 			
 			//If there are rules to be processed (at first, there is always the grammar rules)
-			while(!rulesToProcess.isEmpty()) {
+			while(!(rulesToProcess.isEmpty() && newRules.isEmpty())) {
 				final ArrayList<Rule> nextRulesToProcess = new ArrayList<>();
 				
 				//For each non neighborhood preserving rule A->R (again)
