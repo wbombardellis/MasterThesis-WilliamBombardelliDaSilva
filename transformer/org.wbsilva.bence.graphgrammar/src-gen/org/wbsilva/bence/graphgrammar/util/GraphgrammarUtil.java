@@ -316,7 +316,7 @@ public class GraphgrammarUtil {
 			return false;
 		
 		if (graph.getVertices() == null || 
-				graph.getVertices().stream().anyMatch(v -> v.getLabel() == null || v.getLabel().getName().isEmpty()))
+				graph.getVertices().stream().anyMatch(v -> v.getLabel() == null || v.getLabel().getName() == null || v.getLabel().getName().isEmpty()))
 			return false;
 		if (graph.getVertices().stream().map(v -> v.getId()).distinct().count() != graph.getVertices().size())
 			return false;
