@@ -21,7 +21,7 @@ class GreedyBup extends Bup {
 	 * The central queue holds all generated but not yet consumed subsets ordered in their size
 	 * The size is the amount of vertices in each set of zone vertices
 	 * 
-	 * @example centralQueue = [{a,b},{a,b,c},{a},{b}]
+	 * @example centralQueue = [{},{a,b},{a,b,c},{a},{b}]
 	 */
 	final protected PriorityQueue<Set<ZoneVertex>> centralQueue;
 	
@@ -91,7 +91,7 @@ class GreedyBup extends Bup {
 	@Override
 	public synchronized boolean add(final ZoneVertex zoneVertex) {
 		assert zoneVertex != null;
-		assert this.phase > 0;
+		assert this.phase >= 0;
 		assert this.phase <= lastPhase();
 		assert this.subsets.size() >= this.phase;
 		
@@ -132,7 +132,7 @@ class GreedyBup extends Bup {
 
 	@Override
 	public synchronized Optional<Set<ZoneVertex>> next() {		
-		assert this.phase > 0;
+		assert this.phase >= 0;
 		assert this.phase <= lastPhase();
 		assert this.subsets.size() >= this.phase;
 		
@@ -147,7 +147,7 @@ class GreedyBup extends Bup {
 			//Exhausted all the generated queue
 			
 			//Generated new subsets and advances phase until generates a phase with non empty subsets or reaches the last phase
-			int p = this.phase - 1;
+			int p = Math.max(this.phase - 1, 0);
 			Set<Set<ZoneVertex>> newSubsets;
 			do {
 				p++;
