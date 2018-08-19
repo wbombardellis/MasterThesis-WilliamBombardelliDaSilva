@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar">
+  <org.wbsilva.bence.graphgrammar:TripleGraph>
+    <source>
+      <vertices id="_mjjOIKPxEeiG3p2lA8SGOA">
+        <label name="Program"/>
+      </vertices>
+      <vertices id="_mjjOIaPxEeiG3p2lA8SGOA">
+        <label name="Assignment"/>
+      </vertices>
+      <edges from="_mjjOIKPxEeiG3p2lA8SGOA" to="_mjjOIaPxEeiG3p2lA8SGOA">
+        <label name="first"/>
+      </edges>
+    </source>
+    <corr>
+      <vertices id="_mlsjMaPxEeiG3p2lA8SGOA">
+        <label name="p2g"/>
+      </vertices>
+      <vertices id="_mlwNkaPxEeiG3p2lA8SGOA">
+        <label name="a2c"/>
+      </vertices>
+    </corr>
+    <target>
+      <vertices id="_mlr8IKPxEeiG3p2lA8SGOA">
+        <label name="Graph"/>
+      </vertices>
+      <vertices id="_mlvmg6PxEeiG3p2lA8SGOA">
+        <label name="Command"/>
+      </vertices>
+      <edges from="_mlr8IKPxEeiG3p2lA8SGOA" to="_mlvmg6PxEeiG3p2lA8SGOA">
+        <label name="root"/>
+      </edges>
+    </target>
+    <ms key="_mlsjMaPxEeiG3p2lA8SGOA" value="_mjjOIKPxEeiG3p2lA8SGOA"/>
+    <ms key="_mlwNkaPxEeiG3p2lA8SGOA" value="_mjjOIaPxEeiG3p2lA8SGOA"/>
+    <mt key="_mlsjMaPxEeiG3p2lA8SGOA" value="_mlr8IKPxEeiG3p2lA8SGOA"/>
+    <mt key="_mlwNkaPxEeiG3p2lA8SGOA" value="_mlvmg6PxEeiG3p2lA8SGOA"/>
+  </org.wbsilva.bence.graphgrammar:TripleGraph>
+  <org.wbsilva.bence.graphgrammar:ParsingTree>
+    <zoneVertex id="_mk3cwaPxEeiG3p2lA8SGOA">
+      <label name="S"/>
+      <vertices id="_mgsucKPxEeiG3p2lA8SGOA">
+        <label name="Assignment"/>
+      </vertices>
+      <vertices id="_mgq5QKPxEeiG3p2lA8SGOA">
+        <label name="Program"/>
+      </vertices>
+    </zoneVertex>
+    <derivationStep>
+      <rule id="r0" name="r0">
+        <lhs name="S"/>
+        <rhs>
+          <vertices id="p0">
+            <label name="Program"/>
+          </vertices>
+          <vertices id="A0">
+            <label name="A"/>
+          </vertices>
+          <edges from="p0" to="A0">
+            <label name="first"/>
+          </edges>
+        </rhs>
+      </rule>
+      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mk3cwaPxEeiG3p2lA8SGOA">
+        <label name="S"/>
+        <vertices id="_mgsucKPxEeiG3p2lA8SGOA">
+          <label name="Assignment"/>
+        </vertices>
+        <vertices id="_mgq5QKPxEeiG3p2lA8SGOA">
+          <label name="Program"/>
+        </vertices>
+      </vertex>
+      <previous>
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mk3cwaPxEeiG3p2lA8SGOA">
+          <label name="S"/>
+          <vertices id="_mgsucKPxEeiG3p2lA8SGOA">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_mgq5QKPxEeiG3p2lA8SGOA">
+            <label name="Program"/>
+          </vertices>
+        </vertices>
+      </previous>
+      <next>
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mjjOIKPxEeiG3p2lA8SGOA">
+          <label name="Program"/>
+          <vertices id="_mgq5QKPxEeiG3p2lA8SGOA">
+            <label name="Program"/>
+          </vertices>
+        </vertices>
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mkfpUKPxEeiG3p2lA8SGOA">
+          <label name="A"/>
+          <vertices id="_mgsucKPxEeiG3p2lA8SGOA">
+            <label name="Assignment"/>
+          </vertices>
+        </vertices>
+        <edges from="_mjjOIKPxEeiG3p2lA8SGOA" to="_mkfpUKPxEeiG3p2lA8SGOA">
+          <label name="first"/>
+        </edges>
+      </next>
+      <unifier key="p0" value="_mjjOIKPxEeiG3p2lA8SGOA"/>
+      <unifier key="A0" value="_mkfpUKPxEeiG3p2lA8SGOA"/>
+    </derivationStep>
+    <children>
+      <zoneVertex id="_mjjOIKPxEeiG3p2lA8SGOA">
+        <label name="Program"/>
+        <vertices id="_mgq5QKPxEeiG3p2lA8SGOA">
+          <label name="Program"/>
+        </vertices>
+      </zoneVertex>
+    </children>
+    <children>
+      <zoneVertex id="_mkfpUKPxEeiG3p2lA8SGOA">
+        <label name="A"/>
+        <vertices id="_mgsucKPxEeiG3p2lA8SGOA">
+          <label name="Assignment"/>
+        </vertices>
+      </zoneVertex>
+      <derivationStep>
+        <rule id="r2____mioBEKPxEeiG3p2lA8SGOA" name="r2">
+          <lhs name="A"/>
+          <rhs>
+            <vertices id="_minaAKPxEeiG3p2lA8SGOA">
+              <label name="Assignment"/>
+            </vertices>
+            <vertices id="_minaAaPxEeiG3p2lA8SGOA">
+              <label name="A">
+                <subscript>Assignment</subscript>
+                <superscript>next</superscript>
+              </label>
+            </vertices>
+          </rhs>
+          <embedding key="_minaAKPxEeiG3p2lA8SGOA">
+            <value>
+              <edgeLabel name="first"/>
+              <vertexLabels name="Program"/>
+            </value>
+            <value>
+              <edgeLabel name="next"/>
+              <vertexLabels name="Assignment"/>
+              <vertexLabels name="Decision"/>
+              <vertexLabels name="While"/>
+            </value>
+          </embedding>
+        </rule>
+        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mkfpUKPxEeiG3p2lA8SGOA">
+          <label name="A"/>
+          <vertices id="_mgsucKPxEeiG3p2lA8SGOA">
+            <label name="Assignment"/>
+          </vertices>
+        </vertex>
+        <previous>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mkfpUKPxEeiG3p2lA8SGOA">
+            <label name="A"/>
+            <vertices id="_mgsucKPxEeiG3p2lA8SGOA">
+              <label name="Assignment"/>
+            </vertices>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mkgQYKPxEeiG3p2lA8SGOA">
+            <label name="Program"/>
+            <vertices id="_mgq5QKPxEeiG3p2lA8SGOA">
+              <label name="Program"/>
+            </vertices>
+          </vertices>
+          <edges from="_mkgQYKPxEeiG3p2lA8SGOA" to="_mkfpUKPxEeiG3p2lA8SGOA">
+            <label name="first"/>
+          </edges>
+        </previous>
+        <next>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mjjOIaPxEeiG3p2lA8SGOA">
+            <label name="Assignment"/>
+            <vertices id="_mgsucKPxEeiG3p2lA8SGOA">
+              <label name="Assignment"/>
+            </vertices>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mkNVcKPxEeiG3p2lA8SGOA">
+            <label name="A">
+              <subscript>Assignment</subscript>
+              <superscript>next</superscript>
+            </label>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mkb-8KPxEeiG3p2lA8SGOA">
+            <label name="Program"/>
+            <vertices id="_mgq5QKPxEeiG3p2lA8SGOA">
+              <label name="Program"/>
+            </vertices>
+          </vertices>
+          <edges from="_mkb-8KPxEeiG3p2lA8SGOA" to="_mjjOIaPxEeiG3p2lA8SGOA">
+            <label name="first"/>
+          </edges>
+        </next>
+        <unifier key="_minaAKPxEeiG3p2lA8SGOA" value="_mjjOIaPxEeiG3p2lA8SGOA"/>
+        <unifier key="_minaAaPxEeiG3p2lA8SGOA" value="_mkNVcKPxEeiG3p2lA8SGOA"/>
+      </derivationStep>
+      <children>
+        <zoneVertex id="_mjjOIaPxEeiG3p2lA8SGOA">
+          <label name="Assignment"/>
+          <vertices id="_mgsucKPxEeiG3p2lA8SGOA">
+            <label name="Assignment"/>
+          </vertices>
+        </zoneVertex>
+      </children>
+      <children>
+        <zoneVertex id="_mkNVcKPxEeiG3p2lA8SGOA">
+          <label name="A">
+            <subscript>Assignment</subscript>
+            <superscript>next</superscript>
+          </label>
+        </zoneVertex>
+        <derivationStep>
+          <rule id="r1___(A^{next}_{Assignment})" name="r1">
+            <lhs name="A">
+              <subscript>Assignment</subscript>
+              <superscript>next</superscript>
+            </lhs>
+            <rhs/>
+          </rule>
+          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mkNVcKPxEeiG3p2lA8SGOA">
+            <label name="A">
+              <subscript>Assignment</subscript>
+              <superscript>next</superscript>
+            </label>
+          </vertex>
+          <previous>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_mkNVcKPxEeiG3p2lA8SGOA">
+              <label name="A">
+                <subscript>Assignment</subscript>
+                <superscript>next</superscript>
+              </label>
+            </vertices>
+          </previous>
+          <next/>
+        </derivationStep>
+      </children>
+    </children>
+  </org.wbsilva.bence.graphgrammar:ParsingTree>
+</xmi:XMI>
