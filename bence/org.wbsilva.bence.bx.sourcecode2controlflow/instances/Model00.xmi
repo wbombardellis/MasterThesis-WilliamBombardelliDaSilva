@@ -5,11 +5,5 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:org.wbsilva.mm.sourcecode="platform:/plugin/org.wbsilva.mm.sourcecode/model/Sourcecode.ecore"
     xsi:schemaLocation="platform:/plugin/org.wbsilva.mm.sourcecode/model/Sourcecode.ecore ../../org.wbsilva.mm.sourcecode/model/Sourcecode.ecore">
-  <first xsi:type="org.wbsilva.mm.sourcecode:While"
-      last="//@first/@next/@next">
-    <next xsi:type="org.wbsilva.mm.sourcecode:Assignment">
-      <next
-          xsi:type="org.wbsilva.mm.sourcecode:Assignment"/>
-    </next>
-  </first>
+  <first xsi:type="org.wbsilva.mm.sourcecode:Decision"/>
 </org.wbsilva.mm.sourcecode:Program>
