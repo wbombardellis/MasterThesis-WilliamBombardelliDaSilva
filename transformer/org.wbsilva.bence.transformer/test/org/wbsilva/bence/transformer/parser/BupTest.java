@@ -108,6 +108,8 @@ class BupTest {
 		Bup bup = new Bup(set0, 1, zv1);
 		assertEquals(0, bup.next().get().size());
 		bup.add(zv1);
+		assertEquals(0, bup.next().get().size());
+		
 		Optional<Set<ZoneVertex>> next = bup.next();
 		assertEquals(1, next.get().size());
 		assertTrue(next.get().contains(zv1));
@@ -116,7 +118,10 @@ class BupTest {
 	@Test
 	void testNextAfterNextAfterAdd() {
 		Bup bup = new Bup(set1, 2, zv1);
+		assertEquals(0, bup.next().get().size());
+		
 		bup.add(zv2);
+		assertEquals(0, bup.next().get().size());
 		
 		Optional<Set<ZoneVertex>> next = bup.next();
 		assertEquals(1, next.get().size());
@@ -143,6 +148,7 @@ class BupTest {
 		assertTrue(next.get().contains(zv1));
 		
 		bup.add(zv2);
+		assertEquals(0, bup.next().get().size());
 		
 		Optional<Set<ZoneVertex>> newNext = bup.next();
 		assertEquals(1, newNext.get().size());
