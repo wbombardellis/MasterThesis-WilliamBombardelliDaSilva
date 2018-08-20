@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
+import org.wbsilva.bence.graphgrammar.impl.ZoneVertexImpl;
 
 /**
  * This class implements the bottom-up parsing set.
@@ -133,37 +134,43 @@ public class Bup implements IBup{
 	 */
 	protected synchronized Set<Set<ZoneVertex>> createNewSubsets(final int p, final HashSet<ZoneVertex> zoneVertices) {
 		assert zoneVertices != null;
-		assert p > 0;
+		assert p >= 0;
 		assert p <= lastPhase() + 1;
-		
-		final int previousPhase = p - 1;
-		assert subsets.size() >= previousPhase;
-		//assert queues.size() >= previousPhase;
-		
-		final Set<Set<ZoneVertex>> oldPhaseSubsets = subsets.get(previousPhase);
-		final Set<Set<ZoneVertex>> thisPhaseSubsets = p < subsets.size() ? subsets.get(p) : new HashSet<>(0);
 		
 		//newQueueSize = zoneVertices chooses phase
 		final HashSet<Set<ZoneVertex>> newSubsets = new HashSet<>();
 		
-		//For each subset of the last phase
-		final Iterator<Set<ZoneVertex>> it = oldPhaseSubsets.iterator();
-		while (it.hasNext()) {
-			final Set<ZoneVertex> ss = it.next();
+		if (p == 0) {
+			newSubsets.add(new HashSet<>(0));
 			
-			//Add each zone vertex of interest
-			final Iterator<ZoneVertex> itt = zoneVertices.iterator();
-			while(itt.hasNext()) {
-				final ZoneVertex bup = itt.next();
-				assert bup != null;
+		} else {
+			assert p > 0;
+			final int previousPhase = p - 1;
+			assert subsets.size() >= previousPhase;
+			//assert queues.size() >= previousPhase;
+			
+			final Set<Set<ZoneVertex>> oldPhaseSubsets = subsets.get(previousPhase);
+			final Set<Set<ZoneVertex>> thisPhaseSubsets = p < subsets.size() ? subsets.get(p) : new HashSet<>(0);
+	
+			//For each subset of the last phase
+			final Iterator<Set<ZoneVertex>> it = oldPhaseSubsets.iterator();
+			while (it.hasNext()) {
+				final Set<ZoneVertex> ss = it.next();
 				
-				if(!ss.contains(bup)) {
-					final HashSet<ZoneVertex> newSs = new HashSet<>(ss);
-					newSs.add(bup);
+				//Add each zone vertex of interest
+				final Iterator<ZoneVertex> itt = zoneVertices.iterator();
+				while(itt.hasNext()) {
+					final ZoneVertex bup = itt.next();
+					assert bup != null;
 					
-					//Do not add, if newSS is already in the current phase's subsets
-					if (!thisPhaseSubsets.contains(newSs)) {
-						newSubsets.add(newSs); //two sets with same bups are equal
+					if(!ss.contains(bup)) {
+						final HashSet<ZoneVertex> newSs = new HashSet<>(ss);
+						newSs.add(bup);
+						
+						//Do not add, if newSS is already in the current phase's subsets
+						if (!thisPhaseSubsets.contains(newSs)) {
+							newSubsets.add(newSs); //two sets with same bups are equal
+						}
 					}
 				}
 			}
@@ -237,9 +244,7 @@ public class Bup implements IBup{
 	public synchronized boolean add(final ZoneVertex zoneVertex) {
 		assert zoneVertex != null;
 		
-		boolean contained = contains(zoneVertex);
-		
-		if (!contained) {
+		if (canAdd(zoneVertex)) {
 			assert phase >= 0;
 			assert phase <= subsets.size();
 			assert phase <= lastPhase() + 1;
@@ -251,14 +256,14 @@ public class Bup implements IBup{
 			
 			//Go back to the first phase and add new element to the bupSet
 			//int oldPhase = phase;
-			phase = 1;
+			phase = 0;
 			bupSet.add(zoneVertex);
 			
 			//assert subsets.size() > oldPhase;
 			//assert queues.size() > oldPhase;
 			
 			//Regenerate all previous phases' subsets and queues
-			for (int p = 1; p < subsets.size(); p++) {
+			for (int p = 0; p < subsets.size(); p++) {
 				final Set<Set<ZoneVertex>> newSubsets = createNewSubsets(p, zoneVertex);
 				
 				subsets.get(p).addAll(newSubsets);
@@ -271,6 +276,18 @@ public class Bup implements IBup{
 		} else { 
 			return false;
 		}
+	}
+
+	/**
+	 * Return true iff {@code zonevertex} can be added to the bup
+	 * @param zoneVertex		The zone vertex to be tested
+	 * @return					True if {@code zonevertex} can be added, false otherwise.
+	 */
+	protected boolean canAdd(ZoneVertex zoneVertex) {
+		final boolean contained = this.contains(zoneVertex);
+		//If not contained, or it is an empty production, then allow
+		return !contained || 
+				(zoneVertex.getVertices().isEmpty() && this.bupSet.stream().filter(b -> b.getVertices().isEmpty()).count() < this.maximalSubsetSize); 
 	}
 
 	/**

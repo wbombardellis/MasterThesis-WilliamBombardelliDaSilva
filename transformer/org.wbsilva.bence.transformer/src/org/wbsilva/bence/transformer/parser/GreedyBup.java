@@ -95,16 +95,14 @@ class GreedyBup extends Bup {
 		assert this.phase <= lastPhase();
 		assert this.subsets.size() >= this.phase;
 		
-		final boolean contains = this.contains(zoneVertex);
-		
-		if (!contains) {
+		if (canAdd(zoneVertex)) {
 			//Bottom phase go down, because new elements in phase 1 will be created
-			this.phase = 1;
+			this.phase = 0;
 			
 			this.bupSet.add(zoneVertex);
 			
 			//Create new subsets for the newly added zone vertex from the phase 1 until the last phase
-			int p = 0;
+			int p = -1;
 			Set<Set<ZoneVertex>> newSubsets;
 			do {
 				p++;
