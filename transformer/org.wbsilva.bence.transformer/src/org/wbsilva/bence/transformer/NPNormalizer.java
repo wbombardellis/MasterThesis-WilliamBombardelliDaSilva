@@ -124,7 +124,7 @@ public class NPNormalizer {
 			}
 			
 			
-			//If there are rules to be processed (at first, there is always the grammar rules)
+			//If there are rules to be processed (at first, there is always rules)
 			while(!(rulesToProcess.isEmpty() && newRules.isEmpty())) {
 				final ArrayList<Rule> nextRulesToProcess = new ArrayList<>();
 				
@@ -257,12 +257,12 @@ public class NPNormalizer {
 	}
 
 	/**
-	 * Given a host {@code rule} containing a {@code vertex} that contains at least one of the missing context
+	 * Given a host {@code rule} containing a {@code vertex} that potentiallz contains one of the missing context
 	 * in {@code context}, creates the necessary new rules without such missing contexts.
 	 *  
 	 * @param rule		The host rule containing the vertex to be modified
-	 * @param vertex	The vertex which to change its context, to fix the rule 
-	 * @param context	The missing context of the {@code vertex}'s label
+	 * @param vertex	The vertex which to be fixed 
+	 * @param context	The missing context for the {@code vertex}'s label
 	 * @return			One new rule for each missing context removal from {@code vertex}
 	 * 					mapped to the respective map between the old vertices's id to the new vertices
 	 * 					of its RHS
@@ -306,10 +306,22 @@ public class NPNormalizer {
 					final SymbolSet missIntersection = missingLabels.intersect(embeds.getVertexLabels());
 					
 					for (Symbol ignoredLabel : missIntersection) {
+						//New fix
 						final Entry<Rule, Map<String, Vertex>> newEntry = createNewHostRule(rule, vertex, ignoredLabel, embeds.getEdgeLabel()); 
 						newFixedRules.put(newEntry.getKey(), newEntry.getValue());
+						//Context processed
+						toProccessContext.get(embeds.getEdgeLabel()).remove(ignoredLabel);
 					}
 				}
+			}
+		}
+		
+		//For each missing context that still needs to be processed (e.g. vertex had no edge nor embedding that corresponded to one context)  
+		for (Entry<Symbol, SymbolSet> cEntry : toProccessContext.entrySet()) {
+			for (Symbol ignoringLabel : cEntry.getValue()) {
+				//New fix
+				final Entry<Rule, Map<String, Vertex>> newEntry = createNewHostRule(rule, vertex, ignoringLabel, cEntry.getKey());
+				newFixedRules.put(newEntry.getKey(), newEntry.getValue());
 			}
 		}
 		assert !newFixedRules.isEmpty();
