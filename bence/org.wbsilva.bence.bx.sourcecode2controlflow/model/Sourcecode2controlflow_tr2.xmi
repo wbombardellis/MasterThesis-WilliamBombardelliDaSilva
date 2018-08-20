@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.wbsilva.bence.graphgrammar:TripleGrammar
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar"
+    xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore"
+    name="SourceCode 2 ControlFlow"
+    terminals="//@alphabet.2 //@alphabet.3 //@alphabet.4 //@alphabet.5 //@alphabet.6 //@alphabet.7 //@alphabet.8 //@alphabet.9 //@alphabet.10 //@alphabet.11 //@alphabet.14 //@alphabet.16 //@alphabet.12 //@alphabet.13 //@alphabet.15 //@alphabet.17 //@alphabet.18 //@alphabet.19"
+    nonterminals="//@alphabet.0 //@alphabet.1"
+    initial="//@alphabet.0">
+  <alphabet
+      name="S"/>
+  <alphabet
+      name="A"/>
+  <alphabet
+      name="Program"/>
+  <alphabet
+      name="Assignment"/>
+  <alphabet
+      name="Decision"/>
+  <alphabet
+      name="While"/>
+  <alphabet
+      name="first"/>
+  <alphabet
+      name="next"/>
+  <alphabet
+      name="last"/>
+  <alphabet
+      name="positive"/>
+  <alphabet
+      name="negative"/>
+  <alphabet
+      name="Graph"/>
+  <alphabet
+      name="Command"/>
+  <alphabet
+      name="Branch"/>
+  <alphabet
+      name="root"/>
+  <alphabet
+      name="nodes"/>
+  <alphabet
+      name="p2g"/>
+  <alphabet
+      name="a2c"/>
+  <alphabet
+      name="d2b"/>
+  <alphabet
+      name="w2b"/>
+  <tripleRules>
+    <source
+        id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="p0">
+          <label
+              name="Program"/>
+        </vertices>
+        <vertices
+            id="A0">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="p0"
+            to="A0">
+          <label
+              name="first"/>
+        </edges>
+      </rhs>
+    </source>
+    <corr id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="p02g0">
+          <label
+              name="p2g"/>
+        </vertices>
+        <vertices
+            id="A02A0_">
+          <label
+              name="A"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r0"
+        name="r0">
+      <lhs name="S"/>
+      <rhs>
+        <vertices
+            id="g0">
+          <label
+              name="Graph"/>
+        </vertices>
+        <vertices
+            id="A0_">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="g0"
+            to="A0_">
+          <label
+              name="root"/>
+        </edges>
+      </rhs>
+    </target>
+    <ms key="p02g0"
+        value="p0"/>
+    <ms key="A02A0_"
+        value="A0"/>
+    <mt key="p02g0"
+        value="g0"/>
+    <mt key="A02A0_"
+        value="A0_"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r1"
+        name="r1">
+      <lhs name="A"/>
+      <rhs/>
+    </source>
+    <corr id="r1"
+        name="r1">
+      <lhs name="A"/>
+      <rhs/>
+    </corr>
+    <target
+        id="r1"
+        name="r1">
+      <lhs name="A"/>
+      <rhs/>
+    </target>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r2"
+        name="r2">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="a2">
+          <label
+              name="Assignment"/>
+        </vertices>
+        <vertices
+            id="A2">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="a2"
+            to="A2">
+          <label
+              name="next"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="a2">
+        <value>
+          <edgeLabel
+              name="first"/>
+          <vertexLabels
+              name="Program"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="next"/>
+          <vertexLabels
+              name="Decision"/>
+          <vertexLabels
+              name="Assignment"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="positive"/>
+          <vertexLabels
+              name="Decision"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r2"
+        name="r2">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="a22c2">
+          <label
+              name="a2c"/>
+        </vertices>
+        <vertices
+            id="A2A2_">
+          <label
+              name="A"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r2"
+        name="r2">
+      <lhs name="A"/>
+      <rhs>
+        <vertices
+            id="c2">
+          <label
+              name="Command"/>
+        </vertices>
+        <vertices
+            id="A2_">
+          <label
+              name="A"/>
+        </vertices>
+        <edges
+            from="c2"
+            to="A2_">
+          <label
+              name="next"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="c2">
+        <value>
+          <edgeLabel
+              name="root"/>
+          <vertexLabels
+              name="Graph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="next"/>
+          <vertexLabels
+              name="Command"/>
+          <vertexLabels
+              name="Branch"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="nodes"/>
+          <vertexLabels
+              name="Graph"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="a22c2"
+        value="a2"/>
+    <ms key="A2A2_"
+        value="A2"/>
+    <mt key="a22c2"
+        value="c2"/>
+    <mt key="A2A2_"
+        value="A2_"/>
+  </tripleRules>
+</org.wbsilva.bence.graphgrammar:TripleGrammar>
