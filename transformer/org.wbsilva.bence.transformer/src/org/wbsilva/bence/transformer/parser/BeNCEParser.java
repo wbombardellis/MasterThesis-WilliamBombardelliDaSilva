@@ -115,27 +115,31 @@ public class BeNCEParser {
 						
 							synchronized(this.parsingForest) {
 								//Possible derivation step found
-								this.bup.add(lhs);
+								final boolean added = this.bup.add(lhs);
 								
-								logger.debug(String.format("Can reduce. Derivation step %s, %s", newDS.getRule().getId(), newDS.getVertex().getId()));
+								if (added) {
+									logger.debug(String.format("Can reduce. Derivation step %s, %s", newDS.getRule().getId(), newDS.getVertex().getId()));
+									
+									//Construct parsing tree bottom-up 
+									final ParsingTree parsingTreeNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
+									parsingTreeNode.setZoneVertex(lhs);
+									parsingTreeNode.setDerivationStep(newDS);
 								
-								//Construct parsing tree bottom-up 
-								final ParsingTree parsingTreeNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
-								parsingTreeNode.setZoneVertex(lhs);
-								parsingTreeNode.setDerivationStep(newDS);
-							
-								parsingTreeNode.getChildren().addAll(EcoreUtil.copyAll(this.parsingForest.stream()
-										.filter(pt -> handle.contains(pt.getZoneVertex()))
-										.collect(Collectors.toSet())));
-								assert parsingTreeNode.getChildren().size() == rhs.getVertices().size();
+									parsingTreeNode.getChildren().addAll(EcoreUtil.copyAll(this.parsingForest.stream()
+											.filter(pt -> handle.contains(pt.getZoneVertex()))
+											.collect(Collectors.toSet())));
+									assert parsingTreeNode.getChildren().size() == rhs.getVertices().size();
+									
+									this.parsingForest.add(parsingTreeNode);
 								
-								this.parsingForest.add(parsingTreeNode);
-							
-								logger.debug(String.format("Adding to the parsing forest the parsing tree %s => [%s]", parsingTreeNode.getZoneVertex().getId(),
-									parsingTreeNode.getChildren().stream()
-										.map(pt -> pt.getZoneVertex().getId())
-										.reduce((a,b) -> a.concat(", ").concat(b))
-										.orElse("")));
+									logger.debug(String.format("Adding to the parsing forest the parsing tree %s => [%s]", parsingTreeNode.getZoneVertex().getId(),
+										parsingTreeNode.getChildren().stream()
+											.map(pt -> pt.getZoneVertex().getId())
+											.reduce((a,b) -> a.concat(", ").concat(b))
+											.orElse("")));
+								} else {
+									logger.debug(String.format("Can reduce but cannot add to Bup. LHS %s, %s", lhs.getLabel(), lhs.getId()));
+								}
 							}
 						} else {
 							logger.debug(String.format("Could reduce, but derivation step %s, %s is not neighborhood preserving", newDS.getRule().getName(), newDS.getVertex().getId()));
