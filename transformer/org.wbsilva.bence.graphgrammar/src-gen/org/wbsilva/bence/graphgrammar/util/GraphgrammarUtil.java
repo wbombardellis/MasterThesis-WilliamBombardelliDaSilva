@@ -28,6 +28,7 @@ import org.wbsilva.bence.graphgrammar.TripleGrammar;
 import org.wbsilva.bence.graphgrammar.TripleGraph;
 import org.wbsilva.bence.graphgrammar.TripleRule;
 import org.wbsilva.bence.graphgrammar.Vertex;
+import org.wbsilva.bence.graphgrammar.ZoneVertex;
 
 /**
  * Utilities for the graph grammar metamodel
@@ -548,6 +549,23 @@ public class GraphgrammarUtil {
 		
 		if (derivation.getSteps().stream().anyMatch(dS -> !GraphgrammarUtil.isValidDerivationStep(dS)))
 			return false;
+		
+		for (int i = 0; i < derivation.getSteps().size() - 1; i++) {
+			DerivationStep dStep = derivation.getSteps().get(i);
+			
+			//Get empty zone vertices's ids (they correspond to application of empty productions)
+			final Set<String> emptyZVs = dStep.getNext().getVertices().stream()
+				.filter(v -> v instanceof ZoneVertex)
+				.filter(zv -> ((ZoneVertex)zv).getVertices().isEmpty())
+				.map(zv -> zv.getId())
+				.collect(Collectors.toSet());
+			
+			//If this derivation step has empty zone vertices, they have to be solved in the next derivation steps
+			if (!emptyZVs.isEmpty()) {
+				if (!emptyZVs.contains(derivation.getSteps().get(i+1).getVertex().getId()))
+					return false;
+			}
+		}
 		
 		return true;
 	}

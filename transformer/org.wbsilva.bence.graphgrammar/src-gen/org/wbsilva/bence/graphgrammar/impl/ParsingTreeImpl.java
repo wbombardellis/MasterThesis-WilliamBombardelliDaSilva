@@ -4,6 +4,7 @@ package org.wbsilva.bence.graphgrammar.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -44,6 +45,35 @@ import org.wbsilva.bence.graphgrammar.ZoneVertex;
  * @generated
  */
 public class ParsingTreeImpl extends MinimalEObjectImpl.Container implements ParsingTree {
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * This is a comparator of {@link ParsingTree}'s, in which PT's whose zone vertex has
+	 * lesser vertices are smaller than PT's whose zone vertex has more vertices
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	private static final Comparator<ParsingTree> PTZV_COMPARATOR = new Comparator<ParsingTree>() {
+
+		/**
+		 * This method imposes a total order on the universe of parsing trees.
+		 * Semi formally the order is defined as follows
+		 * a < b iff a.zoneVertices.vertices.size < b.zoneVertices.vertices.size
+		 * a = b iff a.zoneVertices.vertices.size = b.zoneVertices.vertices.size
+		 * a > b iff a.zoneVertices.vertices.size > b.zoneVertices.vertices.size
+		 */
+		@Override
+		public int compare(final ParsingTree a, final ParsingTree b) {
+			assert a != null;
+			assert b != null;
+			
+			final int aSize = a.getZoneVertex().getVertices().size();
+			final int bSize = b.getZoneVertex().getVertices().size();
+			
+			return aSize < bSize ? -1 : aSize == bSize ? 0 : 1;
+		}
+	};
+
 	/**
 	 * The cached value of the '{@link #getZoneVertex() <em>Zone Vertex</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -218,8 +248,15 @@ public class ParsingTreeImpl extends MinimalEObjectImpl.Container implements Par
 			final Derivation derivation = GraphgrammarFactory.eINSTANCE.createDerivation();
 
 			derivation.getSteps().add(EcoreUtil.copy(this.getDerivationStep()));
-			derivation.getSteps().addAll(this.getChildren().stream().map(pt -> pt.derivation()).filter(d -> d != null)
-					.flatMap(d -> d.getSteps().stream()).collect(Collectors.toList()));
+			derivation.getSteps().addAll(this.getChildren().stream()
+					//Require parsing trees with empty zone vertices to come first
+					.sorted(PTZV_COMPARATOR)
+					//Get each pt derivation
+					.map(pt -> pt.derivation())
+					.filter(d -> d != null)
+					//Flatten
+					.flatMap(d -> d.getSteps().stream())
+					.collect(Collectors.toList()));
 
 			return derivation;
 		} else {
