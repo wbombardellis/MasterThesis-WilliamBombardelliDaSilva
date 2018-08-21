@@ -501,7 +501,7 @@
     </source>
     <corr id="r5"
         name="r5">
-      <lhs/>
+      <lhs name="A"/>
       <rhs>
         <vertices
             id="n52xn5">
@@ -603,7 +603,7 @@
     </source>
     <corr id="r6"
         name="r6">
-      <lhs/>
+      <lhs name="A"/>
       <rhs>
         <vertices
             id="n62xn6">
