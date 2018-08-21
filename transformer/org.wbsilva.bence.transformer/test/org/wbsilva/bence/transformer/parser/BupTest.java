@@ -235,5 +235,19 @@ class BupTest {
 		bup.next();
 		assertFalse(bup.next().isPresent());
 	}
+	
+	@Test
+	void testIsParsedTrue() {
+		Bup bup = new Bup(set0, 1, zv1);
+		bup.add(zv1);
+		assertTrue(bup.isParsed());
+	}
+	
+	@Test
+	void testIsParsedFalse() {
+		Bup bup = new Bup(set0, 1, zv1);
+		bup.add(zv2);
+		assertFalse(bup.isParsed());
+	}
 
 }
