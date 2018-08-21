@@ -1,18 +1,14 @@
 package org.wbsilva.bence.graphgrammar.util;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.wbsilva.bence.graphgrammar.Derivation;
@@ -23,7 +19,6 @@ import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
-import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
 import org.wbsilva.bence.graphgrammar.TripleGraph;
 import org.wbsilva.bence.graphgrammar.TripleRule;
@@ -183,15 +178,15 @@ public class GraphgrammarUtil {
 		if (grammar == null)
 			return false;
 		
-		EList<Symbol> ab = grammar.getAlphabet();
+		List<Symbol> ab = grammar.getAlphabet();
 		if (ab == null || ab.isEmpty())
 			return false;
 		
-		EList<Symbol> n = grammar.getNonterminals();
+		List<Symbol> n = grammar.getNonterminals();
 		if (n == null || n.isEmpty())
 			return false;
 		
-		EList<Symbol> t = grammar.getTerminals();
+		List<Symbol> t = grammar.getTerminals();
 		if (t == null)
 			return false;
 		
@@ -209,7 +204,7 @@ public class GraphgrammarUtil {
 								  || l.getSuperscript().stream().anyMatch(s -> !contains(t, s))))
 			return false;
 		
-		EList<Rule> r = grammar.getRules();
+		List<Rule> r = grammar.getRules();
 		if (r == null)
 			return false;
 		
@@ -255,7 +250,7 @@ public class GraphgrammarUtil {
 	 * @param rule			The rule to test		
 	 * @return				True iff {@code rule} is valid
 	 */
-	public static boolean isValidRule(final EList<Symbol> alphabet, final Rule rule) {
+	public static boolean isValidRule(final List<Symbol> alphabet, final Rule rule) {
 		if (rule.getId() == null)
 			return false;
 		if (rule.getLhs() == null || rule.getRhs() == null || !isValidGraph(rule.getRhs()))
@@ -292,7 +287,7 @@ public class GraphgrammarUtil {
 	 * @param symbol	Symbol to test
 	 * @return			True iff {@code symbol} is in the {@code alphabet}
 	 */
-	private static boolean inAlphabet(final EList<Symbol> alphabet, final Symbol symbol) {
+	private static boolean inAlphabet(final List<Symbol> alphabet, final Symbol symbol) {
 		return alphabet.stream().anyMatch(s -> symbol == null ? s == null : symbol.equivalates(s));
 	}
 
@@ -302,7 +297,7 @@ public class GraphgrammarUtil {
 	 * @param symbols	Symbols to test
 	 * @return			True iff all {@code symbols} are in the {@code alphabet}
 	 */
-	private static boolean inAlphabet(final EList<Symbol> alphabet, final EList<Symbol> symbols) {
+	private static boolean inAlphabet(final List<Symbol> alphabet, final List<Symbol> symbols) {
 		return symbols.stream().allMatch(s -> inAlphabet(alphabet, s));
 	}
 
@@ -370,15 +365,15 @@ public class GraphgrammarUtil {
 		if (tripleGrammar == null)
 			return false;
 		
-		EList<Symbol> ab = tripleGrammar.getAlphabet();
+		List<Symbol> ab = tripleGrammar.getAlphabet();
 		if (ab == null || ab.isEmpty())
 			return false;
 		
-		EList<Symbol> n = tripleGrammar.getNonterminals();
+		List<Symbol> n = tripleGrammar.getNonterminals();
 		if (n == null || n.isEmpty())
 			return false;
 		
-		EList<Symbol> t = tripleGrammar.getTerminals();
+		List<Symbol> t = tripleGrammar.getTerminals();
 		if (t == null)
 			return false;
 		
@@ -389,8 +384,8 @@ public class GraphgrammarUtil {
 		if (ini == null || ini.getName() == null || ini.getName().isEmpty() || !n.contains(ini))
 			return false;
 		
-		EList<TripleRule> r = tripleGrammar.getTripleRules();
-		if (r == null || r.stream().anyMatch(rr -> !isValidTripleRule(ab, rr)))
+		List<TripleRule> r = tripleGrammar.getTripleRules();
+		if (r == null || r.stream().anyMatch(rr -> !isValidTripleRule(ab, n, rr)))
 			return false;
 		
 		if (!r.isEmpty() && !r.stream().anyMatch(rr -> rr.getSource().getLhs().equivalates(tripleGrammar.getInitial())
@@ -404,14 +399,20 @@ public class GraphgrammarUtil {
 	/**
 	 * Checks if a triple grammar rule is concise
 	 * @param ab				The alphabet of the grammar
+	 * @param nt				The non terminal symbols of the grammar
 	 * @param rr				The triple rule to test
 	 * @return					True iff {@code rr} is valid
 	 */
-	private static boolean isValidTripleRule(final EList<Symbol> ab, final TripleRule rr) {
+	private static boolean isValidTripleRule(final List<Symbol> ab, final List<Symbol> nt, final TripleRule rr) {
 		if (!isValidRule(ab, rr.getSource()) || !isValidRule(ab, rr.getCorr()) || !isValidRule(ab, rr.getTarget()))
 			return false;
 		
 		if (!rr.getSource().getId().equals(rr.getTarget().getId()))
+			return false;
+		
+		//LHS names' must be equals, but sup and superscripts can be ignored
+		if (! (rr.getSource().getLhs().getName().equals(rr.getCorr().getLhs().getName()) 
+				&& rr.getCorr().getLhs().getName().equals(rr.getTarget().getLhs().getName())))
 			return false;
 		
 		if (!isTotal(rr.getCorr().getRhs().getVertices(), rr.getMs()) ||
@@ -422,6 +423,25 @@ public class GraphgrammarUtil {
 			!isSurjective(rr.getTarget().getRhs().getVertices(), rr.getMt()))
 				return false;
 		
+		if (!isNonTerminalConsistent(nt, rr))
+			return false;
+		
+		return true;
+	}
+
+	/**
+	 * Checks if the triple rule {@code rr} is non-terminal consistent (NTC), supposing {@code rr} has bijective mappings 
+	 * @param nt				The non terminal symbols of the grammar
+	 * @param rr				The triple rule to test
+	 * @return					True iff {@code rr} is NTC
+	 */
+	private static boolean isNonTerminalConsistent(final List<Symbol> nt, final TripleRule rr) {
+		//If any mapping to a non-terminal has different names, then it is not NTC 
+		if (rr.getCorr().getRhs().getVertices().stream()
+				.anyMatch(c -> (contains(nt, rr.getMs().get(c).getLabel()) && !rr.getMs().get(c).getLabel().getName().equals(c.getLabel().getName())) 
+							|| (contains(nt, rr.getMt().get(c).getLabel()) && !rr.getMt().get(c).getLabel().getName().equals(c.getLabel().getName()))))
+			return false;
+		
 		return true;
 	}
 
@@ -431,7 +451,7 @@ public class GraphgrammarUtil {
 	 * @param map				The function
 	 * @return					True iff {@code map} is surjective
 	 */
-	private static boolean isSurjective(final EList<Vertex> counterDomain, final EMap<Vertex, Vertex> map) {
+	private static boolean isSurjective(final List<Vertex> counterDomain, final EMap<Vertex, Vertex> map) {
 		return counterDomain.stream().anyMatch(cd -> !map.containsValue(cd)) ? false : true;
 	}
 
@@ -441,7 +461,7 @@ public class GraphgrammarUtil {
 	 * @param map				The function
 	 * @return					True iff {@code map} is total
 	 */
-	private static boolean isTotal(final EList<Vertex> domain, final EMap<Vertex, Vertex> map) {
+	private static boolean isTotal(final List<Vertex> domain, final EMap<Vertex, Vertex> map) {
 		return domain.stream().anyMatch(d -> !map.containsKey(d)) ? false : true;
 	}
 
@@ -507,7 +527,7 @@ public class GraphgrammarUtil {
 	 * @param g				The G set used to check the boundaryness
 	 * @return				True iff {@code graph} is {@code g}-boundary
 	 */
-	public static boolean isBoundaryGraph(final Graph graph, final EList<Symbol> g) {
+	public static boolean isBoundaryGraph(final Graph graph, final List<Symbol> g) {
 		//if the graph has G-labeled vertices as neighbors
 		if(graph.getEdges().stream()
 				.anyMatch(e -> inAlphabet(g, e.getFrom().getLabel()) &&
