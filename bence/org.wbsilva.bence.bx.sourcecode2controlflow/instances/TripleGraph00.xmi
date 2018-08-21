@@ -2,67 +2,173 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar">
   <org.wbsilva.bence.graphgrammar:TripleGraph>
     <source>
-      <vertices id="_ibz1EKSTEeiGVoeS3RWdyg">
+      <vertices id="_F1PyIKU0EeiXE89G5usdug">
         <label name="Program"/>
       </vertices>
-      <vertices id="_ibz1EaSTEeiGVoeS3RWdyg">
-        <label name="Decision"/>
-      </vertices>
-      <vertices id="_ibz1EqSTEeiGVoeS3RWdyg">
+      <vertices id="_F1QZNaU0EeiXE89G5usdug">
         <label name="Assignment"/>
       </vertices>
-      <edges from="_ibz1EKSTEeiGVoeS3RWdyg" to="_ibz1EaSTEeiGVoeS3RWdyg">
+      <vertices id="_F1PyIaU0EeiXE89G5usdug">
+        <label name="While"/>
+      </vertices>
+      <vertices id="_F1QZNKU0EeiXE89G5usdug">
+        <label name="Assignment"/>
+      </vertices>
+      <vertices id="_F1QZMKU0EeiXE89G5usdug">
+        <label name="Decision"/>
+      </vertices>
+      <vertices id="_F1QZMaU0EeiXE89G5usdug">
+        <label name="Assignment"/>
+      </vertices>
+      <vertices id="_F1QZMqU0EeiXE89G5usdug">
+        <label name="Assignment"/>
+      </vertices>
+      <vertices id="_F1QZM6U0EeiXE89G5usdug">
+        <label name="Assignment"/>
+      </vertices>
+      <edges from="_F1PyIaU0EeiXE89G5usdug" to="_F1QZNaU0EeiXE89G5usdug">
+        <label name="last"/>
+      </edges>
+      <edges from="_F1PyIKU0EeiXE89G5usdug" to="_F1PyIaU0EeiXE89G5usdug">
         <label name="first"/>
       </edges>
-      <edges from="_ibz1EaSTEeiGVoeS3RWdyg" to="_ibz1EqSTEeiGVoeS3RWdyg">
+      <edges from="_F1QZNKU0EeiXE89G5usdug" to="_F1QZNaU0EeiXE89G5usdug">
         <label name="next"/>
+      </edges>
+      <edges from="_F1PyIaU0EeiXE89G5usdug" to="_F1QZNKU0EeiXE89G5usdug">
+        <label name="first"/>
+      </edges>
+      <edges from="_F1PyIaU0EeiXE89G5usdug" to="_F1QZMKU0EeiXE89G5usdug">
+        <label name="next"/>
+      </edges>
+      <edges from="_F1QZMKU0EeiXE89G5usdug" to="_F1QZMaU0EeiXE89G5usdug">
+        <label name="negative"/>
+      </edges>
+      <edges from="_F1QZMKU0EeiXE89G5usdug" to="_F1QZMqU0EeiXE89G5usdug">
+        <label name="next"/>
+      </edges>
+      <edges from="_F1QZMKU0EeiXE89G5usdug" to="_F1QZM6U0EeiXE89G5usdug">
+        <label name="positive"/>
       </edges>
     </source>
     <corr>
-      <vertices id="_ihJBAKSTEeiGVoeS3RWdyg">
+      <vertices id="_HMc1oaU0EeiXE89G5usdug">
         <label name="p2g"/>
       </vertices>
-      <vertices id="_ihWcYqSTEeiGVoeS3RWdyg">
+      <vertices id="_HMggAKU0EeiXE89G5usdug">
+        <label name="a2c"/>
+      </vertices>
+      <vertices id="_HMggAqU0EeiXE89G5usdug">
+        <label name="w2b"/>
+      </vertices>
+      <vertices id="_HMq4FKU0EeiXE89G5usdug">
+        <label name="a2c"/>
+      </vertices>
+      <vertices id="_HMza9qU0EeiXE89G5usdug">
         <label name="d2b"/>
       </vertices>
-      <vertices id="_ihipoaSTEeiGVoeS3RWdyg">
+      <vertices id="_HM2eQaU0EeiXE89G5usdug">
+        <label name="a2c"/>
+      </vertices>
+      <vertices id="_HM6vtKU0EeiXE89G5usdug">
+        <label name="a2c"/>
+      </vertices>
+      <vertices id="_HNAPRaU0EeiXE89G5usdug">
         <label name="a2c"/>
       </vertices>
     </corr>
     <target>
-      <vertices id="_ihIZ8aSTEeiGVoeS3RWdyg">
+      <vertices id="_HMcOkaU0EeiXE89G5usdug">
         <label name="Graph"/>
       </vertices>
-      <vertices id="_ihVORqSTEeiGVoeS3RWdyg">
-        <label name="Branch"/>
-      </vertices>
-      <vertices id="_ihiCk6STEeiGVoeS3RWdyg">
+      <vertices id="_HMf49aU0EeiXE89G5usdug">
         <label name="Command"/>
       </vertices>
-      <edges from="_ihIZ8aSTEeiGVoeS3RWdyg" to="_ihVORqSTEeiGVoeS3RWdyg">
-        <label name="root"/>
-      </edges>
-      <edges from="_ihVORqSTEeiGVoeS3RWdyg" to="_ihiCk6STEeiGVoeS3RWdyg">
+      <vertices id="_HMf49qU0EeiXE89G5usdug">
+        <label name="Branch"/>
+      </vertices>
+      <vertices id="_HMq4EqU0EeiXE89G5usdug">
+        <label name="Command"/>
+      </vertices>
+      <vertices id="_HMza8KU0EeiXE89G5usdug">
+        <label name="Branch"/>
+      </vertices>
+      <vertices id="_HM13MqU0EeiXE89G5usdug">
+        <label name="Command"/>
+      </vertices>
+      <vertices id="_HM6vsqU0EeiXE89G5usdug">
+        <label name="Command"/>
+      </vertices>
+      <vertices id="_HNAPQ6U0EeiXE89G5usdug">
+        <label name="Command"/>
+      </vertices>
+      <edges from="_HMf49aU0EeiXE89G5usdug" to="_HMf49qU0EeiXE89G5usdug">
         <label name="next"/>
       </edges>
+      <edges from="_HMcOkaU0EeiXE89G5usdug" to="_HMf49qU0EeiXE89G5usdug">
+        <label name="root"/>
+      </edges>
+      <edges from="_HMq4EqU0EeiXE89G5usdug" to="_HMf49aU0EeiXE89G5usdug">
+        <label name="next"/>
+      </edges>
+      <edges from="_HMf49qU0EeiXE89G5usdug" to="_HMq4EqU0EeiXE89G5usdug">
+        <label name="positive"/>
+      </edges>
+      <edges from="_HMf49qU0EeiXE89G5usdug" to="_HMza8KU0EeiXE89G5usdug">
+        <label name="negative"/>
+      </edges>
+      <edges from="_HMza8KU0EeiXE89G5usdug" to="_HM13MqU0EeiXE89G5usdug">
+        <label name="negative"/>
+      </edges>
+      <edges from="_HMza8KU0EeiXE89G5usdug" to="_HM6vsqU0EeiXE89G5usdug">
+        <label name="next"/>
+      </edges>
+      <edges from="_HMza8KU0EeiXE89G5usdug" to="_HNAPQ6U0EeiXE89G5usdug">
+        <label name="positive"/>
+      </edges>
     </target>
-    <ms key="_ihJBAKSTEeiGVoeS3RWdyg" value="_ibz1EKSTEeiGVoeS3RWdyg"/>
-    <ms key="_ihWcYqSTEeiGVoeS3RWdyg" value="_ibz1EaSTEeiGVoeS3RWdyg"/>
-    <ms key="_ihipoaSTEeiGVoeS3RWdyg" value="_ibz1EqSTEeiGVoeS3RWdyg"/>
-    <mt key="_ihJBAKSTEeiGVoeS3RWdyg" value="_ihIZ8aSTEeiGVoeS3RWdyg"/>
-    <mt key="_ihWcYqSTEeiGVoeS3RWdyg" value="_ihVORqSTEeiGVoeS3RWdyg"/>
-    <mt key="_ihipoaSTEeiGVoeS3RWdyg" value="_ihiCk6STEeiGVoeS3RWdyg"/>
+    <ms key="_HMc1oaU0EeiXE89G5usdug" value="_F1PyIKU0EeiXE89G5usdug"/>
+    <ms key="_HMggAqU0EeiXE89G5usdug" value="_F1PyIaU0EeiXE89G5usdug"/>
+    <ms key="_HMggAKU0EeiXE89G5usdug" value="_F1QZNaU0EeiXE89G5usdug"/>
+    <ms key="_HMq4FKU0EeiXE89G5usdug" value="_F1QZNKU0EeiXE89G5usdug"/>
+    <ms key="_HMza9qU0EeiXE89G5usdug" value="_F1QZMKU0EeiXE89G5usdug"/>
+    <ms key="_HM2eQaU0EeiXE89G5usdug" value="_F1QZMaU0EeiXE89G5usdug"/>
+    <ms key="_HM6vtKU0EeiXE89G5usdug" value="_F1QZMqU0EeiXE89G5usdug"/>
+    <ms key="_HNAPRaU0EeiXE89G5usdug" value="_F1QZM6U0EeiXE89G5usdug"/>
+    <mt key="_HMc1oaU0EeiXE89G5usdug" value="_HMcOkaU0EeiXE89G5usdug"/>
+    <mt key="_HMggAqU0EeiXE89G5usdug" value="_HMf49qU0EeiXE89G5usdug"/>
+    <mt key="_HMggAKU0EeiXE89G5usdug" value="_HMf49aU0EeiXE89G5usdug"/>
+    <mt key="_HMq4FKU0EeiXE89G5usdug" value="_HMq4EqU0EeiXE89G5usdug"/>
+    <mt key="_HMza9qU0EeiXE89G5usdug" value="_HMza8KU0EeiXE89G5usdug"/>
+    <mt key="_HM2eQaU0EeiXE89G5usdug" value="_HM13MqU0EeiXE89G5usdug"/>
+    <mt key="_HM6vtKU0EeiXE89G5usdug" value="_HM6vsqU0EeiXE89G5usdug"/>
+    <mt key="_HNAPRaU0EeiXE89G5usdug" value="_HNAPQ6U0EeiXE89G5usdug"/>
   </org.wbsilva.bence.graphgrammar:TripleGraph>
   <org.wbsilva.bence.graphgrammar:ParsingTree>
-    <zoneVertex id="_igbPUKSTEeiGVoeS3RWdyg">
+    <zoneVertex id="_HLWCYKU0EeiXE89G5usdug">
       <label name="S"/>
-      <vertices id="_iUVUEKSTEeiGVoeS3RWdyg">
+      <vertices id="_FtF7sKU0EeiXE89G5usdug">
         <label name="Program"/>
       </vertices>
-      <vertices id="_iUYXYKSTEeiGVoeS3RWdyg">
+      <vertices id="_FuXHAKU0EeiXE89G5usdug">
+        <label name="Assignment"/>
+      </vertices>
+      <vertices id="_FtOekKU0EeiXE89G5usdug">
         <label name="Decision"/>
       </vertices>
-      <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+      <vertices id="_FtN3gKU0EeiXE89G5usdug">
+        <label name="While"/>
+      </vertices>
+      <vertices id="_FtOekaU0EeiXE89G5usdug">
+        <label name="Assignment"/>
+      </vertices>
+      <vertices id="_FudNoKU0EeiXE89G5usdug">
+        <label name="Assignment"/>
+      </vertices>
+      <vertices id="_Fufp4KU0EeiXE89G5usdug">
+        <label name="Assignment"/>
+      </vertices>
+      <vertices id="_FufC0KU0EeiXE89G5usdug">
         <label name="Assignment"/>
       </vertices>
     </zoneVertex>
@@ -81,124 +187,166 @@
           </edges>
         </rhs>
       </rule>
-      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_igbPUKSTEeiGVoeS3RWdyg">
+      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_HLWCYKU0EeiXE89G5usdug">
         <label name="S"/>
-        <vertices id="_iUVUEKSTEeiGVoeS3RWdyg">
+        <vertices id="_FtF7sKU0EeiXE89G5usdug">
           <label name="Program"/>
         </vertices>
-        <vertices id="_iUYXYKSTEeiGVoeS3RWdyg">
+        <vertices id="_FuXHAKU0EeiXE89G5usdug">
+          <label name="Assignment"/>
+        </vertices>
+        <vertices id="_FtOekKU0EeiXE89G5usdug">
           <label name="Decision"/>
         </vertices>
-        <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+        <vertices id="_FtN3gKU0EeiXE89G5usdug">
+          <label name="While"/>
+        </vertices>
+        <vertices id="_FtOekaU0EeiXE89G5usdug">
+          <label name="Assignment"/>
+        </vertices>
+        <vertices id="_FudNoKU0EeiXE89G5usdug">
+          <label name="Assignment"/>
+        </vertices>
+        <vertices id="_Fufp4KU0EeiXE89G5usdug">
+          <label name="Assignment"/>
+        </vertices>
+        <vertices id="_FufC0KU0EeiXE89G5usdug">
           <label name="Assignment"/>
         </vertices>
       </vertex>
       <previous>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_igbPUKSTEeiGVoeS3RWdyg">
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_HLWCYKU0EeiXE89G5usdug">
           <label name="S"/>
-          <vertices id="_iUVUEKSTEeiGVoeS3RWdyg">
+          <vertices id="_FtF7sKU0EeiXE89G5usdug">
             <label name="Program"/>
           </vertices>
-          <vertices id="_iUYXYKSTEeiGVoeS3RWdyg">
+          <vertices id="_FuXHAKU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FtOekKU0EeiXE89G5usdug">
             <label name="Decision"/>
           </vertices>
-          <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+          <vertices id="_FtN3gKU0EeiXE89G5usdug">
+            <label name="While"/>
+          </vertices>
+          <vertices id="_FtOekaU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FudNoKU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_Fufp4KU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FufC0KU0EeiXE89G5usdug">
             <label name="Assignment"/>
           </vertices>
         </vertices>
       </previous>
       <next>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_igMl0KSTEeiGVoeS3RWdyg">
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_HK2TIaU0EeiXE89G5usdug">
           <label name="A"/>
-          <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+          <vertices id="_Fufp4KU0EeiXE89G5usdug">
             <label name="Assignment"/>
           </vertices>
-          <vertices id="_iUYXYKSTEeiGVoeS3RWdyg">
+          <vertices id="_FtOekaU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FudNoKU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FtOekKU0EeiXE89G5usdug">
             <label name="Decision"/>
           </vertices>
+          <vertices id="_FuXHAKU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FufC0KU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FtN3gKU0EeiXE89G5usdug">
+            <label name="While"/>
+          </vertices>
         </vertices>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_ibz1EKSTEeiGVoeS3RWdyg">
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1PyIKU0EeiXE89G5usdug">
           <label name="Program"/>
-          <vertices id="_iUVUEKSTEeiGVoeS3RWdyg">
+          <vertices id="_FtF7sKU0EeiXE89G5usdug">
             <label name="Program"/>
           </vertices>
         </vertices>
-        <edges from="_ibz1EKSTEeiGVoeS3RWdyg" to="_igMl0KSTEeiGVoeS3RWdyg">
+        <edges from="_F1PyIKU0EeiXE89G5usdug" to="_HK2TIaU0EeiXE89G5usdug">
           <label name="first"/>
         </edges>
       </next>
-      <unifier key="p0" value="_ibz1EKSTEeiGVoeS3RWdyg"/>
-      <unifier key="A0" value="_igMl0KSTEeiGVoeS3RWdyg"/>
+      <unifier key="p0" value="_F1PyIKU0EeiXE89G5usdug"/>
+      <unifier key="A0" value="_HK2TIaU0EeiXE89G5usdug"/>
     </derivationStep>
     <children>
-      <zoneVertex id="_ibz1EKSTEeiGVoeS3RWdyg">
+      <zoneVertex id="_F1PyIKU0EeiXE89G5usdug">
         <label name="Program"/>
-        <vertices id="_iUVUEKSTEeiGVoeS3RWdyg">
+        <vertices id="_FtF7sKU0EeiXE89G5usdug">
           <label name="Program"/>
         </vertices>
       </zoneVertex>
     </children>
     <children>
-      <zoneVertex id="_igMl0KSTEeiGVoeS3RWdyg">
+      <zoneVertex id="_HK2TIaU0EeiXE89G5usdug">
         <label name="A"/>
-        <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+        <vertices id="_Fufp4KU0EeiXE89G5usdug">
           <label name="Assignment"/>
         </vertices>
-        <vertices id="_iUYXYKSTEeiGVoeS3RWdyg">
+        <vertices id="_FtOekaU0EeiXE89G5usdug">
+          <label name="Assignment"/>
+        </vertices>
+        <vertices id="_FudNoKU0EeiXE89G5usdug">
+          <label name="Assignment"/>
+        </vertices>
+        <vertices id="_FtOekKU0EeiXE89G5usdug">
           <label name="Decision"/>
+        </vertices>
+        <vertices id="_FuXHAKU0EeiXE89G5usdug">
+          <label name="Assignment"/>
+        </vertices>
+        <vertices id="_FufC0KU0EeiXE89G5usdug">
+          <label name="Assignment"/>
+        </vertices>
+        <vertices id="_FtN3gKU0EeiXE89G5usdug">
+          <label name="While"/>
         </vertices>
       </zoneVertex>
       <derivationStep>
-        <rule id="r3____iX0s8KSTEeiGVoeS3RWdyg____iYdmIKSTEeiGVoeS3RWdyg" name="r3">
+        <rule id="r6" name="r6">
           <lhs name="A"/>
           <rhs>
-            <vertices id="_iYc_EKSTEeiGVoeS3RWdyg">
-              <label name="Decision"/>
+            <vertices id="w6">
+              <label name="While"/>
             </vertices>
-            <vertices id="_iYc_EaSTEeiGVoeS3RWdyg">
-              <label name="A">
-                <subscript>Decision</subscript>
-                <subscript>Program</subscript>
-                <subscript>Assignment</subscript>
-                <subscript>Decision</subscript>
-                <subscript>Decision</subscript>
-                <superscript>positive</superscript>
-                <superscript>first</superscript>
-                <superscript>next</superscript>
-                <superscript>next</superscript>
-                <superscript>negative</superscript>
-              </label>
-            </vertices>
-            <vertices id="_iYc_EqSTEeiGVoeS3RWdyg">
-              <label name="A">
-                <subscript>Decision</subscript>
-                <subscript>Program</subscript>
-                <subscript>Assignment</subscript>
-                <subscript>Decision</subscript>
-                <subscript>Decision</subscript>
-                <superscript>positive</superscript>
-                <superscript>first</superscript>
-                <superscript>next</superscript>
-                <superscript>next</superscript>
-                <superscript>negative</superscript>
-              </label>
-            </vertices>
-            <vertices id="_iYc_E6STEeiGVoeS3RWdyg">
+            <vertices id="fA6">
               <label name="A"/>
             </vertices>
-            <edges from="_iYc_EKSTEeiGVoeS3RWdyg" to="_iYc_E6STEeiGVoeS3RWdyg">
+            <vertices id="a6">
+              <label name="Assignment"/>
+            </vertices>
+            <vertices id="xA6">
+              <label name="A"/>
+            </vertices>
+            <edges from="w6" to="fA6">
+              <label name="first"/>
+            </edges>
+            <edges from="fA6" to="a6">
+              <label name="next"/>
+            </edges>
+            <edges from="w6" to="a6">
+              <label name="last"/>
+            </edges>
+            <edges from="w6" to="xA6">
               <label name="next"/>
             </edges>
           </rhs>
-          <embedding key="_iYc_EKSTEeiGVoeS3RWdyg">
+          <embedding key="w6">
             <value>
               <edgeLabel name="first"/>
               <vertexLabels name="Program"/>
-            </value>
-            <value>
-              <edgeLabel name="next"/>
-              <vertexLabels name="Assignment"/>
-              <vertexLabels name="Decision"/>
               <vertexLabels name="While"/>
             </value>
             <value>
@@ -209,265 +357,188 @@
               <edgeLabel name="negative"/>
               <vertexLabels name="Decision"/>
             </value>
+            <value>
+              <edgeLabel name="next"/>
+              <vertexLabels name="Assignment"/>
+              <vertexLabels name="Decision"/>
+              <vertexLabels name="While"/>
+            </value>
           </embedding>
         </rule>
-        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_igMl0KSTEeiGVoeS3RWdyg">
+        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_HK2TIaU0EeiXE89G5usdug">
           <label name="A"/>
-          <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+          <vertices id="_Fufp4KU0EeiXE89G5usdug">
             <label name="Assignment"/>
           </vertices>
-          <vertices id="_iUYXYKSTEeiGVoeS3RWdyg">
+          <vertices id="_FtOekaU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FudNoKU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FtOekKU0EeiXE89G5usdug">
             <label name="Decision"/>
+          </vertices>
+          <vertices id="_FuXHAKU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FufC0KU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FtN3gKU0EeiXE89G5usdug">
+            <label name="While"/>
           </vertices>
         </vertex>
         <previous>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_igMl0KSTEeiGVoeS3RWdyg">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_HK2TIaU0EeiXE89G5usdug">
             <label name="A"/>
-            <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+            <vertices id="_Fufp4KU0EeiXE89G5usdug">
               <label name="Assignment"/>
             </vertices>
-            <vertices id="_iUYXYKSTEeiGVoeS3RWdyg">
+            <vertices id="_FtOekaU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+            <vertices id="_FudNoKU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+            <vertices id="_FtOekKU0EeiXE89G5usdug">
               <label name="Decision"/>
             </vertices>
+            <vertices id="_FuXHAKU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+            <vertices id="_FufC0KU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+            <vertices id="_FtN3gKU0EeiXE89G5usdug">
+              <label name="While"/>
+            </vertices>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_igNM4KSTEeiGVoeS3RWdyg">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_HK26MqU0EeiXE89G5usdug">
             <label name="Program"/>
-            <vertices id="_iUVUEKSTEeiGVoeS3RWdyg">
+            <vertices id="_FtF7sKU0EeiXE89G5usdug">
               <label name="Program"/>
             </vertices>
           </vertices>
-          <edges from="_igNM4KSTEeiGVoeS3RWdyg" to="_igMl0KSTEeiGVoeS3RWdyg">
+          <edges from="_HK26MqU0EeiXE89G5usdug" to="_HK2TIaU0EeiXE89G5usdug">
             <label name="first"/>
           </edges>
         </previous>
         <next>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_if6R8KSTEeiGVoeS3RWdyg">
-            <label name="A">
-              <subscript>Decision</subscript>
-              <subscript>Program</subscript>
-              <subscript>Assignment</subscript>
-              <subscript>Decision</subscript>
-              <subscript>Decision</subscript>
-              <superscript>positive</superscript>
-              <superscript>first</superscript>
-              <superscript>next</superscript>
-              <superscript>next</superscript>
-              <superscript>negative</superscript>
-            </label>
-          </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_icyFcKSTEeiGVoeS3RWdyg">
-            <label name="A">
-              <subscript>Decision</subscript>
-              <subscript>Program</subscript>
-              <subscript>Assignment</subscript>
-              <subscript>Decision</subscript>
-              <subscript>Decision</subscript>
-              <superscript>positive</superscript>
-              <superscript>first</superscript>
-              <superscript>next</superscript>
-              <superscript>next</superscript>
-              <superscript>negative</superscript>
-            </label>
-          </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_id-_UKSTEeiGVoeS3RWdyg">
-            <label name="A"/>
-            <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1QZNaU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+            <vertices id="_Fufp4KU0EeiXE89G5usdug">
               <label name="Assignment"/>
             </vertices>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_ibz1EaSTEeiGVoeS3RWdyg">
-            <label name="Decision"/>
-            <vertices id="_iUYXYKSTEeiGVoeS3RWdyg">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_GAfY0KU0EeiXE89G5usdug">
+            <label name="A"/>
+            <vertices id="_FudNoKU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+            <vertices id="_FtOekaU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+            <vertices id="_FtOekKU0EeiXE89G5usdug">
               <label name="Decision"/>
             </vertices>
+            <vertices id="_FuXHAKU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_igKJkKSTEeiGVoeS3RWdyg">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1PyIaU0EeiXE89G5usdug">
+            <label name="While"/>
+            <vertices id="_FtN3gKU0EeiXE89G5usdug">
+              <label name="While"/>
+            </vertices>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F_DOYKU0EeiXE89G5usdug">
+            <label name="A"/>
+            <vertices id="_FufC0KU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_HKyow6U0EeiXE89G5usdug">
             <label name="Program"/>
-            <vertices id="_iUVUEKSTEeiGVoeS3RWdyg">
+            <vertices id="_FtF7sKU0EeiXE89G5usdug">
               <label name="Program"/>
             </vertices>
           </vertices>
-          <edges from="_ibz1EaSTEeiGVoeS3RWdyg" to="_id-_UKSTEeiGVoeS3RWdyg">
+          <edges from="_F1PyIaU0EeiXE89G5usdug" to="_F1QZNaU0EeiXE89G5usdug">
+            <label name="last"/>
+          </edges>
+          <edges from="_F1PyIaU0EeiXE89G5usdug" to="_F_DOYKU0EeiXE89G5usdug">
+            <label name="first"/>
+          </edges>
+          <edges from="_F1PyIaU0EeiXE89G5usdug" to="_GAfY0KU0EeiXE89G5usdug">
             <label name="next"/>
           </edges>
-          <edges from="_igKJkKSTEeiGVoeS3RWdyg" to="_ibz1EaSTEeiGVoeS3RWdyg">
+          <edges from="_F_DOYKU0EeiXE89G5usdug" to="_F1QZNaU0EeiXE89G5usdug">
+            <label name="next"/>
+          </edges>
+          <edges from="_HKyow6U0EeiXE89G5usdug" to="_F1PyIaU0EeiXE89G5usdug">
             <label name="first"/>
           </edges>
         </next>
-        <unifier key="_iYc_EKSTEeiGVoeS3RWdyg" value="_ibz1EaSTEeiGVoeS3RWdyg"/>
-        <unifier key="_iYc_EaSTEeiGVoeS3RWdyg" value="_icyFcKSTEeiGVoeS3RWdyg"/>
-        <unifier key="_iYc_EqSTEeiGVoeS3RWdyg" value="_if6R8KSTEeiGVoeS3RWdyg"/>
-        <unifier key="_iYc_E6STEeiGVoeS3RWdyg" value="_id-_UKSTEeiGVoeS3RWdyg"/>
+        <unifier key="w6" value="_F1PyIaU0EeiXE89G5usdug"/>
+        <unifier key="fA6" value="_F_DOYKU0EeiXE89G5usdug"/>
+        <unifier key="a6" value="_F1QZNaU0EeiXE89G5usdug"/>
+        <unifier key="xA6" value="_GAfY0KU0EeiXE89G5usdug"/>
       </derivationStep>
       <children>
-        <zoneVertex id="_icyFcKSTEeiGVoeS3RWdyg">
-          <label name="A">
-            <subscript>Decision</subscript>
-            <subscript>Program</subscript>
-            <subscript>Assignment</subscript>
-            <subscript>Decision</subscript>
-            <subscript>Decision</subscript>
-            <superscript>positive</superscript>
-            <superscript>first</superscript>
-            <superscript>next</superscript>
-            <superscript>next</superscript>
-            <superscript>negative</superscript>
-          </label>
-        </zoneVertex>
-        <derivationStep>
-          <rule id="r1___(A^{positive, first, next, next, negative}_{Decision, Program, Assignment, Decision, Decision})" name="r1">
-            <lhs name="A">
-              <subscript>Decision</subscript>
-              <subscript>Program</subscript>
-              <subscript>Assignment</subscript>
-              <subscript>Decision</subscript>
-              <subscript>Decision</subscript>
-              <superscript>positive</superscript>
-              <superscript>first</superscript>
-              <superscript>next</superscript>
-              <superscript>next</superscript>
-              <superscript>negative</superscript>
-            </lhs>
-            <rhs/>
-          </rule>
-          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_icyFcKSTEeiGVoeS3RWdyg">
-            <label name="A">
-              <subscript>Decision</subscript>
-              <subscript>Program</subscript>
-              <subscript>Assignment</subscript>
-              <subscript>Decision</subscript>
-              <subscript>Decision</subscript>
-              <superscript>positive</superscript>
-              <superscript>first</superscript>
-              <superscript>next</superscript>
-              <superscript>next</superscript>
-              <superscript>negative</superscript>
-            </label>
-          </vertex>
-          <previous>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_icyFcKSTEeiGVoeS3RWdyg">
-              <label name="A">
-                <subscript>Decision</subscript>
-                <subscript>Program</subscript>
-                <subscript>Assignment</subscript>
-                <subscript>Decision</subscript>
-                <subscript>Decision</subscript>
-                <superscript>positive</superscript>
-                <superscript>first</superscript>
-                <superscript>next</superscript>
-                <superscript>next</superscript>
-                <superscript>negative</superscript>
-              </label>
-            </vertices>
-          </previous>
-          <next/>
-        </derivationStep>
-      </children>
-      <children>
-        <zoneVertex id="_if6R8KSTEeiGVoeS3RWdyg">
-          <label name="A">
-            <subscript>Decision</subscript>
-            <subscript>Program</subscript>
-            <subscript>Assignment</subscript>
-            <subscript>Decision</subscript>
-            <subscript>Decision</subscript>
-            <superscript>positive</superscript>
-            <superscript>first</superscript>
-            <superscript>next</superscript>
-            <superscript>next</superscript>
-            <superscript>negative</superscript>
-          </label>
-        </zoneVertex>
-        <derivationStep>
-          <rule id="r1___(A^{positive, first, next, next, negative}_{Decision, Program, Assignment, Decision, Decision})" name="r1">
-            <lhs name="A">
-              <subscript>Decision</subscript>
-              <subscript>Program</subscript>
-              <subscript>Assignment</subscript>
-              <subscript>Decision</subscript>
-              <subscript>Decision</subscript>
-              <superscript>positive</superscript>
-              <superscript>first</superscript>
-              <superscript>next</superscript>
-              <superscript>next</superscript>
-              <superscript>negative</superscript>
-            </lhs>
-            <rhs/>
-          </rule>
-          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_if6R8KSTEeiGVoeS3RWdyg">
-            <label name="A">
-              <subscript>Decision</subscript>
-              <subscript>Program</subscript>
-              <subscript>Assignment</subscript>
-              <subscript>Decision</subscript>
-              <subscript>Decision</subscript>
-              <superscript>positive</superscript>
-              <superscript>first</superscript>
-              <superscript>next</superscript>
-              <superscript>next</superscript>
-              <superscript>negative</superscript>
-            </label>
-          </vertex>
-          <previous>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_if6R8KSTEeiGVoeS3RWdyg">
-              <label name="A">
-                <subscript>Decision</subscript>
-                <subscript>Program</subscript>
-                <subscript>Assignment</subscript>
-                <subscript>Decision</subscript>
-                <subscript>Decision</subscript>
-                <superscript>positive</superscript>
-                <superscript>first</superscript>
-                <superscript>next</superscript>
-                <superscript>next</superscript>
-                <superscript>negative</superscript>
-              </label>
-            </vertices>
-          </previous>
-          <next/>
-        </derivationStep>
-      </children>
-      <children>
-        <zoneVertex id="_ibz1EaSTEeiGVoeS3RWdyg">
-          <label name="Decision"/>
-          <vertices id="_iUYXYKSTEeiGVoeS3RWdyg">
-            <label name="Decision"/>
+        <zoneVertex id="_F1PyIaU0EeiXE89G5usdug">
+          <label name="While"/>
+          <vertices id="_FtN3gKU0EeiXE89G5usdug">
+            <label name="While"/>
           </vertices>
         </zoneVertex>
       </children>
       <children>
-        <zoneVertex id="_id-_UKSTEeiGVoeS3RWdyg">
+        <zoneVertex id="_F1QZNaU0EeiXE89G5usdug">
+          <label name="Assignment"/>
+          <vertices id="_Fufp4KU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+        </zoneVertex>
+      </children>
+      <children>
+        <zoneVertex id="_F_DOYKU0EeiXE89G5usdug">
           <label name="A"/>
-          <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+          <vertices id="_FufC0KU0EeiXE89G5usdug">
             <label name="Assignment"/>
           </vertices>
         </zoneVertex>
         <derivationStep>
-          <rule id="r2____iXwbgKSTEeiGVoeS3RWdyg" name="r2">
+          <rule id="r2____FxNmsqU0EeiXE89G5usdug" name="r2">
             <lhs name="A"/>
             <rhs>
-              <vertices id="_iXv0cKSTEeiGVoeS3RWdyg">
+              <vertices id="_FxNmsKU0EeiXE89G5usdug">
                 <label name="Assignment"/>
               </vertices>
-              <vertices id="_iXv0caSTEeiGVoeS3RWdyg">
+              <vertices id="_FxNmsaU0EeiXE89G5usdug">
                 <label name="A">
                   <subscript>Decision</subscript>
+                  <subscript>Decision</subscript>
+                  <subscript>While</subscript>
                   <subscript>Program</subscript>
                   <subscript>Assignment</subscript>
+                  <subscript>While</subscript>
                   <subscript>Decision</subscript>
-                  <subscript>Decision</subscript>
+                  <superscript>negative</superscript>
                   <superscript>positive</superscript>
+                  <superscript>first</superscript>
                   <superscript>first</superscript>
                   <superscript>next</superscript>
                   <superscript>next</superscript>
-                  <superscript>negative</superscript>
+                  <superscript>next</superscript>
                 </label>
               </vertices>
             </rhs>
-            <embedding key="_iXv0cKSTEeiGVoeS3RWdyg">
+            <embedding key="_FxNmsKU0EeiXE89G5usdug">
               <value>
                 <edgeLabel name="first"/>
                 <vertexLabels name="Program"/>
+                <vertexLabels name="While"/>
               </value>
               <value>
                 <edgeLabel name="next"/>
@@ -485,121 +556,165 @@
               </value>
             </embedding>
           </rule>
-          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_id-_UKSTEeiGVoeS3RWdyg">
+          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F_DOYKU0EeiXE89G5usdug">
             <label name="A"/>
-            <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+            <vertices id="_FufC0KU0EeiXE89G5usdug">
               <label name="Assignment"/>
             </vertices>
           </vertex>
           <previous>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_id-_UKSTEeiGVoeS3RWdyg">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F_DOYKU0EeiXE89G5usdug">
               <label name="A"/>
-              <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+              <vertices id="_FufC0KU0EeiXE89G5usdug">
                 <label name="Assignment"/>
               </vertices>
             </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_id-_UaSTEeiGVoeS3RWdyg">
-              <label name="Decision"/>
-              <vertices id="_iUYXYKSTEeiGVoeS3RWdyg">
-                <label name="Decision"/>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F_D1caU0EeiXE89G5usdug">
+              <label name="While"/>
+              <vertices id="_FtN3gKU0EeiXE89G5usdug">
+                <label name="While"/>
               </vertices>
             </vertices>
-            <edges from="_id-_UaSTEeiGVoeS3RWdyg" to="_id-_UKSTEeiGVoeS3RWdyg">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F_D1cKU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+              <vertices id="_Fufp4KU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+            </vertices>
+            <edges from="_F_DOYKU0EeiXE89G5usdug" to="_F_D1cKU0EeiXE89G5usdug">
               <label name="next"/>
+            </edges>
+            <edges from="_F_D1caU0EeiXE89G5usdug" to="_F_DOYKU0EeiXE89G5usdug">
+              <label name="first"/>
+            </edges>
+            <edges from="_F_D1caU0EeiXE89G5usdug" to="_F_D1cKU0EeiXE89G5usdug">
+              <label name="last"/>
             </edges>
           </previous>
           <next>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_ibz1EqSTEeiGVoeS3RWdyg">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1QZNKU0EeiXE89G5usdug">
               <label name="Assignment"/>
-              <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+              <vertices id="_FufC0KU0EeiXE89G5usdug">
                 <label name="Assignment"/>
               </vertices>
             </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_icyFcKSTEeiGVoeS3RWdyg">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
               <label name="A">
                 <subscript>Decision</subscript>
+                <subscript>Decision</subscript>
+                <subscript>While</subscript>
                 <subscript>Program</subscript>
                 <subscript>Assignment</subscript>
+                <subscript>While</subscript>
                 <subscript>Decision</subscript>
-                <subscript>Decision</subscript>
+                <superscript>negative</superscript>
                 <superscript>positive</superscript>
+                <superscript>first</superscript>
                 <superscript>first</superscript>
                 <superscript>next</superscript>
                 <superscript>next</superscript>
-                <superscript>negative</superscript>
+                <superscript>next</superscript>
               </label>
             </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_id0AMKSTEeiGVoeS3RWdyg">
-              <label name="Decision"/>
-              <vertices id="_iUYXYKSTEeiGVoeS3RWdyg">
-                <label name="Decision"/>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F-4PRKU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+              <vertices id="_Fufp4KU0EeiXE89G5usdug">
+                <label name="Assignment"/>
               </vertices>
             </vertices>
-            <edges from="_id0AMKSTEeiGVoeS3RWdyg" to="_ibz1EqSTEeiGVoeS3RWdyg">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F-4PRaU0EeiXE89G5usdug">
+              <label name="While"/>
+              <vertices id="_FtN3gKU0EeiXE89G5usdug">
+                <label name="While"/>
+              </vertices>
+            </vertices>
+            <edges from="_F1QZNKU0EeiXE89G5usdug" to="_F-4PRKU0EeiXE89G5usdug">
               <label name="next"/>
             </edges>
+            <edges from="_F-4PRaU0EeiXE89G5usdug" to="_F1QZNKU0EeiXE89G5usdug">
+              <label name="first"/>
+            </edges>
+            <edges from="_F-4PRaU0EeiXE89G5usdug" to="_F-4PRKU0EeiXE89G5usdug">
+              <label name="last"/>
+            </edges>
           </next>
-          <unifier key="_iXv0cKSTEeiGVoeS3RWdyg" value="_ibz1EqSTEeiGVoeS3RWdyg"/>
-          <unifier key="_iXv0caSTEeiGVoeS3RWdyg" value="_icyFcKSTEeiGVoeS3RWdyg"/>
+          <unifier key="_FxNmsKU0EeiXE89G5usdug" value="_F1QZNKU0EeiXE89G5usdug"/>
+          <unifier key="_FxNmsaU0EeiXE89G5usdug" value="_F1yksKU0EeiXE89G5usdug"/>
         </derivationStep>
         <children>
-          <zoneVertex id="_icyFcKSTEeiGVoeS3RWdyg">
+          <zoneVertex id="_F1yksKU0EeiXE89G5usdug">
             <label name="A">
               <subscript>Decision</subscript>
+              <subscript>Decision</subscript>
+              <subscript>While</subscript>
               <subscript>Program</subscript>
               <subscript>Assignment</subscript>
+              <subscript>While</subscript>
               <subscript>Decision</subscript>
-              <subscript>Decision</subscript>
+              <superscript>negative</superscript>
               <superscript>positive</superscript>
+              <superscript>first</superscript>
               <superscript>first</superscript>
               <superscript>next</superscript>
               <superscript>next</superscript>
-              <superscript>negative</superscript>
+              <superscript>next</superscript>
             </label>
           </zoneVertex>
           <derivationStep>
-            <rule id="r1___(A^{positive, first, next, next, negative}_{Decision, Program, Assignment, Decision, Decision})" name="r1">
+            <rule id="r1___(A^{negative, positive, first, first, next, next, next}_{Decision, Decision, While, Program, Assignment, While, Decision})" name="r1">
               <lhs name="A">
                 <subscript>Decision</subscript>
+                <subscript>Decision</subscript>
+                <subscript>While</subscript>
                 <subscript>Program</subscript>
                 <subscript>Assignment</subscript>
+                <subscript>While</subscript>
                 <subscript>Decision</subscript>
-                <subscript>Decision</subscript>
+                <superscript>negative</superscript>
                 <superscript>positive</superscript>
+                <superscript>first</superscript>
                 <superscript>first</superscript>
                 <superscript>next</superscript>
                 <superscript>next</superscript>
-                <superscript>negative</superscript>
+                <superscript>next</superscript>
               </lhs>
               <rhs/>
             </rule>
-            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_icyFcKSTEeiGVoeS3RWdyg">
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
               <label name="A">
                 <subscript>Decision</subscript>
+                <subscript>Decision</subscript>
+                <subscript>While</subscript>
                 <subscript>Program</subscript>
                 <subscript>Assignment</subscript>
+                <subscript>While</subscript>
                 <subscript>Decision</subscript>
-                <subscript>Decision</subscript>
+                <superscript>negative</superscript>
                 <superscript>positive</superscript>
+                <superscript>first</superscript>
                 <superscript>first</superscript>
                 <superscript>next</superscript>
                 <superscript>next</superscript>
-                <superscript>negative</superscript>
+                <superscript>next</superscript>
               </label>
             </vertex>
             <previous>
-              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_icyFcKSTEeiGVoeS3RWdyg">
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
                 <label name="A">
                   <subscript>Decision</subscript>
+                  <subscript>Decision</subscript>
+                  <subscript>While</subscript>
                   <subscript>Program</subscript>
                   <subscript>Assignment</subscript>
+                  <subscript>While</subscript>
                   <subscript>Decision</subscript>
-                  <subscript>Decision</subscript>
+                  <superscript>negative</superscript>
                   <superscript>positive</superscript>
+                  <superscript>first</superscript>
                   <superscript>first</superscript>
                   <superscript>next</superscript>
                   <superscript>next</superscript>
-                  <superscript>negative</superscript>
+                  <superscript>next</superscript>
                 </label>
               </vertices>
             </previous>
@@ -607,10 +722,788 @@
           </derivationStep>
         </children>
         <children>
-          <zoneVertex id="_ibz1EqSTEeiGVoeS3RWdyg">
+          <zoneVertex id="_F1QZNKU0EeiXE89G5usdug">
             <label name="Assignment"/>
-            <vertices id="_iUY-cKSTEeiGVoeS3RWdyg">
+            <vertices id="_FufC0KU0EeiXE89G5usdug">
               <label name="Assignment"/>
+            </vertices>
+          </zoneVertex>
+        </children>
+      </children>
+      <children>
+        <zoneVertex id="_GAfY0KU0EeiXE89G5usdug">
+          <label name="A"/>
+          <vertices id="_FudNoKU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FtOekaU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+          <vertices id="_FtOekKU0EeiXE89G5usdug">
+            <label name="Decision"/>
+          </vertices>
+          <vertices id="_FuXHAKU0EeiXE89G5usdug">
+            <label name="Assignment"/>
+          </vertices>
+        </zoneVertex>
+        <derivationStep>
+          <rule id="r3" name="r3">
+            <lhs name="A"/>
+            <rhs>
+              <vertices id="d3">
+                <label name="Decision"/>
+              </vertices>
+              <vertices id="pA3">
+                <label name="A"/>
+              </vertices>
+              <vertices id="nA3">
+                <label name="A"/>
+              </vertices>
+              <vertices id="xA3">
+                <label name="A"/>
+              </vertices>
+              <edges from="d3" to="pA3">
+                <label name="positive"/>
+              </edges>
+              <edges from="d3" to="nA3">
+                <label name="negative"/>
+              </edges>
+              <edges from="d3" to="xA3">
+                <label name="next"/>
+              </edges>
+            </rhs>
+            <embedding key="d3">
+              <value>
+                <edgeLabel name="first"/>
+                <vertexLabels name="Program"/>
+                <vertexLabels name="While"/>
+              </value>
+              <value>
+                <edgeLabel name="next"/>
+                <vertexLabels name="Assignment"/>
+                <vertexLabels name="Decision"/>
+                <vertexLabels name="While"/>
+              </value>
+              <value>
+                <edgeLabel name="positive"/>
+                <vertexLabels name="Decision"/>
+              </value>
+              <value>
+                <edgeLabel name="negative"/>
+                <vertexLabels name="Decision"/>
+              </value>
+            </embedding>
+          </rule>
+          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_GAfY0KU0EeiXE89G5usdug">
+            <label name="A"/>
+            <vertices id="_FudNoKU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+            <vertices id="_FtOekaU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+            <vertices id="_FtOekKU0EeiXE89G5usdug">
+              <label name="Decision"/>
+            </vertices>
+            <vertices id="_FuXHAKU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+          </vertex>
+          <previous>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_GAfY0KU0EeiXE89G5usdug">
+              <label name="A"/>
+              <vertices id="_FudNoKU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+              <vertices id="_FtOekaU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+              <vertices id="_FtOekKU0EeiXE89G5usdug">
+                <label name="Decision"/>
+              </vertices>
+              <vertices id="_FuXHAKU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_GAfY0aU0EeiXE89G5usdug">
+              <label name="While"/>
+              <vertices id="_FtN3gKU0EeiXE89G5usdug">
+                <label name="While"/>
+              </vertices>
+            </vertices>
+            <edges from="_GAfY0aU0EeiXE89G5usdug" to="_GAfY0KU0EeiXE89G5usdug">
+              <label name="next"/>
+            </edges>
+          </previous>
+          <next>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F3d_sKU0EeiXE89G5usdug">
+              <label name="A"/>
+              <vertices id="_FtOekaU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F-_kAKU0EeiXE89G5usdug">
+              <label name="A"/>
+              <vertices id="_FuXHAKU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F3cKgaU0EeiXE89G5usdug">
+              <label name="A"/>
+              <vertices id="_FudNoKU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1QZMKU0EeiXE89G5usdug">
+              <label name="Decision"/>
+              <vertices id="_FtOekKU0EeiXE89G5usdug">
+                <label name="Decision"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_GAbHYKU0EeiXE89G5usdug">
+              <label name="While"/>
+              <vertices id="_FtN3gKU0EeiXE89G5usdug">
+                <label name="While"/>
+              </vertices>
+            </vertices>
+            <edges from="_F1QZMKU0EeiXE89G5usdug" to="_F-_kAKU0EeiXE89G5usdug">
+              <label name="positive"/>
+            </edges>
+            <edges from="_F1QZMKU0EeiXE89G5usdug" to="_F3d_sKU0EeiXE89G5usdug">
+              <label name="next"/>
+            </edges>
+            <edges from="_F1QZMKU0EeiXE89G5usdug" to="_F3cKgaU0EeiXE89G5usdug">
+              <label name="negative"/>
+            </edges>
+            <edges from="_GAbHYKU0EeiXE89G5usdug" to="_F1QZMKU0EeiXE89G5usdug">
+              <label name="next"/>
+            </edges>
+          </next>
+          <unifier key="d3" value="_F1QZMKU0EeiXE89G5usdug"/>
+          <unifier key="pA3" value="_F3cKgaU0EeiXE89G5usdug"/>
+          <unifier key="nA3" value="_F3d_sKU0EeiXE89G5usdug"/>
+          <unifier key="xA3" value="_F-_kAKU0EeiXE89G5usdug"/>
+        </derivationStep>
+        <children>
+          <zoneVertex id="_F3d_sKU0EeiXE89G5usdug">
+            <label name="A"/>
+            <vertices id="_FtOekaU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+          </zoneVertex>
+          <derivationStep>
+            <rule id="r2____FxNmsqU0EeiXE89G5usdug" name="r2">
+              <lhs name="A"/>
+              <rhs>
+                <vertices id="_FxNmsKU0EeiXE89G5usdug">
+                  <label name="Assignment"/>
+                </vertices>
+                <vertices id="_FxNmsaU0EeiXE89G5usdug">
+                  <label name="A">
+                    <subscript>Decision</subscript>
+                    <subscript>Decision</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Program</subscript>
+                    <subscript>Assignment</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Decision</subscript>
+                    <superscript>negative</superscript>
+                    <superscript>positive</superscript>
+                    <superscript>first</superscript>
+                    <superscript>first</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                  </label>
+                </vertices>
+              </rhs>
+              <embedding key="_FxNmsKU0EeiXE89G5usdug">
+                <value>
+                  <edgeLabel name="first"/>
+                  <vertexLabels name="Program"/>
+                  <vertexLabels name="While"/>
+                </value>
+                <value>
+                  <edgeLabel name="next"/>
+                  <vertexLabels name="Assignment"/>
+                  <vertexLabels name="Decision"/>
+                  <vertexLabels name="While"/>
+                </value>
+                <value>
+                  <edgeLabel name="positive"/>
+                  <vertexLabels name="Decision"/>
+                </value>
+                <value>
+                  <edgeLabel name="negative"/>
+                  <vertexLabels name="Decision"/>
+                </value>
+              </embedding>
+            </rule>
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F3d_sKU0EeiXE89G5usdug">
+              <label name="A"/>
+              <vertices id="_FtOekaU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+            </vertex>
+            <previous>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F3d_sKU0EeiXE89G5usdug">
+                <label name="A"/>
+                <vertices id="_FtOekaU0EeiXE89G5usdug">
+                  <label name="Assignment"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F3d_saU0EeiXE89G5usdug">
+                <label name="Decision"/>
+                <vertices id="_FtOekKU0EeiXE89G5usdug">
+                  <label name="Decision"/>
+                </vertices>
+              </vertices>
+              <edges from="_F3d_saU0EeiXE89G5usdug" to="_F3d_sKU0EeiXE89G5usdug">
+                <label name="next"/>
+              </edges>
+            </previous>
+            <next>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1QZMaU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+                <vertices id="_FtOekaU0EeiXE89G5usdug">
+                  <label name="Assignment"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
+                <label name="A">
+                  <subscript>Decision</subscript>
+                  <subscript>Decision</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Program</subscript>
+                  <subscript>Assignment</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Decision</subscript>
+                  <superscript>negative</superscript>
+                  <superscript>positive</superscript>
+                  <superscript>first</superscript>
+                  <superscript>first</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                </label>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F3bjcKU0EeiXE89G5usdug">
+                <label name="Decision"/>
+                <vertices id="_FtOekKU0EeiXE89G5usdug">
+                  <label name="Decision"/>
+                </vertices>
+              </vertices>
+              <edges from="_F3bjcKU0EeiXE89G5usdug" to="_F1QZMaU0EeiXE89G5usdug">
+                <label name="next"/>
+              </edges>
+            </next>
+            <unifier key="_FxNmsKU0EeiXE89G5usdug" value="_F1QZMaU0EeiXE89G5usdug"/>
+            <unifier key="_FxNmsaU0EeiXE89G5usdug" value="_F1yksKU0EeiXE89G5usdug"/>
+          </derivationStep>
+          <children>
+            <zoneVertex id="_F1QZMaU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+              <vertices id="_FtOekaU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+            </zoneVertex>
+          </children>
+          <children>
+            <zoneVertex id="_F1yksKU0EeiXE89G5usdug">
+              <label name="A">
+                <subscript>Decision</subscript>
+                <subscript>Decision</subscript>
+                <subscript>While</subscript>
+                <subscript>Program</subscript>
+                <subscript>Assignment</subscript>
+                <subscript>While</subscript>
+                <subscript>Decision</subscript>
+                <superscript>negative</superscript>
+                <superscript>positive</superscript>
+                <superscript>first</superscript>
+                <superscript>first</superscript>
+                <superscript>next</superscript>
+                <superscript>next</superscript>
+                <superscript>next</superscript>
+              </label>
+            </zoneVertex>
+            <derivationStep>
+              <rule id="r1___(A^{negative, positive, first, first, next, next, next}_{Decision, Decision, While, Program, Assignment, While, Decision})" name="r1">
+                <lhs name="A">
+                  <subscript>Decision</subscript>
+                  <subscript>Decision</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Program</subscript>
+                  <subscript>Assignment</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Decision</subscript>
+                  <superscript>negative</superscript>
+                  <superscript>positive</superscript>
+                  <superscript>first</superscript>
+                  <superscript>first</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                </lhs>
+                <rhs/>
+              </rule>
+              <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
+                <label name="A">
+                  <subscript>Decision</subscript>
+                  <subscript>Decision</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Program</subscript>
+                  <subscript>Assignment</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Decision</subscript>
+                  <superscript>negative</superscript>
+                  <superscript>positive</superscript>
+                  <superscript>first</superscript>
+                  <superscript>first</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                </label>
+              </vertex>
+              <previous>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
+                  <label name="A">
+                    <subscript>Decision</subscript>
+                    <subscript>Decision</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Program</subscript>
+                    <subscript>Assignment</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Decision</subscript>
+                    <superscript>negative</superscript>
+                    <superscript>positive</superscript>
+                    <superscript>first</superscript>
+                    <superscript>first</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                  </label>
+                </vertices>
+              </previous>
+              <next/>
+            </derivationStep>
+          </children>
+        </children>
+        <children>
+          <zoneVertex id="_F-_kAKU0EeiXE89G5usdug">
+            <label name="A"/>
+            <vertices id="_FuXHAKU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+          </zoneVertex>
+          <derivationStep>
+            <rule id="r2____FxNmsqU0EeiXE89G5usdug" name="r2">
+              <lhs name="A"/>
+              <rhs>
+                <vertices id="_FxNmsKU0EeiXE89G5usdug">
+                  <label name="Assignment"/>
+                </vertices>
+                <vertices id="_FxNmsaU0EeiXE89G5usdug">
+                  <label name="A">
+                    <subscript>Decision</subscript>
+                    <subscript>Decision</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Program</subscript>
+                    <subscript>Assignment</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Decision</subscript>
+                    <superscript>negative</superscript>
+                    <superscript>positive</superscript>
+                    <superscript>first</superscript>
+                    <superscript>first</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                  </label>
+                </vertices>
+              </rhs>
+              <embedding key="_FxNmsKU0EeiXE89G5usdug">
+                <value>
+                  <edgeLabel name="first"/>
+                  <vertexLabels name="Program"/>
+                  <vertexLabels name="While"/>
+                </value>
+                <value>
+                  <edgeLabel name="next"/>
+                  <vertexLabels name="Assignment"/>
+                  <vertexLabels name="Decision"/>
+                  <vertexLabels name="While"/>
+                </value>
+                <value>
+                  <edgeLabel name="positive"/>
+                  <vertexLabels name="Decision"/>
+                </value>
+                <value>
+                  <edgeLabel name="negative"/>
+                  <vertexLabels name="Decision"/>
+                </value>
+              </embedding>
+            </rule>
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F-_kAKU0EeiXE89G5usdug">
+              <label name="A"/>
+              <vertices id="_FuXHAKU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+            </vertex>
+            <previous>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F-_kAKU0EeiXE89G5usdug">
+                <label name="A"/>
+                <vertices id="_FuXHAKU0EeiXE89G5usdug">
+                  <label name="Assignment"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F-_kAaU0EeiXE89G5usdug">
+                <label name="Decision"/>
+                <vertices id="_FtOekKU0EeiXE89G5usdug">
+                  <label name="Decision"/>
+                </vertices>
+              </vertices>
+              <edges from="_F-_kAaU0EeiXE89G5usdug" to="_F-_kAKU0EeiXE89G5usdug">
+                <label name="positive"/>
+              </edges>
+            </previous>
+            <next>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1QZMqU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+                <vertices id="_FuXHAKU0EeiXE89G5usdug">
+                  <label name="Assignment"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
+                <label name="A">
+                  <subscript>Decision</subscript>
+                  <subscript>Decision</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Program</subscript>
+                  <subscript>Assignment</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Decision</subscript>
+                  <superscript>negative</superscript>
+                  <superscript>positive</superscript>
+                  <superscript>first</superscript>
+                  <superscript>first</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                </label>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F-9u0KU0EeiXE89G5usdug">
+                <label name="Decision"/>
+                <vertices id="_FtOekKU0EeiXE89G5usdug">
+                  <label name="Decision"/>
+                </vertices>
+              </vertices>
+              <edges from="_F-9u0KU0EeiXE89G5usdug" to="_F1QZMqU0EeiXE89G5usdug">
+                <label name="positive"/>
+              </edges>
+            </next>
+            <unifier key="_FxNmsKU0EeiXE89G5usdug" value="_F1QZMqU0EeiXE89G5usdug"/>
+            <unifier key="_FxNmsaU0EeiXE89G5usdug" value="_F1yksKU0EeiXE89G5usdug"/>
+          </derivationStep>
+          <children>
+            <zoneVertex id="_F1yksKU0EeiXE89G5usdug">
+              <label name="A">
+                <subscript>Decision</subscript>
+                <subscript>Decision</subscript>
+                <subscript>While</subscript>
+                <subscript>Program</subscript>
+                <subscript>Assignment</subscript>
+                <subscript>While</subscript>
+                <subscript>Decision</subscript>
+                <superscript>negative</superscript>
+                <superscript>positive</superscript>
+                <superscript>first</superscript>
+                <superscript>first</superscript>
+                <superscript>next</superscript>
+                <superscript>next</superscript>
+                <superscript>next</superscript>
+              </label>
+            </zoneVertex>
+            <derivationStep>
+              <rule id="r1___(A^{negative, positive, first, first, next, next, next}_{Decision, Decision, While, Program, Assignment, While, Decision})" name="r1">
+                <lhs name="A">
+                  <subscript>Decision</subscript>
+                  <subscript>Decision</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Program</subscript>
+                  <subscript>Assignment</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Decision</subscript>
+                  <superscript>negative</superscript>
+                  <superscript>positive</superscript>
+                  <superscript>first</superscript>
+                  <superscript>first</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                </lhs>
+                <rhs/>
+              </rule>
+              <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
+                <label name="A">
+                  <subscript>Decision</subscript>
+                  <subscript>Decision</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Program</subscript>
+                  <subscript>Assignment</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Decision</subscript>
+                  <superscript>negative</superscript>
+                  <superscript>positive</superscript>
+                  <superscript>first</superscript>
+                  <superscript>first</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                </label>
+              </vertex>
+              <previous>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
+                  <label name="A">
+                    <subscript>Decision</subscript>
+                    <subscript>Decision</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Program</subscript>
+                    <subscript>Assignment</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Decision</subscript>
+                    <superscript>negative</superscript>
+                    <superscript>positive</superscript>
+                    <superscript>first</superscript>
+                    <superscript>first</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                  </label>
+                </vertices>
+              </previous>
+              <next/>
+            </derivationStep>
+          </children>
+          <children>
+            <zoneVertex id="_F1QZMqU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+              <vertices id="_FuXHAKU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+            </zoneVertex>
+          </children>
+        </children>
+        <children>
+          <zoneVertex id="_F3cKgaU0EeiXE89G5usdug">
+            <label name="A"/>
+            <vertices id="_FudNoKU0EeiXE89G5usdug">
+              <label name="Assignment"/>
+            </vertices>
+          </zoneVertex>
+          <derivationStep>
+            <rule id="r2____FxNmsqU0EeiXE89G5usdug" name="r2">
+              <lhs name="A"/>
+              <rhs>
+                <vertices id="_FxNmsKU0EeiXE89G5usdug">
+                  <label name="Assignment"/>
+                </vertices>
+                <vertices id="_FxNmsaU0EeiXE89G5usdug">
+                  <label name="A">
+                    <subscript>Decision</subscript>
+                    <subscript>Decision</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Program</subscript>
+                    <subscript>Assignment</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Decision</subscript>
+                    <superscript>negative</superscript>
+                    <superscript>positive</superscript>
+                    <superscript>first</superscript>
+                    <superscript>first</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                  </label>
+                </vertices>
+              </rhs>
+              <embedding key="_FxNmsKU0EeiXE89G5usdug">
+                <value>
+                  <edgeLabel name="first"/>
+                  <vertexLabels name="Program"/>
+                  <vertexLabels name="While"/>
+                </value>
+                <value>
+                  <edgeLabel name="next"/>
+                  <vertexLabels name="Assignment"/>
+                  <vertexLabels name="Decision"/>
+                  <vertexLabels name="While"/>
+                </value>
+                <value>
+                  <edgeLabel name="positive"/>
+                  <vertexLabels name="Decision"/>
+                </value>
+                <value>
+                  <edgeLabel name="negative"/>
+                  <vertexLabels name="Decision"/>
+                </value>
+              </embedding>
+            </rule>
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F3cKgaU0EeiXE89G5usdug">
+              <label name="A"/>
+              <vertices id="_FudNoKU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+            </vertex>
+            <previous>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F3cKgaU0EeiXE89G5usdug">
+                <label name="A"/>
+                <vertices id="_FudNoKU0EeiXE89G5usdug">
+                  <label name="Assignment"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F3cKg6U0EeiXE89G5usdug">
+                <label name="Decision"/>
+                <vertices id="_FtOekKU0EeiXE89G5usdug">
+                  <label name="Decision"/>
+                </vertices>
+              </vertices>
+              <edges from="_F3cKg6U0EeiXE89G5usdug" to="_F3cKgaU0EeiXE89G5usdug">
+                <label name="negative"/>
+              </edges>
+            </previous>
+            <next>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1QZM6U0EeiXE89G5usdug">
+                <label name="Assignment"/>
+                <vertices id="_FudNoKU0EeiXE89G5usdug">
+                  <label name="Assignment"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
+                <label name="A">
+                  <subscript>Decision</subscript>
+                  <subscript>Decision</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Program</subscript>
+                  <subscript>Assignment</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Decision</subscript>
+                  <superscript>negative</superscript>
+                  <superscript>positive</superscript>
+                  <superscript>first</superscript>
+                  <superscript>first</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                </label>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F3aVUKU0EeiXE89G5usdug">
+                <label name="Decision"/>
+                <vertices id="_FtOekKU0EeiXE89G5usdug">
+                  <label name="Decision"/>
+                </vertices>
+              </vertices>
+              <edges from="_F3aVUKU0EeiXE89G5usdug" to="_F1QZM6U0EeiXE89G5usdug">
+                <label name="negative"/>
+              </edges>
+            </next>
+            <unifier key="_FxNmsKU0EeiXE89G5usdug" value="_F1QZM6U0EeiXE89G5usdug"/>
+            <unifier key="_FxNmsaU0EeiXE89G5usdug" value="_F1yksKU0EeiXE89G5usdug"/>
+          </derivationStep>
+          <children>
+            <zoneVertex id="_F1yksKU0EeiXE89G5usdug">
+              <label name="A">
+                <subscript>Decision</subscript>
+                <subscript>Decision</subscript>
+                <subscript>While</subscript>
+                <subscript>Program</subscript>
+                <subscript>Assignment</subscript>
+                <subscript>While</subscript>
+                <subscript>Decision</subscript>
+                <superscript>negative</superscript>
+                <superscript>positive</superscript>
+                <superscript>first</superscript>
+                <superscript>first</superscript>
+                <superscript>next</superscript>
+                <superscript>next</superscript>
+                <superscript>next</superscript>
+              </label>
+            </zoneVertex>
+            <derivationStep>
+              <rule id="r1___(A^{negative, positive, first, first, next, next, next}_{Decision, Decision, While, Program, Assignment, While, Decision})" name="r1">
+                <lhs name="A">
+                  <subscript>Decision</subscript>
+                  <subscript>Decision</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Program</subscript>
+                  <subscript>Assignment</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Decision</subscript>
+                  <superscript>negative</superscript>
+                  <superscript>positive</superscript>
+                  <superscript>first</superscript>
+                  <superscript>first</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                </lhs>
+                <rhs/>
+              </rule>
+              <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
+                <label name="A">
+                  <subscript>Decision</subscript>
+                  <subscript>Decision</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Program</subscript>
+                  <subscript>Assignment</subscript>
+                  <subscript>While</subscript>
+                  <subscript>Decision</subscript>
+                  <superscript>negative</superscript>
+                  <superscript>positive</superscript>
+                  <superscript>first</superscript>
+                  <superscript>first</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                  <superscript>next</superscript>
+                </label>
+              </vertex>
+              <previous>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_F1yksKU0EeiXE89G5usdug">
+                  <label name="A">
+                    <subscript>Decision</subscript>
+                    <subscript>Decision</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Program</subscript>
+                    <subscript>Assignment</subscript>
+                    <subscript>While</subscript>
+                    <subscript>Decision</subscript>
+                    <superscript>negative</superscript>
+                    <superscript>positive</superscript>
+                    <superscript>first</superscript>
+                    <superscript>first</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                    <superscript>next</superscript>
+                  </label>
+                </vertices>
+              </previous>
+              <next/>
+            </derivationStep>
+          </children>
+          <children>
+            <zoneVertex id="_F1QZM6U0EeiXE89G5usdug">
+              <label name="Assignment"/>
+              <vertices id="_FudNoKU0EeiXE89G5usdug">
+                <label name="Assignment"/>
+              </vertices>
+            </zoneVertex>
+          </children>
+        </children>
+        <children>
+          <zoneVertex id="_F1QZMKU0EeiXE89G5usdug">
+            <label name="Decision"/>
+            <vertices id="_FtOekKU0EeiXE89G5usdug">
+              <label name="Decision"/>
             </vertices>
           </zoneVertex>
         </children>
