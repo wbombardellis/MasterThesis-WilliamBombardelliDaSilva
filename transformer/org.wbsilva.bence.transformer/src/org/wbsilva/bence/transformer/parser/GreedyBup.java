@@ -146,31 +146,35 @@ class GreedyBup extends Bup {
 			
 			//Generated new subsets and advances phase until generates a phase with non empty subsets or reaches the last phase
 			int p = Math.max(this.phase - 1, 0);
-			Set<Set<ZoneVertex>> newSubsets;
-			do {
-				p++;
-				newSubsets = createNewSubsets(p, this.bupSet);
+			if ((p + 1) <= lastPhase()) {
+				Set<Set<ZoneVertex>> newSubsets;
+				do {
+					p++;
+					newSubsets = createNewSubsets(p, this.bupSet);
+					
+					if (this.subsets.size() <= p) {
+						addNewSubsetQueue(newSubsets);
+					} else {
+						this.subsets.get(p).addAll(newSubsets);
+						this.centralQueue.addAll(newSubsets);
+					}
+				} while ((p + 1) <= lastPhase() && newSubsets.isEmpty());
 				
-				if (this.subsets.size() <= p) {
-					addNewSubsetQueue(newSubsets);
+				this.phase = p;
+				
+				//Reached the last phase
+				if (newSubsets.isEmpty()) {
+					return Optional.empty();
 				} else {
-					this.subsets.get(p).addAll(newSubsets);
-					this.centralQueue.addAll(newSubsets);
+					assert this.subsets.size() >= this.phase;
+					
+					final Set<ZoneVertex> ret = this.centralQueue.poll();
+					assert ret != null;
+					
+					return Optional.of(ret);
 				}
-			} while ((p + 1) <= lastPhase() && newSubsets.isEmpty());
-			
-			this.phase = p;
-			
-			//Reached the last phase
-			if (newSubsets.isEmpty()) {
-				return Optional.empty();
 			} else {
-				assert this.subsets.size() >= this.phase;
-				
-				final Set<ZoneVertex> ret = this.centralQueue.poll();
-				assert ret != null;
-				
-				return Optional.of(ret);
+				return Optional.empty();
 			}
 		}
 	}
