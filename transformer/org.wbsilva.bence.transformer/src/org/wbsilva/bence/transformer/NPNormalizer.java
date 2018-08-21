@@ -181,14 +181,24 @@ public class NPNormalizer {
 		for (Entry<Rule, SymbolMap<SymbolSet>> rEntry : nonNPRulesContext.entrySet()) {
 			final Rule nonNPRule = rEntry.getKey();
 			final SymbolMap<SymbolSet> missingContext = rEntry.getValue();
+			assert missingContext != null;
 			
-			final Set<SymbolMap<SymbolSet>> mcSet = new HashSet<>(1);
-			mcSet.add(missingContext);
-			//TODO: implement equals in the SymbolMap
-			nonNPContexts.merge(nonNPRule.getLhs(), mcSet, (a,b) -> {
-				a.addAll(b);
-				return a;
-			});
+			final Set<SymbolMap<SymbolSet>> ctxs = nonNPContexts.get(nonNPRule.getLhs());
+			//If there is no context for this rules so far
+			if (ctxs == null) {
+				final Set<SymbolMap<SymbolSet>> mcSet = new HashSet<>(1);
+				mcSet.add(missingContext);
+				nonNPContexts.put(nonNPRule.getLhs(), mcSet);
+			} else {
+				//If there are contexts, but non are equal to the missing context
+				if (ctxs.stream().noneMatch(map -> map.entrySet().stream()
+													.allMatch(e -> missingContext.get(e.getKey()) != null &&  missingContext.get(e.getKey()).containsAll(e.getValue()))
+												&& missingContext.entrySet().stream()
+													.allMatch(e -> map.get(e.getKey()) != null && map.get(e.getKey()).containsAll(e.getValue())))) {
+					//Then add the missing context
+					ctxs.add(missingContext);
+				}
+			}
 		}
 		return nonNPContexts;
 	}
