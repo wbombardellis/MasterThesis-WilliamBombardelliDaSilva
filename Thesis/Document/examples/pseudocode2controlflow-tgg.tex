@@ -1,0 +1,131 @@
+\begin{example}{Pseudocode to ControlFlow.}
+	$GG = (\{S,A,B,a,b,c\}, \{a,b,c\}, S, P)$, where $P$ is
+
+	\noindent
+	\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_0:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {S ::=};
+	
+	\draw (0.5,0) node[t] (s1) {p};
+	\draw (0.5,-1) node[nont] (s2) {A};
+	\draw[edge] (s1) -- (s2) node [vedgeLabel] {$f$};
+	%%
+	\draw (2,0) node[t] (c1) {pg};
+	\draw (2,-1) node[nont] (c2) {A};
+	%%
+	\draw (3.5,0) node[t] (t1) {g};
+	\draw (3.5,-1) node[nont] (t2) {A};
+	\draw[edge] (t1) -- (t2) node [vedgeLabel] {$f$};
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\end{tikzpicture}
+	\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_1:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {A ::=};
+	
+	\draw (0.5,0) node[t] (s1) {a};
+	\draw (0.5,-1) node[nont] (s2) {A};
+	\draw[edge] (s1) -- (s2) node [vedgeLabel] {$x$};
+	\draw node[uw, label=0:$f;x;x;x;n;p$, label=-45:$p;a;d;w;d;d$] at (s1.north) (w-s1) {}
+	[wedge] (s1) -- (w-s1);
+	%%
+	\draw (2,0) node[t] (c1) {ac};
+	\draw (2,-1) node[nont] (c2) {A};
+	%%
+	\draw (3.5,0) node[t] (t1) {c};
+	\draw (3.5,-1) node[nont] (t2) {A};
+	\draw[edge] (t1) -- (t2) node [vedgeLabel] {$x$};
+	\draw node[uw, label=0:$r;x;x;n;p$, label=-45:$g;b;c;b;b$] at (t1.north) (w-t1) {}
+	[wedge] (t1) -- (w-t1);
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\end{tikzpicture}
+	
+	\noindent
+	\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_2:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {A ::=};
+	
+	\draw (1,0) node[t] (s1) {d};
+	\draw (0.1,-1) node[nont] (s2) {A};
+	\draw (1,-1) node[nont] (s3) {A};
+	\draw (1.7,-1) node[nont] (s4) {A};
+	\draw[edge] (s1) -- (s2) node [vedgeLabel] {$x$};
+	\draw[edge] (s1) -- (s3) node [vedgeLabel] {$p$};
+	\draw[edge] (s1) -- (s4) node [vedgeLabel] {$n$};
+	\draw node[uw, label=0:$f;x;x;x;n;p$, label=-45:$p;a;d;w;d;d$] at (s1.north) (w-s1) {}
+	[wedge] (s1) -- (w-s1);
+	%%
+	\draw (2.5,0) node[t] (c1) {db};
+	\draw (2.5,-0.5) node[nont] (c2) {A};
+	\draw (2.5,-1) node[nont] (c4) {A};
+	\draw (2.5,-1.5) node[nont] (c3) {A};
+	%%
+	\draw (4,0) node[t] (t1) {b};
+	\draw (3.3,-1) node[nont] (t4) {A};
+	\draw (4,-1) node[nont] (t3) {A};
+	\draw (4.9,-1) node[nont] (t2) {A};
+	\draw[edge] (t1) -- (t4) node [vedgeLabel] {$n$};
+	\draw[edge] (t1) -- (t3) node [vedgeLabel] {$p$};
+	\draw[edge] (t1) -- (t2) node [vedgeLabel] {$x$};
+	
+	\draw[edge] (t1) -- (t2) node [vedgeLabel] {$x$};
+	\draw node[uw, label=0:$r;x;x;n;p$, label=-45:$g;b;cb;b$] at (t1.north) (w-t1) {}
+	[wedge] (t1) -- (w-t1);
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	
+	%%%%
+	\draw[pipe] (5.5,\pipeBY) -- (5.5,\pipeUY);
+	
+	\node[rid] at (6.1,\ridY) {$r_3:$};
+	
+	\draw (7,0) node[t] (s5) {w};
+	\draw (6.1,-1) node[nont] (s6) {A};
+	\draw (7,-1) node[t] (s7) {a};
+	\draw[edge] (s5) -- (s6) node [vedgeLabel] {$x$};
+	\draw[edge] (s5) -- (s7) node [vedgeLabel] {$f$};
+	\draw[edge] (s7) -- (s5) node [vedgeLabel] {$n$};
+	\draw node[uw, label=0:$f;x;x;x;n;p;f$, label=-45:$p;a;d;w;d;d;w$] at (s5.north) (w-s5) {}
+	[wedge] (s5) -- (w-s5);
+	%%
+	\draw (2.5,0) node[t] (c1) {db};
+	\draw (2.5,-0.5) node[nont] (c2) {A};
+	\draw (2.5,-1) node[nont] (c4) {A};
+	\draw (2.5,-1.5) node[nont] (c3) {A};
+	%%
+	\draw (4,0) node[t] (t1) {b};
+	\draw (3.3,-1) node[nont] (t4) {A};
+	\draw (4,-1) node[nont] (t3) {A};
+	\draw (4.9,-1) node[nont] (t2) {A};
+	\draw[edge] (t1) -- (t4) node [vedgeLabel] {$n$};
+	\draw[edge] (t1) -- (t3) node [vedgeLabel] {$p$};
+	\draw[edge] (t1) -- (t2) node [vedgeLabel] {$x$};
+	
+	\draw[edge] (t1) -- (t2) node [vedgeLabel] {$x$};
+	\draw node[uw, label=0:$r;x;x;n;p$, label=-45:$g;b;cb;b$] at (t1.north) (w-t1) {}
+	[wedge] (t1) -- (w-t1);
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\end{tikzpicture}
+\end{example}

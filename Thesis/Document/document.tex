@@ -84,7 +84,6 @@ We start presenting our notation for graphs and grammars, accompanied by example
 %%%%%% Concrete Syntax %%%%%%
 In the following, we present our concrete syntax inspired by the well-known backus-naur form to denote BNCE graph grammar rules. Let $GG = (\{A,a,b,c\},$ $\{a,b,c\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\}, \{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, $\omega = \{v_1 \mapsto \{(l,a), (l,b), (m,c)\}\}$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$ and $\zeta = \emptyset$, we denote $p$ and $q$ together as\\
 
-\noindent
 \input{misc/concrete-syntax}
 
 Notice that, we use squares for non-terminal vertices, circles for terminal vertices, position the respective label inside the shape and the (possibly omitted) identifier over it. Over each edge is positioned its respective label. To depict the embedding function, we place below the respective vertex a small circle labeled with the image pairs of the embedding function for this node aligned vertically and separated by semi-colons.
@@ -137,7 +136,7 @@ Notice that for every graph $G \in L(GG)$, there is at least one finite derivati
 
 Below we give one example of a grammar whose language consists of all chains of one or more vertices with interleaved vertices labeled with $a$ and $b$.
 
-%Examples (chains and activities)
+%Examples (chains)
 \input{examples/abchains-tg}
 
 The graph $G=$
@@ -157,31 +156,26 @@ belongs to $L(GG)$ because it contains only terminal vertices and $\startG{GG}$ 
 		\deriv{r_2}{v_1}{} 
 		\begin{tikzpicture}[graph]
 			\draw (1,0) node[t, label=90:$v_2$] (v2) {a};
-			\draw (2.5,0) node[nont, label=90:$v_3$] (v3) {B};
+			\draw (2,0) node[nont, label=90:$v_3$] (v3) {B};
 			\draw[edge] (v2) -- (v3) node [edgeLabel] {$c$};
 		\end{tikzpicture}
 		\deriv{r_4}{v_3}{}
 		\begin{tikzpicture}[graph]
 			\draw (1,0) node[t, label=90:$v_2$] (v2) {a};
-			\draw (2.5,0) node[t, label=90:$v_4$] (v4) {b};
-			\draw (4,0) node[nont, label=90:$v_5$] (v5) {A};
+			\draw (2,0) node[t, label=90:$v_4$] (v4) {b};
+			\draw (3,0) node[nont, label=90:$v_5$] (v5) {A};
 			\draw[edge] (v2) -- (v4) node [edgeLabel] {$c$};
 			\draw[edge] (v4) -- (v5) node [edgeLabel] {$c$};
 		\end{tikzpicture}
-\]\[
 		\deriv{r_3}{v_5}{}
 		\begin{tikzpicture}[graph]
 			\draw (0,0) node[t, label=90:$v_2$] (v2) {a};
-			\draw (1.5,0) node[t, label=90:$v_4$] (v4) {b};
-			\draw (3,0) node[t, label=90:$v_6$] (v6) {a};
+			\draw (1,0) node[t, label=90:$v_4$] (v4) {b};
+			\draw (2,0) node[t, label=90:$v_6$] (v6) {a};
 			\draw[edge] (v2) -- (v4) node [edgeLabel] {$c$};
 			\draw[edge] (v4) -- (v6) node [edgeLabel] {$c$};
 		\end{tikzpicture}
 \]
-
-%TODO: Adapt activty diagram afterwards
-%\input{examples/activity-tg}
-
 
 %TODO: Church-Rosser theorem??
 
@@ -276,11 +270,8 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 
 Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and is presented below by means of an example. The only difference is at the left-hand sides, which are now depicted by three symbols and the dashed lines at the right-hand sides that depict the morphisms between the correspondence graph and the source and target graphs.
 
-%Concrete syntax and examples (chains and activities)
-
-%TODO: Adapt activty diagram TGG
-%\input{examples/activity-tgg}
-
+%Concrete syntax and examples (Pseudocode 2 Control Flow [sourcecode2controlflow])
+\input{examples/pseudocode2controlflow-tgg}) 
 
 \section{Parsing of Graphs with BNCE Graph Grammars}
 In the last section we cleared how the concepts of graphs and languages fit together. In this section we are interested in the problem of deciding, given a BNCE graph grammar $GG$ and a graph $G$, whether $G \in L(GG)$. This is sometimes called the \textit{membership} problem and can be solved through a recognizer algorithm that always finishes answering yes if and only if $G \in L(GG)$ and no otherwise. A slight extension of this problem is the \textit{parsing} problem, which consists of deciding if $G \in L(GG)$ and finding a derivation $\startG{GG} \derivtr{}{}{} G$.

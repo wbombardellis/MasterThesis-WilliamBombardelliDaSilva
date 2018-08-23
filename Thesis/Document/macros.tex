@@ -1,4 +1,4 @@
-\renewcommand{\.}{. \;}
+%%%%%%%%%%%%%% THEOREM %%%%%%%%%%%%%%
 \theoremstyle{definition}
 \newtheorem*{definition}{Definition}
 \newtheorem*{example}{Example}
@@ -9,40 +9,32 @@
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 
-\newcommand{\pto}{\nrightarrow}
-\newcommand{\ptree}[3]{
-	\ifx&#2&%
-	(#1 \rightrightarrows #3)
-	\else
-	(#1^#2 \rightrightarrows #3)
-	\fi
-}
-
-\newcommand{\allgraphs}[1]{\mathcal{G}_{#1}}
-\newcommand{\alltgraphs}[1]{\mathcal{TG}_{#1}}
-\newcommand{\emptyGraph}{\varepsilon}
-\newcommand{\startG}[1]{Z_{#1}}
-\newcommand{\startTG}[1]{Z_{#1}}
-\newcommand{\pro}{\to}
-
+%%%%%%%%%%%%%% GENERAL %%%%%%%%%%%%%%
 \newcommand{\rel}{\sim}
 \newcommand{\rrestr}{\triangleright}
+\newcommand{\st}{\; | \;}
+\renewcommand{\.}{. \;}
 
+%%%%%%%%%%%%%% GG %%%%%%%%%%%%%%
+\newcommand{\neigh}[1]{\operatorname{neigh}_{#1}}
+\newcommand{\isomorph}{\cong}
+\newcommand{\scont}[2]{\eta_{#1}(#2)}
+\newcommand{\cont}[2]{\operatorname{cont}_{#1}(#2)}
+\newcommand{\emb}[1]{\operatorname{emb}(#1)}
+\newcommand{\allgraphs}[1]{\mathcal{G}_{#1}}
+\newcommand{\emptyGraph}{\varepsilon}
+\newcommand{\startG}[1]{Z_{#1}}
+\newcommand{\pro}{\to}
+
+%%%%%%%%%%%%%% TGG %%%%%%%%%%%%%%
+\newcommand{\alltgraphs}[1]{\mathcal{TG}_{#1}}
+\newcommand{\startTG}[1]{Z_{#1}}
+\newcommand{\ms}[1]{\overset{#1}{\leftarrow}}
+\newcommand{\mt}[1]{\overset{#1}{\rightarrow}}
 \newcommand{\source}{\operatorname{s}}
 \newcommand{\Source}{\operatorname{S}}
 \newcommand{\target}{\operatorname{t}}
 \newcommand{\Target}{\operatorname{T}}
-
-
-\newcommand{\neigh}[1]{\operatorname{neigh}_{#1}}
-\newcommand{\scont}[2]{\eta_{#1}(#2)}
-\newcommand{\cont}[2]{\operatorname{cont}_{#1}(#2)}
-\newcommand{\emb}[1]{\operatorname{emb}(#1)}
-
-\newcommand{\st}{\; | \;}
-\newcommand{\isomorph}{\cong}
-\newcommand{\ms}[1]{\overset{#1}{\leftarrow}}
-\newcommand{\mt}[1]{\overset{#1}{\rightarrow}}
 \newcommand{\cderiv}[3]{
 	\ifx&#2&%
 	\overset{#1}{\Rrightarrow}_{#3}
@@ -86,22 +78,41 @@
 	\fi
 }
 
+%%%%%%%%%%%%%% ALGORITHM %%%%%%%%%%%%%%
 \newcommand{\?}{\;\operatorname{\textbf{?}}\;}
 \renewcommand{\:}{\;\operatorname{\textbf{:}}\;}
 \newcommand{\Break}{\textbf{break}}
 \newcommand{\Select}{\textbf{select}}
+\newcommand{\pto}{\nrightarrow}
+\newcommand{\ptree}[3]{
+	\ifx&#2&%
+	(#1 \rightrightarrows #3)
+	\else
+	(#1^#2 \rightrightarrows #3)
+	\fi
+}
 
+%%%%%%%%%%%%%% TIKZ %%%%%%%%%%%%%%
 \tikzstyle{grammar}=[shorten >= 1pt, ->, draw=black!50, framed, background rectangle/.style={draw, rounded corners}, font=\scriptsize ]
 \tikzstyle{graph}=[shorten >= 1pt, ->, draw=black!50, font=\scriptsize]
-\tikzstyle{rid} = [align=left, anchor=east]
+\tikzstyle{rid} = [inner sep=3pt, align=left, anchor=east]
 \tikzstyle{nont}=[rectangle, inner sep=3pt, draw, fill=white, minimum width=5pt]
 \tikzstyle{t}=[circle, inner sep=3pt, draw, fill=white, minimum width=5pt]
 \tikzstyle{g}=[inner sep=3pt, fill=white]
-\tikzstyle{lhs}=[inner sep=3pt, fill=white]
-\tikzstyle{w}=[circle, inner sep=1pt, below=8pt, draw, fill=white]
-\tikzstyle{edge}=[->, very thick, -latex]
+\tikzstyle{lhs}=[inner sep=0pt, fill=white]
+\tikzstyle{w}=[circle, inner sep=1pt, below=8pt, draw, fill=white, font=\tiny]
+\tikzstyle{uw}=[circle, inner sep=1pt, above=8pt, draw, fill=white, font=\tiny]
+\tikzstyle{edge}=[->, thin, -latex]
 \tikzstyle{edgeLabel}=[midway, above]
-\tikzstyle{wedge}=[-, thick]
-\tikzstyle{biedge}=[-, very thick]
-\tikzstyle{pipe}=[-, very thick]
-\tikzstyle{morph}=[-, very thick, dashed, -latex]
+\tikzstyle{vedgeLabel}=[midway, left]
+\tikzstyle{wedge}=[-, thin]
+\tikzstyle{biedge}=[-, thin]
+\tikzstyle{pipe}=[-, thick]
+\tikzstyle{morph}=[-, thin, dashed, -latex]
+
+\newcommand{\ridX}{-0.3}
+\newcommand{\ridY}{0.5}
+\newcommand{\lhsX}{-0.3}
+\newcommand{\pipeUY}{-1}
+\newcommand{\pipeBY}{0.5}
+
