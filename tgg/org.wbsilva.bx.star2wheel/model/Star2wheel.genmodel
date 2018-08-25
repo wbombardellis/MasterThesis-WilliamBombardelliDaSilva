@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.wbsilva.bx.star2wheel/gen" modelPluginID="org.wbsilva.bx.star2wheel"
+    modelName="Star2wheel" updateClasspath="false" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.genmodel#//runtime platform:/plugin/org.wbsilva.mm.graph/model/Graph.genmodel#//graph platform:/plugin/org.moflon.tgg.language/model/Language.genmodel#//language platform:/plugin/SDMLanguage/model/SDMLanguage.genmodel#//SDMLanguage platform:/plugin/MocaTree/model/MocaTree.genmodel#//MocaTree"
+    operationReflection="true">
+  <foreignModel>Star2wheel.ecore</foreignModel>
+  <genPackages prefix="Star2wheel" basePackage="org.wbsilva.bx" disposableProviderFactory="true"
+      ecorePackage="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#/">
+    <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/target"/>
+    </genClasses>
+    <nestedGenPackages prefix="Rules" disposableProviderFactory="true" loadInitialization="true"
+        literalsInterface="false" ecorePackage="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules">
+      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn">
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_FWD/s"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_FWD/s"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_FWD/s"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_FWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_BWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_BWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_BWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_BWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_BWD_EMoflonEdge_196">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_BWD_EMoflonEdge_196/_edge_out"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_FWD_EMoflonEdge_169">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_FWD_EMoflonEdge_169/_edge_node"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_CC/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_CC/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_CC/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_CC/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_CC/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_CC/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkDEC_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkDEC_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkDEC_FWD/s"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkDEC_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkDEC_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkDEC_BWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel/g2hParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn">
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_FWD/s"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjectsToMatch_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjectsToMatch_FWD/s"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_solveCsp_FWD/s"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_FWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_FWD/s"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_FWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_FWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_FWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_FWD/s"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjectsToMatch_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjectsToMatch_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_solveCsp_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_BWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_BWD/s"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_BWD_EMoflonEdge_197">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_BWD_EMoflonEdge_197/_edge_node"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_FWD_EMoflonEdge_170">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_FWD_EMoflonEdge_170/_edge_node"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_CC/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_CC/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_CC/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_CC/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkDEC_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkDEC_FWD/s"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkDEC_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkDEC_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel/g2hParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn">
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_FWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/b2m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/b2m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_BWD_EMoflonEdge_198">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_BWD_EMoflonEdge_198/_edge_node"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_FWD_EMoflonEdge_171">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_FWD_EMoflonEdge_171/_edge_node"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkDEC_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkDEC_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkDEC_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkDEC_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkDEC_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkDEC_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkDEC_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkDEC_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel/g2hParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin">
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_FWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_FWD/g2h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/b2m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_FWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/b2m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_BWD_EMoflonEdge_199">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_BWD_EMoflonEdge_199/_edge_out"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_FWD_EMoflonEdge_172">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_FWD_EMoflonEdge_172/_edge_node"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkDEC_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkDEC_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkDEC_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkDEC_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkDEC_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkDEC_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkDEC_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkDEC_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel/g2hParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g">
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_FWD/g"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjectsToMatch_FWD/g"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_solveCsp_FWD/g"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_FWD/g"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_FWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_FWD/g"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_BWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjectsToMatch_BWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_solveCsp_BWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_BWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_BWD/g"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_BWD_G_36">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_BWD_G_36/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_FWD_G_36">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_FWD_G_36/g"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_CC/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_CC/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkDEC_FWD/g"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkDEC_BWD/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/generateModel/ruleEntryContainer"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin">
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_FWD/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_FWD/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_FWD/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD/b2m"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/c2o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD/b2m"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD/b2m"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/c2o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD/b2m"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_BWD_EMoflonEdge_200">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_BWD_EMoflonEdge_200/_edge_node"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_FWD_EMoflonEdge_173">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_FWD_EMoflonEdge_173/_edge_node"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_FWD/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkDEC_BWD/w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel/a2nParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/b2m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn">
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/b2m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD/m"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/b2m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD/c2o"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_BWD/m"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_BWD/m"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_BWD/m"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/b2m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD/m"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/b2m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD/c2o"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_BWD_EMoflonEdge_201">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_BWD_EMoflonEdge_201/_edge_node"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_FWD_EMoflonEdge_174">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_FWD_EMoflonEdge_174/_edge_out"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_FWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_FWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_FWD/a"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_BWD/o"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkDEC_BWD/m"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel/g2hParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/g2h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/s"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/h"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/b2m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/s2w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/g"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/w"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/a2n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/m"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdmUtil:CompilerInjection xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sdmUtil="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//sdmUtil">
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.star2wheel.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.star2wheel.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.star2wheel.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.star2wheel.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.star2wheel.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.star2wheel.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.star2wheel.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn"/>
+  </importInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;c&quot;, c);&#xA;match.registerObject(&quot;g&quot;, g);&#xA;match.registerObject(&quot;a&quot;, a);&#xA;match.registerObject(&quot;b&quot;, b);&#xA;match.registerObject(&quot;s&quot;, s);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;s2w&quot;,s2w);&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xA;isApplicableMatch.registerObject(&quot;a2n&quot;,a2n);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xA;isApplicableMatch.registerObject(&quot;m&quot;,m);&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xA;isApplicableMatch.registerObject(&quot;b2m&quot;,b2m);&#xA;isApplicableMatch.registerObject(&quot;w&quot;,w);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;s2w&quot;, s2w);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;a2n&quot;, a2n);&#xA;ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;c2o&quot;, c2o);&#xA;ruleresult.registerObject(&quot;m&quot;, m);&#xA;ruleresult.registerObject(&quot;g&quot;, g);&#xA;ruleresult.registerObject(&quot;a&quot;, a);&#xA;ruleresult.registerObject(&quot;b&quot;, b);&#xA;ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;b2m&quot;, b2m);&#xA;ruleresult.registerObject(&quot;o&quot;, o);&#xA;ruleresult.registerObject(&quot;w&quot;, w);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;c&quot;).eClass()).equals(&quot;graph.Node.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;h&quot;, h);&#xA;match.registerObject(&quot;n&quot;, n);&#xA;match.registerObject(&quot;m&quot;, m);&#xA;match.registerObject(&quot;o&quot;, o);&#xA;match.registerObject(&quot;w&quot;, w);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;s2w&quot;,s2w);&#xA;isApplicableMatch.registerObject(&quot;a2n&quot;,a2n);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xA;isApplicableMatch.registerObject(&quot;m&quot;,m);&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xA;isApplicableMatch.registerObject(&quot;b2m&quot;,b2m);&#xA;isApplicableMatch.registerObject(&quot;o&quot;,o);&#xA;isApplicableMatch.registerObject(&quot;w&quot;,w);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;s2w&quot;, s2w);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;a2n&quot;, a2n);&#xA;ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;c2o&quot;, c2o);&#xA;ruleresult.registerObject(&quot;m&quot;, m);&#xA;ruleresult.registerObject(&quot;g&quot;, g);&#xA;ruleresult.registerObject(&quot;a&quot;, a);&#xA;ruleresult.registerObject(&quot;b&quot;, b);&#xA;ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;b2m&quot;, b2m);&#xA;ruleresult.registerObject(&quot;o&quot;, o);&#xA;ruleresult.registerObject(&quot;w&quot;, w);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;o&quot;).eClass()).equals(&quot;graph.Node.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;g&quot;, g);&#xA;match.registerObject(&quot;s&quot;, s);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;g&quot;, g);&#xA;ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;w&quot;, w);&#xA;ruleresult.registerObject(&quot;s2w&quot;, s2w);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;s&quot;).eClass()).equals(&quot;graph.Node.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;h&quot;, h);&#xA;match.registerObject(&quot;w&quot;, w);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;w&quot;,w);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;g&quot;, g);&#xA;ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;w&quot;, w);&#xA;ruleresult.registerObject(&quot;s2w&quot;, s2w);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;w&quot;).eClass()).equals(&quot;graph.Node.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;g&quot;, g);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;g&quot;, g);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;g&quot;).eClass()).equals(&quot;graph.G.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;h&quot;, h);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;g&quot;, g);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;h&quot;).eClass()).equals(&quot;graph.G.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;a&quot;, a);&#xA;match.registerObject(&quot;g&quot;, g);&#xA;match.registerObject(&quot;b&quot;, b);&#xA;match.registerObject(&quot;s&quot;, s);&#xA;match.registerObject(&quot;c&quot;, c);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;m&quot;, m);&#xA;match.registerObject(&quot;h&quot;, h);&#xA;match.registerObject(&quot;n&quot;, n);&#xA;match.registerObject(&quot;w&quot;, w);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;a2n&quot;,a2n);&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xA;isApplicableMatch.registerObject(&quot;m&quot;,m);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;w&quot;,w);&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xA;isApplicableMatch.registerObject(&quot;s2w&quot;,s2w);&#xA;isApplicableMatch.registerObject(&quot;b2m&quot;,b2m);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;a2n&quot;, a2n);&#xA;ruleresult.registerObject(&quot;a&quot;, a);&#xA;ruleresult.registerObject(&quot;m&quot;, m);&#xA;ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;g&quot;, g);&#xA;ruleresult.registerObject(&quot;b2m_f&quot;, b2m_f);&#xA;ruleresult.registerObject(&quot;w&quot;, w);&#xA;ruleresult.registerObject(&quot;b&quot;, b);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;s2w&quot;, s2w);&#xA;ruleresult.registerObject(&quot;b2m&quot;, b2m);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;g&quot;, g);&#xA;match.registerObject(&quot;c&quot;, c);&#xA;match.registerObject(&quot;b&quot;, b);&#xA;match.registerObject(&quot;s&quot;, s);&#xA;match.registerObject(&quot;a&quot;, a);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;m&quot;,m);&#xA;isApplicableMatch.registerObject(&quot;s2w&quot;,s2w);&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xA;isApplicableMatch.registerObject(&quot;w&quot;,w);&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xA;isApplicableMatch.registerObject(&quot;a2n&quot;,a2n);&#xA;isApplicableMatch.registerObject(&quot;b2m&quot;,b2m);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;g&quot;, g);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;o&quot;, o);&#xA;ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;m&quot;, m);&#xA;ruleresult.registerObject(&quot;s2w&quot;, s2w);&#xA;ruleresult.registerObject(&quot;b&quot;, b);&#xA;ruleresult.registerObject(&quot;c2o&quot;, c2o);&#xA;ruleresult.registerObject(&quot;w&quot;, w);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;a&quot;, a);&#xA;ruleresult.registerObject(&quot;a2n&quot;, a2n);&#xA;ruleresult.registerObject(&quot;b2m&quot;, b2m);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;c&quot;).eClass()).equals(&quot;graph.Node.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;h&quot;, h);&#xA;match.registerObject(&quot;n&quot;, n);&#xA;match.registerObject(&quot;o&quot;, o);&#xA;match.registerObject(&quot;m&quot;, m);&#xA;match.registerObject(&quot;w&quot;, w);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xA;isApplicableMatch.registerObject(&quot;o&quot;,o);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;m&quot;,m);&#xA;isApplicableMatch.registerObject(&quot;s2w&quot;,s2w);&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xA;isApplicableMatch.registerObject(&quot;w&quot;,w);&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xA;isApplicableMatch.registerObject(&quot;a2n&quot;,a2n);&#xA;isApplicableMatch.registerObject(&quot;b2m&quot;,b2m);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;g&quot;, g);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;o&quot;, o);&#xA;ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;m&quot;, m);&#xA;ruleresult.registerObject(&quot;s2w&quot;, s2w);&#xA;ruleresult.registerObject(&quot;b&quot;, b);&#xA;ruleresult.registerObject(&quot;c2o&quot;, c2o);&#xA;ruleresult.registerObject(&quot;w&quot;, w);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;a&quot;, a);&#xA;ruleresult.registerObject(&quot;a2n&quot;, a2n);&#xA;ruleresult.registerObject(&quot;b2m&quot;, b2m);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;o&quot;).eClass()).equals(&quot;graph.Node.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;s&quot;, s);&#xA;match.registerObject(&quot;a&quot;, a);&#xA;match.registerObject(&quot;g&quot;, g);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;a2n&quot;, a2n);&#xA;ruleresult.registerObject(&quot;s2w&quot;, s2w);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;a&quot;, a);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;w&quot;, w);&#xA;ruleresult.registerObject(&quot;g&quot;, g);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;s&quot;).eClass()).equals(&quot;graph.Node.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a&quot;).eClass()).equals(&quot;graph.Node.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;h&quot;, h);&#xA;match.registerObject(&quot;n&quot;, n);&#xA;match.registerObject(&quot;w&quot;, w);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xA;isApplicableMatch.registerObject(&quot;w&quot;,w);&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;a2n&quot;, a2n);&#xA;ruleresult.registerObject(&quot;s2w&quot;, s2w);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;a&quot;, a);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;w&quot;, w);&#xA;ruleresult.registerObject(&quot;g&quot;, g);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;n&quot;).eClass()).equals(&quot;graph.Node.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;w&quot;).eClass()).equals(&quot;graph.Node.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;g&quot;, g);&#xA;match.registerObject(&quot;a&quot;, a);&#xA;match.registerObject(&quot;b&quot;, b);&#xA;match.registerObject(&quot;s&quot;, s);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;g&quot;, g);&#xA;ruleresult.registerObject(&quot;w&quot;, w);&#xA;ruleresult.registerObject(&quot;m&quot;, m);&#xA;ruleresult.registerObject(&quot;a&quot;, a);&#xA;ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;b&quot;, b);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;b2m&quot;, b2m);&#xA;ruleresult.registerObject(&quot;a2n&quot;, a2n);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;s2w&quot;, s2w);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a&quot;).eClass()).equals(&quot;graph.Node.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;b&quot;).eClass()).equals(&quot;graph.Node.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;s&quot;).eClass()).equals(&quot;graph.Node.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;w&quot;, w);&#xA;match.registerObject(&quot;m&quot;, m);&#xA;match.registerObject(&quot;h&quot;, h);&#xA;match.registerObject(&quot;n&quot;, n);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;w&quot;,w);&#xA;isApplicableMatch.registerObject(&quot;m&quot;,m);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;g&quot;, g);&#xA;ruleresult.registerObject(&quot;w&quot;, w);&#xA;ruleresult.registerObject(&quot;m&quot;, m);&#xA;ruleresult.registerObject(&quot;a&quot;, a);&#xA;ruleresult.registerObject(&quot;g2h&quot;, g2h);&#xA;ruleresult.registerObject(&quot;b&quot;, b);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;h&quot;, h);&#xA;ruleresult.registerObject(&quot;b2m&quot;, b2m);&#xA;ruleresult.registerObject(&quot;a2n&quot;, a2n);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;s2w&quot;, s2w);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;w&quot;).eClass()).equals(&quot;graph.Node.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;m&quot;).eClass()).equals(&quot;graph.Node.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;n&quot;).eClass()).equals(&quot;graph.Node.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;qn2qn&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;qn2qn&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/checkAttributes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;sn2sn&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;sn2sn&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/checkAttributes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;g2g&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;g2g&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/checkAttributes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;tn2tn_fin&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;tn2tn_fin&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/checkAttributes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;qn2qn_fin&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;qn2qn_fin&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/checkAttributes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;dn2dn&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;dn2dn&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/checkAttributes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;tn2tn&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xA;ruleResult.setRule(&quot;tn2tn&quot;);&#x9;&#xA;ruleResult.setSuccess(true);&#xA;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xA;&#x9;ruleResult.setSuccess(true);&#xA;} else {&#xA;&#x9;if(csp.check()){ &#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xA;&#x9;} else {&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xA;&#x9;&#x9;return ruleResult;&#xA;&#x9;}&#x9;&#x9;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/checkAttributes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_solveCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/isApplicable_checkCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_solveCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/isApplicable_checkCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_solveCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/isApplicable_checkCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_solveCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/isApplicable_checkCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_solveCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/isApplicable_checkCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_solveCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/isApplicable_checkCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_solveCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/isApplicable_checkCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;s2w&quot;,s2w);&#xA;isApplicableMatch.registerObject(&quot;a2n&quot;,a2n);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xA;isApplicableMatch.registerObject(&quot;m&quot;,m);&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xA;isApplicableMatch.registerObject(&quot;b2m&quot;,b2m);&#xA;isApplicableMatch.registerObject(&quot;w&quot;,w);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/sn2sn/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/g2g/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;a2n&quot;,a2n);&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xA;isApplicableMatch.registerObject(&quot;m&quot;,m);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;w&quot;,w);&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xA;isApplicableMatch.registerObject(&quot;s2w&quot;,s2w);&#xA;isApplicableMatch.registerObject(&quot;b2m&quot;,b2m);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn_fin/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;m&quot;,m);&#xA;isApplicableMatch.registerObject(&quot;s2w&quot;,s2w);&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xA;isApplicableMatch.registerObject(&quot;w&quot;,w);&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xA;isApplicableMatch.registerObject(&quot;a2n&quot;,a2n);&#xA;isApplicableMatch.registerObject(&quot;b2m&quot;,b2m);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/qn2qn_fin/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/dn2dn/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xA;&#xA;// Create literals&#xA;&#xA;// Create attribute variables&#xA;&#xA;// Create unbound variables&#xA;&#xA;// Create constraints&#xA;&#xA;&#xA;&#xA;&#xA;// Solve CSP&#xA;&#xA;// Snapshot pattern match on which CSP is solved&#xA;isApplicableMatch.registerObject(&quot;g&quot;,g);&#xA;isApplicableMatch.registerObject(&quot;g2h&quot;,g2h);&#xA;isApplicableMatch.registerObject(&quot;h&quot;,h);&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Rules/tn2tn/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+</sdmUtil:CompilerInjection>

@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.language:TripleGraphGrammar xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.moflon.tgg.language="platform:/plugin/org.moflon.tgg.language/model/Language.ecore" name="org.wbsilva.bx.star2wheel">
+  <domain name="Target" metamodel="//@metamodel.1" type="TARGET"/>
+  <domain name="Source" metamodel="//@metamodel.2" type="SOURCE"/>
+  <domain name="Correspondence" metamodel="//@metamodel.0"/>
+  <tggRule name="qn2qn" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s2w" outgoingLink="//@tggRule.0/@linkVariable.10 //@tggRule.0/@linkVariable.25" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.0/@linkVariable.1 //@tggRule.0/@linkVariable.7" outgoingLink="//@tggRule.0/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a2n" outgoingLink="//@tggRule.0/@linkVariable.4 //@tggRule.0/@linkVariable.17" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="h" incomingLink="//@tggRule.0/@linkVariable.16" outgoingLink="//@tggRule.0/@linkVariable.6 //@tggRule.0/@linkVariable.12 //@tggRule.0/@linkVariable.15 //@tggRule.0/@linkVariable.20 //@tggRule.0/@linkVariable.26" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="n" incomingLink="//@tggRule.0/@linkVariable.15 //@tggRule.0/@linkVariable.17 //@tggRule.0/@linkVariable.22 //@tggRule.0/@linkVariable.5" outgoingLink="//@tggRule.0/@linkVariable.8 //@tggRule.0/@linkVariable.13" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2o" outgoingLink="//@tggRule.0/@linkVariable.1 //@tggRule.0/@linkVariable.21" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="m" incomingLink="//@tggRule.0/@linkVariable.6 //@tggRule.0/@linkVariable.19 //@tggRule.0/@linkVariable.13" outgoingLink="//@tggRule.0/@linkVariable.18" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.0/@linkVariable.26" outgoingLink="//@tggRule.0/@linkVariable.2 //@tggRule.0/@linkVariable.5" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g" incomingLink="//@tggRule.0/@linkVariable.9" outgoingLink="//@tggRule.0/@linkVariable.3 //@tggRule.0/@linkVariable.7 //@tggRule.0/@linkVariable.14 //@tggRule.0/@linkVariable.28" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a" incomingLink="//@tggRule.0/@linkVariable.4 //@tggRule.0/@linkVariable.14" outgoingLink="//@tggRule.0/@linkVariable.27" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b" incomingLink="//@tggRule.0/@linkVariable.3 //@tggRule.0/@linkVariable.23" outgoingLink="//@tggRule.0/@linkVariable.11" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g2h" outgoingLink="//@tggRule.0/@linkVariable.9 //@tggRule.0/@linkVariable.16" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s" incomingLink="//@tggRule.0/@linkVariable.10 //@tggRule.0/@linkVariable.11 //@tggRule.0/@linkVariable.0 //@tggRule.0/@linkVariable.27 //@tggRule.0/@linkVariable.28" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b2m" outgoingLink="//@tggRule.0/@linkVariable.19 //@tggRule.0/@linkVariable.23" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="o" incomingLink="//@tggRule.0/@linkVariable.21 //@tggRule.0/@linkVariable.12" outgoingLink="//@tggRule.0/@linkVariable.22 //@tggRule.0/@linkVariable.24" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="w" incomingLink="//@tggRule.0/@linkVariable.18 //@tggRule.0/@linkVariable.20 //@tggRule.0/@linkVariable.8 //@tggRule.0/@linkVariable.25 //@tggRule.0/@linkVariable.2 //@tggRule.0/@linkVariable.24" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.0/@objectVariable.12" source="//@tggRule.0/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.1" source="//@tggRule.0/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.0/@objectVariable.15" source="//@tggRule.0/@objectVariable.7" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.0/@objectVariable.10" source="//@tggRule.0/@objectVariable.8" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.9" source="//@tggRule.0/@objectVariable.2" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.0/@objectVariable.4" source="//@tggRule.0/@objectVariable.7" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.0/@objectVariable.6" source="//@tggRule.0/@objectVariable.3" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.0/@objectVariable.1" source="//@tggRule.0/@objectVariable.8" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.0/@objectVariable.15" source="//@tggRule.0/@objectVariable.4" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.8" source="//@tggRule.0/@objectVariable.11" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.12" source="//@tggRule.0/@objectVariable.0" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.0/@objectVariable.12" source="//@tggRule.0/@objectVariable.10" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.0/@objectVariable.14" source="//@tggRule.0/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.0/@objectVariable.6" source="//@tggRule.0/@objectVariable.4" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.0/@objectVariable.9" source="//@tggRule.0/@objectVariable.8" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.0/@objectVariable.4" source="//@tggRule.0/@objectVariable.3" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.3" source="//@tggRule.0/@objectVariable.11" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.4" source="//@tggRule.0/@objectVariable.2" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.0/@objectVariable.15" source="//@tggRule.0/@objectVariable.6" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.6" source="//@tggRule.0/@objectVariable.13" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.0/@objectVariable.15" source="//@tggRule.0/@objectVariable.3" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.14" source="//@tggRule.0/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.0/@objectVariable.4" source="//@tggRule.0/@objectVariable.14" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.10" source="//@tggRule.0/@objectVariable.13" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.0/@objectVariable.15" source="//@tggRule.0/@objectVariable.14" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.15" source="//@tggRule.0/@objectVariable.0" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.0/@objectVariable.7" source="//@tggRule.0/@objectVariable.3" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.0/@objectVariable.12" source="//@tggRule.0/@objectVariable.9" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.0/@objectVariable.12" source="//@tggRule.0/@objectVariable.8" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <tggRule name="sn2sn" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g" incomingLink="//@tggRule.1/@linkVariable.2" outgoingLink="//@tggRule.1/@linkVariable.0 //@tggRule.1/@linkVariable.1" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g2h" outgoingLink="//@tggRule.1/@linkVariable.2 //@tggRule.1/@linkVariable.9" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="h" incomingLink="//@tggRule.1/@linkVariable.9" outgoingLink="//@tggRule.1/@linkVariable.3 //@tggRule.1/@linkVariable.4" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="m" incomingLink="//@tggRule.1/@linkVariable.3" outgoingLink="//@tggRule.1/@linkVariable.5" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="w" incomingLink="//@tggRule.1/@linkVariable.4 //@tggRule.1/@linkVariable.5 //@tggRule.1/@linkVariable.7" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="n" incomingLink="//@tggRule.1/@linkVariable.1" outgoingLink="//@tggRule.1/@linkVariable.6" bindingSemantics="NEGATIVE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s2w" outgoingLink="//@tggRule.1/@linkVariable.7 //@tggRule.1/@linkVariable.8" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s" incomingLink="//@tggRule.1/@linkVariable.8 //@tggRule.1/@linkVariable.6 //@tggRule.1/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.1/@objectVariable.7" source="//@tggRule.1/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.1/@objectVariable.5" source="//@tggRule.1/@objectVariable.0" bindingSemantics="NEGATIVE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.1/@objectVariable.0" source="//@tggRule.1/@objectVariable.1" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.1/@objectVariable.3" source="//@tggRule.1/@objectVariable.2" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.1/@objectVariable.4" source="//@tggRule.1/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.1/@objectVariable.4" source="//@tggRule.1/@objectVariable.3" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.1/@objectVariable.7" source="//@tggRule.1/@objectVariable.5" bindingSemantics="NEGATIVE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.1/@objectVariable.4" source="//@tggRule.1/@objectVariable.6" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.1/@objectVariable.7" source="//@tggRule.1/@objectVariable.6" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.1/@objectVariable.2" source="//@tggRule.1/@objectVariable.1" domain="//@domain.2"/>
+    <csp/>
+  </tggRule>
+  <tggRule name="g2g" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g2h" outgoingLink="//@tggRule.2/@linkVariable.0 //@tggRule.2/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="h" incomingLink="//@tggRule.2/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g" incomingLink="//@tggRule.2/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.1" source="//@tggRule.2/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.2" source="//@tggRule.2/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.2"/>
+    <csp/>
+  </tggRule>
+  <tggRule name="tn2tn_fin" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a2n" outgoingLink="//@tggRule.3/@linkVariable.4 //@tggRule.3/@linkVariable.17" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="d" incomingLink="//@tggRule.3/@linkVariable.2" outgoingLink="//@tggRule.3/@linkVariable.15" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a" incomingLink="//@tggRule.3/@linkVariable.9 //@tggRule.3/@linkVariable.17" outgoingLink="//@tggRule.3/@linkVariable.0" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="m" incomingLink="//@tggRule.3/@linkVariable.1 //@tggRule.3/@linkVariable.13 //@tggRule.3/@linkVariable.23 //@tggRule.3/@linkVariable.25" outgoingLink="//@tggRule.3/@linkVariable.10 //@tggRule.3/@linkVariable.12" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="h" incomingLink="//@tggRule.3/@linkVariable.19" outgoingLink="//@tggRule.3/@linkVariable.1 //@tggRule.3/@linkVariable.2 //@tggRule.3/@linkVariable.3 //@tggRule.3/@linkVariable.8" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="n" incomingLink="//@tggRule.3/@linkVariable.4 //@tggRule.3/@linkVariable.12 //@tggRule.3/@linkVariable.8" outgoingLink="//@tggRule.3/@linkVariable.5 //@tggRule.3/@linkVariable.23" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g" incomingLink="//@tggRule.3/@linkVariable.18" outgoingLink="//@tggRule.3/@linkVariable.6 //@tggRule.3/@linkVariable.7 //@tggRule.3/@linkVariable.9 //@tggRule.3/@linkVariable.11" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b2m_f" outgoingLink="//@tggRule.3/@linkVariable.13 //@tggRule.3/@linkVariable.14" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="w" incomingLink="//@tggRule.3/@linkVariable.5 //@tggRule.3/@linkVariable.15 //@tggRule.3/@linkVariable.10 //@tggRule.3/@linkVariable.21 //@tggRule.3/@linkVariable.3" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b" incomingLink="//@tggRule.3/@linkVariable.11 //@tggRule.3/@linkVariable.14 //@tggRule.3/@linkVariable.24" outgoingLink="//@tggRule.3/@linkVariable.16" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s" incomingLink="//@tggRule.3/@linkVariable.0 //@tggRule.3/@linkVariable.6 //@tggRule.3/@linkVariable.16 //@tggRule.3/@linkVariable.22 //@tggRule.3/@linkVariable.20" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g2h" outgoingLink="//@tggRule.3/@linkVariable.18 //@tggRule.3/@linkVariable.19" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.3/@linkVariable.7" outgoingLink="//@tggRule.3/@linkVariable.20" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s2w" outgoingLink="//@tggRule.3/@linkVariable.21 //@tggRule.3/@linkVariable.22" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b2m" outgoingLink="//@tggRule.3/@linkVariable.24 //@tggRule.3/@linkVariable.25" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.3/@objectVariable.10" source="//@tggRule.3/@objectVariable.2" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.3/@objectVariable.3" source="//@tggRule.3/@objectVariable.4" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.3/@objectVariable.1" source="//@tggRule.3/@objectVariable.4" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.3/@objectVariable.8" source="//@tggRule.3/@objectVariable.4" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.5" source="//@tggRule.3/@objectVariable.0" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.3/@objectVariable.8" source="//@tggRule.3/@objectVariable.5" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.3/@objectVariable.10" source="//@tggRule.3/@objectVariable.6" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.3/@objectVariable.12" source="//@tggRule.3/@objectVariable.6" bindingSemantics="NEGATIVE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.3/@objectVariable.5" source="//@tggRule.3/@objectVariable.4" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.3/@objectVariable.2" source="//@tggRule.3/@objectVariable.6" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.3/@objectVariable.8" source="//@tggRule.3/@objectVariable.3" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.3/@objectVariable.9" source="//@tggRule.3/@objectVariable.6" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.3/@objectVariable.5" source="//@tggRule.3/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.3" source="//@tggRule.3/@objectVariable.7" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.9" source="//@tggRule.3/@objectVariable.7" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.3/@objectVariable.8" source="//@tggRule.3/@objectVariable.1" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.3/@objectVariable.10" source="//@tggRule.3/@objectVariable.9" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.2" source="//@tggRule.3/@objectVariable.0" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.6" source="//@tggRule.3/@objectVariable.11" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.4" source="//@tggRule.3/@objectVariable.11" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.3/@objectVariable.10" source="//@tggRule.3/@objectVariable.12" bindingSemantics="NEGATIVE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.8" source="//@tggRule.3/@objectVariable.13" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.10" source="//@tggRule.3/@objectVariable.13" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.3/@objectVariable.3" source="//@tggRule.3/@objectVariable.5" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.9" source="//@tggRule.3/@objectVariable.14" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.3" source="//@tggRule.3/@objectVariable.14" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/target"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <tggRule name="qn2qn_fin" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="h" incomingLink="//@tggRule.4/@linkVariable.7" outgoingLink="//@tggRule.4/@linkVariable.0 //@tggRule.4/@linkVariable.1 //@tggRule.4/@linkVariable.5 //@tggRule.4/@linkVariable.8 //@tggRule.4/@linkVariable.20" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g" incomingLink="//@tggRule.4/@linkVariable.9" outgoingLink="//@tggRule.4/@linkVariable.2 //@tggRule.4/@linkVariable.3 //@tggRule.4/@linkVariable.4 //@tggRule.4/@linkVariable.6 //@tggRule.4/@linkVariable.10" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.4/@linkVariable.0" outgoingLink="//@tggRule.4/@linkVariable.25" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="n" incomingLink="//@tggRule.4/@linkVariable.20 //@tggRule.4/@linkVariable.15 //@tggRule.4/@linkVariable.26" outgoingLink="//@tggRule.4/@linkVariable.14 //@tggRule.4/@linkVariable.28" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.4/@linkVariable.2 //@tggRule.4/@linkVariable.24" outgoingLink="//@tggRule.4/@linkVariable.12" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="o" incomingLink="//@tggRule.4/@linkVariable.13 //@tggRule.4/@linkVariable.17 //@tggRule.4/@linkVariable.5" outgoingLink="//@tggRule.4/@linkVariable.15 //@tggRule.4/@linkVariable.23" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g2h" outgoingLink="//@tggRule.4/@linkVariable.7 //@tggRule.4/@linkVariable.9" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="m" incomingLink="//@tggRule.4/@linkVariable.1 //@tggRule.4/@linkVariable.27 //@tggRule.4/@linkVariable.28" outgoingLink="//@tggRule.4/@linkVariable.11 //@tggRule.4/@linkVariable.13" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s2w" outgoingLink="//@tggRule.4/@linkVariable.18 //@tggRule.4/@linkVariable.21" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b" incomingLink="//@tggRule.4/@linkVariable.10 //@tggRule.4/@linkVariable.30" outgoingLink="//@tggRule.4/@linkVariable.16" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2o" outgoingLink="//@tggRule.4/@linkVariable.17 //@tggRule.4/@linkVariable.24" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="w" incomingLink="//@tggRule.4/@linkVariable.14 //@tggRule.4/@linkVariable.21 //@tggRule.4/@linkVariable.8 //@tggRule.4/@linkVariable.11 //@tggRule.4/@linkVariable.25 //@tggRule.4/@linkVariable.23" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s" incomingLink="//@tggRule.4/@linkVariable.16 //@tggRule.4/@linkVariable.18 //@tggRule.4/@linkVariable.6 //@tggRule.4/@linkVariable.12 //@tggRule.4/@linkVariable.22 //@tggRule.4/@linkVariable.19" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="d" incomingLink="//@tggRule.4/@linkVariable.3" outgoingLink="//@tggRule.4/@linkVariable.19" bindingSemantics="NEGATIVE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a" incomingLink="//@tggRule.4/@linkVariable.4 //@tggRule.4/@linkVariable.29" outgoingLink="//@tggRule.4/@linkVariable.22" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a2n" outgoingLink="//@tggRule.4/@linkVariable.26 //@tggRule.4/@linkVariable.29" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b2m" outgoingLink="//@tggRule.4/@linkVariable.27 //@tggRule.4/@linkVariable.30" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.4/@objectVariable.2" source="//@tggRule.4/@objectVariable.0" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.4/@objectVariable.7" source="//@tggRule.4/@objectVariable.0" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.4/@objectVariable.4" source="//@tggRule.4/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.4/@objectVariable.13" source="//@tggRule.4/@objectVariable.1" bindingSemantics="NEGATIVE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.4/@objectVariable.14" source="//@tggRule.4/@objectVariable.1" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.4/@objectVariable.5" source="//@tggRule.4/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.4/@objectVariable.12" source="//@tggRule.4/@objectVariable.1" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.4/@objectVariable.0" source="//@tggRule.4/@objectVariable.6" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.4/@objectVariable.11" source="//@tggRule.4/@objectVariable.0" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.4/@objectVariable.1" source="//@tggRule.4/@objectVariable.6" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.4/@objectVariable.9" source="//@tggRule.4/@objectVariable.1" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.4/@objectVariable.11" source="//@tggRule.4/@objectVariable.7" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.4/@objectVariable.12" source="//@tggRule.4/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.4/@objectVariable.5" source="//@tggRule.4/@objectVariable.7" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.4/@objectVariable.11" source="//@tggRule.4/@objectVariable.3" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.4/@objectVariable.3" source="//@tggRule.4/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.4/@objectVariable.12" source="//@tggRule.4/@objectVariable.9" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.4/@objectVariable.5" source="//@tggRule.4/@objectVariable.10" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.4/@objectVariable.12" source="//@tggRule.4/@objectVariable.8" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.4/@objectVariable.12" source="//@tggRule.4/@objectVariable.13" bindingSemantics="NEGATIVE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.4/@objectVariable.3" source="//@tggRule.4/@objectVariable.0" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.4/@objectVariable.11" source="//@tggRule.4/@objectVariable.8" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.4/@objectVariable.12" source="//@tggRule.4/@objectVariable.14" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.4/@objectVariable.11" source="//@tggRule.4/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.4/@objectVariable.4" source="//@tggRule.4/@objectVariable.10" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.4/@objectVariable.11" source="//@tggRule.4/@objectVariable.2" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.4/@objectVariable.3" source="//@tggRule.4/@objectVariable.15" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.4/@objectVariable.7" source="//@tggRule.4/@objectVariable.16" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.4/@objectVariable.7" source="//@tggRule.4/@objectVariable.3" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.4/@objectVariable.14" source="//@tggRule.4/@objectVariable.15" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.4/@objectVariable.9" source="//@tggRule.4/@objectVariable.16" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/source"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <tggRule name="dn2dn" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a2n" outgoingLink="//@tggRule.5/@linkVariable.4 //@tggRule.5/@linkVariable.9" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s2w" outgoingLink="//@tggRule.5/@linkVariable.0 //@tggRule.5/@linkVariable.10" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s" incomingLink="//@tggRule.5/@linkVariable.0 //@tggRule.5/@linkVariable.3 //@tggRule.5/@linkVariable.11 //@tggRule.5/@linkVariable.13" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="m" incomingLink="//@tggRule.5/@linkVariable.6" outgoingLink="//@tggRule.5/@linkVariable.1" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b" incomingLink="//@tggRule.5/@linkVariable.12" outgoingLink="//@tggRule.5/@linkVariable.13" bindingSemantics="NEGATIVE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g2h" outgoingLink="//@tggRule.5/@linkVariable.7 //@tggRule.5/@linkVariable.15" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="h" incomingLink="//@tggRule.5/@linkVariable.7" outgoingLink="//@tggRule.5/@linkVariable.2 //@tggRule.5/@linkVariable.5 //@tggRule.5/@linkVariable.6" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a" incomingLink="//@tggRule.5/@linkVariable.4 //@tggRule.5/@linkVariable.14" outgoingLink="//@tggRule.5/@linkVariable.3" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="n" incomingLink="//@tggRule.5/@linkVariable.2 //@tggRule.5/@linkVariable.9" outgoingLink="//@tggRule.5/@linkVariable.8" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="w" incomingLink="//@tggRule.5/@linkVariable.5 //@tggRule.5/@linkVariable.8 //@tggRule.5/@linkVariable.1 //@tggRule.5/@linkVariable.10" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g" incomingLink="//@tggRule.5/@linkVariable.15" outgoingLink="//@tggRule.5/@linkVariable.11 //@tggRule.5/@linkVariable.12 //@tggRule.5/@linkVariable.14" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.2" source="//@tggRule.5/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.5/@objectVariable.9" source="//@tggRule.5/@objectVariable.3" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.5/@objectVariable.8" source="//@tggRule.5/@objectVariable.6" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.5/@objectVariable.2" source="//@tggRule.5/@objectVariable.7" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.7" source="//@tggRule.5/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.5/@objectVariable.9" source="//@tggRule.5/@objectVariable.6" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.5/@objectVariable.3" source="//@tggRule.5/@objectVariable.6" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.6" source="//@tggRule.5/@objectVariable.5" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.5/@objectVariable.9" source="//@tggRule.5/@objectVariable.8" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.8" source="//@tggRule.5/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.9" source="//@tggRule.5/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.5/@objectVariable.2" source="//@tggRule.5/@objectVariable.10" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.5/@objectVariable.4" source="//@tggRule.5/@objectVariable.10" bindingSemantics="NEGATIVE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.5/@objectVariable.2" source="//@tggRule.5/@objectVariable.4" bindingSemantics="NEGATIVE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.5/@objectVariable.7" source="//@tggRule.5/@objectVariable.10" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.10" source="//@tggRule.5/@objectVariable.5" domain="//@domain.2"/>
+    <csp/>
+  </tggRule>
+  <tggRule name="tn2tn" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g" incomingLink="//@tggRule.6/@linkVariable.2" outgoingLink="//@tggRule.6/@linkVariable.1 //@tggRule.6/@linkVariable.3 //@tggRule.6/@linkVariable.16" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="w" incomingLink="//@tggRule.6/@linkVariable.0 //@tggRule.6/@linkVariable.11 //@tggRule.6/@linkVariable.9 //@tggRule.6/@linkVariable.15" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="m" incomingLink="//@tggRule.6/@linkVariable.5 //@tggRule.6/@linkVariable.8 //@tggRule.6/@linkVariable.12" outgoingLink="//@tggRule.6/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a" incomingLink="//@tggRule.6/@linkVariable.10 //@tggRule.6/@linkVariable.16" outgoingLink="//@tggRule.6/@linkVariable.7" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="g2h" outgoingLink="//@tggRule.6/@linkVariable.2 //@tggRule.6/@linkVariable.4" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//G2G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b" incomingLink="//@tggRule.6/@linkVariable.1 //@tggRule.6/@linkVariable.13" outgoingLink="//@tggRule.6/@linkVariable.6" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s" incomingLink="//@tggRule.6/@linkVariable.6 //@tggRule.6/@linkVariable.3 //@tggRule.6/@linkVariable.7 //@tggRule.6/@linkVariable.14" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="h" incomingLink="//@tggRule.6/@linkVariable.4" outgoingLink="//@tggRule.6/@linkVariable.8 //@tggRule.6/@linkVariable.11 //@tggRule.6/@linkVariable.18" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b2m" outgoingLink="//@tggRule.6/@linkVariable.5 //@tggRule.6/@linkVariable.13" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a2n" outgoingLink="//@tggRule.6/@linkVariable.10 //@tggRule.6/@linkVariable.17" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="n" incomingLink="//@tggRule.6/@linkVariable.17 //@tggRule.6/@linkVariable.18" outgoingLink="//@tggRule.6/@linkVariable.9 //@tggRule.6/@linkVariable.12" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="s2w" outgoingLink="//@tggRule.6/@linkVariable.14 //@tggRule.6/@linkVariable.15" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.6/@objectVariable.1" source="//@tggRule.6/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.6/@objectVariable.5" source="//@tggRule.6/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.6/@objectVariable.0" source="//@tggRule.6/@objectVariable.4" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.6/@objectVariable.6" source="//@tggRule.6/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.6/@objectVariable.7" source="//@tggRule.6/@objectVariable.4" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.6/@objectVariable.2" source="//@tggRule.6/@objectVariable.8" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.6/@objectVariable.6" source="//@tggRule.6/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.6/@objectVariable.6" source="//@tggRule.6/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.6/@objectVariable.2" source="//@tggRule.6/@objectVariable.7" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.6/@objectVariable.1" source="//@tggRule.6/@objectVariable.10" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.6/@objectVariable.3" source="//@tggRule.6/@objectVariable.9" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.6/@objectVariable.1" source="//@tggRule.6/@objectVariable.7" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="out" target="//@tggRule.6/@objectVariable.2" source="//@tggRule.6/@objectVariable.10" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//Node/out"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.6/@objectVariable.5" source="//@tggRule.6/@objectVariable.8" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.6/@objectVariable.6" source="//@tggRule.6/@objectVariable.11" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.6/@objectVariable.1" source="//@tggRule.6/@objectVariable.11" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#//Node2Node/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.6/@objectVariable.3" source="//@tggRule.6/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.6/@objectVariable.10" source="//@tggRule.6/@objectVariable.9" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="node" target="//@tggRule.6/@objectVariable.10" source="//@tggRule.6/@objectVariable.7" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#//G/node"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <metamodel name="star2wheel">
+    <outermostPackage href="../../../plugin/org.wbsilva.bx.star2wheel/model/Star2wheel.ecore#/"/>
+  </metamodel>
+  <metamodel name="graph">
+    <outermostPackage href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#/"/>
+  </metamodel>
+  <metamodel name="graph">
+    <outermostPackage href="../../../plugin/org.wbsilva.mm.graph/model/Graph.ecore#/"/>
+  </metamodel>
+</org.moflon.tgg.language:TripleGraphGrammar>
