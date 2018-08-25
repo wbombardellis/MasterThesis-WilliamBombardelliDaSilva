@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -17,6 +19,9 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
+import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
+import org.wbsilva.bence.graphgrammar.TripleGrammar;
+import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.transformer.exception.TransformationException;
 
 /**
@@ -162,5 +167,38 @@ public class TransformerUtil {
 			logger.error(ex);
 			throw ex;
         }
+	}
+
+	/**
+	 * Count and return the total amount of elements in {@code tripleGrammar}
+	 * @param tripleGrammar		The valid triple graph grammar to count
+	 * @return					The amount of elements in {@code tripleGrammar}
+	 */
+	public static int countElements(final TripleGrammar tripleGrammar) {
+		final int elements = tripleGrammar.getTripleRules().stream()
+			.mapToInt(tr -> 
+					  tr.getSource().getRhs().getVertices().size() + tr.getSource().getRhs().getEdges().size() + countEmbedding(tr.getSource().getEmbedding())
+					+ tr.getTarget().getRhs().getVertices().size() + tr.getTarget().getRhs().getEdges().size() + countEmbedding(tr.getTarget().getEmbedding())
+					+ tr.getCorr().getRhs().getVertices().size() + tr.getCorr().getRhs().getEdges().size() + countEmbedding(tr.getCorr().getEmbedding())
+					+ tr.getMs().size() + tr.getMt().size())
+			.reduce(Integer::sum)
+			.orElse(0);
+		
+		return elements;
+	}
+
+	/**
+	 * Count and return the total amount of mappings in {@code embedding}
+	 * @param eMap		The embedding to count mappings
+	 * @return				The amount of mappings. I.e. the amount of vertex labels in {@code embedding}
+	 */
+	private static int countEmbedding(final EMap<Vertex, EList<SymbolSymbolsPair>> eMap) {
+		return eMap.entrySet().stream()
+			.mapToInt(e -> e.getValue().stream()
+						.mapToInt(ssP -> ssP.getVertexLabels().size())
+						.reduce(Integer::sum)
+						.orElse(0))
+			.reduce(Integer::sum)
+			.orElse(0);
 	}
 }

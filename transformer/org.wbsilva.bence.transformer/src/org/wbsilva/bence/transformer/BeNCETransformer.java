@@ -20,6 +20,7 @@ import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 import org.wbsilva.bence.graphgrammar.util.NPUtil;
 import org.wbsilva.bence.transformer.parser.BeNCEParser;
 import org.wbsilva.bence.transformer.parser.BeNCEParser.Strategy;
+import org.wbsilva.bence.transformer.util.TransformerUtil;
 
 /**
  * This class implements a B-eNCE triple graph grammar transformer, that transforms an input graph (source or target)
@@ -54,6 +55,8 @@ public class BeNCETransformer {
 			this.inputGrammarNP = null;
 		} else {
 			logger.debug(String.format("Constructing the %s BeNCE Transformer for grammar %s", forward ? "forward" : "backward", tripleGrammar.getName()));
+
+			logger.info(String.format("Grammar has %d elements", TransformerUtil.countElements(tripleGrammar)));
 			
 			//Construct source (or target) input grammar for the parsing of the input graph
 			this.inputGrammarNP = GraphgrammarFactory.eINSTANCE.createGrammar();
