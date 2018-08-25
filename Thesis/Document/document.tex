@@ -22,9 +22,16 @@ Overview of the MDE. Potential and problems of it. The challenge of model transf
 \section{Related Work}
 TGG main references and reviews. Usability enhancements proposed for TGG. Graph grammar main references. NCE and B-eNCE graph grammar. Alternative proposal of graph grammars.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% THEORETICAL REVIEW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Theoretical Review}
 In this section, we introduce the theoretical concepts used along this thesis. The definitions below are taken from the works of ...%TODO: cite 27, 54,s_99.
 We first go on to define graphs and graph grammars and then, building upon it, we construct the so-called triple graph grammars.
+
+%%%==================================================================%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% GRAPH GRAMMARS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%==================================================================%%%
 
 \subsection{Graph Grammars}
 We start presenting our notation for graphs and grammars, accompanied by examples, then we introduce the dynamic aspects of the graph grammar formalism that is, how graph grammars are to be interpreted.
@@ -86,9 +93,9 @@ In the following, we present our concrete syntax inspired by the well-known back
 
 \input{misc/concrete-syntax}
 
-Notice that, we use squares for non-terminal vertices, circles for terminal vertices, position the respective label inside the shape and the (possibly omitted) identifier over it. Over each edge is positioned its respective label. To depict the embedding function, we place below the respective vertex a small circle labeled with the image pairs of the embedding function for this node aligned vertically and separated by semi-colons.
+Notice that, we use squares for non-terminal vertices, circles for terminal vertices, position the respective label inside the shape and the (possibly omitted) identifier over it. Over each edge is positioned its respective label. To depict the embedding function, we place near the respective vertex a small circle labeled with the image pairs of the embedding function for this node aligned vertically and separated by semi-colons, which in certain circumstances may also be omitted.
 
-%TODO: comment on the different notation compared to the literature that uses attributed graphs and squares, etc...
+%TODO: comment on the different notation compared to the literature that uses attributed graphs and squares, etc... plus attributed graphs
 
 %%%%%% Semantics %%%%%%
 With these syntactic notions of the formalism presented, we introduce below its semantics by means of the concepts of derivation step, derivation and language.
@@ -137,48 +144,55 @@ Notice that for every graph $G \in L(GG)$, there is at least one finite derivati
 Below we give one example of a grammar whose language consists of all chains of one or more vertices with interleaved vertices labeled with $a$ and $b$.
 
 %Examples (chains)
-\input{examples/abchains-tg}
-
-The graph $G=$
-\begin{tikzpicture}[graph]
-\draw (0,0) node[t] (v1) {a};
-\draw (1.5,0) node[t] (v2) {b};
-\draw (3,0) node[t] (v3) {a};
-\draw[edge] (v1) -- (v2) node [edgeLabel] {$c$};
-\draw[edge] (v2) -- (v3) node [edgeLabel] {$c$};
-\end{tikzpicture}
-belongs to $L(GG)$ because it contains only terminal vertices and $\startG{GG}$ derives into it using the following derivation:
-\[
+\begin{example}{Chains of a's and b's.}
+	$GG = (\{S,A,B,a,b,c\}, \{a,b,c\}, S, P)$, where $P$ is
+	
+	\input{examples/abchains-gg}
+	
+	The graph $G=$
+	\begin{tikzpicture}[graph]
+	\draw (0,0) node[t] (v1) {a};
+	\draw (1.5,0) node[t] (v2) {b};
+	\draw (3,0) node[t] (v3) {a};
+	\draw[edge] (v1) -- (v2) node [edgeLabel] {$c$};
+	\draw[edge] (v2) -- (v3) node [edgeLabel] {$c$};
+	\end{tikzpicture}
+	belongs to $L(GG)$ because it contains only terminal vertices and $\startG{GG}$ derives into it using the following derivation:
+	\[
 	\startG{GG} \deriv{r_0}{v_0}{} 
-		\begin{tikzpicture}[graph]
-			\draw (0,0) node[nont, label=90:$v_1$] (v1) {A};
-		\end{tikzpicture}
-		\deriv{r_2}{v_1}{} 
-		\begin{tikzpicture}[graph]
-			\draw (1,0) node[t, label=90:$v_2$] (v2) {a};
-			\draw (2,0) node[nont, label=90:$v_3$] (v3) {B};
-			\draw[edge] (v2) -- (v3) node [edgeLabel] {$c$};
-		\end{tikzpicture}
-		\deriv{r_4}{v_3}{}
-		\begin{tikzpicture}[graph]
-			\draw (1,0) node[t, label=90:$v_2$] (v2) {a};
-			\draw (2,0) node[t, label=90:$v_4$] (v4) {b};
-			\draw (3,0) node[nont, label=90:$v_5$] (v5) {A};
-			\draw[edge] (v2) -- (v4) node [edgeLabel] {$c$};
-			\draw[edge] (v4) -- (v5) node [edgeLabel] {$c$};
-		\end{tikzpicture}
-		\deriv{r_3}{v_5}{}
-		\begin{tikzpicture}[graph]
-			\draw (0,0) node[t, label=90:$v_2$] (v2) {a};
-			\draw (1,0) node[t, label=90:$v_4$] (v4) {b};
-			\draw (2,0) node[t, label=90:$v_6$] (v6) {a};
-			\draw[edge] (v2) -- (v4) node [edgeLabel] {$c$};
-			\draw[edge] (v4) -- (v6) node [edgeLabel] {$c$};
-		\end{tikzpicture}
-\]
+	\begin{tikzpicture}[graph]
+	\draw (0,0) node[nont, label=90:$v_1$] (v1) {A};
+	\end{tikzpicture}
+	\deriv{r_2}{v_1}{} 
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t, label=90:$v_2$] (v2) {a};
+	\draw (2,0) node[nont, label=90:$v_3$] (v3) {B};
+	\draw[edge] (v2) -- (v3) node [edgeLabel] {$c$};
+	\end{tikzpicture}
+	\deriv{r_4}{v_3}{}
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t, label=90:$v_2$] (v2) {a};
+	\draw (2,0) node[t, label=90:$v_4$] (v4) {b};
+	\draw (3,0) node[nont, label=90:$v_5$] (v5) {A};
+	\draw[edge] (v2) -- (v4) node [edgeLabel] {$c$};
+	\draw[edge] (v4) -- (v5) node [edgeLabel] {$c$};
+	\end{tikzpicture}
+	\deriv{r_3}{v_5}{}
+	\begin{tikzpicture}[graph]
+	\draw (0,0) node[t, label=90:$v_2$] (v2) {a};
+	\draw (1,0) node[t, label=90:$v_4$] (v4) {b};
+	\draw (2,0) node[t, label=90:$v_6$] (v6) {a};
+	\draw[edge] (v2) -- (v4) node [edgeLabel] {$c$};
+	\draw[edge] (v4) -- (v6) node [edgeLabel] {$c$};
+	\end{tikzpicture}
+	\]
+\end{example}
 
 %TODO: Church-Rosser theorem??
 
+%%%==================================================================%%%
+%%%%%%%%%%%%%%%%%%%% TRIPLE GRAPH GRAMMARS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%==================================================================%%%
 \subsection{Triple Graph Grammars}
 Building upon the concepts of graphs and graph grammars, we present, in the following, our understanding over triple graphs and triple graph grammars (TGGs), supported by the TGG specification from (). %TODO: cite schürr 1994
 
@@ -194,7 +208,7 @@ Building upon the concepts of graphs and graph grammars, we present, in the foll
 	A $\Gamma\text{-boundary}$ triple graph $TG = G_s \ms{} G_c \mt{} G_t$ is such that $G_s$, $G_c$ and $G_t$ are $\Gamma\text{-boundary}$ graphs.
 \end{definition}
 
-%TODO: comments on triple graphs: good for modelling... give intuition
+%TODO: comments on triple graphs: good for modelling of consistency... give intuition
 
 Below we start introducing the standard definition of TGG of the current research's literature. As the reader should notice, this definition of TGG does not fit our needs optimally, because it defines a context-sensitive-like graph grammar whilst we wish a context-free-like graph grammar to use together with the NCE graph grammar formalism. Hence, after presenting the conventional TGG definition, we refine it to create a NCE TGG, that fits our context best.
 
@@ -268,11 +282,38 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 	\]
 \end{definition}
 
-Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and is presented below by means of an example. The only difference is at the left-hand sides, which are now depicted by three symbols and the dashed lines at the right-hand sides that depict the morphisms between the correspondence graph and the source and target graphs.
+Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and is presented below by means of the Example \ref{ex:pseudocode2controlflow}. The only difference is at the right-hand sides that depict the morphisms between the correspondence graph and source and target graphs.
 
 %Concrete syntax and examples (Pseudocode 2 Control Flow [sourcecode2controlflow])
-\input{examples/pseudocode2controlflow-tgg}) 
+\begin{example}{Pseudocode to Controlflow.}
+	\label{ex:pseudocode2controlflow}
+	This example illustrates the specification of the consistency relation between $Pseudocode$ graphs and $Controlflow$ graphs. A $Pseudocode$ graph is an abstract representation of a program written in a pseudo-code where vertices refer to actions, ifs or whiles and edges connect these terms together according to how they appear in the program. A $Controlflow$ graph is a more abstract representation of a program, where vertices can only be either a command or a branch.
+	
+	Consider, for instance, the program $main$ below on the left, written in a pseudo-code. The triple graph $TG$ on the right consists of the $Pseudocode$ graph of $main$ connected to the $Controlflow$ graph of the same program through the correspondence graph in the middle of them. In such graph, the vertex labels of the $Pseudocode$ graph $p, i, a, w$ correspond to the concepts of \textit{program}, \textit{if}, \textit{action} and \textit{while}, respectively. The edge label $f$ is given to the edge from the vertex $p$ to the program's first statement, $x$ stands for \textit{next} and indicates that a statement is followed by another, $p$ and $n$ stand for \textit{positive} and \textit{negative} and indicate which assignments correspond to the positive of negative case of the \textit{if}'s evaluation, finally $l$ stands for \textit{last} and indicates the last action of a loop. In the $Controlflow$ graph, the vertex labels $g, b, c$ stand for the concepts of \textit{graph}, \textit{branch} and \textit{command}, respectively. The edge label $r$ is given to the edge from the vertex $g$ to the first program's statement, $x, p$ and $n$ mean, analogous to the former graph, \textit{next}, \textit{positive} and \textit{negative}. In the correspondence graph, the labels $pg, ib, ac, wb$ serve to indicate which labels in the source and target graphs are being connected through the triple graph's morphism.
+	
+	\input{examples/pseudocode2controlflow-tg}
+	
+	The main difference between the two graphs is the absence of the $w$ label in the $Controlflow$ graph, what makes it encode loops through the combination of $b$-labeled vertices and $x$-labeled edges.
+	
+	The TGG that specifies the relation between these two types of graphs is $TGG = (\{S, A, p, a, i, w, g, b, c, f, x, p, n, l, r, pg, ac, ib, wb\}, \{p, a, i, w, g, b, c, f, x, p, n, l, r, pg, ac, ib, wb\}, S, P)$, where $P$ is
+	
+	\input{examples/pseudocode2controlflow-tgg}
+	
+	\noindent
+	with $\sigma_1(s_{11}) = \sigma_2(s_{21}) = \sigma_3(s_{31}) = \sigma_4(s_{41}) =\sigma_5(s_{51}) = \{ (f,p), (x,a), (x,i),$ $ (x,w), (p,i), (n,i), (l,w), (f,w) \}$ and $\tau_1(t_{11}) = \tau_2(t_{21}) = \tau_3(t_{31}) = \tau_4(t_{41}) =\tau_5(t_{51}) = \{ (r,g), (x,c), (x,b), (p,b), (n,b)\}$ being the complete definition of the source and target embedding functions of the rules, respectively.
+	
+	The rule $r_0$ relates programs to graphs, $r_1$ actions to commands, $r_2$ ifs to branches, $r_3$ empty whiles to simple branches, $r_4$ filled whiles to filled loops with branches, $r_5$ whiles with one action to loops with branches with one command and, finally, $r_6$ produces an empty graph from a symbol $A$, what allows any derivation in the grammar to finish.
+	
+	The aforementioned triple graph $TG$ is in $L(TGG)$, because the derivation
+	$
+	\startTG{TGG} \tderiv{r_0}{}{} G_1 \tderiv{r_2}{}{} G_2 \tderiv{r_6}{}{} G_3 \tderiv{r_1}{}{} G_4 \tderiv{r_6}{}{} G_5 \tderiv{r_1}{}{} G_6 \tderiv{r_4}{}{} G_7 \tderiv{r_1}{}{} G_8 \tderiv{r_6}{}{} G_9 \tderiv{r_1}{}{} G_{10} \tderiv{r_6}{}{} TG
+	$
+	is a derivation in TGG with appropriate $G_i$ for $1 \le i \le 10$.
+\end{example}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PARSING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Parsing of Graphs with BNCE Graph Grammars}
 In the last section we cleared how the concepts of graphs and languages fit together. In this section we are interested in the problem of deciding, given a BNCE graph grammar $GG$ and a graph $G$, whether $G \in L(GG)$. This is sometimes called the \textit{membership} problem and can be solved through a recognizer algorithm that always finishes answering yes if and only if $G \in L(GG)$ and no otherwise. A slight extension of this problem is the \textit{parsing} problem, which consists of deciding if $G \in L(GG)$ and finding a derivation $\startG{GG} \derivtr{}{}{} G$.
 
@@ -342,9 +383,9 @@ Finally, the Algorithm \ref{alg:parse} displays the parsing algorithm of graphs 
 					\EndIf
 				\EndFor
 			\Until{$(S, V_G) \in bup$} \Comment{if found the root, stop}
-			\State \Return $(S, V_G) \in bup \? D(\ptree{(S,V_G)}{y}{X} \in pf) \: empty $
+			\State \Return $(S, V_G) \in bup \? D(\ptree{(S,V_G)}{y}{X} \in pf) \: nothing $
 		\EndFunction
-		\Ensure $return \text{ is either } empty \text{ or of the form } \startG{GG} \derivtr{}{}{} G$
+		\Ensure $return \text{ is either } nothing \text{ or of the form } \startG{GG} \derivtr{}{}{} G$
 	\end{algorithmic}
 	\label{alg:parse}
 \end{algorithm}
@@ -354,7 +395,7 @@ is started with the trivial zone vertices of $G$, each containing only one verte
 
 The variable $h$ stands for handle and is any subset from $bup$ chosen to be evaluated for the search of new zone vertices to insert in $bup$. The procedure $\Select$ gives one yet not chosen handle or an empty set and cares for the termination of the execution. Then, for the chosen $h$, rules $r$ with left-hand side $d$ and right-hand side isomorphic to $Y(h)$ that produce $Z(h)$ from $Z(\{l\})$ are searched. If any is found, then $l = (d,V(h))$ is inserted into $bup$. This basically means that it found a zone vertex that encompasses the vertices $V(h)$ (a possibly bigger subset than other elements in $bup$), from which, through the application of a sequence of rules, we can produce the subgraph of G induced by $V(h)$. This information is saved in the parsing forest $pf$ in form of a parsing tree with node $l$ and children $\ptree{z}{y}{X}$, already in the parsing forest $pf$, for all $z \in h$.
 
-If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that the whole graph $G$ can be produced through the application of a derivation starting from the start graph $\startG{GG}$ and thus $G \in L(GG)$. This derivation is, namely, the result of a depth-first walk in the parsing tree whose root is $(S, V_G)$. If, otherwise, all possibilities for $h$ were exhausted without inferring such zone vertex, then $empty$ is returned, what means that $G$ cannot de parsed with $GG$ and therefore $G \notin L(GG)$.
+If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that the whole graph $G$ can be produced through the application of a derivation starting from the start graph $\startG{GG}$ and thus $G \in L(GG)$. This derivation is, namely, the result of a depth-first walk in the parsing tree whose root is $(S, V_G)$. If, otherwise, all possibilities for $h$ were exhausted without inferring such zone vertex, then $nothing$ is returned, what means that $G$ cannot de parsed with $GG$ and therefore $G \notin L(GG)$.
 
 %TODO: Talk about the empty productions, that are allowed
 %TODO: Talk about the isomorphism in the reduction test
@@ -364,6 +405,10 @@ If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that
 %TODO: Comment on correctness and completeness
 %TODO: Comment on spatial and time complexity
 %TODO: Nevertheless, the grammar's ambiguity does not compromise the correctness of our algorithms presented in the following.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% MODEL TRANSFORMATION %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Model Transformation with BNCE Triple Graph Grammars}
 Given a graph $G$ over $\Delta$, one may be interested in finding another graph $T$ over $\Delta$ that is somehow consistent to $G$, write $G \rel T$. One example of such a situation is the compilation of a source-code, represented abstractly by $G$, into a machine-code, represented by $T$. Since, very often, $T$ can be generated from $G$, following some specification, this problem is referred to as model transformation problem.
@@ -437,26 +482,98 @@ The complete transformation procedure is presented in the Algorithm \ref{alg:tra
 		\State from $\overline{D}$ construct $D = \startTG{TGG} \derivtr{}{}{TGG} G \ms{} C \mt{} T$
 		\State \Return {$T$}
 		\Else
-		\State \Return {$empty$} \Comment{no $T$ satisfies $(G \ms{} C \mt{} T) \in L(TGG)$}
+		\State \Return {$nothing$} \Comment{no $T$ satisfies $(G \ms{} C \mt{} T) \in L(TGG)$}
 		\EndIf
 		\EndFunction 
-		\Ensure $return \text{ is either } empty \text{ or } T \text{, such that } (G \ms{} C \mt{} T) \in L(TGG)$
+		\Ensure $return \text{ is either } nothing \text{ or } T \text{, such that } (G \ms{} C \mt{} T) \in L(TGG)$
 	\end{algorithmic}
 	\label{alg:transform}
 \end{algorithm}
 
 %Incremental and Synchhronization
 %TODO: discourse about incremental transformation and synchronization
+%TODO: Discuss ambiguiity in the grammar and the non-determinism in the generation of TGs in this case
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% TGG EXTENTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{An Extension of BNCE Triple Graph Grammars with Look-ahead}
 Problem with B-eNCE TGG. Solution with look-ahead. Critical view. Examples
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% IMPLEMENTATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Implementation}
 Concrete implementation. Critical view.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EVALUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Evaluation}
-Evaluation of the results (mainly the usability gain of the new formalism B-eNCE TGG in comparison to the state-of-the-art). Critical discussion. Positive and negative aspects of the proposed approach. Future work.
+In order to evaluate the proposed BNCE TGG formalism, we compare the amount of rules and elements (vertices and edges) we needed to describe some typical model transformations in BNCE TGG and in standard TGG. Table \ref{tab:formalism-eval} presents these results.
 
+\begin{table}[h]
+	\centering
+	\begin{tabular}{l r r r r }
+						& \multicolumn{2}{c}{Standard TGG} & \multicolumn{2}{c}{BNCE TGG}\\
+		Transformation 			& Rules & Elements & Rules & Elements\\
+		\hline
+		Pseudocode2Controlflow	& 	&		& 7 	& 185 \\
+		BTree2XBTree			& 4		& 50	&  		& \\
+		Star2Wheel				& 7		& 215	& 6 	& 89 \\
+		%Activity2ControlFlow	& 	&	&	&	\\
+		%StateMachine2PetriNets	& 	&	&	&	\\
+		%UMLClass2SDLBlock		& 	&	&	&	\\
+		%Code2ControlFlow 		& 	&	&	&	\\
+		%Activity2CSP \\
+		%\citep{Bisztray2009}			& 	&	&	&	\\
+		%StateMachine2Java \\
+		%\citep{Striewe2008}		& 	&	&	&	\\
+		\hline
+		Total					&  & 		&	& \\
+		\hline
+	\end{tabular}
+	\caption{Results of the usability evaluation of the BNCE TGG formalism in comparison with the standard TGG}
+	\label{tab:formalism-eval}
+\end{table}
+
+ of the TGG approach we compare the amount of rules necessary to describe the most researched transformations of the literature in B-NLC TGG and standard TGG. Furthermore, we also report on the runtime for forward and backward batch transformations in a Intel Core i3 2.3GHz 4x 64bit with 4GB RAM. The standard TGG version of the transformations were executed using the eMoflon Tool \cite{leblebici2014developing}. 
+
+%Evaluation of the results (mainly the usability gain of the new formalism B-eNCE TGG in comparison to the state-of-the-art). Critical discussion. Positive and negative aspects of the proposed approach. Cases where it specially works good and bad. Future work.
+
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{l r r r r }
+		Transformation 	& TGG Fwd & B-NLC Fwd & TGG Bwd & B-NLC Bwd\\
+		\hline
+		Class2ER									& 	&	&	&	\\
+		Activity2ControlFlow						& 	&	&	&	\\
+		StateMachine2PetriNets						& 	&	&	&	\\
+		UMLClass2SDLBlock \\
+		\citep{Giese2009}			& 	&	&	&	\\
+		Code2ControlFlow \\
+		\citep{Pratt1971}	& 	&	&	&	\\
+		BPMN2BPEL \\
+		\citep{Shi2014}					& 	&	&	&	\\
+		Activity2CSP \\
+		\citep{Bisztray2009}			& 	&	&	&	\\
+		StateMachine2Java \\
+		\citep{Striewe2008}		& 	&	&	&	\\
+		Tree2XTree									& 	&	&	&	\\
+		Star2Wheel									& 	&	&	&	\\
+		LogicExpr2LogicCircuit						& 	&	&	&	\\
+		NeuralNet2Function	 						& 	&	&	&	\\
+		\hline
+	\end{tabular}
+	\caption{Results of the empirical evaluation of the B-NLC TGG in comparison with standard TGG}
+	\label{tab:evaluation}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 Summary and closing words.
 

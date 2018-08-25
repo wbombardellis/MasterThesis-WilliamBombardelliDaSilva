@@ -1,0 +1,81 @@
+\noindent
+\begin{minipage}[h]{.48\textwidth}
+	\begin{algorithmic}[!ht]
+		\State \Program $main(n)$
+		\If {$n < 0$}
+			\State \Return $nothing$
+		\Else
+			\State $f \gets 1$ 
+			\While {$n > 0$}
+				\State $f \gets f * n$
+				\State $n \gets n - 1$
+			\EndWhile
+			\State \Return $Just f$
+		\EndIf
+	\end{algorithmic}
+\end{minipage}
+\begin{minipage}[h]{.5\textwidth}
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[t] (s2) {i};
+	\draw (1.5,-1.4) node[t] (s3) {a};
+	\draw (0.5,-1.4) node[t] (s4) {a};
+	\draw (0.5,-2.1) node[t] (s5) {w};
+	\draw (0.5,-2.8) node[t] (s6) {a};
+	\draw (0.5,-3.5) node[t] (s7) {a};
+	\draw (0.5,-4.2) node[t] (s8) {a};
+	
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	\draw[edge] (s2) -- (s3) node [vredgeLabel] {$p$};
+	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
+	\draw[edge] (s4) -- (s5) node [vledgeLabel] {$x$};
+	\draw[edge] (s5) -- (s6) node [vledgeLabel] {$f$};
+	\draw[edge] (s5) to [bend left] (s7) node [above=15pt, right=3pt] {$l$};
+	\draw[edge] (s5) to [bend right=60] (s8) node [above=30pt, left=13pt] {$x$};
+	\draw[edge] (s6) -- (s7) node [vledgeLabel] {$x$};
+	%
+	\draw (3,0) node[t] (c1) {pg};
+	\draw (3,-0.5) node[t] (c2) {ib};
+	\draw (3,-1.0) node[t] (c3) {ac};
+	\draw (3,-1.8) node[t] (c4) {ac};
+	\draw (3,-2.3) node[t] (c5) {wb};
+	\draw (3,-2.8) node[t] (c6) {ac};
+	\draw (3,-3.5) node[t] (c7) {ac};
+	\draw (3,-4.2) node[t] (c8) {ac};
+	%
+	\draw (5,0) node[t] (t1) {g};
+	\draw (5,-0.7) node[t] (t2) {b};
+	\draw (5.5,-1.4) node[t] (t3) {c};
+	\draw (4.5,-1.4) node[t] (t4) {c};
+	\draw (4.5,-2.1) node[t] (t5) {b};
+	\draw (4.5,-2.8) node[t] (t6) {c};
+	\draw (4.5,-3.5) node[t] (t7) {c};
+	\draw (4.5,-4.2) node[t] (t8) {c};
+	
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
+	\draw[edge] (t2) -- (t4) node [vledgeLabel] {$n$};
+	\draw[edge] (t4) -- (t5) node [vledgeLabel] {$x$};
+	\draw[edge] (t5) -- (t6) node [vledgeLabel] {$f$};
+	\draw[edge] (t7) to [bend right] (t5) node [below=15pt, right=3pt] {$x$};
+	\draw[edge] (t5) to [bend right=60] (t8) node [above=30pt, left=13pt] {$x$};
+	\draw[edge] (t6) -- (t7) node [vledgeLabel] {$x$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\draw[morph] (c6) -- (s6);
+	\draw[morph] (c6) -- (t6);
+	\draw[morph] (c7) -- (s7);
+	\draw[morph] (c7) -- (t7);
+	\draw[morph] (c8) -- (s8);
+	\draw[morph] (c8) -- (t8);
+	\end{tikzpicture}
+\end{minipage}%
