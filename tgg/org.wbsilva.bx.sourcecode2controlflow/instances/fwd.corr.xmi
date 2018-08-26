@@ -5,28 +5,24 @@
     <target href="fwd.trg.xmi#//@potentialRoots.0"/>
   </correspondences>
   <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2B">
-    <source xsi:type="org.wbsilva.mm.sourcecode:While" href="fwd.src.xmi#//@first"/>
+    <source xsi:type="org.wbsilva.mm.sourcecode:Decision" href="fwd.src.xmi#//@first"/>
     <target href="fwd.trg.xmi#//@potentialRoots.1"/>
   </correspondences>
   <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2N">
-    <source xsi:type="org.wbsilva.mm.sourcecode:Assignment" href="fwd.src.xmi#//@first/@first/@next"/>
-    <target xsi:type="org.wbsilva.mm.controlflow:Command" href="fwd.trg.xmi#//@potentialRoots.2"/>
+    <source xsi:type="org.wbsilva.mm.sourcecode:Assignment" href="fwd.src.xmi#//@first/@positive/@first"/>
+    <target xsi:type="org.wbsilva.mm.controlflow:Command" href="fwd.trg.xmi#//@potentialRoots.3"/>
   </correspondences>
   <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2B">
-    <source xsi:type="org.wbsilva.mm.sourcecode:While" href="fwd.src.xmi#//@first/@next"/>
-    <target href="fwd.trg.xmi#//@potentialRoots.3"/>
+    <source xsi:type="org.wbsilva.mm.sourcecode:While" href="fwd.src.xmi#//@first/@positive"/>
+    <target href="fwd.trg.xmi#//@potentialRoots.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2B">
+    <source xsi:type="org.wbsilva.mm.sourcecode:While" href="fwd.src.xmi#//@first/@negative"/>
+    <target href="fwd.trg.xmi#//@potentialRoots.4"/>
   </correspondences>
   <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2N">
-    <source xsi:type="org.wbsilva.mm.sourcecode:Assignment" href="fwd.src.xmi#//@first/@next/@first/@next"/>
-    <target xsi:type="org.wbsilva.mm.controlflow:Command" href="fwd.trg.xmi#//@potentialRoots.4"/>
-  </correspondences>
-  <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2N">
-    <source xsi:type="org.wbsilva.mm.sourcecode:Assignment" href="fwd.src.xmi#//@first/@first"/>
-    <target xsi:type="org.wbsilva.mm.controlflow:Command" href="fwd.trg.xmi#//@potentialRoots.5"/>
-  </correspondences>
-  <correspondences xsi:type="org.wbsilva.bx.sourcecode2controlflow:S2N">
-    <source xsi:type="org.wbsilva.mm.sourcecode:Assignment" href="fwd.src.xmi#//@first/@next/@first"/>
-    <target xsi:type="org.wbsilva.mm.controlflow:Command" href="fwd.trg.xmi#//@potentialRoots.6"/>
+    <source xsi:type="org.wbsilva.mm.sourcecode:Assignment" href="fwd.src.xmi#//@first/@negative/@first"/>
+    <target xsi:type="org.wbsilva.mm.controlflow:Command" href="fwd.trg.xmi#//@potentialRoots.2"/>
   </correspondences>
   <source href="fwd.src.xmi#/"/>
   <target href="fwd.trg.xmi#/"/>

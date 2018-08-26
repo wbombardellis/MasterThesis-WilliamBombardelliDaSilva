@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <algorithm:TempOutputContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:algorithm="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//algorithm" xmlns:org.wbsilva.mm.controlflow="platform:/plugin/org.wbsilva.mm.controlflow/model/Controlflow.ecore">
   <potentialRoots xsi:type="org.wbsilva.mm.controlflow:Graph" root="//@potentialRoots.1"/>
-  <potentialRoots xsi:type="org.wbsilva.mm.controlflow:Branch" positive="//@potentialRoots.5" negative="//@potentialRoots.3"/>
-  <potentialRoots xsi:type="org.wbsilva.mm.controlflow:Command" next="//@potentialRoots.1"/>
-  <potentialRoots xsi:type="org.wbsilva.mm.controlflow:Branch" positive="//@potentialRoots.6"/>
-  <potentialRoots xsi:type="org.wbsilva.mm.controlflow:Command" next="//@potentialRoots.3"/>
-  <potentialRoots xsi:type="org.wbsilva.mm.controlflow:Command" next="//@potentialRoots.2"/>
+  <potentialRoots xsi:type="org.wbsilva.mm.controlflow:Branch" positive="//@potentialRoots.5" negative="//@potentialRoots.4"/>
   <potentialRoots xsi:type="org.wbsilva.mm.controlflow:Command" next="//@potentialRoots.4"/>
+  <potentialRoots xsi:type="org.wbsilva.mm.controlflow:Command" next="//@potentialRoots.5"/>
+  <potentialRoots xsi:type="org.wbsilva.mm.controlflow:Branch" positive="//@potentialRoots.2"/>
+  <potentialRoots xsi:type="org.wbsilva.mm.controlflow:Branch" positive="//@potentialRoots.3"/>
 </algorithm:TempOutputContainer>
