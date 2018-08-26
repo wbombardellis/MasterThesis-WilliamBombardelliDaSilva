@@ -510,17 +510,16 @@ Concrete implementation. Critical view.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% EVALUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Evaluation}
-In order to evaluate the proposed BNCE TGG formalism, we compare the amount of rules and elements (vertices and edges) we needed to describe some typical model transformations in BNCE TGG and in standard TGG. Table \ref{tab:formalism-eval} presents these results.
-
+In order to evaluate the proposed BNCE TGG formalism, we compare the amount of rules and elements (vertices, edges and mappings) we needed to describe some typical model transformations in BNCE TGG and in standard TGG without application conditions. Table \ref{tab:formalism-eval} presents these results.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l r r r r }
 						& \multicolumn{2}{c}{Standard TGG} & \multicolumn{2}{c}{BNCE TGG}\\
-		Transformation 			& Rules & Elements & Rules & Elements\\
+		Transformation 			& Rules & Elements 	& Rules & Elements\\
 		\hline
-		Pseudocode2Controlflow	& 	&		& 7 	& 185 \\
-		BTree2XBTree			& 4		& 50	&  		& \\
-		Star2Wheel				& 7		& 215	& 6 	& 89 \\
+		Pseudocode2Controlflow	& 45	& 1061		& 7 	& 185 \\
+		BTree2XBTree			& 4		& 50		&  		& \\
+		Star2Wheel				& -		& -			& 6 	& 89 \\
 		%Activity2ControlFlow	& 	&	&	&	\\
 		%StateMachine2PetriNets	& 	&	&	&	\\
 		%UMLClass2SDLBlock		& 	&	&	&	\\
