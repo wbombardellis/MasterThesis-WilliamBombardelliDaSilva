@@ -518,7 +518,7 @@ In order to evaluate the proposed BNCE TGG formalism, we compare the amount of r
 		Transformation 			& Rules & Elements 	& Rules & Elements\\
 		\hline
 		Pseudocode2Controlflow	& 45	& 1061		& 7 	& 185 \\
-		BTree2XBTree			& 4		& 50		&  		& \\
+		BTree2XBTree			& 4		& 50		& 5		& 80 \\
 		Star2Wheel				& -		& -			& 6 	& 89 \\
 		%Activity2ControlFlow	& 	&	&	&	\\
 		%StateMachine2PetriNets	& 	&	&	&	\\
@@ -530,50 +530,37 @@ In order to evaluate the proposed BNCE TGG formalism, we compare the amount of r
 		%\citep{Striewe2008}		& 	&	&	&	\\
 		\hline
 		Total					&  & 		&	& \\
-		\hline
+		Average					&  & 		&	& \\
 	\end{tabular}
 	\caption{Results of the usability evaluation of the BNCE TGG formalism in comparison with the standard TGG}
 	\label{tab:formalism-eval}
 \end{table}
 
- of the TGG approach we compare the amount of rules necessary to describe the most researched transformations of the literature in B-NLC TGG and standard TGG. Furthermore, we also report on the runtime for forward and backward batch transformations in a Intel Core i3 2.3GHz 4x 64bit with 4GB RAM. The standard TGG version of the transformations were executed using the eMoflon Tool \cite{leblebici2014developing}. 
+%TODO: Critical discussion.
+%TODO: Positive and negative aspects of the proposed approach. Cases where it specially works good and bad. 
 
-%Evaluation of the results (mainly the usability gain of the new formalism B-eNCE TGG in comparison to the state-of-the-art). Critical discussion. Positive and negative aspects of the proposed approach. Cases where it specially works good and bad. Future work.
-
-
+%Furthermore, we also report on the runtime for forward and backward batch transformations in a Intel Core i3 2.3GHz 4x 64bit with 4GB RAM. The standard TGG version of the transformations were executed using the eMoflon Tool \cite{leblebici2014developing}.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l r r r r }
-		Transformation 	& TGG Fwd & B-NLC Fwd & TGG Bwd & B-NLC Bwd\\
+			& \multicolumn{2}{c}{Standard TGG} & \multicolumn{2}{c}{BNCE TGG}\\
+		Transformation 	& Forward & Backward & Forward & Backward \\
 		\hline
-		Class2ER									& 	&	&	&	\\
-		Activity2ControlFlow						& 	&	&	&	\\
-		StateMachine2PetriNets						& 	&	&	&	\\
-		UMLClass2SDLBlock \\
-		\citep{Giese2009}			& 	&	&	&	\\
-		Code2ControlFlow \\
-		\citep{Pratt1971}	& 	&	&	&	\\
-		BPMN2BPEL \\
-		\citep{Shi2014}					& 	&	&	&	\\
-		Activity2CSP \\
-		\citep{Bisztray2009}			& 	&	&	&	\\
-		StateMachine2Java \\
-		\citep{Striewe2008}		& 	&	&	&	\\
-		Tree2XTree									& 	&	&	&	\\
-		Star2Wheel									& 	&	&	&	\\
-		LogicExpr2LogicCircuit						& 	&	&	&	\\
-		NeuralNet2Function	 						& 	&	&	&	\\
+		Pseudocode2Controlflow	& 		& 		& 	 	&  \\
+		BTree2XBTree			&  		& 		& 		&  \\
+		Star2Wheel				& -		& -		& 	 	&  \\
 		\hline
+		Total					&  & 		&	& \\
+		Average					&  & 		&	& \\
 	\end{tabular}
 	\caption{Results of the empirical evaluation of the B-NLC TGG in comparison with standard TGG}
 	\label{tab:evaluation}
 \end{table}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
-Summary and closing words.
+Summary and closing words. Future work.
 
 \end{document}          
