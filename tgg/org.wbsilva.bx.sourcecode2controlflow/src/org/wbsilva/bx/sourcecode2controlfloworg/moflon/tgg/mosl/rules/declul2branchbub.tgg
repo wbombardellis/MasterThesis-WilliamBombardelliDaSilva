@@ -1,0 +1,64 @@
+#using org.wbsilva.bx.sourcecode2controlflow.*
+#using AttrCondDefLibrary.*
+
+#rule declul2branchbub #with org.wbsilva.bx.sourcecode2controlflow
+
+#source {
+	d: Decision{
+		++ -positive->a
+		++ -negative->b
+	}
+	++ a: While {
+		++ -last->l
+	}
+	++ b: While {
+		++ -first->m
+		++ -last->m
+	} 
+	++ l: Assignment
+	++ m: Assignment
+}
+
+#target {
+	c: Branch{
+		++ -positive->x
+		++ -negative->y
+	}
+	++ x: Branch
+	++ y: Branch {
+		++ -positive->w
+	}
+	++ z: Command{
+		++ -next->x
+	}
+	++ w: Command{
+		++ -next->y
+	}
+}
+
+#correspondence {
+	d2c: S2B{
+		#src->d
+		#trg->c
+	}
+	++ a2x: S2B{
+		#src->a
+		#trg->x
+	}
+	++ b2y: S2B{
+		#src->b
+		#trg->y
+	}
+	++ l2z: S2N{
+		#src->l
+		#trg->z
+	}
+	++ m2w: S2N{
+		#src->m
+		#trg->w
+	}
+}
+
+#attributeConditions {
+
+}
