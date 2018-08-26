@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="ASCII"?>
+<analysis:StaticAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:analysis="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//analysis">
+  <sourceRules>
+    <rules ruleName="whilelul2branchbub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilelul2branchbub/isAppropriate_FWD_EMoflonEdge_116"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilelul2branchbub/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="assignment2command">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/assignment2command/isAppropriate_FWD_EMoflonEdge_117"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/assignment2command/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="while2branch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/while2branch/isAppropriate_FWD_EMoflonEdge_118"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/while2branch/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="next2next">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/next2next/isAppropriate_FWD_EMoflonEdge_119"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/next2next/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decula2branchubc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decula2branchubc/isAppropriate_FWD_EMoflonEdge_120"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decula2branchubc/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whilea2branchc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilea2branchc/isAppropriate_FWD_EMoflonEdge_121"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilea2branchc/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whileda2branchbc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileda2branchbc/isAppropriate_FWD_EMoflonEdge_122"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileda2branchbc/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decaul2branchcub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decaul2branchcub/isAppropriate_FWD_EMoflonEdge_123"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decaul2branchcub/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whiledd2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledd2branchbb/isAppropriate_FWD_EMoflonEdge_124"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledd2branchbb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whileaul2branchcub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileaul2branchcub/isAppropriate_FWD_EMoflonEdge_125"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileaul2branchcub/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whiled2branchb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiled2branchb/isAppropriate_FWD_EMoflonEdge_126"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiled2branchb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decision2branch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decision2branch/isAppropriate_FWD_EMoflonEdge_127"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decision2branch/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="uwhile2ubranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/uwhile2ubranch/isAppropriate_FWD_EMoflonEdge_128"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/uwhile2ubranch/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whiledl2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledl2branchbb/isAppropriate_FWD_EMoflonEdge_129"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledl2branchbb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whilel2branchb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilel2branchb/isAppropriate_FWD_EMoflonEdge_130"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilel2branchb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="deculul2branchubub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/deculul2branchubub/isAppropriate_FWD_EMoflonEdge_131"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/deculul2branchubub/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whiledul2branchbub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledul2branchbub/isAppropriate_FWD_EMoflonEdge_132"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledul2branchbub/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="firstuwhile2rootubranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstuwhile2rootubranch/isAppropriate_FWD_EMoflonEdge_133"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstuwhile2rootubranch/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="firstwhile2rootbranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstwhile2rootbranch/isAppropriate_FWD_EMoflonEdge_134"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstwhile2rootbranch/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="program2graph">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/program2graph/isAppropriate_FWD_Program_4"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/program2graph/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whileld2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileld2branchbb/isAppropriate_FWD_EMoflonEdge_135"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileld2branchbb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="deculd2branchubb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/deculd2branchubb/isAppropriate_FWD_EMoflonEdge_136"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/deculd2branchubb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decdul2branchbub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdul2branchbub/isAppropriate_FWD_EMoflonEdge_137"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdul2branchbub/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decull2branchubb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decull2branchubb/isAppropriate_FWD_EMoflonEdge_138"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decull2branchubb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whileula2branchubc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileula2branchubc/isAppropriate_FWD_EMoflonEdge_139"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileula2branchubc/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whileul2branchub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileul2branchub/isAppropriate_FWD_EMoflonEdge_140"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileul2branchub/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decdecdec2branchbranchbranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdecdec2branchbranchbranch/isAppropriate_FWD_EMoflonEdge_141"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdecdec2branchbranchbranch/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whileulul2branchubub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileulul2branchubub/isAppropriate_FWD_EMoflonEdge_142"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileulul2branchubub/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whileull2branchubb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileull2branchubb/isAppropriate_FWD_EMoflonEdge_143"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileull2branchubb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="firstdecision2firstbranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstdecision2firstbranch/isAppropriate_FWD_EMoflonEdge_144"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstdecision2firstbranch/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decdecass2branchbranchcmd">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdecass2branchbranchcmd/isAppropriate_FWD_EMoflonEdge_145"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdecass2branchbranchcmd/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whilell2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilell2branchbb/isAppropriate_FWD_EMoflonEdge_146"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilell2branchbb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whileuld2branchubb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileuld2branchubb/isAppropriate_FWD_EMoflonEdge_147"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileuld2branchubb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="declul2branchbub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/declul2branchbub/isAppropriate_FWD_EMoflonEdge_148"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/declul2branchbub/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decla2branchbc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decla2branchbc/isAppropriate_FWD_EMoflonEdge_149"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decla2branchbc/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="firstass2rootcmd">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstass2rootcmd/isAppropriate_FWD_EMoflonEdge_150"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstass2rootcmd/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decll2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decll2branchbb/isAppropriate_FWD_EMoflonEdge_151"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decll2branchbb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decal2branchcb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decal2branchcb/isAppropriate_FWD_EMoflonEdge_152"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decal2branchcb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decassdec2branchcmdbranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decassdec2branchcmdbranch/isAppropriate_FWD_EMoflonEdge_153"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decassdec2branchcmdbranch/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decassass2branchcmdcmd">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decassass2branchcmdcmd/isAppropriate_FWD_EMoflonEdge_154"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decassass2branchcmdcmd/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decdl2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdl2branchbb/isAppropriate_FWD_EMoflonEdge_155"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdl2branchbb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whilela2branchbc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilela2branchbc/isAppropriate_FWD_EMoflonEdge_156"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilela2branchbc/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whilead2branchcb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilead2branchcb/isAppropriate_FWD_EMoflonEdge_157"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilead2branchcb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whileaa2branchcc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileaa2branchcc/isAppropriate_FWD_EMoflonEdge_158"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileaa2branchcc/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="whileal2branchcb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileal2branchcb/isAppropriate_FWD_EMoflonEdge_159"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileal2branchcb/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="decld2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decld2branchbb/isAppropriate_FWD_EMoflonEdge_160"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decld2branchbb/checkDEC_FWD"/>
+    </rules>
+  </sourceRules>
+  <targetRules>
+    <rules ruleName="whilelul2branchbub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilelul2branchbub/isAppropriate_BWD_EMoflonEdge_116"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilelul2branchbub/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="assignment2command">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/assignment2command/isAppropriate_BWD_EMoflonEdge_117"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/assignment2command/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="while2branch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/while2branch/isAppropriate_BWD_EMoflonEdge_118"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/while2branch/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="next2next">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/next2next/isAppropriate_BWD_EMoflonEdge_119"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/next2next/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decula2branchubc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decula2branchubc/isAppropriate_BWD_EMoflonEdge_120"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decula2branchubc/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whilea2branchc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilea2branchc/isAppropriate_BWD_EMoflonEdge_121"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilea2branchc/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whileda2branchbc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileda2branchbc/isAppropriate_BWD_EMoflonEdge_122"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileda2branchbc/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decaul2branchcub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decaul2branchcub/isAppropriate_BWD_EMoflonEdge_123"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decaul2branchcub/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whiledd2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledd2branchbb/isAppropriate_BWD_EMoflonEdge_124"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledd2branchbb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whileaul2branchcub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileaul2branchcub/isAppropriate_BWD_EMoflonEdge_125"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileaul2branchcub/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whiled2branchb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiled2branchb/isAppropriate_BWD_EMoflonEdge_126"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiled2branchb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decision2branch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decision2branch/isAppropriate_BWD_EMoflonEdge_127"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decision2branch/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="uwhile2ubranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/uwhile2ubranch/isAppropriate_BWD_EMoflonEdge_128"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/uwhile2ubranch/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whiledl2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledl2branchbb/isAppropriate_BWD_EMoflonEdge_129"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledl2branchbb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whilel2branchb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilel2branchb/isAppropriate_BWD_EMoflonEdge_130"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilel2branchb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="deculul2branchubub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/deculul2branchubub/isAppropriate_BWD_EMoflonEdge_131"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/deculul2branchubub/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whiledul2branchbub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledul2branchbub/isAppropriate_BWD_EMoflonEdge_132"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whiledul2branchbub/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="firstuwhile2rootubranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstuwhile2rootubranch/isAppropriate_BWD_EMoflonEdge_133"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstuwhile2rootubranch/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="firstwhile2rootbranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstwhile2rootbranch/isAppropriate_BWD_EMoflonEdge_134"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstwhile2rootbranch/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="program2graph">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/program2graph/isAppropriate_BWD_Graph_4"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/program2graph/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whileld2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileld2branchbb/isAppropriate_BWD_EMoflonEdge_135"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileld2branchbb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="deculd2branchubb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/deculd2branchubb/isAppropriate_BWD_EMoflonEdge_136"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/deculd2branchubb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decdul2branchbub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdul2branchbub/isAppropriate_BWD_EMoflonEdge_137"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdul2branchbub/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decull2branchubb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decull2branchubb/isAppropriate_BWD_EMoflonEdge_138"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decull2branchubb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whileula2branchubc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileula2branchubc/isAppropriate_BWD_EMoflonEdge_139"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileula2branchubc/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whileul2branchub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileul2branchub/isAppropriate_BWD_EMoflonEdge_140"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileul2branchub/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decdecdec2branchbranchbranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdecdec2branchbranchbranch/isAppropriate_BWD_EMoflonEdge_141"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdecdec2branchbranchbranch/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whileulul2branchubub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileulul2branchubub/isAppropriate_BWD_EMoflonEdge_142"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileulul2branchubub/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whileull2branchubb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileull2branchubb/isAppropriate_BWD_EMoflonEdge_143"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileull2branchubb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="firstdecision2firstbranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstdecision2firstbranch/isAppropriate_BWD_EMoflonEdge_144"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstdecision2firstbranch/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decdecass2branchbranchcmd">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdecass2branchbranchcmd/isAppropriate_BWD_EMoflonEdge_145"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdecass2branchbranchcmd/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whilell2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilell2branchbb/isAppropriate_BWD_EMoflonEdge_146"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilell2branchbb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whileuld2branchubb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileuld2branchubb/isAppropriate_BWD_EMoflonEdge_147"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileuld2branchubb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="declul2branchbub">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/declul2branchbub/isAppropriate_BWD_EMoflonEdge_148"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/declul2branchbub/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decla2branchbc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decla2branchbc/isAppropriate_BWD_EMoflonEdge_149"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decla2branchbc/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="firstass2rootcmd">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstass2rootcmd/isAppropriate_BWD_EMoflonEdge_150"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/firstass2rootcmd/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decll2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decll2branchbb/isAppropriate_BWD_EMoflonEdge_151"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decll2branchbb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decal2branchcb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decal2branchcb/isAppropriate_BWD_EMoflonEdge_152"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decal2branchcb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decassdec2branchcmdbranch">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decassdec2branchcmdbranch/isAppropriate_BWD_EMoflonEdge_153"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decassdec2branchcmdbranch/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decassass2branchcmdcmd">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decassass2branchcmdcmd/isAppropriate_BWD_EMoflonEdge_154"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decassass2branchcmdcmd/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decdl2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdl2branchbb/isAppropriate_BWD_EMoflonEdge_155"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decdl2branchbb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whilela2branchbc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilela2branchbc/isAppropriate_BWD_EMoflonEdge_156"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilela2branchbc/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whilead2branchcb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilead2branchcb/isAppropriate_BWD_EMoflonEdge_157"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whilead2branchcb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whileaa2branchcc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileaa2branchcc/isAppropriate_BWD_EMoflonEdge_158"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileaa2branchcc/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="whileal2branchcb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileal2branchcb/isAppropriate_BWD_EMoflonEdge_159"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/whileal2branchcb/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="decld2branchbb">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decld2branchbb/isAppropriate_BWD_EMoflonEdge_160"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.sourcecode2controlflow/model/Sourcecode2controlflow.ecore#//Rules/decld2branchbb/checkDEC_BWD"/>
+    </rules>
+  </targetRules>
+</analysis:StaticAnalysis>
