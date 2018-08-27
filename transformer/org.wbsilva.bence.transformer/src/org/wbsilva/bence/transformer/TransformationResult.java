@@ -13,10 +13,7 @@ public class TransformationResult {
 	final private TripleGraph tripleGraph;
 	final private ParsingTree parsingTree;
 
-	public TransformationResult(final TripleGraph tripleGraph, final ParsingTree parsingTree) {
-		assert tripleGraph != null;
-		assert parsingTree != null;
-		
+	public TransformationResult(final TripleGraph tripleGraph, final ParsingTree parsingTree) {		
 		this.tripleGraph = tripleGraph;
 		this.parsingTree = parsingTree;
 	}
