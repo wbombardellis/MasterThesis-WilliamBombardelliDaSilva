@@ -110,37 +110,20 @@ public class Main {
 			}
 			
 			// Read the triple graph grammar model
-			final Resource tripleGrammarResource;
+			final Optional<TripleGrammar> tripleGrammarOpt;
 			try {
-				tripleGrammarResource = TransformerUtil.getResourceFromFile(resSet, tripleGrammarPath);
+				tripleGrammarOpt = TransformerUtil.loadModel(resSet, tripleGrammarPath, TripleGrammar.class);
 			} catch (Exception e) {
 				UIUtil.printFail();
 				return;
 			}
-			final TripleGrammar tripleGrammar;
-			
-			if (tripleGrammarResource.getContents().size() < 1){
-				logger.error("The grammar model is empty. Aborting. Used URL: "+ tripleGrammarPath);
+			if (!tripleGrammarOpt.isPresent()) {
 				UIUtil.printFail();
 				return;
-			} else {
-				//Grammar resource's first element must be a grammar
-				final EObject root = tripleGrammarResource.getContents().get(0);
-				
-				if (tripleGrammarResource.getContents().size() > 1) {
-					logger.warn("The grammar file has more than one root element. Only the first one will be used. Ignoring the others.");
-				}
-				
-				if (root instanceof TripleGrammar) {
-					tripleGrammar = (TripleGrammar) root;
-					logger.debug("Triple Grammar model read successfully. Using: "+ tripleGrammar.getName());
-				} else {
-					logger.error("Missing triple grammar model. The resource file's first element should be a triple grammar, found a "+ root.eClass()+ ". Aborting");
-					UIUtil.printFail();
-					return;
-				}
 			}
+			final TripleGrammar tripleGrammar = tripleGrammarOpt.get();
 			assert tripleGrammar != null;
+			logger.debug("Triple graph grammar model read successfully. Using: "+ tripleGrammar.getName());
 			
 			//More Bureaucracy for reading input model with correct metamodel
 			try {
@@ -149,31 +132,23 @@ public class Main {
 				UIUtil.printFail();
 				return;
 			}
+			
 			// Read graph model
-			final Resource inputGraphResource;
+			final Optional<EObject> inputModelOpt;
 			try {
-				inputGraphResource = TransformerUtil.getResourceFromFile(resSet, inputModelPath);
+				inputModelOpt = TransformerUtil.loadModel(resSet, inputModelPath, EObject.class);
 			} catch (Exception e) {
 				UIUtil.printFail();
 				return;
 			}
-			final EObject inputModel;
-			
-			if (inputGraphResource.getContents().size() < 1){
-				logger.error("The input graph model is empty. Aborting. Used URL: "+ inputModelPath);
+			if (!inputModelOpt.isPresent()) {
 				UIUtil.printFail();
 				return;
-			} else {
-				if (inputGraphResource.getContents().size() > 1) {
-					logger.warn("The input graph file has more than one root element. Only the first one will be used. Ignoring the others.");
-				}
-				
-				//Graph resource's first element is the model
-				inputModel = inputGraphResource.getContents().get(0);
-				
-				logger.debug("Graph model read successfully. Using model: "+ inputModel);
 			}
+			final EObject inputModel = inputModelOpt.get();
 			assert inputModel != null;
+			logger.debug("Graph model read successfully. Using model: "+ inputModel);
+			
 			
 			UIUtil.printAdaptingInput();
 			

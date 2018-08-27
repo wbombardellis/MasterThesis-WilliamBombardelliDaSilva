@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.Map;
+import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,6 +24,8 @@ import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.transformer.exception.TransformationException;
+
+import com.sun.media.sound.ModelPatch;
 
 /**
  * Utility methods for the transformation
@@ -201,4 +204,51 @@ public class TransformerUtil {
 			.reduce(Integer::sum)
 			.orElse(0);
 	}
+
+	/**
+	 * Load the model in file {@code modelPath} using resource set {@code resSet} and assure that the first
+	 * element in the read resource is of type {@code rootClass} and return this element if so.
+	 * If the first element (root) in the resource is note of the given type nor subclass of it, return empty.
+	 * Further root elements are ignored. If resource is empty, return empty.
+	 * @param resSet		The resource set used to read the file at {@code modelPath}
+	 * @param modelPath		The path to the file containing the resource with the desired model to be load
+	 * @param rootClass		The require type or supertype of the first root element of the resource, that will be returned
+	 * @return				The first root element of the resource in {@code modelPath}, if it complies to the type {@code rootClass}
+	 * @throws Exception	In case of problem by the reading of the input file
+	 * @see TransformerUtil#getResourceFromFile(ResourceSet, String)
+	 */
+	@SuppressWarnings("unchecked")
+	public static <T> Optional<T> loadModel(final ResourceSet resSet, final String modelPath, final Class<T> rootClass) 
+			throws Exception {
+		
+		final Resource resource;
+		resource = TransformerUtil.getResourceFromFile(resSet, modelPath);
+		
+		final T model;
+		
+		if (resource.getContents().size() < 1){
+			logger.error("The model is empty. Aborting. Used URL: "+ modelPath);
+			return Optional.empty();
+		} else {
+			//Resource's first element must be a of the given type
+			final EObject root = resource.getContents().get(0);
+			
+			if (resource.getContents().size() > 1) {
+				logger.warn("The model file has more than one root element. Only the first one will be used. Ignoring the others.");
+			}
+			
+			if (rootClass.isAssignableFrom(root.getClass())) {
+				model = (T) root;
+			} else {
+				logger.error(String.format("Wrong model. The resource file's first element should be a %s, found a %s. Aborting",
+						rootClass.getName(), root.eClass()));
+				return Optional.empty();
+			}
+		}
+		assert model != null;
+		return Optional.of(model);
+	}
+	
+	
+	
 }
