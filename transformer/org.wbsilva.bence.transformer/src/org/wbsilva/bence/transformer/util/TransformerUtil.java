@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.DynamicEObjectImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.xmi.XMIResource;
@@ -23,9 +24,10 @@ import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
 import org.wbsilva.bence.graphgrammar.Vertex;
+import org.wbsilva.bence.transformer.ECore2GraphTransformer;
 import org.wbsilva.bence.transformer.exception.TransformationException;
 
-import com.sun.media.sound.ModelPatch;
+import com.sun.org.apache.xalan.internal.lib.ExsltDynamic;
 
 /**
  * Utility methods for the transformation
@@ -45,6 +47,7 @@ public class TransformerUtil {
 		// Register the XMI resource factory for the graph grammar files
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 		m.put(XMIResource.XMI_NS, new XMIResourceFactoryImpl());
 		m.put(EcorePackage.eNS_PREFIX, new EcoreResourceFactoryImpl());
 	}
@@ -112,6 +115,23 @@ public class TransformerUtil {
 		// Register the metamodel's package in the package registry (necessary for loading its models)
 		resSet.getPackageRegistry().put(metamodelPackage.getNsURI(), metamodelPackage);
 		logger.debug("Metamodel's ePackage registered successfully, using following URI: "+metamodelPackage.getNsURI());
+	}
+	
+	/**
+	 * Adds a package to the resourceSet. This method is specially useful if you want to
+	 * instantiate the elements of a loaded model with the actual classes of its generated metamodel, 
+	 * that are in the {@code ePackage}, instead of dynamic instances.
+	 * If no exceptions is thrown, it is guaranteed that the package will be registered
+	 * @param resSet	
+	 * 			The resource set in which to register the necessary ePackage
+	 * @param ePackage
+	 * 			The package to register
+	 * @see DynamicEObjectImpl
+	 */
+	public static void registerPackages(final ResourceSet resSet, final EPackage ePackage) {
+		// Register the metamodel's package in the package registry (necessary for loading its models)
+		resSet.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
+		logger.debug("Metamodel's ePackage registered successfully, using following URI: "+ePackage.getNsURI());
 	}
 
 	/**
@@ -248,7 +268,4 @@ public class TransformerUtil {
 		assert model != null;
 		return Optional.of(model);
 	}
-	
-	
-	
 }
