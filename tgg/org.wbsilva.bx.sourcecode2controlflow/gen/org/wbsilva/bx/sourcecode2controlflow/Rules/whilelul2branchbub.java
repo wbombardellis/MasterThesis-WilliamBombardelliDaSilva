@@ -46,7 +46,7 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, While c, While a, Assignment b, While w, Assignment d);
+	boolean isAppropriate_FWD(Match match, While c, Assignment d, Assignment b, While w, While a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, While c, While a, Assignment b, While w, Assignment d);
+	void registerObjectsToMatch_FWD(Match match, While c, Assignment d, Assignment b, While w, While a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, While c, While a, Assignment b, While w, Assignment d);
+	CSP isAppropriate_solveCsp_FWD(Match match, While c, Assignment d, Assignment b, While w, While a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,8 +94,8 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, While c, While a, Assignment b, While w,
-			Assignment d, Branch i, S2B w2i);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, While c, Branch i, Assignment d, Assignment b,
+			While w, S2B w2i, While a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,9 +111,9 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject z, EObject c, EObject a, EObject b, EObject c2z,
-			EObject y, EObject x, EObject w, EObject d, EObject i, EObject w2i, EObject b2y, EObject a2x, EObject d2v,
-			EObject v);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject c2z, EObject d2v, EObject v, EObject z, EObject c,
+			EObject i, EObject b2y, EObject d, EObject x, EObject b, EObject w, EObject w2i, EObject a2x, EObject a,
+			EObject y);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Branch z, Command y, Branch x, Branch i, Command v);
+	boolean isAppropriate_BWD(Match match, Command v, Branch z, Branch i, Branch x, Command y);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +153,7 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Branch z, Command y, Branch x, Branch i, Command v);
+	void registerObjectsToMatch_BWD(Match match, Command v, Branch z, Branch i, Branch x, Command y);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +161,7 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Branch z, Command y, Branch x, Branch i, Command v);
+	CSP isAppropriate_solveCsp_BWD(Match match, Command v, Branch z, Branch i, Branch x, Command y);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,8 +177,8 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch z, Command y, Branch x, While w, Branch i,
-			S2B w2i, Command v);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Command v, Branch z, Branch i, Branch x, While w,
+			S2B w2i, Command y);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,9 +194,9 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject z, EObject c, EObject a, EObject b, EObject c2z,
-			EObject y, EObject x, EObject w, EObject d, EObject i, EObject w2i, EObject b2y, EObject a2x, EObject d2v,
-			EObject v);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject c2z, EObject d2v, EObject v, EObject z, EObject c,
+			EObject i, EObject b2y, EObject d, EObject x, EObject b, EObject w, EObject w2i, EObject a2x, EObject a,
+			EObject y);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_116(EMoflonEdge _edge_positive);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_13(EMoflonEdge _edge_next);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_116(EMoflonEdge _edge_last);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_13(EMoflonEdge _edge_first);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,8 +252,8 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Branch z, While c, While a, Assignment b, Command y, Branch x, While w, Assignment d,
-			Branch i, Command v, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Command v, Branch z, While c, Branch i, Assignment d, Branch x, Assignment b, While w,
+			While a, Command y, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,7 +269,7 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(While c, While a, Assignment b, While w, Assignment d);
+	boolean checkDEC_FWD(While c, Assignment d, Assignment b, While w, While a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,7 +277,7 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Branch z, Command y, Branch x, Branch i, Command v);
+	boolean checkDEC_BWD(Command v, Branch z, Branch i, Branch x, Command y);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,7 +293,7 @@ public interface whilelul2branchbub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, While w, Branch i, S2B w2i,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch i, While w, S2B w2i,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

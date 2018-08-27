@@ -148,14 +148,14 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Node n = (Node) result1_bindingAndBlack[0];
-		Command c = (Command) result1_bindingAndBlack[1];
-		S2N a2c = (S2N) result1_bindingAndBlack[2];
-		S2N s2n = (S2N) result1_bindingAndBlack[3];
-		Statement s = (Statement) result1_bindingAndBlack[4];
-		Assignment a = (Assignment) result1_bindingAndBlack[5];
+		Statement s = (Statement) result1_bindingAndBlack[0];
+		Assignment a = (Assignment) result1_bindingAndBlack[1];
+		Command c = (Command) result1_bindingAndBlack[2];
+		Node n = (Node) result1_bindingAndBlack[3];
+		S2N a2c = (S2N) result1_bindingAndBlack[4];
+		S2N s2n = (S2N) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
-		next2nextImpl.pattern_next2next_1_1_performtransformation_greenBB(n, c);
+		next2nextImpl.pattern_next2next_1_1_performtransformation_greenBB(c, n);
 
 		Object[] result2_green = next2nextImpl.pattern_next2next_1_2_collecttranslatedelements_greenF();
 		if (result2_green == null) {
@@ -163,20 +163,20 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		}
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = next2nextImpl.pattern_next2next_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, n, c,
-				a2c, s2n, s, a);
+		Object[] result3_black = next2nextImpl.pattern_next2next_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, s, a,
+				c, n, a2c, s2n);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[n] = " + n + ", " + "[c] = " + c + ", " + "[a2c] = " + a2c + ", " + "[s2n] = " + s2n
-					+ ", " + "[s] = " + s + ", " + "[a] = " + a + ".");
+					+ ", " + "[s] = " + s + ", " + "[a] = " + a + ", " + "[c] = " + c + ", " + "[n] = " + n + ", "
+					+ "[a2c] = " + a2c + ", " + "[s2n] = " + s2n + ".");
 		}
-		next2nextImpl.pattern_next2next_1_3_bookkeepingforedges_greenBBBBBFF(ruleresult, n, c, s, a);
+		next2nextImpl.pattern_next2next_1_3_bookkeepingforedges_greenBBBBBFF(ruleresult, s, a, c, n);
 		//nothing EMoflonEdge s__a____next = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge n__c____next = (EMoflonEdge) result3_green[6];
 
 		// 
 		// 
-		next2nextImpl.pattern_next2next_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, n, c, a2c, s2n, s, a);
+		next2nextImpl.pattern_next2next_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, s, a, c, n, a2c, s2n);
 		return next2nextImpl.pattern_next2next_1_6_expressionFB(ruleresult);
 	}
 
@@ -205,31 +205,31 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		}
 		Statement s = (Statement) result2_binding[0];
 		Assignment a = (Assignment) result2_binding[1];
-		for (Object[] result2_black : next2nextImpl.pattern_next2next_2_2_corematch_blackFFFFBBB(s, a, match)) {
-			Node n = (Node) result2_black[0];
-			Command c = (Command) result2_black[1];
-			S2N a2c = (S2N) result2_black[2];
-			S2N s2n = (S2N) result2_black[3];
+		for (Object[] result2_black : next2nextImpl.pattern_next2next_2_2_corematch_blackBBFFFFB(s, a, match)) {
+			Command c = (Command) result2_black[2];
+			Node n = (Node) result2_black[3];
+			S2N a2c = (S2N) result2_black[4];
+			S2N s2n = (S2N) result2_black[5];
 			// ForEach 
-			for (Object[] result3_black : next2nextImpl.pattern_next2next_2_3_findcontext_blackBBBBBB(n, c, a2c, s2n, s,
-					a)) {
-				Object[] result3_green = next2nextImpl.pattern_next2next_2_3_findcontext_greenBBBBBBFFFFFF(n, c, a2c,
-						s2n, s, a);
+			for (Object[] result3_black : next2nextImpl.pattern_next2next_2_3_findcontext_blackBBBBBB(s, a, c, n, a2c,
+					s2n)) {
+				Object[] result3_green = next2nextImpl.pattern_next2next_2_3_findcontext_greenBBBBBBFFFFFF(s, a, c, n,
+						a2c, s2n);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge s__a____next = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge a2c__c____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge s2n__s____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge a2c__a____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge a2c__c____target = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge s2n__n____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge a2c__a____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge s2n__s____source = (EMoflonEdge) result3_green[11];
 
 				Object[] result4_bindingAndBlack = next2nextImpl
-						.pattern_next2next_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch, n, c, a2c,
-								s2n, s, a);
+						.pattern_next2next_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch, s, a, c, n,
+								a2c, s2n);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[n] = " + n + ", " + "[c] = " + c
-							+ ", " + "[a2c] = " + a2c + ", " + "[s2n] = " + s2n + ", " + "[s] = " + s + ", " + "[a] = "
-							+ a + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s] = " + s + ", " + "[a] = " + a
+							+ ", " + "[c] = " + c + ", " + "[n] = " + n + ", " + "[a2c] = " + a2c + ", " + "[s2n] = "
+							+ s2n + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -297,8 +297,8 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Node n, Command c, S2N a2c, S2N s2n,
-			Statement s, Assignment a) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Statement s, Assignment a, Command c,
+			Node n, S2N a2c, S2N s2n) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -313,12 +313,12 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("n", n);
-		isApplicableMatch.registerObject("c", c);
-		isApplicableMatch.registerObject("a2c", a2c);
-		isApplicableMatch.registerObject("s2n", s2n);
 		isApplicableMatch.registerObject("s", s);
 		isApplicableMatch.registerObject("a", a);
+		isApplicableMatch.registerObject("c", c);
+		isApplicableMatch.registerObject("n", n);
+		isApplicableMatch.registerObject("a2c", a2c);
+		isApplicableMatch.registerObject("s2n", s2n);
 		return csp;
 	}
 
@@ -336,14 +336,14 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject n, EObject c, EObject a2c, EObject s2n,
-			EObject s, EObject a) {
-		ruleresult.registerObject("n", n);
-		ruleresult.registerObject("c", c);
-		ruleresult.registerObject("a2c", a2c);
-		ruleresult.registerObject("s2n", s2n);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject s, EObject a, EObject c, EObject n,
+			EObject a2c, EObject s2n) {
 		ruleresult.registerObject("s", s);
 		ruleresult.registerObject("a", a);
+		ruleresult.registerObject("c", c);
+		ruleresult.registerObject("n", n);
+		ruleresult.registerObject("a2c", a2c);
+		ruleresult.registerObject("s2n", s2n);
 
 	}
 
@@ -361,42 +361,42 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Node n, Command c) {
+	public boolean isAppropriate_BWD(Match match, Command c, Node n) {
 
-		Object[] result1_black = next2nextImpl.pattern_next2next_10_1_initialbindings_blackBBBB(this, match, n, c);
+		Object[] result1_black = next2nextImpl.pattern_next2next_10_1_initialbindings_blackBBBB(this, match, c, n);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[n] = " + n + ", " + "[c] = " + c + ".");
+					+ "[match] = " + match + ", " + "[c] = " + c + ", " + "[n] = " + n + ".");
 		}
 
 		Object[] result2_bindingAndBlack = next2nextImpl.pattern_next2next_10_2_SolveCSP_bindingAndBlackFBBBB(this,
-				match, n, c);
+				match, c, n);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[n] = " + n + ", " + "[c] = " + c + ".");
+					+ "[match] = " + match + ", " + "[c] = " + c + ", " + "[n] = " + n + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (next2nextImpl.pattern_next2next_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = next2nextImpl.pattern_next2next_10_4_collectelementstobetranslated_blackBBB(match,
-					n, c);
+					c, n);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[n] = " + n + ", " + "[c] = " + c + ".");
+						+ "[c] = " + c + ", " + "[n] = " + n + ".");
 			}
-			next2nextImpl.pattern_next2next_10_4_collectelementstobetranslated_greenBBBF(match, n, c);
+			next2nextImpl.pattern_next2next_10_4_collectelementstobetranslated_greenBBBF(match, c, n);
 			//nothing EMoflonEdge n__c____next = (EMoflonEdge) result4_green[3];
 
-			Object[] result5_black = next2nextImpl.pattern_next2next_10_5_collectcontextelements_blackBBB(match, n, c);
+			Object[] result5_black = next2nextImpl.pattern_next2next_10_5_collectcontextelements_blackBBB(match, c, n);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[n] = " + n + ", " + "[c] = " + c + ".");
+						+ "[c] = " + c + ", " + "[n] = " + n + ".");
 			}
-			next2nextImpl.pattern_next2next_10_5_collectcontextelements_greenBBB(match, n, c);
+			next2nextImpl.pattern_next2next_10_5_collectcontextelements_greenBBB(match, c, n);
 
 			// 
-			next2nextImpl.pattern_next2next_10_6_registerobjectstomatch_expressionBBBB(this, match, n, c);
+			next2nextImpl.pattern_next2next_10_6_registerobjectstomatch_expressionBBBB(this, match, c, n);
 			return next2nextImpl.pattern_next2next_10_7_expressionF();
 		} else {
 			return next2nextImpl.pattern_next2next_10_8_expressionF();
@@ -417,12 +417,12 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Node n = (Node) result1_bindingAndBlack[0];
-		Command c = (Command) result1_bindingAndBlack[1];
-		S2N a2c = (S2N) result1_bindingAndBlack[2];
-		S2N s2n = (S2N) result1_bindingAndBlack[3];
-		Statement s = (Statement) result1_bindingAndBlack[4];
-		Assignment a = (Assignment) result1_bindingAndBlack[5];
+		Statement s = (Statement) result1_bindingAndBlack[0];
+		Assignment a = (Assignment) result1_bindingAndBlack[1];
+		Command c = (Command) result1_bindingAndBlack[2];
+		Node n = (Node) result1_bindingAndBlack[3];
+		S2N a2c = (S2N) result1_bindingAndBlack[4];
+		S2N s2n = (S2N) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 		next2nextImpl.pattern_next2next_11_1_performtransformation_greenBB(s, a);
 
@@ -432,20 +432,20 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		}
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = next2nextImpl.pattern_next2next_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, n, c,
-				a2c, s2n, s, a);
+		Object[] result3_black = next2nextImpl.pattern_next2next_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, s, a,
+				c, n, a2c, s2n);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[n] = " + n + ", " + "[c] = " + c + ", " + "[a2c] = " + a2c + ", " + "[s2n] = " + s2n
-					+ ", " + "[s] = " + s + ", " + "[a] = " + a + ".");
+					+ ", " + "[s] = " + s + ", " + "[a] = " + a + ", " + "[c] = " + c + ", " + "[n] = " + n + ", "
+					+ "[a2c] = " + a2c + ", " + "[s2n] = " + s2n + ".");
 		}
-		next2nextImpl.pattern_next2next_11_3_bookkeepingforedges_greenBBBBBFF(ruleresult, n, c, s, a);
+		next2nextImpl.pattern_next2next_11_3_bookkeepingforedges_greenBBBBBFF(ruleresult, s, a, c, n);
 		//nothing EMoflonEdge s__a____next = (EMoflonEdge) result3_green[5];
 		//nothing EMoflonEdge n__c____next = (EMoflonEdge) result3_green[6];
 
 		// 
 		// 
-		next2nextImpl.pattern_next2next_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, n, c, a2c, s2n, s, a);
+		next2nextImpl.pattern_next2next_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, s, a, c, n, a2c, s2n);
 		return next2nextImpl.pattern_next2next_11_6_expressionFB(ruleresult);
 	}
 
@@ -472,33 +472,33 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Node n = (Node) result2_binding[0];
-		Command c = (Command) result2_binding[1];
-		for (Object[] result2_black : next2nextImpl.pattern_next2next_12_2_corematch_blackBBFFFFB(n, c, match)) {
-			S2N a2c = (S2N) result2_black[2];
-			S2N s2n = (S2N) result2_black[3];
-			Statement s = (Statement) result2_black[4];
-			Assignment a = (Assignment) result2_black[5];
+		Command c = (Command) result2_binding[0];
+		Node n = (Node) result2_binding[1];
+		for (Object[] result2_black : next2nextImpl.pattern_next2next_12_2_corematch_blackFFBBFFB(c, n, match)) {
+			Statement s = (Statement) result2_black[0];
+			Assignment a = (Assignment) result2_black[1];
+			S2N a2c = (S2N) result2_black[4];
+			S2N s2n = (S2N) result2_black[5];
 			// ForEach 
-			for (Object[] result3_black : next2nextImpl.pattern_next2next_12_3_findcontext_blackBBBBBB(n, c, a2c, s2n,
-					s, a)) {
-				Object[] result3_green = next2nextImpl.pattern_next2next_12_3_findcontext_greenBBBBBBFFFFFF(n, c, a2c,
-						s2n, s, a);
+			for (Object[] result3_black : next2nextImpl.pattern_next2next_12_3_findcontext_blackBBBBBB(s, a, c, n, a2c,
+					s2n)) {
+				Object[] result3_green = next2nextImpl.pattern_next2next_12_3_findcontext_greenBBBBBBFFFFFF(s, a, c, n,
+						a2c, s2n);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
 				//nothing EMoflonEdge n__c____next = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge a2c__c____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge s2n__s____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge a2c__a____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge a2c__c____target = (EMoflonEdge) result3_green[9];
 				//nothing EMoflonEdge s2n__n____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge a2c__a____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge s2n__s____source = (EMoflonEdge) result3_green[11];
 
 				Object[] result4_bindingAndBlack = next2nextImpl
-						.pattern_next2next_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch, n, c, a2c,
-								s2n, s, a);
+						.pattern_next2next_12_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch, s, a, c, n,
+								a2c, s2n);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[n] = " + n + ", " + "[c] = " + c
-							+ ", " + "[a2c] = " + a2c + ", " + "[s2n] = " + s2n + ", " + "[s] = " + s + ", " + "[a] = "
-							+ a + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s] = " + s + ", " + "[a] = " + a
+							+ ", " + "[c] = " + c + ", " + "[n] = " + n + ", " + "[a2c] = " + a2c + ", " + "[s2n] = "
+							+ s2n + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -526,9 +526,9 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Node n, Command c) {
-		match.registerObject("n", n);
+	public void registerObjectsToMatch_BWD(Match match, Command c, Node n) {
 		match.registerObject("c", c);
+		match.registerObject("n", n);
 
 	}
 
@@ -537,7 +537,7 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Node n, Command c) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Command c, Node n) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -566,8 +566,8 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Node n, Command c, S2N a2c, S2N s2n,
-			Statement s, Assignment a) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Statement s, Assignment a, Command c,
+			Node n, S2N a2c, S2N s2n) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -582,12 +582,12 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("n", n);
-		isApplicableMatch.registerObject("c", c);
-		isApplicableMatch.registerObject("a2c", a2c);
-		isApplicableMatch.registerObject("s2n", s2n);
 		isApplicableMatch.registerObject("s", s);
 		isApplicableMatch.registerObject("a", a);
+		isApplicableMatch.registerObject("c", c);
+		isApplicableMatch.registerObject("n", n);
+		isApplicableMatch.registerObject("a2c", a2c);
+		isApplicableMatch.registerObject("s2n", s2n);
 		return csp;
 	}
 
@@ -605,14 +605,14 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject n, EObject c, EObject a2c, EObject s2n,
-			EObject s, EObject a) {
-		ruleresult.registerObject("n", n);
-		ruleresult.registerObject("c", c);
-		ruleresult.registerObject("a2c", a2c);
-		ruleresult.registerObject("s2n", s2n);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject s, EObject a, EObject c, EObject n,
+			EObject a2c, EObject s2n) {
 		ruleresult.registerObject("s", s);
 		ruleresult.registerObject("a", a);
+		ruleresult.registerObject("c", c);
+		ruleresult.registerObject("n", n);
+		ruleresult.registerObject("a2c", a2c);
+		ruleresult.registerObject("s2n", s2n);
 
 	}
 
@@ -630,7 +630,7 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_119(EMoflonEdge _edge_next) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_10(EMoflonEdge _edge_next) {
 
 		Object[] result1_bindingAndBlack = next2nextImpl
 				.pattern_next2next_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -645,14 +645,14 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 
 		// ForEach 
 		for (Object[] result2_black : next2nextImpl.pattern_next2next_20_2_testcorematchandDECs_blackFFB(_edge_next)) {
-			Node n = (Node) result2_black[0];
-			Command c = (Command) result2_black[1];
+			Command c = (Command) result2_black[0];
+			Node n = (Node) result2_black[1];
 			Object[] result2_green = next2nextImpl.pattern_next2next_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (next2nextImpl.pattern_next2next_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-					match, n, c)) {
+					match, c, n)) {
 				// 
 				if (next2nextImpl.pattern_next2next_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
 						this, match)) {
@@ -682,7 +682,7 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_119(EMoflonEdge _edge_next) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_10(EMoflonEdge _edge_next) {
 
 		Object[] result1_bindingAndBlack = next2nextImpl
 				.pattern_next2next_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -809,36 +809,36 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Node n = (Node) result2_bindingAndBlack[0];
-		Command c = (Command) result2_bindingAndBlack[1];
-		Statement s = (Statement) result2_bindingAndBlack[2];
-		Assignment a = (Assignment) result2_bindingAndBlack[3];
+		Statement s = (Statement) result2_bindingAndBlack[0];
+		Assignment a = (Assignment) result2_bindingAndBlack[1];
+		Command c = (Command) result2_bindingAndBlack[2];
+		Node n = (Node) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = next2nextImpl.pattern_next2next_24_3_solvecsp_bindingAndBlackFBBBBBBB(this,
-				n, c, s, a, sourceMatch, targetMatch);
+				s, a, c, n, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[n] = " + n + ", " + "[c] = " + c + ", " + "[s] = " + s + ", " + "[a] = " + a + ", "
+					+ "[s] = " + s + ", " + "[a] = " + a + ", " + "[c] = " + c + ", " + "[n] = " + n + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (next2nextImpl.pattern_next2next_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : next2nextImpl.pattern_next2next_24_5_matchcorrcontext_blackBBFFBBBB(n, c, s,
-					a, sourceMatch, targetMatch)) {
-				S2N a2c = (S2N) result5_black[2];
-				S2N s2n = (S2N) result5_black[3];
+			for (Object[] result5_black : next2nextImpl.pattern_next2next_24_5_matchcorrcontext_blackBBBBFFBB(s, a, c,
+					n, sourceMatch, targetMatch)) {
+				S2N a2c = (S2N) result5_black[4];
+				S2N s2n = (S2N) result5_black[5];
 				Object[] result5_green = next2nextImpl.pattern_next2next_24_5_matchcorrcontext_greenBBBBF(a2c, s2n,
 						sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
-				Object[] result6_black = next2nextImpl.pattern_next2next_24_6_createcorrespondence_blackBBBBB(n, c, s,
-						a, ccMatch);
+				Object[] result6_black = next2nextImpl.pattern_next2next_24_6_createcorrespondence_blackBBBBB(s, a, c,
+						n, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException(
-							"Pattern matching failed." + " Variables: " + "[n] = " + n + ", " + "[c] = " + c + ", "
-									+ "[s] = " + s + ", " + "[a] = " + a + ", " + "[ccMatch] = " + ccMatch + ".");
+							"Pattern matching failed." + " Variables: " + "[s] = " + s + ", " + "[a] = " + a + ", "
+									+ "[c] = " + c + ", " + "[n] = " + n + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 
 				Object[] result7_black = next2nextImpl.pattern_next2next_24_7_addtoreturnedresult_blackBB(result,
@@ -861,7 +861,7 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Node n, Command c, Statement s, Assignment a, Match sourceMatch,
+	public CSP isApplicable_solveCsp_CC(Statement s, Assignment a, Command c, Node n, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -906,8 +906,8 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Node n, Command c) {// 
-		Object[] result1_black = next2nextImpl.pattern_next2next_28_1_matchtggpattern_blackBB(n, c);
+	public boolean checkDEC_BWD(Command c, Node n) {// 
+		Object[] result1_black = next2nextImpl.pattern_next2next_28_1_matchtggpattern_blackBB(c, n);
 		if (result1_black != null) {
 			return next2nextImpl.pattern_next2next_28_2_expressionF();
 		} else {
@@ -936,38 +936,38 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		for (Object[] result2_black : next2nextImpl
 				.pattern_next2next_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList s2nList = (RuleEntryList) result2_black[0];
-			Node n = (Node) result2_black[1];
+			Statement s = (Statement) result2_black[1];
 			S2N s2n = (S2N) result2_black[2];
-			Statement s = (Statement) result2_black[3];
+			Node n = (Node) result2_black[3];
 			//nothing RuleEntryList a2cList = (RuleEntryList) result2_black[4];
-			Command c = (Command) result2_black[5];
+			Assignment a = (Assignment) result2_black[5];
 			S2N a2c = (S2N) result2_black[6];
-			Assignment a = (Assignment) result2_black[7];
+			Command c = (Command) result2_black[7];
 
 			Object[] result3_bindingAndBlack = next2nextImpl.pattern_next2next_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-					this, isApplicableMatch, n, c, a2c, s2n, s, a, ruleResult);
+					this, isApplicableMatch, s, a, c, n, a2c, s2n, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[n] = " + n + ", " + "[c] = " + c
-						+ ", " + "[a2c] = " + a2c + ", " + "[s2n] = " + s2n + ", " + "[s] = " + s + ", " + "[a] = " + a
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s] = " + s + ", " + "[a] = " + a
+						+ ", " + "[c] = " + c + ", " + "[n] = " + n + ", " + "[a2c] = " + a2c + ", " + "[s2n] = " + s2n
 						+ ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (next2nextImpl.pattern_next2next_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = next2nextImpl.pattern_next2next_29_5_checknacs_blackBBBBBB(n, c, a2c, s2n, s,
-						a);
+				Object[] result5_black = next2nextImpl.pattern_next2next_29_5_checknacs_blackBBBBBB(s, a, c, n, a2c,
+						s2n);
 				if (result5_black != null) {
 
-					Object[] result6_black = next2nextImpl.pattern_next2next_29_6_perform_blackBBBBBBB(n, c, a2c, s2n,
-							s, a, ruleResult);
+					Object[] result6_black = next2nextImpl.pattern_next2next_29_6_perform_blackBBBBBBB(s, a, c, n, a2c,
+							s2n, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[n] = " + n + ", "
-								+ "[c] = " + c + ", " + "[a2c] = " + a2c + ", " + "[s2n] = " + s2n + ", " + "[s] = " + s
-								+ ", " + "[a] = " + a + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[s] = " + s + ", "
+								+ "[a] = " + a + ", " + "[c] = " + c + ", " + "[n] = " + n + ", " + "[a2c] = " + a2c
+								+ ", " + "[s2n] = " + s2n + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					next2nextImpl.pattern_next2next_29_6_perform_greenBBBBB(n, c, s, a, ruleResult);
+					next2nextImpl.pattern_next2next_29_6_perform_greenBBBBB(s, a, c, n, ruleResult);
 
 				} else {
 				}
@@ -984,8 +984,8 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Node n, Command c, S2N a2c, S2N s2n,
-			Statement s, Assignment a, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Statement s, Assignment a, Command c,
+			Node n, S2N a2c, S2N s2n, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1000,12 +1000,12 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("n", n);
-		isApplicableMatch.registerObject("c", c);
-		isApplicableMatch.registerObject("a2c", a2c);
-		isApplicableMatch.registerObject("s2n", s2n);
 		isApplicableMatch.registerObject("s", s);
 		isApplicableMatch.registerObject("a", a);
+		isApplicableMatch.registerObject("c", c);
+		isApplicableMatch.registerObject("n", n);
+		isApplicableMatch.registerObject("a2c", a2c);
+		isApplicableMatch.registerObject("s2n", s2n);
 		return csp;
 	}
 
@@ -1042,10 +1042,10 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 					(Assignment) arguments.get(2));
 		case RulesPackage.NEXT2NEXT___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.NEXT2NEXT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_NODE_COMMAND_S2N_S2N_STATEMENT_ASSIGNMENT:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Node) arguments.get(1),
-					(Command) arguments.get(2), (S2N) arguments.get(3), (S2N) arguments.get(4),
-					(Statement) arguments.get(5), (Assignment) arguments.get(6));
+		case RulesPackage.NEXT2NEXT___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_STATEMENT_ASSIGNMENT_COMMAND_NODE_S2N_S2N:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Statement) arguments.get(1),
+					(Assignment) arguments.get(2), (Command) arguments.get(3), (Node) arguments.get(4),
+					(S2N) arguments.get(5), (S2N) arguments.get(6));
 		case RulesPackage.NEXT2NEXT___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.NEXT2NEXT___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1055,24 +1055,24 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 			return null;
 		case RulesPackage.NEXT2NEXT___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.NEXT2NEXT___IS_APPROPRIATE_BWD__MATCH_NODE_COMMAND:
-			return isAppropriate_BWD((Match) arguments.get(0), (Node) arguments.get(1), (Command) arguments.get(2));
+		case RulesPackage.NEXT2NEXT___IS_APPROPRIATE_BWD__MATCH_COMMAND_NODE:
+			return isAppropriate_BWD((Match) arguments.get(0), (Command) arguments.get(1), (Node) arguments.get(2));
 		case RulesPackage.NEXT2NEXT___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.NEXT2NEXT___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.NEXT2NEXT___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_NODE_COMMAND:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Node) arguments.get(1), (Command) arguments.get(2));
+		case RulesPackage.NEXT2NEXT___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_COMMAND_NODE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Command) arguments.get(1), (Node) arguments.get(2));
 			return null;
-		case RulesPackage.NEXT2NEXT___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_NODE_COMMAND:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Node) arguments.get(1),
-					(Command) arguments.get(2));
+		case RulesPackage.NEXT2NEXT___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_COMMAND_NODE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Command) arguments.get(1),
+					(Node) arguments.get(2));
 		case RulesPackage.NEXT2NEXT___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.NEXT2NEXT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_NODE_COMMAND_S2N_S2N_STATEMENT_ASSIGNMENT:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Node) arguments.get(1),
-					(Command) arguments.get(2), (S2N) arguments.get(3), (S2N) arguments.get(4),
-					(Statement) arguments.get(5), (Assignment) arguments.get(6));
+		case RulesPackage.NEXT2NEXT___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_STATEMENT_ASSIGNMENT_COMMAND_NODE_S2N_S2N:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Statement) arguments.get(1),
+					(Assignment) arguments.get(2), (Command) arguments.get(3), (Node) arguments.get(4),
+					(S2N) arguments.get(5), (S2N) arguments.get(6));
 		case RulesPackage.NEXT2NEXT___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.NEXT2NEXT___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1082,33 +1082,32 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 			return null;
 		case RulesPackage.NEXT2NEXT___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.NEXT2NEXT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_119__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_119((EMoflonEdge) arguments.get(0));
-		case RulesPackage.NEXT2NEXT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_119__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_119((EMoflonEdge) arguments.get(0));
+		case RulesPackage.NEXT2NEXT___IS_APPROPRIATE_BWD_EMOFLON_EDGE_10__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_10((EMoflonEdge) arguments.get(0));
+		case RulesPackage.NEXT2NEXT___IS_APPROPRIATE_FWD_EMOFLON_EDGE_10__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_10((EMoflonEdge) arguments.get(0));
 		case RulesPackage.NEXT2NEXT___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.NEXT2NEXT___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.NEXT2NEXT___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.NEXT2NEXT___IS_APPLICABLE_SOLVE_CSP_CC__NODE_COMMAND_STATEMENT_ASSIGNMENT_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Node) arguments.get(0), (Command) arguments.get(1),
-					(Statement) arguments.get(2), (Assignment) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.NEXT2NEXT___IS_APPLICABLE_SOLVE_CSP_CC__STATEMENT_ASSIGNMENT_COMMAND_NODE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Statement) arguments.get(0), (Assignment) arguments.get(1),
+					(Command) arguments.get(2), (Node) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.NEXT2NEXT___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.NEXT2NEXT___CHECK_DEC_FWD__STATEMENT_ASSIGNMENT:
 			return checkDEC_FWD((Statement) arguments.get(0), (Assignment) arguments.get(1));
-		case RulesPackage.NEXT2NEXT___CHECK_DEC_BWD__NODE_COMMAND:
-			return checkDEC_BWD((Node) arguments.get(0), (Command) arguments.get(1));
+		case RulesPackage.NEXT2NEXT___CHECK_DEC_BWD__COMMAND_NODE:
+			return checkDEC_BWD((Command) arguments.get(0), (Node) arguments.get(1));
 		case RulesPackage.NEXT2NEXT___GENERATE_MODEL__RULEENTRYCONTAINER_S2N_S2N:
 			return generateModel((RuleEntryContainer) arguments.get(0), (S2N) arguments.get(1), (S2N) arguments.get(2));
-		case RulesPackage.NEXT2NEXT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_NODE_COMMAND_S2N_S2N_STATEMENT_ASSIGNMENT_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Node) arguments.get(1),
-					(Command) arguments.get(2), (S2N) arguments.get(3), (S2N) arguments.get(4),
-					(Statement) arguments.get(5), (Assignment) arguments.get(6),
-					(ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.NEXT2NEXT___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_STATEMENT_ASSIGNMENT_COMMAND_NODE_S2N_S2N_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Statement) arguments.get(1),
+					(Assignment) arguments.get(2), (Command) arguments.get(3), (Node) arguments.get(4),
+					(S2N) arguments.get(5), (S2N) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.NEXT2NEXT___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1211,31 +1210,31 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 
 	public static final Object[] pattern_next2next_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("n");
-		EObject _localVariable_1 = isApplicableMatch.getObject("c");
-		EObject _localVariable_2 = isApplicableMatch.getObject("a2c");
-		EObject _localVariable_3 = isApplicableMatch.getObject("s2n");
-		EObject _localVariable_4 = isApplicableMatch.getObject("s");
-		EObject _localVariable_5 = isApplicableMatch.getObject("a");
-		EObject tmpN = _localVariable_0;
-		EObject tmpC = _localVariable_1;
-		EObject tmpA2c = _localVariable_2;
-		EObject tmpS2n = _localVariable_3;
-		EObject tmpS = _localVariable_4;
-		EObject tmpA = _localVariable_5;
-		if (tmpN instanceof Node) {
-			Node n = (Node) tmpN;
-			if (tmpC instanceof Command) {
-				Command c = (Command) tmpC;
-				if (tmpA2c instanceof S2N) {
-					S2N a2c = (S2N) tmpA2c;
-					if (tmpS2n instanceof S2N) {
-						S2N s2n = (S2N) tmpS2n;
-						if (tmpS instanceof Statement) {
-							Statement s = (Statement) tmpS;
-							if (tmpA instanceof Assignment) {
-								Assignment a = (Assignment) tmpA;
-								return new Object[] { n, c, a2c, s2n, s, a, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("s");
+		EObject _localVariable_1 = isApplicableMatch.getObject("a");
+		EObject _localVariable_2 = isApplicableMatch.getObject("c");
+		EObject _localVariable_3 = isApplicableMatch.getObject("n");
+		EObject _localVariable_4 = isApplicableMatch.getObject("a2c");
+		EObject _localVariable_5 = isApplicableMatch.getObject("s2n");
+		EObject tmpS = _localVariable_0;
+		EObject tmpA = _localVariable_1;
+		EObject tmpC = _localVariable_2;
+		EObject tmpN = _localVariable_3;
+		EObject tmpA2c = _localVariable_4;
+		EObject tmpS2n = _localVariable_5;
+		if (tmpS instanceof Statement) {
+			Statement s = (Statement) tmpS;
+			if (tmpA instanceof Assignment) {
+				Assignment a = (Assignment) tmpA;
+				if (tmpC instanceof Command) {
+					Command c = (Command) tmpC;
+					if (tmpN instanceof Node) {
+						Node n = (Node) tmpN;
+						if (tmpA2c instanceof S2N) {
+							S2N a2c = (S2N) tmpA2c;
+							if (tmpS2n instanceof S2N) {
+								S2N s2n = (S2N) tmpS2n;
+								return new Object[] { s, a, c, n, a2c, s2n, isApplicableMatch };
 							}
 						}
 					}
@@ -1245,15 +1244,15 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return null;
 	}
 
-	public static final Object[] pattern_next2next_1_1_performtransformation_blackBBBBBBFBB(Node n, Command c, S2N a2c,
-			S2N s2n, Statement s, Assignment a, next2next _this, IsApplicableMatch isApplicableMatch) {
-		if (!c.equals(n)) {
-			if (!a2c.equals(s2n)) {
-				if (!a.equals(s)) {
+	public static final Object[] pattern_next2next_1_1_performtransformation_blackBBBBBBFBB(Statement s, Assignment a,
+			Command c, Node n, S2N a2c, S2N s2n, next2next _this, IsApplicableMatch isApplicableMatch) {
+		if (!a.equals(s)) {
+			if (!c.equals(n)) {
+				if (!a2c.equals(s2n)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { n, c, a2c, s2n, s, a, csp, _this, isApplicableMatch };
+							return new Object[] { s, a, c, n, a2c, s2n, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -1267,27 +1266,27 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		Object[] result_pattern_next2next_1_1_performtransformation_binding = pattern_next2next_1_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_next2next_1_1_performtransformation_binding != null) {
-			Node n = (Node) result_pattern_next2next_1_1_performtransformation_binding[0];
-			Command c = (Command) result_pattern_next2next_1_1_performtransformation_binding[1];
-			S2N a2c = (S2N) result_pattern_next2next_1_1_performtransformation_binding[2];
-			S2N s2n = (S2N) result_pattern_next2next_1_1_performtransformation_binding[3];
-			Statement s = (Statement) result_pattern_next2next_1_1_performtransformation_binding[4];
-			Assignment a = (Assignment) result_pattern_next2next_1_1_performtransformation_binding[5];
+			Statement s = (Statement) result_pattern_next2next_1_1_performtransformation_binding[0];
+			Assignment a = (Assignment) result_pattern_next2next_1_1_performtransformation_binding[1];
+			Command c = (Command) result_pattern_next2next_1_1_performtransformation_binding[2];
+			Node n = (Node) result_pattern_next2next_1_1_performtransformation_binding[3];
+			S2N a2c = (S2N) result_pattern_next2next_1_1_performtransformation_binding[4];
+			S2N s2n = (S2N) result_pattern_next2next_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_next2next_1_1_performtransformation_black = pattern_next2next_1_1_performtransformation_blackBBBBBBFBB(
-					n, c, a2c, s2n, s, a, _this, isApplicableMatch);
+					s, a, c, n, a2c, s2n, _this, isApplicableMatch);
 			if (result_pattern_next2next_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_next2next_1_1_performtransformation_black[6];
 
-				return new Object[] { n, c, a2c, s2n, s, a, csp, _this, isApplicableMatch };
+				return new Object[] { s, a, c, n, a2c, s2n, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_next2next_1_1_performtransformation_greenBB(Node n, Command c) {
+	public static final Object[] pattern_next2next_1_1_performtransformation_greenBB(Command c, Node n) {
 		n.setNext(c);
-		return new Object[] { n, c };
+		return new Object[] { c, n };
 	}
 
 	public static final Object[] pattern_next2next_1_2_collecttranslatedelements_greenF() {
@@ -1296,24 +1295,24 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_1_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject n, EObject c, EObject a2c, EObject s2n, EObject s, EObject a) {
-		if (!n.equals(s2n)) {
-			if (!n.equals(s)) {
-				if (!c.equals(n)) {
-					if (!c.equals(s2n)) {
-						if (!c.equals(s)) {
-							if (!a2c.equals(n)) {
-								if (!a2c.equals(c)) {
-									if (!a2c.equals(s2n)) {
-										if (!a2c.equals(s)) {
-											if (!s.equals(s2n)) {
-												if (!a.equals(n)) {
-													if (!a.equals(c)) {
-														if (!a.equals(a2c)) {
-															if (!a.equals(s2n)) {
-																if (!a.equals(s)) {
-																	return new Object[] { ruleresult, n, c, a2c, s2n, s,
-																			a };
+			EObject s, EObject a, EObject c, EObject n, EObject a2c, EObject s2n) {
+		if (!s.equals(s2n)) {
+			if (!a.equals(s)) {
+				if (!a.equals(c)) {
+					if (!a.equals(n)) {
+						if (!a.equals(a2c)) {
+							if (!a.equals(s2n)) {
+								if (!c.equals(s)) {
+									if (!c.equals(n)) {
+										if (!c.equals(s2n)) {
+											if (!n.equals(s)) {
+												if (!n.equals(s2n)) {
+													if (!a2c.equals(s)) {
+														if (!a2c.equals(c)) {
+															if (!a2c.equals(n)) {
+																if (!a2c.equals(s2n)) {
+																	return new Object[] { ruleresult, s, a, c, n, a2c,
+																			s2n };
 																}
 															}
 														}
@@ -1333,7 +1332,7 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_1_3_bookkeepingforedges_greenBBBBBFF(PerformRuleResult ruleresult,
-			EObject n, EObject c, EObject s, EObject a) {
+			EObject s, EObject a, EObject c, EObject n) {
 		EMoflonEdge s__a____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge n__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "next2next";
@@ -1348,12 +1347,12 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		s__a____next.setName(s__a____next_name_prime);
 		n__c____next.setName(n__c____next_name_prime);
-		return new Object[] { ruleresult, n, c, s, a, s__a____next, n__c____next };
+		return new Object[] { ruleresult, s, a, c, n, s__a____next, n__c____next };
 	}
 
 	public static final void pattern_next2next_1_5_registerobjects_expressionBBBBBBBB(next2next _this,
-			PerformRuleResult ruleresult, EObject n, EObject c, EObject a2c, EObject s2n, EObject s, EObject a) {
-		_this.registerObjects_FWD(ruleresult, n, c, a2c, s2n, s, a);
+			PerformRuleResult ruleresult, EObject s, EObject a, EObject c, EObject n, EObject a2c, EObject s2n) {
+		_this.registerObjects_FWD(ruleresult, s, a, c, n, a2c, s2n);
 
 	}
 
@@ -1424,21 +1423,21 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_next2next_2_2_corematch_blackFFFFBBB(Statement s, Assignment a,
+	public static final Iterable<Object[]> pattern_next2next_2_2_corematch_blackBBFFFFB(Statement s, Assignment a,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!a.equals(s)) {
-			for (S2N s2n : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(s, S2N.class, "source")) {
-				Node n = s2n.getTarget();
-				if (n != null) {
-					for (S2N a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a, S2N.class,
+			for (S2N a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a, S2N.class, "source")) {
+				Node tmpC = a2c.getTarget();
+				if (tmpC instanceof Command) {
+					Command c = (Command) tmpC;
+					for (S2N s2n : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(s, S2N.class,
 							"source")) {
 						if (!a2c.equals(s2n)) {
-							Node tmpC = a2c.getTarget();
-							if (tmpC instanceof Command) {
-								Command c = (Command) tmpC;
+							Node n = s2n.getTarget();
+							if (n != null) {
 								if (!c.equals(n)) {
-									_result.add(new Object[] { n, c, a2c, s2n, s, a, match });
+									_result.add(new Object[] { s, a, c, n, a2c, s2n, match });
 								}
 							}
 
@@ -1451,18 +1450,18 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_next2next_2_3_findcontext_blackBBBBBB(Node n, Command c, S2N a2c,
-			S2N s2n, Statement s, Assignment a) {
+	public static final Iterable<Object[]> pattern_next2next_2_3_findcontext_blackBBBBBB(Statement s, Assignment a,
+			Command c, Node n, S2N a2c, S2N s2n) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!c.equals(n)) {
-			if (!a2c.equals(s2n)) {
-				if (!a.equals(s)) {
+		if (!a.equals(s)) {
+			if (!c.equals(n)) {
+				if (!a2c.equals(s2n)) {
 					if (a.equals(s.getNext())) {
-						if (c.equals(a2c.getTarget())) {
-							if (s.equals(s2n.getSource())) {
+						if (a.equals(a2c.getSource())) {
+							if (c.equals(a2c.getTarget())) {
 								if (n.equals(s2n.getTarget())) {
-									if (a.equals(a2c.getSource())) {
-										_result.add(new Object[] { n, c, a2c, s2n, s, a });
+									if (s.equals(s2n.getSource())) {
+										_result.add(new Object[] { s, a, c, n, a2c, s2n });
 									}
 								}
 							}
@@ -1474,55 +1473,55 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return _result;
 	}
 
-	public static final Object[] pattern_next2next_2_3_findcontext_greenBBBBBBFFFFFF(Node n, Command c, S2N a2c,
-			S2N s2n, Statement s, Assignment a) {
+	public static final Object[] pattern_next2next_2_3_findcontext_greenBBBBBBFFFFFF(Statement s, Assignment a,
+			Command c, Node n, S2N a2c, S2N s2n) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge s__a____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge s2n__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge s2n__n____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2c__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2n__n____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2n__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String s__a____next_name_prime = "next";
-		String a2c__c____target_name_prime = "target";
-		String s2n__s____source_name_prime = "source";
-		String s2n__n____target_name_prime = "target";
 		String a2c__a____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(n);
-		isApplicableMatch.getAllContextElements().add(c);
-		isApplicableMatch.getAllContextElements().add(a2c);
-		isApplicableMatch.getAllContextElements().add(s2n);
+		String a2c__c____target_name_prime = "target";
+		String s2n__n____target_name_prime = "target";
+		String s2n__s____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(s);
 		isApplicableMatch.getAllContextElements().add(a);
+		isApplicableMatch.getAllContextElements().add(c);
+		isApplicableMatch.getAllContextElements().add(n);
+		isApplicableMatch.getAllContextElements().add(a2c);
+		isApplicableMatch.getAllContextElements().add(s2n);
 		s__a____next.setSrc(s);
 		s__a____next.setTrg(a);
 		isApplicableMatch.getAllContextElements().add(s__a____next);
-		a2c__c____target.setSrc(a2c);
-		a2c__c____target.setTrg(c);
-		isApplicableMatch.getAllContextElements().add(a2c__c____target);
-		s2n__s____source.setSrc(s2n);
-		s2n__s____source.setTrg(s);
-		isApplicableMatch.getAllContextElements().add(s2n__s____source);
-		s2n__n____target.setSrc(s2n);
-		s2n__n____target.setTrg(n);
-		isApplicableMatch.getAllContextElements().add(s2n__n____target);
 		a2c__a____source.setSrc(a2c);
 		a2c__a____source.setTrg(a);
 		isApplicableMatch.getAllContextElements().add(a2c__a____source);
+		a2c__c____target.setSrc(a2c);
+		a2c__c____target.setTrg(c);
+		isApplicableMatch.getAllContextElements().add(a2c__c____target);
+		s2n__n____target.setSrc(s2n);
+		s2n__n____target.setTrg(n);
+		isApplicableMatch.getAllContextElements().add(s2n__n____target);
+		s2n__s____source.setSrc(s2n);
+		s2n__s____source.setTrg(s);
+		isApplicableMatch.getAllContextElements().add(s2n__s____source);
 		s__a____next.setName(s__a____next_name_prime);
-		a2c__c____target.setName(a2c__c____target_name_prime);
-		s2n__s____source.setName(s2n__s____source_name_prime);
-		s2n__n____target.setName(s2n__n____target_name_prime);
 		a2c__a____source.setName(a2c__a____source_name_prime);
-		return new Object[] { n, c, a2c, s2n, s, a, isApplicableMatch, s__a____next, a2c__c____target, s2n__s____source,
-				s2n__n____target, a2c__a____source };
+		a2c__c____target.setName(a2c__c____target_name_prime);
+		s2n__n____target.setName(s2n__n____target_name_prime);
+		s2n__s____source.setName(s2n__s____source_name_prime);
+		return new Object[] { s, a, c, n, a2c, s2n, isApplicableMatch, s__a____next, a2c__a____source, a2c__c____target,
+				s2n__n____target, s2n__s____source };
 	}
 
 	public static final Object[] pattern_next2next_2_4_solveCSP_bindingFBBBBBBBB(next2next _this,
-			IsApplicableMatch isApplicableMatch, Node n, Command c, S2N a2c, S2N s2n, Statement s, Assignment a) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, n, c, a2c, s2n, s, a);
+			IsApplicableMatch isApplicableMatch, Statement s, Assignment a, Command c, Node n, S2N a2c, S2N s2n) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, s, a, c, n, a2c, s2n);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, n, c, a2c, s2n, s, a };
+			return new Object[] { csp, _this, isApplicableMatch, s, a, c, n, a2c, s2n };
 		}
 		return null;
 	}
@@ -1532,16 +1531,16 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_2_4_solveCSP_bindingAndBlackFBBBBBBBB(next2next _this,
-			IsApplicableMatch isApplicableMatch, Node n, Command c, S2N a2c, S2N s2n, Statement s, Assignment a) {
+			IsApplicableMatch isApplicableMatch, Statement s, Assignment a, Command c, Node n, S2N a2c, S2N s2n) {
 		Object[] result_pattern_next2next_2_4_solveCSP_binding = pattern_next2next_2_4_solveCSP_bindingFBBBBBBBB(_this,
-				isApplicableMatch, n, c, a2c, s2n, s, a);
+				isApplicableMatch, s, a, c, n, a2c, s2n);
 		if (result_pattern_next2next_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_next2next_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_next2next_2_4_solveCSP_black = pattern_next2next_2_4_solveCSP_blackB(csp);
 			if (result_pattern_next2next_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, n, c, a2c, s2n, s, a };
+				return new Object[] { csp, _this, isApplicableMatch, s, a, c, n, a2c, s2n };
 			}
 		}
 		return null;
@@ -1573,20 +1572,20 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return _result;
 	}
 
-	public static final Object[] pattern_next2next_10_1_initialbindings_blackBBBB(next2next _this, Match match, Node n,
-			Command c) {
+	public static final Object[] pattern_next2next_10_1_initialbindings_blackBBBB(next2next _this, Match match,
+			Command c, Node n) {
 		if (!c.equals(n)) {
-			return new Object[] { _this, match, n, c };
+			return new Object[] { _this, match, c, n };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_next2next_10_2_SolveCSP_bindingFBBBB(next2next _this, Match match, Node n,
-			Command c) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, n, c);
+	public static final Object[] pattern_next2next_10_2_SolveCSP_bindingFBBBB(next2next _this, Match match, Command c,
+			Node n) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, c, n);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, n, c };
+			return new Object[] { csp, _this, match, c, n };
 		}
 		return null;
 	}
@@ -1596,16 +1595,16 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_10_2_SolveCSP_bindingAndBlackFBBBB(next2next _this, Match match,
-			Node n, Command c) {
+			Command c, Node n) {
 		Object[] result_pattern_next2next_10_2_SolveCSP_binding = pattern_next2next_10_2_SolveCSP_bindingFBBBB(_this,
-				match, n, c);
+				match, c, n);
 		if (result_pattern_next2next_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_next2next_10_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_next2next_10_2_SolveCSP_black = pattern_next2next_10_2_SolveCSP_blackB(csp);
 			if (result_pattern_next2next_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, n, c };
+				return new Object[] { csp, _this, match, c, n };
 			}
 		}
 		return null;
@@ -1617,43 +1616,43 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return _result;
 	}
 
-	public static final Object[] pattern_next2next_10_4_collectelementstobetranslated_blackBBB(Match match, Node n,
-			Command c) {
+	public static final Object[] pattern_next2next_10_4_collectelementstobetranslated_blackBBB(Match match, Command c,
+			Node n) {
 		if (!c.equals(n)) {
-			return new Object[] { match, n, c };
+			return new Object[] { match, c, n };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_next2next_10_4_collectelementstobetranslated_greenBBBF(Match match, Node n,
-			Command c) {
+	public static final Object[] pattern_next2next_10_4_collectelementstobetranslated_greenBBBF(Match match, Command c,
+			Node n) {
 		EMoflonEdge n__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String n__c____next_name_prime = "next";
 		n__c____next.setSrc(n);
 		n__c____next.setTrg(c);
 		match.getToBeTranslatedEdges().add(n__c____next);
 		n__c____next.setName(n__c____next_name_prime);
-		return new Object[] { match, n, c, n__c____next };
+		return new Object[] { match, c, n, n__c____next };
 	}
 
-	public static final Object[] pattern_next2next_10_5_collectcontextelements_blackBBB(Match match, Node n,
-			Command c) {
+	public static final Object[] pattern_next2next_10_5_collectcontextelements_blackBBB(Match match, Command c,
+			Node n) {
 		if (!c.equals(n)) {
-			return new Object[] { match, n, c };
+			return new Object[] { match, c, n };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_next2next_10_5_collectcontextelements_greenBBB(Match match, Node n,
-			Command c) {
-		match.getContextNodes().add(n);
+	public static final Object[] pattern_next2next_10_5_collectcontextelements_greenBBB(Match match, Command c,
+			Node n) {
 		match.getContextNodes().add(c);
-		return new Object[] { match, n, c };
+		match.getContextNodes().add(n);
+		return new Object[] { match, c, n };
 	}
 
 	public static final void pattern_next2next_10_6_registerobjectstomatch_expressionBBBB(next2next _this, Match match,
-			Node n, Command c) {
-		_this.registerObjectsToMatch_BWD(match, n, c);
+			Command c, Node n) {
+		_this.registerObjectsToMatch_BWD(match, c, n);
 
 	}
 
@@ -1669,31 +1668,31 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 
 	public static final Object[] pattern_next2next_11_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("n");
-		EObject _localVariable_1 = isApplicableMatch.getObject("c");
-		EObject _localVariable_2 = isApplicableMatch.getObject("a2c");
-		EObject _localVariable_3 = isApplicableMatch.getObject("s2n");
-		EObject _localVariable_4 = isApplicableMatch.getObject("s");
-		EObject _localVariable_5 = isApplicableMatch.getObject("a");
-		EObject tmpN = _localVariable_0;
-		EObject tmpC = _localVariable_1;
-		EObject tmpA2c = _localVariable_2;
-		EObject tmpS2n = _localVariable_3;
-		EObject tmpS = _localVariable_4;
-		EObject tmpA = _localVariable_5;
-		if (tmpN instanceof Node) {
-			Node n = (Node) tmpN;
-			if (tmpC instanceof Command) {
-				Command c = (Command) tmpC;
-				if (tmpA2c instanceof S2N) {
-					S2N a2c = (S2N) tmpA2c;
-					if (tmpS2n instanceof S2N) {
-						S2N s2n = (S2N) tmpS2n;
-						if (tmpS instanceof Statement) {
-							Statement s = (Statement) tmpS;
-							if (tmpA instanceof Assignment) {
-								Assignment a = (Assignment) tmpA;
-								return new Object[] { n, c, a2c, s2n, s, a, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("s");
+		EObject _localVariable_1 = isApplicableMatch.getObject("a");
+		EObject _localVariable_2 = isApplicableMatch.getObject("c");
+		EObject _localVariable_3 = isApplicableMatch.getObject("n");
+		EObject _localVariable_4 = isApplicableMatch.getObject("a2c");
+		EObject _localVariable_5 = isApplicableMatch.getObject("s2n");
+		EObject tmpS = _localVariable_0;
+		EObject tmpA = _localVariable_1;
+		EObject tmpC = _localVariable_2;
+		EObject tmpN = _localVariable_3;
+		EObject tmpA2c = _localVariable_4;
+		EObject tmpS2n = _localVariable_5;
+		if (tmpS instanceof Statement) {
+			Statement s = (Statement) tmpS;
+			if (tmpA instanceof Assignment) {
+				Assignment a = (Assignment) tmpA;
+				if (tmpC instanceof Command) {
+					Command c = (Command) tmpC;
+					if (tmpN instanceof Node) {
+						Node n = (Node) tmpN;
+						if (tmpA2c instanceof S2N) {
+							S2N a2c = (S2N) tmpA2c;
+							if (tmpS2n instanceof S2N) {
+								S2N s2n = (S2N) tmpS2n;
+								return new Object[] { s, a, c, n, a2c, s2n, isApplicableMatch };
 							}
 						}
 					}
@@ -1703,15 +1702,15 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return null;
 	}
 
-	public static final Object[] pattern_next2next_11_1_performtransformation_blackBBBBBBFBB(Node n, Command c, S2N a2c,
-			S2N s2n, Statement s, Assignment a, next2next _this, IsApplicableMatch isApplicableMatch) {
-		if (!c.equals(n)) {
-			if (!a2c.equals(s2n)) {
-				if (!a.equals(s)) {
+	public static final Object[] pattern_next2next_11_1_performtransformation_blackBBBBBBFBB(Statement s, Assignment a,
+			Command c, Node n, S2N a2c, S2N s2n, next2next _this, IsApplicableMatch isApplicableMatch) {
+		if (!a.equals(s)) {
+			if (!c.equals(n)) {
+				if (!a2c.equals(s2n)) {
 					for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 						if (tmpCsp instanceof CSP) {
 							CSP csp = (CSP) tmpCsp;
-							return new Object[] { n, c, a2c, s2n, s, a, csp, _this, isApplicableMatch };
+							return new Object[] { s, a, c, n, a2c, s2n, csp, _this, isApplicableMatch };
 						}
 					}
 				}
@@ -1725,19 +1724,19 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		Object[] result_pattern_next2next_11_1_performtransformation_binding = pattern_next2next_11_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_next2next_11_1_performtransformation_binding != null) {
-			Node n = (Node) result_pattern_next2next_11_1_performtransformation_binding[0];
-			Command c = (Command) result_pattern_next2next_11_1_performtransformation_binding[1];
-			S2N a2c = (S2N) result_pattern_next2next_11_1_performtransformation_binding[2];
-			S2N s2n = (S2N) result_pattern_next2next_11_1_performtransformation_binding[3];
-			Statement s = (Statement) result_pattern_next2next_11_1_performtransformation_binding[4];
-			Assignment a = (Assignment) result_pattern_next2next_11_1_performtransformation_binding[5];
+			Statement s = (Statement) result_pattern_next2next_11_1_performtransformation_binding[0];
+			Assignment a = (Assignment) result_pattern_next2next_11_1_performtransformation_binding[1];
+			Command c = (Command) result_pattern_next2next_11_1_performtransformation_binding[2];
+			Node n = (Node) result_pattern_next2next_11_1_performtransformation_binding[3];
+			S2N a2c = (S2N) result_pattern_next2next_11_1_performtransformation_binding[4];
+			S2N s2n = (S2N) result_pattern_next2next_11_1_performtransformation_binding[5];
 
 			Object[] result_pattern_next2next_11_1_performtransformation_black = pattern_next2next_11_1_performtransformation_blackBBBBBBFBB(
-					n, c, a2c, s2n, s, a, _this, isApplicableMatch);
+					s, a, c, n, a2c, s2n, _this, isApplicableMatch);
 			if (result_pattern_next2next_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_next2next_11_1_performtransformation_black[6];
 
-				return new Object[] { n, c, a2c, s2n, s, a, csp, _this, isApplicableMatch };
+				return new Object[] { s, a, c, n, a2c, s2n, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1754,24 +1753,24 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_11_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject n, EObject c, EObject a2c, EObject s2n, EObject s, EObject a) {
-		if (!n.equals(s2n)) {
-			if (!n.equals(s)) {
-				if (!c.equals(n)) {
-					if (!c.equals(s2n)) {
-						if (!c.equals(s)) {
-							if (!a2c.equals(n)) {
-								if (!a2c.equals(c)) {
-									if (!a2c.equals(s2n)) {
-										if (!a2c.equals(s)) {
-											if (!s.equals(s2n)) {
-												if (!a.equals(n)) {
-													if (!a.equals(c)) {
-														if (!a.equals(a2c)) {
-															if (!a.equals(s2n)) {
-																if (!a.equals(s)) {
-																	return new Object[] { ruleresult, n, c, a2c, s2n, s,
-																			a };
+			EObject s, EObject a, EObject c, EObject n, EObject a2c, EObject s2n) {
+		if (!s.equals(s2n)) {
+			if (!a.equals(s)) {
+				if (!a.equals(c)) {
+					if (!a.equals(n)) {
+						if (!a.equals(a2c)) {
+							if (!a.equals(s2n)) {
+								if (!c.equals(s)) {
+									if (!c.equals(n)) {
+										if (!c.equals(s2n)) {
+											if (!n.equals(s)) {
+												if (!n.equals(s2n)) {
+													if (!a2c.equals(s)) {
+														if (!a2c.equals(c)) {
+															if (!a2c.equals(n)) {
+																if (!a2c.equals(s2n)) {
+																	return new Object[] { ruleresult, s, a, c, n, a2c,
+																			s2n };
 																}
 															}
 														}
@@ -1791,7 +1790,7 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_11_3_bookkeepingforedges_greenBBBBBFF(PerformRuleResult ruleresult,
-			EObject n, EObject c, EObject s, EObject a) {
+			EObject s, EObject a, EObject c, EObject n) {
 		EMoflonEdge s__a____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge n__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "next2next";
@@ -1806,12 +1805,12 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		s__a____next.setName(s__a____next_name_prime);
 		n__c____next.setName(n__c____next_name_prime);
-		return new Object[] { ruleresult, n, c, s, a, s__a____next, n__c____next };
+		return new Object[] { ruleresult, s, a, c, n, s__a____next, n__c____next };
 	}
 
 	public static final void pattern_next2next_11_5_registerobjects_expressionBBBBBBBB(next2next _this,
-			PerformRuleResult ruleresult, EObject n, EObject c, EObject a2c, EObject s2n, EObject s, EObject a) {
-		_this.registerObjects_BWD(ruleresult, n, c, a2c, s2n, s, a);
+			PerformRuleResult ruleresult, EObject s, EObject a, EObject c, EObject n, EObject a2c, EObject s2n) {
+		_this.registerObjects_BWD(ruleresult, s, a, c, n, a2c, s2n);
 
 	}
 
@@ -1868,21 +1867,21 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("n");
-		EObject _localVariable_1 = match.getObject("c");
-		EObject tmpN = _localVariable_0;
-		EObject tmpC = _localVariable_1;
-		if (tmpN instanceof Node) {
-			Node n = (Node) tmpN;
-			if (tmpC instanceof Command) {
-				Command c = (Command) tmpC;
-				return new Object[] { n, c, match };
+		EObject _localVariable_0 = match.getObject("c");
+		EObject _localVariable_1 = match.getObject("n");
+		EObject tmpC = _localVariable_0;
+		EObject tmpN = _localVariable_1;
+		if (tmpC instanceof Command) {
+			Command c = (Command) tmpC;
+			if (tmpN instanceof Node) {
+				Node n = (Node) tmpN;
+				return new Object[] { c, n, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_next2next_12_2_corematch_blackBBFFFFB(Node n, Command c,
+	public static final Iterable<Object[]> pattern_next2next_12_2_corematch_blackFFBBFFB(Command c, Node n,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!c.equals(n)) {
@@ -1896,7 +1895,7 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 							Statement s = s2n.getSource();
 							if (s != null) {
 								if (!a.equals(s)) {
-									_result.add(new Object[] { n, c, a2c, s2n, s, a, match });
+									_result.add(new Object[] { s, a, c, n, a2c, s2n, match });
 								}
 							}
 
@@ -1909,18 +1908,18 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_next2next_12_3_findcontext_blackBBBBBB(Node n, Command c, S2N a2c,
-			S2N s2n, Statement s, Assignment a) {
+	public static final Iterable<Object[]> pattern_next2next_12_3_findcontext_blackBBBBBB(Statement s, Assignment a,
+			Command c, Node n, S2N a2c, S2N s2n) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!c.equals(n)) {
-			if (!a2c.equals(s2n)) {
-				if (!a.equals(s)) {
+		if (!a.equals(s)) {
+			if (!c.equals(n)) {
+				if (!a2c.equals(s2n)) {
 					if (c.equals(n.getNext())) {
-						if (c.equals(a2c.getTarget())) {
-							if (s.equals(s2n.getSource())) {
+						if (a.equals(a2c.getSource())) {
+							if (c.equals(a2c.getTarget())) {
 								if (n.equals(s2n.getTarget())) {
-									if (a.equals(a2c.getSource())) {
-										_result.add(new Object[] { n, c, a2c, s2n, s, a });
+									if (s.equals(s2n.getSource())) {
+										_result.add(new Object[] { s, a, c, n, a2c, s2n });
 									}
 								}
 							}
@@ -1932,55 +1931,55 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return _result;
 	}
 
-	public static final Object[] pattern_next2next_12_3_findcontext_greenBBBBBBFFFFFF(Node n, Command c, S2N a2c,
-			S2N s2n, Statement s, Assignment a) {
+	public static final Object[] pattern_next2next_12_3_findcontext_greenBBBBBBFFFFFF(Statement s, Assignment a,
+			Command c, Node n, S2N a2c, S2N s2n) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge n__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge s2n__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge s2n__n____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2c__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2n__n____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2n__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String n__c____next_name_prime = "next";
-		String a2c__c____target_name_prime = "target";
-		String s2n__s____source_name_prime = "source";
-		String s2n__n____target_name_prime = "target";
 		String a2c__a____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(n);
-		isApplicableMatch.getAllContextElements().add(c);
-		isApplicableMatch.getAllContextElements().add(a2c);
-		isApplicableMatch.getAllContextElements().add(s2n);
+		String a2c__c____target_name_prime = "target";
+		String s2n__n____target_name_prime = "target";
+		String s2n__s____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(s);
 		isApplicableMatch.getAllContextElements().add(a);
+		isApplicableMatch.getAllContextElements().add(c);
+		isApplicableMatch.getAllContextElements().add(n);
+		isApplicableMatch.getAllContextElements().add(a2c);
+		isApplicableMatch.getAllContextElements().add(s2n);
 		n__c____next.setSrc(n);
 		n__c____next.setTrg(c);
 		isApplicableMatch.getAllContextElements().add(n__c____next);
-		a2c__c____target.setSrc(a2c);
-		a2c__c____target.setTrg(c);
-		isApplicableMatch.getAllContextElements().add(a2c__c____target);
-		s2n__s____source.setSrc(s2n);
-		s2n__s____source.setTrg(s);
-		isApplicableMatch.getAllContextElements().add(s2n__s____source);
-		s2n__n____target.setSrc(s2n);
-		s2n__n____target.setTrg(n);
-		isApplicableMatch.getAllContextElements().add(s2n__n____target);
 		a2c__a____source.setSrc(a2c);
 		a2c__a____source.setTrg(a);
 		isApplicableMatch.getAllContextElements().add(a2c__a____source);
+		a2c__c____target.setSrc(a2c);
+		a2c__c____target.setTrg(c);
+		isApplicableMatch.getAllContextElements().add(a2c__c____target);
+		s2n__n____target.setSrc(s2n);
+		s2n__n____target.setTrg(n);
+		isApplicableMatch.getAllContextElements().add(s2n__n____target);
+		s2n__s____source.setSrc(s2n);
+		s2n__s____source.setTrg(s);
+		isApplicableMatch.getAllContextElements().add(s2n__s____source);
 		n__c____next.setName(n__c____next_name_prime);
-		a2c__c____target.setName(a2c__c____target_name_prime);
-		s2n__s____source.setName(s2n__s____source_name_prime);
-		s2n__n____target.setName(s2n__n____target_name_prime);
 		a2c__a____source.setName(a2c__a____source_name_prime);
-		return new Object[] { n, c, a2c, s2n, s, a, isApplicableMatch, n__c____next, a2c__c____target, s2n__s____source,
-				s2n__n____target, a2c__a____source };
+		a2c__c____target.setName(a2c__c____target_name_prime);
+		s2n__n____target.setName(s2n__n____target_name_prime);
+		s2n__s____source.setName(s2n__s____source_name_prime);
+		return new Object[] { s, a, c, n, a2c, s2n, isApplicableMatch, n__c____next, a2c__a____source, a2c__c____target,
+				s2n__n____target, s2n__s____source };
 	}
 
 	public static final Object[] pattern_next2next_12_4_solveCSP_bindingFBBBBBBBB(next2next _this,
-			IsApplicableMatch isApplicableMatch, Node n, Command c, S2N a2c, S2N s2n, Statement s, Assignment a) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, n, c, a2c, s2n, s, a);
+			IsApplicableMatch isApplicableMatch, Statement s, Assignment a, Command c, Node n, S2N a2c, S2N s2n) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, s, a, c, n, a2c, s2n);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, n, c, a2c, s2n, s, a };
+			return new Object[] { csp, _this, isApplicableMatch, s, a, c, n, a2c, s2n };
 		}
 		return null;
 	}
@@ -1990,16 +1989,16 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_12_4_solveCSP_bindingAndBlackFBBBBBBBB(next2next _this,
-			IsApplicableMatch isApplicableMatch, Node n, Command c, S2N a2c, S2N s2n, Statement s, Assignment a) {
+			IsApplicableMatch isApplicableMatch, Statement s, Assignment a, Command c, Node n, S2N a2c, S2N s2n) {
 		Object[] result_pattern_next2next_12_4_solveCSP_binding = pattern_next2next_12_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, n, c, a2c, s2n, s, a);
+				_this, isApplicableMatch, s, a, c, n, a2c, s2n);
 		if (result_pattern_next2next_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_next2next_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_next2next_12_4_solveCSP_black = pattern_next2next_12_4_solveCSP_blackB(csp);
 			if (result_pattern_next2next_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, n, c, a2c, s2n, s, a };
+				return new Object[] { csp, _this, isApplicableMatch, s, a, c, n, a2c, s2n };
 			}
 		}
 		return null;
@@ -2093,7 +2092,7 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 				Command c = (Command) tmpC;
 				if (!c.equals(n)) {
 					if (c.equals(n.getNext())) {
-						_result.add(new Object[] { n, c, _edge_next });
+						_result.add(new Object[] { c, n, _edge_next });
 					}
 				}
 			}
@@ -2113,8 +2112,8 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final boolean pattern_next2next_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			next2next _this, Match match, Node n, Command c) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, n, c);
+			next2next _this, Match match, Command c, Node n) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, c, n);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2272,25 +2271,25 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_next2next_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
-			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("n");
-		EObject _localVariable_1 = targetMatch.getObject("c");
-		EObject _localVariable_2 = sourceMatch.getObject("s");
-		EObject _localVariable_3 = sourceMatch.getObject("a");
-		EObject tmpN = _localVariable_0;
-		EObject tmpC = _localVariable_1;
-		EObject tmpS = _localVariable_2;
-		EObject tmpA = _localVariable_3;
-		if (tmpN instanceof Node) {
-			Node n = (Node) tmpN;
-			if (tmpC instanceof Command) {
-				Command c = (Command) tmpC;
-				if (tmpS instanceof Statement) {
-					Statement s = (Statement) tmpS;
-					if (tmpA instanceof Assignment) {
-						Assignment a = (Assignment) tmpA;
-						return new Object[] { n, c, s, a, targetMatch, sourceMatch };
+	public static final Object[] pattern_next2next_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
+			Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("s");
+		EObject _localVariable_1 = sourceMatch.getObject("a");
+		EObject _localVariable_2 = targetMatch.getObject("c");
+		EObject _localVariable_3 = targetMatch.getObject("n");
+		EObject tmpS = _localVariable_0;
+		EObject tmpA = _localVariable_1;
+		EObject tmpC = _localVariable_2;
+		EObject tmpN = _localVariable_3;
+		if (tmpS instanceof Statement) {
+			Statement s = (Statement) tmpS;
+			if (tmpA instanceof Assignment) {
+				Assignment a = (Assignment) tmpA;
+				if (tmpC instanceof Command) {
+					Command c = (Command) tmpC;
+					if (tmpN instanceof Node) {
+						Node n = (Node) tmpN;
+						return new Object[] { s, a, c, n, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2298,12 +2297,12 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return null;
 	}
 
-	public static final Object[] pattern_next2next_24_2_matchsrctrgcontext_blackBBBBBB(Node n, Command c, Statement s,
-			Assignment a, Match sourceMatch, Match targetMatch) {
-		if (!c.equals(n)) {
-			if (!a.equals(s)) {
+	public static final Object[] pattern_next2next_24_2_matchsrctrgcontext_blackBBBBBB(Statement s, Assignment a,
+			Command c, Node n, Match sourceMatch, Match targetMatch) {
+		if (!a.equals(s)) {
+			if (!c.equals(n)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { n, c, s, a, sourceMatch, targetMatch };
+					return new Object[] { s, a, c, n, sourceMatch, targetMatch };
 				}
 			}
 		}
@@ -2313,29 +2312,29 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	public static final Object[] pattern_next2next_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_next2next_24_2_matchsrctrgcontext_binding = pattern_next2next_24_2_matchsrctrgcontext_bindingFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_next2next_24_2_matchsrctrgcontext_binding != null) {
-			Node n = (Node) result_pattern_next2next_24_2_matchsrctrgcontext_binding[0];
-			Command c = (Command) result_pattern_next2next_24_2_matchsrctrgcontext_binding[1];
-			Statement s = (Statement) result_pattern_next2next_24_2_matchsrctrgcontext_binding[2];
-			Assignment a = (Assignment) result_pattern_next2next_24_2_matchsrctrgcontext_binding[3];
+			Statement s = (Statement) result_pattern_next2next_24_2_matchsrctrgcontext_binding[0];
+			Assignment a = (Assignment) result_pattern_next2next_24_2_matchsrctrgcontext_binding[1];
+			Command c = (Command) result_pattern_next2next_24_2_matchsrctrgcontext_binding[2];
+			Node n = (Node) result_pattern_next2next_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_next2next_24_2_matchsrctrgcontext_black = pattern_next2next_24_2_matchsrctrgcontext_blackBBBBBB(
-					n, c, s, a, sourceMatch, targetMatch);
+					s, a, c, n, sourceMatch, targetMatch);
 			if (result_pattern_next2next_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { n, c, s, a, sourceMatch, targetMatch };
+				return new Object[] { s, a, c, n, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_next2next_24_3_solvecsp_bindingFBBBBBBB(next2next _this, Node n, Command c,
-			Statement s, Assignment a, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(n, c, s, a, sourceMatch, targetMatch);
+	public static final Object[] pattern_next2next_24_3_solvecsp_bindingFBBBBBBB(next2next _this, Statement s,
+			Assignment a, Command c, Node n, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(s, a, c, n, sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, n, c, s, a, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, s, a, c, n, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2344,17 +2343,17 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_next2next_24_3_solvecsp_bindingAndBlackFBBBBBBB(next2next _this, Node n,
-			Command c, Statement s, Assignment a, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_next2next_24_3_solvecsp_bindingAndBlackFBBBBBBB(next2next _this, Statement s,
+			Assignment a, Command c, Node n, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_next2next_24_3_solvecsp_binding = pattern_next2next_24_3_solvecsp_bindingFBBBBBBB(_this,
-				n, c, s, a, sourceMatch, targetMatch);
+				s, a, c, n, sourceMatch, targetMatch);
 		if (result_pattern_next2next_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_next2next_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_next2next_24_3_solvecsp_black = pattern_next2next_24_3_solvecsp_blackB(csp);
 			if (result_pattern_next2next_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, n, c, s, a, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, s, a, c, n, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2366,20 +2365,20 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_next2next_24_5_matchcorrcontext_blackBBFFBBBB(Node n, Command c,
-			Statement s, Assignment a, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_next2next_24_5_matchcorrcontext_blackBBBBFFBB(Statement s,
+			Assignment a, Command c, Node n, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!c.equals(n)) {
-			if (!a.equals(s)) {
+		if (!a.equals(s)) {
+			if (!c.equals(n)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					for (S2N a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c, S2N.class,
-							"target")) {
-						if (a.equals(a2c.getSource())) {
-							for (S2N s2n : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(s,
-									S2N.class, "source")) {
+					for (S2N a2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a, S2N.class,
+							"source")) {
+						if (c.equals(a2c.getTarget())) {
+							for (S2N s2n : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n,
+									S2N.class, "target")) {
 								if (!a2c.equals(s2n)) {
-									if (n.equals(s2n.getTarget())) {
-										_result.add(new Object[] { n, c, a2c, s2n, s, a, sourceMatch, targetMatch });
+									if (s.equals(s2n.getSource())) {
+										_result.add(new Object[] { s, a, c, n, a2c, s2n, sourceMatch, targetMatch });
 									}
 								}
 							}
@@ -2403,11 +2402,11 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return new Object[] { a2c, s2n, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_next2next_24_6_createcorrespondence_blackBBBBB(Node n, Command c, Statement s,
-			Assignment a, CCMatch ccMatch) {
-		if (!c.equals(n)) {
-			if (!a.equals(s)) {
-				return new Object[] { n, c, s, a, ccMatch };
+	public static final Object[] pattern_next2next_24_6_createcorrespondence_blackBBBBB(Statement s, Assignment a,
+			Command c, Node n, CCMatch ccMatch) {
+		if (!a.equals(s)) {
+			if (!c.equals(n)) {
+				return new Object[] { s, a, c, n, ccMatch };
 			}
 		}
 		return null;
@@ -2452,10 +2451,10 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return _result;
 	}
 
-	public static final Object[] pattern_next2next_28_1_matchtggpattern_blackBB(Node n, Command c) {
+	public static final Object[] pattern_next2next_28_1_matchtggpattern_blackBB(Command c, Node n) {
 		if (!c.equals(n)) {
 			if (c.equals(n.getNext())) {
-				return new Object[] { n, c };
+				return new Object[] { c, n };
 			}
 		}
 		return null;
@@ -2484,9 +2483,9 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Node n) {
-		if (ruleResult.getTargetObjects().contains(n)) {
-			return new Object[] { ruleResult, n };
+			ModelgeneratorRuleResult ruleResult, Statement s) {
+		if (ruleResult.getSourceObjects().contains(s)) {
+			return new Object[] { ruleResult, s };
 		}
 		return null;
 	}
@@ -2500,17 +2499,17 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Statement s) {
-		if (ruleResult.getSourceObjects().contains(s)) {
-			return new Object[] { ruleResult, s };
+			ModelgeneratorRuleResult ruleResult, Node n) {
+		if (ruleResult.getTargetObjects().contains(n)) {
+			return new Object[] { ruleResult, n };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_next2next_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, Command c) {
-		if (ruleResult.getTargetObjects().contains(c)) {
-			return new Object[] { ruleResult, c };
+			ModelgeneratorRuleResult ruleResult, Assignment a) {
+		if (ruleResult.getSourceObjects().contains(a)) {
+			return new Object[] { ruleResult, a };
 		}
 		return null;
 	}
@@ -2524,9 +2523,9 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_29_2_isapplicablecore_black_nac_5BB(
-			ModelgeneratorRuleResult ruleResult, Assignment a) {
-		if (ruleResult.getSourceObjects().contains(a)) {
-			return new Object[] { ruleResult, a };
+			ModelgeneratorRuleResult ruleResult, Command c) {
+		if (ruleResult.getTargetObjects().contains(c)) {
+			return new Object[] { ruleResult, c };
 		}
 		return null;
 	}
@@ -2540,37 +2539,37 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 					for (EObject tmpS2n : s2nList.getEntryObjects()) {
 						if (tmpS2n instanceof S2N) {
 							S2N s2n = (S2N) tmpS2n;
-							Node n = s2n.getTarget();
-							if (n != null) {
-								Statement s = s2n.getSource();
-								if (s != null) {
+							Statement s = s2n.getSource();
+							if (s != null) {
+								Node n = s2n.getTarget();
+								if (n != null) {
 									if (pattern_next2next_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 											s2n) == null) {
 										if (pattern_next2next_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-												n) == null) {
+												s) == null) {
 											if (pattern_next2next_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-													s) == null) {
+													n) == null) {
 												for (EObject tmpA2c : a2cList.getEntryObjects()) {
 													if (tmpA2c instanceof S2N) {
 														S2N a2c = (S2N) tmpA2c;
 														if (!a2c.equals(s2n)) {
-															Node tmpC = a2c.getTarget();
-															if (tmpC instanceof Command) {
-																Command c = (Command) tmpC;
-																if (!c.equals(n)) {
-																	Statement tmpA = a2c.getSource();
-																	if (tmpA instanceof Assignment) {
-																		Assignment a = (Assignment) tmpA;
-																		if (!a.equals(s)) {
+															Statement tmpA = a2c.getSource();
+															if (tmpA instanceof Assignment) {
+																Assignment a = (Assignment) tmpA;
+																if (!a.equals(s)) {
+																	Node tmpC = a2c.getTarget();
+																	if (tmpC instanceof Command) {
+																		Command c = (Command) tmpC;
+																		if (!c.equals(n)) {
 																			if (pattern_next2next_29_2_isapplicablecore_black_nac_4BB(
 																					ruleResult, a2c) == null) {
 																				if (pattern_next2next_29_2_isapplicablecore_black_nac_3BB(
-																						ruleResult, c) == null) {
+																						ruleResult, a) == null) {
 																					if (pattern_next2next_29_2_isapplicablecore_black_nac_5BB(
-																							ruleResult, a) == null) {
+																							ruleResult, c) == null) {
 																						_result.add(new Object[] {
-																								s2nList, n, s2n, s,
-																								a2cList, c, a2c, a,
+																								s2nList, s, s2n, n,
+																								a2cList, a, a2c, c,
 																								ruleEntryContainer,
 																								ruleResult });
 																					}
@@ -2601,12 +2600,12 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_29_3_solveCSP_bindingFBBBBBBBBB(next2next _this,
-			IsApplicableMatch isApplicableMatch, Node n, Command c, S2N a2c, S2N s2n, Statement s, Assignment a,
+			IsApplicableMatch isApplicableMatch, Statement s, Assignment a, Command c, Node n, S2N a2c, S2N s2n,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, n, c, a2c, s2n, s, a, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, s, a, c, n, a2c, s2n, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, n, c, a2c, s2n, s, a, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, s, a, c, n, a2c, s2n, ruleResult };
 		}
 		return null;
 	}
@@ -2616,17 +2615,17 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 	}
 
 	public static final Object[] pattern_next2next_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(next2next _this,
-			IsApplicableMatch isApplicableMatch, Node n, Command c, S2N a2c, S2N s2n, Statement s, Assignment a,
+			IsApplicableMatch isApplicableMatch, Statement s, Assignment a, Command c, Node n, S2N a2c, S2N s2n,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_next2next_29_3_solveCSP_binding = pattern_next2next_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, n, c, a2c, s2n, s, a, ruleResult);
+				_this, isApplicableMatch, s, a, c, n, a2c, s2n, ruleResult);
 		if (result_pattern_next2next_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_next2next_29_3_solveCSP_binding[0];
 
 			Object[] result_pattern_next2next_29_3_solveCSP_black = pattern_next2next_29_3_solveCSP_blackB(csp);
 			if (result_pattern_next2next_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, n, c, a2c, s2n, s, a, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, s, a, c, n, a2c, s2n, ruleResult };
 			}
 		}
 		return null;
@@ -2638,31 +2637,31 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		return _result;
 	}
 
-	public static final Object[] pattern_next2next_29_5_checknacs_blackBBBBBB(Node n, Command c, S2N a2c, S2N s2n,
-			Statement s, Assignment a) {
-		if (!c.equals(n)) {
-			if (!a2c.equals(s2n)) {
-				if (!a.equals(s)) {
-					return new Object[] { n, c, a2c, s2n, s, a };
+	public static final Object[] pattern_next2next_29_5_checknacs_blackBBBBBB(Statement s, Assignment a, Command c,
+			Node n, S2N a2c, S2N s2n) {
+		if (!a.equals(s)) {
+			if (!c.equals(n)) {
+				if (!a2c.equals(s2n)) {
+					return new Object[] { s, a, c, n, a2c, s2n };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_next2next_29_6_perform_blackBBBBBBB(Node n, Command c, S2N a2c, S2N s2n,
-			Statement s, Assignment a, ModelgeneratorRuleResult ruleResult) {
-		if (!c.equals(n)) {
-			if (!a2c.equals(s2n)) {
-				if (!a.equals(s)) {
-					return new Object[] { n, c, a2c, s2n, s, a, ruleResult };
+	public static final Object[] pattern_next2next_29_6_perform_blackBBBBBBB(Statement s, Assignment a, Command c,
+			Node n, S2N a2c, S2N s2n, ModelgeneratorRuleResult ruleResult) {
+		if (!a.equals(s)) {
+			if (!c.equals(n)) {
+				if (!a2c.equals(s2n)) {
+					return new Object[] { s, a, c, n, a2c, s2n, ruleResult };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_next2next_29_6_perform_greenBBBBB(Node n, Command c, Statement s, Assignment a,
+	public static final Object[] pattern_next2next_29_6_perform_greenBBBBB(Statement s, Assignment a, Command c, Node n,
 			ModelgeneratorRuleResult ruleResult) {
 		s.setNext(a);
 		n.setNext(c);
@@ -2671,7 +2670,7 @@ public class next2nextImpl extends AbstractRuleImpl implements next2next {
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { n, c, s, a, ruleResult };
+		return new Object[] { s, a, c, n, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_next2next_29_7_expressionFB(

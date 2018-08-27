@@ -46,7 +46,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Assignment a, Program p);
+	boolean isAppropriate_FWD(Match match, Program p, Assignment a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Assignment a, Program p);
+	void registerObjectsToMatch_FWD(Match match, Program p, Assignment a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Assignment a, Program p);
+	CSP isAppropriate_solveCsp_FWD(Match match, Program p, Assignment a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,7 +94,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Assignment a, Program p, P2G p2g, Graph g);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Program p, Graph g, Assignment a, P2G p2g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,8 +110,8 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject a, EObject p, EObject f2r, EObject p2g, EObject c,
-			EObject g);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject c, EObject p, EObject g, EObject a, EObject p2g,
+			EObject f2r);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,7 +175,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Program p, P2G p2g, Command c, Graph g);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Command c, Program p, Graph g, P2G p2g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,8 +191,8 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject a, EObject p, EObject f2r, EObject p2g, EObject c,
-			EObject g);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject c, EObject p, EObject g, EObject a, EObject p2g,
+			EObject f2r);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_150(EMoflonEdge _edge_root);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_27(EMoflonEdge _edge_root);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_150(EMoflonEdge _edge_first);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_27(EMoflonEdge _edge_first);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +248,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Assignment a, Program p, Command c, Graph g, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Command c, Program p, Graph g, Assignment a, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,7 +264,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Assignment a, Program p);
+	boolean checkDEC_FWD(Program p, Assignment a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,7 +288,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Program p, P2G p2g, Graph g,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Program p, Graph g, P2G p2g,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

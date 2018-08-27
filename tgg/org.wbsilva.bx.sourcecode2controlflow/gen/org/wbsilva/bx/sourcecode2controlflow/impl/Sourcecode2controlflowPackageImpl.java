@@ -58,14 +58,14 @@ public class Sourcecode2controlflowPackageImpl extends EPackageImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass p2GEClass = null;
+	private EClass s2BEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass s2BEClass = null;
+	private EClass p2GEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,41 +156,10 @@ public class Sourcecode2controlflowPackageImpl extends EPackageImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getP2G() {
-		if (p2GEClass == null) {
-			p2GEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Sourcecode2controlflowPackage.eNS_URI)
-					.getEClassifiers().get(0);
-		}
-		return p2GEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getP2G_Source() {
-		return (EReference) getP2G().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getP2G_Target() {
-		return (EReference) getP2G().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getS2B() {
 		if (s2BEClass == null) {
 			s2BEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Sourcecode2controlflowPackage.eNS_URI)
-					.getEClassifiers().get(1);
+					.getEClassifiers().get(0);
 		}
 		return s2BEClass;
 	}
@@ -211,6 +180,37 @@ public class Sourcecode2controlflowPackageImpl extends EPackageImpl implements S
 	 */
 	public EReference getS2B_Target() {
 		return (EReference) getS2B().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getP2G() {
+		if (p2GEClass == null) {
+			p2GEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Sourcecode2controlflowPackage.eNS_URI)
+					.getEClassifiers().get(1);
+		}
+		return p2GEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getP2G_Source() {
+		return (EReference) getP2G().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getP2G_Target() {
+		return (EReference) getP2G().getEStructuralFeatures().get(1);
 	}
 
 	/**

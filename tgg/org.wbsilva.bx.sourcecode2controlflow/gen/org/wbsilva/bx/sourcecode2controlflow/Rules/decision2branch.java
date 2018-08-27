@@ -94,7 +94,7 @@ public interface decision2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, S2N s2n, Decision d, Node n, Statement s);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Decision d, Node n, S2N s2n, Statement s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,8 +110,8 @@ public interface decision2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject a2c, EObject s2n, EObject d, EObject n, EObject c,
-			EObject s);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject d, EObject n, EObject s2n, EObject c, EObject s,
+			EObject a2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,7 +175,7 @@ public interface decision2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2N s2n, Node n, Branch c, Statement s);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Node n, S2N s2n, Branch c, Statement s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,8 +191,8 @@ public interface decision2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject a2c, EObject s2n, EObject d, EObject n, EObject c,
-			EObject s);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject d, EObject n, EObject s2n, EObject c, EObject s,
+			EObject a2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface decision2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_127(EMoflonEdge _edge_next);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_30(EMoflonEdge _edge_next);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface decision2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_127(EMoflonEdge _edge_next);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_30(EMoflonEdge _edge_next);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,7 +288,7 @@ public interface decision2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2N s2n, Node n, Statement s,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Node n, S2N s2n, Statement s,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

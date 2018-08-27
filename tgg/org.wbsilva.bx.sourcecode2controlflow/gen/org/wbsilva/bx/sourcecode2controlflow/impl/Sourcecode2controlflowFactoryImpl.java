@@ -56,10 +56,10 @@ public class Sourcecode2controlflowFactoryImpl extends EFactoryImpl implements S
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case Sourcecode2controlflowPackage.P2G:
-			return createP2G();
 		case Sourcecode2controlflowPackage.S2B:
 			return createS2B();
+		case Sourcecode2controlflowPackage.P2G:
+			return createP2G();
 		case Sourcecode2controlflowPackage.S2N:
 			return createS2N();
 		default:
@@ -72,9 +72,9 @@ public class Sourcecode2controlflowFactoryImpl extends EFactoryImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public P2G createP2G() {
-		P2GImpl p2G = new P2GImpl();
-		return p2G;
+	public S2B createS2B() {
+		S2BImpl s2B = new S2BImpl();
+		return s2B;
 	}
 
 	/**
@@ -82,9 +82,9 @@ public class Sourcecode2controlflowFactoryImpl extends EFactoryImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public S2B createS2B() {
-		S2BImpl s2B = new S2BImpl();
-		return s2B;
+	public P2G createP2G() {
+		P2GImpl p2G = new P2GImpl();
+		return p2G;
 	}
 
 	/**
