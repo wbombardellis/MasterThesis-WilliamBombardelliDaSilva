@@ -213,6 +213,7 @@ Building upon the concepts of graphs and graph grammars, we present, in the foll
 Below we start introducing the standard definition of TGG of the current research's literature. As the reader should notice, this definition of TGG does not fit our needs optimally, because it defines a context-sensitive-like graph grammar whilst we wish a context-free-like graph grammar to use together with the NCE graph grammar formalism. Hence, after presenting the conventional TGG definition, we refine it to create a NCE TGG, that fits our context best.
 
 \begin{definition}
+	\label{def:stgg}
 	A triple graph grammar $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, analogously to graph grammars (see \ref{def:gg}), an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $L \pro R$ with $L = L_s \ms{} L_c \mt{} L_t$ and $R = R_s \ms{} R_c \mt{} R_t$ and $L \subseteq R.$
 \end{definition}
 
@@ -403,7 +404,7 @@ If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that
 %TODO: We beleieve this imperative view is also a contribution of our work
 
 %TODO: Comment on correctness and completeness
-%TODO: Comment on spatial and time complexity
+%TODO: Comment on termination and spatial and time complexity
 %TODO: Nevertheless, the grammar's ambiguity does not compromise the correctness of our algorithms presented in the following.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -493,6 +494,8 @@ The complete transformation procedure is presented in the Algorithm \ref{alg:tra
 %Incremental and Synchhronization
 %TODO: discourse about incremental transformation and synchronization
 %TODO: Discuss ambiguiity in the grammar and the non-determinism in the generation of TGs in this case
+%TODO: Comment on correctness and completeness in the TGG sense
+%TODO: Comment on termination and spatial and time complexity
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% TGG EXTENTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -517,9 +520,9 @@ In order to evaluate the proposed BNCE TGG formalism, we compare the amount of r
 						& \multicolumn{2}{c}{Standard TGG} & \multicolumn{2}{c}{BNCE TGG}\\
 		Transformation 			& Rules & Elements 	& Rules & Elements\\
 		\hline
-		Pseudocode2Controlflow	& 45	& 1061		& 7 	& 185 \\
-		BTree2XBTree			& 4		& 50		& 5		& 80 \\
-		Star2Wheel				& -		& -			& 6 	& 89 \\
+		Pseudocode2Controlflow	& 45			& 1061	& \textbf{7}	& \textbf{185} \\
+		BTree2XBTree			& \textbf{4}	& \textbf{50}	& 5		& 80 \\
+		Star2Wheel				& -				& -		& \textbf{6} 	& \textbf{89} \\
 		%Activity2ControlFlow	& 	&	&	&	\\
 		%StateMachine2PetriNets	& 	&	&	&	\\
 		%UMLClass2SDLBlock		& 	&	&	&	\\
@@ -536,8 +539,16 @@ In order to evaluate the proposed BNCE TGG formalism, we compare the amount of r
 	\label{tab:formalism-eval}
 \end{table}
 
-%TODO: Critical discussion.
+In the case of $Pseudocode2Controlflow$, our proposed approach shows a clear advantage against the standard TGG formalism. We judge that, similarly to what happens to programming languages, this advantage stems from the very nested structure of $Pseudocode$ and $Controlflow$ graphs, that is, for instance, in rule the $r_2$ of this TGG (see Example \ref{ex:pseudocode2controlflow}), a node in a positive branch of an $if$-labeled vertex is never connected with a node in the negative branch. This disjunctive aspect allows every branch to be defined in the rule (as well as effectively parsed) independently of the other branch. This characteristic makes it possible for BNCE TGG rules to be defined in a very straightforward manner and reduces the total amount of elements necessary.
+
+In addition to that, the use of non-terminal symbols gives BNCE TGGs the power to represent abstract concepts very easily. For example, whereas the rule $r_1$ encodes, using only few elements, that after each $action$ comes any statement $A$, which can be another $action$, an $if$, a $while$ or nothing (an empty graph), in the standard TGG without application condition or any special inheritance-like treatment, we need to write a different rule for each of these cases. For the whole grammar, we need to consider all combinations of $actions$, $ifs$ and $whiles$ in all rules, what causes the great amount of rules and elements.
+
+The $Star2Wheel$ transformation consists of transforming star graphs, which are complete bipartite graphs $K_{1,k}$, with the partitions named center and border, to wheel graphs, that can be constructed from star graphs by adding edges between border vertices to form a minimal cycle. We could not write this transformation in standard TGG, specially because of the monotonicity aspect of it (see Definition \ref{def:stgg}). That is, we missed the possibility to erase edges in a rule, feature that we do have in the semantics of BNCE TGG through the embedding functions.
+
 %TODO: Positive and negative aspects of the proposed approach. Cases where it specially works good and bad. 
+%TODO: Overview: total and average results
+
+%TODO: Not enough experimentation to say one is expressive than the other. This would require extensive theoretical analysis. But BNCE seems to present better usability in many cases
 
 %Furthermore, we also report on the runtime for forward and backward batch transformations in a Intel Core i3 2.3GHz 4x 64bit with 4GB RAM. The standard TGG version of the transformations were executed using the eMoflon Tool \cite{leblebici2014developing}.
 \begin{table}[h]
@@ -561,6 +572,6 @@ In order to evaluate the proposed BNCE TGG formalism, we compare the amount of r
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
-Summary and closing words. Future work.
+Summary and closing words. Future work (e.g. lexicalization for model synchronization).
 
 \end{document}          
