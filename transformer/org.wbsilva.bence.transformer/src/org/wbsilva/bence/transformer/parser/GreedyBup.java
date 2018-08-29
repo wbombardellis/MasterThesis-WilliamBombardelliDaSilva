@@ -5,12 +5,14 @@ import java.util.Optional;
 import java.util.PriorityQueue;
 import java.util.Set;
 
+import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
 
 /**
  * This extension of {@linkplain Bup} implements a greedy strategy that creates subsets of different sizes
  * upon the addition of a new zone vertex and retrieves them ordered by the amount of vertices inside it. 
- * That is, sets with zone vertices containing more vertices are retrieved first
+ * That is, sets with zone vertices containing more vertices are retrieved first. If they have the same amount
+ * of vertices, furhter criteria are used to order them.
  * 
  * @author wbombardellis
  *
@@ -26,19 +28,20 @@ class GreedyBup extends Bup {
 	final protected PriorityQueue<Set<ZoneVertex>> centralQueue;
 	
 	/**
+	 * The graph to which the vertices in the zone vertices belong. Used for heuristics only.
+	 */
+	final protected Graph graph;
+	
+	/**
 	 * The comparator for the sets of zone vertices. The more vertices the zone vertices of a set has,
 	 * the smaller it is in this total order. If two sets have the same amount of vertices in their
-	 * zone vertices, then they are equal.
+	 * zone vertices, then further criteria decide their order.
 	 * This order is not consistent with equals
 	 */
-	static final private Comparator<Set<ZoneVertex>> ZVSET_COMPARATOR = new Comparator<Set<ZoneVertex>>() {
+	final private Comparator<Set<ZoneVertex>> ZVSET_COMPARATOR = new Comparator<Set<ZoneVertex>>() {
 
 		/**
 		 * This method imposes a total order on the sets of zone vertices.
-		 * Semi formally the order is defined as follows
-		 * a < b iff a.zoneVertices.vertices.size > b.zoneVertices.vertices.size
-		 * a = b iff a.zoneVertices.vertices.size = b.zoneVertices.vertices.size
-		 * a > b iff a.zoneVertices.vertices.size < b.zoneVertices.vertices.size
 		 */
 		@Override
 		public int compare(final Set<ZoneVertex> a, final Set<ZoneVertex> b) {
@@ -55,16 +58,46 @@ class GreedyBup extends Bup {
 					.orElse(0);
 			
 			//A bigger set a is smaller in our order, so that it goes in the beginning of the queue
-			return aSize > bSize ? -1 : aSize == bSize ? 0 : 1;
+			if (aSize > bSize) {
+				return -1;
+			} else if (aSize < bSize) {
+				return 1;
+			} else {
+				//The second criterion is the amount of outEdges
+				final int aOutEdges = a.stream()
+								.mapToInt(z -> z.getVertices().stream()
+													.mapToInt(v -> graph.outEdges(v).size())
+													.reduce(Integer::sum)
+													.orElse(0))
+								.reduce(Integer::sum)
+								.orElse(0);
+				final int bOutEdges = b.stream()
+						.mapToInt(z -> z.getVertices().stream()
+											.mapToInt(v -> graph.outEdges(v).size())
+											.reduce(Integer::sum)
+											.orElse(0))
+						.reduce(Integer::sum)
+						.orElse(0);
+				if (aOutEdges < bOutEdges) {
+					return -1;
+				} else if (aOutEdges > bOutEdges) {
+					return 1;					
+				} else {
+					return 0;
+				}
+			}
 		}
 	};
 	
 	/**
-	 * Same contract as {@link Bup#Bup(Set, int, ZoneVertex)}
+	 * Same contract as {@link Bup#Bup(Set, int, ZoneVertex)} with additional parameter for the graph.
+	 * @param graph			The graph to which the vertices of the zone vertices belong
 	 * @see Bup
 	 */
-	public GreedyBup(final Set<ZoneVertex> initialSet, final int maximalSubsetSize, final ZoneVertex root) {
+	public GreedyBup(final Set<ZoneVertex> initialSet, final int maximalSubsetSize, final ZoneVertex root, final Graph graph) {
 		super(initialSet, maximalSubsetSize, root);
+		
+		this.graph = graph;
 		
 		//The central queue holds all generated but not yet consumed subsets ordered in their size
 		this.centralQueue = new PriorityQueue<>(ZVSET_COMPARATOR);
