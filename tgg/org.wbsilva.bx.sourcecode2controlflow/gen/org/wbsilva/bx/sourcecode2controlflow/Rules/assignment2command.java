@@ -94,7 +94,7 @@ public interface assignment2command extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Statement s, S2N s2n, Node n, Assignment a);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, S2N s2n, Statement s, Node n, Assignment a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,7 +110,7 @@ public interface assignment2command extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject s, EObject c, EObject a2c, EObject s2n, EObject n,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject s2n, EObject s, EObject c, EObject n, EObject a2c,
 			EObject a);
 
 	/**
@@ -175,7 +175,7 @@ public interface assignment2command extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Statement s, Command c, S2N s2n, Node n);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2N s2n, Statement s, Command c, Node n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,7 +191,7 @@ public interface assignment2command extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject s, EObject c, EObject a2c, EObject s2n, EObject n,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject s2n, EObject s, EObject c, EObject n, EObject a2c,
 			EObject a);
 
 	/**
@@ -208,7 +208,7 @@ public interface assignment2command extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_16(EMoflonEdge _edge_next);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_68(EMoflonEdge _edge_next);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface assignment2command extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_16(EMoflonEdge _edge_next);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_68(EMoflonEdge _edge_next);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,7 +288,7 @@ public interface assignment2command extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Statement s, S2N s2n, Node n,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2N s2n, Statement s, Node n,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

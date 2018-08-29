@@ -58,6 +58,13 @@ public class Sourcecode2controlflowPackageImpl extends EPackageImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass s2NEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass s2BEClass = null;
 
 	/**
@@ -66,13 +73,6 @@ public class Sourcecode2controlflowPackageImpl extends EPackageImpl implements S
 	 * @generated
 	 */
 	private EClass p2GEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass s2NEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -156,10 +156,41 @@ public class Sourcecode2controlflowPackageImpl extends EPackageImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getS2N() {
+		if (s2NEClass == null) {
+			s2NEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Sourcecode2controlflowPackage.eNS_URI)
+					.getEClassifiers().get(0);
+		}
+		return s2NEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getS2N_Source() {
+		return (EReference) getS2N().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getS2N_Target() {
+		return (EReference) getS2N().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getS2B() {
 		if (s2BEClass == null) {
 			s2BEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Sourcecode2controlflowPackage.eNS_URI)
-					.getEClassifiers().get(0);
+					.getEClassifiers().get(1);
 		}
 		return s2BEClass;
 	}
@@ -190,7 +221,7 @@ public class Sourcecode2controlflowPackageImpl extends EPackageImpl implements S
 	public EClass getP2G() {
 		if (p2GEClass == null) {
 			p2GEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Sourcecode2controlflowPackage.eNS_URI)
-					.getEClassifiers().get(1);
+					.getEClassifiers().get(2);
 		}
 		return p2GEClass;
 	}
@@ -211,37 +242,6 @@ public class Sourcecode2controlflowPackageImpl extends EPackageImpl implements S
 	 */
 	public EReference getP2G_Target() {
 		return (EReference) getP2G().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getS2N() {
-		if (s2NEClass == null) {
-			s2NEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Sourcecode2controlflowPackage.eNS_URI)
-					.getEClassifiers().get(2);
-		}
-		return s2NEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getS2N_Source() {
-		return (EReference) getS2N().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getS2N_Target() {
-		return (EReference) getS2N().getEStructuralFeatures().get(1);
 	}
 
 	/**

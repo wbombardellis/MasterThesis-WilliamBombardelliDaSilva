@@ -47,13 +47,6 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass right2southeastEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass left2southwestEClass = null;
 
 	/**
@@ -61,7 +54,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rightleft2eastwestEClass = null;
+	private EClass right2southeastEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,6 +62,13 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	private EClass node2nodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rightleft2eastwestEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -154,303 +154,6 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getright2southeast() {
-		return right2southeastEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsAppropriate_FWD__Match_BTNode_BTNode() {
-		return right2southeastEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__Perform_FWD__IsApplicableMatch() {
-		return right2southeastEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsApplicable_FWD__Match() {
-		return right2southeastEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__RegisterObjectsToMatch_FWD__Match_BTNode_BTNode() {
-		return right2southeastEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsAppropriate_solveCsp_FWD__Match_BTNode_BTNode() {
-		return right2southeastEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsAppropriate_checkCsp_FWD__CSP() {
-		return right2southeastEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode_BTNode_BTNode2XBTnode_XBTNode() {
-		return right2southeastEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsApplicable_checkCsp_FWD__CSP() {
-		return right2southeastEClass.getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject() {
-		return right2southeastEClass.getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__CheckTypes_FWD__Match() {
-		return right2southeastEClass.getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsAppropriate_BWD__Match_XBTNode_XBTNode() {
-		return right2southeastEClass.getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__Perform_BWD__IsApplicableMatch() {
-		return right2southeastEClass.getEOperations().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsApplicable_BWD__Match() {
-		return right2southeastEClass.getEOperations().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__RegisterObjectsToMatch_BWD__Match_XBTNode_XBTNode() {
-		return right2southeastEClass.getEOperations().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsAppropriate_solveCsp_BWD__Match_XBTNode_XBTNode() {
-		return right2southeastEClass.getEOperations().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsAppropriate_checkCsp_BWD__CSP() {
-		return right2southeastEClass.getEOperations().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode_XBTNode_BTNode2XBTnode_XBTNode() {
-		return right2southeastEClass.getEOperations().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsApplicable_checkCsp_BWD__CSP() {
-		return right2southeastEClass.getEOperations().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject() {
-		return right2southeastEClass.getEOperations().get(18);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__CheckTypes_BWD__Match() {
-		return right2southeastEClass.getEOperations().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsAppropriate_BWD_EMoflonEdge_39__EMoflonEdge() {
-		return right2southeastEClass.getEOperations().get(20);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsAppropriate_FWD_EMoflonEdge_39__EMoflonEdge() {
-		return right2southeastEClass.getEOperations().get(21);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__CheckAttributes_FWD__TripleMatch() {
-		return right2southeastEClass.getEOperations().get(22);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__CheckAttributes_BWD__TripleMatch() {
-		return right2southeastEClass.getEOperations().get(23);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsApplicable_CC__Match_Match() {
-		return right2southeastEClass.getEOperations().get(24);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsApplicable_solveCsp_CC__BTNode_BTNode_XBTNode_XBTNode_Match_Match() {
-		return right2southeastEClass.getEOperations().get(25);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__IsApplicable_checkCsp_CC__CSP() {
-		return right2southeastEClass.getEOperations().get(26);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__CheckDEC_FWD__BTNode_BTNode() {
-		return right2southeastEClass.getEOperations().get(27);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__CheckDEC_BWD__XBTNode_XBTNode() {
-		return right2southeastEClass.getEOperations().get(28);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__GenerateModel__RuleEntryContainer_BTNode2XBTnode() {
-		return right2southeastEClass.getEOperations().get(29);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode_BTNode2XBTnode_XBTNode_ModelgeneratorRuleResult() {
-		return right2southeastEClass.getEOperations().get(30);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getright2southeast__GenerateModel_checkCsp_BWD__CSP() {
-		return right2southeastEClass.getEOperations().get(31);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getleft2southwest() {
 		return left2southwestEClass;
 	}
@@ -514,7 +217,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getleft2southwest__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode_BTNode2XBTnode_BTNode_XBTNode() {
+	public EOperation getleft2southwest__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode2XBTnode_XBTNode_BTNode_BTNode() {
 		return left2southwestEClass.getEOperations().get(6);
 	}
 
@@ -604,7 +307,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getleft2southwest__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode_BTNode2XBTnode_XBTNode_XBTNode() {
+	public EOperation getleft2southwest__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_XBTNode_XBTNode_BTNode() {
 		return left2southwestEClass.getEOperations().get(16);
 	}
 
@@ -640,7 +343,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getleft2southwest__IsAppropriate_BWD_EMoflonEdge_40__EMoflonEdge() {
+	public EOperation getleft2southwest__IsAppropriate_BWD_EMoflonEdge_48__EMoflonEdge() {
 		return left2southwestEClass.getEOperations().get(20);
 	}
 
@@ -649,7 +352,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getleft2southwest__IsAppropriate_FWD_EMoflonEdge_40__EMoflonEdge() {
+	public EOperation getleft2southwest__IsAppropriate_FWD_EMoflonEdge_48__EMoflonEdge() {
 		return left2southwestEClass.getEOperations().get(21);
 	}
 
@@ -685,7 +388,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getleft2southwest__IsApplicable_solveCsp_CC__BTNode_XBTNode_BTNode_XBTNode_Match_Match() {
+	public EOperation getleft2southwest__IsApplicable_solveCsp_CC__XBTNode_XBTNode_BTNode_BTNode_Match_Match() {
 		return left2southwestEClass.getEOperations().get(25);
 	}
 
@@ -730,7 +433,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getleft2southwest__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode_BTNode2XBTnode_XBTNode_ModelgeneratorRuleResult() {
+	public EOperation getleft2southwest__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_XBTNode_BTNode_ModelgeneratorRuleResult() {
 		return left2southwestEClass.getEOperations().get(30);
 	}
 
@@ -748,8 +451,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getrightleft2eastwest() {
-		return rightleft2eastwestEClass;
+	public EClass getright2southeast() {
+		return right2southeastEClass;
 	}
 
 	/**
@@ -757,8 +460,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsAppropriate_FWD__Match_BTNode_BTNode_BTNode() {
-		return rightleft2eastwestEClass.getEOperations().get(0);
+	public EOperation getright2southeast__IsAppropriate_FWD__Match_BTNode_BTNode() {
+		return right2southeastEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -766,8 +469,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__Perform_FWD__IsApplicableMatch() {
-		return rightleft2eastwestEClass.getEOperations().get(1);
+	public EOperation getright2southeast__Perform_FWD__IsApplicableMatch() {
+		return right2southeastEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -775,8 +478,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsApplicable_FWD__Match() {
-		return rightleft2eastwestEClass.getEOperations().get(2);
+	public EOperation getright2southeast__IsApplicable_FWD__Match() {
+		return right2southeastEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -784,8 +487,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__RegisterObjectsToMatch_FWD__Match_BTNode_BTNode_BTNode() {
-		return rightleft2eastwestEClass.getEOperations().get(3);
+	public EOperation getright2southeast__RegisterObjectsToMatch_FWD__Match_BTNode_BTNode() {
+		return right2southeastEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -793,8 +496,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsAppropriate_solveCsp_FWD__Match_BTNode_BTNode_BTNode() {
-		return rightleft2eastwestEClass.getEOperations().get(4);
+	public EOperation getright2southeast__IsAppropriate_solveCsp_FWD__Match_BTNode_BTNode() {
+		return right2southeastEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -802,8 +505,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsAppropriate_checkCsp_FWD__CSP() {
-		return rightleft2eastwestEClass.getEOperations().get(5);
+	public EOperation getright2southeast__IsAppropriate_checkCsp_FWD__CSP() {
+		return right2southeastEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -811,8 +514,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode2XBTnode_BTNode_BTNode_BTNode_XBTNode() {
-		return rightleft2eastwestEClass.getEOperations().get(6);
+	public EOperation getright2southeast__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode2XBTnode_BTNode_XBTNode_BTNode() {
+		return right2southeastEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -820,8 +523,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsApplicable_checkCsp_FWD__CSP() {
-		return rightleft2eastwestEClass.getEOperations().get(7);
+	public EOperation getright2southeast__IsApplicable_checkCsp_FWD__CSP() {
+		return right2southeastEClass.getEOperations().get(7);
 	}
 
 	/**
@@ -829,8 +532,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
-		return rightleft2eastwestEClass.getEOperations().get(8);
+	public EOperation getright2southeast__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject() {
+		return right2southeastEClass.getEOperations().get(8);
 	}
 
 	/**
@@ -838,8 +541,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__CheckTypes_FWD__Match() {
-		return rightleft2eastwestEClass.getEOperations().get(9);
+	public EOperation getright2southeast__CheckTypes_FWD__Match() {
+		return right2southeastEClass.getEOperations().get(9);
 	}
 
 	/**
@@ -847,8 +550,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsAppropriate_BWD__Match_XBTNode_XBTNode_XBTNode() {
-		return rightleft2eastwestEClass.getEOperations().get(10);
+	public EOperation getright2southeast__IsAppropriate_BWD__Match_XBTNode_XBTNode() {
+		return right2southeastEClass.getEOperations().get(10);
 	}
 
 	/**
@@ -856,8 +559,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__Perform_BWD__IsApplicableMatch() {
-		return rightleft2eastwestEClass.getEOperations().get(11);
+	public EOperation getright2southeast__Perform_BWD__IsApplicableMatch() {
+		return right2southeastEClass.getEOperations().get(11);
 	}
 
 	/**
@@ -865,8 +568,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsApplicable_BWD__Match() {
-		return rightleft2eastwestEClass.getEOperations().get(12);
+	public EOperation getright2southeast__IsApplicable_BWD__Match() {
+		return right2southeastEClass.getEOperations().get(12);
 	}
 
 	/**
@@ -874,8 +577,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__RegisterObjectsToMatch_BWD__Match_XBTNode_XBTNode_XBTNode() {
-		return rightleft2eastwestEClass.getEOperations().get(13);
+	public EOperation getright2southeast__RegisterObjectsToMatch_BWD__Match_XBTNode_XBTNode() {
+		return right2southeastEClass.getEOperations().get(13);
 	}
 
 	/**
@@ -883,8 +586,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsAppropriate_solveCsp_BWD__Match_XBTNode_XBTNode_XBTNode() {
-		return rightleft2eastwestEClass.getEOperations().get(14);
+	public EOperation getright2southeast__IsAppropriate_solveCsp_BWD__Match_XBTNode_XBTNode() {
+		return right2southeastEClass.getEOperations().get(14);
 	}
 
 	/**
@@ -892,8 +595,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsAppropriate_checkCsp_BWD__CSP() {
-		return rightleft2eastwestEClass.getEOperations().get(15);
+	public EOperation getright2southeast__IsAppropriate_checkCsp_BWD__CSP() {
+		return right2southeastEClass.getEOperations().get(15);
 	}
 
 	/**
@@ -901,8 +604,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_BTNode_XBTNode_XBTNode_XBTNode() {
-		return rightleft2eastwestEClass.getEOperations().get(16);
+	public EOperation getright2southeast__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_BTNode_XBTNode_XBTNode() {
+		return right2southeastEClass.getEOperations().get(16);
 	}
 
 	/**
@@ -910,8 +613,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsApplicable_checkCsp_BWD__CSP() {
-		return rightleft2eastwestEClass.getEOperations().get(17);
+	public EOperation getright2southeast__IsApplicable_checkCsp_BWD__CSP() {
+		return right2southeastEClass.getEOperations().get(17);
 	}
 
 	/**
@@ -919,8 +622,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
-		return rightleft2eastwestEClass.getEOperations().get(18);
+	public EOperation getright2southeast__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject() {
+		return right2southeastEClass.getEOperations().get(18);
 	}
 
 	/**
@@ -928,8 +631,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__CheckTypes_BWD__Match() {
-		return rightleft2eastwestEClass.getEOperations().get(19);
+	public EOperation getright2southeast__CheckTypes_BWD__Match() {
+		return right2southeastEClass.getEOperations().get(19);
 	}
 
 	/**
@@ -937,8 +640,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsAppropriate_BWD_EMoflonEdge_41__EMoflonEdge() {
-		return rightleft2eastwestEClass.getEOperations().get(20);
+	public EOperation getright2southeast__IsAppropriate_BWD_EMoflonEdge_49__EMoflonEdge() {
+		return right2southeastEClass.getEOperations().get(20);
 	}
 
 	/**
@@ -946,8 +649,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsAppropriate_FWD_EMoflonEdge_41__EMoflonEdge() {
-		return rightleft2eastwestEClass.getEOperations().get(21);
+	public EOperation getright2southeast__IsAppropriate_FWD_EMoflonEdge_49__EMoflonEdge() {
+		return right2southeastEClass.getEOperations().get(21);
 	}
 
 	/**
@@ -955,8 +658,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__CheckAttributes_FWD__TripleMatch() {
-		return rightleft2eastwestEClass.getEOperations().get(22);
+	public EOperation getright2southeast__CheckAttributes_FWD__TripleMatch() {
+		return right2southeastEClass.getEOperations().get(22);
 	}
 
 	/**
@@ -964,8 +667,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__CheckAttributes_BWD__TripleMatch() {
-		return rightleft2eastwestEClass.getEOperations().get(23);
+	public EOperation getright2southeast__CheckAttributes_BWD__TripleMatch() {
+		return right2southeastEClass.getEOperations().get(23);
 	}
 
 	/**
@@ -973,8 +676,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsApplicable_CC__Match_Match() {
-		return rightleft2eastwestEClass.getEOperations().get(24);
+	public EOperation getright2southeast__IsApplicable_CC__Match_Match() {
+		return right2southeastEClass.getEOperations().get(24);
 	}
 
 	/**
@@ -982,8 +685,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsApplicable_solveCsp_CC__BTNode_BTNode_BTNode_XBTNode_XBTNode_XBTNode_Match_Match() {
-		return rightleft2eastwestEClass.getEOperations().get(25);
+	public EOperation getright2southeast__IsApplicable_solveCsp_CC__BTNode_XBTNode_XBTNode_BTNode_Match_Match() {
+		return right2southeastEClass.getEOperations().get(25);
 	}
 
 	/**
@@ -991,8 +694,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__IsApplicable_checkCsp_CC__CSP() {
-		return rightleft2eastwestEClass.getEOperations().get(26);
+	public EOperation getright2southeast__IsApplicable_checkCsp_CC__CSP() {
+		return right2southeastEClass.getEOperations().get(26);
 	}
 
 	/**
@@ -1000,8 +703,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__CheckDEC_FWD__BTNode_BTNode_BTNode() {
-		return rightleft2eastwestEClass.getEOperations().get(27);
+	public EOperation getright2southeast__CheckDEC_FWD__BTNode_BTNode() {
+		return right2southeastEClass.getEOperations().get(27);
 	}
 
 	/**
@@ -1009,8 +712,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__CheckDEC_BWD__XBTNode_XBTNode_XBTNode() {
-		return rightleft2eastwestEClass.getEOperations().get(28);
+	public EOperation getright2southeast__CheckDEC_BWD__XBTNode_XBTNode() {
+		return right2southeastEClass.getEOperations().get(28);
 	}
 
 	/**
@@ -1018,8 +721,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__GenerateModel__RuleEntryContainer_BTNode2XBTnode() {
-		return rightleft2eastwestEClass.getEOperations().get(29);
+	public EOperation getright2southeast__GenerateModel__RuleEntryContainer_BTNode2XBTnode() {
+		return right2southeastEClass.getEOperations().get(29);
 	}
 
 	/**
@@ -1027,8 +730,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_BTNode_XBTNode_ModelgeneratorRuleResult() {
-		return rightleft2eastwestEClass.getEOperations().get(30);
+	public EOperation getright2southeast__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_BTNode_XBTNode_ModelgeneratorRuleResult() {
+		return right2southeastEClass.getEOperations().get(30);
 	}
 
 	/**
@@ -1036,8 +739,8 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getrightleft2eastwest__GenerateModel_checkCsp_BWD__CSP() {
-		return rightleft2eastwestEClass.getEOperations().get(31);
+	public EOperation getright2southeast__GenerateModel_checkCsp_BWD__CSP() {
+		return right2southeastEClass.getEOperations().get(31);
 	}
 
 	/**
@@ -1234,7 +937,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getnode2node__IsAppropriate_BWD_XBTNode_4__XBTNode() {
+	public EOperation getnode2node__IsAppropriate_BWD_XBTNode_1__XBTNode() {
 		return node2nodeEClass.getEOperations().get(20);
 	}
 
@@ -1243,7 +946,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getnode2node__IsAppropriate_FWD_BTNode_4__BTNode() {
+	public EOperation getnode2node__IsAppropriate_FWD_BTNode_1__BTNode() {
 		return node2nodeEClass.getEOperations().get(21);
 	}
 
@@ -1279,7 +982,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getnode2node__IsApplicable_solveCsp_CC__XBTNode_BTNode_Match_Match() {
+	public EOperation getnode2node__IsApplicable_solveCsp_CC__BTNode_XBTNode_Match_Match() {
 		return node2nodeEClass.getEOperations().get(25);
 	}
 
@@ -1342,6 +1045,303 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getrightleft2eastwest() {
+		return rightleft2eastwestEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsAppropriate_FWD__Match_BTNode_BTNode_BTNode() {
+		return rightleft2eastwestEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__Perform_FWD__IsApplicableMatch() {
+		return rightleft2eastwestEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsApplicable_FWD__Match() {
+		return rightleft2eastwestEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__RegisterObjectsToMatch_FWD__Match_BTNode_BTNode_BTNode() {
+		return rightleft2eastwestEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsAppropriate_solveCsp_FWD__Match_BTNode_BTNode_BTNode() {
+		return rightleft2eastwestEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsAppropriate_checkCsp_FWD__CSP() {
+		return rightleft2eastwestEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode_BTNode_BTNode_BTNode2XBTnode_XBTNode() {
+		return rightleft2eastwestEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsApplicable_checkCsp_FWD__CSP() {
+		return rightleft2eastwestEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
+		return rightleft2eastwestEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__CheckTypes_FWD__Match() {
+		return rightleft2eastwestEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsAppropriate_BWD__Match_XBTNode_XBTNode_XBTNode() {
+		return rightleft2eastwestEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__Perform_BWD__IsApplicableMatch() {
+		return rightleft2eastwestEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsApplicable_BWD__Match() {
+		return rightleft2eastwestEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__RegisterObjectsToMatch_BWD__Match_XBTNode_XBTNode_XBTNode() {
+		return rightleft2eastwestEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsAppropriate_solveCsp_BWD__Match_XBTNode_XBTNode_XBTNode() {
+		return rightleft2eastwestEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsAppropriate_checkCsp_BWD__CSP() {
+		return rightleft2eastwestEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode_XBTNode_BTNode2XBTnode_XBTNode_XBTNode() {
+		return rightleft2eastwestEClass.getEOperations().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsApplicable_checkCsp_BWD__CSP() {
+		return rightleft2eastwestEClass.getEOperations().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
+		return rightleft2eastwestEClass.getEOperations().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__CheckTypes_BWD__Match() {
+		return rightleft2eastwestEClass.getEOperations().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsAppropriate_BWD_EMoflonEdge_50__EMoflonEdge() {
+		return rightleft2eastwestEClass.getEOperations().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsAppropriate_FWD_EMoflonEdge_50__EMoflonEdge() {
+		return rightleft2eastwestEClass.getEOperations().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__CheckAttributes_FWD__TripleMatch() {
+		return rightleft2eastwestEClass.getEOperations().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__CheckAttributes_BWD__TripleMatch() {
+		return rightleft2eastwestEClass.getEOperations().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsApplicable_CC__Match_Match() {
+		return rightleft2eastwestEClass.getEOperations().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsApplicable_solveCsp_CC__BTNode_BTNode_BTNode_XBTNode_XBTNode_XBTNode_Match_Match() {
+		return rightleft2eastwestEClass.getEOperations().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__IsApplicable_checkCsp_CC__CSP() {
+		return rightleft2eastwestEClass.getEOperations().get(26);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__CheckDEC_FWD__BTNode_BTNode_BTNode() {
+		return rightleft2eastwestEClass.getEOperations().get(27);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__CheckDEC_BWD__XBTNode_XBTNode_XBTNode() {
+		return rightleft2eastwestEClass.getEOperations().get(28);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__GenerateModel__RuleEntryContainer_BTNode2XBTnode() {
+		return rightleft2eastwestEClass.getEOperations().get(29);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode_BTNode2XBTnode_XBTNode_ModelgeneratorRuleResult() {
+		return rightleft2eastwestEClass.getEOperations().get(30);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getrightleft2eastwest__GenerateModel_checkCsp_BWD__CSP() {
+		return rightleft2eastwestEClass.getEOperations().get(31);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RulesFactory getRulesFactory() {
 		return (RulesFactory) getEFactoryInstance();
 	}
@@ -1366,46 +1366,6 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		right2southeastEClass = createEClass(RIGHT2SOUTHEAST);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_FWD__MATCH_BTNODE_BTNODE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___PERFORM_FWD__ISAPPLICABLEMATCH);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_FWD__MATCH);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_BTNODE_BTNODE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_BTNODE_BTNODE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_CHECK_CSP_FWD__CSP);
-		createEOperation(right2southeastEClass,
-				RIGHT2SOUTHEAST___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_BTNODE_BTNODE_BTNODE2XBTNODE_XBTNODE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_CHECK_CSP_FWD__CSP);
-		createEOperation(right2southeastEClass,
-				RIGHT2SOUTHEAST___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_TYPES_FWD__MATCH);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_BWD__MATCH_XBTNODE_XBTNODE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___PERFORM_BWD__ISAPPLICABLEMATCH);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_BWD__MATCH);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_XBTNODE_XBTNODE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_XBTNODE_XBTNODE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_CHECK_CSP_BWD__CSP);
-		createEOperation(right2southeastEClass,
-				RIGHT2SOUTHEAST___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE_XBTNODE_BTNODE2XBTNODE_XBTNODE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_CHECK_CSP_BWD__CSP);
-		createEOperation(right2southeastEClass,
-				RIGHT2SOUTHEAST___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_TYPES_BWD__MATCH);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_BWD_EMOFLON_EDGE_39__EMOFLONEDGE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_FWD_EMOFLON_EDGE_39__EMOFLONEDGE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_CC__MATCH_MATCH);
-		createEOperation(right2southeastEClass,
-				RIGHT2SOUTHEAST___IS_APPLICABLE_SOLVE_CSP_CC__BTNODE_BTNODE_XBTNODE_XBTNODE_MATCH_MATCH);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_CHECK_CSP_CC__CSP);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_DEC_FWD__BTNODE_BTNODE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_DEC_BWD__XBTNODE_XBTNODE);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___GENERATE_MODEL__RULEENTRYCONTAINER_BTNODE2XBTNODE);
-		createEOperation(right2southeastEClass,
-				RIGHT2SOUTHEAST___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE_BTNODE2XBTNODE_XBTNODE_MODELGENERATORRULERESULT);
-		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___GENERATE_MODEL_CHECK_CSP_BWD__CSP);
-
 		left2southwestEClass = createEClass(LEFT2SOUTHWEST);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPROPRIATE_FWD__MATCH_BTNODE_BTNODE);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___PERFORM_FWD__ISAPPLICABLEMATCH);
@@ -1414,7 +1374,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_BTNODE_BTNODE);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPROPRIATE_CHECK_CSP_FWD__CSP);
 		createEOperation(left2southwestEClass,
-				LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_BTNODE_BTNODE2XBTNODE_BTNODE_XBTNODE);
+				LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_XBTNODE_BTNODE_BTNODE);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPLICABLE_CHECK_CSP_FWD__CSP);
 		createEOperation(left2southwestEClass,
 				LEFT2SOUTHWEST___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
@@ -1426,73 +1386,65 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_XBTNODE_XBTNODE);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPROPRIATE_CHECK_CSP_BWD__CSP);
 		createEOperation(left2southwestEClass,
-				LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE_BTNODE2XBTNODE_XBTNODE_XBTNODE);
+				LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_XBTNODE_XBTNODE_BTNODE);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPLICABLE_CHECK_CSP_BWD__CSP);
 		createEOperation(left2southwestEClass,
 				LEFT2SOUTHWEST___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___CHECK_TYPES_BWD__MATCH);
-		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPROPRIATE_BWD_EMOFLON_EDGE_40__EMOFLONEDGE);
-		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPROPRIATE_FWD_EMOFLON_EDGE_40__EMOFLONEDGE);
+		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPROPRIATE_BWD_EMOFLON_EDGE_48__EMOFLONEDGE);
+		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPROPRIATE_FWD_EMOFLON_EDGE_48__EMOFLONEDGE);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPLICABLE_CC__MATCH_MATCH);
 		createEOperation(left2southwestEClass,
-				LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_CC__BTNODE_XBTNODE_BTNODE_XBTNODE_MATCH_MATCH);
+				LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_CC__XBTNODE_XBTNODE_BTNODE_BTNODE_MATCH_MATCH);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___IS_APPLICABLE_CHECK_CSP_CC__CSP);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___CHECK_DEC_FWD__BTNODE_BTNODE);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___CHECK_DEC_BWD__XBTNODE_XBTNODE);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___GENERATE_MODEL__RULEENTRYCONTAINER_BTNODE2XBTNODE);
 		createEOperation(left2southwestEClass,
-				LEFT2SOUTHWEST___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE_BTNODE2XBTNODE_XBTNODE_MODELGENERATORRULERESULT);
+				LEFT2SOUTHWEST___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_XBTNODE_BTNODE_MODELGENERATORRULERESULT);
 		createEOperation(left2southwestEClass, LEFT2SOUTHWEST___GENERATE_MODEL_CHECK_CSP_BWD__CSP);
 
-		rightleft2eastwestEClass = createEClass(RIGHTLEFT2EASTWEST);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPROPRIATE_FWD__MATCH_BTNODE_BTNODE_BTNODE);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___PERFORM_FWD__ISAPPLICABLEMATCH);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_FWD__MATCH);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_BTNODE_BTNODE_BTNODE);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_BTNODE_BTNODE_BTNODE);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPROPRIATE_CHECK_CSP_FWD__CSP);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_BTNODE_BTNODE_BTNODE_XBTNODE);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_CHECK_CSP_FWD__CSP);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_TYPES_FWD__MATCH);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___IS_APPROPRIATE_BWD__MATCH_XBTNODE_XBTNODE_XBTNODE);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___PERFORM_BWD__ISAPPLICABLEMATCH);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_BWD__MATCH);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_XBTNODE_XBTNODE_XBTNODE);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_XBTNODE_XBTNODE_XBTNODE);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPROPRIATE_CHECK_CSP_BWD__CSP);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_BTNODE_XBTNODE_XBTNODE_XBTNODE);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_CHECK_CSP_BWD__CSP);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_TYPES_BWD__MATCH);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___IS_APPROPRIATE_BWD_EMOFLON_EDGE_41__EMOFLONEDGE);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___IS_APPROPRIATE_FWD_EMOFLON_EDGE_41__EMOFLONEDGE);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_CC__MATCH_MATCH);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___IS_APPLICABLE_SOLVE_CSP_CC__BTNODE_BTNODE_BTNODE_XBTNODE_XBTNODE_XBTNODE_MATCH_MATCH);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_CHECK_CSP_CC__CSP);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_DEC_FWD__BTNODE_BTNODE_BTNODE);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_DEC_BWD__XBTNODE_XBTNODE_XBTNODE);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___GENERATE_MODEL__RULEENTRYCONTAINER_BTNODE2XBTNODE);
-		createEOperation(rightleft2eastwestEClass,
-				RIGHTLEFT2EASTWEST___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_BTNODE_XBTNODE_MODELGENERATORRULERESULT);
-		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___GENERATE_MODEL_CHECK_CSP_BWD__CSP);
+		right2southeastEClass = createEClass(RIGHT2SOUTHEAST);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_FWD__MATCH_BTNODE_BTNODE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___PERFORM_FWD__ISAPPLICABLEMATCH);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_FWD__MATCH);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_BTNODE_BTNODE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_BTNODE_BTNODE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_CHECK_CSP_FWD__CSP);
+		createEOperation(right2southeastEClass,
+				RIGHT2SOUTHEAST___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_BTNODE_XBTNODE_BTNODE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_CHECK_CSP_FWD__CSP);
+		createEOperation(right2southeastEClass,
+				RIGHT2SOUTHEAST___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_TYPES_FWD__MATCH);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_BWD__MATCH_XBTNODE_XBTNODE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___PERFORM_BWD__ISAPPLICABLEMATCH);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_BWD__MATCH);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_XBTNODE_XBTNODE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_XBTNODE_XBTNODE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_CHECK_CSP_BWD__CSP);
+		createEOperation(right2southeastEClass,
+				RIGHT2SOUTHEAST___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_BTNODE_XBTNODE_XBTNODE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_CHECK_CSP_BWD__CSP);
+		createEOperation(right2southeastEClass,
+				RIGHT2SOUTHEAST___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_TYPES_BWD__MATCH);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_BWD_EMOFLON_EDGE_49__EMOFLONEDGE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPROPRIATE_FWD_EMOFLON_EDGE_49__EMOFLONEDGE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_CC__MATCH_MATCH);
+		createEOperation(right2southeastEClass,
+				RIGHT2SOUTHEAST___IS_APPLICABLE_SOLVE_CSP_CC__BTNODE_XBTNODE_XBTNODE_BTNODE_MATCH_MATCH);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___IS_APPLICABLE_CHECK_CSP_CC__CSP);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_DEC_FWD__BTNODE_BTNODE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___CHECK_DEC_BWD__XBTNODE_XBTNODE);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___GENERATE_MODEL__RULEENTRYCONTAINER_BTNODE2XBTNODE);
+		createEOperation(right2southeastEClass,
+				RIGHT2SOUTHEAST___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_BTNODE_XBTNODE_MODELGENERATORRULERESULT);
+		createEOperation(right2southeastEClass, RIGHT2SOUTHEAST___GENERATE_MODEL_CHECK_CSP_BWD__CSP);
 
 		node2nodeEClass = createEClass(NODE2NODE);
 		createEOperation(node2nodeEClass, NODE2NODE___IS_APPROPRIATE_FWD__MATCH_BTNODE);
@@ -1515,12 +1467,12 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		createEOperation(node2nodeEClass, NODE2NODE___IS_APPLICABLE_CHECK_CSP_BWD__CSP);
 		createEOperation(node2nodeEClass, NODE2NODE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT);
 		createEOperation(node2nodeEClass, NODE2NODE___CHECK_TYPES_BWD__MATCH);
-		createEOperation(node2nodeEClass, NODE2NODE___IS_APPROPRIATE_BWD_XBT_NODE_4__XBTNODE);
-		createEOperation(node2nodeEClass, NODE2NODE___IS_APPROPRIATE_FWD_BT_NODE_4__BTNODE);
+		createEOperation(node2nodeEClass, NODE2NODE___IS_APPROPRIATE_BWD_XBT_NODE_1__XBTNODE);
+		createEOperation(node2nodeEClass, NODE2NODE___IS_APPROPRIATE_FWD_BT_NODE_1__BTNODE);
 		createEOperation(node2nodeEClass, NODE2NODE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH);
 		createEOperation(node2nodeEClass, NODE2NODE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH);
 		createEOperation(node2nodeEClass, NODE2NODE___IS_APPLICABLE_CC__MATCH_MATCH);
-		createEOperation(node2nodeEClass, NODE2NODE___IS_APPLICABLE_SOLVE_CSP_CC__XBTNODE_BTNODE_MATCH_MATCH);
+		createEOperation(node2nodeEClass, NODE2NODE___IS_APPLICABLE_SOLVE_CSP_CC__BTNODE_XBTNODE_MATCH_MATCH);
 		createEOperation(node2nodeEClass, NODE2NODE___IS_APPLICABLE_CHECK_CSP_CC__CSP);
 		createEOperation(node2nodeEClass, NODE2NODE___CHECK_DEC_FWD__BTNODE);
 		createEOperation(node2nodeEClass, NODE2NODE___CHECK_DEC_BWD__XBTNODE);
@@ -1528,6 +1480,54 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		createEOperation(node2nodeEClass,
 				NODE2NODE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_MODELGENERATORRULERESULT);
 		createEOperation(node2nodeEClass, NODE2NODE___GENERATE_MODEL_CHECK_CSP_BWD__CSP);
+
+		rightleft2eastwestEClass = createEClass(RIGHTLEFT2EASTWEST);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPROPRIATE_FWD__MATCH_BTNODE_BTNODE_BTNODE);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___PERFORM_FWD__ISAPPLICABLEMATCH);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_FWD__MATCH);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_BTNODE_BTNODE_BTNODE);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_BTNODE_BTNODE_BTNODE);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPROPRIATE_CHECK_CSP_FWD__CSP);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_BTNODE_BTNODE_BTNODE_BTNODE2XBTNODE_XBTNODE);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_CHECK_CSP_FWD__CSP);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_TYPES_FWD__MATCH);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___IS_APPROPRIATE_BWD__MATCH_XBTNODE_XBTNODE_XBTNODE);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___PERFORM_BWD__ISAPPLICABLEMATCH);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_BWD__MATCH);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_XBTNODE_XBTNODE_XBTNODE);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_XBTNODE_XBTNODE_XBTNODE);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPROPRIATE_CHECK_CSP_BWD__CSP);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE_XBTNODE_BTNODE2XBTNODE_XBTNODE_XBTNODE);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_CHECK_CSP_BWD__CSP);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_TYPES_BWD__MATCH);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___IS_APPROPRIATE_BWD_EMOFLON_EDGE_50__EMOFLONEDGE);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___IS_APPROPRIATE_FWD_EMOFLON_EDGE_50__EMOFLONEDGE);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_CC__MATCH_MATCH);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___IS_APPLICABLE_SOLVE_CSP_CC__BTNODE_BTNODE_BTNODE_XBTNODE_XBTNODE_XBTNODE_MATCH_MATCH);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___IS_APPLICABLE_CHECK_CSP_CC__CSP);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_DEC_FWD__BTNODE_BTNODE_BTNODE);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___CHECK_DEC_BWD__XBTNODE_XBTNODE_XBTNODE);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___GENERATE_MODEL__RULEENTRYCONTAINER_BTNODE2XBTNODE);
+		createEOperation(rightleft2eastwestEClass,
+				RIGHTLEFT2EASTWEST___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE_BTNODE2XBTNODE_XBTNODE_MODELGENERATORRULERESULT);
+		createEOperation(rightleft2eastwestEClass, RIGHTLEFT2EASTWEST___GENERATE_MODEL_CHECK_CSP_BWD__CSP);
 	}
 
 	/**
@@ -1570,203 +1570,17 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		right2southeastEClass.getESuperTypes().add(theRuntimePackage.getAbstractRule());
 		left2southwestEClass.getESuperTypes().add(theRuntimePackage.getAbstractRule());
-		rightleft2eastwestEClass.getESuperTypes().add(theRuntimePackage.getAbstractRule());
+		right2southeastEClass.getESuperTypes().add(theRuntimePackage.getAbstractRule());
 		node2nodeEClass.getESuperTypes().add(theRuntimePackage.getAbstractRule());
+		rightleft2eastwestEClass.getESuperTypes().add(theRuntimePackage.getAbstractRule());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(right2southeastEClass, right2southeast.class, "right2southeast", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-
-		EOperation op = initEOperation(getright2southeast__IsAppropriate_FWD__Match_BTNode_BTNode(),
-				ecorePackage.getEBoolean(), "isAppropriate_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__Perform_FWD__IsApplicableMatch(),
-				theRuntimePackage.getPerformRuleResult(), "perform_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsApplicable_FWD__Match(),
-				theRuntimePackage.getIsApplicableRuleResult(), "isApplicable_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__RegisterObjectsToMatch_FWD__Match_BTNode_BTNode(), null,
-				"registerObjectsToMatch_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsAppropriate_solveCsp_FWD__Match_BTNode_BTNode(),
-				theCspPackage.getCSP(), "isAppropriate_solveCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsAppropriate_checkCsp_FWD__CSP(), ecorePackage.getEBoolean(),
-				"isAppropriate_checkCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(
-				getright2southeast__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode_BTNode_BTNode2XBTnode_XBTNode(),
-				theCspPackage.getCSP(), "isApplicable_solveCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsApplicable_checkCsp_FWD__CSP(), ecorePackage.getEBoolean(),
-				"isApplicable_checkCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(
-				getright2southeast__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject(),
-				null, "registerObjects_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "l2se", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__CheckTypes_FWD__Match(), ecorePackage.getEBoolean(), "checkTypes_FWD",
-				0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsAppropriate_BWD__Match_XBTNode_XBTNode(), ecorePackage.getEBoolean(),
-				"isAppropriate_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__Perform_BWD__IsApplicableMatch(),
-				theRuntimePackage.getPerformRuleResult(), "perform_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsApplicable_BWD__Match(),
-				theRuntimePackage.getIsApplicableRuleResult(), "isApplicable_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__RegisterObjectsToMatch_BWD__Match_XBTNode_XBTNode(), null,
-				"registerObjectsToMatch_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsAppropriate_solveCsp_BWD__Match_XBTNode_XBTNode(),
-				theCspPackage.getCSP(), "isAppropriate_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsAppropriate_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
-				"isAppropriate_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(
-				getright2southeast__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode_XBTNode_BTNode2XBTnode_XBTNode(),
-				theCspPackage.getCSP(), "isApplicable_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsApplicable_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
-				"isApplicable_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(
-				getright2southeast__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject(),
-				null, "registerObjects_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "l2se", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__CheckTypes_BWD__Match(), ecorePackage.getEBoolean(), "checkTypes_BWD",
-				0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsAppropriate_BWD_EMoflonEdge_39__EMoflonEdge(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_EMoflonEdge_39", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getEMoflonEdge(), "_edge_se", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsAppropriate_FWD_EMoflonEdge_39__EMoflonEdge(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_EMoflonEdge_39", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getEMoflonEdge(), "_edge_r", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__CheckAttributes_FWD__TripleMatch(),
-				theRuntimePackage.getAttributeConstraintsRuleResult(), "checkAttributes_FWD", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getTripleMatch(), "__tripleMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__CheckAttributes_BWD__TripleMatch(),
-				theRuntimePackage.getAttributeConstraintsRuleResult(), "checkAttributes_BWD", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getTripleMatch(), "__tripleMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsApplicable_CC__Match_Match(),
-				theRuntimePackage.getIsApplicableRuleResult(), "isApplicable_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsApplicable_solveCsp_CC__BTNode_BTNode_XBTNode_XBTNode_Match_Match(),
-				theCspPackage.getCSP(), "isApplicable_solveCsp_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__IsApplicable_checkCsp_CC__CSP(), ecorePackage.getEBoolean(),
-				"isApplicable_checkCsp_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__CheckDEC_FWD__BTNode_BTNode(), ecorePackage.getEBoolean(),
-				"checkDEC_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__CheckDEC_BWD__XBTNode_XBTNode(), ecorePackage.getEBoolean(),
-				"checkDEC_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__GenerateModel__RuleEntryContainer_BTNode2XBTnode(),
-				theRuntimePackage.getModelgeneratorRuleResult(), "generateModel", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theModelgeneratorPackage.getRuleEntryContainer(), "ruleEntryContainer", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xnParameter", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(
-				getright2southeast__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode_BTNode2XBTnode_XBTNode_ModelgeneratorRuleResult(),
-				theCspPackage.getCSP(), "generateModel_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getModelgeneratorRuleResult(), "ruleResult", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getright2southeast__GenerateModel_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
-				"generateModel_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(left2southwestEClass, left2southwest.class, "left2southwest", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getleft2southwest__IsAppropriate_FWD__Match_BTNode_BTNode(), ecorePackage.getEBoolean(),
-				"isAppropriate_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getleft2southwest__IsAppropriate_FWD__Match_BTNode_BTNode(),
+				ecorePackage.getEBoolean(), "isAppropriate_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1796,13 +1610,13 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(
-				getleft2southwest__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode_BTNode2XBTnode_BTNode_XBTNode(),
+				getleft2southwest__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode2XBTnode_XBTNode_BTNode_BTNode(),
 				theCspPackage.getCSP(), "isApplicable_solveCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getleft2southwest__IsApplicable_checkCsp_FWD__CSP(), ecorePackage.getEBoolean(),
 				"isApplicable_checkCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1812,12 +1626,12 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 				getleft2southwest__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject(),
 				null, "registerObjects_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "l2sw", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "l2sw", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getleft2southwest__CheckTypes_FWD__Match(), ecorePackage.getEBoolean(), "checkTypes_FWD", 0,
 				1, IS_UNIQUE, IS_ORDERED);
@@ -1854,13 +1668,13 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(
-				getleft2southwest__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode_BTNode2XBTnode_XBTNode_XBTNode(),
+				getleft2southwest__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_XBTNode_XBTNode_BTNode(),
 				theCspPackage.getCSP(), "isApplicable_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getleft2southwest__IsApplicable_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
 				"isApplicable_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1870,24 +1684,24 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 				getleft2southwest__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject(),
 				null, "registerObjects_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "l2sw", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "l2sw", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getleft2southwest__CheckTypes_BWD__Match(), ecorePackage.getEBoolean(), "checkTypes_BWD", 0,
 				1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getleft2southwest__IsAppropriate_BWD_EMoflonEdge_40__EMoflonEdge(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_EMoflonEdge_40", 0, 1, IS_UNIQUE,
+		op = initEOperation(getleft2southwest__IsAppropriate_BWD_EMoflonEdge_48__EMoflonEdge(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_EMoflonEdge_48", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getEMoflonEdge(), "_edge_sw", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getleft2southwest__IsAppropriate_FWD_EMoflonEdge_40__EMoflonEdge(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_EMoflonEdge_40", 0, 1, IS_UNIQUE,
+		op = initEOperation(getleft2southwest__IsAppropriate_FWD_EMoflonEdge_48__EMoflonEdge(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_EMoflonEdge_48", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getEMoflonEdge(), "_edge_l", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1906,12 +1720,12 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getleft2southwest__IsApplicable_solveCsp_CC__BTNode_XBTNode_BTNode_XBTNode_Match_Match(),
+		op = initEOperation(getleft2southwest__IsApplicable_solveCsp_CC__XBTNode_XBTNode_BTNode_BTNode_Match_Match(),
 				theCspPackage.getCSP(), "isApplicable_solveCsp_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1936,212 +1750,193 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xnParameter", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(
-				getleft2southwest__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode_BTNode2XBTnode_XBTNode_ModelgeneratorRuleResult(),
+				getleft2southwest__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_XBTNode_BTNode_ModelgeneratorRuleResult(),
 				theCspPackage.getCSP(), "generateModel_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getModelgeneratorRuleResult(), "ruleResult", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getleft2southwest__GenerateModel_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
 				"generateModel_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(rightleft2eastwestEClass, rightleft2eastwest.class, "rightleft2eastwest", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(right2southeastEClass, right2southeast.class, "right2southeast", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getrightleft2eastwest__IsAppropriate_FWD__Match_BTNode_BTNode_BTNode(),
-				ecorePackage.getEBoolean(), "isAppropriate_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getright2southeast__IsAppropriate_FWD__Match_BTNode_BTNode(), ecorePackage.getEBoolean(),
+				"isAppropriate_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__Perform_FWD__IsApplicableMatch(),
+		op = initEOperation(getright2southeast__Perform_FWD__IsApplicableMatch(),
 				theRuntimePackage.getPerformRuleResult(), "perform_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsApplicable_FWD__Match(),
+		op = initEOperation(getright2southeast__IsApplicable_FWD__Match(),
 				theRuntimePackage.getIsApplicableRuleResult(), "isApplicable_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__RegisterObjectsToMatch_FWD__Match_BTNode_BTNode_BTNode(), null,
+		op = initEOperation(getright2southeast__RegisterObjectsToMatch_FWD__Match_BTNode_BTNode(), null,
 				"registerObjectsToMatch_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsAppropriate_solveCsp_FWD__Match_BTNode_BTNode_BTNode(),
+		op = initEOperation(getright2southeast__IsAppropriate_solveCsp_FWD__Match_BTNode_BTNode(),
 				theCspPackage.getCSP(), "isAppropriate_solveCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsAppropriate_checkCsp_FWD__CSP(), ecorePackage.getEBoolean(),
+		op = initEOperation(getright2southeast__IsAppropriate_checkCsp_FWD__CSP(), ecorePackage.getEBoolean(),
 				"isAppropriate_checkCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(
-				getrightleft2eastwest__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode2XBTnode_BTNode_BTNode_BTNode_XBTNode(),
+				getright2southeast__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode2XBTnode_BTNode_XBTNode_BTNode(),
 				theCspPackage.getCSP(), "isApplicable_solveCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsApplicable_checkCsp_FWD__CSP(), ecorePackage.getEBoolean(),
+		op = initEOperation(getright2southeast__IsApplicable_checkCsp_FWD__CSP(), ecorePackage.getEBoolean(),
 				"isApplicable_checkCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(
-				getrightleft2eastwest__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject(),
+				getright2southeast__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject(),
 				null, "registerObjects_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "cl2xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "cr2xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "l2se", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__CheckTypes_FWD__Match(), ecorePackage.getEBoolean(),
-				"checkTypes_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getright2southeast__CheckTypes_FWD__Match(), ecorePackage.getEBoolean(), "checkTypes_FWD",
+				0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsAppropriate_BWD__Match_XBTNode_XBTNode_XBTNode(),
-				ecorePackage.getEBoolean(), "isAppropriate_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getright2southeast__IsAppropriate_BWD__Match_XBTNode_XBTNode(), ecorePackage.getEBoolean(),
+				"isAppropriate_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__Perform_BWD__IsApplicableMatch(),
+		op = initEOperation(getright2southeast__Perform_BWD__IsApplicableMatch(),
 				theRuntimePackage.getPerformRuleResult(), "perform_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsApplicable_BWD__Match(),
+		op = initEOperation(getright2southeast__IsApplicable_BWD__Match(),
 				theRuntimePackage.getIsApplicableRuleResult(), "isApplicable_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__RegisterObjectsToMatch_BWD__Match_XBTNode_XBTNode_XBTNode(), null,
+		op = initEOperation(getright2southeast__RegisterObjectsToMatch_BWD__Match_XBTNode_XBTNode(), null,
 				"registerObjectsToMatch_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsAppropriate_solveCsp_BWD__Match_XBTNode_XBTNode_XBTNode(),
+		op = initEOperation(getright2southeast__IsAppropriate_solveCsp_BWD__Match_XBTNode_XBTNode(),
 				theCspPackage.getCSP(), "isAppropriate_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsAppropriate_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
+		op = initEOperation(getright2southeast__IsAppropriate_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
 				"isAppropriate_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(
-				getrightleft2eastwest__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_BTNode_XBTNode_XBTNode_XBTNode(),
+				getright2southeast__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_BTNode_XBTNode_XBTNode(),
 				theCspPackage.getCSP(), "isApplicable_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsApplicable_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
+		op = initEOperation(getright2southeast__IsApplicable_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
 				"isApplicable_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(
-				getrightleft2eastwest__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject(),
+				getright2southeast__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject(),
 				null, "registerObjects_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "cl2xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "cr2xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "l2se", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__CheckTypes_BWD__Match(), ecorePackage.getEBoolean(),
-				"checkTypes_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getright2southeast__CheckTypes_BWD__Match(), ecorePackage.getEBoolean(), "checkTypes_BWD",
+				0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsAppropriate_BWD_EMoflonEdge_41__EMoflonEdge(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_EMoflonEdge_41", 0, 1, IS_UNIQUE,
+		op = initEOperation(getright2southeast__IsAppropriate_BWD_EMoflonEdge_49__EMoflonEdge(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_EMoflonEdge_49", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getEMoflonEdge(), "_edge_se", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsAppropriate_FWD_EMoflonEdge_41__EMoflonEdge(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_EMoflonEdge_41", 0, 1, IS_UNIQUE,
+		op = initEOperation(getright2southeast__IsAppropriate_FWD_EMoflonEdge_49__EMoflonEdge(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_EMoflonEdge_49", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
-		addEParameter(op, theRuntimePackage.getEMoflonEdge(), "_edge_l", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getEMoflonEdge(), "_edge_r", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__CheckAttributes_FWD__TripleMatch(),
+		op = initEOperation(getright2southeast__CheckAttributes_FWD__TripleMatch(),
 				theRuntimePackage.getAttributeConstraintsRuleResult(), "checkAttributes_FWD", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getTripleMatch(), "__tripleMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__CheckAttributes_BWD__TripleMatch(),
+		op = initEOperation(getright2southeast__CheckAttributes_BWD__TripleMatch(),
 				theRuntimePackage.getAttributeConstraintsRuleResult(), "checkAttributes_BWD", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getTripleMatch(), "__tripleMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsApplicable_CC__Match_Match(),
+		op = initEOperation(getright2southeast__IsApplicable_CC__Match_Match(),
 				theRuntimePackage.getIsApplicableRuleResult(), "isApplicable_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(
-				getrightleft2eastwest__IsApplicable_solveCsp_CC__BTNode_BTNode_BTNode_XBTNode_XBTNode_XBTNode_Match_Match(),
+		op = initEOperation(getright2southeast__IsApplicable_solveCsp_CC__BTNode_XBTNode_XBTNode_BTNode_Match_Match(),
 				theCspPackage.getCSP(), "isApplicable_solveCsp_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__IsApplicable_checkCsp_CC__CSP(), ecorePackage.getEBoolean(),
+		op = initEOperation(getright2southeast__IsApplicable_checkCsp_CC__CSP(), ecorePackage.getEBoolean(),
 				"isApplicable_checkCsp_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__CheckDEC_FWD__BTNode_BTNode_BTNode(), ecorePackage.getEBoolean(),
+		op = initEOperation(getright2southeast__CheckDEC_FWD__BTNode_BTNode(), ecorePackage.getEBoolean(),
 				"checkDEC_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "c", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__CheckDEC_BWD__XBTNode_XBTNode_XBTNode(), ecorePackage.getEBoolean(),
+		op = initEOperation(getright2southeast__CheckDEC_BWD__XBTNode_XBTNode(), ecorePackage.getEBoolean(),
 				"checkDEC_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xc", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__GenerateModel__RuleEntryContainer_BTNode2XBTnode(),
+		op = initEOperation(getright2southeast__GenerateModel__RuleEntryContainer_BTNode2XBTnode(),
 				theRuntimePackage.getModelgeneratorRuleResult(), "generateModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theModelgeneratorPackage.getRuleEntryContainer(), "ruleEntryContainer", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xnParameter", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(
-				getrightleft2eastwest__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_BTNode_XBTNode_ModelgeneratorRuleResult(),
+				getright2southeast__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode2XBTnode_BTNode_XBTNode_ModelgeneratorRuleResult(),
 				theCspPackage.getCSP(), "generateModel_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2149,7 +1944,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getModelgeneratorRuleResult(), "ruleResult", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getrightleft2eastwest__GenerateModel_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
+		op = initEOperation(getright2southeast__GenerateModel_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
 				"generateModel_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2195,9 +1990,9 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		op = initEOperation(getnode2node__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject(), null,
 				"registerObjects_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getnode2node__CheckTypes_FWD__Match(), ecorePackage.getEBoolean(), "checkTypes_FWD", 0, 1,
 				IS_UNIQUE, IS_ORDERED);
@@ -2242,20 +2037,20 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		op = initEOperation(getnode2node__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject(), null,
 				"registerObjects_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getnode2node__CheckTypes_BWD__Match(), ecorePackage.getEBoolean(), "checkTypes_BWD", 0, 1,
 				IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getnode2node__IsAppropriate_BWD_XBTNode_4__XBTNode(),
-				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_XBTNode_4", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getnode2node__IsAppropriate_BWD_XBTNode_1__XBTNode(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_XBTNode_1", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getnode2node__IsAppropriate_FWD_BTNode_4__BTNode(), theRuntimePackage.getEObjectContainer(),
-				"isAppropriate_FWD_BTNode_4", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getnode2node__IsAppropriate_FWD_BTNode_1__BTNode(), theRuntimePackage.getEObjectContainer(),
+				"isAppropriate_FWD_BTNode_1", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getnode2node__CheckAttributes_FWD__TripleMatch(),
@@ -2273,10 +2068,10 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getnode2node__IsApplicable_solveCsp_CC__XBTNode_BTNode_Match_Match(),
+		op = initEOperation(getnode2node__IsApplicable_solveCsp_CC__BTNode_XBTNode_Match_Match(),
 				theCspPackage.getCSP(), "isApplicable_solveCsp_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2303,6 +2098,211 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 		addEParameter(op, theRuntimePackage.getModelgeneratorRuleResult(), "ruleResult", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getnode2node__GenerateModel_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
+				"generateModel_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(rightleft2eastwestEClass, rightleft2eastwest.class, "rightleft2eastwest", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getrightleft2eastwest__IsAppropriate_FWD__Match_BTNode_BTNode_BTNode(),
+				ecorePackage.getEBoolean(), "isAppropriate_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__Perform_FWD__IsApplicableMatch(),
+				theRuntimePackage.getPerformRuleResult(), "perform_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsApplicable_FWD__Match(),
+				theRuntimePackage.getIsApplicableRuleResult(), "isApplicable_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__RegisterObjectsToMatch_FWD__Match_BTNode_BTNode_BTNode(), null,
+				"registerObjectsToMatch_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsAppropriate_solveCsp_FWD__Match_BTNode_BTNode_BTNode(),
+				theCspPackage.getCSP(), "isAppropriate_solveCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsAppropriate_checkCsp_FWD__CSP(), ecorePackage.getEBoolean(),
+				"isAppropriate_checkCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(
+				getrightleft2eastwest__IsApplicable_solveCsp_FWD__IsApplicableMatch_BTNode_BTNode_BTNode_BTNode2XBTnode_XBTNode(),
+				theCspPackage.getCSP(), "isApplicable_solveCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsApplicable_checkCsp_FWD__CSP(), ecorePackage.getEBoolean(),
+				"isApplicable_checkCsp_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(
+				getrightleft2eastwest__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject(),
+				null, "registerObjects_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "cr2xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "cl2xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__CheckTypes_FWD__Match(), ecorePackage.getEBoolean(),
+				"checkTypes_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsAppropriate_BWD__Match_XBTNode_XBTNode_XBTNode(),
+				ecorePackage.getEBoolean(), "isAppropriate_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__Perform_BWD__IsApplicableMatch(),
+				theRuntimePackage.getPerformRuleResult(), "perform_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsApplicable_BWD__Match(),
+				theRuntimePackage.getIsApplicableRuleResult(), "isApplicable_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__RegisterObjectsToMatch_BWD__Match_XBTNode_XBTNode_XBTNode(), null,
+				"registerObjectsToMatch_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsAppropriate_solveCsp_BWD__Match_XBTNode_XBTNode_XBTNode(),
+				theCspPackage.getCSP(), "isAppropriate_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsAppropriate_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
+				"isAppropriate_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(
+				getrightleft2eastwest__IsApplicable_solveCsp_BWD__IsApplicableMatch_BTNode_XBTNode_BTNode2XBTnode_XBTNode_XBTNode(),
+				theCspPackage.getCSP(), "isApplicable_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsApplicable_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
+				"isApplicable_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(
+				getrightleft2eastwest__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject(),
+				null, "registerObjects_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getPerformRuleResult(), "ruleresult", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "cr2xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "cl2xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__CheckTypes_BWD__Match(), ecorePackage.getEBoolean(),
+				"checkTypes_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "match", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsAppropriate_BWD_EMoflonEdge_50__EMoflonEdge(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_BWD_EMoflonEdge_50", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getEMoflonEdge(), "_edge_w", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsAppropriate_FWD_EMoflonEdge_50__EMoflonEdge(),
+				theRuntimePackage.getEObjectContainer(), "isAppropriate_FWD_EMoflonEdge_50", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getEMoflonEdge(), "_edge_r", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__CheckAttributes_FWD__TripleMatch(),
+				theRuntimePackage.getAttributeConstraintsRuleResult(), "checkAttributes_FWD", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getTripleMatch(), "__tripleMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__CheckAttributes_BWD__TripleMatch(),
+				theRuntimePackage.getAttributeConstraintsRuleResult(), "checkAttributes_BWD", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getTripleMatch(), "__tripleMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsApplicable_CC__Match_Match(),
+				theRuntimePackage.getIsApplicableRuleResult(), "isApplicable_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(
+				getrightleft2eastwest__IsApplicable_solveCsp_CC__BTNode_BTNode_BTNode_XBTNode_XBTNode_XBTNode_Match_Match(),
+				theCspPackage.getCSP(), "isApplicable_solveCsp_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "sourceMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getMatch(), "targetMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__IsApplicable_checkCsp_CC__CSP(), ecorePackage.getEBoolean(),
+				"isApplicable_checkCsp_CC", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__CheckDEC_FWD__BTNode_BTNode_BTNode(), ecorePackage.getEBoolean(),
+				"checkDEC_FWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "cr", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__CheckDEC_BWD__XBTNode_XBTNode_XBTNode(), ecorePackage.getEBoolean(),
+				"checkDEC_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xcsw", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__GenerateModel__RuleEntryContainer_BTNode2XBTnode(),
+				theRuntimePackage.getModelgeneratorRuleResult(), "generateModel", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theModelgeneratorPackage.getRuleEntryContainer(), "ruleEntryContainer", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xnParameter", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(
+				getrightleft2eastwest__GenerateModel_solveCsp_BWD__IsApplicableMatch_BTNode_BTNode2XBTnode_XBTNode_ModelgeneratorRuleResult(),
+				theCspPackage.getCSP(), "generateModel_solveCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getIsApplicableMatch(), "isApplicableMatch", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtreePackage.getBTNode(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theBtree2xbtreePackage.getBTNode2XBTnode(), "n2xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXbtreePackage.getXBTNode(), "xn", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRuntimePackage.getModelgeneratorRuleResult(), "ruleResult", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getrightleft2eastwest__GenerateModel_checkCsp_BWD__CSP(), ecorePackage.getEBoolean(),
 				"generateModel_checkCsp_BWD", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theCspPackage.getCSP(), "csp", 0, 1, IS_UNIQUE, IS_ORDERED);
 	}

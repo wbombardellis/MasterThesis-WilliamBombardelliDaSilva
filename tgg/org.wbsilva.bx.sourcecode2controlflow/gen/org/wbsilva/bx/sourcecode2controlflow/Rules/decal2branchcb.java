@@ -47,7 +47,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, While b, Decision d, Assignment a, Assignment l);
+	boolean isAppropriate_FWD(Match match, Decision d, While b, Assignment a, Assignment l);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, While b, Decision d, Assignment a, Assignment l);
+	void registerObjectsToMatch_FWD(Match match, Decision d, While b, Assignment a, Assignment l);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, While b, Decision d, Assignment a, Assignment l);
+	CSP isAppropriate_solveCsp_FWD(Match match, Decision d, While b, Assignment a, Assignment l);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,7 +95,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Branch c, S2B d2c, While b, Decision d,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Decision d, Branch c, S2B d2c, While b,
 			Assignment a, Assignment l);
 
 	/**
@@ -112,8 +112,8 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject c, EObject a2x, EObject y, EObject d2c, EObject b,
-			EObject d, EObject a, EObject z, EObject b2y, EObject l2z, EObject l, EObject x);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject d, EObject a2x, EObject x, EObject l2z, EObject c,
+			EObject d2c, EObject y, EObject b, EObject a, EObject z, EObject b2y, EObject l);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Branch c, Branch y, Command z, Command x);
+	boolean isAppropriate_BWD(Match match, Command x, Branch c, Branch y, Command z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +153,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Branch c, Branch y, Command z, Command x);
+	void registerObjectsToMatch_BWD(Match match, Command x, Branch c, Branch y, Command z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +161,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Branch c, Branch y, Command z, Command x);
+	CSP isAppropriate_solveCsp_BWD(Match match, Command x, Branch c, Branch y, Command z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,8 +177,8 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch c, Branch y, S2B d2c, Decision d,
-			Command z, Command x);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Decision d, Command x, Branch c, S2B d2c,
+			Branch y, Command z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,8 +194,8 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject c, EObject a2x, EObject y, EObject d2c, EObject b,
-			EObject d, EObject a, EObject z, EObject b2y, EObject l2z, EObject l, EObject x);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject d, EObject a2x, EObject x, EObject l2z, EObject c,
+			EObject d2c, EObject y, EObject b, EObject a, EObject z, EObject b2y, EObject l);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,7 +211,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_32(EMoflonEdge _edge_positive);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_73(EMoflonEdge _edge_positive);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_32(EMoflonEdge _edge_last);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_73(EMoflonEdge _edge_positive);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,8 +251,8 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Branch c, Branch y, While b, Decision d, Assignment a, Command z, Assignment l,
-			Command x, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Decision d, Command x, Branch c, Branch y, While b, Assignment a, Command z,
+			Assignment l, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,7 +268,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(While b, Decision d, Assignment a, Assignment l);
+	boolean checkDEC_FWD(Decision d, While b, Assignment a, Assignment l);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,7 +276,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Branch c, Branch y, Command z, Command x);
+	boolean checkDEC_BWD(Command x, Branch c, Branch y, Command z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -292,7 +292,7 @@ public interface decal2branchcb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch c, S2B d2c, Decision d,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Decision d, Branch c, S2B d2c,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

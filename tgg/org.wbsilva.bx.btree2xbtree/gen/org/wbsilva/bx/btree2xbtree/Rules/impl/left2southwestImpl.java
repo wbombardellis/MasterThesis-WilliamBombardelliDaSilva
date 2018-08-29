@@ -151,34 +151,34 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		BTNode n = (BTNode) result1_bindingAndBlack[0];
-		BTNode2XBTnode n2xn = (BTNode2XBTnode) result1_bindingAndBlack[1];
-		BTNode c = (BTNode) result1_bindingAndBlack[2];
-		XBTNode xn = (XBTNode) result1_bindingAndBlack[3];
+		BTNode2XBTnode n2xn = (BTNode2XBTnode) result1_bindingAndBlack[0];
+		XBTNode xn = (XBTNode) result1_bindingAndBlack[1];
+		BTNode n = (BTNode) result1_bindingAndBlack[2];
+		BTNode c = (BTNode) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = left2southwestImpl.pattern_left2southwest_1_1_performtransformation_greenFFBB(c, xn);
-		BTNode2XBTnode l2sw = (BTNode2XBTnode) result1_green[0];
-		XBTNode xc = (XBTNode) result1_green[1];
+		Object[] result1_green = left2southwestImpl.pattern_left2southwest_1_1_performtransformation_greenFBFB(xn, c);
+		XBTNode xc = (XBTNode) result1_green[0];
+		BTNode2XBTnode l2sw = (BTNode2XBTnode) result1_green[2];
 
-		Object[] result2_black = left2southwestImpl.pattern_left2southwest_1_2_collecttranslatedelements_blackBBB(l2sw,
-				xc, c);
+		Object[] result2_black = left2southwestImpl.pattern_left2southwest_1_2_collecttranslatedelements_blackBBB(xc,
+				l2sw, c);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[l2sw] = " + l2sw + ", "
-					+ "[xc] = " + xc + ", " + "[c] = " + c + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[xc] = " + xc + ", " + "[l2sw] = "
+					+ l2sw + ", " + "[c] = " + c + ".");
 		}
-		Object[] result2_green = left2southwestImpl.pattern_left2southwest_1_2_collecttranslatedelements_greenFBBB(l2sw,
-				xc, c);
+		Object[] result2_green = left2southwestImpl.pattern_left2southwest_1_2_collecttranslatedelements_greenFBBB(xc,
+				l2sw, c);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = left2southwestImpl
-				.pattern_left2southwest_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, l2sw, n, n2xn, xc, c, xn);
+				.pattern_left2southwest_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, n2xn, xc, xn, n, l2sw, c);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[l2sw] = " + l2sw + ", " + "[n] = " + n + ", " + "[n2xn] = " + n2xn + ", " + "[xc] = "
-					+ xc + ", " + "[c] = " + c + ", " + "[xn] = " + xn + ".");
+					+ ", " + "[n2xn] = " + n2xn + ", " + "[xc] = " + xc + ", " + "[xn] = " + xn + ", " + "[n] = " + n
+					+ ", " + "[l2sw] = " + l2sw + ", " + "[c] = " + c + ".");
 		}
-		left2southwestImpl.pattern_left2southwest_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, l2sw, n, xc, c,
-				xn);
+		left2southwestImpl.pattern_left2southwest_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, xc, xn, n, l2sw,
+				c);
 		//nothing EMoflonEdge n__c____l = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge l2sw__xc____target = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge l2sw__c____source = (EMoflonEdge) result3_green[8];
@@ -186,8 +186,8 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 
 		// 
 		// 
-		left2southwestImpl.pattern_left2southwest_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, l2sw, n,
-				n2xn, xc, c, xn);
+		left2southwestImpl.pattern_left2southwest_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, n2xn, xc, xn,
+				n, l2sw, c);
 		return left2southwestImpl.pattern_left2southwest_1_6_expressionFB(ruleresult);
 	}
 
@@ -217,26 +217,26 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		}
 		BTNode n = (BTNode) result2_binding[0];
 		BTNode c = (BTNode) result2_binding[1];
-		for (Object[] result2_black : left2southwestImpl.pattern_left2southwest_2_2_corematch_blackBFBFB(n, c, match)) {
-			BTNode2XBTnode n2xn = (BTNode2XBTnode) result2_black[1];
-			XBTNode xn = (XBTNode) result2_black[3];
+		for (Object[] result2_black : left2southwestImpl.pattern_left2southwest_2_2_corematch_blackFFBBB(n, c, match)) {
+			BTNode2XBTnode n2xn = (BTNode2XBTnode) result2_black[0];
+			XBTNode xn = (XBTNode) result2_black[1];
 			// ForEach 
-			for (Object[] result3_black : left2southwestImpl.pattern_left2southwest_2_3_findcontext_blackBBBB(n, n2xn,
-					c, xn)) {
-				Object[] result3_green = left2southwestImpl.pattern_left2southwest_2_3_findcontext_greenBBBBFFFF(n,
-						n2xn, c, xn);
+			for (Object[] result3_black : left2southwestImpl.pattern_left2southwest_2_3_findcontext_blackBBBB(n2xn, xn,
+					n, c)) {
+				Object[] result3_green = left2southwestImpl.pattern_left2southwest_2_3_findcontext_greenBBBBFFFF(n2xn,
+						xn, n, c);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge n__c____l = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge n2xn__n____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge n2xn__xn____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge n2xn__xn____target = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge n__c____l = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge n2xn__n____source = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = left2southwestImpl
-						.pattern_left2southwest_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, n, n2xn, c,
-								xn);
+						.pattern_left2southwest_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, n2xn, xn,
+								n, c);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[n] = " + n + ", " + "[n2xn] = "
-							+ n2xn + ", " + "[c] = " + c + ", " + "[xn] = " + xn + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[n2xn] = " + n2xn + ", "
+							+ "[xn] = " + xn + ", " + "[n] = " + n + ", " + "[c] = " + c + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -305,8 +305,8 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn, BTNode c,
-			XBTNode xn) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xn, BTNode n,
+			BTNode c) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -321,10 +321,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("n", n);
 		isApplicableMatch.registerObject("n2xn", n2xn);
-		isApplicableMatch.registerObject("c", c);
 		isApplicableMatch.registerObject("xn", xn);
+		isApplicableMatch.registerObject("n", n);
+		isApplicableMatch.registerObject("c", c);
 		return csp;
 	}
 
@@ -342,14 +342,14 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject l2sw, EObject n, EObject n2xn, EObject xc,
-			EObject c, EObject xn) {
-		ruleresult.registerObject("l2sw", l2sw);
-		ruleresult.registerObject("n", n);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject n2xn, EObject xc, EObject xn, EObject n,
+			EObject l2sw, EObject c) {
 		ruleresult.registerObject("n2xn", n2xn);
 		ruleresult.registerObject("xc", xc);
-		ruleresult.registerObject("c", c);
 		ruleresult.registerObject("xn", xn);
+		ruleresult.registerObject("n", n);
+		ruleresult.registerObject("l2sw", l2sw);
+		ruleresult.registerObject("c", c);
 
 	}
 
@@ -425,34 +425,34 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		BTNode n = (BTNode) result1_bindingAndBlack[0];
-		BTNode2XBTnode n2xn = (BTNode2XBTnode) result1_bindingAndBlack[1];
-		XBTNode xc = (XBTNode) result1_bindingAndBlack[2];
-		XBTNode xn = (XBTNode) result1_bindingAndBlack[3];
+		BTNode2XBTnode n2xn = (BTNode2XBTnode) result1_bindingAndBlack[0];
+		XBTNode xc = (XBTNode) result1_bindingAndBlack[1];
+		XBTNode xn = (XBTNode) result1_bindingAndBlack[2];
+		BTNode n = (BTNode) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = left2southwestImpl.pattern_left2southwest_11_1_performtransformation_greenFBBF(n, xc);
-		BTNode2XBTnode l2sw = (BTNode2XBTnode) result1_green[0];
+		Object[] result1_green = left2southwestImpl.pattern_left2southwest_11_1_performtransformation_greenBBFF(xc, n);
+		BTNode2XBTnode l2sw = (BTNode2XBTnode) result1_green[2];
 		BTNode c = (BTNode) result1_green[3];
 
-		Object[] result2_black = left2southwestImpl.pattern_left2southwest_11_2_collecttranslatedelements_blackBBB(l2sw,
-				xc, c);
+		Object[] result2_black = left2southwestImpl.pattern_left2southwest_11_2_collecttranslatedelements_blackBBB(xc,
+				l2sw, c);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[l2sw] = " + l2sw + ", "
-					+ "[xc] = " + xc + ", " + "[c] = " + c + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[xc] = " + xc + ", " + "[l2sw] = "
+					+ l2sw + ", " + "[c] = " + c + ".");
 		}
-		Object[] result2_green = left2southwestImpl
-				.pattern_left2southwest_11_2_collecttranslatedelements_greenFBBB(l2sw, xc, c);
+		Object[] result2_green = left2southwestImpl.pattern_left2southwest_11_2_collecttranslatedelements_greenFBBB(xc,
+				l2sw, c);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = left2southwestImpl
-				.pattern_left2southwest_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, l2sw, n, n2xn, xc, c, xn);
+				.pattern_left2southwest_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, n2xn, xc, xn, n, l2sw, c);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[l2sw] = " + l2sw + ", " + "[n] = " + n + ", " + "[n2xn] = " + n2xn + ", " + "[xc] = "
-					+ xc + ", " + "[c] = " + c + ", " + "[xn] = " + xn + ".");
+					+ ", " + "[n2xn] = " + n2xn + ", " + "[xc] = " + xc + ", " + "[xn] = " + xn + ", " + "[n] = " + n
+					+ ", " + "[l2sw] = " + l2sw + ", " + "[c] = " + c + ".");
 		}
-		left2southwestImpl.pattern_left2southwest_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, l2sw, n, xc, c,
-				xn);
+		left2southwestImpl.pattern_left2southwest_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, xc, xn, n, l2sw,
+				c);
 		//nothing EMoflonEdge n__c____l = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge l2sw__xc____target = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge l2sw__c____source = (EMoflonEdge) result3_green[8];
@@ -460,8 +460,8 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 
 		// 
 		// 
-		left2southwestImpl.pattern_left2southwest_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, l2sw, n,
-				n2xn, xc, c, xn);
+		left2southwestImpl.pattern_left2southwest_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, n2xn, xc,
+				xn, n, l2sw, c);
 		return left2southwestImpl.pattern_left2southwest_11_6_expressionFB(ruleresult);
 	}
 
@@ -491,27 +491,27 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		}
 		XBTNode xc = (XBTNode) result2_binding[0];
 		XBTNode xn = (XBTNode) result2_binding[1];
-		for (Object[] result2_black : left2southwestImpl.pattern_left2southwest_12_2_corematch_blackFFBBB(xc, xn,
+		for (Object[] result2_black : left2southwestImpl.pattern_left2southwest_12_2_corematch_blackFBBFB(xc, xn,
 				match)) {
-			BTNode n = (BTNode) result2_black[0];
-			BTNode2XBTnode n2xn = (BTNode2XBTnode) result2_black[1];
+			BTNode2XBTnode n2xn = (BTNode2XBTnode) result2_black[0];
+			BTNode n = (BTNode) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : left2southwestImpl.pattern_left2southwest_12_3_findcontext_blackBBBB(n, n2xn,
-					xc, xn)) {
-				Object[] result3_green = left2southwestImpl.pattern_left2southwest_12_3_findcontext_greenBBBBFFFF(n,
-						n2xn, xc, xn);
+			for (Object[] result3_black : left2southwestImpl.pattern_left2southwest_12_3_findcontext_blackBBBB(n2xn, xc,
+					xn, n)) {
+				Object[] result3_green = left2southwestImpl.pattern_left2southwest_12_3_findcontext_greenBBBBFFFF(n2xn,
+						xc, xn, n);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge n2xn__n____source = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge xn__xc____sw = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge n2xn__xn____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge n2xn__xn____target = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge n2xn__n____source = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge xn__xc____sw = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = left2southwestImpl
-						.pattern_left2southwest_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, n, n2xn,
-								xc, xn);
+						.pattern_left2southwest_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, n2xn, xc,
+								xn, n);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[n] = " + n + ", " + "[n2xn] = "
-							+ n2xn + ", " + "[xc] = " + xc + ", " + "[xn] = " + xn + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[n2xn] = " + n2xn + ", "
+							+ "[xc] = " + xc + ", " + "[xn] = " + xn + ", " + "[n] = " + n + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -580,8 +580,8 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn, XBTNode xc,
-			XBTNode xn) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xc,
+			XBTNode xn, BTNode n) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -596,10 +596,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("n", n);
 		isApplicableMatch.registerObject("n2xn", n2xn);
 		isApplicableMatch.registerObject("xc", xc);
 		isApplicableMatch.registerObject("xn", xn);
+		isApplicableMatch.registerObject("n", n);
 		return csp;
 	}
 
@@ -617,14 +617,14 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject l2sw, EObject n, EObject n2xn, EObject xc,
-			EObject c, EObject xn) {
-		ruleresult.registerObject("l2sw", l2sw);
-		ruleresult.registerObject("n", n);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject n2xn, EObject xc, EObject xn, EObject n,
+			EObject l2sw, EObject c) {
 		ruleresult.registerObject("n2xn", n2xn);
 		ruleresult.registerObject("xc", xc);
-		ruleresult.registerObject("c", c);
 		ruleresult.registerObject("xn", xn);
+		ruleresult.registerObject("n", n);
+		ruleresult.registerObject("l2sw", l2sw);
+		ruleresult.registerObject("c", c);
 
 	}
 
@@ -642,7 +642,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_40(EMoflonEdge _edge_sw) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_48(EMoflonEdge _edge_sw) {
 
 		Object[] result1_bindingAndBlack = left2southwestImpl
 				.pattern_left2southwest_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -699,7 +699,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_40(EMoflonEdge _edge_l) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_48(EMoflonEdge _edge_l) {
 
 		Object[] result1_bindingAndBlack = left2southwestImpl
 				.pattern_left2southwest_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -831,39 +831,39 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		BTNode n = (BTNode) result2_bindingAndBlack[0];
-		XBTNode xc = (XBTNode) result2_bindingAndBlack[1];
-		BTNode c = (BTNode) result2_bindingAndBlack[2];
-		XBTNode xn = (XBTNode) result2_bindingAndBlack[3];
+		XBTNode xc = (XBTNode) result2_bindingAndBlack[0];
+		XBTNode xn = (XBTNode) result2_bindingAndBlack[1];
+		BTNode n = (BTNode) result2_bindingAndBlack[2];
+		BTNode c = (BTNode) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = left2southwestImpl
-				.pattern_left2southwest_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, n, xc, c, xn, sourceMatch,
+				.pattern_left2southwest_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, xc, xn, n, c, sourceMatch,
 						targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[n] = " + n + ", " + "[xc] = " + xc + ", " + "[c] = " + c + ", " + "[xn] = " + xn + ", "
+					+ "[xc] = " + xc + ", " + "[xn] = " + xn + ", " + "[n] = " + n + ", " + "[c] = " + c + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (left2southwestImpl.pattern_left2southwest_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : left2southwestImpl.pattern_left2southwest_24_5_matchcorrcontext_blackBFBBB(n,
-					xn, sourceMatch, targetMatch)) {
-				BTNode2XBTnode n2xn = (BTNode2XBTnode) result5_black[1];
+			for (Object[] result5_black : left2southwestImpl.pattern_left2southwest_24_5_matchcorrcontext_blackFBBBB(xn,
+					n, sourceMatch, targetMatch)) {
+				BTNode2XBTnode n2xn = (BTNode2XBTnode) result5_black[0];
 				Object[] result5_green = left2southwestImpl.pattern_left2southwest_24_5_matchcorrcontext_greenBBBF(n2xn,
 						sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = left2southwestImpl
-						.pattern_left2southwest_24_6_createcorrespondence_blackBBBBB(n, xc, c, xn, ccMatch);
+						.pattern_left2southwest_24_6_createcorrespondence_blackBBBBB(xc, xn, n, c, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException(
-							"Pattern matching failed." + " Variables: " + "[n] = " + n + ", " + "[xc] = " + xc + ", "
-									+ "[c] = " + c + ", " + "[xn] = " + xn + ", " + "[ccMatch] = " + ccMatch + ".");
+							"Pattern matching failed." + " Variables: " + "[xc] = " + xc + ", " + "[xn] = " + xn + ", "
+									+ "[n] = " + n + ", " + "[c] = " + c + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				left2southwestImpl.pattern_left2southwest_24_6_createcorrespondence_greenFBBB(xc, c, ccMatch);
-				//nothing BTNode2XBTnode l2sw = (BTNode2XBTnode) result6_green[0];
+				left2southwestImpl.pattern_left2southwest_24_6_createcorrespondence_greenBFBB(xc, c, ccMatch);
+				//nothing BTNode2XBTnode l2sw = (BTNode2XBTnode) result6_green[1];
 
 				Object[] result7_black = left2southwestImpl
 						.pattern_left2southwest_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -885,7 +885,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(BTNode n, XBTNode xc, BTNode c, XBTNode xn, Match sourceMatch,
+	public CSP isApplicable_solveCsp_CC(XBTNode xc, XBTNode xn, BTNode n, BTNode c, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -959,36 +959,36 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		for (Object[] result2_black : left2southwestImpl
 				.pattern_left2southwest_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList n2xnList = (RuleEntryList) result2_black[0];
-			BTNode n = (BTNode) result2_black[1];
-			BTNode2XBTnode n2xn = (BTNode2XBTnode) result2_black[2];
-			XBTNode xn = (XBTNode) result2_black[3];
+			BTNode2XBTnode n2xn = (BTNode2XBTnode) result2_black[1];
+			XBTNode xn = (XBTNode) result2_black[2];
+			BTNode n = (BTNode) result2_black[3];
 
 			Object[] result3_bindingAndBlack = left2southwestImpl
-					.pattern_left2southwest_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, n, n2xn, xn,
+					.pattern_left2southwest_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, n2xn, xn, n,
 							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[n] = " + n + ", " + "[n2xn] = " + n2xn
-						+ ", " + "[xn] = " + xn + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[n2xn] = " + n2xn + ", " + "[xn] = "
+						+ xn + ", " + "[n] = " + n + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (left2southwestImpl.pattern_left2southwest_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = left2southwestImpl.pattern_left2southwest_29_5_checknacs_blackBBB(n, n2xn, xn);
+				Object[] result5_black = left2southwestImpl.pattern_left2southwest_29_5_checknacs_blackBBB(n2xn, xn, n);
 				if (result5_black != null) {
 
-					Object[] result6_black = left2southwestImpl.pattern_left2southwest_29_6_perform_blackBBBB(n, n2xn,
-							xn, ruleResult);
+					Object[] result6_black = left2southwestImpl.pattern_left2southwest_29_6_perform_blackBBBB(n2xn, xn,
+							n, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException(
-								"Pattern matching failed." + " Variables: " + "[n] = " + n + ", " + "[n2xn] = " + n2xn
-										+ ", " + "[xn] = " + xn + ", " + "[ruleResult] = " + ruleResult + ".");
+								"Pattern matching failed." + " Variables: " + "[n2xn] = " + n2xn + ", " + "[xn] = " + xn
+										+ ", " + "[n] = " + n + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					left2southwestImpl.pattern_left2southwest_29_6_perform_greenFBFFBB(n, xn, ruleResult);
-					//nothing BTNode2XBTnode l2sw = (BTNode2XBTnode) result6_green[0];
-					//nothing XBTNode xc = (XBTNode) result6_green[2];
-					//nothing BTNode c = (BTNode) result6_green[3];
+					left2southwestImpl.pattern_left2southwest_29_6_perform_greenFBBFFB(xn, n, ruleResult);
+					//nothing XBTNode xc = (XBTNode) result6_green[0];
+					//nothing BTNode2XBTnode l2sw = (BTNode2XBTnode) result6_green[3];
+					//nothing BTNode c = (BTNode) result6_green[4];
 
 				} else {
 				}
@@ -1005,8 +1005,8 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn,
-			XBTNode xn, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xn,
+			BTNode n, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1021,9 +1021,9 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("n", n);
 		isApplicableMatch.registerObject("n2xn", n2xn);
 		isApplicableMatch.registerObject("xn", xn);
+		isApplicableMatch.registerObject("n", n);
 		return csp;
 	}
 
@@ -1058,9 +1058,9 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 					(BTNode) arguments.get(2));
 		case RulesPackage.LEFT2SOUTHWEST___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_BTNODE_BTNODE2XBTNODE_BTNODE_XBTNODE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (BTNode) arguments.get(1),
-					(BTNode2XBTnode) arguments.get(2), (BTNode) arguments.get(3), (XBTNode) arguments.get(4));
+		case RulesPackage.LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_XBTNODE_BTNODE_BTNODE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (BTNode2XBTnode) arguments.get(1),
+					(XBTNode) arguments.get(2), (BTNode) arguments.get(3), (BTNode) arguments.get(4));
 		case RulesPackage.LEFT2SOUTHWEST___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.LEFT2SOUTHWEST___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1085,9 +1085,9 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 					(XBTNode) arguments.get(2));
 		case RulesPackage.LEFT2SOUTHWEST___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE_BTNODE2XBTNODE_XBTNODE_XBTNODE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (BTNode) arguments.get(1),
-					(BTNode2XBTnode) arguments.get(2), (XBTNode) arguments.get(3), (XBTNode) arguments.get(4));
+		case RulesPackage.LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_XBTNODE_XBTNODE_BTNODE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (BTNode2XBTnode) arguments.get(1),
+					(XBTNode) arguments.get(2), (XBTNode) arguments.get(3), (BTNode) arguments.get(4));
 		case RulesPackage.LEFT2SOUTHWEST___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.LEFT2SOUTHWEST___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1097,19 +1097,19 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 			return null;
 		case RulesPackage.LEFT2SOUTHWEST___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.LEFT2SOUTHWEST___IS_APPROPRIATE_BWD_EMOFLON_EDGE_40__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_40((EMoflonEdge) arguments.get(0));
-		case RulesPackage.LEFT2SOUTHWEST___IS_APPROPRIATE_FWD_EMOFLON_EDGE_40__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_40((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LEFT2SOUTHWEST___IS_APPROPRIATE_BWD_EMOFLON_EDGE_48__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_48((EMoflonEdge) arguments.get(0));
+		case RulesPackage.LEFT2SOUTHWEST___IS_APPROPRIATE_FWD_EMOFLON_EDGE_48__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_48((EMoflonEdge) arguments.get(0));
 		case RulesPackage.LEFT2SOUTHWEST___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.LEFT2SOUTHWEST___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.LEFT2SOUTHWEST___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_CC__BTNODE_XBTNODE_BTNODE_XBTNODE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((BTNode) arguments.get(0), (XBTNode) arguments.get(1),
-					(BTNode) arguments.get(2), (XBTNode) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.LEFT2SOUTHWEST___IS_APPLICABLE_SOLVE_CSP_CC__XBTNODE_XBTNODE_BTNODE_BTNODE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((XBTNode) arguments.get(0), (XBTNode) arguments.get(1),
+					(BTNode) arguments.get(2), (BTNode) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.LEFT2SOUTHWEST___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1119,10 +1119,9 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 			return checkDEC_BWD((XBTNode) arguments.get(0), (XBTNode) arguments.get(1));
 		case RulesPackage.LEFT2SOUTHWEST___GENERATE_MODEL__RULEENTRYCONTAINER_BTNODE2XBTNODE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (BTNode2XBTnode) arguments.get(1));
-		case RulesPackage.LEFT2SOUTHWEST___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE_BTNODE2XBTNODE_XBTNODE_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (BTNode) arguments.get(1),
-					(BTNode2XBTnode) arguments.get(2), (XBTNode) arguments.get(3),
-					(ModelgeneratorRuleResult) arguments.get(4));
+		case RulesPackage.LEFT2SOUTHWEST___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BTNODE2XBTNODE_XBTNODE_BTNODE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (BTNode2XBTnode) arguments.get(1),
+					(XBTNode) arguments.get(2), (BTNode) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.LEFT2SOUTHWEST___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1224,23 +1223,23 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 
 	public static final Object[] pattern_left2southwest_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("n");
-		EObject _localVariable_1 = isApplicableMatch.getObject("n2xn");
-		EObject _localVariable_2 = isApplicableMatch.getObject("c");
-		EObject _localVariable_3 = isApplicableMatch.getObject("xn");
-		EObject tmpN = _localVariable_0;
-		EObject tmpN2xn = _localVariable_1;
-		EObject tmpC = _localVariable_2;
-		EObject tmpXn = _localVariable_3;
-		if (tmpN instanceof BTNode) {
-			BTNode n = (BTNode) tmpN;
-			if (tmpN2xn instanceof BTNode2XBTnode) {
-				BTNode2XBTnode n2xn = (BTNode2XBTnode) tmpN2xn;
-				if (tmpC instanceof BTNode) {
-					BTNode c = (BTNode) tmpC;
-					if (tmpXn instanceof XBTNode) {
-						XBTNode xn = (XBTNode) tmpXn;
-						return new Object[] { n, n2xn, c, xn, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("n2xn");
+		EObject _localVariable_1 = isApplicableMatch.getObject("xn");
+		EObject _localVariable_2 = isApplicableMatch.getObject("n");
+		EObject _localVariable_3 = isApplicableMatch.getObject("c");
+		EObject tmpN2xn = _localVariable_0;
+		EObject tmpXn = _localVariable_1;
+		EObject tmpN = _localVariable_2;
+		EObject tmpC = _localVariable_3;
+		if (tmpN2xn instanceof BTNode2XBTnode) {
+			BTNode2XBTnode n2xn = (BTNode2XBTnode) tmpN2xn;
+			if (tmpXn instanceof XBTNode) {
+				XBTNode xn = (XBTNode) tmpXn;
+				if (tmpN instanceof BTNode) {
+					BTNode n = (BTNode) tmpN;
+					if (tmpC instanceof BTNode) {
+						BTNode c = (BTNode) tmpC;
+						return new Object[] { n2xn, xn, n, c, isApplicableMatch };
 					}
 				}
 			}
@@ -1248,13 +1247,13 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return null;
 	}
 
-	public static final Object[] pattern_left2southwest_1_1_performtransformation_blackBBBBFBB(BTNode n,
-			BTNode2XBTnode n2xn, BTNode c, XBTNode xn, left2southwest _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_left2southwest_1_1_performtransformation_blackBBBBFBB(BTNode2XBTnode n2xn,
+			XBTNode xn, BTNode n, BTNode c, left2southwest _this, IsApplicableMatch isApplicableMatch) {
 		if (!c.equals(n)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { n, n2xn, c, xn, csp, _this, isApplicableMatch };
+					return new Object[] { n2xn, xn, n, c, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -1266,64 +1265,64 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		Object[] result_pattern_left2southwest_1_1_performtransformation_binding = pattern_left2southwest_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_left2southwest_1_1_performtransformation_binding != null) {
-			BTNode n = (BTNode) result_pattern_left2southwest_1_1_performtransformation_binding[0];
-			BTNode2XBTnode n2xn = (BTNode2XBTnode) result_pattern_left2southwest_1_1_performtransformation_binding[1];
-			BTNode c = (BTNode) result_pattern_left2southwest_1_1_performtransformation_binding[2];
-			XBTNode xn = (XBTNode) result_pattern_left2southwest_1_1_performtransformation_binding[3];
+			BTNode2XBTnode n2xn = (BTNode2XBTnode) result_pattern_left2southwest_1_1_performtransformation_binding[0];
+			XBTNode xn = (XBTNode) result_pattern_left2southwest_1_1_performtransformation_binding[1];
+			BTNode n = (BTNode) result_pattern_left2southwest_1_1_performtransformation_binding[2];
+			BTNode c = (BTNode) result_pattern_left2southwest_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_left2southwest_1_1_performtransformation_black = pattern_left2southwest_1_1_performtransformation_blackBBBBFBB(
-					n, n2xn, c, xn, _this, isApplicableMatch);
+					n2xn, xn, n, c, _this, isApplicableMatch);
 			if (result_pattern_left2southwest_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_left2southwest_1_1_performtransformation_black[4];
 
-				return new Object[] { n, n2xn, c, xn, csp, _this, isApplicableMatch };
+				return new Object[] { n2xn, xn, n, c, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_left2southwest_1_1_performtransformation_greenFFBB(BTNode c, XBTNode xn) {
-		BTNode2XBTnode l2sw = Btree2xbtreeFactory.eINSTANCE.createBTNode2XBTnode();
+	public static final Object[] pattern_left2southwest_1_1_performtransformation_greenFBFB(XBTNode xn, BTNode c) {
 		XBTNode xc = XbtreeFactory.eINSTANCE.createXBTNode();
-		l2sw.setSource(c);
-		l2sw.setTarget(xc);
+		BTNode2XBTnode l2sw = Btree2xbtreeFactory.eINSTANCE.createBTNode2XBTnode();
 		xn.setSw(xc);
-		return new Object[] { l2sw, xc, c, xn };
+		l2sw.setTarget(xc);
+		l2sw.setSource(c);
+		return new Object[] { xc, xn, l2sw, c };
 	}
 
-	public static final Object[] pattern_left2southwest_1_2_collecttranslatedelements_blackBBB(BTNode2XBTnode l2sw,
-			XBTNode xc, BTNode c) {
-		return new Object[] { l2sw, xc, c };
+	public static final Object[] pattern_left2southwest_1_2_collecttranslatedelements_blackBBB(XBTNode xc,
+			BTNode2XBTnode l2sw, BTNode c) {
+		return new Object[] { xc, l2sw, c };
 	}
 
-	public static final Object[] pattern_left2southwest_1_2_collecttranslatedelements_greenFBBB(BTNode2XBTnode l2sw,
-			XBTNode xc, BTNode c) {
+	public static final Object[] pattern_left2southwest_1_2_collecttranslatedelements_greenFBBB(XBTNode xc,
+			BTNode2XBTnode l2sw, BTNode c) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(l2sw);
 		ruleresult.getCreatedElements().add(xc);
+		ruleresult.getCreatedLinkElements().add(l2sw);
 		ruleresult.getTranslatedElements().add(c);
-		return new Object[] { ruleresult, l2sw, xc, c };
+		return new Object[] { ruleresult, xc, l2sw, c };
 	}
 
 	public static final Object[] pattern_left2southwest_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject l2sw, EObject n, EObject n2xn, EObject xc, EObject c, EObject xn) {
-		if (!l2sw.equals(n)) {
-			if (!l2sw.equals(n2xn)) {
-				if (!l2sw.equals(xc)) {
-					if (!l2sw.equals(xn)) {
-						if (!n.equals(n2xn)) {
-							if (!n.equals(xc)) {
-								if (!n.equals(xn)) {
-									if (!n2xn.equals(xc)) {
-										if (!n2xn.equals(xn)) {
-											if (!xc.equals(xn)) {
-												if (!c.equals(l2sw)) {
-													if (!c.equals(n)) {
-														if (!c.equals(n2xn)) {
-															if (!c.equals(xc)) {
-																if (!c.equals(xn)) {
-																	return new Object[] { ruleresult, l2sw, n, n2xn, xc,
-																			c, xn };
+			PerformRuleResult ruleresult, EObject n2xn, EObject xc, EObject xn, EObject n, EObject l2sw, EObject c) {
+		if (!n2xn.equals(xc)) {
+			if (!n2xn.equals(xn)) {
+				if (!xc.equals(xn)) {
+					if (!n.equals(n2xn)) {
+						if (!n.equals(xc)) {
+							if (!n.equals(xn)) {
+								if (!l2sw.equals(n2xn)) {
+									if (!l2sw.equals(xc)) {
+										if (!l2sw.equals(xn)) {
+											if (!l2sw.equals(n)) {
+												if (!c.equals(n2xn)) {
+													if (!c.equals(xc)) {
+														if (!c.equals(xn)) {
+															if (!c.equals(n)) {
+																if (!c.equals(l2sw)) {
+																	return new Object[] { ruleresult, n2xn, xc, xn, n,
+																			l2sw, c };
 																}
 															}
 														}
@@ -1343,7 +1342,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	}
 
 	public static final Object[] pattern_left2southwest_1_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject l2sw, EObject n, EObject xc, EObject c, EObject xn) {
+			PerformRuleResult ruleresult, EObject xc, EObject xn, EObject n, EObject l2sw, EObject c) {
 		EMoflonEdge n__c____l = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge l2sw__xc____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge l2sw__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1370,13 +1369,13 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		l2sw__xc____target.setName(l2sw__xc____target_name_prime);
 		l2sw__c____source.setName(l2sw__c____source_name_prime);
 		xn__xc____sw.setName(xn__xc____sw_name_prime);
-		return new Object[] { ruleresult, l2sw, n, xc, c, xn, n__c____l, l2sw__xc____target, l2sw__c____source,
+		return new Object[] { ruleresult, xc, xn, n, l2sw, c, n__c____l, l2sw__xc____target, l2sw__c____source,
 				xn__xc____sw };
 	}
 
 	public static final void pattern_left2southwest_1_5_registerobjects_expressionBBBBBBBB(left2southwest _this,
-			PerformRuleResult ruleresult, EObject l2sw, EObject n, EObject n2xn, EObject xc, EObject c, EObject xn) {
-		_this.registerObjects_FWD(ruleresult, l2sw, n, n2xn, xc, c, xn);
+			PerformRuleResult ruleresult, EObject n2xn, EObject xc, EObject xn, EObject n, EObject l2sw, EObject c) {
+		_this.registerObjects_FWD(ruleresult, n2xn, xc, xn, n, l2sw, c);
 
 	}
 
@@ -1449,7 +1448,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_left2southwest_2_2_corematch_blackBFBFB(BTNode n, BTNode c,
+	public static final Iterable<Object[]> pattern_left2southwest_2_2_corematch_blackFFBBB(BTNode n, BTNode c,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!c.equals(n)) {
@@ -1457,7 +1456,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 					BTNode2XBTnode.class, "source")) {
 				XBTNode xn = n2xn.getTarget();
 				if (xn != null) {
-					_result.add(new Object[] { n, n2xn, c, xn, match });
+					_result.add(new Object[] { n2xn, xn, n, c, match });
 				}
 
 			}
@@ -1465,14 +1464,14 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_left2southwest_2_3_findcontext_blackBBBB(BTNode n,
-			BTNode2XBTnode n2xn, BTNode c, XBTNode xn) {
+	public static final Iterable<Object[]> pattern_left2southwest_2_3_findcontext_blackBBBB(BTNode2XBTnode n2xn,
+			XBTNode xn, BTNode n, BTNode c) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!c.equals(n)) {
-			if (c.equals(n.getL())) {
-				if (n.equals(n2xn.getSource())) {
-					if (xn.equals(n2xn.getTarget())) {
-						_result.add(new Object[] { n, n2xn, c, xn });
+			if (xn.equals(n2xn.getTarget())) {
+				if (c.equals(n.getL())) {
+					if (n.equals(n2xn.getSource())) {
+						_result.add(new Object[] { n2xn, xn, n, c });
 					}
 				}
 			}
@@ -1480,40 +1479,40 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return _result;
 	}
 
-	public static final Object[] pattern_left2southwest_2_3_findcontext_greenBBBBFFFF(BTNode n, BTNode2XBTnode n2xn,
-			BTNode c, XBTNode xn) {
+	public static final Object[] pattern_left2southwest_2_3_findcontext_greenBBBBFFFF(BTNode2XBTnode n2xn, XBTNode xn,
+			BTNode n, BTNode c) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge n2xn__xn____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge n__c____l = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge n2xn__n____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge n2xn__xn____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String n2xn__xn____target_name_prime = "target";
 		String n__c____l_name_prime = "l";
 		String n2xn__n____source_name_prime = "source";
-		String n2xn__xn____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(n);
 		isApplicableMatch.getAllContextElements().add(n2xn);
-		isApplicableMatch.getAllContextElements().add(c);
 		isApplicableMatch.getAllContextElements().add(xn);
+		isApplicableMatch.getAllContextElements().add(n);
+		isApplicableMatch.getAllContextElements().add(c);
+		n2xn__xn____target.setSrc(n2xn);
+		n2xn__xn____target.setTrg(xn);
+		isApplicableMatch.getAllContextElements().add(n2xn__xn____target);
 		n__c____l.setSrc(n);
 		n__c____l.setTrg(c);
 		isApplicableMatch.getAllContextElements().add(n__c____l);
 		n2xn__n____source.setSrc(n2xn);
 		n2xn__n____source.setTrg(n);
 		isApplicableMatch.getAllContextElements().add(n2xn__n____source);
-		n2xn__xn____target.setSrc(n2xn);
-		n2xn__xn____target.setTrg(xn);
-		isApplicableMatch.getAllContextElements().add(n2xn__xn____target);
+		n2xn__xn____target.setName(n2xn__xn____target_name_prime);
 		n__c____l.setName(n__c____l_name_prime);
 		n2xn__n____source.setName(n2xn__n____source_name_prime);
-		n2xn__xn____target.setName(n2xn__xn____target_name_prime);
-		return new Object[] { n, n2xn, c, xn, isApplicableMatch, n__c____l, n2xn__n____source, n2xn__xn____target };
+		return new Object[] { n2xn, xn, n, c, isApplicableMatch, n2xn__xn____target, n__c____l, n2xn__n____source };
 	}
 
 	public static final Object[] pattern_left2southwest_2_4_solveCSP_bindingFBBBBBB(left2southwest _this,
-			IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn, BTNode c, XBTNode xn) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, n, n2xn, c, xn);
+			IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xn, BTNode n, BTNode c) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, n2xn, xn, n, c);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, n, n2xn, c, xn };
+			return new Object[] { csp, _this, isApplicableMatch, n2xn, xn, n, c };
 		}
 		return null;
 	}
@@ -1523,16 +1522,16 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	}
 
 	public static final Object[] pattern_left2southwest_2_4_solveCSP_bindingAndBlackFBBBBBB(left2southwest _this,
-			IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn, BTNode c, XBTNode xn) {
+			IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xn, BTNode n, BTNode c) {
 		Object[] result_pattern_left2southwest_2_4_solveCSP_binding = pattern_left2southwest_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, n, n2xn, c, xn);
+				_this, isApplicableMatch, n2xn, xn, n, c);
 		if (result_pattern_left2southwest_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_left2southwest_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_left2southwest_2_4_solveCSP_black = pattern_left2southwest_2_4_solveCSP_blackB(csp);
 			if (result_pattern_left2southwest_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, n, n2xn, c, xn };
+				return new Object[] { csp, _this, isApplicableMatch, n2xn, xn, n, c };
 			}
 		}
 		return null;
@@ -1661,23 +1660,23 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 
 	public static final Object[] pattern_left2southwest_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("n");
-		EObject _localVariable_1 = isApplicableMatch.getObject("n2xn");
-		EObject _localVariable_2 = isApplicableMatch.getObject("xc");
-		EObject _localVariable_3 = isApplicableMatch.getObject("xn");
-		EObject tmpN = _localVariable_0;
-		EObject tmpN2xn = _localVariable_1;
-		EObject tmpXc = _localVariable_2;
-		EObject tmpXn = _localVariable_3;
-		if (tmpN instanceof BTNode) {
-			BTNode n = (BTNode) tmpN;
-			if (tmpN2xn instanceof BTNode2XBTnode) {
-				BTNode2XBTnode n2xn = (BTNode2XBTnode) tmpN2xn;
-				if (tmpXc instanceof XBTNode) {
-					XBTNode xc = (XBTNode) tmpXc;
-					if (tmpXn instanceof XBTNode) {
-						XBTNode xn = (XBTNode) tmpXn;
-						return new Object[] { n, n2xn, xc, xn, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("n2xn");
+		EObject _localVariable_1 = isApplicableMatch.getObject("xc");
+		EObject _localVariable_2 = isApplicableMatch.getObject("xn");
+		EObject _localVariable_3 = isApplicableMatch.getObject("n");
+		EObject tmpN2xn = _localVariable_0;
+		EObject tmpXc = _localVariable_1;
+		EObject tmpXn = _localVariable_2;
+		EObject tmpN = _localVariable_3;
+		if (tmpN2xn instanceof BTNode2XBTnode) {
+			BTNode2XBTnode n2xn = (BTNode2XBTnode) tmpN2xn;
+			if (tmpXc instanceof XBTNode) {
+				XBTNode xc = (XBTNode) tmpXc;
+				if (tmpXn instanceof XBTNode) {
+					XBTNode xn = (XBTNode) tmpXn;
+					if (tmpN instanceof BTNode) {
+						BTNode n = (BTNode) tmpN;
+						return new Object[] { n2xn, xc, xn, n, isApplicableMatch };
 					}
 				}
 			}
@@ -1685,13 +1684,13 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return null;
 	}
 
-	public static final Object[] pattern_left2southwest_11_1_performtransformation_blackBBBBFBB(BTNode n,
-			BTNode2XBTnode n2xn, XBTNode xc, XBTNode xn, left2southwest _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_left2southwest_11_1_performtransformation_blackBBBBFBB(BTNode2XBTnode n2xn,
+			XBTNode xc, XBTNode xn, BTNode n, left2southwest _this, IsApplicableMatch isApplicableMatch) {
 		if (!xc.equals(xn)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { n, n2xn, xc, xn, csp, _this, isApplicableMatch };
+					return new Object[] { n2xn, xc, xn, n, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -1703,64 +1702,64 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		Object[] result_pattern_left2southwest_11_1_performtransformation_binding = pattern_left2southwest_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_left2southwest_11_1_performtransformation_binding != null) {
-			BTNode n = (BTNode) result_pattern_left2southwest_11_1_performtransformation_binding[0];
-			BTNode2XBTnode n2xn = (BTNode2XBTnode) result_pattern_left2southwest_11_1_performtransformation_binding[1];
-			XBTNode xc = (XBTNode) result_pattern_left2southwest_11_1_performtransformation_binding[2];
-			XBTNode xn = (XBTNode) result_pattern_left2southwest_11_1_performtransformation_binding[3];
+			BTNode2XBTnode n2xn = (BTNode2XBTnode) result_pattern_left2southwest_11_1_performtransformation_binding[0];
+			XBTNode xc = (XBTNode) result_pattern_left2southwest_11_1_performtransformation_binding[1];
+			XBTNode xn = (XBTNode) result_pattern_left2southwest_11_1_performtransformation_binding[2];
+			BTNode n = (BTNode) result_pattern_left2southwest_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_left2southwest_11_1_performtransformation_black = pattern_left2southwest_11_1_performtransformation_blackBBBBFBB(
-					n, n2xn, xc, xn, _this, isApplicableMatch);
+					n2xn, xc, xn, n, _this, isApplicableMatch);
 			if (result_pattern_left2southwest_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_left2southwest_11_1_performtransformation_black[4];
 
-				return new Object[] { n, n2xn, xc, xn, csp, _this, isApplicableMatch };
+				return new Object[] { n2xn, xc, xn, n, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_left2southwest_11_1_performtransformation_greenFBBF(BTNode n, XBTNode xc) {
+	public static final Object[] pattern_left2southwest_11_1_performtransformation_greenBBFF(XBTNode xc, BTNode n) {
 		BTNode2XBTnode l2sw = Btree2xbtreeFactory.eINSTANCE.createBTNode2XBTnode();
 		BTNode c = BtreeFactory.eINSTANCE.createBTNode();
 		l2sw.setTarget(xc);
 		n.setL(c);
 		l2sw.setSource(c);
-		return new Object[] { l2sw, n, xc, c };
+		return new Object[] { xc, n, l2sw, c };
 	}
 
-	public static final Object[] pattern_left2southwest_11_2_collecttranslatedelements_blackBBB(BTNode2XBTnode l2sw,
-			XBTNode xc, BTNode c) {
-		return new Object[] { l2sw, xc, c };
+	public static final Object[] pattern_left2southwest_11_2_collecttranslatedelements_blackBBB(XBTNode xc,
+			BTNode2XBTnode l2sw, BTNode c) {
+		return new Object[] { xc, l2sw, c };
 	}
 
-	public static final Object[] pattern_left2southwest_11_2_collecttranslatedelements_greenFBBB(BTNode2XBTnode l2sw,
-			XBTNode xc, BTNode c) {
+	public static final Object[] pattern_left2southwest_11_2_collecttranslatedelements_greenFBBB(XBTNode xc,
+			BTNode2XBTnode l2sw, BTNode c) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(l2sw);
 		ruleresult.getTranslatedElements().add(xc);
+		ruleresult.getCreatedLinkElements().add(l2sw);
 		ruleresult.getCreatedElements().add(c);
-		return new Object[] { ruleresult, l2sw, xc, c };
+		return new Object[] { ruleresult, xc, l2sw, c };
 	}
 
 	public static final Object[] pattern_left2southwest_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject l2sw, EObject n, EObject n2xn, EObject xc, EObject c, EObject xn) {
-		if (!l2sw.equals(n)) {
-			if (!l2sw.equals(n2xn)) {
-				if (!l2sw.equals(xc)) {
-					if (!l2sw.equals(xn)) {
-						if (!n.equals(n2xn)) {
-							if (!n.equals(xc)) {
-								if (!n.equals(xn)) {
-									if (!n2xn.equals(xc)) {
-										if (!n2xn.equals(xn)) {
-											if (!xc.equals(xn)) {
-												if (!c.equals(l2sw)) {
-													if (!c.equals(n)) {
-														if (!c.equals(n2xn)) {
-															if (!c.equals(xc)) {
-																if (!c.equals(xn)) {
-																	return new Object[] { ruleresult, l2sw, n, n2xn, xc,
-																			c, xn };
+			PerformRuleResult ruleresult, EObject n2xn, EObject xc, EObject xn, EObject n, EObject l2sw, EObject c) {
+		if (!n2xn.equals(xc)) {
+			if (!n2xn.equals(xn)) {
+				if (!xc.equals(xn)) {
+					if (!n.equals(n2xn)) {
+						if (!n.equals(xc)) {
+							if (!n.equals(xn)) {
+								if (!l2sw.equals(n2xn)) {
+									if (!l2sw.equals(xc)) {
+										if (!l2sw.equals(xn)) {
+											if (!l2sw.equals(n)) {
+												if (!c.equals(n2xn)) {
+													if (!c.equals(xc)) {
+														if (!c.equals(xn)) {
+															if (!c.equals(n)) {
+																if (!c.equals(l2sw)) {
+																	return new Object[] { ruleresult, n2xn, xc, xn, n,
+																			l2sw, c };
 																}
 															}
 														}
@@ -1780,7 +1779,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	}
 
 	public static final Object[] pattern_left2southwest_11_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject l2sw, EObject n, EObject xc, EObject c, EObject xn) {
+			PerformRuleResult ruleresult, EObject xc, EObject xn, EObject n, EObject l2sw, EObject c) {
 		EMoflonEdge n__c____l = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge l2sw__xc____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge l2sw__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1807,13 +1806,13 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		l2sw__xc____target.setName(l2sw__xc____target_name_prime);
 		l2sw__c____source.setName(l2sw__c____source_name_prime);
 		xn__xc____sw.setName(xn__xc____sw_name_prime);
-		return new Object[] { ruleresult, l2sw, n, xc, c, xn, n__c____l, l2sw__xc____target, l2sw__c____source,
+		return new Object[] { ruleresult, xc, xn, n, l2sw, c, n__c____l, l2sw__xc____target, l2sw__c____source,
 				xn__xc____sw };
 	}
 
 	public static final void pattern_left2southwest_11_5_registerobjects_expressionBBBBBBBB(left2southwest _this,
-			PerformRuleResult ruleresult, EObject l2sw, EObject n, EObject n2xn, EObject xc, EObject c, EObject xn) {
-		_this.registerObjects_BWD(ruleresult, l2sw, n, n2xn, xc, c, xn);
+			PerformRuleResult ruleresult, EObject n2xn, EObject xc, EObject xn, EObject n, EObject l2sw, EObject c) {
+		_this.registerObjects_BWD(ruleresult, n2xn, xc, xn, n, l2sw, c);
 
 	}
 
@@ -1886,7 +1885,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_left2southwest_12_2_corematch_blackFFBBB(XBTNode xc, XBTNode xn,
+	public static final Iterable<Object[]> pattern_left2southwest_12_2_corematch_blackFBBFB(XBTNode xc, XBTNode xn,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!xc.equals(xn)) {
@@ -1894,7 +1893,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 					BTNode2XBTnode.class, "target")) {
 				BTNode n = n2xn.getSource();
 				if (n != null) {
-					_result.add(new Object[] { n, n2xn, xc, xn, match });
+					_result.add(new Object[] { n2xn, xc, xn, n, match });
 				}
 
 			}
@@ -1902,14 +1901,14 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_left2southwest_12_3_findcontext_blackBBBB(BTNode n,
-			BTNode2XBTnode n2xn, XBTNode xc, XBTNode xn) {
+	public static final Iterable<Object[]> pattern_left2southwest_12_3_findcontext_blackBBBB(BTNode2XBTnode n2xn,
+			XBTNode xc, XBTNode xn, BTNode n) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!xc.equals(xn)) {
-			if (n.equals(n2xn.getSource())) {
-				if (xc.equals(xn.getSw())) {
-					if (xn.equals(n2xn.getTarget())) {
-						_result.add(new Object[] { n, n2xn, xc, xn });
+			if (xn.equals(n2xn.getTarget())) {
+				if (n.equals(n2xn.getSource())) {
+					if (xc.equals(xn.getSw())) {
+						_result.add(new Object[] { n2xn, xc, xn, n });
 					}
 				}
 			}
@@ -1917,40 +1916,40 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return _result;
 	}
 
-	public static final Object[] pattern_left2southwest_12_3_findcontext_greenBBBBFFFF(BTNode n, BTNode2XBTnode n2xn,
-			XBTNode xc, XBTNode xn) {
+	public static final Object[] pattern_left2southwest_12_3_findcontext_greenBBBBFFFF(BTNode2XBTnode n2xn, XBTNode xc,
+			XBTNode xn, BTNode n) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge n2xn__xn____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge n2xn__n____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge xn__xc____sw = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge n2xn__xn____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String n2xn__xn____target_name_prime = "target";
 		String n2xn__n____source_name_prime = "source";
 		String xn__xc____sw_name_prime = "sw";
-		String n2xn__xn____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(n);
 		isApplicableMatch.getAllContextElements().add(n2xn);
 		isApplicableMatch.getAllContextElements().add(xc);
 		isApplicableMatch.getAllContextElements().add(xn);
+		isApplicableMatch.getAllContextElements().add(n);
+		n2xn__xn____target.setSrc(n2xn);
+		n2xn__xn____target.setTrg(xn);
+		isApplicableMatch.getAllContextElements().add(n2xn__xn____target);
 		n2xn__n____source.setSrc(n2xn);
 		n2xn__n____source.setTrg(n);
 		isApplicableMatch.getAllContextElements().add(n2xn__n____source);
 		xn__xc____sw.setSrc(xn);
 		xn__xc____sw.setTrg(xc);
 		isApplicableMatch.getAllContextElements().add(xn__xc____sw);
-		n2xn__xn____target.setSrc(n2xn);
-		n2xn__xn____target.setTrg(xn);
-		isApplicableMatch.getAllContextElements().add(n2xn__xn____target);
+		n2xn__xn____target.setName(n2xn__xn____target_name_prime);
 		n2xn__n____source.setName(n2xn__n____source_name_prime);
 		xn__xc____sw.setName(xn__xc____sw_name_prime);
-		n2xn__xn____target.setName(n2xn__xn____target_name_prime);
-		return new Object[] { n, n2xn, xc, xn, isApplicableMatch, n2xn__n____source, xn__xc____sw, n2xn__xn____target };
+		return new Object[] { n2xn, xc, xn, n, isApplicableMatch, n2xn__xn____target, n2xn__n____source, xn__xc____sw };
 	}
 
 	public static final Object[] pattern_left2southwest_12_4_solveCSP_bindingFBBBBBB(left2southwest _this,
-			IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn, XBTNode xc, XBTNode xn) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, n, n2xn, xc, xn);
+			IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xc, XBTNode xn, BTNode n) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, n2xn, xc, xn, n);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, n, n2xn, xc, xn };
+			return new Object[] { csp, _this, isApplicableMatch, n2xn, xc, xn, n };
 		}
 		return null;
 	}
@@ -1960,9 +1959,9 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	}
 
 	public static final Object[] pattern_left2southwest_12_4_solveCSP_bindingAndBlackFBBBBBB(left2southwest _this,
-			IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn, XBTNode xc, XBTNode xn) {
+			IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xc, XBTNode xn, BTNode n) {
 		Object[] result_pattern_left2southwest_12_4_solveCSP_binding = pattern_left2southwest_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, n, n2xn, xc, xn);
+				_this, isApplicableMatch, n2xn, xc, xn, n);
 		if (result_pattern_left2southwest_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_left2southwest_12_4_solveCSP_binding[0];
 
@@ -1970,7 +1969,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 					csp);
 			if (result_pattern_left2southwest_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, n, n2xn, xc, xn };
+				return new Object[] { csp, _this, isApplicableMatch, n2xn, xc, xn, n };
 			}
 		}
 		return null;
@@ -2059,10 +2058,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	public static final Object[] pattern_left2southwest_20_2_testcorematchandDECs_black_nac_0BB(XBTNode xc,
 			XBTNode xn) {
 		if (!xc.equals(xn)) {
-			XBTNode __DEC_xc_w_773515 = xc.getW();
-			if (__DEC_xc_w_773515 != null) {
-				if (!xc.equals(__DEC_xc_w_773515)) {
-					if (!xn.equals(__DEC_xc_w_773515)) {
+			XBTNode __DEC_xc_w_198210 = xc.getW();
+			if (__DEC_xc_w_198210 != null) {
+				if (!xc.equals(__DEC_xc_w_198210)) {
+					if (!xn.equals(__DEC_xc_w_198210)) {
 						return new Object[] { xc, xn };
 					}
 				}
@@ -2075,10 +2074,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	public static final Object[] pattern_left2southwest_20_2_testcorematchandDECs_black_nac_1BB(XBTNode xc,
 			XBTNode xn) {
 		if (!xc.equals(xn)) {
-			XBTNode __DEC_xc_e_451943 = xc.getE();
-			if (__DEC_xc_e_451943 != null) {
-				if (!xc.equals(__DEC_xc_e_451943)) {
-					if (!xn.equals(__DEC_xc_e_451943)) {
+			XBTNode __DEC_xc_e_747125 = xc.getE();
+			if (__DEC_xc_e_747125 != null) {
+				if (!xc.equals(__DEC_xc_e_747125)) {
+					if (!xn.equals(__DEC_xc_e_747125)) {
 						return new Object[] { xc, xn };
 					}
 				}
@@ -2091,10 +2090,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	public static final Object[] pattern_left2southwest_20_2_testcorematchandDECs_black_nac_2BB(XBTNode xc,
 			XBTNode xn) {
 		if (!xc.equals(xn)) {
-			for (XBTNode __DEC_xc_w_21936 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
+			for (XBTNode __DEC_xc_w_371171 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
 					XBTNode.class, "w")) {
-				if (!xc.equals(__DEC_xc_w_21936)) {
-					if (!xn.equals(__DEC_xc_w_21936)) {
+				if (!xc.equals(__DEC_xc_w_371171)) {
+					if (!xn.equals(__DEC_xc_w_371171)) {
 						return new Object[] { xc, xn };
 					}
 				}
@@ -2106,10 +2105,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	public static final Object[] pattern_left2southwest_20_2_testcorematchandDECs_black_nac_3BB(XBTNode xc,
 			XBTNode xn) {
 		if (!xc.equals(xn)) {
-			for (XBTNode __DEC_xc_se_483241 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
+			for (XBTNode __DEC_xc_se_279238 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
 					XBTNode.class, "se")) {
-				if (!xc.equals(__DEC_xc_se_483241)) {
-					if (!xn.equals(__DEC_xc_se_483241)) {
+				if (!xc.equals(__DEC_xc_se_279238)) {
+					if (!xn.equals(__DEC_xc_se_279238)) {
 						return new Object[] { xc, xn };
 					}
 				}
@@ -2121,10 +2120,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	public static final Object[] pattern_left2southwest_20_2_testcorematchandDECs_black_nac_4BB(XBTNode xc,
 			XBTNode xn) {
 		if (!xc.equals(xn)) {
-			for (XBTNode __DEC_xc_e_528546 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
+			for (XBTNode __DEC_xc_e_190470 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
 					XBTNode.class, "e")) {
-				if (!xc.equals(__DEC_xc_e_528546)) {
-					if (!xn.equals(__DEC_xc_e_528546)) {
+				if (!xc.equals(__DEC_xc_e_190470)) {
+					if (!xn.equals(__DEC_xc_e_190470)) {
 						return new Object[] { xc, xn };
 					}
 				}
@@ -2287,10 +2286,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 
 	public static final Object[] pattern_left2southwest_21_2_testcorematchandDECs_black_nac_0BB(BTNode c, BTNode n) {
 		if (!c.equals(n)) {
-			for (BTNode __DEC_c_r_918886 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+			for (BTNode __DEC_c_r_235619 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 					BTNode.class, "r")) {
-				if (!c.equals(__DEC_c_r_918886)) {
-					if (!n.equals(__DEC_c_r_918886)) {
+				if (!c.equals(__DEC_c_r_235619)) {
+					if (!n.equals(__DEC_c_r_235619)) {
 						return new Object[] { c, n };
 					}
 				}
@@ -2384,25 +2383,25 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_left2southwest_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
-			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("n");
-		EObject _localVariable_1 = targetMatch.getObject("xc");
-		EObject _localVariable_2 = sourceMatch.getObject("c");
-		EObject _localVariable_3 = targetMatch.getObject("xn");
-		EObject tmpN = _localVariable_0;
-		EObject tmpXc = _localVariable_1;
-		EObject tmpC = _localVariable_2;
-		EObject tmpXn = _localVariable_3;
-		if (tmpN instanceof BTNode) {
-			BTNode n = (BTNode) tmpN;
-			if (tmpXc instanceof XBTNode) {
-				XBTNode xc = (XBTNode) tmpXc;
-				if (tmpC instanceof BTNode) {
-					BTNode c = (BTNode) tmpC;
-					if (tmpXn instanceof XBTNode) {
-						XBTNode xn = (XBTNode) tmpXn;
-						return new Object[] { n, xc, c, xn, sourceMatch, targetMatch };
+	public static final Object[] pattern_left2southwest_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
+			Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("xc");
+		EObject _localVariable_1 = targetMatch.getObject("xn");
+		EObject _localVariable_2 = sourceMatch.getObject("n");
+		EObject _localVariable_3 = sourceMatch.getObject("c");
+		EObject tmpXc = _localVariable_0;
+		EObject tmpXn = _localVariable_1;
+		EObject tmpN = _localVariable_2;
+		EObject tmpC = _localVariable_3;
+		if (tmpXc instanceof XBTNode) {
+			XBTNode xc = (XBTNode) tmpXc;
+			if (tmpXn instanceof XBTNode) {
+				XBTNode xn = (XBTNode) tmpXn;
+				if (tmpN instanceof BTNode) {
+					BTNode n = (BTNode) tmpN;
+					if (tmpC instanceof BTNode) {
+						BTNode c = (BTNode) tmpC;
+						return new Object[] { xc, xn, n, c, targetMatch, sourceMatch };
 					}
 				}
 			}
@@ -2410,12 +2409,12 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return null;
 	}
 
-	public static final Object[] pattern_left2southwest_24_2_matchsrctrgcontext_blackBBBBBB(BTNode n, XBTNode xc,
-			BTNode c, XBTNode xn, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_left2southwest_24_2_matchsrctrgcontext_blackBBBBBB(XBTNode xc, XBTNode xn,
+			BTNode n, BTNode c, Match sourceMatch, Match targetMatch) {
 		if (!xc.equals(xn)) {
 			if (!c.equals(n)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { n, xc, c, xn, sourceMatch, targetMatch };
+					return new Object[] { xc, xn, n, c, sourceMatch, targetMatch };
 				}
 			}
 		}
@@ -2425,29 +2424,29 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	public static final Object[] pattern_left2southwest_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_left2southwest_24_2_matchsrctrgcontext_binding = pattern_left2southwest_24_2_matchsrctrgcontext_bindingFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_left2southwest_24_2_matchsrctrgcontext_binding != null) {
-			BTNode n = (BTNode) result_pattern_left2southwest_24_2_matchsrctrgcontext_binding[0];
-			XBTNode xc = (XBTNode) result_pattern_left2southwest_24_2_matchsrctrgcontext_binding[1];
-			BTNode c = (BTNode) result_pattern_left2southwest_24_2_matchsrctrgcontext_binding[2];
-			XBTNode xn = (XBTNode) result_pattern_left2southwest_24_2_matchsrctrgcontext_binding[3];
+			XBTNode xc = (XBTNode) result_pattern_left2southwest_24_2_matchsrctrgcontext_binding[0];
+			XBTNode xn = (XBTNode) result_pattern_left2southwest_24_2_matchsrctrgcontext_binding[1];
+			BTNode n = (BTNode) result_pattern_left2southwest_24_2_matchsrctrgcontext_binding[2];
+			BTNode c = (BTNode) result_pattern_left2southwest_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_left2southwest_24_2_matchsrctrgcontext_black = pattern_left2southwest_24_2_matchsrctrgcontext_blackBBBBBB(
-					n, xc, c, xn, sourceMatch, targetMatch);
+					xc, xn, n, c, sourceMatch, targetMatch);
 			if (result_pattern_left2southwest_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { n, xc, c, xn, sourceMatch, targetMatch };
+				return new Object[] { xc, xn, n, c, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_left2southwest_24_3_solvecsp_bindingFBBBBBBB(left2southwest _this, BTNode n,
-			XBTNode xc, BTNode c, XBTNode xn, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(n, xc, c, xn, sourceMatch, targetMatch);
+	public static final Object[] pattern_left2southwest_24_3_solvecsp_bindingFBBBBBBB(left2southwest _this, XBTNode xc,
+			XBTNode xn, BTNode n, BTNode c, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(xc, xn, n, c, sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, n, xc, c, xn, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, xc, xn, n, c, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2457,9 +2456,9 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	}
 
 	public static final Object[] pattern_left2southwest_24_3_solvecsp_bindingAndBlackFBBBBBBB(left2southwest _this,
-			BTNode n, XBTNode xc, BTNode c, XBTNode xn, Match sourceMatch, Match targetMatch) {
+			XBTNode xc, XBTNode xn, BTNode n, BTNode c, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_left2southwest_24_3_solvecsp_binding = pattern_left2southwest_24_3_solvecsp_bindingFBBBBBBB(
-				_this, n, xc, c, xn, sourceMatch, targetMatch);
+				_this, xc, xn, n, c, sourceMatch, targetMatch);
 		if (result_pattern_left2southwest_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_left2southwest_24_3_solvecsp_binding[0];
 
@@ -2467,7 +2466,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 					csp);
 			if (result_pattern_left2southwest_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, n, xc, c, xn, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, xc, xn, n, c, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2479,14 +2478,14 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_left2southwest_24_5_matchcorrcontext_blackBFBBB(BTNode n, XBTNode xn,
+	public static final Iterable<Object[]> pattern_left2southwest_24_5_matchcorrcontext_blackFBBBB(XBTNode xn, BTNode n,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (BTNode2XBTnode n2xn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n,
-					BTNode2XBTnode.class, "source")) {
-				if (xn.equals(n2xn.getTarget())) {
-					_result.add(new Object[] { n, n2xn, xn, sourceMatch, targetMatch });
+			for (BTNode2XBTnode n2xn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
+					BTNode2XBTnode.class, "target")) {
+				if (n.equals(n2xn.getSource())) {
+					_result.add(new Object[] { n2xn, xn, n, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2504,23 +2503,23 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return new Object[] { n2xn, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_left2southwest_24_6_createcorrespondence_blackBBBBB(BTNode n, XBTNode xc,
-			BTNode c, XBTNode xn, CCMatch ccMatch) {
+	public static final Object[] pattern_left2southwest_24_6_createcorrespondence_blackBBBBB(XBTNode xc, XBTNode xn,
+			BTNode n, BTNode c, CCMatch ccMatch) {
 		if (!xc.equals(xn)) {
 			if (!c.equals(n)) {
-				return new Object[] { n, xc, c, xn, ccMatch };
+				return new Object[] { xc, xn, n, c, ccMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_left2southwest_24_6_createcorrespondence_greenFBBB(XBTNode xc, BTNode c,
+	public static final Object[] pattern_left2southwest_24_6_createcorrespondence_greenBFBB(XBTNode xc, BTNode c,
 			CCMatch ccMatch) {
 		BTNode2XBTnode l2sw = Btree2xbtreeFactory.eINSTANCE.createBTNode2XBTnode();
 		l2sw.setTarget(xc);
 		l2sw.setSource(c);
 		ccMatch.getCreateCorr().add(l2sw);
-		return new Object[] { l2sw, xc, c, ccMatch };
+		return new Object[] { xc, l2sw, c, ccMatch };
 	}
 
 	public static final Object[] pattern_left2southwest_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2545,10 +2544,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 
 	public static final Object[] pattern_left2southwest_27_1_matchtggpattern_black_nac_0BB(BTNode c, BTNode n) {
 		if (!c.equals(n)) {
-			for (BTNode __DEC_c_r_108865 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+			for (BTNode __DEC_c_r_350171 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 					BTNode.class, "r")) {
-				if (!c.equals(__DEC_c_r_108865)) {
-					if (!n.equals(__DEC_c_r_108865)) {
+				if (!c.equals(__DEC_c_r_350171)) {
+					if (!n.equals(__DEC_c_r_350171)) {
 						return new Object[] { c, n };
 					}
 				}
@@ -2589,10 +2588,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 
 	public static final Object[] pattern_left2southwest_28_1_matchtggpattern_black_nac_0BB(XBTNode xc, XBTNode xn) {
 		if (!xc.equals(xn)) {
-			XBTNode __DEC_xc_w_907991 = xc.getW();
-			if (__DEC_xc_w_907991 != null) {
-				if (!xc.equals(__DEC_xc_w_907991)) {
-					if (!xn.equals(__DEC_xc_w_907991)) {
+			XBTNode __DEC_xc_w_988232 = xc.getW();
+			if (__DEC_xc_w_988232 != null) {
+				if (!xc.equals(__DEC_xc_w_988232)) {
+					if (!xn.equals(__DEC_xc_w_988232)) {
 						return new Object[] { xc, xn };
 					}
 				}
@@ -2604,10 +2603,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 
 	public static final Object[] pattern_left2southwest_28_1_matchtggpattern_black_nac_1BB(XBTNode xc, XBTNode xn) {
 		if (!xc.equals(xn)) {
-			XBTNode __DEC_xc_e_930536 = xc.getE();
-			if (__DEC_xc_e_930536 != null) {
-				if (!xc.equals(__DEC_xc_e_930536)) {
-					if (!xn.equals(__DEC_xc_e_930536)) {
+			XBTNode __DEC_xc_e_831286 = xc.getE();
+			if (__DEC_xc_e_831286 != null) {
+				if (!xc.equals(__DEC_xc_e_831286)) {
+					if (!xn.equals(__DEC_xc_e_831286)) {
 						return new Object[] { xc, xn };
 					}
 				}
@@ -2619,10 +2618,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 
 	public static final Object[] pattern_left2southwest_28_1_matchtggpattern_black_nac_2BB(XBTNode xc, XBTNode xn) {
 		if (!xc.equals(xn)) {
-			for (XBTNode __DEC_xc_w_906411 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
+			for (XBTNode __DEC_xc_w_202471 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
 					XBTNode.class, "w")) {
-				if (!xc.equals(__DEC_xc_w_906411)) {
-					if (!xn.equals(__DEC_xc_w_906411)) {
+				if (!xc.equals(__DEC_xc_w_202471)) {
+					if (!xn.equals(__DEC_xc_w_202471)) {
 						return new Object[] { xc, xn };
 					}
 				}
@@ -2633,10 +2632,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 
 	public static final Object[] pattern_left2southwest_28_1_matchtggpattern_black_nac_3BB(XBTNode xc, XBTNode xn) {
 		if (!xc.equals(xn)) {
-			for (XBTNode __DEC_xc_se_577991 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
+			for (XBTNode __DEC_xc_se_342580 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
 					XBTNode.class, "se")) {
-				if (!xc.equals(__DEC_xc_se_577991)) {
-					if (!xn.equals(__DEC_xc_se_577991)) {
+				if (!xc.equals(__DEC_xc_se_342580)) {
+					if (!xn.equals(__DEC_xc_se_342580)) {
 						return new Object[] { xc, xn };
 					}
 				}
@@ -2647,10 +2646,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 
 	public static final Object[] pattern_left2southwest_28_1_matchtggpattern_black_nac_4BB(XBTNode xc, XBTNode xn) {
 		if (!xc.equals(xn)) {
-			for (XBTNode __DEC_xc_e_324500 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
+			for (XBTNode __DEC_xc_e_326481 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xc,
 					XBTNode.class, "e")) {
-				if (!xc.equals(__DEC_xc_e_324500)) {
-					if (!xn.equals(__DEC_xc_e_324500)) {
+				if (!xc.equals(__DEC_xc_e_326481)) {
+					if (!xn.equals(__DEC_xc_e_326481)) {
 						return new Object[] { xc, xn };
 					}
 				}
@@ -2719,14 +2718,6 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	}
 
 	public static final Object[] pattern_left2southwest_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, BTNode n) {
-		if (ruleResult.getSourceObjects().contains(n)) {
-			return new Object[] { ruleResult, n };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_left2southwest_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, BTNode2XBTnode n2xn) {
 		if (ruleResult.getCorrObjects().contains(n2xn)) {
 			return new Object[] { ruleResult, n2xn };
@@ -2734,10 +2725,18 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return null;
 	}
 
-	public static final Object[] pattern_left2southwest_29_2_isapplicablecore_black_nac_2BB(
+	public static final Object[] pattern_left2southwest_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, XBTNode xn) {
 		if (ruleResult.getTargetObjects().contains(xn)) {
 			return new Object[] { ruleResult, xn };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_left2southwest_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, BTNode n) {
+		if (ruleResult.getSourceObjects().contains(n)) {
+			return new Object[] { ruleResult, n };
 		}
 		return null;
 	}
@@ -2749,16 +2748,17 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 			for (EObject tmpN2xn : n2xnList.getEntryObjects()) {
 				if (tmpN2xn instanceof BTNode2XBTnode) {
 					BTNode2XBTnode n2xn = (BTNode2XBTnode) tmpN2xn;
-					BTNode n = n2xn.getSource();
-					if (n != null) {
-						XBTNode xn = n2xn.getTarget();
-						if (xn != null) {
-							if (pattern_left2southwest_29_2_isapplicablecore_black_nac_1BB(ruleResult, n2xn) == null) {
-								if (pattern_left2southwest_29_2_isapplicablecore_black_nac_0BB(ruleResult, n) == null) {
+					XBTNode xn = n2xn.getTarget();
+					if (xn != null) {
+						BTNode n = n2xn.getSource();
+						if (n != null) {
+							if (pattern_left2southwest_29_2_isapplicablecore_black_nac_0BB(ruleResult, n2xn) == null) {
+								if (pattern_left2southwest_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+										xn) == null) {
 									if (pattern_left2southwest_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											xn) == null) {
+											n) == null) {
 										_result.add(
-												new Object[] { n2xnList, n, n2xn, xn, ruleEntryContainer, ruleResult });
+												new Object[] { n2xnList, n2xn, xn, n, ruleEntryContainer, ruleResult });
 									}
 								}
 							}
@@ -2773,12 +2773,12 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	}
 
 	public static final Object[] pattern_left2southwest_29_3_solveCSP_bindingFBBBBBB(left2southwest _this,
-			IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn, XBTNode xn,
+			IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xn, BTNode n,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, n, n2xn, xn, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, n2xn, xn, n, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, n, n2xn, xn, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, n2xn, xn, n, ruleResult };
 		}
 		return null;
 	}
@@ -2788,10 +2788,10 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 	}
 
 	public static final Object[] pattern_left2southwest_29_3_solveCSP_bindingAndBlackFBBBBBB(left2southwest _this,
-			IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn, XBTNode xn,
+			IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xn, BTNode n,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_left2southwest_29_3_solveCSP_binding = pattern_left2southwest_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, n, n2xn, xn, ruleResult);
+				_this, isApplicableMatch, n2xn, xn, n, ruleResult);
 		if (result_pattern_left2southwest_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_left2southwest_29_3_solveCSP_binding[0];
 
@@ -2799,7 +2799,7 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 					csp);
 			if (result_pattern_left2southwest_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, n, n2xn, xn, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, n2xn, xn, n, ruleResult };
 			}
 		}
 		return null;
@@ -2811,34 +2811,34 @@ public class left2southwestImpl extends AbstractRuleImpl implements left2southwe
 		return _result;
 	}
 
-	public static final Object[] pattern_left2southwest_29_5_checknacs_blackBBB(BTNode n, BTNode2XBTnode n2xn,
-			XBTNode xn) {
-		return new Object[] { n, n2xn, xn };
+	public static final Object[] pattern_left2southwest_29_5_checknacs_blackBBB(BTNode2XBTnode n2xn, XBTNode xn,
+			BTNode n) {
+		return new Object[] { n2xn, xn, n };
 	}
 
-	public static final Object[] pattern_left2southwest_29_6_perform_blackBBBB(BTNode n, BTNode2XBTnode n2xn,
-			XBTNode xn, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { n, n2xn, xn, ruleResult };
+	public static final Object[] pattern_left2southwest_29_6_perform_blackBBBB(BTNode2XBTnode n2xn, XBTNode xn,
+			BTNode n, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { n2xn, xn, n, ruleResult };
 	}
 
-	public static final Object[] pattern_left2southwest_29_6_perform_greenFBFFBB(BTNode n, XBTNode xn,
+	public static final Object[] pattern_left2southwest_29_6_perform_greenFBBFFB(XBTNode xn, BTNode n,
 			ModelgeneratorRuleResult ruleResult) {
-		BTNode2XBTnode l2sw = Btree2xbtreeFactory.eINSTANCE.createBTNode2XBTnode();
 		XBTNode xc = XbtreeFactory.eINSTANCE.createXBTNode();
+		BTNode2XBTnode l2sw = Btree2xbtreeFactory.eINSTANCE.createBTNode2XBTnode();
 		BTNode c = BtreeFactory.eINSTANCE.createBTNode();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(l2sw);
-		l2sw.setTarget(xc);
 		xn.setSw(xc);
 		ruleResult.getTargetObjects().add(xc);
+		l2sw.setTarget(xc);
+		ruleResult.getCorrObjects().add(l2sw);
 		n.setL(c);
 		l2sw.setSource(c);
 		ruleResult.getSourceObjects().add(c);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { l2sw, n, xc, c, xn, ruleResult };
+		return new Object[] { xc, xn, n, l2sw, c, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_left2southwest_29_7_expressionFB(

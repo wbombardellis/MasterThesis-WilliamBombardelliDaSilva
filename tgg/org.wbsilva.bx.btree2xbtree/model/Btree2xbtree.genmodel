@@ -12,149 +12,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//BTNode2XBTnode/target"/>
     </genClasses>
     <nestedGenPackages prefix="Rules" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules">
-      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast">
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD/n"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/perform_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/perform_FWD/isApplicableMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_FWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_FWD/n"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_FWD/n"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_FWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD/n2xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD/xn"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_FWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/l2se"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/xc"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/n2xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/xn"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_FWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD/xc"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD/xn"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/perform_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/perform_BWD/isApplicableMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_BWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_BWD/xc"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_BWD/xn"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_BWD/xc"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_BWD/xn"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_BWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD/xc"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD/n2xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD/xn"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_BWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/l2se"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/xc"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/n2xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/xn"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_BWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD_EMoflonEdge_39">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD_EMoflonEdge_39/_edge_se"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD_EMoflonEdge_39">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD_EMoflonEdge_39/_edge_r"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkAttributes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkAttributes_FWD/__tripleMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkAttributes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkAttributes_BWD/__tripleMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_CC/targetMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/xc"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/targetMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_CC/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_FWD/n"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_BWD/xc"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_BWD/xn"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel/ruleEntryContainer"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel/n2xnParameter"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD/n2xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD/xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD/ruleResult"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_checkCsp_BWD/csp"/>
-        </genOperations>
-      </genClasses>
       <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest">
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_FWD/match"/>
@@ -182,22 +39,22 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_FWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_FWD/n"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_FWD/n2xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_FWD/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_FWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_FWD/c"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_checkCsp_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_checkCsp_FWD/csp"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD/l2sw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD/n"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD/n2xn"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD/xc"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD/l2sw"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD/c"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkTypes_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkTypes_FWD/match"/>
@@ -228,31 +85,31 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_BWD/n"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_BWD/n2xn"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_BWD/xc"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_BWD/n"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_checkCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_checkCsp_BWD/csp"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD/l2sw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD/n"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD/n2xn"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD/xc"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD/l2sw"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD/c"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkTypes_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkTypes_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_BWD_EMoflonEdge_40">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_BWD_EMoflonEdge_40/_edge_sw"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_BWD_EMoflonEdge_48">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_BWD_EMoflonEdge_48/_edge_sw"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_FWD_EMoflonEdge_40">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_FWD_EMoflonEdge_40/_edge_l"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_FWD_EMoflonEdge_48">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_FWD_EMoflonEdge_48/_edge_l"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkAttributes_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkAttributes_FWD/__tripleMatch"/>
@@ -265,10 +122,10 @@
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_CC/targetMatch"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_CC/n"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_CC/xc"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_CC/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_CC/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_CC/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_CC/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_CC/sourceMatch"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_CC/targetMatch"/>
         </genOperations>
@@ -289,174 +146,156 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_solveCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_solveCsp_BWD/n"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_solveCsp_BWD/n2xn"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_solveCsp_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_solveCsp_BWD/n"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_solveCsp_BWD/ruleResult"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_checkCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_checkCsp_BWD/csp"/>
         </genOperations>
       </genClasses>
-      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest">
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD/cl"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD/cr"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD/n"/>
+      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast">
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD/c"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/perform_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/perform_FWD/isApplicableMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/perform_FWD/isApplicableMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_FWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_FWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_FWD/cl"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_FWD/cr"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_FWD/n"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_FWD/c"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_FWD/cl"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_FWD/cr"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_FWD/n"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_FWD/c"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_checkCsp_FWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_FWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/n2xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/cl"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/cr"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/xn"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD/n2xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD/c"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_FWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_FWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/n2xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/cl"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/cl2xcsw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/cr"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/cr2xcse"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/xcse"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/xcsw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/xn"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/n2xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/xc"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/l2se"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD/c"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkTypes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkTypes_FWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_FWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD/xcse"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD/xcsw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD/xn"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD/xc"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/perform_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/perform_BWD/isApplicableMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/perform_BWD/isApplicableMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_BWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_BWD/xcse"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_BWD/xcsw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_BWD/xn"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_BWD/xc"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_BWD/xcse"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_BWD/xcsw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_BWD/xn"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_BWD/xc"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_checkCsp_BWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_BWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/n2xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/xcse"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/xcsw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/xn"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD/n2xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD/xc"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_BWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_BWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/n2xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/cl"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/cl2xcsw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/cr"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/cr2xcse"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/xcse"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/xcsw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/xn"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/n2xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/xc"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/l2se"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD/c"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkTypes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkTypes_BWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD_EMoflonEdge_41">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD_EMoflonEdge_41/_edge_se"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD_EMoflonEdge_49">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_BWD_EMoflonEdge_49/_edge_se"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD_EMoflonEdge_41">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD_EMoflonEdge_41/_edge_l"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD_EMoflonEdge_49">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_FWD_EMoflonEdge_49/_edge_r"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkAttributes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkAttributes_FWD/__tripleMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkAttributes_FWD/__tripleMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkAttributes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkAttributes_BWD/__tripleMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkAttributes_BWD/__tripleMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_CC/targetMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_CC/targetMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/cl"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/cr"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/xcse"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/xcsw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/targetMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/xc"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC/targetMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_CC/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_CC/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_FWD/cl"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_FWD/cr"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_FWD/n"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_FWD/c"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_BWD/xcse"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_BWD/xcsw"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_BWD/xn"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkDEC_BWD/xc"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel/ruleEntryContainer"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel/n2xnParameter"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel/n2xnParameter"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD/n2xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD/n"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD/xn"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD/ruleResult"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD/n2xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD/ruleResult"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_checkCsp_BWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_checkCsp_BWD/csp"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node">
@@ -490,9 +329,9 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_FWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_FWD/xn"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_FWD/n2xn"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_FWD/xn"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/checkTypes_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/checkTypes_FWD/match"/>
@@ -527,18 +366,18 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_BWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_BWD/xn"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_BWD/n2xn"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_BWD/xn"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/checkTypes_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/checkTypes_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isAppropriate_BWD_XBTNode_4">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isAppropriate_BWD_XBTNode_4/xn"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isAppropriate_BWD_XBTNode_1">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isAppropriate_BWD_XBTNode_1/xn"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isAppropriate_FWD_BTNode_4">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isAppropriate_FWD_BTNode_4/n"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isAppropriate_FWD_BTNode_1">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isAppropriate_FWD_BTNode_1/n"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/checkAttributes_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/checkAttributes_FWD/__tripleMatch"/>
@@ -551,8 +390,8 @@
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_CC/targetMatch"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_solveCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_solveCsp_CC/xn"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_solveCsp_CC/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_solveCsp_CC/xn"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_solveCsp_CC/sourceMatch"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_solveCsp_CC/targetMatch"/>
         </genOperations>
@@ -574,6 +413,167 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/generateModel_checkCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest">
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD/cl"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD/cr"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD/n"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_FWD/cl"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_FWD/cr"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_FWD/n"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_FWD/cl"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_FWD/cr"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_FWD/n"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/cl"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/cr"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/n2xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD/xn"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/cl"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/cr2xcse"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/cr"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/xcse"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/n2xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/xcsw"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD/cl2xcsw"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD/xcse"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD/xcsw"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_BWD/xcse"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_BWD/xcsw"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_BWD/xcse"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_BWD/xcsw"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/xcse"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/n2xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD/xcsw"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/cl"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/cr2xcse"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/cr"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/xcse"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/n2xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/xcsw"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD/cl2xcsw"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD_EMoflonEdge_50">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_BWD_EMoflonEdge_50/_edge_w"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD_EMoflonEdge_50">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_FWD_EMoflonEdge_50/_edge_r"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/cl"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/cr"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/xcse"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/xcsw"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_FWD/cl"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_FWD/cr"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_FWD/n"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_BWD/xcse"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkDEC_BWD/xcsw"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel/n2xnParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD/n"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD/n2xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD/xn"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_checkCsp_BWD/csp"/>
         </genOperations>
       </genClasses>
     </nestedGenPackages>

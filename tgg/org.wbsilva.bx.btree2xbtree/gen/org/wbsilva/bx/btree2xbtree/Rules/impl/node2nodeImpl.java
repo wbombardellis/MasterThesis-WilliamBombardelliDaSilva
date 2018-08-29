@@ -147,31 +147,31 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 		}
 		BTNode n = (BTNode) result1_bindingAndBlack[0];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[1];
-		Object[] result1_green = node2nodeImpl.pattern_node2node_1_1_performtransformation_greenFFB(n);
-		XBTNode xn = (XBTNode) result1_green[0];
-		BTNode2XBTnode n2xn = (BTNode2XBTnode) result1_green[1];
+		Object[] result1_green = node2nodeImpl.pattern_node2node_1_1_performtransformation_greenFBF(n);
+		BTNode2XBTnode n2xn = (BTNode2XBTnode) result1_green[0];
+		XBTNode xn = (XBTNode) result1_green[2];
 
-		Object[] result2_black = node2nodeImpl.pattern_node2node_1_2_collecttranslatedelements_blackBBB(xn, n2xn, n);
+		Object[] result2_black = node2nodeImpl.pattern_node2node_1_2_collecttranslatedelements_blackBBB(n2xn, n, xn);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[xn] = " + xn + ", " + "[n2xn] = "
-					+ n2xn + ", " + "[n] = " + n + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[n2xn] = " + n2xn + ", "
+					+ "[n] = " + n + ", " + "[xn] = " + xn + ".");
 		}
-		Object[] result2_green = node2nodeImpl.pattern_node2node_1_2_collecttranslatedelements_greenFBBB(xn, n2xn, n);
+		Object[] result2_green = node2nodeImpl.pattern_node2node_1_2_collecttranslatedelements_greenFBBB(n2xn, n, xn);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = node2nodeImpl.pattern_node2node_1_3_bookkeepingforedges_blackBBBB(ruleresult, xn, n2xn,
-				n);
+		Object[] result3_black = node2nodeImpl.pattern_node2node_1_3_bookkeepingforedges_blackBBBB(ruleresult, n2xn, n,
+				xn);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[xn] = " + xn + ", " + "[n2xn] = " + n2xn + ", " + "[n] = " + n + ".");
+					+ ", " + "[n2xn] = " + n2xn + ", " + "[n] = " + n + ", " + "[xn] = " + xn + ".");
 		}
-		node2nodeImpl.pattern_node2node_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, xn, n2xn, n);
-		//nothing EMoflonEdge n2xn__xn____target = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge n2xn__n____source = (EMoflonEdge) result3_green[5];
+		node2nodeImpl.pattern_node2node_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, n2xn, n, xn);
+		//nothing EMoflonEdge n2xn__n____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge n2xn__xn____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		node2nodeImpl.pattern_node2node_1_5_registerobjects_expressionBBBBB(this, ruleresult, xn, n2xn, n);
+		node2nodeImpl.pattern_node2node_1_5_registerobjects_expressionBBBBB(this, ruleresult, n2xn, n, xn);
 		return node2nodeImpl.pattern_node2node_1_6_expressionFB(ruleresult);
 	}
 
@@ -309,10 +309,10 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject xn, EObject n2xn, EObject n) {
-		ruleresult.registerObject("xn", xn);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject n2xn, EObject n, EObject xn) {
 		ruleresult.registerObject("n2xn", n2xn);
 		ruleresult.registerObject("n", n);
+		ruleresult.registerObject("xn", xn);
 
 	}
 
@@ -385,31 +385,31 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 		}
 		XBTNode xn = (XBTNode) result1_bindingAndBlack[0];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[1];
-		Object[] result1_green = node2nodeImpl.pattern_node2node_11_1_performtransformation_greenBFF(xn);
-		BTNode2XBTnode n2xn = (BTNode2XBTnode) result1_green[1];
-		BTNode n = (BTNode) result1_green[2];
+		Object[] result1_green = node2nodeImpl.pattern_node2node_11_1_performtransformation_greenFFB(xn);
+		BTNode2XBTnode n2xn = (BTNode2XBTnode) result1_green[0];
+		BTNode n = (BTNode) result1_green[1];
 
-		Object[] result2_black = node2nodeImpl.pattern_node2node_11_2_collecttranslatedelements_blackBBB(xn, n2xn, n);
+		Object[] result2_black = node2nodeImpl.pattern_node2node_11_2_collecttranslatedelements_blackBBB(n2xn, n, xn);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[xn] = " + xn + ", " + "[n2xn] = "
-					+ n2xn + ", " + "[n] = " + n + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[n2xn] = " + n2xn + ", "
+					+ "[n] = " + n + ", " + "[xn] = " + xn + ".");
 		}
-		Object[] result2_green = node2nodeImpl.pattern_node2node_11_2_collecttranslatedelements_greenFBBB(xn, n2xn, n);
+		Object[] result2_green = node2nodeImpl.pattern_node2node_11_2_collecttranslatedelements_greenFBBB(n2xn, n, xn);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = node2nodeImpl.pattern_node2node_11_3_bookkeepingforedges_blackBBBB(ruleresult, xn,
-				n2xn, n);
+		Object[] result3_black = node2nodeImpl.pattern_node2node_11_3_bookkeepingforedges_blackBBBB(ruleresult, n2xn, n,
+				xn);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[xn] = " + xn + ", " + "[n2xn] = " + n2xn + ", " + "[n] = " + n + ".");
+					+ ", " + "[n2xn] = " + n2xn + ", " + "[n] = " + n + ", " + "[xn] = " + xn + ".");
 		}
-		node2nodeImpl.pattern_node2node_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, xn, n2xn, n);
-		//nothing EMoflonEdge n2xn__xn____target = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge n2xn__n____source = (EMoflonEdge) result3_green[5];
+		node2nodeImpl.pattern_node2node_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, n2xn, n, xn);
+		//nothing EMoflonEdge n2xn__n____source = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge n2xn__xn____target = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		node2nodeImpl.pattern_node2node_11_5_registerobjects_expressionBBBBB(this, ruleresult, xn, n2xn, n);
+		node2nodeImpl.pattern_node2node_11_5_registerobjects_expressionBBBBB(this, ruleresult, n2xn, n, xn);
 		return node2nodeImpl.pattern_node2node_11_6_expressionFB(ruleresult);
 	}
 
@@ -547,10 +547,10 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject xn, EObject n2xn, EObject n) {
-		ruleresult.registerObject("xn", xn);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject n2xn, EObject n, EObject xn) {
 		ruleresult.registerObject("n2xn", n2xn);
 		ruleresult.registerObject("n", n);
+		ruleresult.registerObject("xn", xn);
 
 	}
 
@@ -568,7 +568,7 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_XBTNode_4(XBTNode xn) {
+	public EObjectContainer isAppropriate_BWD_XBTNode_1(XBTNode xn) {
 
 		Object[] result1_bindingAndBlack = node2nodeImpl
 				.pattern_node2node_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -618,7 +618,7 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_BTNode_4(BTNode n) {
+	public EObjectContainer isAppropriate_FWD_BTNode_1(BTNode n) {
 
 		Object[] result1_bindingAndBlack = node2nodeImpl
 				.pattern_node2node_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -743,14 +743,14 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		XBTNode xn = (XBTNode) result2_bindingAndBlack[0];
-		BTNode n = (BTNode) result2_bindingAndBlack[1];
+		BTNode n = (BTNode) result2_bindingAndBlack[0];
+		XBTNode xn = (XBTNode) result2_bindingAndBlack[1];
 
-		Object[] result3_bindingAndBlack = node2nodeImpl.pattern_node2node_24_3_solvecsp_bindingAndBlackFBBBBB(this, xn,
-				n, sourceMatch, targetMatch);
+		Object[] result3_bindingAndBlack = node2nodeImpl.pattern_node2node_24_3_solvecsp_bindingAndBlackFBBBBB(this, n,
+				xn, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[xn] = " + xn + ", " + "[n] = " + n + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[n] = " + n + ", " + "[xn] = " + xn + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -763,14 +763,14 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 						targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[2];
 
-				Object[] result6_black = node2nodeImpl.pattern_node2node_24_6_createcorrespondence_blackBBB(xn, n,
+				Object[] result6_black = node2nodeImpl.pattern_node2node_24_6_createcorrespondence_blackBBB(n, xn,
 						ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[xn] = " + xn + ", "
-							+ "[n] = " + n + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[n] = " + n + ", "
+							+ "[xn] = " + xn + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				node2nodeImpl.pattern_node2node_24_6_createcorrespondence_greenBFBB(xn, n, ccMatch);
-				//nothing BTNode2XBTnode n2xn = (BTNode2XBTnode) result6_green[1];
+				node2nodeImpl.pattern_node2node_24_6_createcorrespondence_greenFBBB(n, xn, ccMatch);
+				//nothing BTNode2XBTnode n2xn = (BTNode2XBTnode) result6_green[0];
 
 				Object[] result7_black = node2nodeImpl.pattern_node2node_24_7_addtoreturnedresult_blackBB(result,
 						ccMatch);
@@ -792,7 +792,7 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(XBTNode xn, BTNode n, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(BTNode n, XBTNode xn, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -882,9 +882,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 							"Pattern matching failed." + " Variables: " + "[ruleResult] = " + ruleResult + ".");
 				}
 				node2nodeImpl.pattern_node2node_29_6_perform_greenFFFB(ruleResult);
-				//nothing XBTNode xn = (XBTNode) result6_green[0];
-				//nothing BTNode2XBTnode n2xn = (BTNode2XBTnode) result6_green[1];
-				//nothing BTNode n = (BTNode) result6_green[2];
+				//nothing BTNode2XBTnode n2xn = (BTNode2XBTnode) result6_green[0];
+				//nothing BTNode n = (BTNode) result6_green[1];
+				//nothing XBTNode xn = (XBTNode) result6_green[2];
 
 			} else {
 			}
@@ -980,18 +980,18 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 			return null;
 		case RulesPackage.NODE2NODE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.NODE2NODE___IS_APPROPRIATE_BWD_XBT_NODE_4__XBTNODE:
-			return isAppropriate_BWD_XBTNode_4((XBTNode) arguments.get(0));
-		case RulesPackage.NODE2NODE___IS_APPROPRIATE_FWD_BT_NODE_4__BTNODE:
-			return isAppropriate_FWD_BTNode_4((BTNode) arguments.get(0));
+		case RulesPackage.NODE2NODE___IS_APPROPRIATE_BWD_XBT_NODE_1__XBTNODE:
+			return isAppropriate_BWD_XBTNode_1((XBTNode) arguments.get(0));
+		case RulesPackage.NODE2NODE___IS_APPROPRIATE_FWD_BT_NODE_1__BTNODE:
+			return isAppropriate_FWD_BTNode_1((BTNode) arguments.get(0));
 		case RulesPackage.NODE2NODE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.NODE2NODE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.NODE2NODE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.NODE2NODE___IS_APPLICABLE_SOLVE_CSP_CC__XBTNODE_BTNODE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((XBTNode) arguments.get(0), (BTNode) arguments.get(1),
+		case RulesPackage.NODE2NODE___IS_APPLICABLE_SOLVE_CSP_CC__BTNODE_XBTNODE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((BTNode) arguments.get(0), (XBTNode) arguments.get(1),
 					(Match) arguments.get(2), (Match) arguments.get(3));
 		case RulesPackage.NODE2NODE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1119,34 +1119,34 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 		return null;
 	}
 
-	public static final Object[] pattern_node2node_1_1_performtransformation_greenFFB(BTNode n) {
-		XBTNode xn = XbtreeFactory.eINSTANCE.createXBTNode();
+	public static final Object[] pattern_node2node_1_1_performtransformation_greenFBF(BTNode n) {
 		BTNode2XBTnode n2xn = Btree2xbtreeFactory.eINSTANCE.createBTNode2XBTnode();
-		n2xn.setTarget(xn);
+		XBTNode xn = XbtreeFactory.eINSTANCE.createXBTNode();
 		n2xn.setSource(n);
-		return new Object[] { xn, n2xn, n };
+		n2xn.setTarget(xn);
+		return new Object[] { n2xn, n, xn };
 	}
 
-	public static final Object[] pattern_node2node_1_2_collecttranslatedelements_blackBBB(XBTNode xn,
-			BTNode2XBTnode n2xn, BTNode n) {
-		return new Object[] { xn, n2xn, n };
+	public static final Object[] pattern_node2node_1_2_collecttranslatedelements_blackBBB(BTNode2XBTnode n2xn, BTNode n,
+			XBTNode xn) {
+		return new Object[] { n2xn, n, xn };
 	}
 
-	public static final Object[] pattern_node2node_1_2_collecttranslatedelements_greenFBBB(XBTNode xn,
-			BTNode2XBTnode n2xn, BTNode n) {
+	public static final Object[] pattern_node2node_1_2_collecttranslatedelements_greenFBBB(BTNode2XBTnode n2xn,
+			BTNode n, XBTNode xn) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(xn);
 		ruleresult.getCreatedLinkElements().add(n2xn);
 		ruleresult.getTranslatedElements().add(n);
-		return new Object[] { ruleresult, xn, n2xn, n };
+		ruleresult.getCreatedElements().add(xn);
+		return new Object[] { ruleresult, n2xn, n, xn };
 	}
 
 	public static final Object[] pattern_node2node_1_3_bookkeepingforedges_blackBBBB(PerformRuleResult ruleresult,
-			EObject xn, EObject n2xn, EObject n) {
+			EObject n2xn, EObject n, EObject xn) {
 		if (!n2xn.equals(xn)) {
-			if (!n.equals(xn)) {
-				if (!n.equals(n2xn)) {
-					return new Object[] { ruleresult, xn, n2xn, n };
+			if (!n.equals(n2xn)) {
+				if (!n.equals(xn)) {
+					return new Object[] { ruleresult, n2xn, n, xn };
 				}
 			}
 		}
@@ -1154,27 +1154,27 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_1_3_bookkeepingforedges_greenBBBBFF(PerformRuleResult ruleresult,
-			EObject xn, EObject n2xn, EObject n) {
-		EMoflonEdge n2xn__xn____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			EObject n2xn, EObject n, EObject xn) {
 		EMoflonEdge n2xn__n____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge n2xn__xn____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "node2node";
-		String n2xn__xn____target_name_prime = "target";
 		String n2xn__n____source_name_prime = "source";
-		n2xn__xn____target.setSrc(n2xn);
-		n2xn__xn____target.setTrg(xn);
-		ruleresult.getCreatedEdges().add(n2xn__xn____target);
+		String n2xn__xn____target_name_prime = "target";
 		n2xn__n____source.setSrc(n2xn);
 		n2xn__n____source.setTrg(n);
 		ruleresult.getCreatedEdges().add(n2xn__n____source);
+		n2xn__xn____target.setSrc(n2xn);
+		n2xn__xn____target.setTrg(xn);
+		ruleresult.getCreatedEdges().add(n2xn__xn____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		n2xn__xn____target.setName(n2xn__xn____target_name_prime);
 		n2xn__n____source.setName(n2xn__n____source_name_prime);
-		return new Object[] { ruleresult, xn, n2xn, n, n2xn__xn____target, n2xn__n____source };
+		n2xn__xn____target.setName(n2xn__xn____target_name_prime);
+		return new Object[] { ruleresult, n2xn, n, xn, n2xn__n____source, n2xn__xn____target };
 	}
 
 	public static final void pattern_node2node_1_5_registerobjects_expressionBBBBB(node2node _this,
-			PerformRuleResult ruleresult, EObject xn, EObject n2xn, EObject n) {
-		_this.registerObjects_FWD(ruleresult, xn, n2xn, n);
+			PerformRuleResult ruleresult, EObject n2xn, EObject n, EObject xn) {
+		_this.registerObjects_FWD(ruleresult, n2xn, n, xn);
 
 	}
 
@@ -1423,34 +1423,34 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 		return null;
 	}
 
-	public static final Object[] pattern_node2node_11_1_performtransformation_greenBFF(XBTNode xn) {
+	public static final Object[] pattern_node2node_11_1_performtransformation_greenFFB(XBTNode xn) {
 		BTNode2XBTnode n2xn = Btree2xbtreeFactory.eINSTANCE.createBTNode2XBTnode();
 		BTNode n = BtreeFactory.eINSTANCE.createBTNode();
 		n2xn.setTarget(xn);
 		n2xn.setSource(n);
-		return new Object[] { xn, n2xn, n };
+		return new Object[] { n2xn, n, xn };
 	}
 
-	public static final Object[] pattern_node2node_11_2_collecttranslatedelements_blackBBB(XBTNode xn,
-			BTNode2XBTnode n2xn, BTNode n) {
-		return new Object[] { xn, n2xn, n };
+	public static final Object[] pattern_node2node_11_2_collecttranslatedelements_blackBBB(BTNode2XBTnode n2xn,
+			BTNode n, XBTNode xn) {
+		return new Object[] { n2xn, n, xn };
 	}
 
-	public static final Object[] pattern_node2node_11_2_collecttranslatedelements_greenFBBB(XBTNode xn,
-			BTNode2XBTnode n2xn, BTNode n) {
+	public static final Object[] pattern_node2node_11_2_collecttranslatedelements_greenFBBB(BTNode2XBTnode n2xn,
+			BTNode n, XBTNode xn) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(xn);
 		ruleresult.getCreatedLinkElements().add(n2xn);
 		ruleresult.getCreatedElements().add(n);
-		return new Object[] { ruleresult, xn, n2xn, n };
+		ruleresult.getTranslatedElements().add(xn);
+		return new Object[] { ruleresult, n2xn, n, xn };
 	}
 
 	public static final Object[] pattern_node2node_11_3_bookkeepingforedges_blackBBBB(PerformRuleResult ruleresult,
-			EObject xn, EObject n2xn, EObject n) {
+			EObject n2xn, EObject n, EObject xn) {
 		if (!n2xn.equals(xn)) {
-			if (!n.equals(xn)) {
-				if (!n.equals(n2xn)) {
-					return new Object[] { ruleresult, xn, n2xn, n };
+			if (!n.equals(n2xn)) {
+				if (!n.equals(xn)) {
+					return new Object[] { ruleresult, n2xn, n, xn };
 				}
 			}
 		}
@@ -1458,27 +1458,27 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_11_3_bookkeepingforedges_greenBBBBFF(PerformRuleResult ruleresult,
-			EObject xn, EObject n2xn, EObject n) {
-		EMoflonEdge n2xn__xn____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			EObject n2xn, EObject n, EObject xn) {
 		EMoflonEdge n2xn__n____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge n2xn__xn____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "node2node";
-		String n2xn__xn____target_name_prime = "target";
 		String n2xn__n____source_name_prime = "source";
-		n2xn__xn____target.setSrc(n2xn);
-		n2xn__xn____target.setTrg(xn);
-		ruleresult.getCreatedEdges().add(n2xn__xn____target);
+		String n2xn__xn____target_name_prime = "target";
 		n2xn__n____source.setSrc(n2xn);
 		n2xn__n____source.setTrg(n);
 		ruleresult.getCreatedEdges().add(n2xn__n____source);
+		n2xn__xn____target.setSrc(n2xn);
+		n2xn__xn____target.setTrg(xn);
+		ruleresult.getCreatedEdges().add(n2xn__xn____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		n2xn__xn____target.setName(n2xn__xn____target_name_prime);
 		n2xn__n____source.setName(n2xn__n____source_name_prime);
-		return new Object[] { ruleresult, xn, n2xn, n, n2xn__xn____target, n2xn__n____source };
+		n2xn__xn____target.setName(n2xn__xn____target_name_prime);
+		return new Object[] { ruleresult, n2xn, n, xn, n2xn__n____source, n2xn__xn____target };
 	}
 
 	public static final void pattern_node2node_11_5_registerobjects_expressionBBBBB(node2node _this,
-			PerformRuleResult ruleresult, EObject xn, EObject n2xn, EObject n) {
-		_this.registerObjects_BWD(ruleresult, xn, n2xn, n);
+			PerformRuleResult ruleresult, EObject n2xn, EObject n, EObject xn) {
+		_this.registerObjects_BWD(ruleresult, n2xn, n, xn);
 
 	}
 
@@ -1670,9 +1670,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_20_2_testcorematchandDECs_black_nac_0B(XBTNode xn) {
-		XBTNode __DEC_xn_w_496113 = xn.getW();
-		if (__DEC_xn_w_496113 != null) {
-			if (!xn.equals(__DEC_xn_w_496113)) {
+		XBTNode __DEC_xn_w_502527 = xn.getW();
+		if (__DEC_xn_w_502527 != null) {
+			if (!xn.equals(__DEC_xn_w_502527)) {
 				return new Object[] { xn };
 			}
 		}
@@ -1681,9 +1681,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_20_2_testcorematchandDECs_black_nac_1B(XBTNode xn) {
-		XBTNode __DEC_xn_e_410452 = xn.getE();
-		if (__DEC_xn_e_410452 != null) {
-			if (!xn.equals(__DEC_xn_e_410452)) {
+		XBTNode __DEC_xn_e_160435 = xn.getE();
+		if (__DEC_xn_e_160435 != null) {
+			if (!xn.equals(__DEC_xn_e_160435)) {
 				return new Object[] { xn };
 			}
 		}
@@ -1692,9 +1692,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_20_2_testcorematchandDECs_black_nac_2B(XBTNode xn) {
-		for (XBTNode __DEC_xn_w_852828 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
+		for (XBTNode __DEC_xn_w_118732 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
 				XBTNode.class, "w")) {
-			if (!xn.equals(__DEC_xn_w_852828)) {
+			if (!xn.equals(__DEC_xn_w_118732)) {
 				return new Object[] { xn };
 			}
 		}
@@ -1702,9 +1702,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_20_2_testcorematchandDECs_black_nac_3B(XBTNode xn) {
-		for (XBTNode __DEC_xn_sw_297606 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
+		for (XBTNode __DEC_xn_sw_25365 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
 				XBTNode.class, "sw")) {
-			if (!xn.equals(__DEC_xn_sw_297606)) {
+			if (!xn.equals(__DEC_xn_sw_25365)) {
 				return new Object[] { xn };
 			}
 		}
@@ -1712,9 +1712,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_20_2_testcorematchandDECs_black_nac_4B(XBTNode xn) {
-		for (XBTNode __DEC_xn_se_6325 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
+		for (XBTNode __DEC_xn_se_116623 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
 				XBTNode.class, "se")) {
-			if (!xn.equals(__DEC_xn_se_6325)) {
+			if (!xn.equals(__DEC_xn_se_116623)) {
 				return new Object[] { xn };
 			}
 		}
@@ -1722,9 +1722,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_20_2_testcorematchandDECs_black_nac_5B(XBTNode xn) {
-		for (XBTNode __DEC_xn_e_407596 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
+		for (XBTNode __DEC_xn_e_225838 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
 				XBTNode.class, "e")) {
-			if (!xn.equals(__DEC_xn_e_407596)) {
+			if (!xn.equals(__DEC_xn_e_225838)) {
 				return new Object[] { xn };
 			}
 		}
@@ -1845,9 +1845,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_21_2_testcorematchandDECs_black_nac_0B(BTNode n) {
-		for (BTNode __DEC_n_l_860556 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n,
+		for (BTNode __DEC_n_l_350412 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n,
 				BTNode.class, "l")) {
-			if (!n.equals(__DEC_n_l_860556)) {
+			if (!n.equals(__DEC_n_l_350412)) {
 				return new Object[] { n };
 			}
 		}
@@ -1855,9 +1855,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_21_2_testcorematchandDECs_black_nac_1B(BTNode n) {
-		for (BTNode __DEC_n_r_709605 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n,
+		for (BTNode __DEC_n_r_871247 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n,
 				BTNode.class, "r")) {
-			if (!n.equals(__DEC_n_r_709605)) {
+			if (!n.equals(__DEC_n_r_871247)) {
 				return new Object[] { n };
 			}
 		}
@@ -1927,26 +1927,26 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_node2node_24_2_matchsrctrgcontext_bindingFFBB(Match targetMatch,
-			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("xn");
-		EObject _localVariable_1 = sourceMatch.getObject("n");
-		EObject tmpXn = _localVariable_0;
-		EObject tmpN = _localVariable_1;
-		if (tmpXn instanceof XBTNode) {
-			XBTNode xn = (XBTNode) tmpXn;
-			if (tmpN instanceof BTNode) {
-				BTNode n = (BTNode) tmpN;
-				return new Object[] { xn, n, targetMatch, sourceMatch };
+	public static final Object[] pattern_node2node_24_2_matchsrctrgcontext_bindingFFBB(Match sourceMatch,
+			Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("n");
+		EObject _localVariable_1 = targetMatch.getObject("xn");
+		EObject tmpN = _localVariable_0;
+		EObject tmpXn = _localVariable_1;
+		if (tmpN instanceof BTNode) {
+			BTNode n = (BTNode) tmpN;
+			if (tmpXn instanceof XBTNode) {
+				XBTNode xn = (XBTNode) tmpXn;
+				return new Object[] { n, xn, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_node2node_24_2_matchsrctrgcontext_blackBBBB(XBTNode xn, BTNode n,
+	public static final Object[] pattern_node2node_24_2_matchsrctrgcontext_blackBBBB(BTNode n, XBTNode xn,
 			Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { xn, n, sourceMatch, targetMatch };
+			return new Object[] { n, xn, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1954,27 +1954,27 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	public static final Object[] pattern_node2node_24_2_matchsrctrgcontext_bindingAndBlackFFBB(Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_node2node_24_2_matchsrctrgcontext_binding = pattern_node2node_24_2_matchsrctrgcontext_bindingFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_node2node_24_2_matchsrctrgcontext_binding != null) {
-			XBTNode xn = (XBTNode) result_pattern_node2node_24_2_matchsrctrgcontext_binding[0];
-			BTNode n = (BTNode) result_pattern_node2node_24_2_matchsrctrgcontext_binding[1];
+			BTNode n = (BTNode) result_pattern_node2node_24_2_matchsrctrgcontext_binding[0];
+			XBTNode xn = (XBTNode) result_pattern_node2node_24_2_matchsrctrgcontext_binding[1];
 
 			Object[] result_pattern_node2node_24_2_matchsrctrgcontext_black = pattern_node2node_24_2_matchsrctrgcontext_blackBBBB(
-					xn, n, sourceMatch, targetMatch);
+					n, xn, sourceMatch, targetMatch);
 			if (result_pattern_node2node_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { xn, n, sourceMatch, targetMatch };
+				return new Object[] { n, xn, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_node2node_24_3_solvecsp_bindingFBBBBB(node2node _this, XBTNode xn, BTNode n,
+	public static final Object[] pattern_node2node_24_3_solvecsp_bindingFBBBBB(node2node _this, BTNode n, XBTNode xn,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(xn, n, sourceMatch, targetMatch);
+		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(n, xn, sourceMatch, targetMatch);
 		CSP csp = _localVariable_2;
 		if (csp != null) {
-			return new Object[] { csp, _this, xn, n, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, n, xn, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1983,17 +1983,17 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_node2node_24_3_solvecsp_bindingAndBlackFBBBBB(node2node _this, XBTNode xn,
-			BTNode n, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_node2node_24_3_solvecsp_bindingAndBlackFBBBBB(node2node _this, BTNode n,
+			XBTNode xn, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_node2node_24_3_solvecsp_binding = pattern_node2node_24_3_solvecsp_bindingFBBBBB(_this,
-				xn, n, sourceMatch, targetMatch);
+				n, xn, sourceMatch, targetMatch);
 		if (result_pattern_node2node_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_node2node_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_node2node_24_3_solvecsp_black = pattern_node2node_24_3_solvecsp_blackB(csp);
 			if (result_pattern_node2node_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, xn, n, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, n, xn, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2024,18 +2024,18 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 		return new Object[] { sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_node2node_24_6_createcorrespondence_blackBBB(XBTNode xn, BTNode n,
+	public static final Object[] pattern_node2node_24_6_createcorrespondence_blackBBB(BTNode n, XBTNode xn,
 			CCMatch ccMatch) {
-		return new Object[] { xn, n, ccMatch };
+		return new Object[] { n, xn, ccMatch };
 	}
 
-	public static final Object[] pattern_node2node_24_6_createcorrespondence_greenBFBB(XBTNode xn, BTNode n,
+	public static final Object[] pattern_node2node_24_6_createcorrespondence_greenFBBB(BTNode n, XBTNode xn,
 			CCMatch ccMatch) {
 		BTNode2XBTnode n2xn = Btree2xbtreeFactory.eINSTANCE.createBTNode2XBTnode();
-		n2xn.setTarget(xn);
 		n2xn.setSource(n);
+		n2xn.setTarget(xn);
 		ccMatch.getCreateCorr().add(n2xn);
-		return new Object[] { xn, n2xn, n, ccMatch };
+		return new Object[] { n2xn, n, xn, ccMatch };
 	}
 
 	public static final Object[] pattern_node2node_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2059,9 +2059,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_27_1_matchtggpattern_black_nac_0B(BTNode n) {
-		for (BTNode __DEC_n_l_266853 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n,
+		for (BTNode __DEC_n_l_790963 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n,
 				BTNode.class, "l")) {
-			if (!n.equals(__DEC_n_l_266853)) {
+			if (!n.equals(__DEC_n_l_790963)) {
 				return new Object[] { n };
 			}
 		}
@@ -2069,9 +2069,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_27_1_matchtggpattern_black_nac_1B(BTNode n) {
-		for (BTNode __DEC_n_r_504243 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n,
+		for (BTNode __DEC_n_r_470523 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n,
 				BTNode.class, "r")) {
-			if (!n.equals(__DEC_n_r_504243)) {
+			if (!n.equals(__DEC_n_r_470523)) {
 				return new Object[] { n };
 			}
 		}
@@ -2098,9 +2098,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_28_1_matchtggpattern_black_nac_0B(XBTNode xn) {
-		XBTNode __DEC_xn_w_757284 = xn.getW();
-		if (__DEC_xn_w_757284 != null) {
-			if (!xn.equals(__DEC_xn_w_757284)) {
+		XBTNode __DEC_xn_w_703212 = xn.getW();
+		if (__DEC_xn_w_703212 != null) {
+			if (!xn.equals(__DEC_xn_w_703212)) {
 				return new Object[] { xn };
 			}
 		}
@@ -2109,9 +2109,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_28_1_matchtggpattern_black_nac_1B(XBTNode xn) {
-		XBTNode __DEC_xn_e_316400 = xn.getE();
-		if (__DEC_xn_e_316400 != null) {
-			if (!xn.equals(__DEC_xn_e_316400)) {
+		XBTNode __DEC_xn_e_84353 = xn.getE();
+		if (__DEC_xn_e_84353 != null) {
+			if (!xn.equals(__DEC_xn_e_84353)) {
 				return new Object[] { xn };
 			}
 		}
@@ -2120,9 +2120,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_28_1_matchtggpattern_black_nac_2B(XBTNode xn) {
-		for (XBTNode __DEC_xn_w_614021 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
+		for (XBTNode __DEC_xn_w_577238 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
 				XBTNode.class, "w")) {
-			if (!xn.equals(__DEC_xn_w_614021)) {
+			if (!xn.equals(__DEC_xn_w_577238)) {
 				return new Object[] { xn };
 			}
 		}
@@ -2130,9 +2130,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_28_1_matchtggpattern_black_nac_3B(XBTNode xn) {
-		for (XBTNode __DEC_xn_sw_405085 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
+		for (XBTNode __DEC_xn_sw_419850 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
 				XBTNode.class, "sw")) {
-			if (!xn.equals(__DEC_xn_sw_405085)) {
+			if (!xn.equals(__DEC_xn_sw_419850)) {
 				return new Object[] { xn };
 			}
 		}
@@ -2140,9 +2140,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_28_1_matchtggpattern_black_nac_4B(XBTNode xn) {
-		for (XBTNode __DEC_xn_se_110537 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
+		for (XBTNode __DEC_xn_se_517070 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
 				XBTNode.class, "se")) {
-			if (!xn.equals(__DEC_xn_se_110537)) {
+			if (!xn.equals(__DEC_xn_se_517070)) {
 				return new Object[] { xn };
 			}
 		}
@@ -2150,9 +2150,9 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_28_1_matchtggpattern_black_nac_5B(XBTNode xn) {
-		for (XBTNode __DEC_xn_e_842680 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
+		for (XBTNode __DEC_xn_e_555940 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(xn,
 				XBTNode.class, "e")) {
-			if (!xn.equals(__DEC_xn_e_842680)) {
+			if (!xn.equals(__DEC_xn_e_555940)) {
 				return new Object[] { xn };
 			}
 		}
@@ -2243,20 +2243,20 @@ public class node2nodeImpl extends AbstractRuleImpl implements node2node {
 	}
 
 	public static final Object[] pattern_node2node_29_6_perform_greenFFFB(ModelgeneratorRuleResult ruleResult) {
-		XBTNode xn = XbtreeFactory.eINSTANCE.createXBTNode();
 		BTNode2XBTnode n2xn = Btree2xbtreeFactory.eINSTANCE.createBTNode2XBTnode();
 		BTNode n = BtreeFactory.eINSTANCE.createBTNode();
+		XBTNode xn = XbtreeFactory.eINSTANCE.createXBTNode();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getTargetObjects().add(xn);
-		n2xn.setTarget(xn);
 		ruleResult.getCorrObjects().add(n2xn);
 		n2xn.setSource(n);
 		ruleResult.getSourceObjects().add(n);
+		n2xn.setTarget(xn);
+		ruleResult.getTargetObjects().add(xn);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { xn, n2xn, n, ruleResult };
+		return new Object[] { n2xn, n, xn, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_node2node_29_7_expressionFB(

@@ -92,8 +92,8 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn, BTNode c,
-			XBTNode xn);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xn, BTNode n,
+			BTNode c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,8 +109,8 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject l2sw, EObject n, EObject n2xn, EObject xc, EObject c,
-			EObject xn);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject n2xn, EObject xc, EObject xn, EObject n,
+			EObject l2sw, EObject c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,8 +174,8 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn, XBTNode xc,
-			XBTNode xn);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xc, XBTNode xn,
+			BTNode n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,8 +191,8 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject l2sw, EObject n, EObject n2xn, EObject xc, EObject c,
-			EObject xn);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject n2xn, EObject xc, EObject xn, EObject n,
+			EObject l2sw, EObject c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_40(EMoflonEdge _edge_sw);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_48(EMoflonEdge _edge_sw);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_40(EMoflonEdge _edge_l);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_48(EMoflonEdge _edge_l);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +248,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(BTNode n, XBTNode xc, BTNode c, XBTNode xn, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(XBTNode xc, XBTNode xn, BTNode n, BTNode c, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,7 +288,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode n, BTNode2XBTnode n2xn, XBTNode xn,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xn, BTNode n,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

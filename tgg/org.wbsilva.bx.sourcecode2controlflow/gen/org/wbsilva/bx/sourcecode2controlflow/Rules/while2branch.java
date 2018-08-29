@@ -96,8 +96,8 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, S2N s2n, Statement s, Assignment b, Node n,
-			While a);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Statement s, Assignment b, While a, Node n,
+			S2N s2n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +113,8 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject a2c, EObject c, EObject s2n, EObject b2d, EObject s,
-			EObject d, EObject b, EObject n, EObject a);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject d, EObject b2d, EObject s, EObject b, EObject a,
+			EObject n, EObject a2c, EObject c, EObject s2n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +130,7 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Branch c, Command d, Node n);
+	boolean isAppropriate_BWD(Match match, Command d, Node n, Branch c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +154,7 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Branch c, Command d, Node n);
+	void registerObjectsToMatch_BWD(Match match, Command d, Node n, Branch c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +162,7 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Branch c, Command d, Node n);
+	CSP isAppropriate_solveCsp_BWD(Match match, Command d, Node n, Branch c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch c, S2N s2n, Statement s, Command d,
-			Node n);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Command d, Statement s, Node n, Branch c,
+			S2N s2n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject a2c, EObject c, EObject s2n, EObject b2d, EObject s,
-			EObject d, EObject b, EObject n, EObject a);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject d, EObject b2d, EObject s, EObject b, EObject a,
+			EObject n, EObject a2c, EObject c, EObject s2n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +212,7 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_44(EMoflonEdge _edge_next);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_89(EMoflonEdge _edge_next);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_44(EMoflonEdge _edge_next);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_89(EMoflonEdge _edge_next);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +252,7 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Branch c, Statement s, Command d, Assignment b, Node n, While a, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(Command d, Statement s, Assignment b, While a, Node n, Branch c, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -277,7 +277,7 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Branch c, Command d, Node n);
+	boolean checkDEC_BWD(Command d, Node n, Branch c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,7 +293,7 @@ public interface while2branch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2N s2n, Statement s, Node n,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Statement s, Node n, S2N s2n,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

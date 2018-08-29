@@ -105,7 +105,7 @@ public interface node2node extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject xn, EObject n2xn, EObject n);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject n2xn, EObject n, EObject xn);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface node2node extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject xn, EObject n2xn, EObject n);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject n2xn, EObject n, EObject xn);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +201,7 @@ public interface node2node extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_XBTNode_4(XBTNode xn);
+	EObjectContainer isAppropriate_BWD_XBTNode_1(XBTNode xn);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface node2node extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_BTNode_4(BTNode n);
+	EObjectContainer isAppropriate_FWD_BTNode_1(BTNode n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,7 +241,7 @@ public interface node2node extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(XBTNode xn, BTNode n, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(BTNode n, XBTNode xn, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
