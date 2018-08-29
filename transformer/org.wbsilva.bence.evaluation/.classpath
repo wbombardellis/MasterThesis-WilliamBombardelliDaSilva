@@ -19,5 +19,6 @@
 	<classpathentry kind="lib" path="lib/org.eclipse.emf.mapping.ecore2xml.source_2.9.0.v20170609-0928.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.bx.sourcecode2controlflow"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.bence.graphgrammar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.bx.btree2xbtree"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
