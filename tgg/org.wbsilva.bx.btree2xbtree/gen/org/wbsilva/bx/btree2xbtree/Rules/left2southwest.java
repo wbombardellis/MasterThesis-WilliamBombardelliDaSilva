@@ -44,7 +44,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, BTNode n, BTNode c);
+	boolean isAppropriate_FWD(Match match, BTNode c, BTNode n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,7 +68,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, BTNode n, BTNode c);
+	void registerObjectsToMatch_FWD(Match match, BTNode c, BTNode n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,7 +76,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, BTNode n, BTNode c);
+	CSP isAppropriate_solveCsp_FWD(Match match, BTNode c, BTNode n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,8 +92,8 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xn, BTNode n,
-			BTNode c);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, XBTNode xn, BTNode c, BTNode2XBTnode n2xn,
+			BTNode n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,8 +109,8 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject n2xn, EObject xc, EObject xn, EObject n,
-			EObject l2sw, EObject c);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject xc, EObject xn, EObject c, EObject l2sw,
+			EObject n2xn, EObject n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,7 +174,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xc, XBTNode xn,
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, XBTNode xc, XBTNode xn, BTNode2XBTnode n2xn,
 			BTNode n);
 
 	/**
@@ -191,8 +191,8 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject n2xn, EObject xc, EObject xn, EObject n,
-			EObject l2sw, EObject c);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject xc, EObject xn, EObject c, EObject l2sw,
+			EObject n2xn, EObject n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_48(EMoflonEdge _edge_sw);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_142(EMoflonEdge _edge_sw);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_48(EMoflonEdge _edge_l);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_142(EMoflonEdge _edge_l);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +248,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(XBTNode xc, XBTNode xn, BTNode n, BTNode c, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(XBTNode xc, XBTNode xn, BTNode c, BTNode n, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,7 +264,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(BTNode n, BTNode c);
+	boolean checkDEC_FWD(BTNode c, BTNode n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,7 +288,7 @@ public interface left2southwest extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, XBTNode xn, BTNode n,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, XBTNode xn, BTNode2XBTnode n2xn, BTNode n,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

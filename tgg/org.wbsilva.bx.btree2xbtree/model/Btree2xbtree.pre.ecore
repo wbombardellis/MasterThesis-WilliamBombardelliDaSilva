@@ -13,9 +13,9 @@
   </eClassifiers>
   <eSubpackages name="Rules" nsURI="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules"
       nsPrefix="Rules">
-    <eClassifiers xsi:type="ecore:EClass" name="left2southwest" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="right2southeast" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="node2node" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="right2southeast" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="left2southwest" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="rightleft2eastwest" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
   </eSubpackages>
 </ecore:EPackage>

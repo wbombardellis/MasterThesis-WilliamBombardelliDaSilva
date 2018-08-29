@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sdmUtil:CompilerInjection xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sdmUtil="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//sdmUtil">
   <importInjectionEntries content="org.moflon.tgg.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.wbsilva.bx.btree2xbtree.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.wbsilva.bx.btree2xbtree.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.*">
     <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.wbsilva.bx.btree2xbtree.csp.constraints.*">
@@ -37,6 +13,30 @@
     <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.btree2xbtree.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.btree2xbtree.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
     <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.wbsilva.bx.btree2xbtree.csp.constraints.*">
@@ -49,54 +49,6 @@
     <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
     <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node"/>
   </importInjectionEntries>
   <importInjectionEntries content="java.util.Optional">
@@ -121,6 +73,54 @@
     <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
     <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest"/>
   </importInjectionEntries>
   <importInjectionEntries content="java.util.Optional">
@@ -144,90 +144,6 @@
   <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
     <eClass href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest"/>
   </importInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;n&quot;, n);&#xA;match.registerObject(&quot;c&quot;, c);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;xc&quot;, xc);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;l2sw&quot;, l2sw);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;c&quot;).eClass()).equals(&quot;btree.BTNode.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;xc&quot;, xc);&#xA;match.registerObject(&quot;xn&quot;, xn);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xc&quot;,xc);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;xc&quot;, xc);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;l2sw&quot;, l2sw);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;xc&quot;).eClass()).equals(&quot;xbtree.XBTNode.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkTypes_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;n&quot;, n);&#xA;match.registerObject(&quot;c&quot;, c);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;xc&quot;, xc);&#xA;ruleresult.registerObject(&quot;l2se&quot;, l2se);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;c&quot;).eClass()).equals(&quot;btree.BTNode.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;xn&quot;, xn);&#xA;match.registerObject(&quot;xc&quot;, xc);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xc&quot;,xc);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;xc&quot;, xc);&#xA;ruleresult.registerObject(&quot;l2se&quot;, l2se);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;xc&quot;).eClass()).equals(&quot;xbtree.XBTNode.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_BWD"/>
-  </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isAppropriate_solveCsp_FWD"/>
   </compilerInjectionEntries>
@@ -243,7 +159,7 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;n&quot;).eClass()).equals(&quot;btree.BTNode.&quot;);">
@@ -264,59 +180,143 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/registerObjects_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;xn&quot;).eClass()).equals(&quot;xbtree.XBTNode.&quot;);">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/checkTypes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;c&quot;, c);&#xA;match.registerObject(&quot;n&quot;, n);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;l2se&quot;, l2se);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;xc&quot;, xc);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;c&quot;).eClass()).equals(&quot;btree.BTNode.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;xc&quot;, xc);&#xA;match.registerObject(&quot;xn&quot;, xn);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xc&quot;,xc);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;l2se&quot;, l2se);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;xc&quot;, xc);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;xc&quot;).eClass()).equals(&quot;xbtree.XBTNode.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;c&quot;, c);&#xA;match.registerObject(&quot;n&quot;, n);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;xc&quot;, xc);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;l2sw&quot;, l2sw);&#xA;ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;c&quot;).eClass()).equals(&quot;btree.BTNode.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;xc&quot;, xc);&#xA;match.registerObject(&quot;xn&quot;, xn);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;xc&quot;,xc);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;xc&quot;, xc);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;l2sw&quot;, l2sw);&#xA;ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;xc&quot;).eClass()).equals(&quot;xbtree.XBTNode.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;cl&quot;, cl);&#xA;match.registerObject(&quot;cr&quot;, cr);&#xA;match.registerObject(&quot;n&quot;, n);&#xA;">
+  <compilerInjectionEntries content="match.registerObject(&quot;cr&quot;, cr);&#xA;match.registerObject(&quot;cl&quot;, cl);&#xA;match.registerObject(&quot;n&quot;, n);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;cl&quot;,cl);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cr&quot;,cr);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;cr&quot;,cr);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cl&quot;,cl);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;cl&quot;, cl);&#xA;ruleresult.registerObject(&quot;cr2xcse&quot;, cr2xcse);&#xA;ruleresult.registerObject(&quot;cr&quot;, cr);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;xcse&quot;, xcse);&#xA;ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;xcsw&quot;, xcsw);&#xA;ruleresult.registerObject(&quot;cl2xcsw&quot;, cl2xcsw);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;cr&quot;, cr);&#xA;ruleresult.registerObject(&quot;xcse&quot;, xcse);&#xA;ruleresult.registerObject(&quot;cl&quot;, cl);&#xA;ruleresult.registerObject(&quot;xcsw&quot;, xcsw);&#xA;ruleresult.registerObject(&quot;cl2xcsw&quot;, cl2xcsw);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;cr2xcse&quot;, cr2xcse);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;cl&quot;).eClass()).equals(&quot;btree.BTNode.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;cr&quot;).eClass()).equals(&quot;btree.BTNode.&quot;);">
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;cr&quot;).eClass()).equals(&quot;btree.BTNode.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;cl&quot;).eClass()).equals(&quot;btree.BTNode.&quot;);">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkTypes_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_solveCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;xcse&quot;, xcse);&#xA;match.registerObject(&quot;xn&quot;, xn);&#xA;match.registerObject(&quot;xcsw&quot;, xcsw);&#xA;">
+  <compilerInjectionEntries content="match.registerObject(&quot;xcse&quot;, xcse);&#xA;match.registerObject(&quot;xcsw&quot;, xcsw);&#xA;match.registerObject(&quot;xn&quot;, xn);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjectsToMatch_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isAppropriate_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xcse&quot;,xcse);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xcsw&quot;,xcsw);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;xcse&quot;,xcse);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xcsw&quot;,xcsw);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;cl&quot;, cl);&#xA;ruleresult.registerObject(&quot;cr2xcse&quot;, cr2xcse);&#xA;ruleresult.registerObject(&quot;cr&quot;, cr);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;xcse&quot;, xcse);&#xA;ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;xcsw&quot;, xcsw);&#xA;ruleresult.registerObject(&quot;cl2xcsw&quot;, cl2xcsw);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;cr&quot;, cr);&#xA;ruleresult.registerObject(&quot;xcse&quot;, xcse);&#xA;ruleresult.registerObject(&quot;cl&quot;, cl);&#xA;ruleresult.registerObject(&quot;xcsw&quot;, xcsw);&#xA;ruleresult.registerObject(&quot;cl2xcsw&quot;, cl2xcsw);&#xA;ruleresult.registerObject(&quot;n&quot;, n);&#xA;ruleresult.registerObject(&quot;xn&quot;, xn);&#xA;ruleresult.registerObject(&quot;n2xn&quot;, n2xn);&#xA;ruleresult.registerObject(&quot;cr2xcse&quot;, cr2xcse);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/registerObjects_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;xcse&quot;).eClass()).equals(&quot;xbtree.XBTNode.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;xcsw&quot;).eClass()).equals(&quot;xbtree.XBTNode.&quot;);">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkTypes_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;left2southwest&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkAttributes_FWD"/>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;node2node&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/checkAttributes_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;left2southwest&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkAttributes_BWD"/>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;node2node&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/checkAttributes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;right2southeast&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkAttributes_FWD"/>
@@ -324,11 +324,11 @@
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;right2southeast&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/checkAttributes_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;node2node&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/checkAttributes_FWD"/>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;left2southwest&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkAttributes_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;node2node&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/checkAttributes_BWD"/>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;left2southwest&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/checkAttributes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;rightleft2eastwest&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkAttributes_FWD"/>
@@ -337,10 +337,10 @@
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/checkAttributes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_CC"/>
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_solveCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_checkCsp_CC"/>
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_solveCsp_CC"/>
@@ -349,10 +349,10 @@
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_solveCsp_CC"/>
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_solveCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/isApplicable_checkCsp_CC"/>
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_solveCsp_CC"/>
@@ -360,11 +360,11 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_solveCsp_BWD"/>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/generateModel_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_checkCsp_BWD"/>
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/generateModel_checkCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_solveCsp_BWD"/>
@@ -372,13 +372,13 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/right2southeast/generateModel_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/generateModel_solveCsp_BWD"/>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/node2node/generateModel_checkCsp_BWD"/>
+    <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/left2southwest/generateModel_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;n&quot;,n);&#xD;&#xA;isApplicableMatch.registerObject(&quot;xn&quot;,xn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;n2xn&quot;,n2xn);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.btree2xbtree/model/Btree2xbtree.ecore#//Rules/rightleft2eastwest/generateModel_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">

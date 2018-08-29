@@ -105,7 +105,7 @@ public interface program2graph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject g, EObject p, EObject p2g);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject p, EObject p2g, EObject g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface program2graph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject g, EObject p, EObject p2g);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject p, EObject p2g, EObject g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +201,7 @@ public interface program2graph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Graph_1(Graph g);
+	EObjectContainer isAppropriate_BWD_Graph_2(Graph g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface program2graph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_Program_1(Program p);
+	EObjectContainer isAppropriate_FWD_Program_2(Program p);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,7 +241,7 @@ public interface program2graph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Graph g, Program p, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Program p, Graph g, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->

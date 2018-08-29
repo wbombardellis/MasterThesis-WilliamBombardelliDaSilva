@@ -94,7 +94,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Assignment a, Program p);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Assignment a, Program p, Graph g, P2G p2g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,8 +110,8 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject f2r, EObject g, EObject p2g, EObject a, EObject p,
-			EObject c);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject c, EObject a, EObject f2r, EObject p, EObject g,
+			EObject p2g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,7 +127,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Graph g, Command c);
+	boolean isAppropriate_BWD(Match match, Command c, Graph g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,7 +151,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Graph g, Command c);
+	void registerObjectsToMatch_BWD(Match match, Command c, Graph g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,7 +159,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Graph g, Command c);
+	CSP isAppropriate_solveCsp_BWD(Match match, Command c, Graph g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,7 +175,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Program p, Command c);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Command c, Program p, Graph g, P2G p2g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,8 +191,8 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject f2r, EObject g, EObject p2g, EObject a, EObject p,
-			EObject c);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject c, EObject a, EObject f2r, EObject p, EObject g,
+			EObject p2g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_56(EMoflonEdge _edge_root);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_126(EMoflonEdge _edge_root);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_56(EMoflonEdge _edge_first);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_126(EMoflonEdge _edge_first);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +248,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Graph g, Assignment a, Program p, Command c, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Command c, Assignment a, Program p, Graph g, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,7 +272,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Graph g, Command c);
+	boolean checkDEC_BWD(Command c, Graph g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,7 +288,7 @@ public interface firstass2rootcmd extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Program p,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Program p, Graph g, P2G p2g,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

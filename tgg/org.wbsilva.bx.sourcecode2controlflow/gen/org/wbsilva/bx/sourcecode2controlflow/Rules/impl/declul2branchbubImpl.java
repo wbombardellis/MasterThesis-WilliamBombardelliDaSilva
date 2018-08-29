@@ -101,54 +101,54 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, Decision d, Assignment l, While b, While a, Assignment m) {
+	public boolean isAppropriate_FWD(Match match, Assignment m, Decision d, Assignment l, While a, While b) {
 
 		Object[] result1_black = declul2branchbubImpl.pattern_declul2branchbub_0_1_initialbindings_blackBBBBBBB(this,
-				match, d, l, b, a, m);
+				match, m, d, l, a, b);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[d] = " + d + ", " + "[l] = " + l + ", " + "[b] = " + b + ", "
-					+ "[a] = " + a + ", " + "[m] = " + m + ".");
+					+ "[match] = " + match + ", " + "[m] = " + m + ", " + "[d] = " + d + ", " + "[l] = " + l + ", "
+					+ "[a] = " + a + ", " + "[b] = " + b + ".");
 		}
 
 		Object[] result2_bindingAndBlack = declul2branchbubImpl
-				.pattern_declul2branchbub_0_2_SolveCSP_bindingAndBlackFBBBBBBB(this, match, d, l, b, a, m);
+				.pattern_declul2branchbub_0_2_SolveCSP_bindingAndBlackFBBBBBBB(this, match, m, d, l, a, b);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[d] = " + d + ", " + "[l] = " + l + ", " + "[b] = " + b + ", "
-					+ "[a] = " + a + ", " + "[m] = " + m + ".");
+					+ "[match] = " + match + ", " + "[m] = " + m + ", " + "[d] = " + d + ", " + "[l] = " + l + ", "
+					+ "[a] = " + a + ", " + "[b] = " + b + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (declul2branchbubImpl.pattern_declul2branchbub_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = declul2branchbubImpl
-					.pattern_declul2branchbub_0_4_collectelementstobetranslated_blackBBBBBB(match, d, l, b, a, m);
+					.pattern_declul2branchbub_0_4_collectelementstobetranslated_blackBBBBBB(match, m, d, l, a, b);
 			if (result4_black == null) {
 				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[d] = " + d + ", "
-								+ "[l] = " + l + ", " + "[b] = " + b + ", " + "[a] = " + a + ", " + "[m] = " + m + ".");
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[m] = " + m + ", "
+								+ "[d] = " + d + ", " + "[l] = " + l + ", " + "[a] = " + a + ", " + "[b] = " + b + ".");
 			}
-			declul2branchbubImpl.pattern_declul2branchbub_0_4_collectelementstobetranslated_greenBBBBBBFFFFF(match, d,
-					l, b, a, m);
+			declul2branchbubImpl.pattern_declul2branchbub_0_4_collectelementstobetranslated_greenBBBBBBFFFFF(match, m,
+					d, l, a, b);
 			//nothing EMoflonEdge d__a____positive = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge d__b____negative = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge b__m____first = (EMoflonEdge) result4_green[8];
+			//nothing EMoflonEdge a__l____last = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge d__b____negative = (EMoflonEdge) result4_green[8];
 			//nothing EMoflonEdge b__m____last = (EMoflonEdge) result4_green[9];
-			//nothing EMoflonEdge a__l____last = (EMoflonEdge) result4_green[10];
+			//nothing EMoflonEdge b__m____first = (EMoflonEdge) result4_green[10];
 
 			Object[] result5_black = declul2branchbubImpl
-					.pattern_declul2branchbub_0_5_collectcontextelements_blackBBBBBB(match, d, l, b, a, m);
+					.pattern_declul2branchbub_0_5_collectcontextelements_blackBBBBBB(match, m, d, l, a, b);
 			if (result5_black == null) {
 				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[d] = " + d + ", "
-								+ "[l] = " + l + ", " + "[b] = " + b + ", " + "[a] = " + a + ", " + "[m] = " + m + ".");
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[m] = " + m + ", "
+								+ "[d] = " + d + ", " + "[l] = " + l + ", " + "[a] = " + a + ", " + "[b] = " + b + ".");
 			}
 			declul2branchbubImpl.pattern_declul2branchbub_0_5_collectcontextelements_greenBB(match, d);
 
 			// 
-			declul2branchbubImpl.pattern_declul2branchbub_0_6_registerobjectstomatch_expressionBBBBBBB(this, match, d,
-					l, b, a, m);
+			declul2branchbubImpl.pattern_declul2branchbub_0_6_registerobjectstomatch_expressionBBBBBBB(this, match, m,
+					d, l, a, b);
 			return declul2branchbubImpl.pattern_declul2branchbub_0_7_expressionF();
 		} else {
 			return declul2branchbubImpl.pattern_declul2branchbub_0_8_expressionF();
@@ -170,73 +170,73 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		Branch c = (Branch) result1_bindingAndBlack[0];
-		Decision d = (Decision) result1_bindingAndBlack[1];
-		S2B d2c = (S2B) result1_bindingAndBlack[2];
-		Assignment l = (Assignment) result1_bindingAndBlack[3];
-		While b = (While) result1_bindingAndBlack[4];
+		S2B d2c = (S2B) result1_bindingAndBlack[1];
+		Assignment m = (Assignment) result1_bindingAndBlack[2];
+		Decision d = (Decision) result1_bindingAndBlack[3];
+		Assignment l = (Assignment) result1_bindingAndBlack[4];
 		While a = (While) result1_bindingAndBlack[5];
-		Assignment m = (Assignment) result1_bindingAndBlack[6];
+		While b = (While) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = declul2branchbubImpl
-				.pattern_declul2branchbub_1_1_performtransformation_greenFFBFFFFBFBBBF(c, l, b, a, m);
-		S2N l2z = (S2N) result1_green[0];
-		Command z = (Command) result1_green[1];
-		Command w = (Command) result1_green[3];
+				.pattern_declul2branchbub_1_1_performtransformation_greenBBBFFFBFFFBFF(c, m, l, a, b);
+		S2N l2z = (S2N) result1_green[3];
 		S2B b2y = (S2B) result1_green[4];
-		S2N m2w = (S2N) result1_green[5];
-		Branch x = (Branch) result1_green[6];
-		Branch y = (Branch) result1_green[8];
-		S2B a2x = (S2B) result1_green[12];
+		S2B a2x = (S2B) result1_green[5];
+		Command z = (Command) result1_green[7];
+		S2N m2w = (S2N) result1_green[8];
+		Branch y = (Branch) result1_green[9];
+		Command w = (Command) result1_green[11];
+		Branch x = (Branch) result1_green[12];
 
 		Object[] result2_black = declul2branchbubImpl
-				.pattern_declul2branchbub_1_2_collecttranslatedelements_blackBBBBBBBBBBBB(l2z, z, w, b2y, m2w, x, l, y,
-						b, a, m, a2x);
+				.pattern_declul2branchbub_1_2_collecttranslatedelements_blackBBBBBBBBBBBB(m, l, l2z, b2y, a2x, a, z,
+						m2w, y, b, w, x);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[l2z] = " + l2z + ", " + "[z] = "
-					+ z + ", " + "[w] = " + w + ", " + "[b2y] = " + b2y + ", " + "[m2w] = " + m2w + ", " + "[x] = " + x
-					+ ", " + "[l] = " + l + ", " + "[y] = " + y + ", " + "[b] = " + b + ", " + "[a] = " + a + ", "
-					+ "[m] = " + m + ", " + "[a2x] = " + a2x + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m] = " + m + ", " + "[l] = " + l
+					+ ", " + "[l2z] = " + l2z + ", " + "[b2y] = " + b2y + ", " + "[a2x] = " + a2x + ", " + "[a] = " + a
+					+ ", " + "[z] = " + z + ", " + "[m2w] = " + m2w + ", " + "[y] = " + y + ", " + "[b] = " + b + ", "
+					+ "[w] = " + w + ", " + "[x] = " + x + ".");
 		}
 		Object[] result2_green = declul2branchbubImpl
-				.pattern_declul2branchbub_1_2_collecttranslatedelements_greenFBBBBBBBBBBBB(l2z, z, w, b2y, m2w, x, l, y,
-						b, a, m, a2x);
+				.pattern_declul2branchbub_1_2_collecttranslatedelements_greenFBBBBBBBBBBBB(m, l, l2z, b2y, a2x, a, z,
+						m2w, y, b, w, x);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = declul2branchbubImpl
-				.pattern_declul2branchbub_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBBBB(ruleresult, l2z, z, c, w, d,
-						b2y, m2w, d2c, x, l, y, b, a, m, a2x);
+				.pattern_declul2branchbub_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBBBB(ruleresult, c, d2c, m, d, l,
+						l2z, b2y, a2x, a, z, m2w, y, b, w, x);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[l2z] = " + l2z + ", " + "[z] = " + z + ", " + "[c] = " + c + ", " + "[w] = " + w + ", "
-					+ "[d] = " + d + ", " + "[b2y] = " + b2y + ", " + "[m2w] = " + m2w + ", " + "[d2c] = " + d2c + ", "
-					+ "[x] = " + x + ", " + "[l] = " + l + ", " + "[y] = " + y + ", " + "[b] = " + b + ", " + "[a] = "
-					+ a + ", " + "[m] = " + m + ", " + "[a2x] = " + a2x + ".");
+					+ ", " + "[c] = " + c + ", " + "[d2c] = " + d2c + ", " + "[m] = " + m + ", " + "[d] = " + d + ", "
+					+ "[l] = " + l + ", " + "[l2z] = " + l2z + ", " + "[b2y] = " + b2y + ", " + "[a2x] = " + a2x + ", "
+					+ "[a] = " + a + ", " + "[z] = " + z + ", " + "[m2w] = " + m2w + ", " + "[y] = " + y + ", "
+					+ "[b] = " + b + ", " + "[w] = " + w + ", " + "[x] = " + x + ".");
 		}
 		declul2branchbubImpl.pattern_declul2branchbub_1_3_bookkeepingforedges_greenBBBBBBBBBBBBBBBFFFFFFFFFFFFFFFFFF(
-				ruleresult, l2z, z, c, w, d, b2y, m2w, x, l, y, b, a, m, a2x);
-		//nothing EMoflonEdge l2z__z____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge z__x____next = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge c__y____negative = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge d__a____positive = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge m2w__w____target = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge w__y____next = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge d__b____negative = (EMoflonEdge) result3_green[21];
-		//nothing EMoflonEdge l2z__l____source = (EMoflonEdge) result3_green[22];
-		//nothing EMoflonEdge b2y__y____target = (EMoflonEdge) result3_green[23];
-		//nothing EMoflonEdge y__w____positive = (EMoflonEdge) result3_green[24];
-		//nothing EMoflonEdge b__m____first = (EMoflonEdge) result3_green[25];
+				ruleresult, c, m, d, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x);
+		//nothing EMoflonEdge c__y____negative = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge l2z__l____source = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge d__a____positive = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge c__x____positive = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge a2x__a____source = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge a__l____last = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge z__x____next = (EMoflonEdge) result3_green[21];
+		//nothing EMoflonEdge l2z__z____target = (EMoflonEdge) result3_green[22];
+		//nothing EMoflonEdge m2w__m____source = (EMoflonEdge) result3_green[23];
+		//nothing EMoflonEdge d__b____negative = (EMoflonEdge) result3_green[24];
+		//nothing EMoflonEdge y__w____positive = (EMoflonEdge) result3_green[25];
 		//nothing EMoflonEdge b__m____last = (EMoflonEdge) result3_green[26];
-		//nothing EMoflonEdge b2y__b____source = (EMoflonEdge) result3_green[27];
-		//nothing EMoflonEdge c__x____positive = (EMoflonEdge) result3_green[28];
-		//nothing EMoflonEdge m2w__m____source = (EMoflonEdge) result3_green[29];
-		//nothing EMoflonEdge a__l____last = (EMoflonEdge) result3_green[30];
+		//nothing EMoflonEdge b__m____first = (EMoflonEdge) result3_green[27];
+		//nothing EMoflonEdge b2y__b____source = (EMoflonEdge) result3_green[28];
+		//nothing EMoflonEdge m2w__w____target = (EMoflonEdge) result3_green[29];
+		//nothing EMoflonEdge b2y__y____target = (EMoflonEdge) result3_green[30];
 		//nothing EMoflonEdge a2x__x____target = (EMoflonEdge) result3_green[31];
-		//nothing EMoflonEdge a2x__a____source = (EMoflonEdge) result3_green[32];
+		//nothing EMoflonEdge w__y____next = (EMoflonEdge) result3_green[32];
 
 		// 
 		// 
 		declul2branchbubImpl.pattern_declul2branchbub_1_5_registerobjects_expressionBBBBBBBBBBBBBBBBB(this, ruleresult,
-				l2z, z, c, w, d, b2y, m2w, d2c, x, l, y, b, a, m, a2x);
+				c, d2c, m, d, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x);
 		return declul2branchbubImpl.pattern_declul2branchbub_1_6_expressionFB(ruleresult);
 	}
 
@@ -264,37 +264,37 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Decision d = (Decision) result2_binding[0];
-		Assignment l = (Assignment) result2_binding[1];
-		While b = (While) result2_binding[2];
+		Assignment m = (Assignment) result2_binding[0];
+		Decision d = (Decision) result2_binding[1];
+		Assignment l = (Assignment) result2_binding[2];
 		While a = (While) result2_binding[3];
-		Assignment m = (Assignment) result2_binding[4];
-		for (Object[] result2_black : declul2branchbubImpl.pattern_declul2branchbub_2_2_corematch_blackFBFBBBBB(d, l, b,
-				a, m, match)) {
+		While b = (While) result2_binding[4];
+		for (Object[] result2_black : declul2branchbubImpl.pattern_declul2branchbub_2_2_corematch_blackFFBBBBBB(m, d, l,
+				a, b, match)) {
 			Branch c = (Branch) result2_black[0];
-			S2B d2c = (S2B) result2_black[2];
+			S2B d2c = (S2B) result2_black[1];
 			// ForEach 
 			for (Object[] result3_black : declul2branchbubImpl.pattern_declul2branchbub_2_3_findcontext_blackBBBBBBB(c,
-					d, d2c, l, b, a, m)) {
+					d2c, m, d, l, a, b)) {
 				Object[] result3_green = declul2branchbubImpl
-						.pattern_declul2branchbub_2_3_findcontext_greenBBBBBBBFFFFFFFF(c, d, d2c, l, b, a, m);
+						.pattern_declul2branchbub_2_3_findcontext_greenBBBBBBBFFFFFFFF(c, d2c, m, d, l, a, b);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge d__a____positive = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge d__b____negative = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge d2c__d____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge d2c__c____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge b__m____first = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge d2c__d____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge d__a____positive = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge a__l____last = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge d__b____negative = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge d2c__c____target = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge b__m____last = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge a__l____last = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge b__m____first = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = declul2branchbubImpl
-						.pattern_declul2branchbub_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, c, d,
-								d2c, l, b, a, m);
+						.pattern_declul2branchbub_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, c,
+								d2c, m, d, l, a, b);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c] = " + c + ", " + "[d] = " + d
-							+ ", " + "[d2c] = " + d2c + ", " + "[l] = " + l + ", " + "[b] = " + b + ", " + "[a] = " + a
-							+ ", " + "[m] = " + m + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c] = " + c + ", " + "[d2c] = "
+							+ d2c + ", " + "[m] = " + m + ", " + "[d] = " + d + ", " + "[l] = " + l + ", " + "[a] = "
+							+ a + ", " + "[b] = " + b + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -323,12 +323,12 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, Decision d, Assignment l, While b, While a, Assignment m) {
+	public void registerObjectsToMatch_FWD(Match match, Assignment m, Decision d, Assignment l, While a, While b) {
+		match.registerObject("m", m);
 		match.registerObject("d", d);
 		match.registerObject("l", l);
-		match.registerObject("b", b);
 		match.registerObject("a", a);
-		match.registerObject("m", m);
+		match.registerObject("b", b);
 
 	}
 
@@ -337,7 +337,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, Decision d, Assignment l, While b, While a, Assignment m) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, Assignment m, Decision d, Assignment l, While a, While b) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -366,8 +366,8 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Branch c, Decision d, S2B d2c,
-			Assignment l, While b, While a, Assignment m) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Branch c, S2B d2c, Assignment m,
+			Decision d, Assignment l, While a, While b) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -383,12 +383,12 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("c", c);
-		isApplicableMatch.registerObject("d", d);
 		isApplicableMatch.registerObject("d2c", d2c);
-		isApplicableMatch.registerObject("l", l);
-		isApplicableMatch.registerObject("b", b);
-		isApplicableMatch.registerObject("a", a);
 		isApplicableMatch.registerObject("m", m);
+		isApplicableMatch.registerObject("d", d);
+		isApplicableMatch.registerObject("l", l);
+		isApplicableMatch.registerObject("a", a);
+		isApplicableMatch.registerObject("b", b);
 		return csp;
 	}
 
@@ -406,24 +406,24 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject l2z, EObject z, EObject c, EObject w,
-			EObject d, EObject b2y, EObject m2w, EObject d2c, EObject x, EObject l, EObject y, EObject b, EObject a,
-			EObject m, EObject a2x) {
-		ruleresult.registerObject("l2z", l2z);
-		ruleresult.registerObject("z", z);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject c, EObject d2c, EObject m, EObject d,
+			EObject l, EObject l2z, EObject b2y, EObject a2x, EObject a, EObject z, EObject m2w, EObject y, EObject b,
+			EObject w, EObject x) {
 		ruleresult.registerObject("c", c);
-		ruleresult.registerObject("w", w);
-		ruleresult.registerObject("d", d);
-		ruleresult.registerObject("b2y", b2y);
-		ruleresult.registerObject("m2w", m2w);
 		ruleresult.registerObject("d2c", d2c);
-		ruleresult.registerObject("x", x);
+		ruleresult.registerObject("m", m);
+		ruleresult.registerObject("d", d);
 		ruleresult.registerObject("l", l);
+		ruleresult.registerObject("l2z", l2z);
+		ruleresult.registerObject("b2y", b2y);
+		ruleresult.registerObject("a2x", a2x);
+		ruleresult.registerObject("a", a);
+		ruleresult.registerObject("z", z);
+		ruleresult.registerObject("m2w", m2w);
 		ruleresult.registerObject("y", y);
 		ruleresult.registerObject("b", b);
-		ruleresult.registerObject("a", a);
-		ruleresult.registerObject("m", m);
-		ruleresult.registerObject("a2x", a2x);
+		ruleresult.registerObject("w", w);
+		ruleresult.registerObject("x", x);
 
 	}
 
@@ -434,11 +434,10 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 */
 	public boolean checkTypes_FWD(Match match) {
 		return true
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("m").eClass()).equals("sourcecode.Assignment.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("l").eClass()).equals("sourcecode.Assignment.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("b").eClass()).equals("sourcecode.While.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("a").eClass()).equals("sourcecode.While.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("m").eClass())
-						.equals("sourcecode.Assignment.");
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("b").eClass()).equals("sourcecode.While.");
 	}
 
 	/**
@@ -446,54 +445,54 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Command z, Branch c, Command w, Branch x, Branch y) {
+	public boolean isAppropriate_BWD(Match match, Branch c, Command z, Branch y, Command w, Branch x) {
 
 		Object[] result1_black = declul2branchbubImpl.pattern_declul2branchbub_10_1_initialbindings_blackBBBBBBB(this,
-				match, z, c, w, x, y);
+				match, c, z, y, w, x);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[z] = " + z + ", " + "[c] = " + c + ", " + "[w] = " + w + ", "
-					+ "[x] = " + x + ", " + "[y] = " + y + ".");
+					+ "[match] = " + match + ", " + "[c] = " + c + ", " + "[z] = " + z + ", " + "[y] = " + y + ", "
+					+ "[w] = " + w + ", " + "[x] = " + x + ".");
 		}
 
 		Object[] result2_bindingAndBlack = declul2branchbubImpl
-				.pattern_declul2branchbub_10_2_SolveCSP_bindingAndBlackFBBBBBBB(this, match, z, c, w, x, y);
+				.pattern_declul2branchbub_10_2_SolveCSP_bindingAndBlackFBBBBBBB(this, match, c, z, y, w, x);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[z] = " + z + ", " + "[c] = " + c + ", " + "[w] = " + w + ", "
-					+ "[x] = " + x + ", " + "[y] = " + y + ".");
+					+ "[match] = " + match + ", " + "[c] = " + c + ", " + "[z] = " + z + ", " + "[y] = " + y + ", "
+					+ "[w] = " + w + ", " + "[x] = " + x + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (declul2branchbubImpl.pattern_declul2branchbub_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = declul2branchbubImpl
-					.pattern_declul2branchbub_10_4_collectelementstobetranslated_blackBBBBBB(match, z, c, w, x, y);
+					.pattern_declul2branchbub_10_4_collectelementstobetranslated_blackBBBBBB(match, c, z, y, w, x);
 			if (result4_black == null) {
 				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[z] = " + z + ", "
-								+ "[c] = " + c + ", " + "[w] = " + w + ", " + "[x] = " + x + ", " + "[y] = " + y + ".");
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[c] = " + c + ", "
+								+ "[z] = " + z + ", " + "[y] = " + y + ", " + "[w] = " + w + ", " + "[x] = " + x + ".");
 			}
-			declul2branchbubImpl.pattern_declul2branchbub_10_4_collectelementstobetranslated_greenBBBBBBFFFFF(match, z,
-					c, w, x, y);
-			//nothing EMoflonEdge z__x____next = (EMoflonEdge) result4_green[6];
-			//nothing EMoflonEdge c__y____negative = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge w__y____next = (EMoflonEdge) result4_green[8];
+			declul2branchbubImpl.pattern_declul2branchbub_10_4_collectelementstobetranslated_greenBBBBBBFFFFF(match, c,
+					z, y, w, x);
+			//nothing EMoflonEdge c__y____negative = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge c__x____positive = (EMoflonEdge) result4_green[7];
+			//nothing EMoflonEdge z__x____next = (EMoflonEdge) result4_green[8];
 			//nothing EMoflonEdge y__w____positive = (EMoflonEdge) result4_green[9];
-			//nothing EMoflonEdge c__x____positive = (EMoflonEdge) result4_green[10];
+			//nothing EMoflonEdge w__y____next = (EMoflonEdge) result4_green[10];
 
 			Object[] result5_black = declul2branchbubImpl
-					.pattern_declul2branchbub_10_5_collectcontextelements_blackBBBBBB(match, z, c, w, x, y);
+					.pattern_declul2branchbub_10_5_collectcontextelements_blackBBBBBB(match, c, z, y, w, x);
 			if (result5_black == null) {
 				throw new RuntimeException(
-						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[z] = " + z + ", "
-								+ "[c] = " + c + ", " + "[w] = " + w + ", " + "[x] = " + x + ", " + "[y] = " + y + ".");
+						"Pattern matching failed." + " Variables: " + "[match] = " + match + ", " + "[c] = " + c + ", "
+								+ "[z] = " + z + ", " + "[y] = " + y + ", " + "[w] = " + w + ", " + "[x] = " + x + ".");
 			}
 			declul2branchbubImpl.pattern_declul2branchbub_10_5_collectcontextelements_greenBB(match, c);
 
 			// 
-			declul2branchbubImpl.pattern_declul2branchbub_10_6_registerobjectstomatch_expressionBBBBBBB(this, match, z,
-					c, w, x, y);
+			declul2branchbubImpl.pattern_declul2branchbub_10_6_registerobjectstomatch_expressionBBBBBBB(this, match, c,
+					z, y, w, x);
 			return declul2branchbubImpl.pattern_declul2branchbub_10_7_expressionF();
 		} else {
 			return declul2branchbubImpl.pattern_declul2branchbub_10_8_expressionF();
@@ -514,74 +513,74 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Command z = (Command) result1_bindingAndBlack[0];
-		Branch c = (Branch) result1_bindingAndBlack[1];
-		Command w = (Command) result1_bindingAndBlack[2];
-		Decision d = (Decision) result1_bindingAndBlack[3];
-		S2B d2c = (S2B) result1_bindingAndBlack[4];
-		Branch x = (Branch) result1_bindingAndBlack[5];
-		Branch y = (Branch) result1_bindingAndBlack[6];
+		Branch c = (Branch) result1_bindingAndBlack[0];
+		S2B d2c = (S2B) result1_bindingAndBlack[1];
+		Decision d = (Decision) result1_bindingAndBlack[2];
+		Command z = (Command) result1_bindingAndBlack[3];
+		Branch y = (Branch) result1_bindingAndBlack[4];
+		Command w = (Command) result1_bindingAndBlack[5];
+		Branch x = (Branch) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = declul2branchbubImpl
-				.pattern_declul2branchbub_11_1_performtransformation_greenFBBBFFBFBFFFF(z, w, d, x, y);
-		S2N l2z = (S2N) result1_green[0];
+				.pattern_declul2branchbub_11_1_performtransformation_greenFBFFFFFBFBFBB(d, z, y, w, x);
+		Assignment m = (Assignment) result1_green[0];
+		Assignment l = (Assignment) result1_green[2];
+		S2N l2z = (S2N) result1_green[3];
 		S2B b2y = (S2B) result1_green[4];
-		S2N m2w = (S2N) result1_green[5];
-		Assignment l = (Assignment) result1_green[7];
-		While b = (While) result1_green[9];
-		While a = (While) result1_green[10];
-		Assignment m = (Assignment) result1_green[11];
-		S2B a2x = (S2B) result1_green[12];
+		S2B a2x = (S2B) result1_green[5];
+		While a = (While) result1_green[6];
+		S2N m2w = (S2N) result1_green[8];
+		While b = (While) result1_green[10];
 
 		Object[] result2_black = declul2branchbubImpl
-				.pattern_declul2branchbub_11_2_collecttranslatedelements_blackBBBBBBBBBBBB(l2z, z, w, b2y, m2w, x, l, y,
-						b, a, m, a2x);
+				.pattern_declul2branchbub_11_2_collecttranslatedelements_blackBBBBBBBBBBBB(m, l, l2z, b2y, a2x, a, z,
+						m2w, y, b, w, x);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[l2z] = " + l2z + ", " + "[z] = "
-					+ z + ", " + "[w] = " + w + ", " + "[b2y] = " + b2y + ", " + "[m2w] = " + m2w + ", " + "[x] = " + x
-					+ ", " + "[l] = " + l + ", " + "[y] = " + y + ", " + "[b] = " + b + ", " + "[a] = " + a + ", "
-					+ "[m] = " + m + ", " + "[a2x] = " + a2x + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m] = " + m + ", " + "[l] = " + l
+					+ ", " + "[l2z] = " + l2z + ", " + "[b2y] = " + b2y + ", " + "[a2x] = " + a2x + ", " + "[a] = " + a
+					+ ", " + "[z] = " + z + ", " + "[m2w] = " + m2w + ", " + "[y] = " + y + ", " + "[b] = " + b + ", "
+					+ "[w] = " + w + ", " + "[x] = " + x + ".");
 		}
 		Object[] result2_green = declul2branchbubImpl
-				.pattern_declul2branchbub_11_2_collecttranslatedelements_greenFBBBBBBBBBBBB(l2z, z, w, b2y, m2w, x, l,
-						y, b, a, m, a2x);
+				.pattern_declul2branchbub_11_2_collecttranslatedelements_greenFBBBBBBBBBBBB(m, l, l2z, b2y, a2x, a, z,
+						m2w, y, b, w, x);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = declul2branchbubImpl
-				.pattern_declul2branchbub_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBBBB(ruleresult, l2z, z, c, w, d,
-						b2y, m2w, d2c, x, l, y, b, a, m, a2x);
+				.pattern_declul2branchbub_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBBBB(ruleresult, c, d2c, m, d, l,
+						l2z, b2y, a2x, a, z, m2w, y, b, w, x);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[l2z] = " + l2z + ", " + "[z] = " + z + ", " + "[c] = " + c + ", " + "[w] = " + w + ", "
-					+ "[d] = " + d + ", " + "[b2y] = " + b2y + ", " + "[m2w] = " + m2w + ", " + "[d2c] = " + d2c + ", "
-					+ "[x] = " + x + ", " + "[l] = " + l + ", " + "[y] = " + y + ", " + "[b] = " + b + ", " + "[a] = "
-					+ a + ", " + "[m] = " + m + ", " + "[a2x] = " + a2x + ".");
+					+ ", " + "[c] = " + c + ", " + "[d2c] = " + d2c + ", " + "[m] = " + m + ", " + "[d] = " + d + ", "
+					+ "[l] = " + l + ", " + "[l2z] = " + l2z + ", " + "[b2y] = " + b2y + ", " + "[a2x] = " + a2x + ", "
+					+ "[a] = " + a + ", " + "[z] = " + z + ", " + "[m2w] = " + m2w + ", " + "[y] = " + y + ", "
+					+ "[b] = " + b + ", " + "[w] = " + w + ", " + "[x] = " + x + ".");
 		}
 		declul2branchbubImpl.pattern_declul2branchbub_11_3_bookkeepingforedges_greenBBBBBBBBBBBBBBBFFFFFFFFFFFFFFFFFF(
-				ruleresult, l2z, z, c, w, d, b2y, m2w, x, l, y, b, a, m, a2x);
-		//nothing EMoflonEdge l2z__z____target = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge z__x____next = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge c__y____negative = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge d__a____positive = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge m2w__w____target = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge w__y____next = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge d__b____negative = (EMoflonEdge) result3_green[21];
-		//nothing EMoflonEdge l2z__l____source = (EMoflonEdge) result3_green[22];
-		//nothing EMoflonEdge b2y__y____target = (EMoflonEdge) result3_green[23];
-		//nothing EMoflonEdge y__w____positive = (EMoflonEdge) result3_green[24];
-		//nothing EMoflonEdge b__m____first = (EMoflonEdge) result3_green[25];
+				ruleresult, c, m, d, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x);
+		//nothing EMoflonEdge c__y____negative = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge l2z__l____source = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge d__a____positive = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge c__x____positive = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge a2x__a____source = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge a__l____last = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge z__x____next = (EMoflonEdge) result3_green[21];
+		//nothing EMoflonEdge l2z__z____target = (EMoflonEdge) result3_green[22];
+		//nothing EMoflonEdge m2w__m____source = (EMoflonEdge) result3_green[23];
+		//nothing EMoflonEdge d__b____negative = (EMoflonEdge) result3_green[24];
+		//nothing EMoflonEdge y__w____positive = (EMoflonEdge) result3_green[25];
 		//nothing EMoflonEdge b__m____last = (EMoflonEdge) result3_green[26];
-		//nothing EMoflonEdge b2y__b____source = (EMoflonEdge) result3_green[27];
-		//nothing EMoflonEdge c__x____positive = (EMoflonEdge) result3_green[28];
-		//nothing EMoflonEdge m2w__m____source = (EMoflonEdge) result3_green[29];
-		//nothing EMoflonEdge a__l____last = (EMoflonEdge) result3_green[30];
+		//nothing EMoflonEdge b__m____first = (EMoflonEdge) result3_green[27];
+		//nothing EMoflonEdge b2y__b____source = (EMoflonEdge) result3_green[28];
+		//nothing EMoflonEdge m2w__w____target = (EMoflonEdge) result3_green[29];
+		//nothing EMoflonEdge b2y__y____target = (EMoflonEdge) result3_green[30];
 		//nothing EMoflonEdge a2x__x____target = (EMoflonEdge) result3_green[31];
-		//nothing EMoflonEdge a2x__a____source = (EMoflonEdge) result3_green[32];
+		//nothing EMoflonEdge w__y____next = (EMoflonEdge) result3_green[32];
 
 		// 
 		// 
 		declul2branchbubImpl.pattern_declul2branchbub_11_5_registerobjects_expressionBBBBBBBBBBBBBBBBB(this, ruleresult,
-				l2z, z, c, w, d, b2y, m2w, d2c, x, l, y, b, a, m, a2x);
+				c, d2c, m, d, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x);
 		return declul2branchbubImpl.pattern_declul2branchbub_11_6_expressionFB(ruleresult);
 	}
 
@@ -609,37 +608,37 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Command z = (Command) result2_binding[0];
-		Branch c = (Branch) result2_binding[1];
-		Command w = (Command) result2_binding[2];
-		Branch x = (Branch) result2_binding[3];
-		Branch y = (Branch) result2_binding[4];
-		for (Object[] result2_black : declul2branchbubImpl.pattern_declul2branchbub_12_2_corematch_blackBBBFFBBB(z, c,
-				w, x, y, match)) {
-			Decision d = (Decision) result2_black[3];
-			S2B d2c = (S2B) result2_black[4];
+		Branch c = (Branch) result2_binding[0];
+		Command z = (Command) result2_binding[1];
+		Branch y = (Branch) result2_binding[2];
+		Command w = (Command) result2_binding[3];
+		Branch x = (Branch) result2_binding[4];
+		for (Object[] result2_black : declul2branchbubImpl.pattern_declul2branchbub_12_2_corematch_blackBFFBBBBB(c, z,
+				y, w, x, match)) {
+			S2B d2c = (S2B) result2_black[1];
+			Decision d = (Decision) result2_black[2];
 			// ForEach 
-			for (Object[] result3_black : declul2branchbubImpl.pattern_declul2branchbub_12_3_findcontext_blackBBBBBBB(z,
-					c, w, d, d2c, x, y)) {
+			for (Object[] result3_black : declul2branchbubImpl.pattern_declul2branchbub_12_3_findcontext_blackBBBBBBB(c,
+					d2c, d, z, y, w, x)) {
 				Object[] result3_green = declul2branchbubImpl
-						.pattern_declul2branchbub_12_3_findcontext_greenBBBBBBBFFFFFFFF(z, c, w, d, d2c, x, y);
+						.pattern_declul2branchbub_12_3_findcontext_greenBBBBBBBFFFFFFFF(c, d2c, d, z, y, w, x);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge z__x____next = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge d2c__d____source = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge c__y____negative = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge w__y____next = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge d2c__d____source = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge c__x____positive = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge z__x____next = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge d2c__c____target = (EMoflonEdge) result3_green[12];
 				//nothing EMoflonEdge y__w____positive = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge c__x____positive = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge w__y____next = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = declul2branchbubImpl
-						.pattern_declul2branchbub_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, z, c,
-								w, d, d2c, x, y);
+						.pattern_declul2branchbub_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, c,
+								d2c, d, z, y, w, x);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[z] = " + z + ", " + "[c] = " + c
-							+ ", " + "[w] = " + w + ", " + "[d] = " + d + ", " + "[d2c] = " + d2c + ", " + "[x] = " + x
-							+ ", " + "[y] = " + y + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c] = " + c + ", " + "[d2c] = "
+							+ d2c + ", " + "[d] = " + d + ", " + "[z] = " + z + ", " + "[y] = " + y + ", " + "[w] = "
+							+ w + ", " + "[x] = " + x + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -668,12 +667,12 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Command z, Branch c, Command w, Branch x, Branch y) {
-		match.registerObject("z", z);
+	public void registerObjectsToMatch_BWD(Match match, Branch c, Command z, Branch y, Command w, Branch x) {
 		match.registerObject("c", c);
+		match.registerObject("z", z);
+		match.registerObject("y", y);
 		match.registerObject("w", w);
 		match.registerObject("x", x);
-		match.registerObject("y", y);
 
 	}
 
@@ -682,7 +681,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Command z, Branch c, Command w, Branch x, Branch y) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Branch c, Command z, Branch y, Command w, Branch x) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -711,8 +710,8 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Command z, Branch c, Command w,
-			Decision d, S2B d2c, Branch x, Branch y) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch c, S2B d2c, Decision d, Command z,
+			Branch y, Command w, Branch x) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -727,13 +726,13 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("z", z);
 		isApplicableMatch.registerObject("c", c);
-		isApplicableMatch.registerObject("w", w);
-		isApplicableMatch.registerObject("d", d);
 		isApplicableMatch.registerObject("d2c", d2c);
-		isApplicableMatch.registerObject("x", x);
+		isApplicableMatch.registerObject("d", d);
+		isApplicableMatch.registerObject("z", z);
 		isApplicableMatch.registerObject("y", y);
+		isApplicableMatch.registerObject("w", w);
+		isApplicableMatch.registerObject("x", x);
 		return csp;
 	}
 
@@ -751,24 +750,24 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject l2z, EObject z, EObject c, EObject w,
-			EObject d, EObject b2y, EObject m2w, EObject d2c, EObject x, EObject l, EObject y, EObject b, EObject a,
-			EObject m, EObject a2x) {
-		ruleresult.registerObject("l2z", l2z);
-		ruleresult.registerObject("z", z);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject c, EObject d2c, EObject m, EObject d,
+			EObject l, EObject l2z, EObject b2y, EObject a2x, EObject a, EObject z, EObject m2w, EObject y, EObject b,
+			EObject w, EObject x) {
 		ruleresult.registerObject("c", c);
-		ruleresult.registerObject("w", w);
-		ruleresult.registerObject("d", d);
-		ruleresult.registerObject("b2y", b2y);
-		ruleresult.registerObject("m2w", m2w);
 		ruleresult.registerObject("d2c", d2c);
-		ruleresult.registerObject("x", x);
+		ruleresult.registerObject("m", m);
+		ruleresult.registerObject("d", d);
 		ruleresult.registerObject("l", l);
+		ruleresult.registerObject("l2z", l2z);
+		ruleresult.registerObject("b2y", b2y);
+		ruleresult.registerObject("a2x", a2x);
+		ruleresult.registerObject("a", a);
+		ruleresult.registerObject("z", z);
+		ruleresult.registerObject("m2w", m2w);
 		ruleresult.registerObject("y", y);
 		ruleresult.registerObject("b", b);
-		ruleresult.registerObject("a", a);
-		ruleresult.registerObject("m", m);
-		ruleresult.registerObject("a2x", a2x);
+		ruleresult.registerObject("w", w);
+		ruleresult.registerObject("x", x);
 
 	}
 
@@ -780,9 +779,9 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	public boolean checkTypes_BWD(Match match) {
 		return true
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("z").eClass()).equals("controlflow.Command.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("y").eClass()).equals("controlflow.Branch.")
 				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("w").eClass()).equals("controlflow.Command.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("x").eClass()).equals("controlflow.Branch.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("y").eClass()).equals("controlflow.Branch.");
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("x").eClass()).equals("controlflow.Branch.");
 	}
 
 	/**
@@ -790,7 +789,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_62(EMoflonEdge _edge_next) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_128(EMoflonEdge _edge_negative) {
 
 		Object[] result1_bindingAndBlack = declul2branchbubImpl
 				.pattern_declul2branchbub_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -805,12 +804,12 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 
 		// ForEach 
 		for (Object[] result2_black : declul2branchbubImpl
-				.pattern_declul2branchbub_20_2_testcorematchandDECs_blackFFFFFB(_edge_next)) {
-			Command z = (Command) result2_black[0];
-			Branch c = (Branch) result2_black[1];
-			Command w = (Command) result2_black[2];
-			Branch x = (Branch) result2_black[3];
-			Branch y = (Branch) result2_black[4];
+				.pattern_declul2branchbub_20_2_testcorematchandDECs_blackFFFFFB(_edge_negative)) {
+			Branch c = (Branch) result2_black[0];
+			Command z = (Command) result2_black[1];
+			Branch y = (Branch) result2_black[2];
+			Command w = (Command) result2_black[3];
+			Branch x = (Branch) result2_black[4];
 			Object[] result2_green = declul2branchbubImpl
 					.pattern_declul2branchbub_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -818,7 +817,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 			// 
 			if (declul2branchbubImpl
 					.pattern_declul2branchbub_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(this,
-							match, z, c, w, x, y)) {
+							match, c, z, y, w, x)) {
 				// 
 				if (declul2branchbubImpl
 						.pattern_declul2branchbub_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -850,7 +849,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_62(EMoflonEdge _edge_positive) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_128(EMoflonEdge _edge_positive) {
 
 		Object[] result1_bindingAndBlack = declul2branchbubImpl
 				.pattern_declul2branchbub_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -866,11 +865,11 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		// ForEach 
 		for (Object[] result2_black : declul2branchbubImpl
 				.pattern_declul2branchbub_21_2_testcorematchandDECs_blackFFFFFB(_edge_positive)) {
-			Decision d = (Decision) result2_black[0];
-			Assignment l = (Assignment) result2_black[1];
-			While b = (While) result2_black[2];
+			Assignment m = (Assignment) result2_black[0];
+			Decision d = (Decision) result2_black[1];
+			Assignment l = (Assignment) result2_black[2];
 			While a = (While) result2_black[3];
-			Assignment m = (Assignment) result2_black[4];
+			While b = (While) result2_black[4];
 			Object[] result2_green = declul2branchbubImpl
 					.pattern_declul2branchbub_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -878,7 +877,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 			// 
 			if (declul2branchbubImpl
 					.pattern_declul2branchbub_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(this,
-							match, d, l, b, a, m)) {
+							match, m, d, l, a, b)) {
 				// 
 				if (declul2branchbubImpl
 						.pattern_declul2branchbub_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -985,25 +984,25 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Command z = (Command) result2_bindingAndBlack[0];
-		Branch c = (Branch) result2_bindingAndBlack[1];
-		Command w = (Command) result2_bindingAndBlack[2];
-		Decision d = (Decision) result2_bindingAndBlack[3];
-		Branch x = (Branch) result2_bindingAndBlack[4];
-		Assignment l = (Assignment) result2_bindingAndBlack[5];
+		Branch c = (Branch) result2_bindingAndBlack[0];
+		Assignment m = (Assignment) result2_bindingAndBlack[1];
+		Decision d = (Decision) result2_bindingAndBlack[2];
+		Assignment l = (Assignment) result2_bindingAndBlack[3];
+		While a = (While) result2_bindingAndBlack[4];
+		Command z = (Command) result2_bindingAndBlack[5];
 		Branch y = (Branch) result2_bindingAndBlack[6];
 		While b = (While) result2_bindingAndBlack[7];
-		While a = (While) result2_bindingAndBlack[8];
-		Assignment m = (Assignment) result2_bindingAndBlack[9];
+		Command w = (Command) result2_bindingAndBlack[8];
+		Branch x = (Branch) result2_bindingAndBlack[9];
 
 		Object[] result3_bindingAndBlack = declul2branchbubImpl
-				.pattern_declul2branchbub_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBBBB(this, z, c, w, d, x, l, y, b, a,
-						m, sourceMatch, targetMatch);
+				.pattern_declul2branchbub_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBBBB(this, c, m, d, l, a, z, y, b, w,
+						x, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[z] = " + z + ", " + "[c] = " + c + ", " + "[w] = " + w + ", " + "[d] = " + d + ", " + "[x] = "
-					+ x + ", " + "[l] = " + l + ", " + "[y] = " + y + ", " + "[b] = " + b + ", " + "[a] = " + a + ", "
-					+ "[m] = " + m + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch
+					+ "[c] = " + c + ", " + "[m] = " + m + ", " + "[d] = " + d + ", " + "[l] = " + l + ", " + "[a] = "
+					+ a + ", " + "[z] = " + z + ", " + "[y] = " + y + ", " + "[b] = " + b + ", " + "[w] = " + w + ", "
+					+ "[x] = " + x + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch
 					+ ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1011,27 +1010,27 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		if (declul2branchbubImpl.pattern_declul2branchbub_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : declul2branchbubImpl
-					.pattern_declul2branchbub_24_5_matchcorrcontext_blackBBFBB(c, d, sourceMatch, targetMatch)) {
-				S2B d2c = (S2B) result5_black[2];
+					.pattern_declul2branchbub_24_5_matchcorrcontext_blackBFBBB(c, d, sourceMatch, targetMatch)) {
+				S2B d2c = (S2B) result5_black[1];
 				Object[] result5_green = declul2branchbubImpl
 						.pattern_declul2branchbub_24_5_matchcorrcontext_greenBBBF(d2c, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = declul2branchbubImpl
-						.pattern_declul2branchbub_24_6_createcorrespondence_blackBBBBBBBBBBB(z, c, w, d, x, l, y, b, a,
-								m, ccMatch);
+						.pattern_declul2branchbub_24_6_createcorrespondence_blackBBBBBBBBBBB(c, m, d, l, a, z, y, b, w,
+								x, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[z] = " + z + ", "
-							+ "[c] = " + c + ", " + "[w] = " + w + ", " + "[d] = " + d + ", " + "[x] = " + x + ", "
-							+ "[l] = " + l + ", " + "[y] = " + y + ", " + "[b] = " + b + ", " + "[a] = " + a + ", "
-							+ "[m] = " + m + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[c] = " + c + ", "
+							+ "[m] = " + m + ", " + "[d] = " + d + ", " + "[l] = " + l + ", " + "[a] = " + a + ", "
+							+ "[z] = " + z + ", " + "[y] = " + y + ", " + "[b] = " + b + ", " + "[w] = " + w + ", "
+							+ "[x] = " + x + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				declul2branchbubImpl.pattern_declul2branchbub_24_6_createcorrespondence_greenFBBFFBBBBBBFB(z, w, x, l,
-						y, b, a, m, ccMatch);
-				//nothing S2N l2z = (S2N) result6_green[0];
+				declul2branchbubImpl.pattern_declul2branchbub_24_6_createcorrespondence_greenBBFFFBBFBBBBB(m, l, a, z,
+						y, b, w, x, ccMatch);
+				//nothing S2N l2z = (S2N) result6_green[2];
 				//nothing S2B b2y = (S2B) result6_green[3];
-				//nothing S2N m2w = (S2N) result6_green[4];
-				//nothing S2B a2x = (S2B) result6_green[11];
+				//nothing S2B a2x = (S2B) result6_green[4];
+				//nothing S2N m2w = (S2N) result6_green[7];
 
 				Object[] result7_black = declul2branchbubImpl
 						.pattern_declul2branchbub_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1053,8 +1052,8 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Command z, Branch c, Command w, Decision d, Branch x, Assignment l, Branch y,
-			While b, While a, Assignment m, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Branch c, Assignment m, Decision d, Assignment l, While a, Command z, Branch y,
+			While b, Command w, Branch x, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1083,9 +1082,9 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Decision d, Assignment l, While b, While a, Assignment m) {// 
-		Object[] result1_black = declul2branchbubImpl.pattern_declul2branchbub_27_1_matchtggpattern_blackBBBBB(d, l, b,
-				a, m);
+	public boolean checkDEC_FWD(Assignment m, Decision d, Assignment l, While a, While b) {// 
+		Object[] result1_black = declul2branchbubImpl.pattern_declul2branchbub_27_1_matchtggpattern_blackBBBBB(m, d, l,
+				a, b);
 		if (result1_black != null) {
 			return declul2branchbubImpl.pattern_declul2branchbub_27_2_expressionF();
 		} else {
@@ -1099,9 +1098,9 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Command z, Branch c, Command w, Branch x, Branch y) {// 
-		Object[] result1_black = declul2branchbubImpl.pattern_declul2branchbub_28_1_matchtggpattern_blackBBBBB(z, c, w,
-				x, y);
+	public boolean checkDEC_BWD(Branch c, Command z, Branch y, Command w, Branch x) {// 
+		Object[] result1_black = declul2branchbubImpl.pattern_declul2branchbub_28_1_matchtggpattern_blackBBBBB(c, z, y,
+				w, x);
 		if (result1_black != null) {
 			return declul2branchbubImpl.pattern_declul2branchbub_28_2_expressionF();
 		} else {
@@ -1134,40 +1133,40 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 			Decision d = (Decision) result2_black[3];
 
 			Object[] result3_bindingAndBlack = declul2branchbubImpl
-					.pattern_declul2branchbub_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, c, d, d2c,
+					.pattern_declul2branchbub_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, c, d2c, d,
 							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c] = " + c + ", " + "[d] = " + d
-						+ ", " + "[d2c] = " + d2c + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c] = " + c + ", " + "[d2c] = " + d2c
+						+ ", " + "[d] = " + d + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (declul2branchbubImpl.pattern_declul2branchbub_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = declul2branchbubImpl.pattern_declul2branchbub_29_5_checknacs_blackBBB(c, d,
-						d2c);
+				Object[] result5_black = declul2branchbubImpl.pattern_declul2branchbub_29_5_checknacs_blackBBB(c, d2c,
+						d);
 				if (result5_black != null) {
 
-					Object[] result6_black = declul2branchbubImpl.pattern_declul2branchbub_29_6_perform_blackBBBB(c, d,
-							d2c, ruleResult);
+					Object[] result6_black = declul2branchbubImpl.pattern_declul2branchbub_29_6_perform_blackBBBB(c,
+							d2c, d, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[c] = " + c + ", "
-								+ "[d] = " + d + ", " + "[d2c] = " + d2c + ", " + "[ruleResult] = " + ruleResult + ".");
+								+ "[d2c] = " + d2c + ", " + "[d] = " + d + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					declul2branchbubImpl.pattern_declul2branchbub_29_6_perform_greenFFBFBFFFFFFFFFB(c, d, ruleResult);
-					//nothing S2N l2z = (S2N) result6_green[0];
-					//nothing Command z = (Command) result6_green[1];
-					//nothing Command w = (Command) result6_green[3];
+					declul2branchbubImpl.pattern_declul2branchbub_29_6_perform_greenBFBFFFFFFFFFFFB(c, d, ruleResult);
+					//nothing Assignment m = (Assignment) result6_green[1];
+					//nothing Assignment l = (Assignment) result6_green[3];
+					//nothing S2N l2z = (S2N) result6_green[4];
 					//nothing S2B b2y = (S2B) result6_green[5];
-					//nothing S2N m2w = (S2N) result6_green[6];
-					//nothing Branch x = (Branch) result6_green[7];
-					//nothing Assignment l = (Assignment) result6_green[8];
-					//nothing Branch y = (Branch) result6_green[9];
-					//nothing While b = (While) result6_green[10];
-					//nothing While a = (While) result6_green[11];
-					//nothing Assignment m = (Assignment) result6_green[12];
-					//nothing S2B a2x = (S2B) result6_green[13];
+					//nothing S2B a2x = (S2B) result6_green[6];
+					//nothing While a = (While) result6_green[7];
+					//nothing Command z = (Command) result6_green[8];
+					//nothing S2N m2w = (S2N) result6_green[9];
+					//nothing Branch y = (Branch) result6_green[10];
+					//nothing While b = (While) result6_green[11];
+					//nothing Command w = (Command) result6_green[12];
+					//nothing Branch x = (Branch) result6_green[13];
 
 				} else {
 				}
@@ -1184,7 +1183,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch c, Decision d, S2B d2c,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch c, S2B d2c, Decision d,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1201,8 +1200,8 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("c", c);
-		isApplicableMatch.registerObject("d", d);
 		isApplicableMatch.registerObject("d2c", d2c);
+		isApplicableMatch.registerObject("d", d);
 		return csp;
 	}
 
@@ -1223,29 +1222,29 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_FWD__MATCH_DECISION_ASSIGNMENT_WHILE_WHILE_ASSIGNMENT:
-			return isAppropriate_FWD((Match) arguments.get(0), (Decision) arguments.get(1),
-					(Assignment) arguments.get(2), (While) arguments.get(3), (While) arguments.get(4),
-					(Assignment) arguments.get(5));
+		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_FWD__MATCH_ASSIGNMENT_DECISION_ASSIGNMENT_WHILE_WHILE:
+			return isAppropriate_FWD((Match) arguments.get(0), (Assignment) arguments.get(1),
+					(Decision) arguments.get(2), (Assignment) arguments.get(3), (While) arguments.get(4),
+					(While) arguments.get(5));
 		case RulesPackage.DECLUL2BRANCHBUB___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.DECLUL2BRANCHBUB___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_DECISION_ASSIGNMENT_WHILE_WHILE_ASSIGNMENT:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (Decision) arguments.get(1),
-					(Assignment) arguments.get(2), (While) arguments.get(3), (While) arguments.get(4),
-					(Assignment) arguments.get(5));
+		case RulesPackage.DECLUL2BRANCHBUB___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ASSIGNMENT_DECISION_ASSIGNMENT_WHILE_WHILE:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (Assignment) arguments.get(1),
+					(Decision) arguments.get(2), (Assignment) arguments.get(3), (While) arguments.get(4),
+					(While) arguments.get(5));
 			return null;
-		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_DECISION_ASSIGNMENT_WHILE_WHILE_ASSIGNMENT:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Decision) arguments.get(1),
-					(Assignment) arguments.get(2), (While) arguments.get(3), (While) arguments.get(4),
-					(Assignment) arguments.get(5));
+		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ASSIGNMENT_DECISION_ASSIGNMENT_WHILE_WHILE:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Assignment) arguments.get(1),
+					(Decision) arguments.get(2), (Assignment) arguments.get(3), (While) arguments.get(4),
+					(While) arguments.get(5));
 		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_BRANCH_DECISION_S2B_ASSIGNMENT_WHILE_WHILE_ASSIGNMENT:
+		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_BRANCH_S2B_ASSIGNMENT_DECISION_ASSIGNMENT_WHILE_WHILE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Branch) arguments.get(1),
-					(Decision) arguments.get(2), (S2B) arguments.get(3), (Assignment) arguments.get(4),
-					(While) arguments.get(5), (While) arguments.get(6), (Assignment) arguments.get(7));
+					(S2B) arguments.get(2), (Assignment) arguments.get(3), (Decision) arguments.get(4),
+					(Assignment) arguments.get(5), (While) arguments.get(6), (While) arguments.get(7));
 		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.DECLUL2BRANCHBUB___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1258,27 +1257,27 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 			return null;
 		case RulesPackage.DECLUL2BRANCHBUB___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_BWD__MATCH_COMMAND_BRANCH_COMMAND_BRANCH_BRANCH:
-			return isAppropriate_BWD((Match) arguments.get(0), (Command) arguments.get(1), (Branch) arguments.get(2),
-					(Command) arguments.get(3), (Branch) arguments.get(4), (Branch) arguments.get(5));
+		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_BWD__MATCH_BRANCH_COMMAND_BRANCH_COMMAND_BRANCH:
+			return isAppropriate_BWD((Match) arguments.get(0), (Branch) arguments.get(1), (Command) arguments.get(2),
+					(Branch) arguments.get(3), (Command) arguments.get(4), (Branch) arguments.get(5));
 		case RulesPackage.DECLUL2BRANCHBUB___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.DECLUL2BRANCHBUB___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_COMMAND_BRANCH_COMMAND_BRANCH_BRANCH:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Command) arguments.get(1), (Branch) arguments.get(2),
-					(Command) arguments.get(3), (Branch) arguments.get(4), (Branch) arguments.get(5));
+		case RulesPackage.DECLUL2BRANCHBUB___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_BRANCH_COMMAND_BRANCH_COMMAND_BRANCH:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Branch) arguments.get(1), (Command) arguments.get(2),
+					(Branch) arguments.get(3), (Command) arguments.get(4), (Branch) arguments.get(5));
 			return null;
-		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_COMMAND_BRANCH_COMMAND_BRANCH_BRANCH:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Command) arguments.get(1),
-					(Branch) arguments.get(2), (Command) arguments.get(3), (Branch) arguments.get(4),
+		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_BRANCH_COMMAND_BRANCH_COMMAND_BRANCH:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Branch) arguments.get(1),
+					(Command) arguments.get(2), (Branch) arguments.get(3), (Command) arguments.get(4),
 					(Branch) arguments.get(5));
 		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMMAND_BRANCH_COMMAND_DECISION_S2B_BRANCH_BRANCH:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Command) arguments.get(1),
-					(Branch) arguments.get(2), (Command) arguments.get(3), (Decision) arguments.get(4),
-					(S2B) arguments.get(5), (Branch) arguments.get(6), (Branch) arguments.get(7));
+		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BRANCH_S2B_DECISION_COMMAND_BRANCH_COMMAND_BRANCH:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Branch) arguments.get(1),
+					(S2B) arguments.get(2), (Decision) arguments.get(3), (Command) arguments.get(4),
+					(Branch) arguments.get(5), (Command) arguments.get(6), (Branch) arguments.get(7));
 		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.DECLUL2BRANCHBUB___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1291,35 +1290,35 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 			return null;
 		case RulesPackage.DECLUL2BRANCHBUB___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_BWD_EMOFLON_EDGE_62__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_62((EMoflonEdge) arguments.get(0));
-		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_FWD_EMOFLON_EDGE_62__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_62((EMoflonEdge) arguments.get(0));
+		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_BWD_EMOFLON_EDGE_128__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_128((EMoflonEdge) arguments.get(0));
+		case RulesPackage.DECLUL2BRANCHBUB___IS_APPROPRIATE_FWD_EMOFLON_EDGE_128__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_128((EMoflonEdge) arguments.get(0));
 		case RulesPackage.DECLUL2BRANCHBUB___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.DECLUL2BRANCHBUB___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_SOLVE_CSP_CC__COMMAND_BRANCH_COMMAND_DECISION_BRANCH_ASSIGNMENT_BRANCH_WHILE_WHILE_ASSIGNMENT_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Command) arguments.get(0), (Branch) arguments.get(1),
-					(Command) arguments.get(2), (Decision) arguments.get(3), (Branch) arguments.get(4),
-					(Assignment) arguments.get(5), (Branch) arguments.get(6), (While) arguments.get(7),
-					(While) arguments.get(8), (Assignment) arguments.get(9), (Match) arguments.get(10),
+		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_SOLVE_CSP_CC__BRANCH_ASSIGNMENT_DECISION_ASSIGNMENT_WHILE_COMMAND_BRANCH_WHILE_COMMAND_BRANCH_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Branch) arguments.get(0), (Assignment) arguments.get(1),
+					(Decision) arguments.get(2), (Assignment) arguments.get(3), (While) arguments.get(4),
+					(Command) arguments.get(5), (Branch) arguments.get(6), (While) arguments.get(7),
+					(Command) arguments.get(8), (Branch) arguments.get(9), (Match) arguments.get(10),
 					(Match) arguments.get(11));
 		case RulesPackage.DECLUL2BRANCHBUB___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.DECLUL2BRANCHBUB___CHECK_DEC_FWD__DECISION_ASSIGNMENT_WHILE_WHILE_ASSIGNMENT:
-			return checkDEC_FWD((Decision) arguments.get(0), (Assignment) arguments.get(1), (While) arguments.get(2),
-					(While) arguments.get(3), (Assignment) arguments.get(4));
-		case RulesPackage.DECLUL2BRANCHBUB___CHECK_DEC_BWD__COMMAND_BRANCH_COMMAND_BRANCH_BRANCH:
-			return checkDEC_BWD((Command) arguments.get(0), (Branch) arguments.get(1), (Command) arguments.get(2),
-					(Branch) arguments.get(3), (Branch) arguments.get(4));
+		case RulesPackage.DECLUL2BRANCHBUB___CHECK_DEC_FWD__ASSIGNMENT_DECISION_ASSIGNMENT_WHILE_WHILE:
+			return checkDEC_FWD((Assignment) arguments.get(0), (Decision) arguments.get(1),
+					(Assignment) arguments.get(2), (While) arguments.get(3), (While) arguments.get(4));
+		case RulesPackage.DECLUL2BRANCHBUB___CHECK_DEC_BWD__BRANCH_COMMAND_BRANCH_COMMAND_BRANCH:
+			return checkDEC_BWD((Branch) arguments.get(0), (Command) arguments.get(1), (Branch) arguments.get(2),
+					(Command) arguments.get(3), (Branch) arguments.get(4));
 		case RulesPackage.DECLUL2BRANCHBUB___GENERATE_MODEL__RULEENTRYCONTAINER_S2B:
 			return generateModel((RuleEntryContainer) arguments.get(0), (S2B) arguments.get(1));
-		case RulesPackage.DECLUL2BRANCHBUB___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BRANCH_DECISION_S2B_MODELGENERATORRULERESULT:
+		case RulesPackage.DECLUL2BRANCHBUB___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BRANCH_S2B_DECISION_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Branch) arguments.get(1),
-					(Decision) arguments.get(2), (S2B) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+					(S2B) arguments.get(2), (Decision) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.DECLUL2BRANCHBUB___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1327,21 +1326,21 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_0_1_initialbindings_blackBBBBBBB(declul2branchbub _this,
-			Match match, Decision d, Assignment l, While b, While a, Assignment m) {
+			Match match, Assignment m, Decision d, Assignment l, While a, While b) {
 		if (!l.equals(m)) {
 			if (!a.equals(b)) {
-				return new Object[] { _this, match, d, l, b, a, m };
+				return new Object[] { _this, match, m, d, l, a, b };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_declul2branchbub_0_2_SolveCSP_bindingFBBBBBBB(declul2branchbub _this,
-			Match match, Decision d, Assignment l, While b, While a, Assignment m) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, d, l, b, a, m);
+			Match match, Assignment m, Decision d, Assignment l, While a, While b) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, m, d, l, a, b);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, d, l, b, a, m };
+			return new Object[] { csp, _this, match, m, d, l, a, b };
 		}
 		return null;
 	}
@@ -1351,9 +1350,9 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_0_2_SolveCSP_bindingAndBlackFBBBBBBB(declul2branchbub _this,
-			Match match, Decision d, Assignment l, While b, While a, Assignment m) {
+			Match match, Assignment m, Decision d, Assignment l, While a, While b) {
 		Object[] result_pattern_declul2branchbub_0_2_SolveCSP_binding = pattern_declul2branchbub_0_2_SolveCSP_bindingFBBBBBBB(
-				_this, match, d, l, b, a, m);
+				_this, match, m, d, l, a, b);
 		if (result_pattern_declul2branchbub_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_declul2branchbub_0_2_SolveCSP_binding[0];
 
@@ -1361,7 +1360,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 					csp);
 			if (result_pattern_declul2branchbub_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, d, l, b, a, m };
+				return new Object[] { csp, _this, match, m, d, l, a, b };
 			}
 		}
 		return null;
@@ -1374,60 +1373,60 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_0_4_collectelementstobetranslated_blackBBBBBB(Match match,
-			Decision d, Assignment l, While b, While a, Assignment m) {
+			Assignment m, Decision d, Assignment l, While a, While b) {
 		if (!l.equals(m)) {
 			if (!a.equals(b)) {
-				return new Object[] { match, d, l, b, a, m };
+				return new Object[] { match, m, d, l, a, b };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_declul2branchbub_0_4_collectelementstobetranslated_greenBBBBBBFFFFF(
-			Match match, Decision d, Assignment l, While b, While a, Assignment m) {
+			Match match, Assignment m, Decision d, Assignment l, While a, While b) {
 		EMoflonEdge d__a____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge d__b____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b__m____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b__m____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(l);
-		match.getToBeTranslatedNodes().add(b);
-		match.getToBeTranslatedNodes().add(a);
+		EMoflonEdge d__b____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b__m____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b__m____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(m);
+		match.getToBeTranslatedNodes().add(l);
+		match.getToBeTranslatedNodes().add(a);
+		match.getToBeTranslatedNodes().add(b);
 		String d__a____positive_name_prime = "positive";
-		String d__b____negative_name_prime = "negative";
-		String b__m____first_name_prime = "first";
-		String b__m____last_name_prime = "last";
 		String a__l____last_name_prime = "last";
+		String d__b____negative_name_prime = "negative";
+		String b__m____last_name_prime = "last";
+		String b__m____first_name_prime = "first";
 		d__a____positive.setSrc(d);
 		d__a____positive.setTrg(a);
 		match.getToBeTranslatedEdges().add(d__a____positive);
-		d__b____negative.setSrc(d);
-		d__b____negative.setTrg(b);
-		match.getToBeTranslatedEdges().add(d__b____negative);
-		b__m____first.setSrc(b);
-		b__m____first.setTrg(m);
-		match.getToBeTranslatedEdges().add(b__m____first);
-		b__m____last.setSrc(b);
-		b__m____last.setTrg(m);
-		match.getToBeTranslatedEdges().add(b__m____last);
 		a__l____last.setSrc(a);
 		a__l____last.setTrg(l);
 		match.getToBeTranslatedEdges().add(a__l____last);
+		d__b____negative.setSrc(d);
+		d__b____negative.setTrg(b);
+		match.getToBeTranslatedEdges().add(d__b____negative);
+		b__m____last.setSrc(b);
+		b__m____last.setTrg(m);
+		match.getToBeTranslatedEdges().add(b__m____last);
+		b__m____first.setSrc(b);
+		b__m____first.setTrg(m);
+		match.getToBeTranslatedEdges().add(b__m____first);
 		d__a____positive.setName(d__a____positive_name_prime);
-		d__b____negative.setName(d__b____negative_name_prime);
-		b__m____first.setName(b__m____first_name_prime);
-		b__m____last.setName(b__m____last_name_prime);
 		a__l____last.setName(a__l____last_name_prime);
-		return new Object[] { match, d, l, b, a, m, d__a____positive, d__b____negative, b__m____first, b__m____last,
-				a__l____last };
+		d__b____negative.setName(d__b____negative_name_prime);
+		b__m____last.setName(b__m____last_name_prime);
+		b__m____first.setName(b__m____first_name_prime);
+		return new Object[] { match, m, d, l, a, b, d__a____positive, a__l____last, d__b____negative, b__m____last,
+				b__m____first };
 	}
 
 	public static final Object[] pattern_declul2branchbub_0_5_collectcontextelements_blackBBBBBB(Match match,
-			Decision d, Assignment l, While b, While a, Assignment m) {
+			Assignment m, Decision d, Assignment l, While a, While b) {
 		if (!l.equals(m)) {
 			if (!a.equals(b)) {
-				return new Object[] { match, d, l, b, a, m };
+				return new Object[] { match, m, d, l, a, b };
 			}
 		}
 		return null;
@@ -1439,8 +1438,8 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final void pattern_declul2branchbub_0_6_registerobjectstomatch_expressionBBBBBBB(
-			declul2branchbub _this, Match match, Decision d, Assignment l, While b, While a, Assignment m) {
-		_this.registerObjectsToMatch_FWD(match, d, l, b, a, m);
+			declul2branchbub _this, Match match, Assignment m, Decision d, Assignment l, While a, While b) {
+		_this.registerObjectsToMatch_FWD(match, m, d, l, a, b);
 
 	}
 
@@ -1457,34 +1456,34 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	public static final Object[] pattern_declul2branchbub_1_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("c");
-		EObject _localVariable_1 = isApplicableMatch.getObject("d");
-		EObject _localVariable_2 = isApplicableMatch.getObject("d2c");
-		EObject _localVariable_3 = isApplicableMatch.getObject("l");
-		EObject _localVariable_4 = isApplicableMatch.getObject("b");
+		EObject _localVariable_1 = isApplicableMatch.getObject("d2c");
+		EObject _localVariable_2 = isApplicableMatch.getObject("m");
+		EObject _localVariable_3 = isApplicableMatch.getObject("d");
+		EObject _localVariable_4 = isApplicableMatch.getObject("l");
 		EObject _localVariable_5 = isApplicableMatch.getObject("a");
-		EObject _localVariable_6 = isApplicableMatch.getObject("m");
+		EObject _localVariable_6 = isApplicableMatch.getObject("b");
 		EObject tmpC = _localVariable_0;
-		EObject tmpD = _localVariable_1;
-		EObject tmpD2c = _localVariable_2;
-		EObject tmpL = _localVariable_3;
-		EObject tmpB = _localVariable_4;
+		EObject tmpD2c = _localVariable_1;
+		EObject tmpM = _localVariable_2;
+		EObject tmpD = _localVariable_3;
+		EObject tmpL = _localVariable_4;
 		EObject tmpA = _localVariable_5;
-		EObject tmpM = _localVariable_6;
+		EObject tmpB = _localVariable_6;
 		if (tmpC instanceof Branch) {
 			Branch c = (Branch) tmpC;
-			if (tmpD instanceof Decision) {
-				Decision d = (Decision) tmpD;
-				if (tmpD2c instanceof S2B) {
-					S2B d2c = (S2B) tmpD2c;
-					if (tmpL instanceof Assignment) {
-						Assignment l = (Assignment) tmpL;
-						if (tmpB instanceof While) {
-							While b = (While) tmpB;
+			if (tmpD2c instanceof S2B) {
+				S2B d2c = (S2B) tmpD2c;
+				if (tmpM instanceof Assignment) {
+					Assignment m = (Assignment) tmpM;
+					if (tmpD instanceof Decision) {
+						Decision d = (Decision) tmpD;
+						if (tmpL instanceof Assignment) {
+							Assignment l = (Assignment) tmpL;
 							if (tmpA instanceof While) {
 								While a = (While) tmpA;
-								if (tmpM instanceof Assignment) {
-									Assignment m = (Assignment) tmpM;
-									return new Object[] { c, d, d2c, l, b, a, m, isApplicableMatch };
+								if (tmpB instanceof While) {
+									While b = (While) tmpB;
+									return new Object[] { c, d2c, m, d, l, a, b, isApplicableMatch };
 								}
 							}
 						}
@@ -1495,15 +1494,15 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_1_1_performtransformation_blackBBBBBBBFBB(Branch c,
-			Decision d, S2B d2c, Assignment l, While b, While a, Assignment m, declul2branchbub _this,
+	public static final Object[] pattern_declul2branchbub_1_1_performtransformation_blackBBBBBBBFBB(Branch c, S2B d2c,
+			Assignment m, Decision d, Assignment l, While a, While b, declul2branchbub _this,
 			IsApplicableMatch isApplicableMatch) {
 		if (!l.equals(m)) {
 			if (!a.equals(b)) {
 				for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 					if (tmpCsp instanceof CSP) {
 						CSP csp = (CSP) tmpCsp;
-						return new Object[] { c, d, d2c, l, b, a, m, csp, _this, isApplicableMatch };
+						return new Object[] { c, d2c, m, d, l, a, b, csp, _this, isApplicableMatch };
 					}
 				}
 			}
@@ -1517,60 +1516,60 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 				isApplicableMatch);
 		if (result_pattern_declul2branchbub_1_1_performtransformation_binding != null) {
 			Branch c = (Branch) result_pattern_declul2branchbub_1_1_performtransformation_binding[0];
-			Decision d = (Decision) result_pattern_declul2branchbub_1_1_performtransformation_binding[1];
-			S2B d2c = (S2B) result_pattern_declul2branchbub_1_1_performtransformation_binding[2];
-			Assignment l = (Assignment) result_pattern_declul2branchbub_1_1_performtransformation_binding[3];
-			While b = (While) result_pattern_declul2branchbub_1_1_performtransformation_binding[4];
+			S2B d2c = (S2B) result_pattern_declul2branchbub_1_1_performtransformation_binding[1];
+			Assignment m = (Assignment) result_pattern_declul2branchbub_1_1_performtransformation_binding[2];
+			Decision d = (Decision) result_pattern_declul2branchbub_1_1_performtransformation_binding[3];
+			Assignment l = (Assignment) result_pattern_declul2branchbub_1_1_performtransformation_binding[4];
 			While a = (While) result_pattern_declul2branchbub_1_1_performtransformation_binding[5];
-			Assignment m = (Assignment) result_pattern_declul2branchbub_1_1_performtransformation_binding[6];
+			While b = (While) result_pattern_declul2branchbub_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_declul2branchbub_1_1_performtransformation_black = pattern_declul2branchbub_1_1_performtransformation_blackBBBBBBBFBB(
-					c, d, d2c, l, b, a, m, _this, isApplicableMatch);
+					c, d2c, m, d, l, a, b, _this, isApplicableMatch);
 			if (result_pattern_declul2branchbub_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_declul2branchbub_1_1_performtransformation_black[7];
 
-				return new Object[] { c, d, d2c, l, b, a, m, csp, _this, isApplicableMatch };
+				return new Object[] { c, d2c, m, d, l, a, b, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_1_1_performtransformation_greenFFBFFFFBFBBBF(Branch c,
-			Assignment l, While b, While a, Assignment m) {
+	public static final Object[] pattern_declul2branchbub_1_1_performtransformation_greenBBBFFFBFFFBFF(Branch c,
+			Assignment m, Assignment l, While a, While b) {
 		S2N l2z = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
-		Command z = ControlflowFactory.eINSTANCE.createCommand();
-		Command w = ControlflowFactory.eINSTANCE.createCommand();
 		S2B b2y = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
-		S2N m2w = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
-		Branch x = ControlflowFactory.eINSTANCE.createBranch();
-		Branch y = ControlflowFactory.eINSTANCE.createBranch();
 		S2B a2x = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
+		Command z = ControlflowFactory.eINSTANCE.createCommand();
+		S2N m2w = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
+		Branch y = ControlflowFactory.eINSTANCE.createBranch();
+		Command w = ControlflowFactory.eINSTANCE.createCommand();
+		Branch x = ControlflowFactory.eINSTANCE.createBranch();
 		l2z.setSource(l);
-		l2z.setTarget(z);
 		b2y.setSource(b);
-		m2w.setTarget(w);
+		a2x.setSource(a);
+		l2z.setTarget(z);
 		m2w.setSource(m);
-		z.setNext(x);
-		c.setPositive(x);
 		c.setNegative(y);
-		w.setNext(y);
 		b2y.setTarget(y);
 		y.setPositive(w);
+		m2w.setTarget(w);
+		w.setNext(y);
+		c.setPositive(x);
+		z.setNext(x);
 		a2x.setTarget(x);
-		a2x.setSource(a);
-		return new Object[] { l2z, z, c, w, b2y, m2w, x, l, y, b, a, m, a2x };
+		return new Object[] { c, m, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x };
 	}
 
-	public static final Object[] pattern_declul2branchbub_1_2_collecttranslatedelements_blackBBBBBBBBBBBB(S2N l2z,
-			Command z, Command w, S2B b2y, S2N m2w, Branch x, Assignment l, Branch y, While b, While a, Assignment m,
-			S2B a2x) {
-		if (!l2z.equals(m2w)) {
-			if (!w.equals(z)) {
-				if (!x.equals(y)) {
-					if (!l.equals(m)) {
-						if (!a.equals(b)) {
-							if (!a2x.equals(b2y)) {
-								return new Object[] { l2z, z, w, b2y, m2w, x, l, y, b, a, m, a2x };
+	public static final Object[] pattern_declul2branchbub_1_2_collecttranslatedelements_blackBBBBBBBBBBBB(Assignment m,
+			Assignment l, S2N l2z, S2B b2y, S2B a2x, While a, Command z, S2N m2w, Branch y, While b, Command w,
+			Branch x) {
+		if (!l.equals(m)) {
+			if (!l2z.equals(m2w)) {
+				if (!a2x.equals(b2y)) {
+					if (!a.equals(b)) {
+						if (!w.equals(z)) {
+							if (!x.equals(y)) {
+								return new Object[] { m, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x };
 							}
 						}
 					}
@@ -1580,232 +1579,232 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_1_2_collecttranslatedelements_greenFBBBBBBBBBBBB(S2N l2z,
-			Command z, Command w, S2B b2y, S2N m2w, Branch x, Assignment l, Branch y, While b, While a, Assignment m,
-			S2B a2x) {
+	public static final Object[] pattern_declul2branchbub_1_2_collecttranslatedelements_greenFBBBBBBBBBBBB(Assignment m,
+			Assignment l, S2N l2z, S2B b2y, S2B a2x, While a, Command z, S2N m2w, Branch y, While b, Command w,
+			Branch x) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(l2z);
-		ruleresult.getCreatedElements().add(z);
-		ruleresult.getCreatedElements().add(w);
-		ruleresult.getCreatedLinkElements().add(b2y);
-		ruleresult.getCreatedLinkElements().add(m2w);
-		ruleresult.getCreatedElements().add(x);
+		ruleresult.getTranslatedElements().add(m);
 		ruleresult.getTranslatedElements().add(l);
+		ruleresult.getCreatedLinkElements().add(l2z);
+		ruleresult.getCreatedLinkElements().add(b2y);
+		ruleresult.getCreatedLinkElements().add(a2x);
+		ruleresult.getTranslatedElements().add(a);
+		ruleresult.getCreatedElements().add(z);
+		ruleresult.getCreatedLinkElements().add(m2w);
 		ruleresult.getCreatedElements().add(y);
 		ruleresult.getTranslatedElements().add(b);
-		ruleresult.getTranslatedElements().add(a);
-		ruleresult.getTranslatedElements().add(m);
-		ruleresult.getCreatedLinkElements().add(a2x);
-		return new Object[] { ruleresult, l2z, z, w, b2y, m2w, x, l, y, b, a, m, a2x };
+		ruleresult.getCreatedElements().add(w);
+		ruleresult.getCreatedElements().add(x);
+		return new Object[] { ruleresult, m, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x };
 	}
 
 	public static final Object[] pattern_declul2branchbub_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject l2z, EObject z, EObject c, EObject w, EObject d, EObject b2y,
-			EObject m2w, EObject d2c, EObject x, EObject l, EObject y, EObject b, EObject a, EObject m, EObject a2x) {
-		if (!l2z.equals(z)) {
-			if (!l2z.equals(w)) {
-				if (!l2z.equals(m2w)) {
-					if (!l2z.equals(x)) {
-						if (!l2z.equals(y)) {
-							if (!l2z.equals(m)) {
-								if (!c.equals(l2z)) {
-									if (!c.equals(z)) {
+			PerformRuleResult ruleresult, EObject c, EObject d2c, EObject m, EObject d, EObject l, EObject l2z,
+			EObject b2y, EObject a2x, EObject a, EObject z, EObject m2w, EObject y, EObject b, EObject w, EObject x) {
+		if (!c.equals(d2c)) {
+			if (!c.equals(m)) {
+				if (!c.equals(d)) {
+					if (!c.equals(l)) {
+						if (!c.equals(l2z)) {
+							if (!c.equals(z)) {
+								if (!c.equals(m2w)) {
+									if (!c.equals(y)) {
 										if (!c.equals(w)) {
-											if (!c.equals(d)) {
-												if (!c.equals(m2w)) {
-													if (!c.equals(d2c)) {
-														if (!c.equals(x)) {
-															if (!c.equals(l)) {
-																if (!c.equals(y)) {
-																	if (!c.equals(m)) {
-																		if (!w.equals(z)) {
-																			if (!w.equals(x)) {
-																				if (!w.equals(y)) {
-																					if (!d.equals(l2z)) {
-																						if (!d.equals(z)) {
-																							if (!d.equals(w)) {
-																								if (!d.equals(m2w)) {
+											if (!c.equals(x)) {
+												if (!d2c.equals(m)) {
+													if (!d2c.equals(l)) {
+														if (!d2c.equals(l2z)) {
+															if (!d2c.equals(z)) {
+																if (!d2c.equals(m2w)) {
+																	if (!d2c.equals(y)) {
+																		if (!d2c.equals(w)) {
+																			if (!d2c.equals(x)) {
+																				if (!m.equals(z)) {
+																					if (!m.equals(m2w)) {
+																						if (!m.equals(y)) {
+																							if (!m.equals(w)) {
+																								if (!m.equals(x)) {
 																									if (!d.equals(
 																											d2c)) {
 																										if (!d.equals(
-																												x)) {
+																												m)) {
 																											if (!d.equals(
 																													l)) {
 																												if (!d.equals(
-																														y)) {
+																														l2z)) {
 																													if (!d.equals(
-																															m)) {
-																														if (!b2y.equals(
-																																l2z)) {
-																															if (!b2y.equals(
-																																	z)) {
-																																if (!b2y.equals(
-																																		c)) {
-																																	if (!b2y.equals(
-																																			w)) {
-																																		if (!b2y.equals(
-																																				d)) {
-																																			if (!b2y.equals(
-																																					m2w)) {
-																																				if (!b2y.equals(
-																																						d2c)) {
-																																					if (!b2y.equals(
-																																							x)) {
-																																						if (!b2y.equals(
-																																								l)) {
-																																							if (!b2y.equals(
-																																									y)) {
-																																								if (!b2y.equals(
-																																										m)) {
-																																									if (!m2w.equals(
-																																											z)) {
-																																										if (!m2w.equals(
-																																												w)) {
-																																											if (!m2w.equals(
-																																													x)) {
-																																												if (!m2w.equals(
+																															z)) {
+																														if (!d.equals(
+																																m2w)) {
+																															if (!d.equals(
+																																	y)) {
+																																if (!d.equals(
+																																		w)) {
+																																	if (!d.equals(
+																																			x)) {
+																																		if (!l.equals(
+																																				m)) {
+																																			if (!l.equals(
+																																					l2z)) {
+																																				if (!l.equals(
+																																						z)) {
+																																					if (!l.equals(
+																																							m2w)) {
+																																						if (!l.equals(
+																																								y)) {
+																																							if (!l.equals(
+																																									w)) {
+																																								if (!l.equals(
+																																										x)) {
+																																									if (!l2z.equals(
+																																											m)) {
+																																										if (!l2z.equals(
+																																												z)) {
+																																											if (!l2z.equals(
+																																													m2w)) {
+																																												if (!l2z.equals(
 																																														y)) {
-																																													if (!d2c.equals(
-																																															l2z)) {
-																																														if (!d2c.equals(
-																																																z)) {
-																																															if (!d2c.equals(
-																																																	w)) {
-																																																if (!d2c.equals(
-																																																		m2w)) {
-																																																	if (!d2c.equals(
-																																																			x)) {
-																																																		if (!d2c.equals(
-																																																				l)) {
-																																																			if (!d2c.equals(
-																																																					y)) {
-																																																				if (!d2c.equals(
-																																																						m)) {
-																																																					if (!x.equals(
+																																													if (!l2z.equals(
+																																															w)) {
+																																														if (!l2z.equals(
+																																																x)) {
+																																															if (!b2y.equals(
+																																																	c)) {
+																																																if (!b2y.equals(
+																																																		d2c)) {
+																																																	if (!b2y.equals(
+																																																			m)) {
+																																																		if (!b2y.equals(
+																																																				d)) {
+																																																			if (!b2y.equals(
+																																																					l)) {
+																																																				if (!b2y.equals(
+																																																						l2z)) {
+																																																					if (!b2y.equals(
 																																																							z)) {
-																																																						if (!x.equals(
-																																																								y)) {
-																																																							if (!l.equals(
-																																																									l2z)) {
-																																																								if (!l.equals(
-																																																										z)) {
-																																																									if (!l.equals(
-																																																											w)) {
-																																																										if (!l.equals(
-																																																												m2w)) {
-																																																											if (!l.equals(
-																																																													x)) {
-																																																												if (!l.equals(
-																																																														y)) {
-																																																													if (!l.equals(
-																																																															m)) {
-																																																														if (!y.equals(
-																																																																z)) {
-																																																															if (!b.equals(
+																																																						if (!b2y.equals(
+																																																								m2w)) {
+																																																							if (!b2y.equals(
+																																																									y)) {
+																																																								if (!b2y.equals(
+																																																										w)) {
+																																																									if (!b2y.equals(
+																																																											x)) {
+																																																										if (!a2x.equals(
+																																																												c)) {
+																																																											if (!a2x.equals(
+																																																													d2c)) {
+																																																												if (!a2x.equals(
+																																																														m)) {
+																																																													if (!a2x.equals(
+																																																															d)) {
+																																																														if (!a2x.equals(
+																																																																l)) {
+																																																															if (!a2x.equals(
 																																																																	l2z)) {
-																																																																if (!b.equals(
-																																																																		z)) {
-																																																																	if (!b.equals(
-																																																																			c)) {
-																																																																		if (!b.equals(
-																																																																				w)) {
-																																																																			if (!b.equals(
-																																																																					d)) {
-																																																																				if (!b.equals(
-																																																																						b2y)) {
-																																																																					if (!b.equals(
-																																																																							m2w)) {
-																																																																						if (!b.equals(
-																																																																								d2c)) {
-																																																																							if (!b.equals(
-																																																																									x)) {
-																																																																								if (!b.equals(
-																																																																										l)) {
-																																																																									if (!b.equals(
-																																																																											y)) {
-																																																																										if (!b.equals(
-																																																																												m)) {
+																																																																if (!a2x.equals(
+																																																																		b2y)) {
+																																																																	if (!a2x.equals(
+																																																																			z)) {
+																																																																		if (!a2x.equals(
+																																																																				m2w)) {
+																																																																			if (!a2x.equals(
+																																																																					y)) {
+																																																																				if (!a2x.equals(
+																																																																						b)) {
+																																																																					if (!a2x.equals(
+																																																																							w)) {
+																																																																						if (!a2x.equals(
+																																																																								x)) {
+																																																																							if (!a.equals(
+																																																																									c)) {
+																																																																								if (!a.equals(
+																																																																										d2c)) {
+																																																																									if (!a.equals(
+																																																																											m)) {
+																																																																										if (!a.equals(
+																																																																												d)) {
 																																																																											if (!a.equals(
-																																																																													l2z)) {
+																																																																													l)) {
 																																																																												if (!a.equals(
-																																																																														z)) {
+																																																																														l2z)) {
 																																																																													if (!a.equals(
-																																																																															c)) {
+																																																																															b2y)) {
 																																																																														if (!a.equals(
-																																																																																w)) {
+																																																																																a2x)) {
 																																																																															if (!a.equals(
-																																																																																	d)) {
+																																																																																	z)) {
 																																																																																if (!a.equals(
-																																																																																		b2y)) {
+																																																																																		m2w)) {
 																																																																																	if (!a.equals(
-																																																																																			m2w)) {
+																																																																																			y)) {
 																																																																																		if (!a.equals(
-																																																																																				d2c)) {
+																																																																																				b)) {
 																																																																																			if (!a.equals(
-																																																																																					x)) {
+																																																																																					w)) {
 																																																																																				if (!a.equals(
-																																																																																						l)) {
-																																																																																					if (!a.equals(
-																																																																																							y)) {
-																																																																																						if (!a.equals(
-																																																																																								b)) {
-																																																																																							if (!a.equals(
-																																																																																									m)) {
-																																																																																								if (!a.equals(
-																																																																																										a2x)) {
-																																																																																									if (!m.equals(
+																																																																																						x)) {
+																																																																																					if (!m2w.equals(
+																																																																																							z)) {
+																																																																																						if (!m2w.equals(
+																																																																																								y)) {
+																																																																																							if (!m2w.equals(
+																																																																																									w)) {
+																																																																																								if (!m2w.equals(
+																																																																																										x)) {
+																																																																																									if (!y.equals(
 																																																																																											z)) {
-																																																																																										if (!m.equals(
-																																																																																												w)) {
-																																																																																											if (!m.equals(
-																																																																																													m2w)) {
-																																																																																												if (!m.equals(
-																																																																																														x)) {
-																																																																																													if (!m.equals(
-																																																																																															y)) {
-																																																																																														if (!a2x.equals(
-																																																																																																l2z)) {
-																																																																																															if (!a2x.equals(
-																																																																																																	z)) {
-																																																																																																if (!a2x.equals(
-																																																																																																		c)) {
-																																																																																																	if (!a2x.equals(
-																																																																																																			w)) {
-																																																																																																		if (!a2x.equals(
-																																																																																																				d)) {
-																																																																																																			if (!a2x.equals(
-																																																																																																					b2y)) {
-																																																																																																				if (!a2x.equals(
-																																																																																																						m2w)) {
-																																																																																																					if (!a2x.equals(
-																																																																																																							d2c)) {
-																																																																																																						if (!a2x.equals(
-																																																																																																								x)) {
-																																																																																																							if (!a2x.equals(
-																																																																																																									l)) {
-																																																																																																								if (!a2x.equals(
-																																																																																																										y)) {
-																																																																																																									if (!a2x.equals(
-																																																																																																											b)) {
-																																																																																																										if (!a2x.equals(
-																																																																																																												m)) {
+																																																																																										if (!b.equals(
+																																																																																												c)) {
+																																																																																											if (!b.equals(
+																																																																																													d2c)) {
+																																																																																												if (!b.equals(
+																																																																																														m)) {
+																																																																																													if (!b.equals(
+																																																																																															d)) {
+																																																																																														if (!b.equals(
+																																																																																																l)) {
+																																																																																															if (!b.equals(
+																																																																																																	l2z)) {
+																																																																																																if (!b.equals(
+																																																																																																		b2y)) {
+																																																																																																	if (!b.equals(
+																																																																																																			z)) {
+																																																																																																		if (!b.equals(
+																																																																																																				m2w)) {
+																																																																																																			if (!b.equals(
+																																																																																																					y)) {
+																																																																																																				if (!b.equals(
+																																																																																																						w)) {
+																																																																																																					if (!b.equals(
+																																																																																																							x)) {
+																																																																																																						if (!w.equals(
+																																																																																																								z)) {
+																																																																																																							if (!w.equals(
+																																																																																																									y)) {
+																																																																																																								if (!w.equals(
+																																																																																																										x)) {
+																																																																																																									if (!x.equals(
+																																																																																																											z)) {
+																																																																																																										if (!x.equals(
+																																																																																																												y)) {
 																																																																																																											return new Object[] {
 																																																																																																													ruleresult,
-																																																																																																													l2z,
-																																																																																																													z,
 																																																																																																													c,
-																																																																																																													w,
-																																																																																																													d,
-																																																																																																													b2y,
-																																																																																																													m2w,
 																																																																																																													d2c,
-																																																																																																													x,
+																																																																																																													m,
+																																																																																																													d,
 																																																																																																													l,
+																																																																																																													l2z,
+																																																																																																													b2y,
+																																																																																																													a2x,
+																																																																																																													a,
+																																																																																																													z,
+																																																																																																													m2w,
 																																																																																																													y,
 																																																																																																													b,
-																																																																																																													a,
-																																																																																																													m,
-																																																																																																													a2x };
+																																																																																																													w,
+																																																																																																													x };
 																																																																																																										}
 																																																																																																									}
 																																																																																																								}
@@ -1915,129 +1914,129 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_1_3_bookkeepingforedges_greenBBBBBBBBBBBBBBBFFFFFFFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject l2z, EObject z, EObject c, EObject w, EObject d, EObject b2y,
-			EObject m2w, EObject x, EObject l, EObject y, EObject b, EObject a, EObject m, EObject a2x) {
-		EMoflonEdge l2z__z____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge z__x____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject c, EObject m, EObject d, EObject l, EObject l2z, EObject b2y,
+			EObject a2x, EObject a, EObject z, EObject m2w, EObject y, EObject b, EObject w, EObject x) {
 		EMoflonEdge c__y____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge d__a____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2w__w____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge w__y____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge d__b____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge l2z__l____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2y__y____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge y__w____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b__m____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b__m____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2y__b____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge d__a____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c__x____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2w__m____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2x__x____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2x__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge z__x____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge l2z__z____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2w__m____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge d__b____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge y__w____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b__m____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b__m____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2y__b____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2w__w____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2y__y____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2x__x____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge w__y____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "declul2branchbub";
-		String l2z__z____target_name_prime = "target";
-		String z__x____next_name_prime = "next";
 		String c__y____negative_name_prime = "negative";
-		String d__a____positive_name_prime = "positive";
-		String m2w__w____target_name_prime = "target";
-		String w__y____next_name_prime = "next";
-		String d__b____negative_name_prime = "negative";
 		String l2z__l____source_name_prime = "source";
-		String b2y__y____target_name_prime = "target";
-		String y__w____positive_name_prime = "positive";
-		String b__m____first_name_prime = "first";
-		String b__m____last_name_prime = "last";
-		String b2y__b____source_name_prime = "source";
+		String d__a____positive_name_prime = "positive";
 		String c__x____positive_name_prime = "positive";
-		String m2w__m____source_name_prime = "source";
-		String a__l____last_name_prime = "last";
-		String a2x__x____target_name_prime = "target";
 		String a2x__a____source_name_prime = "source";
-		l2z__z____target.setSrc(l2z);
-		l2z__z____target.setTrg(z);
-		ruleresult.getCreatedEdges().add(l2z__z____target);
-		z__x____next.setSrc(z);
-		z__x____next.setTrg(x);
-		ruleresult.getCreatedEdges().add(z__x____next);
+		String a__l____last_name_prime = "last";
+		String z__x____next_name_prime = "next";
+		String l2z__z____target_name_prime = "target";
+		String m2w__m____source_name_prime = "source";
+		String d__b____negative_name_prime = "negative";
+		String y__w____positive_name_prime = "positive";
+		String b__m____last_name_prime = "last";
+		String b__m____first_name_prime = "first";
+		String b2y__b____source_name_prime = "source";
+		String m2w__w____target_name_prime = "target";
+		String b2y__y____target_name_prime = "target";
+		String a2x__x____target_name_prime = "target";
+		String w__y____next_name_prime = "next";
 		c__y____negative.setSrc(c);
 		c__y____negative.setTrg(y);
 		ruleresult.getCreatedEdges().add(c__y____negative);
-		d__a____positive.setSrc(d);
-		d__a____positive.setTrg(a);
-		ruleresult.getTranslatedEdges().add(d__a____positive);
-		m2w__w____target.setSrc(m2w);
-		m2w__w____target.setTrg(w);
-		ruleresult.getCreatedEdges().add(m2w__w____target);
-		w__y____next.setSrc(w);
-		w__y____next.setTrg(y);
-		ruleresult.getCreatedEdges().add(w__y____next);
-		d__b____negative.setSrc(d);
-		d__b____negative.setTrg(b);
-		ruleresult.getTranslatedEdges().add(d__b____negative);
 		l2z__l____source.setSrc(l2z);
 		l2z__l____source.setTrg(l);
 		ruleresult.getCreatedEdges().add(l2z__l____source);
-		b2y__y____target.setSrc(b2y);
-		b2y__y____target.setTrg(y);
-		ruleresult.getCreatedEdges().add(b2y__y____target);
-		y__w____positive.setSrc(y);
-		y__w____positive.setTrg(w);
-		ruleresult.getCreatedEdges().add(y__w____positive);
-		b__m____first.setSrc(b);
-		b__m____first.setTrg(m);
-		ruleresult.getTranslatedEdges().add(b__m____first);
-		b__m____last.setSrc(b);
-		b__m____last.setTrg(m);
-		ruleresult.getTranslatedEdges().add(b__m____last);
-		b2y__b____source.setSrc(b2y);
-		b2y__b____source.setTrg(b);
-		ruleresult.getCreatedEdges().add(b2y__b____source);
+		d__a____positive.setSrc(d);
+		d__a____positive.setTrg(a);
+		ruleresult.getTranslatedEdges().add(d__a____positive);
 		c__x____positive.setSrc(c);
 		c__x____positive.setTrg(x);
 		ruleresult.getCreatedEdges().add(c__x____positive);
-		m2w__m____source.setSrc(m2w);
-		m2w__m____source.setTrg(m);
-		ruleresult.getCreatedEdges().add(m2w__m____source);
-		a__l____last.setSrc(a);
-		a__l____last.setTrg(l);
-		ruleresult.getTranslatedEdges().add(a__l____last);
-		a2x__x____target.setSrc(a2x);
-		a2x__x____target.setTrg(x);
-		ruleresult.getCreatedEdges().add(a2x__x____target);
 		a2x__a____source.setSrc(a2x);
 		a2x__a____source.setTrg(a);
 		ruleresult.getCreatedEdges().add(a2x__a____source);
+		a__l____last.setSrc(a);
+		a__l____last.setTrg(l);
+		ruleresult.getTranslatedEdges().add(a__l____last);
+		z__x____next.setSrc(z);
+		z__x____next.setTrg(x);
+		ruleresult.getCreatedEdges().add(z__x____next);
+		l2z__z____target.setSrc(l2z);
+		l2z__z____target.setTrg(z);
+		ruleresult.getCreatedEdges().add(l2z__z____target);
+		m2w__m____source.setSrc(m2w);
+		m2w__m____source.setTrg(m);
+		ruleresult.getCreatedEdges().add(m2w__m____source);
+		d__b____negative.setSrc(d);
+		d__b____negative.setTrg(b);
+		ruleresult.getTranslatedEdges().add(d__b____negative);
+		y__w____positive.setSrc(y);
+		y__w____positive.setTrg(w);
+		ruleresult.getCreatedEdges().add(y__w____positive);
+		b__m____last.setSrc(b);
+		b__m____last.setTrg(m);
+		ruleresult.getTranslatedEdges().add(b__m____last);
+		b__m____first.setSrc(b);
+		b__m____first.setTrg(m);
+		ruleresult.getTranslatedEdges().add(b__m____first);
+		b2y__b____source.setSrc(b2y);
+		b2y__b____source.setTrg(b);
+		ruleresult.getCreatedEdges().add(b2y__b____source);
+		m2w__w____target.setSrc(m2w);
+		m2w__w____target.setTrg(w);
+		ruleresult.getCreatedEdges().add(m2w__w____target);
+		b2y__y____target.setSrc(b2y);
+		b2y__y____target.setTrg(y);
+		ruleresult.getCreatedEdges().add(b2y__y____target);
+		a2x__x____target.setSrc(a2x);
+		a2x__x____target.setTrg(x);
+		ruleresult.getCreatedEdges().add(a2x__x____target);
+		w__y____next.setSrc(w);
+		w__y____next.setTrg(y);
+		ruleresult.getCreatedEdges().add(w__y____next);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		l2z__z____target.setName(l2z__z____target_name_prime);
-		z__x____next.setName(z__x____next_name_prime);
 		c__y____negative.setName(c__y____negative_name_prime);
-		d__a____positive.setName(d__a____positive_name_prime);
-		m2w__w____target.setName(m2w__w____target_name_prime);
-		w__y____next.setName(w__y____next_name_prime);
-		d__b____negative.setName(d__b____negative_name_prime);
 		l2z__l____source.setName(l2z__l____source_name_prime);
-		b2y__y____target.setName(b2y__y____target_name_prime);
-		y__w____positive.setName(y__w____positive_name_prime);
-		b__m____first.setName(b__m____first_name_prime);
-		b__m____last.setName(b__m____last_name_prime);
-		b2y__b____source.setName(b2y__b____source_name_prime);
+		d__a____positive.setName(d__a____positive_name_prime);
 		c__x____positive.setName(c__x____positive_name_prime);
-		m2w__m____source.setName(m2w__m____source_name_prime);
-		a__l____last.setName(a__l____last_name_prime);
-		a2x__x____target.setName(a2x__x____target_name_prime);
 		a2x__a____source.setName(a2x__a____source_name_prime);
-		return new Object[] { ruleresult, l2z, z, c, w, d, b2y, m2w, x, l, y, b, a, m, a2x, l2z__z____target,
-				z__x____next, c__y____negative, d__a____positive, m2w__w____target, w__y____next, d__b____negative,
-				l2z__l____source, b2y__y____target, y__w____positive, b__m____first, b__m____last, b2y__b____source,
-				c__x____positive, m2w__m____source, a__l____last, a2x__x____target, a2x__a____source };
+		a__l____last.setName(a__l____last_name_prime);
+		z__x____next.setName(z__x____next_name_prime);
+		l2z__z____target.setName(l2z__z____target_name_prime);
+		m2w__m____source.setName(m2w__m____source_name_prime);
+		d__b____negative.setName(d__b____negative_name_prime);
+		y__w____positive.setName(y__w____positive_name_prime);
+		b__m____last.setName(b__m____last_name_prime);
+		b__m____first.setName(b__m____first_name_prime);
+		b2y__b____source.setName(b2y__b____source_name_prime);
+		m2w__w____target.setName(m2w__w____target_name_prime);
+		b2y__y____target.setName(b2y__y____target_name_prime);
+		a2x__x____target.setName(a2x__x____target_name_prime);
+		w__y____next.setName(w__y____next_name_prime);
+		return new Object[] { ruleresult, c, m, d, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x, c__y____negative,
+				l2z__l____source, d__a____positive, c__x____positive, a2x__a____source, a__l____last, z__x____next,
+				l2z__z____target, m2w__m____source, d__b____negative, y__w____positive, b__m____last, b__m____first,
+				b2y__b____source, m2w__w____target, b2y__y____target, a2x__x____target, w__y____next };
 	}
 
 	public static final void pattern_declul2branchbub_1_5_registerobjects_expressionBBBBBBBBBBBBBBBBB(
-			declul2branchbub _this, PerformRuleResult ruleresult, EObject l2z, EObject z, EObject c, EObject w,
-			EObject d, EObject b2y, EObject m2w, EObject d2c, EObject x, EObject l, EObject y, EObject b, EObject a,
-			EObject m, EObject a2x) {
-		_this.registerObjects_FWD(ruleresult, l2z, z, c, w, d, b2y, m2w, d2c, x, l, y, b, a, m, a2x);
+			declul2branchbub _this, PerformRuleResult ruleresult, EObject c, EObject d2c, EObject m, EObject d,
+			EObject l, EObject l2z, EObject b2y, EObject a2x, EObject a, EObject z, EObject m2w, EObject y, EObject b,
+			EObject w, EObject x) {
+		_this.registerObjects_FWD(ruleresult, c, d2c, m, d, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x);
 
 	}
 
@@ -2096,27 +2095,27 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_2_2_corematch_bindingFFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("d");
-		EObject _localVariable_1 = match.getObject("l");
-		EObject _localVariable_2 = match.getObject("b");
+		EObject _localVariable_0 = match.getObject("m");
+		EObject _localVariable_1 = match.getObject("d");
+		EObject _localVariable_2 = match.getObject("l");
 		EObject _localVariable_3 = match.getObject("a");
-		EObject _localVariable_4 = match.getObject("m");
-		EObject tmpD = _localVariable_0;
-		EObject tmpL = _localVariable_1;
-		EObject tmpB = _localVariable_2;
+		EObject _localVariable_4 = match.getObject("b");
+		EObject tmpM = _localVariable_0;
+		EObject tmpD = _localVariable_1;
+		EObject tmpL = _localVariable_2;
 		EObject tmpA = _localVariable_3;
-		EObject tmpM = _localVariable_4;
-		if (tmpD instanceof Decision) {
-			Decision d = (Decision) tmpD;
-			if (tmpL instanceof Assignment) {
-				Assignment l = (Assignment) tmpL;
-				if (tmpB instanceof While) {
-					While b = (While) tmpB;
+		EObject tmpB = _localVariable_4;
+		if (tmpM instanceof Assignment) {
+			Assignment m = (Assignment) tmpM;
+			if (tmpD instanceof Decision) {
+				Decision d = (Decision) tmpD;
+				if (tmpL instanceof Assignment) {
+					Assignment l = (Assignment) tmpL;
 					if (tmpA instanceof While) {
 						While a = (While) tmpA;
-						if (tmpM instanceof Assignment) {
-							Assignment m = (Assignment) tmpM;
-							return new Object[] { d, l, b, a, m, match };
+						if (tmpB instanceof While) {
+							While b = (While) tmpB;
+							return new Object[] { m, d, l, a, b, match };
 						}
 					}
 				}
@@ -2125,8 +2124,8 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_declul2branchbub_2_2_corematch_blackFBFBBBBB(Decision d,
-			Assignment l, While b, While a, Assignment m, Match match) {
+	public static final Iterable<Object[]> pattern_declul2branchbub_2_2_corematch_blackFFBBBBBB(Assignment m,
+			Decision d, Assignment l, While a, While b, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!l.equals(m)) {
 			if (!a.equals(b)) {
@@ -2134,7 +2133,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 						"source")) {
 					Branch c = d2c.getTarget();
 					if (c != null) {
-						_result.add(new Object[] { c, d, d2c, l, b, a, m, match });
+						_result.add(new Object[] { c, d2c, m, d, l, a, b, match });
 					}
 
 				}
@@ -2143,19 +2142,19 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_declul2branchbub_2_3_findcontext_blackBBBBBBB(Branch c, Decision d,
-			S2B d2c, Assignment l, While b, While a, Assignment m) {
+	public static final Iterable<Object[]> pattern_declul2branchbub_2_3_findcontext_blackBBBBBBB(Branch c, S2B d2c,
+			Assignment m, Decision d, Assignment l, While a, While b) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!l.equals(m)) {
 			if (!a.equals(b)) {
-				if (a.equals(d.getPositive())) {
-					if (b.equals(d.getNegative())) {
-						if (d.equals(d2c.getSource())) {
-							if (c.equals(d2c.getTarget())) {
-								if (m.equals(b.getFirst())) {
+				if (d.equals(d2c.getSource())) {
+					if (a.equals(d.getPositive())) {
+						if (l.equals(a.getLast())) {
+							if (b.equals(d.getNegative())) {
+								if (c.equals(d2c.getTarget())) {
 									if (m.equals(b.getLast())) {
-										if (l.equals(a.getLast())) {
-											_result.add(new Object[] { c, d, d2c, l, b, a, m });
+										if (m.equals(b.getFirst())) {
+											_result.add(new Object[] { c, d2c, m, d, l, a, b });
 										}
 									}
 								}
@@ -2168,69 +2167,69 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return _result;
 	}
 
-	public static final Object[] pattern_declul2branchbub_2_3_findcontext_greenBBBBBBBFFFFFFFF(Branch c, Decision d,
-			S2B d2c, Assignment l, While b, While a, Assignment m) {
+	public static final Object[] pattern_declul2branchbub_2_3_findcontext_greenBBBBBBBFFFFFFFF(Branch c, S2B d2c,
+			Assignment m, Decision d, Assignment l, While a, While b) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge d__a____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge d__b____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge d2c__d____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge d2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b__m____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b__m____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge d__a____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String d__a____positive_name_prime = "positive";
-		String d__b____negative_name_prime = "negative";
+		EMoflonEdge d__b____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge d2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b__m____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b__m____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String d2c__d____source_name_prime = "source";
-		String d2c__c____target_name_prime = "target";
-		String b__m____first_name_prime = "first";
-		String b__m____last_name_prime = "last";
+		String d__a____positive_name_prime = "positive";
 		String a__l____last_name_prime = "last";
+		String d__b____negative_name_prime = "negative";
+		String d2c__c____target_name_prime = "target";
+		String b__m____last_name_prime = "last";
+		String b__m____first_name_prime = "first";
 		isApplicableMatch.getAllContextElements().add(c);
-		isApplicableMatch.getAllContextElements().add(d);
 		isApplicableMatch.getAllContextElements().add(d2c);
-		isApplicableMatch.getAllContextElements().add(l);
-		isApplicableMatch.getAllContextElements().add(b);
-		isApplicableMatch.getAllContextElements().add(a);
 		isApplicableMatch.getAllContextElements().add(m);
-		d__a____positive.setSrc(d);
-		d__a____positive.setTrg(a);
-		isApplicableMatch.getAllContextElements().add(d__a____positive);
-		d__b____negative.setSrc(d);
-		d__b____negative.setTrg(b);
-		isApplicableMatch.getAllContextElements().add(d__b____negative);
+		isApplicableMatch.getAllContextElements().add(d);
+		isApplicableMatch.getAllContextElements().add(l);
+		isApplicableMatch.getAllContextElements().add(a);
+		isApplicableMatch.getAllContextElements().add(b);
 		d2c__d____source.setSrc(d2c);
 		d2c__d____source.setTrg(d);
 		isApplicableMatch.getAllContextElements().add(d2c__d____source);
-		d2c__c____target.setSrc(d2c);
-		d2c__c____target.setTrg(c);
-		isApplicableMatch.getAllContextElements().add(d2c__c____target);
-		b__m____first.setSrc(b);
-		b__m____first.setTrg(m);
-		isApplicableMatch.getAllContextElements().add(b__m____first);
-		b__m____last.setSrc(b);
-		b__m____last.setTrg(m);
-		isApplicableMatch.getAllContextElements().add(b__m____last);
+		d__a____positive.setSrc(d);
+		d__a____positive.setTrg(a);
+		isApplicableMatch.getAllContextElements().add(d__a____positive);
 		a__l____last.setSrc(a);
 		a__l____last.setTrg(l);
 		isApplicableMatch.getAllContextElements().add(a__l____last);
-		d__a____positive.setName(d__a____positive_name_prime);
-		d__b____negative.setName(d__b____negative_name_prime);
+		d__b____negative.setSrc(d);
+		d__b____negative.setTrg(b);
+		isApplicableMatch.getAllContextElements().add(d__b____negative);
+		d2c__c____target.setSrc(d2c);
+		d2c__c____target.setTrg(c);
+		isApplicableMatch.getAllContextElements().add(d2c__c____target);
+		b__m____last.setSrc(b);
+		b__m____last.setTrg(m);
+		isApplicableMatch.getAllContextElements().add(b__m____last);
+		b__m____first.setSrc(b);
+		b__m____first.setTrg(m);
+		isApplicableMatch.getAllContextElements().add(b__m____first);
 		d2c__d____source.setName(d2c__d____source_name_prime);
-		d2c__c____target.setName(d2c__c____target_name_prime);
-		b__m____first.setName(b__m____first_name_prime);
-		b__m____last.setName(b__m____last_name_prime);
+		d__a____positive.setName(d__a____positive_name_prime);
 		a__l____last.setName(a__l____last_name_prime);
-		return new Object[] { c, d, d2c, l, b, a, m, isApplicableMatch, d__a____positive, d__b____negative,
-				d2c__d____source, d2c__c____target, b__m____first, b__m____last, a__l____last };
+		d__b____negative.setName(d__b____negative_name_prime);
+		d2c__c____target.setName(d2c__c____target_name_prime);
+		b__m____last.setName(b__m____last_name_prime);
+		b__m____first.setName(b__m____first_name_prime);
+		return new Object[] { c, d2c, m, d, l, a, b, isApplicableMatch, d2c__d____source, d__a____positive,
+				a__l____last, d__b____negative, d2c__c____target, b__m____last, b__m____first };
 	}
 
 	public static final Object[] pattern_declul2branchbub_2_4_solveCSP_bindingFBBBBBBBBB(declul2branchbub _this,
-			IsApplicableMatch isApplicableMatch, Branch c, Decision d, S2B d2c, Assignment l, While b, While a,
-			Assignment m) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, c, d, d2c, l, b, a, m);
+			IsApplicableMatch isApplicableMatch, Branch c, S2B d2c, Assignment m, Decision d, Assignment l, While a,
+			While b) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, c, d2c, m, d, l, a, b);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, c, d, d2c, l, b, a, m };
+			return new Object[] { csp, _this, isApplicableMatch, c, d2c, m, d, l, a, b };
 		}
 		return null;
 	}
@@ -2240,10 +2239,10 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(declul2branchbub _this,
-			IsApplicableMatch isApplicableMatch, Branch c, Decision d, S2B d2c, Assignment l, While b, While a,
-			Assignment m) {
+			IsApplicableMatch isApplicableMatch, Branch c, S2B d2c, Assignment m, Decision d, Assignment l, While a,
+			While b) {
 		Object[] result_pattern_declul2branchbub_2_4_solveCSP_binding = pattern_declul2branchbub_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, c, d, d2c, l, b, a, m);
+				_this, isApplicableMatch, c, d2c, m, d, l, a, b);
 		if (result_pattern_declul2branchbub_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_declul2branchbub_2_4_solveCSP_binding[0];
 
@@ -2251,7 +2250,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 					csp);
 			if (result_pattern_declul2branchbub_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, c, d, d2c, l, b, a, m };
+				return new Object[] { csp, _this, isApplicableMatch, c, d2c, m, d, l, a, b };
 			}
 		}
 		return null;
@@ -2285,12 +2284,12 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_10_1_initialbindings_blackBBBBBBB(declul2branchbub _this,
-			Match match, Command z, Branch c, Command w, Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
+			Match match, Branch c, Command z, Branch y, Command w, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
 				if (!w.equals(z)) {
 					if (!x.equals(y)) {
-						return new Object[] { _this, match, z, c, w, x, y };
+						return new Object[] { _this, match, c, z, y, w, x };
 					}
 				}
 			}
@@ -2299,11 +2298,11 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_10_2_SolveCSP_bindingFBBBBBBB(declul2branchbub _this,
-			Match match, Command z, Branch c, Command w, Branch x, Branch y) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, z, c, w, x, y);
+			Match match, Branch c, Command z, Branch y, Command w, Branch x) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, c, z, y, w, x);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, z, c, w, x, y };
+			return new Object[] { csp, _this, match, c, z, y, w, x };
 		}
 		return null;
 	}
@@ -2313,9 +2312,9 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_10_2_SolveCSP_bindingAndBlackFBBBBBBB(declul2branchbub _this,
-			Match match, Command z, Branch c, Command w, Branch x, Branch y) {
+			Match match, Branch c, Command z, Branch y, Command w, Branch x) {
 		Object[] result_pattern_declul2branchbub_10_2_SolveCSP_binding = pattern_declul2branchbub_10_2_SolveCSP_bindingFBBBBBBB(
-				_this, match, z, c, w, x, y);
+				_this, match, c, z, y, w, x);
 		if (result_pattern_declul2branchbub_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_declul2branchbub_10_2_SolveCSP_binding[0];
 
@@ -2323,7 +2322,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 					csp);
 			if (result_pattern_declul2branchbub_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, z, c, w, x, y };
+				return new Object[] { csp, _this, match, c, z, y, w, x };
 			}
 		}
 		return null;
@@ -2336,12 +2335,12 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_10_4_collectelementstobetranslated_blackBBBBBB(Match match,
-			Command z, Branch c, Command w, Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
+			Branch c, Command z, Branch y, Command w, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
 				if (!w.equals(z)) {
 					if (!x.equals(y)) {
-						return new Object[] { match, z, c, w, x, y };
+						return new Object[] { match, c, z, y, w, x };
 					}
 				}
 			}
@@ -2350,52 +2349,52 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_10_4_collectelementstobetranslated_greenBBBBBBFFFFF(
-			Match match, Command z, Branch c, Command w, Branch x, Branch y) {
-		EMoflonEdge z__x____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Match match, Branch c, Command z, Branch y, Command w, Branch x) {
 		EMoflonEdge c__y____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge w__y____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge y__w____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c__x____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge z__x____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge y__w____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge w__y____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(z);
+		match.getToBeTranslatedNodes().add(y);
 		match.getToBeTranslatedNodes().add(w);
 		match.getToBeTranslatedNodes().add(x);
-		match.getToBeTranslatedNodes().add(y);
-		String z__x____next_name_prime = "next";
 		String c__y____negative_name_prime = "negative";
-		String w__y____next_name_prime = "next";
-		String y__w____positive_name_prime = "positive";
 		String c__x____positive_name_prime = "positive";
-		z__x____next.setSrc(z);
-		z__x____next.setTrg(x);
-		match.getToBeTranslatedEdges().add(z__x____next);
+		String z__x____next_name_prime = "next";
+		String y__w____positive_name_prime = "positive";
+		String w__y____next_name_prime = "next";
 		c__y____negative.setSrc(c);
 		c__y____negative.setTrg(y);
 		match.getToBeTranslatedEdges().add(c__y____negative);
-		w__y____next.setSrc(w);
-		w__y____next.setTrg(y);
-		match.getToBeTranslatedEdges().add(w__y____next);
-		y__w____positive.setSrc(y);
-		y__w____positive.setTrg(w);
-		match.getToBeTranslatedEdges().add(y__w____positive);
 		c__x____positive.setSrc(c);
 		c__x____positive.setTrg(x);
 		match.getToBeTranslatedEdges().add(c__x____positive);
-		z__x____next.setName(z__x____next_name_prime);
+		z__x____next.setSrc(z);
+		z__x____next.setTrg(x);
+		match.getToBeTranslatedEdges().add(z__x____next);
+		y__w____positive.setSrc(y);
+		y__w____positive.setTrg(w);
+		match.getToBeTranslatedEdges().add(y__w____positive);
+		w__y____next.setSrc(w);
+		w__y____next.setTrg(y);
+		match.getToBeTranslatedEdges().add(w__y____next);
 		c__y____negative.setName(c__y____negative_name_prime);
-		w__y____next.setName(w__y____next_name_prime);
-		y__w____positive.setName(y__w____positive_name_prime);
 		c__x____positive.setName(c__x____positive_name_prime);
-		return new Object[] { match, z, c, w, x, y, z__x____next, c__y____negative, w__y____next, y__w____positive,
-				c__x____positive };
+		z__x____next.setName(z__x____next_name_prime);
+		y__w____positive.setName(y__w____positive_name_prime);
+		w__y____next.setName(w__y____next_name_prime);
+		return new Object[] { match, c, z, y, w, x, c__y____negative, c__x____positive, z__x____next, y__w____positive,
+				w__y____next };
 	}
 
-	public static final Object[] pattern_declul2branchbub_10_5_collectcontextelements_blackBBBBBB(Match match,
-			Command z, Branch c, Command w, Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
+	public static final Object[] pattern_declul2branchbub_10_5_collectcontextelements_blackBBBBBB(Match match, Branch c,
+			Command z, Branch y, Command w, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
 				if (!w.equals(z)) {
 					if (!x.equals(y)) {
-						return new Object[] { match, z, c, w, x, y };
+						return new Object[] { match, c, z, y, w, x };
 					}
 				}
 			}
@@ -2409,8 +2408,8 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final void pattern_declul2branchbub_10_6_registerobjectstomatch_expressionBBBBBBB(
-			declul2branchbub _this, Match match, Command z, Branch c, Command w, Branch x, Branch y) {
-		_this.registerObjectsToMatch_BWD(match, z, c, w, x, y);
+			declul2branchbub _this, Match match, Branch c, Command z, Branch y, Command w, Branch x) {
+		_this.registerObjectsToMatch_BWD(match, c, z, y, w, x);
 
 	}
 
@@ -2426,35 +2425,35 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 
 	public static final Object[] pattern_declul2branchbub_11_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("z");
-		EObject _localVariable_1 = isApplicableMatch.getObject("c");
-		EObject _localVariable_2 = isApplicableMatch.getObject("w");
-		EObject _localVariable_3 = isApplicableMatch.getObject("d");
-		EObject _localVariable_4 = isApplicableMatch.getObject("d2c");
-		EObject _localVariable_5 = isApplicableMatch.getObject("x");
-		EObject _localVariable_6 = isApplicableMatch.getObject("y");
-		EObject tmpZ = _localVariable_0;
-		EObject tmpC = _localVariable_1;
-		EObject tmpW = _localVariable_2;
-		EObject tmpD = _localVariable_3;
-		EObject tmpD2c = _localVariable_4;
-		EObject tmpX = _localVariable_5;
-		EObject tmpY = _localVariable_6;
-		if (tmpZ instanceof Command) {
-			Command z = (Command) tmpZ;
-			if (tmpC instanceof Branch) {
-				Branch c = (Branch) tmpC;
-				if (tmpW instanceof Command) {
-					Command w = (Command) tmpW;
-					if (tmpD instanceof Decision) {
-						Decision d = (Decision) tmpD;
-						if (tmpD2c instanceof S2B) {
-							S2B d2c = (S2B) tmpD2c;
-							if (tmpX instanceof Branch) {
-								Branch x = (Branch) tmpX;
-								if (tmpY instanceof Branch) {
-									Branch y = (Branch) tmpY;
-									return new Object[] { z, c, w, d, d2c, x, y, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("c");
+		EObject _localVariable_1 = isApplicableMatch.getObject("d2c");
+		EObject _localVariable_2 = isApplicableMatch.getObject("d");
+		EObject _localVariable_3 = isApplicableMatch.getObject("z");
+		EObject _localVariable_4 = isApplicableMatch.getObject("y");
+		EObject _localVariable_5 = isApplicableMatch.getObject("w");
+		EObject _localVariable_6 = isApplicableMatch.getObject("x");
+		EObject tmpC = _localVariable_0;
+		EObject tmpD2c = _localVariable_1;
+		EObject tmpD = _localVariable_2;
+		EObject tmpZ = _localVariable_3;
+		EObject tmpY = _localVariable_4;
+		EObject tmpW = _localVariable_5;
+		EObject tmpX = _localVariable_6;
+		if (tmpC instanceof Branch) {
+			Branch c = (Branch) tmpC;
+			if (tmpD2c instanceof S2B) {
+				S2B d2c = (S2B) tmpD2c;
+				if (tmpD instanceof Decision) {
+					Decision d = (Decision) tmpD;
+					if (tmpZ instanceof Command) {
+						Command z = (Command) tmpZ;
+						if (tmpY instanceof Branch) {
+							Branch y = (Branch) tmpY;
+							if (tmpW instanceof Command) {
+								Command w = (Command) tmpW;
+								if (tmpX instanceof Branch) {
+									Branch x = (Branch) tmpX;
+									return new Object[] { c, d2c, d, z, y, w, x, isApplicableMatch };
 								}
 							}
 						}
@@ -2465,17 +2464,17 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_11_1_performtransformation_blackBBBBBBBFBB(Command z,
-			Branch c, Command w, Decision d, S2B d2c, Branch x, Branch y, declul2branchbub _this,
+	public static final Object[] pattern_declul2branchbub_11_1_performtransformation_blackBBBBBBBFBB(Branch c, S2B d2c,
+			Decision d, Command z, Branch y, Command w, Branch x, declul2branchbub _this,
 			IsApplicableMatch isApplicableMatch) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
 				if (!w.equals(z)) {
 					if (!x.equals(y)) {
 						for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 							if (tmpCsp instanceof CSP) {
 								CSP csp = (CSP) tmpCsp;
-								return new Object[] { z, c, w, d, d2c, x, y, csp, _this, isApplicableMatch };
+								return new Object[] { c, d2c, d, z, y, w, x, csp, _this, isApplicableMatch };
 							}
 						}
 					}
@@ -2490,61 +2489,61 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		Object[] result_pattern_declul2branchbub_11_1_performtransformation_binding = pattern_declul2branchbub_11_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_declul2branchbub_11_1_performtransformation_binding != null) {
-			Command z = (Command) result_pattern_declul2branchbub_11_1_performtransformation_binding[0];
-			Branch c = (Branch) result_pattern_declul2branchbub_11_1_performtransformation_binding[1];
-			Command w = (Command) result_pattern_declul2branchbub_11_1_performtransformation_binding[2];
-			Decision d = (Decision) result_pattern_declul2branchbub_11_1_performtransformation_binding[3];
-			S2B d2c = (S2B) result_pattern_declul2branchbub_11_1_performtransformation_binding[4];
-			Branch x = (Branch) result_pattern_declul2branchbub_11_1_performtransformation_binding[5];
-			Branch y = (Branch) result_pattern_declul2branchbub_11_1_performtransformation_binding[6];
+			Branch c = (Branch) result_pattern_declul2branchbub_11_1_performtransformation_binding[0];
+			S2B d2c = (S2B) result_pattern_declul2branchbub_11_1_performtransformation_binding[1];
+			Decision d = (Decision) result_pattern_declul2branchbub_11_1_performtransformation_binding[2];
+			Command z = (Command) result_pattern_declul2branchbub_11_1_performtransformation_binding[3];
+			Branch y = (Branch) result_pattern_declul2branchbub_11_1_performtransformation_binding[4];
+			Command w = (Command) result_pattern_declul2branchbub_11_1_performtransformation_binding[5];
+			Branch x = (Branch) result_pattern_declul2branchbub_11_1_performtransformation_binding[6];
 
 			Object[] result_pattern_declul2branchbub_11_1_performtransformation_black = pattern_declul2branchbub_11_1_performtransformation_blackBBBBBBBFBB(
-					z, c, w, d, d2c, x, y, _this, isApplicableMatch);
+					c, d2c, d, z, y, w, x, _this, isApplicableMatch);
 			if (result_pattern_declul2branchbub_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_declul2branchbub_11_1_performtransformation_black[7];
 
-				return new Object[] { z, c, w, d, d2c, x, y, csp, _this, isApplicableMatch };
+				return new Object[] { c, d2c, d, z, y, w, x, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_11_1_performtransformation_greenFBBBFFBFBFFFF(Command z,
-			Command w, Decision d, Branch x, Branch y) {
+	public static final Object[] pattern_declul2branchbub_11_1_performtransformation_greenFBFFFFFBFBFBB(Decision d,
+			Command z, Branch y, Command w, Branch x) {
+		Assignment m = SourcecodeFactory.eINSTANCE.createAssignment();
+		Assignment l = SourcecodeFactory.eINSTANCE.createAssignment();
 		S2N l2z = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		S2B b2y = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
-		S2N m2w = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
-		Assignment l = SourcecodeFactory.eINSTANCE.createAssignment();
-		While b = SourcecodeFactory.eINSTANCE.createWhile();
-		While a = SourcecodeFactory.eINSTANCE.createWhile();
-		Assignment m = SourcecodeFactory.eINSTANCE.createAssignment();
 		S2B a2x = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
+		While a = SourcecodeFactory.eINSTANCE.createWhile();
+		S2N m2w = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
+		While b = SourcecodeFactory.eINSTANCE.createWhile();
+		l2z.setSource(l);
 		l2z.setTarget(z);
 		b2y.setTarget(y);
-		m2w.setTarget(w);
-		l2z.setSource(l);
-		d.setNegative(b);
-		b2y.setSource(b);
-		d.setPositive(a);
-		a.setLast(l);
-		b.setFirst(m);
-		b.setLast(m);
-		m2w.setSource(m);
 		a2x.setTarget(x);
+		d.setPositive(a);
 		a2x.setSource(a);
-		return new Object[] { l2z, z, w, d, b2y, m2w, x, l, y, b, a, m, a2x };
+		a.setLast(l);
+		m2w.setSource(m);
+		m2w.setTarget(w);
+		d.setNegative(b);
+		b.setLast(m);
+		b.setFirst(m);
+		b2y.setSource(b);
+		return new Object[] { m, d, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x };
 	}
 
-	public static final Object[] pattern_declul2branchbub_11_2_collecttranslatedelements_blackBBBBBBBBBBBB(S2N l2z,
-			Command z, Command w, S2B b2y, S2N m2w, Branch x, Assignment l, Branch y, While b, While a, Assignment m,
-			S2B a2x) {
-		if (!l2z.equals(m2w)) {
-			if (!w.equals(z)) {
-				if (!x.equals(y)) {
-					if (!l.equals(m)) {
-						if (!a.equals(b)) {
-							if (!a2x.equals(b2y)) {
-								return new Object[] { l2z, z, w, b2y, m2w, x, l, y, b, a, m, a2x };
+	public static final Object[] pattern_declul2branchbub_11_2_collecttranslatedelements_blackBBBBBBBBBBBB(Assignment m,
+			Assignment l, S2N l2z, S2B b2y, S2B a2x, While a, Command z, S2N m2w, Branch y, While b, Command w,
+			Branch x) {
+		if (!l.equals(m)) {
+			if (!l2z.equals(m2w)) {
+				if (!a2x.equals(b2y)) {
+					if (!a.equals(b)) {
+						if (!w.equals(z)) {
+							if (!x.equals(y)) {
+								return new Object[] { m, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x };
 							}
 						}
 					}
@@ -2554,232 +2553,232 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_11_2_collecttranslatedelements_greenFBBBBBBBBBBBB(S2N l2z,
-			Command z, Command w, S2B b2y, S2N m2w, Branch x, Assignment l, Branch y, While b, While a, Assignment m,
-			S2B a2x) {
+	public static final Object[] pattern_declul2branchbub_11_2_collecttranslatedelements_greenFBBBBBBBBBBBB(
+			Assignment m, Assignment l, S2N l2z, S2B b2y, S2B a2x, While a, Command z, S2N m2w, Branch y, While b,
+			Command w, Branch x) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(l2z);
-		ruleresult.getTranslatedElements().add(z);
-		ruleresult.getTranslatedElements().add(w);
-		ruleresult.getCreatedLinkElements().add(b2y);
-		ruleresult.getCreatedLinkElements().add(m2w);
-		ruleresult.getTranslatedElements().add(x);
+		ruleresult.getCreatedElements().add(m);
 		ruleresult.getCreatedElements().add(l);
+		ruleresult.getCreatedLinkElements().add(l2z);
+		ruleresult.getCreatedLinkElements().add(b2y);
+		ruleresult.getCreatedLinkElements().add(a2x);
+		ruleresult.getCreatedElements().add(a);
+		ruleresult.getTranslatedElements().add(z);
+		ruleresult.getCreatedLinkElements().add(m2w);
 		ruleresult.getTranslatedElements().add(y);
 		ruleresult.getCreatedElements().add(b);
-		ruleresult.getCreatedElements().add(a);
-		ruleresult.getCreatedElements().add(m);
-		ruleresult.getCreatedLinkElements().add(a2x);
-		return new Object[] { ruleresult, l2z, z, w, b2y, m2w, x, l, y, b, a, m, a2x };
+		ruleresult.getTranslatedElements().add(w);
+		ruleresult.getTranslatedElements().add(x);
+		return new Object[] { ruleresult, m, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x };
 	}
 
 	public static final Object[] pattern_declul2branchbub_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject l2z, EObject z, EObject c, EObject w, EObject d, EObject b2y,
-			EObject m2w, EObject d2c, EObject x, EObject l, EObject y, EObject b, EObject a, EObject m, EObject a2x) {
-		if (!l2z.equals(z)) {
-			if (!l2z.equals(w)) {
-				if (!l2z.equals(m2w)) {
-					if (!l2z.equals(x)) {
-						if (!l2z.equals(y)) {
-							if (!l2z.equals(m)) {
-								if (!c.equals(l2z)) {
-									if (!c.equals(z)) {
+			PerformRuleResult ruleresult, EObject c, EObject d2c, EObject m, EObject d, EObject l, EObject l2z,
+			EObject b2y, EObject a2x, EObject a, EObject z, EObject m2w, EObject y, EObject b, EObject w, EObject x) {
+		if (!c.equals(d2c)) {
+			if (!c.equals(m)) {
+				if (!c.equals(d)) {
+					if (!c.equals(l)) {
+						if (!c.equals(l2z)) {
+							if (!c.equals(z)) {
+								if (!c.equals(m2w)) {
+									if (!c.equals(y)) {
 										if (!c.equals(w)) {
-											if (!c.equals(d)) {
-												if (!c.equals(m2w)) {
-													if (!c.equals(d2c)) {
-														if (!c.equals(x)) {
-															if (!c.equals(l)) {
-																if (!c.equals(y)) {
-																	if (!c.equals(m)) {
-																		if (!w.equals(z)) {
-																			if (!w.equals(x)) {
-																				if (!w.equals(y)) {
-																					if (!d.equals(l2z)) {
-																						if (!d.equals(z)) {
-																							if (!d.equals(w)) {
-																								if (!d.equals(m2w)) {
+											if (!c.equals(x)) {
+												if (!d2c.equals(m)) {
+													if (!d2c.equals(l)) {
+														if (!d2c.equals(l2z)) {
+															if (!d2c.equals(z)) {
+																if (!d2c.equals(m2w)) {
+																	if (!d2c.equals(y)) {
+																		if (!d2c.equals(w)) {
+																			if (!d2c.equals(x)) {
+																				if (!m.equals(z)) {
+																					if (!m.equals(m2w)) {
+																						if (!m.equals(y)) {
+																							if (!m.equals(w)) {
+																								if (!m.equals(x)) {
 																									if (!d.equals(
 																											d2c)) {
 																										if (!d.equals(
-																												x)) {
+																												m)) {
 																											if (!d.equals(
 																													l)) {
 																												if (!d.equals(
-																														y)) {
+																														l2z)) {
 																													if (!d.equals(
-																															m)) {
-																														if (!b2y.equals(
-																																l2z)) {
-																															if (!b2y.equals(
-																																	z)) {
-																																if (!b2y.equals(
-																																		c)) {
-																																	if (!b2y.equals(
-																																			w)) {
-																																		if (!b2y.equals(
-																																				d)) {
-																																			if (!b2y.equals(
-																																					m2w)) {
-																																				if (!b2y.equals(
-																																						d2c)) {
-																																					if (!b2y.equals(
-																																							x)) {
-																																						if (!b2y.equals(
-																																								l)) {
-																																							if (!b2y.equals(
-																																									y)) {
-																																								if (!b2y.equals(
-																																										m)) {
-																																									if (!m2w.equals(
-																																											z)) {
-																																										if (!m2w.equals(
-																																												w)) {
-																																											if (!m2w.equals(
-																																													x)) {
-																																												if (!m2w.equals(
+																															z)) {
+																														if (!d.equals(
+																																m2w)) {
+																															if (!d.equals(
+																																	y)) {
+																																if (!d.equals(
+																																		w)) {
+																																	if (!d.equals(
+																																			x)) {
+																																		if (!l.equals(
+																																				m)) {
+																																			if (!l.equals(
+																																					l2z)) {
+																																				if (!l.equals(
+																																						z)) {
+																																					if (!l.equals(
+																																							m2w)) {
+																																						if (!l.equals(
+																																								y)) {
+																																							if (!l.equals(
+																																									w)) {
+																																								if (!l.equals(
+																																										x)) {
+																																									if (!l2z.equals(
+																																											m)) {
+																																										if (!l2z.equals(
+																																												z)) {
+																																											if (!l2z.equals(
+																																													m2w)) {
+																																												if (!l2z.equals(
 																																														y)) {
-																																													if (!d2c.equals(
-																																															l2z)) {
-																																														if (!d2c.equals(
-																																																z)) {
-																																															if (!d2c.equals(
-																																																	w)) {
-																																																if (!d2c.equals(
-																																																		m2w)) {
-																																																	if (!d2c.equals(
-																																																			x)) {
-																																																		if (!d2c.equals(
-																																																				l)) {
-																																																			if (!d2c.equals(
-																																																					y)) {
-																																																				if (!d2c.equals(
-																																																						m)) {
-																																																					if (!x.equals(
+																																													if (!l2z.equals(
+																																															w)) {
+																																														if (!l2z.equals(
+																																																x)) {
+																																															if (!b2y.equals(
+																																																	c)) {
+																																																if (!b2y.equals(
+																																																		d2c)) {
+																																																	if (!b2y.equals(
+																																																			m)) {
+																																																		if (!b2y.equals(
+																																																				d)) {
+																																																			if (!b2y.equals(
+																																																					l)) {
+																																																				if (!b2y.equals(
+																																																						l2z)) {
+																																																					if (!b2y.equals(
 																																																							z)) {
-																																																						if (!x.equals(
-																																																								y)) {
-																																																							if (!l.equals(
-																																																									l2z)) {
-																																																								if (!l.equals(
-																																																										z)) {
-																																																									if (!l.equals(
-																																																											w)) {
-																																																										if (!l.equals(
-																																																												m2w)) {
-																																																											if (!l.equals(
-																																																													x)) {
-																																																												if (!l.equals(
-																																																														y)) {
-																																																													if (!l.equals(
-																																																															m)) {
-																																																														if (!y.equals(
-																																																																z)) {
-																																																															if (!b.equals(
+																																																						if (!b2y.equals(
+																																																								m2w)) {
+																																																							if (!b2y.equals(
+																																																									y)) {
+																																																								if (!b2y.equals(
+																																																										w)) {
+																																																									if (!b2y.equals(
+																																																											x)) {
+																																																										if (!a2x.equals(
+																																																												c)) {
+																																																											if (!a2x.equals(
+																																																													d2c)) {
+																																																												if (!a2x.equals(
+																																																														m)) {
+																																																													if (!a2x.equals(
+																																																															d)) {
+																																																														if (!a2x.equals(
+																																																																l)) {
+																																																															if (!a2x.equals(
 																																																																	l2z)) {
-																																																																if (!b.equals(
-																																																																		z)) {
-																																																																	if (!b.equals(
-																																																																			c)) {
-																																																																		if (!b.equals(
-																																																																				w)) {
-																																																																			if (!b.equals(
-																																																																					d)) {
-																																																																				if (!b.equals(
-																																																																						b2y)) {
-																																																																					if (!b.equals(
-																																																																							m2w)) {
-																																																																						if (!b.equals(
-																																																																								d2c)) {
-																																																																							if (!b.equals(
-																																																																									x)) {
-																																																																								if (!b.equals(
-																																																																										l)) {
-																																																																									if (!b.equals(
-																																																																											y)) {
-																																																																										if (!b.equals(
-																																																																												m)) {
+																																																																if (!a2x.equals(
+																																																																		b2y)) {
+																																																																	if (!a2x.equals(
+																																																																			z)) {
+																																																																		if (!a2x.equals(
+																																																																				m2w)) {
+																																																																			if (!a2x.equals(
+																																																																					y)) {
+																																																																				if (!a2x.equals(
+																																																																						b)) {
+																																																																					if (!a2x.equals(
+																																																																							w)) {
+																																																																						if (!a2x.equals(
+																																																																								x)) {
+																																																																							if (!a.equals(
+																																																																									c)) {
+																																																																								if (!a.equals(
+																																																																										d2c)) {
+																																																																									if (!a.equals(
+																																																																											m)) {
+																																																																										if (!a.equals(
+																																																																												d)) {
 																																																																											if (!a.equals(
-																																																																													l2z)) {
+																																																																													l)) {
 																																																																												if (!a.equals(
-																																																																														z)) {
+																																																																														l2z)) {
 																																																																													if (!a.equals(
-																																																																															c)) {
+																																																																															b2y)) {
 																																																																														if (!a.equals(
-																																																																																w)) {
+																																																																																a2x)) {
 																																																																															if (!a.equals(
-																																																																																	d)) {
+																																																																																	z)) {
 																																																																																if (!a.equals(
-																																																																																		b2y)) {
+																																																																																		m2w)) {
 																																																																																	if (!a.equals(
-																																																																																			m2w)) {
+																																																																																			y)) {
 																																																																																		if (!a.equals(
-																																																																																				d2c)) {
+																																																																																				b)) {
 																																																																																			if (!a.equals(
-																																																																																					x)) {
+																																																																																					w)) {
 																																																																																				if (!a.equals(
-																																																																																						l)) {
-																																																																																					if (!a.equals(
-																																																																																							y)) {
-																																																																																						if (!a.equals(
-																																																																																								b)) {
-																																																																																							if (!a.equals(
-																																																																																									m)) {
-																																																																																								if (!a.equals(
-																																																																																										a2x)) {
-																																																																																									if (!m.equals(
+																																																																																						x)) {
+																																																																																					if (!m2w.equals(
+																																																																																							z)) {
+																																																																																						if (!m2w.equals(
+																																																																																								y)) {
+																																																																																							if (!m2w.equals(
+																																																																																									w)) {
+																																																																																								if (!m2w.equals(
+																																																																																										x)) {
+																																																																																									if (!y.equals(
 																																																																																											z)) {
-																																																																																										if (!m.equals(
-																																																																																												w)) {
-																																																																																											if (!m.equals(
-																																																																																													m2w)) {
-																																																																																												if (!m.equals(
-																																																																																														x)) {
-																																																																																													if (!m.equals(
-																																																																																															y)) {
-																																																																																														if (!a2x.equals(
-																																																																																																l2z)) {
-																																																																																															if (!a2x.equals(
-																																																																																																	z)) {
-																																																																																																if (!a2x.equals(
-																																																																																																		c)) {
-																																																																																																	if (!a2x.equals(
-																																																																																																			w)) {
-																																																																																																		if (!a2x.equals(
-																																																																																																				d)) {
-																																																																																																			if (!a2x.equals(
-																																																																																																					b2y)) {
-																																																																																																				if (!a2x.equals(
-																																																																																																						m2w)) {
-																																																																																																					if (!a2x.equals(
-																																																																																																							d2c)) {
-																																																																																																						if (!a2x.equals(
-																																																																																																								x)) {
-																																																																																																							if (!a2x.equals(
-																																																																																																									l)) {
-																																																																																																								if (!a2x.equals(
-																																																																																																										y)) {
-																																																																																																									if (!a2x.equals(
-																																																																																																											b)) {
-																																																																																																										if (!a2x.equals(
-																																																																																																												m)) {
+																																																																																										if (!b.equals(
+																																																																																												c)) {
+																																																																																											if (!b.equals(
+																																																																																													d2c)) {
+																																																																																												if (!b.equals(
+																																																																																														m)) {
+																																																																																													if (!b.equals(
+																																																																																															d)) {
+																																																																																														if (!b.equals(
+																																																																																																l)) {
+																																																																																															if (!b.equals(
+																																																																																																	l2z)) {
+																																																																																																if (!b.equals(
+																																																																																																		b2y)) {
+																																																																																																	if (!b.equals(
+																																																																																																			z)) {
+																																																																																																		if (!b.equals(
+																																																																																																				m2w)) {
+																																																																																																			if (!b.equals(
+																																																																																																					y)) {
+																																																																																																				if (!b.equals(
+																																																																																																						w)) {
+																																																																																																					if (!b.equals(
+																																																																																																							x)) {
+																																																																																																						if (!w.equals(
+																																																																																																								z)) {
+																																																																																																							if (!w.equals(
+																																																																																																									y)) {
+																																																																																																								if (!w.equals(
+																																																																																																										x)) {
+																																																																																																									if (!x.equals(
+																																																																																																											z)) {
+																																																																																																										if (!x.equals(
+																																																																																																												y)) {
 																																																																																																											return new Object[] {
 																																																																																																													ruleresult,
-																																																																																																													l2z,
-																																																																																																													z,
 																																																																																																													c,
-																																																																																																													w,
-																																																																																																													d,
-																																																																																																													b2y,
-																																																																																																													m2w,
 																																																																																																													d2c,
-																																																																																																													x,
+																																																																																																													m,
+																																																																																																													d,
 																																																																																																													l,
+																																																																																																													l2z,
+																																																																																																													b2y,
+																																																																																																													a2x,
+																																																																																																													a,
+																																																																																																													z,
+																																																																																																													m2w,
 																																																																																																													y,
 																																																																																																													b,
-																																																																																																													a,
-																																																																																																													m,
-																																																																																																													a2x };
+																																																																																																													w,
+																																																																																																													x };
 																																																																																																										}
 																																																																																																									}
 																																																																																																								}
@@ -2889,129 +2888,129 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_11_3_bookkeepingforedges_greenBBBBBBBBBBBBBBBFFFFFFFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject l2z, EObject z, EObject c, EObject w, EObject d, EObject b2y,
-			EObject m2w, EObject x, EObject l, EObject y, EObject b, EObject a, EObject m, EObject a2x) {
-		EMoflonEdge l2z__z____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge z__x____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject c, EObject m, EObject d, EObject l, EObject l2z, EObject b2y,
+			EObject a2x, EObject a, EObject z, EObject m2w, EObject y, EObject b, EObject w, EObject x) {
 		EMoflonEdge c__y____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge d__a____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2w__w____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge w__y____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge d__b____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge l2z__l____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2y__y____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge y__w____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b__m____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b__m____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2y__b____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge d__a____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c__x____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2w__m____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2x__x____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2x__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge z__x____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge l2z__z____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2w__m____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge d__b____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge y__w____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b__m____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b__m____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2y__b____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2w__w____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2y__y____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2x__x____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge w__y____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "declul2branchbub";
-		String l2z__z____target_name_prime = "target";
-		String z__x____next_name_prime = "next";
 		String c__y____negative_name_prime = "negative";
-		String d__a____positive_name_prime = "positive";
-		String m2w__w____target_name_prime = "target";
-		String w__y____next_name_prime = "next";
-		String d__b____negative_name_prime = "negative";
 		String l2z__l____source_name_prime = "source";
-		String b2y__y____target_name_prime = "target";
-		String y__w____positive_name_prime = "positive";
-		String b__m____first_name_prime = "first";
-		String b__m____last_name_prime = "last";
-		String b2y__b____source_name_prime = "source";
+		String d__a____positive_name_prime = "positive";
 		String c__x____positive_name_prime = "positive";
-		String m2w__m____source_name_prime = "source";
-		String a__l____last_name_prime = "last";
-		String a2x__x____target_name_prime = "target";
 		String a2x__a____source_name_prime = "source";
-		l2z__z____target.setSrc(l2z);
-		l2z__z____target.setTrg(z);
-		ruleresult.getCreatedEdges().add(l2z__z____target);
-		z__x____next.setSrc(z);
-		z__x____next.setTrg(x);
-		ruleresult.getTranslatedEdges().add(z__x____next);
+		String a__l____last_name_prime = "last";
+		String z__x____next_name_prime = "next";
+		String l2z__z____target_name_prime = "target";
+		String m2w__m____source_name_prime = "source";
+		String d__b____negative_name_prime = "negative";
+		String y__w____positive_name_prime = "positive";
+		String b__m____last_name_prime = "last";
+		String b__m____first_name_prime = "first";
+		String b2y__b____source_name_prime = "source";
+		String m2w__w____target_name_prime = "target";
+		String b2y__y____target_name_prime = "target";
+		String a2x__x____target_name_prime = "target";
+		String w__y____next_name_prime = "next";
 		c__y____negative.setSrc(c);
 		c__y____negative.setTrg(y);
 		ruleresult.getTranslatedEdges().add(c__y____negative);
-		d__a____positive.setSrc(d);
-		d__a____positive.setTrg(a);
-		ruleresult.getCreatedEdges().add(d__a____positive);
-		m2w__w____target.setSrc(m2w);
-		m2w__w____target.setTrg(w);
-		ruleresult.getCreatedEdges().add(m2w__w____target);
-		w__y____next.setSrc(w);
-		w__y____next.setTrg(y);
-		ruleresult.getTranslatedEdges().add(w__y____next);
-		d__b____negative.setSrc(d);
-		d__b____negative.setTrg(b);
-		ruleresult.getCreatedEdges().add(d__b____negative);
 		l2z__l____source.setSrc(l2z);
 		l2z__l____source.setTrg(l);
 		ruleresult.getCreatedEdges().add(l2z__l____source);
-		b2y__y____target.setSrc(b2y);
-		b2y__y____target.setTrg(y);
-		ruleresult.getCreatedEdges().add(b2y__y____target);
-		y__w____positive.setSrc(y);
-		y__w____positive.setTrg(w);
-		ruleresult.getTranslatedEdges().add(y__w____positive);
-		b__m____first.setSrc(b);
-		b__m____first.setTrg(m);
-		ruleresult.getCreatedEdges().add(b__m____first);
-		b__m____last.setSrc(b);
-		b__m____last.setTrg(m);
-		ruleresult.getCreatedEdges().add(b__m____last);
-		b2y__b____source.setSrc(b2y);
-		b2y__b____source.setTrg(b);
-		ruleresult.getCreatedEdges().add(b2y__b____source);
+		d__a____positive.setSrc(d);
+		d__a____positive.setTrg(a);
+		ruleresult.getCreatedEdges().add(d__a____positive);
 		c__x____positive.setSrc(c);
 		c__x____positive.setTrg(x);
 		ruleresult.getTranslatedEdges().add(c__x____positive);
-		m2w__m____source.setSrc(m2w);
-		m2w__m____source.setTrg(m);
-		ruleresult.getCreatedEdges().add(m2w__m____source);
-		a__l____last.setSrc(a);
-		a__l____last.setTrg(l);
-		ruleresult.getCreatedEdges().add(a__l____last);
-		a2x__x____target.setSrc(a2x);
-		a2x__x____target.setTrg(x);
-		ruleresult.getCreatedEdges().add(a2x__x____target);
 		a2x__a____source.setSrc(a2x);
 		a2x__a____source.setTrg(a);
 		ruleresult.getCreatedEdges().add(a2x__a____source);
+		a__l____last.setSrc(a);
+		a__l____last.setTrg(l);
+		ruleresult.getCreatedEdges().add(a__l____last);
+		z__x____next.setSrc(z);
+		z__x____next.setTrg(x);
+		ruleresult.getTranslatedEdges().add(z__x____next);
+		l2z__z____target.setSrc(l2z);
+		l2z__z____target.setTrg(z);
+		ruleresult.getCreatedEdges().add(l2z__z____target);
+		m2w__m____source.setSrc(m2w);
+		m2w__m____source.setTrg(m);
+		ruleresult.getCreatedEdges().add(m2w__m____source);
+		d__b____negative.setSrc(d);
+		d__b____negative.setTrg(b);
+		ruleresult.getCreatedEdges().add(d__b____negative);
+		y__w____positive.setSrc(y);
+		y__w____positive.setTrg(w);
+		ruleresult.getTranslatedEdges().add(y__w____positive);
+		b__m____last.setSrc(b);
+		b__m____last.setTrg(m);
+		ruleresult.getCreatedEdges().add(b__m____last);
+		b__m____first.setSrc(b);
+		b__m____first.setTrg(m);
+		ruleresult.getCreatedEdges().add(b__m____first);
+		b2y__b____source.setSrc(b2y);
+		b2y__b____source.setTrg(b);
+		ruleresult.getCreatedEdges().add(b2y__b____source);
+		m2w__w____target.setSrc(m2w);
+		m2w__w____target.setTrg(w);
+		ruleresult.getCreatedEdges().add(m2w__w____target);
+		b2y__y____target.setSrc(b2y);
+		b2y__y____target.setTrg(y);
+		ruleresult.getCreatedEdges().add(b2y__y____target);
+		a2x__x____target.setSrc(a2x);
+		a2x__x____target.setTrg(x);
+		ruleresult.getCreatedEdges().add(a2x__x____target);
+		w__y____next.setSrc(w);
+		w__y____next.setTrg(y);
+		ruleresult.getTranslatedEdges().add(w__y____next);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		l2z__z____target.setName(l2z__z____target_name_prime);
-		z__x____next.setName(z__x____next_name_prime);
 		c__y____negative.setName(c__y____negative_name_prime);
-		d__a____positive.setName(d__a____positive_name_prime);
-		m2w__w____target.setName(m2w__w____target_name_prime);
-		w__y____next.setName(w__y____next_name_prime);
-		d__b____negative.setName(d__b____negative_name_prime);
 		l2z__l____source.setName(l2z__l____source_name_prime);
-		b2y__y____target.setName(b2y__y____target_name_prime);
-		y__w____positive.setName(y__w____positive_name_prime);
-		b__m____first.setName(b__m____first_name_prime);
-		b__m____last.setName(b__m____last_name_prime);
-		b2y__b____source.setName(b2y__b____source_name_prime);
+		d__a____positive.setName(d__a____positive_name_prime);
 		c__x____positive.setName(c__x____positive_name_prime);
-		m2w__m____source.setName(m2w__m____source_name_prime);
-		a__l____last.setName(a__l____last_name_prime);
-		a2x__x____target.setName(a2x__x____target_name_prime);
 		a2x__a____source.setName(a2x__a____source_name_prime);
-		return new Object[] { ruleresult, l2z, z, c, w, d, b2y, m2w, x, l, y, b, a, m, a2x, l2z__z____target,
-				z__x____next, c__y____negative, d__a____positive, m2w__w____target, w__y____next, d__b____negative,
-				l2z__l____source, b2y__y____target, y__w____positive, b__m____first, b__m____last, b2y__b____source,
-				c__x____positive, m2w__m____source, a__l____last, a2x__x____target, a2x__a____source };
+		a__l____last.setName(a__l____last_name_prime);
+		z__x____next.setName(z__x____next_name_prime);
+		l2z__z____target.setName(l2z__z____target_name_prime);
+		m2w__m____source.setName(m2w__m____source_name_prime);
+		d__b____negative.setName(d__b____negative_name_prime);
+		y__w____positive.setName(y__w____positive_name_prime);
+		b__m____last.setName(b__m____last_name_prime);
+		b__m____first.setName(b__m____first_name_prime);
+		b2y__b____source.setName(b2y__b____source_name_prime);
+		m2w__w____target.setName(m2w__w____target_name_prime);
+		b2y__y____target.setName(b2y__y____target_name_prime);
+		a2x__x____target.setName(a2x__x____target_name_prime);
+		w__y____next.setName(w__y____next_name_prime);
+		return new Object[] { ruleresult, c, m, d, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x, c__y____negative,
+				l2z__l____source, d__a____positive, c__x____positive, a2x__a____source, a__l____last, z__x____next,
+				l2z__z____target, m2w__m____source, d__b____negative, y__w____positive, b__m____last, b__m____first,
+				b2y__b____source, m2w__w____target, b2y__y____target, a2x__x____target, w__y____next };
 	}
 
 	public static final void pattern_declul2branchbub_11_5_registerobjects_expressionBBBBBBBBBBBBBBBBB(
-			declul2branchbub _this, PerformRuleResult ruleresult, EObject l2z, EObject z, EObject c, EObject w,
-			EObject d, EObject b2y, EObject m2w, EObject d2c, EObject x, EObject l, EObject y, EObject b, EObject a,
-			EObject m, EObject a2x) {
-		_this.registerObjects_BWD(ruleresult, l2z, z, c, w, d, b2y, m2w, d2c, x, l, y, b, a, m, a2x);
+			declul2branchbub _this, PerformRuleResult ruleresult, EObject c, EObject d2c, EObject m, EObject d,
+			EObject l, EObject l2z, EObject b2y, EObject a2x, EObject a, EObject z, EObject m2w, EObject y, EObject b,
+			EObject w, EObject x) {
+		_this.registerObjects_BWD(ruleresult, c, d2c, m, d, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x);
 
 	}
 
@@ -3070,27 +3069,27 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_12_2_corematch_bindingFFFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("z");
-		EObject _localVariable_1 = match.getObject("c");
-		EObject _localVariable_2 = match.getObject("w");
-		EObject _localVariable_3 = match.getObject("x");
-		EObject _localVariable_4 = match.getObject("y");
-		EObject tmpZ = _localVariable_0;
-		EObject tmpC = _localVariable_1;
-		EObject tmpW = _localVariable_2;
-		EObject tmpX = _localVariable_3;
-		EObject tmpY = _localVariable_4;
-		if (tmpZ instanceof Command) {
-			Command z = (Command) tmpZ;
-			if (tmpC instanceof Branch) {
-				Branch c = (Branch) tmpC;
-				if (tmpW instanceof Command) {
-					Command w = (Command) tmpW;
-					if (tmpX instanceof Branch) {
-						Branch x = (Branch) tmpX;
-						if (tmpY instanceof Branch) {
-							Branch y = (Branch) tmpY;
-							return new Object[] { z, c, w, x, y, match };
+		EObject _localVariable_0 = match.getObject("c");
+		EObject _localVariable_1 = match.getObject("z");
+		EObject _localVariable_2 = match.getObject("y");
+		EObject _localVariable_3 = match.getObject("w");
+		EObject _localVariable_4 = match.getObject("x");
+		EObject tmpC = _localVariable_0;
+		EObject tmpZ = _localVariable_1;
+		EObject tmpY = _localVariable_2;
+		EObject tmpW = _localVariable_3;
+		EObject tmpX = _localVariable_4;
+		if (tmpC instanceof Branch) {
+			Branch c = (Branch) tmpC;
+			if (tmpZ instanceof Command) {
+				Command z = (Command) tmpZ;
+				if (tmpY instanceof Branch) {
+					Branch y = (Branch) tmpY;
+					if (tmpW instanceof Command) {
+						Command w = (Command) tmpW;
+						if (tmpX instanceof Branch) {
+							Branch x = (Branch) tmpX;
+							return new Object[] { c, z, y, w, x, match };
 						}
 					}
 				}
@@ -3099,11 +3098,11 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_declul2branchbub_12_2_corematch_blackBBBFFBBB(Command z, Branch c,
-			Command w, Branch x, Branch y, Match match) {
+	public static final Iterable<Object[]> pattern_declul2branchbub_12_2_corematch_blackBFFBBBBB(Branch c, Command z,
+			Branch y, Command w, Branch x, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
 				if (!w.equals(z)) {
 					if (!x.equals(y)) {
 						for (S2B d2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c, S2B.class,
@@ -3111,7 +3110,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 							Statement tmpD = d2c.getSource();
 							if (tmpD instanceof Decision) {
 								Decision d = (Decision) tmpD;
-								_result.add(new Object[] { z, c, w, d, d2c, x, y, match });
+								_result.add(new Object[] { c, d2c, d, z, y, w, x, match });
 							}
 
 						}
@@ -3122,21 +3121,21 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_declul2branchbub_12_3_findcontext_blackBBBBBBB(Command z, Branch c,
-			Command w, Decision d, S2B d2c, Branch x, Branch y) {
+	public static final Iterable<Object[]> pattern_declul2branchbub_12_3_findcontext_blackBBBBBBB(Branch c, S2B d2c,
+			Decision d, Command z, Branch y, Command w, Branch x) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
 				if (!w.equals(z)) {
 					if (!x.equals(y)) {
-						if (x.equals(z.getNext())) {
+						if (d.equals(d2c.getSource())) {
 							if (y.equals(c.getNegative())) {
-								if (y.equals(w.getNext())) {
-									if (d.equals(d2c.getSource())) {
+								if (x.equals(c.getPositive())) {
+									if (x.equals(z.getNext())) {
 										if (c.equals(d2c.getTarget())) {
 											if (w.equals(y.getPositive())) {
-												if (x.equals(c.getPositive())) {
-													_result.add(new Object[] { z, c, w, d, d2c, x, y });
+												if (y.equals(w.getNext())) {
+													_result.add(new Object[] { c, d2c, d, z, y, w, x });
 												}
 											}
 										}
@@ -3151,69 +3150,69 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return _result;
 	}
 
-	public static final Object[] pattern_declul2branchbub_12_3_findcontext_greenBBBBBBBFFFFFFFF(Command z, Branch c,
-			Command w, Decision d, S2B d2c, Branch x, Branch y) {
+	public static final Object[] pattern_declul2branchbub_12_3_findcontext_greenBBBBBBBFFFFFFFF(Branch c, S2B d2c,
+			Decision d, Command z, Branch y, Command w, Branch x) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge z__x____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c__y____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge w__y____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge d2c__d____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c__y____negative = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c__x____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge z__x____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge d2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge y__w____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c__x____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String z__x____next_name_prime = "next";
-		String c__y____negative_name_prime = "negative";
-		String w__y____next_name_prime = "next";
+		EMoflonEdge w__y____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String d2c__d____source_name_prime = "source";
+		String c__y____negative_name_prime = "negative";
+		String c__x____positive_name_prime = "positive";
+		String z__x____next_name_prime = "next";
 		String d2c__c____target_name_prime = "target";
 		String y__w____positive_name_prime = "positive";
-		String c__x____positive_name_prime = "positive";
-		isApplicableMatch.getAllContextElements().add(z);
+		String w__y____next_name_prime = "next";
 		isApplicableMatch.getAllContextElements().add(c);
-		isApplicableMatch.getAllContextElements().add(w);
-		isApplicableMatch.getAllContextElements().add(d);
 		isApplicableMatch.getAllContextElements().add(d2c);
-		isApplicableMatch.getAllContextElements().add(x);
+		isApplicableMatch.getAllContextElements().add(d);
+		isApplicableMatch.getAllContextElements().add(z);
 		isApplicableMatch.getAllContextElements().add(y);
-		z__x____next.setSrc(z);
-		z__x____next.setTrg(x);
-		isApplicableMatch.getAllContextElements().add(z__x____next);
-		c__y____negative.setSrc(c);
-		c__y____negative.setTrg(y);
-		isApplicableMatch.getAllContextElements().add(c__y____negative);
-		w__y____next.setSrc(w);
-		w__y____next.setTrg(y);
-		isApplicableMatch.getAllContextElements().add(w__y____next);
+		isApplicableMatch.getAllContextElements().add(w);
+		isApplicableMatch.getAllContextElements().add(x);
 		d2c__d____source.setSrc(d2c);
 		d2c__d____source.setTrg(d);
 		isApplicableMatch.getAllContextElements().add(d2c__d____source);
+		c__y____negative.setSrc(c);
+		c__y____negative.setTrg(y);
+		isApplicableMatch.getAllContextElements().add(c__y____negative);
+		c__x____positive.setSrc(c);
+		c__x____positive.setTrg(x);
+		isApplicableMatch.getAllContextElements().add(c__x____positive);
+		z__x____next.setSrc(z);
+		z__x____next.setTrg(x);
+		isApplicableMatch.getAllContextElements().add(z__x____next);
 		d2c__c____target.setSrc(d2c);
 		d2c__c____target.setTrg(c);
 		isApplicableMatch.getAllContextElements().add(d2c__c____target);
 		y__w____positive.setSrc(y);
 		y__w____positive.setTrg(w);
 		isApplicableMatch.getAllContextElements().add(y__w____positive);
-		c__x____positive.setSrc(c);
-		c__x____positive.setTrg(x);
-		isApplicableMatch.getAllContextElements().add(c__x____positive);
-		z__x____next.setName(z__x____next_name_prime);
-		c__y____negative.setName(c__y____negative_name_prime);
-		w__y____next.setName(w__y____next_name_prime);
+		w__y____next.setSrc(w);
+		w__y____next.setTrg(y);
+		isApplicableMatch.getAllContextElements().add(w__y____next);
 		d2c__d____source.setName(d2c__d____source_name_prime);
+		c__y____negative.setName(c__y____negative_name_prime);
+		c__x____positive.setName(c__x____positive_name_prime);
+		z__x____next.setName(z__x____next_name_prime);
 		d2c__c____target.setName(d2c__c____target_name_prime);
 		y__w____positive.setName(y__w____positive_name_prime);
-		c__x____positive.setName(c__x____positive_name_prime);
-		return new Object[] { z, c, w, d, d2c, x, y, isApplicableMatch, z__x____next, c__y____negative, w__y____next,
-				d2c__d____source, d2c__c____target, y__w____positive, c__x____positive };
+		w__y____next.setName(w__y____next_name_prime);
+		return new Object[] { c, d2c, d, z, y, w, x, isApplicableMatch, d2c__d____source, c__y____negative,
+				c__x____positive, z__x____next, d2c__c____target, y__w____positive, w__y____next };
 	}
 
 	public static final Object[] pattern_declul2branchbub_12_4_solveCSP_bindingFBBBBBBBBB(declul2branchbub _this,
-			IsApplicableMatch isApplicableMatch, Command z, Branch c, Command w, Decision d, S2B d2c, Branch x,
-			Branch y) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, z, c, w, d, d2c, x, y);
+			IsApplicableMatch isApplicableMatch, Branch c, S2B d2c, Decision d, Command z, Branch y, Command w,
+			Branch x) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, c, d2c, d, z, y, w, x);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, z, c, w, d, d2c, x, y };
+			return new Object[] { csp, _this, isApplicableMatch, c, d2c, d, z, y, w, x };
 		}
 		return null;
 	}
@@ -3223,10 +3222,10 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			declul2branchbub _this, IsApplicableMatch isApplicableMatch, Command z, Branch c, Command w, Decision d,
-			S2B d2c, Branch x, Branch y) {
+			declul2branchbub _this, IsApplicableMatch isApplicableMatch, Branch c, S2B d2c, Decision d, Command z,
+			Branch y, Command w, Branch x) {
 		Object[] result_pattern_declul2branchbub_12_4_solveCSP_binding = pattern_declul2branchbub_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, z, c, w, d, d2c, x, y);
+				_this, isApplicableMatch, c, d2c, d, z, y, w, x);
 		if (result_pattern_declul2branchbub_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_declul2branchbub_12_4_solveCSP_binding[0];
 
@@ -3234,7 +3233,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 					csp);
 			if (result_pattern_declul2branchbub_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, z, c, w, d, d2c, x, y };
+				return new Object[] { csp, _this, isApplicableMatch, c, d2c, d, z, y, w, x };
 			}
 		}
 		return null;
@@ -3321,7 +3320,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_0B(Command z) {
-		for (Graph __DEC_z_root_648485 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(z,
+		for (Graph __DEC_z_root_145476 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(z,
 				Graph.class, "root")) {
 			return new Object[] { z };
 		}
@@ -3329,16 +3328,16 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_1BBBB(Command z, Branch c,
-			Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
+			Branch y, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
 				if (!x.equals(y)) {
-					for (Branch __DEC_z_positive_148517 : org.moflon.core.utilities.eMoflonEMFUtil
+					for (Branch __DEC_z_positive_255792 : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(z, Branch.class, "positive")) {
-						if (!c.equals(__DEC_z_positive_148517)) {
-							if (!x.equals(__DEC_z_positive_148517)) {
-								if (!y.equals(__DEC_z_positive_148517)) {
-									return new Object[] { z, c, x, y };
+						if (!c.equals(__DEC_z_positive_255792)) {
+							if (!y.equals(__DEC_z_positive_255792)) {
+								if (!x.equals(__DEC_z_positive_255792)) {
+									return new Object[] { z, c, y, x };
 								}
 							}
 						}
@@ -3350,16 +3349,16 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_2BBBB(Command z, Branch c,
-			Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
+			Branch y, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
 				if (!x.equals(y)) {
-					for (Branch __DEC_z_negative_551515 : org.moflon.core.utilities.eMoflonEMFUtil
+					for (Branch __DEC_z_negative_251988 : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(z, Branch.class, "negative")) {
-						if (!c.equals(__DEC_z_negative_551515)) {
-							if (!x.equals(__DEC_z_negative_551515)) {
-								if (!y.equals(__DEC_z_negative_551515)) {
-									return new Object[] { z, c, x, y };
+						if (!c.equals(__DEC_z_negative_251988)) {
+							if (!y.equals(__DEC_z_negative_251988)) {
+								if (!x.equals(__DEC_z_negative_251988)) {
+									return new Object[] { z, c, y, x };
 								}
 							}
 						}
@@ -3370,124 +3369,24 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_3B(Command w) {
-		for (Graph __DEC_w_root_849204 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
-				Graph.class, "root")) {
-			return new Object[] { w };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_4BBBB(Command w, Branch c,
-			Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
-				if (!x.equals(y)) {
-					for (Branch __DEC_w_positive_246357 : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(w, Branch.class, "positive")) {
-						if (!c.equals(__DEC_w_positive_246357)) {
-							if (!x.equals(__DEC_w_positive_246357)) {
-								if (!y.equals(__DEC_w_positive_246357)) {
-									return new Object[] { w, c, x, y };
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_5BBBB(Command w, Branch c,
-			Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
-				if (!x.equals(y)) {
-					for (Branch __DEC_w_negative_324310 : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(w, Branch.class, "negative")) {
-						if (!c.equals(__DEC_w_negative_324310)) {
-							if (!x.equals(__DEC_w_negative_324310)) {
-								if (!y.equals(__DEC_w_negative_324310)) {
-									return new Object[] { w, c, x, y };
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_6B(Branch x) {
-		for (Graph __DEC_x_root_739038 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(x,
-				Graph.class, "root")) {
-			return new Object[] { x };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_7BBB(Branch x, Branch c,
-			Branch y) {
-		if (!x.equals(y)) {
-			if (!c.equals(x)) {
-				if (!c.equals(y)) {
-					for (Branch __DEC_x_positive_568234 : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(x, Branch.class, "positive")) {
-						if (!x.equals(__DEC_x_positive_568234)) {
-							if (!c.equals(__DEC_x_positive_568234)) {
-								if (!y.equals(__DEC_x_positive_568234)) {
-									return new Object[] { x, c, y };
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_8BBB(Branch x, Branch c,
-			Branch y) {
-		if (!x.equals(y)) {
-			if (!c.equals(x)) {
-				if (!c.equals(y)) {
-					for (Branch __DEC_x_negative_995565 : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(x, Branch.class, "negative")) {
-						if (!x.equals(__DEC_x_negative_995565)) {
-							if (!c.equals(__DEC_x_negative_995565)) {
-								if (!y.equals(__DEC_x_negative_995565)) {
-									return new Object[] { x, c, y };
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_9B(Branch y) {
-		for (Graph __DEC_y_root_717002 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(y,
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_3B(Branch y) {
+		for (Graph __DEC_y_root_771802 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(y,
 				Graph.class, "root")) {
 			return new Object[] { y };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_10BBB(Branch y, Branch c,
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_4BBB(Branch y, Branch c,
 			Branch x) {
 		if (!c.equals(y)) {
 			if (!c.equals(x)) {
 				if (!x.equals(y)) {
-					for (Branch __DEC_y_positive_453763 : org.moflon.core.utilities.eMoflonEMFUtil
+					for (Branch __DEC_y_positive_234448 : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(y, Branch.class, "positive")) {
-						if (!y.equals(__DEC_y_positive_453763)) {
-							if (!c.equals(__DEC_y_positive_453763)) {
-								if (!x.equals(__DEC_y_positive_453763)) {
+						if (!y.equals(__DEC_y_positive_234448)) {
+							if (!c.equals(__DEC_y_positive_234448)) {
+								if (!x.equals(__DEC_y_positive_234448)) {
 									return new Object[] { y, c, x };
 								}
 							}
@@ -3499,17 +3398,117 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_11BBB(Branch y, Branch c,
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_5BBB(Branch y, Branch c,
 			Branch x) {
 		if (!c.equals(y)) {
 			if (!c.equals(x)) {
 				if (!x.equals(y)) {
-					for (Branch __DEC_y_negative_165744 : org.moflon.core.utilities.eMoflonEMFUtil
+					for (Branch __DEC_y_negative_729922 : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(y, Branch.class, "negative")) {
-						if (!y.equals(__DEC_y_negative_165744)) {
-							if (!c.equals(__DEC_y_negative_165744)) {
-								if (!x.equals(__DEC_y_negative_165744)) {
+						if (!y.equals(__DEC_y_negative_729922)) {
+							if (!c.equals(__DEC_y_negative_729922)) {
+								if (!x.equals(__DEC_y_negative_729922)) {
 									return new Object[] { y, c, x };
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_6B(Command w) {
+		for (Graph __DEC_w_root_650786 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
+				Graph.class, "root")) {
+			return new Object[] { w };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_7BBBB(Command w, Branch c,
+			Branch y, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
+				if (!x.equals(y)) {
+					for (Branch __DEC_w_positive_236192 : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(w, Branch.class, "positive")) {
+						if (!c.equals(__DEC_w_positive_236192)) {
+							if (!y.equals(__DEC_w_positive_236192)) {
+								if (!x.equals(__DEC_w_positive_236192)) {
+									return new Object[] { w, c, y, x };
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_8BBBB(Command w, Branch c,
+			Branch y, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
+				if (!x.equals(y)) {
+					for (Branch __DEC_w_negative_943548 : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(w, Branch.class, "negative")) {
+						if (!c.equals(__DEC_w_negative_943548)) {
+							if (!y.equals(__DEC_w_negative_943548)) {
+								if (!x.equals(__DEC_w_negative_943548)) {
+									return new Object[] { w, c, y, x };
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_9B(Branch x) {
+		for (Graph __DEC_x_root_963026 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(x,
+				Graph.class, "root")) {
+			return new Object[] { x };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_10BBB(Branch x, Branch c,
+			Branch y) {
+		if (!x.equals(y)) {
+			if (!c.equals(x)) {
+				if (!c.equals(y)) {
+					for (Branch __DEC_x_positive_849607 : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(x, Branch.class, "positive")) {
+						if (!x.equals(__DEC_x_positive_849607)) {
+							if (!c.equals(__DEC_x_positive_849607)) {
+								if (!y.equals(__DEC_x_positive_849607)) {
+									return new Object[] { x, c, y };
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_11BBB(Branch x, Branch c,
+			Branch y) {
+		if (!x.equals(y)) {
+			if (!c.equals(x)) {
+				if (!c.equals(y)) {
+					for (Branch __DEC_x_negative_499117 : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(x, Branch.class, "negative")) {
+						if (!x.equals(__DEC_x_negative_499117)) {
+							if (!c.equals(__DEC_x_negative_499117)) {
+								if (!y.equals(__DEC_x_negative_499117)) {
+									return new Object[] { x, c, y };
 								}
 							}
 						}
@@ -3528,18 +3527,18 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_13BB(Branch x,
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_13BB(Branch y,
 			Command z) {
-		if (z.equals(x.getPositive())) {
-			return new Object[] { x, z };
+		if (z.equals(y.getPositive())) {
+			return new Object[] { y, z };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_14BB(Branch y,
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_14BB(Branch x,
 			Command z) {
-		if (z.equals(y.getPositive())) {
-			return new Object[] { y, z };
+		if (z.equals(x.getPositive())) {
+			return new Object[] { x, z };
 		}
 		return null;
 	}
@@ -3552,15 +3551,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_16BB(Branch x,
-			Command z) {
-		if (z.equals(x.getNegative())) {
-			return new Object[] { x, z };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_17BB(Branch y,
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_16BB(Branch y,
 			Command z) {
 		if (z.equals(y.getNegative())) {
 			return new Object[] { y, z };
@@ -3568,7 +3559,22 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_18BB(Branch c,
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_17BB(Branch x,
+			Command z) {
+		if (z.equals(x.getNegative())) {
+			return new Object[] { x, z };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_18BB(Branch c, Branch y) {
+		if (y.equals(c.getPositive())) {
+			return new Object[] { c, y };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_19BB(Branch c,
 			Command w) {
 		if (w.equals(c.getPositive())) {
 			return new Object[] { c, w };
@@ -3576,7 +3582,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_19BB(Branch x,
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_20BB(Branch x,
 			Command w) {
 		if (w.equals(x.getPositive())) {
 			return new Object[] { x, w };
@@ -3584,18 +3590,10 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_20BB(Branch c,
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_21BB(Branch c,
 			Command w) {
 		if (w.equals(c.getNegative())) {
 			return new Object[] { c, w };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_21BB(Branch x,
-			Command w) {
-		if (w.equals(x.getNegative())) {
-			return new Object[] { x, w };
 		}
 		return null;
 	}
@@ -3608,133 +3606,144 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_23BB(Branch c, Branch x) {
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_23BB(Branch x,
+			Command w) {
+		if (w.equals(x.getNegative())) {
+			return new Object[] { x, w };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_24BB(Branch y, Branch x) {
+		if (x.equals(y.getPositive())) {
+			return new Object[] { y, x };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_25BB(Branch c, Branch x) {
 		if (x.equals(c.getNegative())) {
 			return new Object[] { c, x };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_24BB(Branch c, Branch y) {
-		if (y.equals(c.getPositive())) {
-			return new Object[] { c, y };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_25BB(Branch x, Branch y) {
-		if (y.equals(x.getPositive())) {
-			return new Object[] { x, y };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_26BB(Branch x, Branch y) {
-		if (y.equals(x.getNegative())) {
-			return new Object[] { x, y };
+	public static final Object[] pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_26BB(Branch y, Branch x) {
+		if (x.equals(y.getNegative())) {
+			return new Object[] { y, x };
 		}
 		return null;
 	}
 
 	public static final Iterable<Object[]> pattern_declul2branchbub_20_2_testcorematchandDECs_blackFFFFFB(
-			EMoflonEdge _edge_next) {
+			EMoflonEdge _edge_negative) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpZ = _edge_next.getSrc();
-		if (tmpZ instanceof Command) {
-			Command z = (Command) tmpZ;
-			EObject tmpX = _edge_next.getTrg();
-			if (tmpX instanceof Branch) {
-				Branch x = (Branch) tmpX;
-				if (x.equals(z.getNext())) {
-					if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_0B(z) == null) {
-						if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_6B(x) == null) {
-							if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_13BB(x, z) == null) {
-								if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_16BB(x, z) == null) {
-									for (Branch c : org.moflon.core.utilities.eMoflonEMFUtil
-											.getOppositeReferenceTyped(x, Branch.class, "positive")) {
-										if (!c.equals(x)) {
-											Node tmpY = c.getNegative();
-											if (tmpY instanceof Branch) {
-												Branch y = (Branch) tmpY;
-												if (!c.equals(y)) {
-													if (!x.equals(y)) {
-														Node tmpW = y.getPositive();
-														if (tmpW instanceof Command) {
-															Command w = (Command) tmpW;
-															if (!w.equals(z)) {
-																if (y.equals(w.getNext())) {
-																	if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_12BB(
-																			c, z) == null) {
-																		if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_15BB(
-																				c, z) == null) {
-																			if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_23BB(
+		EObject tmpC = _edge_negative.getSrc();
+		if (tmpC instanceof Branch) {
+			Branch c = (Branch) tmpC;
+			EObject tmpY = _edge_negative.getTrg();
+			if (tmpY instanceof Branch) {
+				Branch y = (Branch) tmpY;
+				if (!c.equals(y)) {
+					if (y.equals(c.getNegative())) {
+						Node tmpX = c.getPositive();
+						if (tmpX instanceof Branch) {
+							Branch x = (Branch) tmpX;
+							if (!c.equals(x)) {
+								if (!x.equals(y)) {
+									Node tmpW = y.getPositive();
+									if (tmpW instanceof Command) {
+										Command w = (Command) tmpW;
+										if (y.equals(w.getNext())) {
+											if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_3B(
+													y) == null) {
+												if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_18BB(c,
+														y) == null) {
+													if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_4BBB(
+															y, c, x) == null) {
+														if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_5BBB(
+																y, c, x) == null) {
+															if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_9B(
+																	x) == null) {
+																if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_10BBB(
+																		x, c, y) == null) {
+																	if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_11BBB(
+																			x, c, y) == null) {
+																		if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_24BB(
+																				y, x) == null) {
+																			if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_25BB(
 																					c, x) == null) {
-																				if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_1BBBB(
-																						z, c, x, y) == null) {
-																					if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_2BBBB(
-																							z, c, x, y) == null) {
-																						if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_7BBB(
-																								x, c, y) == null) {
-																							if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_8BBB(
-																									x, c, y) == null) {
-																								if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_9B(
-																										y) == null) {
-																									if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_10BBB(
-																											y, c,
-																											x) == null) {
-																										if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_11BBB(
-																												y, c,
-																												x) == null) {
-																											if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_14BB(
+																				if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_26BB(
+																						y, x) == null) {
+																					if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_6B(
+																							w) == null) {
+																						if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_7BBBB(
+																								w, c, y, x) == null) {
+																							if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_8BBBB(
+																									w, c, y,
+																									x) == null) {
+																								if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_19BB(
+																										c, w) == null) {
+																									if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_20BB(
+																											x,
+																											w) == null) {
+																										if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_21BB(
+																												c,
+																												w) == null) {
+																											if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_22BB(
 																													y,
-																													z) == null) {
-																												if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_17BB(
-																														y,
-																														z) == null) {
-																													if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_24BB(
-																															c,
-																															y) == null) {
-																														if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_25BB(
-																																x,
-																																y) == null) {
-																															if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_26BB(
+																													w) == null) {
+																												if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_23BB(
+																														x,
+																														w) == null) {
+																													for (Node tmpZ : org.moflon.core.utilities.eMoflonEMFUtil
+																															.getOppositeReferenceTyped(
 																																	x,
-																																	y) == null) {
-																																if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_3B(
-																																		w) == null) {
-																																	if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_4BBBB(
-																																			w,
+																																	Node.class,
+																																	"next")) {
+																														if (tmpZ instanceof Command) {
+																															Command z = (Command) tmpZ;
+																															if (!w.equals(
+																																	z)) {
+																																if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_0B(
+																																		z) == null) {
+																																	if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_1BBBB(
+																																			z,
 																																			c,
-																																			x,
-																																			y) == null) {
-																																		if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_5BBBB(
-																																				w,
+																																			y,
+																																			x) == null) {
+																																		if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_2BBBB(
+																																				z,
 																																				c,
-																																				x,
-																																				y) == null) {
-																																			if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_18BB(
+																																				y,
+																																				x) == null) {
+																																			if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_12BB(
 																																					c,
-																																					w) == null) {
-																																				if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_19BB(
-																																						x,
-																																						w) == null) {
-																																					if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_20BB(
-																																							c,
-																																							w) == null) {
-																																						if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_21BB(
-																																								x,
-																																								w) == null) {
-																																							if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_22BB(
+																																					z) == null) {
+																																				if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_13BB(
+																																						y,
+																																						z) == null) {
+																																					if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_14BB(
+																																							x,
+																																							z) == null) {
+																																						if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_15BB(
+																																								c,
+																																								z) == null) {
+																																							if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_16BB(
 																																									y,
-																																									w) == null) {
-																																								_result.add(
-																																										new Object[] {
-																																												z,
-																																												c,
-																																												w,
-																																												x,
-																																												y,
-																																												_edge_next });
+																																									z) == null) {
+																																								if (pattern_declul2branchbub_20_2_testcorematchandDECs_black_nac_17BB(
+																																										x,
+																																										z) == null) {
+																																									_result.add(
+																																											new Object[] {
+																																													c,
+																																													z,
+																																													y,
+																																													w,
+																																													x,
+																																													_edge_negative });
+																																								}
 																																							}
 																																						}
 																																					}
@@ -3761,16 +3770,16 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 																}
 															}
 														}
-
 													}
 												}
 											}
-
 										}
 									}
+
 								}
 							}
 						}
+
 					}
 				}
 			}
@@ -3790,8 +3799,8 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final boolean pattern_declul2branchbub_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-			declul2branchbub _this, Match match, Command z, Branch c, Command w, Branch x, Branch y) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, z, c, w, x, y);
+			declul2branchbub _this, Match match, Branch c, Command z, Branch y, Command w, Branch x) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, c, z, y, w, x);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3877,36 +3886,81 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return new Object[] { __result };
 	}
 
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_0BB(Assignment l,
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_0BB(Assignment m,
 			Decision d) {
-		for (Decision __DEC_l_positive_821520 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+		for (Decision __DEC_m_positive_914681 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
 				Decision.class, "positive")) {
-			if (!d.equals(__DEC_l_positive_821520)) {
-				return new Object[] { l, d };
+			if (!d.equals(__DEC_m_positive_914681)) {
+				return new Object[] { m, d };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_1BB(Assignment l,
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_1BB(Assignment m,
 			Decision d) {
-		for (Decision __DEC_l_negative_694489 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+		for (Decision __DEC_m_negative_546710 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
 				Decision.class, "negative")) {
-			if (!d.equals(__DEC_l_negative_694489)) {
+			if (!d.equals(__DEC_m_negative_546710)) {
+				return new Object[] { m, d };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_2BBB(Assignment m,
+			While a, While b) {
+		if (!a.equals(b)) {
+			for (While __DEC_m_last_526102 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
+					While.class, "last")) {
+				if (!a.equals(__DEC_m_last_526102)) {
+					if (!b.equals(__DEC_m_last_526102)) {
+						return new Object[] { m, a, b };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_3B(Assignment m) {
+		for (Program __DEC_m_first_211056 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
+				Program.class, "first")) {
+			return new Object[] { m };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_4BB(Assignment l,
+			Decision d) {
+		for (Decision __DEC_l_positive_943034 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+				Decision.class, "positive")) {
+			if (!d.equals(__DEC_l_positive_943034)) {
 				return new Object[] { l, d };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_2BBB(Assignment l,
-			While b, While a) {
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_5BB(Assignment l,
+			Decision d) {
+		for (Decision __DEC_l_negative_882178 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+				Decision.class, "negative")) {
+			if (!d.equals(__DEC_l_negative_882178)) {
+				return new Object[] { l, d };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_6BBB(Assignment l,
+			While a, While b) {
 		if (!a.equals(b)) {
-			for (While __DEC_l_first_82906 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+			for (While __DEC_l_first_210935 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 					While.class, "first")) {
-				if (!b.equals(__DEC_l_first_82906)) {
-					if (!a.equals(__DEC_l_first_82906)) {
-						return new Object[] { l, b, a };
+				if (!a.equals(__DEC_l_first_210935)) {
+					if (!b.equals(__DEC_l_first_210935)) {
+						return new Object[] { l, a, b };
 					}
 				}
 			}
@@ -3914,14 +3968,14 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_3BBB(Assignment l,
-			While b, While a) {
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_7BBB(Assignment l,
+			While a, While b) {
 		if (!a.equals(b)) {
-			for (While __DEC_l_last_681134 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+			for (While __DEC_l_last_577198 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 					While.class, "last")) {
-				if (!b.equals(__DEC_l_last_681134)) {
-					if (!a.equals(__DEC_l_last_681134)) {
-						return new Object[] { l, b, a };
+				if (!a.equals(__DEC_l_last_577198)) {
+					if (!b.equals(__DEC_l_last_577198)) {
+						return new Object[] { l, a, b };
 					}
 				}
 			}
@@ -3929,64 +3983,18 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_4B(Assignment l) {
-		for (Program __DEC_l_first_25408 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_8B(Assignment l) {
+		for (Program __DEC_l_first_29232 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 				Program.class, "first")) {
 			return new Object[] { l };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_5BB(While b, Decision d) {
-		for (Decision __DEC_b_positive_882834 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
-				Decision.class, "positive")) {
-			if (!d.equals(__DEC_b_positive_882834)) {
-				return new Object[] { b, d };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_6BB(While b, While a) {
-		if (!a.equals(b)) {
-			for (While __DEC_b_first_957427 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
-					While.class, "first")) {
-				if (!b.equals(__DEC_b_first_957427)) {
-					if (!a.equals(__DEC_b_first_957427)) {
-						return new Object[] { b, a };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_7BB(While b, While a) {
-		if (!a.equals(b)) {
-			for (While __DEC_b_last_932057 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
-					While.class, "last")) {
-				if (!b.equals(__DEC_b_last_932057)) {
-					if (!a.equals(__DEC_b_last_932057)) {
-						return new Object[] { b, a };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_8B(While b) {
-		for (Program __DEC_b_first_220734 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
-				Program.class, "first")) {
-			return new Object[] { b };
-		}
-		return null;
-	}
-
 	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_9BB(While a, Decision d) {
-		for (Decision __DEC_a_negative_87031 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (Decision __DEC_a_negative_386027 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				Decision.class, "negative")) {
-			if (!d.equals(__DEC_a_negative_87031)) {
+			if (!d.equals(__DEC_a_negative_386027)) {
 				return new Object[] { a, d };
 			}
 		}
@@ -3995,10 +4003,10 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 
 	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_10BB(While a, While b) {
 		if (!a.equals(b)) {
-			for (While __DEC_a_first_375274 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+			for (While __DEC_a_first_922767 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 					While.class, "first")) {
-				if (!a.equals(__DEC_a_first_375274)) {
-					if (!b.equals(__DEC_a_first_375274)) {
+				if (!a.equals(__DEC_a_first_922767)) {
+					if (!b.equals(__DEC_a_first_922767)) {
 						return new Object[] { a, b };
 					}
 				}
@@ -4009,10 +4017,10 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 
 	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_11BB(While a, While b) {
 		if (!a.equals(b)) {
-			for (While __DEC_a_last_866322 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+			for (While __DEC_a_last_905271 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 					While.class, "last")) {
-				if (!a.equals(__DEC_a_last_866322)) {
-					if (!b.equals(__DEC_a_last_866322)) {
+				if (!a.equals(__DEC_a_last_905271)) {
+					if (!b.equals(__DEC_a_last_905271)) {
 						return new Object[] { a, b };
 					}
 				}
@@ -4022,43 +4030,31 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_12B(While a) {
-		for (Program __DEC_a_first_715991 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (Program __DEC_a_first_706912 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				Program.class, "first")) {
 			return new Object[] { a };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_13BB(Assignment m,
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_13BB(While b,
 			Decision d) {
-		for (Decision __DEC_m_positive_386980 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
+		for (Decision __DEC_b_positive_848015 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Decision.class, "positive")) {
-			if (!d.equals(__DEC_m_positive_386980)) {
-				return new Object[] { m, d };
+			if (!d.equals(__DEC_b_positive_848015)) {
+				return new Object[] { b, d };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_14BB(Assignment m,
-			Decision d) {
-		for (Decision __DEC_m_negative_414357 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
-				Decision.class, "negative")) {
-			if (!d.equals(__DEC_m_negative_414357)) {
-				return new Object[] { m, d };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_15BBB(Assignment m,
-			While b, While a) {
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_14BB(While b, While a) {
 		if (!a.equals(b)) {
-			for (While __DEC_m_last_870571 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
-					While.class, "last")) {
-				if (!b.equals(__DEC_m_last_870571)) {
-					if (!a.equals(__DEC_m_last_870571)) {
-						return new Object[] { m, b, a };
+			for (While __DEC_b_first_37829 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+					While.class, "first")) {
+				if (!b.equals(__DEC_b_first_37829)) {
+					if (!a.equals(__DEC_b_first_37829)) {
+						return new Object[] { b, a };
 					}
 				}
 			}
@@ -4066,85 +4062,29 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_16B(Assignment m) {
-		for (Program __DEC_m_first_170564 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_15BB(While b, While a) {
+		if (!a.equals(b)) {
+			for (While __DEC_b_last_688052 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+					While.class, "last")) {
+				if (!b.equals(__DEC_b_last_688052)) {
+					if (!a.equals(__DEC_b_last_688052)) {
+						return new Object[] { b, a };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_16B(While b) {
+		for (Program __DEC_b_first_571758 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Program.class, "first")) {
-			return new Object[] { m };
+			return new Object[] { b };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_17BB(Decision d,
-			Assignment l) {
-		if (l.equals(d.getPositive())) {
-			return new Object[] { d, l };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_18BB(Decision d,
-			Assignment l) {
-		if (l.equals(d.getNegative())) {
-			return new Object[] { d, l };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_19BB(While b,
-			Assignment l) {
-		if (l.equals(b.getFirst())) {
-			return new Object[] { b, l };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_20BB(While a,
-			Assignment l) {
-		if (l.equals(a.getFirst())) {
-			return new Object[] { a, l };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_21BB(While b,
-			Assignment l) {
-		if (l.equals(b.getLast())) {
-			return new Object[] { b, l };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_22BB(Decision d,
-			While b) {
-		if (b.equals(d.getPositive())) {
-			return new Object[] { d, b };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_23BB(Decision d,
-			While a) {
-		if (a.equals(d.getNegative())) {
-			return new Object[] { d, a };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_24BB(While b, While a) {
-		if (a.equals(b.getFirst())) {
-			return new Object[] { b, a };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_25BB(While b, While a) {
-		if (a.equals(b.getLast())) {
-			return new Object[] { b, a };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_26BB(Decision d,
 			Assignment m) {
 		if (m.equals(d.getPositive())) {
 			return new Object[] { d, m };
@@ -4152,7 +4092,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_27BB(Decision d,
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_18BB(Decision d,
 			Assignment m) {
 		if (m.equals(d.getNegative())) {
 			return new Object[] { d, m };
@@ -4160,10 +4100,80 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_28BB(While a,
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_19BB(While a,
 			Assignment m) {
 		if (m.equals(a.getLast())) {
 			return new Object[] { a, m };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_20BB(Decision d,
+			Assignment l) {
+		if (l.equals(d.getPositive())) {
+			return new Object[] { d, l };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_21BB(Decision d,
+			Assignment l) {
+		if (l.equals(d.getNegative())) {
+			return new Object[] { d, l };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_22BB(While a,
+			Assignment l) {
+		if (l.equals(a.getFirst())) {
+			return new Object[] { a, l };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_23BB(While b,
+			Assignment l) {
+		if (l.equals(b.getFirst())) {
+			return new Object[] { b, l };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_24BB(While b,
+			Assignment l) {
+		if (l.equals(b.getLast())) {
+			return new Object[] { b, l };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_25BB(Decision d,
+			While a) {
+		if (a.equals(d.getNegative())) {
+			return new Object[] { d, a };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_26BB(Decision d,
+			While b) {
+		if (b.equals(d.getPositive())) {
+			return new Object[] { d, b };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_27BB(While a, While b) {
+		if (b.equals(a.getFirst())) {
+			return new Object[] { a, b };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_28BB(While a, While b) {
+		if (b.equals(a.getLast())) {
+			return new Object[] { a, b };
 		}
 		return null;
 	}
@@ -4185,90 +4195,90 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 							Statement tmpL = a.getLast();
 							if (tmpL instanceof Assignment) {
 								Assignment l = (Assignment) tmpL;
-								Statement tmpM = b.getFirst();
+								Statement tmpM = b.getLast();
 								if (tmpM instanceof Assignment) {
 									Assignment m = (Assignment) tmpM;
 									if (!l.equals(m)) {
-										if (m.equals(b.getLast())) {
+										if (m.equals(b.getFirst())) {
 											if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_9BB(a,
 													d) == null) {
 												if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_12B(
 														a) == null) {
-													if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_23BB(
+													if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_25BB(
 															d, a) == null) {
-														if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_5BB(
-																b, d) == null) {
-															if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_6BB(
-																	b, a) == null) {
-																if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_7BB(
-																		b, a) == null) {
-																	if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_8B(
-																			b) == null) {
-																		if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_10BB(
-																				a, b) == null) {
-																			if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_11BB(
-																					a, b) == null) {
-																				if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_22BB(
+														if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_10BB(
+																a, b) == null) {
+															if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_11BB(
+																	a, b) == null) {
+																if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_13BB(
+																		b, d) == null) {
+																	if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_14BB(
+																			b, a) == null) {
+																		if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_15BB(
+																				b, a) == null) {
+																			if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_16B(
+																					b) == null) {
+																				if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_26BB(
 																						d, b) == null) {
-																					if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_24BB(
-																							b, a) == null) {
-																						if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_25BB(
-																								b, a) == null) {
-																							if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_0BB(
+																					if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_27BB(
+																							a, b) == null) {
+																						if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_28BB(
+																								a, b) == null) {
+																							if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_4BB(
 																									l, d) == null) {
-																								if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_1BB(
+																								if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_5BB(
 																										l, d) == null) {
-																									if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_2BBB(
-																											l, b,
-																											a) == null) {
-																										if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_3BBB(
-																												l, b,
-																												a) == null) {
-																											if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_4B(
+																									if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_6BBB(
+																											l, a,
+																											b) == null) {
+																										if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_7BBB(
+																												l, a,
+																												b) == null) {
+																											if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_8B(
 																													l) == null) {
-																												if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_17BB(
+																												if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_20BB(
 																														d,
 																														l) == null) {
-																													if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_18BB(
+																													if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_21BB(
 																															d,
 																															l) == null) {
-																														if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_19BB(
-																																b,
+																														if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_22BB(
+																																a,
 																																l) == null) {
-																															if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_20BB(
-																																	a,
+																															if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_23BB(
+																																	b,
 																																	l) == null) {
-																																if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_21BB(
+																																if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_24BB(
 																																		b,
 																																		l) == null) {
-																																	if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_13BB(
+																																	if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_0BB(
 																																			m,
 																																			d) == null) {
-																																		if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_14BB(
+																																		if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_1BB(
 																																				m,
 																																				d) == null) {
-																																			if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_15BBB(
+																																			if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_2BBB(
 																																					m,
-																																					b,
-																																					a) == null) {
-																																				if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_16B(
+																																					a,
+																																					b) == null) {
+																																				if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_3B(
 																																						m) == null) {
-																																					if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_26BB(
+																																					if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_17BB(
 																																							d,
 																																							m) == null) {
-																																						if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_27BB(
+																																						if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_18BB(
 																																								d,
 																																								m) == null) {
-																																							if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_28BB(
+																																							if (pattern_declul2branchbub_21_2_testcorematchandDECs_black_nac_19BB(
 																																									a,
 																																									m) == null) {
 																																								_result.add(
 																																										new Object[] {
+																																												m,
 																																												d,
 																																												l,
-																																												b,
 																																												a,
-																																												m,
+																																												b,
 																																												_edge_positive });
 																																							}
 																																						}
@@ -4326,8 +4336,8 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final boolean pattern_declul2branchbub_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-			declul2branchbub _this, Match match, Decision d, Assignment l, While b, While a, Assignment m) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, d, l, b, a, m);
+			declul2branchbub _this, Match match, Assignment m, Decision d, Assignment l, While a, While b) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, m, d, l, a, b);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -4371,47 +4381,47 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 
 	public static final Object[] pattern_declul2branchbub_24_2_matchsrctrgcontext_bindingFFFFFFFFFFBB(Match targetMatch,
 			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("z");
-		EObject _localVariable_1 = targetMatch.getObject("c");
-		EObject _localVariable_2 = targetMatch.getObject("w");
-		EObject _localVariable_3 = sourceMatch.getObject("d");
-		EObject _localVariable_4 = targetMatch.getObject("x");
-		EObject _localVariable_5 = sourceMatch.getObject("l");
+		EObject _localVariable_0 = targetMatch.getObject("c");
+		EObject _localVariable_1 = sourceMatch.getObject("m");
+		EObject _localVariable_2 = sourceMatch.getObject("d");
+		EObject _localVariable_3 = sourceMatch.getObject("l");
+		EObject _localVariable_4 = sourceMatch.getObject("a");
+		EObject _localVariable_5 = targetMatch.getObject("z");
 		EObject _localVariable_6 = targetMatch.getObject("y");
 		EObject _localVariable_7 = sourceMatch.getObject("b");
-		EObject _localVariable_8 = sourceMatch.getObject("a");
-		EObject _localVariable_9 = sourceMatch.getObject("m");
-		EObject tmpZ = _localVariable_0;
-		EObject tmpC = _localVariable_1;
-		EObject tmpW = _localVariable_2;
-		EObject tmpD = _localVariable_3;
-		EObject tmpX = _localVariable_4;
-		EObject tmpL = _localVariable_5;
+		EObject _localVariable_8 = targetMatch.getObject("w");
+		EObject _localVariable_9 = targetMatch.getObject("x");
+		EObject tmpC = _localVariable_0;
+		EObject tmpM = _localVariable_1;
+		EObject tmpD = _localVariable_2;
+		EObject tmpL = _localVariable_3;
+		EObject tmpA = _localVariable_4;
+		EObject tmpZ = _localVariable_5;
 		EObject tmpY = _localVariable_6;
 		EObject tmpB = _localVariable_7;
-		EObject tmpA = _localVariable_8;
-		EObject tmpM = _localVariable_9;
-		if (tmpZ instanceof Command) {
-			Command z = (Command) tmpZ;
-			if (tmpC instanceof Branch) {
-				Branch c = (Branch) tmpC;
-				if (tmpW instanceof Command) {
-					Command w = (Command) tmpW;
-					if (tmpD instanceof Decision) {
-						Decision d = (Decision) tmpD;
-						if (tmpX instanceof Branch) {
-							Branch x = (Branch) tmpX;
-							if (tmpL instanceof Assignment) {
-								Assignment l = (Assignment) tmpL;
+		EObject tmpW = _localVariable_8;
+		EObject tmpX = _localVariable_9;
+		if (tmpC instanceof Branch) {
+			Branch c = (Branch) tmpC;
+			if (tmpM instanceof Assignment) {
+				Assignment m = (Assignment) tmpM;
+				if (tmpD instanceof Decision) {
+					Decision d = (Decision) tmpD;
+					if (tmpL instanceof Assignment) {
+						Assignment l = (Assignment) tmpL;
+						if (tmpA instanceof While) {
+							While a = (While) tmpA;
+							if (tmpZ instanceof Command) {
+								Command z = (Command) tmpZ;
 								if (tmpY instanceof Branch) {
 									Branch y = (Branch) tmpY;
 									if (tmpB instanceof While) {
 										While b = (While) tmpB;
-										if (tmpA instanceof While) {
-											While a = (While) tmpA;
-											if (tmpM instanceof Assignment) {
-												Assignment m = (Assignment) tmpM;
-												return new Object[] { z, c, w, d, x, l, y, b, a, m, targetMatch,
+										if (tmpW instanceof Command) {
+											Command w = (Command) tmpW;
+											if (tmpX instanceof Branch) {
+												Branch x = (Branch) tmpX;
+												return new Object[] { c, m, d, l, a, z, y, b, w, x, targetMatch,
 														sourceMatch };
 											}
 										}
@@ -4426,17 +4436,17 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_24_2_matchsrctrgcontext_blackBBBBBBBBBBBB(Command z, Branch c,
-			Command w, Decision d, Branch x, Assignment l, Branch y, While b, While a, Assignment m, Match sourceMatch,
-			Match targetMatch) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
-				if (!w.equals(z)) {
-					if (!x.equals(y)) {
-						if (!l.equals(m)) {
-							if (!a.equals(b)) {
+	public static final Object[] pattern_declul2branchbub_24_2_matchsrctrgcontext_blackBBBBBBBBBBBB(Branch c,
+			Assignment m, Decision d, Assignment l, While a, Command z, Branch y, While b, Command w, Branch x,
+			Match sourceMatch, Match targetMatch) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
+				if (!l.equals(m)) {
+					if (!a.equals(b)) {
+						if (!w.equals(z)) {
+							if (!x.equals(y)) {
 								if (!sourceMatch.equals(targetMatch)) {
-									return new Object[] { z, c, w, d, x, l, y, b, a, m, sourceMatch, targetMatch };
+									return new Object[] { c, m, d, l, a, z, y, b, w, x, sourceMatch, targetMatch };
 								}
 							}
 						}
@@ -4452,34 +4462,34 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		Object[] result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding = pattern_declul2branchbub_24_2_matchsrctrgcontext_bindingFFFFFFFFFFBB(
 				targetMatch, sourceMatch);
 		if (result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding != null) {
-			Command z = (Command) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[0];
-			Branch c = (Branch) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[1];
-			Command w = (Command) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[2];
-			Decision d = (Decision) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[3];
-			Branch x = (Branch) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[4];
-			Assignment l = (Assignment) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[5];
+			Branch c = (Branch) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[0];
+			Assignment m = (Assignment) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[1];
+			Decision d = (Decision) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[2];
+			Assignment l = (Assignment) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[3];
+			While a = (While) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[4];
+			Command z = (Command) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[5];
 			Branch y = (Branch) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[6];
 			While b = (While) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[7];
-			While a = (While) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[8];
-			Assignment m = (Assignment) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[9];
+			Command w = (Command) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[8];
+			Branch x = (Branch) result_pattern_declul2branchbub_24_2_matchsrctrgcontext_binding[9];
 
 			Object[] result_pattern_declul2branchbub_24_2_matchsrctrgcontext_black = pattern_declul2branchbub_24_2_matchsrctrgcontext_blackBBBBBBBBBBBB(
-					z, c, w, d, x, l, y, b, a, m, sourceMatch, targetMatch);
+					c, m, d, l, a, z, y, b, w, x, sourceMatch, targetMatch);
 			if (result_pattern_declul2branchbub_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { z, c, w, d, x, l, y, b, a, m, sourceMatch, targetMatch };
+				return new Object[] { c, m, d, l, a, z, y, b, w, x, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_declul2branchbub_24_3_solvecsp_bindingFBBBBBBBBBBBBB(declul2branchbub _this,
-			Command z, Branch c, Command w, Decision d, Branch x, Assignment l, Branch y, While b, While a,
-			Assignment m, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_10 = _this.isApplicable_solveCsp_CC(z, c, w, d, x, l, y, b, a, m, sourceMatch, targetMatch);
+			Branch c, Assignment m, Decision d, Assignment l, While a, Command z, Branch y, While b, Command w,
+			Branch x, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_10 = _this.isApplicable_solveCsp_CC(c, m, d, l, a, z, y, b, w, x, sourceMatch, targetMatch);
 		CSP csp = _localVariable_10;
 		if (csp != null) {
-			return new Object[] { csp, _this, z, c, w, d, x, l, y, b, a, m, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, c, m, d, l, a, z, y, b, w, x, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -4489,10 +4499,10 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBBBB(
-			declul2branchbub _this, Command z, Branch c, Command w, Decision d, Branch x, Assignment l, Branch y,
-			While b, While a, Assignment m, Match sourceMatch, Match targetMatch) {
+			declul2branchbub _this, Branch c, Assignment m, Decision d, Assignment l, While a, Command z, Branch y,
+			While b, Command w, Branch x, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_declul2branchbub_24_3_solvecsp_binding = pattern_declul2branchbub_24_3_solvecsp_bindingFBBBBBBBBBBBBB(
-				_this, z, c, w, d, x, l, y, b, a, m, sourceMatch, targetMatch);
+				_this, c, m, d, l, a, z, y, b, w, x, sourceMatch, targetMatch);
 		if (result_pattern_declul2branchbub_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_declul2branchbub_24_3_solvecsp_binding[0];
 
@@ -4500,7 +4510,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 					csp);
 			if (result_pattern_declul2branchbub_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, z, c, w, d, x, l, y, b, a, m, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, c, m, d, l, a, z, y, b, w, x, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -4512,13 +4522,13 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_declul2branchbub_24_5_matchcorrcontext_blackBBFBB(Branch c,
+	public static final Iterable<Object[]> pattern_declul2branchbub_24_5_matchcorrcontext_blackBFBBB(Branch c,
 			Decision d, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (S2B d2c : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d, S2B.class, "source")) {
 				if (c.equals(d2c.getTarget())) {
-					_result.add(new Object[] { c, d, d2c, sourceMatch, targetMatch });
+					_result.add(new Object[] { c, d2c, d, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -4536,16 +4546,16 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return new Object[] { d2c, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_declul2branchbub_24_6_createcorrespondence_blackBBBBBBBBBBB(Command z,
-			Branch c, Command w, Decision d, Branch x, Assignment l, Branch y, While b, While a, Assignment m,
+	public static final Object[] pattern_declul2branchbub_24_6_createcorrespondence_blackBBBBBBBBBBB(Branch c,
+			Assignment m, Decision d, Assignment l, While a, Command z, Branch y, While b, Command w, Branch x,
 			CCMatch ccMatch) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
-				if (!w.equals(z)) {
-					if (!x.equals(y)) {
-						if (!l.equals(m)) {
-							if (!a.equals(b)) {
-								return new Object[] { z, c, w, d, x, l, y, b, a, m, ccMatch };
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
+				if (!l.equals(m)) {
+					if (!a.equals(b)) {
+						if (!w.equals(z)) {
+							if (!x.equals(y)) {
+								return new Object[] { c, m, d, l, a, z, y, b, w, x, ccMatch };
 							}
 						}
 					}
@@ -4555,25 +4565,25 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_24_6_createcorrespondence_greenFBBFFBBBBBBFB(Command z,
-			Command w, Branch x, Assignment l, Branch y, While b, While a, Assignment m, CCMatch ccMatch) {
+	public static final Object[] pattern_declul2branchbub_24_6_createcorrespondence_greenBBFFFBBFBBBBB(Assignment m,
+			Assignment l, While a, Command z, Branch y, While b, Command w, Branch x, CCMatch ccMatch) {
 		S2N l2z = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		S2B b2y = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
-		S2N m2w = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		S2B a2x = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
-		l2z.setTarget(z);
+		S2N m2w = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		l2z.setSource(l);
+		l2z.setTarget(z);
 		ccMatch.getCreateCorr().add(l2z);
-		b2y.setTarget(y);
 		b2y.setSource(b);
+		b2y.setTarget(y);
 		ccMatch.getCreateCorr().add(b2y);
-		m2w.setTarget(w);
-		m2w.setSource(m);
-		ccMatch.getCreateCorr().add(m2w);
-		a2x.setTarget(x);
 		a2x.setSource(a);
+		a2x.setTarget(x);
 		ccMatch.getCreateCorr().add(a2x);
-		return new Object[] { l2z, z, w, b2y, m2w, x, l, y, b, a, m, a2x, ccMatch };
+		m2w.setSource(m);
+		m2w.setTarget(w);
+		ccMatch.getCreateCorr().add(m2w);
+		return new Object[] { m, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x, ccMatch };
 	}
 
 	public static final Object[] pattern_declul2branchbub_24_7_addtoreturnedresult_blackBB(
@@ -4597,34 +4607,77 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return _result;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_0BB(Assignment l, Decision d) {
-		for (Decision __DEC_l_positive_13722 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_0BB(Assignment m, Decision d) {
+		for (Decision __DEC_m_positive_288374 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
 				Decision.class, "positive")) {
-			if (!d.equals(__DEC_l_positive_13722)) {
-				return new Object[] { l, d };
+			if (!d.equals(__DEC_m_positive_288374)) {
+				return new Object[] { m, d };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_1BB(Assignment l, Decision d) {
-		for (Decision __DEC_l_negative_735012 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_1BB(Assignment m, Decision d) {
+		for (Decision __DEC_m_negative_836441 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
 				Decision.class, "negative")) {
-			if (!d.equals(__DEC_l_negative_735012)) {
+			if (!d.equals(__DEC_m_negative_836441)) {
+				return new Object[] { m, d };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_2BBB(Assignment m, While a,
+			While b) {
+		if (!a.equals(b)) {
+			for (While __DEC_m_last_792646 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
+					While.class, "last")) {
+				if (!a.equals(__DEC_m_last_792646)) {
+					if (!b.equals(__DEC_m_last_792646)) {
+						return new Object[] { m, a, b };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_3B(Assignment m) {
+		for (Program __DEC_m_first_386328 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
+				Program.class, "first")) {
+			return new Object[] { m };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_4BB(Assignment l, Decision d) {
+		for (Decision __DEC_l_positive_681823 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+				Decision.class, "positive")) {
+			if (!d.equals(__DEC_l_positive_681823)) {
 				return new Object[] { l, d };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_2BBB(Assignment l, While b,
-			While a) {
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_5BB(Assignment l, Decision d) {
+		for (Decision __DEC_l_negative_615829 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+				Decision.class, "negative")) {
+			if (!d.equals(__DEC_l_negative_615829)) {
+				return new Object[] { l, d };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_6BBB(Assignment l, While a,
+			While b) {
 		if (!a.equals(b)) {
-			for (While __DEC_l_first_286264 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+			for (While __DEC_l_first_293721 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 					While.class, "first")) {
-				if (!b.equals(__DEC_l_first_286264)) {
-					if (!a.equals(__DEC_l_first_286264)) {
-						return new Object[] { l, b, a };
+				if (!a.equals(__DEC_l_first_293721)) {
+					if (!b.equals(__DEC_l_first_293721)) {
+						return new Object[] { l, a, b };
 					}
 				}
 			}
@@ -4632,14 +4685,14 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_3BBB(Assignment l, While b,
-			While a) {
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_7BBB(Assignment l, While a,
+			While b) {
 		if (!a.equals(b)) {
-			for (While __DEC_l_last_792470 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+			for (While __DEC_l_last_793424 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 					While.class, "last")) {
-				if (!b.equals(__DEC_l_last_792470)) {
-					if (!a.equals(__DEC_l_last_792470)) {
-						return new Object[] { l, b, a };
+				if (!a.equals(__DEC_l_last_793424)) {
+					if (!b.equals(__DEC_l_last_793424)) {
+						return new Object[] { l, a, b };
 					}
 				}
 			}
@@ -4647,64 +4700,18 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_4B(Assignment l) {
-		for (Program __DEC_l_first_602105 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_8B(Assignment l) {
+		for (Program __DEC_l_first_719695 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 				Program.class, "first")) {
 			return new Object[] { l };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_5BB(While b, Decision d) {
-		for (Decision __DEC_b_positive_196317 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
-				Decision.class, "positive")) {
-			if (!d.equals(__DEC_b_positive_196317)) {
-				return new Object[] { b, d };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_6BB(While b, While a) {
-		if (!a.equals(b)) {
-			for (While __DEC_b_first_519378 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
-					While.class, "first")) {
-				if (!b.equals(__DEC_b_first_519378)) {
-					if (!a.equals(__DEC_b_first_519378)) {
-						return new Object[] { b, a };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_7BB(While b, While a) {
-		if (!a.equals(b)) {
-			for (While __DEC_b_last_662942 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
-					While.class, "last")) {
-				if (!b.equals(__DEC_b_last_662942)) {
-					if (!a.equals(__DEC_b_last_662942)) {
-						return new Object[] { b, a };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_8B(While b) {
-		for (Program __DEC_b_first_117811 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
-				Program.class, "first")) {
-			return new Object[] { b };
-		}
-		return null;
-	}
-
 	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_9BB(While a, Decision d) {
-		for (Decision __DEC_a_negative_715296 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (Decision __DEC_a_negative_862981 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				Decision.class, "negative")) {
-			if (!d.equals(__DEC_a_negative_715296)) {
+			if (!d.equals(__DEC_a_negative_862981)) {
 				return new Object[] { a, d };
 			}
 		}
@@ -4713,10 +4720,10 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 
 	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_10BB(While a, While b) {
 		if (!a.equals(b)) {
-			for (While __DEC_a_first_538722 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+			for (While __DEC_a_first_410965 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 					While.class, "first")) {
-				if (!a.equals(__DEC_a_first_538722)) {
-					if (!b.equals(__DEC_a_first_538722)) {
+				if (!a.equals(__DEC_a_first_410965)) {
+					if (!b.equals(__DEC_a_first_410965)) {
 						return new Object[] { a, b };
 					}
 				}
@@ -4727,10 +4734,10 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 
 	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_11BB(While a, While b) {
 		if (!a.equals(b)) {
-			for (While __DEC_a_last_489654 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+			for (While __DEC_a_last_557177 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 					While.class, "last")) {
-				if (!a.equals(__DEC_a_last_489654)) {
-					if (!b.equals(__DEC_a_last_489654)) {
+				if (!a.equals(__DEC_a_last_557177)) {
+					if (!b.equals(__DEC_a_last_557177)) {
 						return new Object[] { a, b };
 					}
 				}
@@ -4740,43 +4747,30 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_12B(While a) {
-		for (Program __DEC_a_first_808861 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (Program __DEC_a_first_302483 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				Program.class, "first")) {
 			return new Object[] { a };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_13BB(Assignment m,
-			Decision d) {
-		for (Decision __DEC_m_positive_531488 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_13BB(While b, Decision d) {
+		for (Decision __DEC_b_positive_344292 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Decision.class, "positive")) {
-			if (!d.equals(__DEC_m_positive_531488)) {
-				return new Object[] { m, d };
+			if (!d.equals(__DEC_b_positive_344292)) {
+				return new Object[] { b, d };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_14BB(Assignment m,
-			Decision d) {
-		for (Decision __DEC_m_negative_984562 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
-				Decision.class, "negative")) {
-			if (!d.equals(__DEC_m_negative_984562)) {
-				return new Object[] { m, d };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_15BBB(Assignment m, While b,
-			While a) {
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_14BB(While b, While a) {
 		if (!a.equals(b)) {
-			for (While __DEC_m_last_371314 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
-					While.class, "last")) {
-				if (!b.equals(__DEC_m_last_371314)) {
-					if (!a.equals(__DEC_m_last_371314)) {
-						return new Object[] { m, b, a };
+			for (While __DEC_b_first_247451 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+					While.class, "first")) {
+				if (!b.equals(__DEC_b_first_247451)) {
+					if (!a.equals(__DEC_b_first_247451)) {
+						return new Object[] { b, a };
 					}
 				}
 			}
@@ -4784,80 +4778,29 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_16B(Assignment m) {
-		for (Program __DEC_m_first_771961 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(m,
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_15BB(While b, While a) {
+		if (!a.equals(b)) {
+			for (While __DEC_b_last_377402 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+					While.class, "last")) {
+				if (!b.equals(__DEC_b_last_377402)) {
+					if (!a.equals(__DEC_b_last_377402)) {
+						return new Object[] { b, a };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_16B(While b) {
+		for (Program __DEC_b_first_649815 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Program.class, "first")) {
-			return new Object[] { m };
+			return new Object[] { b };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_17BB(Decision d,
-			Assignment l) {
-		if (l.equals(d.getPositive())) {
-			return new Object[] { d, l };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_18BB(Decision d,
-			Assignment l) {
-		if (l.equals(d.getNegative())) {
-			return new Object[] { d, l };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_19BB(While b, Assignment l) {
-		if (l.equals(b.getFirst())) {
-			return new Object[] { b, l };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_20BB(While a, Assignment l) {
-		if (l.equals(a.getFirst())) {
-			return new Object[] { a, l };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_21BB(While b, Assignment l) {
-		if (l.equals(b.getLast())) {
-			return new Object[] { b, l };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_22BB(Decision d, While b) {
-		if (b.equals(d.getPositive())) {
-			return new Object[] { d, b };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_23BB(Decision d, While a) {
-		if (a.equals(d.getNegative())) {
-			return new Object[] { d, a };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_24BB(While b, While a) {
-		if (a.equals(b.getFirst())) {
-			return new Object[] { b, a };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_25BB(While b, While a) {
-		if (a.equals(b.getLast())) {
-			return new Object[] { b, a };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_26BB(Decision d,
 			Assignment m) {
 		if (m.equals(d.getPositive())) {
 			return new Object[] { d, m };
@@ -4865,7 +4808,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_27BB(Decision d,
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_18BB(Decision d,
 			Assignment m) {
 		if (m.equals(d.getNegative())) {
 			return new Object[] { d, m };
@@ -4873,38 +4816,103 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_28BB(While a, Assignment m) {
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_19BB(While a, Assignment m) {
 		if (m.equals(a.getLast())) {
 			return new Object[] { a, m };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_blackBBBBB(Decision d, Assignment l,
-			While b, While a, Assignment m) {
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_20BB(Decision d,
+			Assignment l) {
+		if (l.equals(d.getPositive())) {
+			return new Object[] { d, l };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_21BB(Decision d,
+			Assignment l) {
+		if (l.equals(d.getNegative())) {
+			return new Object[] { d, l };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_22BB(While a, Assignment l) {
+		if (l.equals(a.getFirst())) {
+			return new Object[] { a, l };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_23BB(While b, Assignment l) {
+		if (l.equals(b.getFirst())) {
+			return new Object[] { b, l };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_24BB(While b, Assignment l) {
+		if (l.equals(b.getLast())) {
+			return new Object[] { b, l };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_25BB(Decision d, While a) {
+		if (a.equals(d.getNegative())) {
+			return new Object[] { d, a };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_26BB(Decision d, While b) {
+		if (b.equals(d.getPositive())) {
+			return new Object[] { d, b };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_27BB(While a, While b) {
+		if (b.equals(a.getFirst())) {
+			return new Object[] { a, b };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_black_nac_28BB(While a, While b) {
+		if (b.equals(a.getLast())) {
+			return new Object[] { a, b };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_27_1_matchtggpattern_blackBBBBB(Assignment m, Decision d,
+			Assignment l, While a, While b) {
 		if (!l.equals(m)) {
 			if (!a.equals(b)) {
 				if (a.equals(d.getPositive())) {
-					if (b.equals(d.getNegative())) {
-						if (m.equals(b.getFirst())) {
+					if (l.equals(a.getLast())) {
+						if (b.equals(d.getNegative())) {
 							if (m.equals(b.getLast())) {
-								if (l.equals(a.getLast())) {
-									if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_0BB(l, d) == null) {
-										if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_1BB(l, d) == null) {
-											if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_2BBB(l, b,
-													a) == null) {
-												if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_3BBB(l, b,
-														a) == null) {
-													if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_4B(
-															l) == null) {
+								if (m.equals(b.getFirst())) {
+									if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_0BB(m, d) == null) {
+										if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_1BB(m, d) == null) {
+											if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_2BBB(m, a,
+													b) == null) {
+												if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_3B(
+														m) == null) {
+													if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_4BB(l,
+															d) == null) {
 														if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_5BB(
-																b, d) == null) {
-															if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_6BB(
-																	b, a) == null) {
-																if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_7BB(
-																		b, a) == null) {
+																l, d) == null) {
+															if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_6BBB(
+																	l, a, b) == null) {
+																if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_7BBB(
+																		l, a, b) == null) {
 																	if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_8B(
-																			b) == null) {
+																			l) == null) {
 																		if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_9BB(
 																				a, d) == null) {
 																			if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_10BB(
@@ -4914,56 +4922,55 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 																					if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_12B(
 																							a) == null) {
 																						if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_13BB(
-																								m, d) == null) {
+																								b, d) == null) {
 																							if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_14BB(
-																									m, d) == null) {
-																								if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_15BBB(
-																										m, b,
-																										a) == null) {
+																									b, a) == null) {
+																								if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_15BB(
+																										b, a) == null) {
 																									if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_16B(
-																											m) == null) {
+																											b) == null) {
 																										if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_17BB(
 																												d,
-																												l) == null) {
+																												m) == null) {
 																											if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_18BB(
 																													d,
-																													l) == null) {
+																													m) == null) {
 																												if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_19BB(
-																														b,
-																														l) == null) {
+																														a,
+																														m) == null) {
 																													if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_20BB(
-																															a,
+																															d,
 																															l) == null) {
 																														if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_21BB(
-																																b,
+																																d,
 																																l) == null) {
 																															if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_22BB(
-																																	d,
-																																	b) == null) {
+																																	a,
+																																	l) == null) {
 																																if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_23BB(
-																																		d,
-																																		a) == null) {
+																																		b,
+																																		l) == null) {
 																																	if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_24BB(
 																																			b,
-																																			a) == null) {
+																																			l) == null) {
 																																		if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_25BB(
-																																				b,
+																																				d,
 																																				a) == null) {
 																																			if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_26BB(
 																																					d,
-																																					m) == null) {
+																																					b) == null) {
 																																				if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_27BB(
-																																						d,
-																																						m) == null) {
+																																						a,
+																																						b) == null) {
 																																					if (pattern_declul2branchbub_27_1_matchtggpattern_black_nac_28BB(
 																																							a,
-																																							m) == null) {
+																																							b) == null) {
 																																						return new Object[] {
+																																								m,
 																																								d,
 																																								l,
-																																								b,
 																																								a,
-																																								m };
+																																								b };
 																																					}
 																																				}
 																																			}
@@ -5014,7 +5021,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_0B(Command z) {
-		for (Graph __DEC_z_root_353964 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(z,
+		for (Graph __DEC_z_root_607472 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(z,
 				Graph.class, "root")) {
 			return new Object[] { z };
 		}
@@ -5022,16 +5029,16 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_1BBBB(Command z, Branch c,
-			Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
+			Branch y, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
 				if (!x.equals(y)) {
-					for (Branch __DEC_z_positive_882596 : org.moflon.core.utilities.eMoflonEMFUtil
+					for (Branch __DEC_z_positive_266484 : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(z, Branch.class, "positive")) {
-						if (!c.equals(__DEC_z_positive_882596)) {
-							if (!x.equals(__DEC_z_positive_882596)) {
-								if (!y.equals(__DEC_z_positive_882596)) {
-									return new Object[] { z, c, x, y };
+						if (!c.equals(__DEC_z_positive_266484)) {
+							if (!y.equals(__DEC_z_positive_266484)) {
+								if (!x.equals(__DEC_z_positive_266484)) {
+									return new Object[] { z, c, y, x };
 								}
 							}
 						}
@@ -5043,16 +5050,16 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_2BBBB(Command z, Branch c,
-			Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
+			Branch y, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
 				if (!x.equals(y)) {
-					for (Branch __DEC_z_negative_399379 : org.moflon.core.utilities.eMoflonEMFUtil
+					for (Branch __DEC_z_negative_351694 : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(z, Branch.class, "negative")) {
-						if (!c.equals(__DEC_z_negative_399379)) {
-							if (!x.equals(__DEC_z_negative_399379)) {
-								if (!y.equals(__DEC_z_negative_399379)) {
-									return new Object[] { z, c, x, y };
+						if (!c.equals(__DEC_z_negative_351694)) {
+							if (!y.equals(__DEC_z_negative_351694)) {
+								if (!x.equals(__DEC_z_negative_351694)) {
+									return new Object[] { z, c, y, x };
 								}
 							}
 						}
@@ -5063,124 +5070,24 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_3B(Command w) {
-		for (Graph __DEC_w_root_707198 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
-				Graph.class, "root")) {
-			return new Object[] { w };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_4BBBB(Command w, Branch c,
-			Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
-				if (!x.equals(y)) {
-					for (Branch __DEC_w_positive_311551 : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(w, Branch.class, "positive")) {
-						if (!c.equals(__DEC_w_positive_311551)) {
-							if (!x.equals(__DEC_w_positive_311551)) {
-								if (!y.equals(__DEC_w_positive_311551)) {
-									return new Object[] { w, c, x, y };
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_5BBBB(Command w, Branch c,
-			Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
-				if (!x.equals(y)) {
-					for (Branch __DEC_w_negative_184640 : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(w, Branch.class, "negative")) {
-						if (!c.equals(__DEC_w_negative_184640)) {
-							if (!x.equals(__DEC_w_negative_184640)) {
-								if (!y.equals(__DEC_w_negative_184640)) {
-									return new Object[] { w, c, x, y };
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_6B(Branch x) {
-		for (Graph __DEC_x_root_277350 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(x,
-				Graph.class, "root")) {
-			return new Object[] { x };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_7BBB(Branch x, Branch c,
-			Branch y) {
-		if (!x.equals(y)) {
-			if (!c.equals(x)) {
-				if (!c.equals(y)) {
-					for (Branch __DEC_x_positive_524571 : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(x, Branch.class, "positive")) {
-						if (!x.equals(__DEC_x_positive_524571)) {
-							if (!c.equals(__DEC_x_positive_524571)) {
-								if (!y.equals(__DEC_x_positive_524571)) {
-									return new Object[] { x, c, y };
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_8BBB(Branch x, Branch c,
-			Branch y) {
-		if (!x.equals(y)) {
-			if (!c.equals(x)) {
-				if (!c.equals(y)) {
-					for (Branch __DEC_x_negative_51630 : org.moflon.core.utilities.eMoflonEMFUtil
-							.getOppositeReferenceTyped(x, Branch.class, "negative")) {
-						if (!x.equals(__DEC_x_negative_51630)) {
-							if (!c.equals(__DEC_x_negative_51630)) {
-								if (!y.equals(__DEC_x_negative_51630)) {
-									return new Object[] { x, c, y };
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_9B(Branch y) {
-		for (Graph __DEC_y_root_243444 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(y,
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_3B(Branch y) {
+		for (Graph __DEC_y_root_54961 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(y,
 				Graph.class, "root")) {
 			return new Object[] { y };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_10BBB(Branch y, Branch c,
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_4BBB(Branch y, Branch c,
 			Branch x) {
 		if (!c.equals(y)) {
 			if (!c.equals(x)) {
 				if (!x.equals(y)) {
-					for (Branch __DEC_y_positive_393213 : org.moflon.core.utilities.eMoflonEMFUtil
+					for (Branch __DEC_y_positive_431098 : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(y, Branch.class, "positive")) {
-						if (!y.equals(__DEC_y_positive_393213)) {
-							if (!c.equals(__DEC_y_positive_393213)) {
-								if (!x.equals(__DEC_y_positive_393213)) {
+						if (!y.equals(__DEC_y_positive_431098)) {
+							if (!c.equals(__DEC_y_positive_431098)) {
+								if (!x.equals(__DEC_y_positive_431098)) {
 									return new Object[] { y, c, x };
 								}
 							}
@@ -5192,17 +5099,117 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_11BBB(Branch y, Branch c,
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_5BBB(Branch y, Branch c,
 			Branch x) {
 		if (!c.equals(y)) {
 			if (!c.equals(x)) {
 				if (!x.equals(y)) {
-					for (Branch __DEC_y_negative_592190 : org.moflon.core.utilities.eMoflonEMFUtil
+					for (Branch __DEC_y_negative_510002 : org.moflon.core.utilities.eMoflonEMFUtil
 							.getOppositeReferenceTyped(y, Branch.class, "negative")) {
-						if (!y.equals(__DEC_y_negative_592190)) {
-							if (!c.equals(__DEC_y_negative_592190)) {
-								if (!x.equals(__DEC_y_negative_592190)) {
+						if (!y.equals(__DEC_y_negative_510002)) {
+							if (!c.equals(__DEC_y_negative_510002)) {
+								if (!x.equals(__DEC_y_negative_510002)) {
 									return new Object[] { y, c, x };
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_6B(Command w) {
+		for (Graph __DEC_w_root_703460 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
+				Graph.class, "root")) {
+			return new Object[] { w };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_7BBBB(Command w, Branch c,
+			Branch y, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
+				if (!x.equals(y)) {
+					for (Branch __DEC_w_positive_275450 : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(w, Branch.class, "positive")) {
+						if (!c.equals(__DEC_w_positive_275450)) {
+							if (!y.equals(__DEC_w_positive_275450)) {
+								if (!x.equals(__DEC_w_positive_275450)) {
+									return new Object[] { w, c, y, x };
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_8BBBB(Command w, Branch c,
+			Branch y, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
+				if (!x.equals(y)) {
+					for (Branch __DEC_w_negative_505568 : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(w, Branch.class, "negative")) {
+						if (!c.equals(__DEC_w_negative_505568)) {
+							if (!y.equals(__DEC_w_negative_505568)) {
+								if (!x.equals(__DEC_w_negative_505568)) {
+									return new Object[] { w, c, y, x };
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_9B(Branch x) {
+		for (Graph __DEC_x_root_560279 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(x,
+				Graph.class, "root")) {
+			return new Object[] { x };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_10BBB(Branch x, Branch c,
+			Branch y) {
+		if (!x.equals(y)) {
+			if (!c.equals(x)) {
+				if (!c.equals(y)) {
+					for (Branch __DEC_x_positive_410698 : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(x, Branch.class, "positive")) {
+						if (!x.equals(__DEC_x_positive_410698)) {
+							if (!c.equals(__DEC_x_positive_410698)) {
+								if (!y.equals(__DEC_x_positive_410698)) {
+									return new Object[] { x, c, y };
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_11BBB(Branch x, Branch c,
+			Branch y) {
+		if (!x.equals(y)) {
+			if (!c.equals(x)) {
+				if (!c.equals(y)) {
+					for (Branch __DEC_x_negative_422865 : org.moflon.core.utilities.eMoflonEMFUtil
+							.getOppositeReferenceTyped(x, Branch.class, "negative")) {
+						if (!x.equals(__DEC_x_negative_422865)) {
+							if (!c.equals(__DEC_x_negative_422865)) {
+								if (!y.equals(__DEC_x_negative_422865)) {
+									return new Object[] { x, c, y };
 								}
 							}
 						}
@@ -5220,16 +5227,16 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_13BB(Branch x, Command z) {
-		if (z.equals(x.getPositive())) {
-			return new Object[] { x, z };
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_13BB(Branch y, Command z) {
+		if (z.equals(y.getPositive())) {
+			return new Object[] { y, z };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_14BB(Branch y, Command z) {
-		if (z.equals(y.getPositive())) {
-			return new Object[] { y, z };
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_14BB(Branch x, Command z) {
+		if (z.equals(x.getPositive())) {
+			return new Object[] { x, z };
 		}
 		return null;
 	}
@@ -5241,44 +5248,44 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_16BB(Branch x, Command z) {
-		if (z.equals(x.getNegative())) {
-			return new Object[] { x, z };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_17BB(Branch y, Command z) {
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_16BB(Branch y, Command z) {
 		if (z.equals(y.getNegative())) {
 			return new Object[] { y, z };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_18BB(Branch c, Command w) {
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_17BB(Branch x, Command z) {
+		if (z.equals(x.getNegative())) {
+			return new Object[] { x, z };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_18BB(Branch c, Branch y) {
+		if (y.equals(c.getPositive())) {
+			return new Object[] { c, y };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_19BB(Branch c, Command w) {
 		if (w.equals(c.getPositive())) {
 			return new Object[] { c, w };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_19BB(Branch x, Command w) {
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_20BB(Branch x, Command w) {
 		if (w.equals(x.getPositive())) {
 			return new Object[] { x, w };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_20BB(Branch c, Command w) {
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_21BB(Branch c, Command w) {
 		if (w.equals(c.getNegative())) {
 			return new Object[] { c, w };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_21BB(Branch x, Command w) {
-		if (w.equals(x.getNegative())) {
-			return new Object[] { x, w };
 		}
 		return null;
 	}
@@ -5290,117 +5297,117 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_23BB(Branch c, Branch x) {
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_23BB(Branch x, Command w) {
+		if (w.equals(x.getNegative())) {
+			return new Object[] { x, w };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_24BB(Branch y, Branch x) {
+		if (x.equals(y.getPositive())) {
+			return new Object[] { y, x };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_25BB(Branch c, Branch x) {
 		if (x.equals(c.getNegative())) {
 			return new Object[] { c, x };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_24BB(Branch c, Branch y) {
-		if (y.equals(c.getPositive())) {
-			return new Object[] { c, y };
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_26BB(Branch y, Branch x) {
+		if (x.equals(y.getNegative())) {
+			return new Object[] { y, x };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_25BB(Branch x, Branch y) {
-		if (y.equals(x.getPositive())) {
-			return new Object[] { x, y };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_black_nac_26BB(Branch x, Branch y) {
-		if (y.equals(x.getNegative())) {
-			return new Object[] { x, y };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_blackBBBBB(Command z, Branch c,
-			Command w, Branch x, Branch y) {
-		if (!c.equals(x)) {
-			if (!c.equals(y)) {
+	public static final Object[] pattern_declul2branchbub_28_1_matchtggpattern_blackBBBBB(Branch c, Command z, Branch y,
+			Command w, Branch x) {
+		if (!c.equals(y)) {
+			if (!c.equals(x)) {
 				if (!w.equals(z)) {
 					if (!x.equals(y)) {
-						if (x.equals(z.getNext())) {
-							if (y.equals(c.getNegative())) {
-								if (y.equals(w.getNext())) {
+						if (y.equals(c.getNegative())) {
+							if (x.equals(c.getPositive())) {
+								if (x.equals(z.getNext())) {
 									if (w.equals(y.getPositive())) {
-										if (x.equals(c.getPositive())) {
+										if (y.equals(w.getNext())) {
 											if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_0B(z) == null) {
 												if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_1BBBB(z, c,
-														x, y) == null) {
+														y, x) == null) {
 													if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_2BBBB(z,
-															c, x, y) == null) {
+															c, y, x) == null) {
 														if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_3B(
-																w) == null) {
-															if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_4BBBB(
-																	w, c, x, y) == null) {
-																if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_5BBBB(
-																		w, c, x, y) == null) {
+																y) == null) {
+															if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_4BBB(
+																	y, c, x) == null) {
+																if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_5BBB(
+																		y, c, x) == null) {
 																	if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_6B(
-																			x) == null) {
-																		if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_7BBB(
-																				x, c, y) == null) {
-																			if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_8BBB(
-																					x, c, y) == null) {
+																			w) == null) {
+																		if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_7BBBB(
+																				w, c, y, x) == null) {
+																			if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_8BBBB(
+																					w, c, y, x) == null) {
 																				if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_9B(
-																						y) == null) {
+																						x) == null) {
 																					if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_10BBB(
-																							y, c, x) == null) {
+																							x, c, y) == null) {
 																						if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_11BBB(
-																								y, c, x) == null) {
+																								x, c, y) == null) {
 																							if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_12BB(
 																									c, z) == null) {
 																								if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_13BB(
-																										x, z) == null) {
+																										y, z) == null) {
 																									if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_14BB(
-																											y,
+																											x,
 																											z) == null) {
 																										if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_15BB(
 																												c,
 																												z) == null) {
 																											if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_16BB(
-																													x,
+																													y,
 																													z) == null) {
 																												if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_17BB(
-																														y,
+																														x,
 																														z) == null) {
 																													if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_18BB(
 																															c,
-																															w) == null) {
+																															y) == null) {
 																														if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_19BB(
-																																x,
+																																c,
 																																w) == null) {
 																															if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_20BB(
-																																	c,
+																																	x,
 																																	w) == null) {
 																																if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_21BB(
-																																		x,
+																																		c,
 																																		w) == null) {
 																																	if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_22BB(
 																																			y,
 																																			w) == null) {
 																																		if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_23BB(
-																																				c,
-																																				x) == null) {
+																																				x,
+																																				w) == null) {
 																																			if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_24BB(
-																																					c,
-																																					y) == null) {
+																																					y,
+																																					x) == null) {
 																																				if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_25BB(
-																																						x,
-																																						y) == null) {
+																																						c,
+																																						x) == null) {
 																																					if (pattern_declul2branchbub_28_1_matchtggpattern_black_nac_26BB(
-																																							x,
-																																							y) == null) {
+																																							y,
+																																							x) == null) {
 																																						return new Object[] {
-																																								z,
 																																								c,
+																																								z,
+																																								y,
 																																								w,
-																																								x,
-																																								y };
+																																								x };
 																																					}
 																																				}
 																																			}
@@ -5519,11 +5526,11 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_29_3_solveCSP_bindingFBBBBBB(declul2branchbub _this,
-			IsApplicableMatch isApplicableMatch, Branch c, Decision d, S2B d2c, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, c, d, d2c, ruleResult);
+			IsApplicableMatch isApplicableMatch, Branch c, S2B d2c, Decision d, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, c, d2c, d, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, c, d, d2c, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, c, d2c, d, ruleResult };
 		}
 		return null;
 	}
@@ -5533,9 +5540,9 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 	}
 
 	public static final Object[] pattern_declul2branchbub_29_3_solveCSP_bindingAndBlackFBBBBBB(declul2branchbub _this,
-			IsApplicableMatch isApplicableMatch, Branch c, Decision d, S2B d2c, ModelgeneratorRuleResult ruleResult) {
+			IsApplicableMatch isApplicableMatch, Branch c, S2B d2c, Decision d, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_declul2branchbub_29_3_solveCSP_binding = pattern_declul2branchbub_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, c, d, d2c, ruleResult);
+				_this, isApplicableMatch, c, d2c, d, ruleResult);
 		if (result_pattern_declul2branchbub_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_declul2branchbub_29_3_solveCSP_binding[0];
 
@@ -5543,7 +5550,7 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 					csp);
 			if (result_pattern_declul2branchbub_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, c, d, d2c, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, c, d2c, d, ruleResult };
 			}
 		}
 		return null;
@@ -5555,65 +5562,65 @@ public class declul2branchbubImpl extends AbstractRuleImpl implements declul2bra
 		return _result;
 	}
 
-	public static final Object[] pattern_declul2branchbub_29_5_checknacs_blackBBB(Branch c, Decision d, S2B d2c) {
-		return new Object[] { c, d, d2c };
+	public static final Object[] pattern_declul2branchbub_29_5_checknacs_blackBBB(Branch c, S2B d2c, Decision d) {
+		return new Object[] { c, d2c, d };
 	}
 
-	public static final Object[] pattern_declul2branchbub_29_6_perform_blackBBBB(Branch c, Decision d, S2B d2c,
+	public static final Object[] pattern_declul2branchbub_29_6_perform_blackBBBB(Branch c, S2B d2c, Decision d,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { c, d, d2c, ruleResult };
+		return new Object[] { c, d2c, d, ruleResult };
 	}
 
-	public static final Object[] pattern_declul2branchbub_29_6_perform_greenFFBFBFFFFFFFFFB(Branch c, Decision d,
+	public static final Object[] pattern_declul2branchbub_29_6_perform_greenBFBFFFFFFFFFFFB(Branch c, Decision d,
 			ModelgeneratorRuleResult ruleResult) {
-		S2N l2z = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
-		Command z = ControlflowFactory.eINSTANCE.createCommand();
-		Command w = ControlflowFactory.eINSTANCE.createCommand();
-		S2B b2y = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
-		S2N m2w = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
-		Branch x = ControlflowFactory.eINSTANCE.createBranch();
+		Assignment m = SourcecodeFactory.eINSTANCE.createAssignment();
 		Assignment l = SourcecodeFactory.eINSTANCE.createAssignment();
+		S2N l2z = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
+		S2B b2y = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
+		S2B a2x = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
+		While a = SourcecodeFactory.eINSTANCE.createWhile();
+		Command z = ControlflowFactory.eINSTANCE.createCommand();
+		S2N m2w = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		Branch y = ControlflowFactory.eINSTANCE.createBranch();
 		While b = SourcecodeFactory.eINSTANCE.createWhile();
-		While a = SourcecodeFactory.eINSTANCE.createWhile();
-		Assignment m = SourcecodeFactory.eINSTANCE.createAssignment();
-		S2B a2x = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
+		Command w = ControlflowFactory.eINSTANCE.createCommand();
+		Branch x = ControlflowFactory.eINSTANCE.createBranch();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(l2z);
-		l2z.setTarget(z);
-		ruleResult.getTargetObjects().add(z);
-		ruleResult.getTargetObjects().add(w);
-		ruleResult.getCorrObjects().add(b2y);
-		m2w.setTarget(w);
-		ruleResult.getCorrObjects().add(m2w);
-		z.setNext(x);
-		c.setPositive(x);
-		ruleResult.getTargetObjects().add(x);
-		l2z.setSource(l);
+		ruleResult.getSourceObjects().add(m);
 		ruleResult.getSourceObjects().add(l);
-		c.setNegative(y);
-		w.setNext(y);
-		b2y.setTarget(y);
-		y.setPositive(w);
-		ruleResult.getTargetObjects().add(y);
-		d.setNegative(b);
-		b2y.setSource(b);
-		ruleResult.getSourceObjects().add(b);
+		l2z.setSource(l);
+		ruleResult.getCorrObjects().add(l2z);
+		ruleResult.getCorrObjects().add(b2y);
+		ruleResult.getCorrObjects().add(a2x);
 		d.setPositive(a);
+		a2x.setSource(a);
 		a.setLast(l);
 		ruleResult.getSourceObjects().add(a);
-		b.setFirst(m);
-		b.setLast(m);
+		l2z.setTarget(z);
+		ruleResult.getTargetObjects().add(z);
 		m2w.setSource(m);
-		ruleResult.getSourceObjects().add(m);
+		ruleResult.getCorrObjects().add(m2w);
+		c.setNegative(y);
+		b2y.setTarget(y);
+		ruleResult.getTargetObjects().add(y);
+		d.setNegative(b);
+		b.setLast(m);
+		b.setFirst(m);
+		b2y.setSource(b);
+		ruleResult.getSourceObjects().add(b);
+		y.setPositive(w);
+		m2w.setTarget(w);
+		w.setNext(y);
+		ruleResult.getTargetObjects().add(w);
+		c.setPositive(x);
+		z.setNext(x);
 		a2x.setTarget(x);
-		a2x.setSource(a);
-		ruleResult.getCorrObjects().add(a2x);
+		ruleResult.getTargetObjects().add(x);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { l2z, z, c, w, d, b2y, m2w, x, l, y, b, a, m, a2x, ruleResult };
+		return new Object[] { c, m, d, l, l2z, b2y, a2x, a, z, m2w, y, b, w, x, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_declul2branchbub_29_7_expressionFB(

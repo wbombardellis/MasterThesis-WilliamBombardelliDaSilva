@@ -47,7 +47,7 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Assignment a, While b, Assignment l, Decision d);
+	boolean isAppropriate_FWD(Match match, Assignment l, While b, Assignment a, Decision d);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Assignment a, While b, Assignment l, Decision d);
+	void registerObjectsToMatch_FWD(Match match, Assignment l, While b, Assignment a, Decision d);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Assignment a, While b, Assignment l, Decision d);
+	CSP isAppropriate_solveCsp_FWD(Match match, Assignment l, While b, Assignment a, Decision d);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,8 +95,8 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Assignment a, While b, Assignment l, Branch c,
-			Decision d, S2B d2c);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Assignment l, While b, Assignment a, S2B d2c,
+			Branch c, Decision d);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject a2x, EObject x, EObject a, EObject l2z, EObject b,
-			EObject l, EObject y, EObject z, EObject c, EObject d, EObject b2y, EObject d2c);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject l, EObject y, EObject b, EObject x, EObject a,
+			EObject l2z, EObject d2c, EObject b2y, EObject c, EObject a2x, EObject d, EObject z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Command x, Branch y, Command z, Branch c);
+	boolean isAppropriate_BWD(Match match, Branch y, Command x, Branch c, Command z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +153,7 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Command x, Branch y, Command z, Branch c);
+	void registerObjectsToMatch_BWD(Match match, Branch y, Command x, Branch c, Command z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +161,7 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Command x, Branch y, Command z, Branch c);
+	CSP isAppropriate_solveCsp_BWD(Match match, Branch y, Command x, Branch c, Command z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,8 +177,8 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Command x, Branch y, Command z, Branch c,
-			Decision d, S2B d2c);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch y, Command x, S2B d2c, Branch c,
+			Decision d, Command z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,8 +194,8 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject a2x, EObject x, EObject a, EObject l2z, EObject b,
-			EObject l, EObject y, EObject z, EObject c, EObject d, EObject b2y, EObject d2c);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject l, EObject y, EObject b, EObject x, EObject a,
+			EObject l2z, EObject d2c, EObject b2y, EObject c, EObject a2x, EObject d, EObject z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,7 +211,7 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_83(EMoflonEdge _edge_positive);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_123(EMoflonEdge _edge_negative);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_83(EMoflonEdge _edge_first);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_123(EMoflonEdge _edge_first);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,8 +251,8 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Command x, Assignment a, While b, Assignment l, Branch y, Command z, Branch c,
-			Decision d, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Assignment l, Branch y, While b, Command x, Assignment a, Branch c, Decision d,
+			Command z, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,7 +268,7 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Assignment a, While b, Assignment l, Decision d);
+	boolean checkDEC_FWD(Assignment l, While b, Assignment a, Decision d);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,7 +276,7 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Command x, Branch y, Command z, Branch c);
+	boolean checkDEC_BWD(Branch y, Command x, Branch c, Command z);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -292,7 +292,7 @@ public interface decaul2branchcub extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch c, Decision d, S2B d2c,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2B d2c, Branch c, Decision d,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

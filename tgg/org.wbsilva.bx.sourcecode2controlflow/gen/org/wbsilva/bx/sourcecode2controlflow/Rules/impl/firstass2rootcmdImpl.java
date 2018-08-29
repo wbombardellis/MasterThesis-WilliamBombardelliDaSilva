@@ -158,44 +158,44 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Graph g = (Graph) result1_bindingAndBlack[0];
-		P2G p2g = (P2G) result1_bindingAndBlack[1];
-		Assignment a = (Assignment) result1_bindingAndBlack[2];
-		Program p = (Program) result1_bindingAndBlack[3];
+		Assignment a = (Assignment) result1_bindingAndBlack[0];
+		Program p = (Program) result1_bindingAndBlack[1];
+		Graph g = (Graph) result1_bindingAndBlack[2];
+		P2G p2g = (P2G) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = firstass2rootcmdImpl.pattern_firstass2rootcmd_1_1_performtransformation_greenFBBF(g,
-				a);
-		S2N f2r = (S2N) result1_green[0];
-		Command c = (Command) result1_green[3];
+		Object[] result1_green = firstass2rootcmdImpl.pattern_firstass2rootcmd_1_1_performtransformation_greenFBFB(a,
+				g);
+		Command c = (Command) result1_green[0];
+		S2N f2r = (S2N) result1_green[2];
 
-		Object[] result2_black = firstass2rootcmdImpl
-				.pattern_firstass2rootcmd_1_2_collecttranslatedelements_blackBBB(f2r, a, c);
+		Object[] result2_black = firstass2rootcmdImpl.pattern_firstass2rootcmd_1_2_collecttranslatedelements_blackBBB(c,
+				a, f2r);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[f2r] = " + f2r + ", " + "[a] = "
-					+ a + ", " + "[c] = " + c + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[c] = " + c + ", " + "[a] = " + a
+					+ ", " + "[f2r] = " + f2r + ".");
 		}
 		Object[] result2_green = firstass2rootcmdImpl
-				.pattern_firstass2rootcmd_1_2_collecttranslatedelements_greenFBBB(f2r, a, c);
+				.pattern_firstass2rootcmd_1_2_collecttranslatedelements_greenFBBB(c, a, f2r);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = firstass2rootcmdImpl
-				.pattern_firstass2rootcmd_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, f2r, g, p2g, a, p, c);
+				.pattern_firstass2rootcmd_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, c, a, f2r, p, g, p2g);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[f2r] = " + f2r + ", " + "[g] = " + g + ", " + "[p2g] = " + p2g + ", " + "[a] = " + a
-					+ ", " + "[p] = " + p + ", " + "[c] = " + c + ".");
+					+ ", " + "[c] = " + c + ", " + "[a] = " + a + ", " + "[f2r] = " + f2r + ", " + "[p] = " + p + ", "
+					+ "[g] = " + g + ", " + "[p2g] = " + p2g + ".");
 		}
-		firstass2rootcmdImpl.pattern_firstass2rootcmd_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, f2r, g, a, p,
-				c);
+		firstass2rootcmdImpl.pattern_firstass2rootcmd_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, c, a, f2r, p,
+				g);
 		//nothing EMoflonEdge f2r__a____source = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge g__c____root = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge f2r__c____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge p__a____first = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge f2r__c____target = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge p__a____first = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge g__c____root = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
-		firstass2rootcmdImpl.pattern_firstass2rootcmd_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, f2r, g,
-				p2g, a, p, c);
+		firstass2rootcmdImpl.pattern_firstass2rootcmd_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, c, a,
+				f2r, p, g, p2g);
 		return firstass2rootcmdImpl.pattern_firstass2rootcmd_1_6_expressionFB(ruleresult);
 	}
 
@@ -225,27 +225,27 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		}
 		Assignment a = (Assignment) result2_binding[0];
 		Program p = (Program) result2_binding[1];
-		for (Object[] result2_black : firstass2rootcmdImpl.pattern_firstass2rootcmd_2_2_corematch_blackFFBBB(a, p,
+		for (Object[] result2_black : firstass2rootcmdImpl.pattern_firstass2rootcmd_2_2_corematch_blackBBFFB(a, p,
 				match)) {
-			Graph g = (Graph) result2_black[0];
-			P2G p2g = (P2G) result2_black[1];
+			Graph g = (Graph) result2_black[2];
+			P2G p2g = (P2G) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : firstass2rootcmdImpl.pattern_firstass2rootcmd_2_3_findcontext_blackBBBB(g,
-					p2g, a, p)) {
-				Object[] result3_green = firstass2rootcmdImpl.pattern_firstass2rootcmd_2_3_findcontext_greenBBBBFFFF(g,
-						p2g, a, p);
+			for (Object[] result3_black : firstass2rootcmdImpl.pattern_firstass2rootcmd_2_3_findcontext_blackBBBB(a, p,
+					g, p2g)) {
+				Object[] result3_green = firstass2rootcmdImpl.pattern_firstass2rootcmd_2_3_findcontext_greenBBBBFFFF(a,
+						p, g, p2g);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge p__a____first = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge p2g__p____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge p__a____first = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = firstass2rootcmdImpl
-						.pattern_firstass2rootcmd_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, g, p2g,
-								a, p);
+						.pattern_firstass2rootcmd_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, a, p, g,
+								p2g);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[g] = " + g + ", " + "[p2g] = "
-							+ p2g + ", " + "[a] = " + a + ", " + "[p] = " + p + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[a] = " + a + ", " + "[p] = " + p
+							+ ", " + "[g] = " + g + ", " + "[p2g] = " + p2g + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -314,8 +314,8 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Assignment a,
-			Program p) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Assignment a, Program p, Graph g,
+			P2G p2g) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -330,10 +330,10 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("g", g);
-		isApplicableMatch.registerObject("p2g", p2g);
 		isApplicableMatch.registerObject("a", a);
 		isApplicableMatch.registerObject("p", p);
+		isApplicableMatch.registerObject("g", g);
+		isApplicableMatch.registerObject("p2g", p2g);
 		return csp;
 	}
 
@@ -351,14 +351,14 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject f2r, EObject g, EObject p2g, EObject a,
-			EObject p, EObject c) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject c, EObject a, EObject f2r, EObject p,
+			EObject g, EObject p2g) {
+		ruleresult.registerObject("c", c);
+		ruleresult.registerObject("a", a);
 		ruleresult.registerObject("f2r", f2r);
+		ruleresult.registerObject("p", p);
 		ruleresult.registerObject("g", g);
 		ruleresult.registerObject("p2g", p2g);
-		ruleresult.registerObject("a", a);
-		ruleresult.registerObject("p", p);
-		ruleresult.registerObject("c", c);
 
 	}
 
@@ -377,44 +377,44 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Graph g, Command c) {
+	public boolean isAppropriate_BWD(Match match, Command c, Graph g) {
 
 		Object[] result1_black = firstass2rootcmdImpl.pattern_firstass2rootcmd_10_1_initialbindings_blackBBBB(this,
-				match, g, c);
+				match, c, g);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[g] = " + g + ", " + "[c] = " + c + ".");
+					+ "[match] = " + match + ", " + "[c] = " + c + ", " + "[g] = " + g + ".");
 		}
 
 		Object[] result2_bindingAndBlack = firstass2rootcmdImpl
-				.pattern_firstass2rootcmd_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, g, c);
+				.pattern_firstass2rootcmd_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, c, g);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[g] = " + g + ", " + "[c] = " + c + ".");
+					+ "[match] = " + match + ", " + "[c] = " + c + ", " + "[g] = " + g + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (firstass2rootcmdImpl.pattern_firstass2rootcmd_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = firstass2rootcmdImpl
-					.pattern_firstass2rootcmd_10_4_collectelementstobetranslated_blackBBB(match, g, c);
+					.pattern_firstass2rootcmd_10_4_collectelementstobetranslated_blackBBB(match, c, g);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[g] = " + g + ", " + "[c] = " + c + ".");
+						+ "[c] = " + c + ", " + "[g] = " + g + ".");
 			}
-			firstass2rootcmdImpl.pattern_firstass2rootcmd_10_4_collectelementstobetranslated_greenBBBF(match, g, c);
+			firstass2rootcmdImpl.pattern_firstass2rootcmd_10_4_collectelementstobetranslated_greenBBBF(match, c, g);
 			//nothing EMoflonEdge g__c____root = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = firstass2rootcmdImpl
-					.pattern_firstass2rootcmd_10_5_collectcontextelements_blackBBB(match, g, c);
+					.pattern_firstass2rootcmd_10_5_collectcontextelements_blackBBB(match, c, g);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[g] = " + g + ", " + "[c] = " + c + ".");
+						+ "[c] = " + c + ", " + "[g] = " + g + ".");
 			}
 			firstass2rootcmdImpl.pattern_firstass2rootcmd_10_5_collectcontextelements_greenBB(match, g);
 
 			// 
-			firstass2rootcmdImpl.pattern_firstass2rootcmd_10_6_registerobjectstomatch_expressionBBBB(this, match, g, c);
+			firstass2rootcmdImpl.pattern_firstass2rootcmd_10_6_registerobjectstomatch_expressionBBBB(this, match, c, g);
 			return firstass2rootcmdImpl.pattern_firstass2rootcmd_10_7_expressionF();
 		} else {
 			return firstass2rootcmdImpl.pattern_firstass2rootcmd_10_8_expressionF();
@@ -435,44 +435,44 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Graph g = (Graph) result1_bindingAndBlack[0];
-		P2G p2g = (P2G) result1_bindingAndBlack[1];
-		Program p = (Program) result1_bindingAndBlack[2];
-		Command c = (Command) result1_bindingAndBlack[3];
+		Command c = (Command) result1_bindingAndBlack[0];
+		Program p = (Program) result1_bindingAndBlack[1];
+		Graph g = (Graph) result1_bindingAndBlack[2];
+		P2G p2g = (P2G) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = firstass2rootcmdImpl.pattern_firstass2rootcmd_11_1_performtransformation_greenFFBB(p,
-				c);
-		S2N f2r = (S2N) result1_green[0];
+		Object[] result1_green = firstass2rootcmdImpl.pattern_firstass2rootcmd_11_1_performtransformation_greenBFFB(c,
+				p);
 		Assignment a = (Assignment) result1_green[1];
+		S2N f2r = (S2N) result1_green[2];
 
 		Object[] result2_black = firstass2rootcmdImpl
-				.pattern_firstass2rootcmd_11_2_collecttranslatedelements_blackBBB(f2r, a, c);
+				.pattern_firstass2rootcmd_11_2_collecttranslatedelements_blackBBB(c, a, f2r);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[f2r] = " + f2r + ", " + "[a] = "
-					+ a + ", " + "[c] = " + c + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[c] = " + c + ", " + "[a] = " + a
+					+ ", " + "[f2r] = " + f2r + ".");
 		}
 		Object[] result2_green = firstass2rootcmdImpl
-				.pattern_firstass2rootcmd_11_2_collecttranslatedelements_greenFBBB(f2r, a, c);
+				.pattern_firstass2rootcmd_11_2_collecttranslatedelements_greenFBBB(c, a, f2r);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = firstass2rootcmdImpl
-				.pattern_firstass2rootcmd_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, f2r, g, p2g, a, p, c);
+				.pattern_firstass2rootcmd_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, c, a, f2r, p, g, p2g);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[f2r] = " + f2r + ", " + "[g] = " + g + ", " + "[p2g] = " + p2g + ", " + "[a] = " + a
-					+ ", " + "[p] = " + p + ", " + "[c] = " + c + ".");
+					+ ", " + "[c] = " + c + ", " + "[a] = " + a + ", " + "[f2r] = " + f2r + ", " + "[p] = " + p + ", "
+					+ "[g] = " + g + ", " + "[p2g] = " + p2g + ".");
 		}
-		firstass2rootcmdImpl.pattern_firstass2rootcmd_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, f2r, g, a, p,
-				c);
+		firstass2rootcmdImpl.pattern_firstass2rootcmd_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, c, a, f2r, p,
+				g);
 		//nothing EMoflonEdge f2r__a____source = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge g__c____root = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge f2r__c____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge p__a____first = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge f2r__c____target = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge p__a____first = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge g__c____root = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
-		firstass2rootcmdImpl.pattern_firstass2rootcmd_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, f2r, g,
-				p2g, a, p, c);
+		firstass2rootcmdImpl.pattern_firstass2rootcmd_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, c, a,
+				f2r, p, g, p2g);
 		return firstass2rootcmdImpl.pattern_firstass2rootcmd_11_6_expressionFB(ruleresult);
 	}
 
@@ -500,29 +500,29 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Graph g = (Graph) result2_binding[0];
-		Command c = (Command) result2_binding[1];
-		for (Object[] result2_black : firstass2rootcmdImpl.pattern_firstass2rootcmd_12_2_corematch_blackBFFBB(g, c,
+		Command c = (Command) result2_binding[0];
+		Graph g = (Graph) result2_binding[1];
+		for (Object[] result2_black : firstass2rootcmdImpl.pattern_firstass2rootcmd_12_2_corematch_blackBFBFB(c, g,
 				match)) {
-			P2G p2g = (P2G) result2_black[1];
-			Program p = (Program) result2_black[2];
+			Program p = (Program) result2_black[1];
+			P2G p2g = (P2G) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : firstass2rootcmdImpl.pattern_firstass2rootcmd_12_3_findcontext_blackBBBB(g,
-					p2g, p, c)) {
-				Object[] result3_green = firstass2rootcmdImpl.pattern_firstass2rootcmd_12_3_findcontext_greenBBBBFFFF(g,
-						p2g, p, c);
+			for (Object[] result3_black : firstass2rootcmdImpl.pattern_firstass2rootcmd_12_3_findcontext_blackBBBB(c, p,
+					g, p2g)) {
+				Object[] result3_green = firstass2rootcmdImpl.pattern_firstass2rootcmd_12_3_findcontext_greenBBBBFFFF(c,
+						p, g, p2g);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge g__c____root = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge p2g__p____source = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge p2g__p____source = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge g__c____root = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = firstass2rootcmdImpl
-						.pattern_firstass2rootcmd_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, g, p2g,
-								p, c);
+						.pattern_firstass2rootcmd_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, c, p, g,
+								p2g);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[g] = " + g + ", " + "[p2g] = "
-							+ p2g + ", " + "[p] = " + p + ", " + "[c] = " + c + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c] = " + c + ", " + "[p] = " + p
+							+ ", " + "[g] = " + g + ", " + "[p2g] = " + p2g + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -551,9 +551,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Graph g, Command c) {
-		match.registerObject("g", g);
+	public void registerObjectsToMatch_BWD(Match match, Command c, Graph g) {
 		match.registerObject("c", c);
+		match.registerObject("g", g);
 
 	}
 
@@ -562,7 +562,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Graph g, Command c) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Command c, Graph g) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -591,7 +591,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Program p, Command c) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Command c, Program p, Graph g, P2G p2g) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -606,10 +606,10 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("c", c);
+		isApplicableMatch.registerObject("p", p);
 		isApplicableMatch.registerObject("g", g);
 		isApplicableMatch.registerObject("p2g", p2g);
-		isApplicableMatch.registerObject("p", p);
-		isApplicableMatch.registerObject("c", c);
 		return csp;
 	}
 
@@ -627,14 +627,14 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject f2r, EObject g, EObject p2g, EObject a,
-			EObject p, EObject c) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject c, EObject a, EObject f2r, EObject p,
+			EObject g, EObject p2g) {
+		ruleresult.registerObject("c", c);
+		ruleresult.registerObject("a", a);
 		ruleresult.registerObject("f2r", f2r);
+		ruleresult.registerObject("p", p);
 		ruleresult.registerObject("g", g);
 		ruleresult.registerObject("p2g", p2g);
-		ruleresult.registerObject("a", a);
-		ruleresult.registerObject("p", p);
-		ruleresult.registerObject("c", c);
 
 	}
 
@@ -653,7 +653,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_56(EMoflonEdge _edge_root) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_126(EMoflonEdge _edge_root) {
 
 		Object[] result1_bindingAndBlack = firstass2rootcmdImpl
 				.pattern_firstass2rootcmd_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -669,8 +669,8 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		// ForEach 
 		for (Object[] result2_black : firstass2rootcmdImpl
 				.pattern_firstass2rootcmd_20_2_testcorematchandDECs_blackFFB(_edge_root)) {
-			Graph g = (Graph) result2_black[0];
-			Command c = (Command) result2_black[1];
+			Command c = (Command) result2_black[0];
+			Graph g = (Graph) result2_black[1];
 			Object[] result2_green = firstass2rootcmdImpl
 					.pattern_firstass2rootcmd_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -678,7 +678,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 			// 
 			if (firstass2rootcmdImpl
 					.pattern_firstass2rootcmd_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-							match, g, c)) {
+							match, c, g)) {
 				// 
 				if (firstass2rootcmdImpl
 						.pattern_firstass2rootcmd_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -710,7 +710,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_56(EMoflonEdge _edge_first) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_126(EMoflonEdge _edge_first) {
 
 		Object[] result1_bindingAndBlack = firstass2rootcmdImpl
 				.pattern_firstass2rootcmd_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -842,17 +842,17 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Graph g = (Graph) result2_bindingAndBlack[0];
+		Command c = (Command) result2_bindingAndBlack[0];
 		Assignment a = (Assignment) result2_bindingAndBlack[1];
 		Program p = (Program) result2_bindingAndBlack[2];
-		Command c = (Command) result2_bindingAndBlack[3];
+		Graph g = (Graph) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = firstass2rootcmdImpl
-				.pattern_firstass2rootcmd_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, g, a, p, c, sourceMatch,
+				.pattern_firstass2rootcmd_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, c, a, p, g, sourceMatch,
 						targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[g] = " + g + ", " + "[a] = " + a + ", " + "[p] = " + p + ", " + "[c] = " + c + ", "
+					+ "[c] = " + c + ", " + "[a] = " + a + ", " + "[p] = " + p + ", " + "[g] = " + g + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -860,21 +860,21 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		if (firstass2rootcmdImpl.pattern_firstass2rootcmd_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : firstass2rootcmdImpl
-					.pattern_firstass2rootcmd_24_5_matchcorrcontext_blackBFBBB(g, p, sourceMatch, targetMatch)) {
-				P2G p2g = (P2G) result5_black[1];
+					.pattern_firstass2rootcmd_24_5_matchcorrcontext_blackBBFBB(p, g, sourceMatch, targetMatch)) {
+				P2G p2g = (P2G) result5_black[2];
 				Object[] result5_green = firstass2rootcmdImpl
 						.pattern_firstass2rootcmd_24_5_matchcorrcontext_greenBBBF(p2g, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = firstass2rootcmdImpl
-						.pattern_firstass2rootcmd_24_6_createcorrespondence_blackBBBBB(g, a, p, c, ccMatch);
+						.pattern_firstass2rootcmd_24_6_createcorrespondence_blackBBBBB(c, a, p, g, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException(
-							"Pattern matching failed." + " Variables: " + "[g] = " + g + ", " + "[a] = " + a + ", "
-									+ "[p] = " + p + ", " + "[c] = " + c + ", " + "[ccMatch] = " + ccMatch + ".");
+							"Pattern matching failed." + " Variables: " + "[c] = " + c + ", " + "[a] = " + a + ", "
+									+ "[p] = " + p + ", " + "[g] = " + g + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				firstass2rootcmdImpl.pattern_firstass2rootcmd_24_6_createcorrespondence_greenFBBB(a, c, ccMatch);
-				//nothing S2N f2r = (S2N) result6_green[0];
+				firstass2rootcmdImpl.pattern_firstass2rootcmd_24_6_createcorrespondence_greenBBFB(c, a, ccMatch);
+				//nothing S2N f2r = (S2N) result6_green[2];
 
 				Object[] result7_black = firstass2rootcmdImpl
 						.pattern_firstass2rootcmd_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -896,7 +896,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Graph g, Assignment a, Program p, Command c, Match sourceMatch,
+	public CSP isApplicable_solveCsp_CC(Command c, Assignment a, Program p, Graph g, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -941,8 +941,8 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Graph g, Command c) {// 
-		Object[] result1_black = firstass2rootcmdImpl.pattern_firstass2rootcmd_28_1_matchtggpattern_blackBB(g, c);
+	public boolean checkDEC_BWD(Command c, Graph g) {// 
+		Object[] result1_black = firstass2rootcmdImpl.pattern_firstass2rootcmd_28_1_matchtggpattern_blackBB(c, g);
 		if (result1_black != null) {
 			return firstass2rootcmdImpl.pattern_firstass2rootcmd_28_2_expressionF();
 		} else {
@@ -970,36 +970,36 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		for (Object[] result2_black : firstass2rootcmdImpl
 				.pattern_firstass2rootcmd_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList p2gList = (RuleEntryList) result2_black[0];
-			Graph g = (Graph) result2_black[1];
+			Program p = (Program) result2_black[1];
 			P2G p2g = (P2G) result2_black[2];
-			Program p = (Program) result2_black[3];
+			Graph g = (Graph) result2_black[3];
 
 			Object[] result3_bindingAndBlack = firstass2rootcmdImpl
-					.pattern_firstass2rootcmd_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, g, p2g, p,
+					.pattern_firstass2rootcmd_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, p, g, p2g,
 							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[g] = " + g + ", " + "[p2g] = " + p2g
-						+ ", " + "[p] = " + p + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[p] = " + p + ", " + "[g] = " + g
+						+ ", " + "[p2g] = " + p2g + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (firstass2rootcmdImpl.pattern_firstass2rootcmd_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = firstass2rootcmdImpl.pattern_firstass2rootcmd_29_5_checknacs_blackBBB(g, p2g,
-						p);
+				Object[] result5_black = firstass2rootcmdImpl.pattern_firstass2rootcmd_29_5_checknacs_blackBBB(p, g,
+						p2g);
 				if (result5_black != null) {
 
-					Object[] result6_black = firstass2rootcmdImpl.pattern_firstass2rootcmd_29_6_perform_blackBBBB(g,
-							p2g, p, ruleResult);
+					Object[] result6_black = firstass2rootcmdImpl.pattern_firstass2rootcmd_29_6_perform_blackBBBB(p, g,
+							p2g, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[g] = " + g + ", "
-								+ "[p2g] = " + p2g + ", " + "[p] = " + p + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[p] = " + p + ", "
+								+ "[g] = " + g + ", " + "[p2g] = " + p2g + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					firstass2rootcmdImpl.pattern_firstass2rootcmd_29_6_perform_greenFBFBFB(g, p, ruleResult);
-					//nothing S2N f2r = (S2N) result6_green[0];
-					//nothing Assignment a = (Assignment) result6_green[2];
-					//nothing Command c = (Command) result6_green[4];
+					firstass2rootcmdImpl.pattern_firstass2rootcmd_29_6_perform_greenFFFBBB(p, g, ruleResult);
+					//nothing Command c = (Command) result6_green[0];
+					//nothing Assignment a = (Assignment) result6_green[1];
+					//nothing S2N f2r = (S2N) result6_green[2];
 
 				} else {
 				}
@@ -1016,7 +1016,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Program p,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Program p, Graph g, P2G p2g,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1032,9 +1032,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("p", p);
 		isApplicableMatch.registerObject("g", g);
 		isApplicableMatch.registerObject("p2g", p2g);
-		isApplicableMatch.registerObject("p", p);
 		return csp;
 	}
 
@@ -1071,9 +1071,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 					(Program) arguments.get(2));
 		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_GRAPH_P2G_ASSIGNMENT_PROGRAM:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Graph) arguments.get(1),
-					(P2G) arguments.get(2), (Assignment) arguments.get(3), (Program) arguments.get(4));
+		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ASSIGNMENT_PROGRAM_GRAPH_P2G:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Assignment) arguments.get(1),
+					(Program) arguments.get(2), (Graph) arguments.get(3), (P2G) arguments.get(4));
 		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.FIRSTASS2ROOTCMD___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1083,23 +1083,23 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 			return null;
 		case RulesPackage.FIRSTASS2ROOTCMD___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPROPRIATE_BWD__MATCH_GRAPH_COMMAND:
-			return isAppropriate_BWD((Match) arguments.get(0), (Graph) arguments.get(1), (Command) arguments.get(2));
+		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPROPRIATE_BWD__MATCH_COMMAND_GRAPH:
+			return isAppropriate_BWD((Match) arguments.get(0), (Command) arguments.get(1), (Graph) arguments.get(2));
 		case RulesPackage.FIRSTASS2ROOTCMD___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.FIRSTASS2ROOTCMD___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_GRAPH_COMMAND:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Graph) arguments.get(1), (Command) arguments.get(2));
+		case RulesPackage.FIRSTASS2ROOTCMD___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_COMMAND_GRAPH:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Command) arguments.get(1), (Graph) arguments.get(2));
 			return null;
-		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_GRAPH_COMMAND:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Graph) arguments.get(1),
-					(Command) arguments.get(2));
+		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_COMMAND_GRAPH:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Command) arguments.get(1),
+					(Graph) arguments.get(2));
 		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_GRAPH_P2G_PROGRAM_COMMAND:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Graph) arguments.get(1),
-					(P2G) arguments.get(2), (Program) arguments.get(3), (Command) arguments.get(4));
+		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMMAND_PROGRAM_GRAPH_P2G:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Command) arguments.get(1),
+					(Program) arguments.get(2), (Graph) arguments.get(3), (P2G) arguments.get(4));
 		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.FIRSTASS2ROOTCMD___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1109,31 +1109,31 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 			return null;
 		case RulesPackage.FIRSTASS2ROOTCMD___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPROPRIATE_BWD_EMOFLON_EDGE_56__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_56((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPROPRIATE_FWD_EMOFLON_EDGE_56__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_56((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPROPRIATE_BWD_EMOFLON_EDGE_126__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_126((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPROPRIATE_FWD_EMOFLON_EDGE_126__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_126((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIRSTASS2ROOTCMD___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIRSTASS2ROOTCMD___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPLICABLE_SOLVE_CSP_CC__GRAPH_ASSIGNMENT_PROGRAM_COMMAND_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Graph) arguments.get(0), (Assignment) arguments.get(1),
-					(Program) arguments.get(2), (Command) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPLICABLE_SOLVE_CSP_CC__COMMAND_ASSIGNMENT_PROGRAM_GRAPH_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Command) arguments.get(0), (Assignment) arguments.get(1),
+					(Program) arguments.get(2), (Graph) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.FIRSTASS2ROOTCMD___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.FIRSTASS2ROOTCMD___CHECK_DEC_FWD__ASSIGNMENT_PROGRAM:
 			return checkDEC_FWD((Assignment) arguments.get(0), (Program) arguments.get(1));
-		case RulesPackage.FIRSTASS2ROOTCMD___CHECK_DEC_BWD__GRAPH_COMMAND:
-			return checkDEC_BWD((Graph) arguments.get(0), (Command) arguments.get(1));
+		case RulesPackage.FIRSTASS2ROOTCMD___CHECK_DEC_BWD__COMMAND_GRAPH:
+			return checkDEC_BWD((Command) arguments.get(0), (Graph) arguments.get(1));
 		case RulesPackage.FIRSTASS2ROOTCMD___GENERATE_MODEL__RULEENTRYCONTAINER_P2G:
 			return generateModel((RuleEntryContainer) arguments.get(0), (P2G) arguments.get(1));
-		case RulesPackage.FIRSTASS2ROOTCMD___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_GRAPH_P2G_PROGRAM_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Graph) arguments.get(1),
-					(P2G) arguments.get(2), (Program) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+		case RulesPackage.FIRSTASS2ROOTCMD___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PROGRAM_GRAPH_P2G_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Program) arguments.get(1),
+					(Graph) arguments.get(2), (P2G) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.FIRSTASS2ROOTCMD___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1227,23 +1227,23 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 
 	public static final Object[] pattern_firstass2rootcmd_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("g");
-		EObject _localVariable_1 = isApplicableMatch.getObject("p2g");
-		EObject _localVariable_2 = isApplicableMatch.getObject("a");
-		EObject _localVariable_3 = isApplicableMatch.getObject("p");
-		EObject tmpG = _localVariable_0;
-		EObject tmpP2g = _localVariable_1;
-		EObject tmpA = _localVariable_2;
-		EObject tmpP = _localVariable_3;
-		if (tmpG instanceof Graph) {
-			Graph g = (Graph) tmpG;
-			if (tmpP2g instanceof P2G) {
-				P2G p2g = (P2G) tmpP2g;
-				if (tmpA instanceof Assignment) {
-					Assignment a = (Assignment) tmpA;
-					if (tmpP instanceof Program) {
-						Program p = (Program) tmpP;
-						return new Object[] { g, p2g, a, p, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("a");
+		EObject _localVariable_1 = isApplicableMatch.getObject("p");
+		EObject _localVariable_2 = isApplicableMatch.getObject("g");
+		EObject _localVariable_3 = isApplicableMatch.getObject("p2g");
+		EObject tmpA = _localVariable_0;
+		EObject tmpP = _localVariable_1;
+		EObject tmpG = _localVariable_2;
+		EObject tmpP2g = _localVariable_3;
+		if (tmpA instanceof Assignment) {
+			Assignment a = (Assignment) tmpA;
+			if (tmpP instanceof Program) {
+				Program p = (Program) tmpP;
+				if (tmpG instanceof Graph) {
+					Graph g = (Graph) tmpG;
+					if (tmpP2g instanceof P2G) {
+						P2G p2g = (P2G) tmpP2g;
+						return new Object[] { a, p, g, p2g, isApplicableMatch };
 					}
 				}
 			}
@@ -1251,12 +1251,12 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		return null;
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_1_1_performtransformation_blackBBBBFBB(Graph g, P2G p2g,
-			Assignment a, Program p, firstass2rootcmd _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_firstass2rootcmd_1_1_performtransformation_blackBBBBFBB(Assignment a,
+			Program p, Graph g, P2G p2g, firstass2rootcmd _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { g, p2g, a, p, csp, _this, isApplicableMatch };
+				return new Object[] { a, p, g, p2g, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1267,64 +1267,64 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		Object[] result_pattern_firstass2rootcmd_1_1_performtransformation_binding = pattern_firstass2rootcmd_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_firstass2rootcmd_1_1_performtransformation_binding != null) {
-			Graph g = (Graph) result_pattern_firstass2rootcmd_1_1_performtransformation_binding[0];
-			P2G p2g = (P2G) result_pattern_firstass2rootcmd_1_1_performtransformation_binding[1];
-			Assignment a = (Assignment) result_pattern_firstass2rootcmd_1_1_performtransformation_binding[2];
-			Program p = (Program) result_pattern_firstass2rootcmd_1_1_performtransformation_binding[3];
+			Assignment a = (Assignment) result_pattern_firstass2rootcmd_1_1_performtransformation_binding[0];
+			Program p = (Program) result_pattern_firstass2rootcmd_1_1_performtransformation_binding[1];
+			Graph g = (Graph) result_pattern_firstass2rootcmd_1_1_performtransformation_binding[2];
+			P2G p2g = (P2G) result_pattern_firstass2rootcmd_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_firstass2rootcmd_1_1_performtransformation_black = pattern_firstass2rootcmd_1_1_performtransformation_blackBBBBFBB(
-					g, p2g, a, p, _this, isApplicableMatch);
+					a, p, g, p2g, _this, isApplicableMatch);
 			if (result_pattern_firstass2rootcmd_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_firstass2rootcmd_1_1_performtransformation_black[4];
 
-				return new Object[] { g, p2g, a, p, csp, _this, isApplicableMatch };
+				return new Object[] { a, p, g, p2g, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_1_1_performtransformation_greenFBBF(Graph g, Assignment a) {
-		S2N f2r = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
+	public static final Object[] pattern_firstass2rootcmd_1_1_performtransformation_greenFBFB(Assignment a, Graph g) {
 		Command c = ControlflowFactory.eINSTANCE.createCommand();
-		f2r.setSource(a);
+		S2N f2r = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		g.setRoot(c);
+		f2r.setSource(a);
 		f2r.setTarget(c);
-		return new Object[] { f2r, g, a, c };
+		return new Object[] { c, a, f2r, g };
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_1_2_collecttranslatedelements_blackBBB(S2N f2r, Assignment a,
-			Command c) {
-		return new Object[] { f2r, a, c };
+	public static final Object[] pattern_firstass2rootcmd_1_2_collecttranslatedelements_blackBBB(Command c,
+			Assignment a, S2N f2r) {
+		return new Object[] { c, a, f2r };
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_1_2_collecttranslatedelements_greenFBBB(S2N f2r, Assignment a,
-			Command c) {
+	public static final Object[] pattern_firstass2rootcmd_1_2_collecttranslatedelements_greenFBBB(Command c,
+			Assignment a, S2N f2r) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(f2r);
-		ruleresult.getTranslatedElements().add(a);
 		ruleresult.getCreatedElements().add(c);
-		return new Object[] { ruleresult, f2r, a, c };
+		ruleresult.getTranslatedElements().add(a);
+		ruleresult.getCreatedLinkElements().add(f2r);
+		return new Object[] { ruleresult, c, a, f2r };
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject f2r, EObject g, EObject p2g, EObject a, EObject p, EObject c) {
-		if (!f2r.equals(g)) {
-			if (!f2r.equals(p2g)) {
-				if (!f2r.equals(p)) {
-					if (!g.equals(p2g)) {
-						if (!g.equals(p)) {
+			PerformRuleResult ruleresult, EObject c, EObject a, EObject f2r, EObject p, EObject g, EObject p2g) {
+		if (!c.equals(f2r)) {
+			if (!c.equals(p)) {
+				if (!c.equals(g)) {
+					if (!c.equals(p2g)) {
+						if (!a.equals(c)) {
 							if (!a.equals(f2r)) {
-								if (!a.equals(g)) {
-									if (!a.equals(p2g)) {
-										if (!a.equals(p)) {
-											if (!a.equals(c)) {
-												if (!p.equals(p2g)) {
-													if (!c.equals(f2r)) {
-														if (!c.equals(g)) {
-															if (!c.equals(p2g)) {
-																if (!c.equals(p)) {
-																	return new Object[] { ruleresult, f2r, g, p2g, a, p,
-																			c };
+								if (!a.equals(p)) {
+									if (!a.equals(g)) {
+										if (!a.equals(p2g)) {
+											if (!f2r.equals(p)) {
+												if (!f2r.equals(g)) {
+													if (!f2r.equals(p2g)) {
+														if (!p.equals(p2g)) {
+															if (!g.equals(p)) {
+																if (!g.equals(p2g)) {
+																	return new Object[] { ruleresult, c, a, f2r, p, g,
+																			p2g };
 																}
 															}
 														}
@@ -1344,40 +1344,40 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_1_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject f2r, EObject g, EObject a, EObject p, EObject c) {
+			PerformRuleResult ruleresult, EObject c, EObject a, EObject f2r, EObject p, EObject g) {
 		EMoflonEdge f2r__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge g__c____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge f2r__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p__a____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge g__c____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "firstass2rootcmd";
 		String f2r__a____source_name_prime = "source";
-		String g__c____root_name_prime = "root";
 		String f2r__c____target_name_prime = "target";
 		String p__a____first_name_prime = "first";
+		String g__c____root_name_prime = "root";
 		f2r__a____source.setSrc(f2r);
 		f2r__a____source.setTrg(a);
 		ruleresult.getCreatedEdges().add(f2r__a____source);
-		g__c____root.setSrc(g);
-		g__c____root.setTrg(c);
-		ruleresult.getCreatedEdges().add(g__c____root);
 		f2r__c____target.setSrc(f2r);
 		f2r__c____target.setTrg(c);
 		ruleresult.getCreatedEdges().add(f2r__c____target);
 		p__a____first.setSrc(p);
 		p__a____first.setTrg(a);
 		ruleresult.getTranslatedEdges().add(p__a____first);
+		g__c____root.setSrc(g);
+		g__c____root.setTrg(c);
+		ruleresult.getCreatedEdges().add(g__c____root);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		f2r__a____source.setName(f2r__a____source_name_prime);
-		g__c____root.setName(g__c____root_name_prime);
 		f2r__c____target.setName(f2r__c____target_name_prime);
 		p__a____first.setName(p__a____first_name_prime);
-		return new Object[] { ruleresult, f2r, g, a, p, c, f2r__a____source, g__c____root, f2r__c____target,
-				p__a____first };
+		g__c____root.setName(g__c____root_name_prime);
+		return new Object[] { ruleresult, c, a, f2r, p, g, f2r__a____source, f2r__c____target, p__a____first,
+				g__c____root };
 	}
 
 	public static final void pattern_firstass2rootcmd_1_5_registerobjects_expressionBBBBBBBB(firstass2rootcmd _this,
-			PerformRuleResult ruleresult, EObject f2r, EObject g, EObject p2g, EObject a, EObject p, EObject c) {
-		_this.registerObjects_FWD(ruleresult, f2r, g, p2g, a, p, c);
+			PerformRuleResult ruleresult, EObject c, EObject a, EObject f2r, EObject p, EObject g, EObject p2g) {
+		_this.registerObjects_FWD(ruleresult, c, a, f2r, p, g, p2g);
 
 	}
 
@@ -1450,66 +1450,66 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_firstass2rootcmd_2_2_corematch_blackFFBBB(Assignment a, Program p,
+	public static final Iterable<Object[]> pattern_firstass2rootcmd_2_2_corematch_blackBBFFB(Assignment a, Program p,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (P2G p2g : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(p, P2G.class, "source")) {
 			Graph g = p2g.getTarget();
 			if (g != null) {
-				_result.add(new Object[] { g, p2g, a, p, match });
+				_result.add(new Object[] { a, p, g, p2g, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_firstass2rootcmd_2_3_findcontext_blackBBBB(Graph g, P2G p2g,
-			Assignment a, Program p) {
+	public static final Iterable<Object[]> pattern_firstass2rootcmd_2_3_findcontext_blackBBBB(Assignment a, Program p,
+			Graph g, P2G p2g) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (g.equals(p2g.getTarget())) {
+		if (a.equals(p.getFirst())) {
 			if (p.equals(p2g.getSource())) {
-				if (a.equals(p.getFirst())) {
-					_result.add(new Object[] { g, p2g, a, p });
+				if (g.equals(p2g.getTarget())) {
+					_result.add(new Object[] { a, p, g, p2g });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_2_3_findcontext_greenBBBBFFFF(Graph g, P2G p2g, Assignment a,
-			Program p) {
+	public static final Object[] pattern_firstass2rootcmd_2_3_findcontext_greenBBBBFFFF(Assignment a, Program p,
+			Graph g, P2G p2g) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge p2g__g____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p__a____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String p2g__g____target_name_prime = "target";
-		String p2g__p____source_name_prime = "source";
+		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge p2g__g____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String p__a____first_name_prime = "first";
-		isApplicableMatch.getAllContextElements().add(g);
-		isApplicableMatch.getAllContextElements().add(p2g);
+		String p2g__p____source_name_prime = "source";
+		String p2g__g____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(a);
 		isApplicableMatch.getAllContextElements().add(p);
-		p2g__g____target.setSrc(p2g);
-		p2g__g____target.setTrg(g);
-		isApplicableMatch.getAllContextElements().add(p2g__g____target);
-		p2g__p____source.setSrc(p2g);
-		p2g__p____source.setTrg(p);
-		isApplicableMatch.getAllContextElements().add(p2g__p____source);
+		isApplicableMatch.getAllContextElements().add(g);
+		isApplicableMatch.getAllContextElements().add(p2g);
 		p__a____first.setSrc(p);
 		p__a____first.setTrg(a);
 		isApplicableMatch.getAllContextElements().add(p__a____first);
-		p2g__g____target.setName(p2g__g____target_name_prime);
-		p2g__p____source.setName(p2g__p____source_name_prime);
+		p2g__p____source.setSrc(p2g);
+		p2g__p____source.setTrg(p);
+		isApplicableMatch.getAllContextElements().add(p2g__p____source);
+		p2g__g____target.setSrc(p2g);
+		p2g__g____target.setTrg(g);
+		isApplicableMatch.getAllContextElements().add(p2g__g____target);
 		p__a____first.setName(p__a____first_name_prime);
-		return new Object[] { g, p2g, a, p, isApplicableMatch, p2g__g____target, p2g__p____source, p__a____first };
+		p2g__p____source.setName(p2g__p____source_name_prime);
+		p2g__g____target.setName(p2g__g____target_name_prime);
+		return new Object[] { a, p, g, p2g, isApplicableMatch, p__a____first, p2g__p____source, p2g__g____target };
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_2_4_solveCSP_bindingFBBBBBB(firstass2rootcmd _this,
-			IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Assignment a, Program p) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, g, p2g, a, p);
+			IsApplicableMatch isApplicableMatch, Assignment a, Program p, Graph g, P2G p2g) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, a, p, g, p2g);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, g, p2g, a, p };
+			return new Object[] { csp, _this, isApplicableMatch, a, p, g, p2g };
 		}
 		return null;
 	}
@@ -1519,9 +1519,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_2_4_solveCSP_bindingAndBlackFBBBBBB(firstass2rootcmd _this,
-			IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Assignment a, Program p) {
+			IsApplicableMatch isApplicableMatch, Assignment a, Program p, Graph g, P2G p2g) {
 		Object[] result_pattern_firstass2rootcmd_2_4_solveCSP_binding = pattern_firstass2rootcmd_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, g, p2g, a, p);
+				_this, isApplicableMatch, a, p, g, p2g);
 		if (result_pattern_firstass2rootcmd_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_firstass2rootcmd_2_4_solveCSP_binding[0];
 
@@ -1529,7 +1529,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 					csp);
 			if (result_pattern_firstass2rootcmd_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, g, p2g, a, p };
+				return new Object[] { csp, _this, isApplicableMatch, a, p, g, p2g };
 			}
 		}
 		return null;
@@ -1563,16 +1563,16 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_10_1_initialbindings_blackBBBB(firstass2rootcmd _this,
-			Match match, Graph g, Command c) {
-		return new Object[] { _this, match, g, c };
+			Match match, Command c, Graph g) {
+		return new Object[] { _this, match, c, g };
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_10_2_SolveCSP_bindingFBBBB(firstass2rootcmd _this,
-			Match match, Graph g, Command c) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, g, c);
+			Match match, Command c, Graph g) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, c, g);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, g, c };
+			return new Object[] { csp, _this, match, c, g };
 		}
 		return null;
 	}
@@ -1582,9 +1582,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_10_2_SolveCSP_bindingAndBlackFBBBB(firstass2rootcmd _this,
-			Match match, Graph g, Command c) {
+			Match match, Command c, Graph g) {
 		Object[] result_pattern_firstass2rootcmd_10_2_SolveCSP_binding = pattern_firstass2rootcmd_10_2_SolveCSP_bindingFBBBB(
-				_this, match, g, c);
+				_this, match, c, g);
 		if (result_pattern_firstass2rootcmd_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_firstass2rootcmd_10_2_SolveCSP_binding[0];
 
@@ -1592,7 +1592,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 					csp);
 			if (result_pattern_firstass2rootcmd_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, g, c };
+				return new Object[] { csp, _this, match, c, g };
 			}
 		}
 		return null;
@@ -1605,12 +1605,12 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_10_4_collectelementstobetranslated_blackBBB(Match match,
-			Graph g, Command c) {
-		return new Object[] { match, g, c };
+			Command c, Graph g) {
+		return new Object[] { match, c, g };
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_10_4_collectelementstobetranslated_greenBBBF(Match match,
-			Graph g, Command c) {
+			Command c, Graph g) {
 		EMoflonEdge g__c____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(c);
 		String g__c____root_name_prime = "root";
@@ -1618,12 +1618,12 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		g__c____root.setTrg(c);
 		match.getToBeTranslatedEdges().add(g__c____root);
 		g__c____root.setName(g__c____root_name_prime);
-		return new Object[] { match, g, c, g__c____root };
+		return new Object[] { match, c, g, g__c____root };
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_10_5_collectcontextelements_blackBBB(Match match, Graph g,
-			Command c) {
-		return new Object[] { match, g, c };
+	public static final Object[] pattern_firstass2rootcmd_10_5_collectcontextelements_blackBBB(Match match, Command c,
+			Graph g) {
+		return new Object[] { match, c, g };
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_10_5_collectcontextelements_greenBB(Match match, Graph g) {
@@ -1632,8 +1632,8 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final void pattern_firstass2rootcmd_10_6_registerobjectstomatch_expressionBBBB(firstass2rootcmd _this,
-			Match match, Graph g, Command c) {
-		_this.registerObjectsToMatch_BWD(match, g, c);
+			Match match, Command c, Graph g) {
+		_this.registerObjectsToMatch_BWD(match, c, g);
 
 	}
 
@@ -1649,23 +1649,23 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 
 	public static final Object[] pattern_firstass2rootcmd_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("g");
-		EObject _localVariable_1 = isApplicableMatch.getObject("p2g");
-		EObject _localVariable_2 = isApplicableMatch.getObject("p");
-		EObject _localVariable_3 = isApplicableMatch.getObject("c");
-		EObject tmpG = _localVariable_0;
-		EObject tmpP2g = _localVariable_1;
-		EObject tmpP = _localVariable_2;
-		EObject tmpC = _localVariable_3;
-		if (tmpG instanceof Graph) {
-			Graph g = (Graph) tmpG;
-			if (tmpP2g instanceof P2G) {
-				P2G p2g = (P2G) tmpP2g;
-				if (tmpP instanceof Program) {
-					Program p = (Program) tmpP;
-					if (tmpC instanceof Command) {
-						Command c = (Command) tmpC;
-						return new Object[] { g, p2g, p, c, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("c");
+		EObject _localVariable_1 = isApplicableMatch.getObject("p");
+		EObject _localVariable_2 = isApplicableMatch.getObject("g");
+		EObject _localVariable_3 = isApplicableMatch.getObject("p2g");
+		EObject tmpC = _localVariable_0;
+		EObject tmpP = _localVariable_1;
+		EObject tmpG = _localVariable_2;
+		EObject tmpP2g = _localVariable_3;
+		if (tmpC instanceof Command) {
+			Command c = (Command) tmpC;
+			if (tmpP instanceof Program) {
+				Program p = (Program) tmpP;
+				if (tmpG instanceof Graph) {
+					Graph g = (Graph) tmpG;
+					if (tmpP2g instanceof P2G) {
+						P2G p2g = (P2G) tmpP2g;
+						return new Object[] { c, p, g, p2g, isApplicableMatch };
 					}
 				}
 			}
@@ -1673,12 +1673,12 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		return null;
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_11_1_performtransformation_blackBBBBFBB(Graph g, P2G p2g,
-			Program p, Command c, firstass2rootcmd _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_firstass2rootcmd_11_1_performtransformation_blackBBBBFBB(Command c, Program p,
+			Graph g, P2G p2g, firstass2rootcmd _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { g, p2g, p, c, csp, _this, isApplicableMatch };
+				return new Object[] { c, p, g, p2g, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1689,64 +1689,64 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		Object[] result_pattern_firstass2rootcmd_11_1_performtransformation_binding = pattern_firstass2rootcmd_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_firstass2rootcmd_11_1_performtransformation_binding != null) {
-			Graph g = (Graph) result_pattern_firstass2rootcmd_11_1_performtransformation_binding[0];
-			P2G p2g = (P2G) result_pattern_firstass2rootcmd_11_1_performtransformation_binding[1];
-			Program p = (Program) result_pattern_firstass2rootcmd_11_1_performtransformation_binding[2];
-			Command c = (Command) result_pattern_firstass2rootcmd_11_1_performtransformation_binding[3];
+			Command c = (Command) result_pattern_firstass2rootcmd_11_1_performtransformation_binding[0];
+			Program p = (Program) result_pattern_firstass2rootcmd_11_1_performtransformation_binding[1];
+			Graph g = (Graph) result_pattern_firstass2rootcmd_11_1_performtransformation_binding[2];
+			P2G p2g = (P2G) result_pattern_firstass2rootcmd_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_firstass2rootcmd_11_1_performtransformation_black = pattern_firstass2rootcmd_11_1_performtransformation_blackBBBBFBB(
-					g, p2g, p, c, _this, isApplicableMatch);
+					c, p, g, p2g, _this, isApplicableMatch);
 			if (result_pattern_firstass2rootcmd_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_firstass2rootcmd_11_1_performtransformation_black[4];
 
-				return new Object[] { g, p2g, p, c, csp, _this, isApplicableMatch };
+				return new Object[] { c, p, g, p2g, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_11_1_performtransformation_greenFFBB(Program p, Command c) {
-		S2N f2r = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
+	public static final Object[] pattern_firstass2rootcmd_11_1_performtransformation_greenBFFB(Command c, Program p) {
 		Assignment a = SourcecodeFactory.eINSTANCE.createAssignment();
-		f2r.setTarget(c);
-		f2r.setSource(a);
+		S2N f2r = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		p.setFirst(a);
-		return new Object[] { f2r, a, p, c };
+		f2r.setSource(a);
+		f2r.setTarget(c);
+		return new Object[] { c, a, f2r, p };
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_11_2_collecttranslatedelements_blackBBB(S2N f2r, Assignment a,
-			Command c) {
-		return new Object[] { f2r, a, c };
+	public static final Object[] pattern_firstass2rootcmd_11_2_collecttranslatedelements_blackBBB(Command c,
+			Assignment a, S2N f2r) {
+		return new Object[] { c, a, f2r };
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_11_2_collecttranslatedelements_greenFBBB(S2N f2r,
-			Assignment a, Command c) {
+	public static final Object[] pattern_firstass2rootcmd_11_2_collecttranslatedelements_greenFBBB(Command c,
+			Assignment a, S2N f2r) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(f2r);
-		ruleresult.getCreatedElements().add(a);
 		ruleresult.getTranslatedElements().add(c);
-		return new Object[] { ruleresult, f2r, a, c };
+		ruleresult.getCreatedElements().add(a);
+		ruleresult.getCreatedLinkElements().add(f2r);
+		return new Object[] { ruleresult, c, a, f2r };
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject f2r, EObject g, EObject p2g, EObject a, EObject p, EObject c) {
-		if (!f2r.equals(g)) {
-			if (!f2r.equals(p2g)) {
-				if (!f2r.equals(p)) {
-					if (!g.equals(p2g)) {
-						if (!g.equals(p)) {
+			PerformRuleResult ruleresult, EObject c, EObject a, EObject f2r, EObject p, EObject g, EObject p2g) {
+		if (!c.equals(f2r)) {
+			if (!c.equals(p)) {
+				if (!c.equals(g)) {
+					if (!c.equals(p2g)) {
+						if (!a.equals(c)) {
 							if (!a.equals(f2r)) {
-								if (!a.equals(g)) {
-									if (!a.equals(p2g)) {
-										if (!a.equals(p)) {
-											if (!a.equals(c)) {
-												if (!p.equals(p2g)) {
-													if (!c.equals(f2r)) {
-														if (!c.equals(g)) {
-															if (!c.equals(p2g)) {
-																if (!c.equals(p)) {
-																	return new Object[] { ruleresult, f2r, g, p2g, a, p,
-																			c };
+								if (!a.equals(p)) {
+									if (!a.equals(g)) {
+										if (!a.equals(p2g)) {
+											if (!f2r.equals(p)) {
+												if (!f2r.equals(g)) {
+													if (!f2r.equals(p2g)) {
+														if (!p.equals(p2g)) {
+															if (!g.equals(p)) {
+																if (!g.equals(p2g)) {
+																	return new Object[] { ruleresult, c, a, f2r, p, g,
+																			p2g };
 																}
 															}
 														}
@@ -1766,40 +1766,40 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_11_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject f2r, EObject g, EObject a, EObject p, EObject c) {
+			PerformRuleResult ruleresult, EObject c, EObject a, EObject f2r, EObject p, EObject g) {
 		EMoflonEdge f2r__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge g__c____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge f2r__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p__a____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge g__c____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "firstass2rootcmd";
 		String f2r__a____source_name_prime = "source";
-		String g__c____root_name_prime = "root";
 		String f2r__c____target_name_prime = "target";
 		String p__a____first_name_prime = "first";
+		String g__c____root_name_prime = "root";
 		f2r__a____source.setSrc(f2r);
 		f2r__a____source.setTrg(a);
 		ruleresult.getCreatedEdges().add(f2r__a____source);
-		g__c____root.setSrc(g);
-		g__c____root.setTrg(c);
-		ruleresult.getTranslatedEdges().add(g__c____root);
 		f2r__c____target.setSrc(f2r);
 		f2r__c____target.setTrg(c);
 		ruleresult.getCreatedEdges().add(f2r__c____target);
 		p__a____first.setSrc(p);
 		p__a____first.setTrg(a);
 		ruleresult.getCreatedEdges().add(p__a____first);
+		g__c____root.setSrc(g);
+		g__c____root.setTrg(c);
+		ruleresult.getTranslatedEdges().add(g__c____root);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		f2r__a____source.setName(f2r__a____source_name_prime);
-		g__c____root.setName(g__c____root_name_prime);
 		f2r__c____target.setName(f2r__c____target_name_prime);
 		p__a____first.setName(p__a____first_name_prime);
-		return new Object[] { ruleresult, f2r, g, a, p, c, f2r__a____source, g__c____root, f2r__c____target,
-				p__a____first };
+		g__c____root.setName(g__c____root_name_prime);
+		return new Object[] { ruleresult, c, a, f2r, p, g, f2r__a____source, f2r__c____target, p__a____first,
+				g__c____root };
 	}
 
 	public static final void pattern_firstass2rootcmd_11_5_registerobjects_expressionBBBBBBBB(firstass2rootcmd _this,
-			PerformRuleResult ruleresult, EObject f2r, EObject g, EObject p2g, EObject a, EObject p, EObject c) {
-		_this.registerObjects_BWD(ruleresult, f2r, g, p2g, a, p, c);
+			PerformRuleResult ruleresult, EObject c, EObject a, EObject f2r, EObject p, EObject g, EObject p2g) {
+		_this.registerObjects_BWD(ruleresult, c, a, f2r, p, g, p2g);
 
 	}
 
@@ -1858,80 +1858,80 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("g");
-		EObject _localVariable_1 = match.getObject("c");
-		EObject tmpG = _localVariable_0;
-		EObject tmpC = _localVariable_1;
-		if (tmpG instanceof Graph) {
-			Graph g = (Graph) tmpG;
-			if (tmpC instanceof Command) {
-				Command c = (Command) tmpC;
-				return new Object[] { g, c, match };
+		EObject _localVariable_0 = match.getObject("c");
+		EObject _localVariable_1 = match.getObject("g");
+		EObject tmpC = _localVariable_0;
+		EObject tmpG = _localVariable_1;
+		if (tmpC instanceof Command) {
+			Command c = (Command) tmpC;
+			if (tmpG instanceof Graph) {
+				Graph g = (Graph) tmpG;
+				return new Object[] { c, g, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_firstass2rootcmd_12_2_corematch_blackBFFBB(Graph g, Command c,
+	public static final Iterable<Object[]> pattern_firstass2rootcmd_12_2_corematch_blackBFBFB(Command c, Graph g,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (P2G p2g : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(g, P2G.class, "target")) {
 			Program p = p2g.getSource();
 			if (p != null) {
-				_result.add(new Object[] { g, p2g, p, c, match });
+				_result.add(new Object[] { c, p, g, p2g, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_firstass2rootcmd_12_3_findcontext_blackBBBB(Graph g, P2G p2g,
-			Program p, Command c) {
+	public static final Iterable<Object[]> pattern_firstass2rootcmd_12_3_findcontext_blackBBBB(Command c, Program p,
+			Graph g, P2G p2g) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (g.equals(p2g.getTarget())) {
-			if (c.equals(g.getRoot())) {
-				if (p.equals(p2g.getSource())) {
-					_result.add(new Object[] { g, p2g, p, c });
+		if (p.equals(p2g.getSource())) {
+			if (g.equals(p2g.getTarget())) {
+				if (c.equals(g.getRoot())) {
+					_result.add(new Object[] { c, p, g, p2g });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_12_3_findcontext_greenBBBBFFFF(Graph g, P2G p2g, Program p,
-			Command c) {
+	public static final Object[] pattern_firstass2rootcmd_12_3_findcontext_greenBBBBFFFF(Command c, Program p, Graph g,
+			P2G p2g) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2g__g____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge g__c____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String p2g__p____source_name_prime = "source";
 		String p2g__g____target_name_prime = "target";
 		String g__c____root_name_prime = "root";
-		String p2g__p____source_name_prime = "source";
+		isApplicableMatch.getAllContextElements().add(c);
+		isApplicableMatch.getAllContextElements().add(p);
 		isApplicableMatch.getAllContextElements().add(g);
 		isApplicableMatch.getAllContextElements().add(p2g);
-		isApplicableMatch.getAllContextElements().add(p);
-		isApplicableMatch.getAllContextElements().add(c);
+		p2g__p____source.setSrc(p2g);
+		p2g__p____source.setTrg(p);
+		isApplicableMatch.getAllContextElements().add(p2g__p____source);
 		p2g__g____target.setSrc(p2g);
 		p2g__g____target.setTrg(g);
 		isApplicableMatch.getAllContextElements().add(p2g__g____target);
 		g__c____root.setSrc(g);
 		g__c____root.setTrg(c);
 		isApplicableMatch.getAllContextElements().add(g__c____root);
-		p2g__p____source.setSrc(p2g);
-		p2g__p____source.setTrg(p);
-		isApplicableMatch.getAllContextElements().add(p2g__p____source);
+		p2g__p____source.setName(p2g__p____source_name_prime);
 		p2g__g____target.setName(p2g__g____target_name_prime);
 		g__c____root.setName(g__c____root_name_prime);
-		p2g__p____source.setName(p2g__p____source_name_prime);
-		return new Object[] { g, p2g, p, c, isApplicableMatch, p2g__g____target, g__c____root, p2g__p____source };
+		return new Object[] { c, p, g, p2g, isApplicableMatch, p2g__p____source, p2g__g____target, g__c____root };
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_12_4_solveCSP_bindingFBBBBBB(firstass2rootcmd _this,
-			IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Program p, Command c) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, g, p2g, p, c);
+			IsApplicableMatch isApplicableMatch, Command c, Program p, Graph g, P2G p2g) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, c, p, g, p2g);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, g, p2g, p, c };
+			return new Object[] { csp, _this, isApplicableMatch, c, p, g, p2g };
 		}
 		return null;
 	}
@@ -1941,9 +1941,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_12_4_solveCSP_bindingAndBlackFBBBBBB(firstass2rootcmd _this,
-			IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Program p, Command c) {
+			IsApplicableMatch isApplicableMatch, Command c, Program p, Graph g, P2G p2g) {
 		Object[] result_pattern_firstass2rootcmd_12_4_solveCSP_binding = pattern_firstass2rootcmd_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, g, p2g, p, c);
+				_this, isApplicableMatch, c, p, g, p2g);
 		if (result_pattern_firstass2rootcmd_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_firstass2rootcmd_12_4_solveCSP_binding[0];
 
@@ -1951,7 +1951,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 					csp);
 			if (result_pattern_firstass2rootcmd_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, g, p2g, p, c };
+				return new Object[] { csp, _this, isApplicableMatch, c, p, g, p2g };
 			}
 		}
 		return null;
@@ -2038,9 +2038,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_20_2_testcorematchandDECs_black_nac_0BB(Command c, Graph g) {
-		for (Graph __DEC_c_root_948520 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+		for (Graph __DEC_c_root_459530 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 				Graph.class, "root")) {
-			if (!g.equals(__DEC_c_root_948520)) {
+			if (!g.equals(__DEC_c_root_459530)) {
 				return new Object[] { c, g };
 			}
 		}
@@ -2048,7 +2048,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_20_2_testcorematchandDECs_black_nac_1B(Command c) {
-		for (Branch __DEC_c_positive_63240 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+		for (Branch __DEC_c_positive_385412 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 				Branch.class, "positive")) {
 			return new Object[] { c };
 		}
@@ -2056,7 +2056,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_20_2_testcorematchandDECs_black_nac_2B(Command c) {
-		for (Branch __DEC_c_negative_25332 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+		for (Branch __DEC_c_negative_71922 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 				Branch.class, "negative")) {
 			return new Object[] { c };
 		}
@@ -2076,7 +2076,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 					if (pattern_firstass2rootcmd_20_2_testcorematchandDECs_black_nac_0BB(c, g) == null) {
 						if (pattern_firstass2rootcmd_20_2_testcorematchandDECs_black_nac_1B(c) == null) {
 							if (pattern_firstass2rootcmd_20_2_testcorematchandDECs_black_nac_2B(c) == null) {
-								_result.add(new Object[] { g, c, _edge_root });
+								_result.add(new Object[] { c, g, _edge_root });
 							}
 						}
 					}
@@ -2098,8 +2098,8 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final boolean pattern_firstass2rootcmd_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			firstass2rootcmd _this, Match match, Graph g, Command c) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, g, c);
+			firstass2rootcmd _this, Match match, Command c, Graph g) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, c, g);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2186,7 +2186,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_21_2_testcorematchandDECs_black_nac_0B(Assignment a) {
-		for (Decision __DEC_a_positive_992261 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (Decision __DEC_a_positive_706914 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				Decision.class, "positive")) {
 			return new Object[] { a };
 		}
@@ -2194,7 +2194,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_21_2_testcorematchandDECs_black_nac_1B(Assignment a) {
-		for (Decision __DEC_a_negative_905911 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (Decision __DEC_a_negative_738124 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				Decision.class, "negative")) {
 			return new Object[] { a };
 		}
@@ -2202,7 +2202,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_21_2_testcorematchandDECs_black_nac_2B(Assignment a) {
-		for (While __DEC_a_first_507902 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (While __DEC_a_first_735382 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				While.class, "first")) {
 			return new Object[] { a };
 		}
@@ -2210,7 +2210,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_21_2_testcorematchandDECs_black_nac_3B(Assignment a) {
-		for (While __DEC_a_last_610392 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (While __DEC_a_last_897596 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				While.class, "last")) {
 			return new Object[] { a };
 		}
@@ -2299,23 +2299,23 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 
 	public static final Object[] pattern_firstass2rootcmd_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
 			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("g");
+		EObject _localVariable_0 = targetMatch.getObject("c");
 		EObject _localVariable_1 = sourceMatch.getObject("a");
 		EObject _localVariable_2 = sourceMatch.getObject("p");
-		EObject _localVariable_3 = targetMatch.getObject("c");
-		EObject tmpG = _localVariable_0;
+		EObject _localVariable_3 = targetMatch.getObject("g");
+		EObject tmpC = _localVariable_0;
 		EObject tmpA = _localVariable_1;
 		EObject tmpP = _localVariable_2;
-		EObject tmpC = _localVariable_3;
-		if (tmpG instanceof Graph) {
-			Graph g = (Graph) tmpG;
+		EObject tmpG = _localVariable_3;
+		if (tmpC instanceof Command) {
+			Command c = (Command) tmpC;
 			if (tmpA instanceof Assignment) {
 				Assignment a = (Assignment) tmpA;
 				if (tmpP instanceof Program) {
 					Program p = (Program) tmpP;
-					if (tmpC instanceof Command) {
-						Command c = (Command) tmpC;
-						return new Object[] { g, a, p, c, targetMatch, sourceMatch };
+					if (tmpG instanceof Graph) {
+						Graph g = (Graph) tmpG;
+						return new Object[] { c, a, p, g, targetMatch, sourceMatch };
 					}
 				}
 			}
@@ -2323,10 +2323,10 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		return null;
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_24_2_matchsrctrgcontext_blackBBBBBB(Graph g, Assignment a,
-			Program p, Command c, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_firstass2rootcmd_24_2_matchsrctrgcontext_blackBBBBBB(Command c, Assignment a,
+			Program p, Graph g, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { g, a, p, c, sourceMatch, targetMatch };
+			return new Object[] { c, a, p, g, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2336,27 +2336,27 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		Object[] result_pattern_firstass2rootcmd_24_2_matchsrctrgcontext_binding = pattern_firstass2rootcmd_24_2_matchsrctrgcontext_bindingFFFFBB(
 				targetMatch, sourceMatch);
 		if (result_pattern_firstass2rootcmd_24_2_matchsrctrgcontext_binding != null) {
-			Graph g = (Graph) result_pattern_firstass2rootcmd_24_2_matchsrctrgcontext_binding[0];
+			Command c = (Command) result_pattern_firstass2rootcmd_24_2_matchsrctrgcontext_binding[0];
 			Assignment a = (Assignment) result_pattern_firstass2rootcmd_24_2_matchsrctrgcontext_binding[1];
 			Program p = (Program) result_pattern_firstass2rootcmd_24_2_matchsrctrgcontext_binding[2];
-			Command c = (Command) result_pattern_firstass2rootcmd_24_2_matchsrctrgcontext_binding[3];
+			Graph g = (Graph) result_pattern_firstass2rootcmd_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_firstass2rootcmd_24_2_matchsrctrgcontext_black = pattern_firstass2rootcmd_24_2_matchsrctrgcontext_blackBBBBBB(
-					g, a, p, c, sourceMatch, targetMatch);
+					c, a, p, g, sourceMatch, targetMatch);
 			if (result_pattern_firstass2rootcmd_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { g, a, p, c, sourceMatch, targetMatch };
+				return new Object[] { c, a, p, g, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_24_3_solvecsp_bindingFBBBBBBB(firstass2rootcmd _this, Graph g,
-			Assignment a, Program p, Command c, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(g, a, p, c, sourceMatch, targetMatch);
+	public static final Object[] pattern_firstass2rootcmd_24_3_solvecsp_bindingFBBBBBBB(firstass2rootcmd _this,
+			Command c, Assignment a, Program p, Graph g, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(c, a, p, g, sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, g, a, p, c, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, c, a, p, g, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2366,9 +2366,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_24_3_solvecsp_bindingAndBlackFBBBBBBB(firstass2rootcmd _this,
-			Graph g, Assignment a, Program p, Command c, Match sourceMatch, Match targetMatch) {
+			Command c, Assignment a, Program p, Graph g, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_firstass2rootcmd_24_3_solvecsp_binding = pattern_firstass2rootcmd_24_3_solvecsp_bindingFBBBBBBB(
-				_this, g, a, p, c, sourceMatch, targetMatch);
+				_this, c, a, p, g, sourceMatch, targetMatch);
 		if (result_pattern_firstass2rootcmd_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_firstass2rootcmd_24_3_solvecsp_binding[0];
 
@@ -2376,7 +2376,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 					csp);
 			if (result_pattern_firstass2rootcmd_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, g, a, p, c, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, c, a, p, g, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2388,13 +2388,13 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_firstass2rootcmd_24_5_matchcorrcontext_blackBFBBB(Graph g, Program p,
+	public static final Iterable<Object[]> pattern_firstass2rootcmd_24_5_matchcorrcontext_blackBBFBB(Program p, Graph g,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (P2G p2g : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(g, P2G.class, "target")) {
-				if (p.equals(p2g.getSource())) {
-					_result.add(new Object[] { g, p2g, p, sourceMatch, targetMatch });
+			for (P2G p2g : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(p, P2G.class, "source")) {
+				if (g.equals(p2g.getTarget())) {
+					_result.add(new Object[] { p, g, p2g, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2412,18 +2412,18 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		return new Object[] { p2g, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_24_6_createcorrespondence_blackBBBBB(Graph g, Assignment a,
-			Program p, Command c, CCMatch ccMatch) {
-		return new Object[] { g, a, p, c, ccMatch };
+	public static final Object[] pattern_firstass2rootcmd_24_6_createcorrespondence_blackBBBBB(Command c, Assignment a,
+			Program p, Graph g, CCMatch ccMatch) {
+		return new Object[] { c, a, p, g, ccMatch };
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_24_6_createcorrespondence_greenFBBB(Assignment a, Command c,
+	public static final Object[] pattern_firstass2rootcmd_24_6_createcorrespondence_greenBBFB(Command c, Assignment a,
 			CCMatch ccMatch) {
 		S2N f2r = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		f2r.setSource(a);
 		f2r.setTarget(c);
 		ccMatch.getCreateCorr().add(f2r);
-		return new Object[] { f2r, a, c, ccMatch };
+		return new Object[] { c, a, f2r, ccMatch };
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_24_7_addtoreturnedresult_blackBB(
@@ -2448,7 +2448,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_27_1_matchtggpattern_black_nac_0B(Assignment a) {
-		for (Decision __DEC_a_positive_61415 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (Decision __DEC_a_positive_861582 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				Decision.class, "positive")) {
 			return new Object[] { a };
 		}
@@ -2456,7 +2456,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_27_1_matchtggpattern_black_nac_1B(Assignment a) {
-		for (Decision __DEC_a_negative_237110 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (Decision __DEC_a_negative_230138 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				Decision.class, "negative")) {
 			return new Object[] { a };
 		}
@@ -2464,7 +2464,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_27_1_matchtggpattern_black_nac_2B(Assignment a) {
-		for (While __DEC_a_first_413134 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (While __DEC_a_first_822682 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				While.class, "first")) {
 			return new Object[] { a };
 		}
@@ -2472,7 +2472,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_27_1_matchtggpattern_black_nac_3B(Assignment a) {
-		for (While __DEC_a_last_33273 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (While __DEC_a_last_809201 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				While.class, "last")) {
 			return new Object[] { a };
 		}
@@ -2505,9 +2505,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_28_1_matchtggpattern_black_nac_0BB(Command c, Graph g) {
-		for (Graph __DEC_c_root_867570 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+		for (Graph __DEC_c_root_14176 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 				Graph.class, "root")) {
-			if (!g.equals(__DEC_c_root_867570)) {
+			if (!g.equals(__DEC_c_root_14176)) {
 				return new Object[] { c, g };
 			}
 		}
@@ -2515,7 +2515,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_28_1_matchtggpattern_black_nac_1B(Command c) {
-		for (Branch __DEC_c_positive_841692 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+		for (Branch __DEC_c_positive_326825 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 				Branch.class, "positive")) {
 			return new Object[] { c };
 		}
@@ -2523,19 +2523,19 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_28_1_matchtggpattern_black_nac_2B(Command c) {
-		for (Branch __DEC_c_negative_128707 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+		for (Branch __DEC_c_negative_681186 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 				Branch.class, "negative")) {
 			return new Object[] { c };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_28_1_matchtggpattern_blackBB(Graph g, Command c) {
+	public static final Object[] pattern_firstass2rootcmd_28_1_matchtggpattern_blackBB(Command c, Graph g) {
 		if (c.equals(g.getRoot())) {
 			if (pattern_firstass2rootcmd_28_1_matchtggpattern_black_nac_0BB(c, g) == null) {
 				if (pattern_firstass2rootcmd_28_1_matchtggpattern_black_nac_1B(c) == null) {
 					if (pattern_firstass2rootcmd_28_1_matchtggpattern_black_nac_2B(c) == null) {
-						return new Object[] { g, c };
+						return new Object[] { c, g };
 					}
 				}
 			}
@@ -2566,9 +2566,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Graph g) {
-		if (ruleResult.getTargetObjects().contains(g)) {
-			return new Object[] { ruleResult, g };
+			ModelgeneratorRuleResult ruleResult, Program p) {
+		if (ruleResult.getSourceObjects().contains(p)) {
+			return new Object[] { ruleResult, p };
 		}
 		return null;
 	}
@@ -2582,9 +2582,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Program p) {
-		if (ruleResult.getSourceObjects().contains(p)) {
-			return new Object[] { ruleResult, p };
+			ModelgeneratorRuleResult ruleResult, Graph g) {
+		if (ruleResult.getTargetObjects().contains(g)) {
+			return new Object[] { ruleResult, g };
 		}
 		return null;
 	}
@@ -2596,17 +2596,17 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 			for (EObject tmpP2g : p2gList.getEntryObjects()) {
 				if (tmpP2g instanceof P2G) {
 					P2G p2g = (P2G) tmpP2g;
-					Graph g = p2g.getTarget();
-					if (g != null) {
-						Program p = p2g.getSource();
-						if (p != null) {
+					Program p = p2g.getSource();
+					if (p != null) {
+						Graph g = p2g.getTarget();
+						if (g != null) {
 							if (pattern_firstass2rootcmd_29_2_isapplicablecore_black_nac_1BB(ruleResult, p2g) == null) {
 								if (pattern_firstass2rootcmd_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-										g) == null) {
+										p) == null) {
 									if (pattern_firstass2rootcmd_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											p) == null) {
+											g) == null) {
 										_result.add(
-												new Object[] { p2gList, g, p2g, p, ruleEntryContainer, ruleResult });
+												new Object[] { p2gList, p, p2g, g, ruleEntryContainer, ruleResult });
 									}
 								}
 							}
@@ -2621,11 +2621,11 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_29_3_solveCSP_bindingFBBBBBB(firstass2rootcmd _this,
-			IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Program p, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, g, p2g, p, ruleResult);
+			IsApplicableMatch isApplicableMatch, Program p, Graph g, P2G p2g, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, p, g, p2g, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, g, p2g, p, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, p, g, p2g, ruleResult };
 		}
 		return null;
 	}
@@ -2635,9 +2635,9 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 	}
 
 	public static final Object[] pattern_firstass2rootcmd_29_3_solveCSP_bindingAndBlackFBBBBBB(firstass2rootcmd _this,
-			IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Program p, ModelgeneratorRuleResult ruleResult) {
+			IsApplicableMatch isApplicableMatch, Program p, Graph g, P2G p2g, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_firstass2rootcmd_29_3_solveCSP_binding = pattern_firstass2rootcmd_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, g, p2g, p, ruleResult);
+				_this, isApplicableMatch, p, g, p2g, ruleResult);
 		if (result_pattern_firstass2rootcmd_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_firstass2rootcmd_29_3_solveCSP_binding[0];
 
@@ -2645,7 +2645,7 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 					csp);
 			if (result_pattern_firstass2rootcmd_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, g, p2g, p, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, p, g, p2g, ruleResult };
 			}
 		}
 		return null;
@@ -2657,33 +2657,33 @@ public class firstass2rootcmdImpl extends AbstractRuleImpl implements firstass2r
 		return _result;
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_29_5_checknacs_blackBBB(Graph g, P2G p2g, Program p) {
-		return new Object[] { g, p2g, p };
+	public static final Object[] pattern_firstass2rootcmd_29_5_checknacs_blackBBB(Program p, Graph g, P2G p2g) {
+		return new Object[] { p, g, p2g };
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_29_6_perform_blackBBBB(Graph g, P2G p2g, Program p,
+	public static final Object[] pattern_firstass2rootcmd_29_6_perform_blackBBBB(Program p, Graph g, P2G p2g,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { g, p2g, p, ruleResult };
+		return new Object[] { p, g, p2g, ruleResult };
 	}
 
-	public static final Object[] pattern_firstass2rootcmd_29_6_perform_greenFBFBFB(Graph g, Program p,
+	public static final Object[] pattern_firstass2rootcmd_29_6_perform_greenFFFBBB(Program p, Graph g,
 			ModelgeneratorRuleResult ruleResult) {
-		S2N f2r = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
-		Assignment a = SourcecodeFactory.eINSTANCE.createAssignment();
 		Command c = ControlflowFactory.eINSTANCE.createCommand();
+		Assignment a = SourcecodeFactory.eINSTANCE.createAssignment();
+		S2N f2r = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(f2r);
-		f2r.setSource(a);
+		g.setRoot(c);
+		ruleResult.getTargetObjects().add(c);
 		p.setFirst(a);
 		ruleResult.getSourceObjects().add(a);
-		g.setRoot(c);
+		f2r.setSource(a);
 		f2r.setTarget(c);
-		ruleResult.getTargetObjects().add(c);
+		ruleResult.getCorrObjects().add(f2r);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { f2r, g, a, p, c, ruleResult };
+		return new Object[] { c, a, f2r, p, g, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_firstass2rootcmd_29_7_expressionFB(
