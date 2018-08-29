@@ -17,8 +17,6 @@
 
 package org.wbsilva.bence.evaluation;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.ThreadMXBean;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -223,8 +221,9 @@ public class Main {
 	 * @return		The current time for this thread
 	 */
 	private static long getTime() {
-		ThreadMXBean bean = ManagementFactory.getThreadMXBean();
-		return bean.isCurrentThreadCpuTimeSupported() ? bean.getCurrentThreadCpuTime() : System.nanoTime();
+		//ThreadMXBean bean = ManagementFactory.getThreadMXBean();
+		//return bean.isCurrentThreadCpuTimeSupported() ? bean.getCurrentThreadCpuTime() : System.nanoTime();
+		return System.nanoTime();
 	}
 
 }
