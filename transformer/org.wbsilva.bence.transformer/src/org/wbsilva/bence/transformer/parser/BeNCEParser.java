@@ -221,11 +221,11 @@ public class BeNCEParser {
 				bup = new Bup(initialZoneVertices, this.maxr, rootZV);
 			break;
 			case GREEDY:
-				bup = new GreedyBup(initialZoneVertices, this.maxr, rootZV);
+				bup = new GreedyBup(initialZoneVertices, this.maxr, rootZV, graph);
 			break;
 			default:
 				logger.debug(String.format("Chosen strategy %s not implemented, falling back to %s.", this.strategy, Strategy.GREEDY));
-				bup = new GreedyBup(initialZoneVertices, this.maxr, rootZV);
+				bup = new GreedyBup(initialZoneVertices, this.maxr, rootZV, graph);
 			}
 			logger.debug(String.format("Using strategy %s", this.strategy));
 			
