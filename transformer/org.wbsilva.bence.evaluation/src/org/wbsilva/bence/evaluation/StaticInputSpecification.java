@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.wbsilva.bence.transformer.util.TransformerUtil;
 
 /**
- * TODO
+ * A static input specification that loads models from files
  * @author wbombardellis
  *
  */
@@ -24,6 +24,11 @@ public class StaticInputSpecification implements IInputSpecification{
 		this.paths = new ArrayList<>(paths);
 	}
 
+	/**
+	 * Return an iterator over the loaded models according to the paths given in the construction of this object.
+	 * If any model cannot be load, than the iterator returns empty for it, otherwise it gives the loaded model 
+	 * in the resource set given in the construction of this object.
+	 */
 	@Override
 	public Iterator<Optional<EObject>> iterator() {
 		return new Iterator<Optional<EObject>>() {

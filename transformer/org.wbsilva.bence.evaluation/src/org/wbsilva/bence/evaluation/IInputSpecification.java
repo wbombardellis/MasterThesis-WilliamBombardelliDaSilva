@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * TODO
+ * The specification of a series of input models to be transformed
  * @author wbombardellis
  *
  */

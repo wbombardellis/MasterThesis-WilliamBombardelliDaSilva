@@ -61,25 +61,18 @@ public class Main {
 		try {
 			TransformerUtil.registerPackages(resSet);
 			
-			workLoad.put(
-					new TGGSpecification("../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/model/Sourcecode2controlflow.xmi",
-							"../../metamodels/org.wbsilva.mm.sourcecode/model/Sourcecode.ecore",
-							Sourcecode2controlflowPackage.eINSTANCE, "../../tgg/org.wbsilva.bx.sourcecode2controlflow",
-							true),
-					new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Src00.xmi"))
-					);
-			/*workLoad.put(
-					new TGGSpecification("../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/model/Sourcecode2controlflow.xmi",
-							"../../metamodels/org.wbsilva.mm.controlflow/model/Controlflow.ecore", false),
-					new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Trg00.xmi"))
-					);*/
+			workLoad.put(new TGGSpecification(SourcecodePackage.eINSTANCE, ControlflowPackage.eINSTANCE,
+							"../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/model/Sourcecode2controlflow.xmi",
+							Sourcecode2controlflowPackage.eINSTANCE, "../../tgg/org.wbsilva.bx.sourcecode2controlflow", true),
+						new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Src00.xmi",
+																		   "../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Src01.xmi")));
 		} catch (Exception e) {
 			workLoad = null;
 		}
 	}
 
 	public static void main(String[] args) {
-		logger.debug("=========== Starting Evaluation ===========");
+		logger.debug("========================= Starting Evaluation =========================");
 		
 		if (workLoad == null) {
 			logger.error("Initialization failed. Work load is null. Aborting.");
@@ -101,6 +94,7 @@ public class Main {
 		//For each transformation job
 		for (Entry<TGGSpecification, IInputSpecification> job : workLoad.entrySet()) {
 			try {
+				logger.debug("================ Begin Job ================");
 				final TGGSpecification tggSpec = job.getKey();
 				
 				//Read input grammar
@@ -111,8 +105,8 @@ public class Main {
 					assert benceTGG != null;
 					logger.debug("Triple graph grammar model read successfully. Using: "+ benceTGG.getName());
 					
-					TransformerUtil.registerPackages(resSet, SourcecodePackage.eINSTANCE);
-					TransformerUtil.registerPackages(resSet, ControlflowPackage.eINSTANCE);
+					TransformerUtil.registerPackages(resSet, tggSpec.getSourcePackage());
+					TransformerUtil.registerPackages(resSet, tggSpec.getTargetPackage());
 					
 					//The transformers eagerly initialized
 					final BeNCETransformer benceTransformer = new BeNCETransformer(benceTGG, tggSpec.getForward());
@@ -151,7 +145,7 @@ public class Main {
 									benceUnsuccess++;
 								}
 								logger.info(String.format("BeNCE transformation, elapsed time: %f s", elapsedTime / 1e9));
-								logger.debug(String.format("=== Finished BeNCE Evaluation %d===", run));
+								logger.debug(String.format("=== Finished BeNCE Evaluation %d ===", run));
 								
 								
 								
@@ -194,12 +188,14 @@ public class Main {
 				} else {
 					logger.warn("Skipping evaluation for triple graph grammar in file "+ tggSpec.getBenceTGGPath());
 				}
+				logger.debug("================ End Job ================");
 			} catch (Exception e) {
 				//Errors has been logged in the read method
 				continue;
 			}
 		}
 
+		logger.debug("##############################");
 		logger.debug("### Results for BeNCE ###");
 		logger.debug(String.format("Total runs: %d", benceRuns));
 		logger.debug(String.format("Total successful: %d", benceSuccess));
@@ -217,8 +213,9 @@ public class Main {
 		logger.debug(eMoflonRuns > 0 ?
 				String.format("Average time: %f s", (eMoflonTime / 1e9 / eMoflonRuns)) 
 				: "Average time: -");
+		logger.debug("##############################");
 		
-		logger.debug("=========== Ending Evaluation Successfully ===========");
+		logger.debug("========================= Ending Evaluation Successfully =========================");
 	}
 
 	/**
