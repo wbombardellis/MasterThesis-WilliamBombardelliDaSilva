@@ -62,16 +62,16 @@ public class Main {
 		try {
 			TransformerUtil.registerPackages(resSet);
 			
+			workLoad.put(new TGGSpecification(SourcecodePackage.eINSTANCE, ControlflowPackage.eINSTANCE,
+							"../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/model/Sourcecode2controlflow.xmi",
+							Sourcecode2controlflowPackage.eINSTANCE, "../../tgg/org.wbsilva.bx.sourcecode2controlflow", true),
+						new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Src00.xmi",
+																		   "../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Src01.xmi")));
 			workLoad.put(new TGGSpecification(BtreePackage.eINSTANCE, XbtreePackage.eINSTANCE,
 					"../../bence/org.wbsilva.bence.bx.btree2xbtree/model/Btree2xbtree.xmi",
 					Btree2xbtreePackage.eINSTANCE, "../../tgg/org.wbsilva.bx.btree2xbtree", true),
-				new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/Src00.xmi",
-																   "../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/Src01.xmi")));
-//			workLoad.put(new TGGSpecification(SourcecodePackage.eINSTANCE, ControlflowPackage.eINSTANCE,
-//							"../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/model/Sourcecode2controlflow.xmi",
-//							Sourcecode2controlflowPackage.eINSTANCE, "../../tgg/org.wbsilva.bx.sourcecode2controlflow", true),
-//						new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Src00.xmi",
-//																		   "../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Src01.xmi")));
+					new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/Src00.xmi",
+																	   "../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/Src01.xmi")));
 		} catch (Exception e) {
 			workLoad = null;
 		}
