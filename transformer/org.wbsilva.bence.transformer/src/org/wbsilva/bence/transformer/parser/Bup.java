@@ -84,6 +84,8 @@ public class Bup implements IBup{
 		else
 			bupSet = new HashSet<>();
 		
+		assert maximalSubsetSize >= 0;
+		
 		this.maximalSubsetSize = maximalSubsetSize; 
 		
 		phase = 0;
