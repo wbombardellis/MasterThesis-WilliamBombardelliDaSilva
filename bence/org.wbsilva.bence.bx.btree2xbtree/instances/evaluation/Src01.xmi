@@ -5,28 +5,13 @@
     xmlns:org.wbsilva.mm.btree="platform:/plugin/org.wbsilva.mm.btree/model/Btree.ecore">
   <l>
     <l>
-      <l>
-        <l/>
-        <r/>
-      </l>
-      <r>
-        <l/>
-        <r/>
-      </r>
-    </l>
-    <r>
       <l/>
       <r/>
-    </r>
+    </l>
+    <r/>
   </l>
   <r>
-    <l>
-      <l/>
-      <r/>
-    </l>
-    <r>
-      <l/>
-      <r/>
-    </r>
+    <l/>
+    <r/>
   </r>
 </org.wbsilva.mm.btree:BTNode>
