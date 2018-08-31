@@ -121,6 +121,83 @@ public class GraphgrammarUtil {
 			return false;
 		}
 	}
+	
+	/**
+	 * Calculates swiftly the 2-distance between all vertices of {@code graph}.
+	 * The 2-distance d(v,w) between two vertices v and w is as follows:
+	 * d(v,v) = 0
+	 * if the least path between v and w is of size 1 (i.e. v and w are immediate neighbors), then d(v,w) = 1
+	 * if the least path between v and w is of size 2, (i.e. v and w are 2-neighbors), then d(v,w) = 3
+	 * otherwise d(v,w) is undefined
+	 * @param graph		The graph to calculate the 2-distance
+	 * @return			A map from the vertices' ids to a map from vertices' ids to an integer containing the 2-distance between the former and the latter
+	 */
+	public static Map<String, Map<String, Integer>> distance(final Graph graph){
+		assert graph != null;
+		
+		final Map<String, Map<String, Integer>> distance = new HashMap<>(graph.getVertices().size());
+		
+		Vertex[] vArray = new Vertex[graph.getVertices().size()];
+		vArray = graph.getVertices().toArray(vArray);
+		
+		//For each vertex, without repetition
+		for (int i = 0; i < vArray.length; i++) {
+			final Vertex v = vArray[i];
+			
+			//Reflexive case 
+			final Map<String, Integer> m = new HashMap<>();
+			m.put(v.getId(), 0);
+			distance.merge(v.getId(), m, (a,b) -> {
+				a.putAll(b);
+				return a;
+			});
+			
+			for (int j = i+1; j < vArray.length; j++) {
+				final Vertex w = vArray[j];
+				
+				//If w is an immediate(one-) neighbor of v
+				if (graph.getEdges().stream().anyMatch(e -> e.getFrom() == v && e.getTo() == w)
+					|| graph.getEdges().stream().anyMatch(e -> e.getTo() == v && e.getFrom() == w)){
+					
+					//Index distance in the map (also with symmetry)
+					final Map<String, Integer> wM = new HashMap<>();
+					wM.put(w.getId(), 1);
+					distance.merge(v.getId(), wM, (a,b) -> {
+						a.putAll(b);
+						return a;
+					});
+					final Map<String, Integer> vM = new HashMap<>();
+					vM.put(v.getId(), 1);
+					distance.merge(w.getId(), vM, (a,b) -> {
+						a.putAll(b);
+						return a;
+					});
+				
+				//If w is a two-neighbor of v
+				} else if (graph.getEdges().stream()
+								.anyMatch(e -> e.getFrom() == v &&  graph.neighborhood(e.getTo()).contains(w))
+							|| graph.getEdges().stream()
+								.anyMatch(e -> e.getTo() == v &&  graph.neighborhood(e.getFrom()).contains(w))){
+					
+					//Index distance in the map
+					final Map<String, Integer> wM = new HashMap<>();
+					wM.put(w.getId(), 3);
+					distance.merge(v.getId(), wM, (a,b) -> {
+						a.putAll(b);
+						return a;
+					});
+					final Map<String, Integer> vM = new HashMap<>();
+					vM.put(v.getId(), 3);
+					distance.merge(w.getId(), vM, (a,b) -> {
+						a.putAll(b);
+						return a;
+					});
+				}
+			}
+		}
+
+		return distance;
+	}
 
 	/**
 	 * Set new unique IDs for each vertex in {@code vertices}
