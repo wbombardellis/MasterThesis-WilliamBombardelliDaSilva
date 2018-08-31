@@ -40,7 +40,8 @@ public class BeNCEParser {
 
 	public enum Strategy{
 		NAIVE,
-		GREEDY;
+		GREEDY,
+		GREEDY_AWARE;
 	};
 	
 	private final Grammar grammar;
@@ -158,7 +159,7 @@ public class BeNCEParser {
 	}
 	
 	public BeNCEParser(final Grammar grammar){
-		this(grammar, Strategy.GREEDY);
+		this(grammar, Strategy.GREEDY_AWARE);
 	}
 	
 	public BeNCEParser(final Grammar grammar, final Strategy strategy){
@@ -234,10 +235,15 @@ public class BeNCEParser {
 				logger.debug(String.format("Using strategy %s", this.strategy));
 			break;
 			case GREEDY:
+				bup = new GreedyBup(initialZoneVertices, this.maxr, rootZV);
+				logger.debug(String.format("Using strategy %s", this.strategy));
+			break;
+			case GREEDY_AWARE:
 				bup = new GreedyAwareBup(initialZoneVertices, this.maxr, rootZV, this.grammar, graph, depths);
 				logger.debug(String.format("Using strategy %s", this.strategy));
 			break;
 			default:
+				assert false;
 				logger.debug(String.format("Chosen strategy %s not implemented, falling back to %s.", this.strategy, Strategy.GREEDY));
 				bup = new GreedyBup(initialZoneVertices, this.maxr, rootZV);
 			}
