@@ -20,5 +20,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.bx.sourcecode2controlflow"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.bence.graphgrammar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.bx.btree2xbtree"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.mm.graph"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
