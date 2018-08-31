@@ -4,16 +4,16 @@ import org.wbsilva.bence.graphgrammar.ParsingTree;
 import org.wbsilva.bence.graphgrammar.TripleGraph;
 
 /**
- * A class for holding the result of a transformation
+ * A class for holding the result of a TGG transformation
  * @author wbombardellis
  *
  */
-public class TransformationResult {
+public class BeNCETransformationResult {
 
 	final private TripleGraph tripleGraph;
 	final private ParsingTree parsingTree;
 
-	public TransformationResult(final TripleGraph tripleGraph, final ParsingTree parsingTree) {		
+	public BeNCETransformationResult(final TripleGraph tripleGraph, final ParsingTree parsingTree) {		
 		this.tripleGraph = tripleGraph;
 		this.parsingTree = parsingTree;
 	}
