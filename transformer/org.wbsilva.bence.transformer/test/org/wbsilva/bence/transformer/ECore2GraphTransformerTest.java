@@ -3,6 +3,8 @@ package org.wbsilva.bence.transformer;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -70,17 +72,22 @@ class ECore2GraphTransformerTest {
 	@Test
 	void testTransformOne() {
 		ECore2GraphTransformer transformer = new ECore2GraphTransformer();
-		Graph g0 = transformer.transform(obj1);
+		E2GTransformationResult r = transformer.transform(obj1);
+		Graph g0 = r.getGraph();
+		Map<String, Integer> d = r.getDepths();
 		
 		assertTrue(GraphgrammarUtil.isValidGraph(g0));
 		assertEquals(1, g0.getVertices().size());
 		assertEquals("A", g0.getVertices().get(0).getLabel().getName());
+		assertTrue(0 == d.get(g0.getVertices().get(0).getId()));
 	}
 
 	@Test
 	void testTransformWithOneChild() {
 		ECore2GraphTransformer transformer = new ECore2GraphTransformer();
-		Graph g0 = transformer.transform(obj2);
+		E2GTransformationResult r = transformer.transform(obj2);
+		Graph g0 = r.getGraph();
+		Map<String, Integer> d = r.getDepths();
 		
 		assertTrue(GraphgrammarUtil.isValidGraph(g0));
 		assertEquals(2, g0.getVertices().size());
@@ -88,13 +95,17 @@ class ECore2GraphTransformerTest {
 		
 		assertEquals(1, g0.getEdges().size());
 		assertEquals("C", g0.getEdges().get(0).getLabel().getName());
+		assertTrue(0 == d.get(g0.getEdges().get(0).getFrom().getId()));
+		assertTrue(1 == d.get(g0.getEdges().get(0).getTo().getId()));
 	}
 	
 	@Test
 	void testTransformWithNonContainedChildAndLists() {
 		ECore2GraphTransformer transformer = new ECore2GraphTransformer();
-		Graph g0 = transformer.transform(obj3);
-		
+		E2GTransformationResult r = transformer.transform(obj3);
+		Graph g0 = r.getGraph(); 
+		Map<String, Integer> d = r.getDepths();
+				
 		assertTrue(GraphgrammarUtil.isValidGraph(g0));
 		assertEquals(3, g0.getVertices().size());
 		assertTrue(g0.getVertices().stream().allMatch(v -> v.getLabel().getName().equals("A")));
@@ -102,12 +113,20 @@ class ECore2GraphTransformerTest {
 		assertEquals(3, g0.getEdges().size());
 		assertTrue(g0.getEdges().stream()
 				.allMatch(e -> e.getLabel().getName().equals("B") || e.getLabel().getName().equals("C")));
+		
+		assertTrue(d.entrySet().stream()
+				.noneMatch(e -> !g0.getVertices().stream()
+						.map(v -> v.getId())
+						.collect(Collectors.toSet())
+						.contains(e.getKey())));
 	}
 	
 	@Test
 	void testTransformLoop() {
 		ECore2GraphTransformer transformer = new ECore2GraphTransformer();
-		Graph g0 = transformer.transform(obj4);
+		E2GTransformationResult r = transformer.transform(obj4);
+		Graph g0 = r.getGraph();
+		Map<String, Integer> d = r.getDepths();
 		
 		assertTrue(GraphgrammarUtil.isValidGraph(g0, true));
 		assertEquals(4, g0.getVertices().size());
@@ -116,5 +135,11 @@ class ECore2GraphTransformerTest {
 		assertEquals(5, g0.getEdges().size());
 		assertTrue(g0.getEdges().stream()
 				.allMatch(e -> e.getLabel().getName().equals("B") || e.getLabel().getName().equals("C")));
+		
+		assertTrue(d.entrySet().stream()
+					.noneMatch(e -> !g0.getVertices().stream()
+							.map(v -> v.getId())
+							.collect(Collectors.toSet())
+							.contains(e.getKey())));
 	}
 }
