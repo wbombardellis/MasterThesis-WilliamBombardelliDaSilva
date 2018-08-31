@@ -42,6 +42,7 @@ import org.wbsilva.bx.sourcecode2controlflow.Sourcecode2controlflowPackage;
 
 import btree.BtreePackage;
 import controlflow.ControlflowPackage;
+import graph.GraphPackage;
 import sourcecode.SourcecodePackage;
 import xbtree.XbtreePackage;
 
@@ -53,32 +54,33 @@ import xbtree.XbtreePackage;
 public class Main {
 	static final Logger logger = LogManager.getLogger(Main.class);
 	
-	private static Map<TGGSpecification, IInputSpecification> workLoad = new HashMap<>();
-	private final static ResourceSet resSet; 
-	
-	static {
+	public static void main(String[] args) {
+		Map<TGGSpecification, IInputSpecification> workLoad = new HashMap<>();
+		
 		//Bureaucratic tasks of initialization
 		TransformerUtil.registerFactories();
-		resSet = new ResourceSetImpl();
+		final ResourceSet resSet = new ResourceSetImpl();
 		try {
 			TransformerUtil.registerPackages(resSet);
 			
+			workLoad.put(new TGGSpecification(GraphPackage.eINSTANCE, GraphPackage.eINSTANCE,
+						"../../bence/org.wbsilva.bence.bx.star2wheel/model/Star2wheel.xmi",
+						null, null, true),
+						new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.star2wheel/instances/evaluation/Src00.xmi")));
 			workLoad.put(new TGGSpecification(SourcecodePackage.eINSTANCE, ControlflowPackage.eINSTANCE,
 							"../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/model/Sourcecode2controlflow.xmi",
 							Sourcecode2controlflowPackage.eINSTANCE, "../../tgg/org.wbsilva.bx.sourcecode2controlflow", true),
 						new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Src00.xmi",
 																		   "../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Src01.xmi")));
 			workLoad.put(new TGGSpecification(BtreePackage.eINSTANCE, XbtreePackage.eINSTANCE,
-					"../../bence/org.wbsilva.bence.bx.btree2xbtree/model/Btree2xbtree.xmi",
-					Btree2xbtreePackage.eINSTANCE, "../../tgg/org.wbsilva.bx.btree2xbtree", true),
-					new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/Src00.xmi",
+						"../../bence/org.wbsilva.bence.bx.btree2xbtree/model/Btree2xbtree.xmi",
+						Btree2xbtreePackage.eINSTANCE, "../../tgg/org.wbsilva.bx.btree2xbtree", true),
+						new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/Src00.xmi",
 																	   "../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/Src01.xmi")));
 		} catch (Exception e) {
 			workLoad = null;
 		}
-	}
-
-	public static void main(String[] args) {
+				
 		logger.debug("========================= Starting Evaluation =========================");
 		
 		if (workLoad == null) {
@@ -159,45 +161,49 @@ public class Main {
 					}
 
 					///////Evaluate eMoflon TGG transformer
-					final EMoflonAdapter eMoflonTransformer = new EMoflonAdapter(resSet, tggSpec.getEMoflonTGGPackage(), tggSpec.getEMoflonTGGPath(), tggSpec.getForward());
-					
-					run = 0;
-					final Iterator<Optional<EObject>> eit = job.getValue().iterator();
-					while(eit.hasNext()) {
-						final Optional<EObject> inputModelOpt = eit.next();
+					if (tggSpec.getEMoflonTGGPackage() != null && tggSpec.getEMoflonTGGPath() != null) {
+						final EMoflonAdapter eMoflonTransformer = new EMoflonAdapter(resSet, tggSpec.getEMoflonTGGPackage(), tggSpec.getEMoflonTGGPath(), tggSpec.getForward());
 						
-						if (inputModelOpt.isPresent()) {
-							final EObject inputModel = inputModelOpt.get();
-							try {
-								assert inputModel != null;
-								logger.debug("Graph model read successfully. Using model: "+ inputModel);
-								logger.debug(String.format("=== Starting eMoflon Evaluation %d ===", run));
-								
-								//Actual transformation and time measurement
-								long start = getTime();
-								final Optional<BeNCETransformationResult> eMoflonResult = eMoflonTransformer.transform(inputModel);
-								long elapsedTime = getTime() - start;
-								
-								eMoflonTime += elapsedTime;
-								eMoflonRuns++;
-								if (eMoflonResult.isPresent()) {
-									logger.info(String.format("eMoflon transformation of %s with grammar %s finished successfully.", inputModel, benceTGG.getName()));
-									eMoflonSuccess++;
-								} else {
-									logger.info(String.format("eMoflon transformation of %s with grammar %s finished withouth success.", inputModel, benceTGG.getName()));
-									eMoflonUnsuccess++;
+						run = 0;
+						final Iterator<Optional<EObject>> eit = job.getValue().iterator();
+						while(eit.hasNext()) {
+							final Optional<EObject> inputModelOpt = eit.next();
+							
+							if (inputModelOpt.isPresent()) {
+								final EObject inputModel = inputModelOpt.get();
+								try {
+									assert inputModel != null;
+									logger.debug("Graph model read successfully. Using model: "+ inputModel);
+									logger.debug(String.format("=== Starting eMoflon Evaluation %d ===", run));
+									
+									//Actual transformation and time measurement
+									long start = getTime();
+									final Optional<BeNCETransformationResult> eMoflonResult = eMoflonTransformer.transform(inputModel);
+									long elapsedTime = getTime() - start;
+									
+									eMoflonTime += elapsedTime;
+									eMoflonRuns++;
+									if (eMoflonResult.isPresent()) {
+										logger.info(String.format("eMoflon transformation of %s with grammar %s finished successfully.", inputModel, benceTGG.getName()));
+										eMoflonSuccess++;
+									} else {
+										logger.info(String.format("eMoflon transformation of %s with grammar %s finished withouth success.", inputModel, benceTGG.getName()));
+										eMoflonUnsuccess++;
+									}
+									logger.info(String.format("eMoflon transformation, elapsed time: %f s", elapsedTime / 1e9));
+									logger.debug(String.format("=== Finished eMoflon Evaluation %d ===", run));
+								} catch (Exception ex) {
+									logger.error(String.format("A unexpected exception occurred during the transformation of model %s"
+											+ ". Skipping it. Exception: %s", inputModel, ex));
 								}
-								logger.info(String.format("eMoflon transformation, elapsed time: %f s", elapsedTime / 1e9));
-								logger.debug(String.format("=== Finished eMoflon Evaluation %d ===", run));
-							} catch (Exception ex) {
-								logger.error(String.format("A unexpected exception occurred during the transformation of model %s"
-										+ ". Skipping it. Exception: %s", inputModel, ex));
+							} else {
+								logger.warn(String.format("Run %d. Skipping evaluation for an input model. Was empty.", run));
 							}
-						} else {
-							logger.warn(String.format("Run %d. Skipping evaluation for an input model. Was empty.", run));
+	
+							run++;
 						}
-
-						run++;
+					} else {
+						logger.warn("Skipping evaluation for eMoflon comparable to " + tggSpec.getBenceTGGPath());
 					}
 				
 					///////Future work: Compare results using isomorphism check
