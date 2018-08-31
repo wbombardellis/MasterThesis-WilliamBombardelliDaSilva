@@ -24,7 +24,7 @@ class GreedyBup extends Bup {
 	 * 
 	 * @example centralQueue = [{},{a,b},{a,b,c},{a},{b}]
 	 */
-	final protected PriorityQueue<Set<ZoneVertex>> centralQueue;
+	protected PriorityQueue<Set<ZoneVertex>> centralQueue;
 	
 	/**
 	 * The comparator for the sets of zone vertices. The more vertices the zone vertices of a set has,
@@ -69,24 +69,6 @@ class GreedyBup extends Bup {
 		
 		//The central queue holds all generated but not yet consumed subsets ordered in their size
 		this.centralQueue = new PriorityQueue<>(ZVSET_COMPARATOR);
-		
-		if (phase <= lastPhase()) {
-			assert this.queues.size() > 0;
-			
-			this.centralQueue.addAll(this.queues.get(this.phase));
-		}
-	}
-	
-	/**
-	 * Same contract as {@link Bup#Bup(Set, int, ZoneVertex)} with additional parameter for the subsets comparator
-	 * @see Bup
-	 * @see Comparator
-	 */
-	protected GreedyBup(final Set<ZoneVertex> initialSet, final int maximalSubsetSize, final ZoneVertex root, final Comparator<Set<ZoneVertex>> ssComparator) {
-		super(initialSet, maximalSubsetSize, root);
-		
-		//The central queue holds all generated but not yet consumed subsets ordered in their size
-		this.centralQueue = new PriorityQueue<>(ssComparator);
 		
 		if (phase <= lastPhase()) {
 			assert this.queues.size() > 0;
