@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -182,21 +183,32 @@ public class BeNCEParser {
 	 * The parser works even if the grammar is ambiguous, in which case only one parsing tree is returned by this method.
 	 * The graph has to be a valid boundary graph.
 	 * The grammar has also to be valid and neighborhood preserving boundary.
+	 * The depth of a vertex v can be seen as some kind of distance from v to the graph's root, supposing the graph has a root
+	 * or a pseudoroot, that was e.g. the first vertex to be load. It cannot contain ids that are not in the graph. 
+	 * It does not need to contain the depth of all vertices, though.
 	 *  
 	 * @param graph			The graph to be parsed. Cannot be null
+	 * @param depths		The depth of each vertex of {@code graph}, mapped by its id. Cannot be null. May be empty.
 	 * @param threadCount	The amount of thread to use for the parsing
 	 * @return				The parsing tree for the input {@code graph} and the {@code grammar} of this class. 
 	 * 						Or empty if it is not part of the language.
 	 */
-	public Optional<ParsingTree> parse(final Graph graph, int threadCount) {
+	public Optional<ParsingTree> parse(final Graph graph, final Map<String, Integer> depths, int threadCount) {
 		assert graph != null;
+		assert depths != null;
 		assert GraphgrammarUtil.isValidGraph(graph);
+		assert depths.size() == graph.getVertices().size();
+		assert depths.entrySet().stream()
+				.noneMatch(e -> !graph.getVertices().stream()
+									.map(v -> v.getId())
+									.collect(Collectors.toSet())
+									.contains(e.getKey()));
 		
 		if (threadCount <= 0) {
 			threadCount = DEFAULT_THREAD_COUNT;
 		}
 		
-		logger.debug(String.format("Starting parsing of the graph %s", graph));
+		logger.debug(String.format("Starting parsing of the graph %s with %d threads", graph, threadCount));
 		
 		//If not all labels are terminals, return fail right away
 		if (graph.getVertices().stream()
@@ -219,15 +231,16 @@ public class BeNCEParser {
 			switch(this.strategy) {
 			case NAIVE:
 				bup = new Bup(initialZoneVertices, this.maxr, rootZV);
+				logger.debug(String.format("Using strategy %s", this.strategy));
 			break;
 			case GREEDY:
-				bup = new GreedyBup(initialZoneVertices, this.maxr, rootZV, graph);
+				bup = new GreedyAwareBup(initialZoneVertices, this.maxr, rootZV, this.grammar, graph, depths);
+				logger.debug(String.format("Using strategy %s", this.strategy));
 			break;
 			default:
 				logger.debug(String.format("Chosen strategy %s not implemented, falling back to %s.", this.strategy, Strategy.GREEDY));
-				bup = new GreedyBup(initialZoneVertices, this.maxr, rootZV, graph);
+				bup = new GreedyBup(initialZoneVertices, this.maxr, rootZV);
 			}
-			logger.debug(String.format("Using strategy %s", this.strategy));
 			
 			//Forest of possible parsing trees
 			final Set<ParsingTree> parsingForest = new HashSet<ParsingTree>();
@@ -277,11 +290,11 @@ public class BeNCEParser {
 	}
 	
 	/**
-	 * Same contract as {@link BeNCEParser#parse(Graph, int)} except that it uses the default thread count
-	 * @see BeNCEParser#parse(Graph, int)
+	 * Same contract as {@link BeNCEParser#parse(Graph, Map, int)} except that it uses the default thread count
+	 * @see BeNCEParser#parse(Graph, Map, int)
 	 */
-	public Optional<ParsingTree> parse(final Graph graph) {
-		return this.parse(graph, DEFAULT_THREAD_COUNT);
+	public Optional<ParsingTree> parse(final Graph graph, final Map<String, Integer> depths) {
+		return this.parse(graph, depths, DEFAULT_THREAD_COUNT);
 	}
 
 	/**
@@ -510,4 +523,5 @@ public class BeNCEParser {
 			.flatMap(v -> v.getVertices().stream().map(w -> EcoreUtil.copy(w))) 
 			.collect(Collectors.toSet());
 	}
+
 }

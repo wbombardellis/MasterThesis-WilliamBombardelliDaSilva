@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.wbsilva.bence.transformer.BeNCETransformer;
-import org.wbsilva.bence.transformer.TransformationResult;
+import org.wbsilva.bence.transformer.BeNCETransformationResult;
 
 /**
  * This class is an adapter for the eMoflon transformer
@@ -44,7 +44,7 @@ public class EMoflonAdapter {
 	}
 
 	/**
-	 * Transform the {@code inputModel} into an output model contained in a triple graph in the {@link TransformationResult} of the return.
+	 * Transform the {@code inputModel} into an output model contained in a triple graph in the {@link BeNCETransformationResult} of the return.
 	 * Or return empty if transformation failed or if transformer was constructed badly.
 	 * 
 	 * @param inputModel		The input model to be transformed (source or target, dependent on the {@code forward} value
@@ -52,18 +52,18 @@ public class EMoflonAdapter {
 	 * @return					The transformation result with the transformed model or empty
 	 * @see BeNCETransformer#transform(org.wbsilva.bence.graphgrammar.Graph)
 	 */
-	public Optional<TransformationResult> transform(final EObject inputModel) {
+	public Optional<BeNCETransformationResult> transform(final EObject inputModel) {
 		if (this.transformer != null) {
 			if (this.forward) {
 				transformer.setSrc(inputModel);
 				transformer.integrateForward();
 				return transformer.getTrg() != null ? 
-						Optional.of(new TransformationResult(null, null)) : Optional.empty(); 
+						Optional.of(new BeNCETransformationResult(null, null)) : Optional.empty(); 
 			} else {
 				transformer.setTrg(inputModel);
 				transformer.integrateBackward();
 				return transformer.getSrc() != null ? 
-						Optional.of(new TransformationResult(null, null)) : Optional.empty();
+						Optional.of(new BeNCETransformationResult(null, null)) : Optional.empty();
 			}
 		} else {
 			return Optional.empty();

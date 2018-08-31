@@ -26,7 +26,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
 import org.wbsilva.bence.transformer.util.TransformerUtil;
 import org.wbsilva.bence.transformer.util.UIUtil;
@@ -153,13 +152,14 @@ public class Main {
 			UIUtil.printAdaptingInput();
 			
 			//Transform the instance of the input model into a graph
-			final Graph inputGraph = new ECore2GraphTransformer().transform(inputModel);
+			final E2GTransformationResult e2g = new ECore2GraphTransformer().transform(inputModel);
+			final BeNCETransformationRequest request = new BeNCETransformationRequest(e2g.getGraph(), e2g.getDepths());
 			
 			UIUtil.printStartTransforming();
 			
 			//The actual TGG-driven transformation
 			final BeNCETransformer transformer = new BeNCETransformer(tripleGrammar, forward);
-			final Optional<TransformationResult> result = transformer.transform(inputGraph);
+			final Optional<BeNCETransformationResult> result = transformer.transform(request);
 			
 			//Save generated triple graph to file
 			if (result.isPresent()) {

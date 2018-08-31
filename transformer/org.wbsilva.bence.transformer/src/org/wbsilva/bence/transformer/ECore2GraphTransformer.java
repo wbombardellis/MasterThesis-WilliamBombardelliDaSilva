@@ -33,10 +33,11 @@ public class ECore2GraphTransformer {
 	 * of the Graphgrammar metamodel. Transform also recursively its children.
 	 * 
 	 * @param inputModel		Model to be transformed. Cannot be null.
-	 * @return					A graph resultant from the transformation from {@code inputModel} 
+	 * @return					A graph resultant from the transformation from {@code inputModel} inside a transformation result object
 	 * @see Graph
+	 * @see E2GTransformationResult
 	 */
-	public Graph transform(final EObject inputModel) {
+	public E2GTransformationResult transform(final EObject inputModel) {
 		assert inputModel != null;
 		
 		logger.debug(String.format("Starting transformation from the eCore input model %s to a graph", inputModel));
@@ -44,11 +45,13 @@ public class ECore2GraphTransformer {
 		final Graph graph = GraphgrammarFactory.eINSTANCE.createGraph();
 		final ConcurrentHashMap<EObject, Symbol> symbols = new ConcurrentHashMap<>();
 		final ConcurrentHashMap<EObject, Vertex> vertices = new ConcurrentHashMap<>();
+		final ConcurrentHashMap<String, Integer> depths = new ConcurrentHashMap<>();
 
-		transformVertex(vertices, symbols, graph, inputModel);
+		transformVertex(vertices, symbols, depths, graph, inputModel, 0);
 		
 		assert GraphgrammarUtil.isValidGraph(graph, true);
-		return graph;
+		
+		return new E2GTransformationResult(graph, depths);
 	}
 
 	/**
@@ -58,11 +61,14 @@ public class ECore2GraphTransformer {
 	 * 
 	 * @param vertices		A map from the objects transformed so far to its correspondent vertices
 	 * @param symbols		A map from the objects' classes transformed so far to its correspondents labels
+	 * @param depths		A map from the vertices' ids transformed so far to its correspondents depths
 	 * @param graph			The graph constructed so far, in which to add this vertex and its children as well as the edges 
 	 * @param modelObject	The eCore object to be transformed
+	 * @param currentDepth	The current depth of the model object to be transformed 
 	 * @return				The vertex resultant from the transformation. Never null.
 	 */
-	private Vertex transformVertex(final ConcurrentHashMap<EObject, Vertex> vertices, final ConcurrentHashMap<EObject, Symbol> symbols, final Graph graph, final EObject modelObject) {
+	private Vertex transformVertex(final ConcurrentHashMap<EObject, Vertex> vertices, final ConcurrentHashMap<EObject, Symbol> symbols,
+			final ConcurrentHashMap<String, Integer> depths, final Graph graph, final EObject modelObject, final Integer currentDepth) {
 		//EObject not transformed to a symbol yet
 		Vertex vertex = vertices.get(modelObject);
 		if (vertex == null) {		
@@ -84,6 +90,7 @@ public class ECore2GraphTransformer {
 			vertex.setLabel(EcoreUtil.copy(label));
 			graph.getVertices().add(vertex);
 			vertices.put(modelObject, vertex);
+			depths.put(vertex.getId(), currentDepth);
 					
 			//Processing of the contained children
 			final List<EReference> containments = eClass.getEAllContainments();
@@ -91,7 +98,7 @@ public class ECore2GraphTransformer {
 				final Object childObject = modelObject.eGet(containment);
 				
 				if (childObject instanceof EObject) {
-					final Vertex childVertex = transformVertex(vertices, symbols, graph, (EObject) childObject);
+					final Vertex childVertex = transformVertex(vertices, symbols, depths, graph, (EObject) childObject, currentDepth+1);
 					assert childVertex != null;
 					
 					transformEdge(symbols, graph, vertex, childVertex, containment);
@@ -100,7 +107,7 @@ public class ECore2GraphTransformer {
 					@SuppressWarnings("unchecked")
 					EList<EObject> children = (EList<EObject>)childObject;
 					for (EObject child : children) {
-						final Vertex childVertex = transformVertex(vertices, symbols, graph, child);
+						final Vertex childVertex = transformVertex(vertices, symbols, depths, graph, child, currentDepth+1);
 						assert childVertex != null;
 						
 						transformEdge(symbols, graph, vertex, childVertex, containment);
@@ -121,7 +128,7 @@ public class ECore2GraphTransformer {
 					Vertex childVertex = vertices.get((EObject) childObject);
 					//Vertex has not being transformed yet (e.g. model is not connected) 
 					if (childVertex == null) {
-						childVertex = transformVertex(vertices, symbols, graph, (EObject) childObject);					
+						childVertex = transformVertex(vertices, symbols, depths, graph, (EObject) childObject, currentDepth+1);					
 					}
 					assert childVertex != null;
 					
@@ -131,7 +138,7 @@ public class ECore2GraphTransformer {
 					@SuppressWarnings("unchecked")
 					EList<EObject> children = (EList<EObject>)childObject;
 					for (EObject child : children) {
-						final Vertex childVertex = transformVertex(vertices, symbols, graph, child);
+						final Vertex childVertex = transformVertex(vertices, symbols, depths, graph, child, currentDepth+1);
 						assert childVertex != null;
 						
 						transformEdge(symbols, graph, vertex, childVertex, reference);

@@ -30,11 +30,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.wbsilva.bence.evaluation.adapter.EMoflonAdapter;
-import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
+import org.wbsilva.bence.transformer.BeNCETransformationRequest;
 import org.wbsilva.bence.transformer.BeNCETransformer;
+import org.wbsilva.bence.transformer.E2GTransformationResult;
 import org.wbsilva.bence.transformer.ECore2GraphTransformer;
-import org.wbsilva.bence.transformer.TransformationResult;
+import org.wbsilva.bence.transformer.BeNCETransformationResult;
 import org.wbsilva.bence.transformer.util.TransformerUtil;
 import org.wbsilva.bx.btree2xbtree.Btree2xbtreePackage;
 import org.wbsilva.bx.sourcecode2controlflow.Sourcecode2controlflowPackage;
@@ -134,11 +135,12 @@ public class Main {
 								
 								///////Evaluate BeNCE TGG transformer
 								logger.debug(String.format("=== Starting BeNCE Evaluation %d ===", run));
-								final Graph inputGraph = new ECore2GraphTransformer().transform(inputModel);
+								final E2GTransformationResult e2g = new ECore2GraphTransformer().transform(inputModel);
+								final BeNCETransformationRequest request = new BeNCETransformationRequest(e2g.getGraph(), e2g.getDepths());
 								
 								//Actual transformation and time measurement
 								long start = getTime();
-								final Optional<TransformationResult> benceResult = benceTransformer.transform(inputGraph);
+								final Optional<BeNCETransformationResult> benceResult = benceTransformer.transform(request);
 								long elapsedTime = getTime() - start;
 								
 								benceTime += elapsedTime;
@@ -161,7 +163,7 @@ public class Main {
 								
 								//Actual transformation and time measurement
 								start = getTime();
-								final Optional<TransformationResult> eMoflonResult = eMoflonTransformer.transform(inputModel);
+								final Optional<BeNCETransformationResult> eMoflonResult = eMoflonTransformer.transform(inputModel);
 								elapsedTime = getTime() - start;
 								
 								eMoflonTime += elapsedTime;

@@ -102,7 +102,7 @@ public class BeNCETransformer {
 	}
 	
 	/**
-	 * Use {@code inputGraph} to create an output graph such that the triple graph composed of these graphs 
+	 * Use {@code inputGraph} in the {@code request} to create an output graph such that the triple graph composed of these graphs 
 	 * conforms to the {@code this.tripleGrammarNP} of this class.
 	 * That is, this method transforms the {@code inputGraph} into an output graph and returns 
 	 * the triple graph containing a copy of boths. The id's of the {@code inputGraph}'s copy are changed and unique, 
@@ -112,11 +112,13 @@ public class BeNCETransformer {
 	 * Important: This transformer can only work with boundary triple graph grammar and graphs. 
 	 * So, if its TGG or the input graph is not boundary, then it returns empty.
 	 * 
-	 * @param inputGraph		The input graph to be transformed. Cannot be null.
+	 * @param request			The request for transformation containing the input graph plus additional information. Cannot be null.
 	 * @return 					An optional of a transformation result containing the created triple graph and 
 	 * 							the parsing tree generated during parsing of the input, in case of success. Empty otherwise.
 	 */
-	public Optional<TransformationResult> transform (final Graph inputGraph){
+	public Optional<BeNCETransformationResult> transform (final BeNCETransformationRequest request){
+		assert request != null;
+		final Graph inputGraph = request.getGraph();
 		assert inputGraph != null;
 		
 		if (this.tripleGrammarNP == null || this.inputGrammarNP == null) {
@@ -137,7 +139,7 @@ public class BeNCETransformer {
 			
 			//Parse input graph
 			final BeNCEParser parser = new BeNCEParser(this.inputGrammarNP, Strategy.GREEDY);
-			final Optional<ParsingTree> parsingTree = parser.parse(inputGraph);
+			final Optional<ParsingTree> parsingTree = parser.parse(inputGraph, request.getDepths());
 			assert parsingTree != null;
 			
 			//Construct output graph in form of a triple graph
@@ -167,7 +169,7 @@ public class BeNCETransformer {
 				
 				logger.debug("Final triple grammar assembly finished");
 				logger.debug("Transformation finished successfully");
-				return Optional.of(new TransformationResult(tripleGraph, parsingTree.get()));
+				return Optional.of(new BeNCETransformationResult(tripleGraph, parsingTree.get()));
 			} else {
 				logger.debug("Could not parse input graph using the input grammar");
 				logger.debug("Transformation finished without success");
