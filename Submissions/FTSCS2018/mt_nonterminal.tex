@@ -326,6 +326,7 @@ Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and
 
 \section{Model Transformation with BNCE TGG}
 \label{sec:modeltrans}
+%TODO: Before to go on here, finish introduction
 Given a graph $G$ over $\Delta$, one may be interested in finding another graph $T$ over $\Delta$ that is somehow consistent to $G$, write $G \rel T$. One example of such a situation is the compilation of a source-code, represented abstractly by $G$, into a machine-code, represented by $T$. Since, very often, $T$ can be generated from $G$, following some specification, this problem is referred to as model transformation problem.
 
 Now, let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar such that $G \rel T$ if and only if, $G \ms{} C \mt{} T \in L(TGG)$, that is, if we interpret $TGG$ as the descriptor of the consistency relation between $G$ and $T$, then the model transformation problem is reduced to finding a triple graph $G \ms{} C \mt{} T$ that belongs to $L(TGG)$. This is, by the definition of triple graph language (see \ref{def:tlanguage}) equivalent to finding a derivation $\startTG{TGG} \tderivtr{}{}{TGG} G \ms{} C \mt{} T$.
