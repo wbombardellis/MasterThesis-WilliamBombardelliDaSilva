@@ -1,5 +1,7 @@
 \documentclass[]{report}
 
+\linespread{1.5}
+
 \include{packages}
 \include{macros}
 
@@ -17,10 +19,21 @@
 \newpage
 
 \section{Introduction}
-Overview of the MDE. Potential and problems of it. The challenge of model transformation. A solution: Triple Graph Grammars (TGG) (justification). A problem of TGG (usability/ amount of grammar rules). Our solution for this problem: TGG with non-terminal nodes. Overview of our approach (graph grammars with non-terminal nodes, NCE grammars, graph language, parsing, transformation). Short summary of the results. Remainder.
+Overview of the MDE. Potential and problems of it. The challenge of model transformation. A solution: Triple Graph Grammars (TGG) (justification). A problem of TGG (usability/ amount of grammar rules). Our solution for this problem: TGG with non-terminal nodes. Overview of our approach (graph grammars with non-terminal nodes, NCE grammars, graph language, parsing, transformation). Brief intro into graph grammars and embedding. Explain why BNCE (HRG parsers were for classes too restricted). Short summary of the results. Remainder.
 
 \section{Related Work}
-TGG main references and reviews. Usability enhancements proposed for TGG. Graph grammar main references. NCE and B-eNCE graph grammar. Alternative proposal of graph grammars.
+In this section, we offer a literary review on the topics of graph grammars and triple graph grammars as well as we indicate published works that are related with our approach. Here, we focus on the node label and the hyperedge replacement approach for graph grammars. Nevertheless, the field does not restrict to this topic, instead, there is a myriad of different approaches to it, for example, the algebraic approach \cite{ehrig1999handbook}.
+
+\textit{Hyperedge replacement graph grammars} (HRG) are context-free grammars with semantics based on the replacement of hyperedges by hypergraphs \cite{drewes1997hyperedge} governed by morphisms. Prominent polynomial-time top-down and shift-reduce parsing techniques for classes of such grammars can be found in \cite{drewes2015predictive,drewes2017predictive,bjorklund2016between,chiang2013parsing} and applications for syntax definition of a visual language can be found in \cite{minas2006syntax,engelfriet1998tree}.
+
+We divide the node label replacement approaches into context-sensitive and context-free. The former includes the \textit{layered graph grammars}, which semantics consists of the replacement of graphs by other graphs governed by morphisms \cite{rekers1997defining} and for which exponential-time bottom-up parsing algorithms are proposed in \cite{rekers1995graph,bottoni2000efficient,furst2011improving}. Another context-sensitive formalism is the \textit{reserved graph grammar}, that is based on the replacement of directed graphs by necessarily greater directed graphs governed by simple embedding rules \cite{zhang2001context} and for which exponential and polynomial-time bottom-up algorithms have been proposed in \cite{zeng2005rgg+,zou2017partial}.
+
+In node label replacement context-free formalisms stand out the \textit{node label controlled} (NLC) grammars and its successor \textit{graph grammar with neighborhood-controlled embedding} (NCE). NLC is based on the replacement of one vertex by a graph, governed by embedding rules written in terms of the vertex's label \cite{rozenberg1986boundary}. For various classes of these grammars, there are polynomial-time top-down and bottom-up parsing algorithms proposed in \cite{flasinski1993parsing,flasinski2014characteristics, rozenberg1986boundary, wanke1991algorithms}. The recognition complexity and generation power of such grammars are analyzed in \cite{flasinski1998power,kim2012structure}. NCE is also based on the replacement of one vertex by a graph, but the embedding rules are written in terms of the vertex's neighbors \cite{janssens1982graph,skodinis1998neighborhood}. For some classes of these grammars, also polynomial-time bottom-up parsing algorithms and automaton formalisms were proposed and analyzed in \cite{kim2001efficient,brandenburg2005finite}. In special, one of these classes is the \textit{boundary graph grammar with neighborhood-controlled embedding} (BNCE), that is used to construct our own formalism. Moreover, it is worth mentioning that, according to \cite{engelfiet1990comparison}, BNCE and HRG have the same generative power.
+
+Beyond the approaches presented above, there is a myriad of alternative proposals for graph grammars, including a context-sensitive NCE \cite{adachi1999nce}, an edge-based grammar \cite{shi2015method}, a grammar that replaces star graphs by other graphs \cite{drewes2010adaptive}, a coordinate system-based grammar \cite{kong2006spatial} and a regular graph grammar \cite{gilroy2017parsing}.
+
+Regarding TGGs, a lot of advances has been made since its first appearance \cite{schurr1994specification}, a 20 years review of the realm is put forward in \cite{anjorin201620}. In special, but not restricted to, advances are made in the direction of expressiveness with the introduction of application conditions \cite{klar2010extended} and of modularization \cite{anjorin2014modularizing}. Furthermore, in the algebraic approach for graph grammars, we have found proposals that introduce inheritance \cite{bardohl2004integrating,hermann2008typed} and variables \cite{hoffmann2005graph} to the formalisms. Nevertheless, it is not of our knowledge an approach that introduces non-terminal symbols to TGGs with the purpose of gaining expressiveness or usability. In this sense our proposal brings something new to the current state-of-the-art.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%% THEORETICAL REVIEW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -61,15 +74,15 @@ We start presenting our notation for graphs and grammars, accompanied by example
 	%TODO: Maybe say some words about the difference to the common isomorphism
 \end{definition}
 
+%TODO: comments on graphs: good for modelling
+
 \begin{definition}
 	A $\Gamma\text{-boundary}$ graph $G$ is such that vertices labeled with any symbol from $\Gamma$ are not neighbors. That is, the graph $G$ is $\Gamma\text{-boundary}$ iff, $\not\exists (v,\_,w) \in E_G \. \phi_G(v) \in \Gamma \land \phi_G(w) \in \Gamma$.
 \end{definition}
 
-%TODO: comments on graphs: good for modelling
-
 \begin{definition}
 	\label{def:gg}
-	An graph grammar with neighborhood-controlled embedding (NCE graph grammar) $GG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of a finite set of symbols $\Sigma$ that is the alphabet, a subset of the alphabet $\Delta \subseteq \Sigma$ that holds the terminal symbols (we define the complementary set of non-terminal symbols as $\Gamma := \Sigma \setminus \Delta$), a special symbol of the alphabet $S \in \Sigma$ that is the start symbol, and a finite set of production rules $P$ of the form $(A \pro R, \omega)$ where $A \in \Gamma$ is the so-called left-hand side, $R \in \allgraphs{\Sigma}$ is the right-hand side and $\omega : V_R \pto 2^{\Sigma \times \Sigma}$ is the partial embedding function from the $R$'s vertices to pairs of edge and label symbols. NCE graph grammars are often referred to as graph grammars or simply as grammars.
+	A graph grammar with neighborhood-controlled embedding (NCE graph grammar) $GG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of a finite set of symbols $\Sigma$ that is the alphabet, a subset of the alphabet $\Delta \subseteq \Sigma$ that holds the terminal symbols (we define the complementary set of non-terminal symbols as $\Gamma := \Sigma \setminus \Delta$), a special symbol of the alphabet $S \in \Sigma$ that is the start symbol, and a finite set of production rules $P$ of the form $(A \pro R, \omega)$ where $A \in \Gamma$ is the so-called left-hand side, $R \in \allgraphs{\Sigma}$ is the right-hand side and $\omega : V_R \pto 2^{\Sigma \times \Sigma}$ is the partial embedding function from the $R$'s vertices to pairs of edge and label symbols. NCE graph grammars are often referred to as graph grammars or simply as grammars.
 	
 	For convenience, define the start graph of $GG$ as $\startG{GG} := (\{v_s\},\emptyset,\{v_s \mapsto S\})$
 	%TODO: notation for the componenents? set of all grammars?
@@ -550,6 +563,8 @@ The $Star2Wheel$ transformation consists of transforming star graphs, which are 
 
 %TODO: Not enough experimentation to say one is expressive than the other. This would require extensive theoretical analysis. But BNCE seems to present better usability in many cases
 
+%TODO: Cite s_78 for evaluation of HRGs
+
 %Furthermore, we also report on the runtime for forward and backward batch transformations in a Intel Core i3 2.3GHz 4x 64bit with 4GB RAM. The standard TGG version of the transformations were executed using the eMoflon Tool \cite{leblebici2014developing}.
 \begin{table}[h]
 	\centering
@@ -574,4 +589,8 @@ The $Star2Wheel$ transformation consists of transforming star graphs, which are 
 \section{Conclusion}
 Summary and closing words. Future work (e.g. lexicalization for model synchronization).
 
+%TODO cite: s_52,s_93
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
 \end{document}          
