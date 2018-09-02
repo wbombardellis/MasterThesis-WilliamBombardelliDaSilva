@@ -54,8 +54,7 @@ We start presenting our notation for graphs and grammars, accompanied by example
 %TODO: Maybe change this definition layout
 \begin{definition}
 	\label{def:graph}
-	A directed labeled graph $G$ over the set of symbols $\Sigma$, $G = (V, E, \phi)$ consists of a finite set of vertices $V$, a set of labeled directed edges $E \subseteq V \times \Sigma \times V$ and a total vertex labeling function $\phi : V \to \Sigma$. Directed labeled graphs are often referred to simply as graphs. For a fixed graph $G$ we refer to its components as $V_G$, $E_G$ and $\phi_G$. Moreover, we define the special empty graph as $\emptyGraph := (\emptyset, \emptyset, \emptyset)$ and we denote the set of all graphs over $\Sigma$ by $\allgraphs{\Sigma}$.
-	%TODO: Talk about muti-edges, loops, etc?
+	A directed labeled graph $G$ over the set of symbols $\Sigma$, $G = (V, E, \phi)$ consists of a finite set of vertices $V$, a set of labeled directed edges $E \subseteq V \times \Sigma \times V$ and a total vertex labeling function $\phi : V \to \Sigma$. Directed labeled graphs are often referred to simply as graphs. For a fixed graph $G$ we refer to its components as $V_G$, $E_G$ and $\phi_G$. Moreover, we define the special empty graph as $\emptyGraph := (\emptyset, \emptyset, \emptyset)$ and we denote the set of all graphs over $\Sigma$ by $\allgraphs{\Sigma}$. In special, we do not allow loops (vertices of the form $(v,l,v)$), but multi-edges with different labels are allowed.
 	%TODO: Comments about notation (e..g edge labels x vertex labels)
 	
 	If $\phi_G(v) = a$ we say $v$ is labeled by $a$. Two vertices $v$ and $w$ are neighbors (also adjacent) iff there is one or more edges between them, that is, $(v,\_,w) \in E_G \lor (w,\_,v) \in E_G$. Two graphs $G$ and $H$ are disjoint iff $V_G \cap V_H = \emptyset$.
@@ -69,7 +68,7 @@ We start presenting our notation for graphs and grammars, accompanied by example
 \end{definition}
 
 \begin{definition}
-	An isomorphism of directed labeled graphs $G$ and $H$ is a bijective mapping $m: V_G \to V_H$ that maintains the connections between vertices and their labels, that is, $(v,l,w) \in E_G$ if, and only if,  $(m(v),l,m(w)) \in E_H$ and if $m(v) = w$ then $\phi_G(v) = \phi_H(w)$. In this case, $G$ and $H$ are said to be isomorphic, we write $G \isomorph H$, and we denote the equivalence class of all graphs isomorphic to G by $[G]$.
+	An isomorphism of directed labeled graphs $G$ and $H$ is a bijective mapping $m: V_G \to V_H$ that maintains the connections between vertices and their labels, that is, $(v,l,w) \in E_G$ if, and only if,  $(m(v),l,m(w)) \in E_H$ and $\phi_G(v) = \phi_H(m(v))$. In this case, $G$ and $H$ are said to be isomorphic, we write $G \isomorph H$, and we denote the equivalence class of all graphs isomorphic to G by $[G]$.
 	Notice that, contrary to isomorphisms, morphism do not require bijectivity nor label or edge-preserving properties.
 	%TODO: Maybe say some words about the difference to the common isomorphism
 \end{definition}
@@ -98,12 +97,10 @@ We start presenting our notation for graphs and grammars, accompanied by example
 	A boundary graph grammar with neighborhood-controlled embedding (BNCE graph grammar) $GG$ is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the graph grammar $GG$ is boundary iff all its rules' right-hand sides are $\Gamma\text{-boundary}$ graphs.
 \end{definition}
 
-%TODO: comments on grammars: why? intuition...
-%TODO: comment about hyperedge replacement grammars
+%TODO: comments on grammars: why? intuition
 
 %%%%%% Concrete Syntax %%%%%%
 In the following, we present our concrete syntax inspired by the well-known backus-naur form to denote BNCE graph grammar rules. Let $GG = (\{A,a,b,c\},$ $\{a,b,c\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\}, \{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, $\omega = \{v_1 \mapsto \{(l,a), (l,b), (m,c)\}\}$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$ and $\zeta = \emptyset$, we denote $p$ and $q$ together as\\
-
 \input{misc/concrete-syntax}
 
 Notice that, we use squares for non-terminal vertices, circles for terminal vertices, position the respective label inside the shape and the (possibly omitted) identifier over it. Over each edge is positioned its respective label. To depict the embedding function, we place near the respective vertex a small circle labeled with the image pairs of the embedding function for this node aligned vertically and separated by semi-colons, which in certain circumstances may also be omitted.
@@ -116,7 +113,7 @@ With these syntactic notions of the formalism presented, we introduce below its 
 \begin{definition}
 	%TODO: Maybe define dstep more formally
 	\label{def:gg_dstep}
-	Let $GG = (\Sigma, \Delta, S, P)$ be a graph grammar and $G$ and $H$ be two graphs over $\Sigma$ disjoint from any right-hand side from $P$, $G$ concretely derives in one step into $H$ with rule $r$ and vertex $v$, we write $G \cderiv{r}{v}{GG} H$ and call it a concrete derivation step, if, and only if, the following holds:
+	Let $GG = (\Sigma, \Delta, S, P)$ be a graph grammar and $G$ and $H$ be two graphs over $\Sigma$ that are disjoint to all right-hand sides from $P$, $G$ concretely derives in one step into $H$ with rule $r$ and vertex $v$, we write $G \cderiv{r}{v}{GG} H$ and call it a concrete derivation step, if, and only if, the following holds:
 	\begin{align*}
 		r & = (A \pro R, \omega) \in P \text{ and } A = \phi_G(v) \text{ and} \\
 		V_H  & = (V_G \setminus \{v\}) \cup V_R \text{ and} \\
@@ -128,7 +125,7 @@ With these syntactic notions of the formalism presented, we introduce below its 
 	\end{align*}
 	Notice that, without loss of generalization, we set $\omega(t) = \emptyset$ for all vertices $t$ without an image defined in $\omega$.
 	
-	If $G$ concretely derives in one step into any graph $H'$ isomorphic to $H$, we say it derives in one step into $H'$ and write $G \deriv{r}{v}{GG} H'$. 
+	If $G$ \textit{concretely derives} in one step into any graph $H'$ isomorphic to $H$, we say it \textit{derives} in one step into $H'$ and write $G \deriv{r}{v}{GG} H'$. 
 	
 	When $GG$, $r$ or $v$ are clear in the context or irrelevant we might omit them and simply write $G \cderiv{}{}{} H$ or $G \deriv{}{}{} H$. Moreover, we denote the reflexive transitive closure of $\deriv{}{}{}$ by $\derivtr{}{}{}$ and, for $G \derivtr{}{}{} H'$, we say $G$ derives in one or more steps into $H'$, or simply $G$ derives into $H'$.
 \end{definition}
@@ -207,14 +204,13 @@ Below we give one example of a grammar whose language consists of all chains of 
 %%%%%%%%%%%%%%%%%%%% TRIPLE GRAPH GRAMMARS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%==================================================================%%%
 \subsection{Triple Graph Grammars}
-Building upon the concepts of graphs and graph grammars, we present, in the following, our understanding over triple graphs and triple graph grammars (TGGs), supported by the TGG specification from (). %TODO: cite schürr 1994
+Building upon the concepts of graphs and graph grammars, we present, in the following, our understanding over triple graphs and triple graph grammars (TGGs), supported by the TGG specification from \cite{schurr1994specification}.
 
 %%%%%% Syntax %%%%%%
 
 \begin{definition}
 	A directed labeled triple graph $TG = G_s \ms{m_s} G_c \mt{m_t} G_t$ over $\Sigma$ consists of three disjoint directed labeled graphs over $\Sigma$ (see \ref{def:graph}), respectively, the source graph $G_s$, the correspondence graph $G_c$ and the target graph $G_t$, together with two injective morphisms (see \ref{def:morphism}) $m_s: V_{G_c} \to V_{G_s}$ and $m_t : V_{G_c} \to G_{G_t}$. Directed labeled triple graphs are often referred to simply as triple graphs and we might omit the morphisms' names in the notation. Moreover, we denote the set of all triple graphs over $\Sigma$ as $\alltgraphs{\Sigma}$. We might refer to all vertices of $TG$ by $V_{TG}:= V_s \cup V_c \cup V_t$, all edges by $E_{TG}:= E_s \cup E_c \cup E_t$ and the complete labeling function by $\phi_{TG}:= \phi_{G_s} \cup \phi_{G_c} \cup \phi_{G_t}$.
 	%TODO: Do we need empty triple graph?
-	%TODO: mabe use format S \pro Gs .... without three symbols in the lhs
 \end{definition}
 
 \begin{definition}
@@ -230,15 +226,15 @@ Below we start introducing the standard definition of TGG of the current researc
 	A triple graph grammar $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, analogously to graph grammars (see \ref{def:gg}), an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $L \pro R$ with $L = L_s \ms{} L_c \mt{} L_t$ and $R = R_s \ms{} R_c \mt{} R_t$ and $L \subseteq R.$
 \end{definition}
 
-%TODO: comment: using SPO, do not confuse with DPO of the algebraic approach.
-
 \begin{definition}
-	A triple graph grammar with neighborhood-controlled embedding (NCE TGG) $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $((A,A,A) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t)$ with $A \in \Gamma$ being the left-hand side, $(R_s \ms{} R_c \mt{} R_t) \in \alltgraphs{\Sigma}$ the right-hand side and $\omega_s : V_{R_s} \pto 2^{\Sigma \times \Sigma}$ and $\omega_t : V_{R_t} \pto 2^{\Sigma \times \Sigma}$ the partial embedding functions from the right-hand side's vertices to pairs of edge and label symbols. We might refer to the complete embedding function by $\omega:= \omega_s \cup \omega_t$.
+	A triple graph grammar with neighborhood-controlled embedding (NCE TGG) $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $(A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t)$ with $A \in \Gamma$ being the left-hand side, $(R_s \ms{} R_c \mt{} R_t) \in \alltgraphs{\Sigma}$ the right-hand side and $\omega_s : V_{R_s} \pto 2^{\Sigma \times \Sigma}$ and $\omega_t : V_{R_t} \pto 2^{\Sigma \times \Sigma}$ the partial embedding functions from the right-hand side's vertices to pairs of edge and label symbols. We might refer to the complete embedding function by $\omega:= \omega_s \cup \omega_t$.
 	
 	For convenience, define the start triple graph of $TGG$ as $\startTG{TGG} := Z_s \ms{ms} Z_c \mt{mt} Z_t$ where $Z_s = (\{s_0\},\emptyset,\{s_0 \mapsto S\})$, $Z_c = (\{c_0\},\emptyset,\{c_0 \mapsto S\})$, $Z_t = (\{t_0\},\emptyset,\{t_0 \mapsto S\})$, $ms = \{c_0 \mapsto s_0 \}$ and $mt = \{c_0 \mapsto t_0 \}$.
 	
 	%TODO: Extend here with look-ahead
 	%TODO: discuss empty productions(?)
+	
+	%TODO: mabe use format S \pro Gs .... without three symbols in the lhs
 \end{definition}
 
 \begin{definition}
@@ -257,21 +253,21 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 	\label{def:tgg_dstep}
 	Let $TGG = (\Sigma, \Delta, S, P)$ be a NCE TGG and $G$ and $H$ be two triple graphs over $\Sigma$ disjoint from any right-hand side from $P$, $G$ concretely derives in one step into $H$ with rule $r$ and distinct vertices $v_s, v_c, v_t$, we write $G \tcderiv{r}{v_s,v_c,v_t}{TGG} H$ if, and only if, the following holds:
 	\begin{align*}
-	r & = ((A,A,A) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P \text{ and } \\
-	A & = \phi_{G_s}(v_s) , A = \phi_{G_c}(v_c) , A = \phi_{G_t}(v_t) \text{ and}\\
-	V_{H_s}  & = (V_{G_s} \setminus \{v_s\}) \cup V_{R_s} \text{ and}\\
-	V_{H_c}  & = (V_{G_c} \setminus \{v_c\}) \cup V_{R_c} \text{ and}\\
-	V_{H_t}  & = (V_{G_t} \setminus \{v_t\}) \cup V_{R_t} \text{ and}\\
-	E_{H_s} & = (E_{G_s} \setminus \{(w,l,t) \in E_{G_s} \st w \in \{v_s\} \lor t \in \{v_s\} \}) \cup E_{R_s} \\
-	& \cup \{(w,l,t) \st (w,l,v) \in E_{G_s} \land (l,\phi_{G_s}(w)) \in \omega_{s}(t)\} \\
-	& \cup \{(t,l,w) \st (v,l,w) \in E_{G_s} \land (l,\phi_{G_s}(w)) \in \omega_{s}(t)\} \text{ and} \\
-	E_{H_c} & = (E_{G_c} \setminus \{(w,l,t) \in E_{G_c} \st w = v_c \lor t = v_c \}) \cup E_{R_c} \text{ and} \\
-	E_{H_t} & = (E_{G_t} \setminus \{(w,l,t) \in E_{G_t} \st w = v_t \lor t = v_t \}) \cup E_{R_t} \\
-	& \cup \{(w,l,t) \st (w,l,v) \in E_{G_t} \land (l,\phi_{G_t}(w)) \in \omega_{t}(t)\} \\
-	& \cup \{(t,l,w) \st (v,l,w) \in E_{G_t} \land (l,\phi_{G_t}(w)) \in \omega_{t}(t)\} \text{ and} \\
-	\phi_{H_s} & = (\phi_{G_s} \setminus \{(v_s,x)\}) \cup \phi_{R_s} \text{ and}\\
-	\phi_{H_c} & = (\phi_{G_c} \setminus \{(v_c,x)\}) \cup \phi_{R_c} \text{ and}\\
-	\phi_{H_t} & = (\phi_{G_t} \setminus \{(v_t,x)\}) \cup \phi_{R_t}\\
+		r & = (A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P \text{ and } \\
+		A & = \phi_{G_s}(v_s) = \phi_{G_c}(v_c) = \phi_{G_t}(v_t) \text{ and}\\
+		V_{H_s}  & = (V_{G_s} \setminus \{v_s\}) \cup V_{R_s} \text{ and}\\
+		V_{H_c}  & = (V_{G_c} \setminus \{v_c\}) \cup V_{R_c} \text{ and}\\
+		V_{H_t}  & = (V_{G_t} \setminus \{v_t\}) \cup V_{R_t} \text{ and}\\
+		E_{H_s} & = (E_{G_s} \setminus \{(w,l,t) \in E_{G_s} \st w \in \{v_s\} \lor t \in \{v_s\} \}) \cup E_{R_s} \\
+		& \cup \{(w,l,t) \st (w,l,v) \in E_{G_s} \land (l,\phi_{G_s}(w)) \in \omega_{s}(t)\} \\
+		& \cup \{(t,l,w) \st (v,l,w) \in E_{G_s} \land (l,\phi_{G_s}(w)) \in \omega_{s}(t)\} \text{ and} \\
+		E_{H_c} & = (E_{G_c} \setminus \{(w,l,t) \in E_{G_c} \st w = v_c \lor t = v_c \}) \cup E_{R_c} \text{ and} \\
+		E_{H_t} & = (E_{G_t} \setminus \{(w,l,t) \in E_{G_t} \st w = v_t \lor t = v_t \}) \cup E_{R_t} \\
+		& \cup \{(w,l,t) \st (w,l,v) \in E_{G_t} \land (l,\phi_{G_t}(w)) \in \omega_{t}(t)\} \\
+		& \cup \{(t,l,w) \st (v,l,w) \in E_{G_t} \land (l,\phi_{G_t}(w)) \in \omega_{t}(t)\} \text{ and} \\
+		\phi_{H_s} & = (\phi_{G_s} \setminus \{(v_s,x)\}) \cup \phi_{R_s} \text{ and}\\
+		\phi_{H_c} & = (\phi_{G_c} \setminus \{(v_c,x)\}) \cup \phi_{R_c} \text{ and}\\
+		\phi_{H_t} & = (\phi_{G_t} \setminus \{(v_t,x)\}) \cup \phi_{R_t}\\
 	\end{align*}
 	Notice that, without loss of generalization, we set $\omega(t) = \emptyset$ for all vertices $t$ without an image defined in $\omega$.
 	
@@ -296,12 +292,12 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 	\]
 \end{definition}
 
-Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and is presented below by means of the Example \ref{ex:pseudocode2controlflow}. The only difference is at the right-hand sides that depict the morphisms between the correspondence graph and source and target graphs.
+Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and is presented below by means of the Example \ref{ex:pseudocode2controlflow}. The only difference is at the right-hand sides, that include the morphisms between the correspondence graph and source and target graphs depicted with dashed lines.
 
 %Concrete syntax and examples (Pseudocode 2 Control Flow [sourcecode2controlflow])
 \begin{example}{Pseudocode to Controlflow.}
 	\label{ex:pseudocode2controlflow}
-	This example illustrates the specification of the consistency relation between $Pseudocode$ graphs and $Controlflow$ graphs. A $Pseudocode$ graph is an abstract representation of a program written in a pseudo-code where vertices refer to actions, ifs or whiles and edges connect these terms together according to how they appear in the program. A $Controlflow$ graph is a more abstract representation of a program, where vertices can only be either a command or a branch.
+	This example illustrates the specification of the consistency relation between $Pseudocode$ graphs and $Controlflow$ graphs. A $Pseudocode$ graph is an abstract representation of a program written in a pseudo-code where vertices refer to \textit{actions}, \textit{ifs} or \textit{whiles} and edges connect these items together according to how they appear in the program. A $Controlflow$ graph is a more abstract representation of a program, where vertices can only be either a \textit{command} or a \textit{branch}.
 	
 	Consider, for instance, the program $main$ below on the left, written in a pseudo-code. The triple graph $TG$ on the right consists of the $Pseudocode$ graph of $main$ connected to the $Controlflow$ graph of the same program through the correspondence graph in the middle of them. In such graph, the vertex labels of the $Pseudocode$ graph $p, i, a, w$ correspond to the concepts of \textit{program}, \textit{if}, \textit{action} and \textit{while}, respectively. The edge label $f$ is given to the edge from the vertex $p$ to the program's first statement, $x$ stands for \textit{next} and indicates that a statement is followed by another, $p$ and $n$ stand for \textit{positive} and \textit{negative} and indicate which assignments correspond to the positive of negative case of the \textit{if}'s evaluation, finally $l$ stands for \textit{last} and indicates the last action of a loop. In the $Controlflow$ graph, the vertex labels $g, b, c$ stand for the concepts of \textit{graph}, \textit{branch} and \textit{command}, respectively. The edge label $r$ is given to the edge from the vertex $g$ to the first program's statement, $x, p$ and $n$ mean, analogous to the former graph, \textit{next}, \textit{positive} and \textit{negative}. In the correspondence graph, the labels $pg, ib, ac, wb$ serve to indicate which labels in the source and target graphs are being connected through the triple graph's morphism.
 	
