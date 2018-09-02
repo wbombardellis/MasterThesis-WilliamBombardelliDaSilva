@@ -1,0 +1,183 @@
+	\noindent
+	\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_0:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {S ::=};
+	
+	\draw (0.5,0) node[t] (s1) {p};
+	\draw (0.5,-1) node[nont] (s2) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	%%
+	\draw (2,0) node[t] (c1) {pg};
+	\draw (2,-1) node[nont] (c2) {A};
+	%%
+	\draw (3.5,0) node[t] (t1) {g};
+	\draw (3.5,-1) node[nont] (t2) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\end{tikzpicture}
+	\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_1:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {A ::=};
+	
+	\draw (0.5,0) node[t, label=90:$s_{11}$] (s1) {a};
+	\draw (0.5,-1) node[nont] (s2) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$x$};
+	%\draw node[uw] at (s1.east) (w-s1) {} [wedge] (s1) -- (w-s1);
+	%%
+	\draw (2,0) node[t] (c1) {ac};
+	\draw (2,-1) node[nont] (c2) {A};
+	%%
+	\draw (3.5,0) node[t, label=90:$t_{11}$] (t1) {c};
+	\draw (3.5,-1) node[nont] (t2) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$x$};
+	%\draw node[uw] at (t1.north) (w-t1) {} [wedge] (t1) -- (w-t1);
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	
+	%%%%
+	\draw[pipe] (4,\pipeBY) -- (4,\pipeUY);
+	
+	\node[rid] at (4.6,\ridY) {$r_6:$};
+	\draw (4.6,0) node[empty] (s3) {$\emptyGraph$};
+	\end{tikzpicture}
+	
+	\noindent
+	\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_2:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {A ::=};
+	
+	\draw (1,0) node[t, label=90:$s_{21}$] (s1) {i};
+	\draw (0.1,-1) node[nont] (s2) {A};
+	\draw (1,-1) node[nont] (s3) {A};
+	\draw (1.7,-1) node[nont] (s4) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$x$};
+	\draw[edge] (s1) -- (s3) node [vledgeLabel] {$p$};
+	\draw[edge] (s1) -- (s4) node [vredgeLabel] {$n$};
+	%\draw node[uw] at (s1.north) (w-s1) {} [wedge] (s1) -- (w-s1);
+	%%
+	\draw (2.5,0) node[t] (c1) {ib};
+	\draw (2.5,-0.5) node[nont] (c2) {A};
+	\draw (2.5,-1) node[nont] (c4) {A};
+	\draw (2.5,-1.5) node[nont] (c3) {A};
+	%%
+	\draw (4,0) node[t, label=90:$t_{21}$] (t1) {b};
+	\draw (3.3,-1) node[nont] (t4) {A};
+	\draw (4,-1) node[nont] (t3) {A};
+	\draw (4.9,-1) node[nont] (t2) {A};
+	\draw[edge] (t1) -- (t4) node [vledgeLabel] {$n$};
+	\draw[edge] (t1) -- (t3) node [vledgeLabel] {$p$};
+	\draw[edge] (t1) -- (t2) node [vredgeLabel] {$x$};
+	%\draw node[uw] at (t1.north) (w-t1) {} [wedge] (t1) -- (w-t1);
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	
+	%%%%
+	\draw[pipe] (5.5,\pipeBY) -- (5.5,\pipeUY);
+	
+	\node[rid] at (6.1,\ridY) {$r_3:$};
+	
+	\draw (7,0) node[t, label=90:$s_{31}$] (s5) {w};
+	\draw (6.1,-1) node[nont] (s6) {A};
+	\draw[edge] (s5) -- (s6) node [vledgeLabel] {$x$};
+	%\draw node[uw] at (s5.north) (w-s5) {} [wedge] (s5) -- (w-s5);
+	%%
+	\draw (8,0) node[t] (c5) {wb};
+	\draw (8,-1) node[nont] (c6) {A};
+	%%
+	\draw (9,0) node[t, label=90:$t_{31}$] (t5) {b};
+	\draw (9.9,-1) node[nont] (t6) {A};
+	\draw[edge] (t5) -- (t6) node [vredgeLabel] {$n$};
+	%\draw node[uw] at (t5.north) (w-t5) {} [wedge] (t5) -- (w-t5);
+	%%
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\draw[morph] (c6) -- (s6);
+	\draw[morph] (c6) -- (t6);
+	\end{tikzpicture}
+	
+	\noindent
+	\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_4:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {A ::=};
+	
+	\draw (1,0) node[t, label=90:$s_{41}$] (s1) {w};
+	\draw (0.1,-1) node[nont] (s2) {A};
+	\draw (1,-1) node[nont] (s3) {A};
+	\draw (1.7,-1) node[t] (s4) {a};
+	
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$x$};
+	\draw[edge] (s1) -- (s3) node [vledgeLabel] {$f$};
+	\draw[edge] (s3) to [bend right=90] (s4) node [below=10pt, left=5pt] {$x$};
+	\draw[edge] (s1) -- (s4) node [vredgeLabel] {$l$};
+	%\draw node[uw] at (s1.north) (w-s1) {} [wedge] (s1) -- (w-s1);
+	%%
+	\draw (2.5,0) node[t] (c1) {wb};
+	\draw (2.5,-0.5) node[nont] (c2) {A};
+	\draw (2.5,-1) node[t] (c4) {ac};
+	\draw (2.5,-1.5) node[nont] (c3) {A};
+	%%
+	\draw (4,0) node[t, label=90:$t_{41}$] (t1) {b};
+	\draw (3.3,-1) node[t] (t4) {c};
+	\draw (4,-1) node[nont] (t3) {A};
+	\draw (4.9,-1) node[nont] (t2) {A};
+	\draw[edge] (t1) -- (t2) node [vredgeLabel] {$n$};
+	\draw[edge] (t1) -- (t3) node [vledgeLabel] {$p$};
+	\draw[edge] (t3) to [bend left=90] (t4) node [below=10pt, right=5pt] {$x$};
+	\draw[edge] (t4) -- (t1) node [vledgeLabel] {$x$};
+	%\draw node[uw] at (t1.north) (w-t1) {} [wedge] (t1) -- (w-t1);
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	
+	%%%%
+	\draw[pipe] (5.5,\pipeBY) -- (5.5,\pipeUY);
+	
+	\node[rid] at (6.1,\ridY) {$r_5:$};
+	
+	\draw (7,0) node[t, label=90:$s_{51}$] (s5) {w};
+	\draw (6.1,-1) node[nont] (s6) {A};
+	\draw (7,-1) node[t] (s7) {a};
+	\draw[edge] (s5) -- (s6) node [vledgeLabel] {$x$};
+	\draw[edge] (s5) to [bend right] (s7) node [vbedgeLabel] {$f$};
+	\draw[edge] (s5) to [bend left] (s7) node [above=10pt, right=1pt] {$l$};
+	%\draw node[uw] at (s5.north) (w-s5) {} [wedge] (s5) -- (w-s5);
+	%%
+	\draw (8,0) node[t] (c5) {wb};
+	\draw (8,-1.5) node[nont] (c6) {A};
+	\draw (8,-1) node[t] (c7) {ac};
+	%%
+	\draw (9,0) node[t, label=90:$t_{51}$] (t5) {b};
+	\draw (9,-1) node[t] (t7) {c};
+	\draw (9.9,-1) node[nont] (t6) {A};
+	\draw[edge] (t5) -- (t6) node [vredgeLabel] {$n$};
+	\draw[edge] (t5) to [bend right] (t7) node [above=10pt, left=1pt] {$p$};
+	\draw[edge] (t7) to [bend right] (t5) node [below=5pt] {$x$};
+	%\draw node[uw] at (t5.north) (w-t5) {} [wedge] (t5) -- (w-t5);
+	%%
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\draw[morph] (c6) -- (s6);
+	\draw[morph] (c6) -- (t6);
+	\draw[morph] (c7) -- (s7);
+	\draw[morph] (c7) -- (t7);
+	\end{tikzpicture}
