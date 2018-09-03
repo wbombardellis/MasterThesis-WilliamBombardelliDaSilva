@@ -19,7 +19,7 @@
 \newpage
 
 \section{Introduction}
-Overview of the MDE. Potential and problems of it. The challenge of model transformation. A solution: Triple Graph Grammars (TGG) (justification). A problem of TGG (usability/ amount of grammar rules). Our solution for this problem: TGG with non-terminal nodes. Overview of our approach (graph grammars with non-terminal nodes, NCE grammars, graph language, parsing, transformation). Brief intro into graph grammars and embedding. Explain why BNCE (HRG parsers were for classes too restricted). Short summary of the results. Remainder.
+Overview of the MDE. Potential and problems of it. The challenge of model transformation. A solution: Triple Graph Grammars (TGG) (justification). A problem of TGG (usability/ amount of grammar rules). Our solution for this problem: TGG with non-terminal nodes. Overview of our approach (graph grammars with non-terminal nodes, NCE grammars, graph language, parsing, transformation). Brief intro into graph grammars and embedding. Explain why BNCE (HRG parsers were for classes too restricted), why grammars. Short summary of the results. Remainder.
 
 \section{Related Work}
 In this section, we offer a literary review on the topics of graph grammars and triple graph grammars as well as we indicate published works that are related with our approach. Here, we focus on the node label and the hyperedge replacement approach for graph grammars. Nevertheless, the field does not restrict to this topic, instead, there is a myriad of different approaches to it, for example, the algebraic approach \cite{ehrig1999handbook}.
@@ -28,7 +28,7 @@ In this section, we offer a literary review on the topics of graph grammars and 
 
 We divide the node label replacement approaches into context-sensitive and context-free. The former includes the \textit{layered graph grammars}, which semantics consists of the replacement of graphs by other graphs governed by morphisms \cite{rekers1997defining} and for which exponential-time bottom-up parsing algorithms are proposed in \cite{rekers1995graph,bottoni2000efficient,furst2011improving}. Another context-sensitive formalism is the \textit{reserved graph grammar}, that is based on the replacement of directed graphs by necessarily greater directed graphs governed by simple embedding rules \cite{zhang2001context} and for which exponential and polynomial-time bottom-up algorithms have been proposed in \cite{zeng2005rgg+,zou2017partial}.
 
-In node label replacement context-free formalisms stand out the \textit{node label controlled} (NLC) grammars and its successor \textit{graph grammar with neighborhood-controlled embedding} (NCE). NLC is based on the replacement of one vertex by a graph, governed by embedding rules written in terms of the vertex's label \cite{rozenberg1986boundary}. For various classes of these grammars, there are polynomial-time top-down and bottom-up parsing algorithms proposed in \cite{flasinski1993parsing,flasinski2014characteristics, rozenberg1986boundary, wanke1991algorithms}. The recognition complexity and generation power of such grammars are analyzed in \cite{flasinski1998power,kim2012structure}. NCE is also based on the replacement of one vertex by a graph, but the embedding rules are written in terms of the vertex's neighbors \cite{janssens1982graph,skodinis1998neighborhood}. For some classes of these grammars, also polynomial-time bottom-up parsing algorithms and automaton formalisms were proposed and analyzed in \cite{kim2001efficient,brandenburg2005finite}. In special, one of these classes is the \textit{boundary graph grammar with neighborhood-controlled embedding} (BNCE), that is used to construct our own formalism. Moreover, it is worth mentioning that, according to \cite{engelfiet1990comparison}, BNCE and HRG have the same generative power.
+In node label replacement context-free formalisms stand out the \textit{node label controlled} (NLC) grammars and its successor \textit{graph grammar with neighborhood-controlled embedding} (NCE). NLC is based on the replacement of one vertex by a graph, governed by embedding rules written in terms of the vertex's label \cite{rozenberg1986boundary}. For various classes of these grammars, there are polynomial-time top-down and bottom-up parsing algorithms proposed in \cite{flasinski1993parsing,flasinski2014characteristics, rozenberg1986boundary, wanke1991algorithms}. The recognition complexity and generation power of such grammars are analyzed in \cite{flasinski1998power,kim2012structure}. NCE occurs in several formulations, including a context-sensitive one, but here we focus on the formulation where one vertex is replaced by a graph, and the embedding rules are written in terms of the vertex's neighbors \cite{janssens1982graph,skodinis1998neighborhood}. For some classes of these grammars, also polynomial-time bottom-up parsing algorithms and automaton formalisms were proposed and analyzed in \cite{kim2001efficient,brandenburg2005finite}. In special, one of these classes is the \textit{boundary graph grammar with neighborhood-controlled embedding} (BNCE), that is used to construct our own formalism. Moreover, it is worth mentioning that, according to \cite{engelfiet1990comparison}, BNCE and HRG have the same generative power.
 
 Beyond the approaches presented above, there is a myriad of alternative proposals for graph grammars, including a context-sensitive NCE \cite{adachi1999nce}, an edge-based grammar \cite{shi2015method}, a grammar that replaces star graphs by other graphs \cite{drewes2010adaptive}, a coordinate system-based grammar \cite{kong2006spatial} and a regular graph grammar \cite{gilroy2017parsing}.
 
@@ -73,11 +73,11 @@ We start presenting our notation for graphs and grammars, accompanied by example
 	%TODO: Maybe say some words about the difference to the common isomorphism
 \end{definition}
 
-%TODO: comments on graphs: good for modelling
-
 \begin{definition}
 	A $\Gamma\text{-boundary}$ graph $G$ is such that vertices labeled with any symbol from $\Gamma$ are not neighbors. That is, the graph $G$ is $\Gamma\text{-boundary}$ iff, $\not\exists (v,\_,w) \in E_G \. \phi_G(v) \in \Gamma \land \phi_G(w) \in \Gamma$.
 \end{definition}
+
+We use graphs to represent models, first because of the extensive theory behind them and, second, because their very abstract structure suits the description of a large spectrum of practical models. In the following we introduce graph grammars, which also suit our needs very well, because they serve as a very effective tool to characterize (possibly infinite) sets of graphs using very few notation.
 
 \begin{definition}
 	\label{def:gg}
@@ -93,11 +93,11 @@ We start presenting our notation for graphs and grammars, accompanied by example
 	Vertices from the right-hand sides of rules labeled by non-terminal (terminal) symbols are said to be non-terminal (terminal) vertices.
 \end{definition}
 
+Notice that, in the original definition of NCE grammars \cite{janssens1982graph}, the left-hand side of the productions were allowed to contain any connected graph. So, strictly speaking, the definition above characterizes actually a 1-NCE graph grammar, that contains only one element in the left-hand side. Nevertheless, for simplicity, we use the denomination NCE to mean a 1-NCE grammar.
+
 \begin{definition}
 	A boundary graph grammar with neighborhood-controlled embedding (BNCE graph grammar) $GG$ is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the graph grammar $GG$ is boundary iff all its rules' right-hand sides are $\Gamma\text{-boundary}$ graphs.
 \end{definition}
-
-%TODO: comments on grammars: why? intuition
 
 %%%%%% Concrete Syntax %%%%%%
 In the following, we present our concrete syntax inspired by the well-known backus-naur form to denote BNCE graph grammar rules. Let $GG = (\{A,a,b,c\},$ $\{a,b,c\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\}, \{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, $\omega = \{v_1 \mapsto \{(l,a), (l,b), (m,c)\}\}$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$ and $\zeta = \emptyset$, we denote $p$ and $q$ together as\\
@@ -130,8 +130,7 @@ With these syntactic notions of the formalism presented, we introduce below its 
 	When $GG$, $r$ or $v$ are clear in the context or irrelevant we might omit them and simply write $G \cderiv{}{}{} H$ or $G \deriv{}{}{} H$. Moreover, we denote the reflexive transitive closure of $\deriv{}{}{}$ by $\derivtr{}{}{}$ and, for $G \derivtr{}{}{} H'$, we say $G$ derives in one or more steps into $H'$, or simply $G$ derives into $H'$.
 \end{definition}
 
-%TODO: give intuition for the rule application
-%TODO: Notice direction does not matter in embedding. why we chose so?
+A concrete derivation can be informally understood as the replacement of a non-terminal vertex $v$ and all its adjacent edges in $G$ by a graph $R$ plus edges $e$ from former neighbors $w$ of $v$ to some vertices $t$ of $R$, provided $e$'s label and $w$'s label are in the embedding specification $\omega(t)$. That is, the embedding function $\omega$ of a rule specifies which neighbors of $v$ are to be connected with which vertices of $R$, according to their labels and the adjacent edges' labels. The process that governs the creation of these edges is called embedding and can occur in various forms in different graph grammar formalisms. We opted for a rather simple approach, in which the edges' directions and labels are maintained and cannot be used to define embedding. As an additional note, it is worth mentioning, that string grammars have no embedding because a replaced symbol in a string has ``connections" only with its left and right neighbors, so the replacement is always ``connected" with both sides.
 
 \begin{definition}
 	A derivation $D$ in $GG$ is a sequence of derivation steps and is written as
@@ -143,13 +142,11 @@ With these syntactic notions of the formalism presented, we introduce below its 
 \begin{definition}
 	The language $L(GG)$ generated by the grammar $GG$ is the set of all graphs containing only terminal vertices derived from the start graph $\startG{GG}$, that is
 	\[
-		L(GG) = \{H \st \phi_H(V_H) \subseteq \Delta \land \startG{GG} \derivtr{}{}{} H\}
+		L(GG) = \{H \text{ is a graph over } \Delta \text{ and } \startG{GG} \derivtr{}{}{} H\}
 	\]
 \end{definition}
 
-%TODO: Notice that the labels of the edges are ignored if theu are terminal or not
-
-Notice that for every graph $G \in L(GG)$, there is at least one finite derivation $(\startG{GG} \deriv{r_0}{v_0}{} \dots \deriv{r_{n-1}}{v_{n-1}}{} G)$, but it is not guaranteed that this derivation be unique. In the case that there are more than one derivation for a $G$, we say that the grammar $GG$ is ambiguous. 
+Notice that for every graph $G \in L(GG)$, there is at least one finite derivation $(\startG{GG} \deriv{r_0}{v_0}{} \dots \deriv{r_{n-1}}{v_{n-1}}{} G)$, but it is not guaranteed that this derivation be unique. In the case that there are more than one derivation for a $G$, we say that the grammar $GG$ is ambiguous.
 
 Below we give one example of a grammar whose language consists of all chains of one or more vertices with interleaved vertices labeled with $a$ and $b$.
 
@@ -169,32 +166,32 @@ Below we give one example of a grammar whose language consists of all chains of 
 	\end{tikzpicture}
 	belongs to $L(GG)$ because it contains only terminal vertices and $\startG{GG}$ derives into it using the following derivation:
 	\[
-	\startG{GG} \deriv{r_0}{v_0}{} 
-	\begin{tikzpicture}[graph]
-	\draw (0,0) node[nont, label=90:$v_1$] (v1) {A};
-	\end{tikzpicture}
-	\deriv{r_2}{v_1}{} 
-	\begin{tikzpicture}[graph]
-	\draw (1,0) node[t, label=90:$v_2$] (v2) {a};
-	\draw (2,0) node[nont, label=90:$v_3$] (v3) {B};
-	\draw[edge] (v2) -- (v3) node [edgeLabel] {$c$};
-	\end{tikzpicture}
-	\deriv{r_4}{v_3}{}
-	\begin{tikzpicture}[graph]
-	\draw (1,0) node[t, label=90:$v_2$] (v2) {a};
-	\draw (2,0) node[t, label=90:$v_4$] (v4) {b};
-	\draw (3,0) node[nont, label=90:$v_5$] (v5) {A};
-	\draw[edge] (v2) -- (v4) node [edgeLabel] {$c$};
-	\draw[edge] (v4) -- (v5) node [edgeLabel] {$c$};
-	\end{tikzpicture}
-	\deriv{r_3}{v_5}{}
-	\begin{tikzpicture}[graph]
-	\draw (0,0) node[t, label=90:$v_2$] (v2) {a};
-	\draw (1,0) node[t, label=90:$v_4$] (v4) {b};
-	\draw (2,0) node[t, label=90:$v_6$] (v6) {a};
-	\draw[edge] (v2) -- (v4) node [edgeLabel] {$c$};
-	\draw[edge] (v4) -- (v6) node [edgeLabel] {$c$};
-	\end{tikzpicture}
+		\startG{GG} \deriv{r_0}{v_0}{} 
+		\begin{tikzpicture}[graph]
+		\draw (0,0) node[nont, label=90:$v_1$] (v1) {A};
+		\end{tikzpicture}
+		\deriv{r_2}{v_1}{} 
+		\begin{tikzpicture}[graph]
+		\draw (1,0) node[t, label=90:$v_2$] (v2) {a};
+		\draw (2,0) node[nont, label=90:$v_3$] (v3) {B};
+		\draw[edge] (v2) -- (v3) node [edgeLabel] {$c$};
+		\end{tikzpicture}
+		\deriv{r_4}{v_3}{}
+		\begin{tikzpicture}[graph]
+		\draw (1,0) node[t, label=90:$v_2$] (v2) {a};
+		\draw (2,0) node[t, label=90:$v_4$] (v4) {b};
+		\draw (3,0) node[nont, label=90:$v_5$] (v5) {A};
+		\draw[edge] (v2) -- (v4) node [edgeLabel] {$c$};
+		\draw[edge] (v4) -- (v5) node [edgeLabel] {$c$};
+		\end{tikzpicture}
+		\deriv{r_3}{v_5}{}
+		\begin{tikzpicture}[graph]
+		\draw (0,0) node[t, label=90:$v_2$] (v2) {a};
+		\draw (1,0) node[t, label=90:$v_4$] (v4) {b};
+		\draw (2,0) node[t, label=90:$v_6$] (v6) {a};
+		\draw[edge] (v2) -- (v4) node [edgeLabel] {$c$};
+		\draw[edge] (v4) -- (v6) node [edgeLabel] {$c$};
+		\end{tikzpicture}
 	\]
 \end{example}
 
@@ -217,7 +214,8 @@ Building upon the concepts of graphs and graph grammars, we present, in the foll
 	A $\Gamma\text{-boundary}$ triple graph $TG = G_s \ms{} G_c \mt{} G_t$ is such that $G_s$, $G_c$ and $G_t$ are $\Gamma\text{-boundary}$ graphs.
 \end{definition}
 
-%TODO: comments on triple graphs: good for modelling of consistency... give intuition
+%TODO: Make sure introduction says something about triple graphs
+As stated before, triple graphs are for us a good tool to express relations between the vertices of two graphs. In the context of model transformation, where graphs represent models, a triple graph holds, for example, a source model and a target model generated from the source, together with the relationship between their vertices. We also advise that in literature, TGGs are often modeled as typed graphs, but we judge that for our circumstance labeled graphs fit better and we are convinced that such divergence does not threat the validity of our approach.
 
 Below we start introducing the standard definition of TGG of the current research's literature. As the reader should notice, this definition of TGG does not fit our needs optimally, because it defines a context-sensitive-like graph grammar whilst we wish a context-free-like graph grammar to use together with the NCE graph grammar formalism. Hence, after presenting the conventional TGG definition, we refine it to create a NCE TGG, that fits our context best.
 
@@ -241,9 +239,7 @@ Below we start introducing the standard definition of TGG of the current researc
 	A boundary triple graph grammar with neighborhood-controlled embedding (BNCE TGG) is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the triple graph grammar $TGG$ is boundary iff all its rules' right-hand sides are $\Gamma\text{-boundary}$ triple graphs.
 \end{definition}
 
-%TODO: Comment the difference between the two. Say it is one of our contribution (make it clear). Refer to a later discussion on the expressiviness
-%TODO: Also relate with the typed TGG and the equivalence with labeled TGG
-%TODO: comments on TGG: why? intuition... Run away from nacs and tacs
+The most important difference between the traditional TGG and the NCE TGG, is that the former allows any triple graph to occur in the left-hand sides, whereas the latter only one symbol. In addition to that, traditional TGG requires that the whole left hand side occur also in the right-hand side, that is to say, the rules are monotonic crescent. Therewith, embedding is not an issue, because an occurrence of the left-hand side is not effectively replaced by the right-hand side, instead, only new vertices are added. On the other hand, NCE TGG has to deal with embedding through the embedding function.
 
 %%%%%% Semantics %%%%%%
 In the following, the semantics for NCE TGG is presented analogously to the semantics for NCE graph grammars.
@@ -251,9 +247,9 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 \begin{definition}
 	%TODO: Maybe define dstep more formally
 	\label{def:tgg_dstep}
-	Let $TGG = (\Sigma, \Delta, S, P)$ be a NCE TGG and $G$ and $H$ be two triple graphs over $\Sigma$ disjoint from any right-hand side from $P$, $G$ concretely derives in one step into $H$ with rule $r$ and distinct vertices $v_s, v_c, v_t$, we write $G \tcderiv{r}{v_s,v_c,v_t}{TGG} H$ if, and only if, the following holds:
+	Let $TGG = (\Sigma, \Delta, S, P)$ be a NCE TGG and $G = G_s \ms{g_s} G_c \mt{g_t} G_t$ and $H = H_s \ms{h_s} H_c \mt{h_t} H_t$ be two triple graphs over $\Sigma$ disjoint from any right-hand side from $P$, $G$ concretely derives in one step into $H$ with rule $r$ and distinct vertices $v_s, v_c, v_t$, we write $G \tcderiv{r}{v_s,v_c,v_t}{TGG} H$ if, and only if, the following holds:
 	\begin{align*}
-		r & = (A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P \text{ and } \\
+		r & = (A \pro (R_s \ms{r_s} R_c \mt{r_t} R_t), \omega_s, \omega_t) \in P \text{ and } \\
 		A & = \phi_{G_s}(v_s) = \phi_{G_c}(v_c) = \phi_{G_t}(v_t) \text{ and}\\
 		V_{H_s}  & = (V_{G_s} \setminus \{v_s\}) \cup V_{R_s} \text{ and}\\
 		V_{H_c}  & = (V_{G_c} \setminus \{v_c\}) \cup V_{R_c} \text{ and}\\
@@ -265,6 +261,8 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 		E_{H_t} & = (E_{G_t} \setminus \{(w,l,t) \in E_{G_t} \st w = v_t \lor t = v_t \}) \cup E_{R_t} \\
 		& \cup \{(w,l,t) \st (w,l,v) \in E_{G_t} \land (l,\phi_{G_t}(w)) \in \omega_{t}(t)\} \\
 		& \cup \{(t,l,w) \st (v,l,w) \in E_{G_t} \land (l,\phi_{G_t}(w)) \in \omega_{t}(t)\} \text{ and} \\
+		h_s		& = (g_s \setminus \{(v_c,x)\}) \cup r_s  \\
+		h_t		& = (g_t \setminus \{(v_c,x)\}) \cup r_t  \\
 		\phi_{H_s} & = (\phi_{G_s} \setminus \{(v_s,x)\}) \cup \phi_{R_s} \text{ and}\\
 		\phi_{H_c} & = (\phi_{G_c} \setminus \{(v_c,x)\}) \cup \phi_{R_c} \text{ and}\\
 		\phi_{H_t} & = (\phi_{G_t} \setminus \{(v_t,x)\}) \cup \phi_{R_t}\\
@@ -274,8 +272,7 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 	Analogously to graph grammars, if $G \cderiv{r}{v_s,v_c,v_t}{TGG} H$ and $H' \in [H]$, then $G \tderiv{r}{v_s,v_c,v_t}{TGG} H'$, moreover the reflexive transitive closure of $\tderiv{}{}{}$ is denoted by $\tderivtr{}{}{}$ and we call these relations by the same names as before, namely, derivation in one step and derivation. We might also omit identifiers.
 \end{definition}
 
-%TODO: give intuition for the rule application
-%TODO: comment the non necessitu of embedding for the correspondence graph
+A concrete derivation of a triple graph $G = G_s \ms{g_s} G_c \mt{g_t} G_t$ can de informally understood as concrete derivations (see \ref{def:gg_dstep}) of $G_s$, $G_c$ and $G_t$ according to the right-hand sides $R_s$, $R_c$ and $R_t$. The only remark is the absence of an embedding mechanism for the correspondence graph, which edges are not important for our application. Nevertheless, the addition of such a mechanism for the correspondence graph should not be a problem if it is desired.
 
 \begin{definition}
 	A derivation $D$ in $TGG$ is a sequence of derivation steps
@@ -288,7 +285,7 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 	\label{def:tlanguage}
 	The language $L(TGG)$ generated by the triple grammar $TGG$ is the set of all triple graphs containing only terminal vertices derived from the start triple graph $\startTG{TGG}$, that is
 	\[
-	L(TGG) = \{H \st \phi_H(V_H) \subseteq \Delta \land \startTG{TGG} \tderivtr{}{}{} H\}
+	L(TGG) = \{H \text{ is a triple graph over } \Delta \text{ and } \startTG{TGG} \tderivtr{}{}{} H\}
 	\]
 \end{definition}
 
@@ -297,7 +294,8 @@ Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and
 %Concrete syntax and examples (Pseudocode 2 Control Flow [sourcecode2controlflow])
 \begin{example}{Pseudocode to Controlflow.}
 	\label{ex:pseudocode2controlflow}
-	This example illustrates the specification of the consistency relation between $Pseudocode$ graphs and $Controlflow$ graphs. A $Pseudocode$ graph is an abstract representation of a program written in a pseudo-code where vertices refer to \textit{actions}, \textit{ifs} or \textit{whiles} and edges connect these items together according to how they appear in the program. A $Controlflow$ graph is a more abstract representation of a program, where vertices can only be either a \textit{command} or a \textit{branch}.
+	%TODO: So far, it should be let clear what TGGs are used for (introduction)
+	This example illustrates the definition of a BNCE TGG that characterizes the language of all $Pseudocode$ graphs together with their respective $Controlflow$ graphs. A $Pseudocode$ graph is an abstract representation of a program written in a pseudo-code where vertices refer to \textit{actions}, \textit{ifs} or \textit{whiles} and edges connect these items together according to how they appear in the program. A $Controlflow$ graph is a more abstract representation of a program, where vertices can only be either a \textit{command} or a \textit{branch}.
 	
 	Consider, for instance, the program $main$ below on the left, written in a pseudo-code. The triple graph $TG$ on the right consists of the $Pseudocode$ graph of $main$ connected to the $Controlflow$ graph of the same program through the correspondence graph in the middle of them. In such graph, the vertex labels of the $Pseudocode$ graph $p, i, a, w$ correspond to the concepts of \textit{program}, \textit{if}, \textit{action} and \textit{while}, respectively. The edge label $f$ is given to the edge from the vertex $p$ to the program's first statement, $x$ stands for \textit{next} and indicates that a statement is followed by another, $p$ and $n$ stand for \textit{positive} and \textit{negative} and indicate which assignments correspond to the positive of negative case of the \textit{if}'s evaluation, finally $l$ stands for \textit{last} and indicates the last action of a loop. In the $Controlflow$ graph, the vertex labels $g, b, c$ stand for the concepts of \textit{graph}, \textit{branch} and \textit{command}, respectively. The edge label $r$ is given to the edge from the vertex $g$ to the first program's statement, $x, p$ and $n$ mean, analogous to the former graph, \textit{next}, \textit{positive} and \textit{negative}. In the correspondence graph, the labels $pg, ib, ac, wb$ serve to indicate which labels in the source and target graphs are being connected through the triple graph's morphism.
 	
@@ -421,9 +419,9 @@ If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Model Transformation with BNCE Triple Graph Grammars}
-Given a graph $G$ over $\Delta$, one may be interested in finding another graph $T$ over $\Delta$ that is somehow consistent to $G$, write $G \rel T$. One example of such a situation is the compilation of a source-code, represented abstractly by $G$, into a machine-code, represented by $T$. Since, very often, $T$ can be generated from $G$, following some specification, this problem is referred to as model transformation problem.
+As already introduced, TGGs can be used to characterize languages of triple graphs holding correctly transformed models. That is, one can interpret a TGG as the description of the correctly-transformed relation between two sets of models $\mathcal{S}$ and $\mathcal{T}$, where two models $G \in \mathcal{S}$ and $T \in \mathcal{T}$ are in the relation if and only if $G$ and $T$ are respectively, source and target graphs of any triple graph of the language $L(TGG)$. That being said, we are interested in this Section on defining a model transformation algorithm that interprets a BNCE TGGs $TGG$ to transform a source model $G$ into one of its correspondent target models $T$ according to the correctly-transformed relation defined by $TGG$.
 
-Now, let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar such that $G \rel T$ if and only if, $G \ms{} C \mt{} T \in L(TGG)$, that is, if we interpret $TGG$ as the descriptor of the consistency relation between $G$ and $T$, then the model transformation problem is reduced to finding a triple graph $G \ms{} C \mt{} T$ that belongs to $L(TGG)$. This is, by the definition of triple graph language (see \ref{def:tlanguage}) equivalent to finding a derivation $\startTG{TGG} \tderivtr{}{}{TGG} G \ms{} C \mt{} T$.
+For that end, let $TGG = (\Sigma = \Sigma_s \cup \Sigma_t, \Delta, S, P)$ be a triple graph grammar defining the correctly-transformed relation between two arbitrary sets of graphs $\mathcal{S}$ over $\Sigma_s$ and $\mathcal{T}$ over $\Sigma_t$. And let $G \in \mathcal{S}$ be a source graph. We want to find a target graph $T \in \mathcal{T}$ such that $G \ms{} C \mt{} T \in L(TGG)$. To put in words, we wish to find a triple graph holding $G$ and $T$ that is in the language of all correctly transformed models. Hence, the model transformation problem is reduced--- according to the definition of triple graph language (see Definition \ref{def:tlanguage})--- to the problem of finding a derivation $\startTG{TGG} \tderivtr{}{}{TGG} G \ms{} C \mt{} T$.
 
 Furthermore, consider the following definitions.
 
@@ -560,6 +558,8 @@ The $Star2Wheel$ transformation consists of transforming star graphs, which are 
 %TODO: Not enough experimentation to say one is expressive than the other. This would require extensive theoretical analysis. But BNCE seems to present better usability in many cases
 
 %TODO: Cite s_78 for evaluation of HRGs
+
+%TODO: Expressiviness. Run away from nacs and tacs. with NCE
 
 %Furthermore, we also report on the runtime for forward and backward batch transformations in a Intel Core i3 2.3GHz 4x 64bit with 4GB RAM. The standard TGG version of the transformations were executed using the eMoflon Tool \cite{leblebici2014developing}.
 \begin{table}[h]
