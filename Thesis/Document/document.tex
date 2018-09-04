@@ -22,7 +22,7 @@
 Overview of the MDE. Potential and problems of it. The challenge of model transformation. A solution: Triple Graph Grammars (TGG) (justification). A problem of TGG (usability/ amount of grammar rules). Our solution for this problem: TGG with non-terminal nodes. Overview of our approach (graph grammars with non-terminal nodes, NCE grammars, graph language, parsing, transformation). Brief intro into graph grammars and embedding. Explain why BNCE (HRG parsers were for classes too restricted), why grammars. Short summary of the results. Remainder.
 
 \section{Related Work}
-In this section, we offer a literary review on the topics of graph grammars and triple graph grammars as well as we indicate published works that are related with our approach. Here, we focus on the node label and the hyperedge replacement approach for graph grammars. Nevertheless, the field does not restrict to this topic, instead, there is a myriad of different approaches to it, for example, the algebraic approach \cite{ehrig1999handbook}.
+In this section, we offer a literary review on the topics of graph grammars and triple graph grammars as well as we indicate published works that are related with our approach. Here, we focus on the node label and the hyperedge replacement approach for graph grammars. Nevertheless, the field does not restrict to this topic, instead, there is a myriad of different approaches to it, for example, the algebraic approach \cite{ehrig1999handbook}. We refer to context-free and context-sensitive grammars, inspired by the use of such classification for string grammars, in a relaxed way without any compromise to the correct definition of context-freeness for graph grammars.
 
 \textit{Hyperedge replacement graph grammars} (HRG) are context-free grammars with semantics based on the replacement of hyperedges by hypergraphs \cite{drewes1997hyperedge} governed by morphisms. Prominent polynomial-time top-down and shift-reduce parsing techniques for classes of such grammars can be found in \cite{drewes2015predictive,drewes2017predictive,bjorklund2016between,chiang2013parsing} and applications for syntax definition of a visual language can be found in \cite{minas2006syntax,engelfriet1998tree}.
 
@@ -93,13 +93,14 @@ We use graphs to represent models, first because of the extensive theory behind 
 	Vertices from the right-hand sides of rules labeled by non-terminal (terminal) symbols are said to be non-terminal (terminal) vertices.
 \end{definition}
 
-Notice that, in the original definition of NCE grammars \cite{janssens1982graph}, the left-hand side of the productions were allowed to contain any connected graph. So, strictly speaking, the definition above characterizes actually a 1-NCE graph grammar, that contains only one element in the left-hand side. Nevertheless, for simplicity, we use the denomination NCE to mean a 1-NCE grammar.
+Notice that, in the original definition of NCE grammars \cite{janssens1982graph}, the left-hand side of the productions were allowed to contain any connected graph. So, strictly speaking, the definition above characterizes actually a 1-edNCE graph grammar, that contains only one element in the left-hand side and a directed edge-labeled graph in the right-hand side. Nevertheless, for simplicity, we use the denomination NCE to mean a 1-edNCE grammar.
 
 \begin{definition}
 	A boundary graph grammar with neighborhood-controlled embedding (BNCE graph grammar) $GG$ is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the graph grammar $GG$ is boundary iff all its rules' right-hand sides are $\Gamma\text{-boundary}$ graphs.
 \end{definition}
 
 %%%%%% Concrete Syntax %%%%%%
+%TODO: Fix concrete syntax: remove embeddin and write it manually in the document
 In the following, we present our concrete syntax inspired by the well-known backus-naur form to denote BNCE graph grammar rules. Let $GG = (\{A,a,b,c\},$ $\{a,b,c\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\}, \{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, $\omega = \{v_1 \mapsto \{(l,a), (l,b), (m,c)\}\}$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$ and $\zeta = \emptyset$, we denote $p$ and $q$ together as\\
 \input{misc/concrete-syntax}
 
@@ -298,6 +299,7 @@ Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and
 	This example illustrates the definition of a BNCE TGG that characterizes the language of all $Pseudocode$ graphs together with their respective $Controlflow$ graphs. A $Pseudocode$ graph is an abstract representation of a program written in a pseudo-code where vertices refer to \textit{actions}, \textit{ifs} or \textit{whiles} and edges connect these items together according to how they appear in the program. A $Controlflow$ graph is a more abstract representation of a program, where vertices can only be either a \textit{command} or a \textit{branch}.
 	
 	Consider, for instance, the program $main$ below on the left, written in a pseudo-code. The triple graph $TG$ on the right consists of the $Pseudocode$ graph of $main$ connected to the $Controlflow$ graph of the same program through the correspondence graph in the middle of them. In such graph, the vertex labels of the $Pseudocode$ graph $p, i, a, w$ correspond to the concepts of \textit{program}, \textit{if}, \textit{action} and \textit{while}, respectively. The edge label $f$ is given to the edge from the vertex $p$ to the program's first statement, $x$ stands for \textit{next} and indicates that a statement is followed by another, $p$ and $n$ stand for \textit{positive} and \textit{negative} and indicate which assignments correspond to the positive of negative case of the \textit{if}'s evaluation, finally $l$ stands for \textit{last} and indicates the last action of a loop. In the $Controlflow$ graph, the vertex labels $g, b, c$ stand for the concepts of \textit{graph}, \textit{branch} and \textit{command}, respectively. The edge label $r$ is given to the edge from the vertex $g$ to the first program's statement, $x, p$ and $n$ mean, analogous to the former graph, \textit{next}, \textit{positive} and \textit{negative}. In the correspondence graph, the labels $pg, ib, ac, wb$ serve to indicate which labels in the source and target graphs are being connected through the triple graph's morphism.
+	%TODO: advise that command are not stuffed with further information that actually characterizes them. But it could be done with a future work on attributed graphs
 	
 	\input{examples/pseudocode2controlflow-tg}
 	
@@ -391,9 +393,9 @@ Finally, the Algorithm \ref{alg:parse} displays the parsing algorithm of graphs 
 					\EndIf
 				\EndFor
 			\Until{$(S, V_G) \in bup$} \Comment{if found the root, stop}
-			\State \Return $(S, V_G) \in bup \? D(\ptree{(S,V_G)}{y}{X} \in pf) \: nothing $
+			\State \Return $(S, V_G) \in bup \? \Just D(\ptree{(S,V_G)}{y}{X} \in pf) \: \Nothing $
 		\EndFunction
-		\Ensure $return \text{ is either } nothing \text{ or of the form } \startG{GG} \derivtr{}{}{} G$
+		\Ensure $return \text{ is either } \Nothing \text{ or of the form } \Just \startG{GG} \derivtr{}{}{} G$
 	\end{algorithmic}
 	\label{alg:parse}
 \end{algorithm}
@@ -403,7 +405,7 @@ is started with the trivial zone vertices of $G$, each containing only one verte
 
 The variable $h$ stands for handle and is any subset from $bup$ chosen to be evaluated for the search of new zone vertices to insert in $bup$. The procedure $\Select$ gives one yet not chosen handle or an empty set and cares for the termination of the execution. Then, for the chosen $h$, rules $r$ with left-hand side $d$ and right-hand side isomorphic to $Y(h)$ that produce $Z(h)$ from $Z(\{l\})$ are searched. If any is found, then $l = (d,V(h))$ is inserted into $bup$. This basically means that it found a zone vertex that encompasses the vertices $V(h)$ (a possibly bigger subset than other elements in $bup$), from which, through the application of a sequence of rules, we can produce the subgraph of G induced by $V(h)$. This information is saved in the parsing forest $pf$ in form of a parsing tree with node $l$ and children $\ptree{z}{y}{X}$, already in the parsing forest $pf$, for all $z \in h$.
 
-If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that the whole graph $G$ can be produced through the application of a derivation starting from the start graph $\startG{GG}$ and thus $G \in L(GG)$. This derivation is, namely, the result of a depth-first walk in the parsing tree whose root is $(S, V_G)$. If, otherwise, all possibilities for $h$ were exhausted without inferring such zone vertex, then $nothing$ is returned, what means that $G$ cannot de parsed with $GG$ and therefore $G \notin L(GG)$.
+If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that the whole graph $G$ can be produced through the application of a derivation starting from the start graph $\startG{GG}$ and thus $G \in L(GG)$. This derivation is, namely, the result of a depth-first walk in the parsing tree whose root is $(S, V_G)$. If, otherwise, all possibilities for $h$ were exhausted without inferring such zone vertex, then $\Nothing$ is returned, what means that $G$ cannot de parsed with $GG$ and therefore $G \notin L(GG)$.
 
 %TODO: Talk about the empty productions, that are allowed
 %TODO: Talk about the isomorphism in the reduction test
@@ -419,62 +421,95 @@ If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Model Transformation with BNCE Triple Graph Grammars}
-As already introduced, TGGs can be used to characterize languages of triple graphs holding correctly transformed models. That is, one can interpret a TGG as the description of the correctly-transformed relation between two sets of models $\mathcal{S}$ and $\mathcal{T}$, where two models $G \in \mathcal{S}$ and $T \in \mathcal{T}$ are in the relation if and only if $G$ and $T$ are respectively, source and target graphs of any triple graph of the language $L(TGG)$. That being said, we are interested in this Section on defining a model transformation algorithm that interprets a BNCE TGGs $TGG$ to transform a source model $G$ into one of its correspondent target models $T$ according to the correctly-transformed relation defined by $TGG$.
+As already introduced, TGGs can be used to characterize languages of triple graphs holding correctly transformed models. That is, one can interpret a TGG as the description of the correctly-transformed relation between two sets of models $\mathcal{S}$ and $\mathcal{T}$, where two models $G \in \mathcal{S}$ and $T \in \mathcal{T}$ are in the relation if and only if $G$ and $T$ are respectively, source and target graphs of any triple graph of the language $L(TGG)$. That being said, we are interested in this section on defining a model transformation algorithm that interprets a BNCE TGG $TGG$ to transform a source model $G$ into one of its correspondent target models $T$ according to the correctly-transformed relation defined by $TGG$.
 
 For that end, let $TGG = (\Sigma = \Sigma_s \cup \Sigma_t, \Delta, S, P)$ be a triple graph grammar defining the correctly-transformed relation between two arbitrary sets of graphs $\mathcal{S}$ over $\Sigma_s$ and $\mathcal{T}$ over $\Sigma_t$. And let $G \in \mathcal{S}$ be a source graph. We want to find a target graph $T \in \mathcal{T}$ such that $G \ms{} C \mt{} T \in L(TGG)$. To put in words, we wish to find a triple graph holding $G$ and $T$ that is in the language of all correctly transformed models. Hence, the model transformation problem is reduced--- according to the definition of triple graph language (see Definition \ref{def:tlanguage})--- to the problem of finding a derivation $\startTG{TGG} \tderivtr{}{}{TGG} G \ms{} C \mt{} T$.
 
-Furthermore, consider the following definitions.
-
-\begin{definition}
-	By extension of the Definition \ref{def:np}, a BNCE triple graph grammar $TGG$ is neighborhood preserving if and only if, $S(TGG)$ and $T(TGG)$ are neighborhood preserving.
-\end{definition}
+Our strategy to solve this problem is, first, to get a derivation for $G$ with the source part of $TGG$ and, then, construct the derivation $\startTG{TGG} \tderivtr{}{}{TGG} G \ms{} C \mt{} T$. For this purpose, consider the definitions of the $\source$ and $\target$ functions, that extract the source and the target part of production rules.
 
 \begin{definition}
 	\label{def:source}
-	Let $r = ((A,A,A) \pro (G_s \ms{} G_c \mt{} G_t), \omega_s, \omega_t)$ be a production rule of a triple graph grammar, $\source(r) = (A \pro G_s,\omega_s)$ gives the source part of $r$ (symmetrically, $\source^-1((A \pro G_s,\omega_s)) = r$). Moreover, for any triple graph grammar $TGG = (\Sigma, \Delta, S, P)$, define the source grammar $\Source(TGG) = (\Sigma, \Delta, S, SP)$, where $SP = \source(P)$. Analogously, $\target(r) = (C \pro G_t,\omega_t)$, $\target^-1((C \pro G_t,\omega_t)) = r$ and $\Target(TGG) = (\Sigma, \Delta, S, TP)$, where $TP = \target(P)$.
+	Let $r = (A \pro (G_s \ms{} G_c \mt{} G_t), \omega_s, \omega_t)$ be a production rule of a triple graph grammar, $\source(r) = (A \pro G_s,\omega_s)$ gives the source part of $r$ and $\target(r) = (A \pro G_t,\omega_t)$ gives the target part. Moreover, $\source^-1((A \pro G_s,\omega_s)) = r$ and $\target^-1((A \pro G_t,\omega_t)) = r$ are the inverse of these functions.
 \end{definition}
 
 \begin{definition}
-	A triple graph $G_s \ms{ms} G_c \mt{mt} G_t$ is $\Gamma\text{-consistent}$ if and only if, 
-$\forall c \in V_{G_c} \. \text{if } \phi_{G_c}(c) \in \Gamma \text{ then } \phi_{G_c}(c) = \phi_{G_s}(ms(c)) = \phi_{G_t}(mt(c))$ and for the sets $N_s = \{v \st \phi_{G_s}(v) \in \Gamma\}$ and $N_t = \{v \st \phi_{G_t}(v) \in \Gamma\}$, the range-restricted functions $(ms \rrestr N_s)$ and $(mt \rrestr N_t)$ are bijective.
+	\label{def:Source}
+	Let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar, $\Source(TGG) = (\Sigma, \Delta, S, \source(P))$ gives the source grammar of $TGG$ and $\Target(TGG) = (\Sigma, \Delta, S, \target(P))$ gives the target grammar of $TGG$.
 \end{definition}
 
+Furthermore, consider the definition of the non-terminal consistent (NTC) property of TGGs, which assures that non-terminal vertices of the correspondent graph are connected to vertices with the same label in the source and target graphs.
+
 \begin{definition}
-	A triple graph grammar $TGG = (\Sigma, \Delta, S, P)$ is non-terminal consistent (NTC) if and only if, all rules $r \in P$ are $\Gamma\text{-consistent}$.
+	A triple graph grammar $TGG = (\Sigma, \Delta, S, P)$ is non-terminal consistent (NTC) if and only if, for all rules $(A \pro (G_s \ms{ms} G_c \mt{mt} G_t), \omega_s, \omega_t) \in P$, the following holds:
+	\begin{enumerate}
+		\item $\forall c \in V_{G_c} \. \text{if } \phi_{G_c}(c) \in \Gamma \text{ then } \phi_{G_c}(c) = \phi_{G_s}(ms(c)) = \phi_{G_t}(mt(c))$ and
+		\item For the sets $N_s = \{v \st \phi_{G_s}(v) \in \Gamma\}$ and $N_t = \{v \st \phi_{G_t}(v) \in \Gamma\}$, the range-restricted functions $(ms \rrestr N_s)$ and $(mt \rrestr N_t)$ are bijective.
+	\end{enumerate}
 \end{definition}
+
+Finally, the following result gives us an equivalence between a derivation in $TGG$ and a derivation in its source grammar $S(TGG)$, which allows us to construct our goal derivation of $G \ms{} C \mt{} T$ in $TGG$ using the derivation of $G$ in $S(TGG)$.
 
 \begin{theorem}
 	\label{thm:one_d_enough}
-	Let $TGG = (\Sigma, \Delta, S, P)$ be a NTC TGG, $SG = S(TGG) = (\Sigma, \Delta, S, SP)$ its source grammar and $D = \startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1 \tderiv{r_1}{s_1,c_1,t_1}{TGG} \dots \tderiv{r_{k-1}}{s_{k-1},c_{k-1},t_{k-1}}{TGG} G^k$ be a derivation in $TGG$, $D$ can equivalently be rewritten as the derivation in $SG$, $\overline{D} = \startG{SG} \deriv{s(r_0)}{s_0}{SG} G^1_s \deriv{s(r_1)}{s_1}{SG} \dots \deriv{s(r_{k-1})}{s_{k-1}}{SG} G^k_s $.
+	Let $TGG = (\Sigma, \Delta, S, P)$ be a NTC TGG. \\
+	$D = \startTG{} \tderiv{r_0}{s_0,c_0,t_0}{} G^1 \tderiv{r_1}{s_1,c_1,t_1}{} \dots \tderiv{r_{k-1}}{s_{k-1},c_{k-1},t_{k-1}}{} G^k$ is a derivation in $TGG$ if, and only if, $\overline{D} = \startG{} \deriv{s(r_0)}{s_0}{} G^1_s \deriv{s(r_1)}{s_1}{} \dots \deriv{s(r_{k-1})}{s_{k-1}}{} G^k_s$ is a derivation in $S(TGG)$.
 \end{theorem}
 \begin{proof}
-	%TODO: Maybe rewrite it using align and referencing to each condition from the gg_dstep abd tgg_dstep definitions
-	We want to show that if $D$ is a derivation in $TGG$, then $\overline{D}$ is a derivation in $SG$, and vice-versa. We prove it by induction in the following.
+	%TODO: Maybe referencing to each condition from the gg_dstep abd tgg_dstep definitions
+	We want to show that if $D$ is a derivation in $TGG = (\Sigma, \Delta, S, P)$, then $\overline{D}$ is a derivation in $SG := S(TGG) = (\Sigma, \Delta, S, SP)$, and vice-versa. We prove it by induction in the following.
 	
-	First, if $\startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1$, that is $Z_s \ms{} Z_c \mt{} Z_t \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1_s \ms{} G^1_c \mt{} G^1_t$, then, by Definition \ref{def:tgg_dstep}, $r_0 = ((S,S,S) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P$, and by Definition \ref{def:source}, $\source(r_0) = (S \pro R_s, \omega_s) \in SP$, hence, using it, the configuration of $\phi_{Z_s}(s_0)$, $V_{G^1_s}$, $E_{G^1_s}$ and $\phi_{G^1_s}$ and the equality $Z_s = \startG{S(TGG)}$, we have $\startG{S(TGG)} \deriv{\source(r_0)}{s_0}{SG} G^1_s$.
+	First, since, by Def. \ref{def:tlanguage}, $\startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1$, that is
+	\begin{align*}
+	& Z_s \ms{} Z_c \mt{} Z_t \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1_s \ms{} G^1_c \mt{} G^1_t \text{, then, by Def. \ref{def:tgg_dstep},}\\
+	& r_0 = (S \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P \text{ and, by Def. \ref{def:source},}\\
+	& \source(r_0) = (S \pro R_s, \omega_s) \in SP
+	\end{align*}
 	
-	In the other direction, we choose $c_0, t_0$ from the definition of $\startTG{TGG}$, with $\phi_{Z_c}(c_0) = S$ and  $\phi_{Z_t}(t_0) = S$. In this case, if $\startG{SG} \deriv{s(r_0)}{s_0}{SG} G^1_s$, then by Definition \ref{def:gg_dstep}, we have $\source(r_0) = (S \pro R_s, \omega_s) \in SP$ and using the bijectivity of $\source$, we get $r_0 = \source^{-1}(s(r_0)) = ((S,S,S) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P$. Hence, using it, the configuration of $\phi_{\startG{SG}}(s_0)$, $V_{G^1_s}$, $E_{G^1_s}$ and $\phi_{G^1_s}$, the equality $Z_s = \startG{SG}$ and constructing $V_{G^1_c}$, $V_{G^1_t}$, $E_{G^1_c}$, $E_{G^1_t}$, $\phi_{G^1_c}$, $\phi_{G^1_t}$ from $Z_c$ and $Z_t$ according to the Definition \ref{def:tgg_dstep}, we have $\startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1_s \ms{} G^1_c \mt{} G^1_t$
+	Hence, using it, the configuration of $\phi_{Z_s}(s_0)$, $V_{G^1_s}$, $E_{G^1_s}$ and $\phi_{G^1_s}$ and the equality $Z_s = \startG{SG}$, we have $\startG{SG} \deriv{\source(r_0)}{s_0}{SG} G^1_s$.
 	
-	Now, for the induction step, we want to show that if $\startTG{TGG} \tderivtr{}{}{TGG} G^i \tderiv{r_{i}}{s_{i},c_{i},t_{i}}{TGG} G^{i+1}$ is a derivation in $TGG$, then $\startG{TGG} \derivtr{}{}{SG} G^i_s \deriv{s(r_{i})}{s_{i}}{SG} G^{i+1}_s$ is a derivation in $SG$ and vice-versa. By induction hypothesis it holds for the first $i$ steps, so we just have to show it for the step $i+1$.
+	In the other direction, we choose $c_0, t_0$ from the definition of $\startTG{TGG}$, with $\phi_{Z_c}(c_0) = S$ and  $\phi_{Z_t}(t_0) = S$. In this case, since, by Def. \ref{def:language},
+	\begin{align*}
+	& \startG{SG} \deriv{s(r_0)}{s_0}{SG} G^1_s \text{, then by Def. \ref{def:gg_dstep},}\\
+	& \source(r_0) = (S \pro R_s, \omega_s) \in SP \text{ and, using the bijectivity of $\source$, we get}\\
+	& r_0 = \source^{-1}(s(r_0)) = (S \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P
+	\end{align*}
 	
-	So, if $G^i \tderiv{r_{i}}{s_{i},c_{i},t_{i}}{TGG} G^{i+1}$, that is $G^i_s \ms{ms_i} G^i_c \mt{mt_i} G^i_t \tderiv{r_i}{s_i,c_i,t_i}{TGG} G^{i+1}_s \ms{} G^{i+1}_c \mt{} G^{i+1}_t$, then, by Definition \ref{def:tgg_dstep}, $r_i = ((S,S,S) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P$, and by Definition \ref{def:source}, $\source(r_i) = (S \pro R_s, \omega_s) \in SP$, hence, using it and the configuration of $\phi_{G^i_s}(s_i)$, $V_{G^{i+1}_s}$, $E_{G^{i+1}_s}$ and $\phi_{G^{i+1}_s}$, we have $G^i \deriv{\source(r_i)}{s_i}{SG} G^{i+1}_s$.
+	Hence, using it, the configuration of $\phi_{\startG{SG}}(s_0)$, $V_{G^1_s}$, $E_{G^1_s}$ and $\phi_{G^1_s}$, the equality $Z_s = \startG{SG}$ and constructing $V_{G^1_c}$, $V_{G^1_t}$, $E_{G^1_c}$, $E_{G^1_t}$, $\phi_{G^1_c}$, $\phi_{G^1_t}$ from $Z_c$ and $Z_t$ according to the Def. \ref{def:tgg_dstep}, we have $\startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1_s \ms{} G^1_c \mt{} G^1_t$.
 	
-	In the other direction, we choose, using the bijectivity from the range-restricted $\source$ stemming from the NTC property, $c_i = ms_i^{-1}(s_i), t_i = mt_i(c_i)$. Moreover, since $TGG$ is NTC, and because $\startTG{TGG} \tderivtr{}{}{TGG} G^i$ is a derivation in $TGG$ it is clear that $G^i$ is NTC, thus $\phi_{G^i_s}(s_0) = \phi_{G^i_c}(c_0) = \phi_{G^i_t}(t_i)$.
+	Now, for the induction step, we want to show that if $\startTG{TGG} \tderivtr{}{}{TGG} G^i$ $\tderiv{r_{i}}{s_{i},c_{i},t_{i}}{TGG} G^{i+1}$ is a derivation in $TGG$, then $\startG{TGG} \derivtr{}{}{SG} G^i_s \deriv{s(r_{i})}{s_{i}}{SG} G^{i+1}_s$ is a derivation in $SG$ and vice-versa, provided that the equivalence holds for the first $i$ steps, so we just have to show it for the step $i+1$.
+	
+	So, since, $G^i \tderiv{r_{i}}{s_{i},c_{i},t_{i}}{TGG} G^{i+1}$, that is
+	\begin{align*}
+	& G^i_s \ms{ms_i} G^i_c \mt{mt_i} G^i_t \tderiv{r_i}{s_i,c_i,t_i}{TGG} G^{i+1}_s \ms{} G^{i+1}_c \mt{} G^{i+1}_t \text{, then, by Def. \ref{def:tgg_dstep},}\\
+	& r_i = (S \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P \text{, and by Def. \ref{def:source},}\\
+	& \source(r_i) = (S \pro R_s, \omega_s) \in SP
+	\end{align*}
+	
+	Hence, using it and the configuration of $\phi_{G^i_s}(s_i)$, $V_{G^{i+1}_s}$, $E_{G^{i+1}_s}$ and $\phi_{G^{i+1}_s}$, we have $G^i \deriv{\source(r_i)}{s_i}{SG} G^{i+1}_s$.
+	
+	In the other direction, we choose, using the bijectivity from the range restricted function $\source$, stemming from the NTC property, $c_i = ms_i^{-1}(s_i), t_i = mt_i(c_i)$. Moreover, since $TGG$ is NTC, and because, by induction hypothesis, $\startTG{TGG} \tderivtr{}{}{TGG} G^i$ is a derivation in $TGG$ and $\phi_{G^i_s}(s_i) \in \Gamma$, it is clear that $\phi_{G^i_s}(s_i) = \phi_{G^i_c}(c_i) = \phi_{G^i_t}(t_i)$.
 	%TODO: Maybe it is not so evident and we need an extra lemma for it
 	
-	In this case, if $G^{i}_s \deriv{s(r_i)}{s_i}{SG} G^{i+1}_s$, then by Definition \ref{def:gg_dstep}, we have $\source(r_i) = (A \pro R_s, \omega_s) \in SP$ and using the bijectivity of $\source$, we get $r_i = \source^{-1}(s(r_i)) = ((A,A,A) \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P$. 
+	In this case, since
+	\begin{align*}
+	& G^{i}_s \deriv{s(r_i)}{s_i}{SG} G^{i+1}_s \text{, then, by Def. \ref{def:gg_dstep},}\\
+	& \source(r_i) = (A \pro R_s, \omega_s) \in SP \text{ and, using the bijectivity of $\source$, we get }\\
+	& r_i = \source^{-1}(s(r_i)) = (A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P
+	\end{align*} 
 	
-	Hence, using, additionally, the configuration of $\phi_{G^i_s}(s_i)$, $\phi_{G^i_c}(c_i)$, $\phi_{G^i_t}(t_i)$ $V_{G^{i+1}_s}$, $E_{G^{i+1}_s}$ and $\phi_{G^{i+1}_s}$ and constructing $V_{G^{i+1}_c}$, $V_{G^{i+1}_t}$, $E_{G^{i+1}_c}$, $E_{G^{i+1}_t}$, $\phi_{G^{i+1}_c}$, $\phi_{G^{i+1}_t}$ from $G^i_c$ and $G^i_t$ according to the Definition \ref{def:tgg_dstep}, we have $ G^i_s \ms{} G^i_c \mt{} G^i_t \tderiv{r_i}{s_i,c_i,t_i}{TGG} G^{i+1}_s \ms{} G^{i+1}_c \mt{} G^{i+1}_t$.
+	Hence, using, additionally, the configuration of $\phi_{G^i_s}(s_i)$, $\phi_{G^i_c}(c_i)$, $\phi_{G^i_t}(t_i)$ $V_{G^{i+1}_s}$, $E_{G^{i+1}_s}$ and $\phi_{G^{i+1}_s}$ and constructing $V_{G^{i+1}_c}$, $V_{G^{i+1}_t}$, $E_{G^{i+1}_c}$, $E_{G^{i+1}_t}$, $\phi_{G^{i+1}_c}$, $\phi_{G^{i+1}_t}$ from $G^i_c$ and $G^i_t$ according to the Def. \ref{def:tgg_dstep}, we have 
+	\begin{equation*}
+	G^i_s \ms{} G^i_c \mt{} G^i_t \tderiv{r_i}{s_i,c_i,t_i}{TGG} G^{i+1}_s \ms{} G^{i+1}_c \mt{} G^{i+1}_t
+	\end{equation*}
 	
 	This finishes the proof.
-	
 \end{proof}
 
 Therefore, by Theorem \ref{thm:one_d_enough}, the problem of finding a derivation $D = \startTG{TGG} \tderivtr{}{}{TGG} G \ms{} C \mt{} T$ is reduced to finding a derivation $\overline{D} = \startG{S(TGG)} \deriv{}{}{S(TGG)} G$, what can be done with the already presented parsing algorithm \ref{alg:parse}. The final construction of the triple graph $G \ms{} C \mt{} T$ becomes then just a matter of creating $D$ out of $\overline{D}$.
 
 %TODO: Comment about the backward case, should be trivial
 
-The complete transformation procedure is presented in the Algorithm \ref{alg:transform}. Thereby it is required that the TGG be neighborhood preserving, what poses no problem to our procedure, once any TGG can be transformed into the neighborhood preserving normal form. 
+The complete transformation procedure is presented in the Algorithm \ref{alg:transform}. Thereby it is required that the TGG be neighborhood preserving (NP), what poses no problem to our procedure, once any TGG can be transformed into the neighborhood preserving normal form. 
 
 %TODO: Maybe talk more about the normalization for TGGs
 
@@ -488,12 +523,12 @@ The complete transformation procedure is presented in the Algorithm \ref{alg:tra
 		\State $\overline{D} \gets parse(GG,G)$ \Comment{use algorithm \ref{alg:parse}}
 		\If{$\overline{D} = \startG{S(TGG)} \derivtr{}{}{S(TGG)} G$} \Comment{if parsed successfully}
 		\State from $\overline{D}$ construct $D = \startTG{TGG} \derivtr{}{}{TGG} G \ms{} C \mt{} T$
-		\State \Return {$T$}
+		\State \Return {$\Just T$}
 		\Else
-		\State \Return {$nothing$} \Comment{no $T$ satisfies $(G \ms{} C \mt{} T) \in L(TGG)$}
+		\State \Return {$\Nothing$} \Comment{no $T$ satisfies $(G \ms{} C \mt{} T) \in L(TGG)$}
 		\EndIf
 		\EndFunction 
-		\Ensure $return \text{ is either } nothing \text{ or } T \text{, such that } (G \ms{} C \mt{} T) \in L(TGG)$
+		\Ensure $return \text{ is either } \Nothing \text{ or } \Just T \text{, such that } (G \ms{} C \mt{} T) \in L(TGG)$
 	\end{algorithmic}
 	\label{alg:transform}
 \end{algorithm}
@@ -501,8 +536,9 @@ The complete transformation procedure is presented in the Algorithm \ref{alg:tra
 %Incremental and Synchhronization
 %TODO: discourse about incremental transformation and synchronization
 %TODO: Discuss ambiguiity in the grammar and the non-determinism in the generation of TGs in this case
-%TODO: Comment on correctness and completeness in the TGG sense
 %TODO: Comment on termination and spatial and time complexity
+
+%TODO: Comment on correctness and completeness in the TGG sense. Analyze empty productions in TGGs, critical-pairs, such complicated things
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% TGG EXTENTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

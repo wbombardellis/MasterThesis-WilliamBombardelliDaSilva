@@ -36,46 +36,38 @@
 \newcommand{\target}{\operatorname{t}}
 \newcommand{\Target}{\operatorname{T}}
 \newcommand{\cderiv}[3]{
-	\ifx&#2&%
+	\ifx\relax\detokenize{#2}\relax
 	\overset{#1}{\Rrightarrow}_{#3}
 	\else
 	\overset{#1,#2}{\Rrightarrow}_{#3}
 	\fi
 }
 \newcommand{\deriv}[3]{
-	\ifx&#2&%
+	\ifx\relax\detokenize{#2}\relax
 	\overset{#1}{\Rightarrow}_{#3}
 	\else
 	\overset{#1,#2}{\Rightarrow}_{#3}
 	\fi
 }
-\newcommand{\derivtr}[3]{
-	\ifx&#2&%
-	\overset{#1}{\Rightarrow^*}_{#3}
-	\else
-	\overset{#1,#2}{\Rightarrow^*}_{#3}
-	\fi
+\newcommand{\derivtr}[1]{
+	\Rightarrow^*_{#1}
 }
 \newcommand{\tcderiv}[3]{
-	\ifx&#2&%
+	\ifx\relax\detokenize{#2}\relax
 	\overset{#1}{\Rrightarrow}_{#3}
 	\else
 	\overset{#1,#2}{\Rrightarrow}_{#3}
 	\fi
 }
 \newcommand{\tderiv}[3]{
-	\ifx&#2&%
+	\ifx\relax\detokenize{#2}\relax
 	\overset{#1}{\Rightarrow}_{#3}
 	\else
 	\overset{#1,#2}{\Rightarrow}_{#3}
 	\fi
 }
-\newcommand{\tderivtr}[3]{
-	\ifx&#2&%
-	\overset{#1}{\Rightarrow^*}_{#3}
-	\else
-	\overset{#1,#2}{\Rightarrow^*}_{#3}
-	\fi
+\newcommand{\tderivtr}[1]{
+	\Rightarrow^*_{#1}
 }
 
 %%%%%%%%%%%%%% ALGORITHM %%%%%%%%%%%%%%
@@ -84,6 +76,8 @@
 \newcommand{\Break}{\textbf{break}}
 \newcommand{\Select}{\textbf{select}}
 \newcommand{\Program}{\textbf{program}\;}
+\newcommand{\Just}{\operatorname{\text{Just}}\;}
+\newcommand{\Nothing}{\operatorname{\text{Nothing}}\;}
 \newcommand{\pto}{\nrightarrow}
 \newcommand{\ptree}[3]{
 	\ifx&#2&%
