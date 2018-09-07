@@ -3,14 +3,14 @@
 	\begin{algorithmic}[!ht]
 		\State \Program $main(n)$
 		\If {$n < 0$}
-			\State \Return $nothing$
+			\State \Return $\Nothing$
 		\Else
 			\State $f \gets 1$ 
 			\While {$n > 0$}
 				\State $f \gets f * n$
 				\State $n \gets n - 1$
 			\EndWhile
-			\State \Return $Just f$
+			\State \Return $\Just f$
 		\EndIf
 	\end{algorithmic}
 \end{minipage}
@@ -30,7 +30,7 @@
 	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
 	\draw[edge] (s4) -- (s5) node [vledgeLabel] {$x$};
 	\draw[edge] (s5) -- (s6) node [vledgeLabel] {$f$};
-	\draw[edge] (s5) to [bend left] (s7) node [above=15pt, right=3pt] {$l$};
+	\draw[edge] (s5) to [bend left] (s7) node [above=25pt, right=3pt] {$l$};
 	\draw[edge] (s5) to [bend right=60] (s8) node [above=30pt, left=13pt] {$x$};
 	\draw[edge] (s6) -- (s7) node [vledgeLabel] {$x$};
 	%

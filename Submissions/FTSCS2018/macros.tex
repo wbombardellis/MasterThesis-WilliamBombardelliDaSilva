@@ -25,14 +25,14 @@
 \newcommand{\target}{\operatorname{t}}
 \newcommand{\Target}{\operatorname{T}}
 \newcommand{\cderiv}[3]{
-	\ifx\relax\detokenize{#2}\relax
-	\overset{#1}{\Rrightarrow}_{#3}
+	\ifx\relax#2\relax%
+	\overset{#1}{\Rrightarrow}_{#3}%
 	\else
-	\overset{#1,#2}{\Rrightarrow}_{#3}
+	\overset{#1,#2}{\Rrightarrow}_{#3}%
 	\fi
 }
 \newcommand{\deriv}[3]{
-	\ifx\relax\detokenize{#2}\relax
+	\ifx\relax#2\relax
 	\overset{#1}{\Rightarrow}_{#3}
 	\else
 	\overset{#1,#2}{\Rightarrow}_{#3}
@@ -42,14 +42,14 @@
 	\Rightarrow^*_{#1}
 }
 \newcommand{\tcderiv}[3]{
-	\ifx\relax\detokenize{#2}\relax
+	\ifx\relax#2\relax
 	\overset{#1}{\Rrightarrow}_{#3}
 	\else
 	\overset{#1,#2}{\Rrightarrow}_{#3}
 	\fi
 }
 \newcommand{\tderiv}[3]{
-	\ifx\relax\detokenize{#2}\relax
+	\ifx\relax#2\relax
 	\overset{#1}{\Rightarrow}_{#3}
 	\else
 	\overset{#1,#2}{\Rightarrow}_{#3}
@@ -84,7 +84,7 @@
 \tikzstyle{t}=[circle, inner sep=1pt, draw, fill=white, minimum width=5pt]
 \tikzstyle{empty}=[font=\Large, fill=white]
 \tikzstyle{g}=[inner sep=3pt, fill=white]
-\tikzstyle{lhs}=[inner sep=0pt, fill=white]
+\tikzstyle{lhs}=[inner sep=1pt, fill=white]
 \tikzstyle{w}=[circle, inner sep=1pt, below=8pt, draw, fill=white, font=\tiny]
 \tikzstyle{uw}=[circle, inner sep=1pt, above=8pt, draw, fill=white, font=\tiny]
 \tikzstyle{edge}=[->, thin, -latex]
