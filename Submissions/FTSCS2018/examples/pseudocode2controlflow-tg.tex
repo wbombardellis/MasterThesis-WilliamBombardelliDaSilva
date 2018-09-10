@@ -1,4 +1,4 @@
-\noindent
+\begin{figure}
 \begin{minipage}[h]{.48\textwidth}
 	\begin{algorithmic}[!ht]
 		\State \Program $main(n)$
@@ -18,7 +18,7 @@
 	\begin{tikzpicture}[graph]
 	\draw (1,0) node[t] (s1) {p};
 	\draw (1,-0.7) node[t] (s2) {i};
-	\draw (1.5,-1.4) node[t] (s3) {a};
+	\draw (1.5,-1.3) node[t] (s3) {a};
 	\draw (0.5,-1.4) node[t] (s4) {a};
 	\draw (0.5,-2.1) node[t] (s5) {w};
 	\draw (0.5,-2.8) node[t] (s6) {a};
@@ -45,8 +45,8 @@
 	%
 	\draw (5,0) node[t] (t1) {g};
 	\draw (5,-0.7) node[t] (t2) {b};
-	\draw (5.5,-1.4) node[t] (t3) {c};
-	\draw (4.5,-1.4) node[t] (t4) {c};
+	\draw (5.5,-1.3) node[t] (t3) {c};
+	\draw (4.5,-1.5) node[t] (t4) {c};
 	\draw (4.5,-2.1) node[t] (t5) {b};
 	\draw (4.5,-2.8) node[t] (t6) {c};
 	\draw (4.5,-3.5) node[t] (t7) {c};
@@ -54,7 +54,7 @@
 	
 	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
 	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
-	\draw[edge] (t2) -- (t4) node [vledgeLabel] {$n$};
+	\draw[edge] (t2) -- (t4) node [above=15pt, right=0pt] {$n$};
 	\draw[edge] (t4) -- (t5) node [vledgeLabel] {$x$};
 	\draw[edge] (t5) -- (t6) node [vledgeLabel] {$f$};
 	\draw[edge] (t7) to [bend right] (t5) node [below=15pt, right=3pt] {$x$};
@@ -79,3 +79,6 @@
 	\draw[morph] (c8) -- (t8);
 	\end{tikzpicture}
 \end{minipage}%
+\caption{A program written in pseudo-code on the left and its correspondent triple graph with the $PseudoCode$ and the $ControlFlow$ graphs on the right}
+\label{fig:p2c-tg}
+\end{figure}
