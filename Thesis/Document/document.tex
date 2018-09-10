@@ -123,7 +123,7 @@ In the sequel, we introduce the dynamic aspects of NCE graph grammars by means o
 		& \cup \{(t,l,w) \st (v,l,w) \in E_G \land (l,\phi_G(w)) \in \omega(t)\} \text{ and} \\
 		\phi_H & = (\phi_G \setminus \{(v,x) \st x \in \Sigma \}) \cup \phi_R
 	\end{align*}
-	Notice that, without loss of generalization, we set $\omega(t) = \emptyset$ for all vertices $t$ without an image defined in $\omega$.
+	Notice that, without loss of generality, we set $\omega(t) = \emptyset$ for all vertices $t$ without an image defined in $\omega$.
 	
 	If $G$ \textit{concretely derives} in one step into any graph $H'$ isomorphic to $H$, we say it \textit{derives} in one step into $H'$ and write $G \deriv{r}{v}{GG} H'$. 
 	
@@ -271,7 +271,7 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 		\phi_{H_c} & = (\phi_{G_c} \setminus \{(v_c,x) \st x \in \Sigma\}) \cup \phi_{R_c} \text{ and}\\
 		\phi_{H_t} & = (\phi_{G_t} \setminus \{(v_t,x) \st x \in \Sigma\}) \cup \phi_{R_t}\\
 	\end{align*}
-	Notice that, without loss of generalization, we set $\omega(t) = \emptyset$ for all vertices $t$ without an image defined in $\omega$.
+	Notice that, without loss of generality, we set $\omega(t) = \emptyset$ for all vertices $t$ without an image defined in $\omega$.
 	
 	Analogously to graph grammars, if $G \cderiv{r}{v_s,v_c,v_t}{TGG} H$ and $H' \in [H]$, then $G \tderiv{r}{v_s,v_c,v_t}{TGG} H'$, moreover the reflexive transitive closure of $\tderiv{}{}{}$ is denoted by $\tderivtr{}$ and we call these relations by the same names as before, namely, derivation in one step and derivation. We might also omit identifiers.
 \end{definition}
