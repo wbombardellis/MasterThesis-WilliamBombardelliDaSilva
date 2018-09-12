@@ -117,14 +117,16 @@ public class BeNCEParser {
 						
 							synchronized(this.parsingForest) {
 								//Possible derivation step found
-								final boolean added = this.bup.add(lhs);
+								final ZoneVertex consumedLhs = filterAC(lhs, newDS);
+								assert consumedLhs != null;
+								final boolean added = this.bup.add(consumedLhs);
 								
 								if (added) {
 									logger.debug(String.format("Can reduce. Derivation step %s, %s", newDS.getRule().getId(), newDS.getVertex().getId()));
 									
 									//Construct parsing tree bottom-up 
 									final ParsingTree parsingTreeNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
-									parsingTreeNode.setZoneVertex(lhs);
+									parsingTreeNode.setZoneVertex(consumedLhs);
 									parsingTreeNode.setDerivationStep(newDS);
 								
 									parsingTreeNode.getChildren().addAll(EcoreUtil.copyAll(this.parsingForest.stream()
@@ -161,7 +163,7 @@ public class BeNCEParser {
 	public BeNCEParser(final Grammar grammar){
 		this(grammar, Strategy.GREEDY_AWARE);
 	}
-	
+
 	public BeNCEParser(final Grammar grammar, final Strategy strategy){
 		assert grammar != null;
 		assert strategy != null;
@@ -528,6 +530,33 @@ public class BeNCEParser {
 		return zoneVertices.stream()
 			.flatMap(v -> v.getVertices().stream().map(w -> EcoreUtil.copy(w))) 
 			.collect(Collectors.toSet());
+	}
+	
+	/**
+	 * TODO
+	 * @param lhs
+	 * @return
+	 */
+	public ZoneVertex filterAC(final ZoneVertex zoneVertex, final DerivationStep dStep) {
+		assert zoneVertex != null;
+		assert zoneVertex.getVertices().stream().noneMatch(v -> v instanceof ZoneVertex);
+		assert dStep != null;
+		assert dStep.getVertex().getId().equals(zoneVertex.getId());
+		
+		final List<Vertex> pacs = dStep.getRule().getPac();
+		//derivation includes pacs, that are 1-sized zone vertices
+		assert pacs.stream()
+					.allMatch(p -> dStep.getUnifier().get(p) instanceof ZoneVertex 
+							&& ((ZoneVertex)dStep.getUnifier().get(p)).getVertices().size() == 1);
+		
+		final Set<String> realPacIds = pacs.stream()
+				.map(p -> ((ZoneVertex)dStep.getUnifier().get(p)).getVertices().get(0).getId())
+				.collect(Collectors.toSet());
+		
+		final boolean removed = zoneVertex.getVertices().removeIf(h -> realPacIds.contains(h.getId()));
+		assert pacs.size() > 0 ? removed : true;
+		
+		return zoneVertex;
 	}
 
 }
