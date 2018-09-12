@@ -442,7 +442,7 @@ public class NPNormalizer {
 		
 		final Map<String, Vertex> old2newMap = GraphgrammarUtil.ensureUniqueIds(modifiedRule.getRhs());
 		
-		//Remove the edge of this vertex for this context
+		//Remove the edges of this vertex for this context
 		final List<Edge> vEdges = modifiedRule.getRhs().edges(v);
 		final Set<Edge> edgesToRemove = new HashSet<>(vEdges.size());
 		for (Edge e : vEdges) {
@@ -484,6 +484,20 @@ public class NPNormalizer {
 		}
 
 		modifiedRule.setId(modifiedRule.getId().concat("___"+EcoreUtil.generateUUID()));
+		
+		//if corrected vertex is equivalent to LHS and rule completely misses the missing context, then adjust LHS to ensure neighborhood preserveness
+		if (vertex.getLabel().equivalates(modifiedRule.getLhs()) && NPUtil.missesContext(modifiedRule, missingContext)) {
+			//For each missing context
+			for (Entry<Symbol, SymbolSet> cEntry : missingContext.entrySet()) {
+				final Symbol edgeLabel = cEntry.getKey();
+				for (Symbol vertexLabel : cEntry.getValue()) {
+					//Add respective super and subscript in the LHS
+					modifiedRule.getLhs().getSuperscript().add(edgeLabel.getName());
+					modifiedRule.getLhs().getSubscript().add(vertexLabel.getName());
+				}
+			}
+			modifiedRule.setId(modifiedRule.getId().concat("___("+modifiedRule.getLhs()+")"));
+		}
 		
 		assert GraphgrammarUtil.isValidRule(modifiedRule);
 		
