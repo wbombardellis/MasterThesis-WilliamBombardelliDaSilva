@@ -2,6 +2,7 @@ package org.wbsilva.bence.transformer.parser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -332,8 +333,16 @@ public class BeNCEParser {
 		//V(R)
 		final Set<Vertex> vs = merge(zoneVertices);
 		
-		//Add the set of all neighbors of V(R)
-		zoneGraph.getVertices().addAll(zoneVertices(graph.neighborhood(new BasicEList<Vertex>(vs))));
+		final Set<String> pacIds = zoneVertices.stream()
+				.flatMap(zv -> zv.getPacs().stream()
+								.map(p -> p.getId()))
+				.collect(Collectors.toSet());
+		
+		//Add the set of all neighbors of V(R) minus the PACs
+		final Set<Vertex> neighbors = graph.neighborhood(new BasicEList<Vertex>(vs)).stream()
+				.filter(v -> !pacIds.contains(v.getId()))
+				.collect(Collectors.toSet());
+		zoneGraph.getVertices().addAll(zoneVertices(neighbors));
 		
 		for(Vertex v : zoneGraph.getVertices()) {
 			//Add edges between two zone vertices v and w, iff, any vertex of v is neighbor of w
@@ -344,13 +353,25 @@ public class BeNCEParser {
 					final ZoneVertex zv = ((ZoneVertex)v);
 					final Set<Edge> es = new HashSet<Edge>(1);
 					final SymbolSet addedLabels = new SymbolSet();
+					//Control to not edges that go or come from a pac
+					final Set<String> pacs = zw.getPacs().stream()
+												.map(p -> p.getId())
+												.collect(Collectors.toSet());
+					pacs.addAll(zv.getPacs().stream()
+									.map(p -> p.getId())
+									.collect(Collectors.toSet()));
 					
 					for (Vertex ww : zw.getVertices()) {
 						for (Vertex vv : zv.getVertices()) {
+							assert !(ww instanceof ZoneVertex);
+							assert !(vv instanceof ZoneVertex);
+							
 							//Do only for in edges to not create duplicates
 							final Set<Edge> newEs = graph.inEdges(ww).stream()
-									.filter(ie -> ie.getFrom().getId().equals(vv.getId()))
-									.filter(ie -> !addedLabels.contains(ie.getLabel()))
+									.filter(ie -> ie.getFrom().getId().equals(vv.getId())
+											&& !pacs.contains(ie.getFrom().getId())
+											&& !pacs.contains(ie.getTo().getId())
+											&& !addedLabels.contains(ie.getLabel()))
 									.map(ie -> {
 										final Edge e = GraphgrammarFactory.eINSTANCE.createEdge();
 										e.setFrom(zv);
@@ -380,10 +401,10 @@ public class BeNCEParser {
 	 * Return a set of zone vertices, one for each {@code simpleVertices}, with new IDs and copied vertex and label.
 	 * If {@code simpleVertices} are empty, return an empty set.
 	 * 
-	 * @param simpleVertices	The list of (not zone) vertices that are to be copied into zone vertices. Cannot be null.
+	 * @param simpleVertices	The collection of (not zone) vertices that are to be copied into zone vertices. Cannot be null.
 	 * @return					The set of zone vertices.
 	 */
-	Set<ZoneVertex> zoneVertices(final EList<Vertex> simpleVertices) {
+	Set<ZoneVertex> zoneVertices(final Collection<Vertex> simpleVertices) {
 		assert simpleVertices != null;
 		
 		return simpleVertices.stream()
@@ -553,8 +574,15 @@ public class BeNCEParser {
 				.map(p -> ((ZoneVertex)dStep.getUnifier().get(p)).getVertices().get(0).getId())
 				.collect(Collectors.toSet());
 		
-		final boolean removed = zoneVertex.getVertices().removeIf(h -> realPacIds.contains(h.getId()));
+		final Set<Vertex> realPacs = zoneVertex.getVertices().stream()
+				.filter(h -> realPacIds.contains(h.getId()))
+				.collect(Collectors.toSet());
+		
+		final boolean removed = zoneVertex.getVertices().removeAll(realPacs);
+		zoneVertex.getPacs().addAll(realPacs);
+		
 		assert pacs.size() > 0 ? removed : true;
+		assert pacs.size() == zoneVertex.getPacs().size();
 		
 		return zoneVertex;
 	}
