@@ -112,7 +112,7 @@ public class GraphgrammarUtil {
 			e.sort(Edge::compareTo);
 			f.sort(Edge::compareTo);
 			for (int i = 0; i < e.size(); i++) {
-				if (e.get(i).compareTo(e.get(i)) != 0) {
+				if (e.get(i).compareTo(f.get(i)) != 0) {
 					return false;
 				}
 			}
