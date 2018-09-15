@@ -343,7 +343,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRule__Embed__Graph_Vertex_EList_EMap() {
+	public EOperation getRule__Embed__Graph_Vertex_EList_EMap_boolean() {
 		return ruleEClass.getEOperations().get(0);
 	}
 
@@ -352,8 +352,26 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRule__Apply__Graph_Vertex() {
+	public EOperation getRule__Apply__Graph_Vertex_boolean() {
 		return ruleEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRule__Derive__Graph_Vertex() {
+		return ruleEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRule__Produce__Graph_Vertex() {
+		return ruleEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -730,6 +748,15 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getZoneVertex_Pacs() {
+		return (EReference) zoneVertexEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getZoneVertex__Equivalates__ZoneVertex() {
 		return zoneVertexEClass.getEOperations().get(0);
 	}
@@ -1049,8 +1076,10 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(ruleEClass, RULE__RHS);
 		createEReference(ruleEClass, RULE__EMBEDDING);
 		createEReference(ruleEClass, RULE__PAC);
-		createEOperation(ruleEClass, RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP);
-		createEOperation(ruleEClass, RULE___APPLY__GRAPH_VERTEX);
+		createEOperation(ruleEClass, RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP_BOOLEAN);
+		createEOperation(ruleEClass, RULE___APPLY__GRAPH_VERTEX_BOOLEAN);
+		createEOperation(ruleEClass, RULE___DERIVE__GRAPH_VERTEX);
+		createEOperation(ruleEClass, RULE___PRODUCE__GRAPH_VERTEX);
 
 		symbolSymbolsPairEClass = createEClass(SYMBOL_SYMBOLS_PAIR);
 		createEReference(symbolSymbolsPairEClass, SYMBOL_SYMBOLS_PAIR__EDGE_LABEL);
@@ -1101,6 +1130,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 
 		zoneVertexEClass = createEClass(ZONE_VERTEX);
 		createEReference(zoneVertexEClass, ZONE_VERTEX__VERTICES);
+		createEReference(zoneVertexEClass, ZONE_VERTEX__PACS);
 		createEOperation(zoneVertexEClass, ZONE_VERTEX___EQUIVALATES__ZONEVERTEX);
 
 		edgeEClass = createEClass(EDGE);
@@ -1214,14 +1244,26 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				!IS_ORDERED);
 
-		op = initEOperation(getRule__Embed__Graph_Vertex_EList_EMap(), this.getEdge(), "embed", 0, -1, IS_UNIQUE,
-				!IS_ORDERED);
+		op = initEOperation(getRule__Embed__Graph_Vertex_EList_EMap_boolean(), this.getEdge(), "embed", 0, -1,
+				IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getGraph(), "graph", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEdge(), "edges", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getVertexToVertexMap(), "unifier", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "pacs", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getRule__Apply__Graph_Vertex(), this.getVertexToVertexMap(), "apply", 0, -1, IS_UNIQUE,
+		op = initEOperation(getRule__Apply__Graph_Vertex_boolean(), this.getVertexToVertexMap(), "apply", 0, -1,
+				IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getGraph(), "graph", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "pacs", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getRule__Derive__Graph_Vertex(), this.getVertexToVertexMap(), "derive", 0, -1, IS_UNIQUE,
+				!IS_ORDERED);
+		addEParameter(op, this.getGraph(), "graph", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getRule__Produce__Graph_Vertex(), this.getVertexToVertexMap(), "produce", 0, -1, IS_UNIQUE,
 				!IS_ORDERED);
 		addEParameter(op, this.getGraph(), "graph", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1349,6 +1391,9 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		initEReference(getZoneVertex_Vertices(), this.getVertex(), null, "vertices", null, 0, -1, ZoneVertex.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getZoneVertex_Pacs(), this.getVertex(), null, "pacs", null, 0, -1, ZoneVertex.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getZoneVertex__Equivalates__ZoneVertex(), ecorePackage.getEBoolean(), "equivalates", 0, 1,
 				IS_UNIQUE, IS_ORDERED);

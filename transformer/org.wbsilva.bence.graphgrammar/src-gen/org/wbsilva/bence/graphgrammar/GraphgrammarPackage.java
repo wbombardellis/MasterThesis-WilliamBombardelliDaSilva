@@ -228,7 +228,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP = 0;
+	int RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP_BOOLEAN = 0;
 
 	/**
 	 * The operation id for the '<em>Apply</em>' operation.
@@ -237,7 +237,25 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE___APPLY__GRAPH_VERTEX = 1;
+	int RULE___APPLY__GRAPH_VERTEX_BOOLEAN = 1;
+
+	/**
+	 * The operation id for the '<em>Derive</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE___DERIVE__GRAPH_VERTEX = 2;
+
+	/**
+	 * The operation id for the '<em>Produce</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE___PRODUCE__GRAPH_VERTEX = 3;
 
 	/**
 	 * The number of operations of the '<em>Rule</em>' class.
@@ -246,7 +264,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_OPERATION_COUNT = 2;
+	int RULE_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.SymbolSymbolsPairImpl <em>Symbol Symbols Pair</em>}' class.
@@ -789,13 +807,22 @@ public interface GraphgrammarPackage extends EPackage {
 	int ZONE_VERTEX__VERTICES = VERTEX_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Pacs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZONE_VERTEX__PACS = VERTEX_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Zone Vertex</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZONE_VERTEX_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 1;
+	int ZONE_VERTEX_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Equivalates</em>' operation.
@@ -1352,24 +1379,44 @@ public interface GraphgrammarPackage extends EPackage {
 	EReference getRule_Pac();
 
 	/**
-	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#embed(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EMap) <em>Embed</em>}' operation.
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#embed(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EMap, boolean) <em>Embed</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Embed</em>' operation.
-	 * @see org.wbsilva.bence.graphgrammar.Rule#embed(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EMap)
+	 * @see org.wbsilva.bence.graphgrammar.Rule#embed(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EMap, boolean)
 	 * @generated
 	 */
-	EOperation getRule__Embed__Graph_Vertex_EList_EMap();
+	EOperation getRule__Embed__Graph_Vertex_EList_EMap_boolean();
 
 	/**
-	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#apply(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex) <em>Apply</em>}' operation.
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#apply(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex, boolean) <em>Apply</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Apply</em>' operation.
-	 * @see org.wbsilva.bence.graphgrammar.Rule#apply(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex)
+	 * @see org.wbsilva.bence.graphgrammar.Rule#apply(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex, boolean)
 	 * @generated
 	 */
-	EOperation getRule__Apply__Graph_Vertex();
+	EOperation getRule__Apply__Graph_Vertex_boolean();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#derive(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex) <em>Derive</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Derive</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Rule#derive(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getRule__Derive__Graph_Vertex();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#produce(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex) <em>Produce</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Produce</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.Rule#produce(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getRule__Produce__Graph_Vertex();
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.SymbolSymbolsPair <em>Symbol Symbols Pair</em>}'.
@@ -1803,6 +1850,17 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getZoneVertex_Vertices();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.wbsilva.bence.graphgrammar.ZoneVertex#getPacs <em>Pacs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Pacs</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.ZoneVertex#getPacs()
+	 * @see #getZoneVertex()
+	 * @generated
+	 */
+	EReference getZoneVertex_Pacs();
 
 	/**
 	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.ZoneVertex#equivalates(org.wbsilva.bence.graphgrammar.ZoneVertex) <em>Equivalates</em>}' operation.
@@ -2276,14 +2334,29 @@ public interface GraphgrammarPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP = eINSTANCE.getRule__Embed__Graph_Vertex_EList_EMap();
+		EOperation RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP_BOOLEAN = eINSTANCE
+				.getRule__Embed__Graph_Vertex_EList_EMap_boolean();
 		/**
 		 * The meta object literal for the '<em><b>Apply</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RULE___APPLY__GRAPH_VERTEX = eINSTANCE.getRule__Apply__Graph_Vertex();
+		EOperation RULE___APPLY__GRAPH_VERTEX_BOOLEAN = eINSTANCE.getRule__Apply__Graph_Vertex_boolean();
+		/**
+		 * The meta object literal for the '<em><b>Derive</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RULE___DERIVE__GRAPH_VERTEX = eINSTANCE.getRule__Derive__Graph_Vertex();
+		/**
+		 * The meta object literal for the '<em><b>Produce</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RULE___PRODUCE__GRAPH_VERTEX = eINSTANCE.getRule__Produce__Graph_Vertex();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.SymbolSymbolsPairImpl <em>Symbol Symbols Pair</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -2589,6 +2662,13 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ZONE_VERTEX__VERTICES = eINSTANCE.getZoneVertex_Vertices();
+		/**
+		 * The meta object literal for the '<em><b>Pacs</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ZONE_VERTEX__PACS = eINSTANCE.getZoneVertex_Pacs();
 		/**
 		 * The meta object literal for the '<em><b>Equivalates</b></em>' operation.
 		 * <!-- begin-user-doc -->

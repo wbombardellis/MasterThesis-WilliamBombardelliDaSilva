@@ -37,10 +37,26 @@
       <eParameters name="vertex" eType="#//Vertex"/>
       <eParameters name="edges" ordered="false" upperBound="-1" eType="#//Edge"/>
       <eParameters name="unifier" upperBound="-1" eType="#//VertexToVertexMap"/>
+      <eParameters name="pacs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eOperations>
     <eOperations name="apply" ordered="false" upperBound="-1" eType="#//VertexToVertexMap">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Apply this rule to the graph, substituting vertex by the RHS of this rule and&#xA;embedding it to the rest of the graph"/>
+        <details key="documentation" value="Apply this rule to the graph, substituting vertex by the RHS of this rule and&#xA;embedding it to the rest of the graph. The flag pacs signalizez whether to &#xA;include the pacs vertices in the resulting graph or not."/>
+      </eAnnotations>
+      <eParameters name="graph" eType="#//Graph"/>
+      <eParameters name="vertex" eType="#//Vertex"/>
+      <eParameters name="pacs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="derive" ordered="false" upperBound="-1" eType="#//VertexToVertexMap">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Apply this rule to the graph, substituting vertex by the RHS of this rule and&#xA;embedding it to the rest of the graph including PACs in the resulting graph"/>
+      </eAnnotations>
+      <eParameters name="graph" eType="#//Graph"/>
+      <eParameters name="vertex" eType="#//Vertex"/>
+    </eOperations>
+    <eOperations name="produce" ordered="false" upperBound="-1" eType="#//VertexToVertexMap">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Apply this rule to the graph, substituting vertex by the RHS of this rule and&#xA;embedding it to the rest of the graph without PACs in the resulting graph"/>
       </eAnnotations>
       <eParameters name="graph" eType="#//Graph"/>
       <eParameters name="vertex" eType="#//Vertex"/>
@@ -209,6 +225,8 @@
       <eParameters name="other" eType="#//ZoneVertex"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" upperBound="-1"
+        eType="#//Vertex" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pacs" ordered="false" upperBound="-1"
         eType="#//Vertex" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Edge">
