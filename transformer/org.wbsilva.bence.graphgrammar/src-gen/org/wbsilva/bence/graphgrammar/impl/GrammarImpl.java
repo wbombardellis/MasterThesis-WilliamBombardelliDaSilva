@@ -269,7 +269,7 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 				final Graph n = EcoreUtil.copy(next);
 				final Rule r = EcoreUtil.copy(rule);
 
-				final EMap<Vertex, Vertex> r2gUnifier = r.apply(g, v);
+				final EMap<Vertex, Vertex> r2gUnifier = r.derive(g, v);
 				assert GraphgrammarUtil.isValidGraph(g);
 
 				//If result of rule application is isomorphic to next, then success

@@ -6,6 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -299,9 +300,9 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		assert outputVertex != null;
 
 		//Generate next input graph by applying rule and ensuring correct IDs for next veertices
-		final EMap<Vertex, Vertex> inputUnifier = inputRule.apply(inputGraph, inputVertex);
-		assert inputUnifier != null && inputUnifier.size() == derivationStep.getRule().getRhs().getVertices().size()
-				&& inputUnifier.size() == derivationStep.getUnifier().size();
+		final EMap<Vertex, Vertex> inputUnifier = inputRule.produce(inputGraph, inputVertex);
+		assert inputUnifier != null && inputUnifier.size() <= derivationStep.getRule().getRhs().getVertices().size()
+				&& inputUnifier.size() <= derivationStep.getUnifier().size();
 
 		final Map<Vertex, Vertex> rename = new HashMap<Vertex, Vertex>(inputUnifier.size());
 		inputUnifier.stream().forEach(iU -> {
@@ -311,19 +312,21 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 				.forEach(v -> v.setId(rename.get(v).getId()));
 
 		//Generate next output graph using output vertex as LHS for the output rule application 
-		final EMap<Vertex, Vertex> outputUnifier = outputRule.apply(outputGraph, outputVertex);
-		assert outputUnifier != null && outputUnifier.size() == outputRule.getRhs().getVertices().size();
+		final EMap<Vertex, Vertex> outputUnifier = outputRule.produce(outputGraph, outputVertex);
+		assert outputUnifier != null && outputUnifier.size() <= outputRule.getRhs().getVertices().size();
 
 		//Generate next correspondence graph using correspondence vertex as LHS for the output rule application
-		final EMap<Vertex, Vertex> corrUnifier = tripleRule.getCorr().apply(tripleGraph.getCorr(), corrVertex);
-		assert corrUnifier != null && corrUnifier.size() == tripleRule.getCorr().getRhs().getVertices().size();
+		final EMap<Vertex, Vertex> corrUnifier = tripleRule.getCorr().produce(tripleGraph.getCorr(), corrVertex);
+		assert corrUnifier != null && corrUnifier.size() <= tripleRule.getCorr().getRhs().getVertices().size();
 
 		//Adjust correspondence morphism ms and mt of the tripleGraph according to the tripleRule
 		inputMorphism.removeKey(corrVertex);
 		outputMorphism.removeKey(corrVertex);
 
-		for (Vertex corrV : tripleRule.getCorr().getRhs().getVertices()) {
-			final Vertex newCorrV = corrUnifier.get(corrV);
+		
+		for (Entry<Vertex, Vertex> corrUnifierEntry : corrUnifier.entrySet()) {
+			final Vertex corrV = corrUnifierEntry.getKey();
+			final Vertex newCorrV = corrUnifierEntry.getValue();
 			assert newCorrV != null;
 			assert tripleGraph.getCorr().getVertices().contains(newCorrV);
 
