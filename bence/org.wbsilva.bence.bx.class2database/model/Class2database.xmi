@@ -161,6 +161,12 @@
           <vertexLabels
               name="ClassDiagram"/>
         </value>
+        <value>
+          <edgeLabel
+              name="target"/>
+          <vertexLabels
+              name="Association"/>
+        </value>
       </embedding>
       <embedding
           key="A1">
@@ -184,6 +190,12 @@
               name="associations"/>
           <vertexLabels
               name="ClassDiagram"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="target"/>
+          <vertexLabels
+              name="Association"/>
         </value>
       </embedding>
     </source>
@@ -290,12 +302,6 @@
           <label
               name="target"/>
         </edges>
-        <edges
-            from="a2"
-            to="c2">
-          <label
-              name="source"/>
-        </edges>
       </rhs>
       <embedding
           key="a2">
@@ -319,6 +325,12 @@
               name="classes"/>
           <vertexLabels
               name="ClassDiagram"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="source"/>
+          <vertexLabels
+              name="Association"/>
         </value>
       </embedding>
     </source>
