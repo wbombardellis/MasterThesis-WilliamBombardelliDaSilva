@@ -12,6 +12,8 @@ import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.ParsingTree;
+import org.wbsilva.bence.graphgrammar.Resolution;
+import org.wbsilva.bence.graphgrammar.ResolutionStep;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
 import org.wbsilva.bence.graphgrammar.TripleGraph;
 import org.wbsilva.bence.graphgrammar.TripleRule;
@@ -19,7 +21,6 @@ import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.util.GraphgrammarUtil;
 import org.wbsilva.bence.graphgrammar.util.NPUtil;
 import org.wbsilva.bence.transformer.parser.BeNCEParser;
-import org.wbsilva.bence.transformer.parser.BeNCEParser.Strategy;
 import org.wbsilva.bence.transformer.util.TransformerUtil;
 
 /**
@@ -155,16 +156,26 @@ public class BeNCETransformer {
 				assert GraphgrammarUtil.isValidTripleGraph(tripleGraph);
 				
 				//Produce for each rule used in the parsing the respective target (or source) part of the triple graph
+				final Resolution resolution = GraphgrammarFactory.eINSTANCE.createResolution();
 				for (DerivationStep dStep : derivation.getSteps()) {
 					assert dStep != null;
 					
-					this.tripleGrammarNP.produce(tripleGraph, dStep, this.forward);
+					this.tripleGrammarNP.produce(tripleGraph, dStep, this.forward, resolution);
 					
 					if (this.forward)
-						logger.debug(String.format("Rule [id = %s, name = %s] applied to the triple graph. Target graph size = %s", dStep.getRule().getId(), dStep.getRule().getName(), tripleGraph.getTarget().getVertices().size()));
+						logger.debug(String.format("Rule [id = %s, name = %s] applied to the triple graph. Target graph size = %d", dStep.getRule().getId(), dStep.getRule().getName(), tripleGraph.getTarget().getVertices().size()));
 					else
-						logger.debug(String.format("Rule [id = %s, name = %s] applied to the triple graph. Source graph size = %s", dStep.getRule().getId(), dStep.getRule().getName(), tripleGraph.getSource().getVertices().size()));
+						logger.debug(String.format("Rule [id = %s, name = %s] applied to the triple graph. Source graph size = %d", dStep.getRule().getId(), dStep.getRule().getName(), tripleGraph.getSource().getVertices().size()));
 		
+				}
+				assert GraphgrammarUtil.isValidResolution(resolution);
+				for (ResolutionStep rStep : resolution.getSteps()) {
+					this.tripleGrammarNP.resolve(tripleGraph, resolution, rStep, this.forward);
+					
+					logger.debug(String.format("PACs {%s} resolved.", rStep.getPac().stream()
+																		.map(p -> p.getKey().getId())
+																		.reduce(String::concat)
+																		.orElse("")));
 				}
 				
 				logger.debug("Final triple grammar assembly finished");
