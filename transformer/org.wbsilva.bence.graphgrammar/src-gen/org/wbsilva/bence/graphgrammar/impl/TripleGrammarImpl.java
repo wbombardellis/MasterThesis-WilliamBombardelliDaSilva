@@ -415,25 +415,23 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		assert GraphgrammarUtil.isValidTripleGraph(tripleGraph);
 		assert GraphgrammarUtil.isValidResolutionStep(resolutionStep);
 		assert GraphgrammarUtil.isValidResolution(resolution);
-		
+
 		final Graph inputGraph = forward ? tripleGraph.getSource() : tripleGraph.getTarget();
 		final Graph outputGraph = forward ? tripleGraph.getTarget() : tripleGraph.getSource();
-		
+
 		//Resolve each pac of this resolution step
 		for (Entry<Vertex, String> pacEntry : resolutionStep.getPac().entrySet()) {
 			//Vertices
 			final Vertex inPac = pacEntry.getKey();
 			assert inputGraph.getVertices().contains(inPac);
 			assert forward ? tripleGraph.invMs(inPac).size() == 1 : tripleGraph.invMt(inPac).size() == 1;
-			
-			final Vertex corrPac = forward ? tripleGraph.invMs(inPac).get(0)
-					: tripleGraph.invMt(inPac).get(0);
+
+			final Vertex corrPac = forward ? tripleGraph.invMs(inPac).get(0) : tripleGraph.invMt(inPac).get(0);
 			assert tripleGraph.getCorr().getVertices().contains(corrPac);
-			
-			final Vertex outPac = forward ? tripleGraph.getMt().get(corrPac) 
-					: tripleGraph.getMs().get(corrPac);
+
+			final Vertex outPac = forward ? tripleGraph.getMt().get(corrPac) : tripleGraph.getMs().get(corrPac);
 			assert outputGraph.getVertices().contains(outPac);
-			
+
 			//Edges
 			final List<Edge> inPacInEdges = inputGraph.inEdges(inPac);
 			final List<Edge> inPacOutEdges = inputGraph.outEdges(inPac);
@@ -441,7 +439,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 			final List<Edge> corrPacOutEdges = tripleGraph.getCorr().outEdges(corrPac);
 			final List<Edge> outPacInEdges = outputGraph.inEdges(outPac);
 			final List<Edge> outPacOutEdges = outputGraph.outEdges(outPac);
-			
+
 			//Remove pacs
 			inputGraph.getEdges().removeAll(inPacInEdges);
 			inputGraph.getEdges().removeAll(inPacOutEdges);
@@ -452,73 +450,61 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 			outputGraph.getEdges().removeAll(outPacInEdges);
 			outputGraph.getEdges().removeAll(outPacOutEdges);
 			outputGraph.getVertices().remove(outPac);
-			
+
 			//Resolve pac vertices
 			final Vertex resolvedInPac = resolution.getReferenceIds().get(pacEntry.getValue());
 			assert inputGraph.getVertices().contains(resolvedInPac);
 			final Vertex resolvedCorrPac = forward ? tripleGraph.invMs(resolvedInPac).get(0)
 					: tripleGraph.invMt(resolvedInPac).get(0);
 			assert tripleGraph.getCorr().getVertices().contains(resolvedCorrPac);
-			final Vertex resolvedOutPac = forward ? tripleGraph.getMt().get(resolvedCorrPac) 
+			final Vertex resolvedOutPac = forward ? tripleGraph.getMt().get(resolvedCorrPac)
 					: tripleGraph.getMs().get(resolvedCorrPac);
 			assert outputGraph.getVertices().contains(resolvedOutPac);
-			
+
 			//Resolve pac edges
-			final Set<Edge> resolvedInPacInEdges = inPacInEdges.stream()
-					.map(e -> {
-						final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
-						newE.setFrom(e.getFrom());
-						newE.setLabel(EcoreUtil.copy(e.getLabel()));
-						newE.setTo(resolvedInPac);
-						return newE;
-					})
-					.collect(Collectors.toSet());
-			final Set<Edge> resolvedInPacOutEdges = inPacOutEdges.stream()
-					.map(e -> {
-						final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
-						newE.setFrom(resolvedInPac);
-						newE.setLabel(EcoreUtil.copy(e.getLabel()));
-						newE.setTo(e.getTo());
-						return newE;
-					})
-					.collect(Collectors.toSet());
-			final Set<Edge> resolvedCorrPacInEdges = corrPacInEdges.stream()
-					.map(e -> {
-						final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
-						newE.setFrom(e.getFrom());
-						newE.setLabel(EcoreUtil.copy(e.getLabel()));
-						newE.setTo(resolvedCorrPac);
-						return newE;
-					})
-					.collect(Collectors.toSet());
-			final Set<Edge> resolvedCorrPacOutEdges = corrPacOutEdges.stream()
-					.map(e -> {
-						final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
-						newE.setFrom(resolvedCorrPac);
-						newE.setLabel(EcoreUtil.copy(e.getLabel()));
-						newE.setTo(e.getTo());
-						return newE;
-					})
-					.collect(Collectors.toSet());
-			final Set<Edge> resolvedOutPacInEdges = outPacInEdges.stream()
-					.map(e -> {
-						final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
-						newE.setFrom(e.getFrom());
-						newE.setLabel(EcoreUtil.copy(e.getLabel()));
-						newE.setTo(resolvedOutPac);
-						return newE;
-					})
-					.collect(Collectors.toSet());
-			final Set<Edge> resolvedOutPacOutEdges = outPacOutEdges.stream()
-					.map(e -> {
-						final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
-						newE.setFrom(resolvedOutPac);
-						newE.setLabel(EcoreUtil.copy(e.getLabel()));
-						newE.setTo(e.getTo());
-						return newE;
-					})
-					.collect(Collectors.toSet());
-			
+			final Set<Edge> resolvedInPacInEdges = inPacInEdges.stream().map(e -> {
+				final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+				newE.setFrom(e.getFrom());
+				newE.setLabel(EcoreUtil.copy(e.getLabel()));
+				newE.setTo(resolvedInPac);
+				return newE;
+			}).collect(Collectors.toSet());
+			final Set<Edge> resolvedInPacOutEdges = inPacOutEdges.stream().map(e -> {
+				final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+				newE.setFrom(resolvedInPac);
+				newE.setLabel(EcoreUtil.copy(e.getLabel()));
+				newE.setTo(e.getTo());
+				return newE;
+			}).collect(Collectors.toSet());
+			final Set<Edge> resolvedCorrPacInEdges = corrPacInEdges.stream().map(e -> {
+				final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+				newE.setFrom(e.getFrom());
+				newE.setLabel(EcoreUtil.copy(e.getLabel()));
+				newE.setTo(resolvedCorrPac);
+				return newE;
+			}).collect(Collectors.toSet());
+			final Set<Edge> resolvedCorrPacOutEdges = corrPacOutEdges.stream().map(e -> {
+				final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+				newE.setFrom(resolvedCorrPac);
+				newE.setLabel(EcoreUtil.copy(e.getLabel()));
+				newE.setTo(e.getTo());
+				return newE;
+			}).collect(Collectors.toSet());
+			final Set<Edge> resolvedOutPacInEdges = outPacInEdges.stream().map(e -> {
+				final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+				newE.setFrom(e.getFrom());
+				newE.setLabel(EcoreUtil.copy(e.getLabel()));
+				newE.setTo(resolvedOutPac);
+				return newE;
+			}).collect(Collectors.toSet());
+			final Set<Edge> resolvedOutPacOutEdges = outPacOutEdges.stream().map(e -> {
+				final Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+				newE.setFrom(resolvedOutPac);
+				newE.setLabel(EcoreUtil.copy(e.getLabel()));
+				newE.setTo(e.getTo());
+				return newE;
+			}).collect(Collectors.toSet());
+
 			//Add the pac edges between the adjacent vertices of this pac and the resolved vertex for this pac 
 			inputGraph.getEdges().addAll(resolvedInPacInEdges);
 			inputGraph.getEdges().addAll(resolvedInPacOutEdges);
@@ -526,7 +512,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 			tripleGraph.getCorr().getEdges().addAll(resolvedCorrPacOutEdges);
 			outputGraph.getEdges().addAll(resolvedOutPacInEdges);
 			outputGraph.getEdges().addAll(resolvedOutPacOutEdges);
-			
+
 			//Correct morphisms
 			tripleGraph.getMs().removeKey(corrPac);
 			tripleGraph.getMt().removeKey(corrPac);
@@ -537,7 +523,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 				tripleGraph.getMs().put(resolvedCorrPac, resolvedOutPac);
 				tripleGraph.getMt().put(resolvedCorrPac, resolvedInPac);
 			}
-			
+
 			assert GraphgrammarUtil.isValidTripleGraph(tripleGraph);
 		}
 	}

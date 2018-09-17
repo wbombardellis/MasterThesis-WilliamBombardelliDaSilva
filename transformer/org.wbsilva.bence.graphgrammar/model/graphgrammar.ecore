@@ -54,13 +54,6 @@
       <eParameters name="graph" eType="#//Graph"/>
       <eParameters name="vertex" eType="#//Vertex"/>
     </eOperations>
-    <eOperations name="produce" ordered="false" upperBound="-1" eType="#//VertexToVertexMap">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Apply this rule to the graph, substituting vertex by the RHS of this rule and&#xA;embedding it to the rest of the graph without PACs in the resulting graph"/>
-      </eAnnotations>
-      <eParameters name="graph" eType="#//Graph"/>
-      <eParameters name="vertex" eType="#//Vertex"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

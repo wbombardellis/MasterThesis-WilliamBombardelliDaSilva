@@ -477,15 +477,6 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public EMap<Vertex, Vertex> produce(Graph graph, Vertex vertex) {
-		return this.apply(graph, vertex, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -630,8 +621,6 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 			return apply((Graph) arguments.get(0), (Vertex) arguments.get(1), (Boolean) arguments.get(2));
 		case GraphgrammarPackage.RULE___DERIVE__GRAPH_VERTEX:
 			return derive((Graph) arguments.get(0), (Vertex) arguments.get(1));
-		case GraphgrammarPackage.RULE___PRODUCE__GRAPH_VERTEX:
-			return produce((Graph) arguments.get(0), (Vertex) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

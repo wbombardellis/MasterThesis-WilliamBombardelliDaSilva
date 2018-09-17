@@ -400,15 +400,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRule__Produce__Graph_Vertex() {
-		return ruleEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSymbolSymbolsPair() {
 		return symbolSymbolsPairEClass;
 	}
@@ -1217,7 +1208,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEOperation(ruleEClass, RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP_BOOLEAN);
 		createEOperation(ruleEClass, RULE___APPLY__GRAPH_VERTEX_BOOLEAN);
 		createEOperation(ruleEClass, RULE___DERIVE__GRAPH_VERTEX);
-		createEOperation(ruleEClass, RULE___PRODUCE__GRAPH_VERTEX);
 
 		symbolSymbolsPairEClass = createEClass(SYMBOL_SYMBOLS_PAIR);
 		createEReference(symbolSymbolsPairEClass, SYMBOL_SYMBOLS_PAIR__EDGE_LABEL);
@@ -1413,11 +1403,6 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		addEParameter(op, ecorePackage.getEBoolean(), "pacs", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getRule__Derive__Graph_Vertex(), this.getVertexToVertexMap(), "derive", 0, -1, IS_UNIQUE,
-				!IS_ORDERED);
-		addEParameter(op, this.getGraph(), "graph", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getRule__Produce__Graph_Vertex(), this.getVertexToVertexMap(), "produce", 0, -1, IS_UNIQUE,
 				!IS_ORDERED);
 		addEParameter(op, this.getGraph(), "graph", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);

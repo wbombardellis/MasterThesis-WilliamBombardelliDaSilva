@@ -249,22 +249,13 @@ public interface GraphgrammarPackage extends EPackage {
 	int RULE___DERIVE__GRAPH_VERTEX = 2;
 
 	/**
-	 * The operation id for the '<em>Produce</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE___PRODUCE__GRAPH_VERTEX = 3;
-
-	/**
 	 * The number of operations of the '<em>Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_OPERATION_COUNT = 4;
+	int RULE_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.SymbolSymbolsPairImpl <em>Symbol Symbols Pair</em>}' class.
@@ -1593,16 +1584,6 @@ public interface GraphgrammarPackage extends EPackage {
 	EOperation getRule__Derive__Graph_Vertex();
 
 	/**
-	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.Rule#produce(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex) <em>Produce</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Produce</em>' operation.
-	 * @see org.wbsilva.bence.graphgrammar.Rule#produce(org.wbsilva.bence.graphgrammar.Graph, org.wbsilva.bence.graphgrammar.Vertex)
-	 * @generated
-	 */
-	EOperation getRule__Produce__Graph_Vertex();
-
-	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.SymbolSymbolsPair <em>Symbol Symbols Pair</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2665,13 +2646,6 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation RULE___DERIVE__GRAPH_VERTEX = eINSTANCE.getRule__Derive__Graph_Vertex();
-		/**
-		 * The meta object literal for the '<em><b>Produce</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RULE___PRODUCE__GRAPH_VERTEX = eINSTANCE.getRule__Produce__Graph_Vertex();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.SymbolSymbolsPairImpl <em>Symbol Symbols Pair</em>}' class.
 		 * <!-- begin-user-doc -->

@@ -211,16 +211,4 @@ public interface Rule extends EObject {
 	 */
 	EMap<Vertex, Vertex> derive(Graph graph, Vertex vertex);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Apply this rule to the graph, substituting vertex by the RHS of this rule and
-	 * embedding it to the rest of the graph without PACs in the resulting graph
-	 * <!-- end-model-doc -->
-	 * @model mapType="org.wbsilva.bence.graphgrammar.VertexToVertexMap&lt;org.wbsilva.bence.graphgrammar.Vertex, org.wbsilva.bence.graphgrammar.Vertex&gt;" ordered="false"
-	 * @generated
-	 */
-	EMap<Vertex, Vertex> produce(Graph graph, Vertex vertex);
-
 } // Rule
