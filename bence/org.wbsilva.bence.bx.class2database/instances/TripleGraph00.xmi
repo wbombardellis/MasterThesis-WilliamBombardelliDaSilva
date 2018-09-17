@@ -2,91 +2,137 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar">
   <org.wbsilva.bence.graphgrammar:TripleGraph>
     <source>
-      <vertices id="_7xlqULkHEeihvd1DjK_gdg">
+      <vertices id="_IiTHILqREeiubdvpieJ5Og">
         <label name="ClassDiagram"/>
       </vertices>
-      <vertices id="_7xlqUbkHEeihvd1DjK_gdg">
+      <vertices id="_IiTuM7qREeiubdvpieJ5Og">
         <label name="Clazz"/>
       </vertices>
-      <vertices id="_7xmRYbkHEeihvd1DjK_gdg">
+      <vertices id="_IiTuMrqREeiubdvpieJ5Og">
+        <label name="Clazz"/>
+      </vertices>
+      <vertices id="_IiTuMLqREeiubdvpieJ5Og">
+        <label name="Clazz"/>
+      </vertices>
+      <vertices id="_IiTuMbqREeiubdvpieJ5Og">
+        <label name="Clazz"/>
+      </vertices>
+      <vertices id="_IiTuNLqREeiubdvpieJ5Og">
         <label name="Association"/>
       </vertices>
-      <vertices id="_7xmRYLkHEeihvd1DjK_gdg">
-        <label name="Clazz"/>
-      </vertices>
-      <edges from="_7xlqULkHEeihvd1DjK_gdg" to="_7xlqUbkHEeihvd1DjK_gdg">
+      <edges from="_IiTHILqREeiubdvpieJ5Og" to="_IiTuM7qREeiubdvpieJ5Og">
         <label name="classes"/>
       </edges>
-      <edges from="_7xmRYbkHEeihvd1DjK_gdg" to="_7xlqUbkHEeihvd1DjK_gdg">
-        <label name="source"/>
+      <edges from="_IiTHILqREeiubdvpieJ5Og" to="_IiTuMrqREeiubdvpieJ5Og">
+        <label name="classes"/>
       </edges>
-      <edges from="_7xlqULkHEeihvd1DjK_gdg" to="_7xmRYbkHEeihvd1DjK_gdg">
+      <edges from="_IiTHILqREeiubdvpieJ5Og" to="_IiTuMLqREeiubdvpieJ5Og">
+        <label name="classes"/>
+      </edges>
+      <edges from="_IiTHILqREeiubdvpieJ5Og" to="_IiTuMbqREeiubdvpieJ5Og">
+        <label name="classes"/>
+      </edges>
+      <edges from="_IiTHILqREeiubdvpieJ5Og" to="_IiTuNLqREeiubdvpieJ5Og">
         <label name="associations"/>
       </edges>
-      <edges from="_7xlqULkHEeihvd1DjK_gdg" to="_7xmRYLkHEeihvd1DjK_gdg">
-        <label name="classes"/>
+      <edges from="_IiTuNLqREeiubdvpieJ5Og" to="_IiTuMLqREeiubdvpieJ5Og">
+        <label name="source"/>
+      </edges>
+      <edges from="_IiTuNLqREeiubdvpieJ5Og" to="_IiTuMbqREeiubdvpieJ5Og">
+        <label name="target"/>
       </edges>
     </source>
     <corr>
-      <vertices id="_9gvTwLkHEeihvd1DjK_gdg">
+      <vertices id="_JcO_0LqREeiubdvpieJ5Og">
         <label name="ClassDiagram2DB"/>
       </vertices>
-      <vertices id="_9hPDAbkHEeihvd1DjK_gdg">
+      <vertices id="_JcoBY7qREeiubdvpieJ5Og">
         <label name="Clazz2Table"/>
       </vertices>
-      <vertices id="_9hjMELkHEeihvd1DjK_gdg">
+      <vertices id="_Jc68ULqREeiubdvpieJ5Og">
+        <label name="Clazz2Table"/>
+      </vertices>
+      <vertices id="_JdEtUbqREeiubdvpieJ5Og">
+        <label name="Clazz2Table"/>
+      </vertices>
+      <vertices id="_JdI-wrqREeiubdvpieJ5Og">
+        <label name="Clazz2Table"/>
+      </vertices>
+      <vertices id="_JdT94bqREeiubdvpieJ5Og">
         <label name="Association2Column"/>
-      </vertices>
-      <vertices id="_9h2uELkHEeihvd1DjK_gdg">
-        <label name="Clazz2Table"/>
       </vertices>
     </corr>
     <target>
-      <vertices id="_9gussLkHEeihvd1DjK_gdg">
+      <vertices id="_JcOYwbqREeiubdvpieJ5Og">
         <label name="DB"/>
       </vertices>
-      <vertices id="_9hOb8rkHEeihvd1DjK_gdg">
+      <vertices id="_JcoBYbqREeiubdvpieJ5Og">
         <label name="Table"/>
       </vertices>
-      <vertices id="_9heTkLkHEeihvd1DjK_gdg">
+      <vertices id="_Jc6VQLqREeiubdvpieJ5Og">
+        <label name="Table"/>
+      </vertices>
+      <vertices id="_JdDfMLqREeiubdvpieJ5Og">
+        <label name="Table"/>
+      </vertices>
+      <vertices id="_JdIXtLqREeiubdvpieJ5Og">
+        <label name="Table"/>
+      </vertices>
+      <vertices id="_JdTW0rqREeiubdvpieJ5Og">
         <label name="Column"/>
       </vertices>
-      <vertices id="_9hxOgbkHEeihvd1DjK_gdg">
-        <label name="Table"/>
-      </vertices>
-      <edges from="_9gussLkHEeihvd1DjK_gdg" to="_9hOb8rkHEeihvd1DjK_gdg">
+      <edges from="_JcOYwbqREeiubdvpieJ5Og" to="_JcoBYbqREeiubdvpieJ5Og">
         <label name="table"/>
       </edges>
-      <edges from="_9hOb8rkHEeihvd1DjK_gdg" to="_9heTkLkHEeihvd1DjK_gdg">
+      <edges from="_JcOYwbqREeiubdvpieJ5Og" to="_Jc6VQLqREeiubdvpieJ5Og">
+        <label name="table"/>
+      </edges>
+      <edges from="_JcOYwbqREeiubdvpieJ5Og" to="_JdDfMLqREeiubdvpieJ5Og">
+        <label name="table"/>
+      </edges>
+      <edges from="_JcOYwbqREeiubdvpieJ5Og" to="_JdIXtLqREeiubdvpieJ5Og">
+        <label name="table"/>
+      </edges>
+      <edges from="_JdDfMLqREeiubdvpieJ5Og" to="_JdTW0rqREeiubdvpieJ5Og">
         <label name="column"/>
       </edges>
-      <edges from="_9gussLkHEeihvd1DjK_gdg" to="_9hxOgbkHEeihvd1DjK_gdg">
-        <label name="table"/>
+      <edges from="_JdTW0rqREeiubdvpieJ5Og" to="_JdIXtLqREeiubdvpieJ5Og">
+        <label name="reference"/>
       </edges>
     </target>
-    <ms key="_9gvTwLkHEeihvd1DjK_gdg" value="_7xlqULkHEeihvd1DjK_gdg"/>
-    <ms key="_9hPDAbkHEeihvd1DjK_gdg" value="_7xlqUbkHEeihvd1DjK_gdg"/>
-    <ms key="_9hjMELkHEeihvd1DjK_gdg" value="_7xmRYbkHEeihvd1DjK_gdg"/>
-    <ms key="_9h2uELkHEeihvd1DjK_gdg" value="_7xmRYLkHEeihvd1DjK_gdg"/>
-    <mt key="_9gvTwLkHEeihvd1DjK_gdg" value="_9gussLkHEeihvd1DjK_gdg"/>
-    <mt key="_9hPDAbkHEeihvd1DjK_gdg" value="_9hOb8rkHEeihvd1DjK_gdg"/>
-    <mt key="_9hjMELkHEeihvd1DjK_gdg" value="_9heTkLkHEeihvd1DjK_gdg"/>
-    <mt key="_9h2uELkHEeihvd1DjK_gdg" value="_9hxOgbkHEeihvd1DjK_gdg"/>
+    <ms key="_JcO_0LqREeiubdvpieJ5Og" value="_IiTHILqREeiubdvpieJ5Og"/>
+    <ms key="_JcoBY7qREeiubdvpieJ5Og" value="_IiTuM7qREeiubdvpieJ5Og"/>
+    <ms key="_Jc68ULqREeiubdvpieJ5Og" value="_IiTuMrqREeiubdvpieJ5Og"/>
+    <ms key="_JdEtUbqREeiubdvpieJ5Og" value="_IiTuMLqREeiubdvpieJ5Og"/>
+    <ms key="_JdI-wrqREeiubdvpieJ5Og" value="_IiTuMbqREeiubdvpieJ5Og"/>
+    <ms key="_JdT94bqREeiubdvpieJ5Og" value="_IiTuNLqREeiubdvpieJ5Og"/>
+    <mt key="_JcO_0LqREeiubdvpieJ5Og" value="_JcOYwbqREeiubdvpieJ5Og"/>
+    <mt key="_JcoBY7qREeiubdvpieJ5Og" value="_JcoBYbqREeiubdvpieJ5Og"/>
+    <mt key="_Jc68ULqREeiubdvpieJ5Og" value="_Jc6VQLqREeiubdvpieJ5Og"/>
+    <mt key="_JdEtUbqREeiubdvpieJ5Og" value="_JdDfMLqREeiubdvpieJ5Og"/>
+    <mt key="_JdI-wrqREeiubdvpieJ5Og" value="_JdIXtLqREeiubdvpieJ5Og"/>
+    <mt key="_JdT94bqREeiubdvpieJ5Og" value="_JdTW0rqREeiubdvpieJ5Og"/>
   </org.wbsilva.bence.graphgrammar:TripleGraph>
   <org.wbsilva.bence.graphgrammar:ParsingTree>
-    <zoneVertex id="_9dX2sLkHEeihvd1DjK_gdg">
+    <zoneVertex id="_JasHsbqREeiubdvpieJ5Og">
       <label name="S"/>
-      <vertices id="_7aA30LkHEeihvd1DjK_gdg">
+      <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+        <label name="Clazz"/>
+      </vertices>
+      <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+        <label name="Association"/>
+      </vertices>
+      <vertices id="_IbVjgLqREeiubdvpieJ5Og">
+        <label name="Clazz"/>
+      </vertices>
+      <vertices id="_IYRBYLqREeiubdvpieJ5Og">
         <label name="ClassDiagram"/>
       </vertices>
-      <vertices id="_7aL28LkHEeihvd1DjK_gdg">
+      <vertices id="_IbUVYLqREeiubdvpieJ5Og">
         <label name="Clazz"/>
       </vertices>
-      <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+      <vertices id="_IYV54LqREeiubdvpieJ5Og">
         <label name="Clazz"/>
-      </vertices>
-      <vertices id="_7femoLkHEeihvd1DjK_gdg">
-        <label name="Association"/>
       </vertices>
     </zoneVertex>
     <derivationStep>
@@ -107,101 +153,132 @@
           </edges>
         </rhs>
       </rule>
-      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9dX2sLkHEeihvd1DjK_gdg">
+      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JasHsbqREeiubdvpieJ5Og">
         <label name="S"/>
-        <vertices id="_7aA30LkHEeihvd1DjK_gdg">
+        <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+          <label name="Clazz"/>
+        </vertices>
+        <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+          <label name="Association"/>
+        </vertices>
+        <vertices id="_IbVjgLqREeiubdvpieJ5Og">
+          <label name="Clazz"/>
+        </vertices>
+        <vertices id="_IYRBYLqREeiubdvpieJ5Og">
           <label name="ClassDiagram"/>
         </vertices>
-        <vertices id="_7aL28LkHEeihvd1DjK_gdg">
+        <vertices id="_IbUVYLqREeiubdvpieJ5Og">
           <label name="Clazz"/>
         </vertices>
-        <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+        <vertices id="_IYV54LqREeiubdvpieJ5Og">
           <label name="Clazz"/>
-        </vertices>
-        <vertices id="_7femoLkHEeihvd1DjK_gdg">
-          <label name="Association"/>
         </vertices>
       </vertex>
       <previous>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9dX2sLkHEeihvd1DjK_gdg">
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JasHsbqREeiubdvpieJ5Og">
           <label name="S"/>
-          <vertices id="_7aA30LkHEeihvd1DjK_gdg">
+          <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+            <label name="Clazz"/>
+          </vertices>
+          <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+            <label name="Association"/>
+          </vertices>
+          <vertices id="_IbVjgLqREeiubdvpieJ5Og">
+            <label name="Clazz"/>
+          </vertices>
+          <vertices id="_IYRBYLqREeiubdvpieJ5Og">
             <label name="ClassDiagram"/>
           </vertices>
-          <vertices id="_7aL28LkHEeihvd1DjK_gdg">
+          <vertices id="_IbUVYLqREeiubdvpieJ5Og">
             <label name="Clazz"/>
           </vertices>
-          <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+          <vertices id="_IYV54LqREeiubdvpieJ5Og">
             <label name="Clazz"/>
-          </vertices>
-          <vertices id="_7femoLkHEeihvd1DjK_gdg">
-            <label name="Association"/>
           </vertices>
         </vertices>
       </previous>
       <next>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9bvfALkHEeihvd1DjK_gdg">
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JaViYLqREeiubdvpieJ5Og">
           <label name="C"/>
-          <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+          <vertices id="_IbUVYLqREeiubdvpieJ5Og">
             <label name="Clazz"/>
           </vertices>
-          <vertices id="_7femoLkHEeihvd1DjK_gdg">
+          <vertices id="_IbVjgLqREeiubdvpieJ5Og">
+            <label name="Clazz"/>
+          </vertices>
+          <vertices id="_IYV54LqREeiubdvpieJ5Og">
+            <label name="Clazz"/>
+          </vertices>
+          <vertices id="_IbX_wLqREeiubdvpieJ5Og">
             <label name="Association"/>
           </vertices>
-          <vertices id="_7aL28LkHEeihvd1DjK_gdg">
+          <vertices id="_IbTHQLqREeiubdvpieJ5Og">
             <label name="Clazz"/>
           </vertices>
         </vertices>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_7xlqULkHEeihvd1DjK_gdg">
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IiTHILqREeiubdvpieJ5Og">
           <label name="ClassDiagram"/>
-          <vertices id="_7aA30LkHEeihvd1DjK_gdg">
+          <vertices id="_IYRBYLqREeiubdvpieJ5Og">
             <label name="ClassDiagram"/>
           </vertices>
         </vertices>
-        <edges from="_7xlqULkHEeihvd1DjK_gdg" to="_9bvfALkHEeihvd1DjK_gdg">
+        <edges from="_IiTHILqREeiubdvpieJ5Og" to="_JaViYLqREeiubdvpieJ5Og">
           <label name="associations"/>
         </edges>
-        <edges from="_7xlqULkHEeihvd1DjK_gdg" to="_9bvfALkHEeihvd1DjK_gdg">
+        <edges from="_IiTHILqREeiubdvpieJ5Og" to="_JaViYLqREeiubdvpieJ5Og">
           <label name="classes"/>
         </edges>
       </next>
-      <unifier key="cd0" value="_7xlqULkHEeihvd1DjK_gdg"/>
-      <unifier key="C0" value="_9bvfALkHEeihvd1DjK_gdg"/>
+      <unifier key="cd0" value="_IiTHILqREeiubdvpieJ5Og"/>
+      <unifier key="C0" value="_JaViYLqREeiubdvpieJ5Og"/>
     </derivationStep>
     <children>
-      <zoneVertex id="_9bvfALkHEeihvd1DjK_gdg">
+      <zoneVertex id="_IiTHILqREeiubdvpieJ5Og">
+        <label name="ClassDiagram"/>
+        <vertices id="_IYRBYLqREeiubdvpieJ5Og">
+          <label name="ClassDiagram"/>
+        </vertices>
+      </zoneVertex>
+    </children>
+    <children>
+      <zoneVertex id="_JaViYLqREeiubdvpieJ5Og">
         <label name="C"/>
-        <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+        <vertices id="_IbUVYLqREeiubdvpieJ5Og">
           <label name="Clazz"/>
         </vertices>
-        <vertices id="_7femoLkHEeihvd1DjK_gdg">
+        <vertices id="_IbVjgLqREeiubdvpieJ5Og">
+          <label name="Clazz"/>
+        </vertices>
+        <vertices id="_IYV54LqREeiubdvpieJ5Og">
+          <label name="Clazz"/>
+        </vertices>
+        <vertices id="_IbX_wLqREeiubdvpieJ5Og">
           <label name="Association"/>
         </vertices>
-        <vertices id="_7aL28LkHEeihvd1DjK_gdg">
+        <vertices id="_IbTHQLqREeiubdvpieJ5Og">
           <label name="Clazz"/>
         </vertices>
       </zoneVertex>
       <derivationStep>
-        <rule id="r1____7r7uQLkHEeihvd1DjK_gdg" name="r1">
+        <rule id="r1____IfN98LqREeiubdvpieJ5Og" name="r1">
           <lhs name="C"/>
           <rhs>
-            <vertices id="_7r7HMLkHEeihvd1DjK_gdg">
+            <vertices id="_IfH3ULqREeiubdvpieJ5Og">
               <label name="Clazz"/>
             </vertices>
-            <vertices id="_7r7HMbkHEeihvd1DjK_gdg">
-              <label name="A"/>
-            </vertices>
-            <vertices id="_7r7HMrkHEeihvd1DjK_gdg">
-              <label name="C">
+            <vertices id="_IfH3UbqREeiubdvpieJ5Og">
+              <label name="A">
+                <subscript>Clazz</subscript>
                 <subscript>ClassDiagram</subscript>
+                <superscript>source</superscript>
                 <superscript>associations</superscript>
               </label>
             </vertices>
-            <edges from="_7r7HMbkHEeihvd1DjK_gdg" to="_7r7HMLkHEeihvd1DjK_gdg">
-              <label name="source"/>
-            </edges>
+            <vertices id="_IfH3UrqREeiubdvpieJ5Og">
+              <label name="C"/>
+            </vertices>
           </rhs>
-          <embedding key="_7r7HMLkHEeihvd1DjK_gdg">
+          <embedding key="_IfH3ULqREeiubdvpieJ5Og">
             <value>
               <edgeLabel name="classes"/>
               <vertexLabels name="ClassDiagram"/>
@@ -211,19 +288,19 @@
               <vertexLabels name="Association"/>
             </value>
           </embedding>
-          <embedding key="_7r7HMbkHEeihvd1DjK_gdg">
+          <embedding key="_IfH3UbqREeiubdvpieJ5Og">
             <value>
               <edgeLabel name="associations"/>
-              <vertexLabels name="ClassDiagram"/>
             </value>
           </embedding>
-          <embedding key="_7r7HMrkHEeihvd1DjK_gdg">
+          <embedding key="_IfH3UrqREeiubdvpieJ5Og">
             <value>
               <edgeLabel name="classes"/>
               <vertexLabels name="ClassDiagram"/>
             </value>
             <value>
               <edgeLabel name="associations"/>
+              <vertexLabels name="ClassDiagram"/>
             </value>
             <value>
               <edgeLabel name="target"/>
@@ -231,482 +308,336 @@
             </value>
           </embedding>
         </rule>
-        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9bvfALkHEeihvd1DjK_gdg">
+        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JaViYLqREeiubdvpieJ5Og">
           <label name="C"/>
-          <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+          <vertices id="_IbUVYLqREeiubdvpieJ5Og">
             <label name="Clazz"/>
           </vertices>
-          <vertices id="_7femoLkHEeihvd1DjK_gdg">
+          <vertices id="_IbVjgLqREeiubdvpieJ5Og">
+            <label name="Clazz"/>
+          </vertices>
+          <vertices id="_IYV54LqREeiubdvpieJ5Og">
+            <label name="Clazz"/>
+          </vertices>
+          <vertices id="_IbX_wLqREeiubdvpieJ5Og">
             <label name="Association"/>
           </vertices>
-          <vertices id="_7aL28LkHEeihvd1DjK_gdg">
+          <vertices id="_IbTHQLqREeiubdvpieJ5Og">
             <label name="Clazz"/>
           </vertices>
         </vertex>
         <previous>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9bvfALkHEeihvd1DjK_gdg">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JaViYLqREeiubdvpieJ5Og">
             <label name="C"/>
-            <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+            <vertices id="_IbUVYLqREeiubdvpieJ5Og">
               <label name="Clazz"/>
             </vertices>
-            <vertices id="_7femoLkHEeihvd1DjK_gdg">
+            <vertices id="_IbVjgLqREeiubdvpieJ5Og">
+              <label name="Clazz"/>
+            </vertices>
+            <vertices id="_IYV54LqREeiubdvpieJ5Og">
+              <label name="Clazz"/>
+            </vertices>
+            <vertices id="_IbX_wLqREeiubdvpieJ5Og">
               <label name="Association"/>
             </vertices>
-            <vertices id="_7aL28LkHEeihvd1DjK_gdg">
+            <vertices id="_IbTHQLqREeiubdvpieJ5Og">
               <label name="Clazz"/>
             </vertices>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9bwGELkHEeihvd1DjK_gdg">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JaViYbqREeiubdvpieJ5Og">
             <label name="ClassDiagram"/>
-            <vertices id="_7aA30LkHEeihvd1DjK_gdg">
+            <vertices id="_IYRBYLqREeiubdvpieJ5Og">
               <label name="ClassDiagram"/>
             </vertices>
           </vertices>
-          <edges from="_9bwGELkHEeihvd1DjK_gdg" to="_9bvfALkHEeihvd1DjK_gdg">
+          <edges from="_JaViYbqREeiubdvpieJ5Og" to="_JaViYLqREeiubdvpieJ5Og">
             <label name="classes"/>
           </edges>
-          <edges from="_9bwGELkHEeihvd1DjK_gdg" to="_9bvfALkHEeihvd1DjK_gdg">
+          <edges from="_JaViYbqREeiubdvpieJ5Og" to="_JaViYLqREeiubdvpieJ5Og">
             <label name="associations"/>
           </edges>
         </previous>
         <next>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_7xlqUbkHEeihvd1DjK_gdg">
-            <label name="Clazz"/>
-            <vertices id="_7aL28LkHEeihvd1DjK_gdg">
-              <label name="Clazz"/>
-            </vertices>
-          </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_8Qt2ULkHEeihvd1DjK_gdg">
-            <label name="A"/>
-            <vertices id="_7femoLkHEeihvd1DjK_gdg">
-              <label name="Association"/>
-            </vertices>
-            <pacs id="_7fcxcLkHEeihvd1DjK_gdg">
-              <label name="Clazz"/>
-            </pacs>
-          </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9X_ncLkHEeihvd1DjK_gdg">
-            <label name="C">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IkwlQLqREeiubdvpieJ5Og">
+            <label name="A">
+              <subscript>Clazz</subscript>
               <subscript>ClassDiagram</subscript>
+              <superscript>source</superscript>
               <superscript>associations</superscript>
             </label>
-            <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JX9j0LqREeiubdvpieJ5Og">
+            <label name="C"/>
+            <vertices id="_IbUVYLqREeiubdvpieJ5Og">
+              <label name="Clazz"/>
+            </vertices>
+            <vertices id="_IYV54LqREeiubdvpieJ5Og">
+              <label name="Clazz"/>
+            </vertices>
+            <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+              <label name="Association"/>
+            </vertices>
+            <vertices id="_IbTHQLqREeiubdvpieJ5Og">
               <label name="Clazz"/>
             </vertices>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9bp_cLkHEeihvd1DjK_gdg">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IiTuM7qREeiubdvpieJ5Og">
+            <label name="Clazz"/>
+            <vertices id="_IbVjgLqREeiubdvpieJ5Og">
+              <label name="Clazz"/>
+            </vertices>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JaPbwLqREeiubdvpieJ5Og">
             <label name="ClassDiagram"/>
-            <vertices id="_7aA30LkHEeihvd1DjK_gdg">
+            <vertices id="_IYRBYLqREeiubdvpieJ5Og">
               <label name="ClassDiagram"/>
             </vertices>
           </vertices>
-          <edges from="_8Qt2ULkHEeihvd1DjK_gdg" to="_7xlqUbkHEeihvd1DjK_gdg">
-            <label name="source"/>
-          </edges>
-          <edges from="_9bp_cLkHEeihvd1DjK_gdg" to="_7xlqUbkHEeihvd1DjK_gdg">
+          <edges from="_JaPbwLqREeiubdvpieJ5Og" to="_JX9j0LqREeiubdvpieJ5Og">
             <label name="classes"/>
           </edges>
-          <edges from="_9bp_cLkHEeihvd1DjK_gdg" to="_8Qt2ULkHEeihvd1DjK_gdg">
+          <edges from="_JaPbwLqREeiubdvpieJ5Og" to="_IiTuM7qREeiubdvpieJ5Og">
+            <label name="classes"/>
+          </edges>
+          <edges from="_JaPbwLqREeiubdvpieJ5Og" to="_JX9j0LqREeiubdvpieJ5Og">
             <label name="associations"/>
           </edges>
-          <edges from="_9bp_cLkHEeihvd1DjK_gdg" to="_9X_ncLkHEeihvd1DjK_gdg">
-            <label name="classes"/>
-          </edges>
         </next>
-        <unifier key="_7r7HMLkHEeihvd1DjK_gdg" value="_7xlqUbkHEeihvd1DjK_gdg"/>
-        <unifier key="_7r7HMbkHEeihvd1DjK_gdg" value="_8Qt2ULkHEeihvd1DjK_gdg"/>
-        <unifier key="_7r7HMrkHEeihvd1DjK_gdg" value="_9X_ncLkHEeihvd1DjK_gdg"/>
+        <unifier key="_IfH3ULqREeiubdvpieJ5Og" value="_IiTuM7qREeiubdvpieJ5Og"/>
+        <unifier key="_IfH3UbqREeiubdvpieJ5Og" value="_IkwlQLqREeiubdvpieJ5Og"/>
+        <unifier key="_IfH3UrqREeiubdvpieJ5Og" value="_JX9j0LqREeiubdvpieJ5Og"/>
       </derivationStep>
       <children>
-        <zoneVertex id="_8Qt2ULkHEeihvd1DjK_gdg">
-          <label name="A"/>
-          <vertices id="_7femoLkHEeihvd1DjK_gdg">
-            <label name="Association"/>
-          </vertices>
-          <pacs id="_7fcxcLkHEeihvd1DjK_gdg">
-            <label name="Clazz"/>
-          </pacs>
+        <zoneVertex id="_IkwlQLqREeiubdvpieJ5Og">
+          <label name="A">
+            <subscript>Clazz</subscript>
+            <subscript>ClassDiagram</subscript>
+            <superscript>source</superscript>
+            <superscript>associations</superscript>
+          </label>
         </zoneVertex>
         <derivationStep>
-          <rule id="r2" name="r2" pac="c2">
-            <lhs name="A"/>
+          <rule id="r3___(A^{source, associations}_{Clazz, ClassDiagram})" name="r3">
+            <lhs name="A">
+              <subscript>Clazz</subscript>
+              <subscript>ClassDiagram</subscript>
+              <superscript>source</superscript>
+              <superscript>associations</superscript>
+            </lhs>
+            <rhs/>
+          </rule>
+          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IkwlQLqREeiubdvpieJ5Og">
+            <label name="A">
+              <subscript>Clazz</subscript>
+              <subscript>ClassDiagram</subscript>
+              <superscript>source</superscript>
+              <superscript>associations</superscript>
+            </label>
+          </vertex>
+          <previous>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IkwlQLqREeiubdvpieJ5Og">
+              <label name="A">
+                <subscript>Clazz</subscript>
+                <subscript>ClassDiagram</subscript>
+                <superscript>source</superscript>
+                <superscript>associations</superscript>
+              </label>
+            </vertices>
+          </previous>
+          <next/>
+        </derivationStep>
+      </children>
+      <children>
+        <zoneVertex id="_JX9j0LqREeiubdvpieJ5Og">
+          <label name="C"/>
+          <vertices id="_IbUVYLqREeiubdvpieJ5Og">
+            <label name="Clazz"/>
+          </vertices>
+          <vertices id="_IYV54LqREeiubdvpieJ5Og">
+            <label name="Clazz"/>
+          </vertices>
+          <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+            <label name="Association"/>
+          </vertices>
+          <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+            <label name="Clazz"/>
+          </vertices>
+        </zoneVertex>
+        <derivationStep>
+          <rule id="r1____IfN98LqREeiubdvpieJ5Og" name="r1">
+            <lhs name="C"/>
             <rhs>
-              <vertices id="a2">
-                <label name="Association"/>
-              </vertices>
-              <vertices id="c2">
+              <vertices id="_IfH3ULqREeiubdvpieJ5Og">
                 <label name="Clazz"/>
               </vertices>
-              <edges from="a2" to="c2">
-                <label name="target"/>
-              </edges>
+              <vertices id="_IfH3UbqREeiubdvpieJ5Og">
+                <label name="A">
+                  <subscript>Clazz</subscript>
+                  <subscript>ClassDiagram</subscript>
+                  <superscript>source</superscript>
+                  <superscript>associations</superscript>
+                </label>
+              </vertices>
+              <vertices id="_IfH3UrqREeiubdvpieJ5Og">
+                <label name="C"/>
+              </vertices>
             </rhs>
-            <embedding key="a2">
+            <embedding key="_IfH3ULqREeiubdvpieJ5Og">
               <value>
-                <edgeLabel name="source"/>
-                <vertexLabels name="Clazz"/>
+                <edgeLabel name="classes"/>
+                <vertexLabels name="ClassDiagram"/>
+              </value>
+              <value>
+                <edgeLabel name="target"/>
+                <vertexLabels name="Association"/>
+              </value>
+            </embedding>
+            <embedding key="_IfH3UbqREeiubdvpieJ5Og">
+              <value>
+                <edgeLabel name="associations"/>
+              </value>
+            </embedding>
+            <embedding key="_IfH3UrqREeiubdvpieJ5Og">
+              <value>
+                <edgeLabel name="classes"/>
+                <vertexLabels name="ClassDiagram"/>
               </value>
               <value>
                 <edgeLabel name="associations"/>
                 <vertexLabels name="ClassDiagram"/>
               </value>
-            </embedding>
-            <embedding key="c2">
-              <value>
-                <edgeLabel name="classes"/>
-                <vertexLabels name="ClassDiagram"/>
-              </value>
-              <value>
-                <edgeLabel name="source"/>
-                <vertexLabels name="Association"/>
-              </value>
-            </embedding>
-          </rule>
-          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_8Qt2ULkHEeihvd1DjK_gdg">
-            <label name="A"/>
-            <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
-              <label name="Clazz"/>
-            </vertices>
-            <vertices id="_7femoLkHEeihvd1DjK_gdg">
-              <label name="Association"/>
-            </vertices>
-          </vertex>
-          <previous>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_8Qt2ULkHEeihvd1DjK_gdg">
-              <label name="A"/>
-              <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
-                <label name="Clazz"/>
-              </vertices>
-              <vertices id="_7femoLkHEeihvd1DjK_gdg">
-                <label name="Association"/>
-              </vertices>
-            </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_8Q3AQLkHEeihvd1DjK_gdg">
-              <label name="ClassDiagram"/>
-              <vertices id="_7aA30LkHEeihvd1DjK_gdg">
-                <label name="ClassDiagram"/>
-              </vertices>
-            </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_8Q2ZMLkHEeihvd1DjK_gdg">
-              <label name="Clazz"/>
-              <vertices id="_7aL28LkHEeihvd1DjK_gdg">
-                <label name="Clazz"/>
-              </vertices>
-            </vertices>
-            <edges from="_8Qt2ULkHEeihvd1DjK_gdg" to="_8Q2ZMLkHEeihvd1DjK_gdg">
-              <label name="source"/>
-            </edges>
-            <edges from="_8Q3AQLkHEeihvd1DjK_gdg" to="_8Qt2ULkHEeihvd1DjK_gdg">
-              <label name="associations"/>
-            </edges>
-            <edges from="_8Q3AQLkHEeihvd1DjK_gdg" to="_8Qt2ULkHEeihvd1DjK_gdg">
-              <label name="classes"/>
-            </edges>
-            <edges from="_8Q3AQLkHEeihvd1DjK_gdg" to="_8Q2ZMLkHEeihvd1DjK_gdg">
-              <label name="classes"/>
-            </edges>
-          </previous>
-          <next>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_7xmRYbkHEeihvd1DjK_gdg">
-              <label name="Association"/>
-              <vertices id="_7femoLkHEeihvd1DjK_gdg">
-                <label name="Association"/>
-              </vertices>
-            </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_7xmRYLkHEeihvd1DjK_gdg">
-              <label name="Clazz"/>
-              <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
-                <label name="Clazz"/>
-              </vertices>
-            </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_8QKcsLkHEeihvd1DjK_gdg">
-              <label name="Clazz"/>
-              <vertices id="_7aL28LkHEeihvd1DjK_gdg">
-                <label name="Clazz"/>
-              </vertices>
-            </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_8QLDwLkHEeihvd1DjK_gdg">
-              <label name="ClassDiagram"/>
-              <vertices id="_7aA30LkHEeihvd1DjK_gdg">
-                <label name="ClassDiagram"/>
-              </vertices>
-            </vertices>
-            <edges from="_7xmRYbkHEeihvd1DjK_gdg" to="_7xmRYLkHEeihvd1DjK_gdg">
-              <label name="target"/>
-            </edges>
-            <edges from="_7xmRYbkHEeihvd1DjK_gdg" to="_8QKcsLkHEeihvd1DjK_gdg">
-              <label name="source"/>
-            </edges>
-            <edges from="_8QLDwLkHEeihvd1DjK_gdg" to="_8QKcsLkHEeihvd1DjK_gdg">
-              <label name="classes"/>
-            </edges>
-            <edges from="_8QLDwLkHEeihvd1DjK_gdg" to="_7xmRYbkHEeihvd1DjK_gdg">
-              <label name="associations"/>
-            </edges>
-            <edges from="_8QLDwLkHEeihvd1DjK_gdg" to="_7xmRYLkHEeihvd1DjK_gdg">
-              <label name="classes"/>
-            </edges>
-          </next>
-          <unifier key="a2" value="_7xmRYbkHEeihvd1DjK_gdg"/>
-          <unifier key="c2" value="_7xmRYLkHEeihvd1DjK_gdg"/>
-        </derivationStep>
-        <children>
-          <zoneVertex id="_7xmRYbkHEeihvd1DjK_gdg">
-            <label name="Association"/>
-            <vertices id="_7femoLkHEeihvd1DjK_gdg">
-              <label name="Association"/>
-            </vertices>
-          </zoneVertex>
-        </children>
-        <children>
-          <zoneVertex id="_7xmRYLkHEeihvd1DjK_gdg">
-            <label name="Clazz"/>
-            <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
-              <label name="Clazz"/>
-            </vertices>
-          </zoneVertex>
-        </children>
-      </children>
-      <children>
-        <zoneVertex id="_7xlqUbkHEeihvd1DjK_gdg">
-          <label name="Clazz"/>
-          <vertices id="_7aL28LkHEeihvd1DjK_gdg">
-            <label name="Clazz"/>
-          </vertices>
-        </zoneVertex>
-      </children>
-      <children>
-        <zoneVertex id="_9X_ncLkHEeihvd1DjK_gdg">
-          <label name="C">
-            <subscript>ClassDiagram</subscript>
-            <superscript>associations</superscript>
-          </label>
-          <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
-            <label name="Clazz"/>
-          </vertices>
-        </zoneVertex>
-        <derivationStep>
-          <rule id="r1____7o6PcLkHEeihvd1DjK_gdg____7qTWkLkHEeihvd1DjK_gdg___(C^{associations}_{ClassDiagram})" name="r1">
-            <lhs name="C">
-              <subscript>ClassDiagram</subscript>
-              <superscript>associations</superscript>
-            </lhs>
-            <rhs>
-              <vertices id="_7rwvILkHEeihvd1DjK_gdg">
-                <label name="Clazz"/>
-              </vertices>
-              <vertices id="_7rwvIbkHEeihvd1DjK_gdg">
-                <label name="A">
-                  <subscript>ClassDiagram</subscript>
-                  <subscript>Clazz</subscript>
-                  <superscript>associations</superscript>
-                  <superscript>source</superscript>
-                </label>
-              </vertices>
-              <vertices id="_7rwvIrkHEeihvd1DjK_gdg">
-                <label name="C">
-                  <subscript>ClassDiagram</subscript>
-                  <subscript>Association</subscript>
-                  <subscript>ClassDiagram</subscript>
-                  <superscript>classes</superscript>
-                  <superscript>target</superscript>
-                  <superscript>associations</superscript>
-                </label>
-              </vertices>
-            </rhs>
-            <embedding key="_7rwvILkHEeihvd1DjK_gdg">
-              <value>
-                <edgeLabel name="classes"/>
-                <vertexLabels name="ClassDiagram"/>
-              </value>
               <value>
                 <edgeLabel name="target"/>
                 <vertexLabels name="Association"/>
               </value>
             </embedding>
-            <embedding key="_7rwvIrkHEeihvd1DjK_gdg">
-              <value>
-                <edgeLabel name="classes"/>
-              </value>
-              <value>
-                <edgeLabel name="target"/>
-              </value>
-            </embedding>
           </rule>
-          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9X_ncLkHEeihvd1DjK_gdg">
-            <label name="C">
-              <subscript>ClassDiagram</subscript>
-              <superscript>associations</superscript>
-            </label>
-            <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JX9j0LqREeiubdvpieJ5Og">
+            <label name="C"/>
+            <vertices id="_IbUVYLqREeiubdvpieJ5Og">
+              <label name="Clazz"/>
+            </vertices>
+            <vertices id="_IYV54LqREeiubdvpieJ5Og">
+              <label name="Clazz"/>
+            </vertices>
+            <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+              <label name="Association"/>
+            </vertices>
+            <vertices id="_IbTHQLqREeiubdvpieJ5Og">
               <label name="Clazz"/>
             </vertices>
           </vertex>
           <previous>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9X_ncLkHEeihvd1DjK_gdg">
-              <label name="C">
-                <subscript>ClassDiagram</subscript>
-                <superscript>associations</superscript>
-              </label>
-              <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JX9j0LqREeiubdvpieJ5Og">
+              <label name="C"/>
+              <vertices id="_IbUVYLqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+              </vertices>
+              <vertices id="_IYV54LqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+              </vertices>
+              <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+                <label name="Association"/>
+              </vertices>
+              <vertices id="_IbTHQLqREeiubdvpieJ5Og">
                 <label name="Clazz"/>
               </vertices>
             </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9YAOgLkHEeihvd1DjK_gdg">
-              <label name="Association"/>
-              <vertices id="_7femoLkHEeihvd1DjK_gdg">
-                <label name="Association"/>
-              </vertices>
-            </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9YAOgbkHEeihvd1DjK_gdg">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JX9j0rqREeiubdvpieJ5Og">
               <label name="ClassDiagram"/>
-              <vertices id="_7aA30LkHEeihvd1DjK_gdg">
+              <vertices id="_IYRBYLqREeiubdvpieJ5Og">
                 <label name="ClassDiagram"/>
               </vertices>
             </vertices>
-            <edges from="_9YAOgLkHEeihvd1DjK_gdg" to="_9X_ncLkHEeihvd1DjK_gdg">
-              <label name="target"/>
-            </edges>
-            <edges from="_9YAOgbkHEeihvd1DjK_gdg" to="_9X_ncLkHEeihvd1DjK_gdg">
+            <edges from="_JX9j0rqREeiubdvpieJ5Og" to="_JX9j0LqREeiubdvpieJ5Og">
               <label name="classes"/>
             </edges>
-            <edges from="_9YAOgbkHEeihvd1DjK_gdg" to="_9YAOgLkHEeihvd1DjK_gdg">
+            <edges from="_JX9j0rqREeiubdvpieJ5Og" to="_JX9j0LqREeiubdvpieJ5Og">
               <label name="associations"/>
             </edges>
           </previous>
           <next>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_74KzcLkHEeihvd1DjK_gdg">
-              <label name="C">
-                <subscript>ClassDiagram</subscript>
-                <subscript>Association</subscript>
-                <subscript>ClassDiagram</subscript>
-                <superscript>classes</superscript>
-                <superscript>target</superscript>
-                <superscript>associations</superscript>
-              </label>
-            </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_77mh8LkHEeihvd1DjK_gdg">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JAlloLqREeiubdvpieJ5Og">
               <label name="A">
-                <subscript>ClassDiagram</subscript>
                 <subscript>Clazz</subscript>
-                <superscript>associations</superscript>
+                <subscript>ClassDiagram</subscript>
                 <superscript>source</superscript>
+                <superscript>associations</superscript>
               </label>
             </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_7xmRYLkHEeihvd1DjK_gdg">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IiTuMrqREeiubdvpieJ5Og">
               <label name="Clazz"/>
-              <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+              <vertices id="_IbUVYLqREeiubdvpieJ5Og">
                 <label name="Clazz"/>
               </vertices>
             </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9Xa_sLkHEeihvd1DjK_gdg">
-              <label name="Association"/>
-              <vertices id="_7femoLkHEeihvd1DjK_gdg">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JVI5ULqREeiubdvpieJ5Og">
+              <label name="C"/>
+              <vertices id="_IYV54LqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+              </vertices>
+              <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+              </vertices>
+              <vertices id="_IbX_wLqREeiubdvpieJ5Og">
                 <label name="Association"/>
               </vertices>
             </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_9Xa_sbkHEeihvd1DjK_gdg">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JX7uoLqREeiubdvpieJ5Og">
               <label name="ClassDiagram"/>
-              <vertices id="_7aA30LkHEeihvd1DjK_gdg">
+              <vertices id="_IYRBYLqREeiubdvpieJ5Og">
                 <label name="ClassDiagram"/>
               </vertices>
             </vertices>
-            <edges from="_9Xa_sLkHEeihvd1DjK_gdg" to="_7xmRYLkHEeihvd1DjK_gdg">
-              <label name="target"/>
+            <edges from="_JX7uoLqREeiubdvpieJ5Og" to="_JVI5ULqREeiubdvpieJ5Og">
+              <label name="classes"/>
             </edges>
-            <edges from="_9Xa_sbkHEeihvd1DjK_gdg" to="_9Xa_sLkHEeihvd1DjK_gdg">
+            <edges from="_JX7uoLqREeiubdvpieJ5Og" to="_JVI5ULqREeiubdvpieJ5Og">
               <label name="associations"/>
             </edges>
-            <edges from="_9Xa_sbkHEeihvd1DjK_gdg" to="_7xmRYLkHEeihvd1DjK_gdg">
+            <edges from="_JX7uoLqREeiubdvpieJ5Og" to="_IiTuMrqREeiubdvpieJ5Og">
               <label name="classes"/>
             </edges>
           </next>
-          <unifier key="_7rwvILkHEeihvd1DjK_gdg" value="_7xmRYLkHEeihvd1DjK_gdg"/>
-          <unifier key="_7rwvIbkHEeihvd1DjK_gdg" value="_77mh8LkHEeihvd1DjK_gdg"/>
-          <unifier key="_7rwvIrkHEeihvd1DjK_gdg" value="_74KzcLkHEeihvd1DjK_gdg"/>
+          <unifier key="_IfH3ULqREeiubdvpieJ5Og" value="_IiTuMrqREeiubdvpieJ5Og"/>
+          <unifier key="_IfH3UbqREeiubdvpieJ5Og" value="_JAlloLqREeiubdvpieJ5Og"/>
+          <unifier key="_IfH3UrqREeiubdvpieJ5Og" value="_JVI5ULqREeiubdvpieJ5Og"/>
         </derivationStep>
         <children>
-          <zoneVertex id="_74KzcLkHEeihvd1DjK_gdg">
-            <label name="C">
-              <subscript>ClassDiagram</subscript>
-              <subscript>Association</subscript>
-              <subscript>ClassDiagram</subscript>
-              <superscript>classes</superscript>
-              <superscript>target</superscript>
-              <superscript>associations</superscript>
-            </label>
-          </zoneVertex>
-          <derivationStep>
-            <rule id="r4___(C^{classes, target, associations}_{ClassDiagram, Association, ClassDiagram})" name="r4">
-              <lhs name="C">
-                <subscript>ClassDiagram</subscript>
-                <subscript>Association</subscript>
-                <subscript>ClassDiagram</subscript>
-                <superscript>classes</superscript>
-                <superscript>target</superscript>
-                <superscript>associations</superscript>
-              </lhs>
-              <rhs/>
-            </rule>
-            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_74KzcLkHEeihvd1DjK_gdg">
-              <label name="C">
-                <subscript>ClassDiagram</subscript>
-                <subscript>Association</subscript>
-                <subscript>ClassDiagram</subscript>
-                <superscript>classes</superscript>
-                <superscript>target</superscript>
-                <superscript>associations</superscript>
-              </label>
-            </vertex>
-            <previous>
-              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_74KzcLkHEeihvd1DjK_gdg">
-                <label name="C">
-                  <subscript>ClassDiagram</subscript>
-                  <subscript>Association</subscript>
-                  <subscript>ClassDiagram</subscript>
-                  <superscript>classes</superscript>
-                  <superscript>target</superscript>
-                  <superscript>associations</superscript>
-                </label>
-              </vertices>
-            </previous>
-            <next/>
-          </derivationStep>
-        </children>
-        <children>
-          <zoneVertex id="_77mh8LkHEeihvd1DjK_gdg">
+          <zoneVertex id="_JAlloLqREeiubdvpieJ5Og">
             <label name="A">
-              <subscript>ClassDiagram</subscript>
               <subscript>Clazz</subscript>
-              <superscript>associations</superscript>
+              <subscript>ClassDiagram</subscript>
               <superscript>source</superscript>
+              <superscript>associations</superscript>
             </label>
           </zoneVertex>
           <derivationStep>
-            <rule id="r3___(A^{associations, source}_{ClassDiagram, Clazz})" name="r3">
+            <rule id="r3___(A^{source, associations}_{Clazz, ClassDiagram})" name="r3">
               <lhs name="A">
-                <subscript>ClassDiagram</subscript>
                 <subscript>Clazz</subscript>
-                <superscript>associations</superscript>
+                <subscript>ClassDiagram</subscript>
                 <superscript>source</superscript>
+                <superscript>associations</superscript>
               </lhs>
               <rhs/>
             </rule>
-            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_77mh8LkHEeihvd1DjK_gdg">
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JAlloLqREeiubdvpieJ5Og">
               <label name="A">
-                <subscript>ClassDiagram</subscript>
                 <subscript>Clazz</subscript>
-                <superscript>associations</superscript>
+                <subscript>ClassDiagram</subscript>
                 <superscript>source</superscript>
+                <superscript>associations</superscript>
               </label>
             </vertex>
             <previous>
-              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_77mh8LkHEeihvd1DjK_gdg">
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JAlloLqREeiubdvpieJ5Og">
                 <label name="A">
-                  <subscript>ClassDiagram</subscript>
                   <subscript>Clazz</subscript>
-                  <superscript>associations</superscript>
+                  <subscript>ClassDiagram</subscript>
                   <superscript>source</superscript>
+                  <superscript>associations</superscript>
                 </label>
               </vertices>
             </previous>
@@ -714,22 +645,642 @@
           </derivationStep>
         </children>
         <children>
-          <zoneVertex id="_7xmRYLkHEeihvd1DjK_gdg">
+          <zoneVertex id="_IiTuMrqREeiubdvpieJ5Og">
             <label name="Clazz"/>
-            <vertices id="_7fcxcLkHEeihvd1DjK_gdg">
+            <vertices id="_IbUVYLqREeiubdvpieJ5Og">
               <label name="Clazz"/>
             </vertices>
           </zoneVertex>
         </children>
+        <children>
+          <zoneVertex id="_JVI5ULqREeiubdvpieJ5Og">
+            <label name="C"/>
+            <vertices id="_IYV54LqREeiubdvpieJ5Og">
+              <label name="Clazz"/>
+            </vertices>
+            <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+              <label name="Clazz"/>
+            </vertices>
+            <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+              <label name="Association"/>
+            </vertices>
+          </zoneVertex>
+          <derivationStep>
+            <rule id="r1____IgaQw7qREeiubdvpieJ5Og" name="r1">
+              <lhs name="C"/>
+              <rhs>
+                <vertices id="_IgaQwLqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                </vertices>
+                <vertices id="_IgaQwbqREeiubdvpieJ5Og">
+                  <label name="A"/>
+                </vertices>
+                <vertices id="_IgaQwrqREeiubdvpieJ5Og">
+                  <label name="C">
+                    <subscript>ClassDiagram</subscript>
+                    <superscript>associations</superscript>
+                  </label>
+                </vertices>
+                <edges from="_IgaQwbqREeiubdvpieJ5Og" to="_IgaQwLqREeiubdvpieJ5Og">
+                  <label name="source"/>
+                </edges>
+              </rhs>
+              <embedding key="_IgaQwLqREeiubdvpieJ5Og">
+                <value>
+                  <edgeLabel name="classes"/>
+                  <vertexLabels name="ClassDiagram"/>
+                </value>
+                <value>
+                  <edgeLabel name="target"/>
+                  <vertexLabels name="Association"/>
+                </value>
+              </embedding>
+              <embedding key="_IgaQwbqREeiubdvpieJ5Og">
+                <value>
+                  <edgeLabel name="associations"/>
+                  <vertexLabels name="ClassDiagram"/>
+                </value>
+              </embedding>
+              <embedding key="_IgaQwrqREeiubdvpieJ5Og">
+                <value>
+                  <edgeLabel name="classes"/>
+                  <vertexLabels name="ClassDiagram"/>
+                </value>
+                <value>
+                  <edgeLabel name="associations"/>
+                </value>
+                <value>
+                  <edgeLabel name="target"/>
+                  <vertexLabels name="Association"/>
+                </value>
+              </embedding>
+            </rule>
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JVI5ULqREeiubdvpieJ5Og">
+              <label name="C"/>
+              <vertices id="_IYV54LqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+              </vertices>
+              <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+              </vertices>
+              <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+                <label name="Association"/>
+              </vertices>
+            </vertex>
+            <previous>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JVI5ULqREeiubdvpieJ5Og">
+                <label name="C"/>
+                <vertices id="_IYV54LqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                </vertices>
+                <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                </vertices>
+                <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+                  <label name="Association"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JVKHcLqREeiubdvpieJ5Og">
+                <label name="ClassDiagram"/>
+                <vertices id="_IYRBYLqREeiubdvpieJ5Og">
+                  <label name="ClassDiagram"/>
+                </vertices>
+              </vertices>
+              <edges from="_JVKHcLqREeiubdvpieJ5Og" to="_JVI5ULqREeiubdvpieJ5Og">
+                <label name="associations"/>
+              </edges>
+              <edges from="_JVKHcLqREeiubdvpieJ5Og" to="_JVI5ULqREeiubdvpieJ5Og">
+                <label name="classes"/>
+              </edges>
+            </previous>
+            <next>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JQ8V0LqREeiubdvpieJ5Og">
+                <label name="A"/>
+                <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+                  <label name="Association"/>
+                </vertices>
+                <pac id="_IbTHQLqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                </pac>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_I5rsYLqREeiubdvpieJ5Og">
+                <label name="C">
+                  <subscript>ClassDiagram</subscript>
+                  <superscript>associations</superscript>
+                </label>
+                <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IiTuMLqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+                <vertices id="_IYV54LqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JU_IULqREeiubdvpieJ5Og">
+                <label name="ClassDiagram"/>
+                <vertices id="_IYRBYLqREeiubdvpieJ5Og">
+                  <label name="ClassDiagram"/>
+                </vertices>
+              </vertices>
+              <edges from="_JQ8V0LqREeiubdvpieJ5Og" to="_IiTuMLqREeiubdvpieJ5Og">
+                <label name="source"/>
+              </edges>
+              <edges from="_JU_IULqREeiubdvpieJ5Og" to="_I5rsYLqREeiubdvpieJ5Og">
+                <label name="classes"/>
+              </edges>
+              <edges from="_JU_IULqREeiubdvpieJ5Og" to="_JQ8V0LqREeiubdvpieJ5Og">
+                <label name="associations"/>
+              </edges>
+              <edges from="_JU_IULqREeiubdvpieJ5Og" to="_IiTuMLqREeiubdvpieJ5Og">
+                <label name="classes"/>
+              </edges>
+            </next>
+            <unifier key="_IgaQwLqREeiubdvpieJ5Og" value="_IiTuMLqREeiubdvpieJ5Og"/>
+            <unifier key="_IgaQwbqREeiubdvpieJ5Og" value="_JQ8V0LqREeiubdvpieJ5Og"/>
+            <unifier key="_IgaQwrqREeiubdvpieJ5Og" value="_I5rsYLqREeiubdvpieJ5Og"/>
+          </derivationStep>
+          <children>
+            <zoneVertex id="_IiTuMLqREeiubdvpieJ5Og">
+              <label name="Clazz"/>
+              <vertices id="_IYV54LqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+              </vertices>
+            </zoneVertex>
+          </children>
+          <children>
+            <zoneVertex id="_I5rsYLqREeiubdvpieJ5Og">
+              <label name="C">
+                <subscript>ClassDiagram</subscript>
+                <superscript>associations</superscript>
+              </label>
+              <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+              </vertices>
+            </zoneVertex>
+            <derivationStep>
+              <rule id="r1____IfN98LqREeiubdvpieJ5Og____IgBPMLqREeiubdvpieJ5Og___(C^{associations}_{ClassDiagram})" name="r1">
+                <lhs name="C">
+                  <subscript>ClassDiagram</subscript>
+                  <superscript>associations</superscript>
+                </lhs>
+                <rhs>
+                  <vertices id="_IgUxMLqREeiubdvpieJ5Og">
+                    <label name="Clazz"/>
+                  </vertices>
+                  <vertices id="_IgUxMbqREeiubdvpieJ5Og">
+                    <label name="A">
+                      <subscript>Clazz</subscript>
+                      <subscript>ClassDiagram</subscript>
+                      <superscript>source</superscript>
+                      <superscript>associations</superscript>
+                    </label>
+                  </vertices>
+                  <vertices id="_IgUxMrqREeiubdvpieJ5Og">
+                    <label name="C">
+                      <subscript>ClassDiagram</subscript>
+                      <subscript>Association</subscript>
+                      <subscript>ClassDiagram</subscript>
+                      <superscript>classes</superscript>
+                      <superscript>target</superscript>
+                      <superscript>associations</superscript>
+                    </label>
+                  </vertices>
+                </rhs>
+                <embedding key="_IgUxMLqREeiubdvpieJ5Og">
+                  <value>
+                    <edgeLabel name="classes"/>
+                    <vertexLabels name="ClassDiagram"/>
+                  </value>
+                  <value>
+                    <edgeLabel name="target"/>
+                    <vertexLabels name="Association"/>
+                  </value>
+                </embedding>
+                <embedding key="_IgUxMrqREeiubdvpieJ5Og">
+                  <value>
+                    <edgeLabel name="classes"/>
+                  </value>
+                  <value>
+                    <edgeLabel name="target"/>
+                  </value>
+                </embedding>
+              </rule>
+              <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_I5rsYLqREeiubdvpieJ5Og">
+                <label name="C">
+                  <subscript>ClassDiagram</subscript>
+                  <superscript>associations</superscript>
+                </label>
+                <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                </vertices>
+              </vertex>
+              <previous>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_I5rsYLqREeiubdvpieJ5Og">
+                  <label name="C">
+                    <subscript>ClassDiagram</subscript>
+                    <superscript>associations</superscript>
+                  </label>
+                  <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                    <label name="Clazz"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_I5rsYbqREeiubdvpieJ5Og">
+                  <label name="ClassDiagram"/>
+                  <vertices id="_IYRBYLqREeiubdvpieJ5Og">
+                    <label name="ClassDiagram"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_I5rsY7qREeiubdvpieJ5Og">
+                  <label name="Association"/>
+                  <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+                    <label name="Association"/>
+                  </vertices>
+                </vertices>
+                <edges from="_I5rsYbqREeiubdvpieJ5Og" to="_I5rsY7qREeiubdvpieJ5Og">
+                  <label name="associations"/>
+                </edges>
+                <edges from="_I5rsYbqREeiubdvpieJ5Og" to="_I5rsYLqREeiubdvpieJ5Og">
+                  <label name="classes"/>
+                </edges>
+                <edges from="_I5rsY7qREeiubdvpieJ5Og" to="_I5rsYLqREeiubdvpieJ5Og">
+                  <label name="target"/>
+                </edges>
+              </previous>
+              <next>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_Il50wLqREeiubdvpieJ5Og">
+                  <label name="C">
+                    <subscript>ClassDiagram</subscript>
+                    <subscript>Association</subscript>
+                    <subscript>ClassDiagram</subscript>
+                    <superscript>classes</superscript>
+                    <superscript>target</superscript>
+                    <superscript>associations</superscript>
+                  </label>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IkwlQLqREeiubdvpieJ5Og">
+                  <label name="A">
+                    <subscript>Clazz</subscript>
+                    <subscript>ClassDiagram</subscript>
+                    <superscript>source</superscript>
+                    <superscript>associations</superscript>
+                  </label>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IiTuMbqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                  <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                    <label name="Clazz"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_I5NyULqREeiubdvpieJ5Og">
+                  <label name="ClassDiagram"/>
+                  <vertices id="_IYRBYLqREeiubdvpieJ5Og">
+                    <label name="ClassDiagram"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_I5NyUbqREeiubdvpieJ5Og">
+                  <label name="Association"/>
+                  <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+                    <label name="Association"/>
+                  </vertices>
+                </vertices>
+                <edges from="_I5NyULqREeiubdvpieJ5Og" to="_I5NyUbqREeiubdvpieJ5Og">
+                  <label name="associations"/>
+                </edges>
+                <edges from="_I5NyULqREeiubdvpieJ5Og" to="_IiTuMbqREeiubdvpieJ5Og">
+                  <label name="classes"/>
+                </edges>
+                <edges from="_I5NyUbqREeiubdvpieJ5Og" to="_IiTuMbqREeiubdvpieJ5Og">
+                  <label name="target"/>
+                </edges>
+              </next>
+              <unifier key="_IgUxMLqREeiubdvpieJ5Og" value="_IiTuMbqREeiubdvpieJ5Og"/>
+              <unifier key="_IgUxMbqREeiubdvpieJ5Og" value="_IkwlQLqREeiubdvpieJ5Og"/>
+              <unifier key="_IgUxMrqREeiubdvpieJ5Og" value="_Il50wLqREeiubdvpieJ5Og"/>
+            </derivationStep>
+            <children>
+              <zoneVertex id="_IiTuMbqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+                <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                </vertices>
+              </zoneVertex>
+            </children>
+            <children>
+              <zoneVertex id="_IkwlQLqREeiubdvpieJ5Og">
+                <label name="A">
+                  <subscript>Clazz</subscript>
+                  <subscript>ClassDiagram</subscript>
+                  <superscript>source</superscript>
+                  <superscript>associations</superscript>
+                </label>
+              </zoneVertex>
+              <derivationStep>
+                <rule id="r3___(A^{source, associations}_{Clazz, ClassDiagram})" name="r3">
+                  <lhs name="A">
+                    <subscript>Clazz</subscript>
+                    <subscript>ClassDiagram</subscript>
+                    <superscript>source</superscript>
+                    <superscript>associations</superscript>
+                  </lhs>
+                  <rhs/>
+                </rule>
+                <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IkwlQLqREeiubdvpieJ5Og">
+                  <label name="A">
+                    <subscript>Clazz</subscript>
+                    <subscript>ClassDiagram</subscript>
+                    <superscript>source</superscript>
+                    <superscript>associations</superscript>
+                  </label>
+                </vertex>
+                <previous>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IkwlQLqREeiubdvpieJ5Og">
+                    <label name="A">
+                      <subscript>Clazz</subscript>
+                      <subscript>ClassDiagram</subscript>
+                      <superscript>source</superscript>
+                      <superscript>associations</superscript>
+                    </label>
+                  </vertices>
+                </previous>
+                <next/>
+              </derivationStep>
+            </children>
+            <children>
+              <zoneVertex id="_Il50wLqREeiubdvpieJ5Og">
+                <label name="C">
+                  <subscript>ClassDiagram</subscript>
+                  <subscript>Association</subscript>
+                  <subscript>ClassDiagram</subscript>
+                  <superscript>classes</superscript>
+                  <superscript>target</superscript>
+                  <superscript>associations</superscript>
+                </label>
+              </zoneVertex>
+              <derivationStep>
+                <rule id="r4___(C^{classes, target, associations}_{ClassDiagram, Association, ClassDiagram})" name="r4">
+                  <lhs name="C">
+                    <subscript>ClassDiagram</subscript>
+                    <subscript>Association</subscript>
+                    <subscript>ClassDiagram</subscript>
+                    <superscript>classes</superscript>
+                    <superscript>target</superscript>
+                    <superscript>associations</superscript>
+                  </lhs>
+                  <rhs/>
+                </rule>
+                <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_Il50wLqREeiubdvpieJ5Og">
+                  <label name="C">
+                    <subscript>ClassDiagram</subscript>
+                    <subscript>Association</subscript>
+                    <subscript>ClassDiagram</subscript>
+                    <superscript>classes</superscript>
+                    <superscript>target</superscript>
+                    <superscript>associations</superscript>
+                  </label>
+                </vertex>
+                <previous>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_Il50wLqREeiubdvpieJ5Og">
+                    <label name="C">
+                      <subscript>ClassDiagram</subscript>
+                      <subscript>Association</subscript>
+                      <subscript>ClassDiagram</subscript>
+                      <superscript>classes</superscript>
+                      <superscript>target</superscript>
+                      <superscript>associations</superscript>
+                    </label>
+                  </vertices>
+                </previous>
+                <next/>
+              </derivationStep>
+            </children>
+          </children>
+          <children>
+            <zoneVertex id="_JQ8V0LqREeiubdvpieJ5Og">
+              <label name="A"/>
+              <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+                <label name="Association"/>
+              </vertices>
+              <pac id="_IbTHQLqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+              </pac>
+            </zoneVertex>
+            <derivationStep>
+              <rule id="r2____IfRBQLqREeiubdvpieJ5Og" name="r2" pac="_IfQaMbqREeiubdvpieJ5Og">
+                <lhs name="A"/>
+                <rhs>
+                  <vertices id="_IfQaMLqREeiubdvpieJ5Og">
+                    <label name="Association"/>
+                  </vertices>
+                  <vertices id="_IfQaMbqREeiubdvpieJ5Og">
+                    <label name="Clazz"/>
+                  </vertices>
+                  <vertices id="_IfQaMrqREeiubdvpieJ5Og">
+                    <label name="A">
+                      <subscript>Clazz</subscript>
+                      <subscript>ClassDiagram</subscript>
+                      <superscript>source</superscript>
+                      <superscript>associations</superscript>
+                    </label>
+                  </vertices>
+                  <edges from="_IfQaMLqREeiubdvpieJ5Og" to="_IfQaMbqREeiubdvpieJ5Og">
+                    <label name="target"/>
+                  </edges>
+                </rhs>
+                <embedding key="_IfQaMLqREeiubdvpieJ5Og">
+                  <value>
+                    <edgeLabel name="source"/>
+                    <vertexLabels name="Clazz"/>
+                  </value>
+                  <value>
+                    <edgeLabel name="associations"/>
+                    <vertexLabels name="ClassDiagram"/>
+                  </value>
+                </embedding>
+                <embedding key="_IfQaMbqREeiubdvpieJ5Og">
+                  <value>
+                    <edgeLabel name="classes"/>
+                    <vertexLabels name="ClassDiagram"/>
+                  </value>
+                  <value>
+                    <edgeLabel name="source"/>
+                    <vertexLabels name="Association"/>
+                  </value>
+                </embedding>
+                <embedding key="_IfQaMrqREeiubdvpieJ5Og">
+                  <value>
+                    <edgeLabel name="source"/>
+                  </value>
+                  <value>
+                    <edgeLabel name="associations"/>
+                  </value>
+                </embedding>
+              </rule>
+              <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JQ8V0LqREeiubdvpieJ5Og">
+                <label name="A"/>
+                <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+                  <label name="Association"/>
+                </vertices>
+                <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                </vertices>
+              </vertex>
+              <previous>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JQ8V0LqREeiubdvpieJ5Og">
+                  <label name="A"/>
+                  <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+                    <label name="Association"/>
+                  </vertices>
+                  <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                    <label name="Clazz"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JQ8V0bqREeiubdvpieJ5Og">
+                  <label name="ClassDiagram"/>
+                  <vertices id="_IYRBYLqREeiubdvpieJ5Og">
+                    <label name="ClassDiagram"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JQ8V0rqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                  <vertices id="_IYV54LqREeiubdvpieJ5Og">
+                    <label name="Clazz"/>
+                  </vertices>
+                </vertices>
+                <edges from="_JQ8V0LqREeiubdvpieJ5Og" to="_JQ8V0rqREeiubdvpieJ5Og">
+                  <label name="source"/>
+                </edges>
+                <edges from="_JQ8V0bqREeiubdvpieJ5Og" to="_JQ8V0LqREeiubdvpieJ5Og">
+                  <label name="classes"/>
+                </edges>
+                <edges from="_JQ8V0bqREeiubdvpieJ5Og" to="_JQ8V0LqREeiubdvpieJ5Og">
+                  <label name="associations"/>
+                </edges>
+                <edges from="_JQ8V0bqREeiubdvpieJ5Og" to="_JQ8V0rqREeiubdvpieJ5Og">
+                  <label name="classes"/>
+                </edges>
+              </previous>
+              <next>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JAlloLqREeiubdvpieJ5Og">
+                  <label name="A">
+                    <subscript>Clazz</subscript>
+                    <subscript>ClassDiagram</subscript>
+                    <superscript>source</superscript>
+                    <superscript>associations</superscript>
+                  </label>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IiTuMbqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                  <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                    <label name="Clazz"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_IiTuNLqREeiubdvpieJ5Og">
+                  <label name="Association"/>
+                  <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+                    <label name="Association"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JQ4rcLqREeiubdvpieJ5Og">
+                  <label name="ClassDiagram"/>
+                  <vertices id="_IYRBYLqREeiubdvpieJ5Og">
+                    <label name="ClassDiagram"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JQ4rcbqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                  <vertices id="_IYV54LqREeiubdvpieJ5Og">
+                    <label name="Clazz"/>
+                  </vertices>
+                </vertices>
+                <edges from="_IiTuNLqREeiubdvpieJ5Og" to="_JQ4rcbqREeiubdvpieJ5Og">
+                  <label name="source"/>
+                </edges>
+                <edges from="_IiTuNLqREeiubdvpieJ5Og" to="_IiTuMbqREeiubdvpieJ5Og">
+                  <label name="target"/>
+                </edges>
+                <edges from="_JQ4rcLqREeiubdvpieJ5Og" to="_IiTuMbqREeiubdvpieJ5Og">
+                  <label name="classes"/>
+                </edges>
+                <edges from="_JQ4rcLqREeiubdvpieJ5Og" to="_JQ4rcbqREeiubdvpieJ5Og">
+                  <label name="classes"/>
+                </edges>
+                <edges from="_JQ4rcLqREeiubdvpieJ5Og" to="_IiTuNLqREeiubdvpieJ5Og">
+                  <label name="associations"/>
+                </edges>
+              </next>
+              <unifier key="_IfQaMLqREeiubdvpieJ5Og" value="_IiTuNLqREeiubdvpieJ5Og"/>
+              <unifier key="_IfQaMbqREeiubdvpieJ5Og" value="_IiTuMbqREeiubdvpieJ5Og"/>
+              <unifier key="_IfQaMrqREeiubdvpieJ5Og" value="_JAlloLqREeiubdvpieJ5Og"/>
+            </derivationStep>
+            <children>
+              <zoneVertex id="_JAlloLqREeiubdvpieJ5Og">
+                <label name="A">
+                  <subscript>Clazz</subscript>
+                  <subscript>ClassDiagram</subscript>
+                  <superscript>source</superscript>
+                  <superscript>associations</superscript>
+                </label>
+              </zoneVertex>
+              <derivationStep>
+                <rule id="r3___(A^{source, associations}_{Clazz, ClassDiagram})" name="r3">
+                  <lhs name="A">
+                    <subscript>Clazz</subscript>
+                    <subscript>ClassDiagram</subscript>
+                    <superscript>source</superscript>
+                    <superscript>associations</superscript>
+                  </lhs>
+                  <rhs/>
+                </rule>
+                <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JAlloLqREeiubdvpieJ5Og">
+                  <label name="A">
+                    <subscript>Clazz</subscript>
+                    <subscript>ClassDiagram</subscript>
+                    <superscript>source</superscript>
+                    <superscript>associations</superscript>
+                  </label>
+                </vertex>
+                <previous>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_JAlloLqREeiubdvpieJ5Og">
+                    <label name="A">
+                      <subscript>Clazz</subscript>
+                      <subscript>ClassDiagram</subscript>
+                      <superscript>source</superscript>
+                      <superscript>associations</superscript>
+                    </label>
+                  </vertices>
+                </previous>
+                <next/>
+              </derivationStep>
+            </children>
+            <children>
+              <zoneVertex id="_IiTuNLqREeiubdvpieJ5Og">
+                <label name="Association"/>
+                <vertices id="_IbX_wLqREeiubdvpieJ5Og">
+                  <label name="Association"/>
+                </vertices>
+              </zoneVertex>
+            </children>
+            <children>
+              <zoneVertex id="_IiTuMbqREeiubdvpieJ5Og">
+                <label name="Clazz"/>
+                <vertices id="_IbTHQLqREeiubdvpieJ5Og">
+                  <label name="Clazz"/>
+                </vertices>
+              </zoneVertex>
+            </children>
+          </children>
+        </children>
       </children>
-    </children>
-    <children>
-      <zoneVertex id="_7xlqULkHEeihvd1DjK_gdg">
-        <label name="ClassDiagram"/>
-        <vertices id="_7aA30LkHEeihvd1DjK_gdg">
-          <label name="ClassDiagram"/>
-        </vertices>
-      </zoneVertex>
+      <children>
+        <zoneVertex id="_IiTuM7qREeiubdvpieJ5Og">
+          <label name="Clazz"/>
+          <vertices id="_IbVjgLqREeiubdvpieJ5Og">
+            <label name="Clazz"/>
+          </vertices>
+        </zoneVertex>
+      </children>
     </children>
   </org.wbsilva.bence.graphgrammar:ParsingTree>
 </xmi:XMI>

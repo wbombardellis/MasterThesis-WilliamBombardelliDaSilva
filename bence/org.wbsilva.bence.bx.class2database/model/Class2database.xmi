@@ -296,6 +296,11 @@
           <label
               name="Clazz"/>
         </vertices>
+        <vertices
+            id="A2">
+          <label
+              name="A"/>
+        </vertices>
         <edges
             from="a2"
             to="c2">
@@ -333,6 +338,21 @@
               name="Association"/>
         </value>
       </embedding>
+      <embedding
+          key="A2">
+        <value>
+          <edgeLabel
+              name="source"/>
+          <vertexLabels
+              name="Clazz"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="associations"/>
+          <vertexLabels
+              name="ClassDiagram"/>
+        </value>
+      </embedding>
     </source>
     <corr id="r2"
         name="r2"
@@ -348,6 +368,11 @@
             id="c22t2">
           <label
               name="Clazz2Table"/>
+        </vertices>
+        <vertices
+            id="A22A2_">
+          <label
+              name="A"/>
         </vertices>
       </rhs>
     </corr>
@@ -367,6 +392,11 @@
           <label
               name="Table"/>
         </vertices>
+        <vertices
+            id="A2_">
+          <label
+              name="A"/>
+        </vertices>
         <edges
             from="co2"
             to="t2">
@@ -383,15 +413,37 @@
               name="Table"/>
         </value>
       </embedding>
+      <embedding
+          key="t2">
+        <value>
+          <edgeLabel
+              name="table"/>
+          <vertexLabels
+              name="DB"/>
+        </value>
+      </embedding>
+      <embedding
+          key="A2_">
+        <value>
+          <edgeLabel
+              name="column"/>
+          <vertexLabels
+              name="Table"/>
+        </value>
+      </embedding>
     </target>
     <ms key="a2co2"
         value="a2"/>
     <ms key="c22t2"
         value="c2"/>
+    <ms key="A22A2_"
+        value="A2"/>
     <mt key="a2co2"
         value="co2"/>
     <mt key="c22t2"
         value="t2"/>
+    <mt key="A22A2_"
+        value="A2_"/>
   </tripleRules>
   <tripleRules>
     <source
