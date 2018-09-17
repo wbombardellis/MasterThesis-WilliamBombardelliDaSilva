@@ -334,7 +334,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 		//assert graph.getEdges().containsAll(edges);
 		assert GraphgrammarUtil.isValidRule(this);
 		assert unifier != null;
-		
+
 		final List<Vertex> ruleVertices;
 		if (pacs) {
 			ruleVertices = this.getRhs().getVertices();
@@ -343,7 +343,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 			ruleVertices = this.getRhs().getVertices().stream().filter(v -> !this.getPac().contains(v))
 					.collect(Collectors.toList());
 		}
-		
+
 		assert unifier.size() == ruleVertices.size();
 		assert ruleVertices.stream()
 				.allMatch(v -> unifier.get(v) != null && graph.getVertices().contains(unifier.get(v)));

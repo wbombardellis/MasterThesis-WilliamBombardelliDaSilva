@@ -19,6 +19,8 @@ import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
 import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
 import org.wbsilva.bence.graphgrammar.ParsingTree;
+import org.wbsilva.bence.graphgrammar.Resolution;
+import org.wbsilva.bence.graphgrammar.ResolutionStep;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
@@ -92,6 +94,20 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass resolutionStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass resolutionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass graphEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,6 +155,20 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * @generated
 	 */
 	private EClass vertexToVertexMapEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass vertexToStringMapEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stringToVertexMapEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -604,6 +634,51 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getResolutionStep() {
+		return resolutionStepEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResolutionStep_Pac() {
+		return (EReference) resolutionStepEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getResolution() {
+		return resolutionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResolution_ReferenceIds() {
+		return (EReference) resolutionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResolution_Steps() {
+		return (EReference) resolutionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getGraph() {
 		return graphEClass;
 	}
@@ -748,7 +823,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getZoneVertex_Pacs() {
+	public EReference getZoneVertex_Pac() {
 		return (EReference) zoneVertexEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -874,8 +949,17 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean() {
+	public EOperation getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean_Resolution() {
 		return tripleGrammarEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTripleGrammar__Resolve__TripleGraph_Resolution_ResolutionStep_boolean() {
+		return tripleGrammarEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1036,6 +1120,60 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getVertexToStringMap() {
+		return vertexToStringMapEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVertexToStringMap_Key() {
+		return (EReference) vertexToStringMapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVertexToStringMap_Value() {
+		return (EAttribute) vertexToStringMapEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStringToVertexMap() {
+		return stringToVertexMapEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStringToVertexMap_Key() {
+		return (EAttribute) stringToVertexMapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStringToVertexMap_Value() {
+		return (EReference) stringToVertexMapEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GraphgrammarFactory getGraphgrammarFactory() {
 		return (GraphgrammarFactory) getEFactoryInstance();
 	}
@@ -1112,6 +1250,13 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(parsingTreeEClass, PARSING_TREE__CHILDREN);
 		createEOperation(parsingTreeEClass, PARSING_TREE___DERIVATION);
 
+		resolutionStepEClass = createEClass(RESOLUTION_STEP);
+		createEReference(resolutionStepEClass, RESOLUTION_STEP__PAC);
+
+		resolutionEClass = createEClass(RESOLUTION);
+		createEReference(resolutionEClass, RESOLUTION__REFERENCE_IDS);
+		createEReference(resolutionEClass, RESOLUTION__STEPS);
+
 		graphEClass = createEClass(GRAPH);
 		createEReference(graphEClass, GRAPH__VERTICES);
 		createEReference(graphEClass, GRAPH__EDGES);
@@ -1130,7 +1275,7 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 
 		zoneVertexEClass = createEClass(ZONE_VERTEX);
 		createEReference(zoneVertexEClass, ZONE_VERTEX__VERTICES);
-		createEReference(zoneVertexEClass, ZONE_VERTEX__PACS);
+		createEReference(zoneVertexEClass, ZONE_VERTEX__PAC);
 		createEOperation(zoneVertexEClass, ZONE_VERTEX___EQUIVALATES__ZONEVERTEX);
 
 		edgeEClass = createEClass(EDGE);
@@ -1146,7 +1291,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__NONTERMINALS);
 		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__TRIPLE_RULES);
 		createEReference(tripleGrammarEClass, TRIPLE_GRAMMAR__INITIAL);
-		createEOperation(tripleGrammarEClass, TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_DERIVATIONSTEP_BOOLEAN);
+		createEOperation(tripleGrammarEClass, TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_DERIVATIONSTEP_BOOLEAN_RESOLUTION);
+		createEOperation(tripleGrammarEClass, TRIPLE_GRAMMAR___RESOLVE__TRIPLEGRAPH_RESOLUTION_RESOLUTIONSTEP_BOOLEAN);
 
 		tripleRuleEClass = createEClass(TRIPLE_RULE);
 		createEReference(tripleRuleEClass, TRIPLE_RULE__SOURCE);
@@ -1167,6 +1313,14 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		vertexToVertexMapEClass = createEClass(VERTEX_TO_VERTEX_MAP);
 		createEReference(vertexToVertexMapEClass, VERTEX_TO_VERTEX_MAP__KEY);
 		createEReference(vertexToVertexMapEClass, VERTEX_TO_VERTEX_MAP__VALUE);
+
+		vertexToStringMapEClass = createEClass(VERTEX_TO_STRING_MAP);
+		createEReference(vertexToStringMapEClass, VERTEX_TO_STRING_MAP__KEY);
+		createEAttribute(vertexToStringMapEClass, VERTEX_TO_STRING_MAP__VALUE);
+
+		stringToVertexMapEClass = createEClass(STRING_TO_VERTEX_MAP);
+		createEAttribute(stringToVertexMapEClass, STRING_TO_VERTEX_MAP__KEY);
+		createEReference(stringToVertexMapEClass, STRING_TO_VERTEX_MAP__VALUE);
 	}
 
 	/**
@@ -1342,6 +1496,21 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 
 		initEOperation(getParsingTree__Derivation(), this.getDerivation(), "derivation", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(resolutionStepEClass, ResolutionStep.class, "ResolutionStep", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResolutionStep_Pac(), this.getVertexToStringMap(), null, "pac", null, 0, -1,
+				ResolutionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(resolutionEClass, Resolution.class, "Resolution", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResolution_ReferenceIds(), this.getStringToVertexMap(), null, "referenceIds", null, 0, -1,
+				Resolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getResolution_Steps(), this.getResolutionStep(), null, "steps", null, 0, -1, Resolution.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(graphEClass, Graph.class, "Graph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGraph_Vertices(), this.getVertex(), null, "vertices", null, 0, -1, Graph.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
@@ -1391,9 +1560,9 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		initEReference(getZoneVertex_Vertices(), this.getVertex(), null, "vertices", null, 0, -1, ZoneVertex.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getZoneVertex_Pacs(), this.getVertex(), null, "pacs", null, 0, -1, ZoneVertex.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getZoneVertex_Pac(), this.getVertex(), null, "pac", null, 0, -1, ZoneVertex.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		op = initEOperation(getZoneVertex__Equivalates__ZoneVertex(), ecorePackage.getEBoolean(), "equivalates", 0, 1,
 				IS_UNIQUE, IS_ORDERED);
@@ -1433,10 +1602,18 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean(), null, "produce", 0, 1,
-				IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean_Resolution(),
+				this.getResolutionStep(), "produce", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTripleGraph(), "tripleGraph", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDerivationStep(), "derivationStep", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "forward", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getResolution(), "resolution", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTripleGrammar__Resolve__TripleGraph_Resolution_ResolutionStep_boolean(), null, "resolve",
+				0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTripleGraph(), "tripleGraph", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getResolution(), "resolution", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getResolutionStep(), "resolutionStep", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "forward", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(tripleRuleEClass, TripleRule.class, "TripleRule", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1487,6 +1664,22 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVertexToVertexMap_Value(), this.getVertex(), null, "value", null, 0, 1, Map.Entry.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(vertexToStringMapEClass, Map.Entry.class, "VertexToStringMap", !IS_ABSTRACT, !IS_INTERFACE,
+				!IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVertexToStringMap_Key(), this.getVertex(), null, "key", null, 0, 1, Map.Entry.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVertexToStringMap_Value(), ecorePackage.getEString(), "value", null, 0, 1, Map.Entry.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(stringToVertexMapEClass, Map.Entry.class, "StringToVertexMap", !IS_ABSTRACT, !IS_INTERFACE,
+				!IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStringToVertexMap_Key(), ecorePackage.getEString(), "key", null, 0, 1, Map.Entry.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStringToVertexMap_Value(), this.getVertex(), null, "value", null, 0, 1, Map.Entry.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

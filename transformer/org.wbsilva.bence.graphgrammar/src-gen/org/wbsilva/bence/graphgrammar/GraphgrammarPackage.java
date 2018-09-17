@@ -606,6 +606,89 @@ public interface GraphgrammarPackage extends EPackage {
 	int PARSING_TREE_OPERATION_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.ResolutionStepImpl <em>Resolution Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bence.graphgrammar.impl.ResolutionStepImpl
+	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getResolutionStep()
+	 * @generated
+	 */
+	int RESOLUTION_STEP = 8;
+
+	/**
+	 * The feature id for the '<em><b>Pac</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOLUTION_STEP__PAC = 0;
+
+	/**
+	 * The number of structural features of the '<em>Resolution Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOLUTION_STEP_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Resolution Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOLUTION_STEP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.ResolutionImpl <em>Resolution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bence.graphgrammar.impl.ResolutionImpl
+	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getResolution()
+	 * @generated
+	 */
+	int RESOLUTION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Reference Ids</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOLUTION__REFERENCE_IDS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOLUTION__STEPS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Resolution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOLUTION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Resolution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOLUTION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.GraphImpl <em>Graph</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -613,7 +696,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getGraph()
 	 * @generated
 	 */
-	int GRAPH = 8;
+	int GRAPH = 10;
 
 	/**
 	 * The feature id for the '<em><b>Vertices</b></em>' containment reference list.
@@ -722,7 +805,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertex()
 	 * @generated
 	 */
-	int VERTEX = 9;
+	int VERTEX = 11;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -777,7 +860,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getZoneVertex()
 	 * @generated
 	 */
-	int ZONE_VERTEX = 10;
+	int ZONE_VERTEX = 12;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -807,13 +890,13 @@ public interface GraphgrammarPackage extends EPackage {
 	int ZONE_VERTEX__VERTICES = VERTEX_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Pacs</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Pac</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZONE_VERTEX__PACS = VERTEX_FEATURE_COUNT + 1;
+	int ZONE_VERTEX__PAC = VERTEX_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Zone Vertex</em>' class.
@@ -859,7 +942,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getEdge()
 	 * @generated
 	 */
-	int EDGE = 11;
+	int EDGE = 13;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -923,7 +1006,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getTripleGrammar()
 	 * @generated
 	 */
-	int TRIPLE_GRAMMAR = 12;
+	int TRIPLE_GRAMMAR = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -995,7 +1078,16 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_DERIVATIONSTEP_BOOLEAN = 0;
+	int TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_DERIVATIONSTEP_BOOLEAN_RESOLUTION = 0;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_GRAMMAR___RESOLVE__TRIPLEGRAPH_RESOLUTION_RESOLUTIONSTEP_BOOLEAN = 1;
 
 	/**
 	 * The number of operations of the '<em>Triple Grammar</em>' class.
@@ -1004,7 +1096,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_GRAMMAR_OPERATION_COUNT = 1;
+	int TRIPLE_GRAMMAR_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.TripleRuleImpl <em>Triple Rule</em>}' class.
@@ -1014,7 +1106,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getTripleRule()
 	 * @generated
 	 */
-	int TRIPLE_RULE = 13;
+	int TRIPLE_RULE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -1087,7 +1179,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getTripleGraph()
 	 * @generated
 	 */
-	int TRIPLE_GRAPH = 14;
+	int TRIPLE_GRAPH = 16;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -1178,7 +1270,7 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertexToVertexMap()
 	 * @generated
 	 */
-	int VERTEX_TO_VERTEX_MAP = 15;
+	int VERTEX_TO_VERTEX_MAP = 17;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' reference.
@@ -1215,6 +1307,98 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @ordered
 	 */
 	int VERTEX_TO_VERTEX_MAP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexToStringMapImpl <em>Vertex To String Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bence.graphgrammar.impl.VertexToStringMapImpl
+	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertexToStringMap()
+	 * @generated
+	 */
+	int VERTEX_TO_STRING_MAP = 18;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX_TO_STRING_MAP__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX_TO_STRING_MAP__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Vertex To String Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX_TO_STRING_MAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Vertex To String Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX_TO_STRING_MAP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.StringToVertexMapImpl <em>String To Vertex Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bence.graphgrammar.impl.StringToVertexMapImpl
+	 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getStringToVertexMap()
+	 * @generated
+	 */
+	int STRING_TO_VERTEX_MAP = 19;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_VERTEX_MAP__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_VERTEX_MAP__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>String To Vertex Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_VERTEX_MAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>String To Vertex Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TO_VERTEX_MAP_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Grammar <em>Grammar</em>}'.
@@ -1687,6 +1871,59 @@ public interface GraphgrammarPackage extends EPackage {
 	EOperation getParsingTree__Derivation();
 
 	/**
+	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.ResolutionStep <em>Resolution Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Resolution Step</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.ResolutionStep
+	 * @generated
+	 */
+	EClass getResolutionStep();
+
+	/**
+	 * Returns the meta object for the map '{@link org.wbsilva.bence.graphgrammar.ResolutionStep#getPac <em>Pac</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>Pac</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.ResolutionStep#getPac()
+	 * @see #getResolutionStep()
+	 * @generated
+	 */
+	EReference getResolutionStep_Pac();
+
+	/**
+	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Resolution <em>Resolution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Resolution</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.Resolution
+	 * @generated
+	 */
+	EClass getResolution();
+
+	/**
+	 * Returns the meta object for the map '{@link org.wbsilva.bence.graphgrammar.Resolution#getReferenceIds <em>Reference Ids</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>Reference Ids</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.Resolution#getReferenceIds()
+	 * @see #getResolution()
+	 * @generated
+	 */
+	EReference getResolution_ReferenceIds();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.wbsilva.bence.graphgrammar.Resolution#getSteps <em>Steps</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Steps</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.Resolution#getSteps()
+	 * @see #getResolution()
+	 * @generated
+	 */
+	EReference getResolution_Steps();
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.Graph <em>Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1852,15 +2089,15 @@ public interface GraphgrammarPackage extends EPackage {
 	EReference getZoneVertex_Vertices();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.wbsilva.bence.graphgrammar.ZoneVertex#getPacs <em>Pacs</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.wbsilva.bence.graphgrammar.ZoneVertex#getPac <em>Pac</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Pacs</em>'.
-	 * @see org.wbsilva.bence.graphgrammar.ZoneVertex#getPacs()
+	 * @return the meta object for the containment reference list '<em>Pac</em>'.
+	 * @see org.wbsilva.bence.graphgrammar.ZoneVertex#getPac()
 	 * @see #getZoneVertex()
 	 * @generated
 	 */
-	EReference getZoneVertex_Pacs();
+	EReference getZoneVertex_Pac();
 
 	/**
 	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.ZoneVertex#equivalates(org.wbsilva.bence.graphgrammar.ZoneVertex) <em>Equivalates</em>}' operation.
@@ -2002,14 +2239,24 @@ public interface GraphgrammarPackage extends EPackage {
 	EReference getTripleGrammar_Initial();
 
 	/**
-	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#produce(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.DerivationStep, boolean) <em>Produce</em>}' operation.
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#produce(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.DerivationStep, boolean, org.wbsilva.bence.graphgrammar.Resolution) <em>Produce</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Produce</em>' operation.
-	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#produce(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.DerivationStep, boolean)
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#produce(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.DerivationStep, boolean, org.wbsilva.bence.graphgrammar.Resolution)
 	 * @generated
 	 */
-	EOperation getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean();
+	EOperation getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean_Resolution();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.TripleGrammar#resolve(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.Resolution, org.wbsilva.bence.graphgrammar.ResolutionStep, boolean) <em>Resolve</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Resolve</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.TripleGrammar#resolve(org.wbsilva.bence.graphgrammar.TripleGraph, org.wbsilva.bence.graphgrammar.Resolution, org.wbsilva.bence.graphgrammar.ResolutionStep, boolean)
+	 * @generated
+	 */
+	EOperation getTripleGrammar__Resolve__TripleGraph_Resolution_ResolutionStep_boolean();
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.TripleRule <em>Triple Rule</em>}'.
@@ -2194,6 +2441,74 @@ public interface GraphgrammarPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVertexToVertexMap_Value();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Vertex To String Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Vertex To String Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyType="org.wbsilva.bence.graphgrammar.Vertex"
+	 *        valueDataType="org.eclipse.emf.ecore.EString"
+	 * @generated
+	 */
+	EClass getVertexToStringMap();
+
+	/**
+	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getVertexToStringMap()
+	 * @generated
+	 */
+	EReference getVertexToStringMap_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getVertexToStringMap()
+	 * @generated
+	 */
+	EAttribute getVertexToStringMap_Value();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To Vertex Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String To Vertex Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyDataType="org.eclipse.emf.ecore.EString"
+	 *        valueType="org.wbsilva.bence.graphgrammar.Vertex"
+	 * @generated
+	 */
+	EClass getStringToVertexMap();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToVertexMap()
+	 * @generated
+	 */
+	EAttribute getStringToVertexMap_Key();
+
+	/**
+	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getStringToVertexMap()
+	 * @generated
+	 */
+	EReference getStringToVertexMap_Value();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2545,6 +2860,45 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EOperation PARSING_TREE___DERIVATION = eINSTANCE.getParsingTree__Derivation();
 		/**
+		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.ResolutionStepImpl <em>Resolution Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bence.graphgrammar.impl.ResolutionStepImpl
+		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getResolutionStep()
+		 * @generated
+		 */
+		EClass RESOLUTION_STEP = eINSTANCE.getResolutionStep();
+		/**
+		 * The meta object literal for the '<em><b>Pac</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOLUTION_STEP__PAC = eINSTANCE.getResolutionStep_Pac();
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.ResolutionImpl <em>Resolution</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bence.graphgrammar.impl.ResolutionImpl
+		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getResolution()
+		 * @generated
+		 */
+		EClass RESOLUTION = eINSTANCE.getResolution();
+		/**
+		 * The meta object literal for the '<em><b>Reference Ids</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOLUTION__REFERENCE_IDS = eINSTANCE.getResolution_ReferenceIds();
+		/**
+		 * The meta object literal for the '<em><b>Steps</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOLUTION__STEPS = eINSTANCE.getResolution_Steps();
+		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.GraphImpl <em>Graph</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2663,12 +3017,12 @@ public interface GraphgrammarPackage extends EPackage {
 		 */
 		EReference ZONE_VERTEX__VERTICES = eINSTANCE.getZoneVertex_Vertices();
 		/**
-		 * The meta object literal for the '<em><b>Pacs</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Pac</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ZONE_VERTEX__PACS = eINSTANCE.getZoneVertex_Pacs();
+		EReference ZONE_VERTEX__PAC = eINSTANCE.getZoneVertex_Pac();
 		/**
 		 * The meta object literal for the '<em><b>Equivalates</b></em>' operation.
 		 * <!-- begin-user-doc -->
@@ -2770,8 +3124,16 @@ public interface GraphgrammarPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_DERIVATIONSTEP_BOOLEAN = eINSTANCE
-				.getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean();
+		EOperation TRIPLE_GRAMMAR___PRODUCE__TRIPLEGRAPH_DERIVATIONSTEP_BOOLEAN_RESOLUTION = eINSTANCE
+				.getTripleGrammar__Produce__TripleGraph_DerivationStep_boolean_Resolution();
+		/**
+		 * The meta object literal for the '<em><b>Resolve</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TRIPLE_GRAMMAR___RESOLVE__TRIPLEGRAPH_RESOLUTION_RESOLUTIONSTEP_BOOLEAN = eINSTANCE
+				.getTripleGrammar__Resolve__TripleGraph_Resolution_ResolutionStep_boolean();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.TripleRuleImpl <em>Triple Rule</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -2897,6 +3259,52 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VERTEX_TO_VERTEX_MAP__VALUE = eINSTANCE.getVertexToVertexMap_Value();
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.VertexToStringMapImpl <em>Vertex To String Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bence.graphgrammar.impl.VertexToStringMapImpl
+		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getVertexToStringMap()
+		 * @generated
+		 */
+		EClass VERTEX_TO_STRING_MAP = eINSTANCE.getVertexToStringMap();
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VERTEX_TO_STRING_MAP__KEY = eINSTANCE.getVertexToStringMap_Key();
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VERTEX_TO_STRING_MAP__VALUE = eINSTANCE.getVertexToStringMap_Value();
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.StringToVertexMapImpl <em>String To Vertex Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bence.graphgrammar.impl.StringToVertexMapImpl
+		 * @see org.wbsilva.bence.graphgrammar.impl.GraphgrammarPackageImpl#getStringToVertexMap()
+		 * @generated
+		 */
+		EClass STRING_TO_VERTEX_MAP = eINSTANCE.getStringToVertexMap();
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_TO_VERTEX_MAP__KEY = eINSTANCE.getStringToVertexMap_Key();
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRING_TO_VERTEX_MAP__VALUE = eINSTANCE.getStringToVertexMap_Value();
 
 	}
 

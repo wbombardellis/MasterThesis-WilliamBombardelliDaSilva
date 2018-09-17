@@ -156,10 +156,27 @@ public interface TripleGrammar extends EObject {
 	 * otherwise the source part. Produce moreover, the correspondence part,
 	 * according to the derivation step derivationStep from the parsing process
 	 * of the input graph, if this is compatible with this triple grammar.
+	 * Additionally, return a resolution step for this derivation step and contributes
+	 * to the creation of the resolution sent by parameter.
 	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
-	void produce(TripleGraph tripleGraph, DerivationStep derivationStep, boolean forward);
+	ResolutionStep produce(TripleGraph tripleGraph, DerivationStep derivationStep, boolean forward,
+			Resolution resolution);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Resolve the occurences of the pac vertices of the resolution step in the
+	 * triple graph adding edges between them and other vertices of the triple 
+	 * graph. The flag forward signalizes which part of the triple graph the 
+	 * resolution step refers.
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	void resolve(TripleGraph tripleGraph, Resolution resolution, ResolutionStep resolutionStep, boolean forward);
 
 } // TripleGrammar

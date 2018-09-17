@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.wbsilva.bence.graphgrammar.ZoneVertex#getVertices <em>Vertices</em>}</li>
- *   <li>{@link org.wbsilva.bence.graphgrammar.ZoneVertex#getPacs <em>Pacs</em>}</li>
+ *   <li>{@link org.wbsilva.bence.graphgrammar.ZoneVertex#getPac <em>Pac</em>}</li>
  * </ul>
  *
  * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getZoneVertex()
@@ -44,20 +44,20 @@ public interface ZoneVertex extends Vertex {
 	EList<Vertex> getVertices();
 
 	/**
-	 * Returns the value of the '<em><b>Pacs</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Pac</b></em>' containment reference list.
 	 * The list contents are of type {@link org.wbsilva.bence.graphgrammar.Vertex}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Pacs</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Pac</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pacs</em>' containment reference list.
-	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getZoneVertex_Pacs()
+	 * @return the value of the '<em>Pac</em>' containment reference list.
+	 * @see org.wbsilva.bence.graphgrammar.GraphgrammarPackage#getZoneVertex_Pac()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Vertex> getPacs();
+	EList<Vertex> getPac();
 
 	/**
 	 * <!-- begin-user-doc -->

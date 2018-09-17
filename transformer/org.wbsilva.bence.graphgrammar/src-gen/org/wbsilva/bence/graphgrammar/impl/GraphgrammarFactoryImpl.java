@@ -74,6 +74,10 @@ public class GraphgrammarFactoryImpl extends EFactoryImpl implements Graphgramma
 			return createDerivation();
 		case GraphgrammarPackage.PARSING_TREE:
 			return createParsingTree();
+		case GraphgrammarPackage.RESOLUTION_STEP:
+			return createResolutionStep();
+		case GraphgrammarPackage.RESOLUTION:
+			return createResolution();
 		case GraphgrammarPackage.GRAPH:
 			return createGraph();
 		case GraphgrammarPackage.VERTEX:
@@ -90,6 +94,10 @@ public class GraphgrammarFactoryImpl extends EFactoryImpl implements Graphgramma
 			return createTripleGraph();
 		case GraphgrammarPackage.VERTEX_TO_VERTEX_MAP:
 			return (EObject) createVertexToVertexMap();
+		case GraphgrammarPackage.VERTEX_TO_STRING_MAP:
+			return (EObject) createVertexToStringMap();
+		case GraphgrammarPackage.STRING_TO_VERTEX_MAP:
+			return (EObject) createStringToVertexMap();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -180,6 +188,26 @@ public class GraphgrammarFactoryImpl extends EFactoryImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ResolutionStep createResolutionStep() {
+		ResolutionStepImpl resolutionStep = new ResolutionStepImpl();
+		return resolutionStep;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Resolution createResolution() {
+		ResolutionImpl resolution = new ResolutionImpl();
+		return resolution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Graph createGraph() {
 		GraphImpl graph = new GraphImpl();
 		return graph;
@@ -253,6 +281,26 @@ public class GraphgrammarFactoryImpl extends EFactoryImpl implements Graphgramma
 	public Map.Entry<Vertex, Vertex> createVertexToVertexMap() {
 		VertexToVertexMapImpl vertexToVertexMap = new VertexToVertexMapImpl();
 		return vertexToVertexMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<Vertex, String> createVertexToStringMap() {
+		VertexToStringMapImpl vertexToStringMap = new VertexToStringMapImpl();
+		return vertexToStringMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<String, Vertex> createStringToVertexMap() {
+		StringToVertexMapImpl stringToVertexMap = new StringToVertexMapImpl();
+		return stringToVertexMap;
 	}
 
 	/**
