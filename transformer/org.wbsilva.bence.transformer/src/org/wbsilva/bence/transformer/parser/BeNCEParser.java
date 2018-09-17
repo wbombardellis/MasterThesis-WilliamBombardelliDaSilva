@@ -334,7 +334,7 @@ public class BeNCEParser {
 		final Set<Vertex> vs = merge(zoneVertices);
 		
 		final Set<String> pacIds = zoneVertices.stream()
-				.flatMap(zv -> zv.getPacs().stream()
+				.flatMap(zv -> zv.getPac().stream()
 								.map(p -> p.getId()))
 				.collect(Collectors.toSet());
 		
@@ -354,10 +354,10 @@ public class BeNCEParser {
 					final Set<Edge> es = new HashSet<Edge>(1);
 					final SymbolSet addedLabels = new SymbolSet();
 					//Control to not edges that go or come from a pac
-					final Set<String> pacs = zw.getPacs().stream()
+					final Set<String> pacs = zw.getPac().stream()
 												.map(p -> p.getId())
 												.collect(Collectors.toSet());
-					pacs.addAll(zv.getPacs().stream()
+					pacs.addAll(zv.getPac().stream()
 									.map(p -> p.getId())
 									.collect(Collectors.toSet()));
 					
@@ -579,10 +579,10 @@ public class BeNCEParser {
 				.collect(Collectors.toSet());
 		
 		final boolean removed = zoneVertex.getVertices().removeAll(realPacs);
-		zoneVertex.getPacs().addAll(realPacs);
+		zoneVertex.getPac().addAll(realPacs);
 		
 		assert pacs.size() > 0 ? removed : true;
-		assert pacs.size() == zoneVertex.getPacs().size();
+		assert pacs.size() == zoneVertex.getPac().size();
 		
 		return zoneVertex;
 	}
