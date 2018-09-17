@@ -274,7 +274,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 		assert GraphgrammarUtil.isValidTripleGrammar(this);
 		assert GraphgrammarUtil.isValidTripleGraph(tripleGraph);
 		assert derivationStep != null;
-		assert GraphgrammarUtil.isValidRule(this.getAlphabet(), derivationStep.getRule());
+		assert GraphgrammarUtil.isValidRule(this.getAlphabet(), this.getNonterminals(), derivationStep.getRule());
 		assert resolution != null;
 
 		final TripleRule tripleRule = this.getTripleRules().stream()

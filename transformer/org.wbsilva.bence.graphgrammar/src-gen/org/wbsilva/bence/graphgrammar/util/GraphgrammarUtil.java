@@ -289,7 +289,7 @@ public class GraphgrammarUtil {
 		
 		if (r.stream().map(rr -> rr.getId()).distinct().count() != r.size())
 			return false;
-		if (r.stream().anyMatch(rr -> !isValidRule(ab, rr)))
+		if (r.stream().anyMatch(rr -> !isValidRule(ab, n, rr)))
 			return false;
 		
 		return true;
@@ -325,11 +325,12 @@ public class GraphgrammarUtil {
 
 	/**
 	 * Checks if a rule is concise, also checking it against the grammar's alphabet
-	 * @param alphabet		The alphabet to which the rule refers 
+	 * @param alphabet		The alphabet to which the rule refers
+	 * @param nt			The non terminal symbols from the alphabet 
 	 * @param rule			The rule to test		
 	 * @return				True iff {@code rule} is valid
 	 */
-	public static boolean isValidRule(final List<Symbol> alphabet, final Rule rule) {
+	public static boolean isValidRule(final List<Symbol> alphabet, final List<Symbol> nt, final Rule rule) {
 		if (rule.getId() == null)
 			return false;
 		if (rule.getLhs() == null || rule.getRhs() == null || !isValidGraph(rule.getRhs()))
@@ -341,6 +342,13 @@ public class GraphgrammarUtil {
 							|| e.getValue().stream().anyMatch(ss -> !inAlphabet(alphabet, ss.getEdgeLabel())
 									|| !inAlphabet(alphabet, ss.getVertexLabels()))))
 				return false;
+		
+		//PACs should not be non-terminals and be in the RHS's vertices
+		if (rule.getPac().stream()
+				.anyMatch(p -> inAlphabet(nt, p.getLabel())
+								|| !rule.getRhs().getVertices().contains(p)))
+			return false;
+		
 		return true;
 	}
 	
@@ -403,6 +411,15 @@ public class GraphgrammarUtil {
 							|| !e.getLabel().getSubscript().isEmpty()
 							|| !e.getLabel().getSuperscript().isEmpty()
 							|| (!acceptLoops && e.getFrom() == e.getTo())))
+			return false;
+		
+		//Set of vertices and pacs in a zone vertex is disjunct
+		if (graph.getVertices().stream()
+				.anyMatch(v -> v instanceof ZoneVertex ? 
+								((ZoneVertex)v).getPac().stream()
+									.anyMatch(w -> ((ZoneVertex)v).getVertices().stream()
+													.anyMatch(y -> y.getId().equals(w.getId())))
+								: false))
 			return false;
 		
 		return true;
@@ -483,7 +500,7 @@ public class GraphgrammarUtil {
 	 * @return					True iff {@code rr} is valid
 	 */
 	private static boolean isValidTripleRule(final List<Symbol> ab, final List<Symbol> nt, final TripleRule rr) {
-		if (!isValidRule(ab, rr.getSource()) || !isValidRule(ab, rr.getCorr()) || !isValidRule(ab, rr.getTarget()))
+		if (!isValidRule(ab, nt, rr.getSource()) || !isValidRule(ab, nt, rr.getCorr()) || !isValidRule(ab, nt, rr.getTarget()))
 			return false;
 		
 		if (!rr.getSource().getId().equals(rr.getTarget().getId()))
@@ -503,6 +520,29 @@ public class GraphgrammarUtil {
 				return false;
 		
 		if (!isNonTerminalConsistent(nt, rr))
+			return false;
+		
+		if (!isPacConsistent(rr))
+			return false;
+		
+		return true;
+	}
+
+	/**
+	 * Checks if the triple rule {@code rr} is PAC consistent, i.e. if pacs are only 
+	 * connected with other pacs, in regard to the ms and mt morphisms
+	 * @param rr		The triple rule to check
+	 * @return			True iff {@code rr} is PAC consistent
+	 */
+	private static boolean isPacConsistent(final TripleRule rr) {
+		if (rr.getSource().getPac().size() != rr.getCorr().getPac().size() 
+				|| rr.getTarget().getPac().size() != rr.getCorr().getPac().size())
+			return false;
+			
+		//If any mapping from a pac does not leave to a pac, then it is not PAC constistent
+		if (rr.getCorr().getPac().stream()
+				.anyMatch(p -> !rr.getSource().getPac().contains(rr.getMs().get(p))
+							|| !rr.getTarget().getPac().contains(rr.getMt().get(p))))
 			return false;
 		
 		return true;
