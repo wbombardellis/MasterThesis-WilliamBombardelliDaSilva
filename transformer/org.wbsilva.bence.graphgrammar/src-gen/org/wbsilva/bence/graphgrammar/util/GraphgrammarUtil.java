@@ -17,6 +17,8 @@ import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
+import org.wbsilva.bence.graphgrammar.Resolution;
+import org.wbsilva.bence.graphgrammar.ResolutionStep;
 import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.TripleGrammar;
@@ -687,6 +689,47 @@ public class GraphgrammarUtil {
 				|| !isTotal(dS.getRule().getRhs().getVertices(), dS.getUnifier())
 				|| !dS.getUnifier().stream().allMatch(u -> dS.getNext().getVertices().contains(u.getValue())))
 			return false;
+		return true;
+	}
+
+	/**
+	 * Checks if a resolution step is valid or not
+	 * @param resolutionStep		The resolution step to check
+	 * @return						True iff {@code resolutionStep} is valid
+	 */
+	public static boolean isValidResolutionStep(final ResolutionStep resolutionStep) {
+		if (resolutionStep == null)
+			return false;
+		if (resolutionStep.getPac() == null)
+			return false;
+		return true;
+	}
+
+	/**
+	 * Checks if {@code resolution} is a valid resolution
+	 * @param resolution		The resolution to check
+	 * @return					True iff {@code resolution} is valid
+	 */
+	public static boolean isValidResolution(final Resolution resolution) {
+		if (resolution == null)
+			return false;
+		if (resolution.getSteps().stream().anyMatch(rs -> !isValidResolutionStep(rs)))
+			return false;
+		
+		//Ensure all resolution steps' pacs are resolutionable
+		final Set<String> referenceIds = resolution.getReferenceIds().keySet();
+		if (resolution.getSteps().stream()
+				.anyMatch(rs -> rs.getPac().stream()
+									.anyMatch(p -> !referenceIds.contains(p.getValue()))))
+			return false;
+		
+		//Ensure all resolution steps' pacs are resolved to a non pac
+		final Collection<Vertex> resolvedVs = resolution.getReferenceIds().values();
+		if (resolution.getSteps().stream()
+				.anyMatch(rs -> rs.getPac().stream()
+									.anyMatch(p -> resolvedVs.contains(p.getKey()))))
+			return false;
+
 		return true;
 	}
 
