@@ -191,12 +191,6 @@
           <vertexLabels
               name="ClassDiagram"/>
         </value>
-        <value>
-          <edgeLabel
-              name="target"/>
-          <vertexLabels
-              name="Association"/>
-        </value>
       </embedding>
     </source>
     <corr id="r1"
@@ -254,6 +248,12 @@
               name="table"/>
           <vertexLabels
               name="DB"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="reference"/>
+          <vertexLabels
+              name="Column"/>
         </value>
       </embedding>
       <embedding
@@ -334,6 +334,12 @@
         <value>
           <edgeLabel
               name="source"/>
+          <vertexLabels
+              name="Association"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="target"/>
           <vertexLabels
               name="Association"/>
         </value>
@@ -420,6 +426,12 @@
               name="table"/>
           <vertexLabels
               name="DB"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="reference"/>
+          <vertexLabels
+              name="Column"/>
         </value>
       </embedding>
       <embedding
