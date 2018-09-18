@@ -29,27 +29,32 @@ public class ECore2GraphTransformer {
 	static final Logger logger = LogManager.getLogger(ECore2GraphTransformer.class);
 	
 	/**
-	 * Transform the eCore/EMF model {@code inputModel} of an arbitrary metamodel to a graph 
+	 * Transform the eCore/EMF models {@code inputModels} of an arbitrary metamodel to a graph 
 	 * of the Graphgrammar metamodel. Transform also recursively its children.
 	 * 
-	 * @param inputModel		Model to be transformed. Cannot be null.
+	 * @param inputModels		Models to be transformed. Cannot be null. May be empty
 	 * @return					A graph resultant from the transformation from {@code inputModel} inside a transformation result object
 	 * @see Graph
 	 * @see E2GTransformationResult
 	 */
-	public E2GTransformationResult transform(final EObject inputModel) {
-		assert inputModel != null;
-		
-		logger.debug(String.format("Starting transformation from the eCore input model %s to a graph", inputModel));
+	public E2GTransformationResult transform(final List<EObject> inputModels) {
+		assert inputModels != null;
 		
 		final Graph graph = GraphgrammarFactory.eINSTANCE.createGraph();
 		final ConcurrentHashMap<EObject, Symbol> symbols = new ConcurrentHashMap<>();
 		final ConcurrentHashMap<EObject, Vertex> vertices = new ConcurrentHashMap<>();
 		final ConcurrentHashMap<String, Integer> depths = new ConcurrentHashMap<>();
-
-		transformVertex(vertices, symbols, depths, graph, inputModel, 0);
 		
-		assert GraphgrammarUtil.isValidGraph(graph, true);
+		for (EObject inputModel : inputModels) {
+			logger.debug(String.format("Starting transformation from the eCore input model %s to a graph", inputModel));
+	
+			transformVertex(vertices, symbols, depths, graph, inputModel, 0);
+			
+			assert GraphgrammarUtil.isValidGraph(graph, true);
+			
+			logger.debug(String.format("Transformation from the eCore input model %s to the graph %s finished successfully", inputModel, graph));
+		}
+		logger.debug(String.format("Transformation from the input models %s to the graph %s finished successfully", inputModels, graph));
 		
 		return new E2GTransformationResult(graph, depths);
 	}
@@ -186,7 +191,5 @@ public class ECore2GraphTransformer {
 		graph.getEdges().add(edge);
 		
 		return edge;
-	}
-
-	
+	}	
 }

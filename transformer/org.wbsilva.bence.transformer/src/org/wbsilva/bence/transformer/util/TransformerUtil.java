@@ -2,7 +2,9 @@ package org.wbsilva.bence.transformer.util;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -226,46 +228,64 @@ public class TransformerUtil {
 	}
 
 	/**
-	 * Load the model in file {@code modelPath} using resource set {@code resSet} and assure that the first
-	 * element in the read resource is of type {@code rootClass} and return this element if so.
-	 * If the first element (root) in the resource is note of the given type nor subclass of it, return empty.
-	 * Further root elements are ignored. If resource is empty, return empty.
+	 * Load the models in file {@code modelPath} using resource set {@code resSet} and assure that the root
+	 * elements in the read resource are of type {@code rootClass} and return these element if so.
+	 * If any root element in the resource is not of the given type nor subclass of it, ignore it.
+	 * If resource is empty, return an empty list.
 	 * @param resSet		The resource set used to read the file at {@code modelPath}
 	 * @param modelPath		The path to the file containing the resource with the desired model to be load
-	 * @param rootClass		The require type or supertype of the first root element of the resource, that will be returned
-	 * @return				The first root element of the resource in {@code modelPath}, if it complies to the type {@code rootClass}
+	 * @param rootClass		The require type or supertype of the root elements of the resource, that will be returned
+	 * @return				Each root element of the resource in {@code modelPath}, if it complies to the type {@code rootClass}
 	 * @throws Exception	In case of problem by the reading of the input file
 	 * @see TransformerUtil#getResourceFromFile(ResourceSet, String)
 	 */
 	@SuppressWarnings("unchecked")
-	public static <T> Optional<T> loadModel(final ResourceSet resSet, final String modelPath, final Class<T> rootClass) 
+	public static <T> List<T> loadModels(final ResourceSet resSet, final String modelPath, final Class<T> rootClass) 
 			throws Exception {
 		
 		final Resource resource;
 		resource = TransformerUtil.getResourceFromFile(resSet, modelPath);
 		
-		final T model;
+		final ArrayList<T> models = new ArrayList<>();
 		
 		if (resource.getContents().size() < 1){
 			logger.error("The model is empty. Aborting. Used URL: "+ modelPath);
-			return Optional.empty();
+			return new ArrayList<T>(0);
 		} else {
-			//Resource's first element must be a of the given type
-			final EObject root = resource.getContents().get(0);
-			
-			if (resource.getContents().size() > 1) {
-				logger.warn("The model file has more than one root element. Only the first one will be used. Ignoring the others.");
-			}
-			
-			if (rootClass.isAssignableFrom(root.getClass())) {
-				model = (T) root;
-			} else {
-				logger.error(String.format("Wrong model. The resource file's first element should be a %s, found a %s. Aborting",
-						rootClass.getName(), root.eClass()));
-				return Optional.empty();
+			for (EObject root : resource.getContents()) {
+				//Resource's root elements must be a of the given type
+				if (rootClass.isAssignableFrom(root.getClass())) {
+					models.add((T) root);
+				} else {
+					logger.error(String.format("Wrong model. A resource file's root element should be a %s, found a %s. Ignoring it.",
+							rootClass.getName(), root.eClass()));
+				}
 			}
 		}
-		assert model != null;
-		return Optional.of(model);
+		assert models != null;
+		return models;
+	}
+	
+	/**
+	 * Load the first model in file {@code modelPath} using resource set {@code resSet} that is of type {@code rootClass}
+	 * and return it. If no root element in the resource is of the given type nor subclass of it, return empty.
+	 * Further root elements are ignored. If resource is empty, return empty.
+	 * @param resSet		The resource set used to read the file at {@code modelPath}
+	 * @param modelPath		The path to the file containing the resource with the desired model to be load
+	 * @param rootClass		The require type or supertype of the first root element of the resource, that will be returned
+	 * @return				The first root element of the resource in {@code modelPath} that complies to the type {@code rootClass}
+	 * 						or empty if none complies
+	 * @throws Exception	In case of problem by the reading of the input file
+	 * @see TransformerUtil#getResourceFromFile(ResourceSet, String)
+	 */
+	public static <T> Optional<T> loadModel(final ResourceSet resSet, final String modelPath, final Class<T> rootClass) 
+			throws Exception {
+		final List<T> models = loadModels(resSet, modelPath, rootClass);
+		
+		if (models.size() > 1) {
+			logger.warn("The model file has more than one root element. Only the first one will be used. Ignoring the others.");
+		}
+		
+		return models.isEmpty() ? Optional.empty() : Optional.of(models.get(0));
 	}
 }
