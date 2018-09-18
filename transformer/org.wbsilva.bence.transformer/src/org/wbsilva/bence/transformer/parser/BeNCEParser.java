@@ -529,10 +529,28 @@ public class BeNCEParser {
 		//Merge all vertices from zoneVertices and copy them
 		final Set<Vertex> mergedVertices = merge(zoneVertices);
 		//Assert zoneVertices are disjunct
-		assert mergedVertices.stream()
-			.map(zv -> zv.getId()).distinct().count() == mergedVertices.size();
+		final Set<String> mergedVerticesIds = mergedVertices.stream()
+							.map(zv -> zv.getId())
+							.collect(Collectors.toSet());
+		assert mergedVerticesIds.size() == mergedVertices.size();
 		
 		zone.getVertices().addAll(mergedVertices);
+		
+		//Merge also all pacs that are not vertices and copy them
+		final Set<Vertex> pacs = zoneVertices.stream()
+				.flatMap(v -> v.getPac().stream())
+				.filter(p -> !mergedVerticesIds.contains(p.getId()))
+				.collect(Collectors.toSet());
+		//But only distinct pacs
+		final Set<Vertex> mergedPacs = new HashSet<>(pacs.size());
+		final Set<String> mergedPacsIds = new HashSet<>(pacs.size());
+		for (Vertex p : pacs) {
+			if (!mergedPacsIds.contains(p.getId())) {
+				mergedPacs.add(EcoreUtil.copy(p));
+				mergedPacsIds.add(p.getId());
+			}
+		}
+		zone.getPac().addAll(mergedPacs);
 		
 		return zone;
 	}
@@ -558,7 +576,7 @@ public class BeNCEParser {
 	 * @param lhs
 	 * @return
 	 */
-	public ZoneVertex filterAC(final ZoneVertex zoneVertex, final DerivationStep dStep) {
+	ZoneVertex filterAC(final ZoneVertex zoneVertex, final DerivationStep dStep) {
 		assert zoneVertex != null;
 		assert zoneVertex.getVertices().stream().noneMatch(v -> v instanceof ZoneVertex);
 		assert dStep != null;
@@ -579,10 +597,19 @@ public class BeNCEParser {
 				.collect(Collectors.toSet());
 		
 		final boolean removed = zoneVertex.getVertices().removeAll(realPacs);
-		zoneVertex.getPac().addAll(realPacs);
+		//But only distinct pacs
+		final Set<Vertex> uniquePacs = new HashSet<>(realPacs.size());
+		final Set<String> uniquePacsIds = zoneVertex.getPac().stream().map(p -> p.getId()).collect(Collectors.toSet());
+		for (Vertex p : realPacs) {
+			if (!uniquePacsIds.contains(p.getId())) {
+				uniquePacs.add(p);
+				uniquePacsIds.add(p.getId());
+			}
+		}
+		zoneVertex.getPac().addAll(uniquePacs);
 		
 		assert pacs.size() > 0 ? removed : true;
-		assert pacs.size() == zoneVertex.getPac().size();
+		assert pacs.size() <= zoneVertex.getPac().size();
 		
 		return zoneVertex;
 	}
