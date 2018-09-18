@@ -54,7 +54,7 @@ We start presenting our notation for graphs and grammars, accompanied by example
 %TODO: Maybe change this definition layout
 \begin{definition}
 	\label{def:graph}
-	A directed labeled graph $G$ over the finite set of symbols $\Sigma$, $G = (V, E, \phi)$ consists of a finite set of vertices $V$, a set of labeled directed edges $E \subseteq V \times \Sigma \times V$ and a total vertex labeling function $\phi : V \to \Sigma$. Directed labeled graphs are often referred to simply as graphs. For a fixed graph $G$ we refer to its components as $V_G$, $E_G$ and $\phi_G$. Moreover, we define the special empty graph as $\emptyGraph := (\emptyset, \emptyset, \emptyset)$ and we denote the set of all graphs over $\Sigma$ by $\allgraphs{\Sigma}$. In special, we do not allow loops (vertices of the form $(v,l,v)$), but multi-edges with different labels are allowed.
+	A directed labeled graph $G$ over the finite set of symbols $\Sigma$, $G = (V, E, \phi)$ consists of a finite set of vertices $V$, a set of labeled directed edges $E \subseteq V \times \Sigma \times V$ and a total vertex labeling function $\phi : V \to \Sigma$. Directed labeled graphs are often referred to simply as graphs. For a fixed graph $G$ we refer to its components as $V_G$, $E_G$ and $\phi_G$. Moreover, we denote the set of all graphs over $\Sigma$ by $\allgraphs{\Sigma}$. In special, we do not allow loops (vertices of the form $(v,l,v)$), but multi-edges with different labels are allowed.
 	%TODO: Comments about notation (e..g edge labels x vertex labels)
 	
 	If $\phi_G(v) = a$ we say $v$ is labeled by $a$. Two vertices $v$ and $w$ are neighbors (also adjacent) if, and only if,there is one or more edges between them, that is, $(v,\_,w) \in E_G \lor (w,\_,v) \in E_G$. Two graphs $G$ and $H$ are disjoint if, and only if,$V_G \cap V_H = \emptyset$.
@@ -208,7 +208,7 @@ Building upon the concepts of graphs and graph grammars, we present, in the foll
 
 \begin{definition}
 	A directed labeled triple graph $TG = G_s \ms{m_s} G_c \mt{m_t} G_t$ over $\Sigma$ consists of three disjoint directed labeled graphs over $\Sigma$ (see \ref{def:graph}), respectively, the source graph $G_s$, the correspondence graph $G_c$ and the target graph $G_t$, together with two injective morphisms (see \ref{def:morphism}) $m_s: V_{G_c} \to V_{G_s}$ and $m_t : V_{G_c} \to G_{G_t}$. Directed labeled triple graphs are often referred to simply as triple graphs and we might omit the morphisms' names in the notation. Moreover, we denote the set of all triple graphs over $\Sigma$ as $\alltgraphs{\Sigma}$. We might refer to all vertices of $TG$ by $V_{TG}:= V_s \cup V_c \cup V_t$, all edges by $E_{TG}:= E_s \cup E_c \cup E_t$ and the complete labeling function by $\phi_{TG}:= \phi_{G_s} \cup \phi_{G_c} \cup \phi_{G_t}$.
-	%TODO: Do we need empty triple graph?
+	Moreover, we define the special empty triple graph as $\emptyTG := E \ms{ms} E \mt{mt} E$ with $E = (\emptyset, \emptyset, \emptyset)$ and $ms = mt = \emptyset$.
 \end{definition}
 
 \begin{definition}
