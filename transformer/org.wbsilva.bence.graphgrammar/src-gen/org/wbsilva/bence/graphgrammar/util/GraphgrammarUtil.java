@@ -335,6 +335,10 @@ public class GraphgrammarUtil {
 			return false;
 		if (rule.getLhs() == null || rule.getRhs() == null || !isValidGraph(rule.getRhs()))
 			return false;
+		if (rule.getRhs().getVertices().stream().anyMatch(v -> !inAlphabet(alphabet, v.getLabel())))
+			return false;
+		if (rule.getRhs().getEdges().stream().anyMatch(e -> !inAlphabet(alphabet, e.getLabel()) || inAlphabet(nt, e.getLabel())))
+			return false;
 		if (rule.getEmbedding() == null || 
 				rule.getEmbedding().entrySet().stream()
 					.anyMatch(e -> !rule.getRhs().getVertices().contains(e.getKey()) 
