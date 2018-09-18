@@ -221,8 +221,12 @@ public class BeNCEParser {
 			logger.debug(String.format("Not all vertices of the graph %s are terminal vertices. Cannot parse.", graph));
 			return Optional.empty();
 			
+		} else if (graph.getEdges().stream()
+				.anyMatch(e -> !grammar.getTerminals().stream()
+						.anyMatch(t -> t.equivalates(e.getLabel())))) {
+			logger.debug(String.format("Not all edges of the graph %s are terminal edges. Cannot parse.", graph));
+			return Optional.empty();
 		} else {
-			
 			//Create bottom-up parse set
 			final Set<ZoneVertex> initialZoneVertices = zoneVertices(graph.getVertices());
 			
