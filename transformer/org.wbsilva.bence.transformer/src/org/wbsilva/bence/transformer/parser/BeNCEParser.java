@@ -118,7 +118,7 @@ public class BeNCEParser {
 						
 							synchronized(this.parsingForest) {
 								//Possible derivation step found
-								final ZoneVertex consumedLhs = filterAC(lhs, newDS);
+								final ZoneVertex consumedLhs = configurePac(lhs, newDS);
 								assert consumedLhs != null;
 								final boolean added = this.bup.add(consumedLhs);
 								
@@ -572,18 +572,23 @@ public class BeNCEParser {
 	}
 	
 	/**
-	 * TODO
-	 * @param lhs
-	 * @return
+	 * Move vertices that are inside {@code zoneVertex} to its set of pacs, according to the
+	 * pac vertices of the rule in {@code dStep}. Ensure a correct configuration of {@code zoneVertex},
+	 * without duplicate pacs.  
+	 * @param zoneVertex		The zone vertex to be configured for PAC, according to {@code dStep}. Important: This object is modified.
+	 * @param dStep				The derivation step whose vertex is {@code zoneVertex}
+	 * @return					The {@code zoneVertex} with its Pac attribute configured properly, according to
+	 * 							the pac in the rule of {@code dStep}. Important: The returned object is the same instance as {@code zoneVertex},
+	 * 							that is, data is not copied.
 	 */
-	ZoneVertex filterAC(final ZoneVertex zoneVertex, final DerivationStep dStep) {
+	ZoneVertex configurePac(final ZoneVertex zoneVertex, final DerivationStep dStep) {
 		assert zoneVertex != null;
 		assert zoneVertex.getVertices().stream().noneMatch(v -> v instanceof ZoneVertex);
 		assert dStep != null;
 		assert dStep.getVertex().getId().equals(zoneVertex.getId());
 		
 		final List<Vertex> pacs = dStep.getRule().getPac();
-		//derivation includes pacs, that are 1-sized zone vertices
+		//Derivation includes pacs, that are 1-sized zone vertices
 		assert pacs.stream()
 					.allMatch(p -> dStep.getUnifier().get(p) instanceof ZoneVertex 
 							&& ((ZoneVertex)dStep.getUnifier().get(p)).getVertices().size() == 1);

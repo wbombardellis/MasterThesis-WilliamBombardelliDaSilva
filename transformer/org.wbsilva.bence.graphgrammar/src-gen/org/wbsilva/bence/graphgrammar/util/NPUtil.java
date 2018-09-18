@@ -159,16 +159,21 @@ public class NPUtil {
 		return vContext;
 	}
 	
-	
 	/**
-	 * TODO
-	 * @param r
-	 * @param embeddingContext
-	 * @return
+	 * Merge the embedding contexts of each vertex of {@code rule}, which are in the mapping
+	 * {@code embeddingContext}, into one {@link SymbolMap}
+	 * @param rule				The rule to which the {@code embeddingContext} belongs
+	 * @param embeddingContext	The embedding context of each vertex of {@code rule}. If a vertex has no embedding,
+	 * 							then it need not be in the mapping
+	 * @return					A {@link SymbolMap} from the edge labels to the vertex labels corresponding to the
+	 * 							embedding of each vertex of {@code rule} in form of a SymbolMap and SymbolSet,
+	 * 							obtained from {@code embeddingContext} 
+	 * @see SymbolMap
+	 * @see SymbolSet
 	 */
-	private static SymbolMap<SymbolSet> getEmbeddingcontext(final Rule r, final Map<Vertex, SymbolMap<SymbolSet>> embeddingContext) {
+	private static SymbolMap<SymbolSet> getEmbeddingcontext(final Rule rule, final Map<Vertex, SymbolMap<SymbolSet>> embeddingContext) {
 		final SymbolMap<SymbolSet> ruleContext = new SymbolMap<>();
-		for (Vertex v : r.getRhs().getVertices()) {
+		for (Vertex v : rule.getRhs().getVertices()) {
 			final SymbolMap<SymbolSet> vContext = embeddingContext.get(v);
 			for (Entry<Symbol,SymbolSet> vContextEntry : vContext.entrySet()) {
 				final SymbolSet context = ruleContext.get(vContextEntry.getKey());
@@ -184,17 +189,20 @@ public class NPUtil {
 	}
 	
 	/**
-	 * 
-	 * @param r
-	 * @return
+	 * Return the complete embedding context of the rule {@code rule} 
+	 * @param rule		The rule from which to obtain the embedding context
+	 * @return			A {@link SymbolMap} from the edge labels to the vertex labels corresponding to the
+	 * 					embeddings of each vertex of {@code rule} in form of a SymbolMap and SymbolSet
+	 * @see SymbolMap
+	 * @see SymbolSet
 	 */
-	static SymbolMap<SymbolSet> getEmbeddingcontext(final Rule r) {
-		final HashMap<Vertex, SymbolMap<SymbolSet>> embeddingContext = new HashMap<>(r.getRhs().getVertices().size());
-		for (Vertex v : r.getRhs().getVertices()) {
-			final SymbolMap<SymbolSet> vContext = getEmbeddingContext(r, v);
+	static SymbolMap<SymbolSet> getEmbeddingcontext(final Rule rule) {
+		final HashMap<Vertex, SymbolMap<SymbolSet>> embeddingContext = new HashMap<>(rule.getRhs().getVertices().size());
+		for (Vertex v : rule.getRhs().getVertices()) {
+			final SymbolMap<SymbolSet> vContext = getEmbeddingContext(rule, v);
 			embeddingContext.put(v, vContext);
 		}
-		return getEmbeddingcontext(r, embeddingContext);
+		return getEmbeddingcontext(rule, embeddingContext);
 	}
 	
 	/**
@@ -312,10 +320,19 @@ public class NPUtil {
 	}
 
 	/**
-	 * TODO
-	 * @param rule
-	 * @param contextToTest
-	 * @return
+	 * Return true iff {@code rule} misses the whole {@code contextToTest}. I.e. If any entry of 
+	 * {@code contextToTest} is in any embedding context of any vertex in {@code rule}, then return false,
+	 * because then the rule contains part of the context to test, and thus, it does not miss the whole of it.
+	 * Otherwise, all entries of the context to test do not occur in the rule, thus the rule misses the whole of it,
+	 * and this method returns true.
+	 * 
+	 * @param rule				The rule to be tested
+	 * @param contextToTest		A {@link SymbolMap} from the edge labels to the vertex labels corresponding to the
+	 * 							embedding context to be tested
+	 * @return					False if {@code rule}'s embedding has at least one vertex label and edge label from
+	 * 							the embedding context {@code contextToTest}, false otherwise  
+	 * @see SymbolMap
+	 * @see SymbolSet
 	 */
 	public static boolean missesContext(final Rule rule, final SymbolMap<SymbolSet> contextToTest) {
 		assert rule != null;
