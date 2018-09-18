@@ -5,9 +5,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:org.wbsilva.mm.class="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore"
     xsi:schemaLocation="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore ../../org.wbsilva.mm.class/model/Class.ecore">
-  <classes id="c0"/>
-  <associations
-      source="c0"
-      target="c0"
-      id="a0"/>
+  <classes id="c0">
+    <attribute
+        id="at0"/>
+    <attribute
+        id="at1"/>
+  </classes>
 </org.wbsilva.mm.class:ClassDiagram>
