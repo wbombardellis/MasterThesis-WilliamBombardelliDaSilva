@@ -1,5 +1,6 @@
 package org.wbsilva.bence.transformer;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
@@ -36,6 +37,7 @@ public class ECore2GraphTransformer {
 	 * @return					A graph resultant from the transformation from {@code inputModel} inside a transformation result object
 	 * @see Graph
 	 * @see E2GTransformationResult
+	 * @see ECore2GraphTransformer#transform(EObject)
 	 */
 	public E2GTransformationResult transform(final List<EObject> inputModels) {
 		assert inputModels != null;
@@ -57,6 +59,14 @@ public class ECore2GraphTransformer {
 		logger.debug(String.format("Transformation from the input models %s to the graph %s finished successfully", inputModels, graph));
 		
 		return new E2GTransformationResult(graph, depths);
+	}
+	
+	/**
+	 * Same contract as {@link ECore2GraphTransformer#transform(List)}, but only for one model
+	 * @see ECore2GraphTransformer#transform(List)
+	 */
+	public E2GTransformationResult transform(final EObject inputModel) {
+		return transform(Arrays.asList(inputModel));
 	}
 
 	/**

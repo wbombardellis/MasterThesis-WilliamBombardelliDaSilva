@@ -238,6 +238,7 @@ public class TransformerUtil {
 	 * @return				Each root element of the resource in {@code modelPath}, if it complies to the type {@code rootClass}
 	 * @throws Exception	In case of problem by the reading of the input file
 	 * @see TransformerUtil#getResourceFromFile(ResourceSet, String)
+	 * @see TransformerUtil#loadModel(ResourceSet, String, Class)
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> List<T> loadModels(final ResourceSet resSet, final String modelPath, final Class<T> rootClass) 
@@ -277,6 +278,7 @@ public class TransformerUtil {
 	 * 						or empty if none complies
 	 * @throws Exception	In case of problem by the reading of the input file
 	 * @see TransformerUtil#getResourceFromFile(ResourceSet, String)
+	 * @see TransformerUtil#loadModels(ResourceSet, String, Class)
 	 */
 	public static <T> Optional<T> loadModel(final ResourceSet resSet, final String modelPath, final Class<T> rootClass) 
 			throws Exception {

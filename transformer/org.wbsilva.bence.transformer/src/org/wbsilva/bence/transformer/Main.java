@@ -17,6 +17,7 @@
 
 package org.wbsilva.bence.transformer;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
@@ -133,26 +134,24 @@ public class Main {
 			}
 			
 			// Read graph model
-			final Optional<EObject> inputModelOpt;
+			final List<EObject> inputModels;
 			try {
-				inputModelOpt = TransformerUtil.loadModel(resSet, inputModelPath, EObject.class);
+				inputModels = TransformerUtil.loadModels(resSet, inputModelPath, EObject.class);
 			} catch (Exception e) {
 				UIUtil.printFail();
 				return;
 			}
-			if (!inputModelOpt.isPresent()) {
+			assert inputModels != null;
+			if (inputModels.isEmpty()) {
 				UIUtil.printFail();
 				return;
 			}
-			final EObject inputModel = inputModelOpt.get();
-			assert inputModel != null;
-			logger.debug("Graph model read successfully. Using model: "+ inputModel);
-			
+			logger.debug("Graph model read successfully. Using root elements: "+ inputModels);
 			
 			UIUtil.printAdaptingInput();
 			
 			//Transform the instance of the input model into a graph
-			final E2GTransformationResult e2g = new ECore2GraphTransformer().transform(inputModel);
+			final E2GTransformationResult e2g = new ECore2GraphTransformer().transform(inputModels);
 			final BeNCETransformationRequest request = new BeNCETransformationRequest(e2g.getGraph(), e2g.getDepths());
 			
 			UIUtil.printStartTransforming();
