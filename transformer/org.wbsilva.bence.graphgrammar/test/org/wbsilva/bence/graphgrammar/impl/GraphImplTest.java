@@ -321,11 +321,11 @@ class GraphImplTest {
 		Edge ec_d = GraphgrammarFactory.eINSTANCE.createEdge();
 		ec_d.setFrom(vc);
 		ec_d.setTo(vd);
-		ec_d.setLabel(EcoreUtil.copy(l1));
+		ec_d.setLabel(EcoreUtil.copy(l2));
 		Edge ed_c = GraphgrammarFactory.eINSTANCE.createEdge();
 		ed_c.setFrom(vd);
 		ed_c.setTo(vc);
-		ed_c.setLabel(EcoreUtil.copy(l1));
+		ed_c.setLabel(EcoreUtil.copy(l2));
 		
 		g4.getEdges().add(ec_d);
 		g4.getEdges().add(ed_c);

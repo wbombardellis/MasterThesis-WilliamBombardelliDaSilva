@@ -200,7 +200,7 @@ class GrammarImplTest {
 		
 		Graph i0 = EcoreUtil.copy(h0);
 		
-		EMap<Vertex, Vertex> un = r0.apply(h0, v0);
+		EMap<Vertex, Vertex> un = r0.apply(h0, v0, true);
 		
 		////
 		

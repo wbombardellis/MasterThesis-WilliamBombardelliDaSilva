@@ -145,7 +145,7 @@ class GraphgrammarUtilTest {
 		ArrayList<Edge> l1 = new ArrayList<Edge>(); 
 		l1.add(e1);
 		
-		assertTrue(GraphgrammarUtil.isomorphicEdges(l0, l1));
+		assertFalse(GraphgrammarUtil.isomorphicEdges(l0, l1));
 	}
 	
 	@Test
