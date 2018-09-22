@@ -325,12 +325,13 @@ public class NPUtil {
 	 * because then the rule contains part of the context to test, and thus, it does not miss the whole of it.
 	 * Otherwise, all entries of the context to test do not occur in the rule, thus the rule misses the whole of it,
 	 * and this method returns true.
+	 * If {@code contextToTest} is empty, return true.
 	 * 
 	 * @param rule				The rule to be tested
 	 * @param contextToTest		A {@link SymbolMap} from the edge labels to the vertex labels corresponding to the
 	 * 							embedding context to be tested
 	 * @return					False if {@code rule}'s embedding has at least one vertex label and edge label from
-	 * 							the embedding context {@code contextToTest}, false otherwise  
+	 * 							the embedding context {@code contextToTest}, true otherwise  
 	 * @see SymbolMap
 	 * @see SymbolSet
 	 */
