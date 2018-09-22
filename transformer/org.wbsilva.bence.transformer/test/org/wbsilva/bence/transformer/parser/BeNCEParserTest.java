@@ -7,13 +7,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.wbsilva.bence.graphgrammar.DerivationStep;
 import org.wbsilva.bence.graphgrammar.Edge;
 import org.wbsilva.bence.graphgrammar.Grammar;
 import org.wbsilva.bence.graphgrammar.Graph;
 import org.wbsilva.bence.graphgrammar.GraphgrammarFactory;
+import org.wbsilva.bence.graphgrammar.GraphgrammarPackage;
+import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.Vertex;
 import org.wbsilva.bence.graphgrammar.ZoneVertex;
@@ -28,6 +32,11 @@ class BeNCEParserTest {
 	private static Vertex v1 = GraphgrammarFactory.eINSTANCE.createVertex();
 	private static Vertex v2 = GraphgrammarFactory.eINSTANCE.createVertex();
 	private static Vertex v3 = GraphgrammarFactory.eINSTANCE.createVertex();
+
+	private static Symbol l1;
+	private static Symbol l2;
+	private static Symbol l3;
+	private static Symbol i;
 	
 	final static private Set<ZoneVertex> set0 = new HashSet<ZoneVertex>(0);
 	final static private Set<ZoneVertex> set1 = new HashSet<ZoneVertex>(1);
@@ -41,11 +50,11 @@ class BeNCEParserTest {
 	
 	@BeforeAll
 	static void init() {
-		Symbol l1 = GraphgrammarFactory.eINSTANCE.createSymbol();
+		l1 = GraphgrammarFactory.eINSTANCE.createSymbol();
 		l1.setName("1");
-		Symbol l2 = GraphgrammarFactory.eINSTANCE.createSymbol();
+		l2 = GraphgrammarFactory.eINSTANCE.createSymbol();
 		l2.setName("2");
-		Symbol l3 = GraphgrammarFactory.eINSTANCE.createSymbol();
+		l3 = GraphgrammarFactory.eINSTANCE.createSymbol();
 		l3.setName("3");
 		
 		Symbol l11 = GraphgrammarFactory.eINSTANCE.createSymbol();
@@ -55,7 +64,7 @@ class BeNCEParserTest {
 		Symbol l33 = GraphgrammarFactory.eINSTANCE.createSymbol();
 		l33.setName("v3");
 		
-		Symbol i = GraphgrammarFactory.eINSTANCE.createSymbol();
+		i = GraphgrammarFactory.eINSTANCE.createSymbol();
 		i.setName("S");
 		
 		gg0.getAlphabet().add(i);
@@ -76,7 +85,8 @@ class BeNCEParserTest {
 		
 		parser = new BeNCEParser(gg0);
 		
-		
+		v1.setLabel(EcoreUtil.copy(l1));
+		v2.setLabel(EcoreUtil.copy(l2));
 		
 		zv1.setLabel(EcoreUtil.copy(l1));
 		zv2.setLabel(EcoreUtil.copy(l2));
@@ -89,6 +99,10 @@ class BeNCEParserTest {
 		v2.setLabel(EcoreUtil.copy(l22));
 		v3.setLabel(EcoreUtil.copy(l33));
 		
+		v1.setId("id1");
+		v2.setId("id2");
+		v3.setId("id3");
+		
 		set1.add(zv1);
 		
 		set2.add(zv1);
@@ -100,7 +114,6 @@ class BeNCEParserTest {
 		set4.add(zv1);
 		set4.add(zv2);
 		
-		GraphgrammarUtil.ensureUniqueIds(Arrays.asList(v1, v2, v3));
 		GraphgrammarUtil.ensureUniqueIds(set2);
 	}
 
@@ -360,5 +373,102 @@ class BeNCEParserTest {
 		assertEquals(2, i.getVertices().size());
 		assertTrue(i.getVertices().stream()
 				.allMatch(z -> EcoreUtil.equals(zv1, z) || EcoreUtil.equals(zv2, z)));
+	}
+	
+	@Test
+	void testConfigurePacSimple() {
+		ZoneVertex z0 = GraphgrammarFactory.eINSTANCE.createZoneVertex();
+		z0.setId("z0");
+		z0.setLabel(EcoreUtil.copy(i));
+		
+		Vertex vv1 = EcoreUtil.copy(v1);
+		ZoneVertex z1 = GraphgrammarFactory.eINSTANCE.createZoneVertex();
+		z1.setId("z1");
+		z1.setLabel(EcoreUtil.copy(l1));
+		z1.getVertices().add(EcoreUtil.copy(vv1));
+		
+		Vertex vv2 = EcoreUtil.copy(v2);
+		ZoneVertex z2 = GraphgrammarFactory.eINSTANCE.createZoneVertex();
+		z2.setId("z2");
+		z2.setLabel(EcoreUtil.copy(l2));
+		z2.getVertices().add(EcoreUtil.copy(vv2));
+		
+		z0.getVertices().add(vv1);
+		z0.getVertices().add(vv2);
+		
+		DerivationStep d0 = GraphgrammarFactory.eINSTANCE.createDerivationStep();
+		d0.setVertex(EcoreUtil.copy(z0));
+
+		Rule r0 = GraphgrammarFactory.eINSTANCE.createRule();
+		r0.setId("r0");
+		r0.setLhs(EcoreUtil.copy(l1));
+		
+		Graph r0g = GraphgrammarFactory.eINSTANCE.createGraph();
+		Vertex r0v1 = EcoreUtil.copy(v1);
+		Vertex r0v2 = EcoreUtil.copy(v2);
+		r0g.getVertices().add(r0v1);
+		r0g.getVertices().add(r0v2);
+		r0.getPac().add(r0v2);
+		r0.setRhs(r0g);
+		
+		d0.setRule(r0);
+		d0.getUnifier().put(r0v1, z1);
+		d0.getUnifier().put(r0v2, z2);
+		
+		ZoneVertex cz0 = parser.configurePac(z0, d0);
+		assertEquals("z0", cz0.getId());
+		assertTrue(i.equivalates(cz0.getLabel()));
+		assertEquals(1, z0.getVertices().size());
+		assertTrue(vv1 == z0.getVertices().get(0));
+		assertEquals(1, z0.getPac().size());
+		assertTrue(vv2 == z0.getPac().get(0));
+	}
+	
+	@Test
+	void testConfigurePacEmpty() {
+		ZoneVertex z0 = GraphgrammarFactory.eINSTANCE.createZoneVertex();
+		z0.setId("z0");
+		z0.setLabel(EcoreUtil.copy(i));
+		
+		Vertex vv1 = EcoreUtil.copy(v1);
+		ZoneVertex z1 = GraphgrammarFactory.eINSTANCE.createZoneVertex();
+		z1.setId("z1");
+		z1.setLabel(EcoreUtil.copy(l1));
+		z1.getVertices().add(EcoreUtil.copy(vv1));
+		
+		Vertex vv2 = EcoreUtil.copy(v2);
+		ZoneVertex z2 = GraphgrammarFactory.eINSTANCE.createZoneVertex();
+		z2.setId("z2");
+		z2.setLabel(EcoreUtil.copy(l2));
+		z2.getVertices().add(EcoreUtil.copy(vv2));
+		
+		z0.getVertices().add(vv1);
+		z0.getVertices().add(vv2);
+		
+		DerivationStep d0 = GraphgrammarFactory.eINSTANCE.createDerivationStep();
+		d0.setVertex(EcoreUtil.copy(z0));
+
+		Rule r0 = GraphgrammarFactory.eINSTANCE.createRule();
+		r0.setId("r0");
+		r0.setLhs(EcoreUtil.copy(l1));
+		
+		Graph r0g = GraphgrammarFactory.eINSTANCE.createGraph();
+		Vertex r0v1 = EcoreUtil.copy(v1);
+		Vertex r0v2 = EcoreUtil.copy(v2);
+		r0g.getVertices().add(r0v1);
+		r0g.getVertices().add(r0v2);
+		r0.setRhs(r0g);
+		
+		d0.setRule(r0);
+		d0.getUnifier().put(r0v1, z1);
+		d0.getUnifier().put(r0v2, z2);
+		
+		ZoneVertex cz0 = parser.configurePac(z0, d0);
+		assertEquals("z0", cz0.getId());
+		assertTrue(i.equivalates(cz0.getLabel()));
+		assertEquals(2, z0.getVertices().size());
+		assertTrue(z0.getVertices().contains(vv1));
+		assertTrue(z0.getVertices().contains(vv2));
+		assertEquals(0, z0.getPac().size());
 	}
 }
