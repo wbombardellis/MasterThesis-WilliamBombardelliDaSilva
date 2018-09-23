@@ -7,11 +7,7 @@
     xsi:schemaLocation="platform:/plugin/org.wbsilva.mm.statemachine/model/Statemachine.ecore ../../org.wbsilva.mm.statemachine/model/Statemachine.ecore">
   <states id="s1"/>
   <states id="s2"/>
-  <states id="s3"/>
   <transitions
       from="s1"
       to="s2"/>
-  <transitions
-      from="s2"
-      to="s3"/>
 </org.wbsilva.mm.statemachine:SM>

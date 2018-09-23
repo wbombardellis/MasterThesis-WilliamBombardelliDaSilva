@@ -6,8 +6,8 @@
     xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar"
     xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore"
     name="Statemachine 2 Petrinet"
-    terminals="//@alphabet.3 //@alphabet.4 //@alphabet.5 //@alphabet.6 //@alphabet.7 //@alphabet.10 //@alphabet.11 //@alphabet.12 //@alphabet.13 //@alphabet.14 //@alphabet.15 //@alphabet.17 //@alphabet.18 //@alphabet.8 //@alphabet.9 //@alphabet.19 //@alphabet.16"
-    nonterminals="//@alphabet.0 //@alphabet.1 //@alphabet.2"
+    terminals="//@alphabet.4 //@alphabet.5 //@alphabet.6 //@alphabet.7 //@alphabet.8 //@alphabet.11 //@alphabet.12 //@alphabet.13 //@alphabet.14 //@alphabet.15 //@alphabet.16 //@alphabet.18 //@alphabet.19 //@alphabet.9 //@alphabet.10 //@alphabet.20 //@alphabet.17"
+    nonterminals="//@alphabet.0 //@alphabet.1 //@alphabet.2 //@alphabet.3"
     initial="//@alphabet.0">
   <alphabet
       name="S"/>
@@ -15,6 +15,8 @@
       name="Z"/>
   <alphabet
       name="T"/>
+  <alphabet
+      name="ST"/>
   <alphabet
       name="SM"/>
   <alphabet
@@ -160,11 +162,28 @@
           <label
               name="T"/>
         </vertices>
+        <vertices
+            id="ST1">
+          <label
+              name="ST"/>
+        </vertices>
         <edges
             from="T1"
             to="s1">
           <label
               name="from"/>
+        </edges>
+        <edges
+            from="ST1"
+            to="s1">
+          <label
+              name="from"/>
+        </edges>
+        <edges
+            from="ST1"
+            to="s1">
+          <label
+              name="to"/>
         </edges>
       </rhs>
       <embedding
@@ -200,6 +219,15 @@
               name="SM"/>
         </value>
       </embedding>
+      <embedding
+          key="ST1">
+        <value>
+          <edgeLabel
+              name="transitions"/>
+          <vertexLabels
+              name="SM"/>
+        </value>
+      </embedding>
     </source>
     <corr id="r1"
         name="r1">
@@ -219,6 +247,11 @@
             id="T12T1_">
           <label
               name="T"/>
+        </vertices>
+        <vertices
+            id="ST12ST1_">
+          <label
+              name="ST"/>
         </vertices>
       </rhs>
     </corr>
@@ -242,11 +275,28 @@
           <label
               name="T"/>
         </vertices>
+        <vertices
+            id="ST1_">
+          <label
+              name="ST"/>
+        </vertices>
         <edges
             from="T1_"
             to="p1">
           <label
               name="from"/>
+        </edges>
+        <edges
+            from="ST1_"
+            to="p1">
+          <label
+              name="from"/>
+        </edges>
+        <edges
+            from="ST1_"
+            to="p1">
+          <label
+              name="to"/>
         </edges>
       </rhs>
       <embedding
@@ -294,6 +344,21 @@
               name="PNGraph"/>
         </value>
       </embedding>
+      <embedding
+          key="ST1_">
+        <value>
+          <edgeLabel
+              name="transitions"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="arcs"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
+      </embedding>
     </target>
     <ms key="s12p1"
         value="s1"/>
@@ -301,12 +366,16 @@
         value="Z1"/>
     <ms key="T12T1_"
         value="T1"/>
+    <ms key="ST12ST1_"
+        value="ST1"/>
     <mt key="s12p1"
         value="p1"/>
     <mt key="Z12Z1_"
         value="Z1_"/>
     <mt key="T12T1_"
         value="T1_"/>
+    <mt key="ST12ST1_"
+        value="ST1_"/>
   </tripleRules>
   <tripleRules>
     <source
@@ -599,6 +668,229 @@
         id="r4"
         name="r4">
       <lhs name="T"/>
+      <rhs/>
+    </target>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r5"
+        name="r5">
+      <lhs name="ST"/>
+      <rhs>
+        <vertices
+            id="t5">
+          <label
+              name="Transition"/>
+        </vertices>
+        <vertices
+            id="ST5">
+          <label
+              name="ST"/>
+        </vertices>
+      </rhs>
+      <embedding
+          key="t5">
+        <value>
+          <edgeLabel
+              name="transitions"/>
+          <vertexLabels
+              name="SM"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="from"/>
+          <vertexLabels
+              name="State"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="to"/>
+          <vertexLabels
+              name="State"/>
+        </value>
+      </embedding>
+      <embedding
+          key="ST5">
+        <value>
+          <edgeLabel
+              name="transitions"/>
+          <vertexLabels
+              name="SM"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="from"/>
+          <vertexLabels
+              name="State"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="to"/>
+          <vertexLabels
+              name="State"/>
+        </value>
+      </embedding>
+    </source>
+    <corr id="r5"
+        name="r5">
+      <lhs name="ST"/>
+      <rhs>
+        <vertices
+            id="t52t5_">
+          <label
+              name="Transition2Transition"/>
+        </vertices>
+        <vertices
+            id="ST52ST5_">
+          <label
+              name="ST"/>
+        </vertices>
+        <vertices
+            id="_2aa5">
+          <label
+              name="Arc"/>
+        </vertices>
+        <vertices
+            id="_2ab5">
+          <label
+              name="Arc"/>
+        </vertices>
+      </rhs>
+    </corr>
+    <target
+        id="r5"
+        name="r5">
+      <lhs name="ST"/>
+      <rhs>
+        <vertices
+            id="t5_">
+          <label
+              name="Transition"/>
+        </vertices>
+        <vertices
+            id="ST5_">
+          <label
+              name="ST"/>
+        </vertices>
+        <vertices
+            id="aa5">
+          <label
+              name="Arc"/>
+        </vertices>
+        <vertices
+            id="ab5">
+          <label
+              name="Arc"/>
+        </vertices>
+        <edges
+            from="aa5"
+            to="t5_">
+          <label
+              name="from"/>
+        </edges>
+        <edges
+            from="ab5"
+            to="t5_">
+          <label
+              name="to"/>
+        </edges>
+      </rhs>
+      <embedding
+          key="aa5">
+        <value>
+          <edgeLabel
+              name="arcs"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="to"/>
+          <vertexLabels
+              name="Place"/>
+        </value>
+      </embedding>
+      <embedding
+          key="ab5">
+        <value>
+          <edgeLabel
+              name="arcs"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="from"/>
+          <vertexLabels
+              name="Place"/>
+        </value>
+      </embedding>
+      <embedding
+          key="t5_">
+        <value>
+          <edgeLabel
+              name="transitions"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
+      </embedding>
+      <embedding
+          key="ST5_">
+        <value>
+          <edgeLabel
+              name="transitions"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="arcs"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="from"/>
+          <vertexLabels
+              name="Place"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="to"/>
+          <vertexLabels
+              name="Place"/>
+        </value>
+      </embedding>
+    </target>
+    <ms key="t52t5_"
+        value="t5"/>
+    <ms key="ST52ST5_"
+        value="ST5"/>
+    <mt key="t52t5_"
+        value="t5_"/>
+    <mt key="_2aa5"
+        value="aa5"/>
+    <mt key="_2ab5"
+        value="ab5"/>
+    <mt key="ST52ST5_"
+        value="ST5_"/>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r6"
+        name="r6">
+      <lhs name="ST"/>
+      <rhs/>
+    </source>
+    <corr id="r6"
+        name="r6">
+      <lhs name="ST"/>
+      <rhs/>
+    </corr>
+    <target
+        id="r6"
+        name="r6">
+      <lhs name="ST"/>
       <rhs/>
     </target>
   </tripleRules>
