@@ -515,10 +515,10 @@ public class GraphgrammarUtil {
 				&& rr.getCorr().getLhs().getName().equals(rr.getTarget().getLhs().getName())))
 			return false;
 		
-		if (!isTotal(rr.getCorr().getRhs().getVertices(), rr.getMs()) ||
+		if (/*!isTotal(rr.getCorr().getRhs().getVertices(), rr.getMs()) ||*/
 			!isInjective(rr.getMs()) ||
 			!isSurjective(rr.getSource().getRhs().getVertices(), rr.getMs()) || 
-			!isTotal(rr.getCorr().getRhs().getVertices(), rr.getMt()) ||
+			/*!isTotal(rr.getCorr().getRhs().getVertices(), rr.getMt()) ||*/
 			!isInjective(rr.getMt()) ||
 			!isSurjective(rr.getTarget().getRhs().getVertices(), rr.getMt()))
 				return false;
@@ -553,7 +553,7 @@ public class GraphgrammarUtil {
 	}
 
 	/**
-	 * Checks if the triple rule {@code rr} is non-terminal consistent (NTC), supposing {@code rr} has bijective mappings 
+	 * Checks if the triple rule {@code rr} is non-terminal consistent (NTC) 
 	 * @param nt				The non terminal symbols of the grammar
 	 * @param rr				The triple rule to test
 	 * @return					True iff {@code rr} is NTC
@@ -561,8 +561,8 @@ public class GraphgrammarUtil {
 	private static boolean isNonTerminalConsistent(final List<Symbol> nt, final TripleRule rr) {
 		//If any mapping to a non-terminal has different names, then it is not NTC 
 		if (rr.getCorr().getRhs().getVertices().stream()
-				.anyMatch(c -> (contains(nt, rr.getMs().get(c).getLabel()) && !rr.getMs().get(c).getLabel().getName().equals(c.getLabel().getName())) 
-							|| (contains(nt, rr.getMt().get(c).getLabel()) && !rr.getMt().get(c).getLabel().getName().equals(c.getLabel().getName()))))
+				.anyMatch(c -> (rr.getMs().get(c) != null && contains(nt, rr.getMs().get(c).getLabel()) && !rr.getMs().get(c).getLabel().getName().equals(c.getLabel().getName())) 
+							|| (rr.getMt().get(c) != null && contains(nt, rr.getMt().get(c).getLabel()) && !rr.getMt().get(c).getLabel().getName().equals(c.getLabel().getName()))))
 			return false;
 		
 		return true;
@@ -609,10 +609,10 @@ public class GraphgrammarUtil {
 		if (!isValidGraph(tripleGraph.getCorr()) || !isValidGraph(tripleGraph.getSource()) || !isValidGraph(tripleGraph.getTarget()))
 			return false;
 		
-		if (!isTotal(tripleGraph.getCorr().getVertices(), tripleGraph.getMs()) ||
+		if (/*!isTotal(tripleGraph.getCorr().getVertices(), tripleGraph.getMs()) ||*/
 				!isInjective(tripleGraph.getMs()) ||
 				!isSurjective(tripleGraph.getSource().getVertices(), tripleGraph.getMs()) || 
-				!isTotal(tripleGraph.getCorr().getVertices(),tripleGraph.getMt()) ||
+				/*!isTotal(tripleGraph.getCorr().getVertices(),tripleGraph.getMt()) ||*/
 				!isInjective(tripleGraph.getMt()) ||
 				!isSurjective(tripleGraph.getTarget().getVertices(), tripleGraph.getMt()))
 				return false;
