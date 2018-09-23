@@ -349,25 +349,27 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 
 			//Get vertex object of the just added output part
 			final Vertex outputV = ruleOutputMorphism.get(corrV);
-			assert outputV != null;
-			assert outputRule.getRhs().getVertices().contains(outputV);
-			final Vertex newOutputV = outputUnifier.get(outputV);
-			assert newOutputV != null;
-			assert outputGraph.getVertices().contains(newOutputV);
+			if (outputV != null) {
+				assert outputRule.getRhs().getVertices().contains(outputV);
+				final Vertex newOutputV = outputUnifier.get(outputV);
+				assert newOutputV != null;
+				assert outputGraph.getVertices().contains(newOutputV);
+				
+				outputMorphism.put(newCorrV, newOutputV);
+			}
 
 			//Get vertex object of the input part
 			final Vertex inputV = ruleInputMorphism.get(corrV);
-			assert inputV != null;
-			assert forward ? tripleRule.getSource().getRhs().getVertices().contains(inputV)
-					: tripleRule.getTarget().getRhs().getVertices().contains(inputV);
-
-			final Vertex newInputV = inputUnifier.get(inputRule.getRhs().getVertices().stream()
-					.filter(w -> w.getId().equals(inputV.getId())).findAny().orElse(null));
-			assert newInputV != null;
-			assert inputGraph.getVertices().contains(newInputV);
-
-			inputMorphism.put(newCorrV, newInputV);
-			outputMorphism.put(newCorrV, newOutputV);
+			if (inputV != null) {
+				assert forward ? tripleRule.getSource().getRhs().getVertices().contains(inputV)
+						: tripleRule.getTarget().getRhs().getVertices().contains(inputV);
+				final Vertex newInputV = inputUnifier.get(inputRule.getRhs().getVertices().stream()
+						.filter(w -> w.getId().equals(inputV.getId())).findAny().orElse(null));
+				assert newInputV != null;
+				assert inputGraph.getVertices().contains(newInputV);
+				
+				inputMorphism.put(newCorrV, newInputV);
+			}
 		}
 		assert GraphgrammarUtil.isValidTripleGraph(tripleGraph);
 
