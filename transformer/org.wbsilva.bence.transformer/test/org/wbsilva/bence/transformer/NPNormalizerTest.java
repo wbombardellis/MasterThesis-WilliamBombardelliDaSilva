@@ -18,6 +18,8 @@ import org.wbsilva.bence.graphgrammar.Rule;
 import org.wbsilva.bence.graphgrammar.Symbol;
 import org.wbsilva.bence.graphgrammar.SymbolSymbolsPair;
 import org.wbsilva.bence.graphgrammar.Vertex;
+import org.wbsilva.bence.graphgrammar.util.SymbolMap;
+import org.wbsilva.bence.graphgrammar.util.SymbolSet;
 
 class NPNormalizerTest {
 
@@ -28,6 +30,7 @@ class NPNormalizerTest {
 	private static Symbol lm;
 	private static Symbol l1;
 	private static Symbol lA_n1;
+	private static Symbol lB_m2_1n;
 	private static Vertex v0;
 	private static Vertex v1;
 	private static Edge e0_1;
@@ -48,7 +51,7 @@ class NPNormalizerTest {
 	private static Rule r3;
 	private static Symbol lC;
 	private static Edge e4_3;
-	private static SymbolSymbolsPair ssP2_n;
+	private static SymbolSymbolsPair ssP2m;
 	private static Symbol lB_n1;
 	private static SymbolSymbolsPair ssP1_n;
 	private static Vertex v6;
@@ -61,6 +64,7 @@ class NPNormalizerTest {
 	private static SymbolSymbolsPair ssP6_m;
 	private static SymbolSymbolsPair ssP7_m;
 	private static Grammar gg0;
+	private static Symbol lC_m1;
 	
 	@BeforeAll
 	static void init() {
@@ -88,6 +92,14 @@ class NPNormalizerTest {
 		lB_m2.setName("B");
 		lB_m2.getSuperscript().add("2");
 		lB_m2.getSubscript().add("m");
+		
+		lB_m2_1n = GraphgrammarFactory.eINSTANCE.createSymbol();
+		lB_m2_1n.setName("B");
+		lB_m2_1n.getSuperscript().add("2");
+		lB_m2_1n.getSubscript().add("m");
+		lB_m2_1n.getSuperscript().add("1");
+		lB_m2_1n.getSubscript().add("n");
+		
 		lB = GraphgrammarFactory.eINSTANCE.createSymbol();
 		lB.setName("B");
 		lC = GraphgrammarFactory.eINSTANCE.createSymbol();
@@ -96,6 +108,11 @@ class NPNormalizerTest {
 		lD.setName("D");
 		lE = GraphgrammarFactory.eINSTANCE.createSymbol();
 		lE.setName("E");
+		
+		lC_m1 = GraphgrammarFactory.eINSTANCE.createSymbol();
+		lC_m1.setName("C");
+		lC_m1.getSuperscript().add("1");
+		lC_m1.getSubscript().add("m");
 		
 		v0 = GraphgrammarFactory.eINSTANCE.createVertex();
 		v0.setId("v0");
@@ -163,10 +180,10 @@ class NPNormalizerTest {
 		ssP1_n = GraphgrammarFactory.eINSTANCE.createSymbolSymbolsPair();
 		ssP1_n.setEdgeLabel(EcoreUtil.copy(l1));
 		ssP1_n.getVertexLabels().add(EcoreUtil.copy(ln));
-		ssP2_n = GraphgrammarFactory.eINSTANCE.createSymbolSymbolsPair();
-		ssP2_n.setEdgeLabel(EcoreUtil.copy(l2));
-		ssP2_n.getVertexLabels().add(EcoreUtil.copy(ln));
-		r2.getEmbedding().put(v4, new BasicEList<>(Arrays.asList(ssP1_n, ssP2_n)));
+		ssP2m = GraphgrammarFactory.eINSTANCE.createSymbolSymbolsPair();
+		ssP2m.setEdgeLabel(EcoreUtil.copy(l2));
+		ssP2m.getVertexLabels().add(EcoreUtil.copy(lm));
+		r2.getEmbedding().put(v4, new BasicEList<>(Arrays.asList(ssP1_n, ssP2m)));
 		
 		//
 		v5 = GraphgrammarFactory.eINSTANCE.createVertex();
@@ -212,6 +229,8 @@ class NPNormalizerTest {
 		gg0.getAlphabet().add(lA);
 		gg0.getAlphabet().add(lB);
 		gg0.getAlphabet().add(lC);
+		gg0.getAlphabet().add(lD);
+		gg0.getAlphabet().add(lE);
 		gg0.getAlphabet().add(ln);
 		gg0.getAlphabet().add(lm);
 		gg0.getAlphabet().add(l1);
@@ -220,6 +239,8 @@ class NPNormalizerTest {
 		gg0.getNonterminals().add(lA);
 		gg0.getNonterminals().add(lB);
 		gg0.getNonterminals().add(lC);
+		gg0.getNonterminals().add(lD);
+		gg0.getNonterminals().add(lE);
 		gg0.getTerminals().add(ln);
 		gg0.getTerminals().add(lm);
 		gg0.getTerminals().add(l1);
@@ -229,6 +250,7 @@ class NPNormalizerTest {
 		gg0.getRules().add(r1);
 		gg0.getRules().add(r2);
 		gg0.getRules().add(r3);
+		gg0.getRules().add(r4);
 	}
 	
 	@Test
@@ -359,4 +381,236 @@ class NPNormalizerTest {
 		assertTrue(nr4.getRhs().getVertices().contains(entry.getValue().get("v7")));
 	}
 	
+	
+	//////////////
+	
+	@Test
+	void testFixHostRuleWithOneEdge() {
+		Rule cr0 = EcoreUtil.copy(r0);
+		SymbolMap<SymbolSet> c0 = new SymbolMap<>();
+		c0.put(l1, new SymbolSet(Arrays.asList(ln)));
+		
+		Entry<Rule, Map<String, Vertex>> entry = npn.fixHostRule(r0, v1, c0);
+		
+		assertTrue(EcoreUtil.equals(r0, cr0));
+		Rule mr0 = entry.getKey();
+		assertTrue(mr0.getLhs().equivalates(r0.getLhs()));
+		assertEquals(2, mr0.getRhs().getVertices().size());
+		assertEquals(0, mr0.getRhs().getEdges().size());
+		assertEquals(0, mr0.getEmbedding().size());
+		assertTrue(mr0.getRhs().getVertices().stream()
+				.allMatch(v -> v.getLabel().equivalates(lA_n1) || v.getLabel().equivalates(ln)));
+		
+		assertEquals(2, entry.getValue().size());
+		assertTrue(mr0.getRhs().getVertices().contains(entry.getValue().get("v0")));
+		assertTrue(mr0.getRhs().getVertices().contains(entry.getValue().get("v1")));
+	}
+	
+	@Test
+	void testFixGuestRuleWithOneEdge(){
+		Rule cr1 = EcoreUtil.copy(r1);
+		SymbolMap<SymbolSet> c0 = new SymbolMap<>();
+		c0.put(l1, new SymbolSet(Arrays.asList(ln)));
+		
+		Entry<Rule, Map<String, Vertex>> entry = npn.fixGuestRule(r1, c0);
+		
+		Rule nr1 = entry.getKey();
+		assertTrue(EcoreUtil.equals(r1, cr1));
+		assertTrue(nr1.getLhs().getName().equals("A"));
+		assertTrue(nr1.getLhs().getSuperscript().get(0).equals("1"));
+		assertTrue(nr1.getLhs().getSubscript().get(0).equals("n"));
+		assertEquals(1, nr1.getRhs().getVertices().size());
+		assertEquals(0, nr1.getRhs().getEdges().size());
+		assertEquals(0, nr1.getEmbedding().size());
+		assertTrue(nr1.getRhs().getVertices().get(0).getLabel().equivalates(lm));
+		
+		assertEquals(1, entry.getValue().size());
+		assertTrue(nr1.getRhs().getVertices().contains(entry.getValue().get("v2")));
+	}
+	
+	@Test
+	void testFixHostRuleWithEmbedding() {
+		Rule cr2 = EcoreUtil.copy(r2);
+		SymbolMap<SymbolSet> c0 = new SymbolMap<>();
+		c0.put(l1, new SymbolSet(Arrays.asList(ln)));
+		
+		Entry<Rule, Map<String, Vertex>> entry = npn.fixHostRule(r2, v4, c0);
+		
+		Rule mr2 = entry.getKey();
+		assertTrue(EcoreUtil.equals(r2, cr2));
+		assertTrue(mr2.getLhs().equivalates(r2.getLhs()));
+		assertEquals(2, mr2.getRhs().getVertices().size());
+		assertEquals(2, mr2.getRhs().getEdges().size());
+		assertEquals(1, mr2.getEmbedding().size());
+		assertTrue(mr2.getEmbedding().entrySet().stream()
+							.allMatch(e -> e.getValue().size() == 1 
+									&& e.getValue().get(0).getEdgeLabel().equivalates(l2)
+									&& e.getValue().get(0).getVertexLabels().size() == 1
+									&& e.getValue().get(0).getVertexLabels().get(0).equivalates(lm)));
+		assertTrue(mr2.getRhs().getVertices().stream()
+				.allMatch(v -> v.getLabel().equivalates(lB_n1) || v.getLabel().equivalates(lm)));
+		
+		assertEquals(2, entry.getValue().size());
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v3")));
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v4")));
+	}
+	
+	@Test
+	void testFixGuestRuleWithEmbedding() {
+		Rule cr3 = EcoreUtil.copy(r3);
+		SymbolMap<SymbolSet> c0 = new SymbolMap<>();
+		c0.put(l1, new SymbolSet(Arrays.asList(ln)));
+		
+		Entry<Rule, Map<String, Vertex>> entry = npn.fixGuestRule(r3, c0);
+		
+		Rule nr3 = entry.getKey(); 
+		assertTrue(EcoreUtil.equals(r3, cr3));
+		assertTrue(nr3.getLhs().getName().equals("B"));
+		assertTrue(nr3.getLhs().getSuperscript().get(0).equals("1"));
+		assertTrue(nr3.getLhs().getSubscript().get(0).equals("n"));
+		assertEquals(1, nr3.getRhs().getVertices().size());
+		assertEquals(0, nr3.getRhs().getEdges().size());
+		assertEquals(0, nr3.getEmbedding().size());
+		assertTrue(nr3.getRhs().getVertices().get(0).getLabel().equivalates(lC));
+		
+		assertEquals(1, entry.getValue().size());
+		assertTrue(nr3.getRhs().getVertices().contains(entry.getValue().get("v5")));
+	}
+	
+	@Test
+	void testFixHostRuleWithTwoEdges() {
+		Rule cr2 = EcoreUtil.copy(r2);
+		SymbolMap<SymbolSet> c0 = new SymbolMap<>();
+		c0.put(l2, new SymbolSet(Arrays.asList(lm)));
+		
+		Entry<Rule, Map<String, Vertex>> entry = npn.fixHostRule(r2, v4, c0);
+		
+		Rule mr2 = entry.getKey();
+		assertTrue(EcoreUtil.equals(r2, cr2));
+		assertTrue(mr2.getLhs().equivalates(r2.getLhs()));
+		assertEquals(2, mr2.getRhs().getVertices().size());
+		assertEquals(1, mr2.getRhs().getEdges().size());
+		assertEquals(1, mr2.getEmbedding().size());
+		assertEquals(1, mr2.getEmbedding().entrySet().stream()
+							.map(e -> e.getKey().getId())
+							.distinct()
+							.count());
+		assertTrue(mr2.getEmbedding().entrySet().stream()
+				.allMatch(e -> e.getValue().size() == 1 
+						&& e.getValue().get(0).getEdgeLabel().equivalates(l1)
+						&& e.getValue().get(0).getVertexLabels().size() == 1
+						&& e.getValue().get(0).getVertexLabels().get(0).equivalates(ln)));
+		
+		assertTrue(mr2.getRhs().getVertices().stream()
+				.allMatch(v -> v.getLabel().equivalates(lB_m2) || v.getLabel().equivalates(lm)));
+		
+		assertEquals(2, entry.getValue().size());
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v3")));
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v4")));
+	}
+
+	@Test
+	void testFixGuestRuleWithTwoEdges() {
+		Rule cr2 = EcoreUtil.copy(r2);
+		SymbolMap<SymbolSet> c0 = new SymbolMap<>();
+		c0.put(l2, new SymbolSet(Arrays.asList(lm)));
+		Entry<Rule, Map<String, Vertex>> entry = npn.fixGuestRule(r2, c0);
+		
+		Rule nr4 = entry.getKey();
+		assertTrue(EcoreUtil.equals(r2, cr2));
+		assertTrue(nr4.getLhs().getName().equals("A"));
+		assertTrue(nr4.getLhs().getSubscript().get(0).equals("m"));
+		assertTrue(nr4.getLhs().getSuperscript().get(0).equals("2"));
+		assertEquals(2, nr4.getRhs().getVertices().size());
+		assertEquals(2, nr4.getRhs().getEdges().size());
+		assertEquals(1, nr4.getEmbedding().entrySet().stream()
+							.filter(e -> !e.getValue().isEmpty())
+							.map(e -> e.getKey().getId())
+							.distinct()
+							.count());
+		assertTrue(nr4.getEmbedding().entrySet().stream()
+							.allMatch(e -> e.getValue().size() <= 1));
+		assertTrue(nr4.getEmbedding().entrySet().stream()
+							.allMatch(e -> e.getValue().stream()
+									.allMatch(ssP -> !ssP.getEdgeLabel().equivalates(l2))));
+		assertTrue(nr4.getRhs().getVertices().stream()
+							.allMatch(v -> v.getLabel().equivalates(lB) || v.getLabel().equivalates(lm)));
+		
+		assertEquals(2, entry.getValue().size());
+		assertTrue(nr4.getRhs().getVertices().contains(entry.getValue().get("v3")));
+		assertTrue(nr4.getRhs().getVertices().contains(entry.getValue().get("v4")));
+	}
+	
+	@Test
+	void testFixHostRuleWithTwoEdgesTwoContexts() {
+		Rule cr2 = EcoreUtil.copy(r2);
+		SymbolMap<SymbolSet> c0 = new SymbolMap<>();
+		c0.put(l2, new SymbolSet(Arrays.asList(lm)));
+		c0.put(l1, new SymbolSet(Arrays.asList(ln)));
+		
+		Entry<Rule, Map<String, Vertex>> entry = npn.fixHostRule(r2, v4, c0);
+		
+		Rule mr2 = entry.getKey();
+		assertTrue(EcoreUtil.equals(r2, cr2));
+		assertTrue(mr2.getLhs().equivalates(r2.getLhs()));
+		assertEquals(2, mr2.getRhs().getVertices().size());
+		assertEquals(1, mr2.getRhs().getEdges().size());
+		assertEquals(0, mr2.getEmbedding().size());
+		
+		assertTrue(mr2.getRhs().getVertices().stream()
+				.allMatch(v -> v.getLabel().equivalates(lB_m2_1n) || v.getLabel().equivalates(lm)));
+		
+		assertEquals(2, entry.getValue().size());
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v3")));
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v4")));
+	}
+	
+	@Test
+	void testFixGuestRuleWithTwoEdgesTwoContexts() {
+		Rule cr2 = EcoreUtil.copy(r2);
+		SymbolMap<SymbolSet> c0 = new SymbolMap<>();
+		c0.put(l2, new SymbolSet(Arrays.asList(lm)));
+		c0.put(l1, new SymbolSet(Arrays.asList(ln)));
+		
+		Entry<Rule, Map<String, Vertex>> entry = npn.fixGuestRule(r2, c0);
+		
+		Rule mr2 = entry.getKey();
+		assertTrue(EcoreUtil.equals(r2, cr2));
+		assertTrue(mr2.getLhs().getName().equals("A"));
+		assertTrue(mr2.getLhs().getSubscript().contains("m"));
+		assertTrue(mr2.getLhs().getSuperscript().contains("2"));
+		assertTrue(mr2.getLhs().getSubscript().contains("n"));
+		assertTrue(mr2.getLhs().getSuperscript().contains("1"));
+		assertEquals(2, mr2.getRhs().getVertices().size());
+		assertEquals(2, mr2.getRhs().getEdges().size());
+		assertEquals(0, mr2.getEmbedding().size());
+		
+		assertTrue(mr2.getRhs().getVertices().stream()
+				.allMatch(v -> v.getLabel().equivalates(lB) || v.getLabel().equivalates(lm)));
+		
+		assertEquals(2, entry.getValue().size());
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v3")));
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v4")));
+	}
+	
+	@Test
+	void testFixHostRuleNoChange() {
+		Rule cr3 = EcoreUtil.copy(r3);
+		SymbolMap<SymbolSet> c0 = new SymbolMap<>();
+		c0.put(l1, new SymbolSet(Arrays.asList(lm)));
+		
+		Entry<Rule, Map<String, Vertex>> entry = npn.fixHostRule(r3, v5, c0);
+		
+		Rule mr2 = entry.getKey();
+		assertTrue(EcoreUtil.equals(r3, cr3));
+		assertTrue(mr2.getLhs().equivalates(r3.getLhs()));
+		assertEquals(1, mr2.getRhs().getVertices().size());
+		assertEquals(0, mr2.getRhs().getEdges().size());
+		assertEquals(0, mr2.getEmbedding().size());
+		
+		assertTrue(mr2.getRhs().getVertices().get(0).getLabel().equivalates(lC_m1));
+		
+		assertEquals(1, entry.getValue().size());
+		assertTrue(mr2.getRhs().getVertices().contains(entry.getValue().get("v5")));
+	}
 }

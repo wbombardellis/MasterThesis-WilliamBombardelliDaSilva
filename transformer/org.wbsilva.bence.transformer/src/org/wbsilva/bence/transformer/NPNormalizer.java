@@ -460,6 +460,7 @@ public class NPNormalizer {
 		//Remove the embeddings for this context
 		final EList<SymbolSymbolsPair> embedding = modifiedRule.getEmbedding().get(v);
 		if (embedding != null) {
+			final HashSet<SymbolSymbolsPair> ssPRemoval = new HashSet<>();
 			for (SymbolSymbolsPair embeds : embedding) {
 				//If it connects to one of the missing contexts	
 				final SymbolSet missingLabels = missingContext.get(embeds.getEdgeLabel());
@@ -469,8 +470,13 @@ public class NPNormalizer {
 					for (Symbol ignoredLabel : missIntersection) {
 						embeds.getVertexLabels().removeIf(l -> l.equivalates(ignoredLabel));
 					}
+					if (embeds.getVertexLabels().isEmpty())
+						ssPRemoval.add(embeds);
 				}
 			}
+			ssPRemoval.forEach(ssP -> embedding.remove(ssP));
+			if (embedding.isEmpty())
+				modifiedRule.getEmbedding().removeKey(v);
 		}
 		
 		//For each missing context
