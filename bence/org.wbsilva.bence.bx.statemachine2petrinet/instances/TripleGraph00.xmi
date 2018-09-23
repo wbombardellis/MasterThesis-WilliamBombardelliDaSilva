@@ -2,68 +2,204 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar">
   <org.wbsilva.bence.graphgrammar:TripleGraph>
     <source>
-      <vertices id="_KpvEoL86EeiONt3kg_Ih3g">
+      <vertices id="_SAJdQL9VEeiBwq7kvv4wtA">
         <label name="SM"/>
       </vertices>
-      <vertices id="_KpvEob86EeiONt3kg_Ih3g">
+      <vertices id="_SAKEUr9VEeiBwq7kvv4wtA">
         <label name="State"/>
       </vertices>
-      <vertices id="_KpvrsL86EeiONt3kg_Ih3g">
+      <vertices id="_SAKEUb9VEeiBwq7kvv4wtA">
         <label name="State"/>
       </vertices>
-      <edges from="_KpvEoL86EeiONt3kg_Ih3g" to="_KpvEob86EeiONt3kg_Ih3g">
+      <vertices id="_SAKEVL9VEeiBwq7kvv4wtA">
+        <label name="Transition"/>
+      </vertices>
+      <vertices id="_SAKEUL9VEeiBwq7kvv4wtA">
+        <label name="State"/>
+      </vertices>
+      <vertices id="_SAKEU79VEeiBwq7kvv4wtA">
+        <label name="Transition"/>
+      </vertices>
+      <edges from="_SAJdQL9VEeiBwq7kvv4wtA" to="_SAKEUr9VEeiBwq7kvv4wtA">
         <label name="states"/>
       </edges>
-      <edges from="_KpvEoL86EeiONt3kg_Ih3g" to="_KpvrsL86EeiONt3kg_Ih3g">
+      <edges from="_SAJdQL9VEeiBwq7kvv4wtA" to="_SAKEUb9VEeiBwq7kvv4wtA">
         <label name="states"/>
+      </edges>
+      <edges from="_SAJdQL9VEeiBwq7kvv4wtA" to="_SAKEVL9VEeiBwq7kvv4wtA">
+        <label name="transitions"/>
+      </edges>
+      <edges from="_SAKEVL9VEeiBwq7kvv4wtA" to="_SAKEUb9VEeiBwq7kvv4wtA">
+        <label name="from"/>
+      </edges>
+      <edges from="_SAJdQL9VEeiBwq7kvv4wtA" to="_SAKEUL9VEeiBwq7kvv4wtA">
+        <label name="states"/>
+      </edges>
+      <edges from="_SAKEU79VEeiBwq7kvv4wtA" to="_SAKEUL9VEeiBwq7kvv4wtA">
+        <label name="from"/>
+      </edges>
+      <edges from="_SAJdQL9VEeiBwq7kvv4wtA" to="_SAKEU79VEeiBwq7kvv4wtA">
+        <label name="transitions"/>
+      </edges>
+      <edges from="_SAKEVL9VEeiBwq7kvv4wtA" to="_SAKEUr9VEeiBwq7kvv4wtA">
+        <label name="to"/>
+      </edges>
+      <edges from="_SAKEU79VEeiBwq7kvv4wtA" to="_SAKEUb9VEeiBwq7kvv4wtA">
+        <label name="to"/>
       </edges>
     </source>
     <corr>
-      <vertices id="_KzSpQr86EeiONt3kg_Ih3g">
+      <vertices id="_SYLiwr9VEeiBwq7kvv4wtA">
         <label name="SM2PNGraph"/>
       </vertices>
-      <vertices id="_KzlkML86EeiONt3kg_Ih3g">
+      <vertices id="_SYSQcr9VEeiBwq7kvv4wtA">
         <label name="State2Place"/>
       </vertices>
-      <vertices id="_KzuuI786EeiONt3kg_Ih3g">
+      <vertices id="_SYV61L9VEeiBwq7kvv4wtA">
         <label name="State2Place"/>
+      </vertices>
+      <vertices id="_SYXwBb9VEeiBwq7kvv4wtA">
+        <label name="Transition2Transition"/>
+      </vertices>
+      <vertices id="_SYXwBr9VEeiBwq7kvv4wtA">
+        <label name="Arc"/>
+      </vertices>
+      <vertices id="_SYXwB79VEeiBwq7kvv4wtA">
+        <label name="Arc"/>
+      </vertices>
+      <vertices id="_SYcogL9VEeiBwq7kvv4wtA">
+        <label name="State2Place"/>
+      </vertices>
+      <vertices id="_SYg5-b9VEeiBwq7kvv4wtA">
+        <label name="Arc"/>
+      </vertices>
+      <vertices id="_SYg5-r9VEeiBwq7kvv4wtA">
+        <label name="Arc"/>
+      </vertices>
+      <vertices id="_SYg5-79VEeiBwq7kvv4wtA">
+        <label name="Transition2Transition"/>
       </vertices>
     </corr>
     <target>
-      <vertices id="_KzSpQb86EeiONt3kg_Ih3g">
+      <vertices id="_SYLiwL9VEeiBwq7kvv4wtA">
         <label name="PNGraph"/>
       </vertices>
-      <vertices id="_Kzk9I786EeiONt3kg_Ih3g">
+      <vertices id="_SYRpZb9VEeiBwq7kvv4wtA">
         <label name="Place"/>
       </vertices>
-      <vertices id="_KzuuIr86EeiONt3kg_Ih3g">
+      <vertices id="_SYV60L9VEeiBwq7kvv4wtA">
         <label name="Place"/>
       </vertices>
-      <edges from="_KzSpQb86EeiONt3kg_Ih3g" to="_Kzk9I786EeiONt3kg_Ih3g">
+      <vertices id="_SYXwAL9VEeiBwq7kvv4wtA">
+        <label name="Transition"/>
+      </vertices>
+      <vertices id="_SYXwAb9VEeiBwq7kvv4wtA">
+        <label name="Arc"/>
+      </vertices>
+      <vertices id="_SYXwAr9VEeiBwq7kvv4wtA">
+        <label name="Arc"/>
+      </vertices>
+      <vertices id="_SYcBdL9VEeiBwq7kvv4wtA">
+        <label name="Place"/>
+      </vertices>
+      <vertices id="_SYg5879VEeiBwq7kvv4wtA">
+        <label name="Arc"/>
+      </vertices>
+      <vertices id="_SYg59L9VEeiBwq7kvv4wtA">
+        <label name="Transition"/>
+      </vertices>
+      <vertices id="_SYg59b9VEeiBwq7kvv4wtA">
+        <label name="Arc"/>
+      </vertices>
+      <edges from="_SYLiwL9VEeiBwq7kvv4wtA" to="_SYRpZb9VEeiBwq7kvv4wtA">
         <label name="places"/>
       </edges>
-      <edges from="_KzSpQb86EeiONt3kg_Ih3g" to="_KzuuIr86EeiONt3kg_Ih3g">
+      <edges from="_SYLiwL9VEeiBwq7kvv4wtA" to="_SYV60L9VEeiBwq7kvv4wtA">
         <label name="places"/>
+      </edges>
+      <edges from="_SYXwAr9VEeiBwq7kvv4wtA" to="_SYXwAL9VEeiBwq7kvv4wtA">
+        <label name="to"/>
+      </edges>
+      <edges from="_SYXwAb9VEeiBwq7kvv4wtA" to="_SYXwAL9VEeiBwq7kvv4wtA">
+        <label name="from"/>
+      </edges>
+      <edges from="_SYXwAr9VEeiBwq7kvv4wtA" to="_SYV60L9VEeiBwq7kvv4wtA">
+        <label name="from"/>
+      </edges>
+      <edges from="_SYLiwL9VEeiBwq7kvv4wtA" to="_SYXwAr9VEeiBwq7kvv4wtA">
+        <label name="arcs"/>
+      </edges>
+      <edges from="_SYLiwL9VEeiBwq7kvv4wtA" to="_SYXwAb9VEeiBwq7kvv4wtA">
+        <label name="arcs"/>
+      </edges>
+      <edges from="_SYLiwL9VEeiBwq7kvv4wtA" to="_SYXwAL9VEeiBwq7kvv4wtA">
+        <label name="transitions"/>
+      </edges>
+      <edges from="_SYLiwL9VEeiBwq7kvv4wtA" to="_SYcBdL9VEeiBwq7kvv4wtA">
+        <label name="places"/>
+      </edges>
+      <edges from="_SYg59b9VEeiBwq7kvv4wtA" to="_SYg59L9VEeiBwq7kvv4wtA">
+        <label name="from"/>
+      </edges>
+      <edges from="_SYg5879VEeiBwq7kvv4wtA" to="_SYg59L9VEeiBwq7kvv4wtA">
+        <label name="to"/>
+      </edges>
+      <edges from="_SYLiwL9VEeiBwq7kvv4wtA" to="_SYg59L9VEeiBwq7kvv4wtA">
+        <label name="transitions"/>
+      </edges>
+      <edges from="_SYLiwL9VEeiBwq7kvv4wtA" to="_SYg59b9VEeiBwq7kvv4wtA">
+        <label name="arcs"/>
+      </edges>
+      <edges from="_SYLiwL9VEeiBwq7kvv4wtA" to="_SYg5879VEeiBwq7kvv4wtA">
+        <label name="arcs"/>
+      </edges>
+      <edges from="_SYg5879VEeiBwq7kvv4wtA" to="_SYcBdL9VEeiBwq7kvv4wtA">
+        <label name="from"/>
+      </edges>
+      <edges from="_SYXwAb9VEeiBwq7kvv4wtA" to="_SYRpZb9VEeiBwq7kvv4wtA">
+        <label name="to"/>
+      </edges>
+      <edges from="_SYg59b9VEeiBwq7kvv4wtA" to="_SYV60L9VEeiBwq7kvv4wtA">
+        <label name="to"/>
       </edges>
     </target>
-    <ms key="_KzSpQr86EeiONt3kg_Ih3g" value="_KpvEoL86EeiONt3kg_Ih3g"/>
-    <ms key="_KzlkML86EeiONt3kg_Ih3g" value="_KpvEob86EeiONt3kg_Ih3g"/>
-    <ms key="_KzuuI786EeiONt3kg_Ih3g" value="_KpvrsL86EeiONt3kg_Ih3g"/>
-    <mt key="_KzSpQr86EeiONt3kg_Ih3g" value="_KzSpQb86EeiONt3kg_Ih3g"/>
-    <mt key="_KzlkML86EeiONt3kg_Ih3g" value="_Kzk9I786EeiONt3kg_Ih3g"/>
-    <mt key="_KzuuI786EeiONt3kg_Ih3g" value="_KzuuIr86EeiONt3kg_Ih3g"/>
+    <ms key="_SYLiwr9VEeiBwq7kvv4wtA" value="_SAJdQL9VEeiBwq7kvv4wtA"/>
+    <ms key="_SYSQcr9VEeiBwq7kvv4wtA" value="_SAKEUr9VEeiBwq7kvv4wtA"/>
+    <ms key="_SYV61L9VEeiBwq7kvv4wtA" value="_SAKEUb9VEeiBwq7kvv4wtA"/>
+    <ms key="_SYXwBb9VEeiBwq7kvv4wtA" value="_SAKEVL9VEeiBwq7kvv4wtA"/>
+    <ms key="_SYcogL9VEeiBwq7kvv4wtA" value="_SAKEUL9VEeiBwq7kvv4wtA"/>
+    <ms key="_SYg5-79VEeiBwq7kvv4wtA" value="_SAKEU79VEeiBwq7kvv4wtA"/>
+    <mt key="_SYLiwr9VEeiBwq7kvv4wtA" value="_SYLiwL9VEeiBwq7kvv4wtA"/>
+    <mt key="_SYSQcr9VEeiBwq7kvv4wtA" value="_SYRpZb9VEeiBwq7kvv4wtA"/>
+    <mt key="_SYV61L9VEeiBwq7kvv4wtA" value="_SYV60L9VEeiBwq7kvv4wtA"/>
+    <mt key="_SYXwBb9VEeiBwq7kvv4wtA" value="_SYXwAL9VEeiBwq7kvv4wtA"/>
+    <mt key="_SYXwB79VEeiBwq7kvv4wtA" value="_SYXwAr9VEeiBwq7kvv4wtA"/>
+    <mt key="_SYXwBr9VEeiBwq7kvv4wtA" value="_SYXwAb9VEeiBwq7kvv4wtA"/>
+    <mt key="_SYcogL9VEeiBwq7kvv4wtA" value="_SYcBdL9VEeiBwq7kvv4wtA"/>
+    <mt key="_SYg5-79VEeiBwq7kvv4wtA" value="_SYg59L9VEeiBwq7kvv4wtA"/>
+    <mt key="_SYg5-b9VEeiBwq7kvv4wtA" value="_SYg5879VEeiBwq7kvv4wtA"/>
+    <mt key="_SYg5-r9VEeiBwq7kvv4wtA" value="_SYg59b9VEeiBwq7kvv4wtA"/>
   </org.wbsilva.bence.graphgrammar:TripleGraph>
   <org.wbsilva.bence.graphgrammar:ParsingTree>
-    <zoneVertex id="_KyKn4L86EeiONt3kg_Ih3g">
+    <zoneVertex id="_SXp-Ub9VEeiBwq7kvv4wtA">
       <label name="S"/>
-      <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+      <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+        <label name="Transition"/>
+      </vertices>
+      <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
         <label name="State"/>
       </vertices>
-      <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
-        <label name="State"/>
-      </vertices>
-      <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+      <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
         <label name="SM"/>
+      </vertices>
+      <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
+        <label name="State"/>
+      </vertices>
+      <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+        <label name="Transition"/>
+      </vertices>
+      <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+        <label name="State"/>
       </vertices>
     </zoneVertex>
     <derivationStep>
@@ -79,208 +215,1079 @@
           <edges from="sm0" to="Z0">
             <label name="states"/>
           </edges>
+          <edges from="sm0" to="Z0">
+            <label name="transitions"/>
+          </edges>
         </rhs>
       </rule>
-      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KyKn4L86EeiONt3kg_Ih3g">
+      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SXp-Ub9VEeiBwq7kvv4wtA">
         <label name="S"/>
-        <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+        <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+          <label name="Transition"/>
+        </vertices>
+        <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
           <label name="State"/>
         </vertices>
-        <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
-          <label name="State"/>
-        </vertices>
-        <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+        <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
           <label name="SM"/>
+        </vertices>
+        <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
+          <label name="State"/>
+        </vertices>
+        <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+          <label name="Transition"/>
+        </vertices>
+        <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+          <label name="State"/>
         </vertices>
       </vertex>
       <previous>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KyKn4L86EeiONt3kg_Ih3g">
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SXp-Ub9VEeiBwq7kvv4wtA">
           <label name="S"/>
-          <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+          <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+            <label name="Transition"/>
+          </vertices>
+          <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
             <label name="State"/>
           </vertices>
-          <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
-            <label name="State"/>
-          </vertices>
-          <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+          <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
             <label name="SM"/>
+          </vertices>
+          <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
+            <label name="State"/>
+          </vertices>
+          <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+            <label name="Transition"/>
+          </vertices>
+          <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+            <label name="State"/>
           </vertices>
         </vertices>
       </previous>
       <next>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KpvEoL86EeiONt3kg_Ih3g">
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SXZfor9VEeiBwq7kvv4wtA">
+          <label name="Z"/>
+          <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+            <label name="Transition"/>
+          </vertices>
+          <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+            <label name="Transition"/>
+          </vertices>
+          <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+            <label name="State"/>
+          </vertices>
+          <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+            <label name="State"/>
+          </vertices>
+          <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
+            <label name="State"/>
+          </vertices>
+        </vertices>
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SAJdQL9VEeiBwq7kvv4wtA">
           <label name="SM"/>
-          <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+          <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
             <label name="SM"/>
           </vertices>
         </vertices>
-        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KxpDcb86EeiONt3kg_Ih3g">
-          <label name="Z"/>
-          <vertices id="_KmAbML86EeiONt3kg_Ih3g">
-            <label name="State"/>
-          </vertices>
-          <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
-            <label name="State"/>
-          </vertices>
-        </vertices>
-        <edges from="_KpvEoL86EeiONt3kg_Ih3g" to="_KxpDcb86EeiONt3kg_Ih3g">
+        <edges from="_SAJdQL9VEeiBwq7kvv4wtA" to="_SXZfor9VEeiBwq7kvv4wtA">
           <label name="states"/>
         </edges>
+        <edges from="_SAJdQL9VEeiBwq7kvv4wtA" to="_SXZfor9VEeiBwq7kvv4wtA">
+          <label name="transitions"/>
+        </edges>
       </next>
-      <unifier key="sm0" value="_KpvEoL86EeiONt3kg_Ih3g"/>
-      <unifier key="Z0" value="_KxpDcb86EeiONt3kg_Ih3g"/>
+      <unifier key="sm0" value="_SAJdQL9VEeiBwq7kvv4wtA"/>
+      <unifier key="Z0" value="_SXZfor9VEeiBwq7kvv4wtA"/>
     </derivationStep>
     <children>
-      <zoneVertex id="_KpvEoL86EeiONt3kg_Ih3g">
-        <label name="SM"/>
-        <vertices id="_KjujQL86EeiONt3kg_Ih3g">
-          <label name="SM"/>
-        </vertices>
-      </zoneVertex>
-    </children>
-    <children>
-      <zoneVertex id="_KxpDcb86EeiONt3kg_Ih3g">
+      <zoneVertex id="_SXZfor9VEeiBwq7kvv4wtA">
         <label name="Z"/>
-        <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+        <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+          <label name="Transition"/>
+        </vertices>
+        <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+          <label name="Transition"/>
+        </vertices>
+        <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
           <label name="State"/>
         </vertices>
-        <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+        <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+          <label name="State"/>
+        </vertices>
+        <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
           <label name="State"/>
         </vertices>
       </zoneVertex>
       <derivationStep>
-        <rule id="r1____Koqtor86EeiONt3kg_Ih3g" name="r1">
+        <rule id="r1____R99r8L9VEeiBwq7kvv4wtA" name="r1">
           <lhs name="Z"/>
           <rhs>
-            <vertices id="_KoqGkL86EeiONt3kg_Ih3g">
+            <vertices id="_R94zcL9VEeiBwq7kvv4wtA">
               <label name="State"/>
             </vertices>
-            <vertices id="_KoqtoL86EeiONt3kg_Ih3g">
+            <vertices id="_R94zcb9VEeiBwq7kvv4wtA">
               <label name="Z"/>
             </vertices>
-            <vertices id="_Koqtob86EeiONt3kg_Ih3g">
+            <vertices id="_R94zcr9VEeiBwq7kvv4wtA">
               <label name="T">
-                <subscript>State</subscript>
                 <subscript>SM</subscript>
-                <superscript>from</superscript>
+                <subscript>State</subscript>
                 <superscript>transitions</superscript>
+                <superscript>from</superscript>
               </label>
             </vertices>
           </rhs>
-          <embedding key="_KoqGkL86EeiONt3kg_Ih3g">
+          <embedding key="_R94zcL9VEeiBwq7kvv4wtA">
             <value>
               <edgeLabel name="states"/>
               <vertexLabels name="SM"/>
             </value>
           </embedding>
-          <embedding key="_KoqtoL86EeiONt3kg_Ih3g">
+          <embedding key="_R94zcb9VEeiBwq7kvv4wtA">
             <value>
               <edgeLabel name="states"/>
+              <vertexLabels name="SM"/>
+            </value>
+            <value>
+              <edgeLabel name="transitions"/>
               <vertexLabels name="SM"/>
             </value>
           </embedding>
         </rule>
-        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KxpDcb86EeiONt3kg_Ih3g">
+        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SXZfor9VEeiBwq7kvv4wtA">
           <label name="Z"/>
-          <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+          <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+            <label name="Transition"/>
+          </vertices>
+          <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+            <label name="Transition"/>
+          </vertices>
+          <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
             <label name="State"/>
           </vertices>
-          <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+          <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+            <label name="State"/>
+          </vertices>
+          <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
             <label name="State"/>
           </vertices>
         </vertex>
         <previous>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KxpDcb86EeiONt3kg_Ih3g">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SXZfor9VEeiBwq7kvv4wtA">
             <label name="Z"/>
-            <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+            <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+              <label name="Transition"/>
+            </vertices>
+            <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+              <label name="Transition"/>
+            </vertices>
+            <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
               <label name="State"/>
             </vertices>
-            <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+            <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+            </vertices>
+            <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
               <label name="State"/>
             </vertices>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KxpDc786EeiONt3kg_Ih3g">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SXaGsL9VEeiBwq7kvv4wtA">
             <label name="SM"/>
-            <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+            <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
               <label name="SM"/>
             </vertices>
           </vertices>
-          <edges from="_KxpDc786EeiONt3kg_Ih3g" to="_KxpDcb86EeiONt3kg_Ih3g">
+          <edges from="_SXaGsL9VEeiBwq7kvv4wtA" to="_SXZfor9VEeiBwq7kvv4wtA">
             <label name="states"/>
+          </edges>
+          <edges from="_SXaGsL9VEeiBwq7kvv4wtA" to="_SXZfor9VEeiBwq7kvv4wtA">
+            <label name="transitions"/>
           </edges>
         </previous>
         <next>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SF0ncL9VEeiBwq7kvv4wtA">
             <label name="T">
-              <subscript>State</subscript>
               <subscript>SM</subscript>
-              <superscript>from</superscript>
+              <subscript>State</subscript>
               <superscript>transitions</superscript>
+              <superscript>from</superscript>
             </label>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KtqiYL86EeiONt3kg_Ih3g">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SVHnsr9VEeiBwq7kvv4wtA">
             <label name="Z"/>
-            <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+            <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+              <label name="Transition"/>
+            </vertices>
+            <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+              <label name="Transition"/>
+            </vertices>
+            <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
               <label name="State"/>
             </vertices>
+            <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+            </vertices>
+            <pac id="_R8DAYL9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+            </pac>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KpvEob86EeiONt3kg_Ih3g">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SAKEUr9VEeiBwq7kvv4wtA">
             <label name="State"/>
-            <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+            <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
               <label name="State"/>
             </vertices>
           </vertices>
-          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_Kxi80L86EeiONt3kg_Ih3g">
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SXY4kb9VEeiBwq7kvv4wtA">
             <label name="SM"/>
-            <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+            <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
               <label name="SM"/>
             </vertices>
           </vertices>
-          <edges from="_Kxi80L86EeiONt3kg_Ih3g" to="_KpvEob86EeiONt3kg_Ih3g">
+          <edges from="_SXY4kb9VEeiBwq7kvv4wtA" to="_SVHnsr9VEeiBwq7kvv4wtA">
             <label name="states"/>
           </edges>
-          <edges from="_Kxi80L86EeiONt3kg_Ih3g" to="_KtqiYL86EeiONt3kg_Ih3g">
+          <edges from="_SXY4kb9VEeiBwq7kvv4wtA" to="_SAKEUr9VEeiBwq7kvv4wtA">
             <label name="states"/>
+          </edges>
+          <edges from="_SXY4kb9VEeiBwq7kvv4wtA" to="_SVHnsr9VEeiBwq7kvv4wtA">
+            <label name="transitions"/>
           </edges>
         </next>
-        <unifier key="_KoqGkL86EeiONt3kg_Ih3g" value="_KpvEob86EeiONt3kg_Ih3g"/>
-        <unifier key="_KoqtoL86EeiONt3kg_Ih3g" value="_KtqiYL86EeiONt3kg_Ih3g"/>
-        <unifier key="_Koqtob86EeiONt3kg_Ih3g" value="_KsOX8L86EeiONt3kg_Ih3g"/>
+        <unifier key="_R94zcL9VEeiBwq7kvv4wtA" value="_SAKEUr9VEeiBwq7kvv4wtA"/>
+        <unifier key="_R94zcb9VEeiBwq7kvv4wtA" value="_SVHnsr9VEeiBwq7kvv4wtA"/>
+        <unifier key="_R94zcr9VEeiBwq7kvv4wtA" value="_SF0ncL9VEeiBwq7kvv4wtA"/>
       </derivationStep>
       <children>
-        <zoneVertex id="_KsOX8L86EeiONt3kg_Ih3g">
+        <zoneVertex id="_SVHnsr9VEeiBwq7kvv4wtA">
+          <label name="Z"/>
+          <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+            <label name="Transition"/>
+          </vertices>
+          <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+            <label name="Transition"/>
+          </vertices>
+          <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+            <label name="State"/>
+          </vertices>
+          <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+            <label name="State"/>
+          </vertices>
+          <pac id="_R8DAYL9VEeiBwq7kvv4wtA">
+            <label name="State"/>
+          </pac>
+        </zoneVertex>
+        <derivationStep>
+          <rule id="r1" name="r1">
+            <lhs name="Z"/>
+            <rhs>
+              <vertices id="s1">
+                <label name="State"/>
+              </vertices>
+              <vertices id="Z1">
+                <label name="Z"/>
+              </vertices>
+              <vertices id="T1">
+                <label name="T"/>
+              </vertices>
+              <edges from="T1" to="s1">
+                <label name="from"/>
+              </edges>
+            </rhs>
+            <embedding key="s1">
+              <value>
+                <edgeLabel name="states"/>
+                <vertexLabels name="SM"/>
+              </value>
+            </embedding>
+            <embedding key="Z1">
+              <value>
+                <edgeLabel name="states"/>
+                <vertexLabels name="SM"/>
+              </value>
+              <value>
+                <edgeLabel name="transitions"/>
+                <vertexLabels name="SM"/>
+              </value>
+            </embedding>
+            <embedding key="T1">
+              <value>
+                <edgeLabel name="transitions"/>
+                <vertexLabels name="SM"/>
+              </value>
+            </embedding>
+          </rule>
+          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SVHnsr9VEeiBwq7kvv4wtA">
+            <label name="Z"/>
+            <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+              <label name="Transition"/>
+            </vertices>
+            <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+              <label name="Transition"/>
+            </vertices>
+            <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+            </vertices>
+            <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+            </vertices>
+            <pac id="_R8DAYL9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+            </pac>
+          </vertex>
+          <previous>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SVHnsr9VEeiBwq7kvv4wtA">
+              <label name="Z"/>
+              <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+                <label name="Transition"/>
+              </vertices>
+              <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+                <label name="Transition"/>
+              </vertices>
+              <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </vertices>
+              <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </vertices>
+              <pac id="_R8DAYL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </pac>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SVHns79VEeiBwq7kvv4wtA">
+              <label name="SM"/>
+              <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
+                <label name="SM"/>
+              </vertices>
+            </vertices>
+            <edges from="_SVHns79VEeiBwq7kvv4wtA" to="_SVHnsr9VEeiBwq7kvv4wtA">
+              <label name="states"/>
+            </edges>
+            <edges from="_SVHns79VEeiBwq7kvv4wtA" to="_SVHnsr9VEeiBwq7kvv4wtA">
+              <label name="transitions"/>
+            </edges>
+          </previous>
+          <next>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SUbEIL9VEeiBwq7kvv4wtA">
+              <label name="Z"/>
+              <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+                <label name="Transition"/>
+              </vertices>
+              <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </vertices>
+              <pac id="_R8CZUL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </pac>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SAKEUb9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+              <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SQ3Z0r9VEeiBwq7kvv4wtA">
+              <label name="T"/>
+              <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+                <label name="Transition"/>
+              </vertices>
+              <pac id="_R8DAYL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </pac>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SVFLcr9VEeiBwq7kvv4wtA">
+              <label name="SM"/>
+              <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
+                <label name="SM"/>
+              </vertices>
+            </vertices>
+            <edges from="_SQ3Z0r9VEeiBwq7kvv4wtA" to="_SAKEUb9VEeiBwq7kvv4wtA">
+              <label name="from"/>
+            </edges>
+            <edges from="_SVFLcr9VEeiBwq7kvv4wtA" to="_SQ3Z0r9VEeiBwq7kvv4wtA">
+              <label name="transitions"/>
+            </edges>
+            <edges from="_SVFLcr9VEeiBwq7kvv4wtA" to="_SUbEIL9VEeiBwq7kvv4wtA">
+              <label name="transitions"/>
+            </edges>
+            <edges from="_SVFLcr9VEeiBwq7kvv4wtA" to="_SAKEUb9VEeiBwq7kvv4wtA">
+              <label name="states"/>
+            </edges>
+            <edges from="_SVFLcr9VEeiBwq7kvv4wtA" to="_SUbEIL9VEeiBwq7kvv4wtA">
+              <label name="states"/>
+            </edges>
+          </next>
+          <unifier key="s1" value="_SAKEUb9VEeiBwq7kvv4wtA"/>
+          <unifier key="Z1" value="_SUbEIL9VEeiBwq7kvv4wtA"/>
+          <unifier key="T1" value="_SQ3Z0r9VEeiBwq7kvv4wtA"/>
+        </derivationStep>
+        <children>
+          <zoneVertex id="_SUbEIL9VEeiBwq7kvv4wtA">
+            <label name="Z"/>
+            <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+              <label name="Transition"/>
+            </vertices>
+            <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+            </vertices>
+            <pac id="_R8CZUL9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+            </pac>
+          </zoneVertex>
+          <derivationStep>
+            <rule id="r1____R-R1A79VEeiBwq7kvv4wtA" name="r1">
+              <lhs name="Z"/>
+              <rhs>
+                <vertices id="_R-R1AL9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </vertices>
+                <vertices id="_R-R1Ab9VEeiBwq7kvv4wtA">
+                  <label name="Z">
+                    <subscript>SM</subscript>
+                    <subscript>SM</subscript>
+                    <superscript>transitions</superscript>
+                    <superscript>states</superscript>
+                  </label>
+                </vertices>
+                <vertices id="_R-R1Ar9VEeiBwq7kvv4wtA">
+                  <label name="T"/>
+                </vertices>
+                <edges from="_R-R1Ar9VEeiBwq7kvv4wtA" to="_R-R1AL9VEeiBwq7kvv4wtA">
+                  <label name="from"/>
+                </edges>
+              </rhs>
+              <embedding key="_R-R1AL9VEeiBwq7kvv4wtA">
+                <value>
+                  <edgeLabel name="states"/>
+                  <vertexLabels name="SM"/>
+                </value>
+              </embedding>
+              <embedding key="_R-R1Ar9VEeiBwq7kvv4wtA">
+                <value>
+                  <edgeLabel name="transitions"/>
+                  <vertexLabels name="SM"/>
+                </value>
+              </embedding>
+            </rule>
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SUbEIL9VEeiBwq7kvv4wtA">
+              <label name="Z"/>
+              <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+                <label name="Transition"/>
+              </vertices>
+              <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </vertices>
+              <pac id="_R8CZUL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </pac>
+            </vertex>
+            <previous>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SUbEIL9VEeiBwq7kvv4wtA">
+                <label name="Z"/>
+                <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+                  <label name="Transition"/>
+                </vertices>
+                <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </vertices>
+                <pac id="_R8CZUL9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </pac>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SUbrMb9VEeiBwq7kvv4wtA">
+                <label name="SM"/>
+                <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
+                  <label name="SM"/>
+                </vertices>
+              </vertices>
+              <edges from="_SUbrMb9VEeiBwq7kvv4wtA" to="_SUbEIL9VEeiBwq7kvv4wtA">
+                <label name="states"/>
+              </edges>
+              <edges from="_SUbrMb9VEeiBwq7kvv4wtA" to="_SUbEIL9VEeiBwq7kvv4wtA">
+                <label name="transitions"/>
+              </edges>
+            </previous>
+            <next>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SF-YcL9VEeiBwq7kvv4wtA">
+                <label name="Z">
+                  <subscript>SM</subscript>
+                  <subscript>SM</subscript>
+                  <superscript>transitions</superscript>
+                  <superscript>states</superscript>
+                </label>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SAKEUL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+                <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SSlREL9VEeiBwq7kvv4wtA">
+                <label name="T"/>
+                <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+                  <label name="Transition"/>
+                </vertices>
+                <pac id="_R8CZUL9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </pac>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SUZ2Ar9VEeiBwq7kvv4wtA">
+                <label name="SM"/>
+                <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
+                  <label name="SM"/>
+                </vertices>
+              </vertices>
+              <edges from="_SSlREL9VEeiBwq7kvv4wtA" to="_SAKEUL9VEeiBwq7kvv4wtA">
+                <label name="from"/>
+              </edges>
+              <edges from="_SUZ2Ar9VEeiBwq7kvv4wtA" to="_SSlREL9VEeiBwq7kvv4wtA">
+                <label name="transitions"/>
+              </edges>
+              <edges from="_SUZ2Ar9VEeiBwq7kvv4wtA" to="_SAKEUL9VEeiBwq7kvv4wtA">
+                <label name="states"/>
+              </edges>
+            </next>
+            <unifier key="_R-R1AL9VEeiBwq7kvv4wtA" value="_SAKEUL9VEeiBwq7kvv4wtA"/>
+            <unifier key="_R-R1Ab9VEeiBwq7kvv4wtA" value="_SF-YcL9VEeiBwq7kvv4wtA"/>
+            <unifier key="_R-R1Ar9VEeiBwq7kvv4wtA" value="_SSlREL9VEeiBwq7kvv4wtA"/>
+          </derivationStep>
+          <children>
+            <zoneVertex id="_SAKEUL9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+              <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </vertices>
+            </zoneVertex>
+          </children>
+          <children>
+            <zoneVertex id="_SF-YcL9VEeiBwq7kvv4wtA">
+              <label name="Z">
+                <subscript>SM</subscript>
+                <subscript>SM</subscript>
+                <superscript>transitions</superscript>
+                <superscript>states</superscript>
+              </label>
+            </zoneVertex>
+            <derivationStep>
+              <rule id="r2___(Z^{transitions, states}_{SM, SM})" name="r2">
+                <lhs name="Z">
+                  <subscript>SM</subscript>
+                  <subscript>SM</subscript>
+                  <superscript>transitions</superscript>
+                  <superscript>states</superscript>
+                </lhs>
+                <rhs/>
+              </rule>
+              <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SF-YcL9VEeiBwq7kvv4wtA">
+                <label name="Z">
+                  <subscript>SM</subscript>
+                  <subscript>SM</subscript>
+                  <superscript>transitions</superscript>
+                  <superscript>states</superscript>
+                </label>
+              </vertex>
+              <previous>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SF-YcL9VEeiBwq7kvv4wtA">
+                  <label name="Z">
+                    <subscript>SM</subscript>
+                    <subscript>SM</subscript>
+                    <superscript>transitions</superscript>
+                    <superscript>states</superscript>
+                  </label>
+                </vertices>
+              </previous>
+              <next/>
+            </derivationStep>
+          </children>
+          <children>
+            <zoneVertex id="_SSlREL9VEeiBwq7kvv4wtA">
+              <label name="T"/>
+              <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+                <label name="Transition"/>
+              </vertices>
+              <pac id="_R8CZUL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </pac>
+            </zoneVertex>
+            <derivationStep>
+              <rule id="r3____R9_hIL9VEeiBwq7kvv4wtA" name="r3" pac="_R9-6Eb9VEeiBwq7kvv4wtA">
+                <lhs name="T"/>
+                <rhs>
+                  <vertices id="_R9-6EL9VEeiBwq7kvv4wtA">
+                    <label name="Transition"/>
+                  </vertices>
+                  <vertices id="_R9-6Eb9VEeiBwq7kvv4wtA">
+                    <label name="State"/>
+                  </vertices>
+                  <vertices id="_R9-6Er9VEeiBwq7kvv4wtA">
+                    <label name="T">
+                      <subscript>SM</subscript>
+                      <subscript>State</subscript>
+                      <superscript>transitions</superscript>
+                      <superscript>from</superscript>
+                    </label>
+                  </vertices>
+                  <edges from="_R9-6EL9VEeiBwq7kvv4wtA" to="_R9-6Eb9VEeiBwq7kvv4wtA">
+                    <label name="to"/>
+                  </edges>
+                </rhs>
+                <embedding key="_R9-6EL9VEeiBwq7kvv4wtA">
+                  <value>
+                    <edgeLabel name="transitions"/>
+                    <vertexLabels name="SM"/>
+                  </value>
+                  <value>
+                    <edgeLabel name="from"/>
+                    <vertexLabels name="State"/>
+                  </value>
+                </embedding>
+                <embedding key="_R9-6Eb9VEeiBwq7kvv4wtA">
+                  <value>
+                    <edgeLabel name="states"/>
+                    <vertexLabels name="SM"/>
+                  </value>
+                  <value>
+                    <edgeLabel name="from"/>
+                    <vertexLabels name="Transition"/>
+                  </value>
+                  <value>
+                    <edgeLabel name="to"/>
+                    <vertexLabels name="Transition"/>
+                  </value>
+                </embedding>
+              </rule>
+              <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SSlREL9VEeiBwq7kvv4wtA">
+                <label name="T"/>
+                <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+                  <label name="Transition"/>
+                </vertices>
+                <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </vertices>
+              </vertex>
+              <previous>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SSlREL9VEeiBwq7kvv4wtA">
+                  <label name="T"/>
+                  <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+                    <label name="Transition"/>
+                  </vertices>
+                  <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+                    <label name="State"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SSlREr9VEeiBwq7kvv4wtA">
+                  <label name="Transition"/>
+                  <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+                    <label name="Transition"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SSlREb9VEeiBwq7kvv4wtA">
+                  <label name="SM"/>
+                  <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
+                    <label name="SM"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SSlRE79VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                  <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+                    <label name="State"/>
+                  </vertices>
+                </vertices>
+                <edges from="_SSlREL9VEeiBwq7kvv4wtA" to="_SSlRE79VEeiBwq7kvv4wtA">
+                  <label name="from"/>
+                </edges>
+                <edges from="_SSlREr9VEeiBwq7kvv4wtA" to="_SSlREL9VEeiBwq7kvv4wtA">
+                  <label name="from"/>
+                </edges>
+                <edges from="_SSlREb9VEeiBwq7kvv4wtA" to="_SSlREL9VEeiBwq7kvv4wtA">
+                  <label name="states"/>
+                </edges>
+                <edges from="_SSlREb9VEeiBwq7kvv4wtA" to="_SSlREr9VEeiBwq7kvv4wtA">
+                  <label name="transitions"/>
+                </edges>
+                <edges from="_SSlREb9VEeiBwq7kvv4wtA" to="_SSlRE79VEeiBwq7kvv4wtA">
+                  <label name="states"/>
+                </edges>
+                <edges from="_SSlREb9VEeiBwq7kvv4wtA" to="_SSlREL9VEeiBwq7kvv4wtA">
+                  <label name="transitions"/>
+                </edges>
+              </previous>
+              <next>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SAKEU79VEeiBwq7kvv4wtA">
+                  <label name="Transition"/>
+                  <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+                    <label name="Transition"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SAKEUb9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                  <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+                    <label name="State"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SBYzYL9VEeiBwq7kvv4wtA">
+                  <label name="T">
+                    <subscript>SM</subscript>
+                    <subscript>State</subscript>
+                    <superscript>transitions</superscript>
+                    <superscript>from</superscript>
+                  </label>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SSi01L9VEeiBwq7kvv4wtA">
+                  <label name="SM"/>
+                  <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
+                    <label name="SM"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SSi01r9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                  <vertices id="_R64iwL9VEeiBwq7kvv4wtA">
+                    <label name="State"/>
+                  </vertices>
+                </vertices>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SSi01b9VEeiBwq7kvv4wtA">
+                  <label name="Transition"/>
+                  <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+                    <label name="Transition"/>
+                  </vertices>
+                </vertices>
+                <edges from="_SAKEU79VEeiBwq7kvv4wtA" to="_SAKEUb9VEeiBwq7kvv4wtA">
+                  <label name="to"/>
+                </edges>
+                <edges from="_SAKEU79VEeiBwq7kvv4wtA" to="_SSi01r9VEeiBwq7kvv4wtA">
+                  <label name="from"/>
+                </edges>
+                <edges from="_SSi01L9VEeiBwq7kvv4wtA" to="_SSi01r9VEeiBwq7kvv4wtA">
+                  <label name="states"/>
+                </edges>
+                <edges from="_SSi01L9VEeiBwq7kvv4wtA" to="_SAKEU79VEeiBwq7kvv4wtA">
+                  <label name="transitions"/>
+                </edges>
+                <edges from="_SSi01L9VEeiBwq7kvv4wtA" to="_SAKEUb9VEeiBwq7kvv4wtA">
+                  <label name="states"/>
+                </edges>
+                <edges from="_SSi01L9VEeiBwq7kvv4wtA" to="_SSi01b9VEeiBwq7kvv4wtA">
+                  <label name="transitions"/>
+                </edges>
+                <edges from="_SSi01b9VEeiBwq7kvv4wtA" to="_SAKEUb9VEeiBwq7kvv4wtA">
+                  <label name="from"/>
+                </edges>
+              </next>
+              <unifier key="_R9-6EL9VEeiBwq7kvv4wtA" value="_SAKEU79VEeiBwq7kvv4wtA"/>
+              <unifier key="_R9-6Eb9VEeiBwq7kvv4wtA" value="_SAKEUb9VEeiBwq7kvv4wtA"/>
+              <unifier key="_R9-6Er9VEeiBwq7kvv4wtA" value="_SBYzYL9VEeiBwq7kvv4wtA"/>
+            </derivationStep>
+            <children>
+              <zoneVertex id="_SBYzYL9VEeiBwq7kvv4wtA">
+                <label name="T">
+                  <subscript>SM</subscript>
+                  <subscript>State</subscript>
+                  <superscript>transitions</superscript>
+                  <superscript>from</superscript>
+                </label>
+              </zoneVertex>
+              <derivationStep>
+                <rule id="r4___(T^{transitions, from}_{SM, State})" name="r4">
+                  <lhs name="T">
+                    <subscript>SM</subscript>
+                    <subscript>State</subscript>
+                    <superscript>transitions</superscript>
+                    <superscript>from</superscript>
+                  </lhs>
+                  <rhs/>
+                </rule>
+                <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SBYzYL9VEeiBwq7kvv4wtA">
+                  <label name="T">
+                    <subscript>SM</subscript>
+                    <subscript>State</subscript>
+                    <superscript>transitions</superscript>
+                    <superscript>from</superscript>
+                  </label>
+                </vertex>
+                <previous>
+                  <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SBYzYL9VEeiBwq7kvv4wtA">
+                    <label name="T">
+                      <subscript>SM</subscript>
+                      <subscript>State</subscript>
+                      <superscript>transitions</superscript>
+                      <superscript>from</superscript>
+                    </label>
+                  </vertices>
+                </previous>
+                <next/>
+              </derivationStep>
+            </children>
+            <children>
+              <zoneVertex id="_SAKEU79VEeiBwq7kvv4wtA">
+                <label name="Transition"/>
+                <vertices id="_R8DncL9VEeiBwq7kvv4wtA">
+                  <label name="Transition"/>
+                </vertices>
+              </zoneVertex>
+            </children>
+            <children>
+              <zoneVertex id="_SAKEUb9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+                <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </vertices>
+              </zoneVertex>
+            </children>
+          </children>
+        </children>
+        <children>
+          <zoneVertex id="_SQ3Z0r9VEeiBwq7kvv4wtA">
+            <label name="T"/>
+            <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+              <label name="Transition"/>
+            </vertices>
+            <pac id="_R8DAYL9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+            </pac>
+          </zoneVertex>
+          <derivationStep>
+            <rule id="r3____R9_hIL9VEeiBwq7kvv4wtA" name="r3" pac="_R9-6Eb9VEeiBwq7kvv4wtA">
+              <lhs name="T"/>
+              <rhs>
+                <vertices id="_R9-6EL9VEeiBwq7kvv4wtA">
+                  <label name="Transition"/>
+                </vertices>
+                <vertices id="_R9-6Eb9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </vertices>
+                <vertices id="_R9-6Er9VEeiBwq7kvv4wtA">
+                  <label name="T">
+                    <subscript>SM</subscript>
+                    <subscript>State</subscript>
+                    <superscript>transitions</superscript>
+                    <superscript>from</superscript>
+                  </label>
+                </vertices>
+                <edges from="_R9-6EL9VEeiBwq7kvv4wtA" to="_R9-6Eb9VEeiBwq7kvv4wtA">
+                  <label name="to"/>
+                </edges>
+              </rhs>
+              <embedding key="_R9-6EL9VEeiBwq7kvv4wtA">
+                <value>
+                  <edgeLabel name="transitions"/>
+                  <vertexLabels name="SM"/>
+                </value>
+                <value>
+                  <edgeLabel name="from"/>
+                  <vertexLabels name="State"/>
+                </value>
+              </embedding>
+              <embedding key="_R9-6Eb9VEeiBwq7kvv4wtA">
+                <value>
+                  <edgeLabel name="states"/>
+                  <vertexLabels name="SM"/>
+                </value>
+                <value>
+                  <edgeLabel name="from"/>
+                  <vertexLabels name="Transition"/>
+                </value>
+                <value>
+                  <edgeLabel name="to"/>
+                  <vertexLabels name="Transition"/>
+                </value>
+              </embedding>
+            </rule>
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SQ3Z0r9VEeiBwq7kvv4wtA">
+              <label name="T"/>
+              <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+                <label name="Transition"/>
+              </vertices>
+              <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </vertices>
+            </vertex>
+            <previous>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SQ3Z0r9VEeiBwq7kvv4wtA">
+                <label name="T"/>
+                <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+                  <label name="Transition"/>
+                </vertices>
+                <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SQ3Z2b9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+                <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SQ3Z2L9VEeiBwq7kvv4wtA">
+                <label name="SM"/>
+                <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
+                  <label name="SM"/>
+                </vertices>
+              </vertices>
+              <edges from="_SQ3Z0r9VEeiBwq7kvv4wtA" to="_SQ3Z2b9VEeiBwq7kvv4wtA">
+                <label name="from"/>
+              </edges>
+              <edges from="_SQ3Z2L9VEeiBwq7kvv4wtA" to="_SQ3Z0r9VEeiBwq7kvv4wtA">
+                <label name="transitions"/>
+              </edges>
+              <edges from="_SQ3Z2L9VEeiBwq7kvv4wtA" to="_SQ3Z2b9VEeiBwq7kvv4wtA">
+                <label name="states"/>
+              </edges>
+              <edges from="_SQ3Z2L9VEeiBwq7kvv4wtA" to="_SQ3Z0r9VEeiBwq7kvv4wtA">
+                <label name="states"/>
+              </edges>
+            </previous>
+            <next>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SAKEVL9VEeiBwq7kvv4wtA">
+                <label name="Transition"/>
+                <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+                  <label name="Transition"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SBYzYL9VEeiBwq7kvv4wtA">
+                <label name="T">
+                  <subscript>SM</subscript>
+                  <subscript>State</subscript>
+                  <superscript>transitions</superscript>
+                  <superscript>from</superscript>
+                </label>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SAKEUr9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+                <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SQ1kob9VEeiBwq7kvv4wtA">
+                <label name="SM"/>
+                <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
+                  <label name="SM"/>
+                </vertices>
+              </vertices>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SQ1kor9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+                <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+                  <label name="State"/>
+                </vertices>
+              </vertices>
+              <edges from="_SAKEVL9VEeiBwq7kvv4wtA" to="_SAKEUr9VEeiBwq7kvv4wtA">
+                <label name="to"/>
+              </edges>
+              <edges from="_SAKEVL9VEeiBwq7kvv4wtA" to="_SQ1kor9VEeiBwq7kvv4wtA">
+                <label name="from"/>
+              </edges>
+              <edges from="_SQ1kob9VEeiBwq7kvv4wtA" to="_SAKEVL9VEeiBwq7kvv4wtA">
+                <label name="transitions"/>
+              </edges>
+              <edges from="_SQ1kob9VEeiBwq7kvv4wtA" to="_SQ1kor9VEeiBwq7kvv4wtA">
+                <label name="states"/>
+              </edges>
+              <edges from="_SQ1kob9VEeiBwq7kvv4wtA" to="_SAKEUr9VEeiBwq7kvv4wtA">
+                <label name="states"/>
+              </edges>
+            </next>
+            <unifier key="_R9-6EL9VEeiBwq7kvv4wtA" value="_SAKEVL9VEeiBwq7kvv4wtA"/>
+            <unifier key="_R9-6Eb9VEeiBwq7kvv4wtA" value="_SAKEUr9VEeiBwq7kvv4wtA"/>
+            <unifier key="_R9-6Er9VEeiBwq7kvv4wtA" value="_SBYzYL9VEeiBwq7kvv4wtA"/>
+          </derivationStep>
+          <children>
+            <zoneVertex id="_SBYzYL9VEeiBwq7kvv4wtA">
+              <label name="T">
+                <subscript>SM</subscript>
+                <subscript>State</subscript>
+                <superscript>transitions</superscript>
+                <superscript>from</superscript>
+              </label>
+            </zoneVertex>
+            <derivationStep>
+              <rule id="r4___(T^{transitions, from}_{SM, State})" name="r4">
+                <lhs name="T">
+                  <subscript>SM</subscript>
+                  <subscript>State</subscript>
+                  <superscript>transitions</superscript>
+                  <superscript>from</superscript>
+                </lhs>
+                <rhs/>
+              </rule>
+              <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SBYzYL9VEeiBwq7kvv4wtA">
+                <label name="T">
+                  <subscript>SM</subscript>
+                  <subscript>State</subscript>
+                  <superscript>transitions</superscript>
+                  <superscript>from</superscript>
+                </label>
+              </vertex>
+              <previous>
+                <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SBYzYL9VEeiBwq7kvv4wtA">
+                  <label name="T">
+                    <subscript>SM</subscript>
+                    <subscript>State</subscript>
+                    <superscript>transitions</superscript>
+                    <superscript>from</superscript>
+                  </label>
+                </vertices>
+              </previous>
+              <next/>
+            </derivationStep>
+          </children>
+          <children>
+            <zoneVertex id="_SAKEUr9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+              <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
+                <label name="State"/>
+              </vertices>
+            </zoneVertex>
+          </children>
+          <children>
+            <zoneVertex id="_SAKEVL9VEeiBwq7kvv4wtA">
+              <label name="Transition"/>
+              <vertices id="_R8E1kL9VEeiBwq7kvv4wtA">
+                <label name="Transition"/>
+              </vertices>
+            </zoneVertex>
+          </children>
+        </children>
+        <children>
+          <zoneVertex id="_SAKEUb9VEeiBwq7kvv4wtA">
+            <label name="State"/>
+            <vertices id="_R8CZUL9VEeiBwq7kvv4wtA">
+              <label name="State"/>
+            </vertices>
+          </zoneVertex>
+        </children>
+      </children>
+      <children>
+        <zoneVertex id="_SF0ncL9VEeiBwq7kvv4wtA">
           <label name="T">
-            <subscript>State</subscript>
             <subscript>SM</subscript>
-            <superscript>from</superscript>
+            <subscript>State</subscript>
             <superscript>transitions</superscript>
+            <superscript>from</superscript>
           </label>
         </zoneVertex>
         <derivationStep>
-          <rule id="r4___(T^{from, transitions}_{State, SM})" name="r4">
+          <rule id="r4___(T^{transitions, from}_{SM, State})" name="r4">
             <lhs name="T">
-              <subscript>State</subscript>
               <subscript>SM</subscript>
-              <superscript>from</superscript>
+              <subscript>State</subscript>
               <superscript>transitions</superscript>
+              <superscript>from</superscript>
             </lhs>
             <rhs/>
           </rule>
-          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
+          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SF0ncL9VEeiBwq7kvv4wtA">
             <label name="T">
-              <subscript>State</subscript>
               <subscript>SM</subscript>
-              <superscript>from</superscript>
+              <subscript>State</subscript>
               <superscript>transitions</superscript>
+              <superscript>from</superscript>
             </label>
           </vertex>
           <previous>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_SF0ncL9VEeiBwq7kvv4wtA">
               <label name="T">
-                <subscript>State</subscript>
                 <subscript>SM</subscript>
-                <superscript>from</superscript>
+                <subscript>State</subscript>
                 <superscript>transitions</superscript>
+                <superscript>from</superscript>
               </label>
             </vertices>
           </previous>
@@ -288,188 +1295,21 @@
         </derivationStep>
       </children>
       <children>
-        <zoneVertex id="_KtqiYL86EeiONt3kg_Ih3g">
-          <label name="Z"/>
-          <vertices id="_KmAbML86EeiONt3kg_Ih3g">
-            <label name="State"/>
-          </vertices>
-        </zoneVertex>
-        <derivationStep>
-          <rule id="r1____Koqtor86EeiONt3kg_Ih3g____KouYAL86EeiONt3kg_Ih3g" name="r1">
-            <lhs name="Z"/>
-            <rhs>
-              <vertices id="_Kotw8L86EeiONt3kg_Ih3g">
-                <label name="State"/>
-              </vertices>
-              <vertices id="_Kotw8b86EeiONt3kg_Ih3g">
-                <label name="Z">
-                  <subscript>SM</subscript>
-                  <superscript>states</superscript>
-                </label>
-              </vertices>
-              <vertices id="_Kotw8r86EeiONt3kg_Ih3g">
-                <label name="T">
-                  <subscript>State</subscript>
-                  <subscript>SM</subscript>
-                  <superscript>from</superscript>
-                  <superscript>transitions</superscript>
-                </label>
-              </vertices>
-            </rhs>
-            <embedding key="_Kotw8L86EeiONt3kg_Ih3g">
-              <value>
-                <edgeLabel name="states"/>
-                <vertexLabels name="SM"/>
-              </value>
-            </embedding>
-          </rule>
-          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KtqiYL86EeiONt3kg_Ih3g">
-            <label name="Z"/>
-            <vertices id="_KmAbML86EeiONt3kg_Ih3g">
-              <label name="State"/>
-            </vertices>
-          </vertex>
-          <previous>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KtqiYL86EeiONt3kg_Ih3g">
-              <label name="Z"/>
-              <vertices id="_KmAbML86EeiONt3kg_Ih3g">
-                <label name="State"/>
-              </vertices>
-            </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KtrJcr86EeiONt3kg_Ih3g">
-              <label name="SM"/>
-              <vertices id="_KjujQL86EeiONt3kg_Ih3g">
-                <label name="SM"/>
-              </vertices>
-            </vertices>
-            <edges from="_KtrJcr86EeiONt3kg_Ih3g" to="_KtqiYL86EeiONt3kg_Ih3g">
-              <label name="states"/>
-            </edges>
-          </previous>
-          <next>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
-              <label name="T">
-                <subscript>State</subscript>
-                <subscript>SM</subscript>
-                <superscript>from</superscript>
-                <superscript>transitions</superscript>
-              </label>
-            </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KrNEQL86EeiONt3kg_Ih3g">
-              <label name="Z">
-                <subscript>SM</subscript>
-                <superscript>states</superscript>
-              </label>
-            </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KpvrsL86EeiONt3kg_Ih3g">
-              <label name="State"/>
-              <vertices id="_KmAbML86EeiONt3kg_Ih3g">
-                <label name="State"/>
-              </vertices>
-            </vertices>
-            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_Ktcf8L86EeiONt3kg_Ih3g">
-              <label name="SM"/>
-              <vertices id="_KjujQL86EeiONt3kg_Ih3g">
-                <label name="SM"/>
-              </vertices>
-            </vertices>
-            <edges from="_Ktcf8L86EeiONt3kg_Ih3g" to="_KpvrsL86EeiONt3kg_Ih3g">
-              <label name="states"/>
-            </edges>
-          </next>
-          <unifier key="_Kotw8L86EeiONt3kg_Ih3g" value="_KpvrsL86EeiONt3kg_Ih3g"/>
-          <unifier key="_Kotw8b86EeiONt3kg_Ih3g" value="_KrNEQL86EeiONt3kg_Ih3g"/>
-          <unifier key="_Kotw8r86EeiONt3kg_Ih3g" value="_KsOX8L86EeiONt3kg_Ih3g"/>
-        </derivationStep>
-        <children>
-          <zoneVertex id="_KsOX8L86EeiONt3kg_Ih3g">
-            <label name="T">
-              <subscript>State</subscript>
-              <subscript>SM</subscript>
-              <superscript>from</superscript>
-              <superscript>transitions</superscript>
-            </label>
-          </zoneVertex>
-          <derivationStep>
-            <rule id="r4___(T^{from, transitions}_{State, SM})" name="r4">
-              <lhs name="T">
-                <subscript>State</subscript>
-                <subscript>SM</subscript>
-                <superscript>from</superscript>
-                <superscript>transitions</superscript>
-              </lhs>
-              <rhs/>
-            </rule>
-            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
-              <label name="T">
-                <subscript>State</subscript>
-                <subscript>SM</subscript>
-                <superscript>from</superscript>
-                <superscript>transitions</superscript>
-              </label>
-            </vertex>
-            <previous>
-              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
-                <label name="T">
-                  <subscript>State</subscript>
-                  <subscript>SM</subscript>
-                  <superscript>from</superscript>
-                  <superscript>transitions</superscript>
-                </label>
-              </vertices>
-            </previous>
-            <next/>
-          </derivationStep>
-        </children>
-        <children>
-          <zoneVertex id="_KrNEQL86EeiONt3kg_Ih3g">
-            <label name="Z">
-              <subscript>SM</subscript>
-              <superscript>states</superscript>
-            </label>
-          </zoneVertex>
-          <derivationStep>
-            <rule id="r2___(Z^{states}_{SM})" name="r2">
-              <lhs name="Z">
-                <subscript>SM</subscript>
-                <superscript>states</superscript>
-              </lhs>
-              <rhs/>
-            </rule>
-            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KrNEQL86EeiONt3kg_Ih3g">
-              <label name="Z">
-                <subscript>SM</subscript>
-                <superscript>states</superscript>
-              </label>
-            </vertex>
-            <previous>
-              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KrNEQL86EeiONt3kg_Ih3g">
-                <label name="Z">
-                  <subscript>SM</subscript>
-                  <superscript>states</superscript>
-                </label>
-              </vertices>
-            </previous>
-            <next/>
-          </derivationStep>
-        </children>
-        <children>
-          <zoneVertex id="_KpvrsL86EeiONt3kg_Ih3g">
-            <label name="State"/>
-            <vertices id="_KmAbML86EeiONt3kg_Ih3g">
-              <label name="State"/>
-            </vertices>
-          </zoneVertex>
-        </children>
-      </children>
-      <children>
-        <zoneVertex id="_KpvEob86EeiONt3kg_Ih3g">
+        <zoneVertex id="_SAKEUr9VEeiBwq7kvv4wtA">
           <label name="State"/>
-          <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+          <vertices id="_R8DAYL9VEeiBwq7kvv4wtA">
             <label name="State"/>
           </vertices>
         </zoneVertex>
       </children>
+    </children>
+    <children>
+      <zoneVertex id="_SAJdQL9VEeiBwq7kvv4wtA">
+        <label name="SM"/>
+        <vertices id="_R61fcL9VEeiBwq7kvv4wtA">
+          <label name="SM"/>
+        </vertices>
+      </zoneVertex>
     </children>
   </org.wbsilva.bence.graphgrammar:ParsingTree>
 </xmi:XMI>
