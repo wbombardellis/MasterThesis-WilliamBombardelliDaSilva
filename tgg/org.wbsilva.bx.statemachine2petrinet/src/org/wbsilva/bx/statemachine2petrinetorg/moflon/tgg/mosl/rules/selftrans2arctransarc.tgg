@@ -17,6 +17,8 @@
 #target {
 	png: PNGraph{
 		++ -transitions-> pt
+		++ -arcs->a1
+		++ -arcs->a2
 	}
 	p1: Place
 	++ pt: Transition
