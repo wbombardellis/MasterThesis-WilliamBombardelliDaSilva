@@ -6,7 +6,7 @@
     xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar"
     xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore"
     name="Statemachine 2 Petrinet"
-    terminals="//@alphabet.3 //@alphabet.4 //@alphabet.5 //@alphabet.6 //@alphabet.7 //@alphabet.8 //@alphabet.9 //@alphabet.12 //@alphabet.13 //@alphabet.14 //@alphabet.15 //@alphabet.16 //@alphabet.17 //@alphabet.19 //@alphabet.20 //@alphabet.10 //@alphabet.11 //@alphabet.21 //@alphabet.18"
+    terminals="//@alphabet.3 //@alphabet.4 //@alphabet.5 //@alphabet.6 //@alphabet.7 //@alphabet.10 //@alphabet.11 //@alphabet.12 //@alphabet.13 //@alphabet.14 //@alphabet.15 //@alphabet.17 //@alphabet.18 //@alphabet.8 //@alphabet.9 //@alphabet.19 //@alphabet.16"
     nonterminals="//@alphabet.0 //@alphabet.1 //@alphabet.2"
     initial="//@alphabet.0">
   <alphabet
@@ -23,10 +23,6 @@
       name="Transition"/>
   <alphabet
       name="states"/>
-  <alphabet
-      name="initial"/>
-  <alphabet
-      name="final"/>
   <alphabet
       name="transitions"/>
   <alphabet
@@ -348,6 +344,11 @@
           <label
               name="State"/>
         </vertices>
+        <vertices
+            id="T3">
+          <label
+              name="T"/>
+        </vertices>
         <edges
             from="t3"
             to="s3">
@@ -391,6 +392,21 @@
               name="Transition"/>
         </value>
       </embedding>
+      <embedding
+          key="T3">
+        <value>
+          <edgeLabel
+              name="transitions"/>
+          <vertexLabels
+              name="SM"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="from"/>
+          <vertexLabels
+              name="State"/>
+        </value>
+      </embedding>
     </source>
     <corr id="r3"
         name="r3"
@@ -406,6 +422,11 @@
             id="s32p3">
           <label
               name="State2Place"/>
+        </vertices>
+        <vertices
+            id="T32T3_">
+          <label
+              name="T"/>
         </vertices>
         <vertices
             id="_2aa3">
@@ -444,6 +465,11 @@
             id="p3">
           <label
               name="Place"/>
+        </vertices>
+        <vertices
+            id="T3_">
+          <label
+              name="T"/>
         </vertices>
         <edges
             from="aa3"
@@ -518,15 +544,40 @@
               name="Arc"/>
         </value>
       </embedding>
+      <embedding
+          key="T3_">
+        <value>
+          <edgeLabel
+              name="transitions"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="arcs"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="from"/>
+          <vertexLabels
+              name="Place"/>
+        </value>
+      </embedding>
     </target>
     <ms key="t32t3_"
         value="t3"/>
     <ms key="s32p3"
         value="s3"/>
+    <ms key="T32T3_"
+        value="T3"/>
     <mt key="t32t3_"
         value="t3_"/>
     <mt key="s32p3"
         value="p3"/>
+    <mt key="T32T3_"
+        value="T3_"/>
     <mt key="_2aa3"
         value="aa3"/>
     <mt key="_2ab3"
