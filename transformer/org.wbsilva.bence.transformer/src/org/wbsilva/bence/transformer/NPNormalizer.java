@@ -387,14 +387,19 @@ public class NPNormalizer {
 				//With fixed morphism
 				final Map<String, Vertex> oldId2Vertex = nREntry.getValue();
 				for (Vertex cV : newTR.getCorr().getRhs().getVertices()) {
-					final Vertex newRV = forward ? oldId2Vertex.get(newTR.getMs().get(cV).getId())
-							: oldId2Vertex.get(newTR.getMt().get(cV).getId());
-					assert newRV != null && newR.getRhs().getVertices().contains(newRV);
-					
-					if (forward)
-						newTR.getMs().put(cV, newRV);
-					else 
-						newTR.getMt().put(cV, newRV);
+					if (forward) {
+						if (newTR.getMs().get(cV) != null) {
+							final Vertex newRV = oldId2Vertex.get(newTR.getMs().get(cV).getId());
+							assert newRV != null && newR.getRhs().getVertices().contains(newRV);
+							newTR.getMs().put(cV, newRV);
+						}
+					} else {
+						if (newTR.getMt().get(cV) != null) {
+							final Vertex newRV = oldId2Vertex.get(newTR.getMt().get(cV).getId());
+							assert newRV != null && newR.getRhs().getVertices().contains(newRV);
+							newTR.getMt().put(cV, newRV);
+						}
+					} 
 				}
 				//Fixed graph
 				if (forward)
