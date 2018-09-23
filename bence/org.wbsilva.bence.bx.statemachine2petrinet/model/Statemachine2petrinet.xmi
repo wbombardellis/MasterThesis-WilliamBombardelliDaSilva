@@ -75,6 +75,12 @@
           <label
               name="states"/>
         </edges>
+        <edges
+            from="sm0"
+            to="Z0">
+          <label
+              name="transitions"/>
+        </edges>
       </rhs>
     </source>
     <corr id="r0"
@@ -113,6 +119,18 @@
             to="Z0_">
           <label
               name="places"/>
+        </edges>
+        <edges
+            from="pn0"
+            to="Z0_">
+          <label
+              name="transitions"/>
+        </edges>
+        <edges
+            from="pn0"
+            to="Z0_">
+          <label
+              name="arcs"/>
         </edges>
       </rhs>
     </target>
@@ -167,6 +185,12 @@
         <value>
           <edgeLabel
               name="states"/>
+          <vertexLabels
+              name="SM"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="transitions"/>
           <vertexLabels
               name="SM"/>
         </value>
@@ -246,12 +270,30 @@
           <vertexLabels
               name="PNGraph"/>
         </value>
+        <value>
+          <edgeLabel
+              name="transitions"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="arcs"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
       </embedding>
       <embedding
           key="T1_">
         <value>
           <edgeLabel
               name="transitions"/>
+          <vertexLabels
+              name="PNGraph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="arcs"/>
           <vertexLabels
               name="PNGraph"/>
         </value>
