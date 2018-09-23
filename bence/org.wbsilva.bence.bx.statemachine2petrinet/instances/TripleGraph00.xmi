@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar">
+  <org.wbsilva.bence.graphgrammar:TripleGraph>
+    <source>
+      <vertices id="_KpvEoL86EeiONt3kg_Ih3g">
+        <label name="SM"/>
+      </vertices>
+      <vertices id="_KpvEob86EeiONt3kg_Ih3g">
+        <label name="State"/>
+      </vertices>
+      <vertices id="_KpvrsL86EeiONt3kg_Ih3g">
+        <label name="State"/>
+      </vertices>
+      <edges from="_KpvEoL86EeiONt3kg_Ih3g" to="_KpvEob86EeiONt3kg_Ih3g">
+        <label name="states"/>
+      </edges>
+      <edges from="_KpvEoL86EeiONt3kg_Ih3g" to="_KpvrsL86EeiONt3kg_Ih3g">
+        <label name="states"/>
+      </edges>
+    </source>
+    <corr>
+      <vertices id="_KzSpQr86EeiONt3kg_Ih3g">
+        <label name="SM2PNGraph"/>
+      </vertices>
+      <vertices id="_KzlkML86EeiONt3kg_Ih3g">
+        <label name="State2Place"/>
+      </vertices>
+      <vertices id="_KzuuI786EeiONt3kg_Ih3g">
+        <label name="State2Place"/>
+      </vertices>
+    </corr>
+    <target>
+      <vertices id="_KzSpQb86EeiONt3kg_Ih3g">
+        <label name="PNGraph"/>
+      </vertices>
+      <vertices id="_Kzk9I786EeiONt3kg_Ih3g">
+        <label name="Place"/>
+      </vertices>
+      <vertices id="_KzuuIr86EeiONt3kg_Ih3g">
+        <label name="Place"/>
+      </vertices>
+      <edges from="_KzSpQb86EeiONt3kg_Ih3g" to="_Kzk9I786EeiONt3kg_Ih3g">
+        <label name="places"/>
+      </edges>
+      <edges from="_KzSpQb86EeiONt3kg_Ih3g" to="_KzuuIr86EeiONt3kg_Ih3g">
+        <label name="places"/>
+      </edges>
+    </target>
+    <ms key="_KzSpQr86EeiONt3kg_Ih3g" value="_KpvEoL86EeiONt3kg_Ih3g"/>
+    <ms key="_KzlkML86EeiONt3kg_Ih3g" value="_KpvEob86EeiONt3kg_Ih3g"/>
+    <ms key="_KzuuI786EeiONt3kg_Ih3g" value="_KpvrsL86EeiONt3kg_Ih3g"/>
+    <mt key="_KzSpQr86EeiONt3kg_Ih3g" value="_KzSpQb86EeiONt3kg_Ih3g"/>
+    <mt key="_KzlkML86EeiONt3kg_Ih3g" value="_Kzk9I786EeiONt3kg_Ih3g"/>
+    <mt key="_KzuuI786EeiONt3kg_Ih3g" value="_KzuuIr86EeiONt3kg_Ih3g"/>
+  </org.wbsilva.bence.graphgrammar:TripleGraph>
+  <org.wbsilva.bence.graphgrammar:ParsingTree>
+    <zoneVertex id="_KyKn4L86EeiONt3kg_Ih3g">
+      <label name="S"/>
+      <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+        <label name="State"/>
+      </vertices>
+      <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+        <label name="State"/>
+      </vertices>
+      <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+        <label name="SM"/>
+      </vertices>
+    </zoneVertex>
+    <derivationStep>
+      <rule id="r0" name="r0">
+        <lhs name="S"/>
+        <rhs>
+          <vertices id="sm0">
+            <label name="SM"/>
+          </vertices>
+          <vertices id="Z0">
+            <label name="Z"/>
+          </vertices>
+          <edges from="sm0" to="Z0">
+            <label name="states"/>
+          </edges>
+        </rhs>
+      </rule>
+      <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KyKn4L86EeiONt3kg_Ih3g">
+        <label name="S"/>
+        <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+          <label name="State"/>
+        </vertices>
+        <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+          <label name="State"/>
+        </vertices>
+        <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+          <label name="SM"/>
+        </vertices>
+      </vertex>
+      <previous>
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KyKn4L86EeiONt3kg_Ih3g">
+          <label name="S"/>
+          <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+            <label name="State"/>
+          </vertices>
+          <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+            <label name="State"/>
+          </vertices>
+          <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+            <label name="SM"/>
+          </vertices>
+        </vertices>
+      </previous>
+      <next>
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KpvEoL86EeiONt3kg_Ih3g">
+          <label name="SM"/>
+          <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+            <label name="SM"/>
+          </vertices>
+        </vertices>
+        <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KxpDcb86EeiONt3kg_Ih3g">
+          <label name="Z"/>
+          <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+            <label name="State"/>
+          </vertices>
+          <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+            <label name="State"/>
+          </vertices>
+        </vertices>
+        <edges from="_KpvEoL86EeiONt3kg_Ih3g" to="_KxpDcb86EeiONt3kg_Ih3g">
+          <label name="states"/>
+        </edges>
+      </next>
+      <unifier key="sm0" value="_KpvEoL86EeiONt3kg_Ih3g"/>
+      <unifier key="Z0" value="_KxpDcb86EeiONt3kg_Ih3g"/>
+    </derivationStep>
+    <children>
+      <zoneVertex id="_KpvEoL86EeiONt3kg_Ih3g">
+        <label name="SM"/>
+        <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+          <label name="SM"/>
+        </vertices>
+      </zoneVertex>
+    </children>
+    <children>
+      <zoneVertex id="_KxpDcb86EeiONt3kg_Ih3g">
+        <label name="Z"/>
+        <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+          <label name="State"/>
+        </vertices>
+        <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+          <label name="State"/>
+        </vertices>
+      </zoneVertex>
+      <derivationStep>
+        <rule id="r1____Koqtor86EeiONt3kg_Ih3g" name="r1">
+          <lhs name="Z"/>
+          <rhs>
+            <vertices id="_KoqGkL86EeiONt3kg_Ih3g">
+              <label name="State"/>
+            </vertices>
+            <vertices id="_KoqtoL86EeiONt3kg_Ih3g">
+              <label name="Z"/>
+            </vertices>
+            <vertices id="_Koqtob86EeiONt3kg_Ih3g">
+              <label name="T">
+                <subscript>State</subscript>
+                <subscript>SM</subscript>
+                <superscript>from</superscript>
+                <superscript>transitions</superscript>
+              </label>
+            </vertices>
+          </rhs>
+          <embedding key="_KoqGkL86EeiONt3kg_Ih3g">
+            <value>
+              <edgeLabel name="states"/>
+              <vertexLabels name="SM"/>
+            </value>
+          </embedding>
+          <embedding key="_KoqtoL86EeiONt3kg_Ih3g">
+            <value>
+              <edgeLabel name="states"/>
+              <vertexLabels name="SM"/>
+            </value>
+          </embedding>
+        </rule>
+        <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KxpDcb86EeiONt3kg_Ih3g">
+          <label name="Z"/>
+          <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+            <label name="State"/>
+          </vertices>
+          <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+            <label name="State"/>
+          </vertices>
+        </vertex>
+        <previous>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KxpDcb86EeiONt3kg_Ih3g">
+            <label name="Z"/>
+            <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+              <label name="State"/>
+            </vertices>
+            <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+              <label name="State"/>
+            </vertices>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KxpDc786EeiONt3kg_Ih3g">
+            <label name="SM"/>
+            <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+              <label name="SM"/>
+            </vertices>
+          </vertices>
+          <edges from="_KxpDc786EeiONt3kg_Ih3g" to="_KxpDcb86EeiONt3kg_Ih3g">
+            <label name="states"/>
+          </edges>
+        </previous>
+        <next>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
+            <label name="T">
+              <subscript>State</subscript>
+              <subscript>SM</subscript>
+              <superscript>from</superscript>
+              <superscript>transitions</superscript>
+            </label>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KtqiYL86EeiONt3kg_Ih3g">
+            <label name="Z"/>
+            <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+              <label name="State"/>
+            </vertices>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KpvEob86EeiONt3kg_Ih3g">
+            <label name="State"/>
+            <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+              <label name="State"/>
+            </vertices>
+          </vertices>
+          <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_Kxi80L86EeiONt3kg_Ih3g">
+            <label name="SM"/>
+            <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+              <label name="SM"/>
+            </vertices>
+          </vertices>
+          <edges from="_Kxi80L86EeiONt3kg_Ih3g" to="_KpvEob86EeiONt3kg_Ih3g">
+            <label name="states"/>
+          </edges>
+          <edges from="_Kxi80L86EeiONt3kg_Ih3g" to="_KtqiYL86EeiONt3kg_Ih3g">
+            <label name="states"/>
+          </edges>
+        </next>
+        <unifier key="_KoqGkL86EeiONt3kg_Ih3g" value="_KpvEob86EeiONt3kg_Ih3g"/>
+        <unifier key="_KoqtoL86EeiONt3kg_Ih3g" value="_KtqiYL86EeiONt3kg_Ih3g"/>
+        <unifier key="_Koqtob86EeiONt3kg_Ih3g" value="_KsOX8L86EeiONt3kg_Ih3g"/>
+      </derivationStep>
+      <children>
+        <zoneVertex id="_KsOX8L86EeiONt3kg_Ih3g">
+          <label name="T">
+            <subscript>State</subscript>
+            <subscript>SM</subscript>
+            <superscript>from</superscript>
+            <superscript>transitions</superscript>
+          </label>
+        </zoneVertex>
+        <derivationStep>
+          <rule id="r4___(T^{from, transitions}_{State, SM})" name="r4">
+            <lhs name="T">
+              <subscript>State</subscript>
+              <subscript>SM</subscript>
+              <superscript>from</superscript>
+              <superscript>transitions</superscript>
+            </lhs>
+            <rhs/>
+          </rule>
+          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
+            <label name="T">
+              <subscript>State</subscript>
+              <subscript>SM</subscript>
+              <superscript>from</superscript>
+              <superscript>transitions</superscript>
+            </label>
+          </vertex>
+          <previous>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
+              <label name="T">
+                <subscript>State</subscript>
+                <subscript>SM</subscript>
+                <superscript>from</superscript>
+                <superscript>transitions</superscript>
+              </label>
+            </vertices>
+          </previous>
+          <next/>
+        </derivationStep>
+      </children>
+      <children>
+        <zoneVertex id="_KtqiYL86EeiONt3kg_Ih3g">
+          <label name="Z"/>
+          <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+            <label name="State"/>
+          </vertices>
+        </zoneVertex>
+        <derivationStep>
+          <rule id="r1____Koqtor86EeiONt3kg_Ih3g____KouYAL86EeiONt3kg_Ih3g" name="r1">
+            <lhs name="Z"/>
+            <rhs>
+              <vertices id="_Kotw8L86EeiONt3kg_Ih3g">
+                <label name="State"/>
+              </vertices>
+              <vertices id="_Kotw8b86EeiONt3kg_Ih3g">
+                <label name="Z">
+                  <subscript>SM</subscript>
+                  <superscript>states</superscript>
+                </label>
+              </vertices>
+              <vertices id="_Kotw8r86EeiONt3kg_Ih3g">
+                <label name="T">
+                  <subscript>State</subscript>
+                  <subscript>SM</subscript>
+                  <superscript>from</superscript>
+                  <superscript>transitions</superscript>
+                </label>
+              </vertices>
+            </rhs>
+            <embedding key="_Kotw8L86EeiONt3kg_Ih3g">
+              <value>
+                <edgeLabel name="states"/>
+                <vertexLabels name="SM"/>
+              </value>
+            </embedding>
+          </rule>
+          <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KtqiYL86EeiONt3kg_Ih3g">
+            <label name="Z"/>
+            <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+              <label name="State"/>
+            </vertices>
+          </vertex>
+          <previous>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KtqiYL86EeiONt3kg_Ih3g">
+              <label name="Z"/>
+              <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+                <label name="State"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KtrJcr86EeiONt3kg_Ih3g">
+              <label name="SM"/>
+              <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+                <label name="SM"/>
+              </vertices>
+            </vertices>
+            <edges from="_KtrJcr86EeiONt3kg_Ih3g" to="_KtqiYL86EeiONt3kg_Ih3g">
+              <label name="states"/>
+            </edges>
+          </previous>
+          <next>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
+              <label name="T">
+                <subscript>State</subscript>
+                <subscript>SM</subscript>
+                <superscript>from</superscript>
+                <superscript>transitions</superscript>
+              </label>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KrNEQL86EeiONt3kg_Ih3g">
+              <label name="Z">
+                <subscript>SM</subscript>
+                <superscript>states</superscript>
+              </label>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KpvrsL86EeiONt3kg_Ih3g">
+              <label name="State"/>
+              <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+                <label name="State"/>
+              </vertices>
+            </vertices>
+            <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_Ktcf8L86EeiONt3kg_Ih3g">
+              <label name="SM"/>
+              <vertices id="_KjujQL86EeiONt3kg_Ih3g">
+                <label name="SM"/>
+              </vertices>
+            </vertices>
+            <edges from="_Ktcf8L86EeiONt3kg_Ih3g" to="_KpvrsL86EeiONt3kg_Ih3g">
+              <label name="states"/>
+            </edges>
+          </next>
+          <unifier key="_Kotw8L86EeiONt3kg_Ih3g" value="_KpvrsL86EeiONt3kg_Ih3g"/>
+          <unifier key="_Kotw8b86EeiONt3kg_Ih3g" value="_KrNEQL86EeiONt3kg_Ih3g"/>
+          <unifier key="_Kotw8r86EeiONt3kg_Ih3g" value="_KsOX8L86EeiONt3kg_Ih3g"/>
+        </derivationStep>
+        <children>
+          <zoneVertex id="_KsOX8L86EeiONt3kg_Ih3g">
+            <label name="T">
+              <subscript>State</subscript>
+              <subscript>SM</subscript>
+              <superscript>from</superscript>
+              <superscript>transitions</superscript>
+            </label>
+          </zoneVertex>
+          <derivationStep>
+            <rule id="r4___(T^{from, transitions}_{State, SM})" name="r4">
+              <lhs name="T">
+                <subscript>State</subscript>
+                <subscript>SM</subscript>
+                <superscript>from</superscript>
+                <superscript>transitions</superscript>
+              </lhs>
+              <rhs/>
+            </rule>
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
+              <label name="T">
+                <subscript>State</subscript>
+                <subscript>SM</subscript>
+                <superscript>from</superscript>
+                <superscript>transitions</superscript>
+              </label>
+            </vertex>
+            <previous>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KsOX8L86EeiONt3kg_Ih3g">
+                <label name="T">
+                  <subscript>State</subscript>
+                  <subscript>SM</subscript>
+                  <superscript>from</superscript>
+                  <superscript>transitions</superscript>
+                </label>
+              </vertices>
+            </previous>
+            <next/>
+          </derivationStep>
+        </children>
+        <children>
+          <zoneVertex id="_KrNEQL86EeiONt3kg_Ih3g">
+            <label name="Z">
+              <subscript>SM</subscript>
+              <superscript>states</superscript>
+            </label>
+          </zoneVertex>
+          <derivationStep>
+            <rule id="r2___(Z^{states}_{SM})" name="r2">
+              <lhs name="Z">
+                <subscript>SM</subscript>
+                <superscript>states</superscript>
+              </lhs>
+              <rhs/>
+            </rule>
+            <vertex xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KrNEQL86EeiONt3kg_Ih3g">
+              <label name="Z">
+                <subscript>SM</subscript>
+                <superscript>states</superscript>
+              </label>
+            </vertex>
+            <previous>
+              <vertices xsi:type="org.wbsilva.bence.graphgrammar:ZoneVertex" id="_KrNEQL86EeiONt3kg_Ih3g">
+                <label name="Z">
+                  <subscript>SM</subscript>
+                  <superscript>states</superscript>
+                </label>
+              </vertices>
+            </previous>
+            <next/>
+          </derivationStep>
+        </children>
+        <children>
+          <zoneVertex id="_KpvrsL86EeiONt3kg_Ih3g">
+            <label name="State"/>
+            <vertices id="_KmAbML86EeiONt3kg_Ih3g">
+              <label name="State"/>
+            </vertices>
+          </zoneVertex>
+        </children>
+      </children>
+      <children>
+        <zoneVertex id="_KpvEob86EeiONt3kg_Ih3g">
+          <label name="State"/>
+          <vertices id="_KjyNoL86EeiONt3kg_Ih3g">
+            <label name="State"/>
+          </vertices>
+        </zoneVertex>
+      </children>
+    </children>
+  </org.wbsilva.bence.graphgrammar:ParsingTree>
+</xmi:XMI>
