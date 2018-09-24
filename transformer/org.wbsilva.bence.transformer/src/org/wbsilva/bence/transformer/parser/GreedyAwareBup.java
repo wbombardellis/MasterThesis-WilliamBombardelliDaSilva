@@ -78,7 +78,7 @@ public class GreedyAwareBup extends GreedyBup {
 			} else if (aSize < bSize) {
 				return 1;
 			} else  {
-				//The second criterion is the amount of outEdges
+				//The second criterion is the distance to the bigger element
 				int aDistances = a.stream()
 						.sorted((x,y) -> - x.getVertices().size() + y.getVertices().size()) //Sort ascendent by size
 						.findFirst()														//Get the biggest
