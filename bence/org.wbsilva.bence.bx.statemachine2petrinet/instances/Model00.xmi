@@ -10,4 +10,7 @@
   <transitions
       from="s1"
       to="s2"/>
+  <transitions
+      from="s2"
+      to="s1"/>
 </org.wbsilva.mm.statemachine:SM>

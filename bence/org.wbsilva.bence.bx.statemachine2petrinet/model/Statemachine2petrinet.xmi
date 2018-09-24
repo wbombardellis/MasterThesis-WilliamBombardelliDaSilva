@@ -194,6 +194,12 @@
           <vertexLabels
               name="SM"/>
         </value>
+        <value>
+          <edgeLabel
+              name="to"/>
+          <vertexLabels
+              name="Transition"/>
+        </value>
       </embedding>
       <embedding
           key="Z1">
@@ -306,6 +312,12 @@
               name="places"/>
           <vertexLabels
               name="PNGraph"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="to"/>
+          <vertexLabels
+              name="Arc"/>
         </value>
       </embedding>
       <embedding
