@@ -188,4 +188,95 @@ class GraphgrammarUtilTest {
 		
 		assertTrue(GraphgrammarUtil.anyBijectiveMapping(candidates).isPresent());
 	}
+	
+	@Test
+	void testDistanceEmpty() {
+		Graph g = GraphgrammarFactory.eINSTANCE.createGraph();
+		
+		Map<String, Map<String, Integer>> d = GraphgrammarUtil.distance(g);
+		assertEquals(0, d.size());
+	}
+	
+	@Test
+	void testDistanceWithOneVertex() {
+		Graph g = GraphgrammarFactory.eINSTANCE.createGraph();
+		Vertex gv0 = GraphgrammarFactory.eINSTANCE.createVertex();
+		gv0.setId("v0");
+		g.getVertices().add(gv0);
+		
+		Map<String, Map<String, Integer>> d = GraphgrammarUtil.distance(g);
+		assertEquals(1, d.size());
+		assertEquals(new Integer(0), d.get(gv0.getId()).get(gv0.getId()));
+	}
+	
+	@Test
+	void testDistanceWithMoreVertices() {
+		Symbol l = GraphgrammarFactory.eINSTANCE.createSymbol();
+		l.setName("l");
+		
+		Graph g = GraphgrammarFactory.eINSTANCE.createGraph();
+		Vertex gv0 = GraphgrammarFactory.eINSTANCE.createVertex();
+		gv0.setId("v0");
+		gv0.setLabel(EcoreUtil.copy(l));
+		Vertex gv1 = GraphgrammarFactory.eINSTANCE.createVertex();
+		gv1.setId("v1");
+		gv1.setLabel(EcoreUtil.copy(l));
+		Vertex gv2 = GraphgrammarFactory.eINSTANCE.createVertex();
+		gv2.setId("v2");
+		gv2.setLabel(EcoreUtil.copy(l));
+		Vertex gv3 = GraphgrammarFactory.eINSTANCE.createVertex();
+		gv3.setId("v3");
+		gv3.setLabel(EcoreUtil.copy(l));
+		Vertex gv4 = GraphgrammarFactory.eINSTANCE.createVertex();
+		gv4.setId("v4");
+		gv4.setLabel(EcoreUtil.copy(l));
+		
+		Edge e0_1 = GraphgrammarFactory.eINSTANCE.createEdge();
+		e0_1.setFrom(gv0);
+		e0_1.setTo(gv1);
+		e0_1.setLabel(EcoreUtil.copy(l));
+		Edge e0_2 = GraphgrammarFactory.eINSTANCE.createEdge();
+		e0_2.setFrom(gv0);
+		e0_2.setTo(gv2);
+		e0_2.setLabel(EcoreUtil.copy(l));
+		Edge e1_2 = GraphgrammarFactory.eINSTANCE.createEdge();
+		e1_2.setFrom(gv1);
+		e1_2.setTo(gv2);
+		e1_2.setLabel(EcoreUtil.copy(l));
+		Edge e2_3 = GraphgrammarFactory.eINSTANCE.createEdge();
+		e2_3.setFrom(gv2);
+		e2_3.setTo(gv3);
+		e2_3.setLabel(EcoreUtil.copy(l));
+		Edge e3_2 = GraphgrammarFactory.eINSTANCE.createEdge();
+		e3_2.setFrom(gv3);
+		e3_2.setTo(gv2);
+		e3_2.setLabel(EcoreUtil.copy(l));
+		Edge e3_4 = GraphgrammarFactory.eINSTANCE.createEdge();
+		e3_4.setFrom(gv3);
+		e3_4.setTo(gv4);
+		e3_4.setLabel(EcoreUtil.copy(l));
+		
+		g.getVertices().add(gv0);
+		g.getVertices().add(gv1);
+		g.getVertices().add(gv2);
+		g.getVertices().add(gv3);
+		g.getVertices().add(gv4);
+		
+		g.getEdges().add(e0_1);
+		g.getEdges().add(e0_2);
+		g.getEdges().add(e1_2);
+		g.getEdges().add(e2_3);
+		g.getEdges().add(e3_2);
+		g.getEdges().add(e3_4);
+		
+		Map<String, Map<String, Integer>> d = GraphgrammarUtil.distance(g);
+		assertEquals(g.getVertices().size(), d.size());
+		assertEquals(new Integer(1), d.get(gv0.getId()).get(gv1.getId()));
+		assertEquals(new Integer(1), d.get(gv0.getId()).get(gv2.getId()));
+		assertEquals(null, d.get(gv0.getId()).get(gv4.getId()));
+		assertEquals(new Integer(3), d.get(gv1.getId()).get(gv3.getId()));
+		assertEquals(new Integer(1), d.get(gv2.getId()).get(gv1.getId()));
+		
+		
+	}
 }
