@@ -545,7 +545,35 @@ The complete transformation procedure is presented in the Algorithm \ref{alg:tra
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% TGG EXTENTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{An Extension of BNCE Triple Graph Grammars with Look-ahead}
-Problem with B-eNCE TGG. Solution with look-ahead. Critical view. Examples
+The NCE graph grammar formalism from \cite{janssens1982graph}, presented in the previous sections, can define with very few rules the languages of several classes of labeled graphs, including trees, path graphs, star graphs, control-flow graphs, edgeless graphs, complete graphs, and others. However, it is at least difficult to define the languages of other classes, like the class-diagram graphs, with NCE graph grammars. In this Section, we approach the problem of defining a NCE graph grammar for these classes of graphs and propose a solution for that by means of an extension of NCE that includes application conditions.
+
+Class diagrams are commonly used to model object-oriented software artifact that are composed of several classes related by associations. For the sake of demonstrating the problem of NCE with class diagrams, consider a simplified view of the class-diagrams graphs, in which a vertex has either label $c$ or $a$, respectively representing a class or an association, and an edge between an association and a class with label $s$ ($t$) signalizes that the class is the source (target) of the association. In Figure \ref{fig:classdiagram-g}, a class-diagram graph with two classes connected by two associations is depicted. An attempt for a NCE graph grammar that would describe the language of all class-diagram graphs is $GG = (\{K,a,b,s,t\}, \{a,b,s,t\}, K, \{r_0, r_1, r_2\})$, with $r_0$, $r_1$, and $r_2$ depicted in Figure \ref{fig:classdiagram-gg} and $\omega_0(c_0) = \omega_1(c_1) = \{(t,a)\}$ and $\omega_0 = \emptyset$ being the complete embedding definition of the rules $r_0$, $r_1$, and $r_2$, respectively.
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\input{examples/classdiagram-g}
+		\caption{....}
+		\label{fig:classdiagram-g}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.68\textwidth}
+		\centering
+		\input{examples/classdiagram-gg}
+		\caption{...}
+		\label{fig:classdiagram-gg}
+	\end{subfigure}
+	\caption{...}
+	%TODO: Captions
+\end{figure}
+
+The problem of the graph grammar $GG$ is that it does not define the complete language of the class-diagram graph. In fact, the graph in Figure \ref{fig:classdiagram-g} is not in $L(GG)$. To see this, consider the following derivation in $GG$:
+\input{examples/classdiagram-der}
+
+This is the closest we get to deriving the graph in Figure \ref{fig:classdiagram-g} using GG. Thereby, we would like to connect the association $v_2$ to the class $v_1$...
+
+
+%TODO: Critical view. Examples
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% IMPLEMENTATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
