@@ -14,6 +14,7 @@
 \newcommand{\rrestr}{\triangleright}
 \newcommand{\st}{\; | \;}
 \renewcommand{\.}{. \;}
+\newcommand{\dom}{\operatorname{dom}}
 
 %%%%%%%%%%%%%% GG %%%%%%%%%%%%%%
 \newcommand{\neigh}[1]{\operatorname{neigh}_{#1}}
@@ -66,9 +67,12 @@
 	\overset{#1,#2}{\Rightarrow}_{#3}
 	\fi
 }
-\newcommand{\tderivtr}[1]{
-	\Rightarrow^*_{#1}
-}
+\newcommand{\tderivtr}[1]{\Rightarrow^*_{#1}}
+\newcommand{\cderivpac}[4]{\overset{#1,#2,#3}{\Rrightarrow}_{#4}}
+\newcommand{\derivpac}[4]{\overset{#1,#2,#3}{\Rightarrow}_{#4}}
+\newcommand{\derivn}[2]{\Rightarrow^{#1}_{#2}}
+\newcommand{\resolv}[1]{\overset{#1}{\rightarrowtail}}
+\newcommand{\resolvn}[2]{\rightarrowtail^{#1}_{#2}}
 
 %%%%%%%%%%%%%% ALGORITHM %%%%%%%%%%%%%%
 \newcommand{\?}{\;\operatorname{\textbf{?}}\;}

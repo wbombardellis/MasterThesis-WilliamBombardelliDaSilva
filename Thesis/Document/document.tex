@@ -129,7 +129,7 @@ In the sequel, we introduce the dynamic aspects of NCE graph grammars by means o
 	
 	When $GG$, $r$ or $v$ are clear in the context or irrelevant we might omit them and simply write $G \cderiv{}{}{} H$ or $G \deriv{}{}{} H$. Moreover, we denote the reflexive transitive closure of $\deriv{}{}{}$ by $\derivtr{}$ and, for $G \derivtr{} H'$, we say $G$ derives into $H'$.
 \end{definition}
-
+%TODO: Explain precedence of vertices, descendant, sentential form
 A concrete derivation can be informally understood as the replacement of a non-terminal vertex $v$ and all its adjacent edges in $G$ by a graph $R$ plus edges $e$ from former neighbors $w$ of $v$ to some vertices $t$ of $R$, provided $e$'s label and $w$'s label are in the embedding specification $\omega(t)$. That is, the embedding function $\omega$ of a rule specifies which neighbors of $v$ are to be connected with which vertices of $R$, according to their labels and the adjacent edges' labels. The process that governs the creation of these edges is called embedding and can occur in various forms in different graph grammar formalisms. We opted for a rather simple approach, in which the edges' directions and labels are maintained and cannot be used to define embedding. As an additional note, it is worth mentioning, that string grammars have no embedding because a replaced symbol in a string has ``connections" only with its left and right neighbors, so the replacement is always ``connected" with both sides.
 
 \begin{definition}
@@ -544,7 +544,7 @@ The complete transformation procedure is presented in the Algorithm \ref{alg:tra
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% TGG EXTENTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{An Extension of BNCE Triple Graph Grammars with Look-ahead}
+\section{An Extension of NCE Triple Graph Grammars with Application Conditions}
 The NCE graph grammar formalism from \cite{janssens1982graph}, presented in the previous sections, can define with very few rules the languages of several classes of labeled graphs, including trees, path graphs, star graphs, control-flow graphs, edgeless graphs, complete graphs, and others. However, it is at least difficult to define the languages of other classes, like the class-diagram graphs, with NCE graph grammars. In this Section, we approach the problem of defining a NCE graph grammar for these classes of graphs and propose a solution for that by means of an extension of NCE that includes application conditions.
 
 Class diagrams are commonly used to model object-oriented software artifact that are composed of several classes related by associations. For the sake of demonstrating the problem of NCE with class diagrams, consider a simplified view of the class-diagrams graphs, in which a vertex has either label $c$ or $a$, respectively representing a class or an association, and an edge between an association and a class with label $s$ ($t$) signalizes that the class is the source (target) of the association. In Figure \ref{fig:classdiagram-g}, a class-diagram graph with two classes connected by two associations is depicted. An attempt for a NCE graph grammar that would describe the language of all class-diagram graphs is $GG = (\{K,a,b,s,t\}, \{a,b,s,t\}, K, \{r_0, r_1, r_2\})$, with $r_0$, $r_1$, and $r_2$ depicted in Figure \ref{fig:classdiagram-gg} and $\omega_0(c_0) = \omega_1(c_1) = \{(t,a)\}$ and $\omega_0 = \emptyset$ being the complete embedding definition of the rules $r_0$, $r_1$, and $r_2$, respectively.
@@ -569,8 +569,61 @@ Class diagrams are commonly used to model object-oriented software artifact that
 The problem of the graph grammar $GG$ is that it does not define the complete language of the class-diagram graph. In fact, the graph in Figure \ref{fig:classdiagram-g} is not in $L(GG)$. To see this, consider the following derivation in $GG$:
 \input{examples/classdiagram-der}
 
-This is the closest we get to deriving the graph in Figure \ref{fig:classdiagram-g} using GG. Thereby, we would like to connect the association $v_2$ to the class $v_1$...
+This is the closest we get to deriving the graph in Figure \ref{fig:classdiagram-g} using GG. Thereby, we would like to connect the association $v_2$ to the class $v_1$ but it is not possible, because $v_1$ was not a neighbor of the vertex $K_0$ that preceded $v_2$. Notice that a vertex in any sentential form can only be either connected to vertices that stem from the same rule application or to neighbors of its precedent vertex. In fact, this seems to be a general characteristic for context-free grammars, where the information about elements in the context of the precedents are not available for descendant elements. In order to overcome it, one could potentially elaborate an alternative grammar that defines the desired language completely and concisely, but we believe that such ad-hoc solution would include a bigger number of rules and add complexity to the grammar. With that in mind, we propose in the sequel an extension of the NCE grammar formalism with positive application conditions (PAC) that solves this issue. 
 
+In NCE graph grammars with PAC, rules' right-hand sides are equipped with application conditions in form of special vertices that are produced by derivation steps and removed by so-called resolution steps. A resolution step is responsible for removing such special vertices and moving their adjacent edges to other vertices. This resolution mechanism allows that the vertex $v_2$ from the previous example be connected to $v_1$. 
+
+In order to define the PAC mechanism in detail, the definitions of rule and derivation step are augmented as follows.
+
+\begin{definition}
+	A production rule with PAC is of the form $(A \pro R, \omega, U)$ with $A$, $R$ and $\omega$ as described in \ref{def:gg} and $U \subseteq \{v \in V_R \st \phi_R(v) \in \Delta\}$, the set of special vertices, called PAC vertices.
+\end{definition}
+
+If a graph grammar has at least one rule with PAC, then we say it is a graph grammar with PAC.
+
+\begin{definition}
+	A \textit{concrete derivation step} with PAC in the graph grammar $GG$ is of the form $G \cderivpac{r}{v}{U}{GG} H$ with $G$, $H$, $v$ being as described in \ref{def:gg_dstep}, and $r = (A \pro R, \omega, U)$ being a production rule with PAC. Given that, a \textit{derivation step} is, analogously, of the form $G \derivpac{r}{v}{W}{GG} H'$ with $W = m(U)$ where $m$ is the isomorphism from $H$ and $H'$.
+\end{definition}
+
+So far, PAC vertices do not change anything in the behavior of a derivation step and the set $U$ in a derivation step serves just to tag which vertices are PAC in a sentential form. Nevertheless, PAC vertices play an important role on a resolution step, defined below.
+
+\begin{definition}
+	Let $GG = (\Sigma, \Delta, S, P)$ be a graph grammar and $G$ a graph over $\Delta$, $G$ resolves into $H$ with the resolution partial function $s: V_G \pto V_G$, we write $G \resolv{s} H$ and call it a resolution step, if, and only if, the following holds:
+	\begin{align*}
+		& \forall v \in \dom s \. s(v) \neq v \text{ and } \phi_G(s(v)) = \phi_G(v) \text{ and}\\
+		V_H & = V_G \setminus \dom s \text{ and}\\
+		E_H & = (E_G \setminus (\{(u,l,t) \st u \in \dom s, (u,l,t) \in E_G\} \\
+			&\hspace{3.5em} \cup \{(t,l,u) \st u \in \dom s, (t,l,u) \in E_G\}))\\
+		    & \cup \{(s(u),l,t) \st u \in \dom s, (u,l,t) \in E_G\} \\
+		    & \cup \{(t,l,s(u)) \st u \in \dom s, (t,l,u) \in E_G\}
+	\end{align*}
+\end{definition}
+
+A resolution step can be informally understood as the removal of the PAC vertices of $G$--- that are in the domain of the resolution function $s$ ---followed by the redirection of the edges adjacent to the PAC vertices to other vertices of $H$.
+
+For the PAC mechanism to work, it is still necessary to combine derivation and resolution steps to define the language of a grammar with PAC, what we do in the following.
+
+\begin{definition}
+	A derivation $D$ in a graph grammar with PAC is a sequence of $n$ derivation steps followed by $n$ resolution steps with $n > 0$, as follows:
+	\begin{equation*}
+		D = (G_0 \derivpac{r_0}{v_0}{W_0}{} G_1 \derivpac{r_1}{v_1}{W_1}{} \dots \derivpac{r_{n-1}}{v_{n-1}}{W_{n-1}}{} G_n^0 \resolv{s_0} G_n^1 \resolv{s_1} \dots \resolv{s_{n-1}} G_n^n)
+	\end{equation*}
+	with $s_i$ being a resolution total function $s_i : m_i(W_i) \to V_{G_n^i}$ and $m_i : W_i \to V_{G_n^i}$ the mapping from the PAC vertices generated on the derivation step $i$ to their correspondent vertices in $G_n^i$, for all $0 \le i < n$.
+\end{definition}
+
+It is clear that, the mapping $m$ of the previous definition exists and is bijective because all PAC vertices are, by definition, terminal and, therefore, are not deleted by derivation steps and, moreover, the images of all $m_i$ are pair-wise disjunct.
+
+\begin{definition}
+	The language $L(GG)$ generated by the grammar $GG$ with PAC is
+	\begin{equation*}
+		L(GG) = \{ H \text{ is a graph over } \Delta \text{ and } \startG{GG} \derivn{n}{} H' \resolvn{n}{} H \}
+	\end{equation*}
+	where $\derivn{n}{}$ and $\resolvn{n}{}$ denote a sequence of $n$ derivation steps and $n$ resolution steps, respectively.
+\end{definition}
+
+
+%TODO: Notice if W = emptyset, then it is the same as before
+%TODO: Claim All pacs are resolved
 
 %TODO: Critical view. Examples
 
