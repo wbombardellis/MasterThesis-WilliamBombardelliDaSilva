@@ -1,0 +1,34 @@
+\noindent
+\begin{minipage}[h]{.5\textwidth}
+	\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_0:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {K ::=};
+	
+	\draw (0.5,0) node[t, label=90:$c_0$] (v1) {c};
+	\draw (1.2,0) node[nont] (v2) {A};
+	\draw (2,0) node[nont] (v3) {K};
+	\draw[edge] (v2) -- (v1) node [edgeLabel] {$s$};
+	
+	%The next rule separator
+	\draw[pipe] (2.5,-0.5) -- (2.5,\ridY);
+	
+	\node[rid] at (3.2,\ridY) {$r_1:$};
+	\draw (3,0) node[empty] (v7) {$\emptyTG$};
+	\end{tikzpicture}
+\end{minipage}
+\begin{minipage}[h]{.5\textwidth}
+\begin{tikzpicture}[grammar]
+\node[rid] at (\ridX,\ridY) {$r_2:$};
+\draw (\lhsX,0) node[lhs] (lhs) {A ::=};
+
+\draw (0.5,0) node[t, label=90:$a_2$] (v1) {a};
+\draw (1.2,0) node[pac, label=90:$c_2$] (v2) {c};
+\draw[pacedge] (v1) -- (v2) node [edgeLabel] {$t$};
+
+%The next rule separator
+\draw[pipe] (2,-0.5) -- (2,\ridY);
+
+\node[rid] at (2.7,\ridY) {$r_3:$};
+\draw (2.5,0) node[empty] (v7) {$\emptyTG$};
+\end{tikzpicture}
+\end{minipage}

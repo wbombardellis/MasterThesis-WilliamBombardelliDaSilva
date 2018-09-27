@@ -349,18 +349,20 @@ The NP property is important to the correctness of the parsing algorithm. Furthe
 The next paragraphs present zone vertices and zone graphs, that are our understanding of the concepts also from %TODO: cite 27
 
 \begin{definition}
+	\label{def:zv}
 	A zone vertex $h$ of a graph $G$ over $\Sigma$ is a pair $(\sigma \in \Sigma, U \subseteq V_G)$, that is, a symbol from $\Sigma$ and a subset of the vertices of $G$.
 	
 	A zone vertex can be understood as a contraction of a subgraph of $G$ defined by the vertices $U$ into one vertex with symbol $\sigma$.
 \end{definition}
 
 \begin{definition}
+	\label{def:z}
 	Let $H = \{(\sigma_0,U_0),(\sigma_1,U_1),\dots,(\sigma_m,U_m)\}$ be a set of zone vertices of a graph $G$ over $\Sigma$ with disjoint vertices (i.e. $U_i \cap U_j = \emptyset$ for all $0 \leq i,j \leq m \text{ and } i \neq j$) and $V(H) = \bigcup_{0 \leq i \leq m}{U_i}$. A zone graph $Z(H)$ for $H$ is $Z(H) = (V, E, \phi)$ with $V$ being the zone vertices, $E \subseteq V \times \Sigma \times V$ the edges between zone vertices and $\phi: V \to \Sigma$ the labeling function, determined by
 	\begin{align*}
-		V & = H \cup \{(\phi_G(x),\{x\}) \st x \in neigh_G(V(H)) \}\\
+		V & = H \cup \{(\phi_G(x),\{x\}) \st x \in \neigh{G}(V(H)) \}\\
 		E & = \{((\sigma,U),l,(\eta,T)) \st (\sigma,U),(\eta,T) \in V \text{ and } U \neq T \text{ and } \\
 		& (u,l,t) \in E_G \text{ and } u \in U \text{ and } t \in T\} \\
-		\phi & = \{(\sigma,U) \mapsto \sigma\}
+		\phi & = \{(\sigma,U) \mapsto \sigma  \st (\sigma,U,W) \in V\}
 	\end{align*}
 	The zone graph $Z(H)$ can be intuitively understood as a subgraph of $G$, where each zone vertex in $V_{Z(H)}$ is either a $(\sigma_i,U_i)$ of $H$, which is a contraction of the vertices $U_i$ of $G$, or a $(\phi_G(x),\{x\})$, which stems from $x$ being a neighbor of some vertex in $V_i$.
 	
@@ -547,7 +549,7 @@ The complete transformation procedure is presented in the Algorithm \ref{alg:tra
 \section{An Extension of NCE Triple Graph Grammars with Application Conditions}
 The NCE graph grammar formalism from \cite{janssens1982graph}, presented in the previous sections, can define with very few rules the languages of several classes of labeled graphs, including trees, path graphs, star graphs, control-flow graphs, edgeless graphs, complete graphs, and others. However, it is at least difficult to define the languages of other classes, like the class-diagram graphs, with NCE graph grammars. In this Section, we approach the problem of defining a NCE graph grammar for these classes of graphs and propose a solution for that by means of an extension of NCE that includes application conditions.
 
-Class diagrams are commonly used to model object-oriented software artifact that are composed of several classes related by associations. For the sake of demonstrating the problem of NCE with class diagrams, consider a simplified view of the class-diagrams graphs, in which a vertex has either label $c$ or $a$, respectively representing a class or an association, and an edge between an association and a class with label $s$ ($t$) signalizes that the class is the source (target) of the association. In Figure \ref{fig:classdiagram-g}, a class-diagram graph with two classes connected by two associations is depicted. An attempt for a NCE graph grammar that would describe the language of all class-diagram graphs is $GG = (\{K,a,b,s,t\}, \{a,b,s,t\}, K, \{r_0, r_1, r_2\})$, with $r_0$, $r_1$, and $r_2$ depicted in Figure \ref{fig:classdiagram-gg} and $\omega_0(c_0) = \omega_1(c_1) = \{(t,a)\}$ and $\omega_0 = \emptyset$ being the complete embedding definition of the rules $r_0$, $r_1$, and $r_2$, respectively.
+Class diagrams are commonly used to model object-oriented software artifact that are composed of several classes related by associations. For the sake of demonstrating the problem of NCE with class diagrams, consider a simplified view of the class-diagrams graphs, in which a vertex has either label $c$ or $a$, respectively representing a class or an association, and an edge between an association and a class with label $s$ ($t$) signalizes that the class is the source (target) of the association. In Figure \ref{fig:classdiagram-g}, a class-diagram graph with two classes connected by two associations is depicted. An attempt for a NCE graph grammar that would describe the language of all class-diagram graphs is $GG = (\{K,a,c,s,t\}, \{a,c,s,t\}, K, \{r_0, r_1, r_2\})$, with $r_0$, $r_1$, and $r_2$ depicted in Figure \ref{fig:classdiagram-gg} and $\omega_0(c_0) = \omega_1(c_1) = \{(t,a)\}$ and $\omega_0 = \emptyset$ being the complete embedding definition of the rules $r_0$, $r_1$, and $r_2$, respectively.
 
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.3\textwidth}
@@ -590,7 +592,7 @@ So far, PAC vertices do not change anything in the behavior of a derivation step
 \begin{definition}
 	Let $GG = (\Sigma, \Delta, S, P)$ be a graph grammar and $G$ a graph over $\Delta$, $G$ resolves into $H$ with the resolution partial function $s: V_G \pto V_G$, we write $G \resolv{s} H$ and call it a resolution step, if, and only if, the following holds:
 	\begin{align*}
-		& \forall v \in \dom s \. s(v) \neq v \text{ and } \phi_G(s(v)) = \phi_G(v) \text{ and}\\
+		& \forall v \in \dom s \. s(v) \notin \dom s \text{ and } \phi_G(s(v)) = \phi_G(v) \text{ and}\\
 		V_H & = V_G \setminus \dom s \text{ and}\\
 		E_H & = (E_G \setminus (\{(u,l,t) \st u \in \dom s, (u,l,t) \in E_G\} \\
 			&\hspace{3.5em} \cup \{(t,l,u) \st u \in \dom s, (t,l,u) \in E_G\}))\\
@@ -616,14 +618,42 @@ It is clear that, the mapping $m$ of the previous definition exists and is bijec
 \begin{definition}
 	The language $L(GG)$ generated by the grammar $GG$ with PAC is
 	\begin{equation*}
-		L(GG) = \{ H \text{ is a graph over } \Delta \text{ and } \startG{GG} \derivn{n}{} H' \resolvn{n}{} H \}
+		L(GG) = \{ H \text{ is a graph over } \Delta \text{ and } \startG{GG} \derivpacn{}{n} H' \resolvn{}{}{n} H \}
 	\end{equation*}
-	where $\derivn{n}{}$ and $\resolvn{n}{}$ denote a sequence of $n$ derivation steps and $n$ resolution steps, respectively.
+	where $\derivpacn{}{n}$ and $\resolvn{}{}{n}$ denote a sequence of $n$ derivation steps and $n$ resolution steps, respectively.
 \end{definition}
 
+Ultimately, we put forward a NCE graph grammar with PAC whose language is the set of all class-diagram graphs. This grammar is $GG = (\{K, A, a, c, s, t\}, \{a, c, s, t\}, K, \{r_0, r_1, r_2, r_3\})$ with $\omega_0(c_0) = \{(t,a)\}$, $\omega_2(a_2) = \{(s,c)\}$, $\omega_2(c_2) = \{(s,a),(t,a)\}$, $\omega_1 = \omega_3 = \emptyset$ being the complete characterization of the embedding functions of the respective rules, and the the rules being denoted as below. We advise that PAC vertices and their adjacent edges are depicted with dotted lines.
 
-%TODO: Notice if W = emptyset, then it is the same as before
-%TODO: Claim All pacs are resolved
+\input{examples/classdiagram-pacgg}
+
+Below, we demonstrate that the graph from Figure \ref{fig:classdiagram-g} is in $L(GG)$, by means of a derivation in $GG$.
+\input{examples/classdiagram-pacder}
+
+\begin{remark}
+	If, for all rules $(A \pro R,\omega,U)$ in a grammar $GG$ have $U = \emptyset$, then the $GG$ degrades to a normal NCE grammar without PAC and the resolution steps have no effect in $L(GG)$.
+\end{remark}
+
+\begin{remark}
+	Given a graph grammar $GG$ with PAC, if the graph $g$ is in $L(GG)$, then $g$ has no PAC vertices. That is, the resolution steps remove all PAC vertices, because every resolution function $s_i$ is required to map to vertices that are not in its domain. This guarantees that the number of PAC vertices reduces at each resolution step with $s_i \neq \emptyset$.
+\end{remark}
+
+Regarding the parsing procedure, the Algorithm \ref{alg:parse} can be slightly modified to support PAC, by augmenting the zone vertices with PAC vertices, changing the way how zone graphs are constructed and how zone vertices are added to $bup$ and to the parsing forest. The details of these changes are described in the sequel.
+
+\begin{definition}
+	A zone vertex with PAC of a garph $G$ is a triple $(\sigma, U, W)$, with $\sigma$ and $U$ being as explained in Definition \ref{def:zv} and $W \in V_G$ being the set of PAC vertices disjunct from $U$.
+\end{definition}
+
+\begin{definition}
+	Let $H = \{(\sigma_o,U_0,W_0), \dots, (\sigma_m, U_m, W_m)\})$ be a set of zone vertices with PAC of a graph $G$, as given in Definition \ref{def:z}, and $W(H) = \bigcup_{0 \le i \le m}{W_i}$. A zone graph with PAC $Z(H)$ for $H$ is $(V,E,\psi)$, with
+	\begin{align*}
+		V & = H \cup \{(\psi_G(x),\{x\}, \emptyset) \st x \in \neigh{G}(V(H)) \setminus W(H) \} \\
+		E & = \{((\sigma,U,W),l,(\eta,T,X)) \st (\sigma,U,W),(\eta,T,X) \in V \text{ and } U \neq T \text{ and } \\
+		& (u,l,t) \in E_G \text{ and } u \in U \setminus X \text{ and } t \in T \setminus W \} \\
+		\phi & = \{(\sigma,U,W) \mapsto \sigma \st (\sigma,U,W) \in V\}
+	\end{align*}
+\end{definition}
+
 
 %TODO: Critical view. Examples
 
