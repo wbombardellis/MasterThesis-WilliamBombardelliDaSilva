@@ -207,8 +207,12 @@ Building upon the concepts of graphs and graph grammars, we present, in the foll
 %%%%%% Syntax %%%%%%
 
 \begin{definition}
-	A directed labeled triple graph $TG = G_s \ms{m_s} G_c \mt{m_t} G_t$ over $\Sigma$ consists of three disjoint directed labeled graphs over $\Sigma$ (see \ref{def:graph}), respectively, the source graph $G_s$, the correspondence graph $G_c$ and the target graph $G_t$, together with two injective morphisms (see \ref{def:morphism}) $m_s: V_{G_c} \to V_{G_s}$ and $m_t : V_{G_c} \to G_{G_t}$. Directed labeled triple graphs are often referred to simply as triple graphs and we might omit the morphisms' names in the notation. Moreover, we denote the set of all triple graphs over $\Sigma$ as $\alltgraphs{\Sigma}$. We might refer to all vertices of $TG$ by $V_{TG}:= V_s \cup V_c \cup V_t$, all edges by $E_{TG}:= E_s \cup E_c \cup E_t$ and the complete labeling function by $\phi_{TG}:= \phi_{G_s} \cup \phi_{G_c} \cup \phi_{G_t}$.
+	A directed labeled triple graph $TG = G_s \ms{m_s} G_c \mt{m_t} G_t$ over $\Sigma$ consists of three disjoint directed labeled graphs over $\Sigma$ (see \ref{def:graph}), respectively, the source graph $G_s$, the correspondence graph $G_c$ and the target graph $G_t$, together with two injective morphisms (see \ref{def:morphism}) $m_s: V_{G_c} \to V_{G_s}$ and $m_t : V_{G_c} \to G_{G_t}$, called source and target morphisms, respectively. Directed labeled triple graphs are often referred to simply as triple graphs and we might omit the morphisms' names in the notation. Moreover, we denote the set of all triple graphs over $\Sigma$ as $\alltgraphs{\Sigma}$. We might refer to all vertices of $TG$ by $V_{TG}:= V_s \cup V_c \cup V_t$, all edges by $E_{TG}:= E_s \cup E_c \cup E_t$ and the complete labeling function by $\phi_{TG}:= \phi_{G_s} \cup \phi_{G_c} \cup \phi_{G_t}$.
 	Moreover, we define the special empty triple graph as $\emptyTG := E \ms{ms} E \mt{mt} E$ with $E = (\emptyset, \emptyset, \emptyset)$ and $ms = mt = \emptyset$.
+\end{definition}
+
+\begin{definition}
+	A triple isomorphism of directed labeled triple graphs $G = (G_s \ms{g_s} G_c \mt{g_t} G_t)$ and $H = (H_s \ms{h_s} H_c \mt{h_t} H_t)$ is a bijective mapping $m: V_G \to V_H$ that maintains the connections between vertices as well as their labels and the source and target morphisms, that is, $(v,l,w) \in E_G$ if, and only if, $(m(v),l,m(w)) \in E_H$ and $\phi_G(v) = \phi_H(m(v))$ and $v \in G_c$ if, and only if, $m(g_s(v)) = h_s(m(v))$ and $m(g_t(v)) = h_t(m(v))$. In this case, we write $G \isomorph H$, and we denote the equivalence class of all triple graphs isomorphic to G also by $[G]$.
 \end{definition}
 
 \begin{definition}
@@ -226,14 +230,12 @@ Below we start introducing the standard definition of TGG of the current researc
 \end{definition}
 
 \begin{definition}
+	\label{def:tgg}
 	A triple graph grammar with neighborhood-controlled embedding (NCE TGG) $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $(A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t)$ with $A \in \Gamma$ being the left-hand side, $(R_s \ms{} R_c \mt{} R_t) \in \alltgraphs{\Sigma}$ the right-hand side and $\omega_s : V_{R_s} \pto 2^{\Sigma \times \Sigma}$ and $\omega_t : V_{R_t} \pto 2^{\Sigma \times \Sigma}$ the partial embedding functions from the right-hand side's vertices to pairs of edge and vertex labels. We might refer to the complete embedding function by $\omega:= \omega_s \cup \omega_t$.
 	
-	For convenience, define the start triple graph of $TGG$ as $\startTG{TGG} := Z_s \ms{ms} Z_c \mt{mt} Z_t$ where $Z_s = (\{s_0\},\emptyset,\{s_0 \mapsto S\})$, $Z_c = (\{c_0\},\emptyset,\{c_0 \mapsto S\})$, $Z_t = (\{t_0\},\emptyset,\{t_0 \mapsto S\})$, $ms = \{c_0 \mapsto s_0 \}$ and $mt = \{c_0 \mapsto t_0 \}$.
+	For convenience, define the start triple graph of $TGG$ as $\startTG{TGG} := Z_s \ms{ms} Z_c \mt{mt} Z_t$ where $Z_s = (\{s_0\},\emptyset,\{s_0 \mapsto S\})$, $Z_c = (\{c_0\},\emptyset,\{c_0 \mapsto S\})$, $Z_t = (\{t_0\},\emptyset,\{t_0 \mapsto S\})$, $ms = \{c_0 \mapsto s_0 \}$ and $mt = \{c_0 \mapsto t_0 \}$. Production rules of triple graph grammars are also called triple rules.
 	
-	%TODO: Extend here with look-ahead
 	%TODO: discuss empty productions(?)
-	
-	%TODO: mabe use format S \pro Gs .... without three symbols in the lhs
 \end{definition}
 
 \begin{definition}
@@ -555,17 +557,16 @@ Class diagrams are commonly used to model object-oriented software artifact that
 	\begin{subfigure}[t]{0.3\textwidth}
 		\centering
 		\input{examples/classdiagram-g}
-		\caption{....}
+		\caption{A class-diagram graph}
 		\label{fig:classdiagram-g}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.68\textwidth}
 		\centering
 		\input{examples/classdiagram-gg}
-		\caption{...}
+		\caption{The depiction of the rules of $GG$}
 		\label{fig:classdiagram-gg}
 	\end{subfigure}
-	\caption{...}
-	%TODO: Captions
+	\caption{An example for a class-diagram graph with two classes connected by associations in (a) and the rules $r_0$, $r_1$, and $r_2$ of the graph grammar $GG$ in (b)}
 \end{figure}
 
 The problem of the graph grammar $GG$ is that it does not define the complete language of the class-diagram graph. In fact, the graph in Figure \ref{fig:classdiagram-g} is not in $L(GG)$. To see this, consider the following derivation in $GG$:
@@ -584,33 +585,33 @@ In order to define the PAC mechanism in detail, the definitions of rule and deri
 If a graph grammar has at least one rule with PAC, then we say it is a graph grammar with PAC.
 
 \begin{definition}
-	A \textit{concrete derivation step} with PAC in the graph grammar $GG$ is of the form $G \cderivpac{r}{v}{U}{GG} H$ with $G$, $H$, $v$ being as described in \ref{def:gg_dstep}, and $r = (A \pro R, \omega, U)$ being a production rule with PAC. Given that, a \textit{derivation step} is, analogously, of the form $G \derivpac{r}{v}{W}{GG} H'$ with $W = m(U)$ where $m$ is the isomorphism from $H$ and $H'$.
+	A \textit{concrete derivation step} with PAC in the graph grammar $GG$ is of the form $G \cderivpac{r}{v}{U}{GG} H$ with $G$, $H$, $v$ being as described in Definition \ref{def:gg_dstep}, and $r = (A \pro R, \omega, U)$ being a production rule with PAC. Given that, a \textit{derivation step} is, analogously, of the form $G \derivpac{r}{v}{W}{GG} H'$ with $W = m(U)$ where $m$ is the isomorphism from $H$ and $H'$.
 \end{definition}
 
 So far, PAC vertices do not change anything in the behavior of a derivation step and the set $U$ in a derivation step serves just to tag which vertices are PAC in a sentential form. Nevertheless, PAC vertices play an important role on a resolution step, defined below.
 
 \begin{definition}
-	Let $GG = (\Sigma, \Delta, S, P)$ be a graph grammar and $G$ a graph over $\Delta$, $G$ resolves into $H$ with the resolution partial function $s: V_G \pto V_G$, we write $G \resolv{s} H$ and call it a resolution step, if, and only if, the following holds:
+	Let $GG = (\Sigma, \Delta, S, P)$ be a graph grammar and $G$ a graph over $\Delta$, $G$ resolves into $H$ with the resolution partial function $\rho: V_G \pto V_G$, we write $G \resolv{\rho} H$ and call it a resolution step, if, and only if, the following holds:
 	\begin{align*}
-		& \forall v \in \dom s \. s(v) \notin \dom s \text{ and } \phi_G(s(v)) = \phi_G(v) \text{ and}\\
-		V_H & = V_G \setminus \dom s \text{ and}\\
-		E_H & = (E_G \setminus (\{(u,l,t) \st u \in \dom s, (u,l,t) \in E_G\} \\
-			&\hspace{3.5em} \cup \{(t,l,u) \st u \in \dom s, (t,l,u) \in E_G\}))\\
-		    & \cup \{(s(u),l,t) \st u \in \dom s, (u,l,t) \in E_G\} \\
-		    & \cup \{(t,l,s(u)) \st u \in \dom s, (t,l,u) \in E_G\}
+		& \forall v \in \dom \rho \. \rho(v) \notin \dom \rho \text{ and } \phi_G(\rho(v)) = \phi_G(v) \text{ and}\\
+		V_H & = V_G \setminus \dom \rho \text{ and}\\
+		E_H & = (E_G \setminus (\{(u,l,t) \st u \in \dom \rho, (u,l,t) \in E_G\} \\
+			&\hspace{3.5em} \cup \{(t,l,u) \st u \in \dom \rho, (t,l,u) \in E_G\}))\\
+		    & \cup \{(\rho(u),l,t) \st u \in \dom \rho, (u,l,t) \in E_G\} \\
+		    & \cup \{(t,l,\rho(u)) \st u \in \dom \rho, (t,l,u) \in E_G\}
 	\end{align*}
 \end{definition}
 
-A resolution step can be informally understood as the removal of the PAC vertices of $G$--- that are in the domain of the resolution function $s$ ---followed by the redirection of the edges adjacent to the PAC vertices to other vertices of $H$.
+A resolution step can be informally understood as the removal of the PAC vertices of $G$--- that are in the domain of the resolution function $\rho$ ---followed by the redirection of the edges adjacent to the PAC vertices to other vertices of $H$.
 
 For the PAC mechanism to work, it is still necessary to combine derivation and resolution steps to define the language of a grammar with PAC, what we do in the following.
 
 \begin{definition}
-	A derivation $D$ in a graph grammar with PAC is a sequence of $n$ derivation steps followed by $n$ resolution steps with $n > 0$, as follows:
+	A production $Q$ in a graph grammar with PAC is a sequence of $n$ derivation steps followed by $n$ resolution steps with $n > 0$, as follows:
 	\begin{equation*}
-		D = (G_0 \derivpac{r_0}{v_0}{W_0}{} G_1 \derivpac{r_1}{v_1}{W_1}{} \dots \derivpac{r_{n-1}}{v_{n-1}}{W_{n-1}}{} G_n^0 \resolv{s_0} G_n^1 \resolv{s_1} \dots \resolv{s_{n-1}} G_n^n)
+		Q = (G_0 \derivpac{r_0}{v_0}{W_0}{} G_1 \derivpac{r_1}{v_1}{W_1}{} \dots \derivpac{r_{n-1}}{v_{n-1}}{W_{n-1}}{} G_n^0 \resolv{\rho_0} G_n^1 \resolv{\rho_1} \dots \resolv{\rho_{n-1}} G_n^n)
 	\end{equation*}
-	with $s_i$ being a resolution total function $s_i : m_i(W_i) \to V_{G_n^i}$ and $m_i : W_i \to V_{G_n^i}$ the mapping from the PAC vertices generated on the derivation step $i$ to their correspondent vertices in $G_n^i$, for all $0 \le i < n$.
+	with $s_i$ being a resolution total function $\rho_i : m_i(W_i) \to V_{G_n^i}$ and $m_i : W_i \to V_{G_n^i}$ the mapping from the PAC vertices generated on the derivation step $i$ to their correspondent vertices in $G_n^i$, for all $0 \le i < n$.
 \end{definition}
 
 It is clear that, the mapping $m$ of the previous definition exists and is bijective because all PAC vertices are, by definition, terminal and, therefore, are not deleted by derivation steps and, moreover, the images of all $m_i$ are pair-wise disjunct.
@@ -627,7 +628,7 @@ Ultimately, we put forward a NCE graph grammar with PAC whose language is the se
 
 \input{examples/classdiagram-pacgg}
 
-Below, we demonstrate that the graph from Figure \ref{fig:classdiagram-g} is in $L(GG)$, by means of a derivation in $GG$.
+Below, we demonstrate that the graph from Figure \ref{fig:classdiagram-g} is in $L(GG)$, by means of a production in $GG$.
 \input{examples/classdiagram-pacder}
 
 \begin{remark}
@@ -635,13 +636,13 @@ Below, we demonstrate that the graph from Figure \ref{fig:classdiagram-g} is in 
 \end{remark}
 
 \begin{remark}
-	Given a graph grammar $GG$ with PAC, if the graph $g$ is in $L(GG)$, then $g$ has no PAC vertices. That is, the resolution steps remove all PAC vertices, because every resolution function $s_i$ is required to map to vertices that are not in its domain. This guarantees that the number of PAC vertices reduces at each resolution step with $s_i \neq \emptyset$.
+	Given a graph grammar $GG$ with PAC, if the graph $g$ is in $L(GG)$, then $g$ has no PAC vertices. That is, the resolution steps remove all PAC vertices, because every resolution function $\rho_i$ is required to map to vertices that are not in its domain. This guarantees that the number of PAC vertices reduces at each resolution step with $\rho_i \neq \emptyset$.
 \end{remark}
 
 Regarding the parsing procedure, the Algorithm \ref{alg:parse} can be slightly modified to support PAC, by augmenting the zone vertices with PAC vertices, changing the way how zone graphs are constructed and how zone vertices are added to $bup$ and to the parsing forest. The details of these changes are described in the sequel.
 
 \begin{definition}
-	A zone vertex with PAC of a garph $G$ is a triple $(\sigma, U, W)$, with $\sigma$ and $U$ being as explained in Definition \ref{def:zv} and $W \in V_G$ being the set of PAC vertices disjunct from $U$.
+	A zone vertex with PAC of a graph $G$ is a triple $(\sigma, U, W)$, with $\sigma$ and $U$ being as explained in Definition \ref{def:zv} and $W \in V_G$ being the set of PAC vertices disjunct from $U$.
 \end{definition}
 
 \begin{definition}
@@ -654,8 +655,74 @@ Regarding the parsing procedure, the Algorithm \ref{alg:parse} can be slightly m
 	\end{align*}
 \end{definition}
 
+The Algorithm \ref{alg:parsepac} is a parsing method that returns a valid derivation if, and only if, the input graph $G$ is in the language of the graph grammar $GG$ with PAC. Notice that, this procedure does not return a production, but only a derivation. Nevertheless, the correct sequence of resolution steps necessary to assembly a production for $G$ can be induced from each derivation step returned.
 
-%TODO: Critical view. Examples
+\begin{algorithm}[!h]
+	\caption{Parsing Algorithm for NP BNCE Graph Grammars with PAC}
+	\begin{algorithmic}[1]
+		\Require $GG \text{ is a valid NP BNCE graph grammar with PAC}$
+		\Require $G \text{ is a valid graph over } \Delta$
+		\Function{$parse$}{$GG=(\Sigma, \Delta, S, P), G=(V_G,E_G,\phi_G)$}{$:Derivation$}
+		\State $bup \gets \{(\phi_G(x),\{x\},\emptyset) \st x \in V_G\}$
+		\State $pf \gets \{ \ptree{b}{}{\emptyset} \st b \in bup \}$
+		\Repeat
+		\State $h \gets \text{\Select } \{X \subseteq bup \st\text{for all } U_i, U_j \in X \text{ with } i \neq j \. U_i \cap U_j = \emptyset \}$
+		\ForAll{$d \in \Gamma$}
+		\State $r \gets \text{any } \{(d \pro R,\omega,U) \in P \st R \isomorph Y(h) \}$
+		\State $l \gets (d,V(h)\setminus W(h), W(h))$ \Comment{$l$ is augmented with PAC $W(h)$}
+		\If{$Z(\{l\}) \derivpac{r}{l}{W}{} Z(h)$} \Comment{derivation with PAC is possible}
+		\State $bup \gets bup \cup \{l\}$
+		\State $pf \gets pf \cup \{ \ptree{l}{r}{\{\ptree{z}{y}{X} \st \ptree{z}{y}{X} \in pf, z \in h \}} \}$
+		\EndIf
+		\EndFor
+		\Until{$(S, V_G, \_) \in bup$} \Comment{if found the root, no matter which PAC}
+		\State \Return $(S, V_G, \_) \in bup \? \Just D(\ptree{(S,V_G, \_)}{y}{X} \in pf) \: \Nothing $
+		\EndFunction
+		\Ensure $return \text{ is either } \Nothing \text{ or of the form } \Just \startG{GG} \derivtr{} G$
+	\end{algorithmic}
+	\label{alg:parsepac}
+\end{algorithm}
+
+The most important difference between Algorithm \ref{alg:parse} and \ref{alg:parsepac} are, first, in the use of a derivation with PAC $Z(\{l\}) \derivpac{r}{l}{W}{} Z(h)$ in line 9, where $W$ is the set of PAC vertices $U$ from the rule $r$ mapped to the zone graph $Z(h)$, and, second, in the construction of the zone vertex $l$, that is augmented with the PAC vertices $W(h)$ which are, in turn, removed from the normal vertices of $l$, in line 8. In practice, this allows, on the one hand, that PAC vertices participate in the search for rules that produce the desired zone graphs, and, on the other hand, that they be not included in the set of normal vertices of zone vertices so they can be effectively added to the zone vertices that effectively produce them.
+
+The extension of NCE TGG to support PAC is straightforward. 
+
+\begin{definition}
+	A triple rule with PAC is of the form $(A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t, U_s, U_t)$ with $A \pro (R_s \ms{} R_c \mt{} R_t)$, $\omega_s$, and $\omega_t$ as defined in Definition \ref{def:tgg} and $U_s \subseteq \{v \in V_{R_s} \st \phi_{R_s}(v) \in \Delta\}$ the set of PAC vertices of $R_s$ and $U_t \subseteq \{v \in V_{R_t} \st \phi_{R_t}(v) \in \Delta\}$ the set of PAC vertices of $R_t$.
+\end{definition}
+
+Analogously, the concepts of \textit{concrete derivation step} and \textit{derivation step} for TGG are extended to be as follows.
+
+\begin{definition}
+ A \textit{concrete derivation step} with PAC in the triple graph grammar $TGG$ is of the form $G \tcderivpac{r}{v_s,v_c,v_t}{U_s,U_t}{TGG} H$, where $G$, $H$, $v_s$, $v_c$, $v_t$ being as described in Definition \ref{def:tgg_dstep}, $r = (A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t, U_s, U_t)$ being a triple rule with PAC. Given that, a \textit{derivation step} with PAC is, analogously, of the form $G \tderivpac{r}{v_s,v_c,v_t}{W_s,W_t}{TGG} H'$ with $W_s = m(U_s)$ and $W_t = m(U_t)$ where $m$ is the triple isomorphism from $H$ to $H'$.
+\end{definition}
+
+Moreover, the \textit{resolution step} for TGG is as follows.
+
+\begin{definition}
+	Let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar and $G = (G_s \ms{g_s} G_c \mt{g_t} G_t)$ a triple graph over $\Delta$, $G$ resolves into $H = (H_s \ms{h_s} H_c \mt{h_t} H_t)$ with the resolution partial functions $\rho_s: V_{G_s} \pto V_{G_s}$ and $\rho_t: V_{G_t} \pto V_{G_t}$, we write $G \tresolv{\rho_s, \rho_t} H$ and call it a resolution step, if, and only if, the following holds:
+	%TODO: I guess g_s, g_t needs to be bijective
+	\begin{align*}
+	& \forall v \in \dom \rho_s \. \rho_s(v) \notin \dom \rho_s \text{ and } \phi_{G_s}(\rho_s(v)) = \phi_{G_s}(v) \text{ and}\\
+	& \forall v \in \dom \rho_t \. \rho_t(v) \notin \dom \rho_t \text{ and } \phi_{G_t}(\rho_t(v)) = \phi_{G_t}(v) \text{ and}\\
+	V_{H_s} & = V_{G_s} \setminus \dom  \rho_s\text{ and}\\
+	V_{H_c} & = V_{G_c} \setminus g_s^{-1}(\dom  \rho_s) \text{ and}\\
+	V_{H_t} & = V_{G_t} \setminus \dom  \rho_t\text{ and}\\
+	E_{H_s} & = (E_{G_s} \setminus (\{(u,l,t) \st u \in \dom \rho_s, (u,l,t) \in E_{G_s}\} \\
+			&\hspace{3.5em} \cup \{(t,l,u) \st u \in \dom \rho_s, (t,l,u) \in E_{G_s}\}))\\
+	& \cup \{(\rho_s(u),l,t) \st u \in \dom \rho_s, (u,l,t) \in E_{G_s}\} \\
+	& \cup \{(t,l,\rho_s(u)) \st u \in \dom \rho_s, (t,l,u) \in E_{G_s}\} \\
+	E_{H_c} & = E_{G_c} \setminus (\{(u,l,t) \st u \in g_s^{-1}(\dom \rho_s), (u,l,t) \in E_{G_s}\} \\
+			&\hspace{3.5em} \cup \{(t,l,u) \st u \in g_s^{-1}(\dom \rho_s), (t,l,u) \in E_{G_s}\})\\
+	E_{H_t} & = (E_{G_t} \setminus (\{(u,l,t) \st u \in \dom \rho_t, (u,l,t) \in E_{G_t}\} \\
+	&\hspace{3.5em} \cup \{(t,l,u) \st u \in \dom \rho_t, (t,l,u) \in E_{G_t}\}))\\
+	& \cup \{(\rho_t(u),l,t) \st u \in \dom \rho_t, (u,l,t) \in E_{G_t}\} \\
+	& \cup \{(t,l,\rho_t(u)) \st u \in \dom \rho_t, (t,l,u) \in E_{G_t}\}
+	\end{align*}
+\end{definition}
+
+
+In regard to the application of NCE graph grammars with PAC to the problem of model transformation, ...
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
