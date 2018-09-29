@@ -1,0 +1,10 @@
+\begin{tikzpicture}[graph]
+	\draw (0,0) node[t] (v1) {c};
+	\draw (1,0) node[t] (v2) {a};
+	\draw (1,-0.5) node[t] (v4) {a};
+	\draw (2,0) node[t] (v3) {c};
+	\draw[edge] (v2) -- (v1) node [edgeLabel] {$s$};
+	\draw[edge] (v2) -- (v3) node [edgeLabel] {$t$};
+	\draw[edge] (v4) -- (v3) node [midway, below] {$s$};
+	\draw[edge] (v4) -- (v1) node [midway, below] {$t$};
+\end{tikzpicture}

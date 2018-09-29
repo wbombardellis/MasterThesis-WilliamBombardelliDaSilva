@@ -1,0 +1,68 @@
+	\noindent
+	\begin{minipage}[t]{.26\textwidth}
+		\begin{tikzpicture}[grammar]
+		\node[rid] at (\ridX,\ridY) {$r_0:$};
+		%The LHS
+		\draw (\lhsX,0) node[lhs] (lhs) {S ::=};
+		
+		%The RHS graph
+		\draw (0.5,0) node[nont] (v1) {A};
+		
+		%The next rule separator
+		\draw[pipe] (1,-0.5) -- (1,\ridY);
+		
+		%The second RHS graph
+		\node[rid] at (1.7,\ridY) {$r_1:$};
+		\draw (1.5,0) node[nont] (v2) {B};
+		\end{tikzpicture}
+	\end{minipage}%
+	\begin{minipage}[t]{.38\textwidth}
+		\begin{tikzpicture}[grammar]
+		\node[rid] at (\ridX,\ridY) {$r_2:$};
+		%The LHS
+		\draw (\lhsX,0) node[lhs] (lhs) {A ::=};
+		
+		%The RHS graph
+		\draw (0.5,0) node[t, label=90:$u_{21}$] (v3) {a};
+		\draw (1.5,0) node[nont] (v4) {B};
+		
+		\draw[edge] (v3) -- (v4) node [edgeLabel] {$c$};
+		
+		%\draw node[w, label=0:$c$, label=-45:$b$] at (v3.south) (w-v3) {}
+		%[wedge] (v1) -- (w-v3);
+		
+		%The next rule separator
+		\draw[pipe] (2,\pipeBY) -- (2,\pipeUY);
+		
+		%The second RHS graph
+		\node[rid] at (2.7,\ridY) {$r_3:$};
+		\draw (2.9,0) node[t, label=90:$u_{31}$] (v5) {a};
+		%\draw node[w, label=0:$c$, label=-45:$b$] at (v5.south) (w-v5) {}
+		%[wedge] (v5) -- (w-v5);
+		\end{tikzpicture}
+	\end{minipage}%
+	\begin{minipage}[t]{.38\textwidth}
+		\begin{tikzpicture}[grammar]
+		\node[rid] at (\ridX,\ridY) {$r_4:$};
+		%The LHS
+		\draw (\lhsX,0) node[lhs] (lhs) {B ::=};
+		
+		%The RHS graph
+		\draw (0.5,0) node[t, label=90:$u_{41}$] (v6) {b};
+		\draw (1.5,0) node[nont] (v7) {A};
+		
+		\draw[edge] (v3) -- (v4) node [edgeLabel] {$c$};
+		
+		%\draw node[w, label=0:$c$, label=-45:$a$] at (v6.south) (w-v6) {}
+		%[wedge] (v1) -- (w-v6);
+		
+		%The next rule separator
+		\draw[pipe] (2,\pipeBY) -- (2,\pipeUY);
+		
+		%The second RHS graph
+		\node[rid] at (2.7,\ridY) {$r_5:$};
+		\draw (2.9,0) node[t, label=90:$u_{51}$] (v8) {b};
+		%\draw node[w, label=0:$c$, label=-45:$a$] at (v8.south) (w-v8) {}
+		%[wedge] (v8) -- (w-v8);
+		\end{tikzpicture}
+	\end{minipage}

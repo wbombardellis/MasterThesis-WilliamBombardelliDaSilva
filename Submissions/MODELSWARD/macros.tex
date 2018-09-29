@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%% THEOREM %%%%%%%%%%%%%%
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+
+%\theoremstyle{plain}
+%\newtheorem{theorem}{Theorem}
+
+%\theoremstyle{remark}
+%\newtheorem*{remark}{Remark}
+
+%%%%%%%%%%%%%% GENERAL %%%%%%%%%%%%%%
+\newcommand{\rel}{\sim}
+\newcommand{\rrestr}{\triangleright}
+\newcommand{\st}{\; | \;}
+\renewcommand{\.}{. \;}
+\newcommand{\dom}{\operatorname{dom}}
+
+%%%%%%%%%%%%%% GG %%%%%%%%%%%%%%
+\newcommand{\neigh}[1]{\operatorname{neigh}_{#1}}
+\newcommand{\isomorph}{\cong}
+\newcommand{\scont}[2]{\eta_{#1}(#2)}
+\newcommand{\cont}[2]{\operatorname{cont}_{#1}(#2)}
+\newcommand{\emb}[1]{\operatorname{emb}(#1)}
+\newcommand{\allgraphs}[1]{\mathcal{G}_{#1}}
+\newcommand{\startG}[1]{Z_{#1}}
+\newcommand{\pro}{\to}
+
+%%%%%%%%%%%%%% TGG %%%%%%%%%%%%%%
+\newcommand{\alltgraphs}[1]{\mathcal{TG}_{#1}}
+\newcommand{\startTG}[1]{Z_{#1}}
+\newcommand{\ms}[1]{\overset{#1}{\leftarrow}}
+\newcommand{\mt}[1]{\overset{#1}{\rightarrow}}
+\newcommand{\emptyTG}{\varepsilon}
+\newcommand{\source}{\operatorname{s}}
+\newcommand{\Source}{\operatorname{S}}
+\newcommand{\target}{\operatorname{t}}
+\newcommand{\Target}{\operatorname{T}}
+\newcommand{\cderiv}[3]{
+	\ifx\relax#2\relax%
+	\overset{#1}{\Rrightarrow}_{#3}%
+	\else
+	\overset{#1,#2}{\Rrightarrow}_{#3}%
+	\fi
+}
+\newcommand{\deriv}[3]{
+	\ifx\relax#2\relax
+	\overset{#1}{\Rightarrow}_{#3}
+	\else
+	\overset{#1,#2}{\Rightarrow}_{#3}
+	\fi
+}
+\newcommand{\derivtr}[1]{
+	\Rightarrow^*_{#1}
+}
+\newcommand{\tcderiv}[3]{
+	\ifx\relax#2\relax
+	\overset{#1}{\Rrightarrow}_{#3}
+	\else
+	\overset{#1,#2}{\Rrightarrow}_{#3}
+	\fi
+}
+\newcommand{\tderiv}[3]{
+	\ifx\relax#2\relax
+	\overset{#1}{\Rightarrow}_{#3}
+	\else
+	\overset{#1,#2}{\Rightarrow}_{#3}
+	\fi
+}
+\newcommand{\tderivtr}[1]{\Rightarrow^*_{#1}}
+\newcommand{\cderivpac}[4]{\overset{#1,#2,#3}{\Rrightarrow}_{#4}}
+\newcommand{\derivpac}[4]{\overset{#1,#2,#3}{\Rightarrow}_{#4}}
+\newcommand{\derivpacn}[2]{\Rightarrow^{#2}_{#1}}
+\newcommand{\resolv}[1]{\overset{#1}{\rightarrowtail}}
+\newcommand{\resolvn}[2]{\overset{#1}{\rightarrowtail}^{#2}}
+\newcommand{\derivpactr}[1]{\Rightarrow^*_{#1}}
+\newcommand{\resolvtr}[1]{\rightarrowtail^*}
+
+\newcommand{\tcderivpac}[4]{\overset{#1,#2,#3}{\Rrightarrow}_{#4}}
+\newcommand{\tderivpac}[4]{\overset{#1,#2,#3}{\Rightarrow}_{#4}}
+\newcommand{\tderivpacn}[2]{\Rightarrow^{#2}_{#1}}
+\newcommand{\tresolv}[1]{\overset{#1}{\rightarrowtail}}
+\newcommand{\tresolvn}[2]{\overset{#1}{\rightarrowtail}^{#2}}
+\newcommand{\tresolvtr}[1]{\Rightarrow^*_{#1}}
+
+%%%%%%%%%%%%%% ALGORITHM %%%%%%%%%%%%%%
+\newcommand{\?}{\;\operatorname{\textbf{?}}\;}
+\renewcommand{\:}{\;\operatorname{\textbf{:}}\;}
+\newcommand{\Break}{\textbf{break}}
+\newcommand{\Select}{\textbf{select}}
+\newcommand{\Program}{\textbf{program}\;}
+\newcommand{\Just}{\operatorname{\text{Just}}\;}
+\newcommand{\Nothing}{\operatorname{\text{Nothing}}\;}
+\newcommand{\pto}{\nrightarrow}
+\newcommand{\ptree}[3]{
+	\ifx&#2&%
+	(#1 \rightrightarrows #3)
+	\else
+	(#1^#2 \rightrightarrows #3)
+	\fi
+}
+
+%%%%%%%%%%%%%% TIKZ %%%%%%%%%%%%%%
+\tikzstyle{grammar}=[shorten >= 1pt, ->, draw=black!50, framed, background rectangle/.style={draw, rounded corners}, font=\scriptsize ]
+\tikzstyle{graph}=[shorten >= 1pt, ->, draw=black!50, font=\scriptsize]
+\tikzstyle{rid} = [inner sep=3pt, align=left, anchor=east]
+\tikzstyle{nont}=[rectangle, inner sep=3pt, draw, fill=white, minimum width=5pt]
+\tikzstyle{t}=[circle, inner sep=1pt, draw, fill=white, minimum width=5pt]
+\tikzstyle{pac}=[circle, inner sep=1pt, draw, dotted, fill=white, minimum width=5pt]
+\tikzstyle{empty}=[font=\Large, fill=white]
+\tikzstyle{g}=[inner sep=3pt, fill=white]
+\tikzstyle{lhs}=[inner sep=1pt, fill=white]
+\tikzstyle{w}=[circle, inner sep=1pt, below=8pt, draw, fill=white, font=\tiny]
+\tikzstyle{uw}=[circle, inner sep=1pt, above=8pt, draw, fill=white, font=\tiny]
+\tikzstyle{edge}=[->, thin, -latex]
+\tikzstyle{pacedge}=[->, thin, -latex, dotted]
+\tikzstyle{edgeLabel}=[midway, above]
+\tikzstyle{vledgeLabel}=[midway, left]
+\tikzstyle{vredgeLabel}=[midway, right]
+\tikzstyle{vbedgeLabel}=[above=3pt]
+\tikzstyle{wedge}=[-, thin]
+\tikzstyle{biedge}=[-, thin]
+\tikzstyle{pipe}=[-, thick]
+\tikzstyle{morph}=[-, thin, dashed, -latex]
+
+\newcommand{\ridX}{-0.3}
+\newcommand{\ridY}{0.5}
+\newcommand{\lhsX}{-0.3}
+\newcommand{\pipeUY}{-0.5}
+\newcommand{\pipeBY}{0.5}
+
