@@ -6,8 +6,8 @@
     xmlns:org.wbsilva.bence.graphgrammar="org.wbsilva.bence.graphgrammar"
     xsi:schemaLocation="org.wbsilva.bence.graphgrammar ../../org.wbsilva.bence.graphgrammar/model/graphgrammar.ecore"
     name="BTree 2 XBTree"
-    terminals="//@alphabet.2 //@alphabet.3 //@alphabet.1 //@alphabet.4 //@alphabet.5"
-    nonterminals="//@alphabet.0 //@alphabet.6"
+    terminals="//@alphabet.2 //@alphabet.3 //@alphabet.1 //@alphabet.4 //@alphabet.5 //@alphabet.6 //@alphabet.7"
+    nonterminals="//@alphabet.0 //@alphabet.8"
     initial="//@alphabet.0">
   <alphabet
       name="S"/>
@@ -21,6 +21,10 @@
       name="l"/>
   <alphabet
       name="r"/>
+  <alphabet
+      name="e"/>
+  <alphabet
+      name="w"/>
   <alphabet
       name="A"/>
   <tripleRules>

@@ -24,6 +24,7 @@ import org.wbsilva.bence.graphgrammar.ZoneVertex;
  * </p>
  * <ul>
  *   <li>{@link org.wbsilva.bence.graphgrammar.impl.ZoneVertexImpl#getVertices <em>Vertices</em>}</li>
+ *   <li>{@link org.wbsilva.bence.graphgrammar.impl.ZoneVertexImpl#getPac <em>Pac</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +39,16 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 	 * @ordered
 	 */
 	protected EList<Vertex> vertices;
+
+	/**
+	 * The cached value of the '{@link #getPac() <em>Pac</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPac()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Vertex> pac;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,6 +85,18 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Vertex> getPac() {
+		if (pac == null) {
+			pac = new EObjectContainmentEList<Vertex>(Vertex.class, this, GraphgrammarPackage.ZONE_VERTEX__PAC);
+		}
+		return pac;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public boolean equivalates(ZoneVertex other) {
@@ -95,6 +118,8 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 		switch (featureID) {
 		case GraphgrammarPackage.ZONE_VERTEX__VERTICES:
 			return ((InternalEList<?>) getVertices()).basicRemove(otherEnd, msgs);
+		case GraphgrammarPackage.ZONE_VERTEX__PAC:
+			return ((InternalEList<?>) getPac()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -109,6 +134,8 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 		switch (featureID) {
 		case GraphgrammarPackage.ZONE_VERTEX__VERTICES:
 			return getVertices();
+		case GraphgrammarPackage.ZONE_VERTEX__PAC:
+			return getPac();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -126,6 +153,10 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 			getVertices().clear();
 			getVertices().addAll((Collection<? extends Vertex>) newValue);
 			return;
+		case GraphgrammarPackage.ZONE_VERTEX__PAC:
+			getPac().clear();
+			getPac().addAll((Collection<? extends Vertex>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -141,6 +172,9 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 		case GraphgrammarPackage.ZONE_VERTEX__VERTICES:
 			getVertices().clear();
 			return;
+		case GraphgrammarPackage.ZONE_VERTEX__PAC:
+			getPac().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -155,6 +189,8 @@ public class ZoneVertexImpl extends VertexImpl implements ZoneVertex {
 		switch (featureID) {
 		case GraphgrammarPackage.ZONE_VERTEX__VERTICES:
 			return vertices != null && !vertices.isEmpty();
+		case GraphgrammarPackage.ZONE_VERTEX__PAC:
+			return pac != null && !pac.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

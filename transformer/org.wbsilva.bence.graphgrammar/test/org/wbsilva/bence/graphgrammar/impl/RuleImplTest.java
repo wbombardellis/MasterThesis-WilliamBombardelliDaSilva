@@ -141,7 +141,7 @@ class RuleImplTest {
 		un0.put(vc, v9);
 		un0.put(vd, v9);
 		
-		EList<Edge> fs0 = r0.embed(h0, v0, new BasicEList<Edge>(), un0);
+		EList<Edge> fs0 = r0.embed(h0, v0, new BasicEList<Edge>(), un0, true);
 		assertTrue(fs0.isEmpty());
 	}
 	
@@ -178,7 +178,7 @@ class RuleImplTest {
 		un0.put(vc, v1);
 		un0.put(vd, v1);
 		
-		EList<Edge> fs0 = r0.embed(h0, v0, es0, un0);
+		EList<Edge> fs0 = r0.embed(h0, v0, es0, un0, true);
 		assertTrue(fs0.isEmpty());
 	}
 	
@@ -215,7 +215,7 @@ class RuleImplTest {
 		un0.put(vc, v1);
 		un0.put(vd, v1);
 		
-		EList<Edge> fs0 = r0.embed(h0, v0, es0, un0);
+		EList<Edge> fs0 = r0.embed(h0, v0, es0, un0, true);
 		assertEquals(2, fs0.size());
 		
 		Edge e1_9 = GraphgrammarFactory.eINSTANCE.createEdge();
@@ -300,7 +300,7 @@ class RuleImplTest {
 		un0.put(vc, v3);
 		un0.put(vd, v4);
 		
-		EList<Edge> fs0 = r0.embed(h0, v0, es0, un0);
+		EList<Edge> fs0 = r0.embed(h0, v0, es0, un0, true);
 		assertEquals(5, fs0.size());
 		
 		Edge e1_9 = GraphgrammarFactory.eINSTANCE.createEdge();
@@ -336,7 +336,7 @@ class RuleImplTest {
 		v0.setLabel(EcoreUtil.copy(sR));
 		
 		Graph i0 = EcoreUtil.copy(h0);
-		EMap<Vertex, Vertex> un = r0.apply(i0, v0);
+		EMap<Vertex, Vertex> un = r0.apply(i0, v0, true);
 		assertNull(un);
 		assertTrue(EcoreUtil.equals(h0, i0));
 	}
@@ -350,7 +350,7 @@ class RuleImplTest {
 		
 		h0.getVertices().add(v0);
 		
-		EMap<Vertex, Vertex> un = r0.apply(h0, v0);
+		EMap<Vertex, Vertex> un = r0.apply(h0, v0, true);
 		assertEquals(4, un.size());
 		assertEquals(4, un.values().stream().distinct().count());
 		assertTrue(r0.getRhs().getVertices().stream()
@@ -405,7 +405,7 @@ class RuleImplTest {
 		
 		Graph i0 = EcoreUtil.copy(h0);
 		
-		EMap<Vertex, Vertex> un = r0.apply(h0, v0);
+		EMap<Vertex, Vertex> un = r0.apply(h0, v0, true);
 		assertEquals(4, un.size());
 		assertEquals(4, un.values().stream().distinct().count());
 		assertTrue(r0.getRhs().getVertices().stream()
@@ -482,6 +482,25 @@ class RuleImplTest {
 		i0.getEdges().add(e2_4);
 		
 		assertTrue(h0.isomorphicTo(i0));
+	}
+	
+	@Test
+	void testDeriveOne() {
+		Graph h0 = GraphgrammarFactory.eINSTANCE.createGraph();
+		Vertex v0 = GraphgrammarFactory.eINSTANCE.createVertex();
+		v0.setId("0");
+		v0.setLabel(EcoreUtil.copy(sR));
+		
+		h0.getVertices().add(v0);
+		
+		//derive is the same as apply with true
+		EMap<Vertex, Vertex> un = r0.derive(h0, v0);
+		assertEquals(4, un.size());
+		assertEquals(4, un.values().stream().distinct().count());
+		assertTrue(r0.getRhs().getVertices().stream()
+					.allMatch(v -> h0.getVertices().contains(un.get(v))));
+
+		assertTrue(h0.isomorphicTo(r0.getRhs()));
 	}
 
 }

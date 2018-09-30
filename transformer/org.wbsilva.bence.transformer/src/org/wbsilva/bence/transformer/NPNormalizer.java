@@ -387,14 +387,19 @@ public class NPNormalizer {
 				//With fixed morphism
 				final Map<String, Vertex> oldId2Vertex = nREntry.getValue();
 				for (Vertex cV : newTR.getCorr().getRhs().getVertices()) {
-					final Vertex newRV = forward ? oldId2Vertex.get(newTR.getMs().get(cV).getId())
-							: oldId2Vertex.get(newTR.getMt().get(cV).getId());
-					assert newRV != null && newR.getRhs().getVertices().contains(newRV);
-					
-					if (forward)
-						newTR.getMs().put(cV, newRV);
-					else 
-						newTR.getMt().put(cV, newRV);
+					if (forward) {
+						if (newTR.getMs().get(cV) != null) {
+							final Vertex newRV = oldId2Vertex.get(newTR.getMs().get(cV).getId());
+							assert newRV != null && newR.getRhs().getVertices().contains(newRV);
+							newTR.getMs().put(cV, newRV);
+						}
+					} else {
+						if (newTR.getMt().get(cV) != null) {
+							final Vertex newRV = oldId2Vertex.get(newTR.getMt().get(cV).getId());
+							assert newRV != null && newR.getRhs().getVertices().contains(newRV);
+							newTR.getMt().put(cV, newRV);
+						}
+					} 
 				}
 				//Fixed graph
 				if (forward)
@@ -442,7 +447,7 @@ public class NPNormalizer {
 		
 		final Map<String, Vertex> old2newMap = GraphgrammarUtil.ensureUniqueIds(modifiedRule.getRhs());
 		
-		//Remove the edge of this vertex for this context
+		//Remove the edges of this vertex for this context
 		final List<Edge> vEdges = modifiedRule.getRhs().edges(v);
 		final Set<Edge> edgesToRemove = new HashSet<>(vEdges.size());
 		for (Edge e : vEdges) {
@@ -460,6 +465,7 @@ public class NPNormalizer {
 		//Remove the embeddings for this context
 		final EList<SymbolSymbolsPair> embedding = modifiedRule.getEmbedding().get(v);
 		if (embedding != null) {
+			final HashSet<SymbolSymbolsPair> ssPRemoval = new HashSet<>();
 			for (SymbolSymbolsPair embeds : embedding) {
 				//If it connects to one of the missing contexts	
 				final SymbolSet missingLabels = missingContext.get(embeds.getEdgeLabel());
@@ -469,8 +475,13 @@ public class NPNormalizer {
 					for (Symbol ignoredLabel : missIntersection) {
 						embeds.getVertexLabels().removeIf(l -> l.equivalates(ignoredLabel));
 					}
+					if (embeds.getVertexLabels().isEmpty())
+						ssPRemoval.add(embeds);
 				}
 			}
+			ssPRemoval.forEach(ssP -> embedding.remove(ssP));
+			if (embedding.isEmpty())
+				modifiedRule.getEmbedding().removeKey(v);
 		}
 		
 		//For each missing context
@@ -484,6 +495,20 @@ public class NPNormalizer {
 		}
 
 		modifiedRule.setId(modifiedRule.getId().concat("___"+EcoreUtil.generateUUID()));
+		
+		//if corrected vertex is equivalent to LHS and rule completely misses the missing context, then adjust LHS to ensure neighborhood preserveness
+		if (vertex.getLabel().equivalates(modifiedRule.getLhs()) && NPUtil.missesContext(modifiedRule, missingContext)) {
+			//For each missing context
+			for (Entry<Symbol, SymbolSet> cEntry : missingContext.entrySet()) {
+				final Symbol edgeLabel = cEntry.getKey();
+				for (Symbol vertexLabel : cEntry.getValue()) {
+					//Add respective super and subscript in the LHS
+					modifiedRule.getLhs().getSuperscript().add(edgeLabel.getName());
+					modifiedRule.getLhs().getSubscript().add(vertexLabel.getName());
+				}
+			}
+			modifiedRule.setId(modifiedRule.getId().concat("___("+modifiedRule.getLhs()+")"));
+		}
 		
 		assert GraphgrammarUtil.isValidRule(modifiedRule);
 		

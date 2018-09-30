@@ -109,6 +109,16 @@ public class GraphgrammarAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseResolutionStep(ResolutionStep object) {
+			return createResolutionStepAdapter();
+		}
+
+		@Override
+		public Adapter caseResolution(Resolution object) {
+			return createResolutionAdapter();
+		}
+
+		@Override
 		public Adapter caseGraph(Graph object) {
 			return createGraphAdapter();
 		}
@@ -146,6 +156,16 @@ public class GraphgrammarAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseVertexToVertexMap(Map.Entry<Vertex, Vertex> object) {
 			return createVertexToVertexMapAdapter();
+		}
+
+		@Override
+		public Adapter caseVertexToStringMap(Map.Entry<Vertex, String> object) {
+			return createVertexToStringMapAdapter();
+		}
+
+		@Override
+		public Adapter caseStringToVertexMap(Map.Entry<String, Vertex> object) {
+			return createStringToVertexMapAdapter();
 		}
 
 		@Override
@@ -280,6 +300,34 @@ public class GraphgrammarAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bence.graphgrammar.ResolutionStep <em>Resolution Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bence.graphgrammar.ResolutionStep
+	 * @generated
+	 */
+	public Adapter createResolutionStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bence.graphgrammar.Resolution <em>Resolution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bence.graphgrammar.Resolution
+	 * @generated
+	 */
+	public Adapter createResolutionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.wbsilva.bence.graphgrammar.Graph <em>Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -388,6 +436,34 @@ public class GraphgrammarAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVertexToVertexMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Vertex To String Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createVertexToStringMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>String To Vertex Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createStringToVertexMapAdapter() {
 		return null;
 	}
 

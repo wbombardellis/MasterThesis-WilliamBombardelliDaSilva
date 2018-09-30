@@ -125,6 +125,20 @@ public class GraphgrammarSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case GraphgrammarPackage.RESOLUTION_STEP: {
+			ResolutionStep resolutionStep = (ResolutionStep) theEObject;
+			T result = caseResolutionStep(resolutionStep);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case GraphgrammarPackage.RESOLUTION: {
+			Resolution resolution = (Resolution) theEObject;
+			T result = caseResolution(resolution);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case GraphgrammarPackage.GRAPH: {
 			Graph graph = (Graph) theEObject;
 			T result = caseGraph(graph);
@@ -180,6 +194,22 @@ public class GraphgrammarSwitch<T> extends Switch<T> {
 			@SuppressWarnings("unchecked")
 			Map.Entry<Vertex, Vertex> vertexToVertexMap = (Map.Entry<Vertex, Vertex>) theEObject;
 			T result = caseVertexToVertexMap(vertexToVertexMap);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case GraphgrammarPackage.VERTEX_TO_STRING_MAP: {
+			@SuppressWarnings("unchecked")
+			Map.Entry<Vertex, String> vertexToStringMap = (Map.Entry<Vertex, String>) theEObject;
+			T result = caseVertexToStringMap(vertexToStringMap);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case GraphgrammarPackage.STRING_TO_VERTEX_MAP: {
+			@SuppressWarnings("unchecked")
+			Map.Entry<String, Vertex> stringToVertexMap = (Map.Entry<String, Vertex>) theEObject;
+			T result = caseStringToVertexMap(stringToVertexMap);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -310,6 +340,36 @@ public class GraphgrammarSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resolution Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resolution Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResolutionStep(ResolutionStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resolution</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resolution</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResolution(Resolution object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Graph</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -426,6 +486,36 @@ public class GraphgrammarSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVertexToVertexMap(Map.Entry<Vertex, Vertex> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vertex To String Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vertex To String Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVertexToStringMap(Map.Entry<Vertex, String> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String To Vertex Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String To Vertex Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringToVertexMap(Map.Entry<String, Vertex> object) {
 		return null;
 	}
 

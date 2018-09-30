@@ -2,6 +2,7 @@ package org.wbsilva.bence.transformer.parser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -117,14 +118,16 @@ public class BeNCEParser {
 						
 							synchronized(this.parsingForest) {
 								//Possible derivation step found
-								final boolean added = this.bup.add(lhs);
+								final ZoneVertex consumedLhs = configurePac(lhs, newDS);
+								assert consumedLhs != null;
+								final boolean added = this.bup.add(consumedLhs);
 								
 								if (added) {
 									logger.debug(String.format("Can reduce. Derivation step %s, %s", newDS.getRule().getId(), newDS.getVertex().getId()));
 									
 									//Construct parsing tree bottom-up 
 									final ParsingTree parsingTreeNode = GraphgrammarFactory.eINSTANCE.createParsingTree();
-									parsingTreeNode.setZoneVertex(lhs);
+									parsingTreeNode.setZoneVertex(consumedLhs);
 									parsingTreeNode.setDerivationStep(newDS);
 								
 									parsingTreeNode.getChildren().addAll(EcoreUtil.copyAll(this.parsingForest.stream()
@@ -161,7 +164,7 @@ public class BeNCEParser {
 	public BeNCEParser(final Grammar grammar){
 		this(grammar, Strategy.GREEDY_AWARE);
 	}
-	
+
 	public BeNCEParser(final Grammar grammar, final Strategy strategy){
 		assert grammar != null;
 		assert strategy != null;
@@ -218,8 +221,12 @@ public class BeNCEParser {
 			logger.debug(String.format("Not all vertices of the graph %s are terminal vertices. Cannot parse.", graph));
 			return Optional.empty();
 			
+		} else if (graph.getEdges().stream()
+				.anyMatch(e -> !grammar.getTerminals().stream()
+						.anyMatch(t -> t.equivalates(e.getLabel())))) {
+			logger.debug(String.format("Not all edges of the graph %s are terminal edges. Cannot parse.", graph));
+			return Optional.empty();
 		} else {
-			
 			//Create bottom-up parse set
 			final Set<ZoneVertex> initialZoneVertices = zoneVertices(graph.getVertices());
 			
@@ -330,8 +337,16 @@ public class BeNCEParser {
 		//V(R)
 		final Set<Vertex> vs = merge(zoneVertices);
 		
-		//Add the set of all neighbors of V(R)
-		zoneGraph.getVertices().addAll(zoneVertices(graph.neighborhood(new BasicEList<Vertex>(vs))));
+		final Set<String> pacIds = zoneVertices.stream()
+				.flatMap(zv -> zv.getPac().stream()
+								.map(p -> p.getId()))
+				.collect(Collectors.toSet());
+		
+		//Add the set of all neighbors of V(R) minus the PACs
+		final Set<Vertex> neighbors = graph.neighborhood(new BasicEList<Vertex>(vs)).stream()
+				.filter(v -> !pacIds.contains(v.getId()))
+				.collect(Collectors.toSet());
+		zoneGraph.getVertices().addAll(zoneVertices(neighbors));
 		
 		for(Vertex v : zoneGraph.getVertices()) {
 			//Add edges between two zone vertices v and w, iff, any vertex of v is neighbor of w
@@ -342,13 +357,25 @@ public class BeNCEParser {
 					final ZoneVertex zv = ((ZoneVertex)v);
 					final Set<Edge> es = new HashSet<Edge>(1);
 					final SymbolSet addedLabels = new SymbolSet();
+					//Control to not edges that go or come from a pac
+					final Set<String> pacs = zw.getPac().stream()
+												.map(p -> p.getId())
+												.collect(Collectors.toSet());
+					pacs.addAll(zv.getPac().stream()
+									.map(p -> p.getId())
+									.collect(Collectors.toSet()));
 					
 					for (Vertex ww : zw.getVertices()) {
 						for (Vertex vv : zv.getVertices()) {
+							assert !(ww instanceof ZoneVertex);
+							assert !(vv instanceof ZoneVertex);
+							
 							//Do only for in edges to not create duplicates
 							final Set<Edge> newEs = graph.inEdges(ww).stream()
-									.filter(ie -> ie.getFrom().getId().equals(vv.getId()))
-									.filter(ie -> !addedLabels.contains(ie.getLabel()))
+									.filter(ie -> ie.getFrom().getId().equals(vv.getId())
+											&& !pacs.contains(ie.getFrom().getId())
+											&& !pacs.contains(ie.getTo().getId())
+											&& !addedLabels.contains(ie.getLabel()))
 									.map(ie -> {
 										final Edge e = GraphgrammarFactory.eINSTANCE.createEdge();
 										e.setFrom(zv);
@@ -378,10 +405,10 @@ public class BeNCEParser {
 	 * Return a set of zone vertices, one for each {@code simpleVertices}, with new IDs and copied vertex and label.
 	 * If {@code simpleVertices} are empty, return an empty set.
 	 * 
-	 * @param simpleVertices	The list of (not zone) vertices that are to be copied into zone vertices. Cannot be null.
+	 * @param simpleVertices	The collection of (not zone) vertices that are to be copied into zone vertices. Cannot be null.
 	 * @return					The set of zone vertices.
 	 */
-	Set<ZoneVertex> zoneVertices(final EList<Vertex> simpleVertices) {
+	Set<ZoneVertex> zoneVertices(final Collection<Vertex> simpleVertices) {
 		assert simpleVertices != null;
 		
 		return simpleVertices.stream()
@@ -506,10 +533,28 @@ public class BeNCEParser {
 		//Merge all vertices from zoneVertices and copy them
 		final Set<Vertex> mergedVertices = merge(zoneVertices);
 		//Assert zoneVertices are disjunct
-		assert mergedVertices.stream()
-			.map(zv -> zv.getId()).distinct().count() == mergedVertices.size();
+		final Set<String> mergedVerticesIds = mergedVertices.stream()
+							.map(zv -> zv.getId())
+							.collect(Collectors.toSet());
+		assert mergedVerticesIds.size() == mergedVertices.size();
 		
 		zone.getVertices().addAll(mergedVertices);
+		
+		//Merge also all pacs that are not vertices and copy them
+		final Set<Vertex> pacs = zoneVertices.stream()
+				.flatMap(v -> v.getPac().stream())
+				.filter(p -> !mergedVerticesIds.contains(p.getId()))
+				.collect(Collectors.toSet());
+		//But only distinct pacs
+		final Set<Vertex> mergedPacs = new HashSet<>(pacs.size());
+		final Set<String> mergedPacsIds = new HashSet<>(pacs.size());
+		for (Vertex p : pacs) {
+			if (!mergedPacsIds.contains(p.getId())) {
+				mergedPacs.add(EcoreUtil.copy(p));
+				mergedPacsIds.add(p.getId());
+			}
+		}
+		zone.getPac().addAll(mergedPacs);
 		
 		return zone;
 	}
@@ -528,6 +573,54 @@ public class BeNCEParser {
 		return zoneVertices.stream()
 			.flatMap(v -> v.getVertices().stream().map(w -> EcoreUtil.copy(w))) 
 			.collect(Collectors.toSet());
+	}
+	
+	/**
+	 * Move vertices that are inside {@code zoneVertex} to its set of pacs, according to the
+	 * pac vertices of the rule in {@code dStep}. Ensure a correct configuration of {@code zoneVertex},
+	 * without duplicate pacs.  
+	 * @param zoneVertex		The zone vertex to be configured for PAC, according to {@code dStep}. Important: This object is modified.
+	 * @param dStep				The derivation step whose vertex is {@code zoneVertex}
+	 * @return					The {@code zoneVertex} with its Pac attribute configured properly, according to
+	 * 							the pac in the rule of {@code dStep}. Important: The returned object is the same instance as {@code zoneVertex},
+	 * 							that is, data is not copied.
+	 */
+	ZoneVertex configurePac(final ZoneVertex zoneVertex, final DerivationStep dStep) {
+		assert zoneVertex != null;
+		assert zoneVertex.getVertices().stream().noneMatch(v -> v instanceof ZoneVertex);
+		assert dStep != null;
+		assert dStep.getVertex().getId().equals(zoneVertex.getId());
+		
+		final List<Vertex> pacs = dStep.getRule().getPac();
+		//Derivation includes pacs, that are 1-sized zone vertices
+		assert pacs.stream()
+					.allMatch(p -> dStep.getUnifier().get(p) instanceof ZoneVertex 
+							&& ((ZoneVertex)dStep.getUnifier().get(p)).getVertices().size() == 1);
+		
+		final Set<String> realPacIds = pacs.stream()
+				.map(p -> ((ZoneVertex)dStep.getUnifier().get(p)).getVertices().get(0).getId())
+				.collect(Collectors.toSet());
+		
+		final Set<Vertex> realPacs = zoneVertex.getVertices().stream()
+				.filter(h -> realPacIds.contains(h.getId()))
+				.collect(Collectors.toSet());
+		
+		final boolean removed = zoneVertex.getVertices().removeAll(realPacs);
+		//But only distinct pacs
+		final Set<Vertex> uniquePacs = new HashSet<>(realPacs.size());
+		final Set<String> uniquePacsIds = zoneVertex.getPac().stream().map(p -> p.getId()).collect(Collectors.toSet());
+		for (Vertex p : realPacs) {
+			if (!uniquePacsIds.contains(p.getId())) {
+				uniquePacs.add(p);
+				uniquePacsIds.add(p.getId());
+			}
+		}
+		zoneVertex.getPac().addAll(uniquePacs);
+		
+		assert pacs.size() > 0 ? removed : true;
+		assert pacs.size() <= zoneVertex.getPac().size();
+		
+		return zoneVertex;
 	}
 
 }

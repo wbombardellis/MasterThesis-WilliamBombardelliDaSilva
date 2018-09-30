@@ -85,6 +85,24 @@ public interface GraphgrammarFactory extends EFactory {
 	ParsingTree createParsingTree();
 
 	/**
+	 * Returns a new object of class '<em>Resolution Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Resolution Step</em>'.
+	 * @generated
+	 */
+	ResolutionStep createResolutionStep();
+
+	/**
+	 * Returns a new object of class '<em>Resolution</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Resolution</em>'.
+	 * @generated
+	 */
+	Resolution createResolution();
+
+	/**
 	 * Returns a new object of class '<em>Graph</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

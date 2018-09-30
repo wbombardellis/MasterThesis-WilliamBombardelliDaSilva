@@ -70,10 +70,19 @@ class GreedyBup extends Bup {
 		//The central queue holds all generated but not yet consumed subsets ordered in their size
 		this.centralQueue = new PriorityQueue<>(ZVSET_COMPARATOR);
 		
-		if (phase <= lastPhase()) {
+		if (0 <= lastPhase()) {
 			assert this.queues.size() > 0;
 			
-			this.centralQueue.addAll(this.queues.get(this.phase));
+			this.centralQueue.addAll(this.queues.get(0));
+			
+			if (1 <= lastPhase()) {
+				//Add initials to subsets and central queue
+				final Set<Set<ZoneVertex>> newDinjunctSubsets = createNewSubsets(1, bupSet);
+				this.subsets.add(newDinjunctSubsets);
+				this.centralQueue.addAll(newDinjunctSubsets);
+				assert subsets.size() == 2;
+				assert subsets.get(0).size() > 0;
+			}
 		}
 	}
 	
@@ -100,6 +109,7 @@ class GreedyBup extends Bup {
 			this.bupSet.add(zoneVertex);
 			
 			//Create new subsets for the newly added zone vertex from the phase 1 until the last phase
+			//if zoneVertex is empty, then do not keep growing central queue and subsets
 			int p = -1;
 			Set<Set<ZoneVertex>> newSubsets;
 			Set<Set<ZoneVertex>> queueSubsets;

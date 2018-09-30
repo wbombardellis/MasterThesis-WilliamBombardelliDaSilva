@@ -5,6 +5,7 @@ package org.wbsilva.bence.graphgrammar.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -324,7 +325,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<Edge> embed(Graph graph, Vertex vertex, EList<Edge> edges, EMap<Vertex, Vertex> unifier) {
+	public EList<Edge> embed(Graph graph, Vertex vertex, EList<Edge> edges, EMap<Vertex, Vertex> unifier,
+			boolean pacs) {
 		assert GraphgrammarUtil.isValidGraph(graph);
 		assert vertex != null;
 		assert edges != null;
@@ -332,8 +334,18 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 		//assert graph.getEdges().containsAll(edges);
 		assert GraphgrammarUtil.isValidRule(this);
 		assert unifier != null;
-		assert unifier.size() == rhs.getVertices().size();
-		assert rhs.getVertices().stream()
+
+		final List<Vertex> ruleVertices;
+		if (pacs) {
+			ruleVertices = this.getRhs().getVertices();
+		} else {
+			//If pacs are not to be included
+			ruleVertices = this.getRhs().getVertices().stream().filter(v -> !this.getPac().contains(v))
+					.collect(Collectors.toList());
+		}
+
+		assert unifier.size() == ruleVertices.size();
+		assert ruleVertices.stream()
 				.allMatch(v -> unifier.get(v) != null && graph.getVertices().contains(unifier.get(v)));
 
 		return new BasicEList<Edge>(edges.stream().flatMap(e -> {
@@ -350,7 +362,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 				return new HashSet<Edge>().stream();
 			}
 
-			Stream<Vertex> vs = rhs.getVertices().stream().filter(v -> {
+			Stream<Vertex> vs = ruleVertices.stream().filter(v -> {
 				final EList<SymbolSymbolsPair> emb = this.getEmbedding().get(v);
 				if (emb != null && emb.stream().anyMatch(em -> em.getEdgeLabel().equivalates(e.getLabel())
 						&& em.getVertexLabels().stream().anyMatch(l -> l.equivalates(targetVertex.getLabel()))))
@@ -394,10 +406,19 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EMap<Vertex, Vertex> apply(Graph graph, Vertex vertex) {
+	public EMap<Vertex, Vertex> apply(Graph graph, Vertex vertex, boolean pacs) {
 		assert GraphgrammarUtil.isValidGraph(graph);
 		assert vertex != null;
 		assert GraphgrammarUtil.isValidRule(this);
+
+		final List<Vertex> ruleVertices;
+		if (pacs) {
+			ruleVertices = this.getRhs().getVertices();
+		} else {
+			//If pacs are not to be included
+			ruleVertices = this.getRhs().getVertices().stream().filter(v -> !this.getPac().contains(v))
+					.collect(Collectors.toList());
+		}
 
 		final Vertex gV = graph.getVertices().stream().filter(w -> w.getId().equals(vertex.getId())).findAny()
 				.orElse(null);
@@ -412,10 +433,10 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 
 			graph.getEdges().removeAll(vEdges);
 
-			final int newVerticesSize = this.getRhs().getVertices().size();
+			final int newVerticesSize = ruleVertices.size();
 			final EMap<Vertex, Vertex> unifier = new BasicEMap<Vertex, Vertex>(newVerticesSize);
 			final Set<Vertex> newVertices = new HashSet<Vertex>(newVerticesSize);
-			for (Vertex w : this.getRhs().getVertices()) {
+			for (Vertex w : ruleVertices) {
 				final Vertex newW = EcoreUtil.copy(w);
 				unifier.put(w, newW);
 				newVertices.add(newW);
@@ -424,15 +445,16 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 
 			graph.getVertices().addAll(newVertices);
 
-			graph.getEdges().addAll(this.getRhs().getEdges().stream().map(e -> {
-				Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
-				newE.setFrom(unifier.get(e.getFrom()));
-				newE.setTo(unifier.get(e.getTo()));
-				newE.setLabel(EcoreUtil.copy(e.getLabel()));
-				return newE;
-			}).collect(Collectors.toSet()));
+			graph.getEdges().addAll(this.getRhs().getEdges().stream()
+					.filter(e -> ruleVertices.contains(e.getFrom()) && ruleVertices.contains(e.getTo())).map(e -> {
+						Edge newE = GraphgrammarFactory.eINSTANCE.createEdge();
+						newE.setFrom(unifier.get(e.getFrom()));
+						newE.setTo(unifier.get(e.getTo()));
+						newE.setLabel(EcoreUtil.copy(e.getLabel()));
+						return newE;
+					}).collect(Collectors.toSet()));
 
-			graph.getEdges().addAll(this.embed(graph, gV, new BasicEList<Edge>(vEdges), unifier));
+			graph.getEdges().addAll(this.embed(graph, gV, new BasicEList<Edge>(vEdges), unifier, pacs));
 
 			assert GraphgrammarUtil.isValidGraph(graph);
 
@@ -441,7 +463,15 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 			//Do not apply rule, do not change graph
 			return null;
 		}
+	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EMap<Vertex, Vertex> derive(Graph graph, Vertex vertex) {
+		return this.apply(graph, vertex, true);
 	}
 
 	/**
@@ -584,11 +614,13 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case GraphgrammarPackage.RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP:
+		case GraphgrammarPackage.RULE___EMBED__GRAPH_VERTEX_ELIST_EMAP_BOOLEAN:
 			return embed((Graph) arguments.get(0), (Vertex) arguments.get(1), (EList<Edge>) arguments.get(2),
-					(EMap<Vertex, Vertex>) arguments.get(3));
-		case GraphgrammarPackage.RULE___APPLY__GRAPH_VERTEX:
-			return apply((Graph) arguments.get(0), (Vertex) arguments.get(1));
+					(EMap<Vertex, Vertex>) arguments.get(3), (Boolean) arguments.get(4));
+		case GraphgrammarPackage.RULE___APPLY__GRAPH_VERTEX_BOOLEAN:
+			return apply((Graph) arguments.get(0), (Vertex) arguments.get(1), (Boolean) arguments.get(2));
+		case GraphgrammarPackage.RULE___DERIVE__GRAPH_VERTEX:
+			return derive((Graph) arguments.get(0), (Vertex) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

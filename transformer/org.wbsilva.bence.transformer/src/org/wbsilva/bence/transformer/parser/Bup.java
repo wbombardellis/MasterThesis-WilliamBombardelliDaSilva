@@ -289,16 +289,20 @@ public class Bup implements IBup{
 	protected boolean canAdd(final ZoneVertex zoneVertex) {
 		final boolean contained = this.contains(zoneVertex);
 		//If not contained, or it is an empty production, then allow
-		return !contained || (zoneVertex.getVertices().isEmpty() && canAddEmptyZV()); 
+		return !contained || (zoneVertex.getVertices().isEmpty() && canAddEmptyZV(zoneVertex)); 
 	}
 
 	/**
-	 * Return true iff it still is allowed to add empty zone vertice's
-	 * @return		True if can add empty ZV. False otherwise
+	 * Return true iff it still is allowed to add the empty zone vertice {@code zoneVertex}
+	 * @param zoneVertex		The empty zone vertex to be tested
+	 * @return					True if can add empty ZV. False otherwise
 	 * @see Bup#canAdd(ZoneVertex)
 	 */
-	protected boolean canAddEmptyZV() {
-		return this.bupSet.stream().filter(b -> b.getVertices().isEmpty()).count() < this.maximalSubsetSize;
+	protected boolean canAddEmptyZV(final ZoneVertex zoneVertex) {
+		return this.bupSet.stream()
+				.filter(b -> b.getVertices().isEmpty() 
+							&& b.getLabel().equivalates(zoneVertex.getLabel()))
+				.count() < this.maximalSubsetSize;
 	}
 
 	/**

@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.BasicEMap;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -43,6 +45,13 @@ class NPUtilTest {
 	private static Graph g3;
 	private static Rule r3;
 	private static Grammar gg0;
+	private static Graph g4;
+	private static Rule r4;
+	private static Vertex v06;
+	private static Vertex v07;
+	private static Vertex v08;
+	private static Graph g5;
+	private static Rule r5;
 
 	@BeforeAll
 	static void init() {
@@ -170,6 +179,48 @@ class NPUtilTest {
 		gg0.getRules().add(r2);
 		gg0.getRules().add(r3);
 		//
+		
+		v06 = GraphgrammarFactory.eINSTANCE.createVertex();
+		v06.setId("v6");
+		v06.setLabel(EcoreUtil.copy(lC));
+		v07 = GraphgrammarFactory.eINSTANCE.createVertex();
+		v07.setId("v7");
+		v07.setLabel(EcoreUtil.copy(lC));
+		g4 = GraphgrammarFactory.eINSTANCE.createGraph();
+		g4.getVertices().add(v06);
+		g4.getVertices().add(v07);
+		
+		r4 = GraphgrammarFactory.eINSTANCE.createRule();
+		r4.setId("r4");
+		r4.setLhs(EcoreUtil.copy(lA));
+		r4.setRhs(g4);
+		SymbolSymbolsPair ssP1_nm = GraphgrammarFactory.eINSTANCE.createSymbolSymbolsPair();
+		ssP1_nm.setEdgeLabel(EcoreUtil.copy(l1));
+		ssP1_nm.getVertexLabels().add(EcoreUtil.copy(ln));
+		ssP1_nm.getVertexLabels().add(EcoreUtil.copy(lm));
+		SymbolSymbolsPair ssP2_m = GraphgrammarFactory.eINSTANCE.createSymbolSymbolsPair();
+		ssP2_m.setEdgeLabel(EcoreUtil.copy(l2));
+		ssP2_m.getVertexLabels().add(EcoreUtil.copy(lm));
+		r4.getEmbedding().put(v06, new BasicEList<>(
+				Arrays.asList(EcoreUtil.copy(ssP1_n), ssP2_m)));
+		r4.getEmbedding().put(v07, new BasicEList<>(Arrays.asList(ssP1_nm)));
+		
+		//
+		
+		v08 = GraphgrammarFactory.eINSTANCE.createVertex();
+		v08.setId("v8");
+		v08.setLabel(EcoreUtil.copy(lC));
+		g5 = GraphgrammarFactory.eINSTANCE.createGraph();
+		g5.getVertices().add(v08);
+		
+		r5 = GraphgrammarFactory.eINSTANCE.createRule();
+		r5.setId("r5");
+		r5.setLhs(EcoreUtil.copy(lA));
+		r5.setRhs(g5);
+		SymbolSymbolsPair ssP1_ = GraphgrammarFactory.eINSTANCE.createSymbolSymbolsPair();
+		ssP1_nm.setEdgeLabel(EcoreUtil.copy(l1));
+		r5.getEmbedding().put(v08, new BasicEList<>(
+				Arrays.asList(EcoreUtil.copy(ssP2_m), ssP1_)));
 	}
 	
 	@Test
@@ -226,6 +277,141 @@ class NPUtilTest {
 		assertTrue(c.get(l1).contains(lm));
 		assertEquals(1, c.get(l2).size());
 		assertTrue(c.get(l2).contains(lm));
+	}
+	
+	@Test
+	void testGetRuleEmbeddingContextEmpty() {
+		SymbolMap<SymbolSet> c = NPUtil.getEmbeddingcontext(r0);
+		assertEquals(0, c.size());
+		
+		c = NPUtil.getEmbeddingcontext(r1);
+		assertEquals(0, c.size());
+		
+		c = NPUtil.getEmbeddingcontext(r3);
+		assertEquals(0, c.size());
+	}
+	
+	@Test
+	void testGetRuleEmbeddingContextWithTwoEmbeddings() {
+		SymbolMap<SymbolSet> c = NPUtil.getEmbeddingcontext(r2);
+		assertEquals(2, c.size());
+		assertEquals(1, c.get(l1).size());
+		assertTrue(c.get(l1).contains(ln));
+		assertEquals(1, c.get(l2).size());
+		assertTrue(c.get(l2).contains(ln));
+	}
+	
+	@Test
+	void testGetRuleEmbeddingContextWithEmbeddingsInSeveralVertices() {
+		SymbolMap<SymbolSet> c = NPUtil.getEmbeddingcontext(r4);
+		assertEquals(2, c.size());
+		assertEquals(2, c.get(l1).size());
+		assertTrue(c.get(l1).contains(ln));
+		assertTrue(c.get(l1).contains(lm));
+		assertEquals(1, c.get(l2).size());
+		assertTrue(c.get(l2).contains(lm));
+	}
+	
+	@Test
+	void testGetRuleEmbeddingContextWithIrregularEmbeddings() {
+		SymbolMap<SymbolSet> c = NPUtil.getEmbeddingcontext(r5);
+		assertEquals(1, c.size());
+		assertEquals(1, c.get(l2).size());
+		assertTrue(c.get(l2).contains(lm));
+	}
+	
+	@Test
+	void testMissesContextEmptyContext() {
+		SymbolMap<SymbolSet> e0 = new SymbolMap<>();
+		
+		assertTrue(NPUtil.missesContext(r0, e0));
+	}
+	
+	@Test
+	void testMissesContextTrueEmptyRule() {
+		SymbolMap<SymbolSet> e0 = new SymbolMap<>();
+		e0.put(l1, new SymbolSet(Arrays.asList(ln)));
+		
+		assertTrue(NPUtil.missesContext(r0, e0));
+		assertTrue(NPUtil.missesContext(r1, e0));
+		assertTrue(NPUtil.missesContext(r3, e0));
+	}
+	
+	@Test
+	void testMissesContextTrueNonEmptyRuleHasEdgeLabel() {
+		SymbolMap<SymbolSet> e0 = new SymbolMap<>();
+		e0.put(l1, new SymbolSet(Arrays.asList(lm)));
+		
+		assertTrue(NPUtil.missesContext(r2, e0));
+		assertTrue(NPUtil.missesContext(r5, e0));
+		
+		SymbolMap<SymbolSet> e1 = new SymbolMap<>();
+		e1.put(l2, new SymbolSet(Arrays.asList(ln)));
+		assertTrue(NPUtil.missesContext(r4, e1));
+	}
+	
+	@Test
+	void testMissesContextTrueNonEmptyRuleDoesntHaveEdgeLabel() {
+		SymbolMap<SymbolSet> e0 = new SymbolMap<>();
+		e0.put(l2, new SymbolSet(Arrays.asList(lm)));
+		
+		assertTrue(NPUtil.missesContext(r2, e0));
+		
+		SymbolMap<SymbolSet> e1 = new SymbolMap<>();
+		e1.put(lA, new SymbolSet(Arrays.asList(lm)));
+		assertTrue(NPUtil.missesContext(r4, e1));
+		assertTrue(NPUtil.missesContext(r5, e1));
+	}
+	
+	@Test
+	void testMissesContextFalseNonEmptyRuleSimpleContext() {
+		SymbolMap<SymbolSet> e0 = new SymbolMap<>();
+		e0.put(l1, new SymbolSet(Arrays.asList(ln)));
+		
+		assertFalse(NPUtil.missesContext(r2, e0));
+		assertFalse(NPUtil.missesContext(r4, e0));
+		
+		SymbolMap<SymbolSet> e1 = new SymbolMap<>();
+		e1.put(l2, new SymbolSet(Arrays.asList(ln)));
+		assertFalse(NPUtil.missesContext(r2, e1));
+		
+		SymbolMap<SymbolSet> e2 = new SymbolMap<>();
+		e2.put(l2, new SymbolSet(Arrays.asList(lm)));
+		assertFalse(NPUtil.missesContext(r5, e2));
+	}
+	
+	@Test
+	void testMissesContextTrueNonEmptyRuleContextWithTwoEntries() {
+		SymbolMap<SymbolSet> e0 = new SymbolMap<>();
+		e0.put(l1, new SymbolSet(Arrays.asList(lm)));
+		e0.put(l2, new SymbolSet(Arrays.asList(lm)));
+		
+		assertTrue(NPUtil.missesContext(r2, e0));
+		
+		SymbolMap<SymbolSet> e1 = new SymbolMap<>();
+		e1.put(l1, new SymbolSet(Arrays.asList(lA)));
+		e1.put(l2, new SymbolSet(Arrays.asList(ln)));
+		assertTrue(NPUtil.missesContext(r4, e1));
+		
+		SymbolMap<SymbolSet> e2 = new SymbolMap<>();
+		e2.put(lA, new SymbolSet(Arrays.asList(lA)));
+		e2.put(l2, new SymbolSet(Arrays.asList(ln)));
+		assertTrue(NPUtil.missesContext(r5, e2));
+	}
+	
+	@Test
+	void testMissesContextFalseNonEmptyRuleContextWithTwoEntries() {
+		SymbolMap<SymbolSet> e0 = new SymbolMap<>();
+		e0.put(l1, new SymbolSet(Arrays.asList(lm)));
+		e0.put(l2, new SymbolSet(Arrays.asList(ln)));
+		
+		assertFalse(NPUtil.missesContext(r2, e0));
+		
+		SymbolMap<SymbolSet> e1 = new SymbolMap<>();
+		e1.put(l1, new SymbolSet(Arrays.asList(ln)));
+		e1.put(l2, new SymbolSet(Arrays.asList(lm)));
+		assertFalse(NPUtil.missesContext(r4, e1));
+		assertFalse(NPUtil.missesContext(r5, e1));
 	}
 
 }

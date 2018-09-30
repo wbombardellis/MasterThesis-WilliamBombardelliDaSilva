@@ -87,19 +87,8 @@ public class NPUtil {
 		//Build rule's embedding context
 		final HashMap<Rule, SymbolMap<SymbolSet>> nonNPRulesContext = new HashMap<>(grammar.getRules().size());
 		for (Rule r : grammar.getRules()) {
-			final SymbolMap<SymbolSet> ruleContext = new SymbolMap<>();
+			final SymbolMap<SymbolSet> ruleContext = getEmbeddingcontext(r, embeddingContext);
 			
-			for (Vertex v : r.getRhs().getVertices()) {
-				final SymbolMap<SymbolSet> vContext = embeddingContext.get(v);
-				for (Entry<Symbol,SymbolSet> vContextEntry : vContext.entrySet()) {
-					final SymbolSet context = ruleContext.get(vContextEntry.getKey());
-					if (context == null) {
-						ruleContext.put(vContextEntry.getKey(), vContextEntry.getValue());
-					}
-					else 
-						context.addAll(vContextEntry.getValue());
-				}	
-			}
 			//If the rule's embedding context does not contain all LHS's maximal context
 			for (Entry<Symbol,SymbolSet> maxContextEntry : maxContext.get(r.getLhs()).entrySet()) {
 				
@@ -138,7 +127,7 @@ public class NPUtil {
 		}
 		return nonNPRulesContext;
 	}
-	
+
 	/**
 	 * Return the embedding context of {@code vertex} in the rule {@code rule} 
 	 * @param rule		The rule containing {@code vertex}
@@ -155,17 +144,65 @@ public class NPUtil {
 		final SymbolMap<SymbolSet> vContext = new SymbolMap<>();
 		if (embedding != null) {
 			for (SymbolSymbolsPair ssP : embedding) {
-				final SymbolSet vLabels = new SymbolSet(ssP.getVertexLabels());
-				
-				final SymbolSet context = vContext.get(ssP.getEdgeLabel());
-				if (context == null) {
-					vContext.put(ssP.getEdgeLabel(), vLabels);
-				} else {
-					context.addAll(vLabels);
+				if (!ssP.getVertexLabels().isEmpty()) {
+					final SymbolSet vLabels = new SymbolSet(ssP.getVertexLabels());
+					
+					final SymbolSet context = vContext.get(ssP.getEdgeLabel());
+					if (context == null) {
+						vContext.put(ssP.getEdgeLabel(), vLabels);
+					} else {
+						context.addAll(vLabels);
+					}
 				}
 			}
 		}
 		return vContext;
+	}
+	
+	/**
+	 * Merge the embedding contexts of each vertex of {@code rule}, which are in the mapping
+	 * {@code embeddingContext}, into one {@link SymbolMap}
+	 * @param rule				The rule to which the {@code embeddingContext} belongs
+	 * @param embeddingContext	The embedding context of each vertex of {@code rule}. If a vertex has no embedding,
+	 * 							then it need not be in the mapping
+	 * @return					A {@link SymbolMap} from the edge labels to the vertex labels corresponding to the
+	 * 							embedding of each vertex of {@code rule} in form of a SymbolMap and SymbolSet,
+	 * 							obtained from {@code embeddingContext} 
+	 * @see SymbolMap
+	 * @see SymbolSet
+	 */
+	private static SymbolMap<SymbolSet> getEmbeddingcontext(final Rule rule, final Map<Vertex, SymbolMap<SymbolSet>> embeddingContext) {
+		final SymbolMap<SymbolSet> ruleContext = new SymbolMap<>();
+		for (Vertex v : rule.getRhs().getVertices()) {
+			final SymbolMap<SymbolSet> vContext = embeddingContext.get(v);
+			for (Entry<Symbol,SymbolSet> vContextEntry : vContext.entrySet()) {
+				final SymbolSet context = ruleContext.get(vContextEntry.getKey());
+				if (context == null) {
+					ruleContext.put(vContextEntry.getKey(), vContextEntry.getValue());
+				}
+				else 
+					context.addAll(vContextEntry.getValue());
+			}	
+		}
+		
+		return ruleContext;
+	}
+	
+	/**
+	 * Return the complete embedding context of the rule {@code rule} 
+	 * @param rule		The rule from which to obtain the embedding context
+	 * @return			A {@link SymbolMap} from the edge labels to the vertex labels corresponding to the
+	 * 					embeddings of each vertex of {@code rule} in form of a SymbolMap and SymbolSet
+	 * @see SymbolMap
+	 * @see SymbolSet
+	 */
+	static SymbolMap<SymbolSet> getEmbeddingcontext(final Rule rule) {
+		final HashMap<Vertex, SymbolMap<SymbolSet>> embeddingContext = new HashMap<>(rule.getRhs().getVertices().size());
+		for (Vertex v : rule.getRhs().getVertices()) {
+			final SymbolMap<SymbolSet> vContext = getEmbeddingContext(rule, v);
+			embeddingContext.put(v, vContext);
+		}
+		return getEmbeddingcontext(rule, embeddingContext);
 	}
 	
 	/**
@@ -280,6 +317,46 @@ public class NPUtil {
 		g2.getVertices().addAll(EcoreUtil.copyAll(n2));
 		
 		return g1.isomorphicTo(g2);
+	}
+
+	/**
+	 * Return true iff {@code rule} misses the whole {@code contextToTest}. I.e. If any entry of 
+	 * {@code contextToTest} is in any embedding context of any vertex in {@code rule}, then return false,
+	 * because then the rule contains part of the context to test, and thus, it does not miss the whole of it.
+	 * Otherwise, all entries of the context to test do not occur in the rule, thus the rule misses the whole of it,
+	 * and this method returns true.
+	 * If {@code contextToTest} is empty, return true.
+	 * 
+	 * @param rule				The rule to be tested
+	 * @param contextToTest		A {@link SymbolMap} from the edge labels to the vertex labels corresponding to the
+	 * 							embedding context to be tested
+	 * @return					False if {@code rule}'s embedding has at least one vertex label and edge label from
+	 * 							the embedding context {@code contextToTest}, true otherwise  
+	 * @see SymbolMap
+	 * @see SymbolSet
+	 */
+	public static boolean missesContext(final Rule rule, final SymbolMap<SymbolSet> contextToTest) {
+		assert rule != null;
+		assert contextToTest != null;
+		final SymbolMap<SymbolSet> ruleContext = getEmbeddingcontext(rule);
+		
+		//Test for each entry of the context to test
+		for (Entry<Symbol,SymbolSet> contextEntry : contextToTest.entrySet()) {
+			final Symbol eLabel = contextEntry.getKey();
+			final SymbolSet testVLabels = contextEntry.getValue();
+			
+			if (testVLabels != null && !testVLabels.isEmpty()) {
+				final SymbolSet ruleVLabels = ruleContext.get(eLabel);
+				//If this rule's context contains the whole test entry, then the rule does not miss the context to test 
+				if (ruleVLabels != null) {
+					if (ruleVLabels.containsAll(testVLabels)) {
+						return false;
+					}
+				}
+			}
+		}
+		//If for all test entries, none is full contained by the rule's context, then the rule misses the whole context to test
+		return true;
 	}
 	
 }

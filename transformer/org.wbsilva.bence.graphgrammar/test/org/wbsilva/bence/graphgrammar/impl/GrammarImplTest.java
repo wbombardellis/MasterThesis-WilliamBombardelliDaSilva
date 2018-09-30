@@ -196,15 +196,67 @@ class GrammarImplTest {
 		h0.getEdges().add(e8_0);
 		h0.getEdges().add(e0_7);
 		
-		///
-		
+		///		
 		Graph i0 = EcoreUtil.copy(h0);
+		//EMap<Vertex, Vertex> un = r0.apply(h0, v0, true);
 		
-		EMap<Vertex, Vertex> un = r0.apply(h0, v0);
+		Graph rhs = EcoreUtil.copy(r0.getRhs());
+		Vertex hva = EcoreUtil.copy(va);
+		Vertex hvb = EcoreUtil.copy(vb);
+		Vertex hvc = EcoreUtil.copy(vc);
+		Vertex hvd = EcoreUtil.copy(vd);
+		h0.getVertices().add(hva);
+		h0.getVertices().add(hvb);
+		h0.getVertices().add(hvc);
+		h0.getVertices().add(hvd);
+		h0.getVertices().remove(v0);
+			
+		Edge hea_b = GraphgrammarFactory.eINSTANCE.createEdge();
+		hea_b.setFrom(hva);
+		hea_b.setTo(hvb);
+		hea_b.setLabel(EcoreUtil.copy(sT));
+		Edge hea_c = GraphgrammarFactory.eINSTANCE.createEdge();
+		hea_c.setFrom(hva);
+		hea_c.setTo(hvc);
+		hea_c.setLabel(EcoreUtil.copy(sT));
+		Edge heb_d = GraphgrammarFactory.eINSTANCE.createEdge();
+		heb_d.setFrom(hvb);
+		heb_d.setTo(hvd);
+		heb_d.setLabel(EcoreUtil.copy(sT));
+		Edge hea_9 = GraphgrammarFactory.eINSTANCE.createEdge();
+		hea_9.setFrom(hva);
+		hea_9.setTo(v9);
+		hea_9.setLabel(EcoreUtil.copy(sF));
+		Edge heb_9F = GraphgrammarFactory.eINSTANCE.createEdge();
+		heb_9F.setFrom(hvb);
+		heb_9F.setTo(v9);
+		heb_9F.setLabel(EcoreUtil.copy(sF));
+		Edge heb_9M = GraphgrammarFactory.eINSTANCE.createEdge();
+		heb_9M.setFrom(hvb);
+		heb_9M.setTo(v9);
+		heb_9M.setLabel(EcoreUtil.copy(sM));
+		Edge he8_b = GraphgrammarFactory.eINSTANCE.createEdge();
+		he8_b.setFrom(v8);
+		he8_b.setTo(hvb);
+		he8_b.setLabel(EcoreUtil.copy(sM));
+		Edge hec_7 = GraphgrammarFactory.eINSTANCE.createEdge();
+		hec_7.setFrom(hvc);
+		hec_7.setTo(v7);
+		hec_7.setLabel(EcoreUtil.copy(sU));
+		
+		h0.getEdges().clear();
+		h0.getEdges().add(hea_b);
+		h0.getEdges().add(hea_c);
+		h0.getEdges().add(heb_d);
+		h0.getEdges().add(hea_9);
+		h0.getEdges().add(heb_9F);
+		h0.getEdges().add(heb_9M);
+		h0.getEdges().add(he8_b);
+		h0.getEdges().add(hec_7);
 		
 		////
 		
-		DerivationStep dStep = gg0.derives(i0, h0, v0, r0.getRhs());
+		DerivationStep dStep = gg0.derives(i0, h0, v0, rhs);
 		
 		assertTrue(dStep != null);
 		assertTrue(EcoreUtil.equals(i0 , dStep.getPrevious()));

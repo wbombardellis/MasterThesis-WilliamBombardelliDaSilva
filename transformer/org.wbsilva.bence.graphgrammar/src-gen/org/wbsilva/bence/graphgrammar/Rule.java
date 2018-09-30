@@ -184,18 +184,31 @@ public interface Rule extends EObject {
 	 * @model ordered="false" edgesMany="true" edgesOrdered="false" unifierMapType="org.wbsilva.bence.graphgrammar.VertexToVertexMap&lt;org.wbsilva.bence.graphgrammar.Vertex, org.wbsilva.bence.graphgrammar.Vertex&gt;"
 	 * @generated
 	 */
-	EList<Edge> embed(Graph graph, Vertex vertex, EList<Edge> edges, EMap<Vertex, Vertex> unifier);
+	EList<Edge> embed(Graph graph, Vertex vertex, EList<Edge> edges, EMap<Vertex, Vertex> unifier, boolean pacs);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Apply this rule to the graph, substituting vertex by the RHS of this rule and
-	 * embedding it to the rest of the graph
+	 * embedding it to the rest of the graph. The flag pacs signalizez whether to 
+	 * include the pacs vertices in the resulting graph or not.
 	 * <!-- end-model-doc -->
 	 * @model mapType="org.wbsilva.bence.graphgrammar.VertexToVertexMap&lt;org.wbsilva.bence.graphgrammar.Vertex, org.wbsilva.bence.graphgrammar.Vertex&gt;" ordered="false"
 	 * @generated
 	 */
-	EMap<Vertex, Vertex> apply(Graph graph, Vertex vertex);
+	EMap<Vertex, Vertex> apply(Graph graph, Vertex vertex, boolean pacs);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Apply this rule to the graph, substituting vertex by the RHS of this rule and
+	 * embedding it to the rest of the graph including PACs in the resulting graph
+	 * <!-- end-model-doc -->
+	 * @model mapType="org.wbsilva.bence.graphgrammar.VertexToVertexMap&lt;org.wbsilva.bence.graphgrammar.Vertex, org.wbsilva.bence.graphgrammar.Vertex&gt;" ordered="false"
+	 * @generated
+	 */
+	EMap<Vertex, Vertex> derive(Graph graph, Vertex vertex);
 
 } // Rule

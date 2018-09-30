@@ -45,7 +45,7 @@ import org.wbsilva.bence.graphgrammar.ZoneVertex;
  * @generated
  */
 public class ParsingTreeImpl extends MinimalEObjectImpl.Container implements ParsingTree {
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * This is a comparator of {@link ParsingTree}'s, in which PT's whose zone vertex has
@@ -66,10 +66,10 @@ public class ParsingTreeImpl extends MinimalEObjectImpl.Container implements Par
 		public int compare(final ParsingTree a, final ParsingTree b) {
 			assert a != null;
 			assert b != null;
-			
+
 			final int aSize = a.getZoneVertex().getVertices().size();
 			final int bSize = b.getZoneVertex().getVertices().size();
-			
+
 			return aSize < bSize ? -1 : aSize == bSize ? 0 : 1;
 		}
 	};
@@ -252,11 +252,9 @@ public class ParsingTreeImpl extends MinimalEObjectImpl.Container implements Par
 					//Require parsing trees with empty zone vertices to come first
 					.sorted(PTZV_COMPARATOR)
 					//Get each pt derivation
-					.map(pt -> pt.derivation())
-					.filter(d -> d != null)
+					.map(pt -> pt.derivation()).filter(d -> d != null)
 					//Flatten
-					.flatMap(d -> d.getSteps().stream())
-					.collect(Collectors.toList()));
+					.flatMap(d -> d.getSteps().stream()).collect(Collectors.toList()));
 
 			return derivation;
 		} else {

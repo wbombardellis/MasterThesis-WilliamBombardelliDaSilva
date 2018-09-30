@@ -78,7 +78,7 @@ public class GreedyAwareBup extends GreedyBup {
 			} else if (aSize < bSize) {
 				return 1;
 			} else  {
-				//The second criterion is the amount of outEdges
+				//The second criterion is the distance to the bigger element
 				int aDistances = a.stream()
 						.sorted((x,y) -> - x.getVertices().size() + y.getVertices().size()) //Sort ascendent by size
 						.findFirst()														//Get the biggest
@@ -179,17 +179,17 @@ public class GreedyAwareBup extends GreedyBup {
 	public GreedyAwareBup(final Set<ZoneVertex> initialSet, final int maximalSubsetSize, final ZoneVertex root, final Grammar grammar, final Graph graph, final Map<String, Integer> depths) {
 		super(initialSet, maximalSubsetSize, root);
 		
-		//The central queue holds all generated but not yet consumed subsets ordered
-		final PriorityQueue<Set<ZoneVertex>> parentCentralQueue = new PriorityQueue<>(this.centralQueue);
-		this.centralQueue = new PriorityQueue<>(ZVSET_AWARE_COMPARATOR);
-		this.centralQueue.addAll(parentCentralQueue);
-
 		assert grammar != null;
 		assert graph != null;
 		assert depths != null;
 		this.grammar = grammar;
 		this.graph = graph;
 		this.depths = depths;
+		
+		//The central queue holds all generated but not yet consumed subsets ordered
+		final PriorityQueue<Set<ZoneVertex>> parentCentralQueue = new PriorityQueue<>(this.centralQueue);
+		this.centralQueue = new PriorityQueue<>(ZVSET_AWARE_COMPARATOR);
+		this.centralQueue.addAll(parentCentralQueue);
 		
 		assert maximalSubsetSize >= 0;
 		
