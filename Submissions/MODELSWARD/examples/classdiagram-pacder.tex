@@ -15,7 +15,8 @@
 	\draw (0.5,-0.5) node[nont, label=270:$K_1$] (v5) {K};
 	\draw[edge] (v2) -- (v1) node [edgeLabel] {$s$};
 	\draw[edge] (v4) -- (v3) node [midway, below] {$s$};
-	\end{tikzpicture}
+	\end{tikzpicture} \\
+	%
 	\derivpac{r_1}{K_1}{\emptyset}{} &
 	\begin{tikzpicture}[graph]
 	\draw (0.5,0) node[t, label=90:$v_1$] (v1) {c};
@@ -24,8 +25,7 @@
 	\draw (1.2,-0.5) node[nont, label=270:$A_1$] (v4) {A};
 	\draw[edge] (v2) -- (v1) node [edgeLabel] {$s$};
 	\draw[edge] (v4) -- (v3) node [midway, below] {$s$};
-	\end{tikzpicture} \\ 
-	%
+	\end{tikzpicture}
 	\derivpac{r_2}{A_0}{\{p_0\}}{} &
 	\begin{tikzpicture}[graph]
 	\draw (0.5,0) node[t, label=90:$v_1$] (v1) {c};
@@ -37,6 +37,8 @@
 	\draw[pacedge] (v2) -- (v5) node [vredgeLabel] {$t$};
 	\draw[edge] (v4) -- (v3) node [midway, below] {$s$};
 	\end{tikzpicture}
+\end{align*}
+\begin{align*}
 	\derivpac{r_2}{A_1}{\{p_1\}}{} &
 	\begin{tikzpicture}[graph]
 	\draw (0.5,0) node[t, label=90:$v_1$] (v1) {c};
@@ -87,5 +89,4 @@
 	\draw[edge] (v4) -- (v3) node [midway, below] {$s$};
 	\draw[edge] (v4) -- (v1) node [midway, below] {$t$};
 	\end{tikzpicture}
-	\;\;\;\;\;\;\;\;\;\;\;\;\;\; &
 \end{align*}

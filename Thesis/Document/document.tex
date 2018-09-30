@@ -20,8 +20,12 @@
 
 %TODO: Decide on the use of italic
 %TODO: Decide whether ms or m_s mt or m_t?
+%TODO: Number the definitions and examples
 \section{Introduction}
 Overview of the MDE. Potential and problems of it. The challenge of model transformation. A solution: Triple Graph Grammars (TGG) (justification). A problem of TGG (usability/ amount of grammar rules). Our solution for this problem: TGG with non-terminal nodes. Overview of our approach (graph grammars with non-terminal nodes, NCE grammars, graph language, parsing, transformation). Brief intro into graph grammars and embedding. Explain why BNCE (HRG parsers were for classes too restricted), why grammars. Short summary of the results. Remainder.
+
+%TODO: Reread intros of the two papers and take good things from there
+% Our proposal is inspired by the use non-terminal symbols in string grammars, that allows the creation of simpler grammars for which there are more efficient recognizer algorithms and with which it has become possible to built efficient programming language compilers.
 
 \section{Related Work}
 In this section, we offer a literary review on the topics of graph grammars and triple graph grammars as well as we indicate published works that are related with our approach. Here, we focus on the node label and the hyperedge replacement approach for graph grammars. Nevertheless, the field does not restrict to this topic, instead, there is a myriad of different approaches to it, for example, the algebraic approach \cite{ehrig1999handbook}. We refer to context-free and context-sensitive grammars, inspired by the use of such classification for string grammars, in a relaxed way without any compromise to the correct definition of context-freeness for graph grammars.
@@ -70,7 +74,7 @@ We start presenting our notation for graphs and grammars, accompanied by example
 \end{definition}
 
 \begin{definition}
-	An isomorphism of directed labeled graphs $G$ and $H$ is a bijective mapping $m: V_G \to V_H$ that maintains the connections between vertices and their labels, that is, $(v,l,w) \in E_G$ if, and only if,  $(m(v),l,m(w)) \in E_H$ and $\phi_G(v) = \phi_H(m(v))$. In this case, $G$ and $H$ are said to be isomorphic, we write $G \isomorph H$, and we denote the equivalence class of all graphs isomorphic to G by $[G]$.
+	An isomorphism of directed labeled graphs $G$ and $H$ is a bijective mapping $m: V_G \to V_H$ that maintains the connections between vertices and their labels, that is, $(v,l,w) \in E_G$ if, and only if,  $(m(v),l,m(w)) \in E_H$ and $\phi_G(v) = \phi_H(m(v))$. In this case, $G$ and $H$ are said to be isomorphic, we write $G \isomorph H$, and we denote the equivalence class of all graphs isomorphic to $G$ by $[G]$.
 	Notice that, contrary to isomorphisms, morphism do not require bijectivity nor label or edge-preserving properties.
 	%TODO: Maybe say some words about the difference to the common isomorphism
 \end{definition}
@@ -105,7 +109,7 @@ Notice that, in the original definition of NCE grammars \cite{janssens1982graph}
 In the following, we present our concrete syntax inspired by the well-known Backus-naur form to denote NCE graph grammar rules. Let $GG = (\{A, B, a, b,$ $ c, l, m\},$ $\{a, b, c, l, m\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\},$ $\{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$, we denote $p$ and $q$ together as\\
 \input{misc/concrete-syntax}
 
-Observe that, we use squares for non-terminal vertices, circles for terminal vertices, position the respective label inside the shape and the (possibly omitted) identifier over it. Near each edge is positioned its respective label. The embedding function is not included in the notation, so it is expressed separately, if necessary.
+Observe that, we use squares for non-terminal vertices, circles for terminal vertices, position the respective label inside the shape and the (possibly omitted) identifier near it. Near each edge its respective label is positioned. The embedding function is not included in the notation, so it is expressed separately, if necessary.
 
 %TODO: comment on the different notation compared to the literature that uses attributed graphs and squares, etc... plus attributed graphs
 
@@ -616,7 +620,7 @@ For the PAC mechanism to work, it is still necessary to combine derivation and r
 	\begin{equation*}
 		Q = (G_0 \derivpac{r_0}{v_0}{W_0}{} G_1 \derivpac{r_1}{v_1}{W_1}{} \dots \derivpac{r_{n-1}}{v_{n-1}}{W_{n-1}}{} G_n^0 \resolv{\rho_0} G_n^1 \resolv{\rho_1} \dots \resolv{\rho_{n-1}} G_n^n)
 	\end{equation*}
-	with $s_i$ being a resolution total function $\rho_i : m_i(W_i) \to V_{G_n^i}$ and $m_i : W_i \to V_{G_n^i}$ the mapping from the PAC vertices generated on the derivation step $i$ to their correspondent vertices in $G_n^i$, for all $0 \le i < n$.
+	with $\rho_i$ being a resolution total function $\rho_i : m_i(W_i) \to V_{G_n^i}$ and $m_i : W_i \to V_{G_n^i}$ the mapping from the PAC vertices generated on the derivation step $i$ to their correspondent vertices in $G_n^i$, for all $0 \le i < n$.
 \end{definition}
 
 It is clear that, the mapping $m$ of the previous definition exists and is bijective because all PAC vertices are, by definition, terminal and, therefore, are not deleted by derivation steps and, moreover, the images of all $m_i$ are pair-wise disjunct.
@@ -635,6 +639,10 @@ Ultimately, we put forward a NCE graph grammar with PAC whose language is the se
 
 Below, we demonstrate that the graph from Figure \ref{fig:classdiagram-g} is in $L(GG)$, by means of a production in $GG$.
 \input{examples/classdiagram-pacder}
+
+In this production, the rule $r_2$ creates, through two applications, two PAC vertices $p_0$ and $p_1$, which are then removed and have their adjacent vertices moved to the vertices $v_2$ and $v_1$, respectively, through the last two resolution steps. The resolution steps have thus the power of connecting vertices that could not be connected otherwise.
+
+%TODO: Explain the name PAC by means of interpretation of its effects in a rule
 
 \begin{remark}
 	If, for all rules $(A \pro R,\omega,U)$ in a grammar $GG$ have $U = \emptyset$, then the $GG$ degrades to a normal NCE grammar without PAC and the resolution steps have no effect in $L(GG)$.
@@ -726,6 +734,7 @@ Moreover, the \textit{resolution step} for TGG is as follows.
 	\end{align*}
 \end{definition}
 
+%TODO: REsolution step for TGG, production and language
 
 In regard to the application of NCE graph grammars with PAC to the problem of model transformation, the extension is also possible, as shown in the next argumentation. First, consider the redefinition of the $\source$ function.
 
