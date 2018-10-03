@@ -1,0 +1,135 @@
+\documentclass[side,11pt,oz,a4,fancybox,fancyheadings,fleqnb]{book}
+
+\topmargin-1cm
+\textheight23cm
+\textwidth15cm
+\voffset0cm
+\evensidemargin0cm
+\oddsidemargin0.9cm
+ 
+% packages
+\usepackage[usenames]{color}
+\usepackage{xcolor}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{xspace}
+\usepackage{pstricks}
+\usepackage{pst-node}
+\usepackage{pst-tree}
+\usepackage{pst-plot}
+\usepackage[nonumberlist, toc, style=super]{glossaries}
+\usepackage[colorlinks]{hyperref}
+\usepackage{zed-csp}
+\usepackage{psfrag}
+\usepackage{ae}
+\usepackage{txfonts}
+\usepackage{ifthen}  
+\usepackage{alltt}
+\usepackage{url} 
+\usepackage{epsfig}
+\usepackage{listings}
+\usepackage{color,listings}
+\usepackage{rotating}
+\usepackage{longtable}
+%\usepackage{fancyhdr}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{multirow}
+\usepackage{subfig}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[utf8]{inputenc}
+\usepackage{acronym}
+
+
+% listing definitions for XML
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
+
+%\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]{\markboth{{\sc Chapter} \thechapter\
+    #1}{{\sc Chapter} \thechapter\ #1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+
+\newglossary[gl]{glossarylist}{go}{gi}{Glossary}
+\newglossary[al]{acronymslist}{ao}{ai}{Acronyms}
+\renewcommand*{\glspostdescription}{}
+
+\lstset{
+   basicstyle=\footnotesize,
+   numbers=right
+%   frame=single,
+%   backgroundcolor=\color{gray}
+ }  
+
+\pretolerance=-1
+\setlength{\emergencystretch}{3em}
+%\DeclareMathSizes{11}{19}{13}{9}
+
+\begin{document}
+
+% settings for the whole document
+\parindent=0in
+\parskip=5pt
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{2}%should be 2
+
+\hypersetup{
+  pdftitle = {XXXX: TITLE XXXX}, pdfkeywords = {pdf, hyperref,
+  bookmarks}, pdfauthor = {Nikolay Tcholtchev}
+} 
+
+
+%switch off page numbering for cover page
+\pagenumbering{gobble}
+
+% keywords, cover, chapters for this thesis
+\include{tex/cover}
+
+%switch on page numbering after the cover page
+\pagenumbering{arabic}
+\setcounter{page}{2}
+
+\include{tex/abstract}
+
+%\include{tex/acknowledgement}
+
+% create the table of contents
+\tableofcontents
+\listoffigures
+\listoftables
+
+\include{tex/introduction}
+
+\bibliographystyle{alpha}
+\bibliography{literature}
+
+
+
+
+%% put all references though they are not cited
+%\nocite{*}
+\end{document}
+
+
