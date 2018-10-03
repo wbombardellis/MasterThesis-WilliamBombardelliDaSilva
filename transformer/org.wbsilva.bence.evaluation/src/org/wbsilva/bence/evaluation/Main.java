@@ -38,12 +38,18 @@ import org.wbsilva.bence.transformer.ECore2GraphTransformer;
 import org.wbsilva.bence.transformer.BeNCETransformationResult;
 import org.wbsilva.bence.transformer.util.TransformerUtil;
 import org.wbsilva.bx.btree2xbtree.Btree2xbtreePackage;
+import org.wbsilva.bx.class2database.Class2databasePackage;
 import org.wbsilva.bx.sourcecode2controlflow.Sourcecode2controlflowPackage;
+import org.wbsilva.bx.statemachine2petrinet.Statemachine2petrinetPackage;
 
 import btree.BtreePackage;
+import class_.ClassPackage;
 import controlflow.ControlflowPackage;
+import database.DatabasePackage;
 import graph.GraphPackage;
+import petrinet.PetrinetPackage;
 import sourcecode.SourcecodePackage;
+import statemachine.StatemachinePackage;
 import xbtree.XbtreePackage;
 
 /**
@@ -77,6 +83,14 @@ public class Main {
 						Btree2xbtreePackage.eINSTANCE, "../../tgg/org.wbsilva.bx.btree2xbtree", true),
 						new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/Src00.xmi",
 																	   "../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/Src01.xmi")));
+			workLoad.put(new TGGSpecification(ClassPackage.eINSTANCE, DatabasePackage.eINSTANCE,
+					"../../bence/org.wbsilva.bence.bx.class2database/model/Class2database.xmi",
+					Class2databasePackage.eINSTANCE, "../../tgg/org.wbsilva.bx.class2database", true),
+				new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.class2database/instances/evaluation/Src00.xmi")));
+			workLoad.put(new TGGSpecification(StatemachinePackage.eINSTANCE, PetrinetPackage.eINSTANCE,
+					"../../bence/org.wbsilva.bence.bx.statemachine2petrinet/model/Statemachine2petrinet.xmi",
+					Statemachine2petrinetPackage.eINSTANCE, "../../tgg/org.wbsilva.bx.statemachine2petrinet", true),
+				new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.statemachine2petrinet/instances/evaluation/Src00.xmi")));
 		} catch (Exception e) {
 			workLoad = null;
 		}
