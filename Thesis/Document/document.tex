@@ -784,14 +784,12 @@ In order to evaluate the proposed BNCE TGG formalism, we compare the amount of r
 		Pseudocode2Controlflow	& 45			& 1061	& \textbf{7}	& \textbf{185} \\
 		BTree2XBTree			& \textbf{4}	& \textbf{50}	& 5		& 80 \\
 		Star2Wheel				& -				& -		& \textbf{6} 	& \textbf{89} \\
-		%Activity2ControlFlow	& 	&	&	&	\\
-		%StateMachine2PetriNets	& 	&	&	&	\\
-		%UMLClass2SDLBlock		& 	&	&	&	\\
-		%Code2ControlFlow 		& 	&	&	&	\\
-		%Activity2CSP \\
-		%\citep{Bisztray2009}			& 	&	&	&	\\
-		%StateMachine2Java \\
-		%\citep{Striewe2008}		& 	&	&	&	\\
+		Class2Database			& \textbf{5}	& \textbf{80}	& 9 	& 117  \\
+		Statemachine2Petrinet	& \textbf{5}	& \textbf{114}	& 7		& 131 \\
+		
+		%Class2SDLBlock		& 	&	&	&	\\
+		%Statemachine2While & 	&	&	&	\\
+		%Activity2CSP 		& 	&	&	&	\\
 		\hline
 		Total					&  & 		&	& \\
 		Average					&  & 		&	& \\
@@ -805,6 +803,8 @@ In the case of $Pseudocode2Controlflow$, our proposed approach shows a clear adv
 In addition to that, the use of non-terminal symbols gives BNCE TGG the power to represent abstract concepts very easily. For example, whereas the rule $r_1$ encodes, using only few elements, that after each $action$ comes any statement $A$, which can be another $action$, an $if$, a $while$ or nothing (an empty graph), in the standard TGG without application condition or any special inheritance treatment, we need to write a different rule for each of these cases. For the whole grammar, we need to consider all combinations of $actions$, $ifs$ and $whiles$ in all rules, what causes the great amount of rules and elements.
 
 The $Star2Wheel$ transformation consists of transforming star graphs, which are complete bipartite graphs $K_{1,k}$, with the partitions named center and border, to wheel graphs, that can be constructed from star graphs by adding edges between border vertices to form a minimal cycle. We could not write this transformation in standard TGG, specially because of the rules' monotonicity (see Definition \ref{def:stgg}). That is, we missed the possibility to erase edges in a rule, feature that we do have in the semantics of BNCE TGG through the embedding mechanism.
+
+%TODO: Comment the last 5 TGGs, not yet commented
 
 %TODO: Positive and negative aspects of the proposed approach. Cases where it specially works good and bad. 
 %TODO: Overview: total and average results
@@ -825,6 +825,11 @@ The $Star2Wheel$ transformation consists of transforming star graphs, which are 
 		Pseudocode2Controlflow	& 		& 		& 	 	&  \\
 		BTree2XBTree			&  		& 		& 		&  \\
 		Star2Wheel				& -		& -		& 	 	&  \\
+		Class2Database			& 		& 		&  		&   \\
+		Statemachine2Petrinet	& 		& 		& 		&  \\
+		%Class2SDLBlock		& 	&	&	&	\\
+		%Statemachine2While & 	&	&	&	\\
+		%Activity2CSP 		& 	&	&	&	\\
 		\hline
 		Total					&  & 		&	& \\
 		Average					&  & 		&	& \\
