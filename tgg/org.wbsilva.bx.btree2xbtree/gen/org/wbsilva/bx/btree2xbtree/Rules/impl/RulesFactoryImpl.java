@@ -57,10 +57,10 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 		switch (eClass.getClassifierID()) {
 		case RulesPackage.NODE2NODE:
 			return createnode2node();
-		case RulesPackage.RIGHT2SOUTHEAST:
-			return createright2southeast();
 		case RulesPackage.LEFT2SOUTHWEST:
 			return createleft2southwest();
+		case RulesPackage.RIGHT2SOUTHEAST:
+			return createright2southeast();
 		case RulesPackage.RIGHTLEFT2EASTWEST:
 			return createrightleft2eastwest();
 		default:
@@ -83,9 +83,9 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public right2southeast createright2southeast() {
-		right2southeastImpl right2southeast = new right2southeastImpl();
-		return right2southeast;
+	public left2southwest createleft2southwest() {
+		left2southwestImpl left2southwest = new left2southwestImpl();
+		return left2southwest;
 	}
 
 	/**
@@ -93,9 +93,9 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public left2southwest createleft2southwest() {
-		left2southwestImpl left2southwest = new left2southwestImpl();
-		return left2southwest;
+	public right2southeast createright2southeast() {
+		right2southeastImpl right2southeast = new right2southeastImpl();
+		return right2southeast;
 	}
 
 	/**

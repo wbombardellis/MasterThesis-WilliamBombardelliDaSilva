@@ -92,7 +92,7 @@ public interface right2southeast extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, BTNode c, BTNode n,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, BTNode c, BTNode2XBTnode n2xn, BTNode n,
 			XBTNode xn);
 
 	/**
@@ -109,8 +109,8 @@ public interface right2southeast extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject n2xn, EObject c, EObject l2se, EObject n, EObject xc,
-			EObject xn);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject c, EObject l2se, EObject n2xn, EObject n, EObject xn,
+			EObject xc);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,7 +126,7 @@ public interface right2southeast extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, XBTNode xc, XBTNode xn);
+	boolean isAppropriate_BWD(Match match, XBTNode xn, XBTNode xc);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,7 +150,7 @@ public interface right2southeast extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, XBTNode xc, XBTNode xn);
+	void registerObjectsToMatch_BWD(Match match, XBTNode xn, XBTNode xc);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,7 +158,7 @@ public interface right2southeast extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, XBTNode xc, XBTNode xn);
+	CSP isAppropriate_solveCsp_BWD(Match match, XBTNode xn, XBTNode xc);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,8 +174,8 @@ public interface right2southeast extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, BTNode n, XBTNode xc,
-			XBTNode xn);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, BTNode2XBTnode n2xn, BTNode n, XBTNode xn,
+			XBTNode xc);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,8 +191,8 @@ public interface right2southeast extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject n2xn, EObject c, EObject l2se, EObject n, EObject xc,
-			EObject xn);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject c, EObject l2se, EObject n2xn, EObject n, EObject xn,
+			EObject xc);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface right2southeast extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_141(EMoflonEdge _edge_se);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_50(EMoflonEdge _edge_se);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface right2southeast extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_141(EMoflonEdge _edge_r);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_51(EMoflonEdge _edge_r);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +248,7 @@ public interface right2southeast extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(BTNode c, BTNode n, XBTNode xc, XBTNode xn, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(BTNode c, BTNode n, XBTNode xn, XBTNode xc, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,7 +272,7 @@ public interface right2southeast extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(XBTNode xc, XBTNode xn);
+	boolean checkDEC_BWD(XBTNode xn, XBTNode xc);
 
 	/**
 	 * <!-- begin-user-doc -->

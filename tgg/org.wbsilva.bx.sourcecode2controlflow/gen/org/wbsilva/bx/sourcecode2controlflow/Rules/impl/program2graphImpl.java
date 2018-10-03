@@ -149,33 +149,33 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 		}
 		Program p = (Program) result1_bindingAndBlack[0];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[1];
-		Object[] result1_green = program2graphImpl.pattern_program2graph_1_1_performtransformation_greenBFF(p);
+		Object[] result1_green = program2graphImpl.pattern_program2graph_1_1_performtransformation_greenFFB(p);
+		Graph g = (Graph) result1_green[0];
 		P2G p2g = (P2G) result1_green[1];
-		Graph g = (Graph) result1_green[2];
 
-		Object[] result2_black = program2graphImpl.pattern_program2graph_1_2_collecttranslatedelements_blackBBB(p, p2g,
-				g);
+		Object[] result2_black = program2graphImpl.pattern_program2graph_1_2_collecttranslatedelements_blackBBB(g, p2g,
+				p);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[p] = " + p + ", " + "[p2g] = "
-					+ p2g + ", " + "[g] = " + g + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[g] = " + g + ", " + "[p2g] = "
+					+ p2g + ", " + "[p] = " + p + ".");
 		}
-		Object[] result2_green = program2graphImpl.pattern_program2graph_1_2_collecttranslatedelements_greenFBBB(p, p2g,
-				g);
+		Object[] result2_green = program2graphImpl.pattern_program2graph_1_2_collecttranslatedelements_greenFBBB(g, p2g,
+				p);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = program2graphImpl.pattern_program2graph_1_3_bookkeepingforedges_blackBBBB(ruleresult,
-				p, p2g, g);
+				g, p2g, p);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[p] = " + p + ", " + "[p2g] = " + p2g + ", " + "[g] = " + g + ".");
+					+ ", " + "[g] = " + g + ", " + "[p2g] = " + p2g + ", " + "[p] = " + p + ".");
 		}
-		program2graphImpl.pattern_program2graph_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, p, p2g, g);
-		//nothing EMoflonEdge p2g__p____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[5];
+		program2graphImpl.pattern_program2graph_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, g, p2g, p);
+		//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge p2g__p____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		program2graphImpl.pattern_program2graph_1_5_registerobjects_expressionBBBBB(this, ruleresult, p, p2g, g);
+		program2graphImpl.pattern_program2graph_1_5_registerobjects_expressionBBBBB(this, ruleresult, g, p2g, p);
 		return program2graphImpl.pattern_program2graph_1_6_expressionFB(ruleresult);
 	}
 
@@ -315,10 +315,10 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject p, EObject p2g, EObject g) {
-		ruleresult.registerObject("p", p);
-		ruleresult.registerObject("p2g", p2g);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject g, EObject p2g, EObject p) {
 		ruleresult.registerObject("g", g);
+		ruleresult.registerObject("p2g", p2g);
+		ruleresult.registerObject("p", p);
 
 	}
 
@@ -393,33 +393,33 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 		}
 		Graph g = (Graph) result1_bindingAndBlack[0];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[1];
-		Object[] result1_green = program2graphImpl.pattern_program2graph_11_1_performtransformation_greenFFB(g);
-		Program p = (Program) result1_green[0];
+		Object[] result1_green = program2graphImpl.pattern_program2graph_11_1_performtransformation_greenBFF(g);
 		P2G p2g = (P2G) result1_green[1];
+		Program p = (Program) result1_green[2];
 
-		Object[] result2_black = program2graphImpl.pattern_program2graph_11_2_collecttranslatedelements_blackBBB(p, p2g,
-				g);
+		Object[] result2_black = program2graphImpl.pattern_program2graph_11_2_collecttranslatedelements_blackBBB(g, p2g,
+				p);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[p] = " + p + ", " + "[p2g] = "
-					+ p2g + ", " + "[g] = " + g + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[g] = " + g + ", " + "[p2g] = "
+					+ p2g + ", " + "[p] = " + p + ".");
 		}
-		Object[] result2_green = program2graphImpl.pattern_program2graph_11_2_collecttranslatedelements_greenFBBB(p,
-				p2g, g);
+		Object[] result2_green = program2graphImpl.pattern_program2graph_11_2_collecttranslatedelements_greenFBBB(g,
+				p2g, p);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = program2graphImpl.pattern_program2graph_11_3_bookkeepingforedges_blackBBBB(ruleresult,
-				p, p2g, g);
+				g, p2g, p);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[p] = " + p + ", " + "[p2g] = " + p2g + ", " + "[g] = " + g + ".");
+					+ ", " + "[g] = " + g + ", " + "[p2g] = " + p2g + ", " + "[p] = " + p + ".");
 		}
-		program2graphImpl.pattern_program2graph_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, p, p2g, g);
-		//nothing EMoflonEdge p2g__p____source = (EMoflonEdge) result3_green[4];
-		//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[5];
+		program2graphImpl.pattern_program2graph_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, g, p2g, p);
+		//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[4];
+		//nothing EMoflonEdge p2g__p____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
-		program2graphImpl.pattern_program2graph_11_5_registerobjects_expressionBBBBB(this, ruleresult, p, p2g, g);
+		program2graphImpl.pattern_program2graph_11_5_registerobjects_expressionBBBBB(this, ruleresult, g, p2g, p);
 		return program2graphImpl.pattern_program2graph_11_6_expressionFB(ruleresult);
 	}
 
@@ -559,10 +559,10 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject p, EObject p2g, EObject g) {
-		ruleresult.registerObject("p", p);
-		ruleresult.registerObject("p2g", p2g);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject g, EObject p2g, EObject p) {
 		ruleresult.registerObject("g", g);
+		ruleresult.registerObject("p2g", p2g);
+		ruleresult.registerObject("p", p);
 
 	}
 
@@ -581,7 +581,7 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Graph_2(Graph g) {
+	public EObjectContainer isAppropriate_BWD_Graph_0(Graph g) {
 
 		Object[] result1_bindingAndBlack = program2graphImpl
 				.pattern_program2graph_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -634,7 +634,7 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_Program_2(Program p) {
+	public EObjectContainer isAppropriate_FWD_Program_0(Program p) {
 
 		Object[] result1_bindingAndBlack = program2graphImpl
 				.pattern_program2graph_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -762,14 +762,14 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Program p = (Program) result2_bindingAndBlack[0];
-		Graph g = (Graph) result2_bindingAndBlack[1];
+		Graph g = (Graph) result2_bindingAndBlack[0];
+		Program p = (Program) result2_bindingAndBlack[1];
 
 		Object[] result3_bindingAndBlack = program2graphImpl
-				.pattern_program2graph_24_3_solvecsp_bindingAndBlackFBBBBB(this, p, g, sourceMatch, targetMatch);
+				.pattern_program2graph_24_3_solvecsp_bindingAndBlackFBBBBB(this, g, p, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[p] = " + p + ", " + "[g] = " + g + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[g] = " + g + ", " + "[p] = " + p + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -782,13 +782,13 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 						.pattern_program2graph_24_5_matchcorrcontext_greenBBF(sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[2];
 
-				Object[] result6_black = program2graphImpl.pattern_program2graph_24_6_createcorrespondence_blackBBB(p,
-						g, ccMatch);
+				Object[] result6_black = program2graphImpl.pattern_program2graph_24_6_createcorrespondence_blackBBB(g,
+						p, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[p] = " + p + ", "
-							+ "[g] = " + g + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[g] = " + g + ", "
+							+ "[p] = " + p + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				program2graphImpl.pattern_program2graph_24_6_createcorrespondence_greenBFBB(p, g, ccMatch);
+				program2graphImpl.pattern_program2graph_24_6_createcorrespondence_greenBFBB(g, p, ccMatch);
 				//nothing P2G p2g = (P2G) result6_green[1];
 
 				Object[] result7_black = program2graphImpl
@@ -811,7 +811,7 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Program p, Graph g, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Graph g, Program p, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -901,9 +901,9 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 							"Pattern matching failed." + " Variables: " + "[ruleResult] = " + ruleResult + ".");
 				}
 				program2graphImpl.pattern_program2graph_29_6_perform_greenFFFB(ruleResult);
-				//nothing Program p = (Program) result6_green[0];
+				//nothing Graph g = (Graph) result6_green[0];
 				//nothing P2G p2g = (P2G) result6_green[1];
-				//nothing Graph g = (Graph) result6_green[2];
+				//nothing Program p = (Program) result6_green[2];
 
 			} else {
 			}
@@ -999,18 +999,18 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 			return null;
 		case RulesPackage.PROGRAM2GRAPH___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PROGRAM2GRAPH___IS_APPROPRIATE_BWD_GRAPH_2__GRAPH:
-			return isAppropriate_BWD_Graph_2((Graph) arguments.get(0));
-		case RulesPackage.PROGRAM2GRAPH___IS_APPROPRIATE_FWD_PROGRAM_2__PROGRAM:
-			return isAppropriate_FWD_Program_2((Program) arguments.get(0));
+		case RulesPackage.PROGRAM2GRAPH___IS_APPROPRIATE_BWD_GRAPH_0__GRAPH:
+			return isAppropriate_BWD_Graph_0((Graph) arguments.get(0));
+		case RulesPackage.PROGRAM2GRAPH___IS_APPROPRIATE_FWD_PROGRAM_0__PROGRAM:
+			return isAppropriate_FWD_Program_0((Program) arguments.get(0));
 		case RulesPackage.PROGRAM2GRAPH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PROGRAM2GRAPH___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PROGRAM2GRAPH___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.PROGRAM2GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__PROGRAM_GRAPH_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Program) arguments.get(0), (Graph) arguments.get(1),
+		case RulesPackage.PROGRAM2GRAPH___IS_APPLICABLE_SOLVE_CSP_CC__GRAPH_PROGRAM_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Graph) arguments.get(0), (Program) arguments.get(1),
 					(Match) arguments.get(2), (Match) arguments.get(3));
 		case RulesPackage.PROGRAM2GRAPH___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1141,34 +1141,34 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 		return null;
 	}
 
-	public static final Object[] pattern_program2graph_1_1_performtransformation_greenBFF(Program p) {
-		P2G p2g = Sourcecode2controlflowFactory.eINSTANCE.createP2G();
+	public static final Object[] pattern_program2graph_1_1_performtransformation_greenFFB(Program p) {
 		Graph g = ControlflowFactory.eINSTANCE.createGraph();
-		p2g.setSource(p);
+		P2G p2g = Sourcecode2controlflowFactory.eINSTANCE.createP2G();
 		p2g.setTarget(g);
-		return new Object[] { p, p2g, g };
+		p2g.setSource(p);
+		return new Object[] { g, p2g, p };
 	}
 
-	public static final Object[] pattern_program2graph_1_2_collecttranslatedelements_blackBBB(Program p, P2G p2g,
-			Graph g) {
-		return new Object[] { p, p2g, g };
+	public static final Object[] pattern_program2graph_1_2_collecttranslatedelements_blackBBB(Graph g, P2G p2g,
+			Program p) {
+		return new Object[] { g, p2g, p };
 	}
 
-	public static final Object[] pattern_program2graph_1_2_collecttranslatedelements_greenFBBB(Program p, P2G p2g,
-			Graph g) {
+	public static final Object[] pattern_program2graph_1_2_collecttranslatedelements_greenFBBB(Graph g, P2G p2g,
+			Program p) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(p);
-		ruleresult.getCreatedLinkElements().add(p2g);
 		ruleresult.getCreatedElements().add(g);
-		return new Object[] { ruleresult, p, p2g, g };
+		ruleresult.getCreatedLinkElements().add(p2g);
+		ruleresult.getTranslatedElements().add(p);
+		return new Object[] { ruleresult, g, p2g, p };
 	}
 
 	public static final Object[] pattern_program2graph_1_3_bookkeepingforedges_blackBBBB(PerformRuleResult ruleresult,
-			EObject p, EObject p2g, EObject g) {
-		if (!p.equals(p2g)) {
+			EObject g, EObject p2g, EObject p) {
+		if (!g.equals(p2g)) {
 			if (!g.equals(p)) {
-				if (!g.equals(p2g)) {
-					return new Object[] { ruleresult, p, p2g, g };
+				if (!p.equals(p2g)) {
+					return new Object[] { ruleresult, g, p2g, p };
 				}
 			}
 		}
@@ -1176,27 +1176,27 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 	}
 
 	public static final Object[] pattern_program2graph_1_3_bookkeepingforedges_greenBBBBFF(PerformRuleResult ruleresult,
-			EObject p, EObject p2g, EObject g) {
-		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			EObject g, EObject p2g, EObject p) {
 		EMoflonEdge p2g__g____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "program2graph";
-		String p2g__p____source_name_prime = "source";
 		String p2g__g____target_name_prime = "target";
-		p2g__p____source.setSrc(p2g);
-		p2g__p____source.setTrg(p);
-		ruleresult.getCreatedEdges().add(p2g__p____source);
+		String p2g__p____source_name_prime = "source";
 		p2g__g____target.setSrc(p2g);
 		p2g__g____target.setTrg(g);
 		ruleresult.getCreatedEdges().add(p2g__g____target);
+		p2g__p____source.setSrc(p2g);
+		p2g__p____source.setTrg(p);
+		ruleresult.getCreatedEdges().add(p2g__p____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		p2g__p____source.setName(p2g__p____source_name_prime);
 		p2g__g____target.setName(p2g__g____target_name_prime);
-		return new Object[] { ruleresult, p, p2g, g, p2g__p____source, p2g__g____target };
+		p2g__p____source.setName(p2g__p____source_name_prime);
+		return new Object[] { ruleresult, g, p2g, p, p2g__g____target, p2g__p____source };
 	}
 
 	public static final void pattern_program2graph_1_5_registerobjects_expressionBBBBB(program2graph _this,
-			PerformRuleResult ruleresult, EObject p, EObject p2g, EObject g) {
-		_this.registerObjects_FWD(ruleresult, p, p2g, g);
+			PerformRuleResult ruleresult, EObject g, EObject p2g, EObject p) {
+		_this.registerObjects_FWD(ruleresult, g, p2g, p);
 
 	}
 
@@ -1450,34 +1450,34 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 		return null;
 	}
 
-	public static final Object[] pattern_program2graph_11_1_performtransformation_greenFFB(Graph g) {
-		Program p = SourcecodeFactory.eINSTANCE.createProgram();
+	public static final Object[] pattern_program2graph_11_1_performtransformation_greenBFF(Graph g) {
 		P2G p2g = Sourcecode2controlflowFactory.eINSTANCE.createP2G();
-		p2g.setSource(p);
+		Program p = SourcecodeFactory.eINSTANCE.createProgram();
 		p2g.setTarget(g);
-		return new Object[] { p, p2g, g };
+		p2g.setSource(p);
+		return new Object[] { g, p2g, p };
 	}
 
-	public static final Object[] pattern_program2graph_11_2_collecttranslatedelements_blackBBB(Program p, P2G p2g,
-			Graph g) {
-		return new Object[] { p, p2g, g };
+	public static final Object[] pattern_program2graph_11_2_collecttranslatedelements_blackBBB(Graph g, P2G p2g,
+			Program p) {
+		return new Object[] { g, p2g, p };
 	}
 
-	public static final Object[] pattern_program2graph_11_2_collecttranslatedelements_greenFBBB(Program p, P2G p2g,
-			Graph g) {
+	public static final Object[] pattern_program2graph_11_2_collecttranslatedelements_greenFBBB(Graph g, P2G p2g,
+			Program p) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(p);
-		ruleresult.getCreatedLinkElements().add(p2g);
 		ruleresult.getTranslatedElements().add(g);
-		return new Object[] { ruleresult, p, p2g, g };
+		ruleresult.getCreatedLinkElements().add(p2g);
+		ruleresult.getCreatedElements().add(p);
+		return new Object[] { ruleresult, g, p2g, p };
 	}
 
 	public static final Object[] pattern_program2graph_11_3_bookkeepingforedges_blackBBBB(PerformRuleResult ruleresult,
-			EObject p, EObject p2g, EObject g) {
-		if (!p.equals(p2g)) {
+			EObject g, EObject p2g, EObject p) {
+		if (!g.equals(p2g)) {
 			if (!g.equals(p)) {
-				if (!g.equals(p2g)) {
-					return new Object[] { ruleresult, p, p2g, g };
+				if (!p.equals(p2g)) {
+					return new Object[] { ruleresult, g, p2g, p };
 				}
 			}
 		}
@@ -1485,27 +1485,27 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 	}
 
 	public static final Object[] pattern_program2graph_11_3_bookkeepingforedges_greenBBBBFF(
-			PerformRuleResult ruleresult, EObject p, EObject p2g, EObject g) {
-		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject g, EObject p2g, EObject p) {
 		EMoflonEdge p2g__g____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "program2graph";
-		String p2g__p____source_name_prime = "source";
 		String p2g__g____target_name_prime = "target";
-		p2g__p____source.setSrc(p2g);
-		p2g__p____source.setTrg(p);
-		ruleresult.getCreatedEdges().add(p2g__p____source);
+		String p2g__p____source_name_prime = "source";
 		p2g__g____target.setSrc(p2g);
 		p2g__g____target.setTrg(g);
 		ruleresult.getCreatedEdges().add(p2g__g____target);
+		p2g__p____source.setSrc(p2g);
+		p2g__p____source.setTrg(p);
+		ruleresult.getCreatedEdges().add(p2g__p____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		p2g__p____source.setName(p2g__p____source_name_prime);
 		p2g__g____target.setName(p2g__g____target_name_prime);
-		return new Object[] { ruleresult, p, p2g, g, p2g__p____source, p2g__g____target };
+		p2g__p____source.setName(p2g__p____source_name_prime);
+		return new Object[] { ruleresult, g, p2g, p, p2g__g____target, p2g__p____source };
 	}
 
 	public static final void pattern_program2graph_11_5_registerobjects_expressionBBBBB(program2graph _this,
-			PerformRuleResult ruleresult, EObject p, EObject p2g, EObject g) {
-		_this.registerObjects_BWD(ruleresult, p, p2g, g);
+			PerformRuleResult ruleresult, EObject g, EObject p2g, EObject p) {
+		_this.registerObjects_BWD(ruleresult, g, p2g, p);
 
 	}
 
@@ -1862,26 +1862,26 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_program2graph_24_2_matchsrctrgcontext_bindingFFBB(Match sourceMatch,
-			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("p");
-		EObject _localVariable_1 = targetMatch.getObject("g");
-		EObject tmpP = _localVariable_0;
-		EObject tmpG = _localVariable_1;
-		if (tmpP instanceof Program) {
-			Program p = (Program) tmpP;
-			if (tmpG instanceof Graph) {
-				Graph g = (Graph) tmpG;
-				return new Object[] { p, g, sourceMatch, targetMatch };
+	public static final Object[] pattern_program2graph_24_2_matchsrctrgcontext_bindingFFBB(Match targetMatch,
+			Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("g");
+		EObject _localVariable_1 = sourceMatch.getObject("p");
+		EObject tmpG = _localVariable_0;
+		EObject tmpP = _localVariable_1;
+		if (tmpG instanceof Graph) {
+			Graph g = (Graph) tmpG;
+			if (tmpP instanceof Program) {
+				Program p = (Program) tmpP;
+				return new Object[] { g, p, targetMatch, sourceMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_program2graph_24_2_matchsrctrgcontext_blackBBBB(Program p, Graph g,
+	public static final Object[] pattern_program2graph_24_2_matchsrctrgcontext_blackBBBB(Graph g, Program p,
 			Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { p, g, sourceMatch, targetMatch };
+			return new Object[] { g, p, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1889,27 +1889,27 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 	public static final Object[] pattern_program2graph_24_2_matchsrctrgcontext_bindingAndBlackFFBB(Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_program2graph_24_2_matchsrctrgcontext_binding = pattern_program2graph_24_2_matchsrctrgcontext_bindingFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_program2graph_24_2_matchsrctrgcontext_binding != null) {
-			Program p = (Program) result_pattern_program2graph_24_2_matchsrctrgcontext_binding[0];
-			Graph g = (Graph) result_pattern_program2graph_24_2_matchsrctrgcontext_binding[1];
+			Graph g = (Graph) result_pattern_program2graph_24_2_matchsrctrgcontext_binding[0];
+			Program p = (Program) result_pattern_program2graph_24_2_matchsrctrgcontext_binding[1];
 
 			Object[] result_pattern_program2graph_24_2_matchsrctrgcontext_black = pattern_program2graph_24_2_matchsrctrgcontext_blackBBBB(
-					p, g, sourceMatch, targetMatch);
+					g, p, sourceMatch, targetMatch);
 			if (result_pattern_program2graph_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { p, g, sourceMatch, targetMatch };
+				return new Object[] { g, p, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_program2graph_24_3_solvecsp_bindingFBBBBB(program2graph _this, Program p,
-			Graph g, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(p, g, sourceMatch, targetMatch);
+	public static final Object[] pattern_program2graph_24_3_solvecsp_bindingFBBBBB(program2graph _this, Graph g,
+			Program p, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(g, p, sourceMatch, targetMatch);
 		CSP csp = _localVariable_2;
 		if (csp != null) {
-			return new Object[] { csp, _this, p, g, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, g, p, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1918,17 +1918,17 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_program2graph_24_3_solvecsp_bindingAndBlackFBBBBB(program2graph _this,
-			Program p, Graph g, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_program2graph_24_3_solvecsp_bindingAndBlackFBBBBB(program2graph _this, Graph g,
+			Program p, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_program2graph_24_3_solvecsp_binding = pattern_program2graph_24_3_solvecsp_bindingFBBBBB(
-				_this, p, g, sourceMatch, targetMatch);
+				_this, g, p, sourceMatch, targetMatch);
 		if (result_pattern_program2graph_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_program2graph_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_program2graph_24_3_solvecsp_black = pattern_program2graph_24_3_solvecsp_blackB(csp);
 			if (result_pattern_program2graph_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, p, g, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, g, p, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -1959,18 +1959,18 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 		return new Object[] { sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_program2graph_24_6_createcorrespondence_blackBBB(Program p, Graph g,
+	public static final Object[] pattern_program2graph_24_6_createcorrespondence_blackBBB(Graph g, Program p,
 			CCMatch ccMatch) {
-		return new Object[] { p, g, ccMatch };
+		return new Object[] { g, p, ccMatch };
 	}
 
-	public static final Object[] pattern_program2graph_24_6_createcorrespondence_greenBFBB(Program p, Graph g,
+	public static final Object[] pattern_program2graph_24_6_createcorrespondence_greenBFBB(Graph g, Program p,
 			CCMatch ccMatch) {
 		P2G p2g = Sourcecode2controlflowFactory.eINSTANCE.createP2G();
-		p2g.setSource(p);
 		p2g.setTarget(g);
+		p2g.setSource(p);
 		ccMatch.getCreateCorr().add(p2g);
-		return new Object[] { p, p2g, g, ccMatch };
+		return new Object[] { g, p2g, p, ccMatch };
 	}
 
 	public static final Object[] pattern_program2graph_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2078,20 +2078,20 @@ public class program2graphImpl extends AbstractRuleImpl implements program2graph
 	}
 
 	public static final Object[] pattern_program2graph_29_6_perform_greenFFFB(ModelgeneratorRuleResult ruleResult) {
-		Program p = SourcecodeFactory.eINSTANCE.createProgram();
-		P2G p2g = Sourcecode2controlflowFactory.eINSTANCE.createP2G();
 		Graph g = ControlflowFactory.eINSTANCE.createGraph();
+		P2G p2g = Sourcecode2controlflowFactory.eINSTANCE.createP2G();
+		Program p = SourcecodeFactory.eINSTANCE.createProgram();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getSourceObjects().add(p);
-		p2g.setSource(p);
-		ruleResult.getCorrObjects().add(p2g);
-		p2g.setTarget(g);
 		ruleResult.getTargetObjects().add(g);
+		p2g.setTarget(g);
+		ruleResult.getCorrObjects().add(p2g);
+		p2g.setSource(p);
+		ruleResult.getSourceObjects().add(p);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { p, p2g, g, ruleResult };
+		return new Object[] { g, p2g, p, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_program2graph_29_7_expressionFB(

@@ -46,7 +46,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Statement s, Assignment a);
+	boolean isAppropriate_FWD(Match match, Assignment a, Statement s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Statement s, Assignment a);
+	void registerObjectsToMatch_FWD(Match match, Assignment a, Statement s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Statement s, Assignment a);
+	CSP isAppropriate_solveCsp_FWD(Match match, Assignment a, Statement s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,8 +94,8 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Statement s, Node n, Assignment a, Command c,
-			S2N s2n, S2N a2c);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, S2N a2c, Assignment a, Command c, Statement s,
+			S2N s2n, Node n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,8 +111,8 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject s, EObject n, EObject a, EObject c, EObject s2n,
-			EObject a2c);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject a2c, EObject a, EObject c, EObject s, EObject s2n,
+			EObject n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,7 +128,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Node n, Command c);
+	boolean isAppropriate_BWD(Match match, Command c, Node n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,7 +152,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Node n, Command c);
+	void registerObjectsToMatch_BWD(Match match, Command c, Node n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,7 +160,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Node n, Command c);
+	CSP isAppropriate_solveCsp_BWD(Match match, Command c, Node n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,8 +176,8 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Statement s, Node n, Assignment a, Command c,
-			S2N s2n, S2N a2c);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2N a2c, Assignment a, Command c, Statement s,
+			S2N s2n, Node n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,8 +193,8 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject s, EObject n, EObject a, EObject c, EObject s2n,
-			EObject a2c);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject a2c, EObject a, EObject c, EObject s, EObject s2n,
+			EObject n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_132(EMoflonEdge _edge_next);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_21(EMoflonEdge _edge_next);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_132(EMoflonEdge _edge_next);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_22(EMoflonEdge _edge_next);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,7 +250,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Statement s, Node n, Assignment a, Command c, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Assignment a, Command c, Statement s, Node n, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -266,7 +266,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Statement s, Assignment a);
+	boolean checkDEC_FWD(Assignment a, Statement s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,7 +274,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Node n, Command c);
+	boolean checkDEC_BWD(Command c, Node n);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -282,7 +282,7 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, S2N s2nParameter, S2N a2cParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, S2N a2cParameter, S2N s2nParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -290,8 +290,8 @@ public interface next2next extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Statement s, Node n, Assignment a, Command c,
-			S2N s2n, S2N a2c, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2N a2c, Assignment a, Command c, Statement s,
+			S2N s2n, Node n, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

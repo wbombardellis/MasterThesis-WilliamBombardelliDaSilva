@@ -77,20 +77,20 @@ public class RulesSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RulesPackage.RIGHT2SOUTHEAST: {
-			right2southeast right2southeast = (right2southeast) theEObject;
-			T result = caseright2southeast(right2southeast);
-			if (result == null)
-				result = caseAbstractRule(right2southeast);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case RulesPackage.LEFT2SOUTHWEST: {
 			left2southwest left2southwest = (left2southwest) theEObject;
 			T result = caseleft2southwest(left2southwest);
 			if (result == null)
 				result = caseAbstractRule(left2southwest);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RulesPackage.RIGHT2SOUTHEAST: {
+			right2southeast right2southeast = (right2southeast) theEObject;
+			T result = caseright2southeast(right2southeast);
+			if (result == null)
+				result = caseAbstractRule(right2southeast);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -125,21 +125,6 @@ public class RulesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>right2southeast</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>right2southeast</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseright2southeast(right2southeast object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>left2southwest</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -151,6 +136,21 @@ public class RulesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseleft2southwest(left2southwest object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>right2southeast</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>right2southeast</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseright2southeast(right2southeast object) {
 		return null;
 	}
 

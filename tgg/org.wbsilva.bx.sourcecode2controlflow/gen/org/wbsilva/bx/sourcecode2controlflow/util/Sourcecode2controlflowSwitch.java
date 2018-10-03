@@ -77,20 +77,20 @@ public class Sourcecode2controlflowSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Sourcecode2controlflowPackage.P2G: {
-			P2G p2G = (P2G) theEObject;
-			T result = caseP2G(p2G);
-			if (result == null)
-				result = caseAbstractCorrespondence(p2G);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case Sourcecode2controlflowPackage.S2N: {
 			S2N s2N = (S2N) theEObject;
 			T result = caseS2N(s2N);
 			if (result == null)
 				result = caseAbstractCorrespondence(s2N);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Sourcecode2controlflowPackage.P2G: {
+			P2G p2G = (P2G) theEObject;
+			T result = caseP2G(p2G);
+			if (result == null)
+				result = caseAbstractCorrespondence(p2G);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -116,21 +116,6 @@ public class Sourcecode2controlflowSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>P2G</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>P2G</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseP2G(P2G object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>S2N</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -142,6 +127,21 @@ public class Sourcecode2controlflowSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseS2N(S2N object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>P2G</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>P2G</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseP2G(P2G object) {
 		return null;
 	}
 

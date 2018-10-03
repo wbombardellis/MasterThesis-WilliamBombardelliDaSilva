@@ -47,7 +47,7 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Decision d, While b, Assignment m, Assignment l, While a);
+	boolean isAppropriate_FWD(Match match, Assignment l, While a, Decision d, While b, Assignment m);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Decision d, While b, Assignment m, Assignment l, While a);
+	void registerObjectsToMatch_FWD(Match match, Assignment l, While a, Decision d, While b, Assignment m);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Decision d, While b, Assignment m, Assignment l, While a);
+	CSP isAppropriate_solveCsp_FWD(Match match, Assignment l, While a, Decision d, While b, Assignment m);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,8 +95,8 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Decision d, While b, Assignment m, S2B d2c,
-			Branch c, Assignment l, While a);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Branch c, Assignment l, While a, Decision d,
+			While b, Assignment m, S2B d2c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,9 +112,9 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject z, EObject a2x, EObject d, EObject y, EObject b,
-			EObject l2z, EObject m, EObject m2w, EObject w, EObject d2c, EObject c, EObject l, EObject x, EObject a,
-			EObject b2y);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject y, EObject c, EObject l, EObject a, EObject d,
+			EObject b, EObject w, EObject a2x, EObject l2z, EObject b2y, EObject m, EObject z, EObject m2w, EObject d2c,
+			EObject x);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +130,7 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Command z, Branch y, Command w, Branch c, Branch x);
+	boolean isAppropriate_BWD(Match match, Branch y, Branch c, Command w, Command z, Branch x);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +154,7 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Command z, Branch y, Command w, Branch c, Branch x);
+	void registerObjectsToMatch_BWD(Match match, Branch y, Branch c, Command w, Command z, Branch x);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,7 +162,7 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Command z, Branch y, Command w, Branch c, Branch x);
+	CSP isAppropriate_solveCsp_BWD(Match match, Branch y, Branch c, Command w, Command z, Branch x);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Command z, Decision d, Branch y, Command w,
-			S2B d2c, Branch c, Branch x);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch y, Branch c, Decision d, Command w,
+			Command z, S2B d2c, Branch x);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,9 +195,9 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject z, EObject a2x, EObject d, EObject y, EObject b,
-			EObject l2z, EObject m, EObject m2w, EObject w, EObject d2c, EObject c, EObject l, EObject x, EObject a,
-			EObject b2y);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject y, EObject c, EObject l, EObject a, EObject d,
+			EObject b, EObject w, EObject a2x, EObject l2z, EObject b2y, EObject m, EObject z, EObject m2w, EObject d2c,
+			EObject x);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_108(EMoflonEdge _edge_next);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_27(EMoflonEdge _edge_positive);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_108(EMoflonEdge _edge_positive);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_28(EMoflonEdge _edge_last);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,8 +253,8 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Command z, Decision d, Branch y, While b, Assignment m, Command w, Branch c,
-			Assignment l, Branch x, While a, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Branch y, Branch c, Assignment l, While a, Decision d, While b, Command w,
+			Assignment m, Command z, Branch x, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -270,7 +270,7 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Decision d, While b, Assignment m, Assignment l, While a);
+	boolean checkDEC_FWD(Assignment l, While a, Decision d, While b, Assignment m);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,7 +278,7 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Command z, Branch y, Command w, Branch c, Branch x);
+	boolean checkDEC_BWD(Branch y, Branch c, Command w, Command z, Branch x);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,7 +294,7 @@ public interface decull2branchubb extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Decision d, S2B d2c, Branch c,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch c, Decision d, S2B d2c,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

@@ -159,10 +159,10 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Statement s = (Statement) result1_bindingAndBlack[0];
+		S2N s2n = (S2N) result1_bindingAndBlack[0];
 		Node n = (Node) result1_bindingAndBlack[1];
-		Assignment a = (Assignment) result1_bindingAndBlack[2];
-		S2N s2n = (S2N) result1_bindingAndBlack[3];
+		Statement s = (Statement) result1_bindingAndBlack[2];
+		Assignment a = (Assignment) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = assignment2commandImpl
 				.pattern_assignment2command_1_1_performtransformation_greenFFBB(n, a);
@@ -180,14 +180,14 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = assignment2commandImpl
-				.pattern_assignment2command_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, c, s, a2c, n, a, s2n);
+				.pattern_assignment2command_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, c, s2n, a2c, n, s, a);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[c] = " + c + ", " + "[s] = " + s + ", " + "[a2c] = " + a2c + ", " + "[n] = " + n + ", "
-					+ "[a] = " + a + ", " + "[s2n] = " + s2n + ".");
+					+ ", " + "[c] = " + c + ", " + "[s2n] = " + s2n + ", " + "[a2c] = " + a2c + ", " + "[n] = " + n
+					+ ", " + "[s] = " + s + ", " + "[a] = " + a + ".");
 		}
-		assignment2commandImpl.pattern_assignment2command_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, c, s, a2c,
-				n, a);
+		assignment2commandImpl.pattern_assignment2command_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, c, a2c, n,
+				s, a);
 		//nothing EMoflonEdge a2c__c____target = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge n__c____next = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge a2c__a____source = (EMoflonEdge) result3_green[8];
@@ -195,8 +195,8 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 
 		// 
 		// 
-		assignment2commandImpl.pattern_assignment2command_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, c, s,
-				a2c, n, a, s2n);
+		assignment2commandImpl.pattern_assignment2command_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, c,
+				s2n, a2c, n, s, a);
 		return assignment2commandImpl.pattern_assignment2command_1_6_expressionFB(ruleresult);
 	}
 
@@ -226,27 +226,27 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		}
 		Statement s = (Statement) result2_binding[0];
 		Assignment a = (Assignment) result2_binding[1];
-		for (Object[] result2_black : assignment2commandImpl.pattern_assignment2command_2_2_corematch_blackBFBFB(s, a,
+		for (Object[] result2_black : assignment2commandImpl.pattern_assignment2command_2_2_corematch_blackFFBBB(s, a,
 				match)) {
+			S2N s2n = (S2N) result2_black[0];
 			Node n = (Node) result2_black[1];
-			S2N s2n = (S2N) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : assignment2commandImpl.pattern_assignment2command_2_3_findcontext_blackBBBB(s,
-					n, a, s2n)) {
+			for (Object[] result3_black : assignment2commandImpl
+					.pattern_assignment2command_2_3_findcontext_blackBBBB(s2n, n, s, a)) {
 				Object[] result3_green = assignment2commandImpl
-						.pattern_assignment2command_2_3_findcontext_greenBBBBFFFF(s, n, a, s2n);
+						.pattern_assignment2command_2_3_findcontext_greenBBBBFFFF(s2n, n, s, a);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge s2n__s____source = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge s2n__n____target = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge s2n__n____target = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge s2n__s____source = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge s__a____next = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = assignment2commandImpl
-						.pattern_assignment2command_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, s, n,
-								a, s2n);
+						.pattern_assignment2command_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, s2n, n,
+								s, a);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s] = " + s + ", " + "[n] = " + n
-							+ ", " + "[a] = " + a + ", " + "[s2n] = " + s2n + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s2n] = " + s2n + ", " + "[n] = "
+							+ n + ", " + "[s] = " + s + ", " + "[a] = " + a + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -315,8 +315,8 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Statement s, Node n, Assignment a,
-			S2N s2n) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, S2N s2n, Node n, Statement s,
+			Assignment a) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -331,10 +331,10 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("s", s);
-		isApplicableMatch.registerObject("n", n);
-		isApplicableMatch.registerObject("a", a);
 		isApplicableMatch.registerObject("s2n", s2n);
+		isApplicableMatch.registerObject("n", n);
+		isApplicableMatch.registerObject("s", s);
+		isApplicableMatch.registerObject("a", a);
 		return csp;
 	}
 
@@ -352,14 +352,14 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject c, EObject s, EObject a2c, EObject n,
-			EObject a, EObject s2n) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject c, EObject s2n, EObject a2c, EObject n,
+			EObject s, EObject a) {
 		ruleresult.registerObject("c", c);
-		ruleresult.registerObject("s", s);
+		ruleresult.registerObject("s2n", s2n);
 		ruleresult.registerObject("a2c", a2c);
 		ruleresult.registerObject("n", n);
+		ruleresult.registerObject("s", s);
 		ruleresult.registerObject("a", a);
-		ruleresult.registerObject("s2n", s2n);
 
 	}
 
@@ -438,13 +438,13 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		Command c = (Command) result1_bindingAndBlack[0];
-		Statement s = (Statement) result1_bindingAndBlack[1];
+		S2N s2n = (S2N) result1_bindingAndBlack[1];
 		Node n = (Node) result1_bindingAndBlack[2];
-		S2N s2n = (S2N) result1_bindingAndBlack[3];
+		Statement s = (Statement) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = assignment2commandImpl
-				.pattern_assignment2command_11_1_performtransformation_greenBBFF(c, s);
-		S2N a2c = (S2N) result1_green[2];
+				.pattern_assignment2command_11_1_performtransformation_greenBFBF(c, s);
+		S2N a2c = (S2N) result1_green[1];
 		Assignment a = (Assignment) result1_green[3];
 
 		Object[] result2_black = assignment2commandImpl
@@ -458,14 +458,14 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = assignment2commandImpl
-				.pattern_assignment2command_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, c, s, a2c, n, a, s2n);
+				.pattern_assignment2command_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult, c, s2n, a2c, n, s, a);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[c] = " + c + ", " + "[s] = " + s + ", " + "[a2c] = " + a2c + ", " + "[n] = " + n + ", "
-					+ "[a] = " + a + ", " + "[s2n] = " + s2n + ".");
+					+ ", " + "[c] = " + c + ", " + "[s2n] = " + s2n + ", " + "[a2c] = " + a2c + ", " + "[n] = " + n
+					+ ", " + "[s] = " + s + ", " + "[a] = " + a + ".");
 		}
-		assignment2commandImpl.pattern_assignment2command_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, c, s,
-				a2c, n, a);
+		assignment2commandImpl.pattern_assignment2command_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, c, a2c,
+				n, s, a);
 		//nothing EMoflonEdge a2c__c____target = (EMoflonEdge) result3_green[6];
 		//nothing EMoflonEdge n__c____next = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge a2c__a____source = (EMoflonEdge) result3_green[8];
@@ -474,7 +474,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		// 
 		// 
 		assignment2commandImpl.pattern_assignment2command_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, c,
-				s, a2c, n, a, s2n);
+				s2n, a2c, n, s, a);
 		return assignment2commandImpl.pattern_assignment2command_11_6_expressionFB(ruleresult);
 	}
 
@@ -506,25 +506,25 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		Node n = (Node) result2_binding[1];
 		for (Object[] result2_black : assignment2commandImpl.pattern_assignment2command_12_2_corematch_blackBFBFB(c, n,
 				match)) {
-			Statement s = (Statement) result2_black[1];
-			S2N s2n = (S2N) result2_black[3];
+			S2N s2n = (S2N) result2_black[1];
+			Statement s = (Statement) result2_black[3];
 			// ForEach 
 			for (Object[] result3_black : assignment2commandImpl
-					.pattern_assignment2command_12_3_findcontext_blackBBBB(c, s, n, s2n)) {
+					.pattern_assignment2command_12_3_findcontext_blackBBBB(c, s2n, n, s)) {
 				Object[] result3_green = assignment2commandImpl
-						.pattern_assignment2command_12_3_findcontext_greenBBBBFFFF(c, s, n, s2n);
+						.pattern_assignment2command_12_3_findcontext_greenBBBBFFFF(c, s2n, n, s);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
 				//nothing EMoflonEdge n__c____next = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge s2n__s____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge s2n__n____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge s2n__n____target = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge s2n__s____source = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = assignment2commandImpl
-						.pattern_assignment2command_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, c, s,
-								n, s2n);
+						.pattern_assignment2command_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, c,
+								s2n, n, s);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c] = " + c + ", " + "[s] = " + s
-							+ ", " + "[n] = " + n + ", " + "[s2n] = " + s2n + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c] = " + c + ", " + "[s2n] = "
+							+ s2n + ", " + "[n] = " + n + ", " + "[s] = " + s + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -594,7 +594,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Command c, Statement s, Node n, S2N s2n) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Command c, S2N s2n, Node n, Statement s) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -610,9 +610,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("c", c);
-		isApplicableMatch.registerObject("s", s);
-		isApplicableMatch.registerObject("n", n);
 		isApplicableMatch.registerObject("s2n", s2n);
+		isApplicableMatch.registerObject("n", n);
+		isApplicableMatch.registerObject("s", s);
 		return csp;
 	}
 
@@ -630,14 +630,14 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject c, EObject s, EObject a2c, EObject n,
-			EObject a, EObject s2n) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject c, EObject s2n, EObject a2c, EObject n,
+			EObject s, EObject a) {
 		ruleresult.registerObject("c", c);
-		ruleresult.registerObject("s", s);
+		ruleresult.registerObject("s2n", s2n);
 		ruleresult.registerObject("a2c", a2c);
 		ruleresult.registerObject("n", n);
+		ruleresult.registerObject("s", s);
 		ruleresult.registerObject("a", a);
-		ruleresult.registerObject("s2n", s2n);
 
 	}
 
@@ -656,7 +656,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_125(EMoflonEdge _edge_next) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_7(EMoflonEdge _edge_next) {
 
 		Object[] result1_bindingAndBlack = assignment2commandImpl
 				.pattern_assignment2command_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -713,7 +713,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_125(EMoflonEdge _edge_next) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_8(EMoflonEdge _edge_next) {
 
 		Object[] result1_bindingAndBlack = assignment2commandImpl
 				.pattern_assignment2command_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -846,16 +846,16 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		Command c = (Command) result2_bindingAndBlack[0];
-		Statement s = (Statement) result2_bindingAndBlack[1];
-		Node n = (Node) result2_bindingAndBlack[2];
+		Node n = (Node) result2_bindingAndBlack[1];
+		Statement s = (Statement) result2_bindingAndBlack[2];
 		Assignment a = (Assignment) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = assignment2commandImpl
-				.pattern_assignment2command_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, c, s, n, a, sourceMatch,
+				.pattern_assignment2command_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, c, n, s, a, sourceMatch,
 						targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[c] = " + c + ", " + "[s] = " + s + ", " + "[n] = " + n + ", " + "[a] = " + a + ", "
+					+ "[c] = " + c + ", " + "[n] = " + n + ", " + "[s] = " + s + ", " + "[a] = " + a + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -863,18 +863,18 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		if (assignment2commandImpl.pattern_assignment2command_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : assignment2commandImpl
-					.pattern_assignment2command_24_5_matchcorrcontext_blackBBFBB(s, n, sourceMatch, targetMatch)) {
-				S2N s2n = (S2N) result5_black[2];
+					.pattern_assignment2command_24_5_matchcorrcontext_blackFBBBB(n, s, sourceMatch, targetMatch)) {
+				S2N s2n = (S2N) result5_black[0];
 				Object[] result5_green = assignment2commandImpl
 						.pattern_assignment2command_24_5_matchcorrcontext_greenBBBF(s2n, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = assignment2commandImpl
-						.pattern_assignment2command_24_6_createcorrespondence_blackBBBBB(c, s, n, a, ccMatch);
+						.pattern_assignment2command_24_6_createcorrespondence_blackBBBBB(c, n, s, a, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException(
-							"Pattern matching failed." + " Variables: " + "[c] = " + c + ", " + "[s] = " + s + ", "
-									+ "[n] = " + n + ", " + "[a] = " + a + ", " + "[ccMatch] = " + ccMatch + ".");
+							"Pattern matching failed." + " Variables: " + "[c] = " + c + ", " + "[n] = " + n + ", "
+									+ "[s] = " + s + ", " + "[a] = " + a + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				assignment2commandImpl.pattern_assignment2command_24_6_createcorrespondence_greenBFBB(c, a, ccMatch);
 				//nothing S2N a2c = (S2N) result6_green[1];
@@ -899,7 +899,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Command c, Statement s, Node n, Assignment a, Match sourceMatch,
+	public CSP isApplicable_solveCsp_CC(Command c, Node n, Statement s, Assignment a, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -973,35 +973,35 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		for (Object[] result2_black : assignment2commandImpl
 				.pattern_assignment2command_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList s2nList = (RuleEntryList) result2_black[0];
-			Statement s = (Statement) result2_black[1];
-			S2N s2n = (S2N) result2_black[2];
-			Node n = (Node) result2_black[3];
+			S2N s2n = (S2N) result2_black[1];
+			Node n = (Node) result2_black[2];
+			Statement s = (Statement) result2_black[3];
 
 			Object[] result3_bindingAndBlack = assignment2commandImpl
-					.pattern_assignment2command_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, s, n, s2n,
+					.pattern_assignment2command_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, s2n, n, s,
 							ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s] = " + s + ", " + "[n] = " + n
-						+ ", " + "[s2n] = " + s2n + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s2n] = " + s2n + ", " + "[n] = " + n
+						+ ", " + "[s] = " + s + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (assignment2commandImpl.pattern_assignment2command_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = assignment2commandImpl.pattern_assignment2command_29_5_checknacs_blackBBB(s, n,
-						s2n);
+				Object[] result5_black = assignment2commandImpl.pattern_assignment2command_29_5_checknacs_blackBBB(s2n,
+						n, s);
 				if (result5_black != null) {
 
-					Object[] result6_black = assignment2commandImpl.pattern_assignment2command_29_6_perform_blackBBBB(s,
-							n, s2n, ruleResult);
+					Object[] result6_black = assignment2commandImpl
+							.pattern_assignment2command_29_6_perform_blackBBBB(s2n, n, s, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[s] = " + s + ", "
-								+ "[n] = " + n + ", " + "[s2n] = " + s2n + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[s2n] = " + s2n + ", "
+								+ "[n] = " + n + ", " + "[s] = " + s + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					assignment2commandImpl.pattern_assignment2command_29_6_perform_greenFBFBFB(s, n, ruleResult);
+					assignment2commandImpl.pattern_assignment2command_29_6_perform_greenFFBBFB(n, s, ruleResult);
 					//nothing Command c = (Command) result6_green[0];
-					//nothing S2N a2c = (S2N) result6_green[2];
+					//nothing S2N a2c = (S2N) result6_green[1];
 					//nothing Assignment a = (Assignment) result6_green[4];
 
 				} else {
@@ -1019,7 +1019,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Statement s, Node n, S2N s2n,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2N s2n, Node n, Statement s,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1035,9 +1035,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("s", s);
-		isApplicableMatch.registerObject("n", n);
 		isApplicableMatch.registerObject("s2n", s2n);
+		isApplicableMatch.registerObject("n", n);
+		isApplicableMatch.registerObject("s", s);
 		return csp;
 	}
 
@@ -1074,9 +1074,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 					(Assignment) arguments.get(2));
 		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_STATEMENT_NODE_ASSIGNMENT_S2N:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Statement) arguments.get(1),
-					(Node) arguments.get(2), (Assignment) arguments.get(3), (S2N) arguments.get(4));
+		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_S2N_NODE_STATEMENT_ASSIGNMENT:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (S2N) arguments.get(1),
+					(Node) arguments.get(2), (Statement) arguments.get(3), (Assignment) arguments.get(4));
 		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.ASSIGNMENT2COMMAND___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1100,9 +1100,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 					(Node) arguments.get(2));
 		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMMAND_STATEMENT_NODE_S2N:
+		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMMAND_S2N_NODE_STATEMENT:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Command) arguments.get(1),
-					(Statement) arguments.get(2), (Node) arguments.get(3), (S2N) arguments.get(4));
+					(S2N) arguments.get(2), (Node) arguments.get(3), (Statement) arguments.get(4));
 		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.ASSIGNMENT2COMMAND___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1112,19 +1112,19 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 			return null;
 		case RulesPackage.ASSIGNMENT2COMMAND___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPROPRIATE_BWD_EMOFLON_EDGE_125__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_125((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPROPRIATE_FWD_EMOFLON_EDGE_125__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_125((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPROPRIATE_BWD_EMOFLON_EDGE_7__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_7((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPROPRIATE_FWD_EMOFLON_EDGE_8__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_8((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ASSIGNMENT2COMMAND___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ASSIGNMENT2COMMAND___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPLICABLE_SOLVE_CSP_CC__COMMAND_STATEMENT_NODE_ASSIGNMENT_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Command) arguments.get(0), (Statement) arguments.get(1),
-					(Node) arguments.get(2), (Assignment) arguments.get(3), (Match) arguments.get(4),
+		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPLICABLE_SOLVE_CSP_CC__COMMAND_NODE_STATEMENT_ASSIGNMENT_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Command) arguments.get(0), (Node) arguments.get(1),
+					(Statement) arguments.get(2), (Assignment) arguments.get(3), (Match) arguments.get(4),
 					(Match) arguments.get(5));
 		case RulesPackage.ASSIGNMENT2COMMAND___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1134,9 +1134,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 			return checkDEC_BWD((Command) arguments.get(0), (Node) arguments.get(1));
 		case RulesPackage.ASSIGNMENT2COMMAND___GENERATE_MODEL__RULEENTRYCONTAINER_S2N:
 			return generateModel((RuleEntryContainer) arguments.get(0), (S2N) arguments.get(1));
-		case RulesPackage.ASSIGNMENT2COMMAND___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_STATEMENT_NODE_S2N_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Statement) arguments.get(1),
-					(Node) arguments.get(2), (S2N) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+		case RulesPackage.ASSIGNMENT2COMMAND___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_S2N_NODE_STATEMENT_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (S2N) arguments.get(1),
+					(Node) arguments.get(2), (Statement) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.ASSIGNMENT2COMMAND___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1241,23 +1241,23 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 
 	public static final Object[] pattern_assignment2command_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("s");
+		EObject _localVariable_0 = isApplicableMatch.getObject("s2n");
 		EObject _localVariable_1 = isApplicableMatch.getObject("n");
-		EObject _localVariable_2 = isApplicableMatch.getObject("a");
-		EObject _localVariable_3 = isApplicableMatch.getObject("s2n");
-		EObject tmpS = _localVariable_0;
+		EObject _localVariable_2 = isApplicableMatch.getObject("s");
+		EObject _localVariable_3 = isApplicableMatch.getObject("a");
+		EObject tmpS2n = _localVariable_0;
 		EObject tmpN = _localVariable_1;
-		EObject tmpA = _localVariable_2;
-		EObject tmpS2n = _localVariable_3;
-		if (tmpS instanceof Statement) {
-			Statement s = (Statement) tmpS;
+		EObject tmpS = _localVariable_2;
+		EObject tmpA = _localVariable_3;
+		if (tmpS2n instanceof S2N) {
+			S2N s2n = (S2N) tmpS2n;
 			if (tmpN instanceof Node) {
 				Node n = (Node) tmpN;
-				if (tmpA instanceof Assignment) {
-					Assignment a = (Assignment) tmpA;
-					if (tmpS2n instanceof S2N) {
-						S2N s2n = (S2N) tmpS2n;
-						return new Object[] { s, n, a, s2n, isApplicableMatch };
+				if (tmpS instanceof Statement) {
+					Statement s = (Statement) tmpS;
+					if (tmpA instanceof Assignment) {
+						Assignment a = (Assignment) tmpA;
+						return new Object[] { s2n, n, s, a, isApplicableMatch };
 					}
 				}
 			}
@@ -1265,13 +1265,13 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return null;
 	}
 
-	public static final Object[] pattern_assignment2command_1_1_performtransformation_blackBBBBFBB(Statement s, Node n,
-			Assignment a, S2N s2n, assignment2command _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_assignment2command_1_1_performtransformation_blackBBBBFBB(S2N s2n, Node n,
+			Statement s, Assignment a, assignment2command _this, IsApplicableMatch isApplicableMatch) {
 		if (!a.equals(s)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { s, n, a, s2n, csp, _this, isApplicableMatch };
+					return new Object[] { s2n, n, s, a, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -1283,17 +1283,17 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		Object[] result_pattern_assignment2command_1_1_performtransformation_binding = pattern_assignment2command_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_assignment2command_1_1_performtransformation_binding != null) {
-			Statement s = (Statement) result_pattern_assignment2command_1_1_performtransformation_binding[0];
+			S2N s2n = (S2N) result_pattern_assignment2command_1_1_performtransformation_binding[0];
 			Node n = (Node) result_pattern_assignment2command_1_1_performtransformation_binding[1];
-			Assignment a = (Assignment) result_pattern_assignment2command_1_1_performtransformation_binding[2];
-			S2N s2n = (S2N) result_pattern_assignment2command_1_1_performtransformation_binding[3];
+			Statement s = (Statement) result_pattern_assignment2command_1_1_performtransformation_binding[2];
+			Assignment a = (Assignment) result_pattern_assignment2command_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_assignment2command_1_1_performtransformation_black = pattern_assignment2command_1_1_performtransformation_blackBBBBFBB(
-					s, n, a, s2n, _this, isApplicableMatch);
+					s2n, n, s, a, _this, isApplicableMatch);
 			if (result_pattern_assignment2command_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_assignment2command_1_1_performtransformation_black[4];
 
-				return new Object[] { s, n, a, s2n, csp, _this, isApplicableMatch };
+				return new Object[] { s2n, n, s, a, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1323,24 +1323,24 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject c, EObject s, EObject a2c, EObject n, EObject a, EObject s2n) {
-		if (!c.equals(s)) {
+			PerformRuleResult ruleresult, EObject c, EObject s2n, EObject a2c, EObject n, EObject s, EObject a) {
+		if (!c.equals(s2n)) {
 			if (!c.equals(n)) {
-				if (!c.equals(s2n)) {
-					if (!s.equals(s2n)) {
-						if (!a2c.equals(c)) {
-							if (!a2c.equals(s)) {
-								if (!a2c.equals(n)) {
-									if (!a2c.equals(s2n)) {
+				if (!c.equals(s)) {
+					if (!a2c.equals(c)) {
+						if (!a2c.equals(s2n)) {
+							if (!a2c.equals(n)) {
+								if (!a2c.equals(s)) {
+									if (!n.equals(s2n)) {
 										if (!n.equals(s)) {
-											if (!n.equals(s2n)) {
+											if (!s.equals(s2n)) {
 												if (!a.equals(c)) {
-													if (!a.equals(s)) {
+													if (!a.equals(s2n)) {
 														if (!a.equals(a2c)) {
 															if (!a.equals(n)) {
-																if (!a.equals(s2n)) {
-																	return new Object[] { ruleresult, c, s, a2c, n, a,
-																			s2n };
+																if (!a.equals(s)) {
+																	return new Object[] { ruleresult, c, s2n, a2c, n, s,
+																			a };
 																}
 															}
 														}
@@ -1360,7 +1360,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_1_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject c, EObject s, EObject a2c, EObject n, EObject a) {
+			PerformRuleResult ruleresult, EObject c, EObject a2c, EObject n, EObject s, EObject a) {
 		EMoflonEdge a2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge n__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2c__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1387,13 +1387,13 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		n__c____next.setName(n__c____next_name_prime);
 		a2c__a____source.setName(a2c__a____source_name_prime);
 		s__a____next.setName(s__a____next_name_prime);
-		return new Object[] { ruleresult, c, s, a2c, n, a, a2c__c____target, n__c____next, a2c__a____source,
+		return new Object[] { ruleresult, c, a2c, n, s, a, a2c__c____target, n__c____next, a2c__a____source,
 				s__a____next };
 	}
 
 	public static final void pattern_assignment2command_1_5_registerobjects_expressionBBBBBBBB(assignment2command _this,
-			PerformRuleResult ruleresult, EObject c, EObject s, EObject a2c, EObject n, EObject a, EObject s2n) {
-		_this.registerObjects_FWD(ruleresult, c, s, a2c, n, a, s2n);
+			PerformRuleResult ruleresult, EObject c, EObject s2n, EObject a2c, EObject n, EObject s, EObject a) {
+		_this.registerObjects_FWD(ruleresult, c, s2n, a2c, n, s, a);
 
 	}
 
@@ -1467,14 +1467,14 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_assignment2command_2_2_corematch_blackBFBFB(Statement s,
+	public static final Iterable<Object[]> pattern_assignment2command_2_2_corematch_blackFFBBB(Statement s,
 			Assignment a, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!a.equals(s)) {
 			for (S2N s2n : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(s, S2N.class, "source")) {
 				Node n = s2n.getTarget();
 				if (n != null) {
-					_result.add(new Object[] { s, n, a, s2n, match });
+					_result.add(new Object[] { s2n, n, s, a, match });
 				}
 
 			}
@@ -1482,14 +1482,14 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_assignment2command_2_3_findcontext_blackBBBB(Statement s, Node n,
-			Assignment a, S2N s2n) {
+	public static final Iterable<Object[]> pattern_assignment2command_2_3_findcontext_blackBBBB(S2N s2n, Node n,
+			Statement s, Assignment a) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!a.equals(s)) {
-			if (s.equals(s2n.getSource())) {
-				if (n.equals(s2n.getTarget())) {
+			if (n.equals(s2n.getTarget())) {
+				if (s.equals(s2n.getSource())) {
 					if (a.equals(s.getNext())) {
-						_result.add(new Object[] { s, n, a, s2n });
+						_result.add(new Object[] { s2n, n, s, a });
 					}
 				}
 			}
@@ -1497,40 +1497,40 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return _result;
 	}
 
-	public static final Object[] pattern_assignment2command_2_3_findcontext_greenBBBBFFFF(Statement s, Node n,
-			Assignment a, S2N s2n) {
+	public static final Object[] pattern_assignment2command_2_3_findcontext_greenBBBBFFFF(S2N s2n, Node n, Statement s,
+			Assignment a) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge s2n__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge s2n__n____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2n__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge s__a____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String s2n__s____source_name_prime = "source";
 		String s2n__n____target_name_prime = "target";
+		String s2n__s____source_name_prime = "source";
 		String s__a____next_name_prime = "next";
-		isApplicableMatch.getAllContextElements().add(s);
-		isApplicableMatch.getAllContextElements().add(n);
-		isApplicableMatch.getAllContextElements().add(a);
 		isApplicableMatch.getAllContextElements().add(s2n);
-		s2n__s____source.setSrc(s2n);
-		s2n__s____source.setTrg(s);
-		isApplicableMatch.getAllContextElements().add(s2n__s____source);
+		isApplicableMatch.getAllContextElements().add(n);
+		isApplicableMatch.getAllContextElements().add(s);
+		isApplicableMatch.getAllContextElements().add(a);
 		s2n__n____target.setSrc(s2n);
 		s2n__n____target.setTrg(n);
 		isApplicableMatch.getAllContextElements().add(s2n__n____target);
+		s2n__s____source.setSrc(s2n);
+		s2n__s____source.setTrg(s);
+		isApplicableMatch.getAllContextElements().add(s2n__s____source);
 		s__a____next.setSrc(s);
 		s__a____next.setTrg(a);
 		isApplicableMatch.getAllContextElements().add(s__a____next);
-		s2n__s____source.setName(s2n__s____source_name_prime);
 		s2n__n____target.setName(s2n__n____target_name_prime);
+		s2n__s____source.setName(s2n__s____source_name_prime);
 		s__a____next.setName(s__a____next_name_prime);
-		return new Object[] { s, n, a, s2n, isApplicableMatch, s2n__s____source, s2n__n____target, s__a____next };
+		return new Object[] { s2n, n, s, a, isApplicableMatch, s2n__n____target, s2n__s____source, s__a____next };
 	}
 
 	public static final Object[] pattern_assignment2command_2_4_solveCSP_bindingFBBBBBB(assignment2command _this,
-			IsApplicableMatch isApplicableMatch, Statement s, Node n, Assignment a, S2N s2n) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, s, n, a, s2n);
+			IsApplicableMatch isApplicableMatch, S2N s2n, Node n, Statement s, Assignment a) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, s2n, n, s, a);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, s, n, a, s2n };
+			return new Object[] { csp, _this, isApplicableMatch, s2n, n, s, a };
 		}
 		return null;
 	}
@@ -1540,9 +1540,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_2_4_solveCSP_bindingAndBlackFBBBBBB(
-			assignment2command _this, IsApplicableMatch isApplicableMatch, Statement s, Node n, Assignment a, S2N s2n) {
+			assignment2command _this, IsApplicableMatch isApplicableMatch, S2N s2n, Node n, Statement s, Assignment a) {
 		Object[] result_pattern_assignment2command_2_4_solveCSP_binding = pattern_assignment2command_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, s, n, a, s2n);
+				_this, isApplicableMatch, s2n, n, s, a);
 		if (result_pattern_assignment2command_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_assignment2command_2_4_solveCSP_binding[0];
 
@@ -1550,7 +1550,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 					csp);
 			if (result_pattern_assignment2command_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, s, n, a, s2n };
+				return new Object[] { csp, _this, isApplicableMatch, s2n, n, s, a };
 			}
 		}
 		return null;
@@ -1682,22 +1682,22 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	public static final Object[] pattern_assignment2command_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("c");
-		EObject _localVariable_1 = isApplicableMatch.getObject("s");
+		EObject _localVariable_1 = isApplicableMatch.getObject("s2n");
 		EObject _localVariable_2 = isApplicableMatch.getObject("n");
-		EObject _localVariable_3 = isApplicableMatch.getObject("s2n");
+		EObject _localVariable_3 = isApplicableMatch.getObject("s");
 		EObject tmpC = _localVariable_0;
-		EObject tmpS = _localVariable_1;
+		EObject tmpS2n = _localVariable_1;
 		EObject tmpN = _localVariable_2;
-		EObject tmpS2n = _localVariable_3;
+		EObject tmpS = _localVariable_3;
 		if (tmpC instanceof Command) {
 			Command c = (Command) tmpC;
-			if (tmpS instanceof Statement) {
-				Statement s = (Statement) tmpS;
+			if (tmpS2n instanceof S2N) {
+				S2N s2n = (S2N) tmpS2n;
 				if (tmpN instanceof Node) {
 					Node n = (Node) tmpN;
-					if (tmpS2n instanceof S2N) {
-						S2N s2n = (S2N) tmpS2n;
-						return new Object[] { c, s, n, s2n, isApplicableMatch };
+					if (tmpS instanceof Statement) {
+						Statement s = (Statement) tmpS;
+						return new Object[] { c, s2n, n, s, isApplicableMatch };
 					}
 				}
 			}
@@ -1705,13 +1705,13 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return null;
 	}
 
-	public static final Object[] pattern_assignment2command_11_1_performtransformation_blackBBBBFBB(Command c,
-			Statement s, Node n, S2N s2n, assignment2command _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_assignment2command_11_1_performtransformation_blackBBBBFBB(Command c, S2N s2n,
+			Node n, Statement s, assignment2command _this, IsApplicableMatch isApplicableMatch) {
 		if (!c.equals(n)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { c, s, n, s2n, csp, _this, isApplicableMatch };
+					return new Object[] { c, s2n, n, s, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -1724,29 +1724,29 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 				isApplicableMatch);
 		if (result_pattern_assignment2command_11_1_performtransformation_binding != null) {
 			Command c = (Command) result_pattern_assignment2command_11_1_performtransformation_binding[0];
-			Statement s = (Statement) result_pattern_assignment2command_11_1_performtransformation_binding[1];
+			S2N s2n = (S2N) result_pattern_assignment2command_11_1_performtransformation_binding[1];
 			Node n = (Node) result_pattern_assignment2command_11_1_performtransformation_binding[2];
-			S2N s2n = (S2N) result_pattern_assignment2command_11_1_performtransformation_binding[3];
+			Statement s = (Statement) result_pattern_assignment2command_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_assignment2command_11_1_performtransformation_black = pattern_assignment2command_11_1_performtransformation_blackBBBBFBB(
-					c, s, n, s2n, _this, isApplicableMatch);
+					c, s2n, n, s, _this, isApplicableMatch);
 			if (result_pattern_assignment2command_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_assignment2command_11_1_performtransformation_black[4];
 
-				return new Object[] { c, s, n, s2n, csp, _this, isApplicableMatch };
+				return new Object[] { c, s2n, n, s, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_assignment2command_11_1_performtransformation_greenBBFF(Command c,
+	public static final Object[] pattern_assignment2command_11_1_performtransformation_greenBFBF(Command c,
 			Statement s) {
 		S2N a2c = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		Assignment a = SourcecodeFactory.eINSTANCE.createAssignment();
 		a2c.setTarget(c);
 		a2c.setSource(a);
 		s.setNext(a);
-		return new Object[] { c, s, a2c, a };
+		return new Object[] { c, a2c, s, a };
 	}
 
 	public static final Object[] pattern_assignment2command_11_2_collecttranslatedelements_blackBBB(Command c, S2N a2c,
@@ -1764,24 +1764,24 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_11_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject c, EObject s, EObject a2c, EObject n, EObject a, EObject s2n) {
-		if (!c.equals(s)) {
+			PerformRuleResult ruleresult, EObject c, EObject s2n, EObject a2c, EObject n, EObject s, EObject a) {
+		if (!c.equals(s2n)) {
 			if (!c.equals(n)) {
-				if (!c.equals(s2n)) {
-					if (!s.equals(s2n)) {
-						if (!a2c.equals(c)) {
-							if (!a2c.equals(s)) {
-								if (!a2c.equals(n)) {
-									if (!a2c.equals(s2n)) {
+				if (!c.equals(s)) {
+					if (!a2c.equals(c)) {
+						if (!a2c.equals(s2n)) {
+							if (!a2c.equals(n)) {
+								if (!a2c.equals(s)) {
+									if (!n.equals(s2n)) {
 										if (!n.equals(s)) {
-											if (!n.equals(s2n)) {
+											if (!s.equals(s2n)) {
 												if (!a.equals(c)) {
-													if (!a.equals(s)) {
+													if (!a.equals(s2n)) {
 														if (!a.equals(a2c)) {
 															if (!a.equals(n)) {
-																if (!a.equals(s2n)) {
-																	return new Object[] { ruleresult, c, s, a2c, n, a,
-																			s2n };
+																if (!a.equals(s)) {
+																	return new Object[] { ruleresult, c, s2n, a2c, n, s,
+																			a };
 																}
 															}
 														}
@@ -1801,7 +1801,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_11_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject c, EObject s, EObject a2c, EObject n, EObject a) {
+			PerformRuleResult ruleresult, EObject c, EObject a2c, EObject n, EObject s, EObject a) {
 		EMoflonEdge a2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge n__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2c__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1828,14 +1828,14 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		n__c____next.setName(n__c____next_name_prime);
 		a2c__a____source.setName(a2c__a____source_name_prime);
 		s__a____next.setName(s__a____next_name_prime);
-		return new Object[] { ruleresult, c, s, a2c, n, a, a2c__c____target, n__c____next, a2c__a____source,
+		return new Object[] { ruleresult, c, a2c, n, s, a, a2c__c____target, n__c____next, a2c__a____source,
 				s__a____next };
 	}
 
 	public static final void pattern_assignment2command_11_5_registerobjects_expressionBBBBBBBB(
-			assignment2command _this, PerformRuleResult ruleresult, EObject c, EObject s, EObject a2c, EObject n,
-			EObject a, EObject s2n) {
-		_this.registerObjects_BWD(ruleresult, c, s, a2c, n, a, s2n);
+			assignment2command _this, PerformRuleResult ruleresult, EObject c, EObject s2n, EObject a2c, EObject n,
+			EObject s, EObject a) {
+		_this.registerObjects_BWD(ruleresult, c, s2n, a2c, n, s, a);
 
 	}
 
@@ -1917,7 +1917,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 			for (S2N s2n : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n, S2N.class, "target")) {
 				Statement s = s2n.getSource();
 				if (s != null) {
-					_result.add(new Object[] { c, s, n, s2n, match });
+					_result.add(new Object[] { c, s2n, n, s, match });
 				}
 
 			}
@@ -1925,14 +1925,14 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_assignment2command_12_3_findcontext_blackBBBB(Command c, Statement s,
-			Node n, S2N s2n) {
+	public static final Iterable<Object[]> pattern_assignment2command_12_3_findcontext_blackBBBB(Command c, S2N s2n,
+			Node n, Statement s) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!c.equals(n)) {
 			if (c.equals(n.getNext())) {
-				if (s.equals(s2n.getSource())) {
-					if (n.equals(s2n.getTarget())) {
-						_result.add(new Object[] { c, s, n, s2n });
+				if (n.equals(s2n.getTarget())) {
+					if (s.equals(s2n.getSource())) {
+						_result.add(new Object[] { c, s2n, n, s });
 					}
 				}
 			}
@@ -1940,40 +1940,40 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return _result;
 	}
 
-	public static final Object[] pattern_assignment2command_12_3_findcontext_greenBBBBFFFF(Command c, Statement s,
-			Node n, S2N s2n) {
+	public static final Object[] pattern_assignment2command_12_3_findcontext_greenBBBBFFFF(Command c, S2N s2n, Node n,
+			Statement s) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge n__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge s2n__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge s2n__n____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2n__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String n__c____next_name_prime = "next";
-		String s2n__s____source_name_prime = "source";
 		String s2n__n____target_name_prime = "target";
+		String s2n__s____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(c);
-		isApplicableMatch.getAllContextElements().add(s);
-		isApplicableMatch.getAllContextElements().add(n);
 		isApplicableMatch.getAllContextElements().add(s2n);
+		isApplicableMatch.getAllContextElements().add(n);
+		isApplicableMatch.getAllContextElements().add(s);
 		n__c____next.setSrc(n);
 		n__c____next.setTrg(c);
 		isApplicableMatch.getAllContextElements().add(n__c____next);
-		s2n__s____source.setSrc(s2n);
-		s2n__s____source.setTrg(s);
-		isApplicableMatch.getAllContextElements().add(s2n__s____source);
 		s2n__n____target.setSrc(s2n);
 		s2n__n____target.setTrg(n);
 		isApplicableMatch.getAllContextElements().add(s2n__n____target);
+		s2n__s____source.setSrc(s2n);
+		s2n__s____source.setTrg(s);
+		isApplicableMatch.getAllContextElements().add(s2n__s____source);
 		n__c____next.setName(n__c____next_name_prime);
-		s2n__s____source.setName(s2n__s____source_name_prime);
 		s2n__n____target.setName(s2n__n____target_name_prime);
-		return new Object[] { c, s, n, s2n, isApplicableMatch, n__c____next, s2n__s____source, s2n__n____target };
+		s2n__s____source.setName(s2n__s____source_name_prime);
+		return new Object[] { c, s2n, n, s, isApplicableMatch, n__c____next, s2n__n____target, s2n__s____source };
 	}
 
 	public static final Object[] pattern_assignment2command_12_4_solveCSP_bindingFBBBBBB(assignment2command _this,
-			IsApplicableMatch isApplicableMatch, Command c, Statement s, Node n, S2N s2n) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, c, s, n, s2n);
+			IsApplicableMatch isApplicableMatch, Command c, S2N s2n, Node n, Statement s) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, c, s2n, n, s);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, c, s, n, s2n };
+			return new Object[] { csp, _this, isApplicableMatch, c, s2n, n, s };
 		}
 		return null;
 	}
@@ -1983,9 +1983,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_12_4_solveCSP_bindingAndBlackFBBBBBB(
-			assignment2command _this, IsApplicableMatch isApplicableMatch, Command c, Statement s, Node n, S2N s2n) {
+			assignment2command _this, IsApplicableMatch isApplicableMatch, Command c, S2N s2n, Node n, Statement s) {
 		Object[] result_pattern_assignment2command_12_4_solveCSP_binding = pattern_assignment2command_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, c, s, n, s2n);
+				_this, isApplicableMatch, c, s2n, n, s);
 		if (result_pattern_assignment2command_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_assignment2command_12_4_solveCSP_binding[0];
 
@@ -1993,7 +1993,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 					csp);
 			if (result_pattern_assignment2command_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, c, s, n, s2n };
+				return new Object[] { csp, _this, isApplicableMatch, c, s2n, n, s };
 			}
 		}
 		return null;
@@ -2082,7 +2082,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_20_2_testcorematchandDECs_black_nac_0B(Command c) {
-		for (Graph __DEC_c_root_176271 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+		for (Graph __DEC_c_root_343268 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 				Graph.class, "root")) {
 			return new Object[] { c };
 		}
@@ -2091,9 +2091,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 
 	public static final Object[] pattern_assignment2command_20_2_testcorematchandDECs_black_nac_1BB(Command c, Node n) {
 		if (!c.equals(n)) {
-			for (Branch __DEC_c_positive_140290 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+			for (Branch __DEC_c_positive_71821 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 					Branch.class, "positive")) {
-				if (!n.equals(__DEC_c_positive_140290)) {
+				if (!n.equals(__DEC_c_positive_71821)) {
 					return new Object[] { c, n };
 				}
 			}
@@ -2103,9 +2103,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 
 	public static final Object[] pattern_assignment2command_20_2_testcorematchandDECs_black_nac_2BB(Command c, Node n) {
 		if (!c.equals(n)) {
-			for (Branch __DEC_c_negative_146193 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+			for (Branch __DEC_c_negative_70847 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 					Branch.class, "negative")) {
-				if (!n.equals(__DEC_c_negative_146193)) {
+				if (!n.equals(__DEC_c_negative_70847)) {
 					return new Object[] { c, n };
 				}
 			}
@@ -2241,9 +2241,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	public static final Object[] pattern_assignment2command_21_2_testcorematchandDECs_black_nac_0BB(Assignment a,
 			Statement s) {
 		if (!a.equals(s)) {
-			for (Decision __DEC_a_positive_345653 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (Decision __DEC_a_positive_122665 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(a, Decision.class, "positive")) {
-				if (!s.equals(__DEC_a_positive_345653)) {
+				if (!s.equals(__DEC_a_positive_122665)) {
 					return new Object[] { a, s };
 				}
 			}
@@ -2254,9 +2254,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	public static final Object[] pattern_assignment2command_21_2_testcorematchandDECs_black_nac_1BB(Assignment a,
 			Statement s) {
 		if (!a.equals(s)) {
-			for (Decision __DEC_a_negative_826076 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (Decision __DEC_a_negative_592980 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(a, Decision.class, "negative")) {
-				if (!s.equals(__DEC_a_negative_826076)) {
+				if (!s.equals(__DEC_a_negative_592980)) {
 					return new Object[] { a, s };
 				}
 			}
@@ -2267,9 +2267,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	public static final Object[] pattern_assignment2command_21_2_testcorematchandDECs_black_nac_2BB(Assignment a,
 			Statement s) {
 		if (!a.equals(s)) {
-			for (While __DEC_a_first_780433 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+			for (While __DEC_a_first_683756 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 					While.class, "first")) {
-				if (!s.equals(__DEC_a_first_780433)) {
+				if (!s.equals(__DEC_a_first_683756)) {
 					return new Object[] { a, s };
 				}
 			}
@@ -2280,9 +2280,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	public static final Object[] pattern_assignment2command_21_2_testcorematchandDECs_black_nac_3BB(Assignment a,
 			Statement s) {
 		if (!a.equals(s)) {
-			for (While __DEC_a_last_669630 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+			for (While __DEC_a_last_879900 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 					While.class, "last")) {
-				if (!s.equals(__DEC_a_last_669630)) {
+				if (!s.equals(__DEC_a_last_879900)) {
 					return new Object[] { a, s };
 				}
 			}
@@ -2291,7 +2291,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_21_2_testcorematchandDECs_black_nac_4B(Assignment a) {
-		for (Program __DEC_a_first_696832 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (Program __DEC_a_first_327811 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				Program.class, "first")) {
 			return new Object[] { a };
 		}
@@ -2387,22 +2387,22 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	public static final Object[] pattern_assignment2command_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
 			Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("c");
-		EObject _localVariable_1 = sourceMatch.getObject("s");
-		EObject _localVariable_2 = targetMatch.getObject("n");
+		EObject _localVariable_1 = targetMatch.getObject("n");
+		EObject _localVariable_2 = sourceMatch.getObject("s");
 		EObject _localVariable_3 = sourceMatch.getObject("a");
 		EObject tmpC = _localVariable_0;
-		EObject tmpS = _localVariable_1;
-		EObject tmpN = _localVariable_2;
+		EObject tmpN = _localVariable_1;
+		EObject tmpS = _localVariable_2;
 		EObject tmpA = _localVariable_3;
 		if (tmpC instanceof Command) {
 			Command c = (Command) tmpC;
-			if (tmpS instanceof Statement) {
-				Statement s = (Statement) tmpS;
-				if (tmpN instanceof Node) {
-					Node n = (Node) tmpN;
+			if (tmpN instanceof Node) {
+				Node n = (Node) tmpN;
+				if (tmpS instanceof Statement) {
+					Statement s = (Statement) tmpS;
 					if (tmpA instanceof Assignment) {
 						Assignment a = (Assignment) tmpA;
-						return new Object[] { c, s, n, a, targetMatch, sourceMatch };
+						return new Object[] { c, n, s, a, targetMatch, sourceMatch };
 					}
 				}
 			}
@@ -2410,12 +2410,12 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return null;
 	}
 
-	public static final Object[] pattern_assignment2command_24_2_matchsrctrgcontext_blackBBBBBB(Command c, Statement s,
-			Node n, Assignment a, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_assignment2command_24_2_matchsrctrgcontext_blackBBBBBB(Command c, Node n,
+			Statement s, Assignment a, Match sourceMatch, Match targetMatch) {
 		if (!c.equals(n)) {
 			if (!a.equals(s)) {
 				if (!sourceMatch.equals(targetMatch)) {
-					return new Object[] { c, s, n, a, sourceMatch, targetMatch };
+					return new Object[] { c, n, s, a, sourceMatch, targetMatch };
 				}
 			}
 		}
@@ -2428,26 +2428,26 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 				targetMatch, sourceMatch);
 		if (result_pattern_assignment2command_24_2_matchsrctrgcontext_binding != null) {
 			Command c = (Command) result_pattern_assignment2command_24_2_matchsrctrgcontext_binding[0];
-			Statement s = (Statement) result_pattern_assignment2command_24_2_matchsrctrgcontext_binding[1];
-			Node n = (Node) result_pattern_assignment2command_24_2_matchsrctrgcontext_binding[2];
+			Node n = (Node) result_pattern_assignment2command_24_2_matchsrctrgcontext_binding[1];
+			Statement s = (Statement) result_pattern_assignment2command_24_2_matchsrctrgcontext_binding[2];
 			Assignment a = (Assignment) result_pattern_assignment2command_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_assignment2command_24_2_matchsrctrgcontext_black = pattern_assignment2command_24_2_matchsrctrgcontext_blackBBBBBB(
-					c, s, n, a, sourceMatch, targetMatch);
+					c, n, s, a, sourceMatch, targetMatch);
 			if (result_pattern_assignment2command_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { c, s, n, a, sourceMatch, targetMatch };
+				return new Object[] { c, n, s, a, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_assignment2command_24_3_solvecsp_bindingFBBBBBBB(assignment2command _this,
-			Command c, Statement s, Node n, Assignment a, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(c, s, n, a, sourceMatch, targetMatch);
+			Command c, Node n, Statement s, Assignment a, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(c, n, s, a, sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, c, s, n, a, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, c, n, s, a, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2457,10 +2457,10 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			assignment2command _this, Command c, Statement s, Node n, Assignment a, Match sourceMatch,
+			assignment2command _this, Command c, Node n, Statement s, Assignment a, Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_assignment2command_24_3_solvecsp_binding = pattern_assignment2command_24_3_solvecsp_bindingFBBBBBBB(
-				_this, c, s, n, a, sourceMatch, targetMatch);
+				_this, c, n, s, a, sourceMatch, targetMatch);
 		if (result_pattern_assignment2command_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_assignment2command_24_3_solvecsp_binding[0];
 
@@ -2468,7 +2468,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 					csp);
 			if (result_pattern_assignment2command_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, c, s, n, a, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, c, n, s, a, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2480,13 +2480,13 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_assignment2command_24_5_matchcorrcontext_blackBBFBB(Statement s,
-			Node n, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_assignment2command_24_5_matchcorrcontext_blackFBBBB(Node n,
+			Statement s, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (S2N s2n : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(s, S2N.class, "source")) {
-				if (n.equals(s2n.getTarget())) {
-					_result.add(new Object[] { s, n, s2n, sourceMatch, targetMatch });
+			for (S2N s2n : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n, S2N.class, "target")) {
+				if (s.equals(s2n.getSource())) {
+					_result.add(new Object[] { s2n, n, s, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2504,11 +2504,11 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return new Object[] { s2n, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_assignment2command_24_6_createcorrespondence_blackBBBBB(Command c, Statement s,
-			Node n, Assignment a, CCMatch ccMatch) {
+	public static final Object[] pattern_assignment2command_24_6_createcorrespondence_blackBBBBB(Command c, Node n,
+			Statement s, Assignment a, CCMatch ccMatch) {
 		if (!c.equals(n)) {
 			if (!a.equals(s)) {
-				return new Object[] { c, s, n, a, ccMatch };
+				return new Object[] { c, n, s, a, ccMatch };
 			}
 		}
 		return null;
@@ -2547,9 +2547,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	public static final Object[] pattern_assignment2command_27_1_matchtggpattern_black_nac_0BB(Assignment a,
 			Statement s) {
 		if (!a.equals(s)) {
-			for (Decision __DEC_a_positive_833371 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (Decision __DEC_a_positive_894524 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(a, Decision.class, "positive")) {
-				if (!s.equals(__DEC_a_positive_833371)) {
+				if (!s.equals(__DEC_a_positive_894524)) {
 					return new Object[] { a, s };
 				}
 			}
@@ -2560,9 +2560,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	public static final Object[] pattern_assignment2command_27_1_matchtggpattern_black_nac_1BB(Assignment a,
 			Statement s) {
 		if (!a.equals(s)) {
-			for (Decision __DEC_a_negative_780537 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (Decision __DEC_a_negative_979951 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(a, Decision.class, "negative")) {
-				if (!s.equals(__DEC_a_negative_780537)) {
+				if (!s.equals(__DEC_a_negative_979951)) {
 					return new Object[] { a, s };
 				}
 			}
@@ -2573,9 +2573,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	public static final Object[] pattern_assignment2command_27_1_matchtggpattern_black_nac_2BB(Assignment a,
 			Statement s) {
 		if (!a.equals(s)) {
-			for (While __DEC_a_first_771062 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+			for (While __DEC_a_first_169143 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 					While.class, "first")) {
-				if (!s.equals(__DEC_a_first_771062)) {
+				if (!s.equals(__DEC_a_first_169143)) {
 					return new Object[] { a, s };
 				}
 			}
@@ -2586,9 +2586,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	public static final Object[] pattern_assignment2command_27_1_matchtggpattern_black_nac_3BB(Assignment a,
 			Statement s) {
 		if (!a.equals(s)) {
-			for (While __DEC_a_last_774380 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+			for (While __DEC_a_last_8465 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 					While.class, "last")) {
-				if (!s.equals(__DEC_a_last_774380)) {
+				if (!s.equals(__DEC_a_last_8465)) {
 					return new Object[] { a, s };
 				}
 			}
@@ -2597,7 +2597,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_27_1_matchtggpattern_black_nac_4B(Assignment a) {
-		for (Program __DEC_a_first_464488 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+		for (Program __DEC_a_first_388977 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 				Program.class, "first")) {
 			return new Object[] { a };
 		}
@@ -2634,7 +2634,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_28_1_matchtggpattern_black_nac_0B(Command c) {
-		for (Graph __DEC_c_root_88491 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+		for (Graph __DEC_c_root_759856 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 				Graph.class, "root")) {
 			return new Object[] { c };
 		}
@@ -2643,9 +2643,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 
 	public static final Object[] pattern_assignment2command_28_1_matchtggpattern_black_nac_1BB(Command c, Node n) {
 		if (!c.equals(n)) {
-			for (Branch __DEC_c_positive_48614 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+			for (Branch __DEC_c_positive_842605 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 					Branch.class, "positive")) {
-				if (!n.equals(__DEC_c_positive_48614)) {
+				if (!n.equals(__DEC_c_positive_842605)) {
 					return new Object[] { c, n };
 				}
 			}
@@ -2655,9 +2655,9 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 
 	public static final Object[] pattern_assignment2command_28_1_matchtggpattern_black_nac_2BB(Command c, Node n) {
 		if (!c.equals(n)) {
-			for (Branch __DEC_c_negative_313059 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+			for (Branch __DEC_c_negative_157191 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 					Branch.class, "negative")) {
-				if (!n.equals(__DEC_c_negative_313059)) {
+				if (!n.equals(__DEC_c_negative_157191)) {
 					return new Object[] { c, n };
 				}
 			}
@@ -2703,14 +2703,6 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Statement s) {
-		if (ruleResult.getSourceObjects().contains(s)) {
-			return new Object[] { ruleResult, s };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_assignment2command_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, S2N s2n) {
 		if (ruleResult.getCorrObjects().contains(s2n)) {
 			return new Object[] { ruleResult, s2n };
@@ -2718,10 +2710,18 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return null;
 	}
 
-	public static final Object[] pattern_assignment2command_29_2_isapplicablecore_black_nac_2BB(
+	public static final Object[] pattern_assignment2command_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, Node n) {
 		if (ruleResult.getTargetObjects().contains(n)) {
 			return new Object[] { ruleResult, n };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_assignment2command_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, Statement s) {
+		if (ruleResult.getSourceObjects().contains(s)) {
+			return new Object[] { ruleResult, s };
 		}
 		return null;
 	}
@@ -2733,18 +2733,18 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 			for (EObject tmpS2n : s2nList.getEntryObjects()) {
 				if (tmpS2n instanceof S2N) {
 					S2N s2n = (S2N) tmpS2n;
-					Statement s = s2n.getSource();
-					if (s != null) {
-						Node n = s2n.getTarget();
-						if (n != null) {
-							if (pattern_assignment2command_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+					Node n = s2n.getTarget();
+					if (n != null) {
+						Statement s = s2n.getSource();
+						if (s != null) {
+							if (pattern_assignment2command_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 									s2n) == null) {
-								if (pattern_assignment2command_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-										s) == null) {
+								if (pattern_assignment2command_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+										n) == null) {
 									if (pattern_assignment2command_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											n) == null) {
+											s) == null) {
 										_result.add(
-												new Object[] { s2nList, s, s2n, n, ruleEntryContainer, ruleResult });
+												new Object[] { s2nList, s2n, n, s, ruleEntryContainer, ruleResult });
 									}
 								}
 							}
@@ -2759,11 +2759,11 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_29_3_solveCSP_bindingFBBBBBB(assignment2command _this,
-			IsApplicableMatch isApplicableMatch, Statement s, Node n, S2N s2n, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, s, n, s2n, ruleResult);
+			IsApplicableMatch isApplicableMatch, S2N s2n, Node n, Statement s, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, s2n, n, s, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, s, n, s2n, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, s2n, n, s, ruleResult };
 		}
 		return null;
 	}
@@ -2773,10 +2773,10 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 	}
 
 	public static final Object[] pattern_assignment2command_29_3_solveCSP_bindingAndBlackFBBBBBB(
-			assignment2command _this, IsApplicableMatch isApplicableMatch, Statement s, Node n, S2N s2n,
+			assignment2command _this, IsApplicableMatch isApplicableMatch, S2N s2n, Node n, Statement s,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_assignment2command_29_3_solveCSP_binding = pattern_assignment2command_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, s, n, s2n, ruleResult);
+				_this, isApplicableMatch, s2n, n, s, ruleResult);
 		if (result_pattern_assignment2command_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_assignment2command_29_3_solveCSP_binding[0];
 
@@ -2784,7 +2784,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 					csp);
 			if (result_pattern_assignment2command_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, s, n, s2n, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, s2n, n, s, ruleResult };
 			}
 		}
 		return null;
@@ -2797,16 +2797,16 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		return _result;
 	}
 
-	public static final Object[] pattern_assignment2command_29_5_checknacs_blackBBB(Statement s, Node n, S2N s2n) {
-		return new Object[] { s, n, s2n };
+	public static final Object[] pattern_assignment2command_29_5_checknacs_blackBBB(S2N s2n, Node n, Statement s) {
+		return new Object[] { s2n, n, s };
 	}
 
-	public static final Object[] pattern_assignment2command_29_6_perform_blackBBBB(Statement s, Node n, S2N s2n,
+	public static final Object[] pattern_assignment2command_29_6_perform_blackBBBB(S2N s2n, Node n, Statement s,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { s, n, s2n, ruleResult };
+		return new Object[] { s2n, n, s, ruleResult };
 	}
 
-	public static final Object[] pattern_assignment2command_29_6_perform_greenFBFBFB(Statement s, Node n,
+	public static final Object[] pattern_assignment2command_29_6_perform_greenFFBBFB(Node n, Statement s,
 			ModelgeneratorRuleResult ruleResult) {
 		Command c = ControlflowFactory.eINSTANCE.createCommand();
 		S2N a2c = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
@@ -2823,7 +2823,7 @@ public class assignment2commandImpl extends AbstractRuleImpl implements assignme
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { c, s, a2c, n, a, ruleResult };
+		return new Object[] { c, a2c, n, s, a, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_assignment2command_29_7_expressionFB(

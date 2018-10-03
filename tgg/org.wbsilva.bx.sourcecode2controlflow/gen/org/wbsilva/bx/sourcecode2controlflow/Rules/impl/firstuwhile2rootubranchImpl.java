@@ -51,7 +51,6 @@ import sourcecode.Assignment;
 import sourcecode.Decision;
 import sourcecode.Program;
 import sourcecode.SourcecodeFactory;
-import sourcecode.Statement;
 import sourcecode.While;
 // <-- [user defined imports]
 import org.moflon.tgg.csp.*;
@@ -102,48 +101,48 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, Assignment l, Program p, While w) {
+	public boolean isAppropriate_FWD(Match match, While w, Assignment l, Program p) {
 
 		Object[] result1_black = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_0_1_initialbindings_blackBBBBB(this, match, l, p, w);
+				.pattern_firstuwhile2rootubranch_0_1_initialbindings_blackBBBBB(this, match, w, l, p);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[l] = " + l + ", " + "[p] = " + p + ", " + "[w] = " + w + ".");
+					+ "[match] = " + match + ", " + "[w] = " + w + ", " + "[l] = " + l + ", " + "[p] = " + p + ".");
 		}
 
 		Object[] result2_bindingAndBlack = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, l, p, w);
+				.pattern_firstuwhile2rootubranch_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, w, l, p);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[l] = " + l + ", " + "[p] = " + p + ", " + "[w] = " + w + ".");
+					+ "[match] = " + match + ", " + "[w] = " + w + ", " + "[l] = " + l + ", " + "[p] = " + p + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = firstuwhile2rootubranchImpl
-					.pattern_firstuwhile2rootubranch_0_4_collectelementstobetranslated_blackBBBB(match, l, p, w);
+					.pattern_firstuwhile2rootubranch_0_4_collectelementstobetranslated_blackBBBB(match, w, l, p);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[l] = " + l + ", " + "[p] = " + p + ", " + "[w] = " + w + ".");
+						+ "[w] = " + w + ", " + "[l] = " + l + ", " + "[p] = " + p + ".");
 			}
 			firstuwhile2rootubranchImpl
-					.pattern_firstuwhile2rootubranch_0_4_collectelementstobetranslated_greenBBBBFFF(match, l, p, w);
-			//nothing EMoflonEdge p__w____first = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge w__l____last = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge w__l____first = (EMoflonEdge) result4_green[6];
+					.pattern_firstuwhile2rootubranch_0_4_collectelementstobetranslated_greenBBBBFFF(match, w, l, p);
+			//nothing EMoflonEdge w__l____first = (EMoflonEdge) result4_green[4];
+			//nothing EMoflonEdge p__w____first = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge w__l____last = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = firstuwhile2rootubranchImpl
-					.pattern_firstuwhile2rootubranch_0_5_collectcontextelements_blackBBBB(match, l, p, w);
+					.pattern_firstuwhile2rootubranch_0_5_collectcontextelements_blackBBBB(match, w, l, p);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[l] = " + l + ", " + "[p] = " + p + ", " + "[w] = " + w + ".");
+						+ "[w] = " + w + ", " + "[l] = " + l + ", " + "[p] = " + p + ".");
 			}
 			firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_0_5_collectcontextelements_greenBB(match, p);
 
 			// 
 			firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_0_6_registerobjectstomatch_expressionBBBBB(this,
-					match, l, p, w);
+					match, w, l, p);
 			return firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_0_7_expressionF();
 		} else {
 			return firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_0_8_expressionF();
@@ -165,56 +164,56 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Graph g = (Graph) result1_bindingAndBlack[0];
-		P2G p2g = (P2G) result1_bindingAndBlack[1];
+		P2G p2g = (P2G) result1_bindingAndBlack[0];
+		While w = (While) result1_bindingAndBlack[1];
 		Assignment l = (Assignment) result1_bindingAndBlack[2];
 		Program p = (Program) result1_bindingAndBlack[3];
-		While w = (While) result1_bindingAndBlack[4];
+		Graph g = (Graph) result1_bindingAndBlack[4];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_1_1_performtransformation_greenBFFFBFB(g, l, w);
-		Branch b = (Branch) result1_green[1];
-		S2N l2d = (S2N) result1_green[2];
-		S2B f2r = (S2B) result1_green[3];
-		Command d = (Command) result1_green[5];
+				.pattern_firstuwhile2rootubranch_1_1_performtransformation_greenFFBFBBF(w, l, g);
+		S2N l2d = (S2N) result1_green[0];
+		S2B f2r = (S2B) result1_green[1];
+		Branch b = (Branch) result1_green[3];
+		Command d = (Command) result1_green[6];
 
 		Object[] result2_black = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_1_2_collecttranslatedelements_blackBBBBBB(b, l2d, f2r, l, d, w);
+				.pattern_firstuwhile2rootubranch_1_2_collecttranslatedelements_blackBBBBBB(l2d, f2r, w, b, l, d);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[b] = " + b + ", " + "[l2d] = " + l2d + ", "
-							+ "[f2r] = " + f2r + ", " + "[l] = " + l + ", " + "[d] = " + d + ", " + "[w] = " + w + ".");
+					"Pattern matching failed." + " Variables: " + "[l2d] = " + l2d + ", " + "[f2r] = " + f2r + ", "
+							+ "[w] = " + w + ", " + "[b] = " + b + ", " + "[l] = " + l + ", " + "[d] = " + d + ".");
 		}
 		Object[] result2_green = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_1_2_collecttranslatedelements_greenFBBBBBB(b, l2d, f2r, l, d, w);
+				.pattern_firstuwhile2rootubranch_1_2_collecttranslatedelements_greenFBBBBBB(l2d, f2r, w, b, l, d);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, g, p2g, b, l2d,
-						f2r, l, d, p, w);
+				.pattern_firstuwhile2rootubranch_1_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, l2d, p2g, f2r, w,
+						b, l, p, g, d);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[g] = " + g + ", " + "[p2g] = " + p2g + ", " + "[b] = " + b + ", " + "[l2d] = " + l2d
-					+ ", " + "[f2r] = " + f2r + ", " + "[l] = " + l + ", " + "[d] = " + d + ", " + "[p] = " + p + ", "
-					+ "[w] = " + w + ".");
+					+ ", " + "[l2d] = " + l2d + ", " + "[p2g] = " + p2g + ", " + "[f2r] = " + f2r + ", " + "[w] = " + w
+					+ ", " + "[b] = " + b + ", " + "[l] = " + l + ", " + "[p] = " + p + ", " + "[g] = " + g + ", "
+					+ "[d] = " + d + ".");
 		}
 		firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFF(
-				ruleresult, g, b, l2d, f2r, l, d, p, w);
-		//nothing EMoflonEdge b__d____positive = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge f2r__b____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge l2d__l____source = (EMoflonEdge) result3_green[11];
+				ruleresult, l2d, f2r, w, b, l, p, g, d);
+		//nothing EMoflonEdge f2r__b____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge w__l____first = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge f2r__w____source = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge p__w____first = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge l2d__d____target = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge d__b____next = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge f2r__w____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge w__l____last = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge b__d____positive = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge l2d__l____source = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge g__b____root = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge w__l____last = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge w__l____first = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge l2d__d____target = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge d__b____next = (EMoflonEdge) result3_green[18];
 
 		// 
 		// 
 		firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_1_5_registerobjects_expressionBBBBBBBBBBB(this,
-				ruleresult, g, p2g, b, l2d, f2r, l, d, p, w);
+				ruleresult, l2d, p2g, f2r, w, b, l, p, g, d);
 		return firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_1_6_expressionFB(ruleresult);
 	}
 
@@ -243,32 +242,32 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Assignment l = (Assignment) result2_binding[0];
-		Program p = (Program) result2_binding[1];
-		While w = (While) result2_binding[2];
+		While w = (While) result2_binding[0];
+		Assignment l = (Assignment) result2_binding[1];
+		Program p = (Program) result2_binding[2];
 		for (Object[] result2_black : firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_2_2_corematch_blackFFBBBB(l, p, w, match)) {
-			Graph g = (Graph) result2_black[0];
-			P2G p2g = (P2G) result2_black[1];
+				.pattern_firstuwhile2rootubranch_2_2_corematch_blackFBBBFB(w, l, p, match)) {
+			P2G p2g = (P2G) result2_black[0];
+			Graph g = (Graph) result2_black[4];
 			// ForEach 
 			for (Object[] result3_black : firstuwhile2rootubranchImpl
-					.pattern_firstuwhile2rootubranch_2_3_findcontext_blackBBBBB(g, p2g, l, p, w)) {
+					.pattern_firstuwhile2rootubranch_2_3_findcontext_blackBBBBB(p2g, w, l, p, g)) {
 				Object[] result3_green = firstuwhile2rootubranchImpl
-						.pattern_firstuwhile2rootubranch_2_3_findcontext_greenBBBBBFFFFFF(g, p2g, l, p, w);
+						.pattern_firstuwhile2rootubranch_2_3_findcontext_greenBBBBBFFFFFF(p2g, w, l, p, g);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
-				//nothing EMoflonEdge p2g__p____source = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge w__l____first = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge p__w____first = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge w__l____last = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge w__l____first = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge w__l____last = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge p2g__p____source = (EMoflonEdge) result3_green[10];
 
 				Object[] result4_bindingAndBlack = firstuwhile2rootubranchImpl
 						.pattern_firstuwhile2rootubranch_2_4_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch,
-								g, p2g, l, p, w);
+								p2g, w, l, p, g);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[g] = " + g + ", " + "[p2g] = "
-							+ p2g + ", " + "[l] = " + l + ", " + "[p] = " + p + ", " + "[w] = " + w + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[p2g] = " + p2g + ", " + "[w] = "
+							+ w + ", " + "[l] = " + l + ", " + "[p] = " + p + ", " + "[g] = " + g + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -298,10 +297,10 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, Assignment l, Program p, While w) {
+	public void registerObjectsToMatch_FWD(Match match, While w, Assignment l, Program p) {
+		match.registerObject("w", w);
 		match.registerObject("l", l);
 		match.registerObject("p", p);
-		match.registerObject("w", w);
 
 	}
 
@@ -310,7 +309,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, Assignment l, Program p, While w) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, While w, Assignment l, Program p) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -339,8 +338,8 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Assignment l, Program p,
-			While w) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, P2G p2g, While w, Assignment l, Program p,
+			Graph g) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -355,11 +354,11 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("g", g);
 		isApplicableMatch.registerObject("p2g", p2g);
+		isApplicableMatch.registerObject("w", w);
 		isApplicableMatch.registerObject("l", l);
 		isApplicableMatch.registerObject("p", p);
-		isApplicableMatch.registerObject("w", w);
+		isApplicableMatch.registerObject("g", g);
 		return csp;
 	}
 
@@ -377,17 +376,17 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject g, EObject p2g, EObject b, EObject l2d,
-			EObject f2r, EObject l, EObject d, EObject p, EObject w) {
-		ruleresult.registerObject("g", g);
-		ruleresult.registerObject("p2g", p2g);
-		ruleresult.registerObject("b", b);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject l2d, EObject p2g, EObject f2r, EObject w,
+			EObject b, EObject l, EObject p, EObject g, EObject d) {
 		ruleresult.registerObject("l2d", l2d);
+		ruleresult.registerObject("p2g", p2g);
 		ruleresult.registerObject("f2r", f2r);
-		ruleresult.registerObject("l", l);
-		ruleresult.registerObject("d", d);
-		ruleresult.registerObject("p", p);
 		ruleresult.registerObject("w", w);
+		ruleresult.registerObject("b", b);
+		ruleresult.registerObject("l", l);
+		ruleresult.registerObject("p", p);
+		ruleresult.registerObject("g", g);
+		ruleresult.registerObject("d", d);
 
 	}
 
@@ -397,9 +396,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * @generated
 	 */
 	public boolean checkTypes_FWD(Match match) {
-		return true
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("l").eClass()).equals("sourcecode.Assignment.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("w").eClass()).equals("sourcecode.While.");
+		return true && org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("w").eClass()).equals("sourcecode.While.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("l").eClass())
+						.equals("sourcecode.Assignment.");
 	}
 
 	/**
@@ -407,48 +406,48 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Graph g, Branch b, Command d) {
+	public boolean isAppropriate_BWD(Match match, Branch b, Graph g, Command d) {
 
 		Object[] result1_black = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_10_1_initialbindings_blackBBBBB(this, match, g, b, d);
+				.pattern_firstuwhile2rootubranch_10_1_initialbindings_blackBBBBB(this, match, b, g, d);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[g] = " + g + ", " + "[b] = " + b + ", " + "[d] = " + d + ".");
+					+ "[match] = " + match + ", " + "[b] = " + b + ", " + "[g] = " + g + ", " + "[d] = " + d + ".");
 		}
 
 		Object[] result2_bindingAndBlack = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, g, b, d);
+				.pattern_firstuwhile2rootubranch_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, b, g, d);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[g] = " + g + ", " + "[b] = " + b + ", " + "[d] = " + d + ".");
+					+ "[match] = " + match + ", " + "[b] = " + b + ", " + "[g] = " + g + ", " + "[d] = " + d + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = firstuwhile2rootubranchImpl
-					.pattern_firstuwhile2rootubranch_10_4_collectelementstobetranslated_blackBBBB(match, g, b, d);
+					.pattern_firstuwhile2rootubranch_10_4_collectelementstobetranslated_blackBBBB(match, b, g, d);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[g] = " + g + ", " + "[b] = " + b + ", " + "[d] = " + d + ".");
+						+ "[b] = " + b + ", " + "[g] = " + g + ", " + "[d] = " + d + ".");
 			}
 			firstuwhile2rootubranchImpl
-					.pattern_firstuwhile2rootubranch_10_4_collectelementstobetranslated_greenBBBBFFF(match, g, b, d);
+					.pattern_firstuwhile2rootubranch_10_4_collectelementstobetranslated_greenBBBBFFF(match, b, g, d);
 			//nothing EMoflonEdge b__d____positive = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge d__b____next = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge g__b____root = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge g__b____root = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge d__b____next = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = firstuwhile2rootubranchImpl
-					.pattern_firstuwhile2rootubranch_10_5_collectcontextelements_blackBBBB(match, g, b, d);
+					.pattern_firstuwhile2rootubranch_10_5_collectcontextelements_blackBBBB(match, b, g, d);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[g] = " + g + ", " + "[b] = " + b + ", " + "[d] = " + d + ".");
+						+ "[b] = " + b + ", " + "[g] = " + g + ", " + "[d] = " + d + ".");
 			}
 			firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_10_5_collectcontextelements_greenBB(match, g);
 
 			// 
 			firstuwhile2rootubranchImpl
-					.pattern_firstuwhile2rootubranch_10_6_registerobjectstomatch_expressionBBBBB(this, match, g, b, d);
+					.pattern_firstuwhile2rootubranch_10_6_registerobjectstomatch_expressionBBBBB(this, match, b, g, d);
 			return firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_10_7_expressionF();
 		} else {
 			return firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_10_8_expressionF();
@@ -470,56 +469,56 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Graph g = (Graph) result1_bindingAndBlack[0];
-		P2G p2g = (P2G) result1_bindingAndBlack[1];
-		Branch b = (Branch) result1_bindingAndBlack[2];
-		Command d = (Command) result1_bindingAndBlack[3];
-		Program p = (Program) result1_bindingAndBlack[4];
+		P2G p2g = (P2G) result1_bindingAndBlack[0];
+		Branch b = (Branch) result1_bindingAndBlack[1];
+		Program p = (Program) result1_bindingAndBlack[2];
+		Graph g = (Graph) result1_bindingAndBlack[3];
+		Command d = (Command) result1_bindingAndBlack[4];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[5];
 		Object[] result1_green = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_11_1_performtransformation_greenBFFFBBF(b, d, p);
-		S2N l2d = (S2N) result1_green[1];
-		S2B f2r = (S2B) result1_green[2];
-		Assignment l = (Assignment) result1_green[3];
-		While w = (While) result1_green[6];
+				.pattern_firstuwhile2rootubranch_11_1_performtransformation_greenFFFBFBB(b, p, d);
+		S2N l2d = (S2N) result1_green[0];
+		S2B f2r = (S2B) result1_green[1];
+		While w = (While) result1_green[2];
+		Assignment l = (Assignment) result1_green[4];
 
 		Object[] result2_black = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_11_2_collecttranslatedelements_blackBBBBBB(b, l2d, f2r, l, d, w);
+				.pattern_firstuwhile2rootubranch_11_2_collecttranslatedelements_blackBBBBBB(l2d, f2r, w, b, l, d);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[b] = " + b + ", " + "[l2d] = " + l2d + ", "
-							+ "[f2r] = " + f2r + ", " + "[l] = " + l + ", " + "[d] = " + d + ", " + "[w] = " + w + ".");
+					"Pattern matching failed." + " Variables: " + "[l2d] = " + l2d + ", " + "[f2r] = " + f2r + ", "
+							+ "[w] = " + w + ", " + "[b] = " + b + ", " + "[l] = " + l + ", " + "[d] = " + d + ".");
 		}
 		Object[] result2_green = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_11_2_collecttranslatedelements_greenFBBBBBB(b, l2d, f2r, l, d, w);
+				.pattern_firstuwhile2rootubranch_11_2_collecttranslatedelements_greenFBBBBBB(l2d, f2r, w, b, l, d);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, g, p2g, b, l2d,
-						f2r, l, d, p, w);
+				.pattern_firstuwhile2rootubranch_11_3_bookkeepingforedges_blackBBBBBBBBBB(ruleresult, l2d, p2g, f2r, w,
+						b, l, p, g, d);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[g] = " + g + ", " + "[p2g] = " + p2g + ", " + "[b] = " + b + ", " + "[l2d] = " + l2d
-					+ ", " + "[f2r] = " + f2r + ", " + "[l] = " + l + ", " + "[d] = " + d + ", " + "[p] = " + p + ", "
-					+ "[w] = " + w + ".");
+					+ ", " + "[l2d] = " + l2d + ", " + "[p2g] = " + p2g + ", " + "[f2r] = " + f2r + ", " + "[w] = " + w
+					+ ", " + "[b] = " + b + ", " + "[l] = " + l + ", " + "[p] = " + p + ", " + "[g] = " + g + ", "
+					+ "[d] = " + d + ".");
 		}
 		firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFF(
-				ruleresult, g, b, l2d, f2r, l, d, p, w);
-		//nothing EMoflonEdge b__d____positive = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge f2r__b____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge l2d__l____source = (EMoflonEdge) result3_green[11];
+				ruleresult, l2d, f2r, w, b, l, p, g, d);
+		//nothing EMoflonEdge f2r__b____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge w__l____first = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge f2r__w____source = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge p__w____first = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge l2d__d____target = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge d__b____next = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge f2r__w____source = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge w__l____last = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge b__d____positive = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge l2d__l____source = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge g__b____root = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge w__l____last = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge w__l____first = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge l2d__d____target = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge d__b____next = (EMoflonEdge) result3_green[18];
 
 		// 
 		// 
 		firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_11_5_registerobjects_expressionBBBBBBBBBBB(this,
-				ruleresult, g, p2g, b, l2d, f2r, l, d, p, w);
+				ruleresult, l2d, p2g, f2r, w, b, l, p, g, d);
 		return firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_11_6_expressionFB(ruleresult);
 	}
 
@@ -548,32 +547,32 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Graph g = (Graph) result2_binding[0];
-		Branch b = (Branch) result2_binding[1];
+		Branch b = (Branch) result2_binding[0];
+		Graph g = (Graph) result2_binding[1];
 		Command d = (Command) result2_binding[2];
 		for (Object[] result2_black : firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_12_2_corematch_blackBFBBFB(g, b, d, match)) {
-			P2G p2g = (P2G) result2_black[1];
-			Program p = (Program) result2_black[4];
+				.pattern_firstuwhile2rootubranch_12_2_corematch_blackFBFBBB(b, g, d, match)) {
+			P2G p2g = (P2G) result2_black[0];
+			Program p = (Program) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : firstuwhile2rootubranchImpl
-					.pattern_firstuwhile2rootubranch_12_3_findcontext_blackBBBBB(g, p2g, b, d, p)) {
+					.pattern_firstuwhile2rootubranch_12_3_findcontext_blackBBBBB(p2g, b, p, g, d)) {
 				Object[] result3_green = firstuwhile2rootubranchImpl
-						.pattern_firstuwhile2rootubranch_12_3_findcontext_greenBBBBBFFFFFF(g, p2g, b, d, p);
+						.pattern_firstuwhile2rootubranch_12_3_findcontext_greenBBBBBFFFFFF(p2g, b, p, g, d);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
 				//nothing EMoflonEdge b__d____positive = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge p2g__p____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge d__b____next = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge g__b____root = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge p2g__g____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge g__b____root = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge p2g__p____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge d__b____next = (EMoflonEdge) result3_green[10];
 
 				Object[] result4_bindingAndBlack = firstuwhile2rootubranchImpl
 						.pattern_firstuwhile2rootubranch_12_4_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch,
-								g, p2g, b, d, p);
+								p2g, b, p, g, d);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[g] = " + g + ", " + "[p2g] = "
-							+ p2g + ", " + "[b] = " + b + ", " + "[d] = " + d + ", " + "[p] = " + p + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[p2g] = " + p2g + ", " + "[b] = "
+							+ b + ", " + "[p] = " + p + ", " + "[g] = " + g + ", " + "[d] = " + d + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -604,9 +603,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Graph g, Branch b, Command d) {
-		match.registerObject("g", g);
+	public void registerObjectsToMatch_BWD(Match match, Branch b, Graph g, Command d) {
 		match.registerObject("b", b);
+		match.registerObject("g", g);
 		match.registerObject("d", d);
 
 	}
@@ -616,7 +615,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Graph g, Branch b, Command d) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Branch b, Graph g, Command d) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -645,8 +644,8 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Branch b, Command d,
-			Program p) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, P2G p2g, Branch b, Program p, Graph g,
+			Command d) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -661,11 +660,11 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("g", g);
 		isApplicableMatch.registerObject("p2g", p2g);
 		isApplicableMatch.registerObject("b", b);
-		isApplicableMatch.registerObject("d", d);
 		isApplicableMatch.registerObject("p", p);
+		isApplicableMatch.registerObject("g", g);
+		isApplicableMatch.registerObject("d", d);
 		return csp;
 	}
 
@@ -683,17 +682,17 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject g, EObject p2g, EObject b, EObject l2d,
-			EObject f2r, EObject l, EObject d, EObject p, EObject w) {
-		ruleresult.registerObject("g", g);
-		ruleresult.registerObject("p2g", p2g);
-		ruleresult.registerObject("b", b);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject l2d, EObject p2g, EObject f2r, EObject w,
+			EObject b, EObject l, EObject p, EObject g, EObject d) {
 		ruleresult.registerObject("l2d", l2d);
+		ruleresult.registerObject("p2g", p2g);
 		ruleresult.registerObject("f2r", f2r);
-		ruleresult.registerObject("l", l);
-		ruleresult.registerObject("d", d);
-		ruleresult.registerObject("p", p);
 		ruleresult.registerObject("w", w);
+		ruleresult.registerObject("b", b);
+		ruleresult.registerObject("l", l);
+		ruleresult.registerObject("p", p);
+		ruleresult.registerObject("g", g);
+		ruleresult.registerObject("d", d);
 
 	}
 
@@ -713,7 +712,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_134(EMoflonEdge _edge_positive) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_11(EMoflonEdge _edge_positive) {
 
 		Object[] result1_bindingAndBlack = firstuwhile2rootubranchImpl
 				.pattern_firstuwhile2rootubranch_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -730,8 +729,8 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		// ForEach 
 		for (Object[] result2_black : firstuwhile2rootubranchImpl
 				.pattern_firstuwhile2rootubranch_20_2_testcorematchandDECs_blackFFFB(_edge_positive)) {
-			Graph g = (Graph) result2_black[0];
-			Branch b = (Branch) result2_black[1];
+			Branch b = (Branch) result2_black[0];
+			Graph g = (Graph) result2_black[1];
 			Command d = (Command) result2_black[2];
 			Object[] result2_green = firstuwhile2rootubranchImpl
 					.pattern_firstuwhile2rootubranch_20_2_testcorematchandDECs_greenFB(__eClass);
@@ -740,7 +739,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 			// 
 			if (firstuwhile2rootubranchImpl
 					.pattern_firstuwhile2rootubranch_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, g, b, d)) {
+							this, match, b, g, d)) {
 				// 
 				if (firstuwhile2rootubranchImpl
 						.pattern_firstuwhile2rootubranch_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -772,7 +771,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_134(EMoflonEdge _edge_first) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_12(EMoflonEdge _edge_first) {
 
 		Object[] result1_bindingAndBlack = firstuwhile2rootubranchImpl
 				.pattern_firstuwhile2rootubranch_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -789,9 +788,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		// ForEach 
 		for (Object[] result2_black : firstuwhile2rootubranchImpl
 				.pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_blackFFFB(_edge_first)) {
-			Assignment l = (Assignment) result2_black[0];
-			Program p = (Program) result2_black[1];
-			While w = (While) result2_black[2];
+			While w = (While) result2_black[0];
+			Assignment l = (Assignment) result2_black[1];
+			Program p = (Program) result2_black[2];
 			Object[] result2_green = firstuwhile2rootubranchImpl
 					.pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -799,7 +798,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 			// 
 			if (firstuwhile2rootubranchImpl
 					.pattern_firstuwhile2rootubranch_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-							this, match, l, p, w)) {
+							this, match, w, l, p)) {
 				// 
 				if (firstuwhile2rootubranchImpl
 						.pattern_firstuwhile2rootubranch_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -907,20 +906,20 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Graph g = (Graph) result2_bindingAndBlack[0];
+		While w = (While) result2_bindingAndBlack[0];
 		Branch b = (Branch) result2_bindingAndBlack[1];
 		Assignment l = (Assignment) result2_bindingAndBlack[2];
-		Command d = (Command) result2_bindingAndBlack[3];
-		Program p = (Program) result2_bindingAndBlack[4];
-		While w = (While) result2_bindingAndBlack[5];
+		Program p = (Program) result2_bindingAndBlack[3];
+		Graph g = (Graph) result2_bindingAndBlack[4];
+		Command d = (Command) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, g, b, l, d, p, w,
+				.pattern_firstuwhile2rootubranch_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, w, b, l, p, g, d,
 						sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[g] = " + g + ", " + "[b] = " + b + ", " + "[l] = " + l + ", " + "[d] = " + d + ", " + "[p] = "
-					+ p + ", " + "[w] = " + w + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
+					+ "[w] = " + w + ", " + "[b] = " + b + ", " + "[l] = " + l + ", " + "[p] = " + p + ", " + "[g] = "
+					+ g + ", " + "[d] = " + d + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
 					+ targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -928,24 +927,24 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		if (firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : firstuwhile2rootubranchImpl
-					.pattern_firstuwhile2rootubranch_24_5_matchcorrcontext_blackBFBBB(g, p, sourceMatch, targetMatch)) {
-				P2G p2g = (P2G) result5_black[1];
+					.pattern_firstuwhile2rootubranch_24_5_matchcorrcontext_blackFBBBB(p, g, sourceMatch, targetMatch)) {
+				P2G p2g = (P2G) result5_black[0];
 				Object[] result5_green = firstuwhile2rootubranchImpl
 						.pattern_firstuwhile2rootubranch_24_5_matchcorrcontext_greenBBBF(p2g, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = firstuwhile2rootubranchImpl
-						.pattern_firstuwhile2rootubranch_24_6_createcorrespondence_blackBBBBBBB(g, b, l, d, p, w,
+						.pattern_firstuwhile2rootubranch_24_6_createcorrespondence_blackBBBBBBB(w, b, l, p, g, d,
 								ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[g] = " + g + ", "
-							+ "[b] = " + b + ", " + "[l] = " + l + ", " + "[d] = " + d + ", " + "[p] = " + p + ", "
-							+ "[w] = " + w + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[w] = " + w + ", "
+							+ "[b] = " + b + ", " + "[l] = " + l + ", " + "[p] = " + p + ", " + "[g] = " + g + ", "
+							+ "[d] = " + d + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_24_6_createcorrespondence_greenBFFBBBB(b, l,
-						d, w, ccMatch);
-				//nothing S2N l2d = (S2N) result6_green[1];
-				//nothing S2B f2r = (S2B) result6_green[2];
+				firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_24_6_createcorrespondence_greenFFBBBBB(w, b,
+						l, d, ccMatch);
+				//nothing S2N l2d = (S2N) result6_green[0];
+				//nothing S2B f2r = (S2B) result6_green[1];
 
 				Object[] result7_black = firstuwhile2rootubranchImpl
 						.pattern_firstuwhile2rootubranch_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -968,7 +967,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Graph g, Branch b, Assignment l, Command d, Program p, While w,
+	public CSP isApplicable_solveCsp_CC(While w, Branch b, Assignment l, Program p, Graph g, Command d,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -998,9 +997,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Assignment l, Program p, While w) {// 
+	public boolean checkDEC_FWD(While w, Assignment l, Program p) {// 
 		Object[] result1_black = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_27_1_matchtggpattern_blackBBB(l, p, w);
+				.pattern_firstuwhile2rootubranch_27_1_matchtggpattern_blackBBB(w, l, p);
 		if (result1_black != null) {
 			return firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_27_2_expressionF();
 		} else {
@@ -1014,9 +1013,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Graph g, Branch b, Command d) {// 
+	public boolean checkDEC_BWD(Branch b, Graph g, Command d) {// 
 		Object[] result1_black = firstuwhile2rootubranchImpl
-				.pattern_firstuwhile2rootubranch_28_1_matchtggpattern_blackBBB(g, b, d);
+				.pattern_firstuwhile2rootubranch_28_1_matchtggpattern_blackBBB(b, g, d);
 		if (result1_black != null) {
 			return firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_28_2_expressionF();
 		} else {
@@ -1046,40 +1045,40 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		for (Object[] result2_black : firstuwhile2rootubranchImpl
 				.pattern_firstuwhile2rootubranch_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList p2gList = (RuleEntryList) result2_black[0];
-			Graph g = (Graph) result2_black[1];
-			P2G p2g = (P2G) result2_black[2];
+			P2G p2g = (P2G) result2_black[1];
+			Graph g = (Graph) result2_black[2];
 			Program p = (Program) result2_black[3];
 
 			Object[] result3_bindingAndBlack = firstuwhile2rootubranchImpl
-					.pattern_firstuwhile2rootubranch_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, g,
-							p2g, p, ruleResult);
+					.pattern_firstuwhile2rootubranch_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, p2g,
+							p, g, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[g] = " + g + ", " + "[p2g] = " + p2g
-						+ ", " + "[p] = " + p + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[p2g] = " + p2g + ", " + "[p] = " + p
+						+ ", " + "[g] = " + g + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = firstuwhile2rootubranchImpl
-						.pattern_firstuwhile2rootubranch_29_5_checknacs_blackBBB(g, p2g, p);
+						.pattern_firstuwhile2rootubranch_29_5_checknacs_blackBBB(p2g, p, g);
 				if (result5_black != null) {
 
 					Object[] result6_black = firstuwhile2rootubranchImpl
-							.pattern_firstuwhile2rootubranch_29_6_perform_blackBBBB(g, p2g, p, ruleResult);
+							.pattern_firstuwhile2rootubranch_29_6_perform_blackBBBB(p2g, p, g, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[g] = " + g + ", "
-								+ "[p2g] = " + p2g + ", " + "[p] = " + p + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[p2g] = " + p2g + ", "
+								+ "[p] = " + p + ", " + "[g] = " + g + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_29_6_perform_greenBFFFFFBFB(g, p,
+					firstuwhile2rootubranchImpl.pattern_firstuwhile2rootubranch_29_6_perform_greenFFFFFBBFB(p, g,
 							ruleResult);
-					//nothing Branch b = (Branch) result6_green[1];
-					//nothing S2N l2d = (S2N) result6_green[2];
-					//nothing S2B f2r = (S2B) result6_green[3];
+					//nothing S2N l2d = (S2N) result6_green[0];
+					//nothing S2B f2r = (S2B) result6_green[1];
+					//nothing While w = (While) result6_green[2];
+					//nothing Branch b = (Branch) result6_green[3];
 					//nothing Assignment l = (Assignment) result6_green[4];
-					//nothing Command d = (Command) result6_green[5];
-					//nothing While w = (While) result6_green[7];
+					//nothing Command d = (Command) result6_green[7];
 
 				} else {
 				}
@@ -1096,7 +1095,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Program p,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, P2G p2g, Program p, Graph g,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1112,9 +1111,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("g", g);
 		isApplicableMatch.registerObject("p2g", p2g);
 		isApplicableMatch.registerObject("p", p);
+		isApplicableMatch.registerObject("g", g);
 		return csp;
 	}
 
@@ -1135,26 +1134,26 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_FWD__MATCH_ASSIGNMENT_PROGRAM_WHILE:
-			return isAppropriate_FWD((Match) arguments.get(0), (Assignment) arguments.get(1),
-					(Program) arguments.get(2), (While) arguments.get(3));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_FWD__MATCH_WHILE_ASSIGNMENT_PROGRAM:
+			return isAppropriate_FWD((Match) arguments.get(0), (While) arguments.get(1), (Assignment) arguments.get(2),
+					(Program) arguments.get(3));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ASSIGNMENT_PROGRAM_WHILE:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (Assignment) arguments.get(1),
-					(Program) arguments.get(2), (While) arguments.get(3));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_WHILE_ASSIGNMENT_PROGRAM:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (While) arguments.get(1),
+					(Assignment) arguments.get(2), (Program) arguments.get(3));
 			return null;
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ASSIGNMENT_PROGRAM_WHILE:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Assignment) arguments.get(1),
-					(Program) arguments.get(2), (While) arguments.get(3));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_WHILE_ASSIGNMENT_PROGRAM:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (While) arguments.get(1),
+					(Assignment) arguments.get(2), (Program) arguments.get(3));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_GRAPH_P2G_ASSIGNMENT_PROGRAM_WHILE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Graph) arguments.get(1),
-					(P2G) arguments.get(2), (Assignment) arguments.get(3), (Program) arguments.get(4),
-					(While) arguments.get(5));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_P2G_WHILE_ASSIGNMENT_PROGRAM_GRAPH:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (P2G) arguments.get(1),
+					(While) arguments.get(2), (Assignment) arguments.get(3), (Program) arguments.get(4),
+					(Graph) arguments.get(5));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1165,26 +1164,26 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 			return null;
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_BWD__MATCH_GRAPH_BRANCH_COMMAND:
-			return isAppropriate_BWD((Match) arguments.get(0), (Graph) arguments.get(1), (Branch) arguments.get(2),
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_BWD__MATCH_BRANCH_GRAPH_COMMAND:
+			return isAppropriate_BWD((Match) arguments.get(0), (Branch) arguments.get(1), (Graph) arguments.get(2),
 					(Command) arguments.get(3));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_GRAPH_BRANCH_COMMAND:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Graph) arguments.get(1), (Branch) arguments.get(2),
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_BRANCH_GRAPH_COMMAND:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Branch) arguments.get(1), (Graph) arguments.get(2),
 					(Command) arguments.get(3));
 			return null;
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_GRAPH_BRANCH_COMMAND:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Graph) arguments.get(1),
-					(Branch) arguments.get(2), (Command) arguments.get(3));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_BRANCH_GRAPH_COMMAND:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Branch) arguments.get(1),
+					(Graph) arguments.get(2), (Command) arguments.get(3));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_GRAPH_P2G_BRANCH_COMMAND_PROGRAM:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Graph) arguments.get(1),
-					(P2G) arguments.get(2), (Branch) arguments.get(3), (Command) arguments.get(4),
-					(Program) arguments.get(5));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_P2G_BRANCH_PROGRAM_GRAPH_COMMAND:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (P2G) arguments.get(1),
+					(Branch) arguments.get(2), (Program) arguments.get(3), (Graph) arguments.get(4),
+					(Command) arguments.get(5));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1195,31 +1194,31 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 			return null;
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_BWD_EMOFLON_EDGE_134__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_134((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_134__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_134((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_BWD_EMOFLON_EDGE_11__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_11((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_12__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_12((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_SOLVE_CSP_CC__GRAPH_BRANCH_ASSIGNMENT_COMMAND_PROGRAM_WHILE_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Graph) arguments.get(0), (Branch) arguments.get(1),
-					(Assignment) arguments.get(2), (Command) arguments.get(3), (Program) arguments.get(4),
-					(While) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_SOLVE_CSP_CC__WHILE_BRANCH_ASSIGNMENT_PROGRAM_GRAPH_COMMAND_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((While) arguments.get(0), (Branch) arguments.get(1),
+					(Assignment) arguments.get(2), (Program) arguments.get(3), (Graph) arguments.get(4),
+					(Command) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___CHECK_DEC_FWD__ASSIGNMENT_PROGRAM_WHILE:
-			return checkDEC_FWD((Assignment) arguments.get(0), (Program) arguments.get(1), (While) arguments.get(2));
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___CHECK_DEC_BWD__GRAPH_BRANCH_COMMAND:
-			return checkDEC_BWD((Graph) arguments.get(0), (Branch) arguments.get(1), (Command) arguments.get(2));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___CHECK_DEC_FWD__WHILE_ASSIGNMENT_PROGRAM:
+			return checkDEC_FWD((While) arguments.get(0), (Assignment) arguments.get(1), (Program) arguments.get(2));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___CHECK_DEC_BWD__BRANCH_GRAPH_COMMAND:
+			return checkDEC_BWD((Branch) arguments.get(0), (Graph) arguments.get(1), (Command) arguments.get(2));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___GENERATE_MODEL__RULEENTRYCONTAINER_P2G:
 			return generateModel((RuleEntryContainer) arguments.get(0), (P2G) arguments.get(1));
-		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_GRAPH_P2G_PROGRAM_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Graph) arguments.get(1),
-					(P2G) arguments.get(2), (Program) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_P2G_PROGRAM_GRAPH_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (P2G) arguments.get(1),
+					(Program) arguments.get(2), (Graph) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.FIRSTUWHILE2ROOTUBRANCH___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1227,16 +1226,16 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_0_1_initialbindings_blackBBBBB(
-			firstuwhile2rootubranch _this, Match match, Assignment l, Program p, While w) {
-		return new Object[] { _this, match, l, p, w };
+			firstuwhile2rootubranch _this, Match match, While w, Assignment l, Program p) {
+		return new Object[] { _this, match, w, l, p };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_0_2_SolveCSP_bindingFBBBBB(
-			firstuwhile2rootubranch _this, Match match, Assignment l, Program p, While w) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, l, p, w);
+			firstuwhile2rootubranch _this, Match match, While w, Assignment l, Program p) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, w, l, p);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, l, p, w };
+			return new Object[] { csp, _this, match, w, l, p };
 		}
 		return null;
 	}
@@ -1246,9 +1245,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_0_2_SolveCSP_bindingAndBlackFBBBBB(
-			firstuwhile2rootubranch _this, Match match, Assignment l, Program p, While w) {
+			firstuwhile2rootubranch _this, Match match, While w, Assignment l, Program p) {
 		Object[] result_pattern_firstuwhile2rootubranch_0_2_SolveCSP_binding = pattern_firstuwhile2rootubranch_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, l, p, w);
+				_this, match, w, l, p);
 		if (result_pattern_firstuwhile2rootubranch_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_firstuwhile2rootubranch_0_2_SolveCSP_binding[0];
 
@@ -1256,7 +1255,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 					csp);
 			if (result_pattern_firstuwhile2rootubranch_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, l, p, w };
+				return new Object[] { csp, _this, match, w, l, p };
 			}
 		}
 		return null;
@@ -1270,38 +1269,38 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_0_4_collectelementstobetranslated_blackBBBB(
-			Match match, Assignment l, Program p, While w) {
-		return new Object[] { match, l, p, w };
+			Match match, While w, Assignment l, Program p) {
+		return new Object[] { match, w, l, p };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_0_4_collectelementstobetranslated_greenBBBBFFF(
-			Match match, Assignment l, Program p, While w) {
+			Match match, While w, Assignment l, Program p) {
+		EMoflonEdge w__l____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p__w____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge w__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge w__l____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(l);
 		match.getToBeTranslatedNodes().add(w);
+		match.getToBeTranslatedNodes().add(l);
+		String w__l____first_name_prime = "first";
 		String p__w____first_name_prime = "first";
 		String w__l____last_name_prime = "last";
-		String w__l____first_name_prime = "first";
+		w__l____first.setSrc(w);
+		w__l____first.setTrg(l);
+		match.getToBeTranslatedEdges().add(w__l____first);
 		p__w____first.setSrc(p);
 		p__w____first.setTrg(w);
 		match.getToBeTranslatedEdges().add(p__w____first);
 		w__l____last.setSrc(w);
 		w__l____last.setTrg(l);
 		match.getToBeTranslatedEdges().add(w__l____last);
-		w__l____first.setSrc(w);
-		w__l____first.setTrg(l);
-		match.getToBeTranslatedEdges().add(w__l____first);
+		w__l____first.setName(w__l____first_name_prime);
 		p__w____first.setName(p__w____first_name_prime);
 		w__l____last.setName(w__l____last_name_prime);
-		w__l____first.setName(w__l____first_name_prime);
-		return new Object[] { match, l, p, w, p__w____first, w__l____last, w__l____first };
+		return new Object[] { match, w, l, p, w__l____first, p__w____first, w__l____last };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_0_5_collectcontextelements_blackBBBB(Match match,
-			Assignment l, Program p, While w) {
-		return new Object[] { match, l, p, w };
+			While w, Assignment l, Program p) {
+		return new Object[] { match, w, l, p };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_0_5_collectcontextelements_greenBB(Match match,
@@ -1311,8 +1310,8 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final void pattern_firstuwhile2rootubranch_0_6_registerobjectstomatch_expressionBBBBB(
-			firstuwhile2rootubranch _this, Match match, Assignment l, Program p, While w) {
-		_this.registerObjectsToMatch_FWD(match, l, p, w);
+			firstuwhile2rootubranch _this, Match match, While w, Assignment l, Program p) {
+		_this.registerObjectsToMatch_FWD(match, w, l, p);
 
 	}
 
@@ -1328,27 +1327,27 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 
 	public static final Object[] pattern_firstuwhile2rootubranch_1_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("g");
-		EObject _localVariable_1 = isApplicableMatch.getObject("p2g");
+		EObject _localVariable_0 = isApplicableMatch.getObject("p2g");
+		EObject _localVariable_1 = isApplicableMatch.getObject("w");
 		EObject _localVariable_2 = isApplicableMatch.getObject("l");
 		EObject _localVariable_3 = isApplicableMatch.getObject("p");
-		EObject _localVariable_4 = isApplicableMatch.getObject("w");
-		EObject tmpG = _localVariable_0;
-		EObject tmpP2g = _localVariable_1;
+		EObject _localVariable_4 = isApplicableMatch.getObject("g");
+		EObject tmpP2g = _localVariable_0;
+		EObject tmpW = _localVariable_1;
 		EObject tmpL = _localVariable_2;
 		EObject tmpP = _localVariable_3;
-		EObject tmpW = _localVariable_4;
-		if (tmpG instanceof Graph) {
-			Graph g = (Graph) tmpG;
-			if (tmpP2g instanceof P2G) {
-				P2G p2g = (P2G) tmpP2g;
+		EObject tmpG = _localVariable_4;
+		if (tmpP2g instanceof P2G) {
+			P2G p2g = (P2G) tmpP2g;
+			if (tmpW instanceof While) {
+				While w = (While) tmpW;
 				if (tmpL instanceof Assignment) {
 					Assignment l = (Assignment) tmpL;
 					if (tmpP instanceof Program) {
 						Program p = (Program) tmpP;
-						if (tmpW instanceof While) {
-							While w = (While) tmpW;
-							return new Object[] { g, p2g, l, p, w, isApplicableMatch };
+						if (tmpG instanceof Graph) {
+							Graph g = (Graph) tmpG;
+							return new Object[] { p2g, w, l, p, g, isApplicableMatch };
 						}
 					}
 				}
@@ -1357,13 +1356,13 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_1_1_performtransformation_blackBBBBBFBB(Graph g,
-			P2G p2g, Assignment l, Program p, While w, firstuwhile2rootubranch _this,
+	public static final Object[] pattern_firstuwhile2rootubranch_1_1_performtransformation_blackBBBBBFBB(P2G p2g,
+			While w, Assignment l, Program p, Graph g, firstuwhile2rootubranch _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { g, p2g, l, p, w, csp, _this, isApplicableMatch };
+				return new Object[] { p2g, w, l, p, g, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1374,119 +1373,118 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		Object[] result_pattern_firstuwhile2rootubranch_1_1_performtransformation_binding = pattern_firstuwhile2rootubranch_1_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_firstuwhile2rootubranch_1_1_performtransformation_binding != null) {
-			Graph g = (Graph) result_pattern_firstuwhile2rootubranch_1_1_performtransformation_binding[0];
-			P2G p2g = (P2G) result_pattern_firstuwhile2rootubranch_1_1_performtransformation_binding[1];
+			P2G p2g = (P2G) result_pattern_firstuwhile2rootubranch_1_1_performtransformation_binding[0];
+			While w = (While) result_pattern_firstuwhile2rootubranch_1_1_performtransformation_binding[1];
 			Assignment l = (Assignment) result_pattern_firstuwhile2rootubranch_1_1_performtransformation_binding[2];
 			Program p = (Program) result_pattern_firstuwhile2rootubranch_1_1_performtransformation_binding[3];
-			While w = (While) result_pattern_firstuwhile2rootubranch_1_1_performtransformation_binding[4];
+			Graph g = (Graph) result_pattern_firstuwhile2rootubranch_1_1_performtransformation_binding[4];
 
 			Object[] result_pattern_firstuwhile2rootubranch_1_1_performtransformation_black = pattern_firstuwhile2rootubranch_1_1_performtransformation_blackBBBBBFBB(
-					g, p2g, l, p, w, _this, isApplicableMatch);
+					p2g, w, l, p, g, _this, isApplicableMatch);
 			if (result_pattern_firstuwhile2rootubranch_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_firstuwhile2rootubranch_1_1_performtransformation_black[5];
 
-				return new Object[] { g, p2g, l, p, w, csp, _this, isApplicableMatch };
+				return new Object[] { p2g, w, l, p, g, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_1_1_performtransformation_greenBFFFBFB(Graph g,
-			Assignment l, While w) {
-		Branch b = ControlflowFactory.eINSTANCE.createBranch();
+	public static final Object[] pattern_firstuwhile2rootubranch_1_1_performtransformation_greenFFBFBBF(While w,
+			Assignment l, Graph g) {
 		S2N l2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		S2B f2r = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
+		Branch b = ControlflowFactory.eINSTANCE.createBranch();
 		Command d = ControlflowFactory.eINSTANCE.createCommand();
-		g.setRoot(b);
 		l2d.setSource(l);
-		f2r.setTarget(b);
 		f2r.setSource(w);
+		f2r.setTarget(b);
+		g.setRoot(b);
 		b.setPositive(d);
 		l2d.setTarget(d);
 		d.setNext(b);
-		return new Object[] { g, b, l2d, f2r, l, d, w };
+		return new Object[] { l2d, f2r, w, b, l, g, d };
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_1_2_collecttranslatedelements_blackBBBBBB(Branch b,
-			S2N l2d, S2B f2r, Assignment l, Command d, While w) {
-		return new Object[] { b, l2d, f2r, l, d, w };
+	public static final Object[] pattern_firstuwhile2rootubranch_1_2_collecttranslatedelements_blackBBBBBB(S2N l2d,
+			S2B f2r, While w, Branch b, Assignment l, Command d) {
+		return new Object[] { l2d, f2r, w, b, l, d };
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_1_2_collecttranslatedelements_greenFBBBBBB(Branch b,
-			S2N l2d, S2B f2r, Assignment l, Command d, While w) {
+	public static final Object[] pattern_firstuwhile2rootubranch_1_2_collecttranslatedelements_greenFBBBBBB(S2N l2d,
+			S2B f2r, While w, Branch b, Assignment l, Command d) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(b);
 		ruleresult.getCreatedLinkElements().add(l2d);
 		ruleresult.getCreatedLinkElements().add(f2r);
+		ruleresult.getTranslatedElements().add(w);
+		ruleresult.getCreatedElements().add(b);
 		ruleresult.getTranslatedElements().add(l);
 		ruleresult.getCreatedElements().add(d);
-		ruleresult.getTranslatedElements().add(w);
-		return new Object[] { ruleresult, b, l2d, f2r, l, d, w };
+		return new Object[] { ruleresult, l2d, f2r, w, b, l, d };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject g, EObject p2g, EObject b, EObject l2d, EObject f2r, EObject l,
-			EObject d, EObject p, EObject w) {
-		if (!g.equals(p2g)) {
-			if (!g.equals(l2d)) {
-				if (!g.equals(l)) {
-					if (!g.equals(p)) {
-						if (!g.equals(w)) {
-							if (!p2g.equals(w)) {
-								if (!b.equals(g)) {
-									if (!b.equals(p2g)) {
-										if (!b.equals(l2d)) {
-											if (!b.equals(f2r)) {
-												if (!b.equals(l)) {
-													if (!b.equals(d)) {
-														if (!b.equals(p)) {
+			PerformRuleResult ruleresult, EObject l2d, EObject p2g, EObject f2r, EObject w, EObject b, EObject l,
+			EObject p, EObject g, EObject d) {
+		if (!l2d.equals(p2g)) {
+			if (!l2d.equals(w)) {
+				if (!l2d.equals(p)) {
+					if (!p2g.equals(w)) {
+						if (!f2r.equals(l2d)) {
+							if (!f2r.equals(p2g)) {
+								if (!f2r.equals(w)) {
+									if (!f2r.equals(l)) {
+										if (!f2r.equals(p)) {
+											if (!f2r.equals(g)) {
+												if (!b.equals(l2d)) {
+													if (!b.equals(p2g)) {
+														if (!b.equals(f2r)) {
 															if (!b.equals(w)) {
-																if (!l2d.equals(p2g)) {
-																	if (!l2d.equals(p)) {
-																		if (!l2d.equals(w)) {
-																			if (!f2r.equals(g)) {
-																				if (!f2r.equals(p2g)) {
-																					if (!f2r.equals(l2d)) {
-																						if (!f2r.equals(l)) {
-																							if (!f2r.equals(p)) {
-																								if (!f2r.equals(w)) {
-																									if (!l.equals(
-																											p2g)) {
-																										if (!l.equals(
+																if (!b.equals(l)) {
+																	if (!b.equals(p)) {
+																		if (!b.equals(g)) {
+																			if (!b.equals(d)) {
+																				if (!l.equals(l2d)) {
+																					if (!l.equals(p2g)) {
+																						if (!l.equals(w)) {
+																							if (!l.equals(p)) {
+																								if (!p.equals(p2g)) {
+																									if (!p.equals(w)) {
+																										if (!g.equals(
 																												l2d)) {
-																											if (!l.equals(
-																													p)) {
-																												if (!l.equals(
+																											if (!g.equals(
+																													p2g)) {
+																												if (!g.equals(
 																														w)) {
-																													if (!d.equals(
-																															g)) {
-																														if (!d.equals(
-																																p2g)) {
+																													if (!g.equals(
+																															l)) {
+																														if (!g.equals(
+																																p)) {
 																															if (!d.equals(
 																																	l2d)) {
 																																if (!d.equals(
-																																		f2r)) {
+																																		p2g)) {
 																																	if (!d.equals(
-																																			l)) {
+																																			f2r)) {
 																																		if (!d.equals(
-																																				p)) {
+																																				w)) {
 																																			if (!d.equals(
-																																					w)) {
-																																				if (!p.equals(
-																																						p2g)) {
-																																					if (!p.equals(
-																																							w)) {
+																																					l)) {
+																																				if (!d.equals(
+																																						p)) {
+																																					if (!d.equals(
+																																							g)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								g,
-																																								p2g,
-																																								b,
 																																								l2d,
+																																								p2g,
 																																								f2r,
+																																								w,
+																																								b,
 																																								l,
-																																								d,
 																																								p,
-																																								w };
+																																								g,
+																																								d };
 																																					}
 																																				}
 																																			}
@@ -1527,79 +1525,79 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject g, EObject b, EObject l2d, EObject f2r, EObject l, EObject d,
-			EObject p, EObject w) {
-		EMoflonEdge b__d____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject l2d, EObject f2r, EObject w, EObject b, EObject l, EObject p,
+			EObject g, EObject d) {
 		EMoflonEdge f2r__b____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge l2d__l____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge w__l____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge f2r__w____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p__w____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge w__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b__d____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge l2d__l____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge g__b____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge l2d__d____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge d__b____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge f2r__w____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge g__b____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge w__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge w__l____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "firstuwhile2rootubranch";
-		String b__d____positive_name_prime = "positive";
 		String f2r__b____target_name_prime = "target";
-		String l2d__l____source_name_prime = "source";
+		String w__l____first_name_prime = "first";
+		String f2r__w____source_name_prime = "source";
 		String p__w____first_name_prime = "first";
+		String w__l____last_name_prime = "last";
+		String b__d____positive_name_prime = "positive";
+		String l2d__l____source_name_prime = "source";
+		String g__b____root_name_prime = "root";
 		String l2d__d____target_name_prime = "target";
 		String d__b____next_name_prime = "next";
-		String f2r__w____source_name_prime = "source";
-		String g__b____root_name_prime = "root";
-		String w__l____last_name_prime = "last";
-		String w__l____first_name_prime = "first";
-		b__d____positive.setSrc(b);
-		b__d____positive.setTrg(d);
-		ruleresult.getCreatedEdges().add(b__d____positive);
 		f2r__b____target.setSrc(f2r);
 		f2r__b____target.setTrg(b);
 		ruleresult.getCreatedEdges().add(f2r__b____target);
-		l2d__l____source.setSrc(l2d);
-		l2d__l____source.setTrg(l);
-		ruleresult.getCreatedEdges().add(l2d__l____source);
+		w__l____first.setSrc(w);
+		w__l____first.setTrg(l);
+		ruleresult.getTranslatedEdges().add(w__l____first);
+		f2r__w____source.setSrc(f2r);
+		f2r__w____source.setTrg(w);
+		ruleresult.getCreatedEdges().add(f2r__w____source);
 		p__w____first.setSrc(p);
 		p__w____first.setTrg(w);
 		ruleresult.getTranslatedEdges().add(p__w____first);
+		w__l____last.setSrc(w);
+		w__l____last.setTrg(l);
+		ruleresult.getTranslatedEdges().add(w__l____last);
+		b__d____positive.setSrc(b);
+		b__d____positive.setTrg(d);
+		ruleresult.getCreatedEdges().add(b__d____positive);
+		l2d__l____source.setSrc(l2d);
+		l2d__l____source.setTrg(l);
+		ruleresult.getCreatedEdges().add(l2d__l____source);
+		g__b____root.setSrc(g);
+		g__b____root.setTrg(b);
+		ruleresult.getCreatedEdges().add(g__b____root);
 		l2d__d____target.setSrc(l2d);
 		l2d__d____target.setTrg(d);
 		ruleresult.getCreatedEdges().add(l2d__d____target);
 		d__b____next.setSrc(d);
 		d__b____next.setTrg(b);
 		ruleresult.getCreatedEdges().add(d__b____next);
-		f2r__w____source.setSrc(f2r);
-		f2r__w____source.setTrg(w);
-		ruleresult.getCreatedEdges().add(f2r__w____source);
-		g__b____root.setSrc(g);
-		g__b____root.setTrg(b);
-		ruleresult.getCreatedEdges().add(g__b____root);
-		w__l____last.setSrc(w);
-		w__l____last.setTrg(l);
-		ruleresult.getTranslatedEdges().add(w__l____last);
-		w__l____first.setSrc(w);
-		w__l____first.setTrg(l);
-		ruleresult.getTranslatedEdges().add(w__l____first);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b__d____positive.setName(b__d____positive_name_prime);
 		f2r__b____target.setName(f2r__b____target_name_prime);
-		l2d__l____source.setName(l2d__l____source_name_prime);
+		w__l____first.setName(w__l____first_name_prime);
+		f2r__w____source.setName(f2r__w____source_name_prime);
 		p__w____first.setName(p__w____first_name_prime);
+		w__l____last.setName(w__l____last_name_prime);
+		b__d____positive.setName(b__d____positive_name_prime);
+		l2d__l____source.setName(l2d__l____source_name_prime);
+		g__b____root.setName(g__b____root_name_prime);
 		l2d__d____target.setName(l2d__d____target_name_prime);
 		d__b____next.setName(d__b____next_name_prime);
-		f2r__w____source.setName(f2r__w____source_name_prime);
-		g__b____root.setName(g__b____root_name_prime);
-		w__l____last.setName(w__l____last_name_prime);
-		w__l____first.setName(w__l____first_name_prime);
-		return new Object[] { ruleresult, g, b, l2d, f2r, l, d, p, w, b__d____positive, f2r__b____target,
-				l2d__l____source, p__w____first, l2d__d____target, d__b____next, f2r__w____source, g__b____root,
-				w__l____last, w__l____first };
+		return new Object[] { ruleresult, l2d, f2r, w, b, l, p, g, d, f2r__b____target, w__l____first, f2r__w____source,
+				p__w____first, w__l____last, b__d____positive, l2d__l____source, g__b____root, l2d__d____target,
+				d__b____next };
 	}
 
 	public static final void pattern_firstuwhile2rootubranch_1_5_registerobjects_expressionBBBBBBBBBBB(
-			firstuwhile2rootubranch _this, PerformRuleResult ruleresult, EObject g, EObject p2g, EObject b, EObject l2d,
-			EObject f2r, EObject l, EObject d, EObject p, EObject w) {
-		_this.registerObjects_FWD(ruleresult, g, p2g, b, l2d, f2r, l, d, p, w);
+			firstuwhile2rootubranch _this, PerformRuleResult ruleresult, EObject l2d, EObject p2g, EObject f2r,
+			EObject w, EObject b, EObject l, EObject p, EObject g, EObject d) {
+		_this.registerObjects_FWD(ruleresult, l2d, p2g, f2r, w, b, l, p, g, d);
 
 	}
 
@@ -1661,47 +1659,47 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_2_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("l");
-		EObject _localVariable_1 = match.getObject("p");
-		EObject _localVariable_2 = match.getObject("w");
-		EObject tmpL = _localVariable_0;
-		EObject tmpP = _localVariable_1;
-		EObject tmpW = _localVariable_2;
-		if (tmpL instanceof Assignment) {
-			Assignment l = (Assignment) tmpL;
-			if (tmpP instanceof Program) {
-				Program p = (Program) tmpP;
-				if (tmpW instanceof While) {
-					While w = (While) tmpW;
-					return new Object[] { l, p, w, match };
+		EObject _localVariable_0 = match.getObject("w");
+		EObject _localVariable_1 = match.getObject("l");
+		EObject _localVariable_2 = match.getObject("p");
+		EObject tmpW = _localVariable_0;
+		EObject tmpL = _localVariable_1;
+		EObject tmpP = _localVariable_2;
+		if (tmpW instanceof While) {
+			While w = (While) tmpW;
+			if (tmpL instanceof Assignment) {
+				Assignment l = (Assignment) tmpL;
+				if (tmpP instanceof Program) {
+					Program p = (Program) tmpP;
+					return new Object[] { w, l, p, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_firstuwhile2rootubranch_2_2_corematch_blackFFBBBB(Assignment l,
-			Program p, While w, Match match) {
+	public static final Iterable<Object[]> pattern_firstuwhile2rootubranch_2_2_corematch_blackFBBBFB(While w,
+			Assignment l, Program p, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (P2G p2g : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(p, P2G.class, "source")) {
 			Graph g = p2g.getTarget();
 			if (g != null) {
-				_result.add(new Object[] { g, p2g, l, p, w, match });
+				_result.add(new Object[] { p2g, w, l, p, g, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_firstuwhile2rootubranch_2_3_findcontext_blackBBBBB(Graph g, P2G p2g,
-			Assignment l, Program p, While w) {
+	public static final Iterable<Object[]> pattern_firstuwhile2rootubranch_2_3_findcontext_blackBBBBB(P2G p2g, While w,
+			Assignment l, Program p, Graph g) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (p.equals(p2g.getSource())) {
+		if (l.equals(w.getFirst())) {
 			if (w.equals(p.getFirst())) {
-				if (g.equals(p2g.getTarget())) {
-					if (l.equals(w.getLast())) {
-						if (l.equals(w.getFirst())) {
-							_result.add(new Object[] { g, p2g, l, p, w });
+				if (l.equals(w.getLast())) {
+					if (g.equals(p2g.getTarget())) {
+						if (p.equals(p2g.getSource())) {
+							_result.add(new Object[] { p2g, w, l, p, g });
 						}
 					}
 				}
@@ -1710,55 +1708,55 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return _result;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_2_3_findcontext_greenBBBBBFFFFFF(Graph g, P2G p2g,
-			Assignment l, Program p, While w) {
+	public static final Object[] pattern_firstuwhile2rootubranch_2_3_findcontext_greenBBBBBFFFFFF(P2G p2g, While w,
+			Assignment l, Program p, Graph g) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge p__w____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge p2g__g____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge w__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge w__l____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String p2g__p____source_name_prime = "source";
-		String p__w____first_name_prime = "first";
-		String p2g__g____target_name_prime = "target";
-		String w__l____last_name_prime = "last";
+		EMoflonEdge p__w____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge w__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge p2g__g____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String w__l____first_name_prime = "first";
-		isApplicableMatch.getAllContextElements().add(g);
+		String p__w____first_name_prime = "first";
+		String w__l____last_name_prime = "last";
+		String p2g__g____target_name_prime = "target";
+		String p2g__p____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(p2g);
+		isApplicableMatch.getAllContextElements().add(w);
 		isApplicableMatch.getAllContextElements().add(l);
 		isApplicableMatch.getAllContextElements().add(p);
-		isApplicableMatch.getAllContextElements().add(w);
-		p2g__p____source.setSrc(p2g);
-		p2g__p____source.setTrg(p);
-		isApplicableMatch.getAllContextElements().add(p2g__p____source);
-		p__w____first.setSrc(p);
-		p__w____first.setTrg(w);
-		isApplicableMatch.getAllContextElements().add(p__w____first);
-		p2g__g____target.setSrc(p2g);
-		p2g__g____target.setTrg(g);
-		isApplicableMatch.getAllContextElements().add(p2g__g____target);
-		w__l____last.setSrc(w);
-		w__l____last.setTrg(l);
-		isApplicableMatch.getAllContextElements().add(w__l____last);
+		isApplicableMatch.getAllContextElements().add(g);
 		w__l____first.setSrc(w);
 		w__l____first.setTrg(l);
 		isApplicableMatch.getAllContextElements().add(w__l____first);
-		p2g__p____source.setName(p2g__p____source_name_prime);
-		p__w____first.setName(p__w____first_name_prime);
-		p2g__g____target.setName(p2g__g____target_name_prime);
-		w__l____last.setName(w__l____last_name_prime);
+		p__w____first.setSrc(p);
+		p__w____first.setTrg(w);
+		isApplicableMatch.getAllContextElements().add(p__w____first);
+		w__l____last.setSrc(w);
+		w__l____last.setTrg(l);
+		isApplicableMatch.getAllContextElements().add(w__l____last);
+		p2g__g____target.setSrc(p2g);
+		p2g__g____target.setTrg(g);
+		isApplicableMatch.getAllContextElements().add(p2g__g____target);
+		p2g__p____source.setSrc(p2g);
+		p2g__p____source.setTrg(p);
+		isApplicableMatch.getAllContextElements().add(p2g__p____source);
 		w__l____first.setName(w__l____first_name_prime);
-		return new Object[] { g, p2g, l, p, w, isApplicableMatch, p2g__p____source, p__w____first, p2g__g____target,
-				w__l____last, w__l____first };
+		p__w____first.setName(p__w____first_name_prime);
+		w__l____last.setName(w__l____last_name_prime);
+		p2g__g____target.setName(p2g__g____target_name_prime);
+		p2g__p____source.setName(p2g__p____source_name_prime);
+		return new Object[] { p2g, w, l, p, g, isApplicableMatch, w__l____first, p__w____first, w__l____last,
+				p2g__g____target, p2g__p____source };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_2_4_solveCSP_bindingFBBBBBBB(
-			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Assignment l,
-			Program p, While w) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, g, p2g, l, p, w);
+			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, P2G p2g, While w, Assignment l,
+			Program p, Graph g) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, p2g, w, l, p, g);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, g, p2g, l, p, w };
+			return new Object[] { csp, _this, isApplicableMatch, p2g, w, l, p, g };
 		}
 		return null;
 	}
@@ -1768,10 +1766,10 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_2_4_solveCSP_bindingAndBlackFBBBBBBB(
-			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Assignment l,
-			Program p, While w) {
+			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, P2G p2g, While w, Assignment l,
+			Program p, Graph g) {
 		Object[] result_pattern_firstuwhile2rootubranch_2_4_solveCSP_binding = pattern_firstuwhile2rootubranch_2_4_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, g, p2g, l, p, w);
+				_this, isApplicableMatch, p2g, w, l, p, g);
 		if (result_pattern_firstuwhile2rootubranch_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_firstuwhile2rootubranch_2_4_solveCSP_binding[0];
 
@@ -1779,7 +1777,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 					csp);
 			if (result_pattern_firstuwhile2rootubranch_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, g, p2g, l, p, w };
+				return new Object[] { csp, _this, isApplicableMatch, p2g, w, l, p, g };
 			}
 		}
 		return null;
@@ -1814,16 +1812,16 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_10_1_initialbindings_blackBBBBB(
-			firstuwhile2rootubranch _this, Match match, Graph g, Branch b, Command d) {
-		return new Object[] { _this, match, g, b, d };
+			firstuwhile2rootubranch _this, Match match, Branch b, Graph g, Command d) {
+		return new Object[] { _this, match, b, g, d };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_10_2_SolveCSP_bindingFBBBBB(
-			firstuwhile2rootubranch _this, Match match, Graph g, Branch b, Command d) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, g, b, d);
+			firstuwhile2rootubranch _this, Match match, Branch b, Graph g, Command d) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, b, g, d);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, g, b, d };
+			return new Object[] { csp, _this, match, b, g, d };
 		}
 		return null;
 	}
@@ -1833,9 +1831,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_10_2_SolveCSP_bindingAndBlackFBBBBB(
-			firstuwhile2rootubranch _this, Match match, Graph g, Branch b, Command d) {
+			firstuwhile2rootubranch _this, Match match, Branch b, Graph g, Command d) {
 		Object[] result_pattern_firstuwhile2rootubranch_10_2_SolveCSP_binding = pattern_firstuwhile2rootubranch_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, g, b, d);
+				_this, match, b, g, d);
 		if (result_pattern_firstuwhile2rootubranch_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_firstuwhile2rootubranch_10_2_SolveCSP_binding[0];
 
@@ -1843,7 +1841,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 					csp);
 			if (result_pattern_firstuwhile2rootubranch_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, g, b, d };
+				return new Object[] { csp, _this, match, b, g, d };
 			}
 		}
 		return null;
@@ -1857,38 +1855,38 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_10_4_collectelementstobetranslated_blackBBBB(
-			Match match, Graph g, Branch b, Command d) {
-		return new Object[] { match, g, b, d };
+			Match match, Branch b, Graph g, Command d) {
+		return new Object[] { match, b, g, d };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_10_4_collectelementstobetranslated_greenBBBBFFF(
-			Match match, Graph g, Branch b, Command d) {
+			Match match, Branch b, Graph g, Command d) {
 		EMoflonEdge b__d____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge d__b____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge g__b____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge d__b____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(b);
 		match.getToBeTranslatedNodes().add(d);
 		String b__d____positive_name_prime = "positive";
-		String d__b____next_name_prime = "next";
 		String g__b____root_name_prime = "root";
+		String d__b____next_name_prime = "next";
 		b__d____positive.setSrc(b);
 		b__d____positive.setTrg(d);
 		match.getToBeTranslatedEdges().add(b__d____positive);
-		d__b____next.setSrc(d);
-		d__b____next.setTrg(b);
-		match.getToBeTranslatedEdges().add(d__b____next);
 		g__b____root.setSrc(g);
 		g__b____root.setTrg(b);
 		match.getToBeTranslatedEdges().add(g__b____root);
+		d__b____next.setSrc(d);
+		d__b____next.setTrg(b);
+		match.getToBeTranslatedEdges().add(d__b____next);
 		b__d____positive.setName(b__d____positive_name_prime);
-		d__b____next.setName(d__b____next_name_prime);
 		g__b____root.setName(g__b____root_name_prime);
-		return new Object[] { match, g, b, d, b__d____positive, d__b____next, g__b____root };
+		d__b____next.setName(d__b____next_name_prime);
+		return new Object[] { match, b, g, d, b__d____positive, g__b____root, d__b____next };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_10_5_collectcontextelements_blackBBBB(Match match,
-			Graph g, Branch b, Command d) {
-		return new Object[] { match, g, b, d };
+			Branch b, Graph g, Command d) {
+		return new Object[] { match, b, g, d };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_10_5_collectcontextelements_greenBB(Match match,
@@ -1898,8 +1896,8 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final void pattern_firstuwhile2rootubranch_10_6_registerobjectstomatch_expressionBBBBB(
-			firstuwhile2rootubranch _this, Match match, Graph g, Branch b, Command d) {
-		_this.registerObjectsToMatch_BWD(match, g, b, d);
+			firstuwhile2rootubranch _this, Match match, Branch b, Graph g, Command d) {
+		_this.registerObjectsToMatch_BWD(match, b, g, d);
 
 	}
 
@@ -1915,27 +1913,27 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 
 	public static final Object[] pattern_firstuwhile2rootubranch_11_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("g");
-		EObject _localVariable_1 = isApplicableMatch.getObject("p2g");
-		EObject _localVariable_2 = isApplicableMatch.getObject("b");
-		EObject _localVariable_3 = isApplicableMatch.getObject("d");
-		EObject _localVariable_4 = isApplicableMatch.getObject("p");
-		EObject tmpG = _localVariable_0;
-		EObject tmpP2g = _localVariable_1;
-		EObject tmpB = _localVariable_2;
-		EObject tmpD = _localVariable_3;
-		EObject tmpP = _localVariable_4;
-		if (tmpG instanceof Graph) {
-			Graph g = (Graph) tmpG;
-			if (tmpP2g instanceof P2G) {
-				P2G p2g = (P2G) tmpP2g;
-				if (tmpB instanceof Branch) {
-					Branch b = (Branch) tmpB;
-					if (tmpD instanceof Command) {
-						Command d = (Command) tmpD;
-						if (tmpP instanceof Program) {
-							Program p = (Program) tmpP;
-							return new Object[] { g, p2g, b, d, p, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("p2g");
+		EObject _localVariable_1 = isApplicableMatch.getObject("b");
+		EObject _localVariable_2 = isApplicableMatch.getObject("p");
+		EObject _localVariable_3 = isApplicableMatch.getObject("g");
+		EObject _localVariable_4 = isApplicableMatch.getObject("d");
+		EObject tmpP2g = _localVariable_0;
+		EObject tmpB = _localVariable_1;
+		EObject tmpP = _localVariable_2;
+		EObject tmpG = _localVariable_3;
+		EObject tmpD = _localVariable_4;
+		if (tmpP2g instanceof P2G) {
+			P2G p2g = (P2G) tmpP2g;
+			if (tmpB instanceof Branch) {
+				Branch b = (Branch) tmpB;
+				if (tmpP instanceof Program) {
+					Program p = (Program) tmpP;
+					if (tmpG instanceof Graph) {
+						Graph g = (Graph) tmpG;
+						if (tmpD instanceof Command) {
+							Command d = (Command) tmpD;
+							return new Object[] { p2g, b, p, g, d, isApplicableMatch };
 						}
 					}
 				}
@@ -1944,13 +1942,13 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_11_1_performtransformation_blackBBBBBFBB(Graph g,
-			P2G p2g, Branch b, Command d, Program p, firstuwhile2rootubranch _this,
+	public static final Object[] pattern_firstuwhile2rootubranch_11_1_performtransformation_blackBBBBBFBB(P2G p2g,
+			Branch b, Program p, Graph g, Command d, firstuwhile2rootubranch _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { g, p2g, b, d, p, csp, _this, isApplicableMatch };
+				return new Object[] { p2g, b, p, g, d, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1961,119 +1959,118 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		Object[] result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding = pattern_firstuwhile2rootubranch_11_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding != null) {
-			Graph g = (Graph) result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding[0];
-			P2G p2g = (P2G) result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding[1];
-			Branch b = (Branch) result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding[2];
-			Command d = (Command) result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding[3];
-			Program p = (Program) result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding[4];
+			P2G p2g = (P2G) result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding[0];
+			Branch b = (Branch) result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding[1];
+			Program p = (Program) result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding[2];
+			Graph g = (Graph) result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding[3];
+			Command d = (Command) result_pattern_firstuwhile2rootubranch_11_1_performtransformation_binding[4];
 
 			Object[] result_pattern_firstuwhile2rootubranch_11_1_performtransformation_black = pattern_firstuwhile2rootubranch_11_1_performtransformation_blackBBBBBFBB(
-					g, p2g, b, d, p, _this, isApplicableMatch);
+					p2g, b, p, g, d, _this, isApplicableMatch);
 			if (result_pattern_firstuwhile2rootubranch_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_firstuwhile2rootubranch_11_1_performtransformation_black[5];
 
-				return new Object[] { g, p2g, b, d, p, csp, _this, isApplicableMatch };
+				return new Object[] { p2g, b, p, g, d, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_11_1_performtransformation_greenBFFFBBF(Branch b,
-			Command d, Program p) {
+	public static final Object[] pattern_firstuwhile2rootubranch_11_1_performtransformation_greenFFFBFBB(Branch b,
+			Program p, Command d) {
 		S2N l2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		S2B f2r = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
-		Assignment l = SourcecodeFactory.eINSTANCE.createAssignment();
 		While w = SourcecodeFactory.eINSTANCE.createWhile();
+		Assignment l = SourcecodeFactory.eINSTANCE.createAssignment();
 		l2d.setTarget(d);
 		f2r.setTarget(b);
-		l2d.setSource(l);
-		p.setFirst(w);
 		f2r.setSource(w);
-		w.setLast(l);
+		p.setFirst(w);
 		w.setFirst(l);
-		return new Object[] { b, l2d, f2r, l, d, p, w };
+		w.setLast(l);
+		l2d.setSource(l);
+		return new Object[] { l2d, f2r, w, b, l, p, d };
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_11_2_collecttranslatedelements_blackBBBBBB(Branch b,
-			S2N l2d, S2B f2r, Assignment l, Command d, While w) {
-		return new Object[] { b, l2d, f2r, l, d, w };
+	public static final Object[] pattern_firstuwhile2rootubranch_11_2_collecttranslatedelements_blackBBBBBB(S2N l2d,
+			S2B f2r, While w, Branch b, Assignment l, Command d) {
+		return new Object[] { l2d, f2r, w, b, l, d };
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_11_2_collecttranslatedelements_greenFBBBBBB(Branch b,
-			S2N l2d, S2B f2r, Assignment l, Command d, While w) {
+	public static final Object[] pattern_firstuwhile2rootubranch_11_2_collecttranslatedelements_greenFBBBBBB(S2N l2d,
+			S2B f2r, While w, Branch b, Assignment l, Command d) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(b);
 		ruleresult.getCreatedLinkElements().add(l2d);
 		ruleresult.getCreatedLinkElements().add(f2r);
+		ruleresult.getCreatedElements().add(w);
+		ruleresult.getTranslatedElements().add(b);
 		ruleresult.getCreatedElements().add(l);
 		ruleresult.getTranslatedElements().add(d);
-		ruleresult.getCreatedElements().add(w);
-		return new Object[] { ruleresult, b, l2d, f2r, l, d, w };
+		return new Object[] { ruleresult, l2d, f2r, w, b, l, d };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject g, EObject p2g, EObject b, EObject l2d, EObject f2r, EObject l,
-			EObject d, EObject p, EObject w) {
-		if (!g.equals(p2g)) {
-			if (!g.equals(l2d)) {
-				if (!g.equals(l)) {
-					if (!g.equals(p)) {
-						if (!g.equals(w)) {
-							if (!p2g.equals(w)) {
-								if (!b.equals(g)) {
-									if (!b.equals(p2g)) {
-										if (!b.equals(l2d)) {
-											if (!b.equals(f2r)) {
-												if (!b.equals(l)) {
-													if (!b.equals(d)) {
-														if (!b.equals(p)) {
+			PerformRuleResult ruleresult, EObject l2d, EObject p2g, EObject f2r, EObject w, EObject b, EObject l,
+			EObject p, EObject g, EObject d) {
+		if (!l2d.equals(p2g)) {
+			if (!l2d.equals(w)) {
+				if (!l2d.equals(p)) {
+					if (!p2g.equals(w)) {
+						if (!f2r.equals(l2d)) {
+							if (!f2r.equals(p2g)) {
+								if (!f2r.equals(w)) {
+									if (!f2r.equals(l)) {
+										if (!f2r.equals(p)) {
+											if (!f2r.equals(g)) {
+												if (!b.equals(l2d)) {
+													if (!b.equals(p2g)) {
+														if (!b.equals(f2r)) {
 															if (!b.equals(w)) {
-																if (!l2d.equals(p2g)) {
-																	if (!l2d.equals(p)) {
-																		if (!l2d.equals(w)) {
-																			if (!f2r.equals(g)) {
-																				if (!f2r.equals(p2g)) {
-																					if (!f2r.equals(l2d)) {
-																						if (!f2r.equals(l)) {
-																							if (!f2r.equals(p)) {
-																								if (!f2r.equals(w)) {
-																									if (!l.equals(
-																											p2g)) {
-																										if (!l.equals(
+																if (!b.equals(l)) {
+																	if (!b.equals(p)) {
+																		if (!b.equals(g)) {
+																			if (!b.equals(d)) {
+																				if (!l.equals(l2d)) {
+																					if (!l.equals(p2g)) {
+																						if (!l.equals(w)) {
+																							if (!l.equals(p)) {
+																								if (!p.equals(p2g)) {
+																									if (!p.equals(w)) {
+																										if (!g.equals(
 																												l2d)) {
-																											if (!l.equals(
-																													p)) {
-																												if (!l.equals(
+																											if (!g.equals(
+																													p2g)) {
+																												if (!g.equals(
 																														w)) {
-																													if (!d.equals(
-																															g)) {
-																														if (!d.equals(
-																																p2g)) {
+																													if (!g.equals(
+																															l)) {
+																														if (!g.equals(
+																																p)) {
 																															if (!d.equals(
 																																	l2d)) {
 																																if (!d.equals(
-																																		f2r)) {
+																																		p2g)) {
 																																	if (!d.equals(
-																																			l)) {
+																																			f2r)) {
 																																		if (!d.equals(
-																																				p)) {
+																																				w)) {
 																																			if (!d.equals(
-																																					w)) {
-																																				if (!p.equals(
-																																						p2g)) {
-																																					if (!p.equals(
-																																							w)) {
+																																					l)) {
+																																				if (!d.equals(
+																																						p)) {
+																																					if (!d.equals(
+																																							g)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								g,
-																																								p2g,
-																																								b,
 																																								l2d,
+																																								p2g,
 																																								f2r,
+																																								w,
+																																								b,
 																																								l,
-																																								d,
 																																								p,
-																																								w };
+																																								g,
+																																								d };
 																																					}
 																																				}
 																																			}
@@ -2114,79 +2111,79 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject g, EObject b, EObject l2d, EObject f2r, EObject l, EObject d,
-			EObject p, EObject w) {
-		EMoflonEdge b__d____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject l2d, EObject f2r, EObject w, EObject b, EObject l, EObject p,
+			EObject g, EObject d) {
 		EMoflonEdge f2r__b____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge l2d__l____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge w__l____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge f2r__w____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p__w____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge w__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b__d____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge l2d__l____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge g__b____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge l2d__d____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge d__b____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge f2r__w____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge g__b____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge w__l____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge w__l____first = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "firstuwhile2rootubranch";
-		String b__d____positive_name_prime = "positive";
 		String f2r__b____target_name_prime = "target";
-		String l2d__l____source_name_prime = "source";
+		String w__l____first_name_prime = "first";
+		String f2r__w____source_name_prime = "source";
 		String p__w____first_name_prime = "first";
+		String w__l____last_name_prime = "last";
+		String b__d____positive_name_prime = "positive";
+		String l2d__l____source_name_prime = "source";
+		String g__b____root_name_prime = "root";
 		String l2d__d____target_name_prime = "target";
 		String d__b____next_name_prime = "next";
-		String f2r__w____source_name_prime = "source";
-		String g__b____root_name_prime = "root";
-		String w__l____last_name_prime = "last";
-		String w__l____first_name_prime = "first";
-		b__d____positive.setSrc(b);
-		b__d____positive.setTrg(d);
-		ruleresult.getTranslatedEdges().add(b__d____positive);
 		f2r__b____target.setSrc(f2r);
 		f2r__b____target.setTrg(b);
 		ruleresult.getCreatedEdges().add(f2r__b____target);
-		l2d__l____source.setSrc(l2d);
-		l2d__l____source.setTrg(l);
-		ruleresult.getCreatedEdges().add(l2d__l____source);
+		w__l____first.setSrc(w);
+		w__l____first.setTrg(l);
+		ruleresult.getCreatedEdges().add(w__l____first);
+		f2r__w____source.setSrc(f2r);
+		f2r__w____source.setTrg(w);
+		ruleresult.getCreatedEdges().add(f2r__w____source);
 		p__w____first.setSrc(p);
 		p__w____first.setTrg(w);
 		ruleresult.getCreatedEdges().add(p__w____first);
+		w__l____last.setSrc(w);
+		w__l____last.setTrg(l);
+		ruleresult.getCreatedEdges().add(w__l____last);
+		b__d____positive.setSrc(b);
+		b__d____positive.setTrg(d);
+		ruleresult.getTranslatedEdges().add(b__d____positive);
+		l2d__l____source.setSrc(l2d);
+		l2d__l____source.setTrg(l);
+		ruleresult.getCreatedEdges().add(l2d__l____source);
+		g__b____root.setSrc(g);
+		g__b____root.setTrg(b);
+		ruleresult.getTranslatedEdges().add(g__b____root);
 		l2d__d____target.setSrc(l2d);
 		l2d__d____target.setTrg(d);
 		ruleresult.getCreatedEdges().add(l2d__d____target);
 		d__b____next.setSrc(d);
 		d__b____next.setTrg(b);
 		ruleresult.getTranslatedEdges().add(d__b____next);
-		f2r__w____source.setSrc(f2r);
-		f2r__w____source.setTrg(w);
-		ruleresult.getCreatedEdges().add(f2r__w____source);
-		g__b____root.setSrc(g);
-		g__b____root.setTrg(b);
-		ruleresult.getTranslatedEdges().add(g__b____root);
-		w__l____last.setSrc(w);
-		w__l____last.setTrg(l);
-		ruleresult.getCreatedEdges().add(w__l____last);
-		w__l____first.setSrc(w);
-		w__l____first.setTrg(l);
-		ruleresult.getCreatedEdges().add(w__l____first);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b__d____positive.setName(b__d____positive_name_prime);
 		f2r__b____target.setName(f2r__b____target_name_prime);
-		l2d__l____source.setName(l2d__l____source_name_prime);
+		w__l____first.setName(w__l____first_name_prime);
+		f2r__w____source.setName(f2r__w____source_name_prime);
 		p__w____first.setName(p__w____first_name_prime);
+		w__l____last.setName(w__l____last_name_prime);
+		b__d____positive.setName(b__d____positive_name_prime);
+		l2d__l____source.setName(l2d__l____source_name_prime);
+		g__b____root.setName(g__b____root_name_prime);
 		l2d__d____target.setName(l2d__d____target_name_prime);
 		d__b____next.setName(d__b____next_name_prime);
-		f2r__w____source.setName(f2r__w____source_name_prime);
-		g__b____root.setName(g__b____root_name_prime);
-		w__l____last.setName(w__l____last_name_prime);
-		w__l____first.setName(w__l____first_name_prime);
-		return new Object[] { ruleresult, g, b, l2d, f2r, l, d, p, w, b__d____positive, f2r__b____target,
-				l2d__l____source, p__w____first, l2d__d____target, d__b____next, f2r__w____source, g__b____root,
-				w__l____last, w__l____first };
+		return new Object[] { ruleresult, l2d, f2r, w, b, l, p, g, d, f2r__b____target, w__l____first, f2r__w____source,
+				p__w____first, w__l____last, b__d____positive, l2d__l____source, g__b____root, l2d__d____target,
+				d__b____next };
 	}
 
 	public static final void pattern_firstuwhile2rootubranch_11_5_registerobjects_expressionBBBBBBBBBBB(
-			firstuwhile2rootubranch _this, PerformRuleResult ruleresult, EObject g, EObject p2g, EObject b, EObject l2d,
-			EObject f2r, EObject l, EObject d, EObject p, EObject w) {
-		_this.registerObjects_BWD(ruleresult, g, p2g, b, l2d, f2r, l, d, p, w);
+			firstuwhile2rootubranch _this, PerformRuleResult ruleresult, EObject l2d, EObject p2g, EObject f2r,
+			EObject w, EObject b, EObject l, EObject p, EObject g, EObject d) {
+		_this.registerObjects_BWD(ruleresult, l2d, p2g, f2r, w, b, l, p, g, d);
 
 	}
 
@@ -2248,47 +2245,47 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_12_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("g");
-		EObject _localVariable_1 = match.getObject("b");
+		EObject _localVariable_0 = match.getObject("b");
+		EObject _localVariable_1 = match.getObject("g");
 		EObject _localVariable_2 = match.getObject("d");
-		EObject tmpG = _localVariable_0;
-		EObject tmpB = _localVariable_1;
+		EObject tmpB = _localVariable_0;
+		EObject tmpG = _localVariable_1;
 		EObject tmpD = _localVariable_2;
-		if (tmpG instanceof Graph) {
-			Graph g = (Graph) tmpG;
-			if (tmpB instanceof Branch) {
-				Branch b = (Branch) tmpB;
+		if (tmpB instanceof Branch) {
+			Branch b = (Branch) tmpB;
+			if (tmpG instanceof Graph) {
+				Graph g = (Graph) tmpG;
 				if (tmpD instanceof Command) {
 					Command d = (Command) tmpD;
-					return new Object[] { g, b, d, match };
+					return new Object[] { b, g, d, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_firstuwhile2rootubranch_12_2_corematch_blackBFBBFB(Graph g, Branch b,
+	public static final Iterable<Object[]> pattern_firstuwhile2rootubranch_12_2_corematch_blackFBFBBB(Branch b, Graph g,
 			Command d, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (P2G p2g : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(g, P2G.class, "target")) {
 			Program p = p2g.getSource();
 			if (p != null) {
-				_result.add(new Object[] { g, p2g, b, d, p, match });
+				_result.add(new Object[] { p2g, b, p, g, d, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_firstuwhile2rootubranch_12_3_findcontext_blackBBBBB(Graph g, P2G p2g,
-			Branch b, Command d, Program p) {
+	public static final Iterable<Object[]> pattern_firstuwhile2rootubranch_12_3_findcontext_blackBBBBB(P2G p2g,
+			Branch b, Program p, Graph g, Command d) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (d.equals(b.getPositive())) {
-			if (p.equals(p2g.getSource())) {
-				if (b.equals(d.getNext())) {
-					if (g.equals(p2g.getTarget())) {
-						if (b.equals(g.getRoot())) {
-							_result.add(new Object[] { g, p2g, b, d, p });
+			if (g.equals(p2g.getTarget())) {
+				if (b.equals(g.getRoot())) {
+					if (p.equals(p2g.getSource())) {
+						if (b.equals(d.getNext())) {
+							_result.add(new Object[] { p2g, b, p, g, d });
 						}
 					}
 				}
@@ -2297,55 +2294,55 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return _result;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_12_3_findcontext_greenBBBBBFFFFFF(Graph g, P2G p2g,
-			Branch b, Command d, Program p) {
+	public static final Object[] pattern_firstuwhile2rootubranch_12_3_findcontext_greenBBBBBFFFFFF(P2G p2g, Branch b,
+			Program p, Graph g, Command d) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge b__d____positive = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge d__b____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge p2g__g____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge g__b____root = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge p2g__p____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge d__b____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String b__d____positive_name_prime = "positive";
-		String p2g__p____source_name_prime = "source";
-		String d__b____next_name_prime = "next";
 		String p2g__g____target_name_prime = "target";
 		String g__b____root_name_prime = "root";
-		isApplicableMatch.getAllContextElements().add(g);
+		String p2g__p____source_name_prime = "source";
+		String d__b____next_name_prime = "next";
 		isApplicableMatch.getAllContextElements().add(p2g);
 		isApplicableMatch.getAllContextElements().add(b);
-		isApplicableMatch.getAllContextElements().add(d);
 		isApplicableMatch.getAllContextElements().add(p);
+		isApplicableMatch.getAllContextElements().add(g);
+		isApplicableMatch.getAllContextElements().add(d);
 		b__d____positive.setSrc(b);
 		b__d____positive.setTrg(d);
 		isApplicableMatch.getAllContextElements().add(b__d____positive);
-		p2g__p____source.setSrc(p2g);
-		p2g__p____source.setTrg(p);
-		isApplicableMatch.getAllContextElements().add(p2g__p____source);
-		d__b____next.setSrc(d);
-		d__b____next.setTrg(b);
-		isApplicableMatch.getAllContextElements().add(d__b____next);
 		p2g__g____target.setSrc(p2g);
 		p2g__g____target.setTrg(g);
 		isApplicableMatch.getAllContextElements().add(p2g__g____target);
 		g__b____root.setSrc(g);
 		g__b____root.setTrg(b);
 		isApplicableMatch.getAllContextElements().add(g__b____root);
+		p2g__p____source.setSrc(p2g);
+		p2g__p____source.setTrg(p);
+		isApplicableMatch.getAllContextElements().add(p2g__p____source);
+		d__b____next.setSrc(d);
+		d__b____next.setTrg(b);
+		isApplicableMatch.getAllContextElements().add(d__b____next);
 		b__d____positive.setName(b__d____positive_name_prime);
-		p2g__p____source.setName(p2g__p____source_name_prime);
-		d__b____next.setName(d__b____next_name_prime);
 		p2g__g____target.setName(p2g__g____target_name_prime);
 		g__b____root.setName(g__b____root_name_prime);
-		return new Object[] { g, p2g, b, d, p, isApplicableMatch, b__d____positive, p2g__p____source, d__b____next,
-				p2g__g____target, g__b____root };
+		p2g__p____source.setName(p2g__p____source_name_prime);
+		d__b____next.setName(d__b____next_name_prime);
+		return new Object[] { p2g, b, p, g, d, isApplicableMatch, b__d____positive, p2g__g____target, g__b____root,
+				p2g__p____source, d__b____next };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_12_4_solveCSP_bindingFBBBBBBB(
-			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Branch b, Command d,
-			Program p) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, g, p2g, b, d, p);
+			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, P2G p2g, Branch b, Program p, Graph g,
+			Command d) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, p2g, b, p, g, d);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, g, p2g, b, d, p };
+			return new Object[] { csp, _this, isApplicableMatch, p2g, b, p, g, d };
 		}
 		return null;
 	}
@@ -2355,10 +2352,10 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_12_4_solveCSP_bindingAndBlackFBBBBBBB(
-			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Branch b, Command d,
-			Program p) {
+			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, P2G p2g, Branch b, Program p, Graph g,
+			Command d) {
 		Object[] result_pattern_firstuwhile2rootubranch_12_4_solveCSP_binding = pattern_firstuwhile2rootubranch_12_4_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, g, p2g, b, d, p);
+				_this, isApplicableMatch, p2g, b, p, g, d);
 		if (result_pattern_firstuwhile2rootubranch_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_firstuwhile2rootubranch_12_4_solveCSP_binding[0];
 
@@ -2366,7 +2363,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 					csp);
 			if (result_pattern_firstuwhile2rootubranch_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, g, p2g, b, d, p };
+				return new Object[] { csp, _this, isApplicableMatch, p2g, b, p, g, d };
 			}
 		}
 		return null;
@@ -2456,9 +2453,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 
 	public static final Object[] pattern_firstuwhile2rootubranch_20_2_testcorematchandDECs_black_nac_0BB(Branch b,
 			Graph g) {
-		for (Graph __DEC_b_root_263237 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+		for (Graph __DEC_b_root_862786 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Graph.class, "root")) {
-			if (!g.equals(__DEC_b_root_263237)) {
+			if (!g.equals(__DEC_b_root_862786)) {
 				return new Object[] { b, g };
 			}
 		}
@@ -2466,9 +2463,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_20_2_testcorematchandDECs_black_nac_1B(Branch b) {
-		for (Branch __DEC_b_positive_461113 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+		for (Branch __DEC_b_positive_409733 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Branch.class, "positive")) {
-			if (!b.equals(__DEC_b_positive_461113)) {
+			if (!b.equals(__DEC_b_positive_409733)) {
 				return new Object[] { b };
 			}
 		}
@@ -2476,9 +2473,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_20_2_testcorematchandDECs_black_nac_2B(Branch b) {
-		for (Branch __DEC_b_negative_399508 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+		for (Branch __DEC_b_negative_782619 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Branch.class, "negative")) {
-			if (!b.equals(__DEC_b_negative_399508)) {
+			if (!b.equals(__DEC_b_negative_782619)) {
 				return new Object[] { b };
 			}
 		}
@@ -2487,9 +2484,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 
 	public static final Object[] pattern_firstuwhile2rootubranch_20_2_testcorematchandDECs_black_nac_3BB(Command d,
 			Graph g) {
-		for (Graph __DEC_d_root_767213 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
+		for (Graph __DEC_d_root_179369 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
 				Graph.class, "root")) {
-			if (!g.equals(__DEC_d_root_767213)) {
+			if (!g.equals(__DEC_d_root_179369)) {
 				return new Object[] { d, g };
 			}
 		}
@@ -2498,9 +2495,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 
 	public static final Object[] pattern_firstuwhile2rootubranch_20_2_testcorematchandDECs_black_nac_4BB(Command d,
 			Branch b) {
-		for (Branch __DEC_d_positive_177263 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
+		for (Branch __DEC_d_positive_377159 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
 				Branch.class, "positive")) {
-			if (!b.equals(__DEC_d_positive_177263)) {
+			if (!b.equals(__DEC_d_positive_377159)) {
 				return new Object[] { d, b };
 			}
 		}
@@ -2509,9 +2506,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 
 	public static final Object[] pattern_firstuwhile2rootubranch_20_2_testcorematchandDECs_black_nac_5BB(Command d,
 			Branch b) {
-		for (Branch __DEC_d_negative_898997 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
+		for (Branch __DEC_d_negative_388040 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
 				Branch.class, "negative")) {
-			if (!b.equals(__DEC_d_negative_898997)) {
+			if (!b.equals(__DEC_d_negative_388040)) {
 				return new Object[] { d, b };
 			}
 		}
@@ -2561,7 +2558,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 															d, g) == null) {
 														if (pattern_firstuwhile2rootubranch_20_2_testcorematchandDECs_black_nac_6BB(
 																g, d) == null) {
-															_result.add(new Object[] { g, b, d, _edge_positive });
+															_result.add(new Object[] { b, g, d, _edge_positive });
 														}
 													}
 												}
@@ -2590,8 +2587,8 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final boolean pattern_firstuwhile2rootubranch_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			firstuwhile2rootubranch _this, Match match, Graph g, Branch b, Command d) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, g, b, d);
+			firstuwhile2rootubranch _this, Match match, Branch b, Graph g, Command d) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, b, g, d);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2678,75 +2675,75 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return new Object[] { __result };
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_0B(Assignment l) {
-		for (Decision __DEC_l_positive_249039 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_0B(While w) {
+		for (Decision __DEC_w_positive_451769 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
+				Decision.class, "positive")) {
+			return new Object[] { w };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_1B(While w) {
+		for (Decision __DEC_w_negative_329258 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
+				Decision.class, "negative")) {
+			return new Object[] { w };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_2B(While w) {
+		for (While __DEC_w_first_715892 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
+				While.class, "first")) {
+			if (!w.equals(__DEC_w_first_715892)) {
+				return new Object[] { w };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_3B(While w) {
+		for (While __DEC_w_last_833933 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
+				While.class, "last")) {
+			if (!w.equals(__DEC_w_last_833933)) {
+				return new Object[] { w };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_4B(Assignment l) {
+		for (Decision __DEC_l_positive_293665 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 				Decision.class, "positive")) {
 			return new Object[] { l };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_1B(Assignment l) {
-		for (Decision __DEC_l_negative_253636 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_5B(Assignment l) {
+		for (Decision __DEC_l_negative_399224 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 				Decision.class, "negative")) {
 			return new Object[] { l };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_2BB(Assignment l,
+	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_6BB(Assignment l,
 			While w) {
-		for (While __DEC_l_last_413437 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+		for (While __DEC_l_last_151119 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 				While.class, "last")) {
-			if (!w.equals(__DEC_l_last_413437)) {
+			if (!w.equals(__DEC_l_last_151119)) {
 				return new Object[] { l, w };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_3BB(Assignment l,
+	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_7BB(Assignment l,
 			Program p) {
-		for (Program __DEC_l_first_674421 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+		for (Program __DEC_l_first_385722 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 				Program.class, "first")) {
-			if (!p.equals(__DEC_l_first_674421)) {
+			if (!p.equals(__DEC_l_first_385722)) {
 				return new Object[] { l, p };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_4B(While w) {
-		for (Decision __DEC_w_positive_721095 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
-				Decision.class, "positive")) {
-			return new Object[] { w };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_5B(While w) {
-		for (Decision __DEC_w_negative_478538 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
-				Decision.class, "negative")) {
-			return new Object[] { w };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_6B(While w) {
-		for (While __DEC_w_first_63986 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
-				While.class, "first")) {
-			if (!w.equals(__DEC_w_first_63986)) {
-				return new Object[] { w };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_7B(While w) {
-		for (While __DEC_w_last_715732 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
-				While.class, "last")) {
-			if (!w.equals(__DEC_w_last_715732)) {
-				return new Object[] { w };
 			}
 		}
 		return null;
@@ -2763,34 +2760,32 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	public static final Iterable<Object[]> pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_blackFFFB(
 			EMoflonEdge _edge_first) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpP = _edge_first.getSrc();
-		if (tmpP instanceof Program) {
-			Program p = (Program) tmpP;
-			EObject tmpW = _edge_first.getTrg();
-			if (tmpW instanceof While) {
-				While w = (While) tmpW;
-				if (w.equals(p.getFirst())) {
-					Statement tmpL = w.getLast();
-					if (tmpL instanceof Assignment) {
-						Assignment l = (Assignment) tmpL;
-						if (l.equals(w.getFirst())) {
-							if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_4B(w) == null) {
-								if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_5B(w) == null) {
-									if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_6B(
+		EObject tmpW = _edge_first.getSrc();
+		if (tmpW instanceof While) {
+			While w = (While) tmpW;
+			EObject tmpL = _edge_first.getTrg();
+			if (tmpL instanceof Assignment) {
+				Assignment l = (Assignment) tmpL;
+				if (l.equals(w.getFirst())) {
+					if (l.equals(w.getLast())) {
+						if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_0B(w) == null) {
+							if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_1B(w) == null) {
+								if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_2B(w) == null) {
+									if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_3B(
 											w) == null) {
-										if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_7B(
-												w) == null) {
-											if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_0B(
+										if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_4B(
+												l) == null) {
+											if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_5B(
 													l) == null) {
-												if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_1B(
-														l) == null) {
-													if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_2BB(
-															l, w) == null) {
-														if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_3BB(
+												if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_6BB(
+														l, w) == null) {
+													for (Program p : org.moflon.core.utilities.eMoflonEMFUtil
+															.getOppositeReferenceTyped(w, Program.class, "first")) {
+														if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_7BB(
 																l, p) == null) {
 															if (pattern_firstuwhile2rootubranch_21_2_testcorematchandDECs_black_nac_8BB(
 																	p, l) == null) {
-																_result.add(new Object[] { l, p, w, _edge_first });
+																_result.add(new Object[] { w, l, p, _edge_first });
 															}
 														}
 													}
@@ -2802,7 +2797,6 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 							}
 						}
 					}
-
 				}
 			}
 
@@ -2821,8 +2815,8 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final boolean pattern_firstuwhile2rootubranch_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			firstuwhile2rootubranch _this, Match match, Assignment l, Program p, While w) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, l, p, w);
+			firstuwhile2rootubranch _this, Match match, While w, Assignment l, Program p) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, w, l, p);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2865,32 +2859,32 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_bindingFFFFFFBB(
-			Match targetMatch, Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("g");
+			Match sourceMatch, Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("w");
 		EObject _localVariable_1 = targetMatch.getObject("b");
 		EObject _localVariable_2 = sourceMatch.getObject("l");
-		EObject _localVariable_3 = targetMatch.getObject("d");
-		EObject _localVariable_4 = sourceMatch.getObject("p");
-		EObject _localVariable_5 = sourceMatch.getObject("w");
-		EObject tmpG = _localVariable_0;
+		EObject _localVariable_3 = sourceMatch.getObject("p");
+		EObject _localVariable_4 = targetMatch.getObject("g");
+		EObject _localVariable_5 = targetMatch.getObject("d");
+		EObject tmpW = _localVariable_0;
 		EObject tmpB = _localVariable_1;
 		EObject tmpL = _localVariable_2;
-		EObject tmpD = _localVariable_3;
-		EObject tmpP = _localVariable_4;
-		EObject tmpW = _localVariable_5;
-		if (tmpG instanceof Graph) {
-			Graph g = (Graph) tmpG;
+		EObject tmpP = _localVariable_3;
+		EObject tmpG = _localVariable_4;
+		EObject tmpD = _localVariable_5;
+		if (tmpW instanceof While) {
+			While w = (While) tmpW;
 			if (tmpB instanceof Branch) {
 				Branch b = (Branch) tmpB;
 				if (tmpL instanceof Assignment) {
 					Assignment l = (Assignment) tmpL;
-					if (tmpD instanceof Command) {
-						Command d = (Command) tmpD;
-						if (tmpP instanceof Program) {
-							Program p = (Program) tmpP;
-							if (tmpW instanceof While) {
-								While w = (While) tmpW;
-								return new Object[] { g, b, l, d, p, w, targetMatch, sourceMatch };
+					if (tmpP instanceof Program) {
+						Program p = (Program) tmpP;
+						if (tmpG instanceof Graph) {
+							Graph g = (Graph) tmpG;
+							if (tmpD instanceof Command) {
+								Command d = (Command) tmpD;
+								return new Object[] { w, b, l, p, g, d, sourceMatch, targetMatch };
 							}
 						}
 					}
@@ -2900,10 +2894,10 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_blackBBBBBBBB(Graph g,
-			Branch b, Assignment l, Command d, Program p, While w, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_blackBBBBBBBB(While w,
+			Branch b, Assignment l, Program p, Graph g, Command d, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { g, b, l, d, p, w, sourceMatch, targetMatch };
+			return new Object[] { w, b, l, p, g, d, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2911,32 +2905,32 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	public static final Object[] pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_bindingAndBlackFFFFFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding = pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_bindingFFFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding != null) {
-			Graph g = (Graph) result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding[0];
+			While w = (While) result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding[0];
 			Branch b = (Branch) result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding[1];
 			Assignment l = (Assignment) result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding[2];
-			Command d = (Command) result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding[3];
-			Program p = (Program) result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding[4];
-			While w = (While) result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding[5];
+			Program p = (Program) result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding[3];
+			Graph g = (Graph) result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding[4];
+			Command d = (Command) result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_black = pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					g, b, l, d, p, w, sourceMatch, targetMatch);
+					w, b, l, p, g, d, sourceMatch, targetMatch);
 			if (result_pattern_firstuwhile2rootubranch_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { g, b, l, d, p, w, sourceMatch, targetMatch };
+				return new Object[] { w, b, l, p, g, d, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_24_3_solvecsp_bindingFBBBBBBBBB(
-			firstuwhile2rootubranch _this, Graph g, Branch b, Assignment l, Command d, Program p, While w,
+			firstuwhile2rootubranch _this, While w, Branch b, Assignment l, Program p, Graph g, Command d,
 			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(g, b, l, d, p, w, sourceMatch, targetMatch);
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(w, b, l, p, g, d, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, g, b, l, d, p, w, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, w, b, l, p, g, d, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2946,10 +2940,10 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			firstuwhile2rootubranch _this, Graph g, Branch b, Assignment l, Command d, Program p, While w,
+			firstuwhile2rootubranch _this, While w, Branch b, Assignment l, Program p, Graph g, Command d,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_firstuwhile2rootubranch_24_3_solvecsp_binding = pattern_firstuwhile2rootubranch_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, g, b, l, d, p, w, sourceMatch, targetMatch);
+				_this, w, b, l, p, g, d, sourceMatch, targetMatch);
 		if (result_pattern_firstuwhile2rootubranch_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_firstuwhile2rootubranch_24_3_solvecsp_binding[0];
 
@@ -2957,7 +2951,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 					csp);
 			if (result_pattern_firstuwhile2rootubranch_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, g, b, l, d, p, w, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, w, b, l, p, g, d, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2969,13 +2963,13 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_firstuwhile2rootubranch_24_5_matchcorrcontext_blackBFBBB(Graph g,
-			Program p, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_firstuwhile2rootubranch_24_5_matchcorrcontext_blackFBBBB(Program p,
+			Graph g, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (P2G p2g : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(p, P2G.class, "source")) {
-				if (g.equals(p2g.getTarget())) {
-					_result.add(new Object[] { g, p2g, p, sourceMatch, targetMatch });
+			for (P2G p2g : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(g, P2G.class, "target")) {
+				if (p.equals(p2g.getSource())) {
+					_result.add(new Object[] { p2g, p, g, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2993,13 +2987,13 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return new Object[] { p2g, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_24_6_createcorrespondence_blackBBBBBBB(Graph g,
-			Branch b, Assignment l, Command d, Program p, While w, CCMatch ccMatch) {
-		return new Object[] { g, b, l, d, p, w, ccMatch };
+	public static final Object[] pattern_firstuwhile2rootubranch_24_6_createcorrespondence_blackBBBBBBB(While w,
+			Branch b, Assignment l, Program p, Graph g, Command d, CCMatch ccMatch) {
+		return new Object[] { w, b, l, p, g, d, ccMatch };
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_24_6_createcorrespondence_greenBFFBBBB(Branch b,
-			Assignment l, Command d, While w, CCMatch ccMatch) {
+	public static final Object[] pattern_firstuwhile2rootubranch_24_6_createcorrespondence_greenFFBBBBB(While w,
+			Branch b, Assignment l, Command d, CCMatch ccMatch) {
 		S2N l2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		S2B f2r = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
 		l2d.setSource(l);
@@ -3008,7 +3002,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		f2r.setTarget(b);
 		f2r.setSource(w);
 		ccMatch.getCreateCorr().add(f2r);
-		return new Object[] { b, l2d, f2r, l, d, w, ccMatch };
+		return new Object[] { l2d, f2r, w, b, l, d, ccMatch };
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_24_7_addtoreturnedresult_blackBB(
@@ -3032,75 +3026,75 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return _result;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_0B(Assignment l) {
-		for (Decision __DEC_l_positive_282705 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_0B(While w) {
+		for (Decision __DEC_w_positive_488238 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
+				Decision.class, "positive")) {
+			return new Object[] { w };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_1B(While w) {
+		for (Decision __DEC_w_negative_600148 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
+				Decision.class, "negative")) {
+			return new Object[] { w };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_2B(While w) {
+		for (While __DEC_w_first_363689 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
+				While.class, "first")) {
+			if (!w.equals(__DEC_w_first_363689)) {
+				return new Object[] { w };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_3B(While w) {
+		for (While __DEC_w_last_182272 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
+				While.class, "last")) {
+			if (!w.equals(__DEC_w_last_182272)) {
+				return new Object[] { w };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_4B(Assignment l) {
+		for (Decision __DEC_l_positive_235235 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 				Decision.class, "positive")) {
 			return new Object[] { l };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_1B(Assignment l) {
-		for (Decision __DEC_l_negative_701594 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_5B(Assignment l) {
+		for (Decision __DEC_l_negative_792147 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 				Decision.class, "negative")) {
 			return new Object[] { l };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_2BB(Assignment l,
+	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_6BB(Assignment l,
 			While w) {
-		for (While __DEC_l_last_533493 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+		for (While __DEC_l_last_889129 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 				While.class, "last")) {
-			if (!w.equals(__DEC_l_last_533493)) {
+			if (!w.equals(__DEC_l_last_889129)) {
 				return new Object[] { l, w };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_3BB(Assignment l,
+	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_7BB(Assignment l,
 			Program p) {
-		for (Program __DEC_l_first_447774 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
+		for (Program __DEC_l_first_262015 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(l,
 				Program.class, "first")) {
-			if (!p.equals(__DEC_l_first_447774)) {
+			if (!p.equals(__DEC_l_first_262015)) {
 				return new Object[] { l, p };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_4B(While w) {
-		for (Decision __DEC_w_positive_740564 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
-				Decision.class, "positive")) {
-			return new Object[] { w };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_5B(While w) {
-		for (Decision __DEC_w_negative_217866 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
-				Decision.class, "negative")) {
-			return new Object[] { w };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_6B(While w) {
-		for (While __DEC_w_first_502576 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
-				While.class, "first")) {
-			if (!w.equals(__DEC_w_first_502576)) {
-				return new Object[] { w };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_7B(While w) {
-		for (While __DEC_w_last_592997 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(w,
-				While.class, "last")) {
-			if (!w.equals(__DEC_w_last_592997)) {
-				return new Object[] { w };
 			}
 		}
 		return null;
@@ -3114,25 +3108,25 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_blackBBB(Assignment l, Program p,
-			While w) {
-		if (w.equals(p.getFirst())) {
-			if (l.equals(w.getLast())) {
-				if (l.equals(w.getFirst())) {
-					if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_0B(l) == null) {
-						if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_1B(l) == null) {
-							if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_2BB(l, w) == null) {
-								if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_3BB(l, p) == null) {
-									if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_4B(w) == null) {
+	public static final Object[] pattern_firstuwhile2rootubranch_27_1_matchtggpattern_blackBBB(While w, Assignment l,
+			Program p) {
+		if (l.equals(w.getFirst())) {
+			if (w.equals(p.getFirst())) {
+				if (l.equals(w.getLast())) {
+					if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_0B(w) == null) {
+						if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_1B(w) == null) {
+							if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_2B(w) == null) {
+								if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_3B(w) == null) {
+									if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_4B(l) == null) {
 										if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_5B(
-												w) == null) {
-											if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_6B(
+												l) == null) {
+											if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_6BB(l,
 													w) == null) {
-												if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_7B(
-														w) == null) {
+												if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_7BB(
+														l, p) == null) {
 													if (pattern_firstuwhile2rootubranch_27_1_matchtggpattern_black_nac_8BB(
 															p, l) == null) {
-														return new Object[] { l, p, w };
+														return new Object[] { w, l, p };
 													}
 												}
 											}
@@ -3159,9 +3153,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_28_1_matchtggpattern_black_nac_0BB(Branch b, Graph g) {
-		for (Graph __DEC_b_root_683037 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+		for (Graph __DEC_b_root_7900 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Graph.class, "root")) {
-			if (!g.equals(__DEC_b_root_683037)) {
+			if (!g.equals(__DEC_b_root_7900)) {
 				return new Object[] { b, g };
 			}
 		}
@@ -3169,9 +3163,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_28_1_matchtggpattern_black_nac_1B(Branch b) {
-		for (Branch __DEC_b_positive_903399 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+		for (Branch __DEC_b_positive_675816 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Branch.class, "positive")) {
-			if (!b.equals(__DEC_b_positive_903399)) {
+			if (!b.equals(__DEC_b_positive_675816)) {
 				return new Object[] { b };
 			}
 		}
@@ -3179,9 +3173,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_28_1_matchtggpattern_black_nac_2B(Branch b) {
-		for (Branch __DEC_b_negative_450080 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+		for (Branch __DEC_b_negative_401283 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Branch.class, "negative")) {
-			if (!b.equals(__DEC_b_negative_450080)) {
+			if (!b.equals(__DEC_b_negative_401283)) {
 				return new Object[] { b };
 			}
 		}
@@ -3190,9 +3184,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 
 	public static final Object[] pattern_firstuwhile2rootubranch_28_1_matchtggpattern_black_nac_3BB(Command d,
 			Graph g) {
-		for (Graph __DEC_d_root_745154 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
+		for (Graph __DEC_d_root_428699 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
 				Graph.class, "root")) {
-			if (!g.equals(__DEC_d_root_745154)) {
+			if (!g.equals(__DEC_d_root_428699)) {
 				return new Object[] { d, g };
 			}
 		}
@@ -3201,9 +3195,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 
 	public static final Object[] pattern_firstuwhile2rootubranch_28_1_matchtggpattern_black_nac_4BB(Command d,
 			Branch b) {
-		for (Branch __DEC_d_positive_824481 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
+		for (Branch __DEC_d_positive_208980 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
 				Branch.class, "positive")) {
-			if (!b.equals(__DEC_d_positive_824481)) {
+			if (!b.equals(__DEC_d_positive_208980)) {
 				return new Object[] { d, b };
 			}
 		}
@@ -3212,9 +3206,9 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 
 	public static final Object[] pattern_firstuwhile2rootubranch_28_1_matchtggpattern_black_nac_5BB(Command d,
 			Branch b) {
-		for (Branch __DEC_d_negative_97959 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
+		for (Branch __DEC_d_negative_532525 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
 				Branch.class, "negative")) {
-			if (!b.equals(__DEC_d_negative_97959)) {
+			if (!b.equals(__DEC_d_negative_532525)) {
 				return new Object[] { d, b };
 			}
 		}
@@ -3237,11 +3231,11 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return null;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_28_1_matchtggpattern_blackBBB(Graph g, Branch b,
+	public static final Object[] pattern_firstuwhile2rootubranch_28_1_matchtggpattern_blackBBB(Branch b, Graph g,
 			Command d) {
 		if (d.equals(b.getPositive())) {
-			if (b.equals(d.getNext())) {
-				if (b.equals(g.getRoot())) {
+			if (b.equals(g.getRoot())) {
+				if (b.equals(d.getNext())) {
 					if (pattern_firstuwhile2rootubranch_28_1_matchtggpattern_black_nac_0BB(b, g) == null) {
 						if (pattern_firstuwhile2rootubranch_28_1_matchtggpattern_black_nac_1B(b) == null) {
 							if (pattern_firstuwhile2rootubranch_28_1_matchtggpattern_black_nac_2B(b) == null) {
@@ -3254,7 +3248,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 													d) == null) {
 												if (pattern_firstuwhile2rootubranch_28_1_matchtggpattern_black_nac_7BB(
 														b, d) == null) {
-													return new Object[] { g, b, d };
+													return new Object[] { b, g, d };
 												}
 											}
 										}
@@ -3293,17 +3287,17 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, Graph g) {
-		if (ruleResult.getTargetObjects().contains(g)) {
-			return new Object[] { ruleResult, g };
+			ModelgeneratorRuleResult ruleResult, P2G p2g) {
+		if (ruleResult.getCorrObjects().contains(p2g)) {
+			return new Object[] { ruleResult, p2g };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, P2G p2g) {
-		if (ruleResult.getCorrObjects().contains(p2g)) {
-			return new Object[] { ruleResult, p2g };
+			ModelgeneratorRuleResult ruleResult, Graph g) {
+		if (ruleResult.getTargetObjects().contains(g)) {
+			return new Object[] { ruleResult, g };
 		}
 		return null;
 	}
@@ -3327,14 +3321,14 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 					if (g != null) {
 						Program p = p2g.getSource();
 						if (p != null) {
-							if (pattern_firstuwhile2rootubranch_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+							if (pattern_firstuwhile2rootubranch_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 									p2g) == null) {
-								if (pattern_firstuwhile2rootubranch_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+								if (pattern_firstuwhile2rootubranch_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 										g) == null) {
 									if (pattern_firstuwhile2rootubranch_29_2_isapplicablecore_black_nac_2BB(ruleResult,
 											p) == null) {
 										_result.add(
-												new Object[] { p2gList, g, p2g, p, ruleEntryContainer, ruleResult });
+												new Object[] { p2gList, p2g, g, p, ruleEntryContainer, ruleResult });
 									}
 								}
 							}
@@ -3349,12 +3343,12 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_29_3_solveCSP_bindingFBBBBBB(
-			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Program p,
+			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, P2G p2g, Program p, Graph g,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, g, p2g, p, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, p2g, p, g, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, g, p2g, p, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, p2g, p, g, ruleResult };
 		}
 		return null;
 	}
@@ -3364,10 +3358,10 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 	}
 
 	public static final Object[] pattern_firstuwhile2rootubranch_29_3_solveCSP_bindingAndBlackFBBBBBB(
-			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, Graph g, P2G p2g, Program p,
+			firstuwhile2rootubranch _this, IsApplicableMatch isApplicableMatch, P2G p2g, Program p, Graph g,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_firstuwhile2rootubranch_29_3_solveCSP_binding = pattern_firstuwhile2rootubranch_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, g, p2g, p, ruleResult);
+				_this, isApplicableMatch, p2g, p, g, ruleResult);
 		if (result_pattern_firstuwhile2rootubranch_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_firstuwhile2rootubranch_29_3_solveCSP_binding[0];
 
@@ -3375,7 +3369,7 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 					csp);
 			if (result_pattern_firstuwhile2rootubranch_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, g, p2g, p, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, p2g, p, g, ruleResult };
 			}
 		}
 		return null;
@@ -3388,45 +3382,45 @@ public class firstuwhile2rootubranchImpl extends AbstractRuleImpl implements fir
 		return _result;
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_29_5_checknacs_blackBBB(Graph g, P2G p2g, Program p) {
-		return new Object[] { g, p2g, p };
+	public static final Object[] pattern_firstuwhile2rootubranch_29_5_checknacs_blackBBB(P2G p2g, Program p, Graph g) {
+		return new Object[] { p2g, p, g };
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_29_6_perform_blackBBBB(Graph g, P2G p2g, Program p,
+	public static final Object[] pattern_firstuwhile2rootubranch_29_6_perform_blackBBBB(P2G p2g, Program p, Graph g,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { g, p2g, p, ruleResult };
+		return new Object[] { p2g, p, g, ruleResult };
 	}
 
-	public static final Object[] pattern_firstuwhile2rootubranch_29_6_perform_greenBFFFFFBFB(Graph g, Program p,
+	public static final Object[] pattern_firstuwhile2rootubranch_29_6_perform_greenFFFFFBBFB(Program p, Graph g,
 			ModelgeneratorRuleResult ruleResult) {
-		Branch b = ControlflowFactory.eINSTANCE.createBranch();
 		S2N l2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		S2B f2r = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
+		While w = SourcecodeFactory.eINSTANCE.createWhile();
+		Branch b = ControlflowFactory.eINSTANCE.createBranch();
 		Assignment l = SourcecodeFactory.eINSTANCE.createAssignment();
 		Command d = ControlflowFactory.eINSTANCE.createCommand();
-		While w = SourcecodeFactory.eINSTANCE.createWhile();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
+		ruleResult.getCorrObjects().add(l2d);
+		ruleResult.getCorrObjects().add(f2r);
+		f2r.setSource(w);
+		p.setFirst(w);
+		ruleResult.getSourceObjects().add(w);
+		f2r.setTarget(b);
 		g.setRoot(b);
 		ruleResult.getTargetObjects().add(b);
-		ruleResult.getCorrObjects().add(l2d);
-		f2r.setTarget(b);
-		ruleResult.getCorrObjects().add(f2r);
+		w.setFirst(l);
+		w.setLast(l);
 		l2d.setSource(l);
 		ruleResult.getSourceObjects().add(l);
 		b.setPositive(d);
 		l2d.setTarget(d);
 		d.setNext(b);
 		ruleResult.getTargetObjects().add(d);
-		p.setFirst(w);
-		f2r.setSource(w);
-		w.setLast(l);
-		w.setFirst(l);
-		ruleResult.getSourceObjects().add(w);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { g, b, l2d, f2r, l, d, p, w, ruleResult };
+		return new Object[] { l2d, f2r, w, b, l, p, g, d, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_firstuwhile2rootubranch_29_7_expressionFB(
