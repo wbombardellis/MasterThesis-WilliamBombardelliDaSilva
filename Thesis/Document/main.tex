@@ -1,0 +1,94 @@
+\documentclass[side,11pt,oz,a4,fancybox,fancyheadings,fleqnb,openany]{book}
+
+\topmargin-1cm
+\textheight23cm
+\textwidth15cm
+\voffset0cm
+\evensidemargin0cm
+\oddsidemargin0.9cm
+
+\include{meta/packages}
+\include{meta/macros}
+\include{meta/meta}
+
+%\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{\thechapter\ #1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\pretolerance=-1
+\setlength{\emergencystretch}{3em}
+%\DeclareMathSizes{11}{19}{13}{9}
+
+%TODO: Decide on the use of italic
+%TODO: Decide whether ms or m_s mt or m_t?
+%TODO: Number the definitions and examples
+\begin{document}
+% settings for the whole document
+\parindent=0in
+\parskip=5pt
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{2}
+
+%switch off page numbering for cover page
+\pagenumbering{gobble}
+
+\include{cover}
+\cleardoublepage
+
+\include{erklaerung}
+\cleardoublepage
+
+%switch on page numbering after the cover page
+\pagenumbering{arabic}
+\setcounter{page}{5}
+
+\input{abstract}
+\input{zusammenfassung}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+
+
+\chapter{Introduction}
+\label{ch:Introduction}
+\input{introduction}
+
+\chapter{Related Works}
+\label{ch:RelatedWorks}
+\input{related-works}
+
+\chapter{Theoretical Review}
+\label{ch:TheoreticalReview}
+\input{theoretical-review}
+
+\chapter{Model Transformation with NCE Triple Graph Grammars}
+\label{ch:ModelTransformation}
+\input{model-transformation}
+
+\chapter{An Extension of NCE Triple Graph Grammars with Application Conditions}
+\label{ch:PacExtension}
+\input{pac-extension}
+
+\chapter{Implementation}
+\label{ch:Implementation}
+\input{implementation}
+
+\chapter{Evaluation}
+\label{ch:Evaluation}
+\input{evaluation}
+
+\chapter{Conclusion}
+\label{ch:Conclusion}
+\input{conclusion}
+
+
+\bibliographystyle{alpha}
+\bibliography{bibliography}
+
+%% put all references though they are not cited
+%\nocite{*}
+\end{document}
+
+
