@@ -21,5 +21,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.bence.graphgrammar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.bx.btree2xbtree"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.mm.graph"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.bx.class2database"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.wbsilva.bx.statemachine2petrinet"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
