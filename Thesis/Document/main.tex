@@ -11,9 +11,24 @@
 \include{meta/macros}
 \include{meta/meta}
 
-%\pagestyle{fancyplain}
+%Headers
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{\thechapter\ #1}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%Chapter titles without the word "Chapter"
+\makeatletter
+\def\@makechapterhead#1{%
+	\vspace*{50\p@}%
+	{\parindent \z@ \raggedright \normalfont
+		\ifnum \c@secnumdepth >\m@ne
+		\if@mainmatter
+		\Huge\bfseries \thechapter.\space%
+		\fi
+		\fi
+		\interlinepenalty\@M
+		\Huge \bfseries #1\par\nobreak
+		\vskip 40\p@
+	}}
+	\makeatother
 
 \pretolerance=-1
 \setlength{\emergencystretch}{3em}
