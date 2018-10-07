@@ -11,6 +11,8 @@
 *.toc
 #*.pdf
 *.gz
+*.lof
+*.lot
 *.*~
 
 Papers/*.pdf
