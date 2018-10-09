@@ -1,4 +1,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% IMPLEMENTATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Concrete implementation. Critical view.
+In this chapter, we present in details our implementation for the model transformer that we exposed in the previous chapters. As programming language and runtime platform we use Java. As modeling and code generation tool we use Eclipse Modeling Framework (EMF).
+
+%TODO: explain ecore file
+The model transformer procedure is depicted in Figure \ref{fig:implementation-scheme}. The input is an ECore file holding the source model to be transformed and this model is an instance of the source metamodel. The first step consists of transforming this input model into a graph. This can be done trivially, for it is a one-to-one transformation, where each element from the model ins transformed into a vertex of the graph. It suffices, thus, to trespass the input model element by element, starting from the roots up to the elements whose all children have already been trespassed. At each visited element, a vertex and an edge to each of its children is created.
+
+\begin{figure}[h]
+	\input{misc/implementation-scheme}
+	%TODO
+	\caption{...}
+	\label{fig:implementation-scheme}
+\end{figure}
