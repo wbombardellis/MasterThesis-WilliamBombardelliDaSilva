@@ -3,8 +3,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In this chapter, we present in details our implementation for the model transformer that we exposed in the previous chapters. As programming language and runtime platform we use Java. As modeling and code generation tool we use Eclipse Modeling Framework (EMF).
 
-%TODO: explain ecore file
-The model transformer procedure is depicted in Figure \ref{fig:implementation-scheme}. The input is an ECore file holding the source model to be transformed and this model is an instance of the source metamodel. The first step consists of transforming this input model into a graph. This can be done trivially, for it is a one-to-one transformation, where each element from the model ins transformed into a vertex of the graph. It suffices, thus, to trespass the input model element by element, starting from the roots up to the elements whose all children have already been trespassed. At each visited element, a vertex and an edge to each of its children is created.
+%TODO: Maybe explain the TGG and TG metamodels (with image maybe)
+
+The model transformer procedure is depicted in Figure \ref{fig:implementation-scheme}. The input for the procedure consists of a source model, which is an instance of the source metamodel, and a TGG model, which is an instance of the TGG metamodel. The source model represents the model to be transformed into a target model and the TGG model holds the BNCE triple graph grammar that describes the transformation between the source metamodel and a target metamodel.
 
 \begin{figure}[h]
 	\input{misc/implementation-scheme}
@@ -12,3 +13,17 @@ The model transformer procedure is depicted in Figure \ref{fig:implementation-sc
 	\caption{...}
 	\label{fig:implementation-scheme}
 \end{figure}
+
+The source model is transformed into a graph by the step \textit{Ecore to Graph}. This can be done trivially, for it is a one-to-one transformation, where each element from the model is transformed into a vertex of the graph. It suffices, thus, to trespass the source model element by element, starting from the roots up to the elements whose all children have already been trespassed. At each visited element, a vertex and an edge to each of its children is created.
+
+The TGG model is normalized to fit the neighborhood preserving (NP) normal form by the step \textit{NP Normalizer}. This normalization consists of creating an triple graph grammar $TGG'$ equivalent to $TGG$, i.e. $L(TGG') = L(TGG)$, for which the NP property (see Definition \ref{def:np}) holds. An NP normalizer algorithm for NLC graph grammars can be found in \citep{rozenberg1986boundary}. We adapt this algorithm for NCE graph grammars and use it to normalize the source part of the TGG model (see \ref{def:source}).
+
+The NP normalizer starts by looking for non-NP rules. For each of these rules, it modifies its left-hand side so that it becomes NP. Moreover, it also adds new rules, that are produced by replacing each occurrence of the old left-hand side by the new one. This procedure is then repeated until the grammar is not modified anymore. It is guaranteed that it always stops producing a NP NCE graph grammar. After stopping, the NP normalizer also modifies the TGG model adding and modifying the correspondent triple rules whose source parts were modified in the process.
+
+The result of the steps \textit{Ecore to Graph} and \textit{NP Normalizer}, that are the source graph to be transformed and a normalized TGG, are used by the step \textit{Parsing} to produce a valid derivation for the source graph, in case it can be transformed following the rules in the TGG. Section \ref{sec:parsing} already offers an abstract presentation of the parsing algorithm for BNCE graph grammar. Thus, in the following paragraphs, we explore more concrete issues that come along with the implementation of the parser.
+
+ 
+
+
+
+

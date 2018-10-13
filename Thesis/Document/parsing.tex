@@ -1,4 +1,5 @@
 \section{Parsing of Graphs with Graph Grammars}
+\label{sec:parsing}
 In the last section we cleared how the concepts of graphs and languages fit together. In this section we are interested in the problem of deciding, given a BNCE graph grammar $GG$ and a graph $G$, whether $G \in L(GG)$. This is sometimes called the \textit{membership} problem and can be solved through a recognizer algorithm that always finishes answering yes if and only if $G \in L(GG)$ and no otherwise. A slight extension of this problem is the \textit{parsing} problem, which consists of deciding if $G \in L(GG)$ and finding a derivation $\startG{GG} \derivtr{} G$.
 
 %TODO: The practical use of it: model checking... model validation
@@ -14,9 +15,10 @@ The parsing algorithm posed in this section is an imperative view of the method 
 	\[\scont{GG}{A} = \bigcup_{(B \pro Q,\zeta) \in P, v \in V_Q, \phi_Q(v) = A} \cont{B \pro Q,\zeta}{v} \] 
 	be the context of the symbol $A$ in the grammar $GG$, then $GG$ is a NP BNCE graph grammar, if and only if,
 	\[ \forall r = (A \pro R,\omega) \in P \. \scont{GG}{A} \subseteq \bigcup_{v \ in V_R} \omega(v) \]
+	If this property holds for a rule $r$, we say $r$ is NP. Otherwise it is non-NP.
 \end{definition}
 
-The NP property is important to the correctness of the parsing algorithm. Furthermore, it is guaranteed that any BNCE graph grammar can be transformed in an equivalent NP BNCE graph grammar in polynomial time. More details in () %TODO: cite 27
+The NP property is important to the correctness of the parsing algorithm. Furthermore, it is guaranteed that any BNCE graph grammar can be transformed in an equivalent NP BNCE graph grammar in polynomial time. More details in \cite{rozenberg1986boundary} and in \cite{skodinis1998neighborhood}.
 
 The next paragraphs present zone vertices and zone graphs, that are our understanding of the concepts also from %TODO: cite 27
 

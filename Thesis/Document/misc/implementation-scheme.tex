@@ -1,7 +1,26 @@
 \noindent
 \begin{tikzpicture}[scheme]
-\draw (0,0) node[object, text width=25pt] (input) {Input Model};
-\draw (3,0) node[activity] (e2g) {ECore2Graph};
+\draw (3.1,0) node[metaobject, text width=45pt] (TGGMM) {$TGG$ $Metamodel$};
+\draw (1,0) node[metaobject, text width=45pt] (sourceMM) {$Source$ $Metamodel$};
 
+\draw (3.1,-1.75) node[object, text width=48pt] (inputTGG) {TGG Model};
+\draw (1,-1) node[object, text width=54pt] (source) {Source Model};
 
+\draw (6,-1) node[activity, text width=65pt] (e2g) {ECore to Graph};
+\draw (6,-1.75) node[activity, text width=60pt] (np) {NP Normalizer};
+\draw (8.75,-1.4) node[activity, text width=30pt] (p) {Parsing};
+\draw (11,-1.4) node[activity, text width=40pt] (prod) {Production};
+\draw (13.75,-1.4) node[object, text width=25pt] (output) {Output Model};
+
+\draw (13.75,0) node[metaobject, text width=45pt] (TGMM) {$TG$ $Metamodel$};
+
+\draw[edge, dashed] (inputTGG) -- (TGGMM) node [edgeLabel] {};
+\draw[edge, dashed] (source) -- (sourceMM) node [edgeLabel] {};
+\draw[edge, dashed] (output) -- (TGMM) node [edgeLabel] {};
+\draw[edge] (inputTGG) -- (np) node [edgeLabel] {};
+\draw[edge] (source) -- (e2g) node [edgeLabel] {};
+\draw[edge] (e2g) -- (p) node [edgeLabel] {};
+\draw[edge] (np) -- (p) node [edgeLabel] {};
+\draw[edge] (p) -- (prod) node [edgeLabel] {};
+\draw[edge] (prod) -- (output) node [edgeLabel] {};
 \end{tikzpicture}
