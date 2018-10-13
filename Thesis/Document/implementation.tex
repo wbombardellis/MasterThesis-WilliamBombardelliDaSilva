@@ -22,7 +22,9 @@ The NP normalizer starts by looking for non-NP rules. For each of these rules, i
 
 The result of the steps \textit{Ecore to Graph} and \textit{NP Normalizer}, that are the source graph to be transformed and a normalized TGG, are used by the step \textit{Parsing} to produce a valid derivation for the source graph, in case it can be transformed following the rules in the TGG. Section \ref{sec:parsing} already offers an abstract presentation of the parsing algorithm for BNCE graph grammar. Thus, in the following paragraphs, we explore more concrete issues that come along with the implementation of the parser.
 
- 
+The parsing procedure can be seen as a search algorithm that explores systematically the search space of all parsing trees for the TGG until it finds the parsing tree for the input graph. It is easy to see that such search space is huge (and potentially infinite) for any practical TGG. The parser starts from the trivial parsing trees, each one containing only one zone vertex of the source graph (see Line 3 in Algorithm \ref{alg:parse}). Then, at every time that it finds a new derivation (see Line 9), it augments its search space with a new parsing tree for the just found derivation (see Line 11). Additionally, the parser also holds the so-called $bup$ set with the zone vertices found by derivations assembled from other zone vertices in $bup$, which also grows at each time a derivation is found (see Line 10).
+
+Notice, thus, that the direction to where the search space grows depends on the choice of which subset of zone vertices are picked from $bup$ (see Line 5) as a handle to find new derivations.
 
 
 
