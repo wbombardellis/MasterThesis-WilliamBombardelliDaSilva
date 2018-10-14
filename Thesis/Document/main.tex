@@ -1,4 +1,4 @@
-\documentclass[side,11pt,oz,a4,fancybox,fancyheadings,fleqnb,openany]{book}
+\documentclass[side,12pt,oz,a4,fancybox,fancyheadings,fleqnb,openany]{book}
 
 \topmargin-1cm
 \textheight23cm
@@ -32,6 +32,7 @@
 
 \pretolerance=-1
 \setlength{\emergencystretch}{3em}
+\renewcommand{\baselinestretch}{1.5} %Line spacing
 %\DeclareMathSizes{11}{19}{13}{9}
 
 %TODO: Decide on the use of italic
@@ -39,6 +40,7 @@
 %TODO: Number the definitions and examples
 %TODO: Review citep and cite
 %TODO: Make definitions smaller, and put text outside them. Like the paper
+%TODO: Decide for a line spacing and font size
 \begin{document}
 % settings for the whole document
 \parindent=0in
@@ -62,11 +64,11 @@
 \input{abstract}
 \input{zusammenfassung}
 
+{\setstretch{1.0}
 \tableofcontents
 \listoffigures
 \listoftables
-
-
+}
 
 \chapter{Introduction}
 \label{ch:Introduction}
