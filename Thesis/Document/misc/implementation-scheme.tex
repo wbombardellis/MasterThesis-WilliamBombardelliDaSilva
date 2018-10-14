@@ -7,12 +7,12 @@
 \draw (1,-1) node[object, text width=54pt] (source) {Source Model};
 
 \draw (6,-1) node[activity, text width=65pt] (e2g) {ECore to Graph};
-\draw (6,-1.75) node[activity, text width=60pt] (np) {NP Normalizer};
+\draw (6,-1.75) node[activity, text width=70pt] (np) {NP Normalization};
 \draw (8.75,-1.4) node[activity, text width=30pt] (p) {Parsing};
 \draw (11,-1.4) node[activity, text width=40pt] (prod) {Production};
-\draw (13.75,-1.4) node[object, text width=25pt] (output) {Output Model};
+\draw (13.6,-1.4) node[object, text width=55pt] (output) {Output Model};
 
-\draw (13.75,0) node[metaobject, text width=45pt] (TGMM) {$TG$ $Metamodel$};
+\draw (13.6,0) node[metaobject, text width=45pt] (TGMM) {$TG$ $Metamodel$};
 
 \draw[edge, dashed] (inputTGG) -- (TGGMM) node [edgeLabel] {};
 \draw[edge, dashed] (source) -- (sourceMM) node [edgeLabel] {};

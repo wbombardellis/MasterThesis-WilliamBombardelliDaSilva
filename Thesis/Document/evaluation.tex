@@ -55,6 +55,14 @@ The $Star2Wheel$ transformation consists of transforming star graphs, which are 
 \section{Performance}
 Furthermore, we also report on the runtime for forward and backward batch transformations in a Intel Core i3 2.3GHz 4x 64bit with 4GB RAM. The standard TGG version of the transformations were executed using the eMoflon Tool %\cite{leblebici2014developing}.
 %TODO: Which implementation details: threads, strategy, etc
+
+Regarding the worst-case time complexity of our model transformer, it is clear that it is linear on the size of the source model for the step \textit{Ecore to Graph} and it is polynomial in the size of the TGG model for the step \textit{NP Normalization}. For the step \textit{Production}, the time complexity is linear on the length of the derivation, which in turn is linear on the size of the source graph. And, ultimately, \cite[p. 160]{rozenberg1986boundary} demonstrates that the parser finishes in polynomial time for degree-bounded connected source graphs. Thus, the worst-case time complexity of the model transformer is also polynomial for this case.
+
+%TODO: Maybe need to explain better these factors, special the fact that bup the internal complexity is fast because the subsets are bounded by maxr(G)
+In particular, the parser's complexity dominates the total complexity and can be roughly described by the multiplication of two factors: the number of loop iterations executed until the desired final zone vertex is found (Lines 4 to 14 in Algorithm \ref{alg:parse}) and the number of operations necessary to find the derivations for a handle (Lines 5 to 13 in Algorithm \ref{alg:parse}). The latter is clearly a function on the size of the grammar, that is the number of rules and the right-hand sides' sizes, that are considered to be fixed, for handles bounded by the greatest right-hand side. The former is the size of the $bup$ set, which in turn is polynomial in the size of the source graph, for a degree-bounded connected graph \cite[p. 161]{rozenberg1986boundary}.
+
+%TODO: Space complexity. NLOG? Look in paper about efficiency and complexity of Kim.. Say also that much memory is used by us in the practice; search space with parsing trees and bup sets. space complexity for production is linear on source graph size
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l r r r r }
