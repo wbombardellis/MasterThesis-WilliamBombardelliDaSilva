@@ -14,7 +14,7 @@
 
 \include{packages}
 \include{macros}
-%TODO: Review italics
+
 \begin{document}
 %
 \title{Model Transformation with Triple Graph Grammars and Non-terminal Symbols}
@@ -122,7 +122,7 @@ Formally, a concrete derivation is defined as follows.
 
 Without loss of generality, we set $\omega(t) = \emptyset$ for all vertices $t$ without an image defined in $\omega$. Furthermore, let $H'$ be isomorphic to $H$, if $G$ \textit{concretely derives} in one step into $H$, we say $G$ \textit{derives} in one step into $H'$ and write $G \deriv{r}{v}{GG} H'$. 
 
-When $GG$, $r$ or $v$ are clear in the context or irrelevant we might omit them and simply write $G \cderiv{}{}{} H$ or $G \deriv{}{}{} H$. Moreover, we denote the reflexive transitive closure of $\deriv{}{}{}$ by $\derivtr{}$ and, for $G \derivtr{} H'$, we say $G$ derives into $H'$.
+When $GG$, $r$ or $v$ are clear in the context or irrelevant we might omit them and simply write $G \cderiv{}{}{} H$ or $G \deriv{}{}{} H$. Moreover, we denote the reflexive transitive closure of $\deriv{}{}{}$ by $\derivtr{}$ and, for $G \derivtr{} H'$, we say $G$ \textit{derives} into $H'$.
 
 \begin{definition}
 	A derivation $D$ in the grammar $GG$ is a non-empty sequence of derivation steps and is written as
@@ -169,7 +169,7 @@ Below, we give one example of a grammar whose language consists of all chains of
 	\draw[edge] (v1) -- (v2) node [edgeLabel] {$c$};
 	\draw[edge] (v2) -- (v3) node [edgeLabel] {$c$};
 	\end{tikzpicture}
-	belongs to $L(GG)$ because it contains only terminal vertices and $\startG{GG}$ derives into it using the following derivation:
+	belongs to $L(GG)$ because it contains only terminal vertices and $\startG{GG}$ \textit{derives} into it using the following derivation:
 	\begin{equation*}
 		\startG{GG} \deriv{r_0}{v_0}{} 
 		\begin{tikzpicture}[graph]
@@ -458,7 +458,7 @@ In the case of $Pseudocode2Controlflow$, our proposed approach shows a clear adv
 
 In addition to that, the use of non-terminal symbols gives BNCE TGG the power to represent abstract concepts very easily. For example, whereas the rule $r_1$ encodes, using only few elements, that after each $action$ comes any statement $A$, which can be another $action$, an $if$, a $while$ or nothing (an empty graph), in the standard TGG without application condition or any special inheritance treatment, we need to write a different rule for each of these cases. For the whole grammar, we need to consider all combinations of $actions$, $ifs$ and $whiles$ in all rules, what causes the great number of rules and elements.
 
-The $Star2Wheel$ transformation consists of transforming star graphs, which are complete bipartite graphs $K_{1,k}$--- where the partitions are named center and border--- to wheel graphs, that can be constructed from star graphs by adding edges between border vertices to form a minimal cycle. We could not describe this transformation in standard TGG, especially because of the rules' monotonicity (see Definition \ref{def:stgg}). That is, we missed the possibility to erase edges in a rule, feature that we do have in the semantics of BNCE TGG through the embedding mechanism.
+The $BTree2XBTree$ transformation consists of lifting binary trees to graphs by adding edges between siblings. On this scenario, our approach performed slightly worse than TGG. The $Star2Wheel$ transformation consists of transforming star graphs, which are complete bipartite graphs $K_{1,k}$--- where the partitions are named center and border--- to wheel graphs, that can be constructed from star graphs by adding edges between border vertices to form a minimal cycle. We could not describe this transformation in standard TGG, especially because of the rules' monotonicity (see Definition \ref{def:stgg}). That is, we missed the possibility to erase edges in a rule, feature that we do have in the semantics of BNCE TGG through the embedding mechanism.
 
 The $Class2Database$ transformation consists of transforming class diagrams, similar to UML class diagrams, to database diagrams, similar to physical entity-relationship diagrams. We could not describe this transformation in BNCE TGG by the fact that the information about the production of a terminal vertex is owned exclusively by one derivation step. That is, this information cannot be used by other derivation steps (the BNCE grammar is context-free). Thus, in the case of $Class2Database$, in which an \textit{association} is connected to two \textit{classes}, each been produced by two different derivation steps, we could not connect one association with two classes.
 
