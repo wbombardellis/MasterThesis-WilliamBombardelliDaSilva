@@ -1,0 +1,159 @@
+Dear William Bombardelli Da Silva,
+
+Thank you very much for submitting the paper
+
+Model Transformation with Triple Graph Grammars and Non-terminal Symbols
+
+to the Sixth International Workshop on
+Formal Techniques for Safety-Critical Systems (FTSCS'18).
+
+We are pleased to inform you that your paper has been ACCEPTED for inclusion in the preproceedings and the Springer CCIS proceedings, and for presentation at the workshop.
+
+We attach the review reports. Some submissions were accepted under the assumption that necessary corrections would be made. We therefore ask you to consider all the comments carefully and make the best possible effort to address all the issues raised when producing the workshop (pre-)proceedings and the Springer proceedings.
+
+FTSCS'18 received 22 paper submissions, which included 2 tool papers.
+We decided to accept 10 papers.
+Members of the program committee have discussed the papers actively, and the decision is based not only on the attached reports, but (in
+particular!) also on extensive discussions in the program committee.
+
+The hard deadline for submission of the workshop version of your paper is
+
+*** October 26 ***
+
+Please, follow all the instructions for authors provided by Springer (http://www.springer.com/computer/lncs?SGWID=0-164-6-793341-0)
+carefully. The page limit was 16 pages, but feel free to use one or two extra pages if needed to address the reviewers' comments and/or to improve the presentation of your paper.
+
+The final deadline for the Springer version will be soon after the workshop.
+
+Please ensure that your paper is well written in correct English before submitting the final version of your manuscript. We reserve the right to reject papers that have not been formatted properly, are not written in good English, or that do not address adequately the issues raised by the reviewers. More detailed instructions on submitting your final version will follow shortly.
+
+We, of course, expect at least one of the authors to attend the conference and present the paper. Please check the ICFEM registration site
+
+http://www.formal-analysis.com/icfem/2018/
+
+as soon as possible.
+
+*** Early registration deadline: October 12 ***
+
+Although it is sufficient to attend the workshop only, you should also consider attending the ICFEM conference as well. 
+
+The choice of the papers whose authors will be invited to submit an extended version to the special issue of the Science of Computer Programming journal will be announced after the workshop. This allows the consideration of additional information about the work, e.g., obtained from the presentation.
+
+The workshop will be a one-day event, and will take place November 16.
+
+We look forward to seeing you in Gold Coast!
+
+*** Don't forget to get an Australian visa ***
+
+(Citizens of surprisingly many countries, including Sweden, used to need visa to go to Australia. Could be gotten online previously.)
+
+Best regards,
+
+
+----------------------- REVIEW 1 ---------------------
+PAPER: 15
+TITLE: Model Transformation with Triple Graph Grammars and Non-terminal Symbols
+AUTHORS: William Bombardelli Da Silva, Max Bureck, Ina Schieferdecker and Christian Hein
+
+Overall evaluation: 1 (weak accept)
+
+----------- Overall evaluation -----------
+#15: Model Transformation
+
+With the aim of supporting the model-based development of (safety-critical) software systems, this paper introduces a novel context-free graph transformation approach for specifying model transformations. It is based on two known graph rewriting concepts, namely, neighborhood-controlled embedding (NCE) graph grammars and triple-graph grammars (TGG). The overall motivation is to increase both the applicability and expressivity of TGG by introducing nonterminals, which allow for the representation of abstract entities and thus support more concise and powerful specifications. Essentially, the paper formally defines the new concept and develops a corresponding graph transformation algorithm. The approach is demonstrated on a practical example, the transformation of pseudo-code to the corresponding control-flow graphs. Moreover, its usability is evaluated on four transformations (including the former) by comparing the size of specifications in the original TGG approach with the !
+ new one.
+
+Although the theoretical results are interesting (in spite of the quite complicated formalism) and appear to be sound (especially Theorem 1, which provides the basis for the graph transformation algorithm), the relevance of the approach for the FTSCS Workshop should be made more clear. The justification by potential application to safety-critical systems is at most weak. The accompanying pseudo-code/control-flow graph is surely not suitable for demonstrating its usefulness in that setting. In addition, the example seems unrealistic as the representation of pseudo-code is quite close to the control flow of the program whereas one would rather expect it to be given by some form of (abstract) syntax tree. Nevertheless, for its technical quality I (weakly) recommend to accept the paper.
+
+One remark concerning related work: I was wondering about the relation between the new formalism and hyperedge replacement grammars (HRG), another context-free approach to graph transformation. More specifically: is there any connection between the embedding functions used in the rules of NCE grammars and the hyperedges of HRG?
+
+
+Detailed comments:
+
+p. 1, 2nd par: "various models _at_ different levels of abstraction"
+
+p. 3, bottom: "We refer to directed labeled graphs often _ simply as graphs."
+
+p. 4, Def. 4: the explanation of the embedding function \omega is given only on the next page, which is quite late. Maybe the informal explanation of the derivation process should directly follow this definition. 
+middle: "the left-hand side_s_ of the productions were allowed to contain any connected graph"
+
+p. 5, top, def. of \phi_H: shouldn't the pair (v,x) be replaced by the mapping relation v \mapsto x?
+
+p. 6, middle: "We also _point out_ that in the literature"
+The following sentence is not clear. What do you mean by "validity of our approach"?
+Def. 9: what is the definition of "L \subseteq R"?
+Def. 10: the set TG_\Sigma (of triple graphs, I presume) is undefined
+
+p. 11, Def. 16: I am wondering whether s^{-1} is well defined. Isn't it possible for the same source graph to occur several times in production?
+
+p. 14, Table 1: it does not become clear what the "BTree2XBTree" transformation does
+
+p. 15, references: the acronyms NLC [6], EDNLC [8], and UML [9] should be typeset in uppercase letters
+
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 15
+TITLE: Model Transformation with Triple Graph Grammars and Non-terminal Symbols
+AUTHORS: William Bombardelli Da Silva, Max Bureck, Ina Schieferdecker and Christian Hein
+
+Overall evaluation: 1 (weak accept)
+
+----------- Overall evaluation ----------- The paper presents a new triple graph grammar (TGG) formalism, called NCE
+    TGG, that introduces non-terminal symbols to TGG with the purpose of gaining
+    expressiveness and usability. It shows how model transformation can be
+    carried out using NCE TGGs and evaluated the approach on four examples.
+ 
+    A triple graph (Gs <-ms- Gc -mt-> Gt) is a triple of graphs (Gs,Gc,Gt)
+    together with a pair of graph morphisms ms,mt injecting nodes of Gc into Gs
+    and Gt.
+
+    NCE TGG is TG grammar where production rules have as lhs a non terminal and
+    rhs a graph triple (Gs <-ms- Gc -mt-> Gt) (whose labels may contain
+    non-terminals) together with a pair of embedding relations (one for Gs and
+    one for Gt) mapping nodes to pairs, an edge label and and edge target label.
+
+    The language of a TGG, L(TGG), is the set of derivable TGs that have no
+    nonTerminals in their labels.
+
+    A TGG can be viewed as the description of the correctly-transformed relation between two sets of models (represented as graphs) S and T, where two models G in S (source) and H in T (target) are in this relation iff G and H are respectively, source and target graphs of some triple graph of the language L(TGG).
+
+    Thus defining a correct model transformation can be reduced to defining
+    a (NCE) TGG whose triples represent the desired transformation relation.
+
+    Theorem 1 shows that given TGG that satisfies some consistency conditions
+    on non terminals, implementing the transformation of G to some
+    related graph according to TGG can be done by first finding a derivation of G
+    using the source projection of TGG and then lifting the derivation
+    to a derivation of triple graphs.
+
+    The idea is evaluated by comparing NTC TGG to basic TGG for four
+    examples: Pseudocode2Controlflow, BTree2XBTree, Star2Wheel, Class2Database.
+    The Star2Wheel didn't seem doable using TGG.  Class2Database seemed not
+    doable using NTC TGG.  The NTC TGG for Pseudocode2Controlflow is almost
+    an order of magnitude smaller than the TGG.
+
+
+    The paper is well-written and reasonably self-contained.
+    It addresses model transformation which is in scope.
+    What I'm missing is how you verify that the TGG or the NTC TGG specified
+    a correct model transformation.  I.e. where is the connection to
+    formal verification.
+
+
+    Defn 9  what is the defn of L contained in R when L,R are triple graphs?
+
+    In what sense are the examples used for evaluation representative
+    of the problem in general?
+
+
+----------------------- REVIEW 3 ---------------------
+PAPER: 15
+TITLE: Model Transformation with Triple Graph Grammars and Non-terminal Symbols
+AUTHORS: William Bombardelli Da Silva, Max Bureck, Ina Schieferdecker and Christian Hein
+
+Overall evaluation: 2 (accept)
+
+----------- Overall evaluation ----------- This paper proposes a new graph grammar formalism, that introduces non-terminal symbols to triple graph grammars (TGG) and shows how to apply it to solving the model transformation problem. The problem is typical in software engineering and it is of great interest for the scientific community. 
+
+In my opinion, the paper is well written and could raise up an interesting discussion in the workshop. The authors are aware of the limits, which are well pointed out in the conclusions.
+
