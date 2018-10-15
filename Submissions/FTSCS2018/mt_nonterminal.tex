@@ -77,16 +77,14 @@ Regarding TGG \cite{schurr1994specification}, a 20 years review of the realm is 
 
 \section{Graph Grammars and Triple Graph Grammars}
 \label{sec:gg-tgg}
-In this section, we introduce important definitions that are used throughout this paper. First, we present definitions regarding graphs, taken mainly from \cite{rozenberg1986boundary}, second, we introduce the NCE graph grammar \cite{janssens1982graph,kim2001efficient} and then, we express our understanding of TGG \cite{schurr1994specification}.
+In this section, we introduce important definitions that are used throughout this paper. First, we present definitions regarding graphs \cite{rozenberg1986boundary}, second, we introduce the NCE graph grammar \cite{janssens1982graph,kim2001efficient} and then, we express our understanding of TGG \cite{schurr1994specification}.
 
 \begin{definition}
 	\label{def:graph}
 	A directed labeled graph $G$ over the finite set of symbols $\Sigma$, $G = (V, E, \phi)$ consists of a finite set of vertices $V$, a set of labeled directed edges $E \subseteq V \times \Sigma \times V$ and a total vertex labeling function $\phi : V \to \Sigma$. 
 \end{definition}
 
-We refer to directed labeled graphs often simply as graphs. For a fixed graph $G$ we refer to its components as $V_G$, $E_G$ and $\phi_G$. Moreover, we denote the set of all graphs over $\Sigma$ by $\allgraphs{\Sigma}$. Two graphs $G$ and $H$ are disjoint if, and only if, $V_G \cap V_H = \emptyset$. If $\phi_G(v) = a$ we say $v$ is labeled by $a$. In special, we do not allow loops (vertices of the form $(v,l,v)$), but multi-edges with different labels are allowed.
-
-Two vertices $v$ and $w$ are neighbors if, and only if, $(v,l,w) \in E_G$ or $(w,l,v) \in E_G$. In this case, we say $(v,l,w)$ and $(w,l,v)$ are adjacent edges to $v$ and to $w$.
+We refer to directed labeled graphs often simply as graphs. For a fixed graph $G$ we refer to its components as $V_G$, $E_G$ and $\phi_G$. For two graphs $G$ and $H$, we write $G \subseteq H$ if, and only if, $V_G \subseteq V_H, E_G \subseteq E_H$ and $\phi_G \subseteq \phi_H$. Furthermore, $G$ and $H$ are disjoint if, and only if, $V_G \cap V_H = \emptyset$. If $\phi_G(v) = a$ we say $v$ is labeled by $a$. Two vertices $v$ and $w$ are neighbors if, and only if, $(v,l,w) \in E_G$ or $(w,l,v) \in E_G$. In this case, we say $(v,l,w)$ and $(w,l,v)$ are adjacent edges to $v$ and to $w$. In special, we do not allow loops (vertices of the form $(v,l,v)$), but multi-edges with different labels are allowed and we denote the set of all graphs over $\Sigma$ by $\allgraphs{\Sigma}$.
 
 \begin{definition}
 	\label{def:morphism}
@@ -218,7 +216,7 @@ Below, we introduce the standard definition of TGG.
 
 \begin{definition}
 	\label{def:stgg}
-	A triple graph grammar $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, analogously to graph grammars (see Definition \ref{def:gg}), an alphabet $\Sigma$, a set of terminal symbols $\Delta$, a start symbol $S$ and a set of production rules $P$ of the form $L \pro R$ with $L = L_s \ms{} L_c \mt{} L_t$ and $R = R_s \ms{} R_c \mt{} R_t$ and $L \subseteq R$.
+	A triple graph grammar $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, analogously to graph grammars (see Definition \ref{def:gg}), an alphabet $\Sigma$, a set of terminal symbols $\Delta$, a start symbol $S$ and a set of production rules $P$ of the form $L \pro R$ with $L = L_s \ms{\sigma_l} L_c \mt{\tau_l} L_t$ and $R = R_s \ms{\sigma_r} R_c \mt{\tau_r} R_t$ and $L_s \subseteq R_s, L_c \subseteq R_c, L_t \subseteq R_t, \sigma_l \subseteq \sigma_r$ and $\tau_l \subseteq \tau_r$.
 \end{definition}
 
 As the reader should notice, this definition of TGG does not fit our needs optimally, because it defines a context-sensitive graph grammar, whereas we wish a context-free graph grammar to use together with the NCE graph grammar formalism. Hence, we refine it, in the next section, to create a NCE TGG, that fits our context better.
@@ -251,13 +249,13 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 		& \cup \{(w,l,t) \st (w,l,v_s) \in E_{G_s} \land (l,\phi_{G_s}(w)) \in \omega_{s}(t)\} \\
 		& \cup \{(t,l,w) \st (v_s,l,w) \in E_{G_s} \land (l,\phi_{G_s}(w)) \in \omega_{s}(t)\} \text{ and} \\
 		E_{H_c} & = (E_{G_c} \setminus (\{(v_c,l,w) \st (v_c,l,w) \in E_{G_c}\} \cup \{(w,l,v_c) \st (w,l,v_c) \in E_{G_c}\})) \\
-		& \cup E_{R_c} \text{ and} \\
+		& \cup E_{R_c} \text{ and}
+	\end{align*}
+	\begin{align*}
 		E_{H_t} & = (E_{G_t} \setminus (\{(v_t,l,w) \st (v_t,l,w) \in E_{G_t}\} \cup \{(w,l,v_t) \st (w,l,v_t) \in E_{G_t}\})) \\
 		& \cup E_{R_t} \\
 		& \cup \{(w,l,t) \st (w,l,v_t) \in E_{G_t} \land (l,\phi_{G_t}(w)) \in \omega_{t}(t)\} \\
-		& \cup \{(t,l,w) \st (v_t,l,w) \in E_{G_t} \land (l,\phi_{G_t}(w)) \in \omega_{t}(t)\} \text{ and} 
-	\end{align*}
-	\begin{align*}
+		& \cup \{(t,l,w) \st (v_t,l,w) \in E_{G_t} \land (l,\phi_{G_t}(w)) \in \omega_{t}(t)\} \text{ and} \\
 		h_s		& = (g_s \setminus \{(v_c,x) \st x \in V_{G_s}\}) \cup r_s  \\
 		h_t		& = (g_t \setminus \{(v_c,x) \st x \in V_{G_t}\}) \cup r_t  \\
 		\phi_{H_s} & = (\phi_{G_s} \setminus \{(v_s,x) \st x \in \Sigma\}) \cup \phi_{R_s} \text{ and}\\
