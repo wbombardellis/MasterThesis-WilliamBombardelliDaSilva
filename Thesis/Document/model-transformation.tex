@@ -12,6 +12,8 @@ Our strategy to solve this problem is, first, to get a derivation for $G$ with t
 	Let $r = (A \pro (G_s \ms{} G_c \mt{} G_t), \omega_s, \omega_t)$ be a production rule of a triple graph grammar, $\source(r) = (A \pro G_s,\omega_s)$ gives the source part of $r$ and $\target(r) = (A \pro G_t,\omega_t)$ gives the target part. Moreover, $\source^{-1}((A \pro G_s,\omega_s)) = r$ and $\target^{-1}((A \pro G_t,\omega_t)) = r$ are the inverse of these functions.
 \end{definition}
 
+In order for $s^{-1}$ to be well defined, we require that all source parts $(A \pro G_s,\omega_s)$ be unique. This does not affect the generality of the formalism, for right-hand side graphs $G_s$ are still allowed to be isomorphic.
+
 \begin{definition}
 	\label{def:Source}
 	Let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar, $\Source(TGG) = (\Sigma, \Delta, S, \source(P))$ gives the source grammar of $TGG$ and $\Target(TGG) = (\Sigma, \Delta, S, \target(P))$ gives the target grammar of $TGG$.
