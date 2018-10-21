@@ -143,4 +143,28 @@ public interface TripleRule extends EObject {
 	 */
 	EMap<Vertex, Vertex> getMt();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The image of inverse function of the morphism ms applied to sourceVertex. 
+	 * As ms is bijective, this inverse exists, is unique and also bijective.
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	Vertex invMs(Vertex sourceVertex);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The image of the inverse function of the morphism mt applied to targetVertex.
+	 * As mt is bijective, this inverse exists, is unique and bijective.
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	Vertex invMt(Vertex targetVertex);
+
 } // TripleRule

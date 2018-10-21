@@ -2,9 +2,13 @@
  */
 package org.wbsilva.bence.graphgrammar.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map.Entry;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EClass;
@@ -288,6 +292,34 @@ public class TripleRuleImpl extends MinimalEObjectImpl.Container implements Trip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Vertex invMs(Vertex sourceVertex) {
+		for (Entry<Vertex, Vertex> entry : this.getMs().entrySet()) {
+			if (entry.getValue() == sourceVertex) {
+				return entry.getKey();
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Vertex invMt(Vertex targetVertex) {
+		for (Entry<Vertex, Vertex> entry : this.getMt().entrySet()) {
+			if (entry.getValue() == targetVertex) {
+				return entry.getKey();
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -409,6 +441,22 @@ public class TripleRuleImpl extends MinimalEObjectImpl.Container implements Trip
 			return mt != null && !mt.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case GraphgrammarPackage.TRIPLE_RULE___INV_MS__VERTEX:
+			return invMs((Vertex) arguments.get(0));
+		case GraphgrammarPackage.TRIPLE_RULE___INV_MT__VERTEX:
+			return invMt((Vertex) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //TripleRuleImpl

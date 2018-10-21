@@ -290,6 +290,18 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A triple rule of a triple graph grammar"/>
     </eAnnotations>
+    <eOperations name="invMs" eType="#//Vertex">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The image of inverse function of the morphism ms applied to sourceVertex. &#xA;As ms is bijective, this inverse exists, is unique and also bijective."/>
+      </eAnnotations>
+      <eParameters name="sourceVertex" eType="#//Vertex"/>
+    </eOperations>
+    <eOperations name="invMt" eType="#//Vertex">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The image of the inverse function of the morphism mt applied to targetVertex.&#xA;As mt is bijective, this inverse exists, is unique and bijective."/>
+      </eAnnotations>
+      <eParameters name="targetVertex" eType="#//Vertex"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Rule"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="corr" eType="#//Rule" containment="true"/>

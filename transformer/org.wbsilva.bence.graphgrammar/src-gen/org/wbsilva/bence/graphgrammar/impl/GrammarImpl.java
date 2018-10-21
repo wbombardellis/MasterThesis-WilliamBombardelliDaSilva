@@ -283,14 +283,15 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 					//Adjust unifier to map from rule to next
 					final EMap<Vertex, Vertex> r2rhsUnifier = r.getRhs().isomorphism(rhs);
 					assert r2gUnifier.size() == r2rhsUnifier.size();
-					
+
 					final EMap<Vertex, Vertex> r2nUnifier = new BasicEMap<Vertex, Vertex>(r2rhsUnifier.size());
 					r2rhsUnifier.stream().forEach(r2rhs -> {
-						r2nUnifier.put(r2rhs.getKey(), n.getVertices().stream().filter(w -> w.getId().equals(r2rhs.getValue().getId())).findAny().orElse(null));
+						r2nUnifier.put(r2rhs.getKey(), n.getVertices().stream()
+								.filter(w -> w.getId().equals(r2rhs.getValue().getId())).findAny().orElse(null));
 					});
 					assert r2nUnifier.size() == r2gUnifier.size();
 					assert r.getRhs().getVertices().stream().allMatch(w -> n.getVertices().contains(r2nUnifier.get(w)));
-					
+
 					/*final EMap<Vertex, Vertex> r2nUnifier = new BasicEMap<Vertex, Vertex>(r2gUnifier.size());
 					r2gUnifier.stream().forEach(r2g -> {
 						r2nUnifier.put(r2g.getKey(), g2nextIsomorphism.get(r2g.getValue()));

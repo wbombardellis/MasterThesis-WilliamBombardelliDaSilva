@@ -1012,6 +1012,24 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getTripleRule__InvMs__Vertex() {
+		return tripleRuleEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTripleRule__InvMt__Vertex() {
+		return tripleRuleEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTripleGraph() {
 		return tripleGraphEClass;
 	}
@@ -1290,6 +1308,8 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		createEReference(tripleRuleEClass, TRIPLE_RULE__TARGET);
 		createEReference(tripleRuleEClass, TRIPLE_RULE__MS);
 		createEReference(tripleRuleEClass, TRIPLE_RULE__MT);
+		createEOperation(tripleRuleEClass, TRIPLE_RULE___INV_MS__VERTEX);
+		createEOperation(tripleRuleEClass, TRIPLE_RULE___INV_MT__VERTEX);
 
 		tripleGraphEClass = createEClass(TRIPLE_GRAPH);
 		createEReference(tripleGraphEClass, TRIPLE_GRAPH__SOURCE);
@@ -1618,6 +1638,12 @@ public class GraphgrammarPackageImpl extends EPackageImpl implements Graphgramma
 		initEReference(getTripleRule_Mt(), this.getVertexToVertexMap(), null, "mt", null, 0, -1, TripleRule.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = initEOperation(getTripleRule__InvMs__Vertex(), this.getVertex(), "invMs", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getVertex(), "sourceVertex", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTripleRule__InvMt__Vertex(), this.getVertex(), "invMt", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getVertex(), "targetVertex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(tripleGraphEClass, TripleGraph.class, "TripleGraph", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

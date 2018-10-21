@@ -354,7 +354,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 				final Vertex newOutputV = outputUnifier.get(outputV);
 				assert newOutputV != null;
 				assert outputGraph.getVertices().contains(newOutputV);
-				
+
 				outputMorphism.put(newCorrV, newOutputV);
 			}
 
@@ -367,7 +367,7 @@ public class TripleGrammarImpl extends MinimalEObjectImpl.Container implements T
 						.filter(w -> w.getId().equals(inputV.getId())).findAny().orElse(null));
 				assert newInputV != null;
 				assert inputGraph.getVertices().contains(newInputV);
-				
+
 				inputMorphism.put(newCorrV, newInputV);
 			}
 		}

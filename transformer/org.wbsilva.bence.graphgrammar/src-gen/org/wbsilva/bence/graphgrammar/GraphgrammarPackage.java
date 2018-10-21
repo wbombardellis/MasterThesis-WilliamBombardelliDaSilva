@@ -1154,13 +1154,31 @@ public interface GraphgrammarPackage extends EPackage {
 	int TRIPLE_RULE_FEATURE_COUNT = 5;
 
 	/**
+	 * The operation id for the '<em>Inv Ms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_RULE___INV_MS__VERTEX = 0;
+
+	/**
+	 * The operation id for the '<em>Inv Mt</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIPLE_RULE___INV_MT__VERTEX = 1;
+
+	/**
 	 * The number of operations of the '<em>Triple Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRIPLE_RULE_OPERATION_COUNT = 0;
+	int TRIPLE_RULE_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.wbsilva.bence.graphgrammar.impl.TripleGraphImpl <em>Triple Graph</em>}' class.
@@ -2305,6 +2323,26 @@ public interface GraphgrammarPackage extends EPackage {
 	EReference getTripleRule_Mt();
 
 	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.TripleRule#invMs(org.wbsilva.bence.graphgrammar.Vertex) <em>Inv Ms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Inv Ms</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.TripleRule#invMs(org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getTripleRule__InvMs__Vertex();
+
+	/**
+	 * Returns the meta object for the '{@link org.wbsilva.bence.graphgrammar.TripleRule#invMt(org.wbsilva.bence.graphgrammar.Vertex) <em>Inv Mt</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Inv Mt</em>' operation.
+	 * @see org.wbsilva.bence.graphgrammar.TripleRule#invMt(org.wbsilva.bence.graphgrammar.Vertex)
+	 * @generated
+	 */
+	EOperation getTripleRule__InvMt__Vertex();
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bence.graphgrammar.TripleGraph <em>Triple Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3152,6 +3190,20 @@ public interface GraphgrammarPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRIPLE_RULE__MT = eINSTANCE.getTripleRule_Mt();
+		/**
+		 * The meta object literal for the '<em><b>Inv Ms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TRIPLE_RULE___INV_MS__VERTEX = eINSTANCE.getTripleRule__InvMs__Vertex();
+		/**
+		 * The meta object literal for the '<em><b>Inv Mt</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TRIPLE_RULE___INV_MT__VERTEX = eINSTANCE.getTripleRule__InvMt__Vertex();
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bence.graphgrammar.impl.TripleGraphImpl <em>Triple Graph</em>}' class.
 		 * <!-- begin-user-doc -->
