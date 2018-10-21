@@ -219,7 +219,7 @@ Furthermore, consider the definition of the PAC consistent (PC) property of TGG,
 	Let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar and $\Pi = \bigcup_{r \in P}{\phi_{G_s}(U_s)}$ be the set of all PAC labels, $TGG$ is PAC consistent (PC) if, and only if, for all rules $(A \pro (G_s \ms{m_s} G_c \mt{m_t} G_t), \omega_s, \omega_t, U_s, U_t) \in P$, the following holds
 	\begin{enumerate}
 		\item $\forall v \in U_s \. m_t(m_s^{-1}(v)) \in U_t$
-		\item $\forall v \in G_s \. \text{if } \phi_{G_s}(v) \in \Pi \text{ then } \phi_{G_s}(v) = \phi_{G_t}(m_t(m_s^{-1}(v)))$
+		\item $\forall v \in G_s \. \text{if } \phi_{G_s}(v) \in \Pi \text{ then } m_t(m_s^{-1}(v)) \in G_t$
 	\end{enumerate}
 \end{definition}
 
