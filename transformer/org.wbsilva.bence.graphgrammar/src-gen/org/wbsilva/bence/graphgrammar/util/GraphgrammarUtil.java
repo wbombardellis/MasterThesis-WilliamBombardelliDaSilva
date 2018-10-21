@@ -488,6 +488,9 @@ public class GraphgrammarUtil {
 		if (r == null || r.stream().anyMatch(rr -> !isValidTripleRule(ab, n, rr)))
 			return false;
 		
+		if (!isPacConsistent(tripleGrammar))
+			return false;
+		
 		if (!r.isEmpty() && !r.stream().anyMatch(rr -> rr.getSource().getLhs().equivalates(tripleGrammar.getInitial())
 									&& rr.getCorr().getLhs().equivalates(tripleGrammar.getInitial())
 									&& rr.getTarget().getLhs().equivalates(tripleGrammar.getInitial())))
@@ -526,12 +529,45 @@ public class GraphgrammarUtil {
 		if (!isNonTerminalConsistent(nt, rr))
 			return false;
 		
-		if (!isPacConsistent(rr))
+		return true;
+	}
+
+	/**
+	 * Checks if the triple grammar {@code tripleGrammar} is PAC consistent.
+	 * Assumes that all rules are valid
+	 * @param tripleGrammar		The triple grammar to check
+	 * @return					True iff {@code tripleGrammar} is PAC consistent
+	 */
+	private static boolean isPacConsistent(final TripleGrammar tripleGrammar) {
+		final List<TripleRule> r = tripleGrammar.getTripleRules();
+		if (r.stream().anyMatch(rr -> !isPacConsistent(rr)))
+			return false;
+		
+		final SymbolSet sPacLabels = new SymbolSet(r.stream()
+			.flatMap(rr -> rr.getSource().getPac().stream())
+			.map(v -> v.getLabel())
+			.collect(Collectors.toSet()));
+		final SymbolSet tPacLabels = new SymbolSet(r.stream()
+				.flatMap(rr-> rr.getTarget().getPac().stream())
+				.map(v -> v.getLabel())
+				.collect(Collectors.toSet()));
+		
+		//Vertices with pac labels need be consistent too
+		if (r.stream()
+			.anyMatch(rr -> rr.getSource().getRhs().getVertices().stream()
+								.anyMatch(v -> sPacLabels.contains(v.getLabel())
+											&& rr.getMt().get(rr.invMs(v)) == null)))
+			return false;
+		
+		if (r.stream()
+				.anyMatch(rr -> rr.getTarget().getRhs().getVertices().stream()
+									.anyMatch(v -> tPacLabels.contains(v.getLabel())
+												&& rr.getMs().get(rr.invMt(v)) == null)))
 			return false;
 		
 		return true;
 	}
-
+	
 	/**
 	 * Checks if the triple rule {@code rr} is PAC consistent, i.e. if pacs are only 
 	 * connected with other pacs, in regard to the ms and mt morphisms
@@ -548,6 +584,8 @@ public class GraphgrammarUtil {
 				.anyMatch(p -> !rr.getSource().getPac().contains(rr.getMs().get(p))
 							|| !rr.getTarget().getPac().contains(rr.getMt().get(p))))
 			return false;
+		
+		
 		
 		return true;
 	}
