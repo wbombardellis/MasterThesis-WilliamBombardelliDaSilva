@@ -44,6 +44,7 @@ If a graph grammar has at least one rule with PAC, then we say it is a graph gra
 So far, PAC vertices do not change anything in the behavior of a derivation step and the set $U$ in a derivation step serves just to tag which vertices are PAC in a sentential form. Nevertheless, PAC vertices play an important role on a resolution step, defined below.
 
 \begin{definition}
+	\label{def:resolv}
 	Let $GG = (\Sigma, \Delta, S, P)$ be a graph grammar and $G$ a graph over $\Delta$, $G$ resolves into $H$ with the resolution partial function $\rho: V_G \pto V_G$, we write $G \resolv{\rho} H$ and call it a resolution step, if, and only if, the following holds:
 	\begin{align*}
 		& \forall v \in \dom \rho \. \rho(v) \notin \dom \rho \text{ and } \phi_G(\rho(v)) = \phi_G(v) \text{ and}\\
@@ -166,6 +167,7 @@ Analogously, the concepts of \textit{concrete derivation step} and \textit{deriv
 Moreover, the \textit{resolution step} for TGG is as follows.
 
 \begin{definition}
+	\label{def:tresolv}
 	Let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar and $G = (G_s \ms{g_s} G_c \mt{g_t} G_t)$ a triple graph over $\Delta$, $G$ resolves into $H = (H_s \ms{h_s} H_c \mt{h_t} H_t)$ with the resolution partial functions $\rho_s: V_{G_s} \pto V_{G_s}$ and $\rho_t: V_{G_t} \pto V_{G_t}$, we write $G \tresolv{\rho_s, \rho_t} H$ and call it a resolution step, if, and only if, the following holds:
 	\begin{align*}
 	& \forall v \in \dom \rho_s \. \rho_s(v) \notin \dom \rho_s \text{ and } \phi_{G_s}(\rho_s(v)) = \phi_{G_s}(v) \text{ and}\\
@@ -186,7 +188,6 @@ Moreover, the \textit{resolution step} for TGG is as follows.
 	\end{align*}
 \end{definition}
 
-%TODO: production and language
 Finally, production and language for TGG are extended as follows.
 
 \begin{definition}
@@ -215,20 +216,57 @@ To define the model transformation procedure, consider the redefinition of the $
 Furthermore, consider the definition of the PAC consistent (PC) property of TGG, which assures that a PAC vertex of the source graph is connected with a PAC vertex in the correspondence and in the target graphs.
 
 \begin{definition}
-	A triple graph grammar $TGG = (\Sigma, \Delta, S, P)$ is PAC consistent (PC) if and only if, for all rules $(A \pro (G_s \ms{m_s} G_c \mt{m_t} G_t), \omega_s, \omega_t, U_s, U_t) \in P$, $\forall v \in U_s \. m_t(m_s^{-1}(v)) \in U_t$ and $\forall v \in U_t \. m_s(m_t^{-1}(v)) \in U_s$.
+	Let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar and $\Pi = \bigcup_{r \in P}{\phi_{G_s}(U_s)}$ be the set of all PAC labels, $TGG$ is PAC consistent (PC) if, and only if, for all rules $(A \pro (G_s \ms{m_s} G_c \mt{m_t} G_t), \omega_s, \omega_t, U_s, U_t) \in P$, the following holds
+	\begin{enumerate}
+		\item $\forall v \in U_s \. m_t(m_s^{-1}(v)) \in U_t$
+		\item $\forall v \in G_s \. \text{if } \phi_{G_s}(v) \in \Pi \text{ then } \phi_{G_s}(v) = \phi_{G_t}(m_t(m_s^{-1}(v)))$
+	\end{enumerate}
 \end{definition}
 
-Finally, the following Theorem \ref{thm:one_d_enough_pac} is an extended equivalent to the Theorem \ref{thm:one_d_enough}, which allows us to construct a production in $TGG$ out of a production in $S(TGG)$, for a triple graph grammar $TGG$.
+%TODO: Remember ms mt are bijective, thus PC is well defined
+
+Finally, Theorem \ref{thm:one_d_enough_pac} is, analogously to Theorem \ref{thm:one_d_enough}, allows us to construct a production in $TGG$ out of a production in $S(TGG)$, for a triple graph grammar $TGG$.
 
 \begin{theorem}
 	\label{thm:one_d_enough_pac}
-	Let $TGG = (\Sigma, \Delta, S, P)$ be a NTC PC TGG and $k \ge 1$, \\
-	$Q = \startTG{TGG} \tderivpac{r_0}{s_0,c_0,t_0}{W_0,Y_0}{} G^1 \tderivpac{r_1}{s_1,c_1,t_1}{W_1,Y_1}{} \dots \tderivpac{r_{k-1}}{s_{k-1},c_{k-1},t_{k-1}}{W_{k-1},Y_{k-1}}{} G^k$\\
-	$ \tresolv{\rho_0,\tau_0} H^1 \tresolv{\rho_1,\tau_1} \dots \tresolv{\rho_{k-1},\tau_{k-1}} H^k$ is a production in $TGG$ if, and only if, $\overline{Q} = \startG{S(TGG)} \derivpac{s(r_0)}{s_0}{W_0}{} G^1_s \derivpac{s(r_1)}{s_1}{W_1}{} \dots \derivpac{s(r_{k-1})}{s_{k-1}}{W_{k-1}}{} G^k_s \tresolv{\rho_0} H_s^1 \tresolv{\rho_1} \dots \tresolv{\rho_{k-1}} H_s^k$ is a production in $S(TGG)$.
+	Let $TGG = (\Sigma, \Delta, S, P)$ be a NTC PC TGG and $k \ge 1$,
+	\begin{equation*}
+		Q = \startTG{TGG} \tderivpac{r_0}{s_0,c_0,t_0}{W_0,Y_0}{} G^1 \tderivpac{r_1}{s_1,c_1,t_1}{W_1,Y_1}{} \dots \tderivpac{r_{k-1}}{s_{k-1},c_{k-1},t_{k-1}}{W_{k-1},Y_{k-1}}{} G^k \tresolv{\rho_0,\tau_0} H^1 \tresolv{\rho_1,\tau_1} \dots \tresolv{\rho_{k-1},\tau_{k-1}} H^k
+	\end{equation*}
+	is a production in $TGG$ if, and only if,
+	\begin{equation*}
+		\overline{Q} = \startG{S(TGG)} \derivpac{s(r_0)}{s_0}{W_0}{} G^1_s \derivpac{s(r_1)}{s_1}{W_1}{} \dots \derivpac{s(r_{k-1})}{s_{k-1}}{W_{k-1}}{} G^k_s \tresolv{\rho_0} H_s^1 \tresolv{\rho_1} \dots \tresolv{\rho_{k-1}} H_s^k
+	\end{equation*}
+	is a production in $S(TGG)$.
 \end{theorem}
 \begin{proof}
-	...
-	%TODO
+	We want to show that if $Q$ is a production in $TGG = (\Sigma, \Delta, S, P)$, then $\overline{Q}$ is a production in $SG := S(TGG) = (\Sigma, \Delta, S, SP)$, and vice-versa.
+	
+	For the first half of the production, that is, for the $k$ derivations steps the equivalence holds trivially because the PAC vertices $W_i$ and $Y_i$ do not harm the result of Theorem \ref{thm:one_d_enough}. So we just have to show it for the second half, that is, the $k$ resolutions, what we do by induction in the following.
+	
+	The induction base is trivial, because the start graph $\startTG{TGG}$ has no PAC vertices, hence, $W_0 = Y_0 = \emptyset$ and thus $\rho_0 = \tau_0 = \emptyset$. Therefore, if $G^k \tresolv{\rho_0,\tau_0} H^1$, then $G^k_s \tresolv{\rho_0} H_s^1$, and vice-versa.
+	
+	For the induction step, we want to show that if $G^k \tresolvtr{} H^i \tresolv{\rho_{i},\tau_{i}} H^{i+1}$ is a resolution, then $G^k_s \tresolvtr{} H^i_s \tresolv{\rho_{i}} H^{i+1}_s$ is also a resolution and vice-versa, provided that the equivalence holds for the first $i$ steps, so we just have to show it for the step $i+1$.
+	
+	So, in the one direction, if $H^i \tresolv{\rho_{i},\tau_{i}} H^{i+1}$, then, trivially, $H^i_s \tresolv{\rho_{i}} H^{i+1}_s$, by Definition \ref{def:resolv} and \ref{def:tresolv}.
+	
+	In the other direction, we want to show that if $H^i_s \tresolv{\rho_{i}} H^{i+1}_s$ then $(H^i_s \ms{ms} H^i_c \mt{mt} H^i_t) \tresolv{\rho_i,\tau_i} (H^{i+1}_s \ms{} H^{i+1}_c \mt{} H^{i+1}_t)$. For that regard, we set 
+	\[
+		\tau_i = \{mt(ms^{-1}(v)) \mapsto mt(ms^{-1}(\rho_i(v))) \st v \in \dom \rho_i \}
+	\]
+	
+	%TODO: The following step is not that clear. Maybe create a lemma to support it
+	Because $TGG$ is PC, it holds that $mt(ms^{-1}(v)) \in H^i_t$ and $mt(ms^{-1}(\rho_i(v))) \in H^i_t$ for all $v$ in $\dom \rho_i$, thus $\tau_i$ is well defined. Moreover, the induction hypothesis supports that
+	\[
+		\forall v \in \dom \rho_i \. \rho_i(v) \notin \dom \rho_i \text{ and } \phi_{H^i_s}(\rho_i(v)) = \phi_{H^i_s}(v)
+	\]
+	Hence, by $mt$ and $ms$ bijectivity and by the PC property, it is clear that
+	\[
+		\forall v \in \dom \tau_i \. \tau_i(v) \notin \dom \tau_i \text{ and } \phi_{H^i_t}(\tau_i(v)) = \phi_{H^i_t}(v)
+	\]
+	Thus, choosing $V_{H_t}$ and $E_{H_t}$ according to Definition \ref{def:tresolv} and $\tau_i$, we have that if $H^i_s \tresolv{\rho_{i}} H^{i+1}_s$ then $(H^i_s \ms{ms} H^i_c \mt{mt} H^i_t) \tresolv{\rho_i,\tau_i} (H^{i+1}_s \ms{} H^{i+1}_c \mt{} H^{i+1}_t)$.
+	
+	This finishes the proof.
 \end{proof}
 
 The effective transformation procedure for TGG with PAC is essentially the same as the one in Algorithm \ref{alg:transform}, with the additional requirement of TGG being PC and the use of Theorem \ref{thm:one_d_enough_pac} to derive and resolve PAC vertices for the produced triple graph.
