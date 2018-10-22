@@ -99,7 +99,7 @@ If there exists an isomorphism of $G$ and $H$, then $G$ and $H$ are said to be i
 
 \begin{definition}
 	\label{def:gg}
-	A graph grammar with neighborhood-controlled embedding (NCE graph grammar) $GG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of a finite set of symbols $\Sigma$ that is called alphabet, a subset of the alphabet $\Delta \subseteq \Sigma$ that holds the terminal symbols (we define the complementary set of non-terminal symbols as $\Gamma := \Sigma \setminus \Delta$), a special symbol of the alphabet $S \in \Sigma$, that is called start symbol, and a finite set of production rules $P$ of the form $(A \pro R, \omega)$ where $A \in \Gamma$ is called left-hand side, $R \in \allgraphs{\Sigma}$ is called right-hand side and $\omega : V_R \pto 2^{\Sigma \times \Sigma}$ is the partial embedding function from $R$'s vertices to pairs of edge and vertex labels.
+	A graph grammar with neighborhood-controlled embedding (NCE graph grammar) $\mathit{GG} = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of a finite set of symbols $\Sigma$ that is called alphabet, a subset of the alphabet $\Delta \subseteq \Sigma$ that holds the terminal symbols (we define the complementary set of non-terminal symbols as $\Gamma := \Sigma \setminus \Delta$), a special symbol of the alphabet $S \in \Sigma$, that is called start symbol, and a finite set of production rules $P$ of the form $(A \pro R, \omega)$ where $A \in \Gamma$ is called left-hand side, $R \in \allgraphs{\Sigma}$ is called right-hand side and $\omega : V_R \pto 2^{\Sigma \times \Sigma}$ is the partial embedding function from $R$'s vertices to pairs of edge and vertex labels.
 \end{definition}
 
 A production rule $(A \pro R, \omega)$ can be applied on a graph $G$ to generate another graph $H$. In this case, we say $G$ \textit{concretely derives} in one step into $H$. A concrete derivation can be informally understood as the replacement of a non-terminal vertex $v$ and all its adjacent edges in $G$ by the graph $R$ plus edges $e$ between former neighbors $w$ of $v$ and some vertices $t$ of $R$, provided $e$'s label and $w$'s label are in the embedding specification $\omega(t)$. That is, the embedding function $\omega$ of a rule specifies which neighbors of $v$ are to be connected with which vertices of $R$, according to their labels and the adjacent edges' labels. The process that governs the creation of these edges is called embedding and can occur in various forms in different graph grammar formalisms. We opted for a rather simple approach, in which the edges' directions and labels are maintained.
@@ -108,7 +108,7 @@ Formally, a concrete derivation is defined as follows.
 
 \begin{definition}
 	\label{def:gg_dstep}
-	Let $GG = (\Sigma, \Delta, S, P)$ be a NCE graph grammar and $G$ and $H$ be two graphs over $\Sigma$ that are disjoint to all right-hand sides from $P$, $G$ concretely derives in one step into $H$ with rule $r$ and vertex $v$, we write $G \cderiv{r}{v}{GG} H$ and call it a concrete derivation step, if, and only if, the following holds:
+	Let $\mathit{GG} = (\Sigma, \Delta, S, P)$ be a NCE graph grammar and $G$ and $H$ be two graphs over $\Sigma$ that are disjoint to all right-hand sides from $P$, $G$ concretely derives in one step into $H$ with rule $r$ and vertex $v$, we write $G \cderiv{r}{v}{GG} H$ and call it a concrete derivation step, if, and only if, the following holds:
 	\begin{align*}
 	r & = (A \pro R, \omega) \in P \text{ and } A = \phi_G(v) \text{ and} \\
 	V_H  & = (V_G \setminus \{v\}) \cup V_R \text{ and} \\
@@ -122,32 +122,28 @@ Formally, a concrete derivation is defined as follows.
 
 Without loss of generality, we set $\omega(t) = \emptyset$ for all vertices $t$ without an image defined in $\omega$. Furthermore, let $H'$ be isomorphic to $H$, if $G$ \textit{concretely derives} in one step into $H$, we say $G$ \textit{derives} in one step into $H'$ and write $G \deriv{r}{v}{GG} H'$. 
 
-When $GG$, $r$ or $v$ are clear in the context or irrelevant we might omit them and simply write $G \cderiv{}{}{} H$ or $G \deriv{}{}{} H$. Moreover, we denote the reflexive transitive closure of $\deriv{}{}{}$ by $\derivtr{}$ and, for $G \derivtr{} H'$, we say $G$ \textit{derives} into $H'$.
+When $\mathit{GG}$, $r$ or $v$ are clear in the context or irrelevant we might omit them and simply write $G \cderiv{}{}{} H$ or $G \deriv{}{}{} H$. Moreover, we denote the reflexive transitive closure of $\deriv{}{}{}$ by $\derivtr{}$ and, for $G \derivtr{} H'$, we say $G$ \textit{derives} into $H'$.
 
 \begin{definition}
-	A derivation $D$ in the grammar $GG$ is a non-empty sequence of derivation steps and is written as
+	A derivation $D$ in the grammar $\mathit{GG}$ is a non-empty sequence of derivation steps and is written as
 	\begin{equation*}
 	D = (G_0 \deriv{r_0}{v_0}{} G_1 \deriv{r_1}{v_1}{} G_2 \deriv{r_2}{v_2}{} \dots \deriv{r_{n-1}}{v_{n-1}}{} G_n)
 	\end{equation*}
 \end{definition}
 
-Finally, we define, for convenience, the start graph of $GG$ as $\startG{GG} := (\{v_s\}, \emptyset,$ $\{v_s \mapsto S\})$. Then, we can discourse about the language of a graph grammar.
+Finally, we define, for convenience, the start graph of $\mathit{GG}$ as $\startG{GG} := (\{v_s\}, \emptyset,$ $\{v_s \mapsto S\})$. Then, we can discourse about the language of a graph grammar.
 
 \begin{definition}
 	\label{def:language}
-	The language $L(GG)$ generated by the grammar $GG$ is the set of all graphs containing only terminal vertices derived from the start graph $\startG{GG}$, that is
+	The language $L(\mathit{GG})$ generated by the grammar $\mathit{GG}$ is the set of all graphs containing only terminal vertices derived from the start graph $\startG{GG}$, that is
 	\begin{equation*}
-	L(GG) = \{H \text{ is a graph over } \Delta \text{ and } \startG{GG} \derivtr{} H\}
+	L(\mathit{GG}) = \{H \text{ is a graph over } \Delta \text{ and } \startG{GG} \derivtr{} H\}
 	\end{equation*}
 \end{definition}
 
 Notice that, in the original definition of NCE graph grammars \cite{janssens1982graph}, the left-hand sides of the productions were allowed to contain any connected graph. Moreover, only undirected graphs without edge labels were allowed. So, strictly speaking, our definitions characterize actually a 1-edNCE graph grammar, that contains only one element in the left-hand side and a directed edge-labeled graph in the right-hand side. Nevertheless, for simplicity, we use the denomination NCE graph grammar, or simply graph grammar, to refer to a 1-edNCE graph grammar along this paper. Moreover, vertices from the right-hand sides of rules labeled by non-terminal (terminal) symbols are said to be non-terminal (terminal) vertices.
 
-%\begin{definition}
-%	A boundary graph grammar with neighborhood-controlled embedding (BNCE graph grammar) $GG$ is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the NCE graph grammar $GG$ is boundary if, and only if, all its rules' right-hand sides are $\Gamma\text{-boundary}$ graphs.
-%\end{definition}
-
-In the following, we present our concrete syntax inspired by the well-known Backus-Naur form to denote NCE graph grammar rules. Let $GG = (\{A, B, a, b,$ $ c, l, m\},$ $\{a, b, c, l, m\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\},$ $\{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$, we denote $p$ and $q$ together as\\
+In the following, we present our concrete syntax inspired by the well-known Backus-Naur form to denote NCE graph grammar rules. Let $\mathit{GG} = (\{A, B, a, b,$ $ c, l, m\},$ $\{a, b, c, l, m\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\},$ $\{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$, we denote $p$ and $q$ together as\\
 \input{misc/concrete-syntax}
 
 Observe that, we use squares for non-terminal vertices, circles for terminal vertices, position the respective label inside the shape and the (possibly omitted) identifier over it. Near each edge is positioned its respective label. The embedding function is not included in the notation, so it is expressed separately, if necessary.
@@ -169,7 +165,7 @@ Below, we give one example of a grammar whose language consists of all chains of
 	\draw[edge] (v1) -- (v2) node [edgeLabel] {$c$};
 	\draw[edge] (v2) -- (v3) node [edgeLabel] {$c$};
 	\end{tikzpicture}
-	belongs to $L(GG)$ because it contains only terminal vertices and $\startG{GG}$ \textit{derives} into it using the following derivation:
+	belongs to $L(\mathit{GG})$ because it contains only terminal vertices and $\startG{GG}$ \textit{derives} into it using the following derivation:
 	\begin{equation*}
 		\startG{GG} \deriv{r_0}{v_0}{} 
 		\begin{tikzpicture}[graph]
@@ -203,7 +199,7 @@ Below, we give one example of a grammar whose language consists of all chains of
 Building upon the concepts of graphs and graph grammars, we present, in the following, our understanding over triple graphs and triple graph grammars, supported by the TGG specification from Sch{\"u}rr \cite{schurr1994specification}.
 
 \begin{definition}
-	A directed labeled triple graph $TG = G_s \ms{m_s} G_c \mt{m_t} G_t$ over $\Sigma$ consists of three disjoint directed labeled graphs over $\Sigma$ (see Definition \ref{def:graph}), respectively, the source graph $G_s$, the correspondence graph $G_c$ and the target graph $G_t$, together with two injective morphisms (see Definition \ref{def:morphism}) $m_s: V_{G_c} \to V_{G_s}$ and $m_t : V_{G_c} \to G_{G_t}$.
+	A directed labeled triple graph $\mathit{TG} = G_s \ms{m_s} G_c \mt{m_t} G_t$ over $\Sigma$ consists of three disjoint directed labeled graphs over $\Sigma$ (see Definition \ref{def:graph}), respectively, the source graph $G_s$, the correspondence graph $G_c$ and the target graph $G_t$, together with two injective morphisms (see Definition \ref{def:morphism}) $m_s: V_{G_c} \to V_{G_s}$ and $m_t : V_{G_c} \to G_{G_t}$.
 \end{definition}
 
 We refer to directed labeled triple graphs are often simply as triple graphs in this paper and we might omit the morphisms' names in the notation. Moreover, we define the special empty triple graph as $\emptyTG := E \ms{m_s} E \mt{m_t} E$ with $E = (\emptyset, \emptyset, \emptyset)$ and $m_s = m_t = \emptyset$ and we denote the set of all triple graphs over $\Sigma$ by $\alltgraphs{\Sigma}$. We also point out that in the literature, triple graphs are often modeled as typed graphs, but we judge that, for our circumstance, labeled graphs fit better.
@@ -216,7 +212,7 @@ Below, we introduce the standard definition of TGG.
 
 \begin{definition}
 	\label{def:stgg}
-	A triple graph grammar $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, analogously to graph grammars (see Definition \ref{def:gg}), an alphabet $\Sigma$, a set of terminal symbols $\Delta$, a start symbol $S$ and a set of production rules $P$ of the form $L \pro R$ with $L = L_s \ms{\sigma_l} L_c \mt{\tau_l} L_t$ and $R = R_s \ms{\sigma_r} R_c \mt{\tau_r} R_t$ and $L_s \subseteq R_s, L_c \subseteq R_c, L_t \subseteq R_t, \sigma_l \subseteq \sigma_r$ and $\tau_l \subseteq \tau_r$.
+	A triple graph grammar $\mathit{TGG} = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, analogously to graph grammars (see Definition \ref{def:gg}), an alphabet $\Sigma$, a set of terminal symbols $\Delta$, a start symbol $S$ and a set of production rules $P$ of the form $L \pro R$ with $L = L_s \ms{\sigma_l} L_c \mt{\tau_l} L_t$ and $R = R_s \ms{\sigma_r} R_c \mt{\tau_r} R_t$ and $L_s \subseteq R_s, L_c \subseteq R_c, L_t \subseteq R_t, \sigma_l \subseteq \sigma_r$ and $\tau_l \subseteq \tau_r$.
 \end{definition}
 
 As the reader should notice, this definition of TGG does not fit our needs optimally, because it defines a context-sensitive graph grammar, whereas we wish a context-free graph grammar to use together with the NCE graph grammar formalism. Hence, we refine it, in the next section, to create a NCE TGG, that fits our context better.
@@ -226,10 +222,10 @@ As the reader should notice, this definition of TGG does not fit our needs optim
 In this section, we put forward our first contribution, that is the result of mixing the NCE and the TGG grammars.
 
 \begin{definition}
-	A triple graph grammar with neighborhood-controlled embedding (NCE TGG) $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $(A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t)$ with $A \in \Gamma$ being the left-hand side, $(R_s \ms{} R_c \mt{} R_t) \in \alltgraphs{\Sigma}$ the right-hand side and $\omega_s : V_{R_s} \pto 2^{\Sigma \times \Sigma}$ and $\omega_t : V_{R_t} \pto 2^{\Sigma \times \Sigma}$ the partial embedding functions from the right-hand side's vertices to pairs of edge and vertex labels.
+	A triple graph grammar with neighborhood-controlled embedding (NCE TGG) $\mathit{TGG} = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $(A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t)$ with $A \in \Gamma$ being the left-hand side, $(R_s \ms{} R_c \mt{} R_t) \in \alltgraphs{\Sigma}$ the right-hand side and $\omega_s : V_{R_s} \pto 2^{\Sigma \times \Sigma}$ and $\omega_t : V_{R_t} \pto 2^{\Sigma \times \Sigma}$ the partial embedding functions from the right-hand side's vertices to pairs of edge and vertex labels.
 \end{definition}
 
-For convenience, define also the start triple graph of $TGG$ as $\startTG{TGG} := Z_s \ms{ms} Z_c \mt{mt} Z_t$ where $Z_s = (\{s_0\},\emptyset,\{s_0 \mapsto S\})$, $Z_c = (\{c_0\},\emptyset,\{c_0 \mapsto S\})$, $Z_t = (\{t_0\},\emptyset,\{t_0 \mapsto S\})$, $ms = \{c_0 \mapsto s_0 \}$ and $mt = \{c_0 \mapsto t_0 \}$.
+For convenience, define also the start triple graph of $\mathit{TGG}$ as $\startTG{TGG} := Z_s \ms{ms} Z_c \mt{mt} Z_t$ where $Z_s = (\{s_0\},\emptyset,\{s_0 \mapsto S\})$, $Z_c = (\{c_0\},\emptyset,\{c_0 \mapsto S\})$, $Z_t = (\{t_0\},\emptyset,\{t_0 \mapsto S\})$, $ms = \{c_0 \mapsto s_0 \}$ and $mt = \{c_0 \mapsto t_0 \}$.
 
 The most important difference between the traditional TGG and the NCE TGG is that the former allows any triple graph to occur in the left-hand sides, whereas the latter only one symbol. In addition to that, traditional TGG requires that the whole left-hand side occur also in the right-hand side, that is to say, the rules are monotonic. Therewith, embedding is not an issue, because an occurrence of the left-hand side is not effectively replaced by the right-hand side, instead, only new vertices are added. On the other hand, NCE TGG has to deal with embedding through the embedding function.
 
@@ -237,7 +233,7 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 
 \begin{definition}
 	\label{def:tgg_dstep}
-	Let $TGG = (\Sigma, \Delta, S, P)$ be a NCE TGG and $G = G_s \ms{g_s} G_c \mt{g_t} G_t$ and $H = H_s \ms{h_s} H_c \mt{h_t} H_t$ be two triple graphs over $\Sigma$ that are disjoint to all right-hand sides from $P$, $G$ concretely derives in one step into $H$ with rule $r$ and distinct vertices $v_s, v_c, v_t$, we write $G \tcderiv{r}{v_s,v_c,v_t}{TGG} H$ if, and only if, the following holds:
+	Let $\mathit{TGG} = (\Sigma, \Delta, S, P)$ be a NCE TGG and $G = G_s \ms{g_s} G_c \mt{g_t} G_t$ and $H = H_s \ms{h_s} H_c \mt{h_t} H_t$ be two triple graphs over $\Sigma$ that are disjoint to all right-hand sides from $P$, $G$ concretely derives in one step into $H$ with rule $r$ and distinct vertices $v_s, v_c, v_t$, we write $G \tcderiv{r}{v_s,v_c,v_t}{TGG} H$ if, and only if, the following holds:
 	\begin{align*}
 		r & = (A \pro (R_s \ms{r_s} R_c \mt{r_t} R_t), \omega_s, \omega_t) \in P \text{ and } \\
 		A & = \phi_{G_s}(v_s) = \phi_{G_c}(v_c) = \phi_{G_t}(v_t) \text{ and}\\
@@ -269,7 +265,7 @@ Without loss of generality, we set $\omega(t) = \emptyset$ for all vertices $t$ 
 A concrete derivation of a triple graph $G = G_s \ms{g_s} G_c \mt{g_t} G_t$ can be informally understood as concrete derivations (see Definition \ref{def:gg_dstep}) of $G_s$, $G_c$ and $G_t$ according to the right-hand sides $R_s$, $R_c$ and $R_t$. The only remark is the absence of an embedding mechanism for the correspondence graph, whose edges are not important for our approach. Nevertheless, the addition of such a mechanism for the correspondence graph should not be a problem if it is desired.
 
 \begin{definition}
-	A derivation $D$ in the triple graph grammar $TGG$ is a non-empty sequence of derivation steps
+	A derivation $D$ in the triple graph grammar $\mathit{TGG}$ is a non-empty sequence of derivation steps
 	\begin{equation*}
 		D = (G_0 \tderiv{r_0}{s_0,c_0,t_0}{} G_1 \tderiv{r_1}{s_1,c_1,t_1}{} G_2 \tderiv{r_2}{s_2,c_2,t_2}{} \dots \tderiv{r_{n-1}}{s_{n-1},c_{n-1},t_{n-1}}{} G_n)
 	\end{equation*}
@@ -277,9 +273,9 @@ A concrete derivation of a triple graph $G = G_s \ms{g_s} G_c \mt{g_t} G_t$ can 
 
 \begin{definition}
 	\label{def:tlanguage}
-	The language $L(TGG)$ generated by the triple grammar $TGG$ is the set of all triple graphs containing only terminal vertices derived from the start triple graph $\startTG{TGG}$, that is
+	The language $L(\mathit{TGG})$ generated by the triple grammar $\mathit{TGG}$ is the set of all triple graphs containing only terminal vertices derived from the start triple graph $\startTG{TGG}$, that is
 	\begin{equation*}
-		L(TGG) = \{H \text{ is a triple graph over } \Delta \text{ and } \startTG{TGG} \tderivtr{} H\}
+		L(\mathit{TGG}) = \{H \text{ is a triple graph over } \Delta \text{ and } \startTG{TGG} \tderivtr{} H\}
 	\end{equation*}
 \end{definition}
 
@@ -288,15 +284,15 @@ Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and
 %Concrete syntax and examples (Pseudocode 2 Control Flow [sourcecode2controlflow])
 \begin{example}
 	\label{ex:pseudocode2controlflow}
-	This example illustrates the definition of a NCE TGG that characterizes the language of all $Pseudocode$ graphs together with their respective $Controlflow$ graphs. A $Pseudocode$ graph is an abstract representation of a program written in a pseudo-code where vertices refer to \textit{actions}, \textit{ifs} or \textit{whiles} and edges connect these items together according to how they appear in the program. A $Controlflow$ graph is a more abstract representation of a program, where vertices can only be either a \textit{command} or a \textit{branch}.
+	This example illustrates the definition of a NCE TGG that characterizes the language of all \emph{Pseudocode} graphs together with their respective \emph{Controlflow} graphs. A \emph{Pseudocode} graph is an abstract representation of a program written in a pseudo-code where vertices refer to \textit{actions}, \textit{ifs} or \textit{whiles} and edges connect these items together according to how they appear in the program. A \emph{Controlflow} graph is a more abstract representation of a program, where vertices can only be either a \textit{command} or a \textit{branch}.
 	
-	Consider, for instance, the program $main$, written in a pseudo-code, and the triple graph $TG$ in Figure \ref{fig:p2c-tg}. The triple graph $TG$ consists of the $Pseudocode$ graph of $main$ connected to the $Controlflow$ graph of the same program through the correspondence graph in the middle of them. In such graph, the vertex labels of the $Pseudocode$ graph $p, i, a, w$ correspond to the concepts of \textit{program}, \textit{if}, \textit{action} and \textit{while}, respectively. The edge label $f$ is given to the edge from the vertex $p$ to the program's first statement, $x$ stands for \textit{next} and indicates that a statement is followed by another statement, $p$ and $n$ stand for \textit{positive} and \textit{negative} and indicate which assignments correspond to the positive of negative case of the \textit{if}'s evaluation, finally $l$ stands for \textit{last} and indicates the last action of a loop. In the $Controlflow$ graph, the vertex labels $g, b, c$ stand for the concepts of \textit{graph}, \textit{branch} and \textit{command}, respectively. The edge label $r$ is given to the edge from the vertex $g$ to the first program's statement, $x, p$ and $n$ mean, analogous to the former graph, \textit{next}, \textit{positive} and \textit{negative}. In the correspondence graph, the labels $pg, ib, ac, wb$ serve to indicate which labels in the source and target graphs are being connected through the triple graph's morphism.
+	Consider, for instance, the program $\mathit{main}$, written in a pseudo-code, and the triple graph $\mathit{TG}$ in Figure \ref{fig:p2c-tg}. The triple graph $\mathit{TG}$ consists of the \emph{Pseudocode} graph of $\mathit{main}$ connected to the \emph{Controlflow} graph of the same program through the correspondence graph in the middle of them. In such graph, the vertex labels of the \emph{Pseudocode} graph $p, i, a, w$ correspond to the concepts of \textit{program}, \textit{if}, \textit{action} and \textit{while}, respectively. The edge label $f$ is given to the edge from the vertex $p$ to the program's first statement, $x$ stands for \textit{next} and indicates that a statement is followed by another statement, $p$ and $n$ stand for \textit{positive} and \textit{negative} and indicate which assignments correspond to the positive of negative case of the \textit{if}'s evaluation, finally $l$ stands for \textit{last} and indicates the last action of a loop. In the \emph{Controlflow} graph, the vertex labels $g, b, c$ stand for the concepts of \textit{graph}, \textit{branch} and \textit{command}, respectively. The edge label $r$ is given to the edge from the vertex $g$ to the first program's statement, $x, p$ and $n$ mean, analogous to the former graph, \textit{next}, \textit{positive} and \textit{negative}. In the correspondence graph, the labels $\mathit{pg}, \mathit{ib}, \mathit{ac}, \mathit{wb}$ serve to indicate which labels in the source and target graphs are being connected through the triple graph's morphism.
 	
-	The main difference between the two graphs is the absence of the $w$ label in the $Controlflow$ graph, what makes it encode loops through the combination of $b$-labeled vertices and $x$-labeled edges.
+	The main difference between the two graphs is the absence of the $w$ label in the \emph{Controlflow} graph, what makes it encode loops through the combination of $b$-labeled vertices and $x$-labeled edges.
 	
 	\input{examples/pseudocode2controlflow-tg}
 	
-	The TGG that specifies the relation between these two types of graphs is $TGG = (\{S, A, p, a, i, w, g, b, c, f, x, n, l, r, pg, ac, ib, wb\}, \{p, a, i, w, g, b, c, f, x,$ $ n, l, r, pg, ac, ib, wb\}, S, P)$, where $P = \{r_i \st 0 \le i \le 5\}$ is denoted by\\
+	The TGG that specifies the relation between these two types of graphs is $\mathit{TGG} = (\{S, A, p, a, i, w, g, b, c, f, x, n, l, r, \mathit{pg}, \mathit{ac}, \mathit{ib}, \mathit{wb}\}, \{p, a, i, w, g, b, c, f, x,$ $ n, l, r, \mathit{pg}, \mathit{ac}, \mathit{ib}, \mathit{wb}\}, S, P)$, where $P = \{r_i \st 0 \le i \le 5\}$ is denoted by\\
 	\input{examples/pseudocode2controlflow-tgg}
 	
 	\noindent
@@ -304,7 +300,7 @@ Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and
 	
 	The rule $r_0$ relates programs to graphs, $r_1$ actions to commands, $r_2$ ifs to branches, $r_3$ empty whiles to simple branches, $r_4$ filled whiles to filled loops with branches, $r_5$ whiles with one action to loops with branches with one command and, finally, $r_6$ produces an empty graph from a symbol $A$, what allows any derivation in the grammar to finish.
 	
-	The aforementioned triple graph $TG$ is in $L(TGG)$, because the derivation
+	The aforementioned triple graph $\mathit{TG}$ is in $L(\mathit{TGG})$, because the derivation
 	$
 	\startTG{TGG} \tderiv{r_0}{}{} G_1 \tderiv{r_2}{}{} G_2 \tderiv{r_6}{}{} G_3 \tderiv{r_1}{}{} G_4 \tderiv{r_6}{}{} G_5 \tderiv{r_1}{}{} G_6 \tderiv{r_4}{}{} G_7 \tderiv{r_1}{}{} G_8 \tderiv{r_6}{}{} G_9 \tderiv{r_1}{}{} G_{10} \tderiv{r_6}{}{} TG
 	$
@@ -319,16 +315,16 @@ Ultimately, consider the definitions of $\Gamma\text{-boundary}$ graphs and BNCE
 
 \begin{definition}
 	\label{def:bncetgg}
-	A boundary triple graph grammar with neighborhood-controlled embedding (BNCE TGG) is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the NCE triple graph grammar $TGG$ is boundary if, and only if, for all its rules' right-hand sides $R_s \ms{} R_c \mt{} R_t$, $R_s$, $R_c$, and $R_t$ are $\Gamma\text{-boundary}$ graphs.
+	A boundary triple graph grammar with neighborhood-controlled embedding (BNCE TGG) is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the NCE triple graph grammar $\mathit{TGG}$ is boundary if, and only if, for all its rules' right-hand sides $R_s \ms{} R_c \mt{} R_t$, $R_s$, $R_c$, and $R_t$ are $\Gamma\text{-boundary}$ graphs.
 \end{definition}
 
 \section{Model Transformation with NCE TGG}
 \label{sec:modeltrans}
-As already introduced, TGG can be used to characterize languages of triple graphs holding correctly transformed models. That is, one can interpret a TGG as the description of the correctly-transformed relation between two sets of models $\mathcal{S}$ and $\mathcal{T}$, where two models $G \in \mathcal{S}$ and $T \in \mathcal{T}$ are in the relation if, and only if, $G$ and $T$ are respectively, source and target graphs of any triple graph of the language $L(TGG)$. That being said, we are interested in this section on defining a model transformation algorithm that interprets a NCE TGG $TGG$ to transform a source model $G$ into one of its correspondent target models $T$ according to the correctly-transformed relation defined by $TGG$.
+As already introduced, TGG can be used to characterize languages of triple graphs holding correctly transformed models. That is, one can interpret a TGG as the description of the correctly-transformed relation between two sets of models $\mathcal{S}$ and $\mathcal{T}$, where two models $G \in \mathcal{S}$ and $T \in \mathcal{T}$ are in the relation if, and only if, $G$ and $T$ are respectively, source and target graphs of any triple graph of the language $L(TGG)$. That being said, we are interested in this section on defining a model transformation algorithm that interprets a NCE TGG $\mathit{TGG}$ to transform a source model $G$ into one of its correspondent target models $T$ according to the correctly-transformed relation defined by $\mathit{TGG}$.
 
-For that end, let $TGG = (\Sigma = \Sigma_s \cup \Sigma_t, \Delta, S, P)$ be a triple graph grammar defining the correctly-transformed relation between two arbitrary sets of graphs $\mathcal{S}$ over $\Sigma_s$ and $\mathcal{T}$ over $\Sigma_t$. And let $G \in \mathcal{S}$ be a source graph. We want to find a target graph $T \in \mathcal{T}$ such that $G \ms{} C \mt{} T \in L(TGG)$. To put in words, we wish to find a triple graph holding $G$ and $T$ that is in the language of all correctly transformed models. Hence, the model transformation problem is reduced--- according to the definition of triple graph language (see Definition \ref{def:tlanguage})--- to the problem of finding a derivation $\startTG{TGG} \tderivtr{TGG} G \ms{} C \mt{} T$.
+For that end, let $\mathit{TGG} = (\Sigma = \Sigma_s \cup \Sigma_t, \Delta, S, P)$ be a triple graph grammar defining the correctly-transformed relation between two arbitrary sets of graphs $\mathcal{S}$ over $\Sigma_s$ and $\mathcal{T}$ over $\Sigma_t$. And let $G \in \mathcal{S}$ be a source graph. We want to find a target graph $T \in \mathcal{T}$ such that $G \ms{} C \mt{} T \in L(TGG)$. To put in words, we wish to find a triple graph holding $G$ and $T$ that is in the language of all correctly transformed models. Hence, the model transformation problem is reduced--- according to the definition of triple graph language (see Definition \ref{def:tlanguage})--- to the problem of finding a derivation $\startTG{TGG} \tderivtr{TGG} G \ms{} C \mt{} T$.
 
-Our strategy to solve this problem is, first, to get a derivation for $G$ with the source part of $TGG$ and, then, construct the derivation $\startTG{TGG} \tderivtr{TGG} G \ms{} C \mt{} T$. For this purpose, consider the definition of the $\source$ function, that extracts the source part of a production rule.
+Our strategy to solve this problem is, first, to get a derivation for $G$ with the source part of $\mathit{TGG}$ and, then, construct the derivation $\startTG{TGG} \tderivtr{TGG} G \ms{} C \mt{} T$. For this purpose, consider the definition of the $\source$ function, that extracts the source part of a production rule.
 
 \begin{definition}
 	\label{def:source}
@@ -339,34 +335,34 @@ In order for $s^{-1}$ to be well defined, we require that all source parts $(A \
 
 \begin{definition}
 	\label{def:Source}
-	Let $TGG = (\Sigma, \Delta, S, P)$ be a triple graph grammar, $\Source(TGG) = (\Sigma, \Delta, S, \source(P))$ gives the source grammar of $TGG$.
+	Let $\mathit{TGG} = (\Sigma, \Delta, S, P)$ be a triple graph grammar, $\Source(\mathit{TGG}) = (\Sigma, \Delta, S, \source(P))$ gives the source grammar of $\mathit{TGG}$.
 \end{definition}
 
 Furthermore, consider the definition of the non-terminal consistent (NTC) property for TGG, which assures, that non-terminal vertices of the correspondent graphs are connected to vertices with the same label in the source and target graphs.
 
 \begin{definition}
-	A triple graph grammar $TGG = (\Sigma, \Delta, S, P)$ is non-terminal consistent (NTC) if and only if, for all rules $(A \pro (G_s \ms{ms} G_c \mt{mt} G_t), \omega_s, \omega_t) \in P$, the following holds:
+	A triple graph grammar $\mathit{TGG} = (\Sigma, \Delta, S, P)$ is non-terminal consistent (NTC) if and only if, for all rules $(A \pro (G_s \ms{ms} G_c \mt{mt} G_t), \omega_s, \omega_t) \in P$, the following holds:
 	\begin{enumerate}
 		\item $\forall c \in V_{G_c} \. \text{if } \phi_{G_c}(c) \in \Gamma \text{ then } \phi_{G_c}(c) = \phi_{G_s}(ms(c)) = \phi_{G_t}(mt(c))$ and
 		\item For the sets $N_s = \{v \st \phi_{G_s}(v) \in \Gamma\}$ and $N_t = \{v \st \phi_{G_t}(v) \in \Gamma\}$, the range-restricted functions $(ms \rrestr N_s)$ and $(mt \rrestr N_t)$ are bijective.
 	\end{enumerate}
 \end{definition}
 
-Finally, the following result gives us an equivalence between a derivation in $TGG$ and a derivation in its source grammar $S(TGG)$, which allows us to construct our goal derivation of $G \ms{} C \mt{} T$ in $TGG$ using the derivation of $G$ in $S(TGG)$.
+Finally, the following result gives us an equivalence between a derivation in $\mathit{TGG}$ and a derivation in its source grammar $S(\mathit{TGG})$, which allows us to construct our goal derivation of $G \ms{} C \mt{} T$ in $\mathit{TGG}$ using the derivation of $G$ in $S(\mathit{TGG})$.
 
 \begin{theorem}
 	\label{thm:one_d_enough}
-	Let $TGG = (\Sigma, \Delta, S, P)$ be a NTC TGG and $k \ge 1$, \\
-	$D = \startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{} G^1 \tderiv{r_1}{s_1,c_1,t_1}{} \dots \tderiv{r_{k-1}}{s_{k-1},c_{k-1},t_{k-1}}{} G^k$ is a derivation in $TGG$ if, and only if, $\overline{D} = \startG{S(TGG)} \deriv{s(r_0)}{s_0}{} G^1_s \deriv{s(r_1)}{s_1}{} \dots \deriv{s(r_{k-1})}{s_{k-1}}{} G^k_s$ is a derivation in $S(TGG)$.
+	Let $\mathit{TGG} = (\Sigma, \Delta, S, P)$ be a NTC TGG and $k \ge 1$, \\
+	$D = \startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{} G^1 \tderiv{r_1}{s_1,c_1,t_1}{} \dots \tderiv{r_{k-1}}{s_{k-1},c_{k-1},t_{k-1}}{} G^k$ is a derivation in $\mathit{TGG}$ if, and only if, $\overline{D} = \startG{S(TGG)} \deriv{s(r_0)}{s_0}{} G^1_s \deriv{s(r_1)}{s_1}{} \dots \deriv{s(r_{k-1})}{s_{k-1}}{} G^k_s$ is a derivation in $S(\mathit{TGG})$.
 \end{theorem}
 \begin{proof}
-	We want to show that if $D$ is a derivation in $TGG = (\Sigma, \Delta, S, P)$, then $\overline{D}$ is a derivation in $SG := S(TGG) = (\Sigma, \Delta, S, SP)$, and vice-versa. We prove it by induction in the following.
+	We want to show that if $D$ is a derivation in $\mathit{TGG} = (\Sigma, \Delta, S, P)$, then $\overline{D}$ is a derivation in $SG := S(\mathit{TGG}) = (\Sigma, \Delta, S, \mathit{SP})$, and vice-versa. We prove it by induction in the following.
 	
 	First, for the induction base, since, $\startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1$, then expanding $\startTG{TGG}$ and $G^1$, we have
 	\begin{align*}
 		& Z_s \ms{} Z_c \mt{} Z_t \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1_s \ms{} G^1_c \mt{} G^1_t \text{, then, by Definition \ref{def:tgg_dstep},}\\
 		& r_0 = (S \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P \text{ and, by Definition \ref{def:source},}\\
-		& \source(r_0) = (S \pro R_s, \omega_s) \in SP
+		& \source(r_0) = (S \pro R_s, \omega_s) \in \mathit{SP}
 	\end{align*}
 	
 	Hence, using it plus the configuration of $\phi_{Z_s}(s_0)$, $V_{G^1_s}$, $E_{G^1_s}$ and $\phi_{G^1_s}$ and the equality $Z_s = \startG{SG}$, we have, by Definition \ref{def:gg_dstep}, $\startG{SG} \deriv{\source(r_0)}{s_0}{SG} G^1_s$.
@@ -374,29 +370,29 @@ Finally, the following result gives us an equivalence between a derivation in $T
 	In the other direction, we choose $c_0, t_0$ from the definition of $\startTG{TGG}$, with $\phi_{Z_c}(c_0) = S$ and  $\phi_{Z_t}(t_0) = S$. In this case, since,
 	\begin{align*}
 		& \startG{SG} \deriv{s(r_0)}{s_0}{SG} G^1_s \text{, then by Definition \ref{def:gg_dstep},}\\
-		& \source(r_0) = (S \pro R_s, \omega_s) \in SP \text{ and, using the bijectivity of $\source$, we get}\\
+		& \source(r_0) = (S \pro R_s, \omega_s) \in \mathit{SP} \text{ and, using the bijectivity of $\source$, we get}\\
 		& r_0 = \source^{-1}(s(r_0)) = (S \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P
 	\end{align*}
 	
 	Hence, using it plus the configuration of $\phi_{\startG{SG}}(s_0)$, $V_{G^1_s}$, $E_{G^1_s}$ and $\phi_{G^1_s}$, the equality $Z_s = \startG{SG}$ and constructing $V_{G^1_c}$, $V_{G^1_t}$, $E_{G^1_c}$, $E_{G^1_t}$, $\phi_{G^1_c}$, $\phi_{G^1_t}$ from $Z_c$ and $Z_t$ according to the Definition \ref{def:tgg_dstep} $\startTG{TGG} \tderiv{r_0}{s_0,c_0,t_0}{TGG} G^1_s \ms{} G^1_c \mt{} G^1_t$.
 	
-	Now, for the induction step, we want to show that if $\startTG{TGG} \tderivtr{TGG} G^i$ $\tderiv{r_{i}}{s_{i},c_{i},t_{i}}{TGG} G^{i+1}$ is a derivation in $TGG$, then $\startG{SG} \derivtr{SG} G^i_s \deriv{s(r_{i})}{s_{i}}{SG} G^{i+1}_s$ is a derivation in $SG$ and vice-versa, provided that the equivalence holds for the first $i$ steps, so we just have to show it for the step $i+1$.
+	Now, for the induction step, we want to show that if $\startTG{TGG} \tderivtr{TGG} G^i$ $\tderiv{r_{i}}{s_{i},c_{i},t_{i}}{TGG} G^{i+1}$ is a derivation in $\mathit{TGG}$, then $\startG{SG} \derivtr{SG} G^i_s \deriv{s(r_{i})}{s_{i}}{SG} G^{i+1}_s$ is a derivation in $\mathit{SG}$ and vice-versa, provided that the equivalence holds for the first $i$ steps, so we just have to show it for the step $i+1$.
 	
 	So, since, $G^i \tderiv{r_{i}}{s_{i},c_{i},t_{i}}{TGG} G^{i+1}$, that is
 	\begin{align*}
 		& G^i_s \ms{ms_i} G^i_c \mt{mt_i} G^i_t \tderiv{r_i}{s_i,c_i,t_i}{TGG} G^{i+1}_s \ms{} G^{i+1}_c \mt{} G^{i+1}_t \text{, then, by Definition \ref{def:tgg_dstep},}\\
 		& r_i = (S \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P \text{, and by Definition \ref{def:source},}\\
-		& \source(r_i) = (S \pro R_s, \omega_s) \in SP
+		& \source(r_i) = (S \pro R_s, \omega_s) \in \mathit{SP}
 	\end{align*}
 	
 	Hence, using it plus the configuration of $\phi_{G^i_s}(s_i)$, $V_{G^{i+1}_s}$, $E_{G^{i+1}_s}$ and $\phi_{G^{i+1}_s}$, we have, by Definition \ref{def:gg_dstep}, $G_s^i \deriv{\source(r_i)}{s_i}{SG} G^{i+1}_s$.
 	
-	In the other direction, we choose, using the bijectivity from the range restricted function $\source$, stemming from the NTC property, $c_i = ms_i^{-1}(s_i), t_i = mt_i(c_i)$. Moreover, since $TGG$ is NTC, and because, by induction hypothesis, $\startTG{TGG} \tderivtr{TGG} G^i$ is a derivation in $TGG$ and $\phi_{G^i_s}(s_i) \in \Gamma$, it is clear that $\phi_{G^i_s}(s_i) = \phi_{G^i_c}(c_i) = \phi_{G^i_t}(t_i)$.
+	In the other direction, we choose, using the bijectivity from the range restricted function $\source$, stemming from the NTC property, $c_i = ms_i^{-1}(s_i), t_i = mt_i(c_i)$. Moreover, since $\mathit{TGG}$ is NTC, and because, by induction hypothesis, $\startTG{TGG} \tderivtr{TGG} G^i$ is a derivation in $\mathit{TGG}$ and $\phi_{G^i_s}(s_i) \in \Gamma$, it is clear that $\phi_{G^i_s}(s_i) = \phi_{G^i_c}(c_i) = \phi_{G^i_t}(t_i)$.
 	
 	In this case, since
 	\begin{align*}
 		& G^{i}_s \deriv{s(r_i)}{s_i}{SG} G^{i+1}_s \text{, then, by Definition \ref{def:gg_dstep},}\\
-		& \source(r_i) = (A \pro R_s, \omega_s) \in SP \text{ and, using the bijectivity of $\source$, we get }\\
+		& \source(r_i) = (A \pro R_s, \omega_s) \in \mathit{SP} \text{ and, using the bijectivity of $\source$, we get }\\
 		& r_i = \source^{-1}(s(r_i)) = (A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P
 	\end{align*} 
 	
@@ -408,17 +404,17 @@ Finally, the following result gives us an equivalence between a derivation in $T
 	This finishes the proof.\qed
 \end{proof}
 
-Therefore, the problem of finding a derivation $D = \startTG{TGG} \tderivtr{} G \ms{} C \mt{} T$ in $TGG$ is reduced to finding a derivation $\overline{D} = \startG{S(TGG)} \derivtr{} G$ in $S(TGG)$, what can be done with the procedure from Rozenberg and Welzl \cite{rozenberg1986boundary}. The final construction of the triple graph $G \ms{} C \mt{} T$ becomes then just a matter of creating $D$ out of $\overline{D}$.
+Therefore, the problem of finding a derivation $D = \startTG{TGG} \tderivtr{} G \ms{} C \mt{} T$ in $\mathit{TGG}$ is reduced to finding a derivation $\overline{D} = \startG{S(TGG)} \derivtr{} G$ in $S(TGG)$, what can be done with the procedure from Rozenberg and Welzl \cite{rozenberg1986boundary}. The final construction of the triple graph $G \ms{} C \mt{} T$ becomes then just a matter of creating $D$ out of $\overline{D}$.
 
 The complete transformation procedure is presented in the Algorithm \ref{alg:transform}. Thereby, it is required that the TGG be a BNCE TGG (see Definition \ref{def:bncetgg}) and be neighborhood preserving (NP) \cite{rozenberg1986boundary,skodinis1998neighborhood}, what poses no problem to our procedure, since any BNCE graph grammar can be transformed into the neighborhood preserving normal form. 
 \begin{algorithm}[h]
 	\caption{Transformation Algorithm for NP NTC BNCE TGG}
 	\begin{algorithmic}[h]
-		\Require $TGG \text{ is a valid NP NTC BNCE triple graph grammar}$
+		\Require $\mathit{TGG} \text{ is a valid NP NTC BNCE triple graph grammar}$
 		\Require $G \text{ is a valid graph over } \Sigma$
-		\Function{$transform$}{$TGG=(\Sigma, \Delta, S, P), G=(V_G,E_G,\phi_G)$}{$:Graph$}
-		\State $SG \gets S(TGG)$ \Comment{see Definition \ref{def:source}}
-		\State $\overline{D} \gets parse(SG,G)$ \Comment{use procedure in \cite{rozenberg1986boundary}}
+		\Function{$\mathit{transform}$}{$\mathit{TGG}=(\Sigma, \Delta, S, P), \mathit{G}=(V_G,E_G,\phi_G)$}{$:\mathit{Graph}$}
+		\State $\mathit{SG} \gets S(TGG)$ \Comment{see Definition \ref{def:source}}
+		\State $\overline{D} \gets \mathit{parse}(\mathit{SG},G)$ \Comment{use procedure in \cite{rozenberg1986boundary}}
 		\If{$\overline{D} = \startG{SG} \derivtr{SG} G$} \Comment{if parsed successfully}
 		\State From $\overline{D}$, construct $D = \startTG{TGG} \tderivtr{TGG} G \ms{} C \mt{} T$  \Comment{see Theorem \ref{thm:one_d_enough}}
 		\State \Return {$\Just T$}
@@ -435,11 +431,12 @@ The complete transformation procedure is presented in the Algorithm \ref{alg:tra
 \label{sec:eval}
 In order to evaluate the usability of the proposed BNCE TGG formalism, we compare the number of rules and elements (vertices, edges, and mappings) we needed to describe some model transformations in BNCE TGG and in standard TGG without application conditions. Table \ref{tab:formalism-eval} presents these results. We cannot claim that our evaluation has a strong statistical validity, for the studied transformations are not very representative in general, but it should demonstrate the potential of our approach.
 
-In the case of $Pseudocode2Controlflow$, our proposed approach shows a clear advantage against the standard TGG formalism. We judge that similarly to what happens to programming languages, this advantage stems from the very nested structure of $Pseudocode$ and $Controlflow$ graphs. That is, for instance, in rule the $r_2$ of this TGG (see Example \ref{ex:pseudocode2controlflow}), a node in a positive branch of an $if$-labeled vertex is never connected with a node in the negative branch. This disjunctive aspect allows every branch to be defined in the rule (as well as effectively parsed) independently of the other branch. This characteristic makes it possible for BNCE TGG rules to be defined in a very straightforward manner and reduces the total number of elements necessary.
+In the case of \emph{Pseudocode2Controlflow}, our proposed approach shows a clear advantage against the standard TGG formalism. We judge that similarly to what happens to programming languages, this advantage stems from the very nested structure of \emph{Pseudocode} and \emph{Controlflow} graphs. That is, for instance, in rule the $r_2$ of this TGG (see Example \ref{ex:pseudocode2controlflow}), a node in a positive branch of an $if$-labeled vertex is never connected with a node in the negative branch. This disjunctive aspect allows every branch to be defined in the rule (as well as effectively parsed) independently of the other branch. This characteristic makes it possible for BNCE TGG rules to be defined in a very straightforward manner and reduces the total number of elements necessary.
 
 \begin{table}[t]
 	\setlength{\tabcolsep}{10pt}
 	\centering
+	\caption{Results of the usability evaluation of the BNCE TGG formalism in comparison with the standard TGG for the model transformation problem}
 	\begin{tabular}{l r r r r }
 		\hline
 		& \multicolumn{2}{c}{Standard TGG} & \multicolumn{2}{c}{BNCE TGG}\\
@@ -451,15 +448,14 @@ In the case of $Pseudocode2Controlflow$, our proposed approach shows a clear adv
 		Class2Database			& \textbf{6}	& \textbf{98}	& -	& - \\
 		\hline
 	\end{tabular}
-	\caption{Results of the usability evaluation of the BNCE TGG formalism in comparison with the standard TGG for the model transformation problem}
 	\label{tab:formalism-eval}
 \end{table}
 
-In addition to that, the use of non-terminal symbols gives BNCE TGG the power to represent abstract concepts very easily. For example, whereas the rule $r_1$ encodes, using only few elements, that after each $action$ comes any statement $A$, which can be another $action$, an $if$, a $while$ or nothing (an empty graph), in the standard TGG without application condition or any special inheritance treatment, we need to write a different rule for each of these cases. For the whole grammar, we need to consider all combinations of $actions$, $ifs$ and $whiles$ in all rules, what causes the great number of rules and elements.
+In addition to that, the use of non-terminal symbols gives BNCE TGG the power to represent abstract concepts very easily. For example, whereas the rule $r_1$ encodes, using only few elements, that after each \emph{action} comes any statement $A$, which can be another \emph{action}, an \emph{if}, a \emph{while} or nothing (an empty graph), in the standard TGG without application condition or any special inheritance treatment, we need to write a different rule for each of these cases. For the whole grammar, we need to consider all combinations of \emph{actions}, \emph{ifs} and \emph{whiles} in all rules, what causes the great number of rules and elements.
 
-The $BTree2XBTree$ transformation consists of lifting binary trees to graphs by adding edges between siblings. In this scenario, our approach performed slightly worse than TGG. The $Star2Wheel$ transformation consists of transforming star graphs, which are complete bipartite graphs $K_{1,k}$--- where the partitions are named center and border--- to wheel graphs, that can be constructed from star graphs by adding edges between border vertices to form a minimal cycle. We could not describe this transformation in standard TGG, especially because of the rules' monotonicity (see Definition \ref{def:stgg}). That is, we missed the possibility to erase edges in a rule, feature that we do have in the semantics of BNCE TGG through the embedding mechanism.
+The \emph{BTree2XBTree} transformation consists of lifting binary trees to graphs by adding edges between siblings. In this scenario, our approach performed slightly worse than TGG. The \emph{Star2Wheel} transformation consists of transforming star graphs, which are complete bipartite graphs $K_{1,k}$--- where the partitions are named center and border--- to wheel graphs, that can be constructed from star graphs by adding edges between border vertices to form a minimal cycle. We could not describe this transformation in standard TGG, especially because of the rules' monotonicity (see Definition \ref{def:stgg}). That is, we missed the possibility to erase edges in a rule, feature that we do have in the semantics of BNCE TGG through the embedding mechanism.
 
-The $Class2Database$ transformation consists of transforming class diagrams, similar to UML class diagrams, to database diagrams, similar to physical entity-relationship diagrams. We could not describe this transformation in BNCE TGG by the fact that the information about the production of a terminal vertex is owned exclusively by one derivation step. That is, this information cannot be used by other derivation steps (the BNCE grammar is context-free). Thus, in the case of $Class2Database$, in which an \textit{association} is connected to two \textit{classes}, each been produced by two different derivation steps, we could not connect one association with two classes.
+The \emph{Class2Database} transformation consists of transforming class diagrams, similar to UML class diagrams, to database diagrams, similar to physical entity-relationship diagrams. We could not describe this transformation in BNCE TGG by the fact that the information about the production of a terminal vertex is owned exclusively by one derivation step. That is, this information cannot be used by other derivation steps (the BNCE grammar is context-free). Thus, in the case of \emph{Class2Database}, in which an \textit{association} is connected to two \textit{classes}, each been produced by two different derivation steps, we could not connect one association with two classes.
 
 \section{Conclusion}
 \label{sec:conclusion}
