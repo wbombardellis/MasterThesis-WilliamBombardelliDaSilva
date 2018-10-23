@@ -1,0 +1,148 @@
+\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_0:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {S ::=};
+	
+	\draw (0.5,0) node[t] (s1) {cd};
+	\draw (0.5,-1) node[nont] (s2) {C};
+	\draw[edge] (s1) to [bend left] (s2) node [above=10pt, left=8pt] {$\sigma$};
+	\draw[edge] (s1) to [bend right] (s2) node [above=10pt, right=8pt] {$\alpha$};
+	%%
+	\draw (2,0) node[t] (c1) {dd};
+	\draw (2,-1) node[nont] (c2) {C};
+	%%
+	\draw (3.5,0) node[t] (t1) {db};
+	\draw (3.5,-1) node[nont] (t2) {C};
+	\draw[edge] (t1) -- (t2) node [vredgeLabel] {$\tau$};
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+\end{tikzpicture}
+\begin{tikzpicture}[grammar]
+\node[rid] at (\ridX,\ridY) {$r_3:$};
+\draw (\lhsX,0) node[lhs] (lhs) {AT ::=};
+
+\draw (0.5,0) node[t] (s1) {at};
+\draw (0.5,-1) node[nont] (s2) {AT};
+%%
+\draw (2,0) node[t] (c1) {tc};
+\draw (2,-1) node[nont] (c2) {AT};
+%%
+\draw (3.5,0) node[t] (t1) {co};
+\draw (3.5,-1) node[nont] (t2) {AT};
+%%
+\draw[morph] (c1) -- (s1);
+\draw[morph] (c1) -- (t1);
+\draw[morph] (c2) -- (s2);
+\draw[morph] (c2) -- (t2);
+
+%%%%
+\draw[pipe] (4,\pipeBY) -- (4,-1);
+
+\node[rid] at (4.7,\ridY) {$r_4:$};
+\draw (4.5,0) node[empty] (s3) {$\emptyTG$};
+\end{tikzpicture}
+
+\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_1:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {C ::=};
+	
+	\draw (1.5,0) node[t, label=90:$s_{11}$] (s1) {c};
+	\draw (0.1,-1) node[nont] (s2) {SA};
+	\draw (0.9,-2) node[nont] (s3) {C};
+	\draw (1.7,-1.5) node[nont] (s4) {A};
+	\draw (2.5,-1) node[nont] (s5) {AT};
+	\draw[edge] (s2) to [bend right=-10] (s1) node [below=7pt, left=15pt] {$\zeta$};
+	\draw[edge] (s2) to [bend left=-10] (s1) node [below=15pt, left=2pt] {$\tau$};
+	\draw[edge] (s4) -- (s1) node [vredgeLabel] {$\zeta$};
+	\draw[edge] (s1) -- (s5) node [vredgeLabel] {$\beta$};
+	%%
+	\draw (3.5,0) node[t] (c1) {ct};
+	\draw (3.5,-0.5) node[nont] (c2) {SA};
+	\draw (3.5,-1) node[nont] (c5) {AT};
+	\draw (3.5,-1.5) node[nont] (c4) {A};
+	\draw (3.5,-2) node[nont] (c3) {C};
+	%%
+	\draw (6,0) node[t] (t1) {t};
+	\draw (4.5,-1) node[nont] (t5) {AT};
+	\draw (5.3,-1.5) node[nont] (t4) {A};
+	\draw (6.1,-2) node[nont] (t3) {C};
+	\draw (7.3,-1) node[nont] (t2) {SA};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$\gamma$};
+	\draw[edge] (t1) -- (t4) node [vredgeLabel] {$\gamma$};
+	\draw[edge] (t1) -- (t5) node [vredgeLabel] {$\gamma$};
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	
+	%%%%
+	\draw[pipe] (8,\pipeBY) -- (8,-2);
+	
+	\node[rid] at (8.7,\ridY) {$r_2:$};
+	\draw (8.6,0) node[empty] (s6) {$\emptyTG$};
+\end{tikzpicture}
+
+\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_5:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {SA ::=};
+	
+	\draw (0.5,0) node[t] (s1) {a};
+	\draw (0.5,-1) node[nont] (s2) {SA};
+	%%
+	\draw (2,0) node[t] (c1) {ac};
+	\draw (2,-1) node[nont] (c2) {SA};
+	%%
+	\draw (3.5,0) node[t] (t1) {co};
+	\draw (3.5,-1) node[nont] (t2) {SA};
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	
+	%%%%
+	\draw[pipe] (4,\pipeBY) -- (4,-1);
+	
+	\node[rid] at (4.7,\ridY) {$r_6:$};
+	\draw (4.5,0) node[empty] (s3) {$\emptyTG$};
+\end{tikzpicture}
+\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$r_7:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {A ::=};
+	
+	\draw (0.5,0) node[t] (s1) {a};
+	\draw (0.2,-1) node[nont] (s2) {SA};
+	\draw (1,-0.7) node[pac] (s3) {c};
+	\draw[edge] (s3) -- (s1) node [vredgeLabel] {$\psi$};
+	%%
+	\draw (2,0) node[t] (c1) {ac};
+	\draw (2,-1) node[nont] (c2) {SA};
+	\draw (2,-0.5) node[pac] (c3) {ct};
+	%%
+	\draw (3.5,0) node[t] (t1) {co};
+	\draw (3.8,-1) node[nont] (t2) {SA};
+	\draw (3,-0.7) node[pac] (t3) {t};
+	\draw[edge] (t3) -- (t1) node [vledgeLabel] {$\psi$};
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	
+	%%%%
+	\draw[pipe] (4.4,\pipeBY) -- (4.4,-1);
+	
+	\node[rid] at (5.1,\ridY) {$r_8:$};
+	\draw (5,0) node[empty] (s3) {$\emptyTG$};
+\end{tikzpicture}
