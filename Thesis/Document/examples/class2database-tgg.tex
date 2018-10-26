@@ -54,7 +54,7 @@
 	\draw (1.7,-1.5) node[nont] (s4) {A};
 	\draw (2.5,-1) node[nont] (s5) {AT};
 	\draw[edge] (s2) to [bend right=-10] (s1) node [below=7pt, left=15pt] {$\zeta$};
-	\draw[edge] (s2) to [bend left=-10] (s1) node [below=15pt, left=2pt] {$\tau$};
+	\draw[edge] (s2) to [bend left=-10] (s1) node [below=15pt, left=2pt] {$\psi$};
 	\draw[edge] (s4) -- (s1) node [vredgeLabel] {$\zeta$};
 	\draw[edge] (s1) -- (s5) node [vredgeLabel] {$\beta$};
 	%%
@@ -69,7 +69,8 @@
 	\draw (5.3,-1.5) node[nont] (t4) {A};
 	\draw (6.1,-2) node[nont] (t3) {C};
 	\draw (7.3,-1) node[nont] (t2) {SA};
-	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$\gamma$};
+	\draw[edge] (t1) to [bend right=-10] (t2) node [above=15pt, left=2pt] {$\gamma$};
+	\draw[edge] (t2) to [bend right=-10] (t1) node [below=15pt, right=2pt] {$\delta$};
 	\draw[edge] (t1) -- (t4) node [vredgeLabel] {$\gamma$};
 	\draw[edge] (t1) -- (t5) node [vredgeLabel] {$\gamma$};
 	%%
@@ -122,7 +123,7 @@
 	\draw (0.5,0) node[t] (s1) {a};
 	\draw (0.2,-1) node[nont] (s2) {SA};
 	\draw (1,-0.7) node[pac] (s3) {c};
-	\draw[edge] (s3) -- (s1) node [vredgeLabel] {$\psi$};
+	\draw[edge] (s1) -- (s3) node [vredgeLabel] {$\psi$};
 	%%
 	\draw (2,0) node[t] (c1) {ac};
 	\draw (2,-1) node[nont] (c2) {SA};
@@ -131,7 +132,7 @@
 	\draw (3.5,0) node[t] (t1) {co};
 	\draw (3.8,-1) node[nont] (t2) {SA};
 	\draw (3,-0.7) node[pac] (t3) {t};
-	\draw[edge] (t3) -- (t1) node [vledgeLabel] {$\psi$};
+	\draw[edge] (t1) -- (t3) node [vledgeLabel] {$\psi$};
 	%%
 	\draw[morph] (c1) -- (s1);
 	\draw[morph] (c1) -- (t1);

@@ -1,0 +1,530 @@
+\begin{align*}
+	\startTG{TGG} \tderivpac{r_0}{s_0,c_0,t_0}{\emptyset}{} &
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[nont, label=270:$s_1$] (s2) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	%
+	\draw (2,0) node[t] (c1) {pg};
+	\draw (2,-0.5) node[nont, label=270:$c_1$] (c2) {A};
+	%
+	\draw (3,0) node[t] (t1) {g};
+	\draw (3,-0.7) node[nont, label=270:$t_1$] (t2) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\end{tikzpicture}
+	\tderivpac{r_2}{s_1,c_1,t_1}{\emptyset}{} &
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[t] (s2) {i};
+	\draw (1.5,-1.3) node[nont] (s3) {A};
+	\draw (0.5,-1.4) node[nont] (s4) {A};
+	\draw (0,-0.7) node[nont, label=90:$s_2$] (s5) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	\draw[edge] (s2) -- (s3) node [vredgeLabel] {$p$};
+	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
+	\draw[edge] (s2) -- (s5) node [edgeLabel] {$x$};
+	%
+	\draw (2.5,0) node[t] (c1) {pg};
+	\draw (2.5,-0.5) node[t] (c2) {ib};
+	\draw (2.5,-1.0) node[nont] (c3) {A};
+	\draw (2.5,-1.8) node[nont] (c4) {A};
+	\draw (2.5,0.5) node[nont, label=90:$c_2$] (c5) {A};
+	%
+	\draw (4,0) node[t] (t1) {g};
+	\draw (4,-0.7) node[t] (t2) {b};
+	\draw (4.5,-1.3) node[nont] (t3) {A};
+	\draw (3.5,-1.5) node[nont] (t4) {A};
+	\draw (5,-0.7) node[nont, label=90:$t_2$] (t5) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
+	\draw[edge] (t2) -- (t4) node [above=15pt, right=0pt] {$n$};
+	\draw[edge] (t2) -- (t5) node [edgeLabel] {$x$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\end{tikzpicture}
+\end{align*}
+\begin{align*}
+	\tderivpac{r_6}{s_2,c_2,t_2}{\emptyset}{} &
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[t] (s2) {i};
+	\draw (1.5,-1.3) node[nont, label=270:$s_3$] (s3) {A};
+	\draw (0.5,-1.4) node[nont] (s4) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	\draw[edge] (s2) -- (s3) node [vredgeLabel] {$p$};
+	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
+	%
+	\draw (2.5,0) node[t] (c1) {pg};
+	\draw (2.5,-0.5) node[t] (c2) {ib};
+	\draw (2.5,-1.0) node[nont, label=0:$c_3$] (c3) {A};
+	\draw (2.5,-1.8) node[nont] (c4) {A};
+	%
+	\draw (4,0) node[t] (t1) {g};
+	\draw (4,-0.7) node[t] (t2) {b};
+	\draw (4.5,-1.3) node[nont, label=270:$t_3$] (t3) {A};
+	\draw (3.5,-1.5) node[nont] (t4) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
+	\draw[edge] (t2) -- (t4) node [above=15pt, right=0pt] {$n$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\end{tikzpicture} 
+	\tderivpac{r_6}{s_3,c_3,t_3}{\emptyset}{} &
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[t] (s2) {i};
+	\draw (1.5,-1.3) node[t] (s3) {a};
+	\draw (1.5,-2.1) node[nont, label=270:$s_4$] (s5) {A};
+	\draw (0.5,-1.4) node[nont] (s4) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	\draw[edge] (s2) -- (s3) node [vredgeLabel] {$p$};
+	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
+	\draw[edge] (s3) -- (s5) node [vredgeLabel] {$x$};
+	%
+	\draw (2.5,0) node[t] (c1) {pg};
+	\draw (2.5,-0.5) node[t] (c2) {ib};
+	\draw (2.5,-1.0) node[t] (c3) {ac};
+	\draw (2.5,-1.8) node[nont] (c4) {A};
+	\draw (2.5,-2.3) node[nont, label=270:$c_4$] (c5) {A};
+	%
+	\draw (4,0) node[t] (t1) {g};
+	\draw (4,-0.7) node[t] (t2) {b};
+	\draw (4.5,-1.3) node[t] (t3) {a};
+	\draw (4.5,-2.1) node[nont, label=270:$t_4$] (t5) {A};
+	\draw (3.5,-1.5) node[nont] (t4) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
+	\draw[edge] (t2) -- (t4) node [above=15pt, right=0pt] {$n$};
+	\draw[edge] (t3) -- (t5) node [vledgeLabel] {$x$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\end{tikzpicture}
+\end{align*}
+\begin{align*}
+	\tderivpac{r_6}{s_4,c_4,t_4}{\emptyset}{} &
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[t] (s2) {i};
+	\draw (1.5,-1.3) node[t] (s3) {a};
+	\draw (0.5,-1.4) node[nont, label=270:$s_5$] (s4) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	\draw[edge] (s2) -- (s3) node [vredgeLabel] {$p$};
+	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
+	%
+	\draw (2.5,0) node[t] (c1) {pg};
+	\draw (2.5,-0.5) node[t] (c2) {ib};
+	\draw (2.5,-1.0) node[t] (c3) {ac};
+	\draw (2.5,-1.8) node[nont, label=270:$c_5$] (c4) {A};
+	%
+	\draw (4,0) node[t] (t1) {g};
+	\draw (4,-0.7) node[t] (t2) {b};
+	\draw (4.5,-1.3) node[t] (t3) {a};
+	\draw (3.5,-1.5) node[nont, label=270:$t_5$] (t4) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
+	\draw[edge] (t2) -- (t4) node [above=15pt, right=0pt] {$n$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\end{tikzpicture}
+	\tderivpac{r_1}{s_5,c_5,t_5}{\emptyset}{} &
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[t] (s2) {i};
+	\draw (1.5,-1.3) node[t] (s3) {a};
+	\draw (0.5,-1.4) node[t] (s4) {a};
+	\draw (0.5,-2.1) node[nont, label=270:$s_6$] (s5) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	\draw[edge] (s2) -- (s3) node [vredgeLabel] {$p$};
+	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
+	\draw[edge] (s4) -- (s5) node [vledgeLabel] {$x$};
+	%
+	\draw (2.5,0) node[t] (c1) {pg};
+	\draw (2.5,-0.5) node[t] (c2) {ib};
+	\draw (2.5,-1.0) node[t] (c3) {ac};
+	\draw (2.5,-1.8) node[t] (c4) {ac};
+	\draw (2.5,-2.3) node[nont, label=270:$c_6$] (c5) {A};
+	%
+	\draw (4,0) node[t] (t1) {g};
+	\draw (4,-0.7) node[t] (t2) {b};
+	\draw (4.5,-1.3) node[t] (t3) {a};
+	\draw (3.5,-1.5) node[t] (t4) {c};
+	\draw (3.5,-2.1) node[nont, label=270:$t_6$] (t5) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
+	\draw[edge] (t2) -- (t4) node [above=15pt, right=0pt] {$n$};
+	\draw[edge] (t4) -- (t5) node [vledgeLabel] {$x$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\end{tikzpicture}\\
+	\tderivpac{r_4}{s_6,c_6,t_6}{\emptyset}{} &
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[t] (s2) {i};
+	\draw (1.5,-1.3) node[t] (s3) {a};
+	\draw (0.5,-1.4) node[t] (s4) {a};
+	\draw (0.5,-2.1) node[t] (s5) {w};
+	\draw (0.5,-2.8) node[nont, label=180:$s_7$] (s6) {A};
+	\draw (0.5,-3.5) node[t] (s7) {a};
+	\draw (0.5,-4.2) node[nont] (s8) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	\draw[edge] (s2) -- (s3) node [vredgeLabel] {$p$};
+	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
+	\draw[edge] (s4) -- (s5) node [vledgeLabel] {$x$};
+	\draw[edge] (s5) -- (s6) node [vledgeLabel] {$f$};
+	\draw[edge] (s5) to [bend left=70] (s7) node [above=25pt, right=10pt] {$l$};
+	\draw[edge] (s5) to [bend right=70] (s8) node [above=30pt, left=13pt] {$x$};
+	\draw[edge] (s6) -- (s7) node [vledgeLabel] {$x$};
+	%
+	\draw (2.5,0) node[t] (c1) {pg};
+	\draw (2.5,-0.5) node[t] (c2) {ib};
+	\draw (2.5,-1.0) node[t] (c3) {ac};
+	\draw (2.5,-1.8) node[t] (c4) {ac};
+	\draw (2.5,-2.3) node[t] (c5) {wb};
+	\draw (2.5,-2.8) node[nont, label=170:$c_7$] (c6) {A};
+	\draw (2.5,-3.5) node[t] (c7) {ac};
+	\draw (2.5,-4.2) node[nont] (c8) {A};
+	%
+	\draw (4,0) node[t] (t1) {g};
+	\draw (4,-0.7) node[t] (t2) {b};
+	\draw (4.5,-1.3) node[t] (t3) {a};
+	\draw (3.5,-1.5) node[t] (t4) {c};
+	\draw (3.5,-2.1) node[t] (t5) {b};
+	\draw (3.5,-2.8) node[nont, label=0:$t_7$] (t6) {A};
+	\draw (3.5,-3.5) node[t] (t7) {c};
+	\draw (3.5,-4.2) node[nont] (t8) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
+	\draw[edge] (t2) -- (t4) node [above=15pt, right=0pt] {$n$};
+	\draw[edge] (t4) -- (t5) node [vledgeLabel] {$x$};
+	\draw[edge] (t5) -- (t6) node [vledgeLabel] {$f$};
+	\draw[edge] (t7) to [bend right=90] (t5) node [below=15pt, right=10pt] {$x$};
+	\draw[edge] (t5) to [bend right=50] (t8) node [above=25pt, left=9pt] {$x$};
+	\draw[edge] (t6) -- (t7) node [vledgeLabel] {$x$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\draw[morph] (c6) -- (s6);
+	\draw[morph] (c6) -- (t6);
+	\draw[morph] (c7) -- (s7);
+	\draw[morph] (c7) -- (t7);
+	\draw[morph] (c8) -- (s8);
+	\draw[morph] (c8) -- (t8);
+	\end{tikzpicture}
+	\tderivpac{r_1}{s_7,c_7,t_7}{\emptyset}{} &
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[t] (s2) {i};
+	\draw (1.5,-1.3) node[t] (s3) {a};
+	\draw (0.5,-1.4) node[t] (s4) {a};
+	\draw (0.5,-2.1) node[t] (s5) {w};
+	\draw (0.5,-2.8) node[t] (s6) {a};
+	\draw (-0.5,-2.5) node[nont, label=90:$s_8$] (s9) {A};
+	\draw (0.5,-3.5) node[t] (s7) {a};
+	\draw (0.5,-4.2) node[nont] (s8) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	\draw[edge] (s2) -- (s3) node [vredgeLabel] {$p$};
+	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
+	\draw[edge] (s4) -- (s5) node [vledgeLabel] {$x$};
+	\draw[edge] (s5) -- (s6) node [vledgeLabel] {$f$};
+	\draw[edge] (s5) to [bend left=70] (s7) node [above=25pt, right=10pt] {$l$};
+	\draw[edge] (s5) to [bend right=70] (s8) node [above=30pt, left=13pt] {$x$};
+	\draw[edge] (s6) -- (s7) node [vledgeLabel] {$x$};
+	\draw[edge] (s6) -- (s9) node [edgeLabel] {$x$};
+	%
+	\draw (2.5,0) node[t] (c1) {pg};
+	\draw (2.5,-0.5) node[t] (c2) {ib};
+	\draw (2.5,-1.0) node[t] (c3) {ac};
+	\draw (2.5,-1.8) node[t] (c4) {ac};
+	\draw (2.5,-2.3) node[t] (c5) {wb};
+	\draw (2.5,-2.8) node[t] (c6) {a};
+	\draw (2.5,-3.5) node[t] (c7) {ac};
+	\draw (2.5,-4.2) node[nont] (c8) {A};
+	\draw (2.5,-4.7) node[nont, label=270:$c_8$] (c9) {A};
+	%
+	\draw (4,0) node[t] (t1) {g};
+	\draw (4,-0.7) node[t] (t2) {b};
+	\draw (4.5,-1.3) node[t] (t3) {a};
+	\draw (3.5,-1.5) node[t] (t4) {c};
+	\draw (3.5,-2.1) node[t] (t5) {b};
+	\draw (3.5,-2.8) node[t] (t6) {a};
+	\draw (5,-2.5) node[nont, label=90:$t_8$] (t9) {A};
+	\draw (3.5,-3.5) node[t] (t7) {c};
+	\draw (3.5,-4.2) node[nont] (t8) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
+	\draw[edge] (t2) -- (t4) node [above=15pt, right=0pt] {$n$};
+	\draw[edge] (t4) -- (t5) node [vledgeLabel] {$x$};
+	\draw[edge] (t5) -- (t6) node [vledgeLabel] {$f$};
+	\draw[edge] (t7) to [bend right=90] (t5) node [below=25pt, right=10pt] {$x$};
+	\draw[edge] (t5) to [bend right=50] (t8) node [above=25pt, left=9pt] {$x$};
+	\draw[edge] (t6) -- (t7) node [vledgeLabel] {$x$};
+	\draw[edge] (t6) -- (t9) node [edgeLabel] {$x$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\draw[morph] (c6) -- (s6);
+	\draw[morph] (c6) -- (t6);
+	\draw[morph] (c7) -- (s7);
+	\draw[morph] (c7) -- (t7);
+	\draw[morph] (c8) -- (s8);
+	\draw[morph] (c8) -- (t8);
+	\draw[morph] (c9) -- (s9);
+	\draw[morph] (c9) -- (t9);
+	\end{tikzpicture} \\
+	\tderivpac{r_6}{s_8,c_8,t_8}{\emptyset}{} &
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[t] (s2) {i};
+	\draw (1.5,-1.3) node[t] (s3) {a};
+	\draw (0.5,-1.4) node[t] (s4) {a};
+	\draw (0.5,-2.1) node[t] (s5) {w};
+	\draw (0.5,-2.8) node[t] (s6) {a};
+	\draw (0.5,-3.5) node[t] (s7) {a};
+	\draw (0.5,-4.2) node[nont, label=90:$s_9$] (s8) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	\draw[edge] (s2) -- (s3) node [vredgeLabel] {$p$};
+	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
+	\draw[edge] (s4) -- (s5) node [vledgeLabel] {$x$};
+	\draw[edge] (s5) -- (s6) node [vledgeLabel] {$f$};
+	\draw[edge] (s5) to [bend left] (s7) node [above=25pt, right=3pt] {$l$};
+	\draw[edge] (s5) to [bend right=60] (s8) node [above=30pt, left=13pt] {$x$};
+	\draw[edge] (s6) -- (s7) node [vledgeLabel] {$x$};
+	%
+	\draw (2.5,0) node[t] (c1) {pg};
+	\draw (2.5,-0.5) node[t] (c2) {ib};
+	\draw (2.5,-1.0) node[t] (c3) {ac};
+	\draw (2.5,-1.8) node[t] (c4) {ac};
+	\draw (2.5,-2.3) node[t] (c5) {wb};
+	\draw (2.5,-2.8) node[t] (c6) {ac};
+	\draw (2.5,-3.5) node[t] (c7) {ac};
+	\draw (2.5,-4.2) node[nont, label=90:$c_9$] (c8) {A};
+	%
+	\draw (4,0) node[t] (t1) {g};
+	\draw (4,-0.7) node[t] (t2) {b};
+	\draw (4.5,-1.3) node[t] (t3) {a};
+	\draw (3.5,-1.5) node[t] (t4) {c};
+	\draw (3.5,-2.1) node[t] (t5) {b};
+	\draw (3.5,-2.8) node[t] (t6) {c};
+	\draw (3.5,-3.5) node[t] (t7) {c};
+	\draw (3.5,-4.2) node[nont, label=90:$t_9$] (t8) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
+	\draw[edge] (t2) -- (t4) node [above=15pt, right=0pt] {$n$};
+	\draw[edge] (t4) -- (t5) node [vledgeLabel] {$x$};
+	\draw[edge] (t5) -- (t6) node [vledgeLabel] {$f$};
+	\draw[edge] (t7) to [bend right] (t5) node [below=15pt, right=3pt] {$x$};
+	\draw[edge] (t5) to [bend right=60] (t8) node [above=30pt, left=13pt] {$x$};
+	\draw[edge] (t6) -- (t7) node [vledgeLabel] {$x$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\draw[morph] (c6) -- (s6);
+	\draw[morph] (c6) -- (t6);
+	\draw[morph] (c7) -- (s7);
+	\draw[morph] (c7) -- (t7);
+	\draw[morph] (c8) -- (s8);
+	\draw[morph] (c8) -- (t8);
+	\end{tikzpicture}
+	\tderivpac{r_1}{s_9,c_9,t_9}{\emptyset}{} &
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[t] (s2) {i};
+	\draw (1.5,-1.3) node[t] (s3) {a};
+	\draw (0.5,-1.4) node[t] (s4) {a};
+	\draw (0.5,-2.1) node[t] (s5) {w};
+	\draw (0.5,-2.8) node[t] (s6) {a};
+	\draw (0.5,-3.5) node[t] (s7) {a};
+	\draw (0.5,-4.2) node[t] (s8) {a};
+	\draw (0.5,-4.9) node[nont, label=180:$s_{10}$] (s9) {A};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	\draw[edge] (s2) -- (s3) node [vredgeLabel] {$p$};
+	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
+	\draw[edge] (s4) -- (s5) node [vledgeLabel] {$x$};
+	\draw[edge] (s5) -- (s6) node [vledgeLabel] {$f$};
+	\draw[edge] (s5) to [bend left] (s7) node [above=25pt, right=3pt] {$l$};
+	\draw[edge] (s5) to [bend right=60] (s8) node [above=30pt, left=13pt] {$x$};
+	\draw[edge] (s6) -- (s7) node [vledgeLabel] {$x$};
+	\draw[edge] (s8) -- (s9) node [vledgeLabel] {$x$};
+	%
+	\draw (2.5,0) node[t] (c1) {pg};
+	\draw (2.5,-0.5) node[t] (c2) {ib};
+	\draw (2.5,-1.0) node[t] (c3) {ac};
+	\draw (2.5,-1.8) node[t] (c4) {ac};
+	\draw (2.5,-2.3) node[t] (c5) {wb};
+	\draw (2.5,-2.8) node[t] (c6) {ac};
+	\draw (2.5,-3.5) node[t] (c7) {ac};
+	\draw (2.5,-4.2) node[t] (c8) {ac};
+	\draw (2.5,-4.9) node[nont, label=90:$c_{10}$] (c9) {A};
+	%
+	\draw (4,0) node[t] (t1) {g};
+	\draw (4,-0.7) node[t] (t2) {b};
+	\draw (4.5,-1.3) node[t] (t3) {a};
+	\draw (3.5,-1.5) node[t] (t4) {c};
+	\draw (3.5,-2.1) node[t] (t5) {b};
+	\draw (3.5,-2.8) node[t] (t6) {c};
+	\draw (3.5,-3.5) node[t] (t7) {c};
+	\draw (3.5,-4.2) node[t] (t8) {c};
+	\draw (3.5,-4.9) node[nont, label=0:$t_{10}$] (t9) {A};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
+	\draw[edge] (t2) -- (t4) node [above=15pt, right=0pt] {$n$};
+	\draw[edge] (t4) -- (t5) node [vledgeLabel] {$x$};
+	\draw[edge] (t5) -- (t6) node [vledgeLabel] {$f$};
+	\draw[edge] (t7) to [bend right] (t5) node [below=15pt, right=3pt] {$x$};
+	\draw[edge] (t5) to [bend right=60] (t8) node [above=30pt, left=13pt] {$x$};
+	\draw[edge] (t6) -- (t7) node [vledgeLabel] {$x$};
+	\draw[edge] (t8) -- (t9) node [vledgeLabel] {$x$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\draw[morph] (c6) -- (s6);
+	\draw[morph] (c6) -- (t6);
+	\draw[morph] (c7) -- (s7);
+	\draw[morph] (c7) -- (t7);
+	\draw[morph] (c8) -- (s8);
+	\draw[morph] (c8) -- (t8);
+	\draw[morph] (c9) -- (s9);
+	\draw[morph] (c9) -- (t9);
+	\end{tikzpicture}\\
+	\tderivpac{r_6}{s_{10},c_{10},t_{10}}{\emptyset}{} &
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {p};
+	\draw (1,-0.7) node[t] (s2) {i};
+	\draw (1.5,-1.3) node[t] (s3) {a};
+	\draw (0.5,-1.4) node[t] (s4) {a};
+	\draw (0.5,-2.1) node[t] (s5) {w};
+	\draw (0.5,-2.8) node[t] (s6) {a};
+	\draw (0.5,-3.5) node[t] (s7) {a};
+	\draw (0.5,-4.2) node[t] (s8) {a};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
+	\draw[edge] (s2) -- (s3) node [vredgeLabel] {$p$};
+	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$n$};
+	\draw[edge] (s4) -- (s5) node [vledgeLabel] {$x$};
+	\draw[edge] (s5) -- (s6) node [vledgeLabel] {$f$};
+	\draw[edge] (s5) to [bend left] (s7) node [above=25pt, right=3pt] {$l$};
+	\draw[edge] (s5) to [bend right=60] (s8) node [above=30pt, left=13pt] {$x$};
+	\draw[edge] (s6) -- (s7) node [vledgeLabel] {$x$};
+	%
+	\draw (2.5,0) node[t] (c1) {pg};
+	\draw (2.5,-0.5) node[t] (c2) {ib};
+	\draw (2.5,-1.0) node[t] (c3) {ac};
+	\draw (2.5,-1.8) node[t] (c4) {ac};
+	\draw (2.5,-2.3) node[t] (c5) {wb};
+	\draw (2.5,-2.8) node[t] (c6) {ac};
+	\draw (2.5,-3.5) node[t] (c7) {ac};
+	\draw (2.5,-4.2) node[t] (c8) {ac};
+	%
+	\draw (4,0) node[t] (t1) {g};
+	\draw (4,-0.7) node[t] (t2) {b};
+	\draw (4.5,-1.3) node[t] (t3) {a};
+	\draw (3.5,-1.5) node[t] (t4) {c};
+	\draw (3.5,-2.1) node[t] (t5) {b};
+	\draw (3.5,-2.8) node[t] (t6) {c};
+	\draw (3.5,-3.5) node[t] (t7) {c};
+	\draw (3.5,-4.2) node[t] (t8) {c};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
+	\draw[edge] (t2) -- (t3) node [vredgeLabel] {$p$};
+	\draw[edge] (t2) -- (t4) node [above=15pt, right=0pt] {$n$};
+	\draw[edge] (t4) -- (t5) node [vledgeLabel] {$x$};
+	\draw[edge] (t5) -- (t6) node [vledgeLabel] {$f$};
+	\draw[edge] (t7) to [bend right] (t5) node [below=15pt, right=3pt] {$x$};
+	\draw[edge] (t5) to [bend right=60] (t8) node [above=30pt, left=13pt] {$x$};
+	\draw[edge] (t6) -- (t7) node [vledgeLabel] {$x$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c3) -- (s3);
+	\draw[morph] (c3) -- (t3);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\draw[morph] (c6) -- (s6);
+	\draw[morph] (c6) -- (t6);
+	\draw[morph] (c7) -- (s7);
+	\draw[morph] (c7) -- (t7);
+	\draw[morph] (c8) -- (s8);
+	\draw[morph] (c8) -- (t8);
+	\end{tikzpicture}
+	&
+\end{align*}
