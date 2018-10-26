@@ -255,7 +255,7 @@
               name="A"/>
         </vertices>
         <vertices
-            id="C12T1">
+            id="C12C1_">
           <label
               name="C"/>
         </vertices>
@@ -287,9 +287,9 @@
               name="A"/>
         </vertices>
         <vertices
-            id="T1">
+            id="C1_">
           <label
-              name="Table"/>
+              name="C"/>
         </vertices>
         <vertices
             id="SA1_">
@@ -342,7 +342,7 @@
         </value>
       </embedding>
       <embedding
-          key="T1">
+          key="C1_">
         <value>
           <edgeLabel
               name="table"/>
@@ -355,7 +355,7 @@
         value="c1"/>
     <ms key="A12A1_"
         value="A1"/>
-    <ms key="C12T1"
+    <ms key="C12C1_"
         value="C1"/>
     <ms key="SA12SA1_"
         value="SA1"/>
@@ -365,8 +365,8 @@
         value="t1"/>
     <mt key="A12A1_"
         value="A1_"/>
-    <mt key="C12T1"
-        value="T1"/>
+    <mt key="C12C1_"
+        value="C1_"/>
     <mt key="SA12SA1_"
         value="SA1_"/>
     <mt key="AT12AT1_"
