@@ -374,8 +374,8 @@
   </tripleRules>
   <tripleRules>
     <source
-        id="r2"
-        name="r2"
+        id="r7"
+        name="r7"
         pac="c2">
       <lhs name="A"/>
       <rhs>
@@ -453,8 +453,8 @@
         </value>
       </embedding>
     </source>
-    <corr id="r2"
-        name="r2"
+    <corr id="r7"
+        name="r7"
         pac="c22t2">
       <lhs name="A"/>
       <rhs>
@@ -476,8 +476,8 @@
       </rhs>
     </corr>
     <target
-        id="r2"
-        name="r2"
+        id="r7"
+        name="r7"
         pac="t2">
       <lhs name="A"/>
       <rhs>
@@ -552,58 +552,39 @@
   </tripleRules>
   <tripleRules>
     <source
-        id="r3"
-        name="r3">
+        id="r8"
+        name="r8">
       <lhs name="A"/>
       <rhs/>
     </source>
-    <corr id="r3"
-        name="r3">
+    <corr id="r8"
+        name="r8">
       <lhs name="A"/>
       <rhs/>
     </corr>
     <target
-        id="r3"
-        name="r3">
+        id="r8"
+        name="r8">
       <lhs name="A"/>
       <rhs/>
     </target>
   </tripleRules>
   <tripleRules>
     <source
-        id="r4"
-        name="r4">
+        id="r2"
+        name="r2">
       <lhs name="C"/>
       <rhs/>
     </source>
-    <corr id="r4"
-        name="r4">
+    <corr id="r2"
+        name="r2">
       <lhs name="C"/>
       <rhs/>
     </corr>
     <target
-        id="r4"
-        name="r4">
+        id="r2"
+        name="r2">
       <lhs name="C"/>
-      <rhs/>
-    </target>
-  </tripleRules>
-  <tripleRules>
-    <source
-        id="r5"
-        name="r5">
-      <lhs name="SA"/>
-      <rhs/>
-    </source>
-    <corr id="r5"
-        name="r5">
-      <lhs name="SA"/>
-      <rhs/>
-    </corr>
-    <target
-        id="r5"
-        name="r5">
-      <lhs name="SA"/>
       <rhs/>
     </target>
   </tripleRules>
@@ -611,6 +592,25 @@
     <source
         id="r6"
         name="r6">
+      <lhs name="SA"/>
+      <rhs/>
+    </source>
+    <corr id="r6"
+        name="r6">
+      <lhs name="SA"/>
+      <rhs/>
+    </corr>
+    <target
+        id="r6"
+        name="r6">
+      <lhs name="SA"/>
+      <rhs/>
+    </target>
+  </tripleRules>
+  <tripleRules>
+    <source
+        id="r5"
+        name="r5">
       <lhs name="SA"/>
       <rhs>
         <vertices
@@ -667,8 +667,8 @@
         </value>
       </embedding>
     </source>
-    <corr id="r6"
-        name="r6">
+    <corr id="r5"
+        name="r5">
       <lhs name="SA"/>
       <rhs>
         <vertices
@@ -684,8 +684,8 @@
       </rhs>
     </corr>
     <target
-        id="r6"
-        name="r6">
+        id="r5"
+        name="r5">
       <lhs name="SA"/>
       <rhs>
         <vertices
@@ -741,27 +741,27 @@
   </tripleRules>
   <tripleRules>
     <source
-        id="r7"
-        name="r7">
+        id="r4"
+        name="r4">
       <lhs name="AT"/>
       <rhs/>
     </source>
-    <corr id="r7"
-        name="r7">
+    <corr id="r4"
+        name="r4">
       <lhs name="AT"/>
       <rhs/>
     </corr>
     <target
-        id="r7"
-        name="r7">
+        id="r4"
+        name="r4">
       <lhs name="AT"/>
       <rhs/>
     </target>
   </tripleRules>
   <tripleRules>
     <source
-        id="r8"
-        name="r8">
+        id="r3"
+        name="r3">
       <lhs name="AT"/>
       <rhs>
         <vertices
@@ -794,8 +794,8 @@
         </value>
       </embedding>
     </source>
-    <corr id="r8"
-        name="r8">
+    <corr id="r3"
+        name="r3">
       <lhs name="AT"/>
       <rhs>
         <vertices
@@ -811,8 +811,8 @@
       </rhs>
     </corr>
     <target
-        id="r8"
-        name="r8">
+        id="r3"
+        name="r3">
       <lhs name="AT"/>
       <rhs>
         <vertices
