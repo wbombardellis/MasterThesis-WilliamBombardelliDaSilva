@@ -4,7 +4,7 @@
 	
 	\draw (0.5,0) node[t] (s1) {cd};
 	\draw (0.5,-1) node[nont] (s2) {C};
-	\draw[edge] (s1) to [bend left] (s2) node [above=10pt, left=8pt] {$\sigma$};
+	\draw[edge] (s1) to [bend left] (s2) node [above=10pt, left=8pt] {$\kappa$};
 	\draw[edge] (s1) to [bend right] (s2) node [above=10pt, right=8pt] {$\alpha$};
 	%%
 	\draw (2,0) node[t] (c1) {dd};
@@ -12,7 +12,7 @@
 	%%
 	\draw (3.5,0) node[t] (t1) {db};
 	\draw (3.5,-1) node[nont] (t2) {C};
-	\draw[edge] (t1) -- (t2) node [vredgeLabel] {$\tau$};
+	\draw[edge] (t1) -- (t2) node [vredgeLabel] {$\pi$};
 	%%
 	\draw[morph] (c1) -- (s1);
 	\draw[morph] (c1) -- (t1);
@@ -23,14 +23,14 @@
 \node[rid] at (\ridX,\ridY) {$r_3:$};
 \draw (\lhsX,0) node[lhs] (lhs) {AT ::=};
 
-\draw (0.5,0) node[t] (s1) {at};
-\draw (0.5,-1) node[nont] (s2) {AT};
+\draw (0.5,0) node[t, label=90:$s_{30}$] (s1) {at};
+\draw (0.5,-1) node[nont, label=90:$s_{31}$] (s2) {AT};
 %%
 \draw (2,0) node[t] (c1) {tc};
 \draw (2,-1) node[nont] (c2) {AT};
 %%
-\draw (3.5,0) node[t] (t1) {co};
-\draw (3.5,-1) node[nont] (t2) {AT};
+\draw (3.5,0) node[t, label=90:$t_{30}$] (t1) {co};
+\draw (3.5,-1) node[nont, label=90:$t_{31}$] (t2) {AT};
 %%
 \draw[morph] (c1) -- (s1);
 \draw[morph] (c1) -- (t1);
@@ -48,10 +48,10 @@
 	\node[rid] at (\ridX,\ridY) {$r_1:$};
 	\draw (\lhsX,0) node[lhs] (lhs) {C ::=};
 	
-	\draw (1.5,0) node[t, label=90:$s_{11}$] (s1) {c};
-	\draw (0.1,-1) node[nont] (s2) {SA};
-	\draw (0.9,-2) node[nont] (s3) {C};
-	\draw (1.7,-1.5) node[nont] (s4) {A};
+	\draw (1.5,0) node[t, label=90:$s_{10}$] (s1) {c};
+	\draw (0.1,-1) node[nont, label=90:$s_{11}$] (s2) {SA};
+	\draw (0.9,-2) node[nont, label=180:$s_{12}$] (s3) {C};
+	\draw (1.7,-1.5) node[nont, label=180:$s_{13}$] (s4) {A};
 	\draw (2.5,-1) node[nont] (s5) {AT};
 	\draw[edge] (s2) to [bend right=-10] (s1) node [below=7pt, left=15pt] {$\zeta$};
 	\draw[edge] (s2) to [bend left=-10] (s1) node [below=15pt, left=2pt] {$\psi$};
@@ -64,11 +64,11 @@
 	\draw (3.5,-1.5) node[nont] (c4) {A};
 	\draw (3.5,-2) node[nont] (c3) {C};
 	%%
-	\draw (6,0) node[t] (t1) {t};
+	\draw (6,0) node[t, label=90:$t_{10}$] (t1) {t};
 	\draw (4.5,-1) node[nont] (t5) {AT};
-	\draw (5.3,-1.5) node[nont] (t4) {A};
-	\draw (6.1,-2) node[nont] (t3) {C};
-	\draw (7.3,-1) node[nont] (t2) {SA};
+	\draw (5.3,-1.5) node[nont, label=0:$t_{13}$] (t4) {A};
+	\draw (6.1,-2) node[nont, label=0:$t_{12}$] (t3) {C};
+	\draw (7.3,-1) node[nont, label=90:$t_{11}$] (t2) {SA};
 	\draw[edge] (t1) to [bend right=-10] (t2) node [above=15pt, left=2pt] {$\gamma$};
 	\draw[edge] (t2) to [bend right=-10] (t1) node [below=15pt, right=2pt] {$\delta$};
 	\draw[edge] (t1) -- (t4) node [vredgeLabel] {$\gamma$};
@@ -96,14 +96,14 @@
 	\node[rid] at (\ridX,\ridY) {$r_5:$};
 	\draw (\lhsX,0) node[lhs] (lhs) {SA ::=};
 	
-	\draw (0.5,0) node[t] (s1) {a};
-	\draw (0.5,-1) node[nont] (s2) {SA};
+	\draw (0.5,0) node[t, label=90:$s_{50}$] (s1) {a};
+	\draw (0.5,-1) node[nont, label=90:$s_{51}$] (s2) {SA};
 	%%
 	\draw (2,0) node[t] (c1) {ac};
 	\draw (2,-1) node[nont] (c2) {SA};
 	%%
-	\draw (3.5,0) node[t] (t1) {co};
-	\draw (3.5,-1) node[nont] (t2) {SA};
+	\draw (3.5,0) node[t, label=90:$t_{50}$] (t1) {co};
+	\draw (3.5,-1) node[nont, label=90:$t_{51}$] (t2) {SA};
 	%%
 	\draw[morph] (c1) -- (s1);
 	\draw[morph] (c1) -- (t1);
@@ -120,19 +120,19 @@
 	\node[rid] at (\ridX,\ridY) {$r_7:$};
 	\draw (\lhsX,0) node[lhs] (lhs) {A ::=};
 	
-	\draw (0.5,0) node[t] (s1) {a};
-	\draw (0.2,-1) node[nont] (s2) {SA};
-	\draw (1,-0.7) node[pac] (s3) {c};
-	\draw[edge] (s1) -- (s3) node [vredgeLabel] {$\psi$};
+	\draw (0.5,0) node[t, label=90:$s_{70}$] (s1) {a};
+	\draw (0.2,-1) node[nont, label=90:$s_{71}$] (s2) {A};
+	\draw (1,-0.7) node[pac, label=45:$s_{72}$] (s3) {c};
+	\draw[pacedge] (s1) -- (s3) node [vredgeLabel] {$\psi$};
 	%%
 	\draw (2,0) node[t] (c1) {ac};
 	\draw (2,-1) node[nont] (c2) {SA};
 	\draw (2,-0.5) node[pac] (c3) {ct};
 	%%
-	\draw (3.5,0) node[t] (t1) {co};
-	\draw (3.8,-1) node[nont] (t2) {SA};
-	\draw (3,-0.7) node[pac] (t3) {t};
-	\draw[edge] (t1) -- (t3) node [vledgeLabel] {$\psi$};
+	\draw (3.5,0) node[t, label=90:$t_{70}$] (t1) {co};
+	\draw (3.8,-1) node[nont, label=90:$t_{71}$] (t2) {A};
+	\draw (3,-0.7) node[pac, label=135:$t_{72}$] (t3) {t};
+	\draw[pacedge] (t1) -- (t3) node [vledgeLabel] {$\delta$};
 	%%
 	\draw[morph] (c1) -- (s1);
 	\draw[morph] (c1) -- (t1);
