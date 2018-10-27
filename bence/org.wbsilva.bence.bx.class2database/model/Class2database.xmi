@@ -436,6 +436,12 @@
           <vertexLabels
               name="Association"/>
         </value>
+        <value>
+          <edgeLabel
+              name="attribute"/>
+          <vertexLabels
+              name="Attribute"/>
+        </value>
       </embedding>
       <embedding
           key="A2">
@@ -523,6 +529,12 @@
         <value>
           <edgeLabel
               name="reference"/>
+          <vertexLabels
+              name="Column"/>
+        </value>
+        <value>
+          <edgeLabel
+              name="column"/>
           <vertexLabels
               name="Column"/>
         </value>
