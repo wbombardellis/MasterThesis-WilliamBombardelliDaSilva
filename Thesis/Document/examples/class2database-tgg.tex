@@ -20,28 +20,28 @@
 	\draw[morph] (c2) -- (t2);
 \end{tikzpicture}
 \begin{tikzpicture}[grammar]
-\node[rid] at (\ridX,\ridY) {$r_3:$};
-\draw (\lhsX,0) node[lhs] (lhs) {AT ::=};
-
-\draw (0.5,0) node[t, label=90:$s_{30}$] (s1) {at};
-\draw (0.5,-1) node[nont, label=90:$s_{31}$] (s2) {AT};
-%%
-\draw (2,0) node[t] (c1) {tc};
-\draw (2,-1) node[nont] (c2) {AT};
-%%
-\draw (3.5,0) node[t, label=90:$t_{30}$] (t1) {co};
-\draw (3.5,-1) node[nont, label=90:$t_{31}$] (t2) {AT};
-%%
-\draw[morph] (c1) -- (s1);
-\draw[morph] (c1) -- (t1);
-\draw[morph] (c2) -- (s2);
-\draw[morph] (c2) -- (t2);
-
-%%%%
-\draw[pipe] (4,\pipeBY) -- (4,-1);
-
-\node[rid] at (4.7,\ridY) {$r_4:$};
-\draw (4.5,0) node[empty] (s3) {$\emptyTG$};
+	\node[rid] at (\ridX,\ridY) {$r_3:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {AT ::=};
+	
+	\draw (0.5,0) node[t, label=90:$s_{30}$] (s1) {at};
+	\draw (0.5,-1) node[nont, label=90:$s_{31}$] (s2) {AT};
+	%%
+	\draw (2,0) node[t] (c1) {tc};
+	\draw (2,-1) node[nont] (c2) {AT};
+	%%
+	\draw (3.5,0) node[t, label=90:$t_{30}$] (t1) {co};
+	\draw (3.5,-1) node[nont, label=90:$t_{31}$] (t2) {AT};
+	%%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	
+	%%%%
+	\draw[pipe] (4,\pipeBY) -- (4,-1);
+	
+	\node[rid] at (4.7,\ridY) {$r_4:$};
+	\draw (4.5,0) node[empty] (s3) {$\emptyTG$};
 \end{tikzpicture}
 
 \begin{tikzpicture}[grammar]
