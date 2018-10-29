@@ -68,8 +68,15 @@
 	\fi
 }
 \newcommand{\tderivtr}[1]{\Rightarrow^*_{#1}}
+
+%%%% PAC %%%%
 \newcommand{\cderivpac}[4]{\overset{#1,#2,#3}{\Rrightarrow}_{#4}}
-\newcommand{\derivpac}[4]{\overset{#1,#2,#3}{\Rightarrow}_{#4}}
+\newcommand{\derivpac}[4]{
+	\ifx\relax#3\relax
+	\overset{#1,#2}{\Rightarrow}_{#4}
+	\else
+	\overset{#1,#2,#3}{\Rightarrow}_{#4}
+	\fi}
 \newcommand{\derivpacn}[2]{\Rightarrow^{#2}_{#1}}
 \newcommand{\resolv}[1]{\overset{#1}{\rightarrowtail}}
 \newcommand{\resolvn}[2]{\overset{#1}{\rightarrowtail}^{#2}}
@@ -77,10 +84,17 @@
 \newcommand{\resolvtr}[1]{\rightarrowtail^*}
 
 \newcommand{\tcderivpac}[4]{\overset{#1,#2,#3}{\Rrightarrow}_{#4}}
-\newcommand{\tderivpac}[4]{\overset{#1,#2,#3}{\Rightarrow}_{#4}}
+\newcommand{\tderivpac}[4]{
+	\ifx\relax#3\relax
+	\overset{#1,#2}{\Rightarrow}_{#4}
+	\else
+	\overset{#1,#2,#3}{\Rightarrow}_{#4}
+	\fi
+}
 \newcommand{\tderivpacn}[2]{\Rightarrow^{#2}_{#1}}
 \newcommand{\tresolv}[1]{\overset{#1}{\rightarrowtail}}
 \newcommand{\tresolvn}[2]{\overset{#1}{\rightarrowtail}^{#2}}
+\newcommand{\tderivpactr}[1]{\Rightarrow^*_{#1}}
 \newcommand{\tresolvtr}[1]{\rightarrowtail^*_{#1}}
 
 %%%%%%%%%%%%%% ALGORITHM %%%%%%%%%%%%%%

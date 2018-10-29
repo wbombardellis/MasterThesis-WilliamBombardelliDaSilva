@@ -41,7 +41,7 @@ If a graph grammar has at least one rule with PAC, then we say it is a graph gra
 	A \textit{concrete derivation step} with PAC in the graph grammar $GG$ is of the form $G \cderivpac{r}{v}{U}{GG} H$ with $G$, $H$, $v$ being as described in Definition \ref{def:gg_dstep}, and $r = (A \pro R, \omega, U)$ being a production rule with PAC. Given that, a \textit{derivation step} is, analogously, of the form $G \derivpac{r}{v}{W}{GG} H'$ with $W = m(U)$ where $m$ is the isomorphism from $H$ and $H'$.
 \end{definition}
 
-So far, PAC vertices do not change anything in the behavior of a derivation step and the set $U$ in a derivation step serves just to tag which vertices are PAC in a sentential form. Nevertheless, PAC vertices play an important role on a resolution step, defined below.
+So far, PAC vertices do not change anything in the behavior of a derivation step and the set $U$ in a derivation step serves just to tag which vertices are PAC in a sentential form. Nevertheless, PAC vertices play an important role on a resolution step, defined below. If $W$ is empty, we might omit it from the notation.
 
 \begin{definition}
 	\label{def:resolv}
@@ -164,7 +164,7 @@ Analogously, the concepts of \textit{concrete derivation step} and \textit{deriv
  A \textit{concrete derivation step} with PAC in the triple graph grammar $TGG$ is of the form $G \tcderivpac{r}{v_s,v_c,v_t}{U_s,U_t}{TGG} H$, where $G$, $H$, $v_s$, $v_c$, $v_t$ being as described in Definition \ref{def:tgg_dstep}, $r = (A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t, U_s, U_t)$ being a triple rule with PAC. Given that, a \textit{derivation step} with PAC is, analogously, of the form $G \tderivpac{r}{v_s,v_c,v_t}{W_s,W_t}{TGG} H'$ with $W_s = m(U_s)$ and $W_t = m(U_t)$ where $m$ is the triple isomorphism from $H$ to $H'$.
 \end{definition}
 
-Moreover, the \textit{resolution step} for TGG is as follows.
+If $W_s$ and $W_t$ are empty, we might omit them from the notation. The \textit{resolution step} for TGG is as follows.
 
 \begin{definition}
 	\label{def:tresolv}
