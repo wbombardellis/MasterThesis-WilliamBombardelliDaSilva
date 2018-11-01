@@ -1,0 +1,34 @@
+	\begin{tikzpicture}[graph]
+	\draw (1,0) node[t] (s1) {cd};
+	\draw (1,-1.5) node[t] (s2) {c};
+	\draw (2,-1.5) node[t] (s4) {a};
+	\draw (2,0) node[t] (s5) {c};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$\kappa$};
+	\draw[edge] (s1) -- (s4) node [vredgeLabel] {$\alpha$};
+	\draw[edge] (s1) -- (s5) node [edgeLabel, below] {$\kappa$};
+	\draw[edge] (s4) -- (s2) node [edgeLabel] {$\zeta$};
+	\draw[edge] (s4) -- (s5) node [vredgeLabel] {$\psi$};
+	%
+	\draw (3,0.5) node[t] (c1) {dd};
+	\draw (3,-2) node[t] (c2) {ct};
+	\draw (3,-1.5) node[t] (c4) {ac};
+	\draw (3,-0.5) node[t] (c5) {ct};
+	%
+	\draw (5,0) node[t] (t1) {db};
+	\draw (5,-1.5) node[t] (t2) {t};
+	\draw (4,-1.5) node[t] (t4) {co};
+	\draw (4,0) node[t] (t5) {t};
+	\draw[edge] (t1) -- (t2) node [vredgeLabel] {$\pi$};
+	\draw[edge] (t1) -- (t5) node [edgeLabel, below] {$\pi$};
+	\draw[edge] (t2) -- (t4) node [edgeLabel] {$\gamma$};
+	\draw[edge] (t4) -- (t5) node [vledgeLabel] {$\delta$};
+	%
+	\draw[morph] (c1) -- (s1);
+	\draw[morph] (c1) -- (t1);
+	\draw[morph] (c2) -- (s2);
+	\draw[morph] (c2) -- (t2);
+	\draw[morph] (c4) -- (s4);
+	\draw[morph] (c4) -- (t4);
+	\draw[morph] (c5) -- (s5);
+	\draw[morph] (c5) -- (t5);
+	\end{tikzpicture}

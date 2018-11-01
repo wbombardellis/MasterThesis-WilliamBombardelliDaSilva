@@ -77,25 +77,38 @@
 	
 	\begin{frame}{The Model Transformation Problem}
 		%TODO: IMAGE - Relation between models. Models in relation of correctly-transformed models
+		\centering{
+		\includegraphics[width=.7\textwidth]{misc/model-transformation}
+		}
+		\begin{itemize}
+			\item $G \ct T$ iff $G$ is correctly transformed into $T$
+			\item $\ct$ is the \emph{correctly-transformed relation} between source and target models
+			\item \textbf{Batch forward transformation:} \\
+			Given $G$, find a $T$, such that $G \ct T$
+		\end{itemize}
+		
 	\end{frame}
 	
 	\begin{frame}{The Triple Graph Grammar Approach}
 		\begin{itemize}
 			\item Models are graphs
 			\pause
-			\item Two correctly-transformed graphs $G$ and $T$ are in a triple graph $G \ms{} C \mt{} T$
-			%TODO: Class2Database instance
+			\item Two correctly-transformed graphs $G$ and $T$ are in a triple graph $G \ms{} C \mt{} T$\\
+			\input{examples/class2database-tg}
 			\pause
 			\item A triple graph grammar $TGG$ is a generator of a set of triple graphs $L(TGG)$
 			\pause
 			\item The correctly-transformed relation $\ct$ between graphs is described in terms of a triple graph grammar $TGG$
 			\begin{itemize}
-				\item $G \ct T \text{ iff } (G \ms{} C \mt{} T) \in L(TGG)$
+				\item $G \ct T $ iff $(G \ms{} C \mt{} T) \in L(TGG)$
 			\end{itemize}
 		\end{itemize}
 	\end{frame}
 	
-	%TODO: Pure TGG example of pseudo2code
+	\begin{frame}{TGG -- An Example}
+		%TODO: Introduction to pseudo2code
+		%TODO: Pure TGG example of pseudo2code
+	\end{frame}
 	
 	%-------------------
 	%  TGG With Non-terminals
