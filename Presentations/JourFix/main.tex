@@ -5,6 +5,10 @@
 \usetikzlibrary{backgrounds}
 \usetikzlibrary{arrows}
 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{algorithmicx}
+
 \usetheme{Berlin}
 
 \input{macros}
@@ -13,8 +17,6 @@
 \setbeamertemplate{headline}{}
 
 %Footer Settings
-%\setbeamertemplate{footline}[page number]
-%\setbeamertemplate{footline}[frame number]
 \setbeamertemplate{navigation symbols}{
 	\usebeamerfont{footline}%
 	\usebeamercolor[fg]{footline}%
@@ -76,7 +78,6 @@
 	\end{frame}
 	
 	\begin{frame}{The Model Transformation Problem}
-		%TODO: IMAGE - Relation between models. Models in relation of correctly-transformed models
 		\centering{
 		\includegraphics[width=.7\textwidth]{misc/model-transformation}
 		}
@@ -106,8 +107,19 @@
 	\end{frame}
 	
 	\begin{frame}{TGG -- An Example}
-		%TODO: Introduction to pseudo2code
-		%TODO: Pure TGG example of pseudo2code
+		\begin{itemize}
+			\item \emph{Pseudocode} to \emph{Controlflow}
+		\end{itemize}
+		
+		\input{examples/pseudocode2controlflow-tg}
+	\end{frame}
+	
+	\begin{frame}{TGG - An Example}
+		\begin{itemize}
+			\item \emph{Pseudocode} to \emph{Controlflow}
+		\end{itemize}
+			
+		\input{examples/pseudocode2controlflow-stgg}
 	\end{frame}
 	
 	%-------------------
@@ -119,7 +131,7 @@
 		\tableofcontents[currentsection, currentsubsection] 
 	\end{frame}
 	
-	\begin{frame}{Our contribution -- NCE TGG}
+	\begin{frame}{Our Contribution -- NCE TGG}
 		\begin{itemize}
 			\item New formalism: NCE TGG
 			\begin{itemize}
@@ -131,7 +143,7 @@
 		\end{itemize}
 	\end{frame}
 	
-	\begin{frame}{NCE TGG -- An example}
+	\begin{frame}{NCE TGG -- An Example}
 		\begin{itemize}
 			\item \emph{Pseudocode} to \emph{Controlflow}
 		\end{itemize}
@@ -190,7 +202,7 @@
 				\item Cannot model important transformations (e.g. Class Diagrams)
 			\end{itemize}
 			\pause
-			\item Future Work:
+			\item Future Work
 			\begin{itemize}
 				\item Application conditions: Positive experimental results
 				\item Broader evaluation including empirical assessment with engineers and performance reports
@@ -199,9 +211,9 @@
 		\end{itemize}
 	\end{frame}
 	
-	%------------------------------------------------
+	%-------------------
 	% References
-	%------------------------------------------------
+	%-------------------
 	\section{References}
 	\begin{frame}
 		\frametitle{References}
