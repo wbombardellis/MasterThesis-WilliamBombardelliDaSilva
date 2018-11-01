@@ -173,6 +173,8 @@ Building upon the concepts of graphs and graph grammars, we present, in the foll
 	Moreover, we define the special empty triple graph as $\emptyTG := E \ms{m_s} E \mt{m_t} E$ with $E = (\emptyset, \emptyset, \emptyset)$ and $m_s = m_t = \emptyset$.
 \end{definition}
 
+%TODO: Talk more about TGG. Example
+
 \begin{definition}
 	%TODO: Maybe make the rightarrows clearer
 	A triple isomorphism of directed labeled triple graphs $G = (G_s \ms{g_s} G_c \mt{g_t} G_t)$ and $H = (H_s \ms{h_s} H_c \mt{h_t} H_t)$ is a bijective mapping $m: V_G \to V_H$ that maintains the connections between vertices as well as their labels and the source and target morphisms, that is, $(v,l,w) \in E_G$ if, and only if, $(m(v),l,m(w)) \in E_H$ and $\phi_G(v) = \phi_H(m(v))$ and $v \in G_c$ if, and only if, $v \in \dom g_s \rightarrow m(g_s(v)) = h_s(m(v))$ and $v \in \dom g_t \rightarrow m(g_t(v)) = h_t(m(v))$. In this case, we write $G \isomorph H$, and we denote the equivalence class of all triple graphs isomorphic to G also by $[G]$.
