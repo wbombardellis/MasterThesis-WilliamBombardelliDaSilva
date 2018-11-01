@@ -14,6 +14,8 @@
 *.lof
 *.lot
 *.*~
+*.nav
+*.snm
 
 Papers/*.pdf
 Papers/*/*.pdf
