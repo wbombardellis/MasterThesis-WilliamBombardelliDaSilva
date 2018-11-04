@@ -16,6 +16,7 @@
 *.*~
 *.nav
 *.snm
+*.auxlock
 
 Papers/*.pdf
 Papers/*/*.pdf
