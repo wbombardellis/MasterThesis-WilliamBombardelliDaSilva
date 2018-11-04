@@ -23,10 +23,10 @@ Furthermore, consider the definition of the non-terminal consistent (NTC) proper
 
 %TODO: I guess the second item can be removed. morphism is bijective by definition
 \begin{definition}
-	A triple graph grammar $TGG = (\Sigma, \Delta, S, P)$ is non-terminal consistent (NTC) if and only if, for all rules $(A \pro (G_s \ms{m_s} G_c \mt{m_t} G_t), \omega_s, \omega_t) \in P$, the following holds:
+	A triple graph grammar $TGG = (\Sigma, \Delta, S, P)$ is \emph{non-terminal consistent} (NTC) if and only if, for all rules $(A \pro (G_s \ms{ms} G_c \mt{mt} G_t), \omega_s, \omega_t) \in P$, the following holds:
 	\begin{enumerate}
-		\item $\forall c \in V_{G_c} \. \text{if } \phi_{G_c}(c) \in \Gamma \text{ then } \phi_{G_c}(c) = \phi_{G_s}(m_s(c)) = \phi_{G_t}(m_t(c))$ and
-		\item For the sets $N_s = \{v \st \phi_{G_s}(v) \in \Gamma\}$ and $N_t = \{v \st \phi_{G_t}(v) \in \Gamma\}$, the range-restricted functions $(m_s \rrestr N_s)$ and $(m_t \rrestr N_t)$ are bijective.
+		\item $\forall c \in V_{G_c} \. \text{if } \phi_{G_c}(c) \in \Gamma \text{ then } \phi_{G_c}(c) = \phi_{G_s}(ms(c)) = \phi_{G_t}(mt(c))$ and
+		\item For the sets $N_s = \{v \st \phi_{G_s}(v) \in \Gamma\}$ and $N_t = \{v \st \phi_{G_t}(v) \in \Gamma\}$, the range-restricted functions $(ms \rrestr N_s)$ and $(mt \rrestr N_t)$ are bijective.
 	\end{enumerate}
 \end{definition}
 

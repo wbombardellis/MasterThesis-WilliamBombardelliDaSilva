@@ -15,17 +15,17 @@ In order to evaluate the proposed BNCE TGG formalism, we compare the amount of r
 	\begin{tabular}{l r r r r }
 		\hline
 						& \multicolumn{2}{c}{Standard TGG} & \multicolumn{2}{c}{BNCE TGG}\\
-		Transformation 			& Rules & Elements 	& Rules & Elements\\
+		Transformation 					& Rules & Elements 	& Rules & Elements\\
 		\hline
-		Pseudocode2Controlflow	& 45			& 1061	& \textbf{7}	& \textbf{185} \\
-		BTree2XBTree			& \textbf{4}	& \textbf{50}	& 5		& 80 \\
-		Star2Wheel				& -				& -		& \textbf{6} 	& \textbf{89} \\
-		Class2Database			& \textbf{5}	& \textbf{80}	& 9 	& 117  \\
-		Statemachine2Petrinet	& \textbf{5}	& \textbf{114}	& 7		& 131 \\
+		\emph{Pseudocode2Controlflow}	& 45			& 1061	& \textbf{7}	& \textbf{185} \\
+		\emph{BTree2XBTree}				& \textbf{4}	& \textbf{50}	& 5		& 80 \\
+		\emph{Star2Wheel}				& -				& -		& \textbf{6} 	& \textbf{89} \\
+		\emph{Class2Database}			& \textbf{5}	& \textbf{80}	& 9 	& 117  \\
+		\emph{Statemachine2Petrinet}	& \textbf{5}	& \textbf{114}	& 7		& 131 \\
 		
-		%Class2SDLBlock		& 	&	&	&	\\
-		%Statemachine2While & 	&	&	&	\\
-		%Activity2CSP 		& 	&	&	&	\\
+		%\emph{Class2SDLBlock}		& 	&	&	&	\\
+		%\emph{Statemachine2While} & 	&	&	&	\\
+		%\emph{Activity2CSP} 		& 	&	&	&	\\
 		\hline
 		Total					&  & 		&	& \\
 		Average					&  & 		&	& \\
@@ -35,11 +35,11 @@ In order to evaluate the proposed BNCE TGG formalism, we compare the amount of r
 	\label{tab:formalism-eval}
 \end{table}
 
-In the case of $Pseudocode2Controlflow$, our proposed approach shows a clear advantage against the standard TGG formalism. We judge that, similarly to what happens to programming languages, this advantage stems from the very nested structure of $Pseudocode$ and $Controlflow$ graphs. That is, for instance, in rule the $r_2$ of this TGG (see Example \ref{ex:pseudocode2controlflow}), a node in a positive branch of an $if$-labeled vertex is never connected with a node in the negative branch. This disjunctive aspect allows every branch to be defined in the rule (as well as effectively parsed) independently of the other branch. This characteristic makes it possible for BNCE TGG rules to be defined in a very straightforward manner and reduces the total amount of elements necessary.
+In the case of \emph{Pseudocode2Controlflow}, our proposed approach shows a clear advantage against the standard TGG formalism. We judge that, similarly to what happens to programming languages, this advantage stems from the very nested structure of \emph{Pseudocode} and \emph{Controlflow} graphs. That is, for instance, in rule the $r_2$ of this TGG (see Example \ref{ex:pseudocode2controlflow}), a node in a positive branch of an $if$-labeled vertex is never connected with a node in the negative branch. This disjunctive aspect allows every branch to be defined in the rule (as well as effectively parsed) independently of the other branch. This characteristic makes it possible for BNCE TGG rules to be defined in a very straightforward manner and reduces the total amount of elements necessary.
 
-In addition to that, the use of non-terminal symbols gives BNCE TGG the power to represent abstract concepts very easily. For example, whereas the rule $r_1$ encodes, using only few elements, that after each $action$ comes any statement $A$, which can be another $action$, an $if$, a $while$ or nothing (an empty graph), in the standard TGG without application condition or any special inheritance treatment, we need to write a different rule for each of these cases. For the whole grammar, we need to consider all combinations of $actions$, $ifs$ and $whiles$ in all rules, what causes the great amount of rules and elements.
+In addition to that, the use of non-terminal symbols gives BNCE TGG the power to represent abstract concepts very easily. For example, whereas the rule $r_1$ encodes, using only few elements, that after each \emph{action} comes any statement $A$, which can be another \emph{action}, an \emph{if}, a \emph{while} or nothing (an empty graph), in the standard TGG without application condition or any special inheritance treatment, we need to write a different rule for each of these cases. For the whole grammar, we need to consider all combinations of \emph{actions}, \emph{ifs} and \emph{whiles} in all rules, what causes the great amount of rules and elements.
 
-The $Star2Wheel$ transformation consists of transforming star graphs, which are complete bipartite graphs $K_{1,k}$, with the partitions named center and border, to wheel graphs, that can be constructed from star graphs by adding edges between border vertices to form a minimal cycle. We could not write this transformation in standard TGG, specially because of the rules' monotonicity (see Definition \ref{def:stgg}). That is, we missed the possibility to erase edges in a rule, feature that we do have in the semantics of BNCE TGG through the embedding mechanism.
+The \emph{Star2Wheel} transformation consists of transforming star graphs, which are complete bipartite graphs $K_{1,k}$, with the partitions named center and border, to wheel graphs, that can be constructed from star graphs by adding edges between border vertices to form a minimal cycle. We could not write this transformation in standard TGG, specially because of the rules' monotonicity (see Definition \ref{def:stgg}). That is, we missed the possibility to erase edges in a rule, feature that we do have in the semantics of BNCE TGG through the embedding mechanism.
 
 %TODO: Comment the last 5 TGGs, not yet commented
 
@@ -59,10 +59,10 @@ The $Star2Wheel$ transformation consists of transforming star graphs, which are 
 Furthermore, we also report on the runtime for forward and backward batch transformations in a Intel Core i3 2.3GHz 4x 64bit with 4GB RAM. The standard TGG version of the transformations were executed using the eMoflon Tool %\cite{leblebici2014developing}.
 %TODO: Which implementation details: threads, strategy, etc
 
-Regarding the worst-case time complexity of our model transformer, it is clear that it is linear on the size of the source model for the step \textit{Ecore to Graph} and it is polynomial in the size of the TGG model for the step \textit{NP Normalization}. For the step \textit{Production}, the time complexity is linear on the length of the derivation, which in turn is linear on the size of the source graph. And, ultimately, \cite[p. 160]{rozenberg1986boundary} demonstrates that the parser finishes in polynomial time for degree-bounded connected source graphs. Thus, the worst-case time complexity of the model transformer is also polynomial for this case.
+Regarding the worst-case time complexity of our model transformer, it is clear that it is linear on the size of the source model for the step \emph{Ecore to Graph} and it is polynomial in the size of the TGG model for the step \emph{NP Normalization}. For the step \emph{Production}, the time complexity is linear on the length of the derivation, which in turn is linear on the size of the source graph. And, ultimately, \cite[p. 160]{rozenberg1986boundary} demonstrates that the parser finishes in polynomial time for degree-bounded connected source graphs. Thus, the worst-case time complexity of the model transformer is also polynomial for this case.
 
 %TODO: Maybe need to explain better these factors, special the fact that bup the internal complexity is fast because the subsets are bounded by maxr(G)
-In particular, the parser's complexity dominates the total complexity and can be roughly described by the multiplication of two factors: the number of loop iterations executed until the desired final zone vertex is found (Lines 4 to 14 in Algorithm \ref{alg:parse}) and the number of operations necessary to find the derivations for a handle (Lines 5 to 13 in Algorithm \ref{alg:parse}). The latter is clearly a function on the size of the grammar, that is the number of rules and the right-hand sides' sizes, that are considered to be fixed, for handles bounded by the greatest right-hand side. The former is the size of the $bup$ set, which in turn is polynomial in the size of the source graph, for a degree-bounded connected graph \cite[p. 161]{rozenberg1986boundary}.
+In particular, the parser's complexity dominates the total complexity and can be roughly described by the multiplication of two factors: the number of loop iterations executed until the desired final zone vertex is found (Lines 4 to 14 in Algorithm \ref{alg:parsepac}) and the number of operations necessary to find the derivations for a handle (Lines 5 to 13 in Algorithm \ref{alg:parsepac}). The latter is clearly a function on the size of the grammar, that is the number of rules and the right-hand sides' sizes, that are considered to be fixed, for handles bounded by the greatest right-hand side. The former is the size of the $bup$ set, which in turn is polynomial in the size of the source graph, for a degree-bounded connected graph \cite[p. 161]{rozenberg1986boundary}.
 
 %TODO: Space complexity. NLOG? Look in paper about efficiency and complexity of Kim.. Say also that much memory is used by us in the practice; search space with parsing trees and bup sets. space complexity for production is linear on source graph size
 
@@ -71,16 +71,16 @@ In particular, the parser's complexity dominates the total complexity and can be
 	\begin{tabular}{l r r r r }
 		\hline
 			& \multicolumn{2}{c}{Standard TGG} & \multicolumn{2}{c}{BNCE TGG}\\
-		Transformation 	& Forward & Backward & Forward & Backward \\
+		Transformation 					& Forward & Backward & Forward & Backward \\
 		\hline
-		Pseudocode2Controlflow	& 		& 		& 	 	&  \\
-		BTree2XBTree			&  		& 		& 		&  \\
-		Star2Wheel				& -		& -		& 	 	&  \\
-		Class2Database			& 		& 		&  		&   \\
-		Statemachine2Petrinet	& 		& 		& 		&  \\
-		%Class2SDLBlock		& 	&	&	&	\\
-		%Statemachine2While & 	&	&	&	\\
-		%Activity2CSP 		& 	&	&	&	\\
+		\emph{Pseudocode2Controlflow}	& 		& 		& 	 	&  \\
+		\emph{BTree2XBTree}				&  		& 		& 		&  \\
+		\emph{Star2Wheel}				& -		& -		& 	 	&  \\
+		\emph{Class2Database}			& 		& 		&  		&   \\
+		\emph{Statemachine2Petrinet}	& 		& 		& 		&  \\
+		%\emph{Class2SDLBlock}		& 	&	&	&	\\
+		%\emph{Statemachine2While} & 	&	&	&	\\
+		%\emph{Activity2CSP} 		& 	&	&	&	\\
 		\hline
 		Total					&  & 		&	& \\
 		Average					&  & 		&	& \\

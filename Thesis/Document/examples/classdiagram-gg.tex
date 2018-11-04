@@ -1,25 +1,24 @@
-\noindent
 \begin{tikzpicture}[grammar]
-\node[rid] at (\ridX,\ridY) {$r_0:$};
-\draw (\lhsX,0) node[lhs] (lhs) {K ::=};
-
-\draw (0.5,0) node[t, label=90:$c_0$] (v1) {c};
-\draw (1.2,0) node[t] (v2) {a};
-\draw (2,0) node[nont] (v3) {K};
-\draw (2,-0.5) node[nont] (v4) {K};
-\draw[edge] (v2) -- (v1) node [edgeLabel] {$s$};
-\draw[edge] (v2) -- (v3) node [edgeLabel] {$t$};
-
-%The next rule separator
-\draw[pipe] (2.5,-0.5) -- (2.5,\ridY);
-
-\node[rid] at (3.2,\ridY) {$r_1:$};
-\draw (3.0,0) node[t, label=90:$c_1$] (v5) {c};
-\draw (3.0,-0.5) node[nont] (v6) {K};
-
-%The next rule separator
-\draw[pipe] (3.5,-0.5) -- (3.5,\ridY);
-
-\node[rid] at (4.2,\ridY) {$r_2:$};
-\draw (4,0) node[empty] (v7) {$\emptyTG$};
+	\node[rid] at (\ridX,\ridY) {$r_0:$};
+	\draw (\lhsX,0) node[lhs] (lhs) {K ::=};
+	
+	\draw (0.5,0) node[t, label=90:$c_0$] (v1) {c};
+	\draw (1.2,0) node[t] (v2) {a};
+	\draw (2,0) node[nont] (v3) {K};
+	\draw (2,-0.5) node[nont] (v4) {K};
+	\draw[edge] (v2) -- (v1) node [edgeLabel] {$s$};
+	\draw[edge] (v2) -- (v3) node [edgeLabel] {$t$};
+	
+	%The next rule separator
+	\draw[pipe] (2.5,-0.5) -- (2.5,\ridY);
+	
+	\node[rid] at (3.2,\ridY) {$r_1:$};
+	\draw (3.0,0) node[t, label=90:$c_1$] (v5) {c};
+	\draw (3.0,-0.5) node[nont] (v6) {K};
+	
+	%The next rule separator
+	\draw[pipe] (3.5,-0.5) -- (3.5,\ridY);
+	
+	\node[rid] at (4.2,\ridY) {$r_2:$};
+	\draw (4,0) node[empty] (v7) {$\emptyTG$};
 \end{tikzpicture}

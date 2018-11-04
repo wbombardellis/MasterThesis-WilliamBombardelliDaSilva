@@ -9,7 +9,7 @@ The parsing algorithm posed in this section is an imperative view of the method 
 
 \begin{definition}
 	\label{def:np}
-	A BNCE graph grammar $GG = (\Sigma, \Delta, S, P)$ is neighborhood preserving (NP), if and only if, the embedding of each rule with left-hand side $A$ is greater or equal than the context of each $A$-labeled vertex in the grammar. That is, let 
+	A BNCE graph grammar $GG = (\Sigma, \Delta, S, P)$ is \emph{neighborhood preserving} (NP), if and only if, the embedding of each rule with left-hand side $A$ is greater or equal than the context of each $A$-labeled vertex in the grammar. That is, let 
 	\[\cont{(A \pro R,\omega)}{v} =\{(l,\phi_{R}(w)) \st (v,l,w) \in E_R \text { or } (w,l,v) \in E_R \} \cup \omega(v) \]
 	be the context of $v$ in the rule $(A \pro R,\omega)$ and
 	\[\scont{GG}{A} = \bigcup_{(B \pro Q,\zeta) \in P, v \in V_Q, \phi_Q(v) = A} \cont{B \pro Q,\zeta}{v} \] 
@@ -24,14 +24,14 @@ The next paragraphs present zone vertices and zone graphs, that are our understa
 
 \begin{definition}
 	\label{def:zv}
-	A zone vertex $h$ of a graph $G$ over $\Sigma$ is a pair $(\sigma \in \Sigma, U \subseteq V_G)$, that is, a symbol from $\Sigma$ and a subset of the vertices of $G$.
+	A \emph{zone vertex} $h$ of a graph $G$ over $\Sigma$ is a pair $(\sigma \in \Sigma, U \subseteq V_G)$, that is, a symbol from $\Sigma$ and a subset of the vertices of $G$.
 	
 	A zone vertex can be understood as a contraction of a subgraph of $G$ defined by the vertices $U$ into one vertex with symbol $\sigma$.
 \end{definition}
 
 \begin{definition}
 	\label{def:z}
-	Let $H = \{(\sigma_0,U_0),(\sigma_1,U_1),\dots,(\sigma_m,U_m)\}$ be a set of zone vertices of a graph $G$ over $\Sigma$ with disjoint vertices (i.e. $U_i \cap U_j = \emptyset$ for all $0 \leq i,j \leq m \text{ and } i \neq j$) and $V(H) = \bigcup_{0 \leq i \leq m}{U_i}$. A zone graph $Z(H)$ for $H$ is $Z(H) = (V, E, \phi)$ with $V$ being the zone vertices, $E \subseteq V \times \Sigma \times V$ the edges between zone vertices and $\phi: V \to \Sigma$ the labeling function, determined by
+	Let $H = \{(\sigma_0,U_0),(\sigma_1,U_1),\dots,(\sigma_m,U_m)\}$ be a set of zone vertices of a graph $G$ over $\Sigma$ with disjoint vertices (i.e. $U_i \cap U_j = \emptyset$ for all $0 \leq i,j \leq m \text{ and } i \neq j$) and $V(H) = \bigcup_{0 \leq i \leq m}{U_i}$. A \emph{zone graph} $Z(H)$ for $H$ is $Z(H) = (V, E, \phi)$ with $V$ being the zone vertices, $E \subseteq V \times \Sigma \times V$ the edges between zone vertices and $\phi: V \to \Sigma$ the labeling function, determined by
 	\begin{align*}
 		V & = H \cup \{(\phi_G(x),\{x\}) \st x \in \neigh{G}(V(H)) \}\\
 		E & = \{((\sigma,U),l,(\eta,T)) \st (\sigma,U),(\eta,T) \in V \text{ and } U \neq T \text{ and } \\
@@ -46,7 +46,7 @@ The next paragraphs present zone vertices and zone graphs, that are our understa
 \end{definition}
 
 \begin{definition}
-	Let $h$ be a zone vertex, $r$ a production rule and $X$ a (potentially empty) set of parsing trees, $\ptree{h}{r}{X}$ is a parsing tree, whereby $h$ is called the root node and $X$ the children and $r$ is optional. $D(pt)$ gives a derivation for the parsing tree $pt$, which can be calculated by performing a depth-first walk on $pt$, starting from its root node, producing as result a sequence of derivation steps that correspond to each visited node and its respective rule. Additionally, a set of parsing trees is called a parsing forest.
+	Let $h$ be a zone vertex, $r$ a production rule and $X$ a (potentially empty) set of parsing trees, $\ptree{h}{r}{X}$ is a \emph{parsing tree}, whereby $h$ is called the root node and $X$ the children and $r$ is optional. $D(pt)$ gives a derivation for the parsing tree $pt$, which can be calculated by performing a depth-first walk on $pt$, starting from its root node, producing as result a sequence of derivation steps that correspond to each visited node and its respective rule. Additionally, a set of parsing trees is called a parsing forest.
 	%TODO: Write D(pt) more formally. Explain the assembly of the effective derivation out of the sequence of sub derivation steps of the parsing tree nodes and explain how the isomorphims looks like. Because at the end, the derivation goes to a G', with G' in [G]
 \end{definition}
 

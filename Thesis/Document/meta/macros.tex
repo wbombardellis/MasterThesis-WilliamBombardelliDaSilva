@@ -1,13 +1,13 @@
 %%%%%%%%%%%%%% THEOREM %%%%%%%%%%%%%%
 \theoremstyle{definition}
-\newtheorem*{definition}{Definition}
-\newtheorem*{example}{Example}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}{Example}[chapter]
 
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}
+\newtheorem{theorem}{Theorem}[chapter]
 
 \theoremstyle{remark}
-\newtheorem*{remark}{Remark}
+\newtheorem{remark}{Remark}[chapter]
 
 %%%%%%%%%%%%%% GENERAL %%%%%%%%%%%%%%
 \newcommand{\rel}{\sim}
@@ -15,6 +15,8 @@
 \newcommand{\st}{\; | \;}
 \renewcommand{\.}{. \;}
 \newcommand{\dom}{\operatorname{dom}}
+
+\newcommand{\ruleskip}{\hskip 10pt}
 
 %%%%%%%%%%%%%% GG %%%%%%%%%%%%%%
 \newcommand{\neigh}[1]{\operatorname{neigh}_{#1}}

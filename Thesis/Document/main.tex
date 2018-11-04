@@ -37,13 +37,8 @@
 %\renewcommand{\baselinestretch}{1.5} %Line spacing
 %\DeclareMathSizes{11}{19}{13}{9}
 
-%TODO: Decide on the use of italic
-%TODO: Decide whether ms or m_s mt or m_t?
-%TODO: Number the definitions and examples
 %TODO: Review citep and cite
 %TODO: Make definitions smaller, and put text outside them. Like the paper
-%TODO: Decide for a line spacing and font size
-%TODO: Change $...$ by \emph{} etc
 %TODO: Remove color from references
 \begin{document}
 % settings for the whole document
@@ -68,11 +63,11 @@
 \input{abstract}
 \input{zusammenfassung}
 
-%TODO: Acronyms
 {\setstretch{1.0}
 \tableofcontents
 \listoffigures
 \listoftables
+\input{acronyms}
 }
 
 \chapter{Introduction}
@@ -111,12 +106,8 @@
 \label{ch:Conclusion}
 \input{conclusion}
 
-%TODO: Typeset with uppercase letter acronyms of the bibliography
 \bibliographystyle{alpha}
 \bibliography{bibliography}
-
-%% put all references though they are not cited
-%\nocite{*}
 \end{document}
 
 
