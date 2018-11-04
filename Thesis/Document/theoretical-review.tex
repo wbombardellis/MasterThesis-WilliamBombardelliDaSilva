@@ -60,6 +60,8 @@ Notice that, in the original definition of NCE grammars \cite{janssens1982graph}
 	A \emph{boundary graph grammar with neighborhood-controlled embedding} (BNCE graph grammar) $GG$ is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the graph grammar $GG$ is boundary if, and only if,all its rules' right-hand sides are $\Gamma\text{-boundary}$ graphs.
 \end{definition}
 
+%TODO: Explain why BNCE (HRG parsers were for classes too restricted), why grammars.
+
 %%%%%% Concrete Syntax %%%%%%
 In the following, we present our concrete syntax inspired by the well-known Backus-naur form to denote NCE graph grammar rules. Let $GG = (\{A, B, a, b,$ $ c, l, m\},$ $\{a, b, c, l, m\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\},$ $\{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$, we denote $p$ and $q$ together as
 	
