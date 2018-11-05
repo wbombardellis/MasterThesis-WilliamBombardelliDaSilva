@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.wbsilva.mm.graph:G
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:org.wbsilva.mm.graph="platform:/plugin/org.wbsilva.mm.graph/model/Graph.ecore"
+    xsi:schemaLocation="platform:/plugin/org.wbsilva.mm.graph/model/Graph.ecore ../../../../../org.wbsilva.mm.graph/model/Graph.ecore">
+  <node xsi:type="org.wbsilva.mm.graph:Center"
+      out="b0 b1 b2 b3 b4 b5 b6 b7"
+      id="c0"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b0"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b1"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b2"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b3"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b4"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b5"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b6"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b7"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b8"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b9"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b10"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b11"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b12"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b13"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b14"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b15"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b16"/>
+  <node xsi:type="org.wbsilva.mm.graph:Boundary"
+      id="b17"/>
+</org.wbsilva.mm.graph:G>
