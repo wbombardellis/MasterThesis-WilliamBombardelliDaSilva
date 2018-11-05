@@ -95,8 +95,8 @@ public interface initial2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, State s, SM sm, SM2PN sm2pn, PNGraph png,
-			Place p, S2P s2p);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, S2P s2p, SM sm,
+			PNGraph png, Place p);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public interface initial2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject s, EObject sm, EObject sm2pn, EObject png, EObject p,
-			EObject s2p);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject sm2pn, EObject s, EObject s2p, EObject sm,
+			EObject png, EObject p);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface initial2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_PNGraph_0(PNGraph png);
+	EObjectContainer isAppropriate_BWD_PNGraph_8(PNGraph png);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,7 +193,7 @@ public interface initial2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_55(EMoflonEdge _edge_initial);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_117(EMoflonEdge _edge_initial);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -265,8 +265,8 @@ public interface initial2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, State s, SM sm, SM2PN sm2pn, PNGraph png,
-			Place p, S2P s2p, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, S2P s2p, SM sm,
+			PNGraph png, Place p, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

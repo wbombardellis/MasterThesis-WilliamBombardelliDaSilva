@@ -105,52 +105,6 @@ public interface Class2databasePackage extends EPackage {
 	int A2C_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.wbsilva.bx.class2database.impl.C2TImpl <em>C2T</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.wbsilva.bx.class2database.impl.C2TImpl
-	 * @see org.wbsilva.bx.class2database.impl.Class2databasePackageImpl#getC2T()
-	 * @generated
-	 */
-	int C2T = 1;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int C2T__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int C2T__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>C2T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int C2T_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>C2T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int C2T_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.wbsilva.bx.class2database.impl.CD2DImpl <em>CD2D</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,7 +112,7 @@ public interface Class2databasePackage extends EPackage {
 	 * @see org.wbsilva.bx.class2database.impl.Class2databasePackageImpl#getCD2D()
 	 * @generated
 	 */
-	int CD2D = 2;
+	int CD2D = 1;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -204,7 +158,7 @@ public interface Class2databasePackage extends EPackage {
 	 * @see org.wbsilva.bx.class2database.impl.Class2databasePackageImpl#getAS2C()
 	 * @generated
 	 */
-	int AS2C = 3;
+	int AS2C = 2;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -243,6 +197,52 @@ public interface Class2databasePackage extends EPackage {
 	int AS2C_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.wbsilva.bx.class2database.impl.C2TImpl <em>C2T</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bx.class2database.impl.C2TImpl
+	 * @see org.wbsilva.bx.class2database.impl.Class2databasePackageImpl#getC2T()
+	 * @generated
+	 */
+	int C2T = 3;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int C2T__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int C2T__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>C2T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int C2T_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>C2T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int C2T_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bx.class2database.A2C <em>A2C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -273,38 +273,6 @@ public interface Class2databasePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getA2C_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.wbsilva.bx.class2database.C2T <em>C2T</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>C2T</em>'.
-	 * @see org.wbsilva.bx.class2database.C2T
-	 * @generated
-	 */
-	EClass getC2T();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.wbsilva.bx.class2database.C2T#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.wbsilva.bx.class2database.C2T#getSource()
-	 * @see #getC2T()
-	 * @generated
-	 */
-	EReference getC2T_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.wbsilva.bx.class2database.C2T#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.wbsilva.bx.class2database.C2T#getTarget()
-	 * @see #getC2T()
-	 * @generated
-	 */
-	EReference getC2T_Target();
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bx.class2database.CD2D <em>CD2D</em>}'.
@@ -371,6 +339,38 @@ public interface Class2databasePackage extends EPackage {
 	EReference getAS2C_Target();
 
 	/**
+	 * Returns the meta object for class '{@link org.wbsilva.bx.class2database.C2T <em>C2T</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>C2T</em>'.
+	 * @see org.wbsilva.bx.class2database.C2T
+	 * @generated
+	 */
+	EClass getC2T();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.wbsilva.bx.class2database.C2T#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.wbsilva.bx.class2database.C2T#getSource()
+	 * @see #getC2T()
+	 * @generated
+	 */
+	EReference getC2T_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.wbsilva.bx.class2database.C2T#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.wbsilva.bx.class2database.C2T#getTarget()
+	 * @see #getC2T()
+	 * @generated
+	 */
+	EReference getC2T_Target();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -418,32 +418,6 @@ public interface Class2databasePackage extends EPackage {
 		 * @generated
 		 */
 		EReference A2C__TARGET = eINSTANCE.getA2C_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.wbsilva.bx.class2database.impl.C2TImpl <em>C2T</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.wbsilva.bx.class2database.impl.C2TImpl
-		 * @see org.wbsilva.bx.class2database.impl.Class2databasePackageImpl#getC2T()
-		 * @generated
-		 */
-		EClass C2T = eINSTANCE.getC2T();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference C2T__SOURCE = eINSTANCE.getC2T_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference C2T__TARGET = eINSTANCE.getC2T_Target();
 
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bx.class2database.impl.CD2DImpl <em>CD2D</em>}' class.
@@ -496,6 +470,32 @@ public interface Class2databasePackage extends EPackage {
 		 * @generated
 		 */
 		EReference AS2C__TARGET = eINSTANCE.getAS2C_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bx.class2database.impl.C2TImpl <em>C2T</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bx.class2database.impl.C2TImpl
+		 * @see org.wbsilva.bx.class2database.impl.Class2databasePackageImpl#getC2T()
+		 * @generated
+		 */
+		EClass C2T = eINSTANCE.getC2T();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference C2T__SOURCE = eINSTANCE.getC2T_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference C2T__TARGET = eINSTANCE.getC2T_Target();
 
 	}
 

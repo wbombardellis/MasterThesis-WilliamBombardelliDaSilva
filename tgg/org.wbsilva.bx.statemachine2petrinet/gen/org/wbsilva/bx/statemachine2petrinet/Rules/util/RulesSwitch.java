@@ -68,47 +68,11 @@ public class RulesSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case RulesPackage.STATE2PLACE: {
-			state2place state2place = (state2place) theEObject;
-			T result = casestate2place(state2place);
-			if (result == null)
-				result = caseAbstractRule(state2place);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case RulesPackage.SELFTRANS2ARCTRANSARC: {
-			selftrans2arctransarc selftrans2arctransarc = (selftrans2arctransarc) theEObject;
-			T result = caseselftrans2arctransarc(selftrans2arctransarc);
-			if (result == null)
-				result = caseAbstractRule(selftrans2arctransarc);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case RulesPackage.INITIAL2NOTHING: {
-			initial2nothing initial2nothing = (initial2nothing) theEObject;
-			T result = caseinitial2nothing(initial2nothing);
-			if (result == null)
-				result = caseAbstractRule(initial2nothing);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case RulesPackage.FINAL2NOTHING: {
 			final2nothing final2nothing = (final2nothing) theEObject;
 			T result = casefinal2nothing(final2nothing);
 			if (result == null)
 				result = caseAbstractRule(final2nothing);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case RulesPackage.TRANSITION2ARCTRANSARC: {
-			transition2arctransarc transition2arctransarc = (transition2arctransarc) theEObject;
-			T result = casetransition2arctransarc(transition2arctransarc);
-			if (result == null)
-				result = caseAbstractRule(transition2arctransarc);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -122,54 +86,45 @@ public class RulesSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case RulesPackage.TRANSITION2ARCTRANSARC: {
+			transition2arctransarc transition2arctransarc = (transition2arctransarc) theEObject;
+			T result = casetransition2arctransarc(transition2arctransarc);
+			if (result == null)
+				result = caseAbstractRule(transition2arctransarc);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RulesPackage.SELFTRANS2ARCTRANSARC: {
+			selftrans2arctransarc selftrans2arctransarc = (selftrans2arctransarc) theEObject;
+			T result = caseselftrans2arctransarc(selftrans2arctransarc);
+			if (result == null)
+				result = caseAbstractRule(selftrans2arctransarc);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RulesPackage.STATE2PLACE: {
+			state2place state2place = (state2place) theEObject;
+			T result = casestate2place(state2place);
+			if (result == null)
+				result = caseAbstractRule(state2place);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RulesPackage.INITIAL2NOTHING: {
+			initial2nothing initial2nothing = (initial2nothing) theEObject;
+			T result = caseinitial2nothing(initial2nothing);
+			if (result == null)
+				result = caseAbstractRule(initial2nothing);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>state2place</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>state2place</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casestate2place(state2place object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>selftrans2arctransarc</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>selftrans2arctransarc</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseselftrans2arctransarc(selftrans2arctransarc object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>initial2nothing</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>initial2nothing</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseinitial2nothing(initial2nothing object) {
-		return null;
 	}
 
 	/**
@@ -184,6 +139,21 @@ public class RulesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casefinal2nothing(final2nothing object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>statemachine2petrinet</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>statemachine2petrinet</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casestatemachine2petrinet(statemachine2petrinet object) {
 		return null;
 	}
 
@@ -203,17 +173,47 @@ public class RulesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>statemachine2petrinet</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>selftrans2arctransarc</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>statemachine2petrinet</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>selftrans2arctransarc</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casestatemachine2petrinet(statemachine2petrinet object) {
+	public T caseselftrans2arctransarc(selftrans2arctransarc object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>state2place</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>state2place</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casestate2place(state2place object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>initial2nothing</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>initial2nothing</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseinitial2nothing(initial2nothing object) {
 		return null;
 	}
 

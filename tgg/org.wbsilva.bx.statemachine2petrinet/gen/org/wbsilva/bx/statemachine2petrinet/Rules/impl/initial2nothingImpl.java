@@ -152,12 +152,12 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		State s = (State) result1_bindingAndBlack[0];
-		SM sm = (SM) result1_bindingAndBlack[1];
-		SM2PN sm2pn = (SM2PN) result1_bindingAndBlack[2];
-		PNGraph png = (PNGraph) result1_bindingAndBlack[3];
-		Place p = (Place) result1_bindingAndBlack[4];
-		S2P s2p = (S2P) result1_bindingAndBlack[5];
+		SM2PN sm2pn = (SM2PN) result1_bindingAndBlack[0];
+		State s = (State) result1_bindingAndBlack[1];
+		S2P s2p = (S2P) result1_bindingAndBlack[2];
+		SM sm = (SM) result1_bindingAndBlack[3];
+		PNGraph png = (PNGraph) result1_bindingAndBlack[4];
+		Place p = (Place) result1_bindingAndBlack[5];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[6];
 
 		Object[] result2_green = initial2nothingImpl.pattern_initial2nothing_1_2_collecttranslatedelements_greenF();
@@ -167,19 +167,19 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = initial2nothingImpl
-				.pattern_initial2nothing_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, s, sm, sm2pn, png, p, s2p);
+				.pattern_initial2nothing_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, sm2pn, s, s2p, sm, png, p);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[s] = " + s + ", " + "[sm] = " + sm + ", " + "[sm2pn] = " + sm2pn + ", " + "[png] = "
-					+ png + ", " + "[p] = " + p + ", " + "[s2p] = " + s2p + ".");
+					+ ", " + "[sm2pn] = " + sm2pn + ", " + "[s] = " + s + ", " + "[s2p] = " + s2p + ", " + "[sm] = "
+					+ sm + ", " + "[png] = " + png + ", " + "[p] = " + p + ".");
 		}
 		initial2nothingImpl.pattern_initial2nothing_1_3_bookkeepingforedges_greenBBBF(ruleresult, s, sm);
 		//nothing EMoflonEdge sm__s____initial = (EMoflonEdge) result3_green[3];
 
 		// 
 		// 
-		initial2nothingImpl.pattern_initial2nothing_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, s, sm,
-				sm2pn, png, p, s2p);
+		initial2nothingImpl.pattern_initial2nothing_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, sm2pn, s,
+				s2p, sm, png, p);
 		return initial2nothingImpl.pattern_initial2nothing_1_6_expressionFB(ruleresult);
 	}
 
@@ -209,34 +209,34 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		}
 		State s = (State) result2_binding[0];
 		SM sm = (SM) result2_binding[1];
-		for (Object[] result2_black : initial2nothingImpl.pattern_initial2nothing_2_2_corematch_blackBBFFFFB(s, sm,
+		for (Object[] result2_black : initial2nothingImpl.pattern_initial2nothing_2_2_corematch_blackFBFBFFB(s, sm,
 				match)) {
-			SM2PN sm2pn = (SM2PN) result2_black[2];
-			PNGraph png = (PNGraph) result2_black[3];
-			Place p = (Place) result2_black[4];
-			S2P s2p = (S2P) result2_black[5];
+			SM2PN sm2pn = (SM2PN) result2_black[0];
+			S2P s2p = (S2P) result2_black[2];
+			PNGraph png = (PNGraph) result2_black[4];
+			Place p = (Place) result2_black[5];
 			// ForEach 
-			for (Object[] result3_black : initial2nothingImpl.pattern_initial2nothing_2_3_findcontext_blackBBBBBB(s, sm,
-					sm2pn, png, p, s2p)) {
+			for (Object[] result3_black : initial2nothingImpl.pattern_initial2nothing_2_3_findcontext_blackBBBBBB(sm2pn,
+					s, s2p, sm, png, p)) {
 				Object[] result3_green = initial2nothingImpl
-						.pattern_initial2nothing_2_3_findcontext_greenBBBBBBFFFFFFFF(s, sm, sm2pn, png, p, s2p);
+						.pattern_initial2nothing_2_3_findcontext_greenBBBBBBFFFFFFFF(sm2pn, s, s2p, sm, png, p);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[6];
-				//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge png__p____places = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge sm2pn__png____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge sm__s____initial = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge sm__s____states = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge sm__s____initial = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge sm__s____states = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge s2p__s____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge sm2pn__png____target = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[11];
 				//nothing EMoflonEdge s2p__p____target = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge s2p__s____source = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge png__p____places = (EMoflonEdge) result3_green[13];
 
 				Object[] result4_bindingAndBlack = initial2nothingImpl
-						.pattern_initial2nothing_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch, s, sm,
-								sm2pn, png, p, s2p);
+						.pattern_initial2nothing_2_4_solveCSP_bindingAndBlackFBBBBBBBB(this, isApplicableMatch, sm2pn,
+								s, s2p, sm, png, p);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s] = " + s + ", " + "[sm] = " + sm
-							+ ", " + "[sm2pn] = " + sm2pn + ", " + "[png] = " + png + ", " + "[p] = " + p + ", "
-							+ "[s2p] = " + s2p + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[sm2pn] = " + sm2pn + ", "
+							+ "[s] = " + s + ", " + "[s2p] = " + s2p + ", " + "[sm] = " + sm + ", " + "[png] = " + png
+							+ ", " + "[p] = " + p + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -305,8 +305,8 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, State s, SM sm, SM2PN sm2pn, PNGraph png,
-			Place p, S2P s2p) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, S2P s2p, SM sm,
+			PNGraph png, Place p) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -321,12 +321,12 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("s", s);
-		isApplicableMatch.registerObject("sm", sm);
 		isApplicableMatch.registerObject("sm2pn", sm2pn);
+		isApplicableMatch.registerObject("s", s);
+		isApplicableMatch.registerObject("s2p", s2p);
+		isApplicableMatch.registerObject("sm", sm);
 		isApplicableMatch.registerObject("png", png);
 		isApplicableMatch.registerObject("p", p);
-		isApplicableMatch.registerObject("s2p", s2p);
 		return csp;
 	}
 
@@ -344,14 +344,14 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject s, EObject sm, EObject sm2pn, EObject png,
-			EObject p, EObject s2p) {
-		ruleresult.registerObject("s", s);
-		ruleresult.registerObject("sm", sm);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject sm2pn, EObject s, EObject s2p, EObject sm,
+			EObject png, EObject p) {
 		ruleresult.registerObject("sm2pn", sm2pn);
+		ruleresult.registerObject("s", s);
+		ruleresult.registerObject("s2p", s2p);
+		ruleresult.registerObject("sm", sm);
 		ruleresult.registerObject("png", png);
 		ruleresult.registerObject("p", p);
-		ruleresult.registerObject("s2p", s2p);
 
 	}
 
@@ -491,7 +491,7 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_PNGraph_0(PNGraph png) {
+	public EObjectContainer isAppropriate_BWD_PNGraph_8(PNGraph png) {
 
 		Object[] result1_bindingAndBlack = initial2nothingImpl
 				.pattern_initial2nothing_17_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -547,7 +547,7 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_55(EMoflonEdge _edge_initial) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_117(EMoflonEdge _edge_initial) {
 
 		Object[] result1_bindingAndBlack = initial2nothingImpl
 				.pattern_initial2nothing_18_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -697,10 +697,10 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		if (initial2nothingImpl.pattern_initial2nothing_21_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : initial2nothingImpl
-					.pattern_initial2nothing_21_5_matchcorrcontext_blackBBFBBFBB(s, sm, png, p, sourceMatch,
+					.pattern_initial2nothing_21_5_matchcorrcontext_blackFBFBBBBB(s, sm, png, p, sourceMatch,
 							targetMatch)) {
-				SM2PN sm2pn = (SM2PN) result5_black[2];
-				S2P s2p = (S2P) result5_black[5];
+				SM2PN sm2pn = (SM2PN) result5_black[0];
+				S2P s2p = (S2P) result5_black[2];
 				Object[] result5_green = initial2nothingImpl
 						.pattern_initial2nothing_21_5_matchcorrcontext_greenBBBBF(sm2pn, s2p, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
@@ -806,36 +806,36 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		for (Object[] result2_black : initial2nothingImpl
 				.pattern_initial2nothing_26_2_isapplicablecore_blackFFFFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList sm2pnList = (RuleEntryList) result2_black[0];
-			State s = (State) result2_black[1];
-			SM sm = (SM) result2_black[2];
-			SM2PN sm2pn = (SM2PN) result2_black[3];
-			PNGraph png = (PNGraph) result2_black[4];
-			Place p = (Place) result2_black[5];
-			S2P s2p = (S2P) result2_black[6];
+			SM2PN sm2pn = (SM2PN) result2_black[1];
+			PNGraph png = (PNGraph) result2_black[2];
+			Place p = (Place) result2_black[3];
+			S2P s2p = (S2P) result2_black[4];
+			State s = (State) result2_black[5];
+			SM sm = (SM) result2_black[6];
 
 			Object[] result3_bindingAndBlack = initial2nothingImpl
-					.pattern_initial2nothing_26_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, s, sm,
-							sm2pn, png, p, s2p, ruleResult);
+					.pattern_initial2nothing_26_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, sm2pn, s,
+							s2p, sm, png, p, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s] = " + s + ", " + "[sm] = " + sm
-						+ ", " + "[sm2pn] = " + sm2pn + ", " + "[png] = " + png + ", " + "[p] = " + p + ", "
-						+ "[s2p] = " + s2p + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[sm2pn] = " + sm2pn + ", " + "[s] = "
+						+ s + ", " + "[s2p] = " + s2p + ", " + "[sm] = " + sm + ", " + "[png] = " + png + ", "
+						+ "[p] = " + p + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (initial2nothingImpl.pattern_initial2nothing_26_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = initial2nothingImpl.pattern_initial2nothing_26_5_checknacs_blackBBBBBB(s, sm,
-						sm2pn, png, p, s2p);
+				Object[] result5_black = initial2nothingImpl.pattern_initial2nothing_26_5_checknacs_blackBBBBBB(sm2pn,
+						s, s2p, sm, png, p);
 				if (result5_black != null) {
 
-					Object[] result6_black = initial2nothingImpl.pattern_initial2nothing_26_6_perform_blackBBBBBBB(s,
-							sm, sm2pn, png, p, s2p, ruleResult);
+					Object[] result6_black = initial2nothingImpl
+							.pattern_initial2nothing_26_6_perform_blackBBBBBBB(sm2pn, s, s2p, sm, png, p, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[s] = " + s + ", "
-								+ "[sm] = " + sm + ", " + "[sm2pn] = " + sm2pn + ", " + "[png] = " + png + ", "
-								+ "[p] = " + p + ", " + "[s2p] = " + s2p + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sm2pn] = " + sm2pn
+								+ ", " + "[s] = " + s + ", " + "[s2p] = " + s2p + ", " + "[sm] = " + sm + ", "
+								+ "[png] = " + png + ", " + "[p] = " + p + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
 					initial2nothingImpl.pattern_initial2nothing_26_6_perform_greenBBB(s, sm, ruleResult);
 
@@ -854,8 +854,8 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, State s, SM sm, SM2PN sm2pn, PNGraph png,
-			Place p, S2P s2p, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, S2P s2p, SM sm,
+			PNGraph png, Place p, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -870,12 +870,12 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("s", s);
-		isApplicableMatch.registerObject("sm", sm);
 		isApplicableMatch.registerObject("sm2pn", sm2pn);
+		isApplicableMatch.registerObject("s", s);
+		isApplicableMatch.registerObject("s2p", s2p);
+		isApplicableMatch.registerObject("sm", sm);
 		isApplicableMatch.registerObject("png", png);
 		isApplicableMatch.registerObject("p", p);
-		isApplicableMatch.registerObject("s2p", s2p);
 		return csp;
 	}
 
@@ -910,10 +910,10 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 					(SM) arguments.get(2));
 		case RulesPackage.INITIAL2NOTHING___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.INITIAL2NOTHING___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_STATE_SM_SM2PN_PNGRAPH_PLACE_S2P:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (State) arguments.get(1),
-					(SM) arguments.get(2), (SM2PN) arguments.get(3), (PNGraph) arguments.get(4),
-					(Place) arguments.get(5), (S2P) arguments.get(6));
+		case RulesPackage.INITIAL2NOTHING___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_SM2PN_STATE_S2P_SM_PNGRAPH_PLACE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (SM2PN) arguments.get(1),
+					(State) arguments.get(2), (S2P) arguments.get(3), (SM) arguments.get(4), (PNGraph) arguments.get(5),
+					(Place) arguments.get(6));
 		case RulesPackage.INITIAL2NOTHING___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.INITIAL2NOTHING___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -939,10 +939,10 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.INITIAL2NOTHING___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INITIAL2NOTHING___IS_APPROPRIATE_BWD_PN_GRAPH_0__PNGRAPH:
-			return isAppropriate_BWD_PNGraph_0((PNGraph) arguments.get(0));
-		case RulesPackage.INITIAL2NOTHING___IS_APPROPRIATE_FWD_EMOFLON_EDGE_55__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_55((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INITIAL2NOTHING___IS_APPROPRIATE_BWD_PN_GRAPH_8__PNGRAPH:
+			return isAppropriate_BWD_PNGraph_8((PNGraph) arguments.get(0));
+		case RulesPackage.INITIAL2NOTHING___IS_APPROPRIATE_FWD_EMOFLON_EDGE_117__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_117((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INITIAL2NOTHING___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INITIAL2NOTHING___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -960,10 +960,10 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 			return checkDEC_BWD((PNGraph) arguments.get(0), (Place) arguments.get(1));
 		case RulesPackage.INITIAL2NOTHING___GENERATE_MODEL__RULEENTRYCONTAINER_SM2PN:
 			return generateModel((RuleEntryContainer) arguments.get(0), (SM2PN) arguments.get(1));
-		case RulesPackage.INITIAL2NOTHING___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_STATE_SM_SM2PN_PNGRAPH_PLACE_S2P_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (State) arguments.get(1),
-					(SM) arguments.get(2), (SM2PN) arguments.get(3), (PNGraph) arguments.get(4),
-					(Place) arguments.get(5), (S2P) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.INITIAL2NOTHING___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_SM2PN_STATE_S2P_SM_PNGRAPH_PLACE_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (SM2PN) arguments.get(1),
+					(State) arguments.get(2), (S2P) arguments.get(3), (SM) arguments.get(4), (PNGraph) arguments.get(5),
+					(Place) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.INITIAL2NOTHING___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1064,31 +1064,31 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 
 	public static final Object[] pattern_initial2nothing_1_1_performtransformation_bindingFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("s");
-		EObject _localVariable_1 = isApplicableMatch.getObject("sm");
-		EObject _localVariable_2 = isApplicableMatch.getObject("sm2pn");
-		EObject _localVariable_3 = isApplicableMatch.getObject("png");
-		EObject _localVariable_4 = isApplicableMatch.getObject("p");
-		EObject _localVariable_5 = isApplicableMatch.getObject("s2p");
-		EObject tmpS = _localVariable_0;
-		EObject tmpSm = _localVariable_1;
-		EObject tmpSm2pn = _localVariable_2;
-		EObject tmpPng = _localVariable_3;
-		EObject tmpP = _localVariable_4;
-		EObject tmpS2p = _localVariable_5;
-		if (tmpS instanceof State) {
-			State s = (State) tmpS;
-			if (tmpSm instanceof SM) {
-				SM sm = (SM) tmpSm;
-				if (tmpSm2pn instanceof SM2PN) {
-					SM2PN sm2pn = (SM2PN) tmpSm2pn;
-					if (tmpPng instanceof PNGraph) {
-						PNGraph png = (PNGraph) tmpPng;
-						if (tmpP instanceof Place) {
-							Place p = (Place) tmpP;
-							if (tmpS2p instanceof S2P) {
-								S2P s2p = (S2P) tmpS2p;
-								return new Object[] { s, sm, sm2pn, png, p, s2p, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("sm2pn");
+		EObject _localVariable_1 = isApplicableMatch.getObject("s");
+		EObject _localVariable_2 = isApplicableMatch.getObject("s2p");
+		EObject _localVariable_3 = isApplicableMatch.getObject("sm");
+		EObject _localVariable_4 = isApplicableMatch.getObject("png");
+		EObject _localVariable_5 = isApplicableMatch.getObject("p");
+		EObject tmpSm2pn = _localVariable_0;
+		EObject tmpS = _localVariable_1;
+		EObject tmpS2p = _localVariable_2;
+		EObject tmpSm = _localVariable_3;
+		EObject tmpPng = _localVariable_4;
+		EObject tmpP = _localVariable_5;
+		if (tmpSm2pn instanceof SM2PN) {
+			SM2PN sm2pn = (SM2PN) tmpSm2pn;
+			if (tmpS instanceof State) {
+				State s = (State) tmpS;
+				if (tmpS2p instanceof S2P) {
+					S2P s2p = (S2P) tmpS2p;
+					if (tmpSm instanceof SM) {
+						SM sm = (SM) tmpSm;
+						if (tmpPng instanceof PNGraph) {
+							PNGraph png = (PNGraph) tmpPng;
+							if (tmpP instanceof Place) {
+								Place p = (Place) tmpP;
+								return new Object[] { sm2pn, s, s2p, sm, png, p, isApplicableMatch };
 							}
 						}
 					}
@@ -1098,12 +1098,12 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		return null;
 	}
 
-	public static final Object[] pattern_initial2nothing_1_1_performtransformation_blackBBBBBBFBB(State s, SM sm,
-			SM2PN sm2pn, PNGraph png, Place p, S2P s2p, initial2nothing _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_initial2nothing_1_1_performtransformation_blackBBBBBBFBB(SM2PN sm2pn, State s,
+			S2P s2p, SM sm, PNGraph png, Place p, initial2nothing _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { s, sm, sm2pn, png, p, s2p, csp, _this, isApplicableMatch };
+				return new Object[] { sm2pn, s, s2p, sm, png, p, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1114,19 +1114,19 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		Object[] result_pattern_initial2nothing_1_1_performtransformation_binding = pattern_initial2nothing_1_1_performtransformation_bindingFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_initial2nothing_1_1_performtransformation_binding != null) {
-			State s = (State) result_pattern_initial2nothing_1_1_performtransformation_binding[0];
-			SM sm = (SM) result_pattern_initial2nothing_1_1_performtransformation_binding[1];
-			SM2PN sm2pn = (SM2PN) result_pattern_initial2nothing_1_1_performtransformation_binding[2];
-			PNGraph png = (PNGraph) result_pattern_initial2nothing_1_1_performtransformation_binding[3];
-			Place p = (Place) result_pattern_initial2nothing_1_1_performtransformation_binding[4];
-			S2P s2p = (S2P) result_pattern_initial2nothing_1_1_performtransformation_binding[5];
+			SM2PN sm2pn = (SM2PN) result_pattern_initial2nothing_1_1_performtransformation_binding[0];
+			State s = (State) result_pattern_initial2nothing_1_1_performtransformation_binding[1];
+			S2P s2p = (S2P) result_pattern_initial2nothing_1_1_performtransformation_binding[2];
+			SM sm = (SM) result_pattern_initial2nothing_1_1_performtransformation_binding[3];
+			PNGraph png = (PNGraph) result_pattern_initial2nothing_1_1_performtransformation_binding[4];
+			Place p = (Place) result_pattern_initial2nothing_1_1_performtransformation_binding[5];
 
 			Object[] result_pattern_initial2nothing_1_1_performtransformation_black = pattern_initial2nothing_1_1_performtransformation_blackBBBBBBFBB(
-					s, sm, sm2pn, png, p, s2p, _this, isApplicableMatch);
+					sm2pn, s, s2p, sm, png, p, _this, isApplicableMatch);
 			if (result_pattern_initial2nothing_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_initial2nothing_1_1_performtransformation_black[6];
 
-				return new Object[] { s, sm, sm2pn, png, p, s2p, csp, _this, isApplicableMatch };
+				return new Object[] { sm2pn, s, s2p, sm, png, p, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1138,24 +1138,24 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 	}
 
 	public static final Object[] pattern_initial2nothing_1_3_bookkeepingforedges_blackBBBBBBB(
-			PerformRuleResult ruleresult, EObject s, EObject sm, EObject sm2pn, EObject png, EObject p, EObject s2p) {
-		if (!s.equals(sm)) {
-			if (!s.equals(sm2pn)) {
-				if (!s.equals(s2p)) {
-					if (!sm.equals(sm2pn)) {
-						if (!png.equals(s)) {
-							if (!png.equals(sm)) {
+			PerformRuleResult ruleresult, EObject sm2pn, EObject s, EObject s2p, EObject sm, EObject png, EObject p) {
+		if (!s.equals(sm2pn)) {
+			if (!s.equals(s2p)) {
+				if (!s.equals(sm)) {
+					if (!s2p.equals(sm2pn)) {
+						if (!s2p.equals(sm)) {
+							if (!sm.equals(sm2pn)) {
 								if (!png.equals(sm2pn)) {
-									if (!png.equals(s2p)) {
-										if (!p.equals(s)) {
-											if (!p.equals(sm)) {
+									if (!png.equals(s)) {
+										if (!png.equals(s2p)) {
+											if (!png.equals(sm)) {
 												if (!p.equals(sm2pn)) {
-													if (!p.equals(png)) {
+													if (!p.equals(s)) {
 														if (!p.equals(s2p)) {
-															if (!s2p.equals(sm)) {
-																if (!s2p.equals(sm2pn)) {
-																	return new Object[] { ruleresult, s, sm, sm2pn, png,
-																			p, s2p };
+															if (!p.equals(sm)) {
+																if (!p.equals(png)) {
+																	return new Object[] { ruleresult, sm2pn, s, s2p, sm,
+																			png, p };
 																}
 															}
 														}
@@ -1188,8 +1188,8 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 	}
 
 	public static final void pattern_initial2nothing_1_5_registerobjects_expressionBBBBBBBB(initial2nothing _this,
-			PerformRuleResult ruleresult, EObject s, EObject sm, EObject sm2pn, EObject png, EObject p, EObject s2p) {
-		_this.registerObjects_FWD(ruleresult, s, sm, sm2pn, png, p, s2p);
+			PerformRuleResult ruleresult, EObject sm2pn, EObject s, EObject s2p, EObject sm, EObject png, EObject p) {
+		_this.registerObjects_FWD(ruleresult, sm2pn, s, s2p, sm, png, p);
 
 	}
 
@@ -1262,18 +1262,17 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_initial2nothing_2_2_corematch_blackBBFFFFB(State s, SM sm,
+	public static final Iterable<Object[]> pattern_initial2nothing_2_2_corematch_blackFBFBFFB(State s, SM sm,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (SM2PN sm2pn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(sm, SM2PN.class,
-				"source")) {
-			PNGraph png = sm2pn.getTarget();
-			if (png != null) {
-				for (S2P s2p : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(s, S2P.class,
+		for (S2P s2p : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(s, S2P.class, "source")) {
+			Place p = s2p.getTarget();
+			if (p != null) {
+				for (SM2PN sm2pn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(sm, SM2PN.class,
 						"source")) {
-					Place p = s2p.getTarget();
-					if (p != null) {
-						_result.add(new Object[] { s, sm, sm2pn, png, p, s2p, match });
+					PNGraph png = sm2pn.getTarget();
+					if (png != null) {
+						_result.add(new Object[] { sm2pn, s, s2p, sm, png, p, match });
 					}
 
 				}
@@ -1283,17 +1282,17 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_initial2nothing_2_3_findcontext_blackBBBBBB(State s, SM sm,
-			SM2PN sm2pn, PNGraph png, Place p, S2P s2p) {
+	public static final Iterable<Object[]> pattern_initial2nothing_2_3_findcontext_blackBBBBBB(SM2PN sm2pn, State s,
+			S2P s2p, SM sm, PNGraph png, Place p) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (sm.equals(sm2pn.getSource())) {
-			if (png.getPlaces().contains(p)) {
-				if (png.equals(sm2pn.getTarget())) {
-					if (s.equals(sm.getInitial())) {
-						if (sm.getStates().contains(s)) {
+		if (s.equals(sm.getInitial())) {
+			if (sm.getStates().contains(s)) {
+				if (s.equals(s2p.getSource())) {
+					if (png.equals(sm2pn.getTarget())) {
+						if (sm.equals(sm2pn.getSource())) {
 							if (p.equals(s2p.getTarget())) {
-								if (s.equals(s2p.getSource())) {
-									_result.add(new Object[] { s, sm, sm2pn, png, p, s2p });
+								if (png.getPlaces().contains(p)) {
+									_result.add(new Object[] { sm2pn, s, s2p, sm, png, p });
 								}
 							}
 						}
@@ -1304,67 +1303,67 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		return _result;
 	}
 
-	public static final Object[] pattern_initial2nothing_2_3_findcontext_greenBBBBBBFFFFFFFF(State s, SM sm,
-			SM2PN sm2pn, PNGraph png, Place p, S2P s2p) {
+	public static final Object[] pattern_initial2nothing_2_3_findcontext_greenBBBBBBFFFFFFFF(SM2PN sm2pn, State s,
+			S2P s2p, SM sm, PNGraph png, Place p) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge sm2pn__sm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge png__p____places = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge sm2pn__png____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sm__s____initial = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sm__s____states = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge s2p__p____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge s2p__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String sm2pn__sm____source_name_prime = "source";
-		String png__p____places_name_prime = "places";
-		String sm2pn__png____target_name_prime = "target";
+		EMoflonEdge sm2pn__png____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge sm2pn__sm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2p__p____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge png__p____places = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String sm__s____initial_name_prime = "initial";
 		String sm__s____states_name_prime = "states";
-		String s2p__p____target_name_prime = "target";
 		String s2p__s____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(s);
-		isApplicableMatch.getAllContextElements().add(sm);
+		String sm2pn__png____target_name_prime = "target";
+		String sm2pn__sm____source_name_prime = "source";
+		String s2p__p____target_name_prime = "target";
+		String png__p____places_name_prime = "places";
 		isApplicableMatch.getAllContextElements().add(sm2pn);
+		isApplicableMatch.getAllContextElements().add(s);
+		isApplicableMatch.getAllContextElements().add(s2p);
+		isApplicableMatch.getAllContextElements().add(sm);
 		isApplicableMatch.getAllContextElements().add(png);
 		isApplicableMatch.getAllContextElements().add(p);
-		isApplicableMatch.getAllContextElements().add(s2p);
-		sm2pn__sm____source.setSrc(sm2pn);
-		sm2pn__sm____source.setTrg(sm);
-		isApplicableMatch.getAllContextElements().add(sm2pn__sm____source);
-		png__p____places.setSrc(png);
-		png__p____places.setTrg(p);
-		isApplicableMatch.getAllContextElements().add(png__p____places);
-		sm2pn__png____target.setSrc(sm2pn);
-		sm2pn__png____target.setTrg(png);
-		isApplicableMatch.getAllContextElements().add(sm2pn__png____target);
 		sm__s____initial.setSrc(sm);
 		sm__s____initial.setTrg(s);
 		isApplicableMatch.getAllContextElements().add(sm__s____initial);
 		sm__s____states.setSrc(sm);
 		sm__s____states.setTrg(s);
 		isApplicableMatch.getAllContextElements().add(sm__s____states);
-		s2p__p____target.setSrc(s2p);
-		s2p__p____target.setTrg(p);
-		isApplicableMatch.getAllContextElements().add(s2p__p____target);
 		s2p__s____source.setSrc(s2p);
 		s2p__s____source.setTrg(s);
 		isApplicableMatch.getAllContextElements().add(s2p__s____source);
-		sm2pn__sm____source.setName(sm2pn__sm____source_name_prime);
-		png__p____places.setName(png__p____places_name_prime);
-		sm2pn__png____target.setName(sm2pn__png____target_name_prime);
+		sm2pn__png____target.setSrc(sm2pn);
+		sm2pn__png____target.setTrg(png);
+		isApplicableMatch.getAllContextElements().add(sm2pn__png____target);
+		sm2pn__sm____source.setSrc(sm2pn);
+		sm2pn__sm____source.setTrg(sm);
+		isApplicableMatch.getAllContextElements().add(sm2pn__sm____source);
+		s2p__p____target.setSrc(s2p);
+		s2p__p____target.setTrg(p);
+		isApplicableMatch.getAllContextElements().add(s2p__p____target);
+		png__p____places.setSrc(png);
+		png__p____places.setTrg(p);
+		isApplicableMatch.getAllContextElements().add(png__p____places);
 		sm__s____initial.setName(sm__s____initial_name_prime);
 		sm__s____states.setName(sm__s____states_name_prime);
-		s2p__p____target.setName(s2p__p____target_name_prime);
 		s2p__s____source.setName(s2p__s____source_name_prime);
-		return new Object[] { s, sm, sm2pn, png, p, s2p, isApplicableMatch, sm2pn__sm____source, png__p____places,
-				sm2pn__png____target, sm__s____initial, sm__s____states, s2p__p____target, s2p__s____source };
+		sm2pn__png____target.setName(sm2pn__png____target_name_prime);
+		sm2pn__sm____source.setName(sm2pn__sm____source_name_prime);
+		s2p__p____target.setName(s2p__p____target_name_prime);
+		png__p____places.setName(png__p____places_name_prime);
+		return new Object[] { sm2pn, s, s2p, sm, png, p, isApplicableMatch, sm__s____initial, sm__s____states,
+				s2p__s____source, sm2pn__png____target, sm2pn__sm____source, s2p__p____target, png__p____places };
 	}
 
 	public static final Object[] pattern_initial2nothing_2_4_solveCSP_bindingFBBBBBBBB(initial2nothing _this,
-			IsApplicableMatch isApplicableMatch, State s, SM sm, SM2PN sm2pn, PNGraph png, Place p, S2P s2p) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, s, sm, sm2pn, png, p, s2p);
+			IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, S2P s2p, SM sm, PNGraph png, Place p) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, sm2pn, s, s2p, sm, png, p);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, s, sm, sm2pn, png, p, s2p };
+			return new Object[] { csp, _this, isApplicableMatch, sm2pn, s, s2p, sm, png, p };
 		}
 		return null;
 	}
@@ -1374,9 +1373,9 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 	}
 
 	public static final Object[] pattern_initial2nothing_2_4_solveCSP_bindingAndBlackFBBBBBBBB(initial2nothing _this,
-			IsApplicableMatch isApplicableMatch, State s, SM sm, SM2PN sm2pn, PNGraph png, Place p, S2P s2p) {
+			IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, S2P s2p, SM sm, PNGraph png, Place p) {
 		Object[] result_pattern_initial2nothing_2_4_solveCSP_binding = pattern_initial2nothing_2_4_solveCSP_bindingFBBBBBBBB(
-				_this, isApplicableMatch, s, sm, sm2pn, png, p, s2p);
+				_this, isApplicableMatch, sm2pn, s, s2p, sm, png, p);
 		if (result_pattern_initial2nothing_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_initial2nothing_2_4_solveCSP_binding[0];
 
@@ -1384,7 +1383,7 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 					csp);
 			if (result_pattern_initial2nothing_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, s, sm, sm2pn, png, p, s2p };
+				return new Object[] { csp, _this, isApplicableMatch, sm2pn, s, s2p, sm, png, p };
 			}
 		}
 		return null;
@@ -1821,17 +1820,16 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_initial2nothing_21_5_matchcorrcontext_blackBBFBBFBB(State s, SM sm,
+	public static final Iterable<Object[]> pattern_initial2nothing_21_5_matchcorrcontext_blackFBFBBBBB(State s, SM sm,
 			PNGraph png, Place p, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (SM2PN sm2pn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(sm, SM2PN.class,
-					"source")) {
-				if (png.equals(sm2pn.getTarget())) {
-					for (S2P s2p : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(p, S2P.class,
-							"target")) {
-						if (s.equals(s2p.getSource())) {
-							_result.add(new Object[] { s, sm, sm2pn, png, p, s2p, sourceMatch, targetMatch });
+			for (S2P s2p : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(s, S2P.class, "source")) {
+				if (p.equals(s2p.getTarget())) {
+					for (SM2PN sm2pn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(png,
+							SM2PN.class, "target")) {
+						if (sm.equals(sm2pn.getSource())) {
+							_result.add(new Object[] { sm2pn, s, s2p, sm, png, p, sourceMatch, targetMatch });
 						}
 					}
 				}
@@ -1927,22 +1925,6 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 	}
 
 	public static final Object[] pattern_initial2nothing_26_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, State s) {
-		if (ruleResult.getSourceObjects().contains(s)) {
-			return new Object[] { ruleResult, s };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_initial2nothing_26_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, SM sm) {
-		if (ruleResult.getSourceObjects().contains(sm)) {
-			return new Object[] { ruleResult, sm };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_initial2nothing_26_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, SM2PN sm2pn) {
 		if (ruleResult.getCorrObjects().contains(sm2pn)) {
 			return new Object[] { ruleResult, sm2pn };
@@ -1950,7 +1932,7 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		return null;
 	}
 
-	public static final Object[] pattern_initial2nothing_26_2_isapplicablecore_black_nac_3BB(
+	public static final Object[] pattern_initial2nothing_26_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, PNGraph png) {
 		if (ruleResult.getTargetObjects().contains(png)) {
 			return new Object[] { ruleResult, png };
@@ -1958,7 +1940,7 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		return null;
 	}
 
-	public static final Object[] pattern_initial2nothing_26_2_isapplicablecore_black_nac_4BB(
+	public static final Object[] pattern_initial2nothing_26_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, Place p) {
 		if (ruleResult.getTargetObjects().contains(p)) {
 			return new Object[] { ruleResult, p };
@@ -1966,10 +1948,26 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		return null;
 	}
 
-	public static final Object[] pattern_initial2nothing_26_2_isapplicablecore_black_nac_5BB(
+	public static final Object[] pattern_initial2nothing_26_2_isapplicablecore_black_nac_3BB(
 			ModelgeneratorRuleResult ruleResult, S2P s2p) {
 		if (ruleResult.getCorrObjects().contains(s2p)) {
 			return new Object[] { ruleResult, s2p };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_initial2nothing_26_2_isapplicablecore_black_nac_4BB(
+			ModelgeneratorRuleResult ruleResult, State s) {
+		if (ruleResult.getSourceObjects().contains(s)) {
+			return new Object[] { ruleResult, s };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_initial2nothing_26_2_isapplicablecore_black_nac_5BB(
+			ModelgeneratorRuleResult ruleResult, SM sm) {
+		if (ruleResult.getSourceObjects().contains(sm)) {
+			return new Object[] { ruleResult, sm };
 		}
 		return null;
 	}
@@ -1981,29 +1979,29 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 			for (EObject tmpSm2pn : sm2pnList.getEntryObjects()) {
 				if (tmpSm2pn instanceof SM2PN) {
 					SM2PN sm2pn = (SM2PN) tmpSm2pn;
-					SM sm = sm2pn.getSource();
-					if (sm != null) {
-						PNGraph png = sm2pn.getTarget();
-						if (png != null) {
-							if (pattern_initial2nothing_26_2_isapplicablecore_black_nac_2BB(ruleResult,
+					PNGraph png = sm2pn.getTarget();
+					if (png != null) {
+						SM sm = sm2pn.getSource();
+						if (sm != null) {
+							if (pattern_initial2nothing_26_2_isapplicablecore_black_nac_0BB(ruleResult,
 									sm2pn) == null) {
 								if (pattern_initial2nothing_26_2_isapplicablecore_black_nac_1BB(ruleResult,
-										sm) == null) {
-									if (pattern_initial2nothing_26_2_isapplicablecore_black_nac_3BB(ruleResult,
-											png) == null) {
-										for (State s : sm.getStates()) {
-											if (pattern_initial2nothing_26_2_isapplicablecore_black_nac_0BB(ruleResult,
-													s) == null) {
-												for (Place p : png.getPlaces()) {
+										png) == null) {
+									if (pattern_initial2nothing_26_2_isapplicablecore_black_nac_5BB(ruleResult,
+											sm) == null) {
+										for (Place p : png.getPlaces()) {
+											if (pattern_initial2nothing_26_2_isapplicablecore_black_nac_2BB(ruleResult,
+													p) == null) {
+												for (State s : sm.getStates()) {
 													if (pattern_initial2nothing_26_2_isapplicablecore_black_nac_4BB(
-															ruleResult, p) == null) {
+															ruleResult, s) == null) {
 														for (S2P s2p : org.moflon.core.utilities.eMoflonEMFUtil
-																.getOppositeReferenceTyped(s, S2P.class, "source")) {
-															if (p.equals(s2p.getTarget())) {
-																if (pattern_initial2nothing_26_2_isapplicablecore_black_nac_5BB(
+																.getOppositeReferenceTyped(p, S2P.class, "target")) {
+															if (s.equals(s2p.getSource())) {
+																if (pattern_initial2nothing_26_2_isapplicablecore_black_nac_3BB(
 																		ruleResult, s2p) == null) {
-																	_result.add(new Object[] { sm2pnList, s, sm, sm2pn,
-																			png, p, s2p, ruleEntryContainer,
+																	_result.add(new Object[] { sm2pnList, sm2pn, png, p,
+																			s2p, s, sm, ruleEntryContainer,
 																			ruleResult });
 																}
 															}
@@ -2026,13 +2024,13 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 	}
 
 	public static final Object[] pattern_initial2nothing_26_3_solveCSP_bindingFBBBBBBBBB(initial2nothing _this,
-			IsApplicableMatch isApplicableMatch, State s, SM sm, SM2PN sm2pn, PNGraph png, Place p, S2P s2p,
+			IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, S2P s2p, SM sm, PNGraph png, Place p,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, s, sm, sm2pn, png, p, s2p,
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, sm2pn, s, s2p, sm, png, p,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, s, sm, sm2pn, png, p, s2p, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, sm2pn, s, s2p, sm, png, p, ruleResult };
 		}
 		return null;
 	}
@@ -2042,10 +2040,10 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 	}
 
 	public static final Object[] pattern_initial2nothing_26_3_solveCSP_bindingAndBlackFBBBBBBBBB(initial2nothing _this,
-			IsApplicableMatch isApplicableMatch, State s, SM sm, SM2PN sm2pn, PNGraph png, Place p, S2P s2p,
+			IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, S2P s2p, SM sm, PNGraph png, Place p,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_initial2nothing_26_3_solveCSP_binding = pattern_initial2nothing_26_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, s, sm, sm2pn, png, p, s2p, ruleResult);
+				_this, isApplicableMatch, sm2pn, s, s2p, sm, png, p, ruleResult);
 		if (result_pattern_initial2nothing_26_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_initial2nothing_26_3_solveCSP_binding[0];
 
@@ -2053,7 +2051,7 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 					csp);
 			if (result_pattern_initial2nothing_26_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, s, sm, sm2pn, png, p, s2p, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, sm2pn, s, s2p, sm, png, p, ruleResult };
 			}
 		}
 		return null;
@@ -2065,14 +2063,14 @@ public class initial2nothingImpl extends AbstractRuleImpl implements initial2not
 		return _result;
 	}
 
-	public static final Object[] pattern_initial2nothing_26_5_checknacs_blackBBBBBB(State s, SM sm, SM2PN sm2pn,
-			PNGraph png, Place p, S2P s2p) {
-		return new Object[] { s, sm, sm2pn, png, p, s2p };
+	public static final Object[] pattern_initial2nothing_26_5_checknacs_blackBBBBBB(SM2PN sm2pn, State s, S2P s2p,
+			SM sm, PNGraph png, Place p) {
+		return new Object[] { sm2pn, s, s2p, sm, png, p };
 	}
 
-	public static final Object[] pattern_initial2nothing_26_6_perform_blackBBBBBBB(State s, SM sm, SM2PN sm2pn,
-			PNGraph png, Place p, S2P s2p, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { s, sm, sm2pn, png, p, s2p, ruleResult };
+	public static final Object[] pattern_initial2nothing_26_6_perform_blackBBBBBBB(SM2PN sm2pn, State s, S2P s2p, SM sm,
+			PNGraph png, Place p, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { sm2pn, s, s2p, sm, png, p, ruleResult };
 	}
 
 	public static final Object[] pattern_initial2nothing_26_6_perform_greenBBB(State s, SM sm,

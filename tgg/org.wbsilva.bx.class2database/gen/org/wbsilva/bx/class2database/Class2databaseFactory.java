@@ -31,15 +31,6 @@ public interface Class2databaseFactory extends EFactory {
 	A2C createA2C();
 
 	/**
-	 * Returns a new object of class '<em>C2T</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>C2T</em>'.
-	 * @generated
-	 */
-	C2T createC2T();
-
-	/**
 	 * Returns a new object of class '<em>CD2D</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,6 +47,15 @@ public interface Class2databaseFactory extends EFactory {
 	 * @generated
 	 */
 	AS2C createAS2C();
+
+	/**
+	 * Returns a new object of class '<em>C2T</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>C2T</em>'.
+	 * @generated
+	 */
+	C2T createC2T();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -56,14 +56,14 @@ public class Statemachine2petrinetFactoryImpl extends EFactoryImpl implements St
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case Statemachine2petrinetPackage.T2T:
-			return createT2T();
-		case Statemachine2petrinetPackage.SM2PN:
-			return createSM2PN();
-		case Statemachine2petrinetPackage.S2P:
-			return createS2P();
 		case Statemachine2petrinetPackage.T2A:
 			return createT2A();
+		case Statemachine2petrinetPackage.S2P:
+			return createS2P();
+		case Statemachine2petrinetPackage.SM2PN:
+			return createSM2PN();
+		case Statemachine2petrinetPackage.T2T:
+			return createT2T();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -74,19 +74,9 @@ public class Statemachine2petrinetFactoryImpl extends EFactoryImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public T2T createT2T() {
-		T2TImpl t2T = new T2TImpl();
-		return t2T;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SM2PN createSM2PN() {
-		SM2PNImpl sm2PN = new SM2PNImpl();
-		return sm2PN;
+	public T2A createT2A() {
+		T2AImpl t2A = new T2AImpl();
+		return t2A;
 	}
 
 	/**
@@ -104,9 +94,19 @@ public class Statemachine2petrinetFactoryImpl extends EFactoryImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public T2A createT2A() {
-		T2AImpl t2A = new T2AImpl();
-		return t2A;
+	public SM2PN createSM2PN() {
+		SM2PNImpl sm2PN = new SM2PNImpl();
+		return sm2PN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public T2T createT2T() {
+		T2TImpl t2T = new T2TImpl();
+		return t2T;
 	}
 
 	/**

@@ -105,7 +105,7 @@ public interface program2graph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject g, EObject p2g, EObject p);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject g, EObject p, EObject p2g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface program2graph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject g, EObject p2g, EObject p);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject g, EObject p, EObject p2g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +201,7 @@ public interface program2graph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Graph_0(Graph g);
+	EObjectContainer isAppropriate_BWD_Graph_1(Graph g);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface program2graph extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_Program_0(Program p);
+	EObjectContainer isAppropriate_FWD_Program_1(Program p);
 
 	/**
 	 * <!-- begin-user-doc -->

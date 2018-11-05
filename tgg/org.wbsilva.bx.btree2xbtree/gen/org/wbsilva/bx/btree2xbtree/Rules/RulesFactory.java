@@ -31,6 +31,15 @@ public interface RulesFactory extends EFactory {
 	node2node createnode2node();
 
 	/**
+	 * Returns a new object of class '<em>rightleft2eastwest</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>rightleft2eastwest</em>'.
+	 * @generated
+	 */
+	rightleft2eastwest createrightleft2eastwest();
+
+	/**
 	 * Returns a new object of class '<em>left2southwest</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,15 +56,6 @@ public interface RulesFactory extends EFactory {
 	 * @generated
 	 */
 	right2southeast createright2southeast();
-
-	/**
-	 * Returns a new object of class '<em>rightleft2eastwest</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>rightleft2eastwest</em>'.
-	 * @generated
-	 */
-	rightleft2eastwest createrightleft2eastwest();
 
 	/**
 	 * Returns the package supported by this factory.

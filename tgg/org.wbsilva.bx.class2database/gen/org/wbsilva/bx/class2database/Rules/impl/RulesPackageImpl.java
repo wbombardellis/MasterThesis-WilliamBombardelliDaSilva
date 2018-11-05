@@ -40,7 +40,21 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass selfassoc2columnEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass attribute2columnEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass association2columnEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -55,20 +69,6 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * @generated
 	 */
 	private EClass super2tableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass selfassoc2columnEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass association2columnEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,10 +158,311 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getselfassoc2column() {
+		if (selfassoc2columnEClass == null) {
+			selfassoc2columnEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(RulesPackage.eNS_URI)
+					.getEClassifiers().get(0);
+		}
+		return selfassoc2columnEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsAppropriate_FWD__Match_Clazz_Association_ClassDiagram() {
+		return getselfassoc2column().getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__Perform_FWD__IsApplicableMatch() {
+		return getselfassoc2column().getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsApplicable_FWD__Match() {
+		return getselfassoc2column().getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__RegisterObjectsToMatch_FWD__Match_Clazz_Association_ClassDiagram() {
+		return getselfassoc2column().getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsAppropriate_solveCsp_FWD__Match_Clazz_Association_ClassDiagram() {
+		return getselfassoc2column().getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsAppropriate_checkCsp_FWD__CSP() {
+		return getselfassoc2column().getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsApplicable_solveCsp_FWD__IsApplicableMatch_Table_Clazz_Association_C2T_ClassDiagram_DB_CD2D() {
+		return getselfassoc2column().getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsApplicable_checkCsp_FWD__CSP() {
+		return getselfassoc2column().getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
+		return getselfassoc2column().getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__CheckTypes_FWD__Match() {
+		return getselfassoc2column().getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsAppropriate_BWD__Match_Table_Column_DB() {
+		return getselfassoc2column().getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__Perform_BWD__IsApplicableMatch() {
+		return getselfassoc2column().getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsApplicable_BWD__Match() {
+		return getselfassoc2column().getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__RegisterObjectsToMatch_BWD__Match_Table_Column_DB() {
+		return getselfassoc2column().getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsAppropriate_solveCsp_BWD__Match_Table_Column_DB() {
+		return getselfassoc2column().getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsAppropriate_checkCsp_BWD__CSP() {
+		return getselfassoc2column().getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsApplicable_solveCsp_BWD__IsApplicableMatch_Table_Clazz_Column_C2T_ClassDiagram_DB_CD2D() {
+		return getselfassoc2column().getEOperations().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsApplicable_checkCsp_BWD__CSP() {
+		return getselfassoc2column().getEOperations().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
+		return getselfassoc2column().getEOperations().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__CheckTypes_BWD__Match() {
+		return getselfassoc2column().getEOperations().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsAppropriate_BWD_EMoflonEdge_58__EMoflonEdge() {
+		return getselfassoc2column().getEOperations().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsAppropriate_FWD_EMoflonEdge_63__EMoflonEdge() {
+		return getselfassoc2column().getEOperations().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__CheckAttributes_FWD__TripleMatch() {
+		return getselfassoc2column().getEOperations().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__CheckAttributes_BWD__TripleMatch() {
+		return getselfassoc2column().getEOperations().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsApplicable_CC__Match_Match() {
+		return getselfassoc2column().getEOperations().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsApplicable_solveCsp_CC__Table_Clazz_Association_Column_ClassDiagram_DB_Match_Match() {
+		return getselfassoc2column().getEOperations().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__IsApplicable_checkCsp_CC__CSP() {
+		return getselfassoc2column().getEOperations().get(26);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__CheckDEC_FWD__Clazz_Association_ClassDiagram() {
+		return getselfassoc2column().getEOperations().get(27);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__CheckDEC_BWD__Table_Column_DB() {
+		return getselfassoc2column().getEOperations().get(28);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__GenerateModel__RuleEntryContainer_C2T() {
+		return getselfassoc2column().getEOperations().get(29);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__GenerateModel_solveCsp_BWD__IsApplicableMatch_Table_Clazz_C2T_ClassDiagram_DB_CD2D_ModelgeneratorRuleResult() {
+		return getselfassoc2column().getEOperations().get(30);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getselfassoc2column__GenerateModel_checkCsp_BWD__CSP() {
+		return getselfassoc2column().getEOperations().get(31);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getattribute2column() {
 		if (attribute2columnEClass == null) {
 			attribute2columnEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(RulesPackage.eNS_URI)
-					.getEClassifiers().get(0);
+					.getEClassifiers().get(1);
 		}
 		return attribute2columnEClass;
 	}
@@ -225,7 +526,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getattribute2column__IsApplicable_solveCsp_FWD__IsApplicableMatch_Table_C2T_Attribute_Clazz() {
+	public EOperation getattribute2column__IsApplicable_solveCsp_FWD__IsApplicableMatch_Attribute_Table_Clazz_C2T() {
 		return getattribute2column().getEOperations().get(6);
 	}
 
@@ -261,7 +562,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getattribute2column__IsAppropriate_BWD__Match_Column_Table() {
+	public EOperation getattribute2column__IsAppropriate_BWD__Match_Table_Column() {
 		return getattribute2column().getEOperations().get(10);
 	}
 
@@ -288,7 +589,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getattribute2column__RegisterObjectsToMatch_BWD__Match_Column_Table() {
+	public EOperation getattribute2column__RegisterObjectsToMatch_BWD__Match_Table_Column() {
 		return getattribute2column().getEOperations().get(13);
 	}
 
@@ -297,7 +598,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getattribute2column__IsAppropriate_solveCsp_BWD__Match_Column_Table() {
+	public EOperation getattribute2column__IsAppropriate_solveCsp_BWD__Match_Table_Column() {
 		return getattribute2column().getEOperations().get(14);
 	}
 
@@ -315,7 +616,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getattribute2column__IsApplicable_solveCsp_BWD__IsApplicableMatch_Column_Table_C2T_Clazz() {
+	public EOperation getattribute2column__IsApplicable_solveCsp_BWD__IsApplicableMatch_Table_Column_Clazz_C2T() {
 		return getattribute2column().getEOperations().get(16);
 	}
 
@@ -351,7 +652,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getattribute2column__IsAppropriate_BWD_EMoflonEdge_0__EMoflonEdge() {
+	public EOperation getattribute2column__IsAppropriate_BWD_EMoflonEdge_59__EMoflonEdge() {
 		return getattribute2column().getEOperations().get(20);
 	}
 
@@ -360,7 +661,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getattribute2column__IsAppropriate_FWD_EMoflonEdge_0__EMoflonEdge() {
+	public EOperation getattribute2column__IsAppropriate_FWD_EMoflonEdge_64__EMoflonEdge() {
 		return getattribute2column().getEOperations().get(21);
 	}
 
@@ -396,7 +697,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getattribute2column__IsApplicable_solveCsp_CC__Column_Table_Attribute_Clazz_Match_Match() {
+	public EOperation getattribute2column__IsApplicable_solveCsp_CC__Attribute_Table_Column_Clazz_Match_Match() {
 		return getattribute2column().getEOperations().get(25);
 	}
 
@@ -423,7 +724,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getattribute2column__CheckDEC_BWD__Column_Table() {
+	public EOperation getattribute2column__CheckDEC_BWD__Table_Column() {
 		return getattribute2column().getEOperations().get(28);
 	}
 
@@ -441,7 +742,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getattribute2column__GenerateModel_solveCsp_BWD__IsApplicableMatch_Table_C2T_Clazz_ModelgeneratorRuleResult() {
+	public EOperation getattribute2column__GenerateModel_solveCsp_BWD__IsApplicableMatch_Table_Clazz_C2T_ModelgeneratorRuleResult() {
 		return getattribute2column().getEOperations().get(30);
 	}
 
@@ -459,10 +760,311 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getassociation2column() {
+		if (association2columnEClass == null) {
+			association2columnEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(RulesPackage.eNS_URI)
+					.getEClassifiers().get(2);
+		}
+		return association2columnEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsAppropriate_FWD__Match_ClassDiagram_Clazz_Association_Clazz() {
+		return getassociation2column().getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__Perform_FWD__IsApplicableMatch() {
+		return getassociation2column().getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsApplicable_FWD__Match() {
+		return getassociation2column().getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__RegisterObjectsToMatch_FWD__Match_ClassDiagram_Clazz_Association_Clazz() {
+		return getassociation2column().getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsAppropriate_solveCsp_FWD__Match_ClassDiagram_Clazz_Association_Clazz() {
+		return getassociation2column().getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsAppropriate_checkCsp_FWD__CSP() {
+		return getassociation2column().getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsApplicable_solveCsp_FWD__IsApplicableMatch_ClassDiagram_Table_C2T_Clazz_CD2D_C2T_DB_Association_Clazz_Table() {
+		return getassociation2column().getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsApplicable_checkCsp_FWD__CSP() {
+		return getassociation2column().getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
+		return getassociation2column().getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__CheckTypes_FWD__Match() {
+		return getassociation2column().getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsAppropriate_BWD__Match_Table_Column_DB_Table() {
+		return getassociation2column().getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__Perform_BWD__IsApplicableMatch() {
+		return getassociation2column().getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsApplicable_BWD__Match() {
+		return getassociation2column().getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__RegisterObjectsToMatch_BWD__Match_Table_Column_DB_Table() {
+		return getassociation2column().getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsAppropriate_solveCsp_BWD__Match_Table_Column_DB_Table() {
+		return getassociation2column().getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsAppropriate_checkCsp_BWD__CSP() {
+		return getassociation2column().getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsApplicable_solveCsp_BWD__IsApplicableMatch_ClassDiagram_Table_C2T_Clazz_CD2D_Column_C2T_DB_Clazz_Table() {
+		return getassociation2column().getEOperations().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsApplicable_checkCsp_BWD__CSP() {
+		return getassociation2column().getEOperations().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
+		return getassociation2column().getEOperations().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__CheckTypes_BWD__Match() {
+		return getassociation2column().getEOperations().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsAppropriate_BWD_EMoflonEdge_60__EMoflonEdge() {
+		return getassociation2column().getEOperations().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsAppropriate_FWD_EMoflonEdge_65__EMoflonEdge() {
+		return getassociation2column().getEOperations().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__CheckAttributes_FWD__TripleMatch() {
+		return getassociation2column().getEOperations().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__CheckAttributes_BWD__TripleMatch() {
+		return getassociation2column().getEOperations().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsApplicable_CC__Match_Match() {
+		return getassociation2column().getEOperations().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsApplicable_solveCsp_CC__ClassDiagram_Table_Clazz_Column_DB_Association_Clazz_Table_Match_Match() {
+		return getassociation2column().getEOperations().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__IsApplicable_checkCsp_CC__CSP() {
+		return getassociation2column().getEOperations().get(26);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__CheckDEC_FWD__ClassDiagram_Clazz_Association_Clazz() {
+		return getassociation2column().getEOperations().get(27);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__CheckDEC_BWD__Table_Column_DB_Table() {
+		return getassociation2column().getEOperations().get(28);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__GenerateModel__RuleEntryContainer_C2T() {
+		return getassociation2column().getEOperations().get(29);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__GenerateModel_solveCsp_BWD__IsApplicableMatch_ClassDiagram_Table_C2T_Clazz_CD2D_C2T_DB_Clazz_Table_ModelgeneratorRuleResult() {
+		return getassociation2column().getEOperations().get(30);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getassociation2column__GenerateModel_checkCsp_BWD__CSP() {
+		return getassociation2column().getEOperations().get(31);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getcd2db() {
 		if (cd2dbEClass == null) {
 			cd2dbEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(RulesPackage.eNS_URI).getEClassifiers()
-					.get(1);
+					.get(3);
 		}
 		return cd2dbEClass;
 	}
@@ -652,7 +1254,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getcd2db__IsAppropriate_BWD_DB_0__DB() {
+	public EOperation getcd2db__IsAppropriate_BWD_DB_1__DB() {
 		return getcd2db().getEOperations().get(20);
 	}
 
@@ -661,7 +1263,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getcd2db__IsAppropriate_FWD_ClassDiagram_0__ClassDiagram() {
+	public EOperation getcd2db__IsAppropriate_FWD_ClassDiagram_1__ClassDiagram() {
 		return getcd2db().getEOperations().get(21);
 	}
 
@@ -763,7 +1365,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	public EClass getsuper2table() {
 		if (super2tableEClass == null) {
 			super2tableEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(RulesPackage.eNS_URI).getEClassifiers()
-					.get(2);
+					.get(4);
 		}
 		return super2tableEClass;
 	}
@@ -773,7 +1375,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getsuper2table__IsAppropriate_FWD__Match_Clazz_Clazz_ClassDiagram() {
+	public EOperation getsuper2table__IsAppropriate_FWD__Match_ClassDiagram_Clazz_Clazz() {
 		return getsuper2table().getEOperations().get(0);
 	}
 
@@ -800,7 +1402,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getsuper2table__RegisterObjectsToMatch_FWD__Match_Clazz_Clazz_ClassDiagram() {
+	public EOperation getsuper2table__RegisterObjectsToMatch_FWD__Match_ClassDiagram_Clazz_Clazz() {
 		return getsuper2table().getEOperations().get(3);
 	}
 
@@ -809,7 +1411,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getsuper2table__IsAppropriate_solveCsp_FWD__Match_Clazz_Clazz_ClassDiagram() {
+	public EOperation getsuper2table__IsAppropriate_solveCsp_FWD__Match_ClassDiagram_Clazz_Clazz() {
 		return getsuper2table().getEOperations().get(4);
 	}
 
@@ -827,7 +1429,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getsuper2table__IsApplicable_solveCsp_FWD__IsApplicableMatch_Table_C2T_Clazz_Clazz_ClassDiagram_CD2D_DB() {
+	public EOperation getsuper2table__IsApplicable_solveCsp_FWD__IsApplicableMatch_Table_C2T_CD2D_ClassDiagram_DB_Clazz_Clazz() {
 		return getsuper2table().getEOperations().get(6);
 	}
 
@@ -926,7 +1528,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getsuper2table__IsAppropriate_BWD_Table_0__Table() {
+	public EOperation getsuper2table__IsAppropriate_BWD_Table_1__Table() {
 		return getsuper2table().getEOperations().get(17);
 	}
 
@@ -935,7 +1537,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getsuper2table__IsAppropriate_FWD_EMoflonEdge_1__EMoflonEdge() {
+	public EOperation getsuper2table__IsAppropriate_FWD_EMoflonEdge_66__EMoflonEdge() {
 		return getsuper2table().getEOperations().get(18);
 	}
 
@@ -971,7 +1573,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getsuper2table__IsApplicable_solveCsp_CC__Table_Clazz_Clazz_ClassDiagram_DB_Match_Match() {
+	public EOperation getsuper2table__IsApplicable_solveCsp_CC__Table_ClassDiagram_DB_Clazz_Clazz_Match_Match() {
 		return getsuper2table().getEOperations().get(22);
 	}
 
@@ -989,7 +1591,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getsuper2table__CheckDEC_FWD__Clazz_Clazz_ClassDiagram() {
+	public EOperation getsuper2table__CheckDEC_FWD__ClassDiagram_Clazz_Clazz() {
 		return getsuper2table().getEOperations().get(24);
 	}
 
@@ -1016,7 +1618,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getsuper2table__GenerateModel_solveCsp_BWD__IsApplicableMatch_Table_C2T_Clazz_ClassDiagram_CD2D_DB_ModelgeneratorRuleResult() {
+	public EOperation getsuper2table__GenerateModel_solveCsp_BWD__IsApplicableMatch_Table_C2T_CD2D_ClassDiagram_DB_Clazz_ModelgeneratorRuleResult() {
 		return getsuper2table().getEOperations().get(27);
 	}
 
@@ -1027,608 +1629,6 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 */
 	public EOperation getsuper2table__GenerateModel_checkCsp_BWD__CSP() {
 		return getsuper2table().getEOperations().get(28);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getselfassoc2column() {
-		if (selfassoc2columnEClass == null) {
-			selfassoc2columnEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(RulesPackage.eNS_URI)
-					.getEClassifiers().get(3);
-		}
-		return selfassoc2columnEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsAppropriate_FWD__Match_Clazz_Association_ClassDiagram() {
-		return getselfassoc2column().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__Perform_FWD__IsApplicableMatch() {
-		return getselfassoc2column().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsApplicable_FWD__Match() {
-		return getselfassoc2column().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__RegisterObjectsToMatch_FWD__Match_Clazz_Association_ClassDiagram() {
-		return getselfassoc2column().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsAppropriate_solveCsp_FWD__Match_Clazz_Association_ClassDiagram() {
-		return getselfassoc2column().getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsAppropriate_checkCsp_FWD__CSP() {
-		return getselfassoc2column().getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsApplicable_solveCsp_FWD__IsApplicableMatch_Table_Clazz_C2T_Association_CD2D_DB_ClassDiagram() {
-		return getselfassoc2column().getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsApplicable_checkCsp_FWD__CSP() {
-		return getselfassoc2column().getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
-		return getselfassoc2column().getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__CheckTypes_FWD__Match() {
-		return getselfassoc2column().getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsAppropriate_BWD__Match_Table_Column_DB() {
-		return getselfassoc2column().getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__Perform_BWD__IsApplicableMatch() {
-		return getselfassoc2column().getEOperations().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsApplicable_BWD__Match() {
-		return getselfassoc2column().getEOperations().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__RegisterObjectsToMatch_BWD__Match_Table_Column_DB() {
-		return getselfassoc2column().getEOperations().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsAppropriate_solveCsp_BWD__Match_Table_Column_DB() {
-		return getselfassoc2column().getEOperations().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsAppropriate_checkCsp_BWD__CSP() {
-		return getselfassoc2column().getEOperations().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsApplicable_solveCsp_BWD__IsApplicableMatch_Table_Clazz_C2T_CD2D_Column_DB_ClassDiagram() {
-		return getselfassoc2column().getEOperations().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsApplicable_checkCsp_BWD__CSP() {
-		return getselfassoc2column().getEOperations().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
-		return getselfassoc2column().getEOperations().get(18);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__CheckTypes_BWD__Match() {
-		return getselfassoc2column().getEOperations().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsAppropriate_BWD_EMoflonEdge_1__EMoflonEdge() {
-		return getselfassoc2column().getEOperations().get(20);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsAppropriate_FWD_EMoflonEdge_2__EMoflonEdge() {
-		return getselfassoc2column().getEOperations().get(21);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__CheckAttributes_FWD__TripleMatch() {
-		return getselfassoc2column().getEOperations().get(22);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__CheckAttributes_BWD__TripleMatch() {
-		return getselfassoc2column().getEOperations().get(23);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsApplicable_CC__Match_Match() {
-		return getselfassoc2column().getEOperations().get(24);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsApplicable_solveCsp_CC__Table_Clazz_Association_Column_DB_ClassDiagram_Match_Match() {
-		return getselfassoc2column().getEOperations().get(25);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__IsApplicable_checkCsp_CC__CSP() {
-		return getselfassoc2column().getEOperations().get(26);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__CheckDEC_FWD__Clazz_Association_ClassDiagram() {
-		return getselfassoc2column().getEOperations().get(27);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__CheckDEC_BWD__Table_Column_DB() {
-		return getselfassoc2column().getEOperations().get(28);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__GenerateModel__RuleEntryContainer_C2T() {
-		return getselfassoc2column().getEOperations().get(29);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__GenerateModel_solveCsp_BWD__IsApplicableMatch_Table_Clazz_C2T_CD2D_DB_ClassDiagram_ModelgeneratorRuleResult() {
-		return getselfassoc2column().getEOperations().get(30);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getselfassoc2column__GenerateModel_checkCsp_BWD__CSP() {
-		return getselfassoc2column().getEOperations().get(31);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getassociation2column() {
-		if (association2columnEClass == null) {
-			association2columnEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(RulesPackage.eNS_URI)
-					.getEClassifiers().get(4);
-		}
-		return association2columnEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsAppropriate_FWD__Match_Clazz_Clazz_Association_ClassDiagram() {
-		return getassociation2column().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__Perform_FWD__IsApplicableMatch() {
-		return getassociation2column().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsApplicable_FWD__Match() {
-		return getassociation2column().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__RegisterObjectsToMatch_FWD__Match_Clazz_Clazz_Association_ClassDiagram() {
-		return getassociation2column().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsAppropriate_solveCsp_FWD__Match_Clazz_Clazz_Association_ClassDiagram() {
-		return getassociation2column().getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsAppropriate_checkCsp_FWD__CSP() {
-		return getassociation2column().getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsApplicable_solveCsp_FWD__IsApplicableMatch_C2T_C2T_Table_DB_Clazz_Table_Clazz_Association_ClassDiagram_CD2D() {
-		return getassociation2column().getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsApplicable_checkCsp_FWD__CSP() {
-		return getassociation2column().getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__RegisterObjects_FWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
-		return getassociation2column().getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__CheckTypes_FWD__Match() {
-		return getassociation2column().getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsAppropriate_BWD__Match_Table_DB_Table_Column() {
-		return getassociation2column().getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__Perform_BWD__IsApplicableMatch() {
-		return getassociation2column().getEOperations().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsApplicable_BWD__Match() {
-		return getassociation2column().getEOperations().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__RegisterObjectsToMatch_BWD__Match_Table_DB_Table_Column() {
-		return getassociation2column().getEOperations().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsAppropriate_solveCsp_BWD__Match_Table_DB_Table_Column() {
-		return getassociation2column().getEOperations().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsAppropriate_checkCsp_BWD__CSP() {
-		return getassociation2column().getEOperations().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsApplicable_solveCsp_BWD__IsApplicableMatch_C2T_C2T_Table_DB_Clazz_Table_Clazz_Column_ClassDiagram_CD2D() {
-		return getassociation2column().getEOperations().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsApplicable_checkCsp_BWD__CSP() {
-		return getassociation2column().getEOperations().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__RegisterObjects_BWD__PerformRuleResult_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject_EObject() {
-		return getassociation2column().getEOperations().get(18);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__CheckTypes_BWD__Match() {
-		return getassociation2column().getEOperations().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsAppropriate_BWD_EMoflonEdge_2__EMoflonEdge() {
-		return getassociation2column().getEOperations().get(20);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsAppropriate_FWD_EMoflonEdge_3__EMoflonEdge() {
-		return getassociation2column().getEOperations().get(21);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__CheckAttributes_FWD__TripleMatch() {
-		return getassociation2column().getEOperations().get(22);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__CheckAttributes_BWD__TripleMatch() {
-		return getassociation2column().getEOperations().get(23);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsApplicable_CC__Match_Match() {
-		return getassociation2column().getEOperations().get(24);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsApplicable_solveCsp_CC__Table_DB_Clazz_Table_Clazz_Column_Association_ClassDiagram_Match_Match() {
-		return getassociation2column().getEOperations().get(25);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__IsApplicable_checkCsp_CC__CSP() {
-		return getassociation2column().getEOperations().get(26);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__CheckDEC_FWD__Clazz_Clazz_Association_ClassDiagram() {
-		return getassociation2column().getEOperations().get(27);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__CheckDEC_BWD__Table_DB_Table_Column() {
-		return getassociation2column().getEOperations().get(28);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__GenerateModel__RuleEntryContainer_C2T() {
-		return getassociation2column().getEOperations().get(29);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__GenerateModel_solveCsp_BWD__IsApplicableMatch_C2T_C2T_Table_DB_Clazz_Table_Clazz_ClassDiagram_CD2D_ModelgeneratorRuleResult() {
-		return getassociation2column().getEOperations().get(30);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getassociation2column__GenerateModel_checkCsp_BWD__CSP() {
-		return getassociation2column().getEOperations().get(31);
 	}
 
 	/**
@@ -1703,7 +1703,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getclass2table__IsApplicable_solveCsp_FWD__IsApplicableMatch_Clazz_ClassDiagram_DB_CD2D() {
+	public EOperation getclass2table__IsApplicable_solveCsp_FWD__IsApplicableMatch_DB_CD2D_Clazz_ClassDiagram() {
 		return getclass2table().getEOperations().get(6);
 	}
 
@@ -1739,7 +1739,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getclass2table__IsAppropriate_BWD__Match_Table_DB() {
+	public EOperation getclass2table__IsAppropriate_BWD__Match_DB_Table() {
 		return getclass2table().getEOperations().get(10);
 	}
 
@@ -1766,7 +1766,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getclass2table__RegisterObjectsToMatch_BWD__Match_Table_DB() {
+	public EOperation getclass2table__RegisterObjectsToMatch_BWD__Match_DB_Table() {
 		return getclass2table().getEOperations().get(13);
 	}
 
@@ -1775,7 +1775,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getclass2table__IsAppropriate_solveCsp_BWD__Match_Table_DB() {
+	public EOperation getclass2table__IsAppropriate_solveCsp_BWD__Match_DB_Table() {
 		return getclass2table().getEOperations().get(14);
 	}
 
@@ -1793,7 +1793,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getclass2table__IsApplicable_solveCsp_BWD__IsApplicableMatch_ClassDiagram_Table_DB_CD2D() {
+	public EOperation getclass2table__IsApplicable_solveCsp_BWD__IsApplicableMatch_DB_Table_CD2D_ClassDiagram() {
 		return getclass2table().getEOperations().get(16);
 	}
 
@@ -1829,7 +1829,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getclass2table__IsAppropriate_BWD_EMoflonEdge_3__EMoflonEdge() {
+	public EOperation getclass2table__IsAppropriate_BWD_EMoflonEdge_61__EMoflonEdge() {
 		return getclass2table().getEOperations().get(20);
 	}
 
@@ -1838,7 +1838,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getclass2table__IsAppropriate_FWD_EMoflonEdge_4__EMoflonEdge() {
+	public EOperation getclass2table__IsAppropriate_FWD_EMoflonEdge_67__EMoflonEdge() {
 		return getclass2table().getEOperations().get(21);
 	}
 
@@ -1874,7 +1874,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getclass2table__IsApplicable_solveCsp_CC__Clazz_ClassDiagram_Table_DB_Match_Match() {
+	public EOperation getclass2table__IsApplicable_solveCsp_CC__DB_Table_Clazz_ClassDiagram_Match_Match() {
 		return getclass2table().getEOperations().get(25);
 	}
 
@@ -1901,7 +1901,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getclass2table__CheckDEC_BWD__Table_DB() {
+	public EOperation getclass2table__CheckDEC_BWD__DB_Table() {
 		return getclass2table().getEOperations().get(28);
 	}
 
@@ -1919,7 +1919,7 @@ public class RulesPackageImpl extends EPackageImpl implements RulesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getclass2table__GenerateModel_solveCsp_BWD__IsApplicableMatch_ClassDiagram_DB_CD2D_ModelgeneratorRuleResult() {
+	public EOperation getclass2table__GenerateModel_solveCsp_BWD__IsApplicableMatch_DB_CD2D_ClassDiagram_ModelgeneratorRuleResult() {
 		return getclass2table().getEOperations().get(30);
 	}
 

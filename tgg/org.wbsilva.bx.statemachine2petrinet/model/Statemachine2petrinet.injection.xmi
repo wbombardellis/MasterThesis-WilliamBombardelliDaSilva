@@ -1,52 +1,28 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sdmUtil:CompilerInjection xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sdmUtil="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//sdmUtil">
   <importInjectionEntries content="org.moflon.tgg.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.wbsilva.bx.statemachine2petrinet.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.language.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.wbsilva.bx.statemachine2petrinet.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.language.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.wbsilva.bx.statemachine2petrinet.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.wbsilva.bx.statemachine2petrinet.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing"/>
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.csp.*">
     <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
@@ -61,87 +37,39 @@
     <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet"/>
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.wbsilva.bx.statemachine2petrinet.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet"/>
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet"/>
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.language.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
     <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
   </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  <importInjectionEntries content="org.wbsilva.bx.statemachine2petrinet.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
   </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
   </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
     <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
   </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
+  <importInjectionEntries content="org.wbsilva.bx.statemachine2petrinet.csp.constraints.*">
     <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
     <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
   </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
     <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
@@ -169,30 +97,6 @@
     <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
     <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet"/>
   </importInjectionEntries>
   <importInjectionEntries content="java.util.Optional">
@@ -216,123 +120,102 @@
   <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
     <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet"/>
   </importInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;s&quot;, s);&#xA;match.registerObject(&quot;sm&quot;, sm);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s.id&quot;, true, csp);&#xD;&#xA;var_s_id.setValue(s.getId());&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p.id&quot;, csp);&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_s_id,var_p_id);&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;p&quot;, p);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;s2p&quot;, s2p);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;s&quot;).eClass()).equals(&quot;statemachine.State.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;p&quot;, p);&#xA;match.registerObject(&quot;png&quot;, png);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p.id&quot;, true, csp);&#xD;&#xA;var_p_id.setValue(p.getId());&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s.id&quot;, csp);&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_s_id,var_p_id);&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;p&quot;, p);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;s2p&quot;, s2p);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/registerObjects_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;p&quot;).eClass()).equals(&quot;petrinet.Place.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkTypes_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;sm&quot;, sm);&#xA;match.registerObject(&quot;st&quot;, st);&#xA;match.registerObject(&quot;s1&quot;, s1);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;st&quot;,st);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;s12p1&quot;, s12p1);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;pt&quot;, pt);&#xA;ruleresult.registerObject(&quot;st2pt&quot;, st2pt);&#xA;ruleresult.registerObject(&quot;st&quot;, st);&#xA;ruleresult.registerObject(&quot;p1&quot;, p1);&#xA;ruleresult.registerObject(&quot;s1&quot;, s1);&#xA;ruleresult.registerObject(&quot;a1&quot;, a1);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;st2a2&quot;, st2a2);&#xA;ruleresult.registerObject(&quot;a2&quot;, a2);&#xA;ruleresult.registerObject(&quot;st2a1&quot;, st2a1);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;st&quot;).eClass()).equals(&quot;statemachine.Transition.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;pt&quot;, pt);&#xA;match.registerObject(&quot;p1&quot;, p1);&#xA;match.registerObject(&quot;a1&quot;, a1);&#xA;match.registerObject(&quot;png&quot;, png);&#xA;match.registerObject(&quot;a2&quot;, a2);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;pt&quot;,pt);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;a1&quot;,a1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;a2&quot;,a2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;s12p1&quot;, s12p1);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;pt&quot;, pt);&#xA;ruleresult.registerObject(&quot;st2pt&quot;, st2pt);&#xA;ruleresult.registerObject(&quot;st&quot;, st);&#xA;ruleresult.registerObject(&quot;p1&quot;, p1);&#xA;ruleresult.registerObject(&quot;s1&quot;, s1);&#xA;ruleresult.registerObject(&quot;a1&quot;, a1);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;st2a2&quot;, st2a2);&#xA;ruleresult.registerObject(&quot;a2&quot;, a2);&#xA;ruleresult.registerObject(&quot;st2a1&quot;, st2a1);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/registerObjects_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;pt&quot;).eClass()).equals(&quot;petrinet.Transition.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a1&quot;).eClass()).equals(&quot;petrinet.Arc.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a2&quot;).eClass()).equals(&quot;petrinet.Arc.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkTypes_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;s&quot;, s);&#xA;match.registerObject(&quot;sm&quot;, sm);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2p&quot;,s2p);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;p&quot;, p);&#xA;ruleresult.registerObject(&quot;s2p&quot;, s2p);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;png&quot;, png);&#xA;match.registerObject(&quot;p&quot;, p);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkTypes_BWD"/>
-  </compilerInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing"/>
+  </importInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/isAppropriate_solveCsp_FWD"/>
   </compilerInjectionEntries>
@@ -342,13 +225,13 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/isAppropriate_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2p&quot;,s2p);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2p&quot;,s2p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/isApplicable_solveCsp_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/isApplicable_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;p&quot;, p);&#xA;ruleresult.registerObject(&quot;s2p&quot;, s2p);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;s2p&quot;, s2p);&#xA;ruleresult.registerObject(&quot;p&quot;, p);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/registerObjects_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true;">
@@ -367,48 +250,6 @@
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/checkTypes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;st&quot;, st);&#xA;match.registerObject(&quot;s2&quot;, s2);&#xA;match.registerObject(&quot;s1&quot;, s1);&#xA;match.registerObject(&quot;sm&quot;, sm);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;st&quot;,st);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2&quot;,s2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2&quot;,p2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s22p2&quot;,s22p2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;st2a1&quot;, st2a1);&#xA;ruleresult.registerObject(&quot;st&quot;, st);&#xA;ruleresult.registerObject(&quot;s2&quot;, s2);&#xA;ruleresult.registerObject(&quot;s1&quot;, s1);&#xA;ruleresult.registerObject(&quot;pt&quot;, pt);&#xA;ruleresult.registerObject(&quot;st2pt&quot;, st2pt);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;s12p1&quot;, s12p1);&#xA;ruleresult.registerObject(&quot;p2&quot;, p2);&#xA;ruleresult.registerObject(&quot;a1&quot;, a1);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;s22p2&quot;, s22p2);&#xA;ruleresult.registerObject(&quot;a2&quot;, a2);&#xA;ruleresult.registerObject(&quot;p1&quot;, p1);&#xA;ruleresult.registerObject(&quot;st2a2&quot;, st2a2);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;st&quot;).eClass()).equals(&quot;statemachine.Transition.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;pt&quot;, pt);&#xA;match.registerObject(&quot;png&quot;, png);&#xA;match.registerObject(&quot;p2&quot;, p2);&#xA;match.registerObject(&quot;a1&quot;, a1);&#xA;match.registerObject(&quot;a2&quot;, a2);&#xA;match.registerObject(&quot;p1&quot;, p1);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2&quot;,s2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;pt&quot;,pt);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2&quot;,p2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;a1&quot;,a1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s22p2&quot;,s22p2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;a2&quot;,a2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isApplicable_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isApplicable_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;st2a1&quot;, st2a1);&#xA;ruleresult.registerObject(&quot;st&quot;, st);&#xA;ruleresult.registerObject(&quot;s2&quot;, s2);&#xA;ruleresult.registerObject(&quot;s1&quot;, s1);&#xA;ruleresult.registerObject(&quot;pt&quot;, pt);&#xA;ruleresult.registerObject(&quot;st2pt&quot;, st2pt);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;s12p1&quot;, s12p1);&#xA;ruleresult.registerObject(&quot;p2&quot;, p2);&#xA;ruleresult.registerObject(&quot;a1&quot;, a1);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;s22p2&quot;, s22p2);&#xA;ruleresult.registerObject(&quot;a2&quot;, a2);&#xA;ruleresult.registerObject(&quot;p1&quot;, p1);&#xA;ruleresult.registerObject(&quot;st2a2&quot;, st2a2);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/registerObjects_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;pt&quot;).eClass()).equals(&quot;petrinet.Transition.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a1&quot;).eClass()).equals(&quot;petrinet.Arc.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a2&quot;).eClass()).equals(&quot;petrinet.Arc.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/checkTypes_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/isAppropriate_solveCsp_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="match.registerObject(&quot;sm&quot;, sm);&#xA;">
@@ -423,7 +264,7 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/isApplicable_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/registerObjects_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;sm&quot;).eClass()).equals(&quot;statemachine.SM.&quot;);">
@@ -444,29 +285,170 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/isApplicable_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/registerObjects_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;png&quot;).eClass()).equals(&quot;petrinet.PNGraph.&quot;);">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/checkTypes_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;state2place&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p&quot;, true, csp);&#xD;&#xA;var_p_id.setValue(__helper.getValue(&quot;p&quot;, &quot;id&quot;));&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xA;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s&quot;, true, csp);&#xD;&#xA;var_s_id.setValue(__helper.getValue(&quot;s&quot;, &quot;id&quot;));&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xA;&#xA;Eq eq0 = new Eq();&#xD;&#xA;csp.getConstraints().add(eq0);&#xA;&#xA;eq0.setRuleName(&quot;state2place&quot;);&#xD;&#xA;eq0.solve(var_s_id,var_p_id);&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;var_p_id.setBound(false);&#xD;&#xA;&#x9;eq0.solve(var_s_id,var_p_id);&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;&#x9;__helper.setValue(&quot;p&quot;, &quot;id&quot;, var_p_id.getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkAttributes_FWD"/>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_solveCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;state2place&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p&quot;, true, csp);&#xD;&#xA;var_p_id.setValue(__helper.getValue(&quot;p&quot;, &quot;id&quot;));&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xA;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s&quot;, true, csp);&#xD;&#xA;var_s_id.setValue(__helper.getValue(&quot;s&quot;, &quot;id&quot;));&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xA;&#xA;Eq eq0 = new Eq();&#xD;&#xA;csp.getConstraints().add(eq0);&#xA;&#xA;eq0.setRuleName(&quot;state2place&quot;);&#xD;&#xA;eq0.solve(var_s_id,var_p_id);&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;var_s_id.setBound(false);&#xD;&#xA;&#x9;eq0.solve(var_s_id,var_p_id);&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;&#x9;__helper.setValue(&quot;s&quot;, &quot;id&quot;, var_s_id.getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkAttributes_BWD"/>
+  <compilerInjectionEntries content="match.registerObject(&quot;st&quot;, st);&#xA;match.registerObject(&quot;sm&quot;, sm);&#xA;match.registerObject(&quot;s1&quot;, s1);&#xA;match.registerObject(&quot;s2&quot;, s2);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/registerObjectsToMatch_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;selftrans2arctransarc&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkAttributes_FWD"/>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;selftrans2arctransarc&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkAttributes_BWD"/>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;st&quot;,st);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2&quot;,p2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2&quot;,s2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s22p2&quot;,s22p2);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isApplicable_solveCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;initial2nothing&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkAttributes_FWD"/>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isApplicable_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;initial2nothing&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkAttributes_BWD"/>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;st&quot;, st);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;a1&quot;, a1);&#xA;ruleresult.registerObject(&quot;a2&quot;, a2);&#xA;ruleresult.registerObject(&quot;p2&quot;, p2);&#xA;ruleresult.registerObject(&quot;st2a1&quot;, st2a1);&#xA;ruleresult.registerObject(&quot;s12p1&quot;, s12p1);&#xA;ruleresult.registerObject(&quot;p1&quot;, p1);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;s1&quot;, s1);&#xA;ruleresult.registerObject(&quot;st2pt&quot;, st2pt);&#xA;ruleresult.registerObject(&quot;s2&quot;, s2);&#xA;ruleresult.registerObject(&quot;st2a2&quot;, st2a2);&#xA;ruleresult.registerObject(&quot;pt&quot;, pt);&#xA;ruleresult.registerObject(&quot;s22p2&quot;, s22p2);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;st&quot;).eClass()).equals(&quot;statemachine.Transition.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;png&quot;, png);&#xA;match.registerObject(&quot;a1&quot;, a1);&#xA;match.registerObject(&quot;a2&quot;, a2);&#xA;match.registerObject(&quot;p2&quot;, p2);&#xA;match.registerObject(&quot;p1&quot;, p1);&#xA;match.registerObject(&quot;pt&quot;, pt);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;a1&quot;,a1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;a2&quot;,a2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2&quot;,p2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2&quot;,s2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;pt&quot;,pt);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s22p2&quot;,s22p2);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;st&quot;, st);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;a1&quot;, a1);&#xA;ruleresult.registerObject(&quot;a2&quot;, a2);&#xA;ruleresult.registerObject(&quot;p2&quot;, p2);&#xA;ruleresult.registerObject(&quot;st2a1&quot;, st2a1);&#xA;ruleresult.registerObject(&quot;s12p1&quot;, s12p1);&#xA;ruleresult.registerObject(&quot;p1&quot;, p1);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;s1&quot;, s1);&#xA;ruleresult.registerObject(&quot;st2pt&quot;, st2pt);&#xA;ruleresult.registerObject(&quot;s2&quot;, s2);&#xA;ruleresult.registerObject(&quot;st2a2&quot;, st2a2);&#xA;ruleresult.registerObject(&quot;pt&quot;, pt);&#xA;ruleresult.registerObject(&quot;s22p2&quot;, s22p2);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a1&quot;).eClass()).equals(&quot;petrinet.Arc.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a2&quot;).eClass()).equals(&quot;petrinet.Arc.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;pt&quot;).eClass()).equals(&quot;petrinet.Transition.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;s1&quot;, s1);&#xA;match.registerObject(&quot;sm&quot;, sm);&#xA;match.registerObject(&quot;st&quot;, st);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;st&quot;,st);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;pt&quot;, pt);&#xA;ruleresult.registerObject(&quot;s12p1&quot;, s12p1);&#xA;ruleresult.registerObject(&quot;a1&quot;, a1);&#xA;ruleresult.registerObject(&quot;st2a1&quot;, st2a1);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;p1&quot;, p1);&#xA;ruleresult.registerObject(&quot;st2pt&quot;, st2pt);&#xA;ruleresult.registerObject(&quot;s1&quot;, s1);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;st2a2&quot;, st2a2);&#xA;ruleresult.registerObject(&quot;a2&quot;, a2);&#xA;ruleresult.registerObject(&quot;st&quot;, st);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;st&quot;).eClass()).equals(&quot;statemachine.Transition.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;pt&quot;, pt);&#xA;match.registerObject(&quot;a1&quot;, a1);&#xA;match.registerObject(&quot;png&quot;, png);&#xA;match.registerObject(&quot;p1&quot;, p1);&#xA;match.registerObject(&quot;a2&quot;, a2);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;pt&quot;,pt);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;a1&quot;,a1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;a2&quot;,a2);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;pt&quot;, pt);&#xA;ruleresult.registerObject(&quot;s12p1&quot;, s12p1);&#xA;ruleresult.registerObject(&quot;a1&quot;, a1);&#xA;ruleresult.registerObject(&quot;st2a1&quot;, st2a1);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;p1&quot;, p1);&#xA;ruleresult.registerObject(&quot;st2pt&quot;, st2pt);&#xA;ruleresult.registerObject(&quot;s1&quot;, s1);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;st2a2&quot;, st2a2);&#xA;ruleresult.registerObject(&quot;a2&quot;, a2);&#xA;ruleresult.registerObject(&quot;st&quot;, st);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;pt&quot;).eClass()).equals(&quot;petrinet.Transition.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a1&quot;).eClass()).equals(&quot;petrinet.Arc.&quot;) &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a2&quot;).eClass()).equals(&quot;petrinet.Arc.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;sm&quot;, sm);&#xA;match.registerObject(&quot;s&quot;, s);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s.id&quot;, true, csp);&#xD;&#xA;var_s_id.setValue(s.getId());&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p.id&quot;, csp);&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_s_id,var_p_id);&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;p&quot;, p);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;s2p&quot;, s2p);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;s&quot;).eClass()).equals(&quot;statemachine.State.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;p&quot;, p);&#xA;match.registerObject(&quot;png&quot;, png);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p.id&quot;, true, csp);&#xD;&#xA;var_p_id.setValue(p.getId());&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s.id&quot;, csp);&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_s_id,var_p_id);&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;p&quot;, p);&#xA;ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;s2p&quot;, s2p);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;p&quot;).eClass()).equals(&quot;petrinet.Place.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;s&quot;, s);&#xA;match.registerObject(&quot;sm&quot;, sm);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2p&quot;,s2p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;sm2pn&quot;, sm2pn);&#xA;ruleresult.registerObject(&quot;s&quot;, s);&#xA;ruleresult.registerObject(&quot;s2p&quot;, s2p);&#xA;ruleresult.registerObject(&quot;sm&quot;, sm);&#xA;ruleresult.registerObject(&quot;png&quot;, png);&#xA;ruleresult.registerObject(&quot;p&quot;, p);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;png&quot;, png);&#xA;match.registerObject(&quot;p&quot;, p);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkTypes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;final2nothing&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/checkAttributes_FWD"/>
@@ -474,35 +456,35 @@
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;final2nothing&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/checkAttributes_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;transition2arctransarc&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/checkAttributes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;transition2arctransarc&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/checkAttributes_BWD"/>
-  </compilerInjectionEntries>
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;statemachine2petrinet&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/checkAttributes_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;statemachine2petrinet&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/checkAttributes_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s.id&quot;, true, csp);&#xD;&#xA;var_s_id.setValue(s.getId());&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xD;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p.id&quot;, true, csp);&#xD;&#xA;var_p_id.setValue(p.getId());&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_s_id,var_p_id);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_solveCsp_CC"/>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;transition2arctransarc&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/checkAttributes_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_checkCsp_CC"/>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;transition2arctransarc&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/checkAttributes_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_solveCsp_CC"/>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;selftrans2arctransarc&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkAttributes_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_checkCsp_CC"/>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;selftrans2arctransarc&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkAttributes_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isApplicable_solveCsp_CC"/>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;state2place&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s&quot;, true, csp);&#xD;&#xA;var_s_id.setValue(__helper.getValue(&quot;s&quot;, &quot;id&quot;));&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xA;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p&quot;, true, csp);&#xD;&#xA;var_p_id.setValue(__helper.getValue(&quot;p&quot;, &quot;id&quot;));&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xA;&#xA;Eq eq0 = new Eq();&#xD;&#xA;csp.getConstraints().add(eq0);&#xA;&#xA;eq0.setRuleName(&quot;state2place&quot;);&#xD;&#xA;eq0.solve(var_s_id,var_p_id);&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;var_p_id.setBound(false);&#xD;&#xA;&#x9;eq0.solve(var_s_id,var_p_id);&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;&#x9;__helper.setValue(&quot;p&quot;, &quot;id&quot;, var_p_id.getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkAttributes_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isApplicable_checkCsp_CC"/>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;state2place&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s&quot;, true, csp);&#xD;&#xA;var_s_id.setValue(__helper.getValue(&quot;s&quot;, &quot;id&quot;));&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xA;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p&quot;, true, csp);&#xD;&#xA;var_p_id.setValue(__helper.getValue(&quot;p&quot;, &quot;id&quot;));&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xA;&#xA;Eq eq0 = new Eq();&#xD;&#xA;csp.getConstraints().add(eq0);&#xA;&#xA;eq0.setRuleName(&quot;state2place&quot;);&#xD;&#xA;eq0.solve(var_s_id,var_p_id);&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;var_s_id.setBound(false);&#xD;&#xA;&#x9;eq0.solve(var_s_id,var_p_id);&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;&#x9;__helper.setValue(&quot;s&quot;, &quot;id&quot;, var_s_id.getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkAttributes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;initial2nothing&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;initial2nothing&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkAttributes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/isApplicable_solveCsp_CC"/>
@@ -511,51 +493,69 @@
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/isApplicable_solveCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/isApplicable_checkCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isApplicable_solveCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/isApplicable_solveCsp_CC"/>
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_solveCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/isApplicable_checkCsp_CC"/>
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s.id&quot;, csp);&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xD;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p.id&quot;, csp);&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_s_id,var_p_id);&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/generateModel_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/generateModel_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/generateModel_solveCsp_BWD"/>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s.id&quot;, true, csp);&#xD;&#xA;var_s_id.setValue(s.getId());&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xD;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p.id&quot;, true, csp);&#xD;&#xA;var_p_id.setValue(p.getId());&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_s_id,var_p_id);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_solveCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/generateModel_checkCsp_BWD"/>
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2p&quot;,s2p);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/generateModel_solveCsp_BWD"/>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isApplicable_solveCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/generateModel_checkCsp_BWD"/>
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2p&quot;,s2p);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2p&quot;,s2p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/generateModel_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/generateModel_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2&quot;,s2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2&quot;,p2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s22p2&quot;,s22p2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/generateModel_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/generateModel_checkCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/generateModel_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2&quot;,p2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2&quot;,s2);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s22p2&quot;,s22p2);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;s12p1&quot;,s12p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p1&quot;,p1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s1&quot;,s1);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;s.id&quot;, csp);&#xD;&#xA;var_s_id.setType(&quot;String&quot;);&#xD;&#xA;Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable(&quot;p.id&quot;, csp);&#xD;&#xA;var_p_id.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_s_id,var_p_id);&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm2pn&quot;,sm2pn);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s&quot;,s);&#xD;&#xA;isApplicableMatch.registerObject(&quot;s2p&quot;,s2p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sm&quot;,sm);&#xD;&#xA;isApplicableMatch.registerObject(&quot;png&quot;,png);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/generateModel_checkCsp_BWD"/>
   </compilerInjectionEntries>
 </sdmUtil:CompilerInjection>

@@ -68,11 +68,29 @@ public class RulesSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+		case RulesPackage.SELFASSOC2COLUMN: {
+			selfassoc2column selfassoc2column = (selfassoc2column) theEObject;
+			T result = caseselfassoc2column(selfassoc2column);
+			if (result == null)
+				result = caseAbstractRule(selfassoc2column);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case RulesPackage.ATTRIBUTE2COLUMN: {
 			attribute2column attribute2column = (attribute2column) theEObject;
 			T result = caseattribute2column(attribute2column);
 			if (result == null)
 				result = caseAbstractRule(attribute2column);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RulesPackage.ASSOCIATION2COLUMN: {
+			association2column association2column = (association2column) theEObject;
+			T result = caseassociation2column(association2column);
+			if (result == null)
+				result = caseAbstractRule(association2column);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -95,24 +113,6 @@ public class RulesSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RulesPackage.SELFASSOC2COLUMN: {
-			selfassoc2column selfassoc2column = (selfassoc2column) theEObject;
-			T result = caseselfassoc2column(selfassoc2column);
-			if (result == null)
-				result = caseAbstractRule(selfassoc2column);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case RulesPackage.ASSOCIATION2COLUMN: {
-			association2column association2column = (association2column) theEObject;
-			T result = caseassociation2column(association2column);
-			if (result == null)
-				result = caseAbstractRule(association2column);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case RulesPackage.CLASS2TABLE: {
 			class2table class2table = (class2table) theEObject;
 			T result = caseclass2table(class2table);
@@ -128,6 +128,21 @@ public class RulesSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>selfassoc2column</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>selfassoc2column</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseselfassoc2column(selfassoc2column object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>attribute2column</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -139,6 +154,21 @@ public class RulesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseattribute2column(attribute2column object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>association2column</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>association2column</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseassociation2column(association2column object) {
 		return null;
 	}
 
@@ -169,36 +199,6 @@ public class RulesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casesuper2table(super2table object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>selfassoc2column</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>selfassoc2column</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseselfassoc2column(selfassoc2column object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>association2column</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>association2column</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseassociation2column(association2column object) {
 		return null;
 	}
 

@@ -95,8 +95,8 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, SM sm, SM2PN sm2pn, PNGraph png, State s,
-			Place p, S2P s2p);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, PNGraph png, S2P s2p, Place p,
+			SM sm, State s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject sm, EObject sm2pn, EObject png, EObject s, EObject p,
-			EObject s2p);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject sm2pn, EObject png, EObject s2p, EObject p,
+			EObject sm, EObject s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_PNGraph_1(PNGraph png);
+	EObjectContainer isAppropriate_BWD_PNGraph_6(PNGraph png);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,7 +193,7 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_56(EMoflonEdge _edge_final);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_113(EMoflonEdge _edge_final);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,7 +225,7 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(SM sm, PNGraph png, State s, Place p, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(PNGraph png, Place p, SM sm, State s, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,7 +257,7 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, S2P s2pParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, SM2PN sm2pnParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -265,8 +265,8 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, SM sm, SM2PN sm2pn, PNGraph png, State s,
-			Place p, S2P s2p, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, PNGraph png, S2P s2p, Place p,
+			SM sm, State s, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

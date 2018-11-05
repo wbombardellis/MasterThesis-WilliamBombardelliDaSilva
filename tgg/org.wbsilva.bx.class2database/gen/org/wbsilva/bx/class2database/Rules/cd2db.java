@@ -201,7 +201,7 @@ public interface cd2db extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_DB_0(DB db);
+	EObjectContainer isAppropriate_BWD_DB_1(DB db);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface cd2db extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_ClassDiagram_0(ClassDiagram cd);
+	EObjectContainer isAppropriate_FWD_ClassDiagram_1(ClassDiagram cd);
 
 	/**
 	 * <!-- begin-user-doc -->

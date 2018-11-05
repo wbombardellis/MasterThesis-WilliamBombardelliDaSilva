@@ -58,14 +58,7 @@ public class Statemachine2petrinetPackageImpl extends EPackageImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass t2TEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass sm2PNEClass = null;
+	private EClass t2AEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +72,14 @@ public class Statemachine2petrinetPackageImpl extends EPackageImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass t2AEClass = null;
+	private EClass sm2PNEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass t2TEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -163,12 +163,12 @@ public class Statemachine2petrinetPackageImpl extends EPackageImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getT2T() {
-		if (t2TEClass == null) {
-			t2TEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Statemachine2petrinetPackage.eNS_URI)
+	public EClass getT2A() {
+		if (t2AEClass == null) {
+			t2AEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Statemachine2petrinetPackage.eNS_URI)
 					.getEClassifiers().get(0);
 		}
-		return t2TEClass;
+		return t2AEClass;
 	}
 
 	/**
@@ -176,8 +176,8 @@ public class Statemachine2petrinetPackageImpl extends EPackageImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getT2T_Source() {
-		return (EReference) getT2T().getEStructuralFeatures().get(0);
+	public EReference getT2A_Source() {
+		return (EReference) getT2A().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -185,39 +185,8 @@ public class Statemachine2petrinetPackageImpl extends EPackageImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getT2T_Target() {
-		return (EReference) getT2T().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSM2PN() {
-		if (sm2PNEClass == null) {
-			sm2PNEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Statemachine2petrinetPackage.eNS_URI)
-					.getEClassifiers().get(1);
-		}
-		return sm2PNEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSM2PN_Source() {
-		return (EReference) getSM2PN().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSM2PN_Target() {
-		return (EReference) getSM2PN().getEStructuralFeatures().get(1);
+	public EReference getT2A_Target() {
+		return (EReference) getT2A().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -228,7 +197,7 @@ public class Statemachine2petrinetPackageImpl extends EPackageImpl implements St
 	public EClass getS2P() {
 		if (s2PEClass == null) {
 			s2PEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Statemachine2petrinetPackage.eNS_URI)
-					.getEClassifiers().get(2);
+					.getEClassifiers().get(1);
 		}
 		return s2PEClass;
 	}
@@ -256,12 +225,43 @@ public class Statemachine2petrinetPackageImpl extends EPackageImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getT2A() {
-		if (t2AEClass == null) {
-			t2AEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Statemachine2petrinetPackage.eNS_URI)
+	public EClass getSM2PN() {
+		if (sm2PNEClass == null) {
+			sm2PNEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Statemachine2petrinetPackage.eNS_URI)
+					.getEClassifiers().get(2);
+		}
+		return sm2PNEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSM2PN_Source() {
+		return (EReference) getSM2PN().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSM2PN_Target() {
+		return (EReference) getSM2PN().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getT2T() {
+		if (t2TEClass == null) {
+			t2TEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Statemachine2petrinetPackage.eNS_URI)
 					.getEClassifiers().get(3);
 		}
-		return t2AEClass;
+		return t2TEClass;
 	}
 
 	/**
@@ -269,8 +269,8 @@ public class Statemachine2petrinetPackageImpl extends EPackageImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getT2A_Source() {
-		return (EReference) getT2A().getEStructuralFeatures().get(0);
+	public EReference getT2T_Source() {
+		return (EReference) getT2T().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -278,8 +278,8 @@ public class Statemachine2petrinetPackageImpl extends EPackageImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getT2A_Target() {
-		return (EReference) getT2A().getEStructuralFeatures().get(1);
+	public EReference getT2T_Target() {
+		return (EReference) getT2T().getEStructuralFeatures().get(1);
 	}
 
 	/**

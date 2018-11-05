@@ -68,20 +68,11 @@ public class Statemachine2petrinetSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case Statemachine2petrinetPackage.T2T: {
-			T2T t2T = (T2T) theEObject;
-			T result = caseT2T(t2T);
+		case Statemachine2petrinetPackage.T2A: {
+			T2A t2A = (T2A) theEObject;
+			T result = caseT2A(t2A);
 			if (result == null)
-				result = caseAbstractCorrespondence(t2T);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case Statemachine2petrinetPackage.SM2PN: {
-			SM2PN sm2PN = (SM2PN) theEObject;
-			T result = caseSM2PN(sm2PN);
-			if (result == null)
-				result = caseAbstractCorrespondence(sm2PN);
+				result = caseAbstractCorrespondence(t2A);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -95,11 +86,20 @@ public class Statemachine2petrinetSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Statemachine2petrinetPackage.T2A: {
-			T2A t2A = (T2A) theEObject;
-			T result = caseT2A(t2A);
+		case Statemachine2petrinetPackage.SM2PN: {
+			SM2PN sm2PN = (SM2PN) theEObject;
+			T result = caseSM2PN(sm2PN);
 			if (result == null)
-				result = caseAbstractCorrespondence(t2A);
+				result = caseAbstractCorrespondence(sm2PN);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Statemachine2petrinetPackage.T2T: {
+			T2T t2T = (T2T) theEObject;
+			T result = caseT2T(t2T);
+			if (result == null)
+				result = caseAbstractCorrespondence(t2T);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -110,32 +110,17 @@ public class Statemachine2petrinetSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>T2T</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>T2A</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>T2T</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>T2A</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseT2T(T2T object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>SM2PN</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>SM2PN</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSM2PN(SM2PN object) {
+	public T caseT2A(T2A object) {
 		return null;
 	}
 
@@ -155,17 +140,32 @@ public class Statemachine2petrinetSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>T2A</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>SM2PN</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>T2A</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>SM2PN</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseT2A(T2A object) {
+	public T caseSM2PN(SM2PN object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>T2T</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>T2T</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseT2T(T2T object) {
 		return null;
 	}
 

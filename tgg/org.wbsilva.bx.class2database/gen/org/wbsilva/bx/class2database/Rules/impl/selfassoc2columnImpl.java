@@ -166,49 +166,49 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		}
 		Table t = (Table) result1_bindingAndBlack[0];
 		Clazz c = (Clazz) result1_bindingAndBlack[1];
-		C2T c2t = (C2T) result1_bindingAndBlack[2];
-		Association sas = (Association) result1_bindingAndBlack[3];
-		CD2D cd2db = (CD2D) result1_bindingAndBlack[4];
+		Association sas = (Association) result1_bindingAndBlack[2];
+		C2T c2t = (C2T) result1_bindingAndBlack[3];
+		ClassDiagram cd = (ClassDiagram) result1_bindingAndBlack[4];
 		DB db = (DB) result1_bindingAndBlack[5];
-		ClassDiagram cd = (ClassDiagram) result1_bindingAndBlack[6];
+		CD2D cd2db = (CD2D) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
-		Object[] result1_green = selfassoc2columnImpl.pattern_selfassoc2column_1_1_performtransformation_greenBBFF(t,
+		Object[] result1_green = selfassoc2columnImpl.pattern_selfassoc2column_1_1_performtransformation_greenFBBF(t,
 				sas);
-		Column fk = (Column) result1_green[2];
-		AS2C sas2fk = (AS2C) result1_green[3];
+		AS2C sas2fk = (AS2C) result1_green[0];
+		Column fk = (Column) result1_green[3];
 
 		Object[] result2_black = selfassoc2columnImpl
-				.pattern_selfassoc2column_1_2_collecttranslatedelements_blackBBB(sas, fk, sas2fk);
+				.pattern_selfassoc2column_1_2_collecttranslatedelements_blackBBB(sas2fk, sas, fk);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sas] = " + sas + ", " + "[fk] = "
-					+ fk + ", " + "[sas2fk] = " + sas2fk + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sas2fk] = " + sas2fk + ", "
+					+ "[sas] = " + sas + ", " + "[fk] = " + fk + ".");
 		}
 		Object[] result2_green = selfassoc2columnImpl
-				.pattern_selfassoc2column_1_2_collecttranslatedelements_greenFBBB(sas, fk, sas2fk);
+				.pattern_selfassoc2column_1_2_collecttranslatedelements_greenFBBB(sas2fk, sas, fk);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = selfassoc2columnImpl.pattern_selfassoc2column_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-				ruleresult, t, c, c2t, sas, cd2db, fk, sas2fk, db, cd);
+				ruleresult, sas2fk, t, c, sas, fk, c2t, cd, db, cd2db);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[t] = " + t + ", " + "[c] = " + c + ", " + "[c2t] = " + c2t + ", " + "[sas] = " + sas
-					+ ", " + "[cd2db] = " + cd2db + ", " + "[fk] = " + fk + ", " + "[sas2fk] = " + sas2fk + ", "
-					+ "[db] = " + db + ", " + "[cd] = " + cd + ".");
+					+ ", " + "[sas2fk] = " + sas2fk + ", " + "[t] = " + t + ", " + "[c] = " + c + ", " + "[sas] = "
+					+ sas + ", " + "[fk] = " + fk + ", " + "[c2t] = " + c2t + ", " + "[cd] = " + cd + ", " + "[db] = "
+					+ db + ", " + "[cd2db] = " + cd2db + ".");
 		}
-		selfassoc2columnImpl.pattern_selfassoc2column_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult, t, c, sas,
-				fk, sas2fk, cd);
+		selfassoc2columnImpl.pattern_selfassoc2column_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult, sas2fk, t,
+				c, sas, fk, cd);
 		//nothing EMoflonEdge t__fk____column = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge sas__c____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge sas__c____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge sas2fk__fk____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge sas2fk__sas____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge fk__t____reference = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge sas2fk__sas____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge sas__c____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge sas__c____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge fk__t____reference = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge sas2fk__fk____target = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge cd__sas____associations = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
-		selfassoc2columnImpl.pattern_selfassoc2column_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult, t, c,
-				c2t, sas, cd2db, fk, sas2fk, db, cd);
+		selfassoc2columnImpl.pattern_selfassoc2column_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
+				sas2fk, t, c, sas, fk, c2t, cd, db, cd2db);
 		return selfassoc2columnImpl.pattern_selfassoc2column_1_6_expressionFB(ruleresult);
 	}
 
@@ -239,36 +239,36 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		Clazz c = (Clazz) result2_binding[0];
 		Association sas = (Association) result2_binding[1];
 		ClassDiagram cd = (ClassDiagram) result2_binding[2];
-		for (Object[] result2_black : selfassoc2columnImpl.pattern_selfassoc2column_2_2_corematch_blackFBFBFFBB(c, sas,
+		for (Object[] result2_black : selfassoc2columnImpl.pattern_selfassoc2column_2_2_corematch_blackFBBFBFFB(c, sas,
 				cd, match)) {
 			Table t = (Table) result2_black[0];
-			C2T c2t = (C2T) result2_black[2];
-			CD2D cd2db = (CD2D) result2_black[4];
+			C2T c2t = (C2T) result2_black[3];
 			DB db = (DB) result2_black[5];
+			CD2D cd2db = (CD2D) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : selfassoc2columnImpl.pattern_selfassoc2column_2_3_findcontext_blackBBBBBBB(t,
-					c, c2t, sas, cd2db, db, cd)) {
+					c, sas, c2t, cd, db, cd2db)) {
 				Object[] result3_green = selfassoc2columnImpl
-						.pattern_selfassoc2column_2_3_findcontext_greenBBBBBBBFFFFFFFFFF(t, c, c2t, sas, cd2db, db, cd);
+						.pattern_selfassoc2column_2_3_findcontext_greenBBBBBBBFFFFFFFFFF(t, c, sas, c2t, cd, db, cd2db);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge c2t__c____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge c2t__t____target = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge sas__c____source = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge sas__c____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge cd2db__db____target = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge cd__sas____associations = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge cd__c____classes = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge sas__c____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge sas__c____target = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge c2t__c____source = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge c2t__t____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge cd__sas____associations = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge cd__c____classes = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge cd2db__db____target = (EMoflonEdge) result3_green[14];
 				//nothing EMoflonEdge db__t____table = (EMoflonEdge) result3_green[15];
 				//nothing EMoflonEdge cd2db__cd____source = (EMoflonEdge) result3_green[16];
 
 				Object[] result4_bindingAndBlack = selfassoc2columnImpl
 						.pattern_selfassoc2column_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, t, c,
-								c2t, sas, cd2db, db, cd);
+								sas, c2t, cd, db, cd2db);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[t] = " + t + ", " + "[c] = " + c
-							+ ", " + "[c2t] = " + c2t + ", " + "[sas] = " + sas + ", " + "[cd2db] = " + cd2db + ", "
-							+ "[db] = " + db + ", " + "[cd] = " + cd + ".");
+							+ ", " + "[sas] = " + sas + ", " + "[c2t] = " + c2t + ", " + "[cd] = " + cd + ", "
+							+ "[db] = " + db + ", " + "[cd2db] = " + cd2db + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -338,8 +338,8 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t,
-			Association sas, CD2D cd2db, DB db, ClassDiagram cd) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, Association sas,
+			C2T c2t, ClassDiagram cd, DB db, CD2D cd2db) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -356,11 +356,11 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("t", t);
 		isApplicableMatch.registerObject("c", c);
-		isApplicableMatch.registerObject("c2t", c2t);
 		isApplicableMatch.registerObject("sas", sas);
-		isApplicableMatch.registerObject("cd2db", cd2db);
-		isApplicableMatch.registerObject("db", db);
+		isApplicableMatch.registerObject("c2t", c2t);
 		isApplicableMatch.registerObject("cd", cd);
+		isApplicableMatch.registerObject("db", db);
+		isApplicableMatch.registerObject("cd2db", cd2db);
 		return csp;
 	}
 
@@ -378,17 +378,17 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject t, EObject c, EObject c2t, EObject sas,
-			EObject cd2db, EObject fk, EObject sas2fk, EObject db, EObject cd) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject sas2fk, EObject t, EObject c, EObject sas,
+			EObject fk, EObject c2t, EObject cd, EObject db, EObject cd2db) {
+		ruleresult.registerObject("sas2fk", sas2fk);
 		ruleresult.registerObject("t", t);
 		ruleresult.registerObject("c", c);
-		ruleresult.registerObject("c2t", c2t);
 		ruleresult.registerObject("sas", sas);
-		ruleresult.registerObject("cd2db", cd2db);
 		ruleresult.registerObject("fk", fk);
-		ruleresult.registerObject("sas2fk", sas2fk);
-		ruleresult.registerObject("db", db);
+		ruleresult.registerObject("c2t", c2t);
 		ruleresult.registerObject("cd", cd);
+		ruleresult.registerObject("db", db);
+		ruleresult.registerObject("cd2db", cd2db);
 
 	}
 
@@ -470,49 +470,49 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		}
 		Table t = (Table) result1_bindingAndBlack[0];
 		Clazz c = (Clazz) result1_bindingAndBlack[1];
-		C2T c2t = (C2T) result1_bindingAndBlack[2];
-		CD2D cd2db = (CD2D) result1_bindingAndBlack[3];
-		Column fk = (Column) result1_bindingAndBlack[4];
+		Column fk = (Column) result1_bindingAndBlack[2];
+		C2T c2t = (C2T) result1_bindingAndBlack[3];
+		ClassDiagram cd = (ClassDiagram) result1_bindingAndBlack[4];
 		DB db = (DB) result1_bindingAndBlack[5];
-		ClassDiagram cd = (ClassDiagram) result1_bindingAndBlack[6];
+		CD2D cd2db = (CD2D) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
-		Object[] result1_green = selfassoc2columnImpl.pattern_selfassoc2column_11_1_performtransformation_greenBFBFB(c,
+		Object[] result1_green = selfassoc2columnImpl.pattern_selfassoc2column_11_1_performtransformation_greenFBFBB(c,
 				fk, cd);
-		Association sas = (Association) result1_green[1];
-		AS2C sas2fk = (AS2C) result1_green[3];
+		AS2C sas2fk = (AS2C) result1_green[0];
+		Association sas = (Association) result1_green[2];
 
 		Object[] result2_black = selfassoc2columnImpl
-				.pattern_selfassoc2column_11_2_collecttranslatedelements_blackBBB(sas, fk, sas2fk);
+				.pattern_selfassoc2column_11_2_collecttranslatedelements_blackBBB(sas2fk, sas, fk);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sas] = " + sas + ", " + "[fk] = "
-					+ fk + ", " + "[sas2fk] = " + sas2fk + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sas2fk] = " + sas2fk + ", "
+					+ "[sas] = " + sas + ", " + "[fk] = " + fk + ".");
 		}
 		Object[] result2_green = selfassoc2columnImpl
-				.pattern_selfassoc2column_11_2_collecttranslatedelements_greenFBBB(sas, fk, sas2fk);
+				.pattern_selfassoc2column_11_2_collecttranslatedelements_greenFBBB(sas2fk, sas, fk);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = selfassoc2columnImpl.pattern_selfassoc2column_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-				ruleresult, t, c, c2t, sas, cd2db, fk, sas2fk, db, cd);
+				ruleresult, sas2fk, t, c, sas, fk, c2t, cd, db, cd2db);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[t] = " + t + ", " + "[c] = " + c + ", " + "[c2t] = " + c2t + ", " + "[sas] = " + sas
-					+ ", " + "[cd2db] = " + cd2db + ", " + "[fk] = " + fk + ", " + "[sas2fk] = " + sas2fk + ", "
-					+ "[db] = " + db + ", " + "[cd] = " + cd + ".");
+					+ ", " + "[sas2fk] = " + sas2fk + ", " + "[t] = " + t + ", " + "[c] = " + c + ", " + "[sas] = "
+					+ sas + ", " + "[fk] = " + fk + ", " + "[c2t] = " + c2t + ", " + "[cd] = " + cd + ", " + "[db] = "
+					+ db + ", " + "[cd2db] = " + cd2db + ".");
 		}
-		selfassoc2columnImpl.pattern_selfassoc2column_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult, t, c,
-				sas, fk, sas2fk, cd);
+		selfassoc2columnImpl.pattern_selfassoc2column_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult, sas2fk,
+				t, c, sas, fk, cd);
 		//nothing EMoflonEdge t__fk____column = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge sas__c____source = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge sas__c____target = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge sas2fk__fk____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge sas2fk__sas____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge fk__t____reference = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge sas2fk__sas____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge sas__c____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge sas__c____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge fk__t____reference = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge sas2fk__fk____target = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge cd__sas____associations = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
-		selfassoc2columnImpl.pattern_selfassoc2column_11_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult, t, c,
-				c2t, sas, cd2db, fk, sas2fk, db, cd);
+		selfassoc2columnImpl.pattern_selfassoc2column_11_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult,
+				sas2fk, t, c, sas, fk, c2t, cd, db, cd2db);
 		return selfassoc2columnImpl.pattern_selfassoc2column_11_6_expressionFB(ruleresult);
 	}
 
@@ -543,35 +543,35 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		Table t = (Table) result2_binding[0];
 		Column fk = (Column) result2_binding[1];
 		DB db = (DB) result2_binding[2];
-		for (Object[] result2_black : selfassoc2columnImpl.pattern_selfassoc2column_12_2_corematch_blackBFFFBBFB(t, fk,
+		for (Object[] result2_black : selfassoc2columnImpl.pattern_selfassoc2column_12_2_corematch_blackBFBFFBFB(t, fk,
 				db, match)) {
 			Clazz c = (Clazz) result2_black[1];
-			C2T c2t = (C2T) result2_black[2];
-			CD2D cd2db = (CD2D) result2_black[3];
-			ClassDiagram cd = (ClassDiagram) result2_black[6];
+			C2T c2t = (C2T) result2_black[3];
+			ClassDiagram cd = (ClassDiagram) result2_black[4];
+			CD2D cd2db = (CD2D) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : selfassoc2columnImpl.pattern_selfassoc2column_12_3_findcontext_blackBBBBBBB(t,
-					c, c2t, cd2db, fk, db, cd)) {
+					c, fk, c2t, cd, db, cd2db)) {
 				Object[] result3_green = selfassoc2columnImpl
-						.pattern_selfassoc2column_12_3_findcontext_greenBBBBBBBFFFFFFFFF(t, c, c2t, cd2db, fk, db, cd);
+						.pattern_selfassoc2column_12_3_findcontext_greenBBBBBBBFFFFFFFFF(t, c, fk, c2t, cd, db, cd2db);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
 				//nothing EMoflonEdge t__fk____column = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge c2t__c____source = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge c2t__t____target = (EMoflonEdge) result3_green[10];
-				//nothing EMoflonEdge cd2db__db____target = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge fk__t____reference = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge cd__c____classes = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge fk__t____reference = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge c2t__c____source = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge c2t__t____target = (EMoflonEdge) result3_green[11];
+				//nothing EMoflonEdge cd__c____classes = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge cd2db__db____target = (EMoflonEdge) result3_green[13];
 				//nothing EMoflonEdge db__t____table = (EMoflonEdge) result3_green[14];
 				//nothing EMoflonEdge cd2db__cd____source = (EMoflonEdge) result3_green[15];
 
 				Object[] result4_bindingAndBlack = selfassoc2columnImpl
 						.pattern_selfassoc2column_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, t, c,
-								c2t, cd2db, fk, db, cd);
+								fk, c2t, cd, db, cd2db);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[t] = " + t + ", " + "[c] = " + c
-							+ ", " + "[c2t] = " + c2t + ", " + "[cd2db] = " + cd2db + ", " + "[fk] = " + fk + ", "
-							+ "[db] = " + db + ", " + "[cd] = " + cd + ".");
+							+ ", " + "[fk] = " + fk + ", " + "[c2t] = " + c2t + ", " + "[cd] = " + cd + ", " + "[db] = "
+							+ db + ", " + "[cd2db] = " + cd2db + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -641,8 +641,8 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, CD2D cd2db,
-			Column fk, DB db, ClassDiagram cd) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, Column fk, C2T c2t,
+			ClassDiagram cd, DB db, CD2D cd2db) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -659,11 +659,11 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("t", t);
 		isApplicableMatch.registerObject("c", c);
-		isApplicableMatch.registerObject("c2t", c2t);
-		isApplicableMatch.registerObject("cd2db", cd2db);
 		isApplicableMatch.registerObject("fk", fk);
-		isApplicableMatch.registerObject("db", db);
+		isApplicableMatch.registerObject("c2t", c2t);
 		isApplicableMatch.registerObject("cd", cd);
+		isApplicableMatch.registerObject("db", db);
+		isApplicableMatch.registerObject("cd2db", cd2db);
 		return csp;
 	}
 
@@ -681,17 +681,17 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject t, EObject c, EObject c2t, EObject sas,
-			EObject cd2db, EObject fk, EObject sas2fk, EObject db, EObject cd) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject sas2fk, EObject t, EObject c, EObject sas,
+			EObject fk, EObject c2t, EObject cd, EObject db, EObject cd2db) {
+		ruleresult.registerObject("sas2fk", sas2fk);
 		ruleresult.registerObject("t", t);
 		ruleresult.registerObject("c", c);
-		ruleresult.registerObject("c2t", c2t);
 		ruleresult.registerObject("sas", sas);
-		ruleresult.registerObject("cd2db", cd2db);
 		ruleresult.registerObject("fk", fk);
-		ruleresult.registerObject("sas2fk", sas2fk);
-		ruleresult.registerObject("db", db);
+		ruleresult.registerObject("c2t", c2t);
 		ruleresult.registerObject("cd", cd);
+		ruleresult.registerObject("db", db);
+		ruleresult.registerObject("cd2db", cd2db);
 
 	}
 
@@ -709,7 +709,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1(EMoflonEdge _edge_column) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_58(EMoflonEdge _edge_column) {
 
 		Object[] result1_bindingAndBlack = selfassoc2columnImpl
 				.pattern_selfassoc2column_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -767,7 +767,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_2(EMoflonEdge _edge_source) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_63(EMoflonEdge _edge_source) {
 
 		Object[] result1_bindingAndBlack = selfassoc2columnImpl
 				.pattern_selfassoc2column_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -904,16 +904,16 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		Clazz c = (Clazz) result2_bindingAndBlack[1];
 		Association sas = (Association) result2_bindingAndBlack[2];
 		Column fk = (Column) result2_bindingAndBlack[3];
-		DB db = (DB) result2_bindingAndBlack[4];
-		ClassDiagram cd = (ClassDiagram) result2_bindingAndBlack[5];
+		ClassDiagram cd = (ClassDiagram) result2_bindingAndBlack[4];
+		DB db = (DB) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = selfassoc2columnImpl
-				.pattern_selfassoc2column_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, t, c, sas, fk, db, cd,
+				.pattern_selfassoc2column_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, t, c, sas, fk, cd, db,
 						sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[t] = " + t + ", " + "[c] = " + c + ", " + "[sas] = " + sas + ", " + "[fk] = " + fk + ", "
-					+ "[db] = " + db + ", " + "[cd] = " + cd + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[cd] = " + cd + ", " + "[db] = " + db + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -921,24 +921,24 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		if (selfassoc2columnImpl.pattern_selfassoc2column_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : selfassoc2columnImpl
-					.pattern_selfassoc2column_24_5_matchcorrcontext_blackBBFFBBBB(t, c, db, cd, sourceMatch,
+					.pattern_selfassoc2column_24_5_matchcorrcontext_blackBBFBBFBB(t, c, cd, db, sourceMatch,
 							targetMatch)) {
 				C2T c2t = (C2T) result5_black[2];
-				CD2D cd2db = (CD2D) result5_black[3];
+				CD2D cd2db = (CD2D) result5_black[5];
 				Object[] result5_green = selfassoc2columnImpl.pattern_selfassoc2column_24_5_matchcorrcontext_greenBBBBF(
 						c2t, cd2db, sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = selfassoc2columnImpl
-						.pattern_selfassoc2column_24_6_createcorrespondence_blackBBBBBBB(t, c, sas, fk, db, cd,
+						.pattern_selfassoc2column_24_6_createcorrespondence_blackBBBBBBB(t, c, sas, fk, cd, db,
 								ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[t] = " + t + ", "
-							+ "[c] = " + c + ", " + "[sas] = " + sas + ", " + "[fk] = " + fk + ", " + "[db] = " + db
-							+ ", " + "[cd] = " + cd + ", " + "[ccMatch] = " + ccMatch + ".");
+							+ "[c] = " + c + ", " + "[sas] = " + sas + ", " + "[fk] = " + fk + ", " + "[cd] = " + cd
+							+ ", " + "[db] = " + db + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				selfassoc2columnImpl.pattern_selfassoc2column_24_6_createcorrespondence_greenBBFB(sas, fk, ccMatch);
-				//nothing AS2C sas2fk = (AS2C) result6_green[2];
+				selfassoc2columnImpl.pattern_selfassoc2column_24_6_createcorrespondence_greenFBBB(sas, fk, ccMatch);
+				//nothing AS2C sas2fk = (AS2C) result6_green[0];
 
 				Object[] result7_black = selfassoc2columnImpl
 						.pattern_selfassoc2column_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -960,7 +960,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Table t, Clazz c, Association sas, Column fk, DB db, ClassDiagram cd,
+	public CSP isApplicable_solveCsp_CC(Table t, Clazz c, Association sas, Column fk, ClassDiagram cd, DB db,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -1044,32 +1044,32 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 
 			Object[] result3_bindingAndBlack = selfassoc2columnImpl
 					.pattern_selfassoc2column_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, t, c,
-							c2t, cd2db, db, cd, ruleResult);
+							c2t, cd, db, cd2db, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[t] = " + t + ", " + "[c] = " + c
-						+ ", " + "[c2t] = " + c2t + ", " + "[cd2db] = " + cd2db + ", " + "[db] = " + db + ", "
-						+ "[cd] = " + cd + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ ", " + "[c2t] = " + c2t + ", " + "[cd] = " + cd + ", " + "[db] = " + db + ", " + "[cd2db] = "
+						+ cd2db + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (selfassoc2columnImpl.pattern_selfassoc2column_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = selfassoc2columnImpl.pattern_selfassoc2column_29_5_checknacs_blackBBBBBB(t, c,
-						c2t, cd2db, db, cd);
+						c2t, cd, db, cd2db);
 				if (result5_black != null) {
 
 					Object[] result6_black = selfassoc2columnImpl.pattern_selfassoc2column_29_6_perform_blackBBBBBBB(t,
-							c, c2t, cd2db, db, cd, ruleResult);
+							c, c2t, cd, db, cd2db, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[t] = " + t + ", "
-								+ "[c] = " + c + ", " + "[c2t] = " + c2t + ", " + "[cd2db] = " + cd2db + ", "
-								+ "[db] = " + db + ", " + "[cd] = " + cd + ", " + "[ruleResult] = " + ruleResult + ".");
+								+ "[c] = " + c + ", " + "[c2t] = " + c2t + ", " + "[cd] = " + cd + ", " + "[db] = " + db
+								+ ", " + "[cd2db] = " + cd2db + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					selfassoc2columnImpl.pattern_selfassoc2column_29_6_perform_greenBBFFFBB(t, c, cd, ruleResult);
-					//nothing Association sas = (Association) result6_green[2];
-					//nothing Column fk = (Column) result6_green[3];
-					//nothing AS2C sas2fk = (AS2C) result6_green[4];
+					selfassoc2columnImpl.pattern_selfassoc2column_29_6_perform_greenFBBFFBB(t, c, cd, ruleResult);
+					//nothing AS2C sas2fk = (AS2C) result6_green[0];
+					//nothing Association sas = (Association) result6_green[3];
+					//nothing Column fk = (Column) result6_green[4];
 
 				} else {
 				}
@@ -1086,8 +1086,8 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, CD2D cd2db,
-			DB db, ClassDiagram cd, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t,
+			ClassDiagram cd, DB db, CD2D cd2db, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1105,9 +1105,9 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		isApplicableMatch.registerObject("t", t);
 		isApplicableMatch.registerObject("c", c);
 		isApplicableMatch.registerObject("c2t", c2t);
-		isApplicableMatch.registerObject("cd2db", cd2db);
-		isApplicableMatch.registerObject("db", db);
 		isApplicableMatch.registerObject("cd", cd);
+		isApplicableMatch.registerObject("db", db);
+		isApplicableMatch.registerObject("cd2db", cd2db);
 		return csp;
 	}
 
@@ -1144,10 +1144,10 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 					(Association) arguments.get(2), (ClassDiagram) arguments.get(3));
 		case RulesPackage.SELFASSOC2COLUMN___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.SELFASSOC2COLUMN___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TABLE_CLAZZ_C2T_ASSOCIATION_CD2D_DB_CLASSDIAGRAM:
+		case RulesPackage.SELFASSOC2COLUMN___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_TABLE_CLAZZ_ASSOCIATION_C2T_CLASSDIAGRAM_DB_CD2D:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Table) arguments.get(1),
-					(Clazz) arguments.get(2), (C2T) arguments.get(3), (Association) arguments.get(4),
-					(CD2D) arguments.get(5), (DB) arguments.get(6), (ClassDiagram) arguments.get(7));
+					(Clazz) arguments.get(2), (Association) arguments.get(3), (C2T) arguments.get(4),
+					(ClassDiagram) arguments.get(5), (DB) arguments.get(6), (CD2D) arguments.get(7));
 		case RulesPackage.SELFASSOC2COLUMN___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.SELFASSOC2COLUMN___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1174,10 +1174,10 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 					(Column) arguments.get(2), (DB) arguments.get(3));
 		case RulesPackage.SELFASSOC2COLUMN___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.SELFASSOC2COLUMN___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TABLE_CLAZZ_C2T_CD2D_COLUMN_DB_CLASSDIAGRAM:
+		case RulesPackage.SELFASSOC2COLUMN___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TABLE_CLAZZ_COLUMN_C2T_CLASSDIAGRAM_DB_CD2D:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Table) arguments.get(1),
-					(Clazz) arguments.get(2), (C2T) arguments.get(3), (CD2D) arguments.get(4),
-					(Column) arguments.get(5), (DB) arguments.get(6), (ClassDiagram) arguments.get(7));
+					(Clazz) arguments.get(2), (Column) arguments.get(3), (C2T) arguments.get(4),
+					(ClassDiagram) arguments.get(5), (DB) arguments.get(6), (CD2D) arguments.get(7));
 		case RulesPackage.SELFASSOC2COLUMN___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.SELFASSOC2COLUMN___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1188,20 +1188,20 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 			return null;
 		case RulesPackage.SELFASSOC2COLUMN___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.SELFASSOC2COLUMN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_1((EMoflonEdge) arguments.get(0));
-		case RulesPackage.SELFASSOC2COLUMN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_2__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_2((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SELFASSOC2COLUMN___IS_APPROPRIATE_BWD_EMOFLON_EDGE_58__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_58((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SELFASSOC2COLUMN___IS_APPROPRIATE_FWD_EMOFLON_EDGE_63__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_63((EMoflonEdge) arguments.get(0));
 		case RulesPackage.SELFASSOC2COLUMN___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SELFASSOC2COLUMN___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SELFASSOC2COLUMN___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.SELFASSOC2COLUMN___IS_APPLICABLE_SOLVE_CSP_CC__TABLE_CLAZZ_ASSOCIATION_COLUMN_DB_CLASSDIAGRAM_MATCH_MATCH:
+		case RulesPackage.SELFASSOC2COLUMN___IS_APPLICABLE_SOLVE_CSP_CC__TABLE_CLAZZ_ASSOCIATION_COLUMN_CLASSDIAGRAM_DB_MATCH_MATCH:
 			return isApplicable_solveCsp_CC((Table) arguments.get(0), (Clazz) arguments.get(1),
-					(Association) arguments.get(2), (Column) arguments.get(3), (DB) arguments.get(4),
-					(ClassDiagram) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
+					(Association) arguments.get(2), (Column) arguments.get(3), (ClassDiagram) arguments.get(4),
+					(DB) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
 		case RulesPackage.SELFASSOC2COLUMN___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.SELFASSOC2COLUMN___CHECK_DEC_FWD__CLAZZ_ASSOCIATION_CLASSDIAGRAM:
@@ -1211,10 +1211,10 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 			return checkDEC_BWD((Table) arguments.get(0), (Column) arguments.get(1), (DB) arguments.get(2));
 		case RulesPackage.SELFASSOC2COLUMN___GENERATE_MODEL__RULEENTRYCONTAINER_C2T:
 			return generateModel((RuleEntryContainer) arguments.get(0), (C2T) arguments.get(1));
-		case RulesPackage.SELFASSOC2COLUMN___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TABLE_CLAZZ_C2T_CD2D_DB_CLASSDIAGRAM_MODELGENERATORRULERESULT:
+		case RulesPackage.SELFASSOC2COLUMN___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TABLE_CLAZZ_C2T_CLASSDIAGRAM_DB_CD2D_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Table) arguments.get(1),
-					(Clazz) arguments.get(2), (C2T) arguments.get(3), (CD2D) arguments.get(4), (DB) arguments.get(5),
-					(ClassDiagram) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+					(Clazz) arguments.get(2), (C2T) arguments.get(3), (ClassDiagram) arguments.get(4),
+					(DB) arguments.get(5), (CD2D) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.SELFASSOC2COLUMN___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1330,33 +1330,33 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("t");
 		EObject _localVariable_1 = isApplicableMatch.getObject("c");
-		EObject _localVariable_2 = isApplicableMatch.getObject("c2t");
-		EObject _localVariable_3 = isApplicableMatch.getObject("sas");
-		EObject _localVariable_4 = isApplicableMatch.getObject("cd2db");
+		EObject _localVariable_2 = isApplicableMatch.getObject("sas");
+		EObject _localVariable_3 = isApplicableMatch.getObject("c2t");
+		EObject _localVariable_4 = isApplicableMatch.getObject("cd");
 		EObject _localVariable_5 = isApplicableMatch.getObject("db");
-		EObject _localVariable_6 = isApplicableMatch.getObject("cd");
+		EObject _localVariable_6 = isApplicableMatch.getObject("cd2db");
 		EObject tmpT = _localVariable_0;
 		EObject tmpC = _localVariable_1;
-		EObject tmpC2t = _localVariable_2;
-		EObject tmpSas = _localVariable_3;
-		EObject tmpCd2db = _localVariable_4;
+		EObject tmpSas = _localVariable_2;
+		EObject tmpC2t = _localVariable_3;
+		EObject tmpCd = _localVariable_4;
 		EObject tmpDb = _localVariable_5;
-		EObject tmpCd = _localVariable_6;
+		EObject tmpCd2db = _localVariable_6;
 		if (tmpT instanceof Table) {
 			Table t = (Table) tmpT;
 			if (tmpC instanceof Clazz) {
 				Clazz c = (Clazz) tmpC;
-				if (tmpC2t instanceof C2T) {
-					C2T c2t = (C2T) tmpC2t;
-					if (tmpSas instanceof Association) {
-						Association sas = (Association) tmpSas;
-						if (tmpCd2db instanceof CD2D) {
-							CD2D cd2db = (CD2D) tmpCd2db;
+				if (tmpSas instanceof Association) {
+					Association sas = (Association) tmpSas;
+					if (tmpC2t instanceof C2T) {
+						C2T c2t = (C2T) tmpC2t;
+						if (tmpCd instanceof ClassDiagram) {
+							ClassDiagram cd = (ClassDiagram) tmpCd;
 							if (tmpDb instanceof DB) {
 								DB db = (DB) tmpDb;
-								if (tmpCd instanceof ClassDiagram) {
-									ClassDiagram cd = (ClassDiagram) tmpCd;
-									return new Object[] { t, c, c2t, sas, cd2db, db, cd, isApplicableMatch };
+								if (tmpCd2db instanceof CD2D) {
+									CD2D cd2db = (CD2D) tmpCd2db;
+									return new Object[] { t, c, sas, c2t, cd, db, cd2db, isApplicableMatch };
 								}
 							}
 						}
@@ -1368,12 +1368,12 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_1_1_performtransformation_blackBBBBBBBFBB(Table t, Clazz c,
-			C2T c2t, Association sas, CD2D cd2db, DB db, ClassDiagram cd, selfassoc2column _this,
+			Association sas, C2T c2t, ClassDiagram cd, DB db, CD2D cd2db, selfassoc2column _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { t, c, c2t, sas, cd2db, db, cd, csp, _this, isApplicableMatch };
+				return new Object[] { t, c, sas, c2t, cd, db, cd2db, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1386,111 +1386,111 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		if (result_pattern_selfassoc2column_1_1_performtransformation_binding != null) {
 			Table t = (Table) result_pattern_selfassoc2column_1_1_performtransformation_binding[0];
 			Clazz c = (Clazz) result_pattern_selfassoc2column_1_1_performtransformation_binding[1];
-			C2T c2t = (C2T) result_pattern_selfassoc2column_1_1_performtransformation_binding[2];
-			Association sas = (Association) result_pattern_selfassoc2column_1_1_performtransformation_binding[3];
-			CD2D cd2db = (CD2D) result_pattern_selfassoc2column_1_1_performtransformation_binding[4];
+			Association sas = (Association) result_pattern_selfassoc2column_1_1_performtransformation_binding[2];
+			C2T c2t = (C2T) result_pattern_selfassoc2column_1_1_performtransformation_binding[3];
+			ClassDiagram cd = (ClassDiagram) result_pattern_selfassoc2column_1_1_performtransformation_binding[4];
 			DB db = (DB) result_pattern_selfassoc2column_1_1_performtransformation_binding[5];
-			ClassDiagram cd = (ClassDiagram) result_pattern_selfassoc2column_1_1_performtransformation_binding[6];
+			CD2D cd2db = (CD2D) result_pattern_selfassoc2column_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_selfassoc2column_1_1_performtransformation_black = pattern_selfassoc2column_1_1_performtransformation_blackBBBBBBBFBB(
-					t, c, c2t, sas, cd2db, db, cd, _this, isApplicableMatch);
+					t, c, sas, c2t, cd, db, cd2db, _this, isApplicableMatch);
 			if (result_pattern_selfassoc2column_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_selfassoc2column_1_1_performtransformation_black[7];
 
-				return new Object[] { t, c, c2t, sas, cd2db, db, cd, csp, _this, isApplicableMatch };
+				return new Object[] { t, c, sas, c2t, cd, db, cd2db, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_selfassoc2column_1_1_performtransformation_greenBBFF(Table t,
+	public static final Object[] pattern_selfassoc2column_1_1_performtransformation_greenFBBF(Table t,
 			Association sas) {
-		Column fk = DatabaseFactory.eINSTANCE.createColumn();
 		AS2C sas2fk = Class2databaseFactory.eINSTANCE.createAS2C();
+		Column fk = DatabaseFactory.eINSTANCE.createColumn();
+		sas2fk.setSource(sas);
 		t.getColumn().add(fk);
 		fk.setReference(t);
 		sas2fk.setTarget(fk);
-		sas2fk.setSource(sas);
-		return new Object[] { t, sas, fk, sas2fk };
+		return new Object[] { sas2fk, t, sas, fk };
 	}
 
-	public static final Object[] pattern_selfassoc2column_1_2_collecttranslatedelements_blackBBB(Association sas,
-			Column fk, AS2C sas2fk) {
-		return new Object[] { sas, fk, sas2fk };
+	public static final Object[] pattern_selfassoc2column_1_2_collecttranslatedelements_blackBBB(AS2C sas2fk,
+			Association sas, Column fk) {
+		return new Object[] { sas2fk, sas, fk };
 	}
 
-	public static final Object[] pattern_selfassoc2column_1_2_collecttranslatedelements_greenFBBB(Association sas,
-			Column fk, AS2C sas2fk) {
+	public static final Object[] pattern_selfassoc2column_1_2_collecttranslatedelements_greenFBBB(AS2C sas2fk,
+			Association sas, Column fk) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(sas2fk);
 		ruleresult.getTranslatedElements().add(sas);
 		ruleresult.getCreatedElements().add(fk);
-		ruleresult.getCreatedLinkElements().add(sas2fk);
-		return new Object[] { ruleresult, sas, fk, sas2fk };
+		return new Object[] { ruleresult, sas2fk, sas, fk };
 	}
 
 	public static final Object[] pattern_selfassoc2column_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject t, EObject c, EObject c2t, EObject sas, EObject cd2db, EObject fk,
-			EObject sas2fk, EObject db, EObject cd) {
-		if (!c.equals(t)) {
-			if (!c.equals(c2t)) {
-				if (!c.equals(sas)) {
-					if (!c.equals(cd2db)) {
+			PerformRuleResult ruleresult, EObject sas2fk, EObject t, EObject c, EObject sas, EObject fk, EObject c2t,
+			EObject cd, EObject db, EObject cd2db) {
+		if (!sas2fk.equals(t)) {
+			if (!c.equals(sas2fk)) {
+				if (!c.equals(t)) {
+					if (!c.equals(sas)) {
 						if (!c.equals(fk)) {
-							if (!c.equals(sas2fk)) {
-								if (!c.equals(db)) {
-									if (!c.equals(cd)) {
-										if (!c2t.equals(t)) {
-											if (!c2t.equals(sas)) {
-												if (!c2t.equals(cd2db)) {
-													if (!c2t.equals(fk)) {
-														if (!c2t.equals(sas2fk)) {
-															if (!c2t.equals(db)) {
-																if (!c2t.equals(cd)) {
-																	if (!sas.equals(t)) {
-																		if (!sas.equals(sas2fk)) {
-																			if (!cd2db.equals(t)) {
-																				if (!cd2db.equals(sas)) {
-																					if (!cd2db.equals(fk)) {
-																						if (!cd2db.equals(sas2fk)) {
-																							if (!cd2db.equals(db)) {
-																								if (!fk.equals(t)) {
-																									if (!fk.equals(
+							if (!c.equals(c2t)) {
+								if (!c.equals(cd)) {
+									if (!c.equals(db)) {
+										if (!c.equals(cd2db)) {
+											if (!sas.equals(sas2fk)) {
+												if (!sas.equals(t)) {
+													if (!fk.equals(sas2fk)) {
+														if (!fk.equals(t)) {
+															if (!fk.equals(sas)) {
+																if (!c2t.equals(sas2fk)) {
+																	if (!c2t.equals(t)) {
+																		if (!c2t.equals(sas)) {
+																			if (!c2t.equals(fk)) {
+																				if (!c2t.equals(cd)) {
+																					if (!c2t.equals(db)) {
+																						if (!c2t.equals(cd2db)) {
+																							if (!cd.equals(sas2fk)) {
+																								if (!cd.equals(t)) {
+																									if (!cd.equals(
 																											sas)) {
-																										if (!fk.equals(
-																												sas2fk)) {
-																											if (!sas2fk
-																													.equals(t)) {
-																												if (!db.equals(
-																														t)) {
+																										if (!cd.equals(
+																												fk)) {
+																											if (!cd.equals(
+																													db)) {
+																												if (!cd.equals(
+																														cd2db)) {
 																													if (!db.equals(
-																															sas)) {
+																															sas2fk)) {
 																														if (!db.equals(
-																																fk)) {
+																																t)) {
 																															if (!db.equals(
-																																	sas2fk)) {
-																																if (!cd.equals(
-																																		t)) {
-																																	if (!cd.equals(
-																																			sas)) {
-																																		if (!cd.equals(
-																																				cd2db)) {
-																																			if (!cd.equals(
-																																					fk)) {
-																																				if (!cd.equals(
-																																						sas2fk)) {
-																																					if (!cd.equals(
-																																							db)) {
+																																	sas)) {
+																																if (!db.equals(
+																																		fk)) {
+																																	if (!cd2db
+																																			.equals(sas2fk)) {
+																																		if (!cd2db
+																																				.equals(t)) {
+																																			if (!cd2db
+																																					.equals(sas)) {
+																																				if (!cd2db
+																																						.equals(fk)) {
+																																					if (!cd2db
+																																							.equals(db)) {
 																																						return new Object[] {
 																																								ruleresult,
+																																								sas2fk,
 																																								t,
 																																								c,
-																																								c2t,
 																																								sas,
-																																								cd2db,
 																																								fk,
-																																								sas2fk,
+																																								c2t,
+																																								cd,
 																																								db,
-																																								cd };
+																																								cd2db };
 																																					}
 																																				}
 																																			}
@@ -1531,60 +1531,59 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject t, EObject c, EObject sas, EObject fk, EObject sas2fk, EObject cd) {
+			PerformRuleResult ruleresult, EObject sas2fk, EObject t, EObject c, EObject sas, EObject fk, EObject cd) {
 		EMoflonEdge t__fk____column = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge sas2fk__sas____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sas__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sas__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge sas2fk__fk____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge sas2fk__sas____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge fk__t____reference = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge sas2fk__fk____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd__sas____associations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "selfassoc2column";
 		String t__fk____column_name_prime = "column";
+		String sas2fk__sas____source_name_prime = "source";
 		String sas__c____source_name_prime = "source";
 		String sas__c____target_name_prime = "target";
-		String sas2fk__fk____target_name_prime = "target";
-		String sas2fk__sas____source_name_prime = "source";
 		String fk__t____reference_name_prime = "reference";
+		String sas2fk__fk____target_name_prime = "target";
 		String cd__sas____associations_name_prime = "associations";
 		t__fk____column.setSrc(t);
 		t__fk____column.setTrg(fk);
 		ruleresult.getCreatedEdges().add(t__fk____column);
+		sas2fk__sas____source.setSrc(sas2fk);
+		sas2fk__sas____source.setTrg(sas);
+		ruleresult.getCreatedEdges().add(sas2fk__sas____source);
 		sas__c____source.setSrc(sas);
 		sas__c____source.setTrg(c);
 		ruleresult.getTranslatedEdges().add(sas__c____source);
 		sas__c____target.setSrc(sas);
 		sas__c____target.setTrg(c);
 		ruleresult.getTranslatedEdges().add(sas__c____target);
-		sas2fk__fk____target.setSrc(sas2fk);
-		sas2fk__fk____target.setTrg(fk);
-		ruleresult.getCreatedEdges().add(sas2fk__fk____target);
-		sas2fk__sas____source.setSrc(sas2fk);
-		sas2fk__sas____source.setTrg(sas);
-		ruleresult.getCreatedEdges().add(sas2fk__sas____source);
 		fk__t____reference.setSrc(fk);
 		fk__t____reference.setTrg(t);
 		ruleresult.getCreatedEdges().add(fk__t____reference);
+		sas2fk__fk____target.setSrc(sas2fk);
+		sas2fk__fk____target.setTrg(fk);
+		ruleresult.getCreatedEdges().add(sas2fk__fk____target);
 		cd__sas____associations.setSrc(cd);
 		cd__sas____associations.setTrg(sas);
 		ruleresult.getTranslatedEdges().add(cd__sas____associations);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		t__fk____column.setName(t__fk____column_name_prime);
+		sas2fk__sas____source.setName(sas2fk__sas____source_name_prime);
 		sas__c____source.setName(sas__c____source_name_prime);
 		sas__c____target.setName(sas__c____target_name_prime);
-		sas2fk__fk____target.setName(sas2fk__fk____target_name_prime);
-		sas2fk__sas____source.setName(sas2fk__sas____source_name_prime);
 		fk__t____reference.setName(fk__t____reference_name_prime);
+		sas2fk__fk____target.setName(sas2fk__fk____target_name_prime);
 		cd__sas____associations.setName(cd__sas____associations_name_prime);
-		return new Object[] { ruleresult, t, c, sas, fk, sas2fk, cd, t__fk____column, sas__c____source,
-				sas__c____target, sas2fk__fk____target, sas2fk__sas____source, fk__t____reference,
-				cd__sas____associations };
+		return new Object[] { ruleresult, sas2fk, t, c, sas, fk, cd, t__fk____column, sas2fk__sas____source,
+				sas__c____source, sas__c____target, fk__t____reference, sas2fk__fk____target, cd__sas____associations };
 	}
 
 	public static final void pattern_selfassoc2column_1_5_registerobjects_expressionBBBBBBBBBBB(selfassoc2column _this,
-			PerformRuleResult ruleresult, EObject t, EObject c, EObject c2t, EObject sas, EObject cd2db, EObject fk,
-			EObject sas2fk, EObject db, EObject cd) {
-		_this.registerObjects_FWD(ruleresult, t, c, c2t, sas, cd2db, fk, sas2fk, db, cd);
+			PerformRuleResult ruleresult, EObject sas2fk, EObject t, EObject c, EObject sas, EObject fk, EObject c2t,
+			EObject cd, EObject db, EObject cd2db) {
+		_this.registerObjects_FWD(ruleresult, sas2fk, t, c, sas, fk, c2t, cd, db, cd2db);
 
 	}
 
@@ -1662,7 +1661,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_selfassoc2column_2_2_corematch_blackFBFBFFBB(Clazz c,
+	public static final Iterable<Object[]> pattern_selfassoc2column_2_2_corematch_blackFBBFBFFB(Clazz c,
 			Association sas, ClassDiagram cd, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (C2T c2t : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c, C2T.class, "source")) {
@@ -1672,7 +1671,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 						"source")) {
 					DB db = cd2db.getTarget();
 					if (db != null) {
-						_result.add(new Object[] { t, c, c2t, sas, cd2db, db, cd, match });
+						_result.add(new Object[] { t, c, sas, c2t, cd, db, cd2db, match });
 					}
 
 				}
@@ -1683,18 +1682,18 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Iterable<Object[]> pattern_selfassoc2column_2_3_findcontext_blackBBBBBBB(Table t, Clazz c,
-			C2T c2t, Association sas, CD2D cd2db, DB db, ClassDiagram cd) {
+			Association sas, C2T c2t, ClassDiagram cd, DB db, CD2D cd2db) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (c.equals(c2t.getSource())) {
-			if (t.equals(c2t.getTarget())) {
-				if (c.equals(sas.getSource())) {
-					if (c.equals(sas.getTarget())) {
-						if (db.equals(cd2db.getTarget())) {
-							if (cd.getAssociations().contains(sas)) {
-								if (cd.getClasses().contains(c)) {
+		if (c.equals(sas.getSource())) {
+			if (c.equals(sas.getTarget())) {
+				if (c.equals(c2t.getSource())) {
+					if (t.equals(c2t.getTarget())) {
+						if (cd.getAssociations().contains(sas)) {
+							if (cd.getClasses().contains(c)) {
+								if (db.equals(cd2db.getTarget())) {
 									if (db.getTable().contains(t)) {
 										if (cd.equals(cd2db.getSource())) {
-											_result.add(new Object[] { t, c, c2t, sas, cd2db, db, cd });
+											_result.add(new Object[] { t, c, sas, c2t, cd, db, cd2db });
 										}
 									}
 								}
@@ -1708,81 +1707,81 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_2_3_findcontext_greenBBBBBBBFFFFFFFFFF(Table t, Clazz c,
-			C2T c2t, Association sas, CD2D cd2db, DB db, ClassDiagram cd) {
+			Association sas, C2T c2t, ClassDiagram cd, DB db, CD2D cd2db) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge c2t__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2t__t____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sas__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sas__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cd2db__db____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2t__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2t__t____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd__sas____associations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd__c____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2db__db____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge db__t____table = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd2db__cd____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String c2t__c____source_name_prime = "source";
-		String c2t__t____target_name_prime = "target";
 		String sas__c____source_name_prime = "source";
 		String sas__c____target_name_prime = "target";
-		String cd2db__db____target_name_prime = "target";
+		String c2t__c____source_name_prime = "source";
+		String c2t__t____target_name_prime = "target";
 		String cd__sas____associations_name_prime = "associations";
 		String cd__c____classes_name_prime = "classes";
+		String cd2db__db____target_name_prime = "target";
 		String db__t____table_name_prime = "table";
 		String cd2db__cd____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(t);
 		isApplicableMatch.getAllContextElements().add(c);
-		isApplicableMatch.getAllContextElements().add(c2t);
 		isApplicableMatch.getAllContextElements().add(sas);
-		isApplicableMatch.getAllContextElements().add(cd2db);
-		isApplicableMatch.getAllContextElements().add(db);
+		isApplicableMatch.getAllContextElements().add(c2t);
 		isApplicableMatch.getAllContextElements().add(cd);
-		c2t__c____source.setSrc(c2t);
-		c2t__c____source.setTrg(c);
-		isApplicableMatch.getAllContextElements().add(c2t__c____source);
-		c2t__t____target.setSrc(c2t);
-		c2t__t____target.setTrg(t);
-		isApplicableMatch.getAllContextElements().add(c2t__t____target);
+		isApplicableMatch.getAllContextElements().add(db);
+		isApplicableMatch.getAllContextElements().add(cd2db);
 		sas__c____source.setSrc(sas);
 		sas__c____source.setTrg(c);
 		isApplicableMatch.getAllContextElements().add(sas__c____source);
 		sas__c____target.setSrc(sas);
 		sas__c____target.setTrg(c);
 		isApplicableMatch.getAllContextElements().add(sas__c____target);
-		cd2db__db____target.setSrc(cd2db);
-		cd2db__db____target.setTrg(db);
-		isApplicableMatch.getAllContextElements().add(cd2db__db____target);
+		c2t__c____source.setSrc(c2t);
+		c2t__c____source.setTrg(c);
+		isApplicableMatch.getAllContextElements().add(c2t__c____source);
+		c2t__t____target.setSrc(c2t);
+		c2t__t____target.setTrg(t);
+		isApplicableMatch.getAllContextElements().add(c2t__t____target);
 		cd__sas____associations.setSrc(cd);
 		cd__sas____associations.setTrg(sas);
 		isApplicableMatch.getAllContextElements().add(cd__sas____associations);
 		cd__c____classes.setSrc(cd);
 		cd__c____classes.setTrg(c);
 		isApplicableMatch.getAllContextElements().add(cd__c____classes);
+		cd2db__db____target.setSrc(cd2db);
+		cd2db__db____target.setTrg(db);
+		isApplicableMatch.getAllContextElements().add(cd2db__db____target);
 		db__t____table.setSrc(db);
 		db__t____table.setTrg(t);
 		isApplicableMatch.getAllContextElements().add(db__t____table);
 		cd2db__cd____source.setSrc(cd2db);
 		cd2db__cd____source.setTrg(cd);
 		isApplicableMatch.getAllContextElements().add(cd2db__cd____source);
-		c2t__c____source.setName(c2t__c____source_name_prime);
-		c2t__t____target.setName(c2t__t____target_name_prime);
 		sas__c____source.setName(sas__c____source_name_prime);
 		sas__c____target.setName(sas__c____target_name_prime);
-		cd2db__db____target.setName(cd2db__db____target_name_prime);
+		c2t__c____source.setName(c2t__c____source_name_prime);
+		c2t__t____target.setName(c2t__t____target_name_prime);
 		cd__sas____associations.setName(cd__sas____associations_name_prime);
 		cd__c____classes.setName(cd__c____classes_name_prime);
+		cd2db__db____target.setName(cd2db__db____target_name_prime);
 		db__t____table.setName(db__t____table_name_prime);
 		cd2db__cd____source.setName(cd2db__cd____source_name_prime);
-		return new Object[] { t, c, c2t, sas, cd2db, db, cd, isApplicableMatch, c2t__c____source, c2t__t____target,
-				sas__c____source, sas__c____target, cd2db__db____target, cd__sas____associations, cd__c____classes,
+		return new Object[] { t, c, sas, c2t, cd, db, cd2db, isApplicableMatch, sas__c____source, sas__c____target,
+				c2t__c____source, c2t__t____target, cd__sas____associations, cd__c____classes, cd2db__db____target,
 				db__t____table, cd2db__cd____source };
 	}
 
 	public static final Object[] pattern_selfassoc2column_2_4_solveCSP_bindingFBBBBBBBBB(selfassoc2column _this,
-			IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, Association sas, CD2D cd2db, DB db,
-			ClassDiagram cd) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, t, c, c2t, sas, cd2db, db, cd);
+			IsApplicableMatch isApplicableMatch, Table t, Clazz c, Association sas, C2T c2t, ClassDiagram cd, DB db,
+			CD2D cd2db) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, t, c, sas, c2t, cd, db, cd2db);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, t, c, c2t, sas, cd2db, db, cd };
+			return new Object[] { csp, _this, isApplicableMatch, t, c, sas, c2t, cd, db, cd2db };
 		}
 		return null;
 	}
@@ -1792,10 +1791,10 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(selfassoc2column _this,
-			IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, Association sas, CD2D cd2db, DB db,
-			ClassDiagram cd) {
+			IsApplicableMatch isApplicableMatch, Table t, Clazz c, Association sas, C2T c2t, ClassDiagram cd, DB db,
+			CD2D cd2db) {
 		Object[] result_pattern_selfassoc2column_2_4_solveCSP_binding = pattern_selfassoc2column_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, t, c, c2t, sas, cd2db, db, cd);
+				_this, isApplicableMatch, t, c, sas, c2t, cd, db, cd2db);
 		if (result_pattern_selfassoc2column_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_selfassoc2column_2_4_solveCSP_binding[0];
 
@@ -1803,7 +1802,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 					csp);
 			if (result_pattern_selfassoc2column_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, t, c, c2t, sas, cd2db, db, cd };
+				return new Object[] { csp, _this, isApplicableMatch, t, c, sas, c2t, cd, db, cd2db };
 			}
 		}
 		return null;
@@ -1939,33 +1938,33 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("t");
 		EObject _localVariable_1 = isApplicableMatch.getObject("c");
-		EObject _localVariable_2 = isApplicableMatch.getObject("c2t");
-		EObject _localVariable_3 = isApplicableMatch.getObject("cd2db");
-		EObject _localVariable_4 = isApplicableMatch.getObject("fk");
+		EObject _localVariable_2 = isApplicableMatch.getObject("fk");
+		EObject _localVariable_3 = isApplicableMatch.getObject("c2t");
+		EObject _localVariable_4 = isApplicableMatch.getObject("cd");
 		EObject _localVariable_5 = isApplicableMatch.getObject("db");
-		EObject _localVariable_6 = isApplicableMatch.getObject("cd");
+		EObject _localVariable_6 = isApplicableMatch.getObject("cd2db");
 		EObject tmpT = _localVariable_0;
 		EObject tmpC = _localVariable_1;
-		EObject tmpC2t = _localVariable_2;
-		EObject tmpCd2db = _localVariable_3;
-		EObject tmpFk = _localVariable_4;
+		EObject tmpFk = _localVariable_2;
+		EObject tmpC2t = _localVariable_3;
+		EObject tmpCd = _localVariable_4;
 		EObject tmpDb = _localVariable_5;
-		EObject tmpCd = _localVariable_6;
+		EObject tmpCd2db = _localVariable_6;
 		if (tmpT instanceof Table) {
 			Table t = (Table) tmpT;
 			if (tmpC instanceof Clazz) {
 				Clazz c = (Clazz) tmpC;
-				if (tmpC2t instanceof C2T) {
-					C2T c2t = (C2T) tmpC2t;
-					if (tmpCd2db instanceof CD2D) {
-						CD2D cd2db = (CD2D) tmpCd2db;
-						if (tmpFk instanceof Column) {
-							Column fk = (Column) tmpFk;
+				if (tmpFk instanceof Column) {
+					Column fk = (Column) tmpFk;
+					if (tmpC2t instanceof C2T) {
+						C2T c2t = (C2T) tmpC2t;
+						if (tmpCd instanceof ClassDiagram) {
+							ClassDiagram cd = (ClassDiagram) tmpCd;
 							if (tmpDb instanceof DB) {
 								DB db = (DB) tmpDb;
-								if (tmpCd instanceof ClassDiagram) {
-									ClassDiagram cd = (ClassDiagram) tmpCd;
-									return new Object[] { t, c, c2t, cd2db, fk, db, cd, isApplicableMatch };
+								if (tmpCd2db instanceof CD2D) {
+									CD2D cd2db = (CD2D) tmpCd2db;
+									return new Object[] { t, c, fk, c2t, cd, db, cd2db, isApplicableMatch };
 								}
 							}
 						}
@@ -1977,12 +1976,12 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_11_1_performtransformation_blackBBBBBBBFBB(Table t, Clazz c,
-			C2T c2t, CD2D cd2db, Column fk, DB db, ClassDiagram cd, selfassoc2column _this,
+			Column fk, C2T c2t, ClassDiagram cd, DB db, CD2D cd2db, selfassoc2column _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { t, c, c2t, cd2db, fk, db, cd, csp, _this, isApplicableMatch };
+				return new Object[] { t, c, fk, c2t, cd, db, cd2db, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1995,112 +1994,112 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		if (result_pattern_selfassoc2column_11_1_performtransformation_binding != null) {
 			Table t = (Table) result_pattern_selfassoc2column_11_1_performtransformation_binding[0];
 			Clazz c = (Clazz) result_pattern_selfassoc2column_11_1_performtransformation_binding[1];
-			C2T c2t = (C2T) result_pattern_selfassoc2column_11_1_performtransformation_binding[2];
-			CD2D cd2db = (CD2D) result_pattern_selfassoc2column_11_1_performtransformation_binding[3];
-			Column fk = (Column) result_pattern_selfassoc2column_11_1_performtransformation_binding[4];
+			Column fk = (Column) result_pattern_selfassoc2column_11_1_performtransformation_binding[2];
+			C2T c2t = (C2T) result_pattern_selfassoc2column_11_1_performtransformation_binding[3];
+			ClassDiagram cd = (ClassDiagram) result_pattern_selfassoc2column_11_1_performtransformation_binding[4];
 			DB db = (DB) result_pattern_selfassoc2column_11_1_performtransformation_binding[5];
-			ClassDiagram cd = (ClassDiagram) result_pattern_selfassoc2column_11_1_performtransformation_binding[6];
+			CD2D cd2db = (CD2D) result_pattern_selfassoc2column_11_1_performtransformation_binding[6];
 
 			Object[] result_pattern_selfassoc2column_11_1_performtransformation_black = pattern_selfassoc2column_11_1_performtransformation_blackBBBBBBBFBB(
-					t, c, c2t, cd2db, fk, db, cd, _this, isApplicableMatch);
+					t, c, fk, c2t, cd, db, cd2db, _this, isApplicableMatch);
 			if (result_pattern_selfassoc2column_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_selfassoc2column_11_1_performtransformation_black[7];
 
-				return new Object[] { t, c, c2t, cd2db, fk, db, cd, csp, _this, isApplicableMatch };
+				return new Object[] { t, c, fk, c2t, cd, db, cd2db, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_selfassoc2column_11_1_performtransformation_greenBFBFB(Clazz c, Column fk,
+	public static final Object[] pattern_selfassoc2column_11_1_performtransformation_greenFBFBB(Clazz c, Column fk,
 			ClassDiagram cd) {
-		Association sas = ClassFactory.eINSTANCE.createAssociation();
 		AS2C sas2fk = Class2databaseFactory.eINSTANCE.createAS2C();
+		Association sas = ClassFactory.eINSTANCE.createAssociation();
+		sas2fk.setTarget(fk);
+		sas2fk.setSource(sas);
 		sas.setSource(c);
 		sas.setTarget(c);
 		cd.getAssociations().add(sas);
-		sas2fk.setTarget(fk);
-		sas2fk.setSource(sas);
-		return new Object[] { c, sas, fk, sas2fk, cd };
+		return new Object[] { sas2fk, c, sas, fk, cd };
 	}
 
-	public static final Object[] pattern_selfassoc2column_11_2_collecttranslatedelements_blackBBB(Association sas,
-			Column fk, AS2C sas2fk) {
-		return new Object[] { sas, fk, sas2fk };
+	public static final Object[] pattern_selfassoc2column_11_2_collecttranslatedelements_blackBBB(AS2C sas2fk,
+			Association sas, Column fk) {
+		return new Object[] { sas2fk, sas, fk };
 	}
 
-	public static final Object[] pattern_selfassoc2column_11_2_collecttranslatedelements_greenFBBB(Association sas,
-			Column fk, AS2C sas2fk) {
+	public static final Object[] pattern_selfassoc2column_11_2_collecttranslatedelements_greenFBBB(AS2C sas2fk,
+			Association sas, Column fk) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(sas2fk);
 		ruleresult.getCreatedElements().add(sas);
 		ruleresult.getTranslatedElements().add(fk);
-		ruleresult.getCreatedLinkElements().add(sas2fk);
-		return new Object[] { ruleresult, sas, fk, sas2fk };
+		return new Object[] { ruleresult, sas2fk, sas, fk };
 	}
 
 	public static final Object[] pattern_selfassoc2column_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject t, EObject c, EObject c2t, EObject sas, EObject cd2db, EObject fk,
-			EObject sas2fk, EObject db, EObject cd) {
-		if (!c.equals(t)) {
-			if (!c.equals(c2t)) {
-				if (!c.equals(sas)) {
-					if (!c.equals(cd2db)) {
+			PerformRuleResult ruleresult, EObject sas2fk, EObject t, EObject c, EObject sas, EObject fk, EObject c2t,
+			EObject cd, EObject db, EObject cd2db) {
+		if (!sas2fk.equals(t)) {
+			if (!c.equals(sas2fk)) {
+				if (!c.equals(t)) {
+					if (!c.equals(sas)) {
 						if (!c.equals(fk)) {
-							if (!c.equals(sas2fk)) {
-								if (!c.equals(db)) {
-									if (!c.equals(cd)) {
-										if (!c2t.equals(t)) {
-											if (!c2t.equals(sas)) {
-												if (!c2t.equals(cd2db)) {
-													if (!c2t.equals(fk)) {
-														if (!c2t.equals(sas2fk)) {
-															if (!c2t.equals(db)) {
-																if (!c2t.equals(cd)) {
-																	if (!sas.equals(t)) {
-																		if (!sas.equals(sas2fk)) {
-																			if (!cd2db.equals(t)) {
-																				if (!cd2db.equals(sas)) {
-																					if (!cd2db.equals(fk)) {
-																						if (!cd2db.equals(sas2fk)) {
-																							if (!cd2db.equals(db)) {
-																								if (!fk.equals(t)) {
-																									if (!fk.equals(
+							if (!c.equals(c2t)) {
+								if (!c.equals(cd)) {
+									if (!c.equals(db)) {
+										if (!c.equals(cd2db)) {
+											if (!sas.equals(sas2fk)) {
+												if (!sas.equals(t)) {
+													if (!fk.equals(sas2fk)) {
+														if (!fk.equals(t)) {
+															if (!fk.equals(sas)) {
+																if (!c2t.equals(sas2fk)) {
+																	if (!c2t.equals(t)) {
+																		if (!c2t.equals(sas)) {
+																			if (!c2t.equals(fk)) {
+																				if (!c2t.equals(cd)) {
+																					if (!c2t.equals(db)) {
+																						if (!c2t.equals(cd2db)) {
+																							if (!cd.equals(sas2fk)) {
+																								if (!cd.equals(t)) {
+																									if (!cd.equals(
 																											sas)) {
-																										if (!fk.equals(
-																												sas2fk)) {
-																											if (!sas2fk
-																													.equals(t)) {
-																												if (!db.equals(
-																														t)) {
+																										if (!cd.equals(
+																												fk)) {
+																											if (!cd.equals(
+																													db)) {
+																												if (!cd.equals(
+																														cd2db)) {
 																													if (!db.equals(
-																															sas)) {
+																															sas2fk)) {
 																														if (!db.equals(
-																																fk)) {
+																																t)) {
 																															if (!db.equals(
-																																	sas2fk)) {
-																																if (!cd.equals(
-																																		t)) {
-																																	if (!cd.equals(
-																																			sas)) {
-																																		if (!cd.equals(
-																																				cd2db)) {
-																																			if (!cd.equals(
-																																					fk)) {
-																																				if (!cd.equals(
-																																						sas2fk)) {
-																																					if (!cd.equals(
-																																							db)) {
+																																	sas)) {
+																																if (!db.equals(
+																																		fk)) {
+																																	if (!cd2db
+																																			.equals(sas2fk)) {
+																																		if (!cd2db
+																																				.equals(t)) {
+																																			if (!cd2db
+																																					.equals(sas)) {
+																																				if (!cd2db
+																																						.equals(fk)) {
+																																					if (!cd2db
+																																							.equals(db)) {
 																																						return new Object[] {
 																																								ruleresult,
+																																								sas2fk,
 																																								t,
 																																								c,
-																																								c2t,
 																																								sas,
-																																								cd2db,
 																																								fk,
-																																								sas2fk,
+																																								c2t,
+																																								cd,
 																																								db,
-																																								cd };
+																																								cd2db };
 																																					}
 																																				}
 																																			}
@@ -2141,60 +2140,59 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject t, EObject c, EObject sas, EObject fk, EObject sas2fk, EObject cd) {
+			PerformRuleResult ruleresult, EObject sas2fk, EObject t, EObject c, EObject sas, EObject fk, EObject cd) {
 		EMoflonEdge t__fk____column = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge sas2fk__sas____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sas__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sas__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge sas2fk__fk____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge sas2fk__sas____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge fk__t____reference = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge sas2fk__fk____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd__sas____associations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "selfassoc2column";
 		String t__fk____column_name_prime = "column";
+		String sas2fk__sas____source_name_prime = "source";
 		String sas__c____source_name_prime = "source";
 		String sas__c____target_name_prime = "target";
-		String sas2fk__fk____target_name_prime = "target";
-		String sas2fk__sas____source_name_prime = "source";
 		String fk__t____reference_name_prime = "reference";
+		String sas2fk__fk____target_name_prime = "target";
 		String cd__sas____associations_name_prime = "associations";
 		t__fk____column.setSrc(t);
 		t__fk____column.setTrg(fk);
 		ruleresult.getTranslatedEdges().add(t__fk____column);
+		sas2fk__sas____source.setSrc(sas2fk);
+		sas2fk__sas____source.setTrg(sas);
+		ruleresult.getCreatedEdges().add(sas2fk__sas____source);
 		sas__c____source.setSrc(sas);
 		sas__c____source.setTrg(c);
 		ruleresult.getCreatedEdges().add(sas__c____source);
 		sas__c____target.setSrc(sas);
 		sas__c____target.setTrg(c);
 		ruleresult.getCreatedEdges().add(sas__c____target);
-		sas2fk__fk____target.setSrc(sas2fk);
-		sas2fk__fk____target.setTrg(fk);
-		ruleresult.getCreatedEdges().add(sas2fk__fk____target);
-		sas2fk__sas____source.setSrc(sas2fk);
-		sas2fk__sas____source.setTrg(sas);
-		ruleresult.getCreatedEdges().add(sas2fk__sas____source);
 		fk__t____reference.setSrc(fk);
 		fk__t____reference.setTrg(t);
 		ruleresult.getTranslatedEdges().add(fk__t____reference);
+		sas2fk__fk____target.setSrc(sas2fk);
+		sas2fk__fk____target.setTrg(fk);
+		ruleresult.getCreatedEdges().add(sas2fk__fk____target);
 		cd__sas____associations.setSrc(cd);
 		cd__sas____associations.setTrg(sas);
 		ruleresult.getCreatedEdges().add(cd__sas____associations);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		t__fk____column.setName(t__fk____column_name_prime);
+		sas2fk__sas____source.setName(sas2fk__sas____source_name_prime);
 		sas__c____source.setName(sas__c____source_name_prime);
 		sas__c____target.setName(sas__c____target_name_prime);
-		sas2fk__fk____target.setName(sas2fk__fk____target_name_prime);
-		sas2fk__sas____source.setName(sas2fk__sas____source_name_prime);
 		fk__t____reference.setName(fk__t____reference_name_prime);
+		sas2fk__fk____target.setName(sas2fk__fk____target_name_prime);
 		cd__sas____associations.setName(cd__sas____associations_name_prime);
-		return new Object[] { ruleresult, t, c, sas, fk, sas2fk, cd, t__fk____column, sas__c____source,
-				sas__c____target, sas2fk__fk____target, sas2fk__sas____source, fk__t____reference,
-				cd__sas____associations };
+		return new Object[] { ruleresult, sas2fk, t, c, sas, fk, cd, t__fk____column, sas2fk__sas____source,
+				sas__c____source, sas__c____target, fk__t____reference, sas2fk__fk____target, cd__sas____associations };
 	}
 
 	public static final void pattern_selfassoc2column_11_5_registerobjects_expressionBBBBBBBBBBB(selfassoc2column _this,
-			PerformRuleResult ruleresult, EObject t, EObject c, EObject c2t, EObject sas, EObject cd2db, EObject fk,
-			EObject sas2fk, EObject db, EObject cd) {
-		_this.registerObjects_BWD(ruleresult, t, c, c2t, sas, cd2db, fk, sas2fk, db, cd);
+			PerformRuleResult ruleresult, EObject sas2fk, EObject t, EObject c, EObject sas, EObject fk, EObject c2t,
+			EObject cd, EObject db, EObject cd2db) {
+		_this.registerObjects_BWD(ruleresult, sas2fk, t, c, sas, fk, c2t, cd, db, cd2db);
 
 	}
 
@@ -2272,7 +2270,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_selfassoc2column_12_2_corematch_blackBFFFBBFB(Table t, Column fk,
+	public static final Iterable<Object[]> pattern_selfassoc2column_12_2_corematch_blackBFBFFBFB(Table t, Column fk,
 			DB db, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (C2T c2t : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(t, C2T.class, "target")) {
@@ -2282,7 +2280,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 						"target")) {
 					ClassDiagram cd = cd2db.getSource();
 					if (cd != null) {
-						_result.add(new Object[] { t, c, c2t, cd2db, fk, db, cd, match });
+						_result.add(new Object[] { t, c, fk, c2t, cd, db, cd2db, match });
 					}
 
 				}
@@ -2293,17 +2291,17 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Iterable<Object[]> pattern_selfassoc2column_12_3_findcontext_blackBBBBBBB(Table t, Clazz c,
-			C2T c2t, CD2D cd2db, Column fk, DB db, ClassDiagram cd) {
+			Column fk, C2T c2t, ClassDiagram cd, DB db, CD2D cd2db) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (t.getColumn().contains(fk)) {
-			if (c.equals(c2t.getSource())) {
-				if (t.equals(c2t.getTarget())) {
-					if (db.equals(cd2db.getTarget())) {
-						if (t.equals(fk.getReference())) {
-							if (cd.getClasses().contains(c)) {
+			if (t.equals(fk.getReference())) {
+				if (c.equals(c2t.getSource())) {
+					if (t.equals(c2t.getTarget())) {
+						if (cd.getClasses().contains(c)) {
+							if (db.equals(cd2db.getTarget())) {
 								if (db.getTable().contains(t)) {
 									if (cd.equals(cd2db.getSource())) {
-										_result.add(new Object[] { t, c, c2t, cd2db, fk, db, cd });
+										_result.add(new Object[] { t, c, fk, c2t, cd, db, cd2db });
 									}
 								}
 							}
@@ -2316,49 +2314,49 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_12_3_findcontext_greenBBBBBBBFFFFFFFFF(Table t, Clazz c,
-			C2T c2t, CD2D cd2db, Column fk, DB db, ClassDiagram cd) {
+			Column fk, C2T c2t, ClassDiagram cd, DB db, CD2D cd2db) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge t__fk____column = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge fk__t____reference = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2t__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge c2t__t____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cd2db__db____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge fk__t____reference = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd__c____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2db__db____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge db__t____table = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd2db__cd____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String t__fk____column_name_prime = "column";
+		String fk__t____reference_name_prime = "reference";
 		String c2t__c____source_name_prime = "source";
 		String c2t__t____target_name_prime = "target";
-		String cd2db__db____target_name_prime = "target";
-		String fk__t____reference_name_prime = "reference";
 		String cd__c____classes_name_prime = "classes";
+		String cd2db__db____target_name_prime = "target";
 		String db__t____table_name_prime = "table";
 		String cd2db__cd____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(t);
 		isApplicableMatch.getAllContextElements().add(c);
-		isApplicableMatch.getAllContextElements().add(c2t);
-		isApplicableMatch.getAllContextElements().add(cd2db);
 		isApplicableMatch.getAllContextElements().add(fk);
-		isApplicableMatch.getAllContextElements().add(db);
+		isApplicableMatch.getAllContextElements().add(c2t);
 		isApplicableMatch.getAllContextElements().add(cd);
+		isApplicableMatch.getAllContextElements().add(db);
+		isApplicableMatch.getAllContextElements().add(cd2db);
 		t__fk____column.setSrc(t);
 		t__fk____column.setTrg(fk);
 		isApplicableMatch.getAllContextElements().add(t__fk____column);
+		fk__t____reference.setSrc(fk);
+		fk__t____reference.setTrg(t);
+		isApplicableMatch.getAllContextElements().add(fk__t____reference);
 		c2t__c____source.setSrc(c2t);
 		c2t__c____source.setTrg(c);
 		isApplicableMatch.getAllContextElements().add(c2t__c____source);
 		c2t__t____target.setSrc(c2t);
 		c2t__t____target.setTrg(t);
 		isApplicableMatch.getAllContextElements().add(c2t__t____target);
-		cd2db__db____target.setSrc(cd2db);
-		cd2db__db____target.setTrg(db);
-		isApplicableMatch.getAllContextElements().add(cd2db__db____target);
-		fk__t____reference.setSrc(fk);
-		fk__t____reference.setTrg(t);
-		isApplicableMatch.getAllContextElements().add(fk__t____reference);
 		cd__c____classes.setSrc(cd);
 		cd__c____classes.setTrg(c);
 		isApplicableMatch.getAllContextElements().add(cd__c____classes);
+		cd2db__db____target.setSrc(cd2db);
+		cd2db__db____target.setTrg(db);
+		isApplicableMatch.getAllContextElements().add(cd2db__db____target);
 		db__t____table.setSrc(db);
 		db__t____table.setTrg(t);
 		isApplicableMatch.getAllContextElements().add(db__t____table);
@@ -2366,25 +2364,25 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		cd2db__cd____source.setTrg(cd);
 		isApplicableMatch.getAllContextElements().add(cd2db__cd____source);
 		t__fk____column.setName(t__fk____column_name_prime);
+		fk__t____reference.setName(fk__t____reference_name_prime);
 		c2t__c____source.setName(c2t__c____source_name_prime);
 		c2t__t____target.setName(c2t__t____target_name_prime);
-		cd2db__db____target.setName(cd2db__db____target_name_prime);
-		fk__t____reference.setName(fk__t____reference_name_prime);
 		cd__c____classes.setName(cd__c____classes_name_prime);
+		cd2db__db____target.setName(cd2db__db____target_name_prime);
 		db__t____table.setName(db__t____table_name_prime);
 		cd2db__cd____source.setName(cd2db__cd____source_name_prime);
-		return new Object[] { t, c, c2t, cd2db, fk, db, cd, isApplicableMatch, t__fk____column, c2t__c____source,
-				c2t__t____target, cd2db__db____target, fk__t____reference, cd__c____classes, db__t____table,
+		return new Object[] { t, c, fk, c2t, cd, db, cd2db, isApplicableMatch, t__fk____column, fk__t____reference,
+				c2t__c____source, c2t__t____target, cd__c____classes, cd2db__db____target, db__t____table,
 				cd2db__cd____source };
 	}
 
 	public static final Object[] pattern_selfassoc2column_12_4_solveCSP_bindingFBBBBBBBBB(selfassoc2column _this,
-			IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, CD2D cd2db, Column fk, DB db,
-			ClassDiagram cd) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, t, c, c2t, cd2db, fk, db, cd);
+			IsApplicableMatch isApplicableMatch, Table t, Clazz c, Column fk, C2T c2t, ClassDiagram cd, DB db,
+			CD2D cd2db) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, t, c, fk, c2t, cd, db, cd2db);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, t, c, c2t, cd2db, fk, db, cd };
+			return new Object[] { csp, _this, isApplicableMatch, t, c, fk, c2t, cd, db, cd2db };
 		}
 		return null;
 	}
@@ -2394,10 +2392,10 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_12_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			selfassoc2column _this, IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, CD2D cd2db,
-			Column fk, DB db, ClassDiagram cd) {
+			selfassoc2column _this, IsApplicableMatch isApplicableMatch, Table t, Clazz c, Column fk, C2T c2t,
+			ClassDiagram cd, DB db, CD2D cd2db) {
 		Object[] result_pattern_selfassoc2column_12_4_solveCSP_binding = pattern_selfassoc2column_12_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, t, c, c2t, cd2db, fk, db, cd);
+				_this, isApplicableMatch, t, c, fk, c2t, cd, db, cd2db);
 		if (result_pattern_selfassoc2column_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_selfassoc2column_12_4_solveCSP_binding[0];
 
@@ -2405,7 +2403,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 					csp);
 			if (result_pattern_selfassoc2column_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, t, c, c2t, cd2db, fk, db, cd };
+				return new Object[] { csp, _this, isApplicableMatch, t, c, fk, c2t, cd, db, cd2db };
 			}
 		}
 		return null;
@@ -2697,14 +2695,14 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		EObject _localVariable_1 = sourceMatch.getObject("c");
 		EObject _localVariable_2 = sourceMatch.getObject("sas");
 		EObject _localVariable_3 = targetMatch.getObject("fk");
-		EObject _localVariable_4 = targetMatch.getObject("db");
-		EObject _localVariable_5 = sourceMatch.getObject("cd");
+		EObject _localVariable_4 = sourceMatch.getObject("cd");
+		EObject _localVariable_5 = targetMatch.getObject("db");
 		EObject tmpT = _localVariable_0;
 		EObject tmpC = _localVariable_1;
 		EObject tmpSas = _localVariable_2;
 		EObject tmpFk = _localVariable_3;
-		EObject tmpDb = _localVariable_4;
-		EObject tmpCd = _localVariable_5;
+		EObject tmpCd = _localVariable_4;
+		EObject tmpDb = _localVariable_5;
 		if (tmpT instanceof Table) {
 			Table t = (Table) tmpT;
 			if (tmpC instanceof Clazz) {
@@ -2713,11 +2711,11 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 					Association sas = (Association) tmpSas;
 					if (tmpFk instanceof Column) {
 						Column fk = (Column) tmpFk;
-						if (tmpDb instanceof DB) {
-							DB db = (DB) tmpDb;
-							if (tmpCd instanceof ClassDiagram) {
-								ClassDiagram cd = (ClassDiagram) tmpCd;
-								return new Object[] { t, c, sas, fk, db, cd, targetMatch, sourceMatch };
+						if (tmpCd instanceof ClassDiagram) {
+							ClassDiagram cd = (ClassDiagram) tmpCd;
+							if (tmpDb instanceof DB) {
+								DB db = (DB) tmpDb;
+								return new Object[] { t, c, sas, fk, cd, db, targetMatch, sourceMatch };
 							}
 						}
 					}
@@ -2728,9 +2726,9 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_24_2_matchsrctrgcontext_blackBBBBBBBB(Table t, Clazz c,
-			Association sas, Column fk, DB db, ClassDiagram cd, Match sourceMatch, Match targetMatch) {
+			Association sas, Column fk, ClassDiagram cd, DB db, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { t, c, sas, fk, db, cd, sourceMatch, targetMatch };
+			return new Object[] { t, c, sas, fk, cd, db, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2744,26 +2742,26 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 			Clazz c = (Clazz) result_pattern_selfassoc2column_24_2_matchsrctrgcontext_binding[1];
 			Association sas = (Association) result_pattern_selfassoc2column_24_2_matchsrctrgcontext_binding[2];
 			Column fk = (Column) result_pattern_selfassoc2column_24_2_matchsrctrgcontext_binding[3];
-			DB db = (DB) result_pattern_selfassoc2column_24_2_matchsrctrgcontext_binding[4];
-			ClassDiagram cd = (ClassDiagram) result_pattern_selfassoc2column_24_2_matchsrctrgcontext_binding[5];
+			ClassDiagram cd = (ClassDiagram) result_pattern_selfassoc2column_24_2_matchsrctrgcontext_binding[4];
+			DB db = (DB) result_pattern_selfassoc2column_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_selfassoc2column_24_2_matchsrctrgcontext_black = pattern_selfassoc2column_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					t, c, sas, fk, db, cd, sourceMatch, targetMatch);
+					t, c, sas, fk, cd, db, sourceMatch, targetMatch);
 			if (result_pattern_selfassoc2column_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { t, c, sas, fk, db, cd, sourceMatch, targetMatch };
+				return new Object[] { t, c, sas, fk, cd, db, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_selfassoc2column_24_3_solvecsp_bindingFBBBBBBBBB(selfassoc2column _this,
-			Table t, Clazz c, Association sas, Column fk, DB db, ClassDiagram cd, Match sourceMatch,
+			Table t, Clazz c, Association sas, Column fk, ClassDiagram cd, DB db, Match sourceMatch,
 			Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(t, c, sas, fk, db, cd, sourceMatch, targetMatch);
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(t, c, sas, fk, cd, db, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, t, c, sas, fk, db, cd, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, t, c, sas, fk, cd, db, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2773,10 +2771,10 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(
-			selfassoc2column _this, Table t, Clazz c, Association sas, Column fk, DB db, ClassDiagram cd,
+			selfassoc2column _this, Table t, Clazz c, Association sas, Column fk, ClassDiagram cd, DB db,
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_selfassoc2column_24_3_solvecsp_binding = pattern_selfassoc2column_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, t, c, sas, fk, db, cd, sourceMatch, targetMatch);
+				_this, t, c, sas, fk, cd, db, sourceMatch, targetMatch);
 		if (result_pattern_selfassoc2column_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_selfassoc2column_24_3_solvecsp_binding[0];
 
@@ -2784,7 +2782,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 					csp);
 			if (result_pattern_selfassoc2column_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, t, c, sas, fk, db, cd, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, t, c, sas, fk, cd, db, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2796,8 +2794,8 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_selfassoc2column_24_5_matchcorrcontext_blackBBFFBBBB(Table t,
-			Clazz c, DB db, ClassDiagram cd, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_selfassoc2column_24_5_matchcorrcontext_blackBBFBBFBB(Table t,
+			Clazz c, ClassDiagram cd, DB db, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (C2T c2t : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c, C2T.class, "source")) {
@@ -2805,7 +2803,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 					for (CD2D cd2db : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(db, CD2D.class,
 							"target")) {
 						if (cd.equals(cd2db.getSource())) {
-							_result.add(new Object[] { t, c, c2t, cd2db, db, cd, sourceMatch, targetMatch });
+							_result.add(new Object[] { t, c, c2t, cd, db, cd2db, sourceMatch, targetMatch });
 						}
 					}
 				}
@@ -2827,17 +2825,17 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_24_6_createcorrespondence_blackBBBBBBB(Table t, Clazz c,
-			Association sas, Column fk, DB db, ClassDiagram cd, CCMatch ccMatch) {
-		return new Object[] { t, c, sas, fk, db, cd, ccMatch };
+			Association sas, Column fk, ClassDiagram cd, DB db, CCMatch ccMatch) {
+		return new Object[] { t, c, sas, fk, cd, db, ccMatch };
 	}
 
-	public static final Object[] pattern_selfassoc2column_24_6_createcorrespondence_greenBBFB(Association sas,
+	public static final Object[] pattern_selfassoc2column_24_6_createcorrespondence_greenFBBB(Association sas,
 			Column fk, CCMatch ccMatch) {
 		AS2C sas2fk = Class2databaseFactory.eINSTANCE.createAS2C();
-		sas2fk.setTarget(fk);
 		sas2fk.setSource(sas);
+		sas2fk.setTarget(fk);
 		ccMatch.getCreateCorr().add(sas2fk);
-		return new Object[] { sas, fk, sas2fk, ccMatch };
+		return new Object[] { sas2fk, sas, fk, ccMatch };
 	}
 
 	public static final Object[] pattern_selfassoc2column_24_7_addtoreturnedresult_blackBB(
@@ -3019,13 +3017,13 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_29_3_solveCSP_bindingFBBBBBBBBB(selfassoc2column _this,
-			IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, CD2D cd2db, DB db, ClassDiagram cd,
+			IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, ClassDiagram cd, DB db, CD2D cd2db,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, t, c, c2t, cd2db, db, cd,
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, t, c, c2t, cd, db, cd2db,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, t, c, c2t, cd2db, db, cd, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, t, c, c2t, cd, db, cd2db, ruleResult };
 		}
 		return null;
 	}
@@ -3035,10 +3033,10 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			selfassoc2column _this, IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, CD2D cd2db, DB db,
-			ClassDiagram cd, ModelgeneratorRuleResult ruleResult) {
+			selfassoc2column _this, IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, ClassDiagram cd,
+			DB db, CD2D cd2db, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_selfassoc2column_29_3_solveCSP_binding = pattern_selfassoc2column_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, t, c, c2t, cd2db, db, cd, ruleResult);
+				_this, isApplicableMatch, t, c, c2t, cd, db, cd2db, ruleResult);
 		if (result_pattern_selfassoc2column_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_selfassoc2column_29_3_solveCSP_binding[0];
 
@@ -3046,7 +3044,7 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 					csp);
 			if (result_pattern_selfassoc2column_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, t, c, c2t, cd2db, db, cd, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, t, c, c2t, cd, db, cd2db, ruleResult };
 			}
 		}
 		return null;
@@ -3059,36 +3057,36 @@ public class selfassoc2columnImpl extends AbstractRuleImpl implements selfassoc2
 	}
 
 	public static final Object[] pattern_selfassoc2column_29_5_checknacs_blackBBBBBB(Table t, Clazz c, C2T c2t,
-			CD2D cd2db, DB db, ClassDiagram cd) {
-		return new Object[] { t, c, c2t, cd2db, db, cd };
+			ClassDiagram cd, DB db, CD2D cd2db) {
+		return new Object[] { t, c, c2t, cd, db, cd2db };
 	}
 
 	public static final Object[] pattern_selfassoc2column_29_6_perform_blackBBBBBBB(Table t, Clazz c, C2T c2t,
-			CD2D cd2db, DB db, ClassDiagram cd, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { t, c, c2t, cd2db, db, cd, ruleResult };
+			ClassDiagram cd, DB db, CD2D cd2db, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { t, c, c2t, cd, db, cd2db, ruleResult };
 	}
 
-	public static final Object[] pattern_selfassoc2column_29_6_perform_greenBBFFFBB(Table t, Clazz c, ClassDiagram cd,
+	public static final Object[] pattern_selfassoc2column_29_6_perform_greenFBBFFBB(Table t, Clazz c, ClassDiagram cd,
 			ModelgeneratorRuleResult ruleResult) {
+		AS2C sas2fk = Class2databaseFactory.eINSTANCE.createAS2C();
 		Association sas = ClassFactory.eINSTANCE.createAssociation();
 		Column fk = DatabaseFactory.eINSTANCE.createColumn();
-		AS2C sas2fk = Class2databaseFactory.eINSTANCE.createAS2C();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
+		ruleResult.getCorrObjects().add(sas2fk);
+		sas2fk.setSource(sas);
 		sas.setSource(c);
 		sas.setTarget(c);
 		cd.getAssociations().add(sas);
 		ruleResult.getSourceObjects().add(sas);
 		t.getColumn().add(fk);
 		fk.setReference(t);
-		ruleResult.getTargetObjects().add(fk);
 		sas2fk.setTarget(fk);
-		sas2fk.setSource(sas);
-		ruleResult.getCorrObjects().add(sas2fk);
+		ruleResult.getTargetObjects().add(fk);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { t, c, sas, fk, sas2fk, cd, ruleResult };
+		return new Object[] { sas2fk, t, c, sas, fk, cd, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_selfassoc2column_29_7_expressionFB(

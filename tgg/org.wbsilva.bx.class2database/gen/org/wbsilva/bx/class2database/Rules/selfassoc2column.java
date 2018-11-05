@@ -97,8 +97,8 @@ public interface selfassoc2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, Association sas,
-			CD2D cd2db, DB db, ClassDiagram cd);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, Association sas, C2T c2t,
+			ClassDiagram cd, DB db, CD2D cd2db);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,8 +114,8 @@ public interface selfassoc2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject t, EObject c, EObject c2t, EObject sas,
-			EObject cd2db, EObject fk, EObject sas2fk, EObject db, EObject cd);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject sas2fk, EObject t, EObject c, EObject sas,
+			EObject fk, EObject c2t, EObject cd, EObject db, EObject cd2db);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,8 +179,8 @@ public interface selfassoc2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, CD2D cd2db, Column fk,
-			DB db, ClassDiagram cd);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, Column fk, C2T c2t,
+			ClassDiagram cd, DB db, CD2D cd2db);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +196,8 @@ public interface selfassoc2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject t, EObject c, EObject c2t, EObject sas,
-			EObject cd2db, EObject fk, EObject sas2fk, EObject db, EObject cd);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject sas2fk, EObject t, EObject c, EObject sas,
+			EObject fk, EObject c2t, EObject cd, EObject db, EObject cd2db);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface selfassoc2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_1(EMoflonEdge _edge_column);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_58(EMoflonEdge _edge_column);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface selfassoc2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_2(EMoflonEdge _edge_source);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_63(EMoflonEdge _edge_source);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,7 +253,7 @@ public interface selfassoc2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Table t, Clazz c, Association sas, Column fk, DB db, ClassDiagram cd,
+	CSP isApplicable_solveCsp_CC(Table t, Clazz c, Association sas, Column fk, ClassDiagram cd, DB db,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -294,8 +294,8 @@ public interface selfassoc2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, CD2D cd2db, DB db,
-			ClassDiagram cd, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t, ClassDiagram cd,
+			DB db, CD2D cd2db, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

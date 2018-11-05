@@ -49,7 +49,7 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Transition st, State s2, State s1, SM sm);
+	boolean isAppropriate_FWD(Match match, Transition st, SM sm, State s1, State s2);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Transition st, State s2, State s1, SM sm);
+	void registerObjectsToMatch_FWD(Match match, Transition st, SM sm, State s1, State s2);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,7 +81,7 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Transition st, State s2, State s1, SM sm);
+	CSP isAppropriate_solveCsp_FWD(Match match, Transition st, SM sm, State s1, State s2);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,8 +97,8 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Transition st, State s2, State s1, PNGraph png,
-			S2P s12p1, Place p2, SM sm, S2P s22p2, Place p1, SM2PN sm2pn);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, PNGraph png, Transition st, SM sm, Place p2,
+			S2P s12p1, Place p1, SM2PN sm2pn, State s1, State s2, S2P s22p2);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,9 +114,9 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject st2a1, EObject st, EObject s2, EObject s1,
-			EObject pt, EObject st2pt, EObject png, EObject s12p1, EObject p2, EObject a1, EObject sm, EObject s22p2,
-			EObject a2, EObject p1, EObject st2a2, EObject sm2pn);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject png, EObject st, EObject sm, EObject a1, EObject a2,
+			EObject p2, EObject st2a1, EObject s12p1, EObject p1, EObject sm2pn, EObject s1, EObject st2pt, EObject s2,
+			EObject st2a2, EObject pt, EObject s22p2);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,7 +132,7 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, petrinet.Transition pt, PNGraph png, Place p2, Arc a1, Arc a2, Place p1);
+	boolean isAppropriate_BWD(Match match, PNGraph png, Arc a1, Arc a2, Place p2, Place p1, petrinet.Transition pt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,8 +156,8 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, petrinet.Transition pt, PNGraph png, Place p2, Arc a1, Arc a2,
-			Place p1);
+	void registerObjectsToMatch_BWD(Match match, PNGraph png, Arc a1, Arc a2, Place p2, Place p1,
+			petrinet.Transition pt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,8 +165,8 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, petrinet.Transition pt, PNGraph png, Place p2, Arc a1, Arc a2,
-			Place p1);
+	CSP isAppropriate_solveCsp_BWD(Match match, PNGraph png, Arc a1, Arc a2, Place p2, Place p1,
+			petrinet.Transition pt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,8 +182,8 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, State s2, State s1, petrinet.Transition pt,
-			PNGraph png, S2P s12p1, Place p2, Arc a1, SM sm, S2P s22p2, Arc a2, Place p1, SM2PN sm2pn);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, PNGraph png, SM sm, Arc a1, Arc a2, Place p2,
+			S2P s12p1, Place p1, SM2PN sm2pn, State s1, State s2, petrinet.Transition pt, S2P s22p2);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,9 +199,9 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject st2a1, EObject st, EObject s2, EObject s1,
-			EObject pt, EObject st2pt, EObject png, EObject s12p1, EObject p2, EObject a1, EObject sm, EObject s22p2,
-			EObject a2, EObject p1, EObject st2a2, EObject sm2pn);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject png, EObject st, EObject sm, EObject a1, EObject a2,
+			EObject p2, EObject st2a1, EObject s12p1, EObject p1, EObject sm2pn, EObject s1, EObject st2pt, EObject s2,
+			EObject st2a2, EObject pt, EObject s22p2);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,7 +217,7 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_54(EMoflonEdge _edge_arcs);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_107(EMoflonEdge _edge_arcs);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,7 +225,7 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_57(EMoflonEdge _edge_from);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_114(EMoflonEdge _edge_transitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,8 +257,8 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Transition st, State s2, State s1, petrinet.Transition pt, PNGraph png, Place p2,
-			Arc a1, SM sm, Arc a2, Place p1, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(PNGraph png, Transition st, SM sm, Arc a1, Arc a2, Place p2, Place p1, State s1,
+			State s2, petrinet.Transition pt, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,7 +274,7 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Transition st, State s2, State s1, SM sm);
+	boolean checkDEC_FWD(Transition st, SM sm, State s1, State s2);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -282,7 +282,7 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(petrinet.Transition pt, PNGraph png, Place p2, Arc a1, Arc a2, Place p1);
+	boolean checkDEC_BWD(PNGraph png, Arc a1, Arc a2, Place p2, Place p1, petrinet.Transition pt);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -290,8 +290,8 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, S2P s22p2Parameter,
-			S2P s12p1Parameter, SM2PN sm2pnParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, SM2PN sm2pnParameter,
+			S2P s22p2Parameter, S2P s12p1Parameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -299,8 +299,8 @@ public interface transition2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, State s2, State s1, PNGraph png, S2P s12p1,
-			Place p2, SM sm, S2P s22p2, Place p1, SM2PN sm2pn, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, PNGraph png, SM sm, Place p2, S2P s12p1,
+			Place p1, SM2PN sm2pn, State s1, State s2, S2P s22p2, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

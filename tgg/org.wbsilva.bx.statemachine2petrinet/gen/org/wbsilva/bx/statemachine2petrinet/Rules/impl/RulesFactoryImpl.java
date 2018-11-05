@@ -55,51 +55,21 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case RulesPackage.STATE2PLACE:
-			return createstate2place();
-		case RulesPackage.SELFTRANS2ARCTRANSARC:
-			return createselftrans2arctransarc();
-		case RulesPackage.INITIAL2NOTHING:
-			return createinitial2nothing();
 		case RulesPackage.FINAL2NOTHING:
 			return createfinal2nothing();
-		case RulesPackage.TRANSITION2ARCTRANSARC:
-			return createtransition2arctransarc();
 		case RulesPackage.STATEMACHINE2PETRINET:
 			return createstatemachine2petrinet();
+		case RulesPackage.TRANSITION2ARCTRANSARC:
+			return createtransition2arctransarc();
+		case RulesPackage.SELFTRANS2ARCTRANSARC:
+			return createselftrans2arctransarc();
+		case RulesPackage.STATE2PLACE:
+			return createstate2place();
+		case RulesPackage.INITIAL2NOTHING:
+			return createinitial2nothing();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public state2place createstate2place() {
-		state2placeImpl state2place = new state2placeImpl();
-		return state2place;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public selftrans2arctransarc createselftrans2arctransarc() {
-		selftrans2arctransarcImpl selftrans2arctransarc = new selftrans2arctransarcImpl();
-		return selftrans2arctransarc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public initial2nothing createinitial2nothing() {
-		initial2nothingImpl initial2nothing = new initial2nothingImpl();
-		return initial2nothing;
 	}
 
 	/**
@@ -117,6 +87,16 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public statemachine2petrinet createstatemachine2petrinet() {
+		statemachine2petrinetImpl statemachine2petrinet = new statemachine2petrinetImpl();
+		return statemachine2petrinet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public transition2arctransarc createtransition2arctransarc() {
 		transition2arctransarcImpl transition2arctransarc = new transition2arctransarcImpl();
 		return transition2arctransarc;
@@ -127,9 +107,29 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public statemachine2petrinet createstatemachine2petrinet() {
-		statemachine2petrinetImpl statemachine2petrinet = new statemachine2petrinetImpl();
-		return statemachine2petrinet;
+	public selftrans2arctransarc createselftrans2arctransarc() {
+		selftrans2arctransarcImpl selftrans2arctransarc = new selftrans2arctransarcImpl();
+		return selftrans2arctransarc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public state2place createstate2place() {
+		state2placeImpl state2place = new state2placeImpl();
+		return state2place;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public initial2nothing createinitial2nothing() {
+		initial2nothingImpl initial2nothing = new initial2nothingImpl();
+		return initial2nothing;
 	}
 
 	/**

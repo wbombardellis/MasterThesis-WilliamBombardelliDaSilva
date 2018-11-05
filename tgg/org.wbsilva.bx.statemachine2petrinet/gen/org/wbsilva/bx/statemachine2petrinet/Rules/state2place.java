@@ -46,7 +46,7 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, State s, SM sm);
+	boolean isAppropriate_FWD(Match match, SM sm, State s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, State s, SM sm);
+	void registerObjectsToMatch_FWD(Match match, SM sm, State s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, State s, SM sm);
+	CSP isAppropriate_solveCsp_FWD(Match match, SM sm, State s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,7 +94,7 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, SM sm, PNGraph png);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, SM sm, SM2PN sm2pn, PNGraph png, State s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,8 +110,8 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject p, EObject sm2pn, EObject s, EObject sm, EObject s2p,
-			EObject png);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject sm, EObject p, EObject sm2pn, EObject png,
+			EObject s2p, EObject s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,7 +175,7 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Place p, SM2PN sm2pn, SM sm, PNGraph png);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, SM sm, Place p, SM2PN sm2pn, PNGraph png);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,8 +191,8 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject p, EObject sm2pn, EObject s, EObject sm, EObject s2p,
-			EObject png);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject sm, EObject p, EObject sm2pn, EObject png,
+			EObject s2p, EObject s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_52(EMoflonEdge _edge_places);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_109(EMoflonEdge _edge_places);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_53(EMoflonEdge _edge_states);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_116(EMoflonEdge _edge_states);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +248,7 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Place p, State s, SM sm, PNGraph png, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(SM sm, Place p, PNGraph png, State s, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,7 +264,7 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(State s, SM sm);
+	boolean checkDEC_FWD(SM sm, State s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,7 +288,7 @@ public interface state2place extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, SM sm, PNGraph png,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, SM sm, SM2PN sm2pn, PNGraph png,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

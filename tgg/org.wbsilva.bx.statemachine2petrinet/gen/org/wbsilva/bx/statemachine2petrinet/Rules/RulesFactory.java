@@ -22,33 +22,6 @@ public interface RulesFactory extends EFactory {
 	RulesFactory eINSTANCE = org.wbsilva.bx.statemachine2petrinet.Rules.impl.RulesFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>state2place</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>state2place</em>'.
-	 * @generated
-	 */
-	state2place createstate2place();
-
-	/**
-	 * Returns a new object of class '<em>selftrans2arctransarc</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>selftrans2arctransarc</em>'.
-	 * @generated
-	 */
-	selftrans2arctransarc createselftrans2arctransarc();
-
-	/**
-	 * Returns a new object of class '<em>initial2nothing</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>initial2nothing</em>'.
-	 * @generated
-	 */
-	initial2nothing createinitial2nothing();
-
-	/**
 	 * Returns a new object of class '<em>final2nothing</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,6 +29,15 @@ public interface RulesFactory extends EFactory {
 	 * @generated
 	 */
 	final2nothing createfinal2nothing();
+
+	/**
+	 * Returns a new object of class '<em>statemachine2petrinet</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>statemachine2petrinet</em>'.
+	 * @generated
+	 */
+	statemachine2petrinet createstatemachine2petrinet();
 
 	/**
 	 * Returns a new object of class '<em>transition2arctransarc</em>'.
@@ -67,13 +49,31 @@ public interface RulesFactory extends EFactory {
 	transition2arctransarc createtransition2arctransarc();
 
 	/**
-	 * Returns a new object of class '<em>statemachine2petrinet</em>'.
+	 * Returns a new object of class '<em>selftrans2arctransarc</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>statemachine2petrinet</em>'.
+	 * @return a new object of class '<em>selftrans2arctransarc</em>'.
 	 * @generated
 	 */
-	statemachine2petrinet createstatemachine2petrinet();
+	selftrans2arctransarc createselftrans2arctransarc();
+
+	/**
+	 * Returns a new object of class '<em>state2place</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>state2place</em>'.
+	 * @generated
+	 */
+	state2place createstate2place();
+
+	/**
+	 * Returns a new object of class '<em>initial2nothing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>initial2nothing</em>'.
+	 * @generated
+	 */
+	initial2nothing createinitial2nothing();
 
 	/**
 	 * Returns the package supported by this factory.

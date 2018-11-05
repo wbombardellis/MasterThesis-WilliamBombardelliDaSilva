@@ -94,7 +94,7 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Table t, C2T c2t, Attribute a, Clazz c);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Attribute a, Table t, Clazz c, C2T c2t);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,8 +110,8 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject a2co, EObject co, EObject t, EObject c2t, EObject a,
-			EObject c);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject a, EObject t, EObject co, EObject c, EObject a2co,
+			EObject c2t);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,7 +127,7 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Column co, Table t);
+	boolean isAppropriate_BWD(Match match, Table t, Column co);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,7 +151,7 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Column co, Table t);
+	void registerObjectsToMatch_BWD(Match match, Table t, Column co);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,7 +159,7 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Column co, Table t);
+	CSP isAppropriate_solveCsp_BWD(Match match, Table t, Column co);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,7 +175,7 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Column co, Table t, C2T c2t, Clazz c);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, Column co, Clazz c, C2T c2t);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,8 +191,8 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject a2co, EObject co, EObject t, EObject c2t, EObject a,
-			EObject c);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject a, EObject t, EObject co, EObject c, EObject a2co,
+			EObject c2t);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_0(EMoflonEdge _edge_column);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_59(EMoflonEdge _edge_column);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_0(EMoflonEdge _edge_attribute);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_64(EMoflonEdge _edge_attribute);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +248,7 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Column co, Table t, Attribute a, Clazz c, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Attribute a, Table t, Column co, Clazz c, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,7 +272,7 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Column co, Table t);
+	boolean checkDEC_BWD(Table t, Column co);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,7 +288,7 @@ public interface attribute2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, C2T c2t, Clazz c,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, Clazz c, C2T c2t,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

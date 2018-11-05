@@ -153,40 +153,40 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Clazz c = (Clazz) result1_bindingAndBlack[0];
-		ClassDiagram cd = (ClassDiagram) result1_bindingAndBlack[1];
-		DB db = (DB) result1_bindingAndBlack[2];
-		CD2D cd2db = (CD2D) result1_bindingAndBlack[3];
+		DB db = (DB) result1_bindingAndBlack[0];
+		CD2D cd2db = (CD2D) result1_bindingAndBlack[1];
+		Clazz c = (Clazz) result1_bindingAndBlack[2];
+		ClassDiagram cd = (ClassDiagram) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = class2tableImpl.pattern_class2table_1_1_performtransformation_greenBFFB(c, db);
-		C2T c2t = (C2T) result1_green[1];
-		Table t = (Table) result1_green[2];
+		Object[] result1_green = class2tableImpl.pattern_class2table_1_1_performtransformation_greenBFFB(db, c);
+		Table t = (Table) result1_green[1];
+		C2T c2t = (C2T) result1_green[2];
 
-		Object[] result2_black = class2tableImpl.pattern_class2table_1_2_collecttranslatedelements_blackBBB(c, c2t, t);
+		Object[] result2_black = class2tableImpl.pattern_class2table_1_2_collecttranslatedelements_blackBBB(t, c2t, c);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[c] = " + c + ", " + "[c2t] = "
-					+ c2t + ", " + "[t] = " + t + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[t] = " + t + ", " + "[c2t] = "
+					+ c2t + ", " + "[c] = " + c + ".");
 		}
-		Object[] result2_green = class2tableImpl.pattern_class2table_1_2_collecttranslatedelements_greenFBBB(c, c2t, t);
+		Object[] result2_green = class2tableImpl.pattern_class2table_1_2_collecttranslatedelements_greenFBBB(t, c2t, c);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = class2tableImpl.pattern_class2table_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, c,
-				cd, c2t, t, db, cd2db);
+		Object[] result3_black = class2tableImpl.pattern_class2table_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
+				db, t, cd2db, c2t, c, cd);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[c] = " + c + ", " + "[cd] = " + cd + ", " + "[c2t] = " + c2t + ", " + "[t] = " + t + ", "
-					+ "[db] = " + db + ", " + "[cd2db] = " + cd2db + ".");
+					+ ", " + "[db] = " + db + ", " + "[t] = " + t + ", " + "[cd2db] = " + cd2db + ", " + "[c2t] = "
+					+ c2t + ", " + "[c] = " + c + ", " + "[cd] = " + cd + ".");
 		}
-		class2tableImpl.pattern_class2table_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, c, cd, c2t, t, db);
-		//nothing EMoflonEdge cd__c____classes = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge c2t__c____source = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge c2t__t____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge db__t____table = (EMoflonEdge) result3_green[9];
+		class2tableImpl.pattern_class2table_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, db, t, c2t, c, cd);
+		//nothing EMoflonEdge db__t____table = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge c2t__t____target = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge c2t__c____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge cd__c____classes = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
-		class2tableImpl.pattern_class2table_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, c, cd, c2t, t, db,
-				cd2db);
+		class2tableImpl.pattern_class2table_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, db, t, cd2db, c2t,
+				c, cd);
 		return class2tableImpl.pattern_class2table_1_6_expressionFB(ruleresult);
 	}
 
@@ -215,26 +215,26 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		}
 		Clazz c = (Clazz) result2_binding[0];
 		ClassDiagram cd = (ClassDiagram) result2_binding[1];
-		for (Object[] result2_black : class2tableImpl.pattern_class2table_2_2_corematch_blackBBFFB(c, cd, match)) {
-			DB db = (DB) result2_black[2];
-			CD2D cd2db = (CD2D) result2_black[3];
+		for (Object[] result2_black : class2tableImpl.pattern_class2table_2_2_corematch_blackFFBBB(c, cd, match)) {
+			DB db = (DB) result2_black[0];
+			CD2D cd2db = (CD2D) result2_black[1];
 			// ForEach 
-			for (Object[] result3_black : class2tableImpl.pattern_class2table_2_3_findcontext_blackBBBB(c, cd, db,
-					cd2db)) {
-				Object[] result3_green = class2tableImpl.pattern_class2table_2_3_findcontext_greenBBBBFFFF(c, cd, db,
-						cd2db);
+			for (Object[] result3_black : class2tableImpl.pattern_class2table_2_3_findcontext_blackBBBB(db, cd2db, c,
+					cd)) {
+				Object[] result3_green = class2tableImpl.pattern_class2table_2_3_findcontext_greenBBBBFFFF(db, cd2db, c,
+						cd);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge cd__c____classes = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge cd2db__db____target = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge cd2db__cd____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge cd2db__db____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge cd__c____classes = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = class2tableImpl
-						.pattern_class2table_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, c, cd, db,
-								cd2db);
+						.pattern_class2table_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, db, cd2db, c,
+								cd);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c] = " + c + ", " + "[cd] = " + cd
-							+ ", " + "[db] = " + db + ", " + "[cd2db] = " + cd2db + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[db] = " + db + ", " + "[cd2db] = "
+							+ cd2db + ", " + "[c] = " + c + ", " + "[cd] = " + cd + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -302,8 +302,8 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Clazz c, ClassDiagram cd, DB db,
-			CD2D cd2db) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, DB db, CD2D cd2db, Clazz c,
+			ClassDiagram cd) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -318,10 +318,10 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("c", c);
-		isApplicableMatch.registerObject("cd", cd);
 		isApplicableMatch.registerObject("db", db);
 		isApplicableMatch.registerObject("cd2db", cd2db);
+		isApplicableMatch.registerObject("c", c);
+		isApplicableMatch.registerObject("cd", cd);
 		return csp;
 	}
 
@@ -339,14 +339,14 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject c, EObject cd, EObject c2t, EObject t,
-			EObject db, EObject cd2db) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject db, EObject t, EObject cd2db, EObject c2t,
+			EObject c, EObject cd) {
+		ruleresult.registerObject("db", db);
+		ruleresult.registerObject("t", t);
+		ruleresult.registerObject("cd2db", cd2db);
+		ruleresult.registerObject("c2t", c2t);
 		ruleresult.registerObject("c", c);
 		ruleresult.registerObject("cd", cd);
-		ruleresult.registerObject("c2t", c2t);
-		ruleresult.registerObject("t", t);
-		ruleresult.registerObject("db", db);
-		ruleresult.registerObject("cd2db", cd2db);
 
 	}
 
@@ -364,43 +364,43 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Table t, DB db) {
+	public boolean isAppropriate_BWD(Match match, DB db, Table t) {
 
-		Object[] result1_black = class2tableImpl.pattern_class2table_10_1_initialbindings_blackBBBB(this, match, t, db);
+		Object[] result1_black = class2tableImpl.pattern_class2table_10_1_initialbindings_blackBBBB(this, match, db, t);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[t] = " + t + ", " + "[db] = " + db + ".");
+					+ "[match] = " + match + ", " + "[db] = " + db + ", " + "[t] = " + t + ".");
 		}
 
 		Object[] result2_bindingAndBlack = class2tableImpl.pattern_class2table_10_2_SolveCSP_bindingAndBlackFBBBB(this,
-				match, t, db);
+				match, db, t);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[t] = " + t + ", " + "[db] = " + db + ".");
+					+ "[match] = " + match + ", " + "[db] = " + db + ", " + "[t] = " + t + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (class2tableImpl.pattern_class2table_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = class2tableImpl
-					.pattern_class2table_10_4_collectelementstobetranslated_blackBBB(match, t, db);
+					.pattern_class2table_10_4_collectelementstobetranslated_blackBBB(match, db, t);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[t] = " + t + ", " + "[db] = " + db + ".");
+						+ "[db] = " + db + ", " + "[t] = " + t + ".");
 			}
-			class2tableImpl.pattern_class2table_10_4_collectelementstobetranslated_greenBBBF(match, t, db);
+			class2tableImpl.pattern_class2table_10_4_collectelementstobetranslated_greenBBBF(match, db, t);
 			//nothing EMoflonEdge db__t____table = (EMoflonEdge) result4_green[3];
 
-			Object[] result5_black = class2tableImpl.pattern_class2table_10_5_collectcontextelements_blackBBB(match, t,
-					db);
+			Object[] result5_black = class2tableImpl.pattern_class2table_10_5_collectcontextelements_blackBBB(match, db,
+					t);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[t] = " + t + ", " + "[db] = " + db + ".");
+						+ "[db] = " + db + ", " + "[t] = " + t + ".");
 			}
 			class2tableImpl.pattern_class2table_10_5_collectcontextelements_greenBB(match, db);
 
 			// 
-			class2tableImpl.pattern_class2table_10_6_registerobjectstomatch_expressionBBBB(this, match, t, db);
+			class2tableImpl.pattern_class2table_10_6_registerobjectstomatch_expressionBBBB(this, match, db, t);
 			return class2tableImpl.pattern_class2table_10_7_expressionF();
 		} else {
 			return class2tableImpl.pattern_class2table_10_8_expressionF();
@@ -421,41 +421,41 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		ClassDiagram cd = (ClassDiagram) result1_bindingAndBlack[0];
+		DB db = (DB) result1_bindingAndBlack[0];
 		Table t = (Table) result1_bindingAndBlack[1];
-		DB db = (DB) result1_bindingAndBlack[2];
-		CD2D cd2db = (CD2D) result1_bindingAndBlack[3];
+		CD2D cd2db = (CD2D) result1_bindingAndBlack[2];
+		ClassDiagram cd = (ClassDiagram) result1_bindingAndBlack[3];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = class2tableImpl.pattern_class2table_11_1_performtransformation_greenFBFB(cd, t);
-		Clazz c = (Clazz) result1_green[0];
-		C2T c2t = (C2T) result1_green[2];
+		Object[] result1_green = class2tableImpl.pattern_class2table_11_1_performtransformation_greenBFFB(t, cd);
+		C2T c2t = (C2T) result1_green[1];
+		Clazz c = (Clazz) result1_green[2];
 
-		Object[] result2_black = class2tableImpl.pattern_class2table_11_2_collecttranslatedelements_blackBBB(c, c2t, t);
+		Object[] result2_black = class2tableImpl.pattern_class2table_11_2_collecttranslatedelements_blackBBB(t, c2t, c);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[c] = " + c + ", " + "[c2t] = "
-					+ c2t + ", " + "[t] = " + t + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[t] = " + t + ", " + "[c2t] = "
+					+ c2t + ", " + "[c] = " + c + ".");
 		}
-		Object[] result2_green = class2tableImpl.pattern_class2table_11_2_collecttranslatedelements_greenFBBB(c, c2t,
-				t);
+		Object[] result2_green = class2tableImpl.pattern_class2table_11_2_collecttranslatedelements_greenFBBB(t, c2t,
+				c);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = class2tableImpl.pattern_class2table_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
-				c, cd, c2t, t, db, cd2db);
+				db, t, cd2db, c2t, c, cd);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[c] = " + c + ", " + "[cd] = " + cd + ", " + "[c2t] = " + c2t + ", " + "[t] = " + t + ", "
-					+ "[db] = " + db + ", " + "[cd2db] = " + cd2db + ".");
+					+ ", " + "[db] = " + db + ", " + "[t] = " + t + ", " + "[cd2db] = " + cd2db + ", " + "[c2t] = "
+					+ c2t + ", " + "[c] = " + c + ", " + "[cd] = " + cd + ".");
 		}
-		class2tableImpl.pattern_class2table_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, c, cd, c2t, t, db);
-		//nothing EMoflonEdge cd__c____classes = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge c2t__c____source = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge c2t__t____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge db__t____table = (EMoflonEdge) result3_green[9];
+		class2tableImpl.pattern_class2table_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, db, t, c2t, c, cd);
+		//nothing EMoflonEdge db__t____table = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge c2t__t____target = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge c2t__c____source = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge cd__c____classes = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
-		class2tableImpl.pattern_class2table_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, c, cd, c2t, t, db,
-				cd2db);
+		class2tableImpl.pattern_class2table_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, db, t, cd2db, c2t,
+				c, cd);
 		return class2tableImpl.pattern_class2table_11_6_expressionFB(ruleresult);
 	}
 
@@ -482,28 +482,28 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Table t = (Table) result2_binding[0];
-		DB db = (DB) result2_binding[1];
-		for (Object[] result2_black : class2tableImpl.pattern_class2table_12_2_corematch_blackFBBFB(t, db, match)) {
-			ClassDiagram cd = (ClassDiagram) result2_black[0];
-			CD2D cd2db = (CD2D) result2_black[3];
+		DB db = (DB) result2_binding[0];
+		Table t = (Table) result2_binding[1];
+		for (Object[] result2_black : class2tableImpl.pattern_class2table_12_2_corematch_blackBBFFB(db, t, match)) {
+			CD2D cd2db = (CD2D) result2_black[2];
+			ClassDiagram cd = (ClassDiagram) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : class2tableImpl.pattern_class2table_12_3_findcontext_blackBBBB(cd, t, db,
-					cd2db)) {
-				Object[] result3_green = class2tableImpl.pattern_class2table_12_3_findcontext_greenBBBBFFFF(cd, t, db,
-						cd2db);
+			for (Object[] result3_black : class2tableImpl.pattern_class2table_12_3_findcontext_blackBBBB(db, t, cd2db,
+					cd)) {
+				Object[] result3_green = class2tableImpl.pattern_class2table_12_3_findcontext_greenBBBBFFFF(db, t,
+						cd2db, cd);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
 				//nothing EMoflonEdge db__t____table = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge cd2db__cd____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge cd2db__db____target = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge cd2db__db____target = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge cd2db__cd____source = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = class2tableImpl
-						.pattern_class2table_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, cd, t, db,
-								cd2db);
+						.pattern_class2table_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, db, t, cd2db,
+								cd);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[cd] = " + cd + ", " + "[t] = " + t
-							+ ", " + "[db] = " + db + ", " + "[cd2db] = " + cd2db + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[db] = " + db + ", " + "[t] = " + t
+							+ ", " + "[cd2db] = " + cd2db + ", " + "[cd] = " + cd + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -532,9 +532,9 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Table t, DB db) {
-		match.registerObject("t", t);
+	public void registerObjectsToMatch_BWD(Match match, DB db, Table t) {
 		match.registerObject("db", db);
+		match.registerObject("t", t);
 
 	}
 
@@ -543,7 +543,7 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Table t, DB db) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, DB db, Table t) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -572,8 +572,8 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDiagram cd, Table t, DB db,
-			CD2D cd2db) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, DB db, Table t, CD2D cd2db,
+			ClassDiagram cd) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -588,10 +588,10 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("cd", cd);
-		isApplicableMatch.registerObject("t", t);
 		isApplicableMatch.registerObject("db", db);
+		isApplicableMatch.registerObject("t", t);
 		isApplicableMatch.registerObject("cd2db", cd2db);
+		isApplicableMatch.registerObject("cd", cd);
 		return csp;
 	}
 
@@ -609,14 +609,14 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject c, EObject cd, EObject c2t, EObject t,
-			EObject db, EObject cd2db) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject db, EObject t, EObject cd2db, EObject c2t,
+			EObject c, EObject cd) {
+		ruleresult.registerObject("db", db);
+		ruleresult.registerObject("t", t);
+		ruleresult.registerObject("cd2db", cd2db);
+		ruleresult.registerObject("c2t", c2t);
 		ruleresult.registerObject("c", c);
 		ruleresult.registerObject("cd", cd);
-		ruleresult.registerObject("c2t", c2t);
-		ruleresult.registerObject("t", t);
-		ruleresult.registerObject("db", db);
-		ruleresult.registerObject("cd2db", cd2db);
 
 	}
 
@@ -634,7 +634,7 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_3(EMoflonEdge _edge_table) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_61(EMoflonEdge _edge_table) {
 
 		Object[] result1_bindingAndBlack = class2tableImpl
 				.pattern_class2table_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -650,14 +650,14 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		// ForEach 
 		for (Object[] result2_black : class2tableImpl
 				.pattern_class2table_20_2_testcorematchandDECs_blackFFB(_edge_table)) {
-			Table t = (Table) result2_black[0];
-			DB db = (DB) result2_black[1];
+			DB db = (DB) result2_black[0];
+			Table t = (Table) result2_black[1];
 			Object[] result2_green = class2tableImpl.pattern_class2table_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (class2tableImpl.pattern_class2table_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-					match, t, db)) {
+					match, db, t)) {
 				// 
 				if (class2tableImpl
 						.pattern_class2table_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -688,7 +688,7 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_4(EMoflonEdge _edge_classes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_67(EMoflonEdge _edge_classes) {
 
 		Object[] result1_bindingAndBlack = class2tableImpl
 				.pattern_class2table_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -817,37 +817,37 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Clazz c = (Clazz) result2_bindingAndBlack[0];
-		ClassDiagram cd = (ClassDiagram) result2_bindingAndBlack[1];
-		Table t = (Table) result2_bindingAndBlack[2];
-		DB db = (DB) result2_bindingAndBlack[3];
+		DB db = (DB) result2_bindingAndBlack[0];
+		Table t = (Table) result2_bindingAndBlack[1];
+		Clazz c = (Clazz) result2_bindingAndBlack[2];
+		ClassDiagram cd = (ClassDiagram) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = class2tableImpl.pattern_class2table_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-				this, c, cd, t, db, sourceMatch, targetMatch);
+				this, db, t, c, cd, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[c] = " + c + ", " + "[cd] = " + cd + ", " + "[t] = " + t + ", " + "[db] = " + db + ", "
+					+ "[db] = " + db + ", " + "[t] = " + t + ", " + "[c] = " + c + ", " + "[cd] = " + cd + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (class2tableImpl.pattern_class2table_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : class2tableImpl.pattern_class2table_24_5_matchcorrcontext_blackBBFBB(cd, db,
+			for (Object[] result5_black : class2tableImpl.pattern_class2table_24_5_matchcorrcontext_blackBFBBB(db, cd,
 					sourceMatch, targetMatch)) {
-				CD2D cd2db = (CD2D) result5_black[2];
+				CD2D cd2db = (CD2D) result5_black[1];
 				Object[] result5_green = class2tableImpl.pattern_class2table_24_5_matchcorrcontext_greenBBBF(cd2db,
 						sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
-				Object[] result6_black = class2tableImpl.pattern_class2table_24_6_createcorrespondence_blackBBBBB(c, cd,
-						t, db, ccMatch);
+				Object[] result6_black = class2tableImpl.pattern_class2table_24_6_createcorrespondence_blackBBBBB(db, t,
+						c, cd, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException(
-							"Pattern matching failed." + " Variables: " + "[c] = " + c + ", " + "[cd] = " + cd + ", "
-									+ "[t] = " + t + ", " + "[db] = " + db + ", " + "[ccMatch] = " + ccMatch + ".");
+							"Pattern matching failed." + " Variables: " + "[db] = " + db + ", " + "[t] = " + t + ", "
+									+ "[c] = " + c + ", " + "[cd] = " + cd + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				class2tableImpl.pattern_class2table_24_6_createcorrespondence_greenBFBB(c, t, ccMatch);
+				class2tableImpl.pattern_class2table_24_6_createcorrespondence_greenBFBB(t, c, ccMatch);
 				//nothing C2T c2t = (C2T) result6_green[1];
 
 				Object[] result7_black = class2tableImpl.pattern_class2table_24_7_addtoreturnedresult_blackBB(result,
@@ -870,7 +870,7 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Clazz c, ClassDiagram cd, Table t, DB db, Match sourceMatch,
+	public CSP isApplicable_solveCsp_CC(DB db, Table t, Clazz c, ClassDiagram cd, Match sourceMatch,
 			Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -915,8 +915,8 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Table t, DB db) {// 
-		Object[] result1_black = class2tableImpl.pattern_class2table_28_1_matchtggpattern_blackBB(t, db);
+	public boolean checkDEC_BWD(DB db, Table t) {// 
+		Object[] result1_black = class2tableImpl.pattern_class2table_28_1_matchtggpattern_blackBB(db, t);
 		if (result1_black != null) {
 			return class2tableImpl.pattern_class2table_28_2_expressionF();
 		} else {
@@ -944,35 +944,35 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		for (Object[] result2_black : class2tableImpl
 				.pattern_class2table_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList cd2dbList = (RuleEntryList) result2_black[0];
-			ClassDiagram cd = (ClassDiagram) result2_black[1];
+			DB db = (DB) result2_black[1];
 			CD2D cd2db = (CD2D) result2_black[2];
-			DB db = (DB) result2_black[3];
+			ClassDiagram cd = (ClassDiagram) result2_black[3];
 
 			Object[] result3_bindingAndBlack = class2tableImpl.pattern_class2table_29_3_solveCSP_bindingAndBlackFBBBBBB(
-					this, isApplicableMatch, cd, db, cd2db, ruleResult);
+					this, isApplicableMatch, db, cd2db, cd, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[cd] = " + cd + ", " + "[db] = " + db
-						+ ", " + "[cd2db] = " + cd2db + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[db] = " + db + ", " + "[cd2db] = "
+						+ cd2db + ", " + "[cd] = " + cd + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (class2tableImpl.pattern_class2table_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = class2tableImpl.pattern_class2table_29_5_checknacs_blackBBB(cd, db, cd2db);
+				Object[] result5_black = class2tableImpl.pattern_class2table_29_5_checknacs_blackBBB(db, cd2db, cd);
 				if (result5_black != null) {
 
-					Object[] result6_black = class2tableImpl.pattern_class2table_29_6_perform_blackBBBB(cd, db, cd2db,
+					Object[] result6_black = class2tableImpl.pattern_class2table_29_6_perform_blackBBBB(db, cd2db, cd,
 							ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException(
-								"Pattern matching failed." + " Variables: " + "[cd] = " + cd + ", " + "[db] = " + db
-										+ ", " + "[cd2db] = " + cd2db + ", " + "[ruleResult] = " + ruleResult + ".");
+								"Pattern matching failed." + " Variables: " + "[db] = " + db + ", " + "[cd2db] = "
+										+ cd2db + ", " + "[cd] = " + cd + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					class2tableImpl.pattern_class2table_29_6_perform_greenFBFFBB(cd, db, ruleResult);
-					//nothing Clazz c = (Clazz) result6_green[0];
+					class2tableImpl.pattern_class2table_29_6_perform_greenBFFFBB(db, cd, ruleResult);
+					//nothing Table t = (Table) result6_green[1];
 					//nothing C2T c2t = (C2T) result6_green[2];
-					//nothing Table t = (Table) result6_green[3];
+					//nothing Clazz c = (Clazz) result6_green[3];
 
 				} else {
 				}
@@ -989,7 +989,7 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDiagram cd, DB db, CD2D cd2db,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, DB db, CD2D cd2db, ClassDiagram cd,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1005,9 +1005,9 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("cd", cd);
 		isApplicableMatch.registerObject("db", db);
 		isApplicableMatch.registerObject("cd2db", cd2db);
+		isApplicableMatch.registerObject("cd", cd);
 		return csp;
 	}
 
@@ -1044,9 +1044,9 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 					(ClassDiagram) arguments.get(2));
 		case RulesPackage.CLASS2TABLE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS2TABLE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_CLAZZ_CLASSDIAGRAM_DB_CD2D:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Clazz) arguments.get(1),
-					(ClassDiagram) arguments.get(2), (DB) arguments.get(3), (CD2D) arguments.get(4));
+		case RulesPackage.CLASS2TABLE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_DB_CD2D_CLAZZ_CLASSDIAGRAM:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (DB) arguments.get(1),
+					(CD2D) arguments.get(2), (Clazz) arguments.get(3), (ClassDiagram) arguments.get(4));
 		case RulesPackage.CLASS2TABLE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.CLASS2TABLE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1056,23 +1056,23 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 			return null;
 		case RulesPackage.CLASS2TABLE___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.CLASS2TABLE___IS_APPROPRIATE_BWD__MATCH_TABLE_DB:
-			return isAppropriate_BWD((Match) arguments.get(0), (Table) arguments.get(1), (DB) arguments.get(2));
+		case RulesPackage.CLASS2TABLE___IS_APPROPRIATE_BWD__MATCH_DB_TABLE:
+			return isAppropriate_BWD((Match) arguments.get(0), (DB) arguments.get(1), (Table) arguments.get(2));
 		case RulesPackage.CLASS2TABLE___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.CLASS2TABLE___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS2TABLE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TABLE_DB:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Table) arguments.get(1), (DB) arguments.get(2));
+		case RulesPackage.CLASS2TABLE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_DB_TABLE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (DB) arguments.get(1), (Table) arguments.get(2));
 			return null;
-		case RulesPackage.CLASS2TABLE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TABLE_DB:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Table) arguments.get(1),
-					(DB) arguments.get(2));
+		case RulesPackage.CLASS2TABLE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_DB_TABLE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (DB) arguments.get(1),
+					(Table) arguments.get(2));
 		case RulesPackage.CLASS2TABLE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.CLASS2TABLE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSDIAGRAM_TABLE_DB_CD2D:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassDiagram) arguments.get(1),
-					(Table) arguments.get(2), (DB) arguments.get(3), (CD2D) arguments.get(4));
+		case RulesPackage.CLASS2TABLE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_DB_TABLE_CD2D_CLASSDIAGRAM:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (DB) arguments.get(1),
+					(Table) arguments.get(2), (CD2D) arguments.get(3), (ClassDiagram) arguments.get(4));
 		case RulesPackage.CLASS2TABLE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.CLASS2TABLE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1082,31 +1082,31 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 			return null;
 		case RulesPackage.CLASS2TABLE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CLASS2TABLE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_3__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_3((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CLASS2TABLE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_4__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_4((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS2TABLE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_61__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_61((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CLASS2TABLE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_67__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_67((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CLASS2TABLE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS2TABLE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CLASS2TABLE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.CLASS2TABLE___IS_APPLICABLE_SOLVE_CSP_CC__CLAZZ_CLASSDIAGRAM_TABLE_DB_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Clazz) arguments.get(0), (ClassDiagram) arguments.get(1),
-					(Table) arguments.get(2), (DB) arguments.get(3), (Match) arguments.get(4),
-					(Match) arguments.get(5));
+		case RulesPackage.CLASS2TABLE___IS_APPLICABLE_SOLVE_CSP_CC__DB_TABLE_CLAZZ_CLASSDIAGRAM_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((DB) arguments.get(0), (Table) arguments.get(1), (Clazz) arguments.get(2),
+					(ClassDiagram) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.CLASS2TABLE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.CLASS2TABLE___CHECK_DEC_FWD__CLAZZ_CLASSDIAGRAM:
 			return checkDEC_FWD((Clazz) arguments.get(0), (ClassDiagram) arguments.get(1));
-		case RulesPackage.CLASS2TABLE___CHECK_DEC_BWD__TABLE_DB:
-			return checkDEC_BWD((Table) arguments.get(0), (DB) arguments.get(1));
+		case RulesPackage.CLASS2TABLE___CHECK_DEC_BWD__DB_TABLE:
+			return checkDEC_BWD((DB) arguments.get(0), (Table) arguments.get(1));
 		case RulesPackage.CLASS2TABLE___GENERATE_MODEL__RULEENTRYCONTAINER_CD2D:
 			return generateModel((RuleEntryContainer) arguments.get(0), (CD2D) arguments.get(1));
-		case RulesPackage.CLASS2TABLE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_CLASSDIAGRAM_DB_CD2D_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (ClassDiagram) arguments.get(1),
-					(DB) arguments.get(2), (CD2D) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+		case RulesPackage.CLASS2TABLE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_DB_CD2D_CLASSDIAGRAM_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (DB) arguments.get(1),
+					(CD2D) arguments.get(2), (ClassDiagram) arguments.get(3),
+					(ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.CLASS2TABLE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1199,23 +1199,23 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 
 	public static final Object[] pattern_class2table_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("c");
-		EObject _localVariable_1 = isApplicableMatch.getObject("cd");
-		EObject _localVariable_2 = isApplicableMatch.getObject("db");
-		EObject _localVariable_3 = isApplicableMatch.getObject("cd2db");
-		EObject tmpC = _localVariable_0;
-		EObject tmpCd = _localVariable_1;
-		EObject tmpDb = _localVariable_2;
-		EObject tmpCd2db = _localVariable_3;
-		if (tmpC instanceof Clazz) {
-			Clazz c = (Clazz) tmpC;
-			if (tmpCd instanceof ClassDiagram) {
-				ClassDiagram cd = (ClassDiagram) tmpCd;
-				if (tmpDb instanceof DB) {
-					DB db = (DB) tmpDb;
-					if (tmpCd2db instanceof CD2D) {
-						CD2D cd2db = (CD2D) tmpCd2db;
-						return new Object[] { c, cd, db, cd2db, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("db");
+		EObject _localVariable_1 = isApplicableMatch.getObject("cd2db");
+		EObject _localVariable_2 = isApplicableMatch.getObject("c");
+		EObject _localVariable_3 = isApplicableMatch.getObject("cd");
+		EObject tmpDb = _localVariable_0;
+		EObject tmpCd2db = _localVariable_1;
+		EObject tmpC = _localVariable_2;
+		EObject tmpCd = _localVariable_3;
+		if (tmpDb instanceof DB) {
+			DB db = (DB) tmpDb;
+			if (tmpCd2db instanceof CD2D) {
+				CD2D cd2db = (CD2D) tmpCd2db;
+				if (tmpC instanceof Clazz) {
+					Clazz c = (Clazz) tmpC;
+					if (tmpCd instanceof ClassDiagram) {
+						ClassDiagram cd = (ClassDiagram) tmpCd;
+						return new Object[] { db, cd2db, c, cd, isApplicableMatch };
 					}
 				}
 			}
@@ -1223,12 +1223,12 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		return null;
 	}
 
-	public static final Object[] pattern_class2table_1_1_performtransformation_blackBBBBFBB(Clazz c, ClassDiagram cd,
-			DB db, CD2D cd2db, class2table _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_class2table_1_1_performtransformation_blackBBBBFBB(DB db, CD2D cd2db, Clazz c,
+			ClassDiagram cd, class2table _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { c, cd, db, cd2db, csp, _this, isApplicableMatch };
+				return new Object[] { db, cd2db, c, cd, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1239,63 +1239,63 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		Object[] result_pattern_class2table_1_1_performtransformation_binding = pattern_class2table_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_class2table_1_1_performtransformation_binding != null) {
-			Clazz c = (Clazz) result_pattern_class2table_1_1_performtransformation_binding[0];
-			ClassDiagram cd = (ClassDiagram) result_pattern_class2table_1_1_performtransformation_binding[1];
-			DB db = (DB) result_pattern_class2table_1_1_performtransformation_binding[2];
-			CD2D cd2db = (CD2D) result_pattern_class2table_1_1_performtransformation_binding[3];
+			DB db = (DB) result_pattern_class2table_1_1_performtransformation_binding[0];
+			CD2D cd2db = (CD2D) result_pattern_class2table_1_1_performtransformation_binding[1];
+			Clazz c = (Clazz) result_pattern_class2table_1_1_performtransformation_binding[2];
+			ClassDiagram cd = (ClassDiagram) result_pattern_class2table_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_class2table_1_1_performtransformation_black = pattern_class2table_1_1_performtransformation_blackBBBBFBB(
-					c, cd, db, cd2db, _this, isApplicableMatch);
+					db, cd2db, c, cd, _this, isApplicableMatch);
 			if (result_pattern_class2table_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_class2table_1_1_performtransformation_black[4];
 
-				return new Object[] { c, cd, db, cd2db, csp, _this, isApplicableMatch };
+				return new Object[] { db, cd2db, c, cd, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_class2table_1_1_performtransformation_greenBFFB(Clazz c, DB db) {
-		C2T c2t = Class2databaseFactory.eINSTANCE.createC2T();
+	public static final Object[] pattern_class2table_1_1_performtransformation_greenBFFB(DB db, Clazz c) {
 		Table t = DatabaseFactory.eINSTANCE.createTable();
-		c2t.setSource(c);
-		c2t.setTarget(t);
+		C2T c2t = Class2databaseFactory.eINSTANCE.createC2T();
 		db.getTable().add(t);
-		return new Object[] { c, c2t, t, db };
+		c2t.setTarget(t);
+		c2t.setSource(c);
+		return new Object[] { db, t, c2t, c };
 	}
 
-	public static final Object[] pattern_class2table_1_2_collecttranslatedelements_blackBBB(Clazz c, C2T c2t, Table t) {
-		return new Object[] { c, c2t, t };
+	public static final Object[] pattern_class2table_1_2_collecttranslatedelements_blackBBB(Table t, C2T c2t, Clazz c) {
+		return new Object[] { t, c2t, c };
 	}
 
-	public static final Object[] pattern_class2table_1_2_collecttranslatedelements_greenFBBB(Clazz c, C2T c2t,
-			Table t) {
+	public static final Object[] pattern_class2table_1_2_collecttranslatedelements_greenFBBB(Table t, C2T c2t,
+			Clazz c) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(c);
-		ruleresult.getCreatedLinkElements().add(c2t);
 		ruleresult.getCreatedElements().add(t);
-		return new Object[] { ruleresult, c, c2t, t };
+		ruleresult.getCreatedLinkElements().add(c2t);
+		ruleresult.getTranslatedElements().add(c);
+		return new Object[] { ruleresult, t, c2t, c };
 	}
 
 	public static final Object[] pattern_class2table_1_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject c, EObject cd, EObject c2t, EObject t, EObject db, EObject cd2db) {
-		if (!c.equals(cd)) {
-			if (!c.equals(c2t)) {
-				if (!c.equals(t)) {
-					if (!c.equals(db)) {
-						if (!c.equals(cd2db)) {
-							if (!cd.equals(t)) {
-								if (!cd.equals(db)) {
-									if (!cd.equals(cd2db)) {
-										if (!c2t.equals(cd)) {
-											if (!c2t.equals(t)) {
-												if (!c2t.equals(db)) {
-													if (!c2t.equals(cd2db)) {
-														if (!db.equals(t)) {
-															if (!cd2db.equals(t)) {
-																if (!cd2db.equals(db)) {
-																	return new Object[] { ruleresult, c, cd, c2t, t, db,
-																			cd2db };
+			EObject db, EObject t, EObject cd2db, EObject c2t, EObject c, EObject cd) {
+		if (!db.equals(t)) {
+			if (!cd2db.equals(db)) {
+				if (!cd2db.equals(t)) {
+					if (!c2t.equals(db)) {
+						if (!c2t.equals(t)) {
+							if (!c2t.equals(cd2db)) {
+								if (!c2t.equals(cd)) {
+									if (!c.equals(db)) {
+										if (!c.equals(t)) {
+											if (!c.equals(cd2db)) {
+												if (!c.equals(c2t)) {
+													if (!c.equals(cd)) {
+														if (!cd.equals(db)) {
+															if (!cd.equals(t)) {
+																if (!cd.equals(cd2db)) {
+																	return new Object[] { ruleresult, db, t, cd2db, c2t,
+																			c, cd };
 																}
 															}
 														}
@@ -1315,40 +1315,40 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_1_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject c, EObject cd, EObject c2t, EObject t, EObject db) {
-		EMoflonEdge cd__c____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2t__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2t__t____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject db, EObject t, EObject c2t, EObject c, EObject cd) {
 		EMoflonEdge db__t____table = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2t__t____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2t__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd__c____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "class2table";
-		String cd__c____classes_name_prime = "classes";
-		String c2t__c____source_name_prime = "source";
-		String c2t__t____target_name_prime = "target";
 		String db__t____table_name_prime = "table";
-		cd__c____classes.setSrc(cd);
-		cd__c____classes.setTrg(c);
-		ruleresult.getTranslatedEdges().add(cd__c____classes);
-		c2t__c____source.setSrc(c2t);
-		c2t__c____source.setTrg(c);
-		ruleresult.getCreatedEdges().add(c2t__c____source);
-		c2t__t____target.setSrc(c2t);
-		c2t__t____target.setTrg(t);
-		ruleresult.getCreatedEdges().add(c2t__t____target);
+		String c2t__t____target_name_prime = "target";
+		String c2t__c____source_name_prime = "source";
+		String cd__c____classes_name_prime = "classes";
 		db__t____table.setSrc(db);
 		db__t____table.setTrg(t);
 		ruleresult.getCreatedEdges().add(db__t____table);
+		c2t__t____target.setSrc(c2t);
+		c2t__t____target.setTrg(t);
+		ruleresult.getCreatedEdges().add(c2t__t____target);
+		c2t__c____source.setSrc(c2t);
+		c2t__c____source.setTrg(c);
+		ruleresult.getCreatedEdges().add(c2t__c____source);
+		cd__c____classes.setSrc(cd);
+		cd__c____classes.setTrg(c);
+		ruleresult.getTranslatedEdges().add(cd__c____classes);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		cd__c____classes.setName(cd__c____classes_name_prime);
-		c2t__c____source.setName(c2t__c____source_name_prime);
-		c2t__t____target.setName(c2t__t____target_name_prime);
 		db__t____table.setName(db__t____table_name_prime);
-		return new Object[] { ruleresult, c, cd, c2t, t, db, cd__c____classes, c2t__c____source, c2t__t____target,
-				db__t____table };
+		c2t__t____target.setName(c2t__t____target_name_prime);
+		c2t__c____source.setName(c2t__c____source_name_prime);
+		cd__c____classes.setName(cd__c____classes_name_prime);
+		return new Object[] { ruleresult, db, t, c2t, c, cd, db__t____table, c2t__t____target, c2t__c____source,
+				cd__c____classes };
 	}
 
 	public static final void pattern_class2table_1_5_registerobjects_expressionBBBBBBBB(class2table _this,
-			PerformRuleResult ruleresult, EObject c, EObject cd, EObject c2t, EObject t, EObject db, EObject cd2db) {
-		_this.registerObjects_FWD(ruleresult, c, cd, c2t, t, db, cd2db);
+			PerformRuleResult ruleresult, EObject db, EObject t, EObject cd2db, EObject c2t, EObject c, EObject cd) {
+		_this.registerObjects_FWD(ruleresult, db, t, cd2db, c2t, c, cd);
 
 	}
 
@@ -1419,68 +1419,68 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_class2table_2_2_corematch_blackBBFFB(Clazz c, ClassDiagram cd,
+	public static final Iterable<Object[]> pattern_class2table_2_2_corematch_blackFFBBB(Clazz c, ClassDiagram cd,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (CD2D cd2db : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(cd, CD2D.class,
 				"source")) {
 			DB db = cd2db.getTarget();
 			if (db != null) {
-				_result.add(new Object[] { c, cd, db, cd2db, match });
+				_result.add(new Object[] { db, cd2db, c, cd, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_class2table_2_3_findcontext_blackBBBB(Clazz c, ClassDiagram cd,
-			DB db, CD2D cd2db) {
+	public static final Iterable<Object[]> pattern_class2table_2_3_findcontext_blackBBBB(DB db, CD2D cd2db, Clazz c,
+			ClassDiagram cd) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (cd.getClasses().contains(c)) {
+		if (db.equals(cd2db.getTarget())) {
 			if (cd.equals(cd2db.getSource())) {
-				if (db.equals(cd2db.getTarget())) {
-					_result.add(new Object[] { c, cd, db, cd2db });
+				if (cd.getClasses().contains(c)) {
+					_result.add(new Object[] { db, cd2db, c, cd });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_class2table_2_3_findcontext_greenBBBBFFFF(Clazz c, ClassDiagram cd, DB db,
-			CD2D cd2db) {
+	public static final Object[] pattern_class2table_2_3_findcontext_greenBBBBFFFF(DB db, CD2D cd2db, Clazz c,
+			ClassDiagram cd) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge cd__c____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cd2db__cd____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd2db__db____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String cd__c____classes_name_prime = "classes";
-		String cd2db__cd____source_name_prime = "source";
+		EMoflonEdge cd2db__cd____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd__c____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String cd2db__db____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(c);
-		isApplicableMatch.getAllContextElements().add(cd);
+		String cd2db__cd____source_name_prime = "source";
+		String cd__c____classes_name_prime = "classes";
 		isApplicableMatch.getAllContextElements().add(db);
 		isApplicableMatch.getAllContextElements().add(cd2db);
-		cd__c____classes.setSrc(cd);
-		cd__c____classes.setTrg(c);
-		isApplicableMatch.getAllContextElements().add(cd__c____classes);
-		cd2db__cd____source.setSrc(cd2db);
-		cd2db__cd____source.setTrg(cd);
-		isApplicableMatch.getAllContextElements().add(cd2db__cd____source);
+		isApplicableMatch.getAllContextElements().add(c);
+		isApplicableMatch.getAllContextElements().add(cd);
 		cd2db__db____target.setSrc(cd2db);
 		cd2db__db____target.setTrg(db);
 		isApplicableMatch.getAllContextElements().add(cd2db__db____target);
-		cd__c____classes.setName(cd__c____classes_name_prime);
-		cd2db__cd____source.setName(cd2db__cd____source_name_prime);
+		cd2db__cd____source.setSrc(cd2db);
+		cd2db__cd____source.setTrg(cd);
+		isApplicableMatch.getAllContextElements().add(cd2db__cd____source);
+		cd__c____classes.setSrc(cd);
+		cd__c____classes.setTrg(c);
+		isApplicableMatch.getAllContextElements().add(cd__c____classes);
 		cd2db__db____target.setName(cd2db__db____target_name_prime);
-		return new Object[] { c, cd, db, cd2db, isApplicableMatch, cd__c____classes, cd2db__cd____source,
-				cd2db__db____target };
+		cd2db__cd____source.setName(cd2db__cd____source_name_prime);
+		cd__c____classes.setName(cd__c____classes_name_prime);
+		return new Object[] { db, cd2db, c, cd, isApplicableMatch, cd2db__db____target, cd2db__cd____source,
+				cd__c____classes };
 	}
 
 	public static final Object[] pattern_class2table_2_4_solveCSP_bindingFBBBBBB(class2table _this,
-			IsApplicableMatch isApplicableMatch, Clazz c, ClassDiagram cd, DB db, CD2D cd2db) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, c, cd, db, cd2db);
+			IsApplicableMatch isApplicableMatch, DB db, CD2D cd2db, Clazz c, ClassDiagram cd) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, db, cd2db, c, cd);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, c, cd, db, cd2db };
+			return new Object[] { csp, _this, isApplicableMatch, db, cd2db, c, cd };
 		}
 		return null;
 	}
@@ -1490,16 +1490,16 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_2_4_solveCSP_bindingAndBlackFBBBBBB(class2table _this,
-			IsApplicableMatch isApplicableMatch, Clazz c, ClassDiagram cd, DB db, CD2D cd2db) {
+			IsApplicableMatch isApplicableMatch, DB db, CD2D cd2db, Clazz c, ClassDiagram cd) {
 		Object[] result_pattern_class2table_2_4_solveCSP_binding = pattern_class2table_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, c, cd, db, cd2db);
+				_this, isApplicableMatch, db, cd2db, c, cd);
 		if (result_pattern_class2table_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_class2table_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_class2table_2_4_solveCSP_black = pattern_class2table_2_4_solveCSP_blackB(csp);
 			if (result_pattern_class2table_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, c, cd, db, cd2db };
+				return new Object[] { csp, _this, isApplicableMatch, db, cd2db, c, cd };
 			}
 		}
 		return null;
@@ -1532,16 +1532,16 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_10_1_initialbindings_blackBBBB(class2table _this, Match match,
-			Table t, DB db) {
-		return new Object[] { _this, match, t, db };
+			DB db, Table t) {
+		return new Object[] { _this, match, db, t };
 	}
 
-	public static final Object[] pattern_class2table_10_2_SolveCSP_bindingFBBBB(class2table _this, Match match, Table t,
-			DB db) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, t, db);
+	public static final Object[] pattern_class2table_10_2_SolveCSP_bindingFBBBB(class2table _this, Match match, DB db,
+			Table t) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, db, t);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, t, db };
+			return new Object[] { csp, _this, match, db, t };
 		}
 		return null;
 	}
@@ -1551,16 +1551,16 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_10_2_SolveCSP_bindingAndBlackFBBBB(class2table _this, Match match,
-			Table t, DB db) {
+			DB db, Table t) {
 		Object[] result_pattern_class2table_10_2_SolveCSP_binding = pattern_class2table_10_2_SolveCSP_bindingFBBBB(
-				_this, match, t, db);
+				_this, match, db, t);
 		if (result_pattern_class2table_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_class2table_10_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_class2table_10_2_SolveCSP_black = pattern_class2table_10_2_SolveCSP_blackB(csp);
 			if (result_pattern_class2table_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, t, db };
+				return new Object[] { csp, _this, match, db, t };
 			}
 		}
 		return null;
@@ -1572,13 +1572,13 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		return _result;
 	}
 
-	public static final Object[] pattern_class2table_10_4_collectelementstobetranslated_blackBBB(Match match, Table t,
-			DB db) {
-		return new Object[] { match, t, db };
+	public static final Object[] pattern_class2table_10_4_collectelementstobetranslated_blackBBB(Match match, DB db,
+			Table t) {
+		return new Object[] { match, db, t };
 	}
 
-	public static final Object[] pattern_class2table_10_4_collectelementstobetranslated_greenBBBF(Match match, Table t,
-			DB db) {
+	public static final Object[] pattern_class2table_10_4_collectelementstobetranslated_greenBBBF(Match match, DB db,
+			Table t) {
 		EMoflonEdge db__t____table = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(t);
 		String db__t____table_name_prime = "table";
@@ -1586,11 +1586,11 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		db__t____table.setTrg(t);
 		match.getToBeTranslatedEdges().add(db__t____table);
 		db__t____table.setName(db__t____table_name_prime);
-		return new Object[] { match, t, db, db__t____table };
+		return new Object[] { match, db, t, db__t____table };
 	}
 
-	public static final Object[] pattern_class2table_10_5_collectcontextelements_blackBBB(Match match, Table t, DB db) {
-		return new Object[] { match, t, db };
+	public static final Object[] pattern_class2table_10_5_collectcontextelements_blackBBB(Match match, DB db, Table t) {
+		return new Object[] { match, db, t };
 	}
 
 	public static final Object[] pattern_class2table_10_5_collectcontextelements_greenBB(Match match, DB db) {
@@ -1599,8 +1599,8 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final void pattern_class2table_10_6_registerobjectstomatch_expressionBBBB(class2table _this,
-			Match match, Table t, DB db) {
-		_this.registerObjectsToMatch_BWD(match, t, db);
+			Match match, DB db, Table t) {
+		_this.registerObjectsToMatch_BWD(match, db, t);
 
 	}
 
@@ -1616,23 +1616,23 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 
 	public static final Object[] pattern_class2table_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("cd");
+		EObject _localVariable_0 = isApplicableMatch.getObject("db");
 		EObject _localVariable_1 = isApplicableMatch.getObject("t");
-		EObject _localVariable_2 = isApplicableMatch.getObject("db");
-		EObject _localVariable_3 = isApplicableMatch.getObject("cd2db");
-		EObject tmpCd = _localVariable_0;
+		EObject _localVariable_2 = isApplicableMatch.getObject("cd2db");
+		EObject _localVariable_3 = isApplicableMatch.getObject("cd");
+		EObject tmpDb = _localVariable_0;
 		EObject tmpT = _localVariable_1;
-		EObject tmpDb = _localVariable_2;
-		EObject tmpCd2db = _localVariable_3;
-		if (tmpCd instanceof ClassDiagram) {
-			ClassDiagram cd = (ClassDiagram) tmpCd;
+		EObject tmpCd2db = _localVariable_2;
+		EObject tmpCd = _localVariable_3;
+		if (tmpDb instanceof DB) {
+			DB db = (DB) tmpDb;
 			if (tmpT instanceof Table) {
 				Table t = (Table) tmpT;
-				if (tmpDb instanceof DB) {
-					DB db = (DB) tmpDb;
-					if (tmpCd2db instanceof CD2D) {
-						CD2D cd2db = (CD2D) tmpCd2db;
-						return new Object[] { cd, t, db, cd2db, isApplicableMatch };
+				if (tmpCd2db instanceof CD2D) {
+					CD2D cd2db = (CD2D) tmpCd2db;
+					if (tmpCd instanceof ClassDiagram) {
+						ClassDiagram cd = (ClassDiagram) tmpCd;
+						return new Object[] { db, t, cd2db, cd, isApplicableMatch };
 					}
 				}
 			}
@@ -1640,12 +1640,12 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		return null;
 	}
 
-	public static final Object[] pattern_class2table_11_1_performtransformation_blackBBBBFBB(ClassDiagram cd, Table t,
-			DB db, CD2D cd2db, class2table _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_class2table_11_1_performtransformation_blackBBBBFBB(DB db, Table t, CD2D cd2db,
+			ClassDiagram cd, class2table _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { cd, t, db, cd2db, csp, _this, isApplicableMatch };
+				return new Object[] { db, t, cd2db, cd, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1656,64 +1656,64 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		Object[] result_pattern_class2table_11_1_performtransformation_binding = pattern_class2table_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_class2table_11_1_performtransformation_binding != null) {
-			ClassDiagram cd = (ClassDiagram) result_pattern_class2table_11_1_performtransformation_binding[0];
+			DB db = (DB) result_pattern_class2table_11_1_performtransformation_binding[0];
 			Table t = (Table) result_pattern_class2table_11_1_performtransformation_binding[1];
-			DB db = (DB) result_pattern_class2table_11_1_performtransformation_binding[2];
-			CD2D cd2db = (CD2D) result_pattern_class2table_11_1_performtransformation_binding[3];
+			CD2D cd2db = (CD2D) result_pattern_class2table_11_1_performtransformation_binding[2];
+			ClassDiagram cd = (ClassDiagram) result_pattern_class2table_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_class2table_11_1_performtransformation_black = pattern_class2table_11_1_performtransformation_blackBBBBFBB(
-					cd, t, db, cd2db, _this, isApplicableMatch);
+					db, t, cd2db, cd, _this, isApplicableMatch);
 			if (result_pattern_class2table_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_class2table_11_1_performtransformation_black[4];
 
-				return new Object[] { cd, t, db, cd2db, csp, _this, isApplicableMatch };
+				return new Object[] { db, t, cd2db, cd, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_class2table_11_1_performtransformation_greenFBFB(ClassDiagram cd, Table t) {
-		Clazz c = ClassFactory.eINSTANCE.createClazz();
+	public static final Object[] pattern_class2table_11_1_performtransformation_greenBFFB(Table t, ClassDiagram cd) {
 		C2T c2t = Class2databaseFactory.eINSTANCE.createC2T();
-		cd.getClasses().add(c);
-		c2t.setSource(c);
+		Clazz c = ClassFactory.eINSTANCE.createClazz();
 		c2t.setTarget(t);
-		return new Object[] { c, cd, c2t, t };
+		c2t.setSource(c);
+		cd.getClasses().add(c);
+		return new Object[] { t, c2t, c, cd };
 	}
 
-	public static final Object[] pattern_class2table_11_2_collecttranslatedelements_blackBBB(Clazz c, C2T c2t,
-			Table t) {
-		return new Object[] { c, c2t, t };
+	public static final Object[] pattern_class2table_11_2_collecttranslatedelements_blackBBB(Table t, C2T c2t,
+			Clazz c) {
+		return new Object[] { t, c2t, c };
 	}
 
-	public static final Object[] pattern_class2table_11_2_collecttranslatedelements_greenFBBB(Clazz c, C2T c2t,
-			Table t) {
+	public static final Object[] pattern_class2table_11_2_collecttranslatedelements_greenFBBB(Table t, C2T c2t,
+			Clazz c) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(c);
-		ruleresult.getCreatedLinkElements().add(c2t);
 		ruleresult.getTranslatedElements().add(t);
-		return new Object[] { ruleresult, c, c2t, t };
+		ruleresult.getCreatedLinkElements().add(c2t);
+		ruleresult.getCreatedElements().add(c);
+		return new Object[] { ruleresult, t, c2t, c };
 	}
 
 	public static final Object[] pattern_class2table_11_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject c, EObject cd, EObject c2t, EObject t, EObject db, EObject cd2db) {
-		if (!c.equals(cd)) {
-			if (!c.equals(c2t)) {
-				if (!c.equals(t)) {
-					if (!c.equals(db)) {
-						if (!c.equals(cd2db)) {
-							if (!cd.equals(t)) {
-								if (!cd.equals(db)) {
-									if (!cd.equals(cd2db)) {
-										if (!c2t.equals(cd)) {
-											if (!c2t.equals(t)) {
-												if (!c2t.equals(db)) {
-													if (!c2t.equals(cd2db)) {
-														if (!db.equals(t)) {
-															if (!cd2db.equals(t)) {
-																if (!cd2db.equals(db)) {
-																	return new Object[] { ruleresult, c, cd, c2t, t, db,
-																			cd2db };
+			EObject db, EObject t, EObject cd2db, EObject c2t, EObject c, EObject cd) {
+		if (!db.equals(t)) {
+			if (!cd2db.equals(db)) {
+				if (!cd2db.equals(t)) {
+					if (!c2t.equals(db)) {
+						if (!c2t.equals(t)) {
+							if (!c2t.equals(cd2db)) {
+								if (!c2t.equals(cd)) {
+									if (!c.equals(db)) {
+										if (!c.equals(t)) {
+											if (!c.equals(cd2db)) {
+												if (!c.equals(c2t)) {
+													if (!c.equals(cd)) {
+														if (!cd.equals(db)) {
+															if (!cd.equals(t)) {
+																if (!cd.equals(cd2db)) {
+																	return new Object[] { ruleresult, db, t, cd2db, c2t,
+																			c, cd };
 																}
 															}
 														}
@@ -1733,40 +1733,40 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_11_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject c, EObject cd, EObject c2t, EObject t, EObject db) {
-		EMoflonEdge cd__c____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2t__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge c2t__t____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject db, EObject t, EObject c2t, EObject c, EObject cd) {
 		EMoflonEdge db__t____table = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2t__t____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge c2t__c____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd__c____classes = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "class2table";
-		String cd__c____classes_name_prime = "classes";
-		String c2t__c____source_name_prime = "source";
-		String c2t__t____target_name_prime = "target";
 		String db__t____table_name_prime = "table";
-		cd__c____classes.setSrc(cd);
-		cd__c____classes.setTrg(c);
-		ruleresult.getCreatedEdges().add(cd__c____classes);
-		c2t__c____source.setSrc(c2t);
-		c2t__c____source.setTrg(c);
-		ruleresult.getCreatedEdges().add(c2t__c____source);
-		c2t__t____target.setSrc(c2t);
-		c2t__t____target.setTrg(t);
-		ruleresult.getCreatedEdges().add(c2t__t____target);
+		String c2t__t____target_name_prime = "target";
+		String c2t__c____source_name_prime = "source";
+		String cd__c____classes_name_prime = "classes";
 		db__t____table.setSrc(db);
 		db__t____table.setTrg(t);
 		ruleresult.getTranslatedEdges().add(db__t____table);
+		c2t__t____target.setSrc(c2t);
+		c2t__t____target.setTrg(t);
+		ruleresult.getCreatedEdges().add(c2t__t____target);
+		c2t__c____source.setSrc(c2t);
+		c2t__c____source.setTrg(c);
+		ruleresult.getCreatedEdges().add(c2t__c____source);
+		cd__c____classes.setSrc(cd);
+		cd__c____classes.setTrg(c);
+		ruleresult.getCreatedEdges().add(cd__c____classes);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		cd__c____classes.setName(cd__c____classes_name_prime);
-		c2t__c____source.setName(c2t__c____source_name_prime);
-		c2t__t____target.setName(c2t__t____target_name_prime);
 		db__t____table.setName(db__t____table_name_prime);
-		return new Object[] { ruleresult, c, cd, c2t, t, db, cd__c____classes, c2t__c____source, c2t__t____target,
-				db__t____table };
+		c2t__t____target.setName(c2t__t____target_name_prime);
+		c2t__c____source.setName(c2t__c____source_name_prime);
+		cd__c____classes.setName(cd__c____classes_name_prime);
+		return new Object[] { ruleresult, db, t, c2t, c, cd, db__t____table, c2t__t____target, c2t__c____source,
+				cd__c____classes };
 	}
 
 	public static final void pattern_class2table_11_5_registerobjects_expressionBBBBBBBB(class2table _this,
-			PerformRuleResult ruleresult, EObject c, EObject cd, EObject c2t, EObject t, EObject db, EObject cd2db) {
-		_this.registerObjects_BWD(ruleresult, c, cd, c2t, t, db, cd2db);
+			PerformRuleResult ruleresult, EObject db, EObject t, EObject cd2db, EObject c2t, EObject c, EObject cd) {
+		_this.registerObjects_BWD(ruleresult, db, t, cd2db, c2t, c, cd);
 
 	}
 
@@ -1824,81 +1824,81 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("t");
-		EObject _localVariable_1 = match.getObject("db");
-		EObject tmpT = _localVariable_0;
-		EObject tmpDb = _localVariable_1;
-		if (tmpT instanceof Table) {
-			Table t = (Table) tmpT;
-			if (tmpDb instanceof DB) {
-				DB db = (DB) tmpDb;
-				return new Object[] { t, db, match };
+		EObject _localVariable_0 = match.getObject("db");
+		EObject _localVariable_1 = match.getObject("t");
+		EObject tmpDb = _localVariable_0;
+		EObject tmpT = _localVariable_1;
+		if (tmpDb instanceof DB) {
+			DB db = (DB) tmpDb;
+			if (tmpT instanceof Table) {
+				Table t = (Table) tmpT;
+				return new Object[] { db, t, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_class2table_12_2_corematch_blackFBBFB(Table t, DB db, Match match) {
+	public static final Iterable<Object[]> pattern_class2table_12_2_corematch_blackBBFFB(DB db, Table t, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (CD2D cd2db : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(db, CD2D.class,
 				"target")) {
 			ClassDiagram cd = cd2db.getSource();
 			if (cd != null) {
-				_result.add(new Object[] { cd, t, db, cd2db, match });
+				_result.add(new Object[] { db, t, cd2db, cd, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_class2table_12_3_findcontext_blackBBBB(ClassDiagram cd, Table t,
-			DB db, CD2D cd2db) {
+	public static final Iterable<Object[]> pattern_class2table_12_3_findcontext_blackBBBB(DB db, Table t, CD2D cd2db,
+			ClassDiagram cd) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (db.getTable().contains(t)) {
-			if (cd.equals(cd2db.getSource())) {
-				if (db.equals(cd2db.getTarget())) {
-					_result.add(new Object[] { cd, t, db, cd2db });
+			if (db.equals(cd2db.getTarget())) {
+				if (cd.equals(cd2db.getSource())) {
+					_result.add(new Object[] { db, t, cd2db, cd });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_class2table_12_3_findcontext_greenBBBBFFFF(ClassDiagram cd, Table t, DB db,
-			CD2D cd2db) {
+	public static final Object[] pattern_class2table_12_3_findcontext_greenBBBBFFFF(DB db, Table t, CD2D cd2db,
+			ClassDiagram cd) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge db__t____table = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge cd2db__cd____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge cd2db__db____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge cd2db__cd____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String db__t____table_name_prime = "table";
-		String cd2db__cd____source_name_prime = "source";
 		String cd2db__db____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(cd);
-		isApplicableMatch.getAllContextElements().add(t);
+		String cd2db__cd____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(db);
+		isApplicableMatch.getAllContextElements().add(t);
 		isApplicableMatch.getAllContextElements().add(cd2db);
+		isApplicableMatch.getAllContextElements().add(cd);
 		db__t____table.setSrc(db);
 		db__t____table.setTrg(t);
 		isApplicableMatch.getAllContextElements().add(db__t____table);
-		cd2db__cd____source.setSrc(cd2db);
-		cd2db__cd____source.setTrg(cd);
-		isApplicableMatch.getAllContextElements().add(cd2db__cd____source);
 		cd2db__db____target.setSrc(cd2db);
 		cd2db__db____target.setTrg(db);
 		isApplicableMatch.getAllContextElements().add(cd2db__db____target);
+		cd2db__cd____source.setSrc(cd2db);
+		cd2db__cd____source.setTrg(cd);
+		isApplicableMatch.getAllContextElements().add(cd2db__cd____source);
 		db__t____table.setName(db__t____table_name_prime);
-		cd2db__cd____source.setName(cd2db__cd____source_name_prime);
 		cd2db__db____target.setName(cd2db__db____target_name_prime);
-		return new Object[] { cd, t, db, cd2db, isApplicableMatch, db__t____table, cd2db__cd____source,
-				cd2db__db____target };
+		cd2db__cd____source.setName(cd2db__cd____source_name_prime);
+		return new Object[] { db, t, cd2db, cd, isApplicableMatch, db__t____table, cd2db__db____target,
+				cd2db__cd____source };
 	}
 
 	public static final Object[] pattern_class2table_12_4_solveCSP_bindingFBBBBBB(class2table _this,
-			IsApplicableMatch isApplicableMatch, ClassDiagram cd, Table t, DB db, CD2D cd2db) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, cd, t, db, cd2db);
+			IsApplicableMatch isApplicableMatch, DB db, Table t, CD2D cd2db, ClassDiagram cd) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, db, t, cd2db, cd);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, cd, t, db, cd2db };
+			return new Object[] { csp, _this, isApplicableMatch, db, t, cd2db, cd };
 		}
 		return null;
 	}
@@ -1908,16 +1908,16 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_12_4_solveCSP_bindingAndBlackFBBBBBB(class2table _this,
-			IsApplicableMatch isApplicableMatch, ClassDiagram cd, Table t, DB db, CD2D cd2db) {
+			IsApplicableMatch isApplicableMatch, DB db, Table t, CD2D cd2db, ClassDiagram cd) {
 		Object[] result_pattern_class2table_12_4_solveCSP_binding = pattern_class2table_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, cd, t, db, cd2db);
+				_this, isApplicableMatch, db, t, cd2db, cd);
 		if (result_pattern_class2table_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_class2table_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_class2table_12_4_solveCSP_black = pattern_class2table_12_4_solveCSP_blackB(csp);
 			if (result_pattern_class2table_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, cd, t, db, cd2db };
+				return new Object[] { csp, _this, isApplicableMatch, db, t, cd2db, cd };
 			}
 		}
 		return null;
@@ -2012,7 +2012,7 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 			if (tmpT instanceof Table) {
 				Table t = (Table) tmpT;
 				if (db.getTable().contains(t)) {
-					_result.add(new Object[] { t, db, _edge_table });
+					_result.add(new Object[] { db, t, _edge_table });
 				}
 			}
 
@@ -2031,8 +2031,8 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final boolean pattern_class2table_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			class2table _this, Match match, Table t, DB db) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, t, db);
+			class2table _this, Match match, DB db, Table t) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, db, t);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2118,9 +2118,9 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_21_2_testcorematchandDECs_black_nac_0B(Clazz c) {
-		Clazz __DEC_c_super_645648 = c.getSuper();
-		if (__DEC_c_super_645648 != null) {
-			if (!c.equals(__DEC_c_super_645648)) {
+		Clazz __DEC_c_super_138505 = c.getSuper();
+		if (__DEC_c_super_138505 != null) {
+			if (!c.equals(__DEC_c_super_138505)) {
 				return new Object[] { c };
 			}
 		}
@@ -2202,25 +2202,25 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_class2table_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
-			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("c");
-		EObject _localVariable_1 = sourceMatch.getObject("cd");
-		EObject _localVariable_2 = targetMatch.getObject("t");
-		EObject _localVariable_3 = targetMatch.getObject("db");
-		EObject tmpC = _localVariable_0;
-		EObject tmpCd = _localVariable_1;
-		EObject tmpT = _localVariable_2;
-		EObject tmpDb = _localVariable_3;
-		if (tmpC instanceof Clazz) {
-			Clazz c = (Clazz) tmpC;
-			if (tmpCd instanceof ClassDiagram) {
-				ClassDiagram cd = (ClassDiagram) tmpCd;
-				if (tmpT instanceof Table) {
-					Table t = (Table) tmpT;
-					if (tmpDb instanceof DB) {
-						DB db = (DB) tmpDb;
-						return new Object[] { c, cd, t, db, sourceMatch, targetMatch };
+	public static final Object[] pattern_class2table_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
+			Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("db");
+		EObject _localVariable_1 = targetMatch.getObject("t");
+		EObject _localVariable_2 = sourceMatch.getObject("c");
+		EObject _localVariable_3 = sourceMatch.getObject("cd");
+		EObject tmpDb = _localVariable_0;
+		EObject tmpT = _localVariable_1;
+		EObject tmpC = _localVariable_2;
+		EObject tmpCd = _localVariable_3;
+		if (tmpDb instanceof DB) {
+			DB db = (DB) tmpDb;
+			if (tmpT instanceof Table) {
+				Table t = (Table) tmpT;
+				if (tmpC instanceof Clazz) {
+					Clazz c = (Clazz) tmpC;
+					if (tmpCd instanceof ClassDiagram) {
+						ClassDiagram cd = (ClassDiagram) tmpCd;
+						return new Object[] { db, t, c, cd, targetMatch, sourceMatch };
 					}
 				}
 			}
@@ -2228,10 +2228,10 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		return null;
 	}
 
-	public static final Object[] pattern_class2table_24_2_matchsrctrgcontext_blackBBBBBB(Clazz c, ClassDiagram cd,
-			Table t, DB db, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_class2table_24_2_matchsrctrgcontext_blackBBBBBB(DB db, Table t, Clazz c,
+			ClassDiagram cd, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { c, cd, t, db, sourceMatch, targetMatch };
+			return new Object[] { db, t, c, cd, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2239,29 +2239,29 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	public static final Object[] pattern_class2table_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_class2table_24_2_matchsrctrgcontext_binding = pattern_class2table_24_2_matchsrctrgcontext_bindingFFFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_class2table_24_2_matchsrctrgcontext_binding != null) {
-			Clazz c = (Clazz) result_pattern_class2table_24_2_matchsrctrgcontext_binding[0];
-			ClassDiagram cd = (ClassDiagram) result_pattern_class2table_24_2_matchsrctrgcontext_binding[1];
-			Table t = (Table) result_pattern_class2table_24_2_matchsrctrgcontext_binding[2];
-			DB db = (DB) result_pattern_class2table_24_2_matchsrctrgcontext_binding[3];
+			DB db = (DB) result_pattern_class2table_24_2_matchsrctrgcontext_binding[0];
+			Table t = (Table) result_pattern_class2table_24_2_matchsrctrgcontext_binding[1];
+			Clazz c = (Clazz) result_pattern_class2table_24_2_matchsrctrgcontext_binding[2];
+			ClassDiagram cd = (ClassDiagram) result_pattern_class2table_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_class2table_24_2_matchsrctrgcontext_black = pattern_class2table_24_2_matchsrctrgcontext_blackBBBBBB(
-					c, cd, t, db, sourceMatch, targetMatch);
+					db, t, c, cd, sourceMatch, targetMatch);
 			if (result_pattern_class2table_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { c, cd, t, db, sourceMatch, targetMatch };
+				return new Object[] { db, t, c, cd, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_class2table_24_3_solvecsp_bindingFBBBBBBB(class2table _this, Clazz c,
-			ClassDiagram cd, Table t, DB db, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(c, cd, t, db, sourceMatch, targetMatch);
+	public static final Object[] pattern_class2table_24_3_solvecsp_bindingFBBBBBBB(class2table _this, DB db, Table t,
+			Clazz c, ClassDiagram cd, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(db, t, c, cd, sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, c, cd, t, db, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, db, t, c, cd, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2270,17 +2270,17 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_class2table_24_3_solvecsp_bindingAndBlackFBBBBBBB(class2table _this, Clazz c,
-			ClassDiagram cd, Table t, DB db, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_class2table_24_3_solvecsp_bindingAndBlackFBBBBBBB(class2table _this, DB db,
+			Table t, Clazz c, ClassDiagram cd, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_class2table_24_3_solvecsp_binding = pattern_class2table_24_3_solvecsp_bindingFBBBBBBB(
-				_this, c, cd, t, db, sourceMatch, targetMatch);
+				_this, db, t, c, cd, sourceMatch, targetMatch);
 		if (result_pattern_class2table_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_class2table_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_class2table_24_3_solvecsp_black = pattern_class2table_24_3_solvecsp_blackB(csp);
 			if (result_pattern_class2table_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, c, cd, t, db, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, db, t, c, cd, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2292,14 +2292,14 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_class2table_24_5_matchcorrcontext_blackBBFBB(ClassDiagram cd, DB db,
+	public static final Iterable<Object[]> pattern_class2table_24_5_matchcorrcontext_blackBFBBB(DB db, ClassDiagram cd,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (CD2D cd2db : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(cd, CD2D.class,
-					"source")) {
-				if (db.equals(cd2db.getTarget())) {
-					_result.add(new Object[] { cd, db, cd2db, sourceMatch, targetMatch });
+			for (CD2D cd2db : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(db, CD2D.class,
+					"target")) {
+				if (cd.equals(cd2db.getSource())) {
+					_result.add(new Object[] { db, cd2db, cd, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2317,18 +2317,18 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		return new Object[] { cd2db, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_class2table_24_6_createcorrespondence_blackBBBBB(Clazz c, ClassDiagram cd,
-			Table t, DB db, CCMatch ccMatch) {
-		return new Object[] { c, cd, t, db, ccMatch };
+	public static final Object[] pattern_class2table_24_6_createcorrespondence_blackBBBBB(DB db, Table t, Clazz c,
+			ClassDiagram cd, CCMatch ccMatch) {
+		return new Object[] { db, t, c, cd, ccMatch };
 	}
 
-	public static final Object[] pattern_class2table_24_6_createcorrespondence_greenBFBB(Clazz c, Table t,
+	public static final Object[] pattern_class2table_24_6_createcorrespondence_greenBFBB(Table t, Clazz c,
 			CCMatch ccMatch) {
 		C2T c2t = Class2databaseFactory.eINSTANCE.createC2T();
-		c2t.setSource(c);
 		c2t.setTarget(t);
+		c2t.setSource(c);
 		ccMatch.getCreateCorr().add(c2t);
-		return new Object[] { c, c2t, t, ccMatch };
+		return new Object[] { t, c2t, c, ccMatch };
 	}
 
 	public static final Object[] pattern_class2table_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2352,9 +2352,9 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_27_1_matchtggpattern_black_nac_0B(Clazz c) {
-		Clazz __DEC_c_super_275652 = c.getSuper();
-		if (__DEC_c_super_275652 != null) {
-			if (!c.equals(__DEC_c_super_275652)) {
+		Clazz __DEC_c_super_831757 = c.getSuper();
+		if (__DEC_c_super_831757 != null) {
+			if (!c.equals(__DEC_c_super_831757)) {
 				return new Object[] { c };
 			}
 		}
@@ -2381,9 +2381,9 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		return _result;
 	}
 
-	public static final Object[] pattern_class2table_28_1_matchtggpattern_blackBB(Table t, DB db) {
+	public static final Object[] pattern_class2table_28_1_matchtggpattern_blackBB(DB db, Table t) {
 		if (db.getTable().contains(t)) {
-			return new Object[] { t, db };
+			return new Object[] { db, t };
 		}
 		return null;
 	}
@@ -2411,9 +2411,9 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, ClassDiagram cd) {
-		if (ruleResult.getSourceObjects().contains(cd)) {
-			return new Object[] { ruleResult, cd };
+			ModelgeneratorRuleResult ruleResult, DB db) {
+		if (ruleResult.getTargetObjects().contains(db)) {
+			return new Object[] { ruleResult, db };
 		}
 		return null;
 	}
@@ -2427,9 +2427,9 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_29_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, DB db) {
-		if (ruleResult.getTargetObjects().contains(db)) {
-			return new Object[] { ruleResult, db };
+			ModelgeneratorRuleResult ruleResult, ClassDiagram cd) {
+		if (ruleResult.getSourceObjects().contains(cd)) {
+			return new Object[] { ruleResult, cd };
 		}
 		return null;
 	}
@@ -2441,15 +2441,15 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 			for (EObject tmpCd2db : cd2dbList.getEntryObjects()) {
 				if (tmpCd2db instanceof CD2D) {
 					CD2D cd2db = (CD2D) tmpCd2db;
-					ClassDiagram cd = cd2db.getSource();
-					if (cd != null) {
-						DB db = cd2db.getTarget();
-						if (db != null) {
+					DB db = cd2db.getTarget();
+					if (db != null) {
+						ClassDiagram cd = cd2db.getSource();
+						if (cd != null) {
 							if (pattern_class2table_29_2_isapplicablecore_black_nac_1BB(ruleResult, cd2db) == null) {
-								if (pattern_class2table_29_2_isapplicablecore_black_nac_0BB(ruleResult, cd) == null) {
+								if (pattern_class2table_29_2_isapplicablecore_black_nac_0BB(ruleResult, db) == null) {
 									if (pattern_class2table_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											db) == null) {
-										_result.add(new Object[] { cd2dbList, cd, cd2db, db, ruleEntryContainer,
+											cd) == null) {
+										_result.add(new Object[] { cd2dbList, db, cd2db, cd, ruleEntryContainer,
 												ruleResult });
 									}
 								}
@@ -2465,12 +2465,12 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_29_3_solveCSP_bindingFBBBBBB(class2table _this,
-			IsApplicableMatch isApplicableMatch, ClassDiagram cd, DB db, CD2D cd2db,
+			IsApplicableMatch isApplicableMatch, DB db, CD2D cd2db, ClassDiagram cd,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, cd, db, cd2db, ruleResult);
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, db, cd2db, cd, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, cd, db, cd2db, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, db, cd2db, cd, ruleResult };
 		}
 		return null;
 	}
@@ -2480,17 +2480,17 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 	}
 
 	public static final Object[] pattern_class2table_29_3_solveCSP_bindingAndBlackFBBBBBB(class2table _this,
-			IsApplicableMatch isApplicableMatch, ClassDiagram cd, DB db, CD2D cd2db,
+			IsApplicableMatch isApplicableMatch, DB db, CD2D cd2db, ClassDiagram cd,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_class2table_29_3_solveCSP_binding = pattern_class2table_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, cd, db, cd2db, ruleResult);
+				_this, isApplicableMatch, db, cd2db, cd, ruleResult);
 		if (result_pattern_class2table_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_class2table_29_3_solveCSP_binding[0];
 
 			Object[] result_pattern_class2table_29_3_solveCSP_black = pattern_class2table_29_3_solveCSP_blackB(csp);
 			if (result_pattern_class2table_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, cd, db, cd2db, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, db, cd2db, cd, ruleResult };
 			}
 		}
 		return null;
@@ -2502,33 +2502,33 @@ public class class2tableImpl extends AbstractRuleImpl implements class2table {
 		return _result;
 	}
 
-	public static final Object[] pattern_class2table_29_5_checknacs_blackBBB(ClassDiagram cd, DB db, CD2D cd2db) {
-		return new Object[] { cd, db, cd2db };
+	public static final Object[] pattern_class2table_29_5_checknacs_blackBBB(DB db, CD2D cd2db, ClassDiagram cd) {
+		return new Object[] { db, cd2db, cd };
 	}
 
-	public static final Object[] pattern_class2table_29_6_perform_blackBBBB(ClassDiagram cd, DB db, CD2D cd2db,
+	public static final Object[] pattern_class2table_29_6_perform_blackBBBB(DB db, CD2D cd2db, ClassDiagram cd,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { cd, db, cd2db, ruleResult };
+		return new Object[] { db, cd2db, cd, ruleResult };
 	}
 
-	public static final Object[] pattern_class2table_29_6_perform_greenFBFFBB(ClassDiagram cd, DB db,
+	public static final Object[] pattern_class2table_29_6_perform_greenBFFFBB(DB db, ClassDiagram cd,
 			ModelgeneratorRuleResult ruleResult) {
-		Clazz c = ClassFactory.eINSTANCE.createClazz();
-		C2T c2t = Class2databaseFactory.eINSTANCE.createC2T();
 		Table t = DatabaseFactory.eINSTANCE.createTable();
+		C2T c2t = Class2databaseFactory.eINSTANCE.createC2T();
+		Clazz c = ClassFactory.eINSTANCE.createClazz();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		cd.getClasses().add(c);
-		ruleResult.getSourceObjects().add(c);
-		c2t.setSource(c);
-		ruleResult.getCorrObjects().add(c2t);
-		c2t.setTarget(t);
 		db.getTable().add(t);
 		ruleResult.getTargetObjects().add(t);
+		c2t.setTarget(t);
+		ruleResult.getCorrObjects().add(c2t);
+		c2t.setSource(c);
+		cd.getClasses().add(c);
+		ruleResult.getSourceObjects().add(c);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { c, cd, c2t, t, db, ruleResult };
+		return new Object[] { db, t, c2t, c, cd, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_class2table_29_7_expressionFB(

@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="ASCII"?>
 <analysis:StaticAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:analysis="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//analysis">
   <sourceRules>
-    <rules ruleName="state2place">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_FWD_EMoflonEdge_53"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="selftrans2arctransarc">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_FWD_EMoflonEdge_54"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="initial2nothing">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_FWD_EMoflonEdge_55"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkDEC_FWD"/>
-    </rules>
     <rules ruleName="final2nothing">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/isAppropriate_FWD_EMoflonEdge_56"/>
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/isAppropriate_FWD_EMoflonEdge_113"/>
       <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/checkDEC_FWD"/>
     </rules>
+    <rules ruleName="statemachine2petrinet">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/isAppropriate_FWD_SM_2"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/checkDEC_FWD"/>
+    </rules>
     <rules ruleName="transition2arctransarc">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_FWD_EMoflonEdge_57"/>
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_FWD_EMoflonEdge_114"/>
       <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="statemachine2petrinet">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/isAppropriate_FWD_SM_0"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/checkDEC_FWD"/>
+    <rules ruleName="selftrans2arctransarc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_FWD_EMoflonEdge_115"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="state2place">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_FWD_EMoflonEdge_116"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="initial2nothing">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_FWD_EMoflonEdge_117"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkDEC_FWD"/>
     </rules>
   </sourceRules>
   <targetRules>
-    <rules ruleName="state2place">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_BWD_EMoflonEdge_52"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="selftrans2arctransarc">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_BWD_EMoflonEdge_53"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="initial2nothing" ignore="true">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_BWD_PNGraph_0"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkDEC_BWD"/>
-    </rules>
     <rules ruleName="final2nothing" ignore="true">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/isAppropriate_BWD_PNGraph_1"/>
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/isAppropriate_BWD_PNGraph_6"/>
       <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/final2nothing/checkDEC_BWD"/>
     </rules>
+    <rules ruleName="statemachine2petrinet">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/isAppropriate_BWD_PNGraph_7"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/checkDEC_BWD"/>
+    </rules>
     <rules ruleName="transition2arctransarc">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_BWD_EMoflonEdge_54"/>
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/isAppropriate_BWD_EMoflonEdge_107"/>
       <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/transition2arctransarc/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="statemachine2petrinet">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/isAppropriate_BWD_PNGraph_2"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/statemachine2petrinet/checkDEC_BWD"/>
+    <rules ruleName="selftrans2arctransarc">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/isAppropriate_BWD_EMoflonEdge_108"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/selftrans2arctransarc/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="state2place">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/isAppropriate_BWD_EMoflonEdge_109"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/state2place/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="initial2nothing" ignore="true">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/isAppropriate_BWD_PNGraph_8"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.statemachine2petrinet/model/Statemachine2petrinet.ecore#//Rules/initial2nothing/checkDEC_BWD"/>
     </rules>
   </targetRules>
 </analysis:StaticAnalysis>

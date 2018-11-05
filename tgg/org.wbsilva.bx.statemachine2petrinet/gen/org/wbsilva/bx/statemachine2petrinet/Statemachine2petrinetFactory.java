@@ -23,22 +23,13 @@ public interface Statemachine2petrinetFactory extends EFactory {
 			.init();
 
 	/**
-	 * Returns a new object of class '<em>T2T</em>'.
+	 * Returns a new object of class '<em>T2A</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>T2T</em>'.
+	 * @return a new object of class '<em>T2A</em>'.
 	 * @generated
 	 */
-	T2T createT2T();
-
-	/**
-	 * Returns a new object of class '<em>SM2PN</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>SM2PN</em>'.
-	 * @generated
-	 */
-	SM2PN createSM2PN();
+	T2A createT2A();
 
 	/**
 	 * Returns a new object of class '<em>S2P</em>'.
@@ -50,13 +41,22 @@ public interface Statemachine2petrinetFactory extends EFactory {
 	S2P createS2P();
 
 	/**
-	 * Returns a new object of class '<em>T2A</em>'.
+	 * Returns a new object of class '<em>SM2PN</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>T2A</em>'.
+	 * @return a new object of class '<em>SM2PN</em>'.
 	 * @generated
 	 */
-	T2A createT2A();
+	SM2PN createSM2PN();
+
+	/**
+	 * Returns a new object of class '<em>T2T</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>T2T</em>'.
+	 * @generated
+	 */
+	T2T createT2T();
 
 	/**
 	 * Returns the package supported by this factory.

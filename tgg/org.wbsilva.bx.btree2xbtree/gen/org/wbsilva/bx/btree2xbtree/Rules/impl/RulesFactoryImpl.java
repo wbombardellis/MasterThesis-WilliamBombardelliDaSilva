@@ -57,12 +57,12 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 		switch (eClass.getClassifierID()) {
 		case RulesPackage.NODE2NODE:
 			return createnode2node();
+		case RulesPackage.RIGHTLEFT2EASTWEST:
+			return createrightleft2eastwest();
 		case RulesPackage.LEFT2SOUTHWEST:
 			return createleft2southwest();
 		case RulesPackage.RIGHT2SOUTHEAST:
 			return createright2southeast();
-		case RulesPackage.RIGHTLEFT2EASTWEST:
-			return createrightleft2eastwest();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -83,6 +83,16 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public rightleft2eastwest createrightleft2eastwest() {
+		rightleft2eastwestImpl rightleft2eastwest = new rightleft2eastwestImpl();
+		return rightleft2eastwest;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public left2southwest createleft2southwest() {
 		left2southwestImpl left2southwest = new left2southwestImpl();
 		return left2southwest;
@@ -96,16 +106,6 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	public right2southeast createright2southeast() {
 		right2southeastImpl right2southeast = new right2southeastImpl();
 		return right2southeast;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public rightleft2eastwest createrightleft2eastwest() {
-		rightleft2eastwestImpl rightleft2eastwest = new rightleft2eastwestImpl();
-		return rightleft2eastwest;
 	}
 
 	/**

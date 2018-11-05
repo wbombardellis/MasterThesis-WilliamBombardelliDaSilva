@@ -55,16 +55,16 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case RulesPackage.SELFASSOC2COLUMN:
+			return createselfassoc2column();
 		case RulesPackage.ATTRIBUTE2COLUMN:
 			return createattribute2column();
+		case RulesPackage.ASSOCIATION2COLUMN:
+			return createassociation2column();
 		case RulesPackage.CD2DB:
 			return createcd2db();
 		case RulesPackage.SUPER2TABLE:
 			return createsuper2table();
-		case RulesPackage.SELFASSOC2COLUMN:
-			return createselfassoc2column();
-		case RulesPackage.ASSOCIATION2COLUMN:
-			return createassociation2column();
 		case RulesPackage.CLASS2TABLE:
 			return createclass2table();
 		default:
@@ -77,9 +77,29 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public selfassoc2column createselfassoc2column() {
+		selfassoc2columnImpl selfassoc2column = new selfassoc2columnImpl();
+		return selfassoc2column;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public attribute2column createattribute2column() {
 		attribute2columnImpl attribute2column = new attribute2columnImpl();
 		return attribute2column;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public association2column createassociation2column() {
+		association2columnImpl association2column = new association2columnImpl();
+		return association2column;
 	}
 
 	/**
@@ -100,26 +120,6 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	public super2table createsuper2table() {
 		super2tableImpl super2table = new super2tableImpl();
 		return super2table;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public selfassoc2column createselfassoc2column() {
-		selfassoc2columnImpl selfassoc2column = new selfassoc2columnImpl();
-		return selfassoc2column;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public association2column createassociation2column() {
-		association2columnImpl association2column = new association2columnImpl();
-		return association2column;
 	}
 
 	/**

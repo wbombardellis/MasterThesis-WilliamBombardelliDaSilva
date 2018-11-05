@@ -74,6 +74,11 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caserightleft2eastwest(rightleft2eastwest object) {
+			return createrightleft2eastwestAdapter();
+		}
+
+		@Override
 		public Adapter caseleft2southwest(left2southwest object) {
 			return createleft2southwestAdapter();
 		}
@@ -81,11 +86,6 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseright2southeast(right2southeast object) {
 			return createright2southeastAdapter();
-		}
-
-		@Override
-		public Adapter caserightleft2eastwest(rightleft2eastwest object) {
-			return createrightleft2eastwestAdapter();
 		}
 
 		@Override
@@ -127,6 +127,20 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.btree2xbtree.Rules.rightleft2eastwest <em>rightleft2eastwest</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.btree2xbtree.Rules.rightleft2eastwest
+	 * @generated
+	 */
+	public Adapter createrightleft2eastwestAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.btree2xbtree.Rules.left2southwest <em>left2southwest</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -151,20 +165,6 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createright2southeastAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.btree2xbtree.Rules.rightleft2eastwest <em>rightleft2eastwest</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.btree2xbtree.Rules.rightleft2eastwest
-	 * @generated
-	 */
-	public Adapter createrightleft2eastwestAdapter() {
 		return null;
 	}
 

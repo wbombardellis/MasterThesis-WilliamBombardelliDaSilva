@@ -11,10 +11,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//A2C/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//A2C/target"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/target"/>
-    </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/target"/>
@@ -23,8 +19,180 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//AS2C/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//AS2C/target"/>
     </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/target"/>
+    </genClasses>
     <nestedGenPackages prefix="Rules" disposableProviderFactory="true" loadInitialization="true"
         literalsInterface="false" ecorePackage="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules">
+      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column">
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD/sas"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD/cd"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD/sas"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD/cd"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD/sas"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD/cd"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/sas"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/c2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/cd2db"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/sas2fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/sas"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/c2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/cd2db"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD/db"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD/db"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD/db"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/c2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/cd2db"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/sas2fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/sas"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/c2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/cd2db"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD_EMoflonEdge_58">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD_EMoflonEdge_58/_edge_column"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD_EMoflonEdge_63">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD_EMoflonEdge_63/_edge_source"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/sas"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_FWD/sas"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_FWD/cd"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_BWD/db"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel/c2tParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/c2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
       <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column">
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_FWD/match"/>
@@ -52,30 +220,30 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_FWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_FWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_FWD/c2t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_FWD/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_FWD/c2t"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_checkCsp_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_checkCsp_FWD/csp"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD/a2co"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD/co"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD/c2t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD/co"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD/a2co"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD/c2t"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkTypes_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkTypes_FWD/match"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_BWD/co"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_BWD/co"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/perform_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/perform_BWD/isApplicableMatch"/>
@@ -85,44 +253,44 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjectsToMatch_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjectsToMatch_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjectsToMatch_BWD/co"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjectsToMatch_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjectsToMatch_BWD/co"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_solveCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_solveCsp_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_solveCsp_BWD/co"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_solveCsp_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_solveCsp_BWD/co"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_checkCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_checkCsp_BWD/csp"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_BWD/co"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_BWD/c2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_BWD/co"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_BWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_BWD/c2t"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_checkCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_checkCsp_BWD/csp"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD/a2co"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD/co"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD/c2t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD/co"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD/a2co"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD/c2t"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkTypes_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkTypes_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_BWD_EMoflonEdge_0">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_BWD_EMoflonEdge_0/_edge_column"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_BWD_EMoflonEdge_59">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_BWD_EMoflonEdge_59/_edge_column"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_FWD_EMoflonEdge_0">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_FWD_EMoflonEdge_0/_edge_attribute"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_FWD_EMoflonEdge_64">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_FWD_EMoflonEdge_64/_edge_attribute"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkAttributes_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkAttributes_FWD/__tripleMatch"/>
@@ -135,9 +303,9 @@
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_CC/targetMatch"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_CC/co"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_CC/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_CC/a"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_CC/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_CC/co"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_CC/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_CC/sourceMatch"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_CC/targetMatch"/>
@@ -150,8 +318,8 @@
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkDEC_FWD/c"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkDEC_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkDEC_BWD/co"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkDEC_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkDEC_BWD/co"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel/ruleEntryContainer"/>
@@ -160,12 +328,205 @@
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_solveCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_solveCsp_BWD/isApplicableMatch"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_solveCsp_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_solveCsp_BWD/c2t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_solveCsp_BWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_solveCsp_BWD/c2t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_solveCsp_BWD/ruleResult"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_checkCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column">
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD/as"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD/as"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD/as"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/b2u"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/c2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/as"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/u"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/b2u"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/as2fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/c2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/as"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/u"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD/u"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD/u"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD/u"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/b2u"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/c2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/u"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/b2u"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/as2fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/c2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/as"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/u"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD_EMoflonEdge_60">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD_EMoflonEdge_60/_edge_column"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD_EMoflonEdge_65">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD_EMoflonEdge_65/_edge_associations"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/as"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/u"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD/as"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD/fk"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD/u"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel/c2tParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/b2u"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/b"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/c2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/u"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_checkCsp_BWD/csp"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db">
@@ -243,11 +604,11 @@
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/checkTypes_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/checkTypes_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isAppropriate_BWD_DB_0">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isAppropriate_BWD_DB_0/db"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isAppropriate_BWD_DB_1">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isAppropriate_BWD_DB_1/db"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isAppropriate_FWD_ClassDiagram_0">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isAppropriate_FWD_ClassDiagram_0/cd"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isAppropriate_FWD_ClassDiagram_1">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isAppropriate_FWD_ClassDiagram_1/cd"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/checkAttributes_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/checkAttributes_FWD/__tripleMatch"/>
@@ -288,9 +649,9 @@
       <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table">
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD/p"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD/cd"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/perform_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/perform_FWD/isApplicableMatch"/>
@@ -300,15 +661,15 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjectsToMatch_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjectsToMatch_FWD/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjectsToMatch_FWD/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjectsToMatch_FWD/p"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjectsToMatch_FWD/cd"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_solveCsp_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_solveCsp_FWD/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_solveCsp_FWD/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_solveCsp_FWD/p"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_solveCsp_FWD/cd"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_checkCsp_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_checkCsp_FWD/csp"/>
@@ -317,11 +678,11 @@
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD/isApplicableMatch"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD/p2t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD/cd"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD/db"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD/p"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD/cd2db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD/db"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_checkCsp_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_checkCsp_FWD/csp"/>
@@ -330,12 +691,12 @@
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/ruleresult"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/p2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/p"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/c2t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD/p"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkTypes_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkTypes_FWD/match"/>
@@ -367,11 +728,11 @@
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkTypes_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkTypes_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_BWD_Table_0">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_BWD_Table_0/t"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_BWD_Table_1">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_BWD_Table_1/t"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD_EMoflonEdge_1">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD_EMoflonEdge_1/_edge_super"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD_EMoflonEdge_66">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD_EMoflonEdge_66/_edge_classes"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkAttributes_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkAttributes_FWD/__tripleMatch"/>
@@ -385,10 +746,10 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC/p"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC/p"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC/sourceMatch"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC/targetMatch"/>
         </genOperations>
@@ -396,9 +757,9 @@
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_checkCsp_CC/csp"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkDEC_FWD/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkDEC_FWD/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkDEC_FWD/p"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkDEC_FWD/cd"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkDEC_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkDEC_BWD/t"/>
@@ -412,375 +773,14 @@
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_solveCsp_BWD/isApplicableMatch"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_solveCsp_BWD/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_solveCsp_BWD/p2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_solveCsp_BWD/p"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_solveCsp_BWD/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_solveCsp_BWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_solveCsp_BWD/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_solveCsp_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_solveCsp_BWD/p"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_solveCsp_BWD/ruleResult"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_checkCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_checkCsp_BWD/csp"/>
-        </genOperations>
-      </genClasses>
-      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column">
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD/sas"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/perform_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/perform_FWD/isApplicableMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_FWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD/sas"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD/sas"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_FWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/sas"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/cd2db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_FWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/sas"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/cd2db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/sas2fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_FWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD/db"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/perform_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/perform_BWD/isApplicableMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_BWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD/db"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD/db"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_BWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/cd2db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_BWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/sas"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/cd2db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/sas2fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_BWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD_EMoflonEdge_1">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD_EMoflonEdge_1/_edge_column"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD_EMoflonEdge_2">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD_EMoflonEdge_2/_edge_source"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkAttributes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkAttributes_FWD/__tripleMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkAttributes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkAttributes_BWD/__tripleMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_CC/targetMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/sas"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC/targetMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_CC/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_FWD/sas"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_FWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_BWD/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_BWD/db"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel/ruleEntryContainer"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel/c2tParameter"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/cd2db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD/ruleResult"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_checkCsp_BWD/csp"/>
-        </genOperations>
-      </genClasses>
-      <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column">
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD/b"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD/as"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/perform_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/perform_FWD/isApplicableMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_FWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD/b"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD/as"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD/b"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD/as"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_FWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/b2u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/b"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/as"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD/cd2db"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_FWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/b2u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/as2fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/b"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/as"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD/cd2db"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_FWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD/u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD/fk"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/perform_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/perform_BWD/isApplicableMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_BWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD/u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD/fk"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD/u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD/fk"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_BWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/b2u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/b"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD/cd2db"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_BWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/b2u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/as2fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/b"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/as"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD/cd2db"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_BWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD_EMoflonEdge_2">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD_EMoflonEdge_2/_edge_column"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD_EMoflonEdge_3">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD_EMoflonEdge_3/_edge_source"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkAttributes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkAttributes_FWD/__tripleMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkAttributes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkAttributes_BWD/__tripleMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_CC/targetMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/b"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/fk"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/as"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_CC/targetMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_CC/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD/b"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD/as"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD/cd"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD/u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD/fk"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel/ruleEntryContainer"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel/b2uParameter"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/b2u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/u"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/b"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/cd2db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD/ruleResult"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_checkCsp_BWD/csp"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table">
@@ -810,30 +810,30 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_FWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_FWD/c"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_FWD/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_FWD/db"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_FWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_FWD/c"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_FWD/cd"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_checkCsp_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_checkCsp_FWD/csp"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD/c2t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD/cd2db"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkTypes_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkTypes_FWD/match"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_BWD/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_BWD/t"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/perform_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/perform_BWD/isApplicableMatch"/>
@@ -843,44 +843,44 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjectsToMatch_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjectsToMatch_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjectsToMatch_BWD/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjectsToMatch_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjectsToMatch_BWD/t"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_solveCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_solveCsp_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_solveCsp_BWD/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_solveCsp_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_solveCsp_BWD/t"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_checkCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_checkCsp_BWD/csp"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_BWD/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_BWD/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_BWD/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_BWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_BWD/cd"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_checkCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_checkCsp_BWD/csp"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD/t"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD/c2t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD/c2t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD/db"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD/cd2db"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkTypes_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkTypes_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_BWD_EMoflonEdge_3">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_BWD_EMoflonEdge_3/_edge_table"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_BWD_EMoflonEdge_61">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_BWD_EMoflonEdge_61/_edge_table"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_FWD_EMoflonEdge_4">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_FWD_EMoflonEdge_4/_edge_classes"/>
+        <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_FWD_EMoflonEdge_67">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_FWD_EMoflonEdge_67/_edge_classes"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkAttributes_FWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkAttributes_FWD/__tripleMatch"/>
@@ -893,10 +893,10 @@
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_CC/targetMatch"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_CC/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_CC/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_CC/c"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_CC/cd"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_CC/t"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_CC/db"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_CC/sourceMatch"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_CC/targetMatch"/>
         </genOperations>
@@ -908,8 +908,8 @@
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkDEC_FWD/cd"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkDEC_BWD">
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkDEC_BWD/t"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkDEC_BWD/db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkDEC_BWD/t"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel/ruleEntryContainer"/>
@@ -917,9 +917,9 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_solveCsp_BWD">
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_solveCsp_BWD/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_solveCsp_BWD/db"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_solveCsp_BWD/cd2db"/>
+          <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_solveCsp_BWD/cd"/>
           <genParameters ecoreParameter="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_solveCsp_BWD/ruleResult"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_checkCsp_BWD">

@@ -96,43 +96,43 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, State s, SM sm) {
+	public boolean isAppropriate_FWD(Match match, SM sm, State s) {
 
-		Object[] result1_black = state2placeImpl.pattern_state2place_0_1_initialbindings_blackBBBB(this, match, s, sm);
+		Object[] result1_black = state2placeImpl.pattern_state2place_0_1_initialbindings_blackBBBB(this, match, sm, s);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[s] = " + s + ", " + "[sm] = " + sm + ".");
+					+ "[match] = " + match + ", " + "[sm] = " + sm + ", " + "[s] = " + s + ".");
 		}
 
 		Object[] result2_bindingAndBlack = state2placeImpl.pattern_state2place_0_2_SolveCSP_bindingAndBlackFBBBB(this,
-				match, s, sm);
+				match, sm, s);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[s] = " + s + ", " + "[sm] = " + sm + ".");
+					+ "[match] = " + match + ", " + "[sm] = " + sm + ", " + "[s] = " + s + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (state2placeImpl.pattern_state2place_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = state2placeImpl
-					.pattern_state2place_0_4_collectelementstobetranslated_blackBBB(match, s, sm);
+					.pattern_state2place_0_4_collectelementstobetranslated_blackBBB(match, sm, s);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[s] = " + s + ", " + "[sm] = " + sm + ".");
+						+ "[sm] = " + sm + ", " + "[s] = " + s + ".");
 			}
-			state2placeImpl.pattern_state2place_0_4_collectelementstobetranslated_greenBBBF(match, s, sm);
+			state2placeImpl.pattern_state2place_0_4_collectelementstobetranslated_greenBBBF(match, sm, s);
 			//nothing EMoflonEdge sm__s____states = (EMoflonEdge) result4_green[3];
 
-			Object[] result5_black = state2placeImpl.pattern_state2place_0_5_collectcontextelements_blackBBB(match, s,
-					sm);
+			Object[] result5_black = state2placeImpl.pattern_state2place_0_5_collectcontextelements_blackBBB(match, sm,
+					s);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[s] = " + s + ", " + "[sm] = " + sm + ".");
+						+ "[sm] = " + sm + ", " + "[s] = " + s + ".");
 			}
 			state2placeImpl.pattern_state2place_0_5_collectcontextelements_greenBB(match, sm);
 
 			// 
-			state2placeImpl.pattern_state2place_0_6_registerobjectstomatch_expressionBBBB(this, match, s, sm);
+			state2placeImpl.pattern_state2place_0_6_registerobjectstomatch_expressionBBBB(this, match, sm, s);
 			return state2placeImpl.pattern_state2place_0_7_expressionF();
 		} else {
 			return state2placeImpl.pattern_state2place_0_8_expressionF();
@@ -153,40 +153,40 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		SM2PN sm2pn = (SM2PN) result1_bindingAndBlack[0];
-		State s = (State) result1_bindingAndBlack[1];
-		SM sm = (SM) result1_bindingAndBlack[2];
-		PNGraph png = (PNGraph) result1_bindingAndBlack[3];
+		SM sm = (SM) result1_bindingAndBlack[0];
+		SM2PN sm2pn = (SM2PN) result1_bindingAndBlack[1];
+		PNGraph png = (PNGraph) result1_bindingAndBlack[2];
+		State s = (State) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = state2placeImpl.pattern_state2place_1_1_performtransformation_greenFBFBB(s, png, csp);
+		Object[] result1_green = state2placeImpl.pattern_state2place_1_1_performtransformation_greenFBFBB(png, s, csp);
 		Place p = (Place) result1_green[0];
 		S2P s2p = (S2P) result1_green[2];
 
-		Object[] result2_black = state2placeImpl.pattern_state2place_1_2_collecttranslatedelements_blackBBB(p, s, s2p);
+		Object[] result2_black = state2placeImpl.pattern_state2place_1_2_collecttranslatedelements_blackBBB(p, s2p, s);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[p] = " + p + ", " + "[s] = " + s
-					+ ", " + "[s2p] = " + s2p + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[p] = " + p + ", " + "[s2p] = "
+					+ s2p + ", " + "[s] = " + s + ".");
 		}
-		Object[] result2_green = state2placeImpl.pattern_state2place_1_2_collecttranslatedelements_greenFBBB(p, s, s2p);
+		Object[] result2_green = state2placeImpl.pattern_state2place_1_2_collecttranslatedelements_greenFBBB(p, s2p, s);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
-		Object[] result3_black = state2placeImpl.pattern_state2place_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult, p,
-				sm2pn, s, sm, s2p, png);
+		Object[] result3_black = state2placeImpl.pattern_state2place_1_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
+				sm, p, sm2pn, png, s2p, s);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[p] = " + p + ", " + "[sm2pn] = " + sm2pn + ", " + "[s] = " + s + ", " + "[sm] = " + sm
-					+ ", " + "[s2p] = " + s2p + ", " + "[png] = " + png + ".");
+					+ ", " + "[sm] = " + sm + ", " + "[p] = " + p + ", " + "[sm2pn] = " + sm2pn + ", " + "[png] = "
+					+ png + ", " + "[s2p] = " + s2p + ", " + "[s] = " + s + ".");
 		}
-		state2placeImpl.pattern_state2place_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, p, s, sm, s2p, png);
-		//nothing EMoflonEdge s2p__s____source = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge s2p__p____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge sm__s____states = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge png__p____places = (EMoflonEdge) result3_green[9];
+		state2placeImpl.pattern_state2place_1_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, sm, p, png, s2p, s);
+		//nothing EMoflonEdge sm__s____states = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge png__p____places = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge s2p__p____target = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge s2p__s____source = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
-		state2placeImpl.pattern_state2place_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, p, sm2pn, s, sm,
-				s2p, png);
+		state2placeImpl.pattern_state2place_1_5_registerobjects_expressionBBBBBBBB(this, ruleresult, sm, p, sm2pn, png,
+				s2p, s);
 		return state2placeImpl.pattern_state2place_1_6_expressionFB(ruleresult);
 	}
 
@@ -213,28 +213,28 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		State s = (State) result2_binding[0];
-		SM sm = (SM) result2_binding[1];
-		for (Object[] result2_black : state2placeImpl.pattern_state2place_2_2_corematch_blackFBBFB(s, sm, match)) {
-			SM2PN sm2pn = (SM2PN) result2_black[0];
-			PNGraph png = (PNGraph) result2_black[3];
+		SM sm = (SM) result2_binding[0];
+		State s = (State) result2_binding[1];
+		for (Object[] result2_black : state2placeImpl.pattern_state2place_2_2_corematch_blackBFFBB(sm, s, match)) {
+			SM2PN sm2pn = (SM2PN) result2_black[1];
+			PNGraph png = (PNGraph) result2_black[2];
 			// ForEach 
-			for (Object[] result3_black : state2placeImpl.pattern_state2place_2_3_findcontext_blackBBBB(sm2pn, s, sm,
-					png)) {
-				Object[] result3_green = state2placeImpl.pattern_state2place_2_3_findcontext_greenBBBBFFFF(sm2pn, s, sm,
-						png);
+			for (Object[] result3_black : state2placeImpl.pattern_state2place_2_3_findcontext_blackBBBB(sm, sm2pn, png,
+					s)) {
+				Object[] result3_green = state2placeImpl.pattern_state2place_2_3_findcontext_greenBBBBFFFF(sm, sm2pn,
+						png, s);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge sm__s____states = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge sm__s____states = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge sm2pn__png____target = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = state2placeImpl
-						.pattern_state2place_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, sm2pn, s, sm,
-								png);
+						.pattern_state2place_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, sm, sm2pn,
+								png, s);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[sm2pn] = " + sm2pn + ", "
-							+ "[s] = " + s + ", " + "[sm] = " + sm + ", " + "[png] = " + png + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[sm] = " + sm + ", " + "[sm2pn] = "
+							+ sm2pn + ", " + "[png] = " + png + ", " + "[s] = " + s + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -262,9 +262,9 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, State s, SM sm) {
-		match.registerObject("s", s);
+	public void registerObjectsToMatch_FWD(Match match, SM sm, State s) {
 		match.registerObject("sm", sm);
+		match.registerObject("s", s);
 
 	}
 
@@ -273,7 +273,7 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, State s, SM sm) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, SM sm, State s) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -302,8 +302,8 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, SM sm,
-			PNGraph png) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, SM sm, SM2PN sm2pn, PNGraph png,
+			State s) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -328,10 +328,10 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		eq.solve(var_s_id, var_p_id);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("sm2pn", sm2pn);
-		isApplicableMatch.registerObject("s", s);
 		isApplicableMatch.registerObject("sm", sm);
+		isApplicableMatch.registerObject("sm2pn", sm2pn);
 		isApplicableMatch.registerObject("png", png);
+		isApplicableMatch.registerObject("s", s);
 		return csp;
 	}
 
@@ -349,14 +349,14 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject p, EObject sm2pn, EObject s, EObject sm,
-			EObject s2p, EObject png) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject sm, EObject p, EObject sm2pn, EObject png,
+			EObject s2p, EObject s) {
+		ruleresult.registerObject("sm", sm);
 		ruleresult.registerObject("p", p);
 		ruleresult.registerObject("sm2pn", sm2pn);
-		ruleresult.registerObject("s", s);
-		ruleresult.registerObject("sm", sm);
-		ruleresult.registerObject("s2p", s2p);
 		ruleresult.registerObject("png", png);
+		ruleresult.registerObject("s2p", s2p);
+		ruleresult.registerObject("s", s);
 
 	}
 
@@ -433,41 +433,41 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Place p = (Place) result1_bindingAndBlack[0];
-		SM2PN sm2pn = (SM2PN) result1_bindingAndBlack[1];
-		SM sm = (SM) result1_bindingAndBlack[2];
+		SM sm = (SM) result1_bindingAndBlack[0];
+		Place p = (Place) result1_bindingAndBlack[1];
+		SM2PN sm2pn = (SM2PN) result1_bindingAndBlack[2];
 		PNGraph png = (PNGraph) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = state2placeImpl.pattern_state2place_11_1_performtransformation_greenBFBFB(p, sm, csp);
-		State s = (State) result1_green[1];
-		S2P s2p = (S2P) result1_green[3];
+		Object[] result1_green = state2placeImpl.pattern_state2place_11_1_performtransformation_greenBBFFB(sm, p, csp);
+		S2P s2p = (S2P) result1_green[2];
+		State s = (State) result1_green[3];
 
-		Object[] result2_black = state2placeImpl.pattern_state2place_11_2_collecttranslatedelements_blackBBB(p, s, s2p);
+		Object[] result2_black = state2placeImpl.pattern_state2place_11_2_collecttranslatedelements_blackBBB(p, s2p, s);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[p] = " + p + ", " + "[s] = " + s
-					+ ", " + "[s2p] = " + s2p + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[p] = " + p + ", " + "[s2p] = "
+					+ s2p + ", " + "[s] = " + s + ".");
 		}
-		Object[] result2_green = state2placeImpl.pattern_state2place_11_2_collecttranslatedelements_greenFBBB(p, s,
-				s2p);
+		Object[] result2_green = state2placeImpl.pattern_state2place_11_2_collecttranslatedelements_greenFBBB(p, s2p,
+				s);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = state2placeImpl.pattern_state2place_11_3_bookkeepingforedges_blackBBBBBBB(ruleresult,
-				p, sm2pn, s, sm, s2p, png);
+				sm, p, sm2pn, png, s2p, s);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[p] = " + p + ", " + "[sm2pn] = " + sm2pn + ", " + "[s] = " + s + ", " + "[sm] = " + sm
-					+ ", " + "[s2p] = " + s2p + ", " + "[png] = " + png + ".");
+					+ ", " + "[sm] = " + sm + ", " + "[p] = " + p + ", " + "[sm2pn] = " + sm2pn + ", " + "[png] = "
+					+ png + ", " + "[s2p] = " + s2p + ", " + "[s] = " + s + ".");
 		}
-		state2placeImpl.pattern_state2place_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, p, s, sm, s2p, png);
-		//nothing EMoflonEdge s2p__s____source = (EMoflonEdge) result3_green[6];
-		//nothing EMoflonEdge s2p__p____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge sm__s____states = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge png__p____places = (EMoflonEdge) result3_green[9];
+		state2placeImpl.pattern_state2place_11_3_bookkeepingforedges_greenBBBBBBFFFF(ruleresult, sm, p, png, s2p, s);
+		//nothing EMoflonEdge sm__s____states = (EMoflonEdge) result3_green[6];
+		//nothing EMoflonEdge png__p____places = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge s2p__p____target = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge s2p__s____source = (EMoflonEdge) result3_green[9];
 
 		// 
 		// 
-		state2placeImpl.pattern_state2place_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, p, sm2pn, s, sm,
-				s2p, png);
+		state2placeImpl.pattern_state2place_11_5_registerobjects_expressionBBBBBBBB(this, ruleresult, sm, p, sm2pn, png,
+				s2p, s);
 		return state2placeImpl.pattern_state2place_11_6_expressionFB(ruleresult);
 	}
 
@@ -496,26 +496,26 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		}
 		Place p = (Place) result2_binding[0];
 		PNGraph png = (PNGraph) result2_binding[1];
-		for (Object[] result2_black : state2placeImpl.pattern_state2place_12_2_corematch_blackBFFBB(p, png, match)) {
-			SM2PN sm2pn = (SM2PN) result2_black[1];
-			SM sm = (SM) result2_black[2];
+		for (Object[] result2_black : state2placeImpl.pattern_state2place_12_2_corematch_blackFBFBB(p, png, match)) {
+			SM sm = (SM) result2_black[0];
+			SM2PN sm2pn = (SM2PN) result2_black[2];
 			// ForEach 
-			for (Object[] result3_black : state2placeImpl.pattern_state2place_12_3_findcontext_blackBBBB(p, sm2pn, sm,
+			for (Object[] result3_black : state2placeImpl.pattern_state2place_12_3_findcontext_blackBBBB(sm, p, sm2pn,
 					png)) {
-				Object[] result3_green = state2placeImpl.pattern_state2place_12_3_findcontext_greenBBBBFFFF(p, sm2pn,
-						sm, png);
+				Object[] result3_green = state2placeImpl.pattern_state2place_12_3_findcontext_greenBBBBFFFF(sm, p,
+						sm2pn, png);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge png__p____places = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge png__p____places = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge sm2pn__png____target = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = state2placeImpl
-						.pattern_state2place_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, p, sm2pn, sm,
+						.pattern_state2place_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, sm, p, sm2pn,
 								png);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[p] = " + p + ", " + "[sm2pn] = "
-							+ sm2pn + ", " + "[sm] = " + sm + ", " + "[png] = " + png + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[sm] = " + sm + ", " + "[p] = " + p
+							+ ", " + "[sm2pn] = " + sm2pn + ", " + "[png] = " + png + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -584,7 +584,7 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Place p, SM2PN sm2pn, SM sm,
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, SM sm, Place p, SM2PN sm2pn,
 			PNGraph png) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -610,9 +610,9 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		eq.solve(var_s_id, var_p_id);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("sm", sm);
 		isApplicableMatch.registerObject("p", p);
 		isApplicableMatch.registerObject("sm2pn", sm2pn);
-		isApplicableMatch.registerObject("sm", sm);
 		isApplicableMatch.registerObject("png", png);
 		return csp;
 	}
@@ -631,14 +631,14 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject p, EObject sm2pn, EObject s, EObject sm,
-			EObject s2p, EObject png) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject sm, EObject p, EObject sm2pn, EObject png,
+			EObject s2p, EObject s) {
+		ruleresult.registerObject("sm", sm);
 		ruleresult.registerObject("p", p);
 		ruleresult.registerObject("sm2pn", sm2pn);
-		ruleresult.registerObject("s", s);
-		ruleresult.registerObject("sm", sm);
-		ruleresult.registerObject("s2p", s2p);
 		ruleresult.registerObject("png", png);
+		ruleresult.registerObject("s2p", s2p);
+		ruleresult.registerObject("s", s);
 
 	}
 
@@ -656,7 +656,7 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_52(EMoflonEdge _edge_places) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_109(EMoflonEdge _edge_places) {
 
 		Object[] result1_bindingAndBlack = state2placeImpl
 				.pattern_state2place_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -710,7 +710,7 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_53(EMoflonEdge _edge_states) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_116(EMoflonEdge _edge_states) {
 
 		Object[] result1_bindingAndBlack = state2placeImpl
 				.pattern_state2place_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -726,14 +726,14 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		// ForEach 
 		for (Object[] result2_black : state2placeImpl
 				.pattern_state2place_21_2_testcorematchandDECs_blackFFB(_edge_states)) {
-			State s = (State) result2_black[0];
-			SM sm = (SM) result2_black[1];
+			SM sm = (SM) result2_black[0];
+			State s = (State) result2_black[1];
 			Object[] result2_green = state2placeImpl.pattern_state2place_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (state2placeImpl.pattern_state2place_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-					match, s, sm)) {
+					match, sm, s)) {
 				// 
 				if (state2placeImpl
 						.pattern_state2place_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -774,13 +774,13 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable("p", true, csp);
-		var_p_id.setValue(__helper.getValue("p", "id"));
-		var_p_id.setType("String");
-
 		Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable("s", true, csp);
 		var_s_id.setValue(__helper.getValue("s", "id"));
 		var_s_id.setType("String");
+
+		Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable("p", true, csp);
+		var_p_id.setValue(__helper.getValue("p", "id"));
+		var_p_id.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -821,13 +821,13 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable("p", true, csp);
-		var_p_id.setValue(__helper.getValue("p", "id"));
-		var_p_id.setType("String");
-
 		Variable var_s_id = CSPFactoryHelper.eINSTANCE.createVariable("s", true, csp);
 		var_s_id.setValue(__helper.getValue("s", "id"));
 		var_s_id.setType("String");
+
+		Variable var_p_id = CSPFactoryHelper.eINSTANCE.createVariable("p", true, csp);
+		var_p_id.setValue(__helper.getValue("p", "id"));
+		var_p_id.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -873,38 +873,38 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Place p = (Place) result2_bindingAndBlack[0];
-		State s = (State) result2_bindingAndBlack[1];
-		SM sm = (SM) result2_bindingAndBlack[2];
-		PNGraph png = (PNGraph) result2_bindingAndBlack[3];
+		SM sm = (SM) result2_bindingAndBlack[0];
+		Place p = (Place) result2_bindingAndBlack[1];
+		PNGraph png = (PNGraph) result2_bindingAndBlack[2];
+		State s = (State) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = state2placeImpl.pattern_state2place_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-				this, p, s, sm, png, sourceMatch, targetMatch);
+				this, sm, p, png, s, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[p] = " + p + ", " + "[s] = " + s + ", " + "[sm] = " + sm + ", " + "[png] = " + png + ", "
+					+ "[sm] = " + sm + ", " + "[p] = " + p + ", " + "[png] = " + png + ", " + "[s] = " + s + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
 		// 
 		if (state2placeImpl.pattern_state2place_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : state2placeImpl.pattern_state2place_24_5_matchcorrcontext_blackFBBBB(sm, png,
+			for (Object[] result5_black : state2placeImpl.pattern_state2place_24_5_matchcorrcontext_blackBFBBB(sm, png,
 					sourceMatch, targetMatch)) {
-				SM2PN sm2pn = (SM2PN) result5_black[0];
+				SM2PN sm2pn = (SM2PN) result5_black[1];
 				Object[] result5_green = state2placeImpl.pattern_state2place_24_5_matchcorrcontext_greenBBBF(sm2pn,
 						sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
-				Object[] result6_black = state2placeImpl.pattern_state2place_24_6_createcorrespondence_blackBBBBB(p, s,
-						sm, png, ccMatch);
+				Object[] result6_black = state2placeImpl.pattern_state2place_24_6_createcorrespondence_blackBBBBB(sm, p,
+						png, s, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException(
-							"Pattern matching failed." + " Variables: " + "[p] = " + p + ", " + "[s] = " + s + ", "
-									+ "[sm] = " + sm + ", " + "[png] = " + png + ", " + "[ccMatch] = " + ccMatch + ".");
+							"Pattern matching failed." + " Variables: " + "[sm] = " + sm + ", " + "[p] = " + p + ", "
+									+ "[png] = " + png + ", " + "[s] = " + s + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				state2placeImpl.pattern_state2place_24_6_createcorrespondence_greenBBFB(p, s, ccMatch);
-				//nothing S2P s2p = (S2P) result6_green[2];
+				state2placeImpl.pattern_state2place_24_6_createcorrespondence_greenBFBB(p, s, ccMatch);
+				//nothing S2P s2p = (S2P) result6_green[1];
 
 				Object[] result7_black = state2placeImpl.pattern_state2place_24_7_addtoreturnedresult_blackBB(result,
 						ccMatch);
@@ -926,7 +926,7 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Place p, State s, SM sm, PNGraph png, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(SM sm, Place p, PNGraph png, State s, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -966,8 +966,8 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(State s, SM sm) {// 
-		Object[] result1_black = state2placeImpl.pattern_state2place_27_1_matchtggpattern_blackBB(s, sm);
+	public boolean checkDEC_FWD(SM sm, State s) {// 
+		Object[] result1_black = state2placeImpl.pattern_state2place_27_1_matchtggpattern_blackBB(sm, s);
 		if (result1_black != null) {
 			return state2placeImpl.pattern_state2place_27_2_expressionF();
 		} else {
@@ -1010,35 +1010,35 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		for (Object[] result2_black : state2placeImpl
 				.pattern_state2place_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList sm2pnList = (RuleEntryList) result2_black[0];
-			SM2PN sm2pn = (SM2PN) result2_black[1];
-			SM sm = (SM) result2_black[2];
+			SM sm = (SM) result2_black[1];
+			SM2PN sm2pn = (SM2PN) result2_black[2];
 			PNGraph png = (PNGraph) result2_black[3];
 
 			Object[] result3_bindingAndBlack = state2placeImpl.pattern_state2place_29_3_solveCSP_bindingAndBlackFBBBBBB(
-					this, isApplicableMatch, sm2pn, sm, png, ruleResult);
+					this, isApplicableMatch, sm, sm2pn, png, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[sm2pn] = " + sm2pn + ", " + "[sm] = "
-						+ sm + ", " + "[png] = " + png + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[sm] = " + sm + ", " + "[sm2pn] = "
+						+ sm2pn + ", " + "[png] = " + png + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (state2placeImpl.pattern_state2place_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = state2placeImpl.pattern_state2place_29_5_checknacs_blackBBB(sm2pn, sm, png);
+				Object[] result5_black = state2placeImpl.pattern_state2place_29_5_checknacs_blackBBB(sm, sm2pn, png);
 				if (result5_black != null) {
 
-					Object[] result6_black = state2placeImpl.pattern_state2place_29_6_perform_blackBBBB(sm2pn, sm, png,
+					Object[] result6_black = state2placeImpl.pattern_state2place_29_6_perform_blackBBBB(sm, sm2pn, png,
 							ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException(
-								"Pattern matching failed." + " Variables: " + "[sm2pn] = " + sm2pn + ", " + "[sm] = "
-										+ sm + ", " + "[png] = " + png + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sm] = " + sm + ", "
+								+ "[sm2pn] = " + sm2pn + ", " + "[png] = " + png + ", " + "[ruleResult] = " + ruleResult
+								+ ".");
 					}
-					state2placeImpl.pattern_state2place_29_6_perform_greenFFBFBBB(sm, png, ruleResult, csp);
-					//nothing Place p = (Place) result6_green[0];
-					//nothing State s = (State) result6_green[1];
+					state2placeImpl.pattern_state2place_29_6_perform_greenBFBFFBB(sm, png, ruleResult, csp);
+					//nothing Place p = (Place) result6_green[1];
 					//nothing S2P s2p = (S2P) result6_green[3];
+					//nothing State s = (State) result6_green[4];
 
 				} else {
 				}
@@ -1055,7 +1055,7 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, SM sm, PNGraph png,
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, SM sm, SM2PN sm2pn, PNGraph png,
 			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -1080,8 +1080,8 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		eq.solve(var_s_id, var_p_id);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("sm2pn", sm2pn);
 		isApplicableMatch.registerObject("sm", sm);
+		isApplicableMatch.registerObject("sm2pn", sm2pn);
 		isApplicableMatch.registerObject("png", png);
 		return csp;
 	}
@@ -1103,23 +1103,23 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.STATE2PLACE___IS_APPROPRIATE_FWD__MATCH_STATE_SM:
-			return isAppropriate_FWD((Match) arguments.get(0), (State) arguments.get(1), (SM) arguments.get(2));
+		case RulesPackage.STATE2PLACE___IS_APPROPRIATE_FWD__MATCH_SM_STATE:
+			return isAppropriate_FWD((Match) arguments.get(0), (SM) arguments.get(1), (State) arguments.get(2));
 		case RulesPackage.STATE2PLACE___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.STATE2PLACE___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.STATE2PLACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_STATE_SM:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (State) arguments.get(1), (SM) arguments.get(2));
+		case RulesPackage.STATE2PLACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_SM_STATE:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (SM) arguments.get(1), (State) arguments.get(2));
 			return null;
-		case RulesPackage.STATE2PLACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_STATE_SM:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (State) arguments.get(1),
-					(SM) arguments.get(2));
+		case RulesPackage.STATE2PLACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_SM_STATE:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (SM) arguments.get(1),
+					(State) arguments.get(2));
 		case RulesPackage.STATE2PLACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.STATE2PLACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_SM2PN_STATE_SM_PNGRAPH:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (SM2PN) arguments.get(1),
-					(State) arguments.get(2), (SM) arguments.get(3), (PNGraph) arguments.get(4));
+		case RulesPackage.STATE2PLACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_SM_SM2PN_PNGRAPH_STATE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (SM) arguments.get(1),
+					(SM2PN) arguments.get(2), (PNGraph) arguments.get(3), (State) arguments.get(4));
 		case RulesPackage.STATE2PLACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.STATE2PLACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1143,9 +1143,9 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 					(PNGraph) arguments.get(2));
 		case RulesPackage.STATE2PLACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.STATE2PLACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PLACE_SM2PN_SM_PNGRAPH:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Place) arguments.get(1),
-					(SM2PN) arguments.get(2), (SM) arguments.get(3), (PNGraph) arguments.get(4));
+		case RulesPackage.STATE2PLACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_SM_PLACE_SM2PN_PNGRAPH:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (SM) arguments.get(1),
+					(Place) arguments.get(2), (SM2PN) arguments.get(3), (PNGraph) arguments.get(4));
 		case RulesPackage.STATE2PLACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.STATE2PLACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1155,30 +1155,30 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 			return null;
 		case RulesPackage.STATE2PLACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.STATE2PLACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_52__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_52((EMoflonEdge) arguments.get(0));
-		case RulesPackage.STATE2PLACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_53__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_53((EMoflonEdge) arguments.get(0));
+		case RulesPackage.STATE2PLACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_109__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_109((EMoflonEdge) arguments.get(0));
+		case RulesPackage.STATE2PLACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_116__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_116((EMoflonEdge) arguments.get(0));
 		case RulesPackage.STATE2PLACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.STATE2PLACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.STATE2PLACE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.STATE2PLACE___IS_APPLICABLE_SOLVE_CSP_CC__PLACE_STATE_SM_PNGRAPH_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Place) arguments.get(0), (State) arguments.get(1), (SM) arguments.get(2),
-					(PNGraph) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
+		case RulesPackage.STATE2PLACE___IS_APPLICABLE_SOLVE_CSP_CC__SM_PLACE_PNGRAPH_STATE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((SM) arguments.get(0), (Place) arguments.get(1), (PNGraph) arguments.get(2),
+					(State) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.STATE2PLACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.STATE2PLACE___CHECK_DEC_FWD__STATE_SM:
-			return checkDEC_FWD((State) arguments.get(0), (SM) arguments.get(1));
+		case RulesPackage.STATE2PLACE___CHECK_DEC_FWD__SM_STATE:
+			return checkDEC_FWD((SM) arguments.get(0), (State) arguments.get(1));
 		case RulesPackage.STATE2PLACE___CHECK_DEC_BWD__PLACE_PNGRAPH:
 			return checkDEC_BWD((Place) arguments.get(0), (PNGraph) arguments.get(1));
 		case RulesPackage.STATE2PLACE___GENERATE_MODEL__RULEENTRYCONTAINER_SM2PN:
 			return generateModel((RuleEntryContainer) arguments.get(0), (SM2PN) arguments.get(1));
-		case RulesPackage.STATE2PLACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_SM2PN_SM_PNGRAPH_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (SM2PN) arguments.get(1),
-					(SM) arguments.get(2), (PNGraph) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
+		case RulesPackage.STATE2PLACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_SM_SM2PN_PNGRAPH_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (SM) arguments.get(1),
+					(SM2PN) arguments.get(2), (PNGraph) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.STATE2PLACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1186,16 +1186,16 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final Object[] pattern_state2place_0_1_initialbindings_blackBBBB(state2place _this, Match match,
-			State s, SM sm) {
-		return new Object[] { _this, match, s, sm };
+			SM sm, State s) {
+		return new Object[] { _this, match, sm, s };
 	}
 
-	public static final Object[] pattern_state2place_0_2_SolveCSP_bindingFBBBB(state2place _this, Match match, State s,
-			SM sm) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, s, sm);
+	public static final Object[] pattern_state2place_0_2_SolveCSP_bindingFBBBB(state2place _this, Match match, SM sm,
+			State s) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, sm, s);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, s, sm };
+			return new Object[] { csp, _this, match, sm, s };
 		}
 		return null;
 	}
@@ -1205,16 +1205,16 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final Object[] pattern_state2place_0_2_SolveCSP_bindingAndBlackFBBBB(state2place _this, Match match,
-			State s, SM sm) {
+			SM sm, State s) {
 		Object[] result_pattern_state2place_0_2_SolveCSP_binding = pattern_state2place_0_2_SolveCSP_bindingFBBBB(_this,
-				match, s, sm);
+				match, sm, s);
 		if (result_pattern_state2place_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_state2place_0_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_state2place_0_2_SolveCSP_black = pattern_state2place_0_2_SolveCSP_blackB(csp);
 			if (result_pattern_state2place_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, s, sm };
+				return new Object[] { csp, _this, match, sm, s };
 			}
 		}
 		return null;
@@ -1226,13 +1226,13 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		return _result;
 	}
 
-	public static final Object[] pattern_state2place_0_4_collectelementstobetranslated_blackBBB(Match match, State s,
-			SM sm) {
-		return new Object[] { match, s, sm };
+	public static final Object[] pattern_state2place_0_4_collectelementstobetranslated_blackBBB(Match match, SM sm,
+			State s) {
+		return new Object[] { match, sm, s };
 	}
 
-	public static final Object[] pattern_state2place_0_4_collectelementstobetranslated_greenBBBF(Match match, State s,
-			SM sm) {
+	public static final Object[] pattern_state2place_0_4_collectelementstobetranslated_greenBBBF(Match match, SM sm,
+			State s) {
 		EMoflonEdge sm__s____states = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(s);
 		String sm__s____states_name_prime = "states";
@@ -1240,11 +1240,11 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		sm__s____states.setTrg(s);
 		match.getToBeTranslatedEdges().add(sm__s____states);
 		sm__s____states.setName(sm__s____states_name_prime);
-		return new Object[] { match, s, sm, sm__s____states };
+		return new Object[] { match, sm, s, sm__s____states };
 	}
 
-	public static final Object[] pattern_state2place_0_5_collectcontextelements_blackBBB(Match match, State s, SM sm) {
-		return new Object[] { match, s, sm };
+	public static final Object[] pattern_state2place_0_5_collectcontextelements_blackBBB(Match match, SM sm, State s) {
+		return new Object[] { match, sm, s };
 	}
 
 	public static final Object[] pattern_state2place_0_5_collectcontextelements_greenBB(Match match, SM sm) {
@@ -1253,8 +1253,8 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final void pattern_state2place_0_6_registerobjectstomatch_expressionBBBB(state2place _this,
-			Match match, State s, SM sm) {
-		_this.registerObjectsToMatch_FWD(match, s, sm);
+			Match match, SM sm, State s) {
+		_this.registerObjectsToMatch_FWD(match, sm, s);
 
 	}
 
@@ -1270,23 +1270,23 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 
 	public static final Object[] pattern_state2place_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("sm2pn");
-		EObject _localVariable_1 = isApplicableMatch.getObject("s");
-		EObject _localVariable_2 = isApplicableMatch.getObject("sm");
-		EObject _localVariable_3 = isApplicableMatch.getObject("png");
-		EObject tmpSm2pn = _localVariable_0;
-		EObject tmpS = _localVariable_1;
-		EObject tmpSm = _localVariable_2;
-		EObject tmpPng = _localVariable_3;
-		if (tmpSm2pn instanceof SM2PN) {
-			SM2PN sm2pn = (SM2PN) tmpSm2pn;
-			if (tmpS instanceof State) {
-				State s = (State) tmpS;
-				if (tmpSm instanceof SM) {
-					SM sm = (SM) tmpSm;
-					if (tmpPng instanceof PNGraph) {
-						PNGraph png = (PNGraph) tmpPng;
-						return new Object[] { sm2pn, s, sm, png, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("sm");
+		EObject _localVariable_1 = isApplicableMatch.getObject("sm2pn");
+		EObject _localVariable_2 = isApplicableMatch.getObject("png");
+		EObject _localVariable_3 = isApplicableMatch.getObject("s");
+		EObject tmpSm = _localVariable_0;
+		EObject tmpSm2pn = _localVariable_1;
+		EObject tmpPng = _localVariable_2;
+		EObject tmpS = _localVariable_3;
+		if (tmpSm instanceof SM) {
+			SM sm = (SM) tmpSm;
+			if (tmpSm2pn instanceof SM2PN) {
+				SM2PN sm2pn = (SM2PN) tmpSm2pn;
+				if (tmpPng instanceof PNGraph) {
+					PNGraph png = (PNGraph) tmpPng;
+					if (tmpS instanceof State) {
+						State s = (State) tmpS;
+						return new Object[] { sm, sm2pn, png, s, isApplicableMatch };
 					}
 				}
 			}
@@ -1294,12 +1294,12 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		return null;
 	}
 
-	public static final Object[] pattern_state2place_1_1_performtransformation_blackBBBBFBB(SM2PN sm2pn, State s, SM sm,
-			PNGraph png, state2place _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_state2place_1_1_performtransformation_blackBBBBFBB(SM sm, SM2PN sm2pn,
+			PNGraph png, State s, state2place _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { sm2pn, s, sm, png, csp, _this, isApplicableMatch };
+				return new Object[] { sm, sm2pn, png, s, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1310,67 +1310,67 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		Object[] result_pattern_state2place_1_1_performtransformation_binding = pattern_state2place_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_state2place_1_1_performtransformation_binding != null) {
-			SM2PN sm2pn = (SM2PN) result_pattern_state2place_1_1_performtransformation_binding[0];
-			State s = (State) result_pattern_state2place_1_1_performtransformation_binding[1];
-			SM sm = (SM) result_pattern_state2place_1_1_performtransformation_binding[2];
-			PNGraph png = (PNGraph) result_pattern_state2place_1_1_performtransformation_binding[3];
+			SM sm = (SM) result_pattern_state2place_1_1_performtransformation_binding[0];
+			SM2PN sm2pn = (SM2PN) result_pattern_state2place_1_1_performtransformation_binding[1];
+			PNGraph png = (PNGraph) result_pattern_state2place_1_1_performtransformation_binding[2];
+			State s = (State) result_pattern_state2place_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_state2place_1_1_performtransformation_black = pattern_state2place_1_1_performtransformation_blackBBBBFBB(
-					sm2pn, s, sm, png, _this, isApplicableMatch);
+					sm, sm2pn, png, s, _this, isApplicableMatch);
 			if (result_pattern_state2place_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_state2place_1_1_performtransformation_black[4];
 
-				return new Object[] { sm2pn, s, sm, png, csp, _this, isApplicableMatch };
+				return new Object[] { sm, sm2pn, png, s, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_state2place_1_1_performtransformation_greenFBFBB(State s, PNGraph png,
+	public static final Object[] pattern_state2place_1_1_performtransformation_greenFBFBB(PNGraph png, State s,
 			CSP csp) {
 		Place p = PetrinetFactory.eINSTANCE.createPlace();
 		S2P s2p = Statemachine2petrinetFactory.eINSTANCE.createS2P();
 		Object _localVariable_0 = csp.getValue("p", "id");
 		png.getPlaces().add(p);
-		s2p.setSource(s);
 		s2p.setTarget(p);
+		s2p.setSource(s);
 		String p_id_prime = (String) _localVariable_0;
 		p.setId(p_id_prime);
-		return new Object[] { p, s, s2p, png, csp };
+		return new Object[] { p, png, s2p, s, csp };
 	}
 
-	public static final Object[] pattern_state2place_1_2_collecttranslatedelements_blackBBB(Place p, State s, S2P s2p) {
-		return new Object[] { p, s, s2p };
+	public static final Object[] pattern_state2place_1_2_collecttranslatedelements_blackBBB(Place p, S2P s2p, State s) {
+		return new Object[] { p, s2p, s };
 	}
 
-	public static final Object[] pattern_state2place_1_2_collecttranslatedelements_greenFBBB(Place p, State s,
-			S2P s2p) {
+	public static final Object[] pattern_state2place_1_2_collecttranslatedelements_greenFBBB(Place p, S2P s2p,
+			State s) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedElements().add(p);
-		ruleresult.getTranslatedElements().add(s);
 		ruleresult.getCreatedLinkElements().add(s2p);
-		return new Object[] { ruleresult, p, s, s2p };
+		ruleresult.getTranslatedElements().add(s);
+		return new Object[] { ruleresult, p, s2p, s };
 	}
 
 	public static final Object[] pattern_state2place_1_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject p, EObject sm2pn, EObject s, EObject sm, EObject s2p, EObject png) {
-		if (!p.equals(sm2pn)) {
-			if (!p.equals(s)) {
-				if (!p.equals(sm)) {
-					if (!p.equals(s2p)) {
-						if (!p.equals(png)) {
-							if (!s.equals(sm2pn)) {
-								if (!s.equals(sm)) {
-									if (!s.equals(s2p)) {
-										if (!sm.equals(sm2pn)) {
-											if (!s2p.equals(sm2pn)) {
+			EObject sm, EObject p, EObject sm2pn, EObject png, EObject s2p, EObject s) {
+		if (!sm.equals(sm2pn)) {
+			if (!p.equals(sm)) {
+				if (!p.equals(sm2pn)) {
+					if (!p.equals(png)) {
+						if (!p.equals(s2p)) {
+							if (!p.equals(s)) {
+								if (!png.equals(sm)) {
+									if (!png.equals(sm2pn)) {
+										if (!png.equals(s2p)) {
+											if (!png.equals(s)) {
 												if (!s2p.equals(sm)) {
-													if (!png.equals(sm2pn)) {
-														if (!png.equals(s)) {
-															if (!png.equals(sm)) {
-																if (!png.equals(s2p)) {
-																	return new Object[] { ruleresult, p, sm2pn, s, sm,
-																			s2p, png };
+													if (!s2p.equals(sm2pn)) {
+														if (!s.equals(sm)) {
+															if (!s.equals(sm2pn)) {
+																if (!s.equals(s2p)) {
+																	return new Object[] { ruleresult, sm, p, sm2pn, png,
+																			s2p, s };
 																}
 															}
 														}
@@ -1390,40 +1390,40 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final Object[] pattern_state2place_1_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject p, EObject s, EObject sm, EObject s2p, EObject png) {
-		EMoflonEdge s2p__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge s2p__p____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject sm, EObject p, EObject png, EObject s2p, EObject s) {
 		EMoflonEdge sm__s____states = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge png__p____places = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2p__p____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2p__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "state2place";
-		String s2p__s____source_name_prime = "source";
-		String s2p__p____target_name_prime = "target";
 		String sm__s____states_name_prime = "states";
 		String png__p____places_name_prime = "places";
-		s2p__s____source.setSrc(s2p);
-		s2p__s____source.setTrg(s);
-		ruleresult.getCreatedEdges().add(s2p__s____source);
-		s2p__p____target.setSrc(s2p);
-		s2p__p____target.setTrg(p);
-		ruleresult.getCreatedEdges().add(s2p__p____target);
+		String s2p__p____target_name_prime = "target";
+		String s2p__s____source_name_prime = "source";
 		sm__s____states.setSrc(sm);
 		sm__s____states.setTrg(s);
 		ruleresult.getTranslatedEdges().add(sm__s____states);
 		png__p____places.setSrc(png);
 		png__p____places.setTrg(p);
 		ruleresult.getCreatedEdges().add(png__p____places);
+		s2p__p____target.setSrc(s2p);
+		s2p__p____target.setTrg(p);
+		ruleresult.getCreatedEdges().add(s2p__p____target);
+		s2p__s____source.setSrc(s2p);
+		s2p__s____source.setTrg(s);
+		ruleresult.getCreatedEdges().add(s2p__s____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		s2p__s____source.setName(s2p__s____source_name_prime);
-		s2p__p____target.setName(s2p__p____target_name_prime);
 		sm__s____states.setName(sm__s____states_name_prime);
 		png__p____places.setName(png__p____places_name_prime);
-		return new Object[] { ruleresult, p, s, sm, s2p, png, s2p__s____source, s2p__p____target, sm__s____states,
-				png__p____places };
+		s2p__p____target.setName(s2p__p____target_name_prime);
+		s2p__s____source.setName(s2p__s____source_name_prime);
+		return new Object[] { ruleresult, sm, p, png, s2p, s, sm__s____states, png__p____places, s2p__p____target,
+				s2p__s____source };
 	}
 
 	public static final void pattern_state2place_1_5_registerobjects_expressionBBBBBBBB(state2place _this,
-			PerformRuleResult ruleresult, EObject p, EObject sm2pn, EObject s, EObject sm, EObject s2p, EObject png) {
-		_this.registerObjects_FWD(ruleresult, p, sm2pn, s, sm, s2p, png);
+			PerformRuleResult ruleresult, EObject sm, EObject p, EObject sm2pn, EObject png, EObject s2p, EObject s) {
+		_this.registerObjects_FWD(ruleresult, sm, p, sm2pn, png, s2p, s);
 
 	}
 
@@ -1480,81 +1480,81 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final Object[] pattern_state2place_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("s");
-		EObject _localVariable_1 = match.getObject("sm");
-		EObject tmpS = _localVariable_0;
-		EObject tmpSm = _localVariable_1;
-		if (tmpS instanceof State) {
-			State s = (State) tmpS;
-			if (tmpSm instanceof SM) {
-				SM sm = (SM) tmpSm;
-				return new Object[] { s, sm, match };
+		EObject _localVariable_0 = match.getObject("sm");
+		EObject _localVariable_1 = match.getObject("s");
+		EObject tmpSm = _localVariable_0;
+		EObject tmpS = _localVariable_1;
+		if (tmpSm instanceof SM) {
+			SM sm = (SM) tmpSm;
+			if (tmpS instanceof State) {
+				State s = (State) tmpS;
+				return new Object[] { sm, s, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_state2place_2_2_corematch_blackFBBFB(State s, SM sm, Match match) {
+	public static final Iterable<Object[]> pattern_state2place_2_2_corematch_blackBFFBB(SM sm, State s, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (SM2PN sm2pn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(sm, SM2PN.class,
 				"source")) {
 			PNGraph png = sm2pn.getTarget();
 			if (png != null) {
-				_result.add(new Object[] { sm2pn, s, sm, png, match });
+				_result.add(new Object[] { sm, sm2pn, png, s, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_state2place_2_3_findcontext_blackBBBB(SM2PN sm2pn, State s, SM sm,
-			PNGraph png) {
+	public static final Iterable<Object[]> pattern_state2place_2_3_findcontext_blackBBBB(SM sm, SM2PN sm2pn,
+			PNGraph png, State s) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (sm.equals(sm2pn.getSource())) {
-			if (sm.getStates().contains(s)) {
+		if (sm.getStates().contains(s)) {
+			if (sm.equals(sm2pn.getSource())) {
 				if (png.equals(sm2pn.getTarget())) {
-					_result.add(new Object[] { sm2pn, s, sm, png });
+					_result.add(new Object[] { sm, sm2pn, png, s });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_state2place_2_3_findcontext_greenBBBBFFFF(SM2PN sm2pn, State s, SM sm,
-			PNGraph png) {
+	public static final Object[] pattern_state2place_2_3_findcontext_greenBBBBFFFF(SM sm, SM2PN sm2pn, PNGraph png,
+			State s) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge sm2pn__sm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sm__s____states = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge sm2pn__sm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sm2pn__png____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String sm2pn__sm____source_name_prime = "source";
 		String sm__s____states_name_prime = "states";
+		String sm2pn__sm____source_name_prime = "source";
 		String sm2pn__png____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(sm2pn);
-		isApplicableMatch.getAllContextElements().add(s);
 		isApplicableMatch.getAllContextElements().add(sm);
+		isApplicableMatch.getAllContextElements().add(sm2pn);
 		isApplicableMatch.getAllContextElements().add(png);
-		sm2pn__sm____source.setSrc(sm2pn);
-		sm2pn__sm____source.setTrg(sm);
-		isApplicableMatch.getAllContextElements().add(sm2pn__sm____source);
+		isApplicableMatch.getAllContextElements().add(s);
 		sm__s____states.setSrc(sm);
 		sm__s____states.setTrg(s);
 		isApplicableMatch.getAllContextElements().add(sm__s____states);
+		sm2pn__sm____source.setSrc(sm2pn);
+		sm2pn__sm____source.setTrg(sm);
+		isApplicableMatch.getAllContextElements().add(sm2pn__sm____source);
 		sm2pn__png____target.setSrc(sm2pn);
 		sm2pn__png____target.setTrg(png);
 		isApplicableMatch.getAllContextElements().add(sm2pn__png____target);
-		sm2pn__sm____source.setName(sm2pn__sm____source_name_prime);
 		sm__s____states.setName(sm__s____states_name_prime);
+		sm2pn__sm____source.setName(sm2pn__sm____source_name_prime);
 		sm2pn__png____target.setName(sm2pn__png____target_name_prime);
-		return new Object[] { sm2pn, s, sm, png, isApplicableMatch, sm2pn__sm____source, sm__s____states,
+		return new Object[] { sm, sm2pn, png, s, isApplicableMatch, sm__s____states, sm2pn__sm____source,
 				sm2pn__png____target };
 	}
 
 	public static final Object[] pattern_state2place_2_4_solveCSP_bindingFBBBBBB(state2place _this,
-			IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, SM sm, PNGraph png) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, sm2pn, s, sm, png);
+			IsApplicableMatch isApplicableMatch, SM sm, SM2PN sm2pn, PNGraph png, State s) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, sm, sm2pn, png, s);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, sm2pn, s, sm, png };
+			return new Object[] { csp, _this, isApplicableMatch, sm, sm2pn, png, s };
 		}
 		return null;
 	}
@@ -1564,16 +1564,16 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final Object[] pattern_state2place_2_4_solveCSP_bindingAndBlackFBBBBBB(state2place _this,
-			IsApplicableMatch isApplicableMatch, SM2PN sm2pn, State s, SM sm, PNGraph png) {
+			IsApplicableMatch isApplicableMatch, SM sm, SM2PN sm2pn, PNGraph png, State s) {
 		Object[] result_pattern_state2place_2_4_solveCSP_binding = pattern_state2place_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, sm2pn, s, sm, png);
+				_this, isApplicableMatch, sm, sm2pn, png, s);
 		if (result_pattern_state2place_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_state2place_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_state2place_2_4_solveCSP_black = pattern_state2place_2_4_solveCSP_blackB(csp);
 			if (result_pattern_state2place_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, sm2pn, s, sm, png };
+				return new Object[] { csp, _this, isApplicableMatch, sm, sm2pn, png, s };
 			}
 		}
 		return null;
@@ -1691,23 +1691,23 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 
 	public static final Object[] pattern_state2place_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("p");
-		EObject _localVariable_1 = isApplicableMatch.getObject("sm2pn");
-		EObject _localVariable_2 = isApplicableMatch.getObject("sm");
+		EObject _localVariable_0 = isApplicableMatch.getObject("sm");
+		EObject _localVariable_1 = isApplicableMatch.getObject("p");
+		EObject _localVariable_2 = isApplicableMatch.getObject("sm2pn");
 		EObject _localVariable_3 = isApplicableMatch.getObject("png");
-		EObject tmpP = _localVariable_0;
-		EObject tmpSm2pn = _localVariable_1;
-		EObject tmpSm = _localVariable_2;
+		EObject tmpSm = _localVariable_0;
+		EObject tmpP = _localVariable_1;
+		EObject tmpSm2pn = _localVariable_2;
 		EObject tmpPng = _localVariable_3;
-		if (tmpP instanceof Place) {
-			Place p = (Place) tmpP;
-			if (tmpSm2pn instanceof SM2PN) {
-				SM2PN sm2pn = (SM2PN) tmpSm2pn;
-				if (tmpSm instanceof SM) {
-					SM sm = (SM) tmpSm;
+		if (tmpSm instanceof SM) {
+			SM sm = (SM) tmpSm;
+			if (tmpP instanceof Place) {
+				Place p = (Place) tmpP;
+				if (tmpSm2pn instanceof SM2PN) {
+					SM2PN sm2pn = (SM2PN) tmpSm2pn;
 					if (tmpPng instanceof PNGraph) {
 						PNGraph png = (PNGraph) tmpPng;
-						return new Object[] { p, sm2pn, sm, png, isApplicableMatch };
+						return new Object[] { sm, p, sm2pn, png, isApplicableMatch };
 					}
 				}
 			}
@@ -1715,12 +1715,12 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		return null;
 	}
 
-	public static final Object[] pattern_state2place_11_1_performtransformation_blackBBBBFBB(Place p, SM2PN sm2pn,
-			SM sm, PNGraph png, state2place _this, IsApplicableMatch isApplicableMatch) {
+	public static final Object[] pattern_state2place_11_1_performtransformation_blackBBBBFBB(SM sm, Place p,
+			SM2PN sm2pn, PNGraph png, state2place _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { p, sm2pn, sm, png, csp, _this, isApplicableMatch };
+				return new Object[] { sm, p, sm2pn, png, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1731,67 +1731,67 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		Object[] result_pattern_state2place_11_1_performtransformation_binding = pattern_state2place_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_state2place_11_1_performtransformation_binding != null) {
-			Place p = (Place) result_pattern_state2place_11_1_performtransformation_binding[0];
-			SM2PN sm2pn = (SM2PN) result_pattern_state2place_11_1_performtransformation_binding[1];
-			SM sm = (SM) result_pattern_state2place_11_1_performtransformation_binding[2];
+			SM sm = (SM) result_pattern_state2place_11_1_performtransformation_binding[0];
+			Place p = (Place) result_pattern_state2place_11_1_performtransformation_binding[1];
+			SM2PN sm2pn = (SM2PN) result_pattern_state2place_11_1_performtransformation_binding[2];
 			PNGraph png = (PNGraph) result_pattern_state2place_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_state2place_11_1_performtransformation_black = pattern_state2place_11_1_performtransformation_blackBBBBFBB(
-					p, sm2pn, sm, png, _this, isApplicableMatch);
+					sm, p, sm2pn, png, _this, isApplicableMatch);
 			if (result_pattern_state2place_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_state2place_11_1_performtransformation_black[4];
 
-				return new Object[] { p, sm2pn, sm, png, csp, _this, isApplicableMatch };
+				return new Object[] { sm, p, sm2pn, png, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_state2place_11_1_performtransformation_greenBFBFB(Place p, SM sm, CSP csp) {
-		State s = StatemachineFactory.eINSTANCE.createState();
+	public static final Object[] pattern_state2place_11_1_performtransformation_greenBBFFB(SM sm, Place p, CSP csp) {
 		S2P s2p = Statemachine2petrinetFactory.eINSTANCE.createS2P();
+		State s = StatemachineFactory.eINSTANCE.createState();
 		Object _localVariable_0 = csp.getValue("s", "id");
+		s2p.setTarget(p);
 		sm.getStates().add(s);
 		s2p.setSource(s);
-		s2p.setTarget(p);
 		String s_id_prime = (String) _localVariable_0;
 		s.setId(s_id_prime);
-		return new Object[] { p, s, sm, s2p, csp };
+		return new Object[] { sm, p, s2p, s, csp };
 	}
 
-	public static final Object[] pattern_state2place_11_2_collecttranslatedelements_blackBBB(Place p, State s,
-			S2P s2p) {
-		return new Object[] { p, s, s2p };
+	public static final Object[] pattern_state2place_11_2_collecttranslatedelements_blackBBB(Place p, S2P s2p,
+			State s) {
+		return new Object[] { p, s2p, s };
 	}
 
-	public static final Object[] pattern_state2place_11_2_collecttranslatedelements_greenFBBB(Place p, State s,
-			S2P s2p) {
+	public static final Object[] pattern_state2place_11_2_collecttranslatedelements_greenFBBB(Place p, S2P s2p,
+			State s) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getTranslatedElements().add(p);
-		ruleresult.getCreatedElements().add(s);
 		ruleresult.getCreatedLinkElements().add(s2p);
-		return new Object[] { ruleresult, p, s, s2p };
+		ruleresult.getCreatedElements().add(s);
+		return new Object[] { ruleresult, p, s2p, s };
 	}
 
 	public static final Object[] pattern_state2place_11_3_bookkeepingforedges_blackBBBBBBB(PerformRuleResult ruleresult,
-			EObject p, EObject sm2pn, EObject s, EObject sm, EObject s2p, EObject png) {
-		if (!p.equals(sm2pn)) {
-			if (!p.equals(s)) {
-				if (!p.equals(sm)) {
-					if (!p.equals(s2p)) {
-						if (!p.equals(png)) {
-							if (!s.equals(sm2pn)) {
-								if (!s.equals(sm)) {
-									if (!s.equals(s2p)) {
-										if (!sm.equals(sm2pn)) {
-											if (!s2p.equals(sm2pn)) {
+			EObject sm, EObject p, EObject sm2pn, EObject png, EObject s2p, EObject s) {
+		if (!sm.equals(sm2pn)) {
+			if (!p.equals(sm)) {
+				if (!p.equals(sm2pn)) {
+					if (!p.equals(png)) {
+						if (!p.equals(s2p)) {
+							if (!p.equals(s)) {
+								if (!png.equals(sm)) {
+									if (!png.equals(sm2pn)) {
+										if (!png.equals(s2p)) {
+											if (!png.equals(s)) {
 												if (!s2p.equals(sm)) {
-													if (!png.equals(sm2pn)) {
-														if (!png.equals(s)) {
-															if (!png.equals(sm)) {
-																if (!png.equals(s2p)) {
-																	return new Object[] { ruleresult, p, sm2pn, s, sm,
-																			s2p, png };
+													if (!s2p.equals(sm2pn)) {
+														if (!s.equals(sm)) {
+															if (!s.equals(sm2pn)) {
+																if (!s.equals(s2p)) {
+																	return new Object[] { ruleresult, sm, p, sm2pn, png,
+																			s2p, s };
 																}
 															}
 														}
@@ -1811,40 +1811,40 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final Object[] pattern_state2place_11_3_bookkeepingforedges_greenBBBBBBFFFF(
-			PerformRuleResult ruleresult, EObject p, EObject s, EObject sm, EObject s2p, EObject png) {
-		EMoflonEdge s2p__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge s2p__p____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject sm, EObject p, EObject png, EObject s2p, EObject s) {
 		EMoflonEdge sm__s____states = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge png__p____places = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2p__p____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2p__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "state2place";
-		String s2p__s____source_name_prime = "source";
-		String s2p__p____target_name_prime = "target";
 		String sm__s____states_name_prime = "states";
 		String png__p____places_name_prime = "places";
-		s2p__s____source.setSrc(s2p);
-		s2p__s____source.setTrg(s);
-		ruleresult.getCreatedEdges().add(s2p__s____source);
-		s2p__p____target.setSrc(s2p);
-		s2p__p____target.setTrg(p);
-		ruleresult.getCreatedEdges().add(s2p__p____target);
+		String s2p__p____target_name_prime = "target";
+		String s2p__s____source_name_prime = "source";
 		sm__s____states.setSrc(sm);
 		sm__s____states.setTrg(s);
 		ruleresult.getCreatedEdges().add(sm__s____states);
 		png__p____places.setSrc(png);
 		png__p____places.setTrg(p);
 		ruleresult.getTranslatedEdges().add(png__p____places);
+		s2p__p____target.setSrc(s2p);
+		s2p__p____target.setTrg(p);
+		ruleresult.getCreatedEdges().add(s2p__p____target);
+		s2p__s____source.setSrc(s2p);
+		s2p__s____source.setTrg(s);
+		ruleresult.getCreatedEdges().add(s2p__s____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		s2p__s____source.setName(s2p__s____source_name_prime);
-		s2p__p____target.setName(s2p__p____target_name_prime);
 		sm__s____states.setName(sm__s____states_name_prime);
 		png__p____places.setName(png__p____places_name_prime);
-		return new Object[] { ruleresult, p, s, sm, s2p, png, s2p__s____source, s2p__p____target, sm__s____states,
-				png__p____places };
+		s2p__p____target.setName(s2p__p____target_name_prime);
+		s2p__s____source.setName(s2p__s____source_name_prime);
+		return new Object[] { ruleresult, sm, p, png, s2p, s, sm__s____states, png__p____places, s2p__p____target,
+				s2p__s____source };
 	}
 
 	public static final void pattern_state2place_11_5_registerobjects_expressionBBBBBBBB(state2place _this,
-			PerformRuleResult ruleresult, EObject p, EObject sm2pn, EObject s, EObject sm, EObject s2p, EObject png) {
-		_this.registerObjects_BWD(ruleresult, p, sm2pn, s, sm, s2p, png);
+			PerformRuleResult ruleresult, EObject sm, EObject p, EObject sm2pn, EObject png, EObject s2p, EObject s) {
+		_this.registerObjects_BWD(ruleresult, sm, p, sm2pn, png, s2p, s);
 
 	}
 
@@ -1916,68 +1916,68 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_state2place_12_2_corematch_blackBFFBB(Place p, PNGraph png,
+	public static final Iterable<Object[]> pattern_state2place_12_2_corematch_blackFBFBB(Place p, PNGraph png,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (SM2PN sm2pn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(png, SM2PN.class,
 				"target")) {
 			SM sm = sm2pn.getSource();
 			if (sm != null) {
-				_result.add(new Object[] { p, sm2pn, sm, png, match });
+				_result.add(new Object[] { sm, p, sm2pn, png, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_state2place_12_3_findcontext_blackBBBB(Place p, SM2PN sm2pn, SM sm,
+	public static final Iterable<Object[]> pattern_state2place_12_3_findcontext_blackBBBB(SM sm, Place p, SM2PN sm2pn,
 			PNGraph png) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (sm.equals(sm2pn.getSource())) {
-			if (png.getPlaces().contains(p)) {
+		if (png.getPlaces().contains(p)) {
+			if (sm.equals(sm2pn.getSource())) {
 				if (png.equals(sm2pn.getTarget())) {
-					_result.add(new Object[] { p, sm2pn, sm, png });
+					_result.add(new Object[] { sm, p, sm2pn, png });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_state2place_12_3_findcontext_greenBBBBFFFF(Place p, SM2PN sm2pn, SM sm,
+	public static final Object[] pattern_state2place_12_3_findcontext_greenBBBBFFFF(SM sm, Place p, SM2PN sm2pn,
 			PNGraph png) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge sm2pn__sm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge png__p____places = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge sm2pn__sm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sm2pn__png____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String sm2pn__sm____source_name_prime = "source";
 		String png__p____places_name_prime = "places";
+		String sm2pn__sm____source_name_prime = "source";
 		String sm2pn__png____target_name_prime = "target";
+		isApplicableMatch.getAllContextElements().add(sm);
 		isApplicableMatch.getAllContextElements().add(p);
 		isApplicableMatch.getAllContextElements().add(sm2pn);
-		isApplicableMatch.getAllContextElements().add(sm);
 		isApplicableMatch.getAllContextElements().add(png);
-		sm2pn__sm____source.setSrc(sm2pn);
-		sm2pn__sm____source.setTrg(sm);
-		isApplicableMatch.getAllContextElements().add(sm2pn__sm____source);
 		png__p____places.setSrc(png);
 		png__p____places.setTrg(p);
 		isApplicableMatch.getAllContextElements().add(png__p____places);
+		sm2pn__sm____source.setSrc(sm2pn);
+		sm2pn__sm____source.setTrg(sm);
+		isApplicableMatch.getAllContextElements().add(sm2pn__sm____source);
 		sm2pn__png____target.setSrc(sm2pn);
 		sm2pn__png____target.setTrg(png);
 		isApplicableMatch.getAllContextElements().add(sm2pn__png____target);
-		sm2pn__sm____source.setName(sm2pn__sm____source_name_prime);
 		png__p____places.setName(png__p____places_name_prime);
+		sm2pn__sm____source.setName(sm2pn__sm____source_name_prime);
 		sm2pn__png____target.setName(sm2pn__png____target_name_prime);
-		return new Object[] { p, sm2pn, sm, png, isApplicableMatch, sm2pn__sm____source, png__p____places,
+		return new Object[] { sm, p, sm2pn, png, isApplicableMatch, png__p____places, sm2pn__sm____source,
 				sm2pn__png____target };
 	}
 
 	public static final Object[] pattern_state2place_12_4_solveCSP_bindingFBBBBBB(state2place _this,
-			IsApplicableMatch isApplicableMatch, Place p, SM2PN sm2pn, SM sm, PNGraph png) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, p, sm2pn, sm, png);
+			IsApplicableMatch isApplicableMatch, SM sm, Place p, SM2PN sm2pn, PNGraph png) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, sm, p, sm2pn, png);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, p, sm2pn, sm, png };
+			return new Object[] { csp, _this, isApplicableMatch, sm, p, sm2pn, png };
 		}
 		return null;
 	}
@@ -1987,16 +1987,16 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final Object[] pattern_state2place_12_4_solveCSP_bindingAndBlackFBBBBBB(state2place _this,
-			IsApplicableMatch isApplicableMatch, Place p, SM2PN sm2pn, SM sm, PNGraph png) {
+			IsApplicableMatch isApplicableMatch, SM sm, Place p, SM2PN sm2pn, PNGraph png) {
 		Object[] result_pattern_state2place_12_4_solveCSP_binding = pattern_state2place_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, p, sm2pn, sm, png);
+				_this, isApplicableMatch, sm, p, sm2pn, png);
 		if (result_pattern_state2place_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_state2place_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_state2place_12_4_solveCSP_black = pattern_state2place_12_4_solveCSP_blackB(csp);
 			if (result_pattern_state2place_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, p, sm2pn, sm, png };
+				return new Object[] { csp, _this, isApplicableMatch, sm, p, sm2pn, png };
 			}
 		}
 		return null;
@@ -2206,7 +2206,7 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 			if (tmpS instanceof State) {
 				State s = (State) tmpS;
 				if (sm.getStates().contains(s)) {
-					_result.add(new Object[] { s, sm, _edge_states });
+					_result.add(new Object[] { sm, s, _edge_states });
 				}
 			}
 
@@ -2225,8 +2225,8 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final boolean pattern_state2place_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			state2place _this, Match match, State s, SM sm) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, s, sm);
+			state2place _this, Match match, SM sm, State s) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, sm, s);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2268,25 +2268,25 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_state2place_24_2_matchsrctrgcontext_bindingFFFFBB(Match targetMatch,
-			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("p");
-		EObject _localVariable_1 = sourceMatch.getObject("s");
-		EObject _localVariable_2 = sourceMatch.getObject("sm");
-		EObject _localVariable_3 = targetMatch.getObject("png");
-		EObject tmpP = _localVariable_0;
-		EObject tmpS = _localVariable_1;
-		EObject tmpSm = _localVariable_2;
-		EObject tmpPng = _localVariable_3;
-		if (tmpP instanceof Place) {
-			Place p = (Place) tmpP;
-			if (tmpS instanceof State) {
-				State s = (State) tmpS;
-				if (tmpSm instanceof SM) {
-					SM sm = (SM) tmpSm;
-					if (tmpPng instanceof PNGraph) {
-						PNGraph png = (PNGraph) tmpPng;
-						return new Object[] { p, s, sm, png, targetMatch, sourceMatch };
+	public static final Object[] pattern_state2place_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
+			Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("sm");
+		EObject _localVariable_1 = targetMatch.getObject("p");
+		EObject _localVariable_2 = targetMatch.getObject("png");
+		EObject _localVariable_3 = sourceMatch.getObject("s");
+		EObject tmpSm = _localVariable_0;
+		EObject tmpP = _localVariable_1;
+		EObject tmpPng = _localVariable_2;
+		EObject tmpS = _localVariable_3;
+		if (tmpSm instanceof SM) {
+			SM sm = (SM) tmpSm;
+			if (tmpP instanceof Place) {
+				Place p = (Place) tmpP;
+				if (tmpPng instanceof PNGraph) {
+					PNGraph png = (PNGraph) tmpPng;
+					if (tmpS instanceof State) {
+						State s = (State) tmpS;
+						return new Object[] { sm, p, png, s, sourceMatch, targetMatch };
 					}
 				}
 			}
@@ -2294,10 +2294,10 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		return null;
 	}
 
-	public static final Object[] pattern_state2place_24_2_matchsrctrgcontext_blackBBBBBB(Place p, State s, SM sm,
-			PNGraph png, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_state2place_24_2_matchsrctrgcontext_blackBBBBBB(SM sm, Place p, PNGraph png,
+			State s, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { p, s, sm, png, sourceMatch, targetMatch };
+			return new Object[] { sm, p, png, s, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2305,29 +2305,29 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	public static final Object[] pattern_state2place_24_2_matchsrctrgcontext_bindingAndBlackFFFFBB(Match sourceMatch,
 			Match targetMatch) {
 		Object[] result_pattern_state2place_24_2_matchsrctrgcontext_binding = pattern_state2place_24_2_matchsrctrgcontext_bindingFFFFBB(
-				targetMatch, sourceMatch);
+				sourceMatch, targetMatch);
 		if (result_pattern_state2place_24_2_matchsrctrgcontext_binding != null) {
-			Place p = (Place) result_pattern_state2place_24_2_matchsrctrgcontext_binding[0];
-			State s = (State) result_pattern_state2place_24_2_matchsrctrgcontext_binding[1];
-			SM sm = (SM) result_pattern_state2place_24_2_matchsrctrgcontext_binding[2];
-			PNGraph png = (PNGraph) result_pattern_state2place_24_2_matchsrctrgcontext_binding[3];
+			SM sm = (SM) result_pattern_state2place_24_2_matchsrctrgcontext_binding[0];
+			Place p = (Place) result_pattern_state2place_24_2_matchsrctrgcontext_binding[1];
+			PNGraph png = (PNGraph) result_pattern_state2place_24_2_matchsrctrgcontext_binding[2];
+			State s = (State) result_pattern_state2place_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_state2place_24_2_matchsrctrgcontext_black = pattern_state2place_24_2_matchsrctrgcontext_blackBBBBBB(
-					p, s, sm, png, sourceMatch, targetMatch);
+					sm, p, png, s, sourceMatch, targetMatch);
 			if (result_pattern_state2place_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { p, s, sm, png, sourceMatch, targetMatch };
+				return new Object[] { sm, p, png, s, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_state2place_24_3_solvecsp_bindingFBBBBBBB(state2place _this, Place p, State s,
-			SM sm, PNGraph png, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(p, s, sm, png, sourceMatch, targetMatch);
+	public static final Object[] pattern_state2place_24_3_solvecsp_bindingFBBBBBBB(state2place _this, SM sm, Place p,
+			PNGraph png, State s, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(sm, p, png, s, sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, p, s, sm, png, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, sm, p, png, s, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2336,17 +2336,17 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_state2place_24_3_solvecsp_bindingAndBlackFBBBBBBB(state2place _this, Place p,
-			State s, SM sm, PNGraph png, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_state2place_24_3_solvecsp_bindingAndBlackFBBBBBBB(state2place _this, SM sm,
+			Place p, PNGraph png, State s, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_state2place_24_3_solvecsp_binding = pattern_state2place_24_3_solvecsp_bindingFBBBBBBB(
-				_this, p, s, sm, png, sourceMatch, targetMatch);
+				_this, sm, p, png, s, sourceMatch, targetMatch);
 		if (result_pattern_state2place_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_state2place_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_state2place_24_3_solvecsp_black = pattern_state2place_24_3_solvecsp_blackB(csp);
 			if (result_pattern_state2place_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, p, s, sm, png, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, sm, p, png, s, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2358,14 +2358,14 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_state2place_24_5_matchcorrcontext_blackFBBBB(SM sm, PNGraph png,
+	public static final Iterable<Object[]> pattern_state2place_24_5_matchcorrcontext_blackBFBBB(SM sm, PNGraph png,
 			Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (SM2PN sm2pn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(sm, SM2PN.class,
 					"source")) {
 				if (png.equals(sm2pn.getTarget())) {
-					_result.add(new Object[] { sm2pn, sm, png, sourceMatch, targetMatch });
+					_result.add(new Object[] { sm, sm2pn, png, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2383,18 +2383,18 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		return new Object[] { sm2pn, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_state2place_24_6_createcorrespondence_blackBBBBB(Place p, State s, SM sm,
-			PNGraph png, CCMatch ccMatch) {
-		return new Object[] { p, s, sm, png, ccMatch };
+	public static final Object[] pattern_state2place_24_6_createcorrespondence_blackBBBBB(SM sm, Place p, PNGraph png,
+			State s, CCMatch ccMatch) {
+		return new Object[] { sm, p, png, s, ccMatch };
 	}
 
-	public static final Object[] pattern_state2place_24_6_createcorrespondence_greenBBFB(Place p, State s,
+	public static final Object[] pattern_state2place_24_6_createcorrespondence_greenBFBB(Place p, State s,
 			CCMatch ccMatch) {
 		S2P s2p = Statemachine2petrinetFactory.eINSTANCE.createS2P();
-		s2p.setSource(s);
 		s2p.setTarget(p);
+		s2p.setSource(s);
 		ccMatch.getCreateCorr().add(s2p);
-		return new Object[] { p, s, s2p, ccMatch };
+		return new Object[] { p, s2p, s, ccMatch };
 	}
 
 	public static final Object[] pattern_state2place_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2417,9 +2417,9 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		return _result;
 	}
 
-	public static final Object[] pattern_state2place_27_1_matchtggpattern_blackBB(State s, SM sm) {
+	public static final Object[] pattern_state2place_27_1_matchtggpattern_blackBB(SM sm, State s) {
 		if (sm.getStates().contains(s)) {
-			return new Object[] { s, sm };
+			return new Object[] { sm, s };
 		}
 		return null;
 	}
@@ -2464,17 +2464,17 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final Object[] pattern_state2place_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, SM2PN sm2pn) {
-		if (ruleResult.getCorrObjects().contains(sm2pn)) {
-			return new Object[] { ruleResult, sm2pn };
+			ModelgeneratorRuleResult ruleResult, SM sm) {
+		if (ruleResult.getSourceObjects().contains(sm)) {
+			return new Object[] { ruleResult, sm };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_state2place_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, SM sm) {
-		if (ruleResult.getSourceObjects().contains(sm)) {
-			return new Object[] { ruleResult, sm };
+			ModelgeneratorRuleResult ruleResult, SM2PN sm2pn) {
+		if (ruleResult.getCorrObjects().contains(sm2pn)) {
+			return new Object[] { ruleResult, sm2pn };
 		}
 		return null;
 	}
@@ -2498,11 +2498,11 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 					if (sm != null) {
 						PNGraph png = sm2pn.getTarget();
 						if (png != null) {
-							if (pattern_state2place_29_2_isapplicablecore_black_nac_0BB(ruleResult, sm2pn) == null) {
-								if (pattern_state2place_29_2_isapplicablecore_black_nac_1BB(ruleResult, sm) == null) {
+							if (pattern_state2place_29_2_isapplicablecore_black_nac_1BB(ruleResult, sm2pn) == null) {
+								if (pattern_state2place_29_2_isapplicablecore_black_nac_0BB(ruleResult, sm) == null) {
 									if (pattern_state2place_29_2_isapplicablecore_black_nac_2BB(ruleResult,
 											png) == null) {
-										_result.add(new Object[] { sm2pnList, sm2pn, sm, png, ruleEntryContainer,
+										_result.add(new Object[] { sm2pnList, sm, sm2pn, png, ruleEntryContainer,
 												ruleResult });
 									}
 								}
@@ -2518,11 +2518,11 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final Object[] pattern_state2place_29_3_solveCSP_bindingFBBBBBB(state2place _this,
-			IsApplicableMatch isApplicableMatch, SM2PN sm2pn, SM sm, PNGraph png, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, sm2pn, sm, png, ruleResult);
+			IsApplicableMatch isApplicableMatch, SM sm, SM2PN sm2pn, PNGraph png, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, sm, sm2pn, png, ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, sm2pn, sm, png, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, sm, sm2pn, png, ruleResult };
 		}
 		return null;
 	}
@@ -2532,16 +2532,16 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 	}
 
 	public static final Object[] pattern_state2place_29_3_solveCSP_bindingAndBlackFBBBBBB(state2place _this,
-			IsApplicableMatch isApplicableMatch, SM2PN sm2pn, SM sm, PNGraph png, ModelgeneratorRuleResult ruleResult) {
+			IsApplicableMatch isApplicableMatch, SM sm, SM2PN sm2pn, PNGraph png, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_state2place_29_3_solveCSP_binding = pattern_state2place_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, sm2pn, sm, png, ruleResult);
+				_this, isApplicableMatch, sm, sm2pn, png, ruleResult);
 		if (result_pattern_state2place_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_state2place_29_3_solveCSP_binding[0];
 
 			Object[] result_pattern_state2place_29_3_solveCSP_black = pattern_state2place_29_3_solveCSP_blackB(csp);
 			if (result_pattern_state2place_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, sm2pn, sm, png, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, sm, sm2pn, png, ruleResult };
 			}
 		}
 		return null;
@@ -2553,31 +2553,31 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		return _result;
 	}
 
-	public static final Object[] pattern_state2place_29_5_checknacs_blackBBB(SM2PN sm2pn, SM sm, PNGraph png) {
-		return new Object[] { sm2pn, sm, png };
+	public static final Object[] pattern_state2place_29_5_checknacs_blackBBB(SM sm, SM2PN sm2pn, PNGraph png) {
+		return new Object[] { sm, sm2pn, png };
 	}
 
-	public static final Object[] pattern_state2place_29_6_perform_blackBBBB(SM2PN sm2pn, SM sm, PNGraph png,
+	public static final Object[] pattern_state2place_29_6_perform_blackBBBB(SM sm, SM2PN sm2pn, PNGraph png,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { sm2pn, sm, png, ruleResult };
+		return new Object[] { sm, sm2pn, png, ruleResult };
 	}
 
-	public static final Object[] pattern_state2place_29_6_perform_greenFFBFBBB(SM sm, PNGraph png,
+	public static final Object[] pattern_state2place_29_6_perform_greenBFBFFBB(SM sm, PNGraph png,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		Place p = PetrinetFactory.eINSTANCE.createPlace();
-		State s = StatemachineFactory.eINSTANCE.createState();
 		S2P s2p = Statemachine2petrinetFactory.eINSTANCE.createS2P();
+		State s = StatemachineFactory.eINSTANCE.createState();
 		Object _localVariable_0 = csp.getValue("p", "id");
 		Object _localVariable_1 = csp.getValue("s", "id");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
 		png.getPlaces().add(p);
 		ruleResult.getTargetObjects().add(p);
-		sm.getStates().add(s);
-		ruleResult.getSourceObjects().add(s);
-		s2p.setSource(s);
 		s2p.setTarget(p);
 		ruleResult.getCorrObjects().add(s2p);
+		sm.getStates().add(s);
+		s2p.setSource(s);
+		ruleResult.getSourceObjects().add(s);
 		String p_id_prime = (String) _localVariable_0;
 		String s_id_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
@@ -2585,7 +2585,7 @@ public class state2placeImpl extends AbstractRuleImpl implements state2place {
 		p.setId(p_id_prime);
 		s.setId(s_id_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { p, s, sm, s2p, png, ruleResult, csp };
+		return new Object[] { sm, p, png, s2p, s, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_state2place_29_7_expressionFB(

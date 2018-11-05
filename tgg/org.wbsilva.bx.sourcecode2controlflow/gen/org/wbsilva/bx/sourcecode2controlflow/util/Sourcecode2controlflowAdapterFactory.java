@@ -69,11 +69,6 @@ public class Sourcecode2controlflowAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected Sourcecode2controlflowSwitch<Adapter> modelSwitch = new Sourcecode2controlflowSwitch<Adapter>() {
 		@Override
-		public Adapter caseS2B(S2B object) {
-			return createS2BAdapter();
-		}
-
-		@Override
 		public Adapter caseS2N(S2N object) {
 			return createS2NAdapter();
 		}
@@ -81,6 +76,11 @@ public class Sourcecode2controlflowAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseP2G(P2G object) {
 			return createP2GAdapter();
+		}
+
+		@Override
+		public Adapter caseS2B(S2B object) {
+			return createS2BAdapter();
 		}
 
 		@Override
@@ -108,20 +108,6 @@ public class Sourcecode2controlflowAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.sourcecode2controlflow.S2B <em>S2B</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.sourcecode2controlflow.S2B
-	 * @generated
-	 */
-	public Adapter createS2BAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.sourcecode2controlflow.S2N <em>S2N</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -146,6 +132,20 @@ public class Sourcecode2controlflowAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createP2GAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.sourcecode2controlflow.S2B <em>S2B</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.sourcecode2controlflow.S2B
+	 * @generated
+	 */
+	public Adapter createS2BAdapter() {
 		return null;
 	}
 

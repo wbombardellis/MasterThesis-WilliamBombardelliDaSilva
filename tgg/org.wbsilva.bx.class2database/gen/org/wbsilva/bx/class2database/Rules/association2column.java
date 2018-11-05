@@ -49,7 +49,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Clazz c, Clazz b, Association as, ClassDiagram cd);
+	boolean isAppropriate_FWD(Match match, ClassDiagram cd, Clazz b, Association as, Clazz c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Clazz c, Clazz b, Association as, ClassDiagram cd);
+	void registerObjectsToMatch_FWD(Match match, ClassDiagram cd, Clazz b, Association as, Clazz c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,7 +81,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Clazz c, Clazz b, Association as, ClassDiagram cd);
+	CSP isAppropriate_solveCsp_FWD(Match match, ClassDiagram cd, Clazz b, Association as, Clazz c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,8 +97,8 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, C2T b2u, C2T c2t, Table t, DB db, Clazz c,
-			Table u, Clazz b, Association as, ClassDiagram cd, CD2D cd2db);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, ClassDiagram cd, Table t, C2T b2u, Clazz b,
+			CD2D cd2db, C2T c2t, DB db, Association as, Clazz c, Table u);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,8 +114,8 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2u, EObject c2t, EObject t, EObject as2fk,
-			EObject db, EObject c, EObject u, EObject b, EObject fk, EObject as, EObject cd, EObject cd2db);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject cd, EObject t, EObject b2u, EObject as2fk, EObject b,
+			EObject cd2db, EObject fk, EObject c2t, EObject db, EObject as, EObject c, EObject u);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,7 +131,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Table t, DB db, Table u, Column fk);
+	boolean isAppropriate_BWD(Match match, Table t, Column fk, DB db, Table u);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,7 +155,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Table t, DB db, Table u, Column fk);
+	void registerObjectsToMatch_BWD(Match match, Table t, Column fk, DB db, Table u);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,7 +163,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Table t, DB db, Table u, Column fk);
+	CSP isAppropriate_solveCsp_BWD(Match match, Table t, Column fk, DB db, Table u);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,8 +179,8 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, C2T b2u, C2T c2t, Table t, DB db, Clazz c,
-			Table u, Clazz b, Column fk, ClassDiagram cd, CD2D cd2db);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDiagram cd, Table t, C2T b2u, Clazz b,
+			CD2D cd2db, Column fk, C2T c2t, DB db, Clazz c, Table u);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,8 +196,8 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2u, EObject c2t, EObject t, EObject as2fk,
-			EObject db, EObject c, EObject u, EObject b, EObject fk, EObject as, EObject cd, EObject cd2db);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject cd, EObject t, EObject b2u, EObject as2fk, EObject b,
+			EObject cd2db, EObject fk, EObject c2t, EObject db, EObject as, EObject c, EObject u);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_2(EMoflonEdge _edge_column);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_60(EMoflonEdge _edge_column);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,7 +221,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_3(EMoflonEdge _edge_source);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_65(EMoflonEdge _edge_associations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,7 +253,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Table t, DB db, Clazz c, Table u, Clazz b, Column fk, Association as, ClassDiagram cd,
+	CSP isApplicable_solveCsp_CC(ClassDiagram cd, Table t, Clazz b, Column fk, DB db, Association as, Clazz c, Table u,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -270,7 +270,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Clazz c, Clazz b, Association as, ClassDiagram cd);
+	boolean checkDEC_FWD(ClassDiagram cd, Clazz b, Association as, Clazz c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,7 +278,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Table t, DB db, Table u, Column fk);
+	boolean checkDEC_BWD(Table t, Column fk, DB db, Table u);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,7 +286,7 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, C2T b2uParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, C2T c2tParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,8 +294,8 @@ public interface association2column extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, C2T b2u, C2T c2t, Table t, DB db, Clazz c,
-			Table u, Clazz b, ClassDiagram cd, CD2D cd2db, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, ClassDiagram cd, Table t, C2T b2u, Clazz b,
+			CD2D cd2db, C2T c2t, DB db, Clazz c, Table u, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

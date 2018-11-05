@@ -105,7 +105,7 @@ public interface node2node extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject xn, EObject n2xn, EObject n);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject xn, EObject n, EObject n2xn);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface node2node extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject xn, EObject n2xn, EObject n);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject xn, EObject n, EObject n2xn);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +201,7 @@ public interface node2node extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_XBTNode_0(XBTNode xn);
+	EObjectContainer isAppropriate_BWD_XBTNode_1(XBTNode xn);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +209,7 @@ public interface node2node extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_BTNode_0(BTNode n);
+	EObjectContainer isAppropriate_FWD_BTNode_1(BTNode n);
 
 	/**
 	 * <!-- begin-user-doc -->

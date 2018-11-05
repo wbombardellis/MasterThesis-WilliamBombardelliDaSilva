@@ -561,7 +561,7 @@ public class cd2dbImpl extends AbstractRuleImpl implements cd2db {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_DB_0(DB db) {
+	public EObjectContainer isAppropriate_BWD_DB_1(DB db) {
 
 		Object[] result1_bindingAndBlack = cd2dbImpl.pattern_cd2db_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
 		if (result1_bindingAndBlack == null) {
@@ -610,7 +610,7 @@ public class cd2dbImpl extends AbstractRuleImpl implements cd2db {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_ClassDiagram_0(ClassDiagram cd) {
+	public EObjectContainer isAppropriate_FWD_ClassDiagram_1(ClassDiagram cd) {
 
 		Object[] result1_bindingAndBlack = cd2dbImpl.pattern_cd2db_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
 		if (result1_bindingAndBlack == null) {
@@ -969,10 +969,10 @@ public class cd2dbImpl extends AbstractRuleImpl implements cd2db {
 			return null;
 		case RulesPackage.CD2DB___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CD2DB___IS_APPROPRIATE_BWD_DB_0__DB:
-			return isAppropriate_BWD_DB_0((DB) arguments.get(0));
-		case RulesPackage.CD2DB___IS_APPROPRIATE_FWD_CLASS_DIAGRAM_0__CLASSDIAGRAM:
-			return isAppropriate_FWD_ClassDiagram_0((ClassDiagram) arguments.get(0));
+		case RulesPackage.CD2DB___IS_APPROPRIATE_BWD_DB_1__DB:
+			return isAppropriate_BWD_DB_1((DB) arguments.get(0));
+		case RulesPackage.CD2DB___IS_APPROPRIATE_FWD_CLASS_DIAGRAM_1__CLASSDIAGRAM:
+			return isAppropriate_FWD_ClassDiagram_1((ClassDiagram) arguments.get(0));
 		case RulesPackage.CD2DB___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CD2DB___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
