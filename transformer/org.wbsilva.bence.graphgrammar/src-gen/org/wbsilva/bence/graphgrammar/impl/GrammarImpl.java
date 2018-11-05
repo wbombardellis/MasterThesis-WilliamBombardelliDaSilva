@@ -254,13 +254,11 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 		assert vertex != null && vertex.getLabel() != null;
 		assert GraphgrammarUtil.isValidGraph(rhs);
 
-		final Rule rule = this.getRules().stream()
-				.filter(r -> r.getLhs().equivalates(vertex.getLabel()) && r.getRhs().isomorphicTo(rhs)).findAny()
-				.orElse(null);
+		final Set<Rule> rules = this.getRules().stream()
+				.filter(r -> r.getLhs().equivalates(vertex.getLabel()) && r.getRhs().isomorphicTo(rhs))
+				.collect(Collectors.toSet());
 
-		if (rule == null) {
-			return null;
-		} else {
+		for (Rule rule : rules) {
 			final Set<Vertex> possibleVertices = prev.getVertices().stream()
 					.filter(v -> v.getLabel().equivalates(vertex.getLabel())).collect(Collectors.toSet());
 
@@ -307,8 +305,8 @@ public class GrammarImpl extends MinimalEObjectImpl.Container implements Grammar
 					return newDS;
 				}
 			}
-			return null;
 		}
+		return null;
 
 	}
 
