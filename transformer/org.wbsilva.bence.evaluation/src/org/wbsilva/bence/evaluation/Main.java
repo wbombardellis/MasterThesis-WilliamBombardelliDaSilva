@@ -73,20 +73,24 @@ public class Main {
 						"../../bence/org.wbsilva.bence.bx.star2wheel/model/Star2wheel.xmi",
 						null, null, true),
 						new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.star2wheel/instances/evaluation/Src00.xmi")));
+			
 			workLoad.put(new TGGSpecification(SourcecodePackage.eINSTANCE, ControlflowPackage.eINSTANCE,
 							"../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/model/Sourcecode2controlflow.xmi",
 							Sourcecode2controlflowPackage.eINSTANCE, "../../tgg/org.wbsilva.bx.sourcecode2controlflow", true),
 						new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Src00.xmi",
 																		   "../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/Src01.xmi")));
+			
 			workLoad.put(new TGGSpecification(BtreePackage.eINSTANCE, XbtreePackage.eINSTANCE,
 						"../../bence/org.wbsilva.bence.bx.btree2xbtree/model/Btree2xbtree.xmi",
 						Btree2xbtreePackage.eINSTANCE, "../../tgg/org.wbsilva.bx.btree2xbtree", true),
 						new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/Src00.xmi",
 																	   "../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/Src01.xmi")));
+			
 			workLoad.put(new TGGSpecification(ClassPackage.eINSTANCE, DatabasePackage.eINSTANCE,
 					"../../bence/org.wbsilva.bence.bx.class2database/model/Class2database.xmi",
 					Class2databasePackage.eINSTANCE, "../../tgg/org.wbsilva.bx.class2database", true),
 				new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.class2database/instances/evaluation/Src00.xmi")));
+			
 			workLoad.put(new TGGSpecification(StatemachinePackage.eINSTANCE, PetrinetPackage.eINSTANCE,
 					"../../bence/org.wbsilva.bence.bx.statemachine2petrinet/model/Statemachine2petrinet.xmi",
 					Statemachine2petrinetPackage.eINSTANCE, "../../tgg/org.wbsilva.bx.statemachine2petrinet", true),
@@ -158,7 +162,7 @@ public class Main {
 									logger.info(String.format("BeNCE transformation of %s with grammar %s finished successfully.", inputModel, benceTGG.getName()));
 									benceSuccess++;
 								} else {
-									logger.info(String.format("BeNCE transformation of %s with grammar %s finished withouth success.", inputModel, benceTGG.getName()));
+									logger.info(String.format("BeNCE transformation of %s with grammar %s finished without success.", inputModel, benceTGG.getName()));
 									benceUnsuccess++;
 								}
 								logger.info(String.format("BeNCE transformation, elapsed time: %f s", elapsedTime / 1e9));
