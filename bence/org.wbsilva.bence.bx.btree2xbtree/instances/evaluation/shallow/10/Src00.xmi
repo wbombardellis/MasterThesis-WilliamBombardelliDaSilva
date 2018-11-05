@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.wbsilva.mm.btree:BTNode
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:org.wbsilva.mm.btree="platform:/plugin/org.wbsilva.mm.btree/model/Btree.ecore"
+    xsi:schemaLocation="platform:/plugin/org.wbsilva.mm.btree/model/Btree.ecore ../../../../../org.wbsilva.mm.btree/model/Btree.ecore">
+  <l>
+    <l/>
+    <r/>
+  </l>
+  <r>
+    <l/>
+    <r>
+      <l/>
+      <r/>
+    </r>
+  </r>
+</org.wbsilva.mm.btree:BTNode>

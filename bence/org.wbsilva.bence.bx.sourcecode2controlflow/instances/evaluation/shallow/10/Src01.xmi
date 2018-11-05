@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.wbsilva.mm.sourcecode:Program
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:org.wbsilva.mm.sourcecode="platform:/plugin/org.wbsilva.mm.sourcecode/model/Sourcecode.ecore"
+    xsi:schemaLocation="platform:/plugin/org.wbsilva.mm.sourcecode/model/Sourcecode.ecore ../../../../../org.wbsilva.mm.sourcecode/model/Sourcecode.ecore">
+  <first xsi:type="org.wbsilva.mm.sourcecode:While"
+      last="a2">
+    <first xsi:type="org.wbsilva.mm.sourcecode:While"
+        last="a1">
+      <next
+          xsi:type="org.wbsilva.mm.sourcecode:Assignment"
+          id="a2"/>
+      <first
+          xsi:type="org.wbsilva.mm.sourcecode:While"
+          last="a0">
+        <next
+            xsi:type="org.wbsilva.mm.sourcecode:Assignment"
+            id="a1"/>
+        <first
+            xsi:type="org.wbsilva.mm.sourcecode:Decision">
+          <next
+              xsi:type="org.wbsilva.mm.sourcecode:Assignment"
+              id="a0"/>
+          <positive
+              xsi:type="org.wbsilva.mm.sourcecode:Assignment"/>
+          <negative
+              xsi:type="org.wbsilva.mm.sourcecode:Assignment"/>
+        </first>
+      </first>
+    </first>
+  </first>
+</org.wbsilva.mm.sourcecode:Program>
