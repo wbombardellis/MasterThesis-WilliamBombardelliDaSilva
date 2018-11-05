@@ -5,18 +5,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:org.wbsilva.mm.sourcecode="platform:/plugin/org.wbsilva.mm.sourcecode/model/Sourcecode.ecore"
     xsi:schemaLocation="platform:/plugin/org.wbsilva.mm.sourcecode/model/Sourcecode.ecore ../../org.wbsilva.mm.sourcecode/model/Sourcecode.ecore">
-  <first xsi:type="org.wbsilva.mm.sourcecode:Decision">
-    <positive
-        xsi:type="org.wbsilva.mm.sourcecode:While"
-        last="//@first/@positive/@first">
+  <first xsi:type="org.wbsilva.mm.sourcecode:While"
+      last="a0">
+    <first xsi:type="org.wbsilva.mm.sourcecode:While"
+        last="a1">
+      <next
+          xsi:type="org.wbsilva.mm.sourcecode:Assignment"
+          id="a0"/>
       <first
-          xsi:type="org.wbsilva.mm.sourcecode:Assignment"/>
-    </positive>
-    <negative
-        xsi:type="org.wbsilva.mm.sourcecode:While"
-        last="//@first/@negative/@first">
-      <first
-          xsi:type="org.wbsilva.mm.sourcecode:Assignment"/>
-    </negative>
+          xsi:type="org.wbsilva.mm.sourcecode:Assignment"
+          id="a1"/>
+    </first>
   </first>
 </org.wbsilva.mm.sourcecode:Program>

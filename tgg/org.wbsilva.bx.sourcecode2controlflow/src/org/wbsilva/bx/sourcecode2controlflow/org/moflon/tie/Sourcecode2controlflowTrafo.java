@@ -22,6 +22,7 @@ public class Sourcecode2controlflowTrafo extends SynchronizationHelper{
 
 		// Forward Transformation
         Sourcecode2controlflowTrafo helper = new Sourcecode2controlflowTrafo();
+        helper.setVerbose(true);
 		helper.performForward("instances/fwd.src.xmi");
 
 		// Backward Transformation
