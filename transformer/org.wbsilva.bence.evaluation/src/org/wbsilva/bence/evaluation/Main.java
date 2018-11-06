@@ -60,6 +60,8 @@ import xbtree.XbtreePackage;
 public class Main {
 	static final Logger logger = LogManager.getLogger(Main.class);
 	
+	private static final long TIMEOUT = (long) 120e3;
+	
 	public static void main(String[] args) {
 		Map<TGGSpecification, IInputSpecification> workLoad = new HashMap<>();
 		
@@ -172,7 +174,7 @@ public class Main {
 								logger.debug(String.format("=== Starting BeNCE Evaluation %d ===", run));
 								
 								final E2GTransformationResult e2g = new ECore2GraphTransformer().transform(inputModel);
-								final BeNCETransformationRequest request = new BeNCETransformationRequest(e2g.getGraph(), e2g.getDepths());
+								final BeNCETransformationRequest request = new BeNCETransformationRequest(e2g.getGraph(), e2g.getDepths(), TIMEOUT);
 								
 								//Actual transformation and time measurement
 								long start = getTime();

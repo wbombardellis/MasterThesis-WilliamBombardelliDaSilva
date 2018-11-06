@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.wbsilva.bence.graphgrammar.DerivationStep;
 import org.wbsilva.bence.graphgrammar.Edge;
@@ -63,6 +62,7 @@ public class BeNCEParser {
 		private final Graph graph;
 		private final Grammar grammar;
 		private final Set<ParsingTree> parsingForest;
+		private boolean abort = false;
 		
 		private BupReducer(final IBup bup, final Graph graph, final Grammar grammar, final Set<ParsingTree> parsingForest) {
 			this.bup = bup;
@@ -80,7 +80,7 @@ public class BeNCEParser {
 		 */
 		public void run() {
 			Optional<Set<ZoneVertex>> nextHandle = this.bup.next();
-			while(nextHandle.isPresent() && !this.bup.isParsed()){
+			while(nextHandle.isPresent() && !this.bup.isParsed() && !this.abort){
 				final Set<ZoneVertex> handle = nextHandle.get(); 			//R
 				
 				logger.debug(String.format("Selected handle {%s}", handle.stream()
@@ -159,6 +159,25 @@ public class BeNCEParser {
 			}
 			assert !nextHandle.isPresent() || this.bup.isParsed();
 		}
+		
+		/**
+		 * Abort this BupReducer. This method does not interrupts this reducer immediately.
+		 * Instead, it causes it to jump out of the parsing loop in the sooner chance it has.
+		 * Thus, it assures that this reducer will finish as soon as it can (i.e this thread will die as soon as possible)
+		 * If this thread is not alive anymore, a call to {@link BupReducer#abort} has no effect
+		 */
+		public synchronized void abort() {
+			if (this.isAlive())
+				this.abort = true;
+		}
+
+		/**
+		 * Return true iff this reducer was aborted manually through a call to {@link BupReducer#abort}
+		 * @return			True if this thread was aborted, false otherwise
+		 */
+		public boolean isAborted() {
+			return this.abort;
+		}
 	}
 	
 	public BeNCEParser(final Grammar grammar){
@@ -190,14 +209,19 @@ public class BeNCEParser {
 	 * The depth of a vertex v can be seen as some kind of distance from v to the graph's root, supposing the graph has a root
 	 * or a pseudoroot, that was e.g. the first vertex to be load. It cannot contain ids that are not in the graph. 
 	 * It does not need to contain the depth of all vertices, though.
+	 * The parameter {@code threadCount} informs the amount of threads to be instanced for the parsing.
+	 * If the parameter {@code timeout} is greater than zero, then the parsing procedure is aborted as soon as this time interval
+	 * has been reached. If it is less or equal to zero, then the parsing procedure executes until the end and is guaranteed to finish
+	 * in a finite time.
 	 *  
 	 * @param graph			The graph to be parsed. Cannot be null
 	 * @param depths		The depth of each vertex of {@code graph}, mapped by its id. Cannot be null. May be empty.
 	 * @param threadCount	The amount of thread to use for the parsing
+	 * @param timeout		The maximal time interval to wait for the parsing to be completed, in milliseconds.
 	 * @return				The parsing tree for the input {@code graph} and the {@code grammar} of this class. 
-	 * 						Or empty if it is not part of the language.
+	 * 						Or empty if it is not part of the language or the timeout was reached.
 	 */
-	public Optional<ParsingTree> parse(final Graph graph, final Map<String, Integer> depths, int threadCount) {
+	public Optional<ParsingTree> parse(final Graph graph, final Map<String, Integer> depths, int threadCount, long timeout) {
 		assert graph != null;
 		assert depths != null;
 		assert GraphgrammarUtil.isValidGraph(graph);
@@ -208,8 +232,13 @@ public class BeNCEParser {
 									.collect(Collectors.toSet())
 									.contains(e.getKey()));
 		
+		long start = System.nanoTime();
+		
 		if (threadCount <= 0) {
 			threadCount = DEFAULT_THREAD_COUNT;
+		}
+		if (timeout < 0) {
+			timeout = 0;
 		}
 		
 		logger.debug(String.format("Starting parsing of the graph %s with %d threads", graph, threadCount));
@@ -277,7 +306,24 @@ public class BeNCEParser {
 			//Wait for all to finish
 			for (BupReducer b : bupReducers) {
 				try {
+					//With timeout
+					if (timeout > 0) {
+						final long elapsed = (System.nanoTime() - start) / (long) 1e6; 
+						final long rest = timeout - elapsed;
+						
+						//No time available anymore, abort
+						if (rest <= 0) {
+							b.abort();
+						} else {
+							//Wait the available rest time and abort
+							b.join(rest);
+							b.abort();
+						}
+					}
+					
+					//With or without timeout, wait for all threads to die, all in all
 					b.join();
+					
 				} catch (InterruptedException e) {
 					//Log and survive for failure tolerance
 					logger.error(e);
@@ -295,6 +341,9 @@ public class BeNCEParser {
 				
 				logger.debug("Parsing finished successfully");
 				return Optional.of(parsingTree);
+			} else if (bupReducers.stream().anyMatch(b -> b.isAborted())){
+				logger.debug("Parsing timed out");
+				return Optional.empty();
 			} else {
 				logger.debug("Parsing finished unsuccessfully");
 				return Optional.empty();
@@ -304,10 +353,10 @@ public class BeNCEParser {
 	
 	/**
 	 * Same contract as {@link BeNCEParser#parse(Graph, Map, int)} except that it uses the default thread count
-	 * @see BeNCEParser#parse(Graph, Map, int)
+	 * @see BeNCEParser#parse(Graph, Map, int, long)
 	 */
-	public Optional<ParsingTree> parse(final Graph graph, final Map<String, Integer> depths) {
-		return this.parse(graph, depths, DEFAULT_THREAD_COUNT);
+	public Optional<ParsingTree> parse(final Graph graph, final Map<String, Integer> depths, final long timeout) {
+		return this.parse(graph, depths, DEFAULT_THREAD_COUNT, timeout);
 	}
 
 	/**

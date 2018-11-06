@@ -140,7 +140,7 @@ public class BeNCETransformer {
 			
 			//Parse input graph
 			final BeNCEParser parser = new BeNCEParser(this.inputGrammarNP);
-			final Optional<ParsingTree> parsingTree = parser.parse(inputGraph, request.getDepths());
+			final Optional<ParsingTree> parsingTree = parser.parse(inputGraph, request.getDepths(), request.getTimeout());
 			assert parsingTree != null;
 			
 			//Construct output graph in form of a triple graph

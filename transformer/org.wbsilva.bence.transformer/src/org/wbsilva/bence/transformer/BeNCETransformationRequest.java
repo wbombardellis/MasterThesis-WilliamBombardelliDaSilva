@@ -11,20 +11,34 @@ import org.wbsilva.bence.graphgrammar.Graph;
  */
 public class BeNCETransformationRequest {
 	
+	private static final long DEFAULT_TIMEOUT = 0;
+	
 	private final Graph graph;
 	private final Map<String, Integer> depths;
+	private final long timeout;
 
 	public BeNCETransformationRequest(final Graph graph, final Map<String, Integer> depths) {
 		this.graph = graph;
 		this.depths = depths;
+		this.timeout = DEFAULT_TIMEOUT;
+	}
+	
+	public BeNCETransformationRequest(final Graph graph, final Map<String, Integer> depths, final long timeout) {
+		this.graph = graph;
+		this.depths = depths;
+		this.timeout = timeout;
 	}
 	
 	public Graph getGraph() {
-		return graph;
+		return this.graph;
 	}
 
 	public Map<String, Integer> getDepths() {
-		return depths;
+		return this.depths;
+	}
+	
+	public long getTimeout() {
+		return this.timeout;
 	}
 
 }
