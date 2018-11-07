@@ -61,6 +61,8 @@ public class Main {
 	static final Logger logger = LogManager.getLogger(Main.class);
 	
 	private static final long TIMEOUT = (long) 120e3;
+	private static final long REPETITIONS = (long) 10;
+	
 	
 	public static void main(String[] args) {
 		Map<TGGSpecification, IInputSpecification> workLoad = new HashMap<>();
@@ -168,6 +170,7 @@ public class Main {
 				
 		logger.debug("========================= Starting Evaluation =========================");
 		
+			
 		if (workLoad == null) {
 			logger.error("Initialization failed. Work load is null. Aborting.");
 			return;
@@ -182,101 +185,61 @@ public class Main {
 		int eMoflonRuns = 0;
 		int eMoflonSuccess = 0;
 		int eMoflonUnsuccess = 0;
-		
-		//For each transformation job
-		for (Entry<TGGSpecification, IInputSpecification> job : workLoad.entrySet()) {
-			try {
-				logger.debug("================ Begin Job ================");
-				final TGGSpecification tggSpec = job.getKey();
-				
-				//Read input grammar
-				final Optional<TripleGrammar> benceTGGOpt = TransformerUtil.loadModel(resSet, tggSpec.getBenceTGGPath(), TripleGrammar.class);
-				
-				if (benceTGGOpt.isPresent()) {
-					final TripleGrammar benceTGG = benceTGGOpt.get();
-					assert benceTGG != null;
-					logger.debug("Triple graph grammar model read successfully. Using: "+ benceTGG.getName());
+			
+		for (int i = 0; i < REPETITIONS; i++) {
+			logger.debug(String.format("-------------------- Repetition %d --------------------", i));
+			
+			//For each transformation job
+			for (Entry<TGGSpecification, IInputSpecification> job : workLoad.entrySet()) {
+				try {
+					logger.debug("================ Begin Job ================");
+					final TGGSpecification tggSpec = job.getKey();
 					
-					TransformerUtil.registerPackages(resSet, tggSpec.getSourcePackage());
-					TransformerUtil.registerPackages(resSet, tggSpec.getTargetPackage());
+					//Read input grammar
+					final Optional<TripleGrammar> benceTGGOpt = TransformerUtil.loadModel(resSet, tggSpec.getBenceTGGPath(), TripleGrammar.class);
 					
-					///////Evaluate BeNCE TGG transformer
-					final BeNCETransformer benceTransformer = new BeNCETransformer(benceTGG, tggSpec.getForward());
-					int run = 0;
-					
-					final Iterator<Optional<EObject>> it = job.getValue().iterator();
-					while(it.hasNext()) {
-						final Optional<EObject> inputModelOpt = it.next();
+					if (benceTGGOpt.isPresent()) {
+						final TripleGrammar benceTGG = benceTGGOpt.get();
+						assert benceTGG != null;
+						logger.debug("Triple graph grammar model read successfully. Using: "+ benceTGG.getName());
 						
-						if (inputModelOpt.isPresent()) {
-							final EObject inputModel = inputModelOpt.get();
-							try {
-								assert inputModel != null;
-								logger.debug("Graph model read successfully. Using model: "+ inputModel);
-								logger.debug(String.format("=== Starting BeNCE Evaluation %d ===", run));
-								
-								final E2GTransformationResult e2g = new ECore2GraphTransformer().transform(inputModel);
-								final BeNCETransformationRequest request = new BeNCETransformationRequest(e2g.getGraph(), e2g.getDepths(), TIMEOUT);
-								
-								//Actual transformation and time measurement
-								long start = getTime();
-								final Optional<BeNCETransformationResult> benceResult = benceTransformer.transform(request);
-								long elapsedTime = getTime() - start;
-								
-								benceTime += elapsedTime;
-								benceRuns++;
-								if (benceResult.isPresent()) {
-									logger.info(String.format("BeNCE transformation of %s with grammar %s finished successfully.", inputModel, benceTGG.getName()));
-									benceSuccess++;
-								} else {
-									logger.info(String.format("BeNCE transformation of %s with grammar %s finished without success.", inputModel, benceTGG.getName()));
-									benceUnsuccess++;
-								}
-								logger.info(String.format("BeNCE transformation, elapsed time: %f s", elapsedTime / 1e9));
-								logger.debug(String.format("=== Finished BeNCE Evaluation %d ===", run));								
-							} catch (Exception ex) {
-								logger.error(String.format("A unexpected exception occurred during the transformation of model %s"
-										+ ". Skipping it. Exception: %s", inputModel, ex));
-							}
-						} else {
-							logger.warn(String.format("Run %d. Skipping evaluation for an input model. Was empty.", run));
-						}
-
-						run++;
-					}
-
-					///////Evaluate eMoflon TGG transformer
-					if (tggSpec.getEMoflonTGGPackage() != null && tggSpec.getEMoflonTGGPath() != null) {
-						final EMoflonAdapter eMoflonTransformer = new EMoflonAdapter(resSet, tggSpec.getEMoflonTGGPackage(), tggSpec.getEMoflonTGGPath(), tggSpec.getForward());
+						TransformerUtil.registerPackages(resSet, tggSpec.getSourcePackage());
+						TransformerUtil.registerPackages(resSet, tggSpec.getTargetPackage());
 						
-						run = 0;
-						final Iterator<Optional<EObject>> eit = job.getValue().iterator();
-						while(eit.hasNext()) {
-							final Optional<EObject> inputModelOpt = eit.next();
+						///////Evaluate BeNCE TGG transformer
+						final BeNCETransformer benceTransformer = new BeNCETransformer(benceTGG, tggSpec.getForward());
+						int run = 0;
+						
+						final Iterator<Optional<EObject>> it = job.getValue().iterator();
+						while(it.hasNext()) {
+							final Optional<EObject> inputModelOpt = it.next();
 							
 							if (inputModelOpt.isPresent()) {
 								final EObject inputModel = inputModelOpt.get();
 								try {
 									assert inputModel != null;
 									logger.debug("Graph model read successfully. Using model: "+ inputModel);
-									logger.debug(String.format("=== Starting eMoflon Evaluation %d ===", run));
+									logger.debug(String.format("=== Starting BeNCE Evaluation %d ===", run));
+									
+									final E2GTransformationResult e2g = new ECore2GraphTransformer().transform(inputModel);
+									final BeNCETransformationRequest request = new BeNCETransformationRequest(e2g.getGraph(), e2g.getDepths(), TIMEOUT);
 									
 									//Actual transformation and time measurement
 									long start = getTime();
-									final Optional<BeNCETransformationResult> eMoflonResult = eMoflonTransformer.transform(inputModel);
+									final Optional<BeNCETransformationResult> benceResult = benceTransformer.transform(request);
 									long elapsedTime = getTime() - start;
 									
-									eMoflonTime += elapsedTime;
-									eMoflonRuns++;
-									if (eMoflonResult.isPresent()) {
-										logger.info(String.format("eMoflon transformation of %s with grammar %s finished successfully.", inputModel, benceTGG.getName()));
-										eMoflonSuccess++;
+									benceTime += elapsedTime;
+									benceRuns++;
+									if (benceResult.isPresent()) {
+										logger.info(String.format("BeNCE transformation of %s with grammar %s finished successfully.", inputModel, benceTGG.getName()));
+										benceSuccess++;
 									} else {
-										logger.info(String.format("eMoflon transformation of %s with grammar %s finished withouth success.", inputModel, benceTGG.getName()));
-										eMoflonUnsuccess++;
+										logger.info(String.format("BeNCE transformation of %s with grammar %s finished without success.", inputModel, benceTGG.getName()));
+										benceUnsuccess++;
 									}
-									logger.info(String.format("eMoflon transformation, elapsed time: %f s", elapsedTime / 1e9));
-									logger.debug(String.format("=== Finished eMoflon Evaluation %d ===", run));
+									logger.info(String.format("BeNCE transformation, elapsed time: %f s", elapsedTime / 1e9));
+									logger.debug(String.format("=== Finished BeNCE Evaluation %d ===", run));								
 								} catch (Exception ex) {
 									logger.error(String.format("A unexpected exception occurred during the transformation of model %s"
 											+ ". Skipping it. Exception: %s", inputModel, ex));
@@ -287,20 +250,65 @@ public class Main {
 	
 							run++;
 						}
-					} else {
-						logger.warn("Skipping evaluation for eMoflon comparable to " + tggSpec.getBenceTGGPath());
-					}
-				
-					///////Future work: Compare results using isomorphism check
+	
+						///////Evaluate eMoflon TGG transformer
+						if (tggSpec.getEMoflonTGGPackage() != null && tggSpec.getEMoflonTGGPath() != null) {
+							final EMoflonAdapter eMoflonTransformer = new EMoflonAdapter(resSet, tggSpec.getEMoflonTGGPackage(), tggSpec.getEMoflonTGGPath(), tggSpec.getForward());
+							
+							run = 0;
+							final Iterator<Optional<EObject>> eit = job.getValue().iterator();
+							while(eit.hasNext()) {
+								final Optional<EObject> inputModelOpt = eit.next();
+								
+								if (inputModelOpt.isPresent()) {
+									final EObject inputModel = inputModelOpt.get();
+									try {
+										assert inputModel != null;
+										logger.debug("Graph model read successfully. Using model: "+ inputModel);
+										logger.debug(String.format("=== Starting eMoflon Evaluation %d ===", run));
+										
+										//Actual transformation and time measurement
+										long start = getTime();
+										final Optional<BeNCETransformationResult> eMoflonResult = eMoflonTransformer.transform(inputModel);
+										long elapsedTime = getTime() - start;
+										
+										eMoflonTime += elapsedTime;
+										eMoflonRuns++;
+										if (eMoflonResult.isPresent()) {
+											logger.info(String.format("eMoflon transformation of %s with grammar %s finished successfully.", inputModel, benceTGG.getName()));
+											eMoflonSuccess++;
+										} else {
+											logger.info(String.format("eMoflon transformation of %s with grammar %s finished withouth success.", inputModel, benceTGG.getName()));
+											eMoflonUnsuccess++;
+										}
+										logger.info(String.format("eMoflon transformation, elapsed time: %f s", elapsedTime / 1e9));
+										logger.debug(String.format("=== Finished eMoflon Evaluation %d ===", run));
+									} catch (Exception ex) {
+										logger.error(String.format("A unexpected exception occurred during the transformation of model %s"
+												+ ". Skipping it. Exception: %s", inputModel, ex));
+									}
+								} else {
+									logger.warn(String.format("Run %d. Skipping evaluation for an input model. Was empty.", run));
+								}
+		
+								run++;
+							}
+						} else {
+							logger.warn("Skipping evaluation for eMoflon comparable to " + tggSpec.getBenceTGGPath());
+						}
 					
-				} else {
-					logger.warn("Skipping evaluation for triple graph grammar in file "+ tggSpec.getBenceTGGPath());
+						///////Future work: Compare results using isomorphism check
+						
+					} else {
+						logger.warn("Skipping evaluation for triple graph grammar in file "+ tggSpec.getBenceTGGPath());
+					}
+					logger.debug("================ End Job ================");
+				} catch (Exception e) {
+					//Errors has been logged in the read method
+					continue;
 				}
-				logger.debug("================ End Job ================");
-			} catch (Exception e) {
-				//Errors has been logged in the read method
-				continue;
 			}
+			logger.debug(String.format("------------------ End Repetition %d ------------------", i));
 		}
 
 		logger.debug("##############################");
