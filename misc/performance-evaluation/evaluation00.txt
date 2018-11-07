@@ -1,0 +1,234 @@
+20:18:56.180 [main] DEBUG org.wbsilva.bence.evaluation.Main - ========================= Starting Evaluation =========================
+20:18:56.187 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ Begin Job ================
+20:18:56.335 [main] DEBUG org.wbsilva.bence.evaluation.Main - Triple graph grammar model read successfully. Using: SourceCode 2 ControlFlow
+20:18:56.916 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@3a2d3909
+20:18:56.916 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 0 ===
+20:18:57.891 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of sourcecode.impl.ProgramImpl@3a2d3909 with grammar SourceCode 2 ControlFlow finished successfully.
+20:18:57.893 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,960829 s
+20:18:57.893 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 0 ===
+20:18:57.963 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@4debbf0
+20:18:57.964 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 1 ===
+20:19:00.373 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of sourcecode.impl.ProgramImpl@4debbf0 with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:00.374 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 2,407197 s
+20:19:00.374 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 1 ===
+20:19:00.435 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@3d40a3b4
+20:19:00.436 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 2 ===
+20:19:01.209 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of sourcecode.impl.ProgramImpl@3d40a3b4 with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:01.211 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,769017 s
+20:19:01.213 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 2 ===
+20:19:01.358 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@7c0df4ab
+20:19:01.359 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 3 ===
+20:19:02.418 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of sourcecode.impl.ProgramImpl@7c0df4ab with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:02.418 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 1,057216 s
+20:19:02.419 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 3 ===
+20:19:02.436 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@698f4aa
+20:19:02.437 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 4 ===
+20:19:03.287 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of sourcecode.impl.ProgramImpl@698f4aa with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:03.288 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,849251 s
+20:19:03.288 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 4 ===
+20:19:03.302 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@27dfd12b
+20:19:03.303 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 5 ===
+20:19:03.477 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of sourcecode.impl.ProgramImpl@27dfd12b with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:03.477 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,173022 s
+20:19:03.478 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 5 ===
+20:19:03.487 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@6e668322
+20:19:03.487 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 6 ===
+20:19:53.948 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of sourcecode.impl.ProgramImpl@6e668322 with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:53.949 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 50,458883 s
+20:19:53.949 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 6 ===
+20:19:53.958 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@72a0a60d
+20:19:53.959 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 7 ===
+20:19:57.403 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of sourcecode.impl.ProgramImpl@72a0a60d with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:57.403 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 3,438725 s
+20:19:57.403 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 7 ===
+20:19:57.556 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@3a2d3909
+20:19:57.556 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 0 ===
+20:19:58.207 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of sourcecode.impl.ProgramImpl@3a2d3909 with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:58.207 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,650237 s
+20:19:58.211 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 0 ===
+20:19:58.212 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@4debbf0
+20:19:58.212 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 1 ===
+20:19:58.218 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of sourcecode.impl.ProgramImpl@4debbf0 with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:58.220 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,004438 s
+20:19:58.222 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 1 ===
+20:19:58.223 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@3d40a3b4
+20:19:58.224 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 2 ===
+20:19:58.227 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of sourcecode.impl.ProgramImpl@3d40a3b4 with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:58.228 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,003432 s
+20:19:58.229 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 2 ===
+20:19:58.230 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@7c0df4ab
+20:19:58.230 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 3 ===
+20:19:58.234 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of sourcecode.impl.ProgramImpl@7c0df4ab with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:58.234 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,003649 s
+20:19:58.235 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 3 ===
+20:19:58.236 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@698f4aa
+20:19:58.237 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 4 ===
+20:19:58.240 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of sourcecode.impl.ProgramImpl@698f4aa with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:58.242 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,002541 s
+20:19:58.243 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 4 ===
+20:19:58.244 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@27dfd12b
+20:19:58.244 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 5 ===
+20:19:58.247 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of sourcecode.impl.ProgramImpl@27dfd12b with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:58.248 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,002419 s
+20:19:58.249 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 5 ===
+20:19:58.249 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@6e668322
+20:19:58.250 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 6 ===
+20:19:58.253 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of sourcecode.impl.ProgramImpl@6e668322 with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:58.254 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,003106 s
+20:19:58.254 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 6 ===
+20:19:58.255 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: sourcecode.impl.ProgramImpl@72a0a60d
+20:19:58.255 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 7 ===
+20:19:58.258 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of sourcecode.impl.ProgramImpl@72a0a60d with grammar SourceCode 2 ControlFlow finished successfully.
+20:19:58.261 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,003119 s
+20:19:58.261 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 7 ===
+20:19:58.262 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ End Job ================
+20:19:58.262 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ Begin Job ================
+20:19:58.314 [main] DEBUG org.wbsilva.bence.evaluation.Main - Triple graph grammar model read successfully. Using: BTree 2 XBTree
+20:19:58.540 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@170937fe
+20:19:58.541 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 0 ===
+20:19:58.821 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of btree.impl.BTNodeImpl@170937fe with grammar BTree 2 XBTree finished successfully.
+20:19:58.823 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,277570 s
+20:19:58.824 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 0 ===
+20:19:58.833 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@326d39fd
+20:19:58.833 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 1 ===
+20:19:58.926 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of btree.impl.BTNodeImpl@326d39fd with grammar BTree 2 XBTree finished successfully.
+20:19:58.927 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,091884 s
+20:19:58.927 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 1 ===
+20:19:58.938 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@12ef7db5
+20:19:58.938 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 2 ===
+20:19:59.339 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of btree.impl.BTNodeImpl@12ef7db5 with grammar BTree 2 XBTree finished successfully.
+20:19:59.339 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,401121 s
+20:19:59.339 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 2 ===
+20:19:59.339 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@1967c032
+20:19:59.339 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 3 ===
+20:19:59.956 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of btree.impl.BTNodeImpl@1967c032 with grammar BTree 2 XBTree finished successfully.
+20:19:59.956 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,604525 s
+20:19:59.957 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 3 ===
+20:19:59.964 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@113a7d12
+20:19:59.964 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 4 ===
+20:20:04.267 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of btree.impl.BTNodeImpl@113a7d12 with grammar BTree 2 XBTree finished successfully.
+20:20:04.267 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 4,299712 s
+20:20:04.267 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 4 ===
+20:20:04.276 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@62e7e3df
+20:20:04.276 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 5 ===
+20:20:08.907 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of btree.impl.BTNodeImpl@62e7e3df with grammar BTree 2 XBTree finished successfully.
+20:20:08.907 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 4,629999 s
+20:20:08.907 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 5 ===
+20:20:08.916 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@4cdd0f2f
+20:20:08.918 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 6 ===
+20:35:33.903 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of btree.impl.BTNodeImpl@4cdd0f2f with grammar BTree 2 XBTree finished successfully.
+20:35:33.903 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 924,981535 s
+20:35:33.903 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 6 ===
+20:35:33.911 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@7e199cec
+20:35:33.911 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 7 ===
+20:52:14.897 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of btree.impl.BTNodeImpl@7e199cec with grammar BTree 2 XBTree finished successfully.
+20:52:14.897 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 1000,988713 s
+20:52:14.902 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 7 ===
+20:52:14.913 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@170937fe
+20:52:14.914 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 0 ===
+20:52:15.132 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of btree.impl.BTNodeImpl@170937fe with grammar BTree 2 XBTree finished successfully.
+20:52:15.132 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,223964 s
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 0 ===
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@326d39fd
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 1 ===
+20:52:15.132 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of btree.impl.BTNodeImpl@326d39fd with grammar BTree 2 XBTree finished successfully.
+20:52:15.132 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,000904 s
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 1 ===
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@12ef7db5
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 2 ===
+20:52:15.132 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of btree.impl.BTNodeImpl@12ef7db5 with grammar BTree 2 XBTree finished successfully.
+20:52:15.132 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,000793 s
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 2 ===
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@1967c032
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 3 ===
+20:52:15.132 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of btree.impl.BTNodeImpl@1967c032 with grammar BTree 2 XBTree finished successfully.
+20:52:15.132 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,000967 s
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 3 ===
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@113a7d12
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 4 ===
+20:52:15.132 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of btree.impl.BTNodeImpl@113a7d12 with grammar BTree 2 XBTree finished successfully.
+20:52:15.132 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,000697 s
+20:52:15.132 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 4 ===
+20:52:15.147 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@62e7e3df
+20:52:15.147 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 5 ===
+20:52:15.147 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of btree.impl.BTNodeImpl@62e7e3df with grammar BTree 2 XBTree finished successfully.
+20:52:15.147 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,000826 s
+20:52:15.147 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 5 ===
+20:52:15.147 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@4cdd0f2f
+20:52:15.147 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 6 ===
+20:52:15.147 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of btree.impl.BTNodeImpl@4cdd0f2f with grammar BTree 2 XBTree finished successfully.
+20:52:15.147 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,000955 s
+20:52:15.147 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 6 ===
+20:52:15.147 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: btree.impl.BTNodeImpl@7e199cec
+20:52:15.147 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 7 ===
+20:52:15.147 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of btree.impl.BTNodeImpl@7e199cec with grammar BTree 2 XBTree finished successfully.
+20:52:15.147 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,000819 s
+20:52:15.147 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 7 ===
+20:52:15.147 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ End Job ================
+20:52:15.147 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ Begin Job ================
+20:52:15.163 [main] DEBUG org.wbsilva.bence.evaluation.Main - Triple graph grammar model read successfully. Using: Class 2 Database
+20:52:15.396 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: class_.impl.ClassDiagramImpl@117eac4a (id: null)
+20:52:15.396 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 0 ===
+20:52:16.796 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of class_.impl.ClassDiagramImpl@117eac4a (id: null) with grammar Class 2 Database finished successfully.
+20:52:16.796 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 1,398218 s
+20:52:16.796 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 0 ===
+20:52:16.860 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: class_.impl.ClassDiagramImpl@7ce8e48b (id: null)
+20:52:16.860 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 1 ===
+20:52:22.634 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of class_.impl.ClassDiagramImpl@7ce8e48b (id: null) with grammar Class 2 Database finished successfully.
+20:52:22.635 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 5,760185 s
+20:52:22.635 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 1 ===
+20:52:22.638 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: class_.impl.ClassDiagramImpl@3ca941f6 (id: null)
+20:52:22.638 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 2 ===
+20:53:51.609 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of class_.impl.ClassDiagramImpl@3ca941f6 (id: null) with grammar Class 2 Database finished successfully.
+20:53:51.609 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 88,968722 s
+20:53:51.609 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 2 ===
+
+16:20:01.372 [main] DEBUG org.wbsilva.bence.evaluation.Main - ========================= Starting Evaluation =========================
+16:20:01.378 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ Begin Job ================
+16:20:02.911 [main] DEBUG org.wbsilva.bence.evaluation.Main - Triple graph grammar model read successfully. Using: Statemachine 2 Petrinet
+16:20:03.723 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: statemachine.impl.SMImpl@46a145ba
+16:20:03.723 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 0 ===
+16:20:10.180 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of statemachine.impl.SMImpl@46a145ba with grammar Statemachine 2 Petrinet finished successfully.
+16:20:10.182 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 6,424896 s
+16:20:10.182 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 0 ===
+16:20:10.195 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: statemachine.impl.SMImpl@d16be4f
+16:20:10.198 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 1 ===
+16:20:33.299 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of statemachine.impl.SMImpl@d16be4f with grammar Statemachine 2 Petrinet finished successfully.
+16:20:33.300 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 23,094578 s
+16:20:33.300 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 1 ===
+16:20:33.310 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: statemachine.impl.SMImpl@6f1c3f18
+16:20:33.310 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 2 ===
+16:30:33.691 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of statemachine.impl.SMImpl@6f1c3f18 with grammar Statemachine 2 Petrinet finished successfully.
+16:30:33.692 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 600,377341 s
+16:30:33.692 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 2 ===
+16:30:33.864 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: statemachine.impl.SMImpl@46a145ba
+16:30:33.865 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 0 ===
+16:30:34.322 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of statemachine.impl.SMImpl@46a145ba with grammar Statemachine 2 Petrinet finished successfully.
+16:30:34.323 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,457503 s
+16:30:34.323 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 0 ===
+16:30:34.324 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: statemachine.impl.SMImpl@d16be4f
+16:30:34.326 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 1 ===
+16:30:34.332 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of statemachine.impl.SMImpl@d16be4f with grammar Statemachine 2 Petrinet finished successfully.
+16:30:34.332 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,005933 s
+16:30:34.333 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 1 ===
+16:30:34.333 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: statemachine.impl.SMImpl@6f1c3f18
+16:30:34.334 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting eMoflon Evaluation 2 ===
+16:30:34.337 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation of statemachine.impl.SMImpl@6f1c3f18 with grammar Statemachine 2 Petrinet finished successfully.
+16:30:34.337 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,002840 s
+16:30:34.337 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 2 ===
+16:30:34.337 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ End Job ================
+16:30:34.337 [main] DEBUG org.wbsilva.bence.evaluation.Main - ##############################
+16:30:34.337 [main] DEBUG org.wbsilva.bence.evaluation.Main - ### Results for BeNCE ###
+16:30:34.338 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total runs: 3
+16:30:34.338 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total successful: 3
+16:30:34.338 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total unsuccessful: 0
+16:30:34.338 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total time: 629,896816 s
+16:30:34.338 [main] DEBUG org.wbsilva.bence.evaluation.Main - Average time: 209,965605 s
+16:30:34.338 [main] DEBUG org.wbsilva.bence.evaluation.Main - ### Results for eMoflon ###
+16:30:34.338 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total runs: 3
+16:30:34.338 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total successful: 3
+16:30:34.338 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total unsuccessful: 0
+16:30:34.339 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total time: 0,466276 s
+16:30:34.339 [main] DEBUG org.wbsilva.bence.evaluation.Main - Average time: 0,155425 s
+16:30:34.339 [main] DEBUG org.wbsilva.bence.evaluation.Main - ##############################
+16:30:34.339 [main] DEBUG org.wbsilva.bence.evaluation.Main - ========================= Ending Evaluation Successfully =========================
