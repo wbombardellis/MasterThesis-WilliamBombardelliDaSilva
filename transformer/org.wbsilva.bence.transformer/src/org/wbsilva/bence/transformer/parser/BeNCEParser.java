@@ -649,12 +649,16 @@ public class BeNCEParser {
 		final Set<String> realPacIds = pacs.stream()
 				.map(p -> ((ZoneVertex)dStep.getUnifier().get(p)).getVertices().get(0).getId())
 				.collect(Collectors.toSet());
+		assert realPacIds.size() == pacs.size();
 		
 		final Set<Vertex> realPacs = zoneVertex.getVertices().stream()
 				.filter(h -> realPacIds.contains(h.getId()))
 				.collect(Collectors.toSet());
+		assert realPacs.size() == pacs.size();
 		
 		final boolean removed = zoneVertex.getVertices().removeAll(realPacs);
+		assert realPacs.size() > 0 ? removed : true;
+		
 		//But only distinct pacs
 		final Set<Vertex> uniquePacs = new HashSet<>(realPacs.size());
 		final Set<String> uniquePacsIds = zoneVertex.getPac().stream().map(p -> p.getId()).collect(Collectors.toSet());
@@ -666,7 +670,6 @@ public class BeNCEParser {
 		}
 		zoneVertex.getPac().addAll(uniquePacs);
 		
-		assert pacs.size() > 0 ? removed : true;
 		assert pacs.size() <= zoneVertex.getPac().size();
 		
 		return zoneVertex;
