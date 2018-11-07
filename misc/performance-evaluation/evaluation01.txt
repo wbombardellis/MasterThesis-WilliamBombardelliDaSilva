@@ -651,42 +651,27 @@
 18:01:11.771 [main] INFO  org.wbsilva.bence.evaluation.Main - eMoflon transformation, elapsed time: 0,002421 s
 18:01:11.771 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished eMoflon Evaluation 15 ===
 18:01:11.771 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ End Job ================
-18:01:11.771 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ Begin Job ================
-18:01:11.837 [main] DEBUG org.wbsilva.bence.evaluation.Main - Triple graph grammar model read successfully. Using: star2wheel
-18:01:11.868 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: graph.impl.GImpl@25ffb506
-18:01:11.868 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 0 ===
-18:01:11.890 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of graph.impl.GImpl@25ffb506 with grammar star2wheel finished successfully.
-18:01:11.890 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,023603 s
-18:01:11.890 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 0 ===
-18:01:11.890 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: graph.impl.GImpl@639c6f31
-18:01:11.890 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 1 ===
-18:01:12.069 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of graph.impl.GImpl@639c6f31 with grammar star2wheel finished successfully.
-18:01:12.069 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,170476 s
-18:01:12.069 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 1 ===
-18:01:12.069 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: graph.impl.GImpl@34ef0da
-18:01:12.069 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 2 ===
-18:01:36.712 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of graph.impl.GImpl@34ef0da with grammar star2wheel finished without success.
-18:01:36.713 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 24,633613 s
-18:01:36.713 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 2 ===
-18:01:36.718 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: graph.impl.GImpl@5c55b1e7
-18:01:36.718 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 3 ===
-18:03:36.736 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of graph.impl.GImpl@5c55b1e7 with grammar star2wheel finished without success.
-18:03:36.736 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 120,016754 s
-18:03:36.736 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 3 ===
-18:03:36.737 [main] WARN  org.wbsilva.bence.evaluation.Main - Skipping evaluation for eMoflon comparable to ../../bence/org.wbsilva.bence.bx.star2wheel/model/Star2wheel.xmi
-18:03:36.737 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ End Job ================
-18:03:36.737 [main] DEBUG org.wbsilva.bence.evaluation.Main - ##############################
-18:03:36.737 [main] DEBUG org.wbsilva.bence.evaluation.Main - ### Results for BeNCE ###
-18:03:36.737 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total runs: 68
-18:03:36.737 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total successful: 54
-18:03:36.737 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total unsuccessful: 14
-18:03:36.737 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total time: 2085,855226 s
-18:03:36.737 [main] DEBUG org.wbsilva.bence.evaluation.Main - Average time: 30,674342 s
-18:03:36.737 [main] DEBUG org.wbsilva.bence.evaluation.Main - ### Results for eMoflon ###
-18:03:36.737 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total runs: 64
-18:03:36.737 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total successful: 64
-18:03:36.738 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total unsuccessful: 0
-18:03:36.738 [main] DEBUG org.wbsilva.bence.evaluation.Main - Total time: 0,849081 s
-18:03:36.738 [main] DEBUG org.wbsilva.bence.evaluation.Main - Average time: 0,013267 s
-18:03:36.738 [main] DEBUG org.wbsilva.bence.evaluation.Main - ##############################
-18:03:36.738 [main] DEBUG org.wbsilva.bence.evaluation.Main - ========================= Ending Evaluation Successfully =========================
+18:06:37.142 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ Begin Job ================
+18:06:37.341 [main] DEBUG org.wbsilva.bence.evaluation.Main - Triple graph grammar model read successfully. Using: star2wheel
+18:06:37.594 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: graph.impl.GImpl@5745ca0e
+18:06:37.594 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 0 ===
+18:06:38.258 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of graph.impl.GImpl@5745ca0e with grammar star2wheel finished successfully.
+18:06:38.260 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,480972 s
+18:06:38.260 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 0 ===
+18:06:38.273 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: graph.impl.GImpl@5e3d57c7
+18:06:38.273 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 1 ===
+18:06:38.924 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of graph.impl.GImpl@5e3d57c7 with grammar star2wheel finished successfully.
+18:06:38.924 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,648535 s
+18:06:38.925 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 1 ===
+18:06:38.934 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: graph.impl.GImpl@4b3a45f1
+18:06:38.935 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 2 ===
+18:06:39.917 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of graph.impl.GImpl@4b3a45f1 with grammar star2wheel finished successfully.
+18:06:39.918 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 0,979605 s
+18:06:39.918 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 2 ===
+18:06:39.929 [main] DEBUG org.wbsilva.bence.evaluation.Main - Graph model read successfully. Using model: graph.impl.GImpl@28782602
+18:06:39.929 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Starting BeNCE Evaluation 3 ===
+18:06:41.309 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation of graph.impl.GImpl@28782602 with grammar star2wheel finished successfully.
+18:06:41.309 [main] INFO  org.wbsilva.bence.evaluation.Main - BeNCE transformation, elapsed time: 1,376444 s
+18:06:41.309 [main] DEBUG org.wbsilva.bence.evaluation.Main - === Finished BeNCE Evaluation 3 ===
+18:06:41.310 [main] WARN  org.wbsilva.bence.evaluation.Main - Skipping evaluation for eMoflon comparable to ../../bence/org.wbsilva.bence.bx.star2wheel/model/Star2wheel.xmi
+18:06:41.310 [main] DEBUG org.wbsilva.bence.evaluation.Main - ================ End Job ================
