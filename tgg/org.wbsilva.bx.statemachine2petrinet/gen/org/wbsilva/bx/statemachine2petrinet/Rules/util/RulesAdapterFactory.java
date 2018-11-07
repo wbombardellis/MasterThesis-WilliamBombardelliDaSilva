@@ -69,13 +69,8 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected RulesSwitch<Adapter> modelSwitch = new RulesSwitch<Adapter>() {
 		@Override
-		public Adapter casefinal2nothing(final2nothing object) {
-			return createfinal2nothingAdapter();
-		}
-
-		@Override
-		public Adapter casestatemachine2petrinet(statemachine2petrinet object) {
-			return createstatemachine2petrinetAdapter();
+		public Adapter caseinitial2nothing(initial2nothing object) {
+			return createinitial2nothingAdapter();
 		}
 
 		@Override
@@ -84,18 +79,23 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseselftrans2arctransarc(selftrans2arctransarc object) {
-			return createselftrans2arctransarcAdapter();
-		}
-
-		@Override
 		public Adapter casestate2place(state2place object) {
 			return createstate2placeAdapter();
 		}
 
 		@Override
-		public Adapter caseinitial2nothing(initial2nothing object) {
-			return createinitial2nothingAdapter();
+		public Adapter caseselftrans2arctransarc(selftrans2arctransarc object) {
+			return createselftrans2arctransarcAdapter();
+		}
+
+		@Override
+		public Adapter casefinal2nothing(final2nothing object) {
+			return createfinal2nothingAdapter();
+		}
+
+		@Override
+		public Adapter casestatemachine2petrinet(statemachine2petrinet object) {
+			return createstatemachine2petrinetAdapter();
 		}
 
 		@Override
@@ -123,6 +123,62 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.statemachine2petrinet.Rules.initial2nothing <em>initial2nothing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.statemachine2petrinet.Rules.initial2nothing
+	 * @generated
+	 */
+	public Adapter createinitial2nothingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.statemachine2petrinet.Rules.transition2arctransarc <em>transition2arctransarc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.statemachine2petrinet.Rules.transition2arctransarc
+	 * @generated
+	 */
+	public Adapter createtransition2arctransarcAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.statemachine2petrinet.Rules.state2place <em>state2place</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.statemachine2petrinet.Rules.state2place
+	 * @generated
+	 */
+	public Adapter createstate2placeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.statemachine2petrinet.Rules.selftrans2arctransarc <em>selftrans2arctransarc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.statemachine2petrinet.Rules.selftrans2arctransarc
+	 * @generated
+	 */
+	public Adapter createselftrans2arctransarcAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.statemachine2petrinet.Rules.final2nothing <em>final2nothing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -147,62 +203,6 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createstatemachine2petrinetAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.statemachine2petrinet.Rules.transition2arctransarc <em>transition2arctransarc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.statemachine2petrinet.Rules.transition2arctransarc
-	 * @generated
-	 */
-	public Adapter createtransition2arctransarcAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.statemachine2petrinet.Rules.selftrans2arctransarc <em>selftrans2arctransarc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.statemachine2petrinet.Rules.selftrans2arctransarc
-	 * @generated
-	 */
-	public Adapter createselftrans2arctransarcAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.statemachine2petrinet.Rules.state2place <em>state2place</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.statemachine2petrinet.Rules.state2place
-	 * @generated
-	 */
-	public Adapter createstate2placeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.statemachine2petrinet.Rules.initial2nothing <em>initial2nothing</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.statemachine2petrinet.Rules.initial2nothing
-	 * @generated
-	 */
-	public Adapter createinitial2nothingAdapter() {
 		return null;
 	}
 

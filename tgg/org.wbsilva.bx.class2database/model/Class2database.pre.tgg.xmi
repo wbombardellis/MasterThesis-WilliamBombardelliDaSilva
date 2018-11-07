@@ -3,291 +3,291 @@
   <domain name="Target" metamodel="//@metamodel.1" type="TARGET"/>
   <domain name="Source" metamodel="//@metamodel.0" type="SOURCE"/>
   <domain name="Correspondence" metamodel="//@metamodel.2"/>
-  <tggRule name="selfassoc2column" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="sas2fk" outgoingLink="//@tggRule.0/@linkVariable.1 //@tggRule.0/@linkVariable.5" bindingOperator="CREATE" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//AS2C"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="t" incomingLink="//@tggRule.0/@linkVariable.7 //@tggRule.0/@linkVariable.4 //@tggRule.0/@linkVariable.11" outgoingLink="//@tggRule.0/@linkVariable.0" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.0/@linkVariable.2 //@tggRule.0/@linkVariable.6 //@tggRule.0/@linkVariable.3 //@tggRule.0/@linkVariable.9" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="sas" incomingLink="//@tggRule.0/@linkVariable.1 //@tggRule.0/@linkVariable.8" outgoingLink="//@tggRule.0/@linkVariable.2 //@tggRule.0/@linkVariable.3" bindingOperator="CREATE" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Association"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fk" incomingLink="//@tggRule.0/@linkVariable.0 //@tggRule.0/@linkVariable.5" outgoingLink="//@tggRule.0/@linkVariable.4" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Column"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2t" outgoingLink="//@tggRule.0/@linkVariable.6 //@tggRule.0/@linkVariable.7" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd" incomingLink="//@tggRule.0/@linkVariable.12" outgoingLink="//@tggRule.0/@linkVariable.8 //@tggRule.0/@linkVariable.9" domain="//@domain.1">
+  <tggRule name="cd2db" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd" incomingLink="//@tggRule.0/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.1">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram"/>
     </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="db" incomingLink="//@tggRule.0/@linkVariable.10" outgoingLink="//@tggRule.0/@linkVariable.11" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd2db" outgoingLink="//@tggRule.0/@linkVariable.10 //@tggRule.0/@linkVariable.12" domain="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd2db" outgoingLink="//@tggRule.0/@linkVariable.0 //@tggRule.0/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.2">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D"/>
     </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="column" target="//@tggRule.0/@objectVariable.4" source="//@tggRule.0/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.0">
-      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table/column"/>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="db" incomingLink="//@tggRule.0/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.0" source="//@tggRule.0/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/source"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.3" source="//@tggRule.0/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.2" source="//@tggRule.0/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Association/source"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.2" source="//@tggRule.0/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Association/target"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="reference" target="//@tggRule.0/@objectVariable.1" source="//@tggRule.0/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.0">
-      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Column/reference"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.4" source="//@tggRule.0/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.2" source="//@tggRule.0/@objectVariable.5" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.1" source="//@tggRule.0/@objectVariable.5" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="associations" target="//@tggRule.0/@objectVariable.3" source="//@tggRule.0/@objectVariable.6" bindingOperator="CREATE" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/associations"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.0/@objectVariable.2" source="//@tggRule.0/@objectVariable.6" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.7" source="//@tggRule.0/@objectVariable.8" domain="//@domain.2">
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.2" source="//@tggRule.0/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2">
       <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/target"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="table" target="//@tggRule.0/@objectVariable.1" source="//@tggRule.0/@objectVariable.7" domain="//@domain.0">
+    <csp/>
+  </tggRule>
+  <tggRule name="class2table" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2t" outgoingLink="//@tggRule.1/@linkVariable.1 //@tggRule.1/@linkVariable.5" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="db" incomingLink="//@tggRule.1/@linkVariable.3" outgoingLink="//@tggRule.1/@linkVariable.0" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="t" incomingLink="//@tggRule.1/@linkVariable.0 //@tggRule.1/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd" incomingLink="//@tggRule.1/@linkVariable.2" outgoingLink="//@tggRule.1/@linkVariable.4" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd2db" outgoingLink="//@tggRule.1/@linkVariable.2 //@tggRule.1/@linkVariable.3" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.1/@linkVariable.5 //@tggRule.1/@linkVariable.4" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="table" target="//@tggRule.1/@objectVariable.2" source="//@tggRule.1/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.0">
       <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB/table"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.6" source="//@tggRule.0/@objectVariable.8" domain="//@domain.2">
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.1/@objectVariable.2" source="//@tggRule.1/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.1/@objectVariable.3" source="//@tggRule.1/@objectVariable.4" domain="//@domain.2">
       <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.1/@objectVariable.1" source="//@tggRule.1/@objectVariable.4" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.1/@objectVariable.5" source="//@tggRule.1/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.1/@objectVariable.5" source="//@tggRule.1/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.2"/>
+    <csp/>
+  </tggRule>
+  <tggRule name="super2table" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="db" incomingLink="//@tggRule.2/@linkVariable.4" outgoingLink="//@tggRule.2/@linkVariable.0" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p2t" outgoingLink="//@tggRule.2/@linkVariable.1 //@tggRule.2/@linkVariable.2" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="t" incomingLink="//@tggRule.2/@linkVariable.1 //@tggRule.2/@linkVariable.0 //@tggRule.2/@linkVariable.5" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.2/@linkVariable.2 //@tggRule.2/@linkVariable.6 //@tggRule.2/@linkVariable.3" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd2db" outgoingLink="//@tggRule.2/@linkVariable.4 //@tggRule.2/@linkVariable.7" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.2/@linkVariable.8 //@tggRule.2/@linkVariable.9" outgoingLink="//@tggRule.2/@linkVariable.3" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2t" outgoingLink="//@tggRule.2/@linkVariable.5 //@tggRule.2/@linkVariable.8" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd" incomingLink="//@tggRule.2/@linkVariable.7" outgoingLink="//@tggRule.2/@linkVariable.6 //@tggRule.2/@linkVariable.9" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="table" target="//@tggRule.2/@objectVariable.2" source="//@tggRule.2/@objectVariable.0" domain="//@domain.0">
+      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB/table"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.2" source="//@tggRule.2/@objectVariable.1" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.3" source="//@tggRule.2/@objectVariable.1" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="super" target="//@tggRule.2/@objectVariable.3" source="//@tggRule.2/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz/super"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.0" source="//@tggRule.2/@objectVariable.4" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.2" source="//@tggRule.2/@objectVariable.6" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.2/@objectVariable.3" source="//@tggRule.2/@objectVariable.7" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.7" source="//@tggRule.2/@objectVariable.4" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.5" source="//@tggRule.2/@objectVariable.6" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.2/@objectVariable.5" source="//@tggRule.2/@objectVariable.7" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <tggRule name="selfassoc2column" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.3/@linkVariable.5 //@tggRule.3/@linkVariable.7 //@tggRule.3/@linkVariable.1 //@tggRule.3/@linkVariable.12" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fk" incomingLink="//@tggRule.3/@linkVariable.9 //@tggRule.3/@linkVariable.0" outgoingLink="//@tggRule.3/@linkVariable.6" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Column"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="sas2fk" outgoingLink="//@tggRule.3/@linkVariable.4 //@tggRule.3/@linkVariable.9" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//AS2C"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="db" incomingLink="//@tggRule.3/@linkVariable.10" outgoingLink="//@tggRule.3/@linkVariable.2" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="t" incomingLink="//@tggRule.3/@linkVariable.3 //@tggRule.3/@linkVariable.6 //@tggRule.3/@linkVariable.2" outgoingLink="//@tggRule.3/@linkVariable.0" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="sas" incomingLink="//@tggRule.3/@linkVariable.4 //@tggRule.3/@linkVariable.8" outgoingLink="//@tggRule.3/@linkVariable.1 //@tggRule.3/@linkVariable.12" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Association"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2t" outgoingLink="//@tggRule.3/@linkVariable.3 //@tggRule.3/@linkVariable.5" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd2db" outgoingLink="//@tggRule.3/@linkVariable.10 //@tggRule.3/@linkVariable.11" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd" incomingLink="//@tggRule.3/@linkVariable.11" outgoingLink="//@tggRule.3/@linkVariable.7 //@tggRule.3/@linkVariable.8" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="column" target="//@tggRule.3/@objectVariable.1" source="//@tggRule.3/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table/column"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.0" source="//@tggRule.3/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Association/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="table" target="//@tggRule.3/@objectVariable.4" source="//@tggRule.3/@objectVariable.3" domain="//@domain.0">
+      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB/table"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.4" source="//@tggRule.3/@objectVariable.6" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.5" source="//@tggRule.3/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//AS2C/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.0" source="//@tggRule.3/@objectVariable.6" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="reference" target="//@tggRule.3/@objectVariable.4" source="//@tggRule.3/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Column/reference"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.3/@objectVariable.0" source="//@tggRule.3/@objectVariable.8" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="associations" target="//@tggRule.3/@objectVariable.5" source="//@tggRule.3/@objectVariable.8" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/associations"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.1" source="//@tggRule.3/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//AS2C/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.3" source="//@tggRule.3/@objectVariable.7" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.8" source="//@tggRule.3/@objectVariable.7" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.0" source="//@tggRule.3/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Association/source"/>
     </linkVariable>
     <csp/>
   </tggRule>
   <tggRule name="attribute2column" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a" incomingLink="//@tggRule.1/@linkVariable.0 //@tggRule.1/@linkVariable.5" bindingOperator="CREATE" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Attribute"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="t" incomingLink="//@tggRule.1/@linkVariable.3" outgoingLink="//@tggRule.1/@linkVariable.1" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="co" incomingLink="//@tggRule.1/@linkVariable.1 //@tggRule.1/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="co" incomingLink="//@tggRule.4/@linkVariable.2 //@tggRule.4/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Column"/>
     </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.1/@linkVariable.4" outgoingLink="//@tggRule.1/@linkVariable.0" domain="//@domain.1">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.4/@linkVariable.3" outgoingLink="//@tggRule.4/@linkVariable.0" domain="//@domain.1">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
     </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a2co" outgoingLink="//@tggRule.1/@linkVariable.2 //@tggRule.1/@linkVariable.5" bindingOperator="CREATE" domain="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a2co" outgoingLink="//@tggRule.4/@linkVariable.2 //@tggRule.4/@linkVariable.4" bindingOperator="CREATE" domain="//@domain.2">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//A2C"/>
     </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2t" outgoingLink="//@tggRule.1/@linkVariable.3 //@tggRule.1/@linkVariable.4" domain="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="t" incomingLink="//@tggRule.4/@linkVariable.5" outgoingLink="//@tggRule.4/@linkVariable.1" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2t" outgoingLink="//@tggRule.4/@linkVariable.3 //@tggRule.4/@linkVariable.5" domain="//@domain.2">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
     </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="attribute" target="//@tggRule.1/@objectVariable.0" source="//@tggRule.1/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.1">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="a" incomingLink="//@tggRule.4/@linkVariable.0 //@tggRule.4/@linkVariable.4" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Attribute"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="attribute" target="//@tggRule.4/@objectVariable.5" source="//@tggRule.4/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.1">
       <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz/attribute"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="column" target="//@tggRule.1/@objectVariable.2" source="//@tggRule.1/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="column" target="//@tggRule.4/@objectVariable.0" source="//@tggRule.4/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.0">
       <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table/column"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.1/@objectVariable.2" source="//@tggRule.1/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//A2C/target"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.1/@objectVariable.1" source="//@tggRule.1/@objectVariable.5" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/target"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.1/@objectVariable.3" source="//@tggRule.1/@objectVariable.5" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/source"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.1/@objectVariable.0" source="//@tggRule.1/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//A2C/source"/>
-    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.4/@objectVariable.0" source="//@tggRule.4/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.4/@objectVariable.1" source="//@tggRule.4/@objectVariable.4" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.4/@objectVariable.5" source="//@tggRule.4/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.2"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.4/@objectVariable.3" source="//@tggRule.4/@objectVariable.4" domain="//@domain.2"/>
     <csp/>
   </tggRule>
   <tggRule name="association2column" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd" incomingLink="//@tggRule.2/@linkVariable.3" outgoingLink="//@tggRule.2/@linkVariable.1 //@tggRule.2/@linkVariable.5 //@tggRule.2/@linkVariable.6" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="t" incomingLink="//@tggRule.2/@linkVariable.14 //@tggRule.2/@linkVariable.13" outgoingLink="//@tggRule.2/@linkVariable.0" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b2u" outgoingLink="//@tggRule.2/@linkVariable.2 //@tggRule.2/@linkVariable.16" domain="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b2u" outgoingLink="//@tggRule.5/@linkVariable.10 //@tggRule.5/@linkVariable.12" domain="//@domain.2">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
     </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="as2fk" outgoingLink="//@tggRule.2/@linkVariable.7 //@tggRule.2/@linkVariable.11" bindingOperator="CREATE" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//AS2C"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b" incomingLink="//@tggRule.2/@linkVariable.2 //@tggRule.2/@linkVariable.5 //@tggRule.2/@linkVariable.8" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd2db" outgoingLink="//@tggRule.2/@linkVariable.3 //@tggRule.2/@linkVariable.10" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fk" incomingLink="//@tggRule.2/@linkVariable.0 //@tggRule.2/@linkVariable.7" outgoingLink="//@tggRule.2/@linkVariable.4" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Column"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2t" outgoingLink="//@tggRule.2/@linkVariable.14 //@tggRule.2/@linkVariable.15" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="db" incomingLink="//@tggRule.2/@linkVariable.10" outgoingLink="//@tggRule.2/@linkVariable.12 //@tggRule.2/@linkVariable.13" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="as" incomingLink="//@tggRule.2/@linkVariable.11 //@tggRule.2/@linkVariable.6" outgoingLink="//@tggRule.2/@linkVariable.8 //@tggRule.2/@linkVariable.9" bindingOperator="CREATE" domain="//@domain.1">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="as" incomingLink="//@tggRule.5/@linkVariable.5 //@tggRule.5/@linkVariable.4" outgoingLink="//@tggRule.5/@linkVariable.0 //@tggRule.5/@linkVariable.15" bindingOperator="CREATE" domain="//@domain.1">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Association"/>
     </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.2/@linkVariable.9 //@tggRule.2/@linkVariable.1 //@tggRule.2/@linkVariable.15" domain="//@domain.1">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fk" incomingLink="//@tggRule.5/@linkVariable.7 //@tggRule.5/@linkVariable.9" outgoingLink="//@tggRule.5/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Column"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2t" outgoingLink="//@tggRule.5/@linkVariable.11 //@tggRule.5/@linkVariable.16" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="as2fk" outgoingLink="//@tggRule.5/@linkVariable.5 //@tggRule.5/@linkVariable.7" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//AS2C"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="b" incomingLink="//@tggRule.5/@linkVariable.8 //@tggRule.5/@linkVariable.10 //@tggRule.5/@linkVariable.15" domain="//@domain.1">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
     </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="u" incomingLink="//@tggRule.2/@linkVariable.16 //@tggRule.2/@linkVariable.4 //@tggRule.2/@linkVariable.12" domain="//@domain.0">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="db" incomingLink="//@tggRule.5/@linkVariable.13" outgoingLink="//@tggRule.5/@linkVariable.2 //@tggRule.5/@linkVariable.3" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="u" incomingLink="//@tggRule.5/@linkVariable.1 //@tggRule.5/@linkVariable.3 //@tggRule.5/@linkVariable.12" domain="//@domain.0">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table"/>
     </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="column" target="//@tggRule.2/@objectVariable.6" source="//@tggRule.2/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.0">
-      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table/column"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.2/@objectVariable.10" source="//@tggRule.2/@objectVariable.0" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.4" source="//@tggRule.2/@objectVariable.2" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.0" source="//@tggRule.2/@objectVariable.5" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/source"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="reference" target="//@tggRule.2/@objectVariable.11" source="//@tggRule.2/@objectVariable.6" bindingOperator="CREATE" domain="//@domain.0">
-      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Column/reference"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.2/@objectVariable.4" source="//@tggRule.2/@objectVariable.0" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="associations" target="//@tggRule.2/@objectVariable.9" source="//@tggRule.2/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/associations"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.6" source="//@tggRule.2/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.4" source="//@tggRule.2/@objectVariable.9" bindingOperator="CREATE" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Association/target"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.10" source="//@tggRule.2/@objectVariable.9" bindingOperator="CREATE" domain="//@domain.1">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd" incomingLink="//@tggRule.5/@linkVariable.14" outgoingLink="//@tggRule.5/@linkVariable.4 //@tggRule.5/@linkVariable.6 //@tggRule.5/@linkVariable.8" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="t" incomingLink="//@tggRule.5/@linkVariable.11 //@tggRule.5/@linkVariable.2" outgoingLink="//@tggRule.5/@linkVariable.9" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.5/@linkVariable.0 //@tggRule.5/@linkVariable.6 //@tggRule.5/@linkVariable.16" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd2db" outgoingLink="//@tggRule.5/@linkVariable.13 //@tggRule.5/@linkVariable.14" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.10" source="//@tggRule.5/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.1">
       <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Association/source"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.8" source="//@tggRule.2/@objectVariable.5" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/target"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="reference" target="//@tggRule.5/@objectVariable.7" source="//@tggRule.5/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Column/reference"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.9" source="//@tggRule.2/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="table" target="//@tggRule.2/@objectVariable.11" source="//@tggRule.2/@objectVariable.8" domain="//@domain.0">
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="table" target="//@tggRule.5/@objectVariable.9" source="//@tggRule.5/@objectVariable.6" domain="//@domain.0">
       <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB/table"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="table" target="//@tggRule.2/@objectVariable.1" source="//@tggRule.2/@objectVariable.8" domain="//@domain.0">
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="table" target="//@tggRule.5/@objectVariable.7" source="//@tggRule.5/@objectVariable.6" domain="//@domain.0">
       <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB/table"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.1" source="//@tggRule.2/@objectVariable.7" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/target"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="associations" target="//@tggRule.5/@objectVariable.1" source="//@tggRule.5/@objectVariable.8" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/associations"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.10" source="//@tggRule.2/@objectVariable.7" domain="//@domain.2">
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.1" source="//@tggRule.5/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//AS2C/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.5/@objectVariable.10" source="//@tggRule.5/@objectVariable.8" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.2" source="//@tggRule.5/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//AS2C/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.5/@objectVariable.5" source="//@tggRule.5/@objectVariable.8" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="column" target="//@tggRule.5/@objectVariable.2" source="//@tggRule.5/@objectVariable.9" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table/column"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.5" source="//@tggRule.5/@objectVariable.0" domain="//@domain.2">
       <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/source"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.11" source="//@tggRule.2/@objectVariable.2" domain="//@domain.2"/>
-    <csp/>
-  </tggRule>
-  <tggRule name="cd2db" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd" incomingLink="//@tggRule.3/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd2db" outgoingLink="//@tggRule.3/@linkVariable.0 //@tggRule.3/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="db" incomingLink="//@tggRule.3/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.0" source="//@tggRule.3/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/source"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.2" source="//@tggRule.3/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/target"/>
-    </linkVariable>
-    <csp/>
-  </tggRule>
-  <tggRule name="super2table" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="t" incomingLink="//@tggRule.4/@linkVariable.0 //@tggRule.4/@linkVariable.1 //@tggRule.4/@linkVariable.4" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p2t" outgoingLink="//@tggRule.4/@linkVariable.0 //@tggRule.4/@linkVariable.9" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2t" outgoingLink="//@tggRule.4/@linkVariable.1 //@tggRule.4/@linkVariable.6" bindingOperator="CREATE" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd2db" outgoingLink="//@tggRule.4/@linkVariable.3 //@tggRule.4/@linkVariable.5" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd" incomingLink="//@tggRule.4/@linkVariable.5" outgoingLink="//@tggRule.4/@linkVariable.2 //@tggRule.4/@linkVariable.7" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="db" incomingLink="//@tggRule.4/@linkVariable.3" outgoingLink="//@tggRule.4/@linkVariable.4" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.4/@linkVariable.6 //@tggRule.4/@linkVariable.7" outgoingLink="//@tggRule.4/@linkVariable.8" bindingOperator="CREATE" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.4/@linkVariable.2 //@tggRule.4/@linkVariable.8 //@tggRule.4/@linkVariable.9" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.4/@objectVariable.0" source="//@tggRule.4/@objectVariable.1" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.4/@objectVariable.0" source="//@tggRule.4/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.4/@objectVariable.7" source="//@tggRule.4/@objectVariable.4" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.4/@objectVariable.5" source="//@tggRule.4/@objectVariable.3" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/target"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="table" target="//@tggRule.4/@objectVariable.0" source="//@tggRule.4/@objectVariable.5" domain="//@domain.0">
-      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB/table"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.4/@objectVariable.4" source="//@tggRule.4/@objectVariable.3" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/source"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.4/@objectVariable.6" source="//@tggRule.4/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.4/@objectVariable.6" source="//@tggRule.4/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="super" target="//@tggRule.4/@objectVariable.7" source="//@tggRule.4/@objectVariable.6" bindingOperator="CREATE" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz/super"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.4/@objectVariable.7" source="//@tggRule.4/@objectVariable.1" domain="//@domain.2"/>
-    <csp/>
-  </tggRule>
-  <tggRule name="class2table" correspondence="//@domain.2" source="//@domain.1" target="//@domain.0">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="db" incomingLink="//@tggRule.5/@linkVariable.1" outgoingLink="//@tggRule.5/@linkVariable.0" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="t" incomingLink="//@tggRule.5/@linkVariable.2 //@tggRule.5/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//Table"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd2db" outgoingLink="//@tggRule.5/@linkVariable.1 //@tggRule.5/@linkVariable.4" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2t" outgoingLink="//@tggRule.5/@linkVariable.2 //@tggRule.5/@linkVariable.3" bindingOperator="CREATE" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c" incomingLink="//@tggRule.5/@linkVariable.3 //@tggRule.5/@linkVariable.5" bindingOperator="CREATE" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Clazz"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="cd" incomingLink="//@tggRule.5/@linkVariable.4" outgoingLink="//@tggRule.5/@linkVariable.5" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="table" target="//@tggRule.5/@objectVariable.1" source="//@tggRule.5/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.0">
-      <type href="platform:/plugin/org.wbsilva.mm.database/model/Database.ecore#//DB/table"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.0" source="//@tggRule.5/@objectVariable.2" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/target"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.1" source="//@tggRule.5/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.2">
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.9" source="//@tggRule.5/@objectVariable.3" domain="//@domain.2">
       <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/target"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.4" source="//@tggRule.5/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/source"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.7" source="//@tggRule.5/@objectVariable.0" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/target"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.5" source="//@tggRule.5/@objectVariable.2" domain="//@domain.2">
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.6" source="//@tggRule.5/@objectVariable.11" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.8" source="//@tggRule.5/@objectVariable.11" domain="//@domain.2">
       <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//CD2D/source"/>
     </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="classes" target="//@tggRule.5/@objectVariable.4" source="//@tggRule.5/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.1">
-      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//ClassDiagram/classes"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.5" source="//@tggRule.5/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/org.wbsilva.mm.class/model/Class.ecore#//Association/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.10" source="//@tggRule.5/@objectVariable.3" domain="//@domain.2">
+      <type href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//C2T/source"/>
     </linkVariable>
     <csp/>
   </tggRule>

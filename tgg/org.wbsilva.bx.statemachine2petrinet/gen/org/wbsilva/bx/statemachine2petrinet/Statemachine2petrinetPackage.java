@@ -60,6 +60,52 @@ public interface Statemachine2petrinetPackage extends EPackage {
 			.init();
 
 	/**
+	 * The meta object id for the '{@link org.wbsilva.bx.statemachine2petrinet.impl.T2TImpl <em>T2T</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bx.statemachine2petrinet.impl.T2TImpl
+	 * @see org.wbsilva.bx.statemachine2petrinet.impl.Statemachine2petrinetPackageImpl#getT2T()
+	 * @generated
+	 */
+	int T2T = 0;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T2T__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T2T__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>T2T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T2T_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>T2T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T2T_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.wbsilva.bx.statemachine2petrinet.impl.T2AImpl <em>T2A</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +113,7 @@ public interface Statemachine2petrinetPackage extends EPackage {
 	 * @see org.wbsilva.bx.statemachine2petrinet.impl.Statemachine2petrinetPackageImpl#getT2A()
 	 * @generated
 	 */
-	int T2A = 0;
+	int T2A = 1;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -113,7 +159,7 @@ public interface Statemachine2petrinetPackage extends EPackage {
 	 * @see org.wbsilva.bx.statemachine2petrinet.impl.Statemachine2petrinetPackageImpl#getS2P()
 	 * @generated
 	 */
-	int S2P = 1;
+	int S2P = 2;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -159,7 +205,7 @@ public interface Statemachine2petrinetPackage extends EPackage {
 	 * @see org.wbsilva.bx.statemachine2petrinet.impl.Statemachine2petrinetPackageImpl#getSM2PN()
 	 * @generated
 	 */
-	int SM2PN = 2;
+	int SM2PN = 3;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -198,50 +244,36 @@ public interface Statemachine2petrinetPackage extends EPackage {
 	int SM2PN_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.wbsilva.bx.statemachine2petrinet.impl.T2TImpl <em>T2T</em>}' class.
+	 * Returns the meta object for class '{@link org.wbsilva.bx.statemachine2petrinet.T2T <em>T2T</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.wbsilva.bx.statemachine2petrinet.impl.T2TImpl
-	 * @see org.wbsilva.bx.statemachine2petrinet.impl.Statemachine2petrinetPackageImpl#getT2T()
+	 * @return the meta object for class '<em>T2T</em>'.
+	 * @see org.wbsilva.bx.statemachine2petrinet.T2T
 	 * @generated
 	 */
-	int T2T = 3;
+	EClass getT2T();
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * Returns the meta object for the reference '{@link org.wbsilva.bx.statemachine2petrinet.T2T#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.wbsilva.bx.statemachine2petrinet.T2T#getSource()
+	 * @see #getT2T()
 	 * @generated
-	 * @ordered
 	 */
-	int T2T__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+	EReference getT2T_Source();
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * Returns the meta object for the reference '{@link org.wbsilva.bx.statemachine2petrinet.T2T#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.wbsilva.bx.statemachine2petrinet.T2T#getTarget()
+	 * @see #getT2T()
 	 * @generated
-	 * @ordered
 	 */
-	int T2T__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>T2T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T2T_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>T2T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T2T_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+	EReference getT2T_Target();
 
 	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bx.statemachine2petrinet.T2A <em>T2A</em>}'.
@@ -340,38 +372,6 @@ public interface Statemachine2petrinetPackage extends EPackage {
 	EReference getSM2PN_Target();
 
 	/**
-	 * Returns the meta object for class '{@link org.wbsilva.bx.statemachine2petrinet.T2T <em>T2T</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>T2T</em>'.
-	 * @see org.wbsilva.bx.statemachine2petrinet.T2T
-	 * @generated
-	 */
-	EClass getT2T();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.wbsilva.bx.statemachine2petrinet.T2T#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.wbsilva.bx.statemachine2petrinet.T2T#getSource()
-	 * @see #getT2T()
-	 * @generated
-	 */
-	EReference getT2T_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.wbsilva.bx.statemachine2petrinet.T2T#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.wbsilva.bx.statemachine2petrinet.T2T#getTarget()
-	 * @see #getT2T()
-	 * @generated
-	 */
-	EReference getT2T_Target();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -394,6 +394,32 @@ public interface Statemachine2petrinetPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bx.statemachine2petrinet.impl.T2TImpl <em>T2T</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bx.statemachine2petrinet.impl.T2TImpl
+		 * @see org.wbsilva.bx.statemachine2petrinet.impl.Statemachine2petrinetPackageImpl#getT2T()
+		 * @generated
+		 */
+		EClass T2T = eINSTANCE.getT2T();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference T2T__SOURCE = eINSTANCE.getT2T_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference T2T__TARGET = eINSTANCE.getT2T_Target();
+
 		/**
 		 * The meta object literal for the '{@link org.wbsilva.bx.statemachine2petrinet.impl.T2AImpl <em>T2A</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -471,32 +497,6 @@ public interface Statemachine2petrinetPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SM2PN__TARGET = eINSTANCE.getSM2PN_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.wbsilva.bx.statemachine2petrinet.impl.T2TImpl <em>T2T</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.wbsilva.bx.statemachine2petrinet.impl.T2TImpl
-		 * @see org.wbsilva.bx.statemachine2petrinet.impl.Statemachine2petrinetPackageImpl#getT2T()
-		 * @generated
-		 */
-		EClass T2T = eINSTANCE.getT2T();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference T2T__SOURCE = eINSTANCE.getT2T_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference T2T__TARGET = eINSTANCE.getT2T_Target();
 
 	}
 

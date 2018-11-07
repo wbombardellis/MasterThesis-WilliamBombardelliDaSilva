@@ -56,27 +56,17 @@ public class Class2databaseFactoryImpl extends EFactoryImpl implements Class2dat
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case Class2databasePackage.A2C:
-			return createA2C();
 		case Class2databasePackage.CD2D:
 			return createCD2D();
 		case Class2databasePackage.AS2C:
 			return createAS2C();
+		case Class2databasePackage.A2C:
+			return createA2C();
 		case Class2databasePackage.C2T:
 			return createC2T();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public A2C createA2C() {
-		A2CImpl a2C = new A2CImpl();
-		return a2C;
 	}
 
 	/**
@@ -97,6 +87,16 @@ public class Class2databaseFactoryImpl extends EFactoryImpl implements Class2dat
 	public AS2C createAS2C() {
 		AS2CImpl as2C = new AS2CImpl();
 		return as2C;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public A2C createA2C() {
+		A2CImpl a2C = new A2CImpl();
+		return a2C;
 	}
 
 	/**

@@ -131,8 +131,8 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 			selftrans2arctransarcImpl
 					.pattern_selftrans2arctransarc_0_4_collectelementstobetranslated_greenBBBBFFF(match, s1, sm, st);
 			//nothing EMoflonEdge sm__st____transitions = (EMoflonEdge) result4_green[4];
-			//nothing EMoflonEdge st__s1____to = (EMoflonEdge) result4_green[5];
-			//nothing EMoflonEdge st__s1____from = (EMoflonEdge) result4_green[6];
+			//nothing EMoflonEdge st__s1____from = (EMoflonEdge) result4_green[5];
+			//nothing EMoflonEdge st__s1____to = (EMoflonEdge) result4_green[6];
 
 			Object[] result5_black = selftrans2arctransarcImpl
 					.pattern_selftrans2arctransarc_0_5_collectcontextelements_blackBBBB(match, s1, sm, st);
@@ -166,70 +166,70 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		S2P s12p1 = (S2P) result1_bindingAndBlack[0];
-		PNGraph png = (PNGraph) result1_bindingAndBlack[1];
-		SM2PN sm2pn = (SM2PN) result1_bindingAndBlack[2];
-		Place p1 = (Place) result1_bindingAndBlack[3];
-		State s1 = (State) result1_bindingAndBlack[4];
-		SM sm = (SM) result1_bindingAndBlack[5];
-		Transition st = (Transition) result1_bindingAndBlack[6];
+		State s1 = (State) result1_bindingAndBlack[0];
+		SM2PN sm2pn = (SM2PN) result1_bindingAndBlack[1];
+		PNGraph png = (PNGraph) result1_bindingAndBlack[2];
+		SM sm = (SM) result1_bindingAndBlack[3];
+		Transition st = (Transition) result1_bindingAndBlack[4];
+		Place p1 = (Place) result1_bindingAndBlack[5];
+		S2P s12p1 = (S2P) result1_bindingAndBlack[6];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[7];
 		Object[] result1_green = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_1_1_performtransformation_greenFFFBBFFFB(png, p1, st);
+				.pattern_selftrans2arctransarc_1_1_performtransformation_greenFBFFFBFBF(png, st, p1);
 		petrinet.Transition pt = (petrinet.Transition) result1_green[0];
-		Arc a1 = (Arc) result1_green[1];
-		T2A st2a1 = (T2A) result1_green[2];
-		T2T st2pt = (T2T) result1_green[5];
-		T2A st2a2 = (T2A) result1_green[6];
-		Arc a2 = (Arc) result1_green[7];
+		Arc a1 = (Arc) result1_green[2];
+		T2T st2pt = (T2T) result1_green[3];
+		T2A st2a2 = (T2A) result1_green[4];
+		Arc a2 = (Arc) result1_green[6];
+		T2A st2a1 = (T2A) result1_green[8];
 
 		Object[] result2_black = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_1_2_collecttranslatedelements_blackBBBBBBB(pt, a1, st2a1, st2pt, st2a2,
-						a2, st);
+				.pattern_selftrans2arctransarc_1_2_collecttranslatedelements_blackBBBBBBB(pt, a1, st2pt, st2a2, st, a2,
+						st2a1);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[pt] = " + pt + ", " + "[a1] = "
-					+ a1 + ", " + "[st2a1] = " + st2a1 + ", " + "[st2pt] = " + st2pt + ", " + "[st2a2] = " + st2a2
-					+ ", " + "[a2] = " + a2 + ", " + "[st] = " + st + ".");
+					+ a1 + ", " + "[st2pt] = " + st2pt + ", " + "[st2a2] = " + st2a2 + ", " + "[st] = " + st + ", "
+					+ "[a2] = " + a2 + ", " + "[st2a1] = " + st2a1 + ".");
 		}
 		Object[] result2_green = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_1_2_collecttranslatedelements_greenFBBBBBBB(pt, a1, st2a1, st2pt, st2a2,
-						a2, st);
+				.pattern_selftrans2arctransarc_1_2_collecttranslatedelements_greenFBBBBBBB(pt, a1, st2pt, st2a2, st, a2,
+						st2a1);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(ruleresult, pt, s12p1, a1,
-						st2a1, png, sm2pn, p1, st2pt, s1, sm, st2a2, a2, st);
+				.pattern_selftrans2arctransarc_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(ruleresult, pt, s1, sm2pn,
+						png, a1, st2pt, st2a2, sm, st, a2, p1, st2a1, s12p1);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[pt] = " + pt + ", " + "[s12p1] = " + s12p1 + ", " + "[a1] = " + a1 + ", " + "[st2a1] = "
-					+ st2a1 + ", " + "[png] = " + png + ", " + "[sm2pn] = " + sm2pn + ", " + "[p1] = " + p1 + ", "
-					+ "[st2pt] = " + st2pt + ", " + "[s1] = " + s1 + ", " + "[sm] = " + sm + ", " + "[st2a2] = " + st2a2
-					+ ", " + "[a2] = " + a2 + ", " + "[st] = " + st + ".");
+					+ ", " + "[pt] = " + pt + ", " + "[s1] = " + s1 + ", " + "[sm2pn] = " + sm2pn + ", " + "[png] = "
+					+ png + ", " + "[a1] = " + a1 + ", " + "[st2pt] = " + st2pt + ", " + "[st2a2] = " + st2a2 + ", "
+					+ "[sm] = " + sm + ", " + "[st] = " + st + ", " + "[a2] = " + a2 + ", " + "[p1] = " + p1 + ", "
+					+ "[st2a1] = " + st2a1 + ", " + "[s12p1] = " + s12p1 + ".");
 		}
 		selftrans2arctransarcImpl
 				.pattern_selftrans2arctransarc_1_3_bookkeepingforedges_greenBBBBBBBBBBBBFFFFFFFFFFFFFFFF(ruleresult, pt,
-						a1, st2a1, png, p1, st2pt, s1, sm, st2a2, a2, st);
-		//nothing EMoflonEdge st2a1__a1____target = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge a1__pt____to = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge png__pt____transitions = (EMoflonEdge) result3_green[14];
+						s1, png, a1, st2pt, st2a2, sm, st, a2, p1, st2a1);
+		//nothing EMoflonEdge png__a2____arcs = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge png__pt____transitions = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge a1__pt____to = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge a1__p1____from = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge st2pt__pt____target = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge png__a1____arcs = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge sm__st____transitions = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge png__a2____arcs = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge st2a2__a2____target = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge st__s1____to = (EMoflonEdge) result3_green[21];
+		//nothing EMoflonEdge sm__st____transitions = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge st2pt__st____source = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge st2a2__st____source = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge st2a1__a1____target = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge st2a1__st____source = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge st2pt__pt____target = (EMoflonEdge) result3_green[21];
 		//nothing EMoflonEdge st__s1____from = (EMoflonEdge) result3_green[22];
-		//nothing EMoflonEdge st2pt__st____source = (EMoflonEdge) result3_green[23];
+		//nothing EMoflonEdge st__s1____to = (EMoflonEdge) result3_green[23];
 		//nothing EMoflonEdge a2__pt____from = (EMoflonEdge) result3_green[24];
-		//nothing EMoflonEdge st2a2__st____source = (EMoflonEdge) result3_green[25];
-		//nothing EMoflonEdge st2a1__st____source = (EMoflonEdge) result3_green[26];
+		//nothing EMoflonEdge st2a2__a2____target = (EMoflonEdge) result3_green[25];
+		//nothing EMoflonEdge png__a1____arcs = (EMoflonEdge) result3_green[26];
 		//nothing EMoflonEdge a2__p1____to = (EMoflonEdge) result3_green[27];
 
 		// 
 		// 
 		selftrans2arctransarcImpl.pattern_selftrans2arctransarc_1_5_registerobjects_expressionBBBBBBBBBBBBBBB(this,
-				ruleresult, pt, s12p1, a1, st2a1, png, sm2pn, p1, st2pt, s1, sm, st2a2, a2, st);
+				ruleresult, pt, s1, sm2pn, png, a1, st2pt, st2a2, sm, st, a2, p1, st2a1, s12p1);
 		return selftrans2arctransarcImpl.pattern_selftrans2arctransarc_1_6_expressionFB(ruleresult);
 	}
 
@@ -262,34 +262,34 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		SM sm = (SM) result2_binding[1];
 		Transition st = (Transition) result2_binding[2];
 		for (Object[] result2_black : selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_2_2_corematch_blackFFFFBBBB(s1, sm, st, match)) {
-			S2P s12p1 = (S2P) result2_black[0];
-			PNGraph png = (PNGraph) result2_black[1];
-			SM2PN sm2pn = (SM2PN) result2_black[2];
-			Place p1 = (Place) result2_black[3];
+				.pattern_selftrans2arctransarc_2_2_corematch_blackBFFBBFFB(s1, sm, st, match)) {
+			SM2PN sm2pn = (SM2PN) result2_black[1];
+			PNGraph png = (PNGraph) result2_black[2];
+			Place p1 = (Place) result2_black[5];
+			S2P s12p1 = (S2P) result2_black[6];
 			// ForEach 
 			for (Object[] result3_black : selftrans2arctransarcImpl
-					.pattern_selftrans2arctransarc_2_3_findcontext_blackBBBBBBB(s12p1, png, sm2pn, p1, s1, sm, st)) {
+					.pattern_selftrans2arctransarc_2_3_findcontext_blackBBBBBBB(s1, sm2pn, png, sm, st, p1, s12p1)) {
 				Object[] result3_green = selftrans2arctransarcImpl
-						.pattern_selftrans2arctransarc_2_3_findcontext_greenBBBBBBBFFFFFFFF(s12p1, png, sm2pn, p1, s1,
-								sm, st);
+						.pattern_selftrans2arctransarc_2_3_findcontext_greenBBBBBBBFFFFFFFF(s1, sm2pn, png, sm, st, p1,
+								s12p1);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[7];
-				//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[8];
-				//nothing EMoflonEdge sm__st____transitions = (EMoflonEdge) result3_green[9];
-				//nothing EMoflonEdge st__s1____to = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge sm2pn__png____target = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[9];
+				//nothing EMoflonEdge sm__st____transitions = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge st__s1____from = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge sm2pn__png____target = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge s12p1__p1____target = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge s12p1__s1____source = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge st__s1____to = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge s12p1__s1____source = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge s12p1__p1____target = (EMoflonEdge) result3_green[14];
 
 				Object[] result4_bindingAndBlack = selftrans2arctransarcImpl
 						.pattern_selftrans2arctransarc_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-								s12p1, png, sm2pn, p1, s1, sm, st);
+								s1, sm2pn, png, sm, st, p1, s12p1);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s12p1] = " + s12p1 + ", "
-							+ "[png] = " + png + ", " + "[sm2pn] = " + sm2pn + ", " + "[p1] = " + p1 + ", " + "[s1] = "
-							+ s1 + ", " + "[sm] = " + sm + ", " + "[st] = " + st + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s1] = " + s1 + ", " + "[sm2pn] = "
+							+ sm2pn + ", " + "[png] = " + png + ", " + "[sm] = " + sm + ", " + "[st] = " + st + ", "
+							+ "[p1] = " + p1 + ", " + "[s12p1] = " + s12p1 + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -360,8 +360,8 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, S2P s12p1, PNGraph png, SM2PN sm2pn,
-			Place p1, State s1, SM sm, Transition st) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, State s1, SM2PN sm2pn, PNGraph png, SM sm,
+			Transition st, Place p1, S2P s12p1) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -376,13 +376,13 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("s12p1", s12p1);
-		isApplicableMatch.registerObject("png", png);
-		isApplicableMatch.registerObject("sm2pn", sm2pn);
-		isApplicableMatch.registerObject("p1", p1);
 		isApplicableMatch.registerObject("s1", s1);
+		isApplicableMatch.registerObject("sm2pn", sm2pn);
+		isApplicableMatch.registerObject("png", png);
 		isApplicableMatch.registerObject("sm", sm);
 		isApplicableMatch.registerObject("st", st);
+		isApplicableMatch.registerObject("p1", p1);
+		isApplicableMatch.registerObject("s12p1", s12p1);
 		return csp;
 	}
 
@@ -400,22 +400,22 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject pt, EObject s12p1, EObject a1, EObject st2a1,
-			EObject png, EObject sm2pn, EObject p1, EObject st2pt, EObject s1, EObject sm, EObject st2a2, EObject a2,
-			EObject st) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject pt, EObject s1, EObject sm2pn, EObject png,
+			EObject a1, EObject st2pt, EObject st2a2, EObject sm, EObject st, EObject a2, EObject p1, EObject st2a1,
+			EObject s12p1) {
 		ruleresult.registerObject("pt", pt);
-		ruleresult.registerObject("s12p1", s12p1);
-		ruleresult.registerObject("a1", a1);
-		ruleresult.registerObject("st2a1", st2a1);
-		ruleresult.registerObject("png", png);
-		ruleresult.registerObject("sm2pn", sm2pn);
-		ruleresult.registerObject("p1", p1);
-		ruleresult.registerObject("st2pt", st2pt);
 		ruleresult.registerObject("s1", s1);
-		ruleresult.registerObject("sm", sm);
+		ruleresult.registerObject("sm2pn", sm2pn);
+		ruleresult.registerObject("png", png);
+		ruleresult.registerObject("a1", a1);
+		ruleresult.registerObject("st2pt", st2pt);
 		ruleresult.registerObject("st2a2", st2a2);
-		ruleresult.registerObject("a2", a2);
+		ruleresult.registerObject("sm", sm);
 		ruleresult.registerObject("st", st);
+		ruleresult.registerObject("a2", a2);
+		ruleresult.registerObject("p1", p1);
+		ruleresult.registerObject("st2a1", st2a1);
+		ruleresult.registerObject("s12p1", s12p1);
 
 	}
 
@@ -434,59 +434,59 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {
+	public boolean isAppropriate_BWD(Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {
 
 		Object[] result1_black = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_10_1_initialbindings_blackBBBBBBB(this, match, pt, a1, png, p1, a2);
+				.pattern_selftrans2arctransarc_10_1_initialbindings_blackBBBBBBB(this, match, pt, png, a1, a2, p1);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[pt] = " + pt + ", " + "[a1] = " + a1 + ", " + "[png] = " + png
-					+ ", " + "[p1] = " + p1 + ", " + "[a2] = " + a2 + ".");
+					+ "[match] = " + match + ", " + "[pt] = " + pt + ", " + "[png] = " + png + ", " + "[a1] = " + a1
+					+ ", " + "[a2] = " + a2 + ", " + "[p1] = " + p1 + ".");
 		}
 
 		Object[] result2_bindingAndBlack = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_10_2_SolveCSP_bindingAndBlackFBBBBBBB(this, match, pt, a1, png, p1, a2);
+				.pattern_selftrans2arctransarc_10_2_SolveCSP_bindingAndBlackFBBBBBBB(this, match, pt, png, a1, a2, p1);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[pt] = " + pt + ", " + "[a1] = " + a1 + ", " + "[png] = " + png
-					+ ", " + "[p1] = " + p1 + ", " + "[a2] = " + a2 + ".");
+					+ "[match] = " + match + ", " + "[pt] = " + pt + ", " + "[png] = " + png + ", " + "[a1] = " + a1
+					+ ", " + "[a2] = " + a2 + ", " + "[p1] = " + p1 + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (selftrans2arctransarcImpl.pattern_selftrans2arctransarc_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = selftrans2arctransarcImpl
-					.pattern_selftrans2arctransarc_10_4_collectelementstobetranslated_blackBBBBBB(match, pt, a1, png,
-							p1, a2);
+					.pattern_selftrans2arctransarc_10_4_collectelementstobetranslated_blackBBBBBB(match, pt, png, a1,
+							a2, p1);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[pt] = " + pt + ", " + "[a1] = " + a1 + ", " + "[png] = " + png + ", " + "[p1] = " + p1
-						+ ", " + "[a2] = " + a2 + ".");
+						+ "[pt] = " + pt + ", " + "[png] = " + png + ", " + "[a1] = " + a1 + ", " + "[a2] = " + a2
+						+ ", " + "[p1] = " + p1 + ".");
 			}
 			selftrans2arctransarcImpl
-					.pattern_selftrans2arctransarc_10_4_collectelementstobetranslated_greenBBBBBBFFFFFFF(match, pt, a1,
-							png, p1, a2);
-			//nothing EMoflonEdge a1__pt____to = (EMoflonEdge) result4_green[6];
+					.pattern_selftrans2arctransarc_10_4_collectelementstobetranslated_greenBBBBBBFFFFFFF(match, pt, png,
+							a1, a2, p1);
+			//nothing EMoflonEdge png__a2____arcs = (EMoflonEdge) result4_green[6];
 			//nothing EMoflonEdge png__pt____transitions = (EMoflonEdge) result4_green[7];
-			//nothing EMoflonEdge a1__p1____from = (EMoflonEdge) result4_green[8];
-			//nothing EMoflonEdge png__a1____arcs = (EMoflonEdge) result4_green[9];
-			//nothing EMoflonEdge png__a2____arcs = (EMoflonEdge) result4_green[10];
-			//nothing EMoflonEdge a2__pt____from = (EMoflonEdge) result4_green[11];
+			//nothing EMoflonEdge a1__pt____to = (EMoflonEdge) result4_green[8];
+			//nothing EMoflonEdge a1__p1____from = (EMoflonEdge) result4_green[9];
+			//nothing EMoflonEdge a2__pt____from = (EMoflonEdge) result4_green[10];
+			//nothing EMoflonEdge png__a1____arcs = (EMoflonEdge) result4_green[11];
 			//nothing EMoflonEdge a2__p1____to = (EMoflonEdge) result4_green[12];
 
 			Object[] result5_black = selftrans2arctransarcImpl
-					.pattern_selftrans2arctransarc_10_5_collectcontextelements_blackBBBBBB(match, pt, a1, png, p1, a2);
+					.pattern_selftrans2arctransarc_10_5_collectcontextelements_blackBBBBBB(match, pt, png, a1, a2, p1);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[pt] = " + pt + ", " + "[a1] = " + a1 + ", " + "[png] = " + png + ", " + "[p1] = " + p1
-						+ ", " + "[a2] = " + a2 + ".");
+						+ "[pt] = " + pt + ", " + "[png] = " + png + ", " + "[a1] = " + a1 + ", " + "[a2] = " + a2
+						+ ", " + "[p1] = " + p1 + ".");
 			}
 			selftrans2arctransarcImpl.pattern_selftrans2arctransarc_10_5_collectcontextelements_greenBBB(match, png,
 					p1);
 
 			// 
 			selftrans2arctransarcImpl.pattern_selftrans2arctransarc_10_6_registerobjectstomatch_expressionBBBBBBB(this,
-					match, pt, a1, png, p1, a2);
+					match, pt, png, a1, a2, p1);
 			return selftrans2arctransarcImpl.pattern_selftrans2arctransarc_10_7_expressionF();
 		} else {
 			return selftrans2arctransarcImpl.pattern_selftrans2arctransarc_10_8_expressionF();
@@ -509,69 +509,69 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
 		petrinet.Transition pt = (petrinet.Transition) result1_bindingAndBlack[0];
-		S2P s12p1 = (S2P) result1_bindingAndBlack[1];
-		Arc a1 = (Arc) result1_bindingAndBlack[2];
+		State s1 = (State) result1_bindingAndBlack[1];
+		SM2PN sm2pn = (SM2PN) result1_bindingAndBlack[2];
 		PNGraph png = (PNGraph) result1_bindingAndBlack[3];
-		SM2PN sm2pn = (SM2PN) result1_bindingAndBlack[4];
-		Place p1 = (Place) result1_bindingAndBlack[5];
-		State s1 = (State) result1_bindingAndBlack[6];
-		SM sm = (SM) result1_bindingAndBlack[7];
-		Arc a2 = (Arc) result1_bindingAndBlack[8];
+		Arc a1 = (Arc) result1_bindingAndBlack[4];
+		SM sm = (SM) result1_bindingAndBlack[5];
+		Arc a2 = (Arc) result1_bindingAndBlack[6];
+		Place p1 = (Place) result1_bindingAndBlack[7];
+		S2P s12p1 = (S2P) result1_bindingAndBlack[8];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[9];
 		Object[] result1_green = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_11_1_performtransformation_greenBBFFBBFBF(pt, a1, s1, sm, a2);
-		T2A st2a1 = (T2A) result1_green[2];
+				.pattern_selftrans2arctransarc_11_1_performtransformation_greenBBBFFBFBF(pt, s1, a1, sm, a2);
 		T2T st2pt = (T2T) result1_green[3];
-		T2A st2a2 = (T2A) result1_green[6];
-		Transition st = (Transition) result1_green[8];
+		T2A st2a2 = (T2A) result1_green[4];
+		Transition st = (Transition) result1_green[6];
+		T2A st2a1 = (T2A) result1_green[8];
 
 		Object[] result2_black = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_11_2_collecttranslatedelements_blackBBBBBBB(pt, a1, st2a1, st2pt, st2a2,
-						a2, st);
+				.pattern_selftrans2arctransarc_11_2_collecttranslatedelements_blackBBBBBBB(pt, a1, st2pt, st2a2, st, a2,
+						st2a1);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[pt] = " + pt + ", " + "[a1] = "
-					+ a1 + ", " + "[st2a1] = " + st2a1 + ", " + "[st2pt] = " + st2pt + ", " + "[st2a2] = " + st2a2
-					+ ", " + "[a2] = " + a2 + ", " + "[st] = " + st + ".");
+					+ a1 + ", " + "[st2pt] = " + st2pt + ", " + "[st2a2] = " + st2a2 + ", " + "[st] = " + st + ", "
+					+ "[a2] = " + a2 + ", " + "[st2a1] = " + st2a1 + ".");
 		}
 		Object[] result2_green = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_11_2_collecttranslatedelements_greenFBBBBBBB(pt, a1, st2a1, st2pt, st2a2,
-						a2, st);
+				.pattern_selftrans2arctransarc_11_2_collecttranslatedelements_greenFBBBBBBB(pt, a1, st2pt, st2a2, st,
+						a2, st2a1);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(ruleresult, pt, s12p1, a1,
-						st2a1, png, sm2pn, p1, st2pt, s1, sm, st2a2, a2, st);
+				.pattern_selftrans2arctransarc_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(ruleresult, pt, s1, sm2pn,
+						png, a1, st2pt, st2a2, sm, st, a2, p1, st2a1, s12p1);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[pt] = " + pt + ", " + "[s12p1] = " + s12p1 + ", " + "[a1] = " + a1 + ", " + "[st2a1] = "
-					+ st2a1 + ", " + "[png] = " + png + ", " + "[sm2pn] = " + sm2pn + ", " + "[p1] = " + p1 + ", "
-					+ "[st2pt] = " + st2pt + ", " + "[s1] = " + s1 + ", " + "[sm] = " + sm + ", " + "[st2a2] = " + st2a2
-					+ ", " + "[a2] = " + a2 + ", " + "[st] = " + st + ".");
+					+ ", " + "[pt] = " + pt + ", " + "[s1] = " + s1 + ", " + "[sm2pn] = " + sm2pn + ", " + "[png] = "
+					+ png + ", " + "[a1] = " + a1 + ", " + "[st2pt] = " + st2pt + ", " + "[st2a2] = " + st2a2 + ", "
+					+ "[sm] = " + sm + ", " + "[st] = " + st + ", " + "[a2] = " + a2 + ", " + "[p1] = " + p1 + ", "
+					+ "[st2a1] = " + st2a1 + ", " + "[s12p1] = " + s12p1 + ".");
 		}
 		selftrans2arctransarcImpl
 				.pattern_selftrans2arctransarc_11_3_bookkeepingforedges_greenBBBBBBBBBBBBFFFFFFFFFFFFFFFF(ruleresult,
-						pt, a1, st2a1, png, p1, st2pt, s1, sm, st2a2, a2, st);
-		//nothing EMoflonEdge st2a1__a1____target = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge a1__pt____to = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge png__pt____transitions = (EMoflonEdge) result3_green[14];
+						pt, s1, png, a1, st2pt, st2a2, sm, st, a2, p1, st2a1);
+		//nothing EMoflonEdge png__a2____arcs = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge png__pt____transitions = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge a1__pt____to = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge a1__p1____from = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge st2pt__pt____target = (EMoflonEdge) result3_green[16];
-		//nothing EMoflonEdge png__a1____arcs = (EMoflonEdge) result3_green[17];
-		//nothing EMoflonEdge sm__st____transitions = (EMoflonEdge) result3_green[18];
-		//nothing EMoflonEdge png__a2____arcs = (EMoflonEdge) result3_green[19];
-		//nothing EMoflonEdge st2a2__a2____target = (EMoflonEdge) result3_green[20];
-		//nothing EMoflonEdge st__s1____to = (EMoflonEdge) result3_green[21];
+		//nothing EMoflonEdge sm__st____transitions = (EMoflonEdge) result3_green[16];
+		//nothing EMoflonEdge st2pt__st____source = (EMoflonEdge) result3_green[17];
+		//nothing EMoflonEdge st2a2__st____source = (EMoflonEdge) result3_green[18];
+		//nothing EMoflonEdge st2a1__a1____target = (EMoflonEdge) result3_green[19];
+		//nothing EMoflonEdge st2a1__st____source = (EMoflonEdge) result3_green[20];
+		//nothing EMoflonEdge st2pt__pt____target = (EMoflonEdge) result3_green[21];
 		//nothing EMoflonEdge st__s1____from = (EMoflonEdge) result3_green[22];
-		//nothing EMoflonEdge st2pt__st____source = (EMoflonEdge) result3_green[23];
+		//nothing EMoflonEdge st__s1____to = (EMoflonEdge) result3_green[23];
 		//nothing EMoflonEdge a2__pt____from = (EMoflonEdge) result3_green[24];
-		//nothing EMoflonEdge st2a2__st____source = (EMoflonEdge) result3_green[25];
-		//nothing EMoflonEdge st2a1__st____source = (EMoflonEdge) result3_green[26];
+		//nothing EMoflonEdge st2a2__a2____target = (EMoflonEdge) result3_green[25];
+		//nothing EMoflonEdge png__a1____arcs = (EMoflonEdge) result3_green[26];
 		//nothing EMoflonEdge a2__p1____to = (EMoflonEdge) result3_green[27];
 
 		// 
 		// 
 		selftrans2arctransarcImpl.pattern_selftrans2arctransarc_11_5_registerobjects_expressionBBBBBBBBBBBBBBB(this,
-				ruleresult, pt, s12p1, a1, st2a1, png, sm2pn, p1, st2pt, s1, sm, st2a2, a2, st);
+				ruleresult, pt, s1, sm2pn, png, a1, st2pt, st2a2, sm, st, a2, p1, st2a1, s12p1);
 		return selftrans2arctransarcImpl.pattern_selftrans2arctransarc_11_6_expressionFB(ruleresult);
 	}
 
@@ -601,45 +601,45 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
 		petrinet.Transition pt = (petrinet.Transition) result2_binding[0];
-		Arc a1 = (Arc) result2_binding[1];
-		PNGraph png = (PNGraph) result2_binding[2];
-		Place p1 = (Place) result2_binding[3];
-		Arc a2 = (Arc) result2_binding[4];
+		PNGraph png = (PNGraph) result2_binding[1];
+		Arc a1 = (Arc) result2_binding[2];
+		Arc a2 = (Arc) result2_binding[3];
+		Place p1 = (Place) result2_binding[4];
 		for (Object[] result2_black : selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_12_2_corematch_blackBFBBFBFFBB(pt, a1, png, p1, a2, match)) {
-			S2P s12p1 = (S2P) result2_black[1];
-			SM2PN sm2pn = (SM2PN) result2_black[4];
-			State s1 = (State) result2_black[6];
-			SM sm = (SM) result2_black[7];
+				.pattern_selftrans2arctransarc_12_2_corematch_blackBFFBBFBBFB(pt, png, a1, a2, p1, match)) {
+			State s1 = (State) result2_black[1];
+			SM2PN sm2pn = (SM2PN) result2_black[2];
+			SM sm = (SM) result2_black[5];
+			S2P s12p1 = (S2P) result2_black[8];
 			// ForEach 
 			for (Object[] result3_black : selftrans2arctransarcImpl
-					.pattern_selftrans2arctransarc_12_3_findcontext_blackBBBBBBBBB(pt, s12p1, a1, png, sm2pn, p1, s1,
-							sm, a2)) {
+					.pattern_selftrans2arctransarc_12_3_findcontext_blackBBBBBBBBB(pt, s1, sm2pn, png, a1, sm, a2, p1,
+							s12p1)) {
 				Object[] result3_green = selftrans2arctransarcImpl
-						.pattern_selftrans2arctransarc_12_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFF(pt, s12p1, a1, png,
-								sm2pn, p1, s1, sm, a2);
+						.pattern_selftrans2arctransarc_12_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFF(pt, s1, sm2pn, png,
+								a1, sm, a2, p1, s12p1);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[9];
-				//nothing EMoflonEdge a1__pt____to = (EMoflonEdge) result3_green[10];
+				//nothing EMoflonEdge png__a2____arcs = (EMoflonEdge) result3_green[10];
 				//nothing EMoflonEdge png__pt____transitions = (EMoflonEdge) result3_green[11];
-				//nothing EMoflonEdge a1__p1____from = (EMoflonEdge) result3_green[12];
-				//nothing EMoflonEdge png__a1____arcs = (EMoflonEdge) result3_green[13];
-				//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[14];
-				//nothing EMoflonEdge png__a2____arcs = (EMoflonEdge) result3_green[15];
-				//nothing EMoflonEdge a2__pt____from = (EMoflonEdge) result3_green[16];
-				//nothing EMoflonEdge sm2pn__png____target = (EMoflonEdge) result3_green[17];
-				//nothing EMoflonEdge s12p1__p1____target = (EMoflonEdge) result3_green[18];
-				//nothing EMoflonEdge a2__p1____to = (EMoflonEdge) result3_green[19];
-				//nothing EMoflonEdge s12p1__s1____source = (EMoflonEdge) result3_green[20];
+				//nothing EMoflonEdge sm2pn__png____target = (EMoflonEdge) result3_green[12];
+				//nothing EMoflonEdge a1__pt____to = (EMoflonEdge) result3_green[13];
+				//nothing EMoflonEdge a1__p1____from = (EMoflonEdge) result3_green[14];
+				//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[15];
+				//nothing EMoflonEdge s12p1__s1____source = (EMoflonEdge) result3_green[16];
+				//nothing EMoflonEdge s12p1__p1____target = (EMoflonEdge) result3_green[17];
+				//nothing EMoflonEdge a2__pt____from = (EMoflonEdge) result3_green[18];
+				//nothing EMoflonEdge png__a1____arcs = (EMoflonEdge) result3_green[19];
+				//nothing EMoflonEdge a2__p1____to = (EMoflonEdge) result3_green[20];
 
 				Object[] result4_bindingAndBlack = selftrans2arctransarcImpl
 						.pattern_selftrans2arctransarc_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(this,
-								isApplicableMatch, pt, s12p1, a1, png, sm2pn, p1, s1, sm, a2);
+								isApplicableMatch, pt, s1, sm2pn, png, a1, sm, a2, p1, s12p1);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[pt] = " + pt + ", " + "[s12p1] = "
-							+ s12p1 + ", " + "[a1] = " + a1 + ", " + "[png] = " + png + ", " + "[sm2pn] = " + sm2pn
-							+ ", " + "[p1] = " + p1 + ", " + "[s1] = " + s1 + ", " + "[sm] = " + sm + ", " + "[a2] = "
-							+ a2 + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[pt] = " + pt + ", " + "[s1] = "
+							+ s1 + ", " + "[sm2pn] = " + sm2pn + ", " + "[png] = " + png + ", " + "[a1] = " + a1 + ", "
+							+ "[sm] = " + sm + ", " + "[a2] = " + a2 + ", " + "[p1] = " + p1 + ", " + "[s12p1] = "
+							+ s12p1 + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -669,12 +669,12 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {
+	public void registerObjectsToMatch_BWD(Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {
 		match.registerObject("pt", pt);
-		match.registerObject("a1", a1);
 		match.registerObject("png", png);
-		match.registerObject("p1", p1);
+		match.registerObject("a1", a1);
 		match.registerObject("a2", a2);
+		match.registerObject("p1", p1);
 
 	}
 
@@ -683,7 +683,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -712,8 +712,8 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, petrinet.Transition pt, S2P s12p1, Arc a1,
-			PNGraph png, SM2PN sm2pn, Place p1, State s1, SM sm, Arc a2) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, petrinet.Transition pt, State s1,
+			SM2PN sm2pn, PNGraph png, Arc a1, SM sm, Arc a2, Place p1, S2P s12p1) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -729,14 +729,14 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 
 		// Snapshot pattern match on which CSP is solved
 		isApplicableMatch.registerObject("pt", pt);
-		isApplicableMatch.registerObject("s12p1", s12p1);
-		isApplicableMatch.registerObject("a1", a1);
-		isApplicableMatch.registerObject("png", png);
-		isApplicableMatch.registerObject("sm2pn", sm2pn);
-		isApplicableMatch.registerObject("p1", p1);
 		isApplicableMatch.registerObject("s1", s1);
+		isApplicableMatch.registerObject("sm2pn", sm2pn);
+		isApplicableMatch.registerObject("png", png);
+		isApplicableMatch.registerObject("a1", a1);
 		isApplicableMatch.registerObject("sm", sm);
 		isApplicableMatch.registerObject("a2", a2);
+		isApplicableMatch.registerObject("p1", p1);
+		isApplicableMatch.registerObject("s12p1", s12p1);
 		return csp;
 	}
 
@@ -754,22 +754,22 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject pt, EObject s12p1, EObject a1, EObject st2a1,
-			EObject png, EObject sm2pn, EObject p1, EObject st2pt, EObject s1, EObject sm, EObject st2a2, EObject a2,
-			EObject st) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject pt, EObject s1, EObject sm2pn, EObject png,
+			EObject a1, EObject st2pt, EObject st2a2, EObject sm, EObject st, EObject a2, EObject p1, EObject st2a1,
+			EObject s12p1) {
 		ruleresult.registerObject("pt", pt);
-		ruleresult.registerObject("s12p1", s12p1);
-		ruleresult.registerObject("a1", a1);
-		ruleresult.registerObject("st2a1", st2a1);
-		ruleresult.registerObject("png", png);
-		ruleresult.registerObject("sm2pn", sm2pn);
-		ruleresult.registerObject("p1", p1);
-		ruleresult.registerObject("st2pt", st2pt);
 		ruleresult.registerObject("s1", s1);
-		ruleresult.registerObject("sm", sm);
+		ruleresult.registerObject("sm2pn", sm2pn);
+		ruleresult.registerObject("png", png);
+		ruleresult.registerObject("a1", a1);
+		ruleresult.registerObject("st2pt", st2pt);
 		ruleresult.registerObject("st2a2", st2a2);
-		ruleresult.registerObject("a2", a2);
+		ruleresult.registerObject("sm", sm);
 		ruleresult.registerObject("st", st);
+		ruleresult.registerObject("a2", a2);
+		ruleresult.registerObject("p1", p1);
+		ruleresult.registerObject("st2a1", st2a1);
+		ruleresult.registerObject("s12p1", s12p1);
 
 	}
 
@@ -790,7 +790,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_108(EMoflonEdge _edge_to) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_111(EMoflonEdge _edge_arcs) {
 
 		Object[] result1_bindingAndBlack = selftrans2arctransarcImpl
 				.pattern_selftrans2arctransarc_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -806,12 +806,12 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 
 		// ForEach 
 		for (Object[] result2_black : selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_20_2_testcorematchandDECs_blackFFFFFB(_edge_to)) {
+				.pattern_selftrans2arctransarc_20_2_testcorematchandDECs_blackFFFFFB(_edge_arcs)) {
 			petrinet.Transition pt = (petrinet.Transition) result2_black[0];
-			Arc a1 = (Arc) result2_black[1];
-			PNGraph png = (PNGraph) result2_black[2];
-			Place p1 = (Place) result2_black[3];
-			Arc a2 = (Arc) result2_black[4];
+			PNGraph png = (PNGraph) result2_black[1];
+			Arc a1 = (Arc) result2_black[2];
+			Arc a2 = (Arc) result2_black[3];
+			Place p1 = (Place) result2_black[4];
 			Object[] result2_green = selftrans2arctransarcImpl
 					.pattern_selftrans2arctransarc_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -819,7 +819,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 			// 
 			if (selftrans2arctransarcImpl
 					.pattern_selftrans2arctransarc_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-							this, match, pt, a1, png, p1, a2)) {
+							this, match, pt, png, a1, a2, p1)) {
 				// 
 				if (selftrans2arctransarcImpl
 						.pattern_selftrans2arctransarc_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -851,7 +851,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_115(EMoflonEdge _edge_transitions) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_118(EMoflonEdge _edge_transitions) {
 
 		Object[] result1_bindingAndBlack = selftrans2arctransarcImpl
 				.pattern_selftrans2arctransarc_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -987,21 +987,21 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		petrinet.Transition pt = (petrinet.Transition) result2_bindingAndBlack[0];
-		Arc a1 = (Arc) result2_bindingAndBlack[1];
+		State s1 = (State) result2_bindingAndBlack[1];
 		PNGraph png = (PNGraph) result2_bindingAndBlack[2];
-		Place p1 = (Place) result2_bindingAndBlack[3];
-		State s1 = (State) result2_bindingAndBlack[4];
-		SM sm = (SM) result2_bindingAndBlack[5];
+		Arc a1 = (Arc) result2_bindingAndBlack[3];
+		SM sm = (SM) result2_bindingAndBlack[4];
+		Transition st = (Transition) result2_bindingAndBlack[5];
 		Arc a2 = (Arc) result2_bindingAndBlack[6];
-		Transition st = (Transition) result2_bindingAndBlack[7];
+		Place p1 = (Place) result2_bindingAndBlack[7];
 
 		Object[] result3_bindingAndBlack = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBB(this, pt, a1, png, p1, s1, sm,
-						a2, st, sourceMatch, targetMatch);
+				.pattern_selftrans2arctransarc_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBB(this, pt, s1, png, a1, sm, st,
+						a2, p1, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[pt] = " + pt + ", " + "[a1] = " + a1 + ", " + "[png] = " + png + ", " + "[p1] = " + p1 + ", "
-					+ "[s1] = " + s1 + ", " + "[sm] = " + sm + ", " + "[a2] = " + a2 + ", " + "[st] = " + st + ", "
+					+ "[pt] = " + pt + ", " + "[s1] = " + s1 + ", " + "[png] = " + png + ", " + "[a1] = " + a1 + ", "
+					+ "[sm] = " + sm + ", " + "[st] = " + st + ", " + "[a2] = " + a2 + ", " + "[p1] = " + p1 + ", "
 					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1009,29 +1009,29 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		if (selftrans2arctransarcImpl.pattern_selftrans2arctransarc_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : selftrans2arctransarcImpl
-					.pattern_selftrans2arctransarc_24_5_matchcorrcontext_blackFBFBBBBB(png, p1, s1, sm, sourceMatch,
+					.pattern_selftrans2arctransarc_24_5_matchcorrcontext_blackBFBBBFBB(s1, png, sm, p1, sourceMatch,
 							targetMatch)) {
-				S2P s12p1 = (S2P) result5_black[0];
-				SM2PN sm2pn = (SM2PN) result5_black[2];
+				SM2PN sm2pn = (SM2PN) result5_black[1];
+				S2P s12p1 = (S2P) result5_black[5];
 				Object[] result5_green = selftrans2arctransarcImpl
-						.pattern_selftrans2arctransarc_24_5_matchcorrcontext_greenBBBBF(s12p1, sm2pn, sourceMatch,
+						.pattern_selftrans2arctransarc_24_5_matchcorrcontext_greenBBBBF(sm2pn, s12p1, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[4];
 
 				Object[] result6_black = selftrans2arctransarcImpl
-						.pattern_selftrans2arctransarc_24_6_createcorrespondence_blackBBBBBBBBB(pt, a1, png, p1, s1, sm,
-								a2, st, ccMatch);
+						.pattern_selftrans2arctransarc_24_6_createcorrespondence_blackBBBBBBBBB(pt, s1, png, a1, sm, st,
+								a2, p1, ccMatch);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[pt] = " + pt + ", "
-							+ "[a1] = " + a1 + ", " + "[png] = " + png + ", " + "[p1] = " + p1 + ", " + "[s1] = " + s1
-							+ ", " + "[sm] = " + sm + ", " + "[a2] = " + a2 + ", " + "[st] = " + st + ", "
+							+ "[s1] = " + s1 + ", " + "[png] = " + png + ", " + "[a1] = " + a1 + ", " + "[sm] = " + sm
+							+ ", " + "[st] = " + st + ", " + "[a2] = " + a2 + ", " + "[p1] = " + p1 + ", "
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
-				selftrans2arctransarcImpl.pattern_selftrans2arctransarc_24_6_createcorrespondence_greenBBFFFBBB(pt, a1,
-						a2, st, ccMatch);
-				//nothing T2A st2a1 = (T2A) result6_green[2];
-				//nothing T2T st2pt = (T2T) result6_green[3];
-				//nothing T2A st2a2 = (T2A) result6_green[4];
+				selftrans2arctransarcImpl.pattern_selftrans2arctransarc_24_6_createcorrespondence_greenBBFFBBFB(pt, a1,
+						st, a2, ccMatch);
+				//nothing T2T st2pt = (T2T) result6_green[2];
+				//nothing T2A st2a2 = (T2A) result6_green[3];
+				//nothing T2A st2a1 = (T2A) result6_green[6];
 
 				Object[] result7_black = selftrans2arctransarcImpl
 						.pattern_selftrans2arctransarc_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1054,8 +1054,8 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(petrinet.Transition pt, Arc a1, PNGraph png, Place p1, State s1, SM sm, Arc a2,
-			Transition st, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(petrinet.Transition pt, State s1, PNGraph png, Arc a1, SM sm, Transition st,
+			Arc a2, Place p1, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1100,9 +1100,9 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {// 
+	public boolean checkDEC_BWD(petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {// 
 		Object[] result1_black = selftrans2arctransarcImpl
-				.pattern_selftrans2arctransarc_28_1_matchtggpattern_blackBBBBB(pt, a1, png, p1, a2);
+				.pattern_selftrans2arctransarc_28_1_matchtggpattern_blackBBBBB(pt, png, a1, a2, p1);
 		if (result1_black != null) {
 			return selftrans2arctransarcImpl.pattern_selftrans2arctransarc_28_2_expressionF();
 		} else {
@@ -1131,48 +1131,49 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		for (Object[] result2_black : selftrans2arctransarcImpl
 				.pattern_selftrans2arctransarc_29_2_isapplicablecore_blackFFFFFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList s12p1List = (RuleEntryList) result2_black[0];
-			S2P s12p1 = (S2P) result2_black[1];
-			Place p1 = (Place) result2_black[2];
-			State s1 = (State) result2_black[3];
+			State s1 = (State) result2_black[1];
+			S2P s12p1 = (S2P) result2_black[2];
+			Place p1 = (Place) result2_black[3];
 			//nothing RuleEntryList sm2pnList = (RuleEntryList) result2_black[4];
-			PNGraph png = (PNGraph) result2_black[5];
-			SM2PN sm2pn = (SM2PN) result2_black[6];
+			SM2PN sm2pn = (SM2PN) result2_black[5];
+			PNGraph png = (PNGraph) result2_black[6];
 			SM sm = (SM) result2_black[7];
 
 			Object[] result3_bindingAndBlack = selftrans2arctransarcImpl
-					.pattern_selftrans2arctransarc_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch,
-							s12p1, png, sm2pn, p1, s1, sm, ruleResult);
+					.pattern_selftrans2arctransarc_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(this, isApplicableMatch, s1,
+							sm2pn, png, sm, p1, s12p1, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s12p1] = " + s12p1 + ", " + "[png] = "
-						+ png + ", " + "[sm2pn] = " + sm2pn + ", " + "[p1] = " + p1 + ", " + "[s1] = " + s1 + ", "
-						+ "[sm] = " + sm + ", " + "[ruleResult] = " + ruleResult + ".");
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s1] = " + s1 + ", " + "[sm2pn] = "
+						+ sm2pn + ", " + "[png] = " + png + ", " + "[sm] = " + sm + ", " + "[p1] = " + p1 + ", "
+						+ "[s12p1] = " + s12p1 + ", " + "[ruleResult] = " + ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (selftrans2arctransarcImpl.pattern_selftrans2arctransarc_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = selftrans2arctransarcImpl
-						.pattern_selftrans2arctransarc_29_5_checknacs_blackBBBBBB(s12p1, png, sm2pn, p1, s1, sm);
+						.pattern_selftrans2arctransarc_29_5_checknacs_blackBBBBBB(s1, sm2pn, png, sm, p1, s12p1);
 				if (result5_black != null) {
 
 					Object[] result6_black = selftrans2arctransarcImpl
-							.pattern_selftrans2arctransarc_29_6_perform_blackBBBBBBB(s12p1, png, sm2pn, p1, s1, sm,
+							.pattern_selftrans2arctransarc_29_6_perform_blackBBBBBBB(s1, sm2pn, png, sm, p1, s12p1,
 									ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[s12p1] = " + s12p1
-								+ ", " + "[png] = " + png + ", " + "[sm2pn] = " + sm2pn + ", " + "[p1] = " + p1 + ", "
-								+ "[s1] = " + s1 + ", " + "[sm] = " + sm + ", " + "[ruleResult] = " + ruleResult + ".");
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[s1] = " + s1 + ", "
+								+ "[sm2pn] = " + sm2pn + ", " + "[png] = " + png + ", " + "[sm] = " + sm + ", "
+								+ "[p1] = " + p1 + ", " + "[s12p1] = " + s12p1 + ", " + "[ruleResult] = " + ruleResult
+								+ ".");
 					}
-					selftrans2arctransarcImpl.pattern_selftrans2arctransarc_29_6_perform_greenFFFBBFBBFFFB(png, p1, s1,
-							sm, ruleResult);
+					selftrans2arctransarcImpl.pattern_selftrans2arctransarc_29_6_perform_greenFBBFFFBFFBFB(s1, png, sm,
+							p1, ruleResult);
 					//nothing petrinet.Transition pt = (petrinet.Transition) result6_green[0];
-					//nothing Arc a1 = (Arc) result6_green[1];
-					//nothing T2A st2a1 = (T2A) result6_green[2];
-					//nothing T2T st2pt = (T2T) result6_green[5];
-					//nothing T2A st2a2 = (T2A) result6_green[8];
-					//nothing Arc a2 = (Arc) result6_green[9];
-					//nothing Transition st = (Transition) result6_green[10];
+					//nothing Arc a1 = (Arc) result6_green[3];
+					//nothing T2T st2pt = (T2T) result6_green[4];
+					//nothing T2A st2a2 = (T2A) result6_green[5];
+					//nothing Transition st = (Transition) result6_green[7];
+					//nothing Arc a2 = (Arc) result6_green[8];
+					//nothing T2A st2a1 = (T2A) result6_green[10];
 
 				} else {
 				}
@@ -1189,8 +1190,8 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2P s12p1, PNGraph png, SM2PN sm2pn,
-			Place p1, State s1, SM sm, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, State s1, SM2PN sm2pn, PNGraph png,
+			SM sm, Place p1, S2P s12p1, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1205,12 +1206,12 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("s12p1", s12p1);
-		isApplicableMatch.registerObject("png", png);
-		isApplicableMatch.registerObject("sm2pn", sm2pn);
-		isApplicableMatch.registerObject("p1", p1);
 		isApplicableMatch.registerObject("s1", s1);
+		isApplicableMatch.registerObject("sm2pn", sm2pn);
+		isApplicableMatch.registerObject("png", png);
 		isApplicableMatch.registerObject("sm", sm);
+		isApplicableMatch.registerObject("p1", p1);
+		isApplicableMatch.registerObject("s12p1", s12p1);
 		return csp;
 	}
 
@@ -1247,10 +1248,10 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 					(Transition) arguments.get(3));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_S2P_PNGRAPH_SM2PN_PLACE_STATE_SM_TRANSITION:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (S2P) arguments.get(1),
-					(PNGraph) arguments.get(2), (SM2PN) arguments.get(3), (Place) arguments.get(4),
-					(State) arguments.get(5), (SM) arguments.get(6), (Transition) arguments.get(7));
+		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_STATE_SM2PN_PNGRAPH_SM_TRANSITION_PLACE_S2P:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (State) arguments.get(1),
+					(SM2PN) arguments.get(2), (PNGraph) arguments.get(3), (SM) arguments.get(4),
+					(Transition) arguments.get(5), (Place) arguments.get(6), (S2P) arguments.get(7));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1262,30 +1263,30 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 			return null;
 		case RulesPackage.SELFTRANS2ARCTRANSARC___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPROPRIATE_BWD__MATCH_TRANSITION_ARC_PNGRAPH_PLACE_ARC:
+		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPROPRIATE_BWD__MATCH_TRANSITION_PNGRAPH_ARC_ARC_PLACE:
 			return isAppropriate_BWD((Match) arguments.get(0), (petrinet.Transition) arguments.get(1),
-					(Arc) arguments.get(2), (PNGraph) arguments.get(3), (Place) arguments.get(4),
-					(Arc) arguments.get(5));
+					(PNGraph) arguments.get(2), (Arc) arguments.get(3), (Arc) arguments.get(4),
+					(Place) arguments.get(5));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.SELFTRANS2ARCTRANSARC___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TRANSITION_ARC_PNGRAPH_PLACE_ARC:
+		case RulesPackage.SELFTRANS2ARCTRANSARC___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_TRANSITION_PNGRAPH_ARC_ARC_PLACE:
 			registerObjectsToMatch_BWD((Match) arguments.get(0), (petrinet.Transition) arguments.get(1),
-					(Arc) arguments.get(2), (PNGraph) arguments.get(3), (Place) arguments.get(4),
-					(Arc) arguments.get(5));
+					(PNGraph) arguments.get(2), (Arc) arguments.get(3), (Arc) arguments.get(4),
+					(Place) arguments.get(5));
 			return null;
-		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TRANSITION_ARC_PNGRAPH_PLACE_ARC:
+		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_TRANSITION_PNGRAPH_ARC_ARC_PLACE:
 			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (petrinet.Transition) arguments.get(1),
-					(Arc) arguments.get(2), (PNGraph) arguments.get(3), (Place) arguments.get(4),
-					(Arc) arguments.get(5));
+					(PNGraph) arguments.get(2), (Arc) arguments.get(3), (Arc) arguments.get(4),
+					(Place) arguments.get(5));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TRANSITION_S2P_ARC_PNGRAPH_SM2PN_PLACE_STATE_SM_ARC:
+		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_TRANSITION_STATE_SM2PN_PNGRAPH_ARC_SM_ARC_PLACE_S2P:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(petrinet.Transition) arguments.get(1), (S2P) arguments.get(2), (Arc) arguments.get(3),
-					(PNGraph) arguments.get(4), (SM2PN) arguments.get(5), (Place) arguments.get(6),
-					(State) arguments.get(7), (SM) arguments.get(8), (Arc) arguments.get(9));
+					(petrinet.Transition) arguments.get(1), (State) arguments.get(2), (SM2PN) arguments.get(3),
+					(PNGraph) arguments.get(4), (Arc) arguments.get(5), (SM) arguments.get(6), (Arc) arguments.get(7),
+					(Place) arguments.get(8), (S2P) arguments.get(9));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1297,35 +1298,35 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 			return null;
 		case RulesPackage.SELFTRANS2ARCTRANSARC___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPROPRIATE_BWD_EMOFLON_EDGE_108__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_108((EMoflonEdge) arguments.get(0));
-		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPROPRIATE_FWD_EMOFLON_EDGE_115__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_115((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPROPRIATE_BWD_EMOFLON_EDGE_111__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_111((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPROPRIATE_FWD_EMOFLON_EDGE_118__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_118((EMoflonEdge) arguments.get(0));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPLICABLE_SOLVE_CSP_CC__TRANSITION_ARC_PNGRAPH_PLACE_STATE_SM_ARC_TRANSITION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((petrinet.Transition) arguments.get(0), (Arc) arguments.get(1),
-					(PNGraph) arguments.get(2), (Place) arguments.get(3), (State) arguments.get(4),
-					(SM) arguments.get(5), (Arc) arguments.get(6), (Transition) arguments.get(7),
+		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPLICABLE_SOLVE_CSP_CC__TRANSITION_STATE_PNGRAPH_ARC_SM_TRANSITION_ARC_PLACE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((petrinet.Transition) arguments.get(0), (State) arguments.get(1),
+					(PNGraph) arguments.get(2), (Arc) arguments.get(3), (SM) arguments.get(4),
+					(Transition) arguments.get(5), (Arc) arguments.get(6), (Place) arguments.get(7),
 					(Match) arguments.get(8), (Match) arguments.get(9));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___CHECK_DEC_FWD__STATE_SM_TRANSITION:
 			return checkDEC_FWD((State) arguments.get(0), (SM) arguments.get(1), (Transition) arguments.get(2));
-		case RulesPackage.SELFTRANS2ARCTRANSARC___CHECK_DEC_BWD__TRANSITION_ARC_PNGRAPH_PLACE_ARC:
-			return checkDEC_BWD((petrinet.Transition) arguments.get(0), (Arc) arguments.get(1),
-					(PNGraph) arguments.get(2), (Place) arguments.get(3), (Arc) arguments.get(4));
+		case RulesPackage.SELFTRANS2ARCTRANSARC___CHECK_DEC_BWD__TRANSITION_PNGRAPH_ARC_ARC_PLACE:
+			return checkDEC_BWD((petrinet.Transition) arguments.get(0), (PNGraph) arguments.get(1),
+					(Arc) arguments.get(2), (Arc) arguments.get(3), (Place) arguments.get(4));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___GENERATE_MODEL__RULEENTRYCONTAINER_S2P_SM2PN:
 			return generateModel((RuleEntryContainer) arguments.get(0), (S2P) arguments.get(1),
 					(SM2PN) arguments.get(2));
-		case RulesPackage.SELFTRANS2ARCTRANSARC___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_S2P_PNGRAPH_SM2PN_PLACE_STATE_SM_MODELGENERATORRULERESULT:
-			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (S2P) arguments.get(1),
-					(PNGraph) arguments.get(2), (SM2PN) arguments.get(3), (Place) arguments.get(4),
-					(State) arguments.get(5), (SM) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
+		case RulesPackage.SELFTRANS2ARCTRANSARC___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_STATE_SM2PN_PNGRAPH_SM_PLACE_S2P_MODELGENERATORRULERESULT:
+			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (State) arguments.get(1),
+					(SM2PN) arguments.get(2), (PNGraph) arguments.get(3), (SM) arguments.get(4),
+					(Place) arguments.get(5), (S2P) arguments.get(6), (ModelgeneratorRuleResult) arguments.get(7));
 		case RulesPackage.SELFTRANS2ARCTRANSARC___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1383,25 +1384,25 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	public static final Object[] pattern_selftrans2arctransarc_0_4_collectelementstobetranslated_greenBBBBFFF(
 			Match match, State s1, SM sm, Transition st) {
 		EMoflonEdge sm__st____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge st__s1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge st__s1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st__s1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(st);
 		String sm__st____transitions_name_prime = "transitions";
-		String st__s1____to_name_prime = "to";
 		String st__s1____from_name_prime = "from";
+		String st__s1____to_name_prime = "to";
 		sm__st____transitions.setSrc(sm);
 		sm__st____transitions.setTrg(st);
 		match.getToBeTranslatedEdges().add(sm__st____transitions);
-		st__s1____to.setSrc(st);
-		st__s1____to.setTrg(s1);
-		match.getToBeTranslatedEdges().add(st__s1____to);
 		st__s1____from.setSrc(st);
 		st__s1____from.setTrg(s1);
 		match.getToBeTranslatedEdges().add(st__s1____from);
+		st__s1____to.setSrc(st);
+		st__s1____to.setTrg(s1);
+		match.getToBeTranslatedEdges().add(st__s1____to);
 		sm__st____transitions.setName(sm__st____transitions_name_prime);
-		st__s1____to.setName(st__s1____to_name_prime);
 		st__s1____from.setName(st__s1____from_name_prime);
-		return new Object[] { match, s1, sm, st, sm__st____transitions, st__s1____to, st__s1____from };
+		st__s1____to.setName(st__s1____to_name_prime);
+		return new Object[] { match, s1, sm, st, sm__st____transitions, st__s1____from, st__s1____to };
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_0_5_collectcontextelements_blackBBBB(Match match,
@@ -1434,35 +1435,35 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 
 	public static final Object[] pattern_selftrans2arctransarc_1_1_performtransformation_bindingFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("s12p1");
-		EObject _localVariable_1 = isApplicableMatch.getObject("png");
-		EObject _localVariable_2 = isApplicableMatch.getObject("sm2pn");
-		EObject _localVariable_3 = isApplicableMatch.getObject("p1");
-		EObject _localVariable_4 = isApplicableMatch.getObject("s1");
-		EObject _localVariable_5 = isApplicableMatch.getObject("sm");
-		EObject _localVariable_6 = isApplicableMatch.getObject("st");
-		EObject tmpS12p1 = _localVariable_0;
-		EObject tmpPng = _localVariable_1;
-		EObject tmpSm2pn = _localVariable_2;
-		EObject tmpP1 = _localVariable_3;
-		EObject tmpS1 = _localVariable_4;
-		EObject tmpSm = _localVariable_5;
-		EObject tmpSt = _localVariable_6;
-		if (tmpS12p1 instanceof S2P) {
-			S2P s12p1 = (S2P) tmpS12p1;
-			if (tmpPng instanceof PNGraph) {
-				PNGraph png = (PNGraph) tmpPng;
-				if (tmpSm2pn instanceof SM2PN) {
-					SM2PN sm2pn = (SM2PN) tmpSm2pn;
-					if (tmpP1 instanceof Place) {
-						Place p1 = (Place) tmpP1;
-						if (tmpS1 instanceof State) {
-							State s1 = (State) tmpS1;
-							if (tmpSm instanceof SM) {
-								SM sm = (SM) tmpSm;
-								if (tmpSt instanceof Transition) {
-									Transition st = (Transition) tmpSt;
-									return new Object[] { s12p1, png, sm2pn, p1, s1, sm, st, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("s1");
+		EObject _localVariable_1 = isApplicableMatch.getObject("sm2pn");
+		EObject _localVariable_2 = isApplicableMatch.getObject("png");
+		EObject _localVariable_3 = isApplicableMatch.getObject("sm");
+		EObject _localVariable_4 = isApplicableMatch.getObject("st");
+		EObject _localVariable_5 = isApplicableMatch.getObject("p1");
+		EObject _localVariable_6 = isApplicableMatch.getObject("s12p1");
+		EObject tmpS1 = _localVariable_0;
+		EObject tmpSm2pn = _localVariable_1;
+		EObject tmpPng = _localVariable_2;
+		EObject tmpSm = _localVariable_3;
+		EObject tmpSt = _localVariable_4;
+		EObject tmpP1 = _localVariable_5;
+		EObject tmpS12p1 = _localVariable_6;
+		if (tmpS1 instanceof State) {
+			State s1 = (State) tmpS1;
+			if (tmpSm2pn instanceof SM2PN) {
+				SM2PN sm2pn = (SM2PN) tmpSm2pn;
+				if (tmpPng instanceof PNGraph) {
+					PNGraph png = (PNGraph) tmpPng;
+					if (tmpSm instanceof SM) {
+						SM sm = (SM) tmpSm;
+						if (tmpSt instanceof Transition) {
+							Transition st = (Transition) tmpSt;
+							if (tmpP1 instanceof Place) {
+								Place p1 = (Place) tmpP1;
+								if (tmpS12p1 instanceof S2P) {
+									S2P s12p1 = (S2P) tmpS12p1;
+									return new Object[] { s1, sm2pn, png, sm, st, p1, s12p1, isApplicableMatch };
 								}
 							}
 						}
@@ -1473,13 +1474,13 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		return null;
 	}
 
-	public static final Object[] pattern_selftrans2arctransarc_1_1_performtransformation_blackBBBBBBBFBB(S2P s12p1,
-			PNGraph png, SM2PN sm2pn, Place p1, State s1, SM sm, Transition st, selftrans2arctransarc _this,
+	public static final Object[] pattern_selftrans2arctransarc_1_1_performtransformation_blackBBBBBBBFBB(State s1,
+			SM2PN sm2pn, PNGraph png, SM sm, Transition st, Place p1, S2P s12p1, selftrans2arctransarc _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { s12p1, png, sm2pn, p1, s1, sm, st, csp, _this, isApplicableMatch };
+				return new Object[] { s1, sm2pn, png, sm, st, p1, s12p1, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1490,223 +1491,224 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		Object[] result_pattern_selftrans2arctransarc_1_1_performtransformation_binding = pattern_selftrans2arctransarc_1_1_performtransformation_bindingFFFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_selftrans2arctransarc_1_1_performtransformation_binding != null) {
-			S2P s12p1 = (S2P) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[0];
-			PNGraph png = (PNGraph) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[1];
-			SM2PN sm2pn = (SM2PN) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[2];
-			Place p1 = (Place) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[3];
-			State s1 = (State) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[4];
-			SM sm = (SM) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[5];
-			Transition st = (Transition) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[6];
+			State s1 = (State) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[0];
+			SM2PN sm2pn = (SM2PN) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[1];
+			PNGraph png = (PNGraph) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[2];
+			SM sm = (SM) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[3];
+			Transition st = (Transition) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[4];
+			Place p1 = (Place) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[5];
+			S2P s12p1 = (S2P) result_pattern_selftrans2arctransarc_1_1_performtransformation_binding[6];
 
 			Object[] result_pattern_selftrans2arctransarc_1_1_performtransformation_black = pattern_selftrans2arctransarc_1_1_performtransformation_blackBBBBBBBFBB(
-					s12p1, png, sm2pn, p1, s1, sm, st, _this, isApplicableMatch);
+					s1, sm2pn, png, sm, st, p1, s12p1, _this, isApplicableMatch);
 			if (result_pattern_selftrans2arctransarc_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_selftrans2arctransarc_1_1_performtransformation_black[7];
 
-				return new Object[] { s12p1, png, sm2pn, p1, s1, sm, st, csp, _this, isApplicableMatch };
+				return new Object[] { s1, sm2pn, png, sm, st, p1, s12p1, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_selftrans2arctransarc_1_1_performtransformation_greenFFFBBFFFB(PNGraph png,
-			Place p1, Transition st) {
+	public static final Object[] pattern_selftrans2arctransarc_1_1_performtransformation_greenFBFFFBFBF(PNGraph png,
+			Transition st, Place p1) {
 		petrinet.Transition pt = PetrinetFactory.eINSTANCE.createTransition();
 		Arc a1 = PetrinetFactory.eINSTANCE.createArc();
-		T2A st2a1 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
 		T2T st2pt = Statemachine2petrinetFactory.eINSTANCE.createT2T();
 		T2A st2a2 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
 		Arc a2 = PetrinetFactory.eINSTANCE.createArc();
+		T2A st2a1 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
 		png.getTransitions().add(pt);
 		a1.setTo(pt);
 		a1.setFrom(p1);
 		png.getArcs().add(a1);
-		st2a1.setTarget(a1);
-		st2a1.setSource(st);
-		st2pt.setTarget(pt);
 		st2pt.setSource(st);
+		st2pt.setTarget(pt);
 		st2a2.setSource(st);
 		png.getArcs().add(a2);
-		st2a2.setTarget(a2);
 		a2.setFrom(pt);
+		st2a2.setTarget(a2);
 		a2.setTo(p1);
-		return new Object[] { pt, a1, st2a1, png, p1, st2pt, st2a2, a2, st };
+		st2a1.setTarget(a1);
+		st2a1.setSource(st);
+		return new Object[] { pt, png, a1, st2pt, st2a2, st, a2, p1, st2a1 };
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_1_2_collecttranslatedelements_blackBBBBBBB(
-			petrinet.Transition pt, Arc a1, T2A st2a1, T2T st2pt, T2A st2a2, Arc a2, Transition st) {
+			petrinet.Transition pt, Arc a1, T2T st2pt, T2A st2a2, Transition st, Arc a2, T2A st2a1) {
 		if (!a1.equals(a2)) {
 			if (!st2a1.equals(st2a2)) {
-				return new Object[] { pt, a1, st2a1, st2pt, st2a2, a2, st };
+				return new Object[] { pt, a1, st2pt, st2a2, st, a2, st2a1 };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_1_2_collecttranslatedelements_greenFBBBBBBB(
-			petrinet.Transition pt, Arc a1, T2A st2a1, T2T st2pt, T2A st2a2, Arc a2, Transition st) {
+			petrinet.Transition pt, Arc a1, T2T st2pt, T2A st2a2, Transition st, Arc a2, T2A st2a1) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedElements().add(pt);
 		ruleresult.getCreatedElements().add(a1);
-		ruleresult.getCreatedLinkElements().add(st2a1);
 		ruleresult.getCreatedLinkElements().add(st2pt);
 		ruleresult.getCreatedLinkElements().add(st2a2);
-		ruleresult.getCreatedElements().add(a2);
 		ruleresult.getTranslatedElements().add(st);
-		return new Object[] { ruleresult, pt, a1, st2a1, st2pt, st2a2, a2, st };
+		ruleresult.getCreatedElements().add(a2);
+		ruleresult.getCreatedLinkElements().add(st2a1);
+		return new Object[] { ruleresult, pt, a1, st2pt, st2a2, st, a2, st2a1 };
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_1_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject pt, EObject s12p1, EObject a1, EObject st2a1, EObject png,
-			EObject sm2pn, EObject p1, EObject st2pt, EObject s1, EObject sm, EObject st2a2, EObject a2, EObject st) {
-		if (!pt.equals(s12p1)) {
-			if (!pt.equals(st2a1)) {
-				if (!pt.equals(sm2pn)) {
-					if (!pt.equals(st2pt)) {
-						if (!pt.equals(s1)) {
-							if (!pt.equals(sm)) {
-								if (!pt.equals(st2a2)) {
-									if (!pt.equals(st)) {
-										if (!s12p1.equals(st2a1)) {
-											if (!s12p1.equals(sm2pn)) {
-												if (!s12p1.equals(st2pt)) {
-													if (!s12p1.equals(sm)) {
-														if (!s12p1.equals(st2a2)) {
-															if (!s12p1.equals(st)) {
-																if (!a1.equals(pt)) {
-																	if (!a1.equals(s12p1)) {
-																		if (!a1.equals(st2a1)) {
-																			if (!a1.equals(png)) {
-																				if (!a1.equals(sm2pn)) {
-																					if (!a1.equals(p1)) {
-																						if (!a1.equals(st2pt)) {
-																							if (!a1.equals(s1)) {
-																								if (!a1.equals(sm)) {
-																									if (!a1.equals(
+			PerformRuleResult ruleresult, EObject pt, EObject s1, EObject sm2pn, EObject png, EObject a1, EObject st2pt,
+			EObject st2a2, EObject sm, EObject st, EObject a2, EObject p1, EObject st2a1, EObject s12p1) {
+		if (!pt.equals(s1)) {
+			if (!pt.equals(sm2pn)) {
+				if (!pt.equals(st2pt)) {
+					if (!pt.equals(st2a2)) {
+						if (!pt.equals(sm)) {
+							if (!pt.equals(st)) {
+								if (!pt.equals(st2a1)) {
+									if (!pt.equals(s12p1)) {
+										if (!s1.equals(sm2pn)) {
+											if (!s1.equals(st2pt)) {
+												if (!s1.equals(st2a2)) {
+													if (!s1.equals(sm)) {
+														if (!s1.equals(st)) {
+															if (!s1.equals(st2a1)) {
+																if (!s1.equals(s12p1)) {
+																	if (!sm2pn.equals(st2pt)) {
+																		if (!sm2pn.equals(st2a2)) {
+																			if (!sm2pn.equals(st)) {
+																				if (!sm2pn.equals(st2a1)) {
+																					if (!png.equals(pt)) {
+																						if (!png.equals(s1)) {
+																							if (!png.equals(sm2pn)) {
+																								if (!png.equals(
+																										st2pt)) {
+																									if (!png.equals(
 																											st2a2)) {
-																										if (!a1.equals(
-																												a2)) {
-																											if (!a1.equals(
+																										if (!png.equals(
+																												sm)) {
+																											if (!png.equals(
 																													st)) {
-																												if (!st2a1
-																														.equals(st2pt)) {
-																													if (!st2a1
-																															.equals(st2a2)) {
-																														if (!png.equals(
+																												if (!png.equals(
+																														st2a1)) {
+																													if (!png.equals(
+																															s12p1)) {
+																														if (!a1.equals(
 																																pt)) {
-																															if (!png.equals(
-																																	s12p1)) {
-																																if (!png.equals(
-																																		st2a1)) {
-																																	if (!png.equals(
-																																			sm2pn)) {
-																																		if (!png.equals(
+																															if (!a1.equals(
+																																	s1)) {
+																																if (!a1.equals(
+																																		sm2pn)) {
+																																	if (!a1.equals(
+																																			png)) {
+																																		if (!a1.equals(
 																																				st2pt)) {
-																																			if (!png.equals(
-																																					s1)) {
-																																				if (!png.equals(
+																																			if (!a1.equals(
+																																					st2a2)) {
+																																				if (!a1.equals(
 																																						sm)) {
-																																					if (!png.equals(
-																																							st2a2)) {
-																																						if (!png.equals(
-																																								st)) {
-																																							if (!sm2pn
-																																									.equals(st2a1)) {
-																																								if (!sm2pn
-																																										.equals(st2pt)) {
-																																									if (!sm2pn
-																																											.equals(st2a2)) {
-																																										if (!sm2pn
-																																												.equals(st)) {
-																																											if (!p1.equals(
-																																													pt)) {
-																																												if (!p1.equals(
-																																														s12p1)) {
-																																													if (!p1.equals(
-																																															st2a1)) {
-																																														if (!p1.equals(
-																																																png)) {
-																																															if (!p1.equals(
-																																																	sm2pn)) {
-																																																if (!p1.equals(
+																																					if (!a1.equals(
+																																							st)) {
+																																						if (!a1.equals(
+																																								a2)) {
+																																							if (!a1.equals(
+																																									p1)) {
+																																								if (!a1.equals(
+																																										st2a1)) {
+																																									if (!a1.equals(
+																																											s12p1)) {
+																																										if (!st2a2
+																																												.equals(st2pt)) {
+																																											if (!sm.equals(
+																																													sm2pn)) {
+																																												if (!sm.equals(
+																																														st2pt)) {
+																																													if (!sm.equals(
+																																															st2a2)) {
+																																														if (!sm.equals(
+																																																st)) {
+																																															if (!sm.equals(
+																																																	st2a1)) {
+																																																if (!st.equals(
 																																																		st2pt)) {
-																																																	if (!p1.equals(
-																																																			s1)) {
-																																																		if (!p1.equals(
-																																																				sm)) {
-																																																			if (!p1.equals(
-																																																					st2a2)) {
-																																																				if (!p1.equals(
-																																																						st)) {
-																																																					if (!s1.equals(
-																																																							s12p1)) {
-																																																						if (!s1.equals(
-																																																								st2a1)) {
-																																																							if (!s1.equals(
-																																																									sm2pn)) {
-																																																								if (!s1.equals(
-																																																										st2pt)) {
-																																																									if (!s1.equals(
+																																																	if (!st.equals(
+																																																			st2a2)) {
+																																																		if (!st.equals(
+																																																				st2a1)) {
+																																																			if (!a2.equals(
+																																																					pt)) {
+																																																				if (!a2.equals(
+																																																						s1)) {
+																																																					if (!a2.equals(
+																																																							sm2pn)) {
+																																																						if (!a2.equals(
+																																																								png)) {
+																																																							if (!a2.equals(
+																																																									st2pt)) {
+																																																								if (!a2.equals(
+																																																										st2a2)) {
+																																																									if (!a2.equals(
 																																																											sm)) {
-																																																										if (!s1.equals(
-																																																												st2a2)) {
-																																																											if (!s1.equals(
-																																																													st)) {
-																																																												if (!sm.equals(
+																																																										if (!a2.equals(
+																																																												st)) {
+																																																											if (!a2.equals(
+																																																													p1)) {
+																																																												if (!a2.equals(
 																																																														st2a1)) {
-																																																													if (!sm.equals(
-																																																															sm2pn)) {
-																																																														if (!sm.equals(
-																																																																st2pt)) {
-																																																															if (!sm.equals(
-																																																																	st2a2)) {
-																																																																if (!sm.equals(
-																																																																		st)) {
-																																																																	if (!st2a2
-																																																																			.equals(st2pt)) {
-																																																																		if (!a2.equals(
-																																																																				pt)) {
-																																																																			if (!a2.equals(
-																																																																					s12p1)) {
-																																																																				if (!a2.equals(
-																																																																						st2a1)) {
-																																																																					if (!a2.equals(
-																																																																							png)) {
-																																																																						if (!a2.equals(
-																																																																								sm2pn)) {
-																																																																							if (!a2.equals(
-																																																																									p1)) {
-																																																																								if (!a2.equals(
-																																																																										st2pt)) {
-																																																																									if (!a2.equals(
-																																																																											s1)) {
-																																																																										if (!a2.equals(
-																																																																												sm)) {
-																																																																											if (!a2.equals(
-																																																																													st2a2)) {
-																																																																												if (!a2.equals(
-																																																																														st)) {
-																																																																													if (!st.equals(
-																																																																															st2a1)) {
-																																																																														if (!st.equals(
-																																																																																st2pt)) {
-																																																																															if (!st.equals(
-																																																																																	st2a2)) {
+																																																													if (!a2.equals(
+																																																															s12p1)) {
+																																																														if (!p1.equals(
+																																																																pt)) {
+																																																															if (!p1.equals(
+																																																																	s1)) {
+																																																																if (!p1.equals(
+																																																																		sm2pn)) {
+																																																																	if (!p1.equals(
+																																																																			png)) {
+																																																																		if (!p1.equals(
+																																																																				st2pt)) {
+																																																																			if (!p1.equals(
+																																																																					st2a2)) {
+																																																																				if (!p1.equals(
+																																																																						sm)) {
+																																																																					if (!p1.equals(
+																																																																							st)) {
+																																																																						if (!p1.equals(
+																																																																								st2a1)) {
+																																																																							if (!p1.equals(
+																																																																									s12p1)) {
+																																																																								if (!st2a1
+																																																																										.equals(st2pt)) {
+																																																																									if (!st2a1
+																																																																											.equals(st2a2)) {
+																																																																										if (!s12p1
+																																																																												.equals(sm2pn)) {
+																																																																											if (!s12p1
+																																																																													.equals(st2pt)) {
+																																																																												if (!s12p1
+																																																																														.equals(st2a2)) {
+																																																																													if (!s12p1
+																																																																															.equals(sm)) {
+																																																																														if (!s12p1
+																																																																																.equals(st)) {
+																																																																															if (!s12p1
+																																																																																	.equals(st2a1)) {
 																																																																																return new Object[] {
 																																																																																		ruleresult,
 																																																																																		pt,
-																																																																																		s12p1,
-																																																																																		a1,
-																																																																																		st2a1,
-																																																																																		png,
-																																																																																		sm2pn,
-																																																																																		p1,
-																																																																																		st2pt,
 																																																																																		s1,
-																																																																																		sm,
+																																																																																		sm2pn,
+																																																																																		png,
+																																																																																		a1,
+																																																																																		st2pt,
 																																																																																		st2a2,
+																																																																																		sm,
+																																																																																		st,
 																																																																																		a2,
-																																																																																		st };
+																																																																																		p1,
+																																																																																		st2a1,
+																																																																																		s12p1 };
 																																																																															}
 																																																																														}
 																																																																													}
@@ -1789,117 +1791,117 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_1_3_bookkeepingforedges_greenBBBBBBBBBBBBFFFFFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject pt, EObject a1, EObject st2a1, EObject png, EObject p1, EObject st2pt,
-			EObject s1, EObject sm, EObject st2a2, EObject a2, EObject st) {
-		EMoflonEdge st2a1__a1____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a1__pt____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge png__pt____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a1__p1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge st2pt__pt____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge png__a1____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge sm__st____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject pt, EObject s1, EObject png, EObject a1, EObject st2pt, EObject st2a2,
+			EObject sm, EObject st, EObject a2, EObject p1, EObject st2a1) {
 		EMoflonEdge png__a2____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge st2a2__a2____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge st__s1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge st__s1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge png__pt____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a1__pt____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a1__p1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge sm__st____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge st2pt__st____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2__pt____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge st2a2__st____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st2a1__a1____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge st2a1__st____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st2pt__pt____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st__s1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st__s1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2__pt____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st2a2__a2____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge png__a1____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2__p1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "selftrans2arctransarc";
-		String st2a1__a1____target_name_prime = "target";
-		String a1__pt____to_name_prime = "to";
-		String png__pt____transitions_name_prime = "transitions";
-		String a1__p1____from_name_prime = "from";
-		String st2pt__pt____target_name_prime = "target";
-		String png__a1____arcs_name_prime = "arcs";
-		String sm__st____transitions_name_prime = "transitions";
 		String png__a2____arcs_name_prime = "arcs";
-		String st2a2__a2____target_name_prime = "target";
-		String st__s1____to_name_prime = "to";
-		String st__s1____from_name_prime = "from";
+		String png__pt____transitions_name_prime = "transitions";
+		String a1__pt____to_name_prime = "to";
+		String a1__p1____from_name_prime = "from";
+		String sm__st____transitions_name_prime = "transitions";
 		String st2pt__st____source_name_prime = "source";
-		String a2__pt____from_name_prime = "from";
 		String st2a2__st____source_name_prime = "source";
+		String st2a1__a1____target_name_prime = "target";
 		String st2a1__st____source_name_prime = "source";
+		String st2pt__pt____target_name_prime = "target";
+		String st__s1____from_name_prime = "from";
+		String st__s1____to_name_prime = "to";
+		String a2__pt____from_name_prime = "from";
+		String st2a2__a2____target_name_prime = "target";
+		String png__a1____arcs_name_prime = "arcs";
 		String a2__p1____to_name_prime = "to";
-		st2a1__a1____target.setSrc(st2a1);
-		st2a1__a1____target.setTrg(a1);
-		ruleresult.getCreatedEdges().add(st2a1__a1____target);
-		a1__pt____to.setSrc(a1);
-		a1__pt____to.setTrg(pt);
-		ruleresult.getCreatedEdges().add(a1__pt____to);
-		png__pt____transitions.setSrc(png);
-		png__pt____transitions.setTrg(pt);
-		ruleresult.getCreatedEdges().add(png__pt____transitions);
-		a1__p1____from.setSrc(a1);
-		a1__p1____from.setTrg(p1);
-		ruleresult.getCreatedEdges().add(a1__p1____from);
-		st2pt__pt____target.setSrc(st2pt);
-		st2pt__pt____target.setTrg(pt);
-		ruleresult.getCreatedEdges().add(st2pt__pt____target);
-		png__a1____arcs.setSrc(png);
-		png__a1____arcs.setTrg(a1);
-		ruleresult.getCreatedEdges().add(png__a1____arcs);
-		sm__st____transitions.setSrc(sm);
-		sm__st____transitions.setTrg(st);
-		ruleresult.getTranslatedEdges().add(sm__st____transitions);
 		png__a2____arcs.setSrc(png);
 		png__a2____arcs.setTrg(a2);
 		ruleresult.getCreatedEdges().add(png__a2____arcs);
-		st2a2__a2____target.setSrc(st2a2);
-		st2a2__a2____target.setTrg(a2);
-		ruleresult.getCreatedEdges().add(st2a2__a2____target);
-		st__s1____to.setSrc(st);
-		st__s1____to.setTrg(s1);
-		ruleresult.getTranslatedEdges().add(st__s1____to);
-		st__s1____from.setSrc(st);
-		st__s1____from.setTrg(s1);
-		ruleresult.getTranslatedEdges().add(st__s1____from);
+		png__pt____transitions.setSrc(png);
+		png__pt____transitions.setTrg(pt);
+		ruleresult.getCreatedEdges().add(png__pt____transitions);
+		a1__pt____to.setSrc(a1);
+		a1__pt____to.setTrg(pt);
+		ruleresult.getCreatedEdges().add(a1__pt____to);
+		a1__p1____from.setSrc(a1);
+		a1__p1____from.setTrg(p1);
+		ruleresult.getCreatedEdges().add(a1__p1____from);
+		sm__st____transitions.setSrc(sm);
+		sm__st____transitions.setTrg(st);
+		ruleresult.getTranslatedEdges().add(sm__st____transitions);
 		st2pt__st____source.setSrc(st2pt);
 		st2pt__st____source.setTrg(st);
 		ruleresult.getCreatedEdges().add(st2pt__st____source);
-		a2__pt____from.setSrc(a2);
-		a2__pt____from.setTrg(pt);
-		ruleresult.getCreatedEdges().add(a2__pt____from);
 		st2a2__st____source.setSrc(st2a2);
 		st2a2__st____source.setTrg(st);
 		ruleresult.getCreatedEdges().add(st2a2__st____source);
+		st2a1__a1____target.setSrc(st2a1);
+		st2a1__a1____target.setTrg(a1);
+		ruleresult.getCreatedEdges().add(st2a1__a1____target);
 		st2a1__st____source.setSrc(st2a1);
 		st2a1__st____source.setTrg(st);
 		ruleresult.getCreatedEdges().add(st2a1__st____source);
+		st2pt__pt____target.setSrc(st2pt);
+		st2pt__pt____target.setTrg(pt);
+		ruleresult.getCreatedEdges().add(st2pt__pt____target);
+		st__s1____from.setSrc(st);
+		st__s1____from.setTrg(s1);
+		ruleresult.getTranslatedEdges().add(st__s1____from);
+		st__s1____to.setSrc(st);
+		st__s1____to.setTrg(s1);
+		ruleresult.getTranslatedEdges().add(st__s1____to);
+		a2__pt____from.setSrc(a2);
+		a2__pt____from.setTrg(pt);
+		ruleresult.getCreatedEdges().add(a2__pt____from);
+		st2a2__a2____target.setSrc(st2a2);
+		st2a2__a2____target.setTrg(a2);
+		ruleresult.getCreatedEdges().add(st2a2__a2____target);
+		png__a1____arcs.setSrc(png);
+		png__a1____arcs.setTrg(a1);
+		ruleresult.getCreatedEdges().add(png__a1____arcs);
 		a2__p1____to.setSrc(a2);
 		a2__p1____to.setTrg(p1);
 		ruleresult.getCreatedEdges().add(a2__p1____to);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		st2a1__a1____target.setName(st2a1__a1____target_name_prime);
-		a1__pt____to.setName(a1__pt____to_name_prime);
-		png__pt____transitions.setName(png__pt____transitions_name_prime);
-		a1__p1____from.setName(a1__p1____from_name_prime);
-		st2pt__pt____target.setName(st2pt__pt____target_name_prime);
-		png__a1____arcs.setName(png__a1____arcs_name_prime);
-		sm__st____transitions.setName(sm__st____transitions_name_prime);
 		png__a2____arcs.setName(png__a2____arcs_name_prime);
-		st2a2__a2____target.setName(st2a2__a2____target_name_prime);
-		st__s1____to.setName(st__s1____to_name_prime);
-		st__s1____from.setName(st__s1____from_name_prime);
+		png__pt____transitions.setName(png__pt____transitions_name_prime);
+		a1__pt____to.setName(a1__pt____to_name_prime);
+		a1__p1____from.setName(a1__p1____from_name_prime);
+		sm__st____transitions.setName(sm__st____transitions_name_prime);
 		st2pt__st____source.setName(st2pt__st____source_name_prime);
-		a2__pt____from.setName(a2__pt____from_name_prime);
 		st2a2__st____source.setName(st2a2__st____source_name_prime);
+		st2a1__a1____target.setName(st2a1__a1____target_name_prime);
 		st2a1__st____source.setName(st2a1__st____source_name_prime);
+		st2pt__pt____target.setName(st2pt__pt____target_name_prime);
+		st__s1____from.setName(st__s1____from_name_prime);
+		st__s1____to.setName(st__s1____to_name_prime);
+		a2__pt____from.setName(a2__pt____from_name_prime);
+		st2a2__a2____target.setName(st2a2__a2____target_name_prime);
+		png__a1____arcs.setName(png__a1____arcs_name_prime);
 		a2__p1____to.setName(a2__p1____to_name_prime);
-		return new Object[] { ruleresult, pt, a1, st2a1, png, p1, st2pt, s1, sm, st2a2, a2, st, st2a1__a1____target,
-				a1__pt____to, png__pt____transitions, a1__p1____from, st2pt__pt____target, png__a1____arcs,
-				sm__st____transitions, png__a2____arcs, st2a2__a2____target, st__s1____to, st__s1____from,
-				st2pt__st____source, a2__pt____from, st2a2__st____source, st2a1__st____source, a2__p1____to };
+		return new Object[] { ruleresult, pt, s1, png, a1, st2pt, st2a2, sm, st, a2, p1, st2a1, png__a2____arcs,
+				png__pt____transitions, a1__pt____to, a1__p1____from, sm__st____transitions, st2pt__st____source,
+				st2a2__st____source, st2a1__a1____target, st2a1__st____source, st2pt__pt____target, st__s1____from,
+				st__s1____to, a2__pt____from, st2a2__a2____target, png__a1____arcs, a2__p1____to };
 	}
 
 	public static final void pattern_selftrans2arctransarc_1_5_registerobjects_expressionBBBBBBBBBBBBBBB(
-			selftrans2arctransarc _this, PerformRuleResult ruleresult, EObject pt, EObject s12p1, EObject a1,
-			EObject st2a1, EObject png, EObject sm2pn, EObject p1, EObject st2pt, EObject s1, EObject sm, EObject st2a2,
-			EObject a2, EObject st) {
-		_this.registerObjects_FWD(ruleresult, pt, s12p1, a1, st2a1, png, sm2pn, p1, st2pt, s1, sm, st2a2, a2, st);
+			selftrans2arctransarc _this, PerformRuleResult ruleresult, EObject pt, EObject s1, EObject sm2pn,
+			EObject png, EObject a1, EObject st2pt, EObject st2a2, EObject sm, EObject st, EObject a2, EObject p1,
+			EObject st2a1, EObject s12p1) {
+		_this.registerObjects_FWD(ruleresult, pt, s1, sm2pn, png, a1, st2pt, st2a2, sm, st, a2, p1, st2a1, s12p1);
 
 	}
 
@@ -1979,7 +1981,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_selftrans2arctransarc_2_2_corematch_blackFFFFBBBB(State s1, SM sm,
+	public static final Iterable<Object[]> pattern_selftrans2arctransarc_2_2_corematch_blackBFFBBFFB(State s1, SM sm,
 			Transition st, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (SM2PN sm2pn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(sm, SM2PN.class,
@@ -1990,7 +1992,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 						"source")) {
 					Place p1 = s12p1.getTarget();
 					if (p1 != null) {
-						_result.add(new Object[] { s12p1, png, sm2pn, p1, s1, sm, st, match });
+						_result.add(new Object[] { s1, sm2pn, png, sm, st, p1, s12p1, match });
 					}
 
 				}
@@ -2000,17 +2002,17 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_selftrans2arctransarc_2_3_findcontext_blackBBBBBBB(S2P s12p1,
-			PNGraph png, SM2PN sm2pn, Place p1, State s1, SM sm, Transition st) {
+	public static final Iterable<Object[]> pattern_selftrans2arctransarc_2_3_findcontext_blackBBBBBBB(State s1,
+			SM2PN sm2pn, PNGraph png, SM sm, Transition st, Place p1, S2P s12p1) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (sm.equals(sm2pn.getSource())) {
-			if (sm.getTransitions().contains(st)) {
-				if (s1.equals(st.getTo())) {
+		if (png.equals(sm2pn.getTarget())) {
+			if (sm.equals(sm2pn.getSource())) {
+				if (sm.getTransitions().contains(st)) {
 					if (s1.equals(st.getFrom())) {
-						if (png.equals(sm2pn.getTarget())) {
-							if (p1.equals(s12p1.getTarget())) {
-								if (s1.equals(s12p1.getSource())) {
-									_result.add(new Object[] { s12p1, png, sm2pn, p1, s1, sm, st });
+						if (s1.equals(st.getTo())) {
+							if (s1.equals(s12p1.getSource())) {
+								if (p1.equals(s12p1.getTarget())) {
+									_result.add(new Object[] { s1, sm2pn, png, sm, st, p1, s12p1 });
 								}
 							}
 						}
@@ -2021,70 +2023,70 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		return _result;
 	}
 
-	public static final Object[] pattern_selftrans2arctransarc_2_3_findcontext_greenBBBBBBBFFFFFFFF(S2P s12p1,
-			PNGraph png, SM2PN sm2pn, Place p1, State s1, SM sm, Transition st) {
+	public static final Object[] pattern_selftrans2arctransarc_2_3_findcontext_greenBBBBBBBFFFFFFFF(State s1,
+			SM2PN sm2pn, PNGraph png, SM sm, Transition st, Place p1, S2P s12p1) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge sm2pn__png____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sm2pn__sm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sm__st____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge st__s1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge st__s1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge sm2pn__png____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge s12p1__p1____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st__s1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge s12p1__s1____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s12p1__p1____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String sm2pn__png____target_name_prime = "target";
 		String sm2pn__sm____source_name_prime = "source";
 		String sm__st____transitions_name_prime = "transitions";
-		String st__s1____to_name_prime = "to";
 		String st__s1____from_name_prime = "from";
-		String sm2pn__png____target_name_prime = "target";
-		String s12p1__p1____target_name_prime = "target";
+		String st__s1____to_name_prime = "to";
 		String s12p1__s1____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(s12p1);
-		isApplicableMatch.getAllContextElements().add(png);
-		isApplicableMatch.getAllContextElements().add(sm2pn);
-		isApplicableMatch.getAllContextElements().add(p1);
+		String s12p1__p1____target_name_prime = "target";
 		isApplicableMatch.getAllContextElements().add(s1);
+		isApplicableMatch.getAllContextElements().add(sm2pn);
+		isApplicableMatch.getAllContextElements().add(png);
 		isApplicableMatch.getAllContextElements().add(sm);
 		isApplicableMatch.getAllContextElements().add(st);
+		isApplicableMatch.getAllContextElements().add(p1);
+		isApplicableMatch.getAllContextElements().add(s12p1);
+		sm2pn__png____target.setSrc(sm2pn);
+		sm2pn__png____target.setTrg(png);
+		isApplicableMatch.getAllContextElements().add(sm2pn__png____target);
 		sm2pn__sm____source.setSrc(sm2pn);
 		sm2pn__sm____source.setTrg(sm);
 		isApplicableMatch.getAllContextElements().add(sm2pn__sm____source);
 		sm__st____transitions.setSrc(sm);
 		sm__st____transitions.setTrg(st);
 		isApplicableMatch.getAllContextElements().add(sm__st____transitions);
-		st__s1____to.setSrc(st);
-		st__s1____to.setTrg(s1);
-		isApplicableMatch.getAllContextElements().add(st__s1____to);
 		st__s1____from.setSrc(st);
 		st__s1____from.setTrg(s1);
 		isApplicableMatch.getAllContextElements().add(st__s1____from);
-		sm2pn__png____target.setSrc(sm2pn);
-		sm2pn__png____target.setTrg(png);
-		isApplicableMatch.getAllContextElements().add(sm2pn__png____target);
-		s12p1__p1____target.setSrc(s12p1);
-		s12p1__p1____target.setTrg(p1);
-		isApplicableMatch.getAllContextElements().add(s12p1__p1____target);
+		st__s1____to.setSrc(st);
+		st__s1____to.setTrg(s1);
+		isApplicableMatch.getAllContextElements().add(st__s1____to);
 		s12p1__s1____source.setSrc(s12p1);
 		s12p1__s1____source.setTrg(s1);
 		isApplicableMatch.getAllContextElements().add(s12p1__s1____source);
+		s12p1__p1____target.setSrc(s12p1);
+		s12p1__p1____target.setTrg(p1);
+		isApplicableMatch.getAllContextElements().add(s12p1__p1____target);
+		sm2pn__png____target.setName(sm2pn__png____target_name_prime);
 		sm2pn__sm____source.setName(sm2pn__sm____source_name_prime);
 		sm__st____transitions.setName(sm__st____transitions_name_prime);
-		st__s1____to.setName(st__s1____to_name_prime);
 		st__s1____from.setName(st__s1____from_name_prime);
-		sm2pn__png____target.setName(sm2pn__png____target_name_prime);
-		s12p1__p1____target.setName(s12p1__p1____target_name_prime);
+		st__s1____to.setName(st__s1____to_name_prime);
 		s12p1__s1____source.setName(s12p1__s1____source_name_prime);
-		return new Object[] { s12p1, png, sm2pn, p1, s1, sm, st, isApplicableMatch, sm2pn__sm____source,
-				sm__st____transitions, st__s1____to, st__s1____from, sm2pn__png____target, s12p1__p1____target,
-				s12p1__s1____source };
+		s12p1__p1____target.setName(s12p1__p1____target_name_prime);
+		return new Object[] { s1, sm2pn, png, sm, st, p1, s12p1, isApplicableMatch, sm2pn__png____target,
+				sm2pn__sm____source, sm__st____transitions, st__s1____from, st__s1____to, s12p1__s1____source,
+				s12p1__p1____target };
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_2_4_solveCSP_bindingFBBBBBBBBB(
-			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, S2P s12p1, PNGraph png, SM2PN sm2pn,
-			Place p1, State s1, SM sm, Transition st) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, s12p1, png, sm2pn, p1, s1, sm, st);
+			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, State s1, SM2PN sm2pn, PNGraph png, SM sm,
+			Transition st, Place p1, S2P s12p1) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, s1, sm2pn, png, sm, st, p1, s12p1);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, s12p1, png, sm2pn, p1, s1, sm, st };
+			return new Object[] { csp, _this, isApplicableMatch, s1, sm2pn, png, sm, st, p1, s12p1 };
 		}
 		return null;
 	}
@@ -2094,10 +2096,10 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_2_4_solveCSP_bindingAndBlackFBBBBBBBBB(
-			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, S2P s12p1, PNGraph png, SM2PN sm2pn,
-			Place p1, State s1, SM sm, Transition st) {
+			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, State s1, SM2PN sm2pn, PNGraph png, SM sm,
+			Transition st, Place p1, S2P s12p1) {
 		Object[] result_pattern_selftrans2arctransarc_2_4_solveCSP_binding = pattern_selftrans2arctransarc_2_4_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, s12p1, png, sm2pn, p1, s1, sm, st);
+				_this, isApplicableMatch, s1, sm2pn, png, sm, st, p1, s12p1);
 		if (result_pattern_selftrans2arctransarc_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_selftrans2arctransarc_2_4_solveCSP_binding[0];
 
@@ -2105,7 +2107,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 					csp);
 			if (result_pattern_selftrans2arctransarc_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, s12p1, png, sm2pn, p1, s1, sm, st };
+				return new Object[] { csp, _this, isApplicableMatch, s1, sm2pn, png, sm, st, p1, s12p1 };
 			}
 		}
 		return null;
@@ -2140,19 +2142,19 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_10_1_initialbindings_blackBBBBBBB(
-			selftrans2arctransarc _this, Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {
+			selftrans2arctransarc _this, Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {
 		if (!a1.equals(a2)) {
-			return new Object[] { _this, match, pt, a1, png, p1, a2 };
+			return new Object[] { _this, match, pt, png, a1, a2, p1 };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_10_2_SolveCSP_bindingFBBBBBBB(
-			selftrans2arctransarc _this, Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, pt, a1, png, p1, a2);
+			selftrans2arctransarc _this, Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, pt, png, a1, a2, p1);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, pt, a1, png, p1, a2 };
+			return new Object[] { csp, _this, match, pt, png, a1, a2, p1 };
 		}
 		return null;
 	}
@@ -2162,9 +2164,9 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_10_2_SolveCSP_bindingAndBlackFBBBBBBB(
-			selftrans2arctransarc _this, Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {
+			selftrans2arctransarc _this, Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {
 		Object[] result_pattern_selftrans2arctransarc_10_2_SolveCSP_binding = pattern_selftrans2arctransarc_10_2_SolveCSP_bindingFBBBBBBB(
-				_this, match, pt, a1, png, p1, a2);
+				_this, match, pt, png, a1, a2, p1);
 		if (result_pattern_selftrans2arctransarc_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_selftrans2arctransarc_10_2_SolveCSP_binding[0];
 
@@ -2172,7 +2174,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 					csp);
 			if (result_pattern_selftrans2arctransarc_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, pt, a1, png, p1, a2 };
+				return new Object[] { csp, _this, match, pt, png, a1, a2, p1 };
 			}
 		}
 		return null;
@@ -2186,68 +2188,68 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_10_4_collectelementstobetranslated_blackBBBBBB(
-			Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {
+			Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {
 		if (!a1.equals(a2)) {
-			return new Object[] { match, pt, a1, png, p1, a2 };
+			return new Object[] { match, pt, png, a1, a2, p1 };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_10_4_collectelementstobetranslated_greenBBBBBBFFFFFFF(
-			Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {
-		EMoflonEdge a1__pt____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge png__pt____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a1__p1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge png__a1____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {
 		EMoflonEdge png__a2____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge png__pt____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a1__pt____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a1__p1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2__pt____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge png__a1____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2__p1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(pt);
 		match.getToBeTranslatedNodes().add(a1);
 		match.getToBeTranslatedNodes().add(a2);
-		String a1__pt____to_name_prime = "to";
-		String png__pt____transitions_name_prime = "transitions";
-		String a1__p1____from_name_prime = "from";
-		String png__a1____arcs_name_prime = "arcs";
 		String png__a2____arcs_name_prime = "arcs";
+		String png__pt____transitions_name_prime = "transitions";
+		String a1__pt____to_name_prime = "to";
+		String a1__p1____from_name_prime = "from";
 		String a2__pt____from_name_prime = "from";
+		String png__a1____arcs_name_prime = "arcs";
 		String a2__p1____to_name_prime = "to";
-		a1__pt____to.setSrc(a1);
-		a1__pt____to.setTrg(pt);
-		match.getToBeTranslatedEdges().add(a1__pt____to);
-		png__pt____transitions.setSrc(png);
-		png__pt____transitions.setTrg(pt);
-		match.getToBeTranslatedEdges().add(png__pt____transitions);
-		a1__p1____from.setSrc(a1);
-		a1__p1____from.setTrg(p1);
-		match.getToBeTranslatedEdges().add(a1__p1____from);
-		png__a1____arcs.setSrc(png);
-		png__a1____arcs.setTrg(a1);
-		match.getToBeTranslatedEdges().add(png__a1____arcs);
 		png__a2____arcs.setSrc(png);
 		png__a2____arcs.setTrg(a2);
 		match.getToBeTranslatedEdges().add(png__a2____arcs);
+		png__pt____transitions.setSrc(png);
+		png__pt____transitions.setTrg(pt);
+		match.getToBeTranslatedEdges().add(png__pt____transitions);
+		a1__pt____to.setSrc(a1);
+		a1__pt____to.setTrg(pt);
+		match.getToBeTranslatedEdges().add(a1__pt____to);
+		a1__p1____from.setSrc(a1);
+		a1__p1____from.setTrg(p1);
+		match.getToBeTranslatedEdges().add(a1__p1____from);
 		a2__pt____from.setSrc(a2);
 		a2__pt____from.setTrg(pt);
 		match.getToBeTranslatedEdges().add(a2__pt____from);
+		png__a1____arcs.setSrc(png);
+		png__a1____arcs.setTrg(a1);
+		match.getToBeTranslatedEdges().add(png__a1____arcs);
 		a2__p1____to.setSrc(a2);
 		a2__p1____to.setTrg(p1);
 		match.getToBeTranslatedEdges().add(a2__p1____to);
-		a1__pt____to.setName(a1__pt____to_name_prime);
-		png__pt____transitions.setName(png__pt____transitions_name_prime);
-		a1__p1____from.setName(a1__p1____from_name_prime);
-		png__a1____arcs.setName(png__a1____arcs_name_prime);
 		png__a2____arcs.setName(png__a2____arcs_name_prime);
+		png__pt____transitions.setName(png__pt____transitions_name_prime);
+		a1__pt____to.setName(a1__pt____to_name_prime);
+		a1__p1____from.setName(a1__p1____from_name_prime);
 		a2__pt____from.setName(a2__pt____from_name_prime);
+		png__a1____arcs.setName(png__a1____arcs_name_prime);
 		a2__p1____to.setName(a2__p1____to_name_prime);
-		return new Object[] { match, pt, a1, png, p1, a2, a1__pt____to, png__pt____transitions, a1__p1____from,
-				png__a1____arcs, png__a2____arcs, a2__pt____from, a2__p1____to };
+		return new Object[] { match, pt, png, a1, a2, p1, png__a2____arcs, png__pt____transitions, a1__pt____to,
+				a1__p1____from, a2__pt____from, png__a1____arcs, a2__p1____to };
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_10_5_collectcontextelements_blackBBBBBB(Match match,
-			petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {
+			petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {
 		if (!a1.equals(a2)) {
-			return new Object[] { match, pt, a1, png, p1, a2 };
+			return new Object[] { match, pt, png, a1, a2, p1 };
 		}
 		return null;
 	}
@@ -2260,8 +2262,8 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final void pattern_selftrans2arctransarc_10_6_registerobjectstomatch_expressionBBBBBBB(
-			selftrans2arctransarc _this, Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {
-		_this.registerObjectsToMatch_BWD(match, pt, a1, png, p1, a2);
+			selftrans2arctransarc _this, Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {
+		_this.registerObjectsToMatch_BWD(match, pt, png, a1, a2, p1);
 
 	}
 
@@ -2278,42 +2280,42 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	public static final Object[] pattern_selftrans2arctransarc_11_1_performtransformation_bindingFFFFFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
 		EObject _localVariable_0 = isApplicableMatch.getObject("pt");
-		EObject _localVariable_1 = isApplicableMatch.getObject("s12p1");
-		EObject _localVariable_2 = isApplicableMatch.getObject("a1");
+		EObject _localVariable_1 = isApplicableMatch.getObject("s1");
+		EObject _localVariable_2 = isApplicableMatch.getObject("sm2pn");
 		EObject _localVariable_3 = isApplicableMatch.getObject("png");
-		EObject _localVariable_4 = isApplicableMatch.getObject("sm2pn");
-		EObject _localVariable_5 = isApplicableMatch.getObject("p1");
-		EObject _localVariable_6 = isApplicableMatch.getObject("s1");
-		EObject _localVariable_7 = isApplicableMatch.getObject("sm");
-		EObject _localVariable_8 = isApplicableMatch.getObject("a2");
+		EObject _localVariable_4 = isApplicableMatch.getObject("a1");
+		EObject _localVariable_5 = isApplicableMatch.getObject("sm");
+		EObject _localVariable_6 = isApplicableMatch.getObject("a2");
+		EObject _localVariable_7 = isApplicableMatch.getObject("p1");
+		EObject _localVariable_8 = isApplicableMatch.getObject("s12p1");
 		EObject tmpPt = _localVariable_0;
-		EObject tmpS12p1 = _localVariable_1;
-		EObject tmpA1 = _localVariable_2;
+		EObject tmpS1 = _localVariable_1;
+		EObject tmpSm2pn = _localVariable_2;
 		EObject tmpPng = _localVariable_3;
-		EObject tmpSm2pn = _localVariable_4;
-		EObject tmpP1 = _localVariable_5;
-		EObject tmpS1 = _localVariable_6;
-		EObject tmpSm = _localVariable_7;
-		EObject tmpA2 = _localVariable_8;
+		EObject tmpA1 = _localVariable_4;
+		EObject tmpSm = _localVariable_5;
+		EObject tmpA2 = _localVariable_6;
+		EObject tmpP1 = _localVariable_7;
+		EObject tmpS12p1 = _localVariable_8;
 		if (tmpPt instanceof petrinet.Transition) {
 			petrinet.Transition pt = (petrinet.Transition) tmpPt;
-			if (tmpS12p1 instanceof S2P) {
-				S2P s12p1 = (S2P) tmpS12p1;
-				if (tmpA1 instanceof Arc) {
-					Arc a1 = (Arc) tmpA1;
+			if (tmpS1 instanceof State) {
+				State s1 = (State) tmpS1;
+				if (tmpSm2pn instanceof SM2PN) {
+					SM2PN sm2pn = (SM2PN) tmpSm2pn;
 					if (tmpPng instanceof PNGraph) {
 						PNGraph png = (PNGraph) tmpPng;
-						if (tmpSm2pn instanceof SM2PN) {
-							SM2PN sm2pn = (SM2PN) tmpSm2pn;
-							if (tmpP1 instanceof Place) {
-								Place p1 = (Place) tmpP1;
-								if (tmpS1 instanceof State) {
-									State s1 = (State) tmpS1;
-									if (tmpSm instanceof SM) {
-										SM sm = (SM) tmpSm;
-										if (tmpA2 instanceof Arc) {
-											Arc a2 = (Arc) tmpA2;
-											return new Object[] { pt, s12p1, a1, png, sm2pn, p1, s1, sm, a2,
+						if (tmpA1 instanceof Arc) {
+							Arc a1 = (Arc) tmpA1;
+							if (tmpSm instanceof SM) {
+								SM sm = (SM) tmpSm;
+								if (tmpA2 instanceof Arc) {
+									Arc a2 = (Arc) tmpA2;
+									if (tmpP1 instanceof Place) {
+										Place p1 = (Place) tmpP1;
+										if (tmpS12p1 instanceof S2P) {
+											S2P s12p1 = (S2P) tmpS12p1;
+											return new Object[] { pt, s1, sm2pn, png, a1, sm, a2, p1, s12p1,
 													isApplicableMatch };
 										}
 									}
@@ -2328,13 +2330,13 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_11_1_performtransformation_blackBBBBBBBBBFBB(
-			petrinet.Transition pt, S2P s12p1, Arc a1, PNGraph png, SM2PN sm2pn, Place p1, State s1, SM sm, Arc a2,
+			petrinet.Transition pt, State s1, SM2PN sm2pn, PNGraph png, Arc a1, SM sm, Arc a2, Place p1, S2P s12p1,
 			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch) {
 		if (!a1.equals(a2)) {
 			for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 				if (tmpCsp instanceof CSP) {
 					CSP csp = (CSP) tmpCsp;
-					return new Object[] { pt, s12p1, a1, png, sm2pn, p1, s1, sm, a2, csp, _this, isApplicableMatch };
+					return new Object[] { pt, s1, sm2pn, png, a1, sm, a2, p1, s12p1, csp, _this, isApplicableMatch };
 				}
 			}
 		}
@@ -2347,218 +2349,219 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 				isApplicableMatch);
 		if (result_pattern_selftrans2arctransarc_11_1_performtransformation_binding != null) {
 			petrinet.Transition pt = (petrinet.Transition) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[0];
-			S2P s12p1 = (S2P) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[1];
-			Arc a1 = (Arc) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[2];
+			State s1 = (State) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[1];
+			SM2PN sm2pn = (SM2PN) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[2];
 			PNGraph png = (PNGraph) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[3];
-			SM2PN sm2pn = (SM2PN) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[4];
-			Place p1 = (Place) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[5];
-			State s1 = (State) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[6];
-			SM sm = (SM) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[7];
-			Arc a2 = (Arc) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[8];
+			Arc a1 = (Arc) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[4];
+			SM sm = (SM) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[5];
+			Arc a2 = (Arc) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[6];
+			Place p1 = (Place) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[7];
+			S2P s12p1 = (S2P) result_pattern_selftrans2arctransarc_11_1_performtransformation_binding[8];
 
 			Object[] result_pattern_selftrans2arctransarc_11_1_performtransformation_black = pattern_selftrans2arctransarc_11_1_performtransformation_blackBBBBBBBBBFBB(
-					pt, s12p1, a1, png, sm2pn, p1, s1, sm, a2, _this, isApplicableMatch);
+					pt, s1, sm2pn, png, a1, sm, a2, p1, s12p1, _this, isApplicableMatch);
 			if (result_pattern_selftrans2arctransarc_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_selftrans2arctransarc_11_1_performtransformation_black[9];
 
-				return new Object[] { pt, s12p1, a1, png, sm2pn, p1, s1, sm, a2, csp, _this, isApplicableMatch };
+				return new Object[] { pt, s1, sm2pn, png, a1, sm, a2, p1, s12p1, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_selftrans2arctransarc_11_1_performtransformation_greenBBFFBBFBF(
-			petrinet.Transition pt, Arc a1, State s1, SM sm, Arc a2) {
-		T2A st2a1 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
+	public static final Object[] pattern_selftrans2arctransarc_11_1_performtransformation_greenBBBFFBFBF(
+			petrinet.Transition pt, State s1, Arc a1, SM sm, Arc a2) {
 		T2T st2pt = Statemachine2petrinetFactory.eINSTANCE.createT2T();
 		T2A st2a2 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
 		Transition st = StatemachineFactory.eINSTANCE.createTransition();
-		st2a1.setTarget(a1);
+		T2A st2a1 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
 		st2pt.setTarget(pt);
 		st2a2.setTarget(a2);
 		sm.getTransitions().add(st);
-		st.setTo(s1);
-		st.setFrom(s1);
 		st2pt.setSource(st);
 		st2a2.setSource(st);
+		st.setFrom(s1);
+		st.setTo(s1);
+		st2a1.setTarget(a1);
 		st2a1.setSource(st);
-		return new Object[] { pt, a1, st2a1, st2pt, s1, sm, st2a2, a2, st };
+		return new Object[] { pt, s1, a1, st2pt, st2a2, sm, st, a2, st2a1 };
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_11_2_collecttranslatedelements_blackBBBBBBB(
-			petrinet.Transition pt, Arc a1, T2A st2a1, T2T st2pt, T2A st2a2, Arc a2, Transition st) {
+			petrinet.Transition pt, Arc a1, T2T st2pt, T2A st2a2, Transition st, Arc a2, T2A st2a1) {
 		if (!a1.equals(a2)) {
 			if (!st2a1.equals(st2a2)) {
-				return new Object[] { pt, a1, st2a1, st2pt, st2a2, a2, st };
+				return new Object[] { pt, a1, st2pt, st2a2, st, a2, st2a1 };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_11_2_collecttranslatedelements_greenFBBBBBBB(
-			petrinet.Transition pt, Arc a1, T2A st2a1, T2T st2pt, T2A st2a2, Arc a2, Transition st) {
+			petrinet.Transition pt, Arc a1, T2T st2pt, T2A st2a2, Transition st, Arc a2, T2A st2a1) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getTranslatedElements().add(pt);
 		ruleresult.getTranslatedElements().add(a1);
-		ruleresult.getCreatedLinkElements().add(st2a1);
 		ruleresult.getCreatedLinkElements().add(st2pt);
 		ruleresult.getCreatedLinkElements().add(st2a2);
-		ruleresult.getTranslatedElements().add(a2);
 		ruleresult.getCreatedElements().add(st);
-		return new Object[] { ruleresult, pt, a1, st2a1, st2pt, st2a2, a2, st };
+		ruleresult.getTranslatedElements().add(a2);
+		ruleresult.getCreatedLinkElements().add(st2a1);
+		return new Object[] { ruleresult, pt, a1, st2pt, st2a2, st, a2, st2a1 };
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_11_3_bookkeepingforedges_blackBBBBBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject pt, EObject s12p1, EObject a1, EObject st2a1, EObject png,
-			EObject sm2pn, EObject p1, EObject st2pt, EObject s1, EObject sm, EObject st2a2, EObject a2, EObject st) {
-		if (!pt.equals(s12p1)) {
-			if (!pt.equals(st2a1)) {
-				if (!pt.equals(sm2pn)) {
-					if (!pt.equals(st2pt)) {
-						if (!pt.equals(s1)) {
-							if (!pt.equals(sm)) {
-								if (!pt.equals(st2a2)) {
-									if (!pt.equals(st)) {
-										if (!s12p1.equals(st2a1)) {
-											if (!s12p1.equals(sm2pn)) {
-												if (!s12p1.equals(st2pt)) {
-													if (!s12p1.equals(sm)) {
-														if (!s12p1.equals(st2a2)) {
-															if (!s12p1.equals(st)) {
-																if (!a1.equals(pt)) {
-																	if (!a1.equals(s12p1)) {
-																		if (!a1.equals(st2a1)) {
-																			if (!a1.equals(png)) {
-																				if (!a1.equals(sm2pn)) {
-																					if (!a1.equals(p1)) {
-																						if (!a1.equals(st2pt)) {
-																							if (!a1.equals(s1)) {
-																								if (!a1.equals(sm)) {
-																									if (!a1.equals(
+			PerformRuleResult ruleresult, EObject pt, EObject s1, EObject sm2pn, EObject png, EObject a1, EObject st2pt,
+			EObject st2a2, EObject sm, EObject st, EObject a2, EObject p1, EObject st2a1, EObject s12p1) {
+		if (!pt.equals(s1)) {
+			if (!pt.equals(sm2pn)) {
+				if (!pt.equals(st2pt)) {
+					if (!pt.equals(st2a2)) {
+						if (!pt.equals(sm)) {
+							if (!pt.equals(st)) {
+								if (!pt.equals(st2a1)) {
+									if (!pt.equals(s12p1)) {
+										if (!s1.equals(sm2pn)) {
+											if (!s1.equals(st2pt)) {
+												if (!s1.equals(st2a2)) {
+													if (!s1.equals(sm)) {
+														if (!s1.equals(st)) {
+															if (!s1.equals(st2a1)) {
+																if (!s1.equals(s12p1)) {
+																	if (!sm2pn.equals(st2pt)) {
+																		if (!sm2pn.equals(st2a2)) {
+																			if (!sm2pn.equals(st)) {
+																				if (!sm2pn.equals(st2a1)) {
+																					if (!png.equals(pt)) {
+																						if (!png.equals(s1)) {
+																							if (!png.equals(sm2pn)) {
+																								if (!png.equals(
+																										st2pt)) {
+																									if (!png.equals(
 																											st2a2)) {
-																										if (!a1.equals(
-																												a2)) {
-																											if (!a1.equals(
+																										if (!png.equals(
+																												sm)) {
+																											if (!png.equals(
 																													st)) {
-																												if (!st2a1
-																														.equals(st2pt)) {
-																													if (!st2a1
-																															.equals(st2a2)) {
-																														if (!png.equals(
+																												if (!png.equals(
+																														st2a1)) {
+																													if (!png.equals(
+																															s12p1)) {
+																														if (!a1.equals(
 																																pt)) {
-																															if (!png.equals(
-																																	s12p1)) {
-																																if (!png.equals(
-																																		st2a1)) {
-																																	if (!png.equals(
-																																			sm2pn)) {
-																																		if (!png.equals(
+																															if (!a1.equals(
+																																	s1)) {
+																																if (!a1.equals(
+																																		sm2pn)) {
+																																	if (!a1.equals(
+																																			png)) {
+																																		if (!a1.equals(
 																																				st2pt)) {
-																																			if (!png.equals(
-																																					s1)) {
-																																				if (!png.equals(
+																																			if (!a1.equals(
+																																					st2a2)) {
+																																				if (!a1.equals(
 																																						sm)) {
-																																					if (!png.equals(
-																																							st2a2)) {
-																																						if (!png.equals(
-																																								st)) {
-																																							if (!sm2pn
-																																									.equals(st2a1)) {
-																																								if (!sm2pn
-																																										.equals(st2pt)) {
-																																									if (!sm2pn
-																																											.equals(st2a2)) {
-																																										if (!sm2pn
-																																												.equals(st)) {
-																																											if (!p1.equals(
-																																													pt)) {
-																																												if (!p1.equals(
-																																														s12p1)) {
-																																													if (!p1.equals(
-																																															st2a1)) {
-																																														if (!p1.equals(
-																																																png)) {
-																																															if (!p1.equals(
-																																																	sm2pn)) {
-																																																if (!p1.equals(
+																																					if (!a1.equals(
+																																							st)) {
+																																						if (!a1.equals(
+																																								a2)) {
+																																							if (!a1.equals(
+																																									p1)) {
+																																								if (!a1.equals(
+																																										st2a1)) {
+																																									if (!a1.equals(
+																																											s12p1)) {
+																																										if (!st2a2
+																																												.equals(st2pt)) {
+																																											if (!sm.equals(
+																																													sm2pn)) {
+																																												if (!sm.equals(
+																																														st2pt)) {
+																																													if (!sm.equals(
+																																															st2a2)) {
+																																														if (!sm.equals(
+																																																st)) {
+																																															if (!sm.equals(
+																																																	st2a1)) {
+																																																if (!st.equals(
 																																																		st2pt)) {
-																																																	if (!p1.equals(
-																																																			s1)) {
-																																																		if (!p1.equals(
-																																																				sm)) {
-																																																			if (!p1.equals(
-																																																					st2a2)) {
-																																																				if (!p1.equals(
-																																																						st)) {
-																																																					if (!s1.equals(
-																																																							s12p1)) {
-																																																						if (!s1.equals(
-																																																								st2a1)) {
-																																																							if (!s1.equals(
-																																																									sm2pn)) {
-																																																								if (!s1.equals(
-																																																										st2pt)) {
-																																																									if (!s1.equals(
+																																																	if (!st.equals(
+																																																			st2a2)) {
+																																																		if (!st.equals(
+																																																				st2a1)) {
+																																																			if (!a2.equals(
+																																																					pt)) {
+																																																				if (!a2.equals(
+																																																						s1)) {
+																																																					if (!a2.equals(
+																																																							sm2pn)) {
+																																																						if (!a2.equals(
+																																																								png)) {
+																																																							if (!a2.equals(
+																																																									st2pt)) {
+																																																								if (!a2.equals(
+																																																										st2a2)) {
+																																																									if (!a2.equals(
 																																																											sm)) {
-																																																										if (!s1.equals(
-																																																												st2a2)) {
-																																																											if (!s1.equals(
-																																																													st)) {
-																																																												if (!sm.equals(
+																																																										if (!a2.equals(
+																																																												st)) {
+																																																											if (!a2.equals(
+																																																													p1)) {
+																																																												if (!a2.equals(
 																																																														st2a1)) {
-																																																													if (!sm.equals(
-																																																															sm2pn)) {
-																																																														if (!sm.equals(
-																																																																st2pt)) {
-																																																															if (!sm.equals(
-																																																																	st2a2)) {
-																																																																if (!sm.equals(
-																																																																		st)) {
-																																																																	if (!st2a2
-																																																																			.equals(st2pt)) {
-																																																																		if (!a2.equals(
-																																																																				pt)) {
-																																																																			if (!a2.equals(
-																																																																					s12p1)) {
-																																																																				if (!a2.equals(
-																																																																						st2a1)) {
-																																																																					if (!a2.equals(
-																																																																							png)) {
-																																																																						if (!a2.equals(
-																																																																								sm2pn)) {
-																																																																							if (!a2.equals(
-																																																																									p1)) {
-																																																																								if (!a2.equals(
-																																																																										st2pt)) {
-																																																																									if (!a2.equals(
-																																																																											s1)) {
-																																																																										if (!a2.equals(
-																																																																												sm)) {
-																																																																											if (!a2.equals(
-																																																																													st2a2)) {
-																																																																												if (!a2.equals(
-																																																																														st)) {
-																																																																													if (!st.equals(
-																																																																															st2a1)) {
-																																																																														if (!st.equals(
-																																																																																st2pt)) {
-																																																																															if (!st.equals(
-																																																																																	st2a2)) {
+																																																													if (!a2.equals(
+																																																															s12p1)) {
+																																																														if (!p1.equals(
+																																																																pt)) {
+																																																															if (!p1.equals(
+																																																																	s1)) {
+																																																																if (!p1.equals(
+																																																																		sm2pn)) {
+																																																																	if (!p1.equals(
+																																																																			png)) {
+																																																																		if (!p1.equals(
+																																																																				st2pt)) {
+																																																																			if (!p1.equals(
+																																																																					st2a2)) {
+																																																																				if (!p1.equals(
+																																																																						sm)) {
+																																																																					if (!p1.equals(
+																																																																							st)) {
+																																																																						if (!p1.equals(
+																																																																								st2a1)) {
+																																																																							if (!p1.equals(
+																																																																									s12p1)) {
+																																																																								if (!st2a1
+																																																																										.equals(st2pt)) {
+																																																																									if (!st2a1
+																																																																											.equals(st2a2)) {
+																																																																										if (!s12p1
+																																																																												.equals(sm2pn)) {
+																																																																											if (!s12p1
+																																																																													.equals(st2pt)) {
+																																																																												if (!s12p1
+																																																																														.equals(st2a2)) {
+																																																																													if (!s12p1
+																																																																															.equals(sm)) {
+																																																																														if (!s12p1
+																																																																																.equals(st)) {
+																																																																															if (!s12p1
+																																																																																	.equals(st2a1)) {
 																																																																																return new Object[] {
 																																																																																		ruleresult,
 																																																																																		pt,
-																																																																																		s12p1,
-																																																																																		a1,
-																																																																																		st2a1,
-																																																																																		png,
-																																																																																		sm2pn,
-																																																																																		p1,
-																																																																																		st2pt,
 																																																																																		s1,
-																																																																																		sm,
+																																																																																		sm2pn,
+																																																																																		png,
+																																																																																		a1,
+																																																																																		st2pt,
 																																																																																		st2a2,
+																																																																																		sm,
+																																																																																		st,
 																																																																																		a2,
-																																																																																		st };
+																																																																																		p1,
+																																																																																		st2a1,
+																																																																																		s12p1 };
 																																																																															}
 																																																																														}
 																																																																													}
@@ -2641,117 +2644,117 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_11_3_bookkeepingforedges_greenBBBBBBBBBBBBFFFFFFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject pt, EObject a1, EObject st2a1, EObject png, EObject p1, EObject st2pt,
-			EObject s1, EObject sm, EObject st2a2, EObject a2, EObject st) {
-		EMoflonEdge st2a1__a1____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a1__pt____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge png__pt____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a1__p1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge st2pt__pt____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge png__a1____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge sm__st____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject pt, EObject s1, EObject png, EObject a1, EObject st2pt, EObject st2a2,
+			EObject sm, EObject st, EObject a2, EObject p1, EObject st2a1) {
 		EMoflonEdge png__a2____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge st2a2__a2____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge st__s1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge st__s1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge png__pt____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a1__pt____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a1__p1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge sm__st____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge st2pt__st____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2__pt____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge st2a2__st____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st2a1__a1____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge st2a1__st____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st2pt__pt____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st__s1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st__s1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2__pt____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge st2a2__a2____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge png__a1____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a2__p1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "selftrans2arctransarc";
-		String st2a1__a1____target_name_prime = "target";
-		String a1__pt____to_name_prime = "to";
-		String png__pt____transitions_name_prime = "transitions";
-		String a1__p1____from_name_prime = "from";
-		String st2pt__pt____target_name_prime = "target";
-		String png__a1____arcs_name_prime = "arcs";
-		String sm__st____transitions_name_prime = "transitions";
 		String png__a2____arcs_name_prime = "arcs";
-		String st2a2__a2____target_name_prime = "target";
-		String st__s1____to_name_prime = "to";
-		String st__s1____from_name_prime = "from";
+		String png__pt____transitions_name_prime = "transitions";
+		String a1__pt____to_name_prime = "to";
+		String a1__p1____from_name_prime = "from";
+		String sm__st____transitions_name_prime = "transitions";
 		String st2pt__st____source_name_prime = "source";
-		String a2__pt____from_name_prime = "from";
 		String st2a2__st____source_name_prime = "source";
+		String st2a1__a1____target_name_prime = "target";
 		String st2a1__st____source_name_prime = "source";
+		String st2pt__pt____target_name_prime = "target";
+		String st__s1____from_name_prime = "from";
+		String st__s1____to_name_prime = "to";
+		String a2__pt____from_name_prime = "from";
+		String st2a2__a2____target_name_prime = "target";
+		String png__a1____arcs_name_prime = "arcs";
 		String a2__p1____to_name_prime = "to";
-		st2a1__a1____target.setSrc(st2a1);
-		st2a1__a1____target.setTrg(a1);
-		ruleresult.getCreatedEdges().add(st2a1__a1____target);
-		a1__pt____to.setSrc(a1);
-		a1__pt____to.setTrg(pt);
-		ruleresult.getTranslatedEdges().add(a1__pt____to);
-		png__pt____transitions.setSrc(png);
-		png__pt____transitions.setTrg(pt);
-		ruleresult.getTranslatedEdges().add(png__pt____transitions);
-		a1__p1____from.setSrc(a1);
-		a1__p1____from.setTrg(p1);
-		ruleresult.getTranslatedEdges().add(a1__p1____from);
-		st2pt__pt____target.setSrc(st2pt);
-		st2pt__pt____target.setTrg(pt);
-		ruleresult.getCreatedEdges().add(st2pt__pt____target);
-		png__a1____arcs.setSrc(png);
-		png__a1____arcs.setTrg(a1);
-		ruleresult.getTranslatedEdges().add(png__a1____arcs);
-		sm__st____transitions.setSrc(sm);
-		sm__st____transitions.setTrg(st);
-		ruleresult.getCreatedEdges().add(sm__st____transitions);
 		png__a2____arcs.setSrc(png);
 		png__a2____arcs.setTrg(a2);
 		ruleresult.getTranslatedEdges().add(png__a2____arcs);
-		st2a2__a2____target.setSrc(st2a2);
-		st2a2__a2____target.setTrg(a2);
-		ruleresult.getCreatedEdges().add(st2a2__a2____target);
-		st__s1____to.setSrc(st);
-		st__s1____to.setTrg(s1);
-		ruleresult.getCreatedEdges().add(st__s1____to);
-		st__s1____from.setSrc(st);
-		st__s1____from.setTrg(s1);
-		ruleresult.getCreatedEdges().add(st__s1____from);
+		png__pt____transitions.setSrc(png);
+		png__pt____transitions.setTrg(pt);
+		ruleresult.getTranslatedEdges().add(png__pt____transitions);
+		a1__pt____to.setSrc(a1);
+		a1__pt____to.setTrg(pt);
+		ruleresult.getTranslatedEdges().add(a1__pt____to);
+		a1__p1____from.setSrc(a1);
+		a1__p1____from.setTrg(p1);
+		ruleresult.getTranslatedEdges().add(a1__p1____from);
+		sm__st____transitions.setSrc(sm);
+		sm__st____transitions.setTrg(st);
+		ruleresult.getCreatedEdges().add(sm__st____transitions);
 		st2pt__st____source.setSrc(st2pt);
 		st2pt__st____source.setTrg(st);
 		ruleresult.getCreatedEdges().add(st2pt__st____source);
-		a2__pt____from.setSrc(a2);
-		a2__pt____from.setTrg(pt);
-		ruleresult.getTranslatedEdges().add(a2__pt____from);
 		st2a2__st____source.setSrc(st2a2);
 		st2a2__st____source.setTrg(st);
 		ruleresult.getCreatedEdges().add(st2a2__st____source);
+		st2a1__a1____target.setSrc(st2a1);
+		st2a1__a1____target.setTrg(a1);
+		ruleresult.getCreatedEdges().add(st2a1__a1____target);
 		st2a1__st____source.setSrc(st2a1);
 		st2a1__st____source.setTrg(st);
 		ruleresult.getCreatedEdges().add(st2a1__st____source);
+		st2pt__pt____target.setSrc(st2pt);
+		st2pt__pt____target.setTrg(pt);
+		ruleresult.getCreatedEdges().add(st2pt__pt____target);
+		st__s1____from.setSrc(st);
+		st__s1____from.setTrg(s1);
+		ruleresult.getCreatedEdges().add(st__s1____from);
+		st__s1____to.setSrc(st);
+		st__s1____to.setTrg(s1);
+		ruleresult.getCreatedEdges().add(st__s1____to);
+		a2__pt____from.setSrc(a2);
+		a2__pt____from.setTrg(pt);
+		ruleresult.getTranslatedEdges().add(a2__pt____from);
+		st2a2__a2____target.setSrc(st2a2);
+		st2a2__a2____target.setTrg(a2);
+		ruleresult.getCreatedEdges().add(st2a2__a2____target);
+		png__a1____arcs.setSrc(png);
+		png__a1____arcs.setTrg(a1);
+		ruleresult.getTranslatedEdges().add(png__a1____arcs);
 		a2__p1____to.setSrc(a2);
 		a2__p1____to.setTrg(p1);
 		ruleresult.getTranslatedEdges().add(a2__p1____to);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		st2a1__a1____target.setName(st2a1__a1____target_name_prime);
-		a1__pt____to.setName(a1__pt____to_name_prime);
-		png__pt____transitions.setName(png__pt____transitions_name_prime);
-		a1__p1____from.setName(a1__p1____from_name_prime);
-		st2pt__pt____target.setName(st2pt__pt____target_name_prime);
-		png__a1____arcs.setName(png__a1____arcs_name_prime);
-		sm__st____transitions.setName(sm__st____transitions_name_prime);
 		png__a2____arcs.setName(png__a2____arcs_name_prime);
-		st2a2__a2____target.setName(st2a2__a2____target_name_prime);
-		st__s1____to.setName(st__s1____to_name_prime);
-		st__s1____from.setName(st__s1____from_name_prime);
+		png__pt____transitions.setName(png__pt____transitions_name_prime);
+		a1__pt____to.setName(a1__pt____to_name_prime);
+		a1__p1____from.setName(a1__p1____from_name_prime);
+		sm__st____transitions.setName(sm__st____transitions_name_prime);
 		st2pt__st____source.setName(st2pt__st____source_name_prime);
-		a2__pt____from.setName(a2__pt____from_name_prime);
 		st2a2__st____source.setName(st2a2__st____source_name_prime);
+		st2a1__a1____target.setName(st2a1__a1____target_name_prime);
 		st2a1__st____source.setName(st2a1__st____source_name_prime);
+		st2pt__pt____target.setName(st2pt__pt____target_name_prime);
+		st__s1____from.setName(st__s1____from_name_prime);
+		st__s1____to.setName(st__s1____to_name_prime);
+		a2__pt____from.setName(a2__pt____from_name_prime);
+		st2a2__a2____target.setName(st2a2__a2____target_name_prime);
+		png__a1____arcs.setName(png__a1____arcs_name_prime);
 		a2__p1____to.setName(a2__p1____to_name_prime);
-		return new Object[] { ruleresult, pt, a1, st2a1, png, p1, st2pt, s1, sm, st2a2, a2, st, st2a1__a1____target,
-				a1__pt____to, png__pt____transitions, a1__p1____from, st2pt__pt____target, png__a1____arcs,
-				sm__st____transitions, png__a2____arcs, st2a2__a2____target, st__s1____to, st__s1____from,
-				st2pt__st____source, a2__pt____from, st2a2__st____source, st2a1__st____source, a2__p1____to };
+		return new Object[] { ruleresult, pt, s1, png, a1, st2pt, st2a2, sm, st, a2, p1, st2a1, png__a2____arcs,
+				png__pt____transitions, a1__pt____to, a1__p1____from, sm__st____transitions, st2pt__st____source,
+				st2a2__st____source, st2a1__a1____target, st2a1__st____source, st2pt__pt____target, st__s1____from,
+				st__s1____to, a2__pt____from, st2a2__a2____target, png__a1____arcs, a2__p1____to };
 	}
 
 	public static final void pattern_selftrans2arctransarc_11_5_registerobjects_expressionBBBBBBBBBBBBBBB(
-			selftrans2arctransarc _this, PerformRuleResult ruleresult, EObject pt, EObject s12p1, EObject a1,
-			EObject st2a1, EObject png, EObject sm2pn, EObject p1, EObject st2pt, EObject s1, EObject sm, EObject st2a2,
-			EObject a2, EObject st) {
-		_this.registerObjects_BWD(ruleresult, pt, s12p1, a1, st2a1, png, sm2pn, p1, st2pt, s1, sm, st2a2, a2, st);
+			selftrans2arctransarc _this, PerformRuleResult ruleresult, EObject pt, EObject s1, EObject sm2pn,
+			EObject png, EObject a1, EObject st2pt, EObject st2a2, EObject sm, EObject st, EObject a2, EObject p1,
+			EObject st2a1, EObject s12p1) {
+		_this.registerObjects_BWD(ruleresult, pt, s1, sm2pn, png, a1, st2pt, st2a2, sm, st, a2, p1, st2a1, s12p1);
 
 	}
 
@@ -2814,26 +2817,26 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 
 	public static final Object[] pattern_selftrans2arctransarc_12_2_corematch_bindingFFFFFB(Match match) {
 		EObject _localVariable_0 = match.getObject("pt");
-		EObject _localVariable_1 = match.getObject("a1");
-		EObject _localVariable_2 = match.getObject("png");
-		EObject _localVariable_3 = match.getObject("p1");
-		EObject _localVariable_4 = match.getObject("a2");
+		EObject _localVariable_1 = match.getObject("png");
+		EObject _localVariable_2 = match.getObject("a1");
+		EObject _localVariable_3 = match.getObject("a2");
+		EObject _localVariable_4 = match.getObject("p1");
 		EObject tmpPt = _localVariable_0;
-		EObject tmpA1 = _localVariable_1;
-		EObject tmpPng = _localVariable_2;
-		EObject tmpP1 = _localVariable_3;
-		EObject tmpA2 = _localVariable_4;
+		EObject tmpPng = _localVariable_1;
+		EObject tmpA1 = _localVariable_2;
+		EObject tmpA2 = _localVariable_3;
+		EObject tmpP1 = _localVariable_4;
 		if (tmpPt instanceof petrinet.Transition) {
 			petrinet.Transition pt = (petrinet.Transition) tmpPt;
-			if (tmpA1 instanceof Arc) {
-				Arc a1 = (Arc) tmpA1;
-				if (tmpPng instanceof PNGraph) {
-					PNGraph png = (PNGraph) tmpPng;
-					if (tmpP1 instanceof Place) {
-						Place p1 = (Place) tmpP1;
-						if (tmpA2 instanceof Arc) {
-							Arc a2 = (Arc) tmpA2;
-							return new Object[] { pt, a1, png, p1, a2, match };
+			if (tmpPng instanceof PNGraph) {
+				PNGraph png = (PNGraph) tmpPng;
+				if (tmpA1 instanceof Arc) {
+					Arc a1 = (Arc) tmpA1;
+					if (tmpA2 instanceof Arc) {
+						Arc a2 = (Arc) tmpA2;
+						if (tmpP1 instanceof Place) {
+							Place p1 = (Place) tmpP1;
+							return new Object[] { pt, png, a1, a2, p1, match };
 						}
 					}
 				}
@@ -2842,8 +2845,8 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_selftrans2arctransarc_12_2_corematch_blackBFBBFBFFBB(
-			petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2, Match match) {
+	public static final Iterable<Object[]> pattern_selftrans2arctransarc_12_2_corematch_blackBFFBBFBBFB(
+			petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!a1.equals(a2)) {
 			for (SM2PN sm2pn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(png, SM2PN.class,
@@ -2854,7 +2857,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 							"target")) {
 						State s1 = s12p1.getSource();
 						if (s1 != null) {
-							_result.add(new Object[] { pt, s12p1, a1, png, sm2pn, p1, s1, sm, a2, match });
+							_result.add(new Object[] { pt, s1, sm2pn, png, a1, sm, a2, p1, s12p1, match });
 						}
 
 					}
@@ -2866,22 +2869,22 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Iterable<Object[]> pattern_selftrans2arctransarc_12_3_findcontext_blackBBBBBBBBB(
-			petrinet.Transition pt, S2P s12p1, Arc a1, PNGraph png, SM2PN sm2pn, Place p1, State s1, SM sm, Arc a2) {
+			petrinet.Transition pt, State s1, SM2PN sm2pn, PNGraph png, Arc a1, SM sm, Arc a2, Place p1, S2P s12p1) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!a1.equals(a2)) {
-			if (pt.equals(a1.getTo())) {
+			if (png.getArcs().contains(a2)) {
 				if (png.getTransitions().contains(pt)) {
-					if (p1.equals(a1.getFrom())) {
-						if (png.getArcs().contains(a1)) {
-							if (sm.equals(sm2pn.getSource())) {
-								if (png.getArcs().contains(a2)) {
-									if (pt.equals(a2.getFrom())) {
-										if (png.equals(sm2pn.getTarget())) {
-											if (p1.equals(s12p1.getTarget())) {
-												if (p1.equals(a2.getTo())) {
-													if (s1.equals(s12p1.getSource())) {
-														_result.add(new Object[] { pt, s12p1, a1, png, sm2pn, p1, s1,
-																sm, a2 });
+					if (png.equals(sm2pn.getTarget())) {
+						if (pt.equals(a1.getTo())) {
+							if (p1.equals(a1.getFrom())) {
+								if (sm.equals(sm2pn.getSource())) {
+									if (s1.equals(s12p1.getSource())) {
+										if (p1.equals(s12p1.getTarget())) {
+											if (pt.equals(a2.getFrom())) {
+												if (png.getArcs().contains(a1)) {
+													if (p1.equals(a2.getTo())) {
+														_result.add(new Object[] { pt, s1, sm2pn, png, a1, sm, a2, p1,
+																s12p1 });
 													}
 												}
 											}
@@ -2898,96 +2901,96 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_12_3_findcontext_greenBBBBBBBBBFFFFFFFFFFFF(
-			petrinet.Transition pt, S2P s12p1, Arc a1, PNGraph png, SM2PN sm2pn, Place p1, State s1, SM sm, Arc a2) {
+			petrinet.Transition pt, State s1, SM2PN sm2pn, PNGraph png, Arc a1, SM sm, Arc a2, Place p1, S2P s12p1) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge a1__pt____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge png__pt____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a1__p1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge png__a1____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge sm2pn__sm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge png__a2____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2__pt____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge png__pt____transitions = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sm2pn__png____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge s12p1__p1____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2__p1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a1__pt____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a1__p1____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge sm2pn__sm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge s12p1__s1____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String a1__pt____to_name_prime = "to";
-		String png__pt____transitions_name_prime = "transitions";
-		String a1__p1____from_name_prime = "from";
-		String png__a1____arcs_name_prime = "arcs";
-		String sm2pn__sm____source_name_prime = "source";
+		EMoflonEdge s12p1__p1____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2__pt____from = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge png__a1____arcs = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2__p1____to = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String png__a2____arcs_name_prime = "arcs";
-		String a2__pt____from_name_prime = "from";
+		String png__pt____transitions_name_prime = "transitions";
 		String sm2pn__png____target_name_prime = "target";
-		String s12p1__p1____target_name_prime = "target";
-		String a2__p1____to_name_prime = "to";
+		String a1__pt____to_name_prime = "to";
+		String a1__p1____from_name_prime = "from";
+		String sm2pn__sm____source_name_prime = "source";
 		String s12p1__s1____source_name_prime = "source";
+		String s12p1__p1____target_name_prime = "target";
+		String a2__pt____from_name_prime = "from";
+		String png__a1____arcs_name_prime = "arcs";
+		String a2__p1____to_name_prime = "to";
 		isApplicableMatch.getAllContextElements().add(pt);
-		isApplicableMatch.getAllContextElements().add(s12p1);
-		isApplicableMatch.getAllContextElements().add(a1);
-		isApplicableMatch.getAllContextElements().add(png);
-		isApplicableMatch.getAllContextElements().add(sm2pn);
-		isApplicableMatch.getAllContextElements().add(p1);
 		isApplicableMatch.getAllContextElements().add(s1);
+		isApplicableMatch.getAllContextElements().add(sm2pn);
+		isApplicableMatch.getAllContextElements().add(png);
+		isApplicableMatch.getAllContextElements().add(a1);
 		isApplicableMatch.getAllContextElements().add(sm);
 		isApplicableMatch.getAllContextElements().add(a2);
-		a1__pt____to.setSrc(a1);
-		a1__pt____to.setTrg(pt);
-		isApplicableMatch.getAllContextElements().add(a1__pt____to);
-		png__pt____transitions.setSrc(png);
-		png__pt____transitions.setTrg(pt);
-		isApplicableMatch.getAllContextElements().add(png__pt____transitions);
-		a1__p1____from.setSrc(a1);
-		a1__p1____from.setTrg(p1);
-		isApplicableMatch.getAllContextElements().add(a1__p1____from);
-		png__a1____arcs.setSrc(png);
-		png__a1____arcs.setTrg(a1);
-		isApplicableMatch.getAllContextElements().add(png__a1____arcs);
-		sm2pn__sm____source.setSrc(sm2pn);
-		sm2pn__sm____source.setTrg(sm);
-		isApplicableMatch.getAllContextElements().add(sm2pn__sm____source);
+		isApplicableMatch.getAllContextElements().add(p1);
+		isApplicableMatch.getAllContextElements().add(s12p1);
 		png__a2____arcs.setSrc(png);
 		png__a2____arcs.setTrg(a2);
 		isApplicableMatch.getAllContextElements().add(png__a2____arcs);
-		a2__pt____from.setSrc(a2);
-		a2__pt____from.setTrg(pt);
-		isApplicableMatch.getAllContextElements().add(a2__pt____from);
+		png__pt____transitions.setSrc(png);
+		png__pt____transitions.setTrg(pt);
+		isApplicableMatch.getAllContextElements().add(png__pt____transitions);
 		sm2pn__png____target.setSrc(sm2pn);
 		sm2pn__png____target.setTrg(png);
 		isApplicableMatch.getAllContextElements().add(sm2pn__png____target);
-		s12p1__p1____target.setSrc(s12p1);
-		s12p1__p1____target.setTrg(p1);
-		isApplicableMatch.getAllContextElements().add(s12p1__p1____target);
-		a2__p1____to.setSrc(a2);
-		a2__p1____to.setTrg(p1);
-		isApplicableMatch.getAllContextElements().add(a2__p1____to);
+		a1__pt____to.setSrc(a1);
+		a1__pt____to.setTrg(pt);
+		isApplicableMatch.getAllContextElements().add(a1__pt____to);
+		a1__p1____from.setSrc(a1);
+		a1__p1____from.setTrg(p1);
+		isApplicableMatch.getAllContextElements().add(a1__p1____from);
+		sm2pn__sm____source.setSrc(sm2pn);
+		sm2pn__sm____source.setTrg(sm);
+		isApplicableMatch.getAllContextElements().add(sm2pn__sm____source);
 		s12p1__s1____source.setSrc(s12p1);
 		s12p1__s1____source.setTrg(s1);
 		isApplicableMatch.getAllContextElements().add(s12p1__s1____source);
-		a1__pt____to.setName(a1__pt____to_name_prime);
-		png__pt____transitions.setName(png__pt____transitions_name_prime);
-		a1__p1____from.setName(a1__p1____from_name_prime);
-		png__a1____arcs.setName(png__a1____arcs_name_prime);
-		sm2pn__sm____source.setName(sm2pn__sm____source_name_prime);
+		s12p1__p1____target.setSrc(s12p1);
+		s12p1__p1____target.setTrg(p1);
+		isApplicableMatch.getAllContextElements().add(s12p1__p1____target);
+		a2__pt____from.setSrc(a2);
+		a2__pt____from.setTrg(pt);
+		isApplicableMatch.getAllContextElements().add(a2__pt____from);
+		png__a1____arcs.setSrc(png);
+		png__a1____arcs.setTrg(a1);
+		isApplicableMatch.getAllContextElements().add(png__a1____arcs);
+		a2__p1____to.setSrc(a2);
+		a2__p1____to.setTrg(p1);
+		isApplicableMatch.getAllContextElements().add(a2__p1____to);
 		png__a2____arcs.setName(png__a2____arcs_name_prime);
-		a2__pt____from.setName(a2__pt____from_name_prime);
+		png__pt____transitions.setName(png__pt____transitions_name_prime);
 		sm2pn__png____target.setName(sm2pn__png____target_name_prime);
-		s12p1__p1____target.setName(s12p1__p1____target_name_prime);
-		a2__p1____to.setName(a2__p1____to_name_prime);
+		a1__pt____to.setName(a1__pt____to_name_prime);
+		a1__p1____from.setName(a1__p1____from_name_prime);
+		sm2pn__sm____source.setName(sm2pn__sm____source_name_prime);
 		s12p1__s1____source.setName(s12p1__s1____source_name_prime);
-		return new Object[] { pt, s12p1, a1, png, sm2pn, p1, s1, sm, a2, isApplicableMatch, a1__pt____to,
-				png__pt____transitions, a1__p1____from, png__a1____arcs, sm2pn__sm____source, png__a2____arcs,
-				a2__pt____from, sm2pn__png____target, s12p1__p1____target, a2__p1____to, s12p1__s1____source };
+		s12p1__p1____target.setName(s12p1__p1____target_name_prime);
+		a2__pt____from.setName(a2__pt____from_name_prime);
+		png__a1____arcs.setName(png__a1____arcs_name_prime);
+		a2__p1____to.setName(a2__p1____to_name_prime);
+		return new Object[] { pt, s1, sm2pn, png, a1, sm, a2, p1, s12p1, isApplicableMatch, png__a2____arcs,
+				png__pt____transitions, sm2pn__png____target, a1__pt____to, a1__p1____from, sm2pn__sm____source,
+				s12p1__s1____source, s12p1__p1____target, a2__pt____from, png__a1____arcs, a2__p1____to };
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_12_4_solveCSP_bindingFBBBBBBBBBBB(
-			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, petrinet.Transition pt, S2P s12p1, Arc a1,
-			PNGraph png, SM2PN sm2pn, Place p1, State s1, SM sm, Arc a2) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, pt, s12p1, a1, png, sm2pn, p1, s1, sm,
-				a2);
+			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, petrinet.Transition pt, State s1,
+			SM2PN sm2pn, PNGraph png, Arc a1, SM sm, Arc a2, Place p1, S2P s12p1) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, pt, s1, sm2pn, png, a1, sm, a2, p1,
+				s12p1);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, pt, s12p1, a1, png, sm2pn, p1, s1, sm, a2 };
+			return new Object[] { csp, _this, isApplicableMatch, pt, s1, sm2pn, png, a1, sm, a2, p1, s12p1 };
 		}
 		return null;
 	}
@@ -2997,10 +3000,10 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_12_4_solveCSP_bindingAndBlackFBBBBBBBBBBB(
-			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, petrinet.Transition pt, S2P s12p1, Arc a1,
-			PNGraph png, SM2PN sm2pn, Place p1, State s1, SM sm, Arc a2) {
+			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, petrinet.Transition pt, State s1,
+			SM2PN sm2pn, PNGraph png, Arc a1, SM sm, Arc a2, Place p1, S2P s12p1) {
 		Object[] result_pattern_selftrans2arctransarc_12_4_solveCSP_binding = pattern_selftrans2arctransarc_12_4_solveCSP_bindingFBBBBBBBBBBB(
-				_this, isApplicableMatch, pt, s12p1, a1, png, sm2pn, p1, s1, sm, a2);
+				_this, isApplicableMatch, pt, s1, sm2pn, png, a1, sm, a2, p1, s12p1);
 		if (result_pattern_selftrans2arctransarc_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_selftrans2arctransarc_12_4_solveCSP_binding[0];
 
@@ -3008,7 +3011,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 					csp);
 			if (result_pattern_selftrans2arctransarc_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, pt, s12p1, a1, png, sm2pn, p1, s1, sm, a2 };
+				return new Object[] { csp, _this, isApplicableMatch, pt, s1, sm2pn, png, a1, sm, a2, p1, s12p1 };
 			}
 		}
 		return null;
@@ -3097,31 +3100,33 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Iterable<Object[]> pattern_selftrans2arctransarc_20_2_testcorematchandDECs_blackFFFFFB(
-			EMoflonEdge _edge_to) {
+			EMoflonEdge _edge_arcs) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		EObject tmpA1 = _edge_to.getSrc();
-		if (tmpA1 instanceof Arc) {
-			Arc a1 = (Arc) tmpA1;
-			EObject tmpPt = _edge_to.getTrg();
-			if (tmpPt instanceof petrinet.Transition) {
-				petrinet.Transition pt = (petrinet.Transition) tmpPt;
-				if (pt.equals(a1.getTo())) {
-					Node tmpP1 = a1.getFrom();
-					if (tmpP1 instanceof Place) {
-						Place p1 = (Place) tmpP1;
-						for (PNGraph png : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a1,
-								PNGraph.class, "arcs")) {
-							if (png.getTransitions().contains(pt)) {
-								for (Arc a2 : png.getArcs()) {
+		EObject tmpPng = _edge_arcs.getSrc();
+		if (tmpPng instanceof PNGraph) {
+			PNGraph png = (PNGraph) tmpPng;
+			EObject tmpA2 = _edge_arcs.getTrg();
+			if (tmpA2 instanceof Arc) {
+				Arc a2 = (Arc) tmpA2;
+				if (png.getArcs().contains(a2)) {
+					Node tmpPt = a2.getFrom();
+					if (tmpPt instanceof petrinet.Transition) {
+						petrinet.Transition pt = (petrinet.Transition) tmpPt;
+						if (png.getTransitions().contains(pt)) {
+							Node tmpP1 = a2.getTo();
+							if (tmpP1 instanceof Place) {
+								Place p1 = (Place) tmpP1;
+								for (Arc a1 : png.getArcs()) {
 									if (!a1.equals(a2)) {
-										if (pt.equals(a2.getFrom())) {
-											if (p1.equals(a2.getTo())) {
-												_result.add(new Object[] { pt, a1, png, p1, a2, _edge_to });
+										if (pt.equals(a1.getTo())) {
+											if (p1.equals(a1.getFrom())) {
+												_result.add(new Object[] { pt, png, a1, a2, p1, _edge_arcs });
 											}
 										}
 									}
 								}
 							}
+
 						}
 					}
 
@@ -3143,8 +3148,8 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final boolean pattern_selftrans2arctransarc_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBBBB(
-			selftrans2arctransarc _this, Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, pt, a1, png, p1, a2);
+			selftrans2arctransarc _this, Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, pt, png, a1, a2, p1);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -3241,9 +3246,9 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 			if (tmpSt instanceof Transition) {
 				Transition st = (Transition) tmpSt;
 				if (sm.getTransitions().contains(st)) {
-					State s1 = st.getTo();
+					State s1 = st.getFrom();
 					if (s1 != null) {
-						if (s1.equals(st.getFrom())) {
+						if (s1.equals(st.getTo())) {
 							_result.add(new Object[] { s1, sm, st, _edge_transitions });
 						}
 					}
@@ -3312,38 +3317,38 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	public static final Object[] pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_bindingFFFFFFFFBB(
 			Match targetMatch, Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("pt");
-		EObject _localVariable_1 = targetMatch.getObject("a1");
+		EObject _localVariable_1 = sourceMatch.getObject("s1");
 		EObject _localVariable_2 = targetMatch.getObject("png");
-		EObject _localVariable_3 = targetMatch.getObject("p1");
-		EObject _localVariable_4 = sourceMatch.getObject("s1");
-		EObject _localVariable_5 = sourceMatch.getObject("sm");
+		EObject _localVariable_3 = targetMatch.getObject("a1");
+		EObject _localVariable_4 = sourceMatch.getObject("sm");
+		EObject _localVariable_5 = sourceMatch.getObject("st");
 		EObject _localVariable_6 = targetMatch.getObject("a2");
-		EObject _localVariable_7 = sourceMatch.getObject("st");
+		EObject _localVariable_7 = targetMatch.getObject("p1");
 		EObject tmpPt = _localVariable_0;
-		EObject tmpA1 = _localVariable_1;
+		EObject tmpS1 = _localVariable_1;
 		EObject tmpPng = _localVariable_2;
-		EObject tmpP1 = _localVariable_3;
-		EObject tmpS1 = _localVariable_4;
-		EObject tmpSm = _localVariable_5;
+		EObject tmpA1 = _localVariable_3;
+		EObject tmpSm = _localVariable_4;
+		EObject tmpSt = _localVariable_5;
 		EObject tmpA2 = _localVariable_6;
-		EObject tmpSt = _localVariable_7;
+		EObject tmpP1 = _localVariable_7;
 		if (tmpPt instanceof petrinet.Transition) {
 			petrinet.Transition pt = (petrinet.Transition) tmpPt;
-			if (tmpA1 instanceof Arc) {
-				Arc a1 = (Arc) tmpA1;
+			if (tmpS1 instanceof State) {
+				State s1 = (State) tmpS1;
 				if (tmpPng instanceof PNGraph) {
 					PNGraph png = (PNGraph) tmpPng;
-					if (tmpP1 instanceof Place) {
-						Place p1 = (Place) tmpP1;
-						if (tmpS1 instanceof State) {
-							State s1 = (State) tmpS1;
-							if (tmpSm instanceof SM) {
-								SM sm = (SM) tmpSm;
+					if (tmpA1 instanceof Arc) {
+						Arc a1 = (Arc) tmpA1;
+						if (tmpSm instanceof SM) {
+							SM sm = (SM) tmpSm;
+							if (tmpSt instanceof Transition) {
+								Transition st = (Transition) tmpSt;
 								if (tmpA2 instanceof Arc) {
 									Arc a2 = (Arc) tmpA2;
-									if (tmpSt instanceof Transition) {
-										Transition st = (Transition) tmpSt;
-										return new Object[] { pt, a1, png, p1, s1, sm, a2, st, targetMatch,
+									if (tmpP1 instanceof Place) {
+										Place p1 = (Place) tmpP1;
+										return new Object[] { pt, s1, png, a1, sm, st, a2, p1, targetMatch,
 												sourceMatch };
 									}
 								}
@@ -3357,11 +3362,11 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_blackBBBBBBBBBB(
-			petrinet.Transition pt, Arc a1, PNGraph png, Place p1, State s1, SM sm, Arc a2, Transition st,
+			petrinet.Transition pt, State s1, PNGraph png, Arc a1, SM sm, Transition st, Arc a2, Place p1,
 			Match sourceMatch, Match targetMatch) {
 		if (!a1.equals(a2)) {
 			if (!sourceMatch.equals(targetMatch)) {
-				return new Object[] { pt, a1, png, p1, s1, sm, a2, st, sourceMatch, targetMatch };
+				return new Object[] { pt, s1, png, a1, sm, st, a2, p1, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -3373,32 +3378,32 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 				targetMatch, sourceMatch);
 		if (result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding != null) {
 			petrinet.Transition pt = (petrinet.Transition) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[0];
-			Arc a1 = (Arc) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[1];
+			State s1 = (State) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[1];
 			PNGraph png = (PNGraph) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[2];
-			Place p1 = (Place) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[3];
-			State s1 = (State) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[4];
-			SM sm = (SM) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[5];
+			Arc a1 = (Arc) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[3];
+			SM sm = (SM) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[4];
+			Transition st = (Transition) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[5];
 			Arc a2 = (Arc) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[6];
-			Transition st = (Transition) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[7];
+			Place p1 = (Place) result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_binding[7];
 
 			Object[] result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_black = pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_blackBBBBBBBBBB(
-					pt, a1, png, p1, s1, sm, a2, st, sourceMatch, targetMatch);
+					pt, s1, png, a1, sm, st, a2, p1, sourceMatch, targetMatch);
 			if (result_pattern_selftrans2arctransarc_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { pt, a1, png, p1, s1, sm, a2, st, sourceMatch, targetMatch };
+				return new Object[] { pt, s1, png, a1, sm, st, a2, p1, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_24_3_solvecsp_bindingFBBBBBBBBBBB(
-			selftrans2arctransarc _this, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, State s1, SM sm, Arc a2,
-			Transition st, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_8 = _this.isApplicable_solveCsp_CC(pt, a1, png, p1, s1, sm, a2, st, sourceMatch,
+			selftrans2arctransarc _this, petrinet.Transition pt, State s1, PNGraph png, Arc a1, SM sm, Transition st,
+			Arc a2, Place p1, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_8 = _this.isApplicable_solveCsp_CC(pt, s1, png, a1, sm, st, a2, p1, sourceMatch,
 				targetMatch);
 		CSP csp = _localVariable_8;
 		if (csp != null) {
-			return new Object[] { csp, _this, pt, a1, png, p1, s1, sm, a2, st, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, pt, s1, png, a1, sm, st, a2, p1, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -3408,10 +3413,10 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_24_3_solvecsp_bindingAndBlackFBBBBBBBBBBB(
-			selftrans2arctransarc _this, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, State s1, SM sm, Arc a2,
-			Transition st, Match sourceMatch, Match targetMatch) {
+			selftrans2arctransarc _this, petrinet.Transition pt, State s1, PNGraph png, Arc a1, SM sm, Transition st,
+			Arc a2, Place p1, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_selftrans2arctransarc_24_3_solvecsp_binding = pattern_selftrans2arctransarc_24_3_solvecsp_bindingFBBBBBBBBBBB(
-				_this, pt, a1, png, p1, s1, sm, a2, st, sourceMatch, targetMatch);
+				_this, pt, s1, png, a1, sm, st, a2, p1, sourceMatch, targetMatch);
 		if (result_pattern_selftrans2arctransarc_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_selftrans2arctransarc_24_3_solvecsp_binding[0];
 
@@ -3419,7 +3424,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 					csp);
 			if (result_pattern_selftrans2arctransarc_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, pt, a1, png, p1, s1, sm, a2, st, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, pt, s1, png, a1, sm, st, a2, p1, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -3431,17 +3436,17 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_selftrans2arctransarc_24_5_matchcorrcontext_blackFBFBBBBB(
-			PNGraph png, Place p1, State s1, SM sm, Match sourceMatch, Match targetMatch) {
+	public static final Iterable<Object[]> pattern_selftrans2arctransarc_24_5_matchcorrcontext_blackBFBBBFBB(State s1,
+			PNGraph png, SM sm, Place p1, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			for (SM2PN sm2pn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(sm, SM2PN.class,
-					"source")) {
-				if (png.equals(sm2pn.getTarget())) {
-					for (S2P s12p1 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(p1, S2P.class,
-							"target")) {
-						if (s1.equals(s12p1.getSource())) {
-							_result.add(new Object[] { s12p1, png, sm2pn, p1, s1, sm, sourceMatch, targetMatch });
+			for (SM2PN sm2pn : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(png, SM2PN.class,
+					"target")) {
+				if (sm.equals(sm2pn.getSource())) {
+					for (S2P s12p1 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(s1, S2P.class,
+							"source")) {
+						if (p1.equals(s12p1.getTarget())) {
+							_result.add(new Object[] { s1, sm2pn, png, sm, p1, s12p1, sourceMatch, targetMatch });
 						}
 					}
 				}
@@ -3450,42 +3455,42 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		return _result;
 	}
 
-	public static final Object[] pattern_selftrans2arctransarc_24_5_matchcorrcontext_greenBBBBF(S2P s12p1, SM2PN sm2pn,
+	public static final Object[] pattern_selftrans2arctransarc_24_5_matchcorrcontext_greenBBBBF(SM2PN sm2pn, S2P s12p1,
 			Match sourceMatch, Match targetMatch) {
 		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
 		String ccMatch_ruleName_prime = "selftrans2arctransarc";
 		ccMatch.setSourceMatch(sourceMatch);
 		ccMatch.setTargetMatch(targetMatch);
-		ccMatch.getAllContextElements().add(s12p1);
 		ccMatch.getAllContextElements().add(sm2pn);
+		ccMatch.getAllContextElements().add(s12p1);
 		ccMatch.setRuleName(ccMatch_ruleName_prime);
-		return new Object[] { s12p1, sm2pn, sourceMatch, targetMatch, ccMatch };
+		return new Object[] { sm2pn, s12p1, sourceMatch, targetMatch, ccMatch };
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_24_6_createcorrespondence_blackBBBBBBBBB(
-			petrinet.Transition pt, Arc a1, PNGraph png, Place p1, State s1, SM sm, Arc a2, Transition st,
+			petrinet.Transition pt, State s1, PNGraph png, Arc a1, SM sm, Transition st, Arc a2, Place p1,
 			CCMatch ccMatch) {
 		if (!a1.equals(a2)) {
-			return new Object[] { pt, a1, png, p1, s1, sm, a2, st, ccMatch };
+			return new Object[] { pt, s1, png, a1, sm, st, a2, p1, ccMatch };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_selftrans2arctransarc_24_6_createcorrespondence_greenBBFFFBBB(
-			petrinet.Transition pt, Arc a1, Arc a2, Transition st, CCMatch ccMatch) {
-		T2A st2a1 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
+	public static final Object[] pattern_selftrans2arctransarc_24_6_createcorrespondence_greenBBFFBBFB(
+			petrinet.Transition pt, Arc a1, Transition st, Arc a2, CCMatch ccMatch) {
 		T2T st2pt = Statemachine2petrinetFactory.eINSTANCE.createT2T();
 		T2A st2a2 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
+		T2A st2a1 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
+		st2pt.setSource(st);
+		st2pt.setTarget(pt);
+		ccMatch.getCreateCorr().add(st2pt);
+		st2a2.setSource(st);
+		st2a2.setTarget(a2);
+		ccMatch.getCreateCorr().add(st2a2);
 		st2a1.setTarget(a1);
 		st2a1.setSource(st);
 		ccMatch.getCreateCorr().add(st2a1);
-		st2pt.setTarget(pt);
-		st2pt.setSource(st);
-		ccMatch.getCreateCorr().add(st2pt);
-		st2a2.setTarget(a2);
-		st2a2.setSource(st);
-		ccMatch.getCreateCorr().add(st2a2);
-		return new Object[] { pt, a1, st2a1, st2pt, st2a2, a2, st, ccMatch };
+		return new Object[] { pt, a1, st2pt, st2a2, st, a2, st2a1, ccMatch };
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_24_7_addtoreturnedresult_blackBB(
@@ -3512,8 +3517,8 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	public static final Object[] pattern_selftrans2arctransarc_27_1_matchtggpattern_blackBBB(State s1, SM sm,
 			Transition st) {
 		if (sm.getTransitions().contains(st)) {
-			if (s1.equals(st.getTo())) {
-				if (s1.equals(st.getFrom())) {
+			if (s1.equals(st.getFrom())) {
+				if (s1.equals(st.getTo())) {
 					return new Object[] { s1, sm, st };
 				}
 			}
@@ -3532,16 +3537,16 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_28_1_matchtggpattern_blackBBBBB(petrinet.Transition pt,
-			Arc a1, PNGraph png, Place p1, Arc a2) {
+			PNGraph png, Arc a1, Arc a2, Place p1) {
 		if (!a1.equals(a2)) {
-			if (pt.equals(a1.getTo())) {
+			if (png.getArcs().contains(a2)) {
 				if (png.getTransitions().contains(pt)) {
-					if (p1.equals(a1.getFrom())) {
-						if (png.getArcs().contains(a1)) {
-							if (png.getArcs().contains(a2)) {
-								if (pt.equals(a2.getFrom())) {
+					if (pt.equals(a1.getTo())) {
+						if (p1.equals(a1.getFrom())) {
+							if (pt.equals(a2.getFrom())) {
+								if (png.getArcs().contains(a1)) {
 									if (p1.equals(a2.getTo())) {
-										return new Object[] { pt, a1, png, p1, a2 };
+										return new Object[] { pt, png, a1, a2, p1 };
 									}
 								}
 							}
@@ -3576,22 +3581,6 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, S2P s12p1) {
-		if (ruleResult.getCorrObjects().contains(s12p1)) {
-			return new Object[] { ruleResult, s12p1 };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, Place p1) {
-		if (ruleResult.getTargetObjects().contains(p1)) {
-			return new Object[] { ruleResult, p1 };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_2BB(
 			ModelgeneratorRuleResult ruleResult, State s1) {
 		if (ruleResult.getSourceObjects().contains(s1)) {
 			return new Object[] { ruleResult, s1 };
@@ -3599,18 +3588,34 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		return null;
 	}
 
+	public static final Object[] pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_1BB(
+			ModelgeneratorRuleResult ruleResult, S2P s12p1) {
+		if (ruleResult.getCorrObjects().contains(s12p1)) {
+			return new Object[] { ruleResult, s12p1 };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, Place p1) {
+		if (ruleResult.getTargetObjects().contains(p1)) {
+			return new Object[] { ruleResult, p1 };
+		}
+		return null;
+	}
+
 	public static final Object[] pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_3BB(
-			ModelgeneratorRuleResult ruleResult, PNGraph png) {
-		if (ruleResult.getTargetObjects().contains(png)) {
-			return new Object[] { ruleResult, png };
+			ModelgeneratorRuleResult ruleResult, SM2PN sm2pn) {
+		if (ruleResult.getCorrObjects().contains(sm2pn)) {
+			return new Object[] { ruleResult, sm2pn };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_4BB(
-			ModelgeneratorRuleResult ruleResult, SM2PN sm2pn) {
-		if (ruleResult.getCorrObjects().contains(sm2pn)) {
-			return new Object[] { ruleResult, sm2pn };
+			ModelgeneratorRuleResult ruleResult, PNGraph png) {
+		if (ruleResult.getTargetObjects().contains(png)) {
+			return new Object[] { ruleResult, png };
 		}
 		return null;
 	}
@@ -3632,16 +3637,16 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 					for (EObject tmpS12p1 : s12p1List.getEntryObjects()) {
 						if (tmpS12p1 instanceof S2P) {
 							S2P s12p1 = (S2P) tmpS12p1;
-							Place p1 = s12p1.getTarget();
-							if (p1 != null) {
-								State s1 = s12p1.getSource();
-								if (s1 != null) {
-									if (pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_0BB(ruleResult,
+							State s1 = s12p1.getSource();
+							if (s1 != null) {
+								Place p1 = s12p1.getTarget();
+								if (p1 != null) {
+									if (pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_1BB(ruleResult,
 											s12p1) == null) {
-										if (pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_1BB(
-												ruleResult, p1) == null) {
+										if (pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_0BB(
+												ruleResult, s1) == null) {
 											if (pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_2BB(
-													ruleResult, s1) == null) {
+													ruleResult, p1) == null) {
 												for (EObject tmpSm2pn : sm2pnList.getEntryObjects()) {
 													if (tmpSm2pn instanceof SM2PN) {
 														SM2PN sm2pn = (SM2PN) tmpSm2pn;
@@ -3649,15 +3654,16 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 														if (png != null) {
 															SM sm = sm2pn.getSource();
 															if (sm != null) {
-																if (pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_4BB(
+																if (pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_3BB(
 																		ruleResult, sm2pn) == null) {
-																	if (pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_3BB(
+																	if (pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_4BB(
 																			ruleResult, png) == null) {
 																		if (pattern_selftrans2arctransarc_29_2_isapplicablecore_black_nac_5BB(
 																				ruleResult, sm) == null) {
-																			_result.add(new Object[] { s12p1List, s12p1,
-																					p1, s1, sm2pnList, png, sm2pn, sm,
-																					ruleEntryContainer, ruleResult });
+																			_result.add(new Object[] { s12p1List, s1,
+																					s12p1, p1, sm2pnList, sm2pn, png,
+																					sm, ruleEntryContainer,
+																					ruleResult });
 																		}
 																	}
 																}
@@ -3683,13 +3689,13 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_29_3_solveCSP_bindingFBBBBBBBBB(
-			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, S2P s12p1, PNGraph png, SM2PN sm2pn,
-			Place p1, State s1, SM sm, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, s12p1, png, sm2pn, p1, s1, sm,
+			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, State s1, SM2PN sm2pn, PNGraph png, SM sm,
+			Place p1, S2P s12p1, ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, s1, sm2pn, png, sm, p1, s12p1,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, s12p1, png, sm2pn, p1, s1, sm, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, s1, sm2pn, png, sm, p1, s12p1, ruleResult };
 		}
 		return null;
 	}
@@ -3699,10 +3705,10 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 	}
 
 	public static final Object[] pattern_selftrans2arctransarc_29_3_solveCSP_bindingAndBlackFBBBBBBBBB(
-			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, S2P s12p1, PNGraph png, SM2PN sm2pn,
-			Place p1, State s1, SM sm, ModelgeneratorRuleResult ruleResult) {
+			selftrans2arctransarc _this, IsApplicableMatch isApplicableMatch, State s1, SM2PN sm2pn, PNGraph png, SM sm,
+			Place p1, S2P s12p1, ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_selftrans2arctransarc_29_3_solveCSP_binding = pattern_selftrans2arctransarc_29_3_solveCSP_bindingFBBBBBBBBB(
-				_this, isApplicableMatch, s12p1, png, sm2pn, p1, s1, sm, ruleResult);
+				_this, isApplicableMatch, s1, sm2pn, png, sm, p1, s12p1, ruleResult);
 		if (result_pattern_selftrans2arctransarc_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_selftrans2arctransarc_29_3_solveCSP_binding[0];
 
@@ -3710,7 +3716,7 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 					csp);
 			if (result_pattern_selftrans2arctransarc_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, s12p1, png, sm2pn, p1, s1, sm, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, s1, sm2pn, png, sm, p1, s12p1, ruleResult };
 			}
 		}
 		return null;
@@ -3723,25 +3729,25 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		return _result;
 	}
 
-	public static final Object[] pattern_selftrans2arctransarc_29_5_checknacs_blackBBBBBB(S2P s12p1, PNGraph png,
-			SM2PN sm2pn, Place p1, State s1, SM sm) {
-		return new Object[] { s12p1, png, sm2pn, p1, s1, sm };
+	public static final Object[] pattern_selftrans2arctransarc_29_5_checknacs_blackBBBBBB(State s1, SM2PN sm2pn,
+			PNGraph png, SM sm, Place p1, S2P s12p1) {
+		return new Object[] { s1, sm2pn, png, sm, p1, s12p1 };
 	}
 
-	public static final Object[] pattern_selftrans2arctransarc_29_6_perform_blackBBBBBBB(S2P s12p1, PNGraph png,
-			SM2PN sm2pn, Place p1, State s1, SM sm, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { s12p1, png, sm2pn, p1, s1, sm, ruleResult };
+	public static final Object[] pattern_selftrans2arctransarc_29_6_perform_blackBBBBBBB(State s1, SM2PN sm2pn,
+			PNGraph png, SM sm, Place p1, S2P s12p1, ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { s1, sm2pn, png, sm, p1, s12p1, ruleResult };
 	}
 
-	public static final Object[] pattern_selftrans2arctransarc_29_6_perform_greenFFFBBFBBFFFB(PNGraph png, Place p1,
-			State s1, SM sm, ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_selftrans2arctransarc_29_6_perform_greenFBBFFFBFFBFB(State s1, PNGraph png,
+			SM sm, Place p1, ModelgeneratorRuleResult ruleResult) {
 		petrinet.Transition pt = PetrinetFactory.eINSTANCE.createTransition();
 		Arc a1 = PetrinetFactory.eINSTANCE.createArc();
-		T2A st2a1 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
 		T2T st2pt = Statemachine2petrinetFactory.eINSTANCE.createT2T();
 		T2A st2a2 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
-		Arc a2 = PetrinetFactory.eINSTANCE.createArc();
 		Transition st = StatemachineFactory.eINSTANCE.createTransition();
+		Arc a2 = PetrinetFactory.eINSTANCE.createArc();
+		T2A st2a1 = Statemachine2petrinetFactory.eINSTANCE.createT2A();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
 		png.getTransitions().add(pt);
@@ -3750,27 +3756,27 @@ public class selftrans2arctransarcImpl extends AbstractRuleImpl implements selft
 		a1.setFrom(p1);
 		png.getArcs().add(a1);
 		ruleResult.getTargetObjects().add(a1);
-		st2a1.setTarget(a1);
-		ruleResult.getCorrObjects().add(st2a1);
 		st2pt.setTarget(pt);
 		ruleResult.getCorrObjects().add(st2pt);
 		ruleResult.getCorrObjects().add(st2a2);
-		png.getArcs().add(a2);
-		st2a2.setTarget(a2);
-		a2.setFrom(pt);
-		a2.setTo(p1);
-		ruleResult.getTargetObjects().add(a2);
 		sm.getTransitions().add(st);
-		st.setTo(s1);
-		st.setFrom(s1);
 		st2pt.setSource(st);
 		st2a2.setSource(st);
-		st2a1.setSource(st);
+		st.setFrom(s1);
+		st.setTo(s1);
 		ruleResult.getSourceObjects().add(st);
+		png.getArcs().add(a2);
+		a2.setFrom(pt);
+		st2a2.setTarget(a2);
+		a2.setTo(p1);
+		ruleResult.getTargetObjects().add(a2);
+		st2a1.setTarget(a1);
+		st2a1.setSource(st);
+		ruleResult.getCorrObjects().add(st2a1);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { pt, a1, st2a1, png, p1, st2pt, s1, sm, st2a2, a2, st, ruleResult };
+		return new Object[] { pt, s1, png, a1, st2pt, st2a2, sm, st, a2, p1, st2a1, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_selftrans2arctransarc_29_7_expressionFB(

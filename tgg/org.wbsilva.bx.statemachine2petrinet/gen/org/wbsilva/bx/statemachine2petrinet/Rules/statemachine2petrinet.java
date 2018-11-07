@@ -105,7 +105,7 @@ public interface statemachine2petrinet extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject sm, EObject png, EObject sm2pn);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject png, EObject sm2pn, EObject sm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface statemachine2petrinet extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject sm, EObject png, EObject sm2pn);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject png, EObject sm2pn, EObject sm);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,7 +241,7 @@ public interface statemachine2petrinet extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(SM sm, PNGraph png, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(PNGraph png, SM sm, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->

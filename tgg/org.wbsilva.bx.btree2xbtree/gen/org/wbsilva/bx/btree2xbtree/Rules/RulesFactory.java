@@ -22,6 +22,15 @@ public interface RulesFactory extends EFactory {
 	RulesFactory eINSTANCE = org.wbsilva.bx.btree2xbtree.Rules.impl.RulesFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>left2southwest</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>left2southwest</em>'.
+	 * @generated
+	 */
+	left2southwest createleft2southwest();
+
+	/**
 	 * Returns a new object of class '<em>node2node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,15 +47,6 @@ public interface RulesFactory extends EFactory {
 	 * @generated
 	 */
 	rightleft2eastwest createrightleft2eastwest();
-
-	/**
-	 * Returns a new object of class '<em>left2southwest</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>left2southwest</em>'.
-	 * @generated
-	 */
-	left2southwest createleft2southwest();
 
 	/**
 	 * Returns a new object of class '<em>right2southeast</em>'.

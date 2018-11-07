@@ -94,8 +94,8 @@ public interface decassdec2branchcmdbranch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, S2B d2c, Decision d, Branch c, Decision b,
-			Assignment a);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, S2B d2c, Decision d, Decision b, Assignment a,
+			Branch c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,8 +111,8 @@ public interface decassdec2branchcmdbranch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject y, EObject d2c, EObject d, EObject c, EObject a2x,
-			EObject x, EObject b, EObject a, EObject b2y);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject d2c, EObject a2x, EObject d, EObject y, EObject b,
+			EObject a, EObject x, EObject b2y, EObject c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,7 +128,7 @@ public interface decassdec2branchcmdbranch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Branch y, Branch c, Command x);
+	boolean isAppropriate_BWD(Match match, Branch y, Command x, Branch c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,7 +152,7 @@ public interface decassdec2branchcmdbranch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Branch y, Branch c, Command x);
+	void registerObjectsToMatch_BWD(Match match, Branch y, Command x, Branch c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,7 +160,7 @@ public interface decassdec2branchcmdbranch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Branch y, Branch c, Command x);
+	CSP isAppropriate_solveCsp_BWD(Match match, Branch y, Command x, Branch c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,8 +176,8 @@ public interface decassdec2branchcmdbranch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch y, S2B d2c, Decision d, Branch c,
-			Command x);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2B d2c, Decision d, Branch y, Command x,
+			Branch c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,8 +193,8 @@ public interface decassdec2branchcmdbranch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject y, EObject d2c, EObject d, EObject c, EObject a2x,
-			EObject x, EObject b, EObject a, EObject b2y);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject d2c, EObject a2x, EObject d, EObject y, EObject b,
+			EObject a, EObject x, EObject b2y, EObject c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +210,7 @@ public interface decassdec2branchcmdbranch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_295(EMoflonEdge _edge_positive);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_86(EMoflonEdge _edge_positive);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +218,7 @@ public interface decassdec2branchcmdbranch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_303(EMoflonEdge _edge_negative);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_92(EMoflonEdge _edge_positive);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,7 +250,7 @@ public interface decassdec2branchcmdbranch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Branch y, Decision d, Branch c, Command x, Decision b, Assignment a, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(Decision d, Branch y, Decision b, Assignment a, Command x, Branch c, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -275,7 +275,7 @@ public interface decassdec2branchcmdbranch extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Branch y, Branch c, Command x);
+	boolean checkDEC_BWD(Branch y, Command x, Branch c);
 
 	/**
 	 * <!-- begin-user-doc -->

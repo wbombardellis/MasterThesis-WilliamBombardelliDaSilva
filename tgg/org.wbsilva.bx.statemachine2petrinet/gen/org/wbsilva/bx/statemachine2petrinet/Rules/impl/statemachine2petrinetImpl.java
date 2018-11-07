@@ -152,35 +152,35 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 		SM sm = (SM) result1_bindingAndBlack[0];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = statemachine2petrinetImpl
-				.pattern_statemachine2petrinet_1_1_performtransformation_greenBFF(sm);
-		PNGraph png = (PNGraph) result1_green[1];
-		SM2PN sm2pn = (SM2PN) result1_green[2];
+				.pattern_statemachine2petrinet_1_1_performtransformation_greenFFB(sm);
+		PNGraph png = (PNGraph) result1_green[0];
+		SM2PN sm2pn = (SM2PN) result1_green[1];
 
 		Object[] result2_black = statemachine2petrinetImpl
-				.pattern_statemachine2petrinet_1_2_collecttranslatedelements_blackBBB(sm, png, sm2pn);
+				.pattern_statemachine2petrinet_1_2_collecttranslatedelements_blackBBB(png, sm2pn, sm);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sm] = " + sm + ", " + "[png] = "
-					+ png + ", " + "[sm2pn] = " + sm2pn + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[png] = " + png + ", "
+					+ "[sm2pn] = " + sm2pn + ", " + "[sm] = " + sm + ".");
 		}
 		Object[] result2_green = statemachine2petrinetImpl
-				.pattern_statemachine2petrinet_1_2_collecttranslatedelements_greenFBBB(sm, png, sm2pn);
+				.pattern_statemachine2petrinet_1_2_collecttranslatedelements_greenFBBB(png, sm2pn, sm);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = statemachine2petrinetImpl
-				.pattern_statemachine2petrinet_1_3_bookkeepingforedges_blackBBBB(ruleresult, sm, png, sm2pn);
+				.pattern_statemachine2petrinet_1_3_bookkeepingforedges_blackBBBB(ruleresult, png, sm2pn, sm);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[sm] = " + sm + ", " + "[png] = " + png + ", " + "[sm2pn] = " + sm2pn + ".");
+					+ ", " + "[png] = " + png + ", " + "[sm2pn] = " + sm2pn + ", " + "[sm] = " + sm + ".");
 		}
-		statemachine2petrinetImpl.pattern_statemachine2petrinet_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, sm, png,
-				sm2pn);
+		statemachine2petrinetImpl.pattern_statemachine2petrinet_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, png,
+				sm2pn, sm);
 		//nothing EMoflonEdge sm2pn__png____target = (EMoflonEdge) result3_green[4];
 		//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
 		statemachine2petrinetImpl.pattern_statemachine2petrinet_1_5_registerobjects_expressionBBBBB(this, ruleresult,
-				sm, png, sm2pn);
+				png, sm2pn, sm);
 		return statemachine2petrinetImpl.pattern_statemachine2petrinet_1_6_expressionFB(ruleresult);
 	}
 
@@ -325,10 +325,10 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject sm, EObject png, EObject sm2pn) {
-		ruleresult.registerObject("sm", sm);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject png, EObject sm2pn, EObject sm) {
 		ruleresult.registerObject("png", png);
 		ruleresult.registerObject("sm2pn", sm2pn);
+		ruleresult.registerObject("sm", sm);
 
 	}
 
@@ -406,35 +406,35 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 		PNGraph png = (PNGraph) result1_bindingAndBlack[0];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = statemachine2petrinetImpl
-				.pattern_statemachine2petrinet_11_1_performtransformation_greenFBF(png);
-		SM sm = (SM) result1_green[0];
-		SM2PN sm2pn = (SM2PN) result1_green[2];
+				.pattern_statemachine2petrinet_11_1_performtransformation_greenBFF(png);
+		SM2PN sm2pn = (SM2PN) result1_green[1];
+		SM sm = (SM) result1_green[2];
 
 		Object[] result2_black = statemachine2petrinetImpl
-				.pattern_statemachine2petrinet_11_2_collecttranslatedelements_blackBBB(sm, png, sm2pn);
+				.pattern_statemachine2petrinet_11_2_collecttranslatedelements_blackBBB(png, sm2pn, sm);
 		if (result2_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sm] = " + sm + ", " + "[png] = "
-					+ png + ", " + "[sm2pn] = " + sm2pn + ".");
+			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[png] = " + png + ", "
+					+ "[sm2pn] = " + sm2pn + ", " + "[sm] = " + sm + ".");
 		}
 		Object[] result2_green = statemachine2petrinetImpl
-				.pattern_statemachine2petrinet_11_2_collecttranslatedelements_greenFBBB(sm, png, sm2pn);
+				.pattern_statemachine2petrinet_11_2_collecttranslatedelements_greenFBBB(png, sm2pn, sm);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = statemachine2petrinetImpl
-				.pattern_statemachine2petrinet_11_3_bookkeepingforedges_blackBBBB(ruleresult, sm, png, sm2pn);
+				.pattern_statemachine2petrinet_11_3_bookkeepingforedges_blackBBBB(ruleresult, png, sm2pn, sm);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[sm] = " + sm + ", " + "[png] = " + png + ", " + "[sm2pn] = " + sm2pn + ".");
+					+ ", " + "[png] = " + png + ", " + "[sm2pn] = " + sm2pn + ", " + "[sm] = " + sm + ".");
 		}
-		statemachine2petrinetImpl.pattern_statemachine2petrinet_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, sm,
-				png, sm2pn);
+		statemachine2petrinetImpl.pattern_statemachine2petrinet_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, png,
+				sm2pn, sm);
 		//nothing EMoflonEdge sm2pn__png____target = (EMoflonEdge) result3_green[4];
 		//nothing EMoflonEdge sm2pn__sm____source = (EMoflonEdge) result3_green[5];
 
 		// 
 		// 
 		statemachine2petrinetImpl.pattern_statemachine2petrinet_11_5_registerobjects_expressionBBBBB(this, ruleresult,
-				sm, png, sm2pn);
+				png, sm2pn, sm);
 		return statemachine2petrinetImpl.pattern_statemachine2petrinet_11_6_expressionFB(ruleresult);
 	}
 
@@ -579,10 +579,10 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject sm, EObject png, EObject sm2pn) {
-		ruleresult.registerObject("sm", sm);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject png, EObject sm2pn, EObject sm) {
 		ruleresult.registerObject("png", png);
 		ruleresult.registerObject("sm2pn", sm2pn);
+		ruleresult.registerObject("sm", sm);
 
 	}
 
@@ -788,15 +788,15 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		SM sm = (SM) result2_bindingAndBlack[0];
-		PNGraph png = (PNGraph) result2_bindingAndBlack[1];
+		PNGraph png = (PNGraph) result2_bindingAndBlack[0];
+		SM sm = (SM) result2_bindingAndBlack[1];
 
 		Object[] result3_bindingAndBlack = statemachine2petrinetImpl
-				.pattern_statemachine2petrinet_24_3_solvecsp_bindingAndBlackFBBBBB(this, sm, png, sourceMatch,
+				.pattern_statemachine2petrinet_24_3_solvecsp_bindingAndBlackFBBBBB(this, png, sm, sourceMatch,
 						targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[sm] = " + sm + ", " + "[png] = " + png + ", " + "[sourceMatch] = " + sourceMatch + ", "
+					+ "[png] = " + png + ", " + "[sm] = " + sm + ", " + "[sourceMatch] = " + sourceMatch + ", "
 					+ "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -810,14 +810,14 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 				CCMatch ccMatch = (CCMatch) result5_green[2];
 
 				Object[] result6_black = statemachine2petrinetImpl
-						.pattern_statemachine2petrinet_24_6_createcorrespondence_blackBBB(sm, png, ccMatch);
+						.pattern_statemachine2petrinet_24_6_createcorrespondence_blackBBB(png, sm, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sm] = " + sm + ", "
-							+ "[png] = " + png + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[png] = " + png + ", "
+							+ "[sm] = " + sm + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				statemachine2petrinetImpl.pattern_statemachine2petrinet_24_6_createcorrespondence_greenBBFB(sm, png,
+				statemachine2petrinetImpl.pattern_statemachine2petrinet_24_6_createcorrespondence_greenBFBB(png, sm,
 						ccMatch);
-				//nothing SM2PN sm2pn = (SM2PN) result6_green[2];
+				//nothing SM2PN sm2pn = (SM2PN) result6_green[1];
 
 				Object[] result7_black = statemachine2petrinetImpl
 						.pattern_statemachine2petrinet_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -840,7 +840,7 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(SM sm, PNGraph png, Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(PNGraph png, SM sm, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -935,9 +935,9 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 							"Pattern matching failed." + " Variables: " + "[ruleResult] = " + ruleResult + ".");
 				}
 				statemachine2petrinetImpl.pattern_statemachine2petrinet_29_6_perform_greenFFFB(ruleResult);
-				//nothing SM sm = (SM) result6_green[0];
-				//nothing PNGraph png = (PNGraph) result6_green[1];
-				//nothing SM2PN sm2pn = (SM2PN) result6_green[2];
+				//nothing PNGraph png = (PNGraph) result6_green[0];
+				//nothing SM2PN sm2pn = (SM2PN) result6_green[1];
+				//nothing SM sm = (SM) result6_green[2];
 
 			} else {
 			}
@@ -1043,8 +1043,8 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.STATEMACHINE2PETRINET___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.STATEMACHINE2PETRINET___IS_APPLICABLE_SOLVE_CSP_CC__SM_PNGRAPH_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((SM) arguments.get(0), (PNGraph) arguments.get(1), (Match) arguments.get(2),
+		case RulesPackage.STATEMACHINE2PETRINET___IS_APPLICABLE_SOLVE_CSP_CC__PNGRAPH_SM_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((PNGraph) arguments.get(0), (SM) arguments.get(1), (Match) arguments.get(2),
 					(Match) arguments.get(3));
 		case RulesPackage.STATEMACHINE2PETRINET___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
@@ -1177,34 +1177,34 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 		return null;
 	}
 
-	public static final Object[] pattern_statemachine2petrinet_1_1_performtransformation_greenBFF(SM sm) {
+	public static final Object[] pattern_statemachine2petrinet_1_1_performtransformation_greenFFB(SM sm) {
 		PNGraph png = PetrinetFactory.eINSTANCE.createPNGraph();
 		SM2PN sm2pn = Statemachine2petrinetFactory.eINSTANCE.createSM2PN();
 		sm2pn.setTarget(png);
 		sm2pn.setSource(sm);
-		return new Object[] { sm, png, sm2pn };
+		return new Object[] { png, sm2pn, sm };
 	}
 
-	public static final Object[] pattern_statemachine2petrinet_1_2_collecttranslatedelements_blackBBB(SM sm,
-			PNGraph png, SM2PN sm2pn) {
-		return new Object[] { sm, png, sm2pn };
+	public static final Object[] pattern_statemachine2petrinet_1_2_collecttranslatedelements_blackBBB(PNGraph png,
+			SM2PN sm2pn, SM sm) {
+		return new Object[] { png, sm2pn, sm };
 	}
 
-	public static final Object[] pattern_statemachine2petrinet_1_2_collecttranslatedelements_greenFBBB(SM sm,
-			PNGraph png, SM2PN sm2pn) {
+	public static final Object[] pattern_statemachine2petrinet_1_2_collecttranslatedelements_greenFBBB(PNGraph png,
+			SM2PN sm2pn, SM sm) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(sm);
 		ruleresult.getCreatedElements().add(png);
 		ruleresult.getCreatedLinkElements().add(sm2pn);
-		return new Object[] { ruleresult, sm, png, sm2pn };
+		ruleresult.getTranslatedElements().add(sm);
+		return new Object[] { ruleresult, png, sm2pn, sm };
 	}
 
 	public static final Object[] pattern_statemachine2petrinet_1_3_bookkeepingforedges_blackBBBB(
-			PerformRuleResult ruleresult, EObject sm, EObject png, EObject sm2pn) {
-		if (!sm.equals(sm2pn)) {
+			PerformRuleResult ruleresult, EObject png, EObject sm2pn, EObject sm) {
+		if (!png.equals(sm2pn)) {
 			if (!png.equals(sm)) {
-				if (!png.equals(sm2pn)) {
-					return new Object[] { ruleresult, sm, png, sm2pn };
+				if (!sm.equals(sm2pn)) {
+					return new Object[] { ruleresult, png, sm2pn, sm };
 				}
 			}
 		}
@@ -1212,7 +1212,7 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 	}
 
 	public static final Object[] pattern_statemachine2petrinet_1_3_bookkeepingforedges_greenBBBBFF(
-			PerformRuleResult ruleresult, EObject sm, EObject png, EObject sm2pn) {
+			PerformRuleResult ruleresult, EObject png, EObject sm2pn, EObject sm) {
 		EMoflonEdge sm2pn__png____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sm2pn__sm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "statemachine2petrinet";
@@ -1227,12 +1227,12 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		sm2pn__png____target.setName(sm2pn__png____target_name_prime);
 		sm2pn__sm____source.setName(sm2pn__sm____source_name_prime);
-		return new Object[] { ruleresult, sm, png, sm2pn, sm2pn__png____target, sm2pn__sm____source };
+		return new Object[] { ruleresult, png, sm2pn, sm, sm2pn__png____target, sm2pn__sm____source };
 	}
 
 	public static final void pattern_statemachine2petrinet_1_5_registerobjects_expressionBBBBB(
-			statemachine2petrinet _this, PerformRuleResult ruleresult, EObject sm, EObject png, EObject sm2pn) {
-		_this.registerObjects_FWD(ruleresult, sm, png, sm2pn);
+			statemachine2petrinet _this, PerformRuleResult ruleresult, EObject png, EObject sm2pn, EObject sm) {
+		_this.registerObjects_FWD(ruleresult, png, sm2pn, sm);
 
 	}
 
@@ -1494,34 +1494,34 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 		return null;
 	}
 
-	public static final Object[] pattern_statemachine2petrinet_11_1_performtransformation_greenFBF(PNGraph png) {
-		SM sm = StatemachineFactory.eINSTANCE.createSM();
+	public static final Object[] pattern_statemachine2petrinet_11_1_performtransformation_greenBFF(PNGraph png) {
 		SM2PN sm2pn = Statemachine2petrinetFactory.eINSTANCE.createSM2PN();
+		SM sm = StatemachineFactory.eINSTANCE.createSM();
 		sm2pn.setTarget(png);
 		sm2pn.setSource(sm);
-		return new Object[] { sm, png, sm2pn };
+		return new Object[] { png, sm2pn, sm };
 	}
 
-	public static final Object[] pattern_statemachine2petrinet_11_2_collecttranslatedelements_blackBBB(SM sm,
-			PNGraph png, SM2PN sm2pn) {
-		return new Object[] { sm, png, sm2pn };
+	public static final Object[] pattern_statemachine2petrinet_11_2_collecttranslatedelements_blackBBB(PNGraph png,
+			SM2PN sm2pn, SM sm) {
+		return new Object[] { png, sm2pn, sm };
 	}
 
-	public static final Object[] pattern_statemachine2petrinet_11_2_collecttranslatedelements_greenFBBB(SM sm,
-			PNGraph png, SM2PN sm2pn) {
+	public static final Object[] pattern_statemachine2petrinet_11_2_collecttranslatedelements_greenFBBB(PNGraph png,
+			SM2PN sm2pn, SM sm) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(sm);
 		ruleresult.getTranslatedElements().add(png);
 		ruleresult.getCreatedLinkElements().add(sm2pn);
-		return new Object[] { ruleresult, sm, png, sm2pn };
+		ruleresult.getCreatedElements().add(sm);
+		return new Object[] { ruleresult, png, sm2pn, sm };
 	}
 
 	public static final Object[] pattern_statemachine2petrinet_11_3_bookkeepingforedges_blackBBBB(
-			PerformRuleResult ruleresult, EObject sm, EObject png, EObject sm2pn) {
-		if (!sm.equals(sm2pn)) {
+			PerformRuleResult ruleresult, EObject png, EObject sm2pn, EObject sm) {
+		if (!png.equals(sm2pn)) {
 			if (!png.equals(sm)) {
-				if (!png.equals(sm2pn)) {
-					return new Object[] { ruleresult, sm, png, sm2pn };
+				if (!sm.equals(sm2pn)) {
+					return new Object[] { ruleresult, png, sm2pn, sm };
 				}
 			}
 		}
@@ -1529,7 +1529,7 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 	}
 
 	public static final Object[] pattern_statemachine2petrinet_11_3_bookkeepingforedges_greenBBBBFF(
-			PerformRuleResult ruleresult, EObject sm, EObject png, EObject sm2pn) {
+			PerformRuleResult ruleresult, EObject png, EObject sm2pn, EObject sm) {
 		EMoflonEdge sm2pn__png____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge sm2pn__sm____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "statemachine2petrinet";
@@ -1544,12 +1544,12 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		sm2pn__png____target.setName(sm2pn__png____target_name_prime);
 		sm2pn__sm____source.setName(sm2pn__sm____source_name_prime);
-		return new Object[] { ruleresult, sm, png, sm2pn, sm2pn__png____target, sm2pn__sm____source };
+		return new Object[] { ruleresult, png, sm2pn, sm, sm2pn__png____target, sm2pn__sm____source };
 	}
 
 	public static final void pattern_statemachine2petrinet_11_5_registerobjects_expressionBBBBB(
-			statemachine2petrinet _this, PerformRuleResult ruleresult, EObject sm, EObject png, EObject sm2pn) {
-		_this.registerObjects_BWD(ruleresult, sm, png, sm2pn);
+			statemachine2petrinet _this, PerformRuleResult ruleresult, EObject png, EObject sm2pn, EObject sm) {
+		_this.registerObjects_BWD(ruleresult, png, sm2pn, sm);
 
 	}
 
@@ -1915,26 +1915,26 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_statemachine2petrinet_24_2_matchsrctrgcontext_bindingFFBB(Match sourceMatch,
-			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("sm");
-		EObject _localVariable_1 = targetMatch.getObject("png");
-		EObject tmpSm = _localVariable_0;
-		EObject tmpPng = _localVariable_1;
-		if (tmpSm instanceof SM) {
-			SM sm = (SM) tmpSm;
-			if (tmpPng instanceof PNGraph) {
-				PNGraph png = (PNGraph) tmpPng;
-				return new Object[] { sm, png, sourceMatch, targetMatch };
+	public static final Object[] pattern_statemachine2petrinet_24_2_matchsrctrgcontext_bindingFFBB(Match targetMatch,
+			Match sourceMatch) {
+		EObject _localVariable_0 = targetMatch.getObject("png");
+		EObject _localVariable_1 = sourceMatch.getObject("sm");
+		EObject tmpPng = _localVariable_0;
+		EObject tmpSm = _localVariable_1;
+		if (tmpPng instanceof PNGraph) {
+			PNGraph png = (PNGraph) tmpPng;
+			if (tmpSm instanceof SM) {
+				SM sm = (SM) tmpSm;
+				return new Object[] { png, sm, targetMatch, sourceMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_statemachine2petrinet_24_2_matchsrctrgcontext_blackBBBB(SM sm, PNGraph png,
+	public static final Object[] pattern_statemachine2petrinet_24_2_matchsrctrgcontext_blackBBBB(PNGraph png, SM sm,
 			Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { sm, png, sourceMatch, targetMatch };
+			return new Object[] { png, sm, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1942,27 +1942,27 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 	public static final Object[] pattern_statemachine2petrinet_24_2_matchsrctrgcontext_bindingAndBlackFFBB(
 			Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_statemachine2petrinet_24_2_matchsrctrgcontext_binding = pattern_statemachine2petrinet_24_2_matchsrctrgcontext_bindingFFBB(
-				sourceMatch, targetMatch);
+				targetMatch, sourceMatch);
 		if (result_pattern_statemachine2petrinet_24_2_matchsrctrgcontext_binding != null) {
-			SM sm = (SM) result_pattern_statemachine2petrinet_24_2_matchsrctrgcontext_binding[0];
-			PNGraph png = (PNGraph) result_pattern_statemachine2petrinet_24_2_matchsrctrgcontext_binding[1];
+			PNGraph png = (PNGraph) result_pattern_statemachine2petrinet_24_2_matchsrctrgcontext_binding[0];
+			SM sm = (SM) result_pattern_statemachine2petrinet_24_2_matchsrctrgcontext_binding[1];
 
 			Object[] result_pattern_statemachine2petrinet_24_2_matchsrctrgcontext_black = pattern_statemachine2petrinet_24_2_matchsrctrgcontext_blackBBBB(
-					sm, png, sourceMatch, targetMatch);
+					png, sm, sourceMatch, targetMatch);
 			if (result_pattern_statemachine2petrinet_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { sm, png, sourceMatch, targetMatch };
+				return new Object[] { png, sm, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_statemachine2petrinet_24_3_solvecsp_bindingFBBBBB(statemachine2petrinet _this,
-			SM sm, PNGraph png, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(sm, png, sourceMatch, targetMatch);
+			PNGraph png, SM sm, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(png, sm, sourceMatch, targetMatch);
 		CSP csp = _localVariable_2;
 		if (csp != null) {
-			return new Object[] { csp, _this, sm, png, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, png, sm, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -1972,9 +1972,9 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 	}
 
 	public static final Object[] pattern_statemachine2petrinet_24_3_solvecsp_bindingAndBlackFBBBBB(
-			statemachine2petrinet _this, SM sm, PNGraph png, Match sourceMatch, Match targetMatch) {
+			statemachine2petrinet _this, PNGraph png, SM sm, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_statemachine2petrinet_24_3_solvecsp_binding = pattern_statemachine2petrinet_24_3_solvecsp_bindingFBBBBB(
-				_this, sm, png, sourceMatch, targetMatch);
+				_this, png, sm, sourceMatch, targetMatch);
 		if (result_pattern_statemachine2petrinet_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_statemachine2petrinet_24_3_solvecsp_binding[0];
 
@@ -1982,7 +1982,7 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 					csp);
 			if (result_pattern_statemachine2petrinet_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, sm, png, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, png, sm, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2013,18 +2013,18 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 		return new Object[] { sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_statemachine2petrinet_24_6_createcorrespondence_blackBBB(SM sm, PNGraph png,
+	public static final Object[] pattern_statemachine2petrinet_24_6_createcorrespondence_blackBBB(PNGraph png, SM sm,
 			CCMatch ccMatch) {
-		return new Object[] { sm, png, ccMatch };
+		return new Object[] { png, sm, ccMatch };
 	}
 
-	public static final Object[] pattern_statemachine2petrinet_24_6_createcorrespondence_greenBBFB(SM sm, PNGraph png,
+	public static final Object[] pattern_statemachine2petrinet_24_6_createcorrespondence_greenBFBB(PNGraph png, SM sm,
 			CCMatch ccMatch) {
 		SM2PN sm2pn = Statemachine2petrinetFactory.eINSTANCE.createSM2PN();
 		sm2pn.setTarget(png);
 		sm2pn.setSource(sm);
 		ccMatch.getCreateCorr().add(sm2pn);
-		return new Object[] { sm, png, sm2pn, ccMatch };
+		return new Object[] { png, sm2pn, sm, ccMatch };
 	}
 
 	public static final Object[] pattern_statemachine2petrinet_24_7_addtoreturnedresult_blackBB(
@@ -2138,20 +2138,20 @@ public class statemachine2petrinetImpl extends AbstractRuleImpl implements state
 
 	public static final Object[] pattern_statemachine2petrinet_29_6_perform_greenFFFB(
 			ModelgeneratorRuleResult ruleResult) {
-		SM sm = StatemachineFactory.eINSTANCE.createSM();
 		PNGraph png = PetrinetFactory.eINSTANCE.createPNGraph();
 		SM2PN sm2pn = Statemachine2petrinetFactory.eINSTANCE.createSM2PN();
+		SM sm = StatemachineFactory.eINSTANCE.createSM();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getSourceObjects().add(sm);
 		ruleResult.getTargetObjects().add(png);
 		sm2pn.setTarget(png);
-		sm2pn.setSource(sm);
 		ruleResult.getCorrObjects().add(sm2pn);
+		sm2pn.setSource(sm);
+		ruleResult.getSourceObjects().add(sm);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { sm, png, sm2pn, ruleResult };
+		return new Object[] { png, sm2pn, sm, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_statemachine2petrinet_29_7_expressionFB(

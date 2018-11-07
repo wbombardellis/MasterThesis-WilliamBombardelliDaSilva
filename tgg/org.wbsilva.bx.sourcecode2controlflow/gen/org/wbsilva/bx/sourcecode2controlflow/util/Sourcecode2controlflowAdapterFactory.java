@@ -74,13 +74,13 @@ public class Sourcecode2controlflowAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseS2N(S2N object) {
-			return createS2NAdapter();
+		public Adapter caseP2G(P2G object) {
+			return createP2GAdapter();
 		}
 
 		@Override
-		public Adapter caseP2G(P2G object) {
-			return createP2GAdapter();
+		public Adapter caseS2N(S2N object) {
+			return createS2NAdapter();
 		}
 
 		@Override
@@ -122,20 +122,6 @@ public class Sourcecode2controlflowAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.sourcecode2controlflow.S2N <em>S2N</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.sourcecode2controlflow.S2N
-	 * @generated
-	 */
-	public Adapter createS2NAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.sourcecode2controlflow.P2G <em>P2G</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -146,6 +132,20 @@ public class Sourcecode2controlflowAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createP2GAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.sourcecode2controlflow.S2N <em>S2N</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.sourcecode2controlflow.S2N
+	 * @generated
+	 */
+	public Adapter createS2NAdapter() {
 		return null;
 	}
 

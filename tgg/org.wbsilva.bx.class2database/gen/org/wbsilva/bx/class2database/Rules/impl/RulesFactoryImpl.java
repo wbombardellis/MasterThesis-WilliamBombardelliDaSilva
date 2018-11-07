@@ -55,21 +55,51 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case RulesPackage.CD2DB:
+			return createcd2db();
+		case RulesPackage.CLASS2TABLE:
+			return createclass2table();
+		case RulesPackage.SUPER2TABLE:
+			return createsuper2table();
 		case RulesPackage.SELFASSOC2COLUMN:
 			return createselfassoc2column();
 		case RulesPackage.ATTRIBUTE2COLUMN:
 			return createattribute2column();
 		case RulesPackage.ASSOCIATION2COLUMN:
 			return createassociation2column();
-		case RulesPackage.CD2DB:
-			return createcd2db();
-		case RulesPackage.SUPER2TABLE:
-			return createsuper2table();
-		case RulesPackage.CLASS2TABLE:
-			return createclass2table();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public cd2db createcd2db() {
+		cd2dbImpl cd2db = new cd2dbImpl();
+		return cd2db;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public class2table createclass2table() {
+		class2tableImpl class2table = new class2tableImpl();
+		return class2table;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public super2table createsuper2table() {
+		super2tableImpl super2table = new super2tableImpl();
+		return super2table;
 	}
 
 	/**
@@ -100,36 +130,6 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	public association2column createassociation2column() {
 		association2columnImpl association2column = new association2columnImpl();
 		return association2column;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public cd2db createcd2db() {
-		cd2dbImpl cd2db = new cd2dbImpl();
-		return cd2db;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public super2table createsuper2table() {
-		super2tableImpl super2table = new super2tableImpl();
-		return super2table;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public class2table createclass2table() {
-		class2tableImpl class2table = new class2tableImpl();
-		return class2table;
 	}
 
 	/**

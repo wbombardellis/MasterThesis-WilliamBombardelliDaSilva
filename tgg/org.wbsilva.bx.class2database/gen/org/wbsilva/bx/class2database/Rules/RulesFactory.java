@@ -22,6 +22,33 @@ public interface RulesFactory extends EFactory {
 	RulesFactory eINSTANCE = org.wbsilva.bx.class2database.Rules.impl.RulesFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>cd2db</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>cd2db</em>'.
+	 * @generated
+	 */
+	cd2db createcd2db();
+
+	/**
+	 * Returns a new object of class '<em>class2table</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>class2table</em>'.
+	 * @generated
+	 */
+	class2table createclass2table();
+
+	/**
+	 * Returns a new object of class '<em>super2table</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>super2table</em>'.
+	 * @generated
+	 */
+	super2table createsuper2table();
+
+	/**
 	 * Returns a new object of class '<em>selfassoc2column</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,33 +74,6 @@ public interface RulesFactory extends EFactory {
 	 * @generated
 	 */
 	association2column createassociation2column();
-
-	/**
-	 * Returns a new object of class '<em>cd2db</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>cd2db</em>'.
-	 * @generated
-	 */
-	cd2db createcd2db();
-
-	/**
-	 * Returns a new object of class '<em>super2table</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>super2table</em>'.
-	 * @generated
-	 */
-	super2table createsuper2table();
-
-	/**
-	 * Returns a new object of class '<em>class2table</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>class2table</em>'.
-	 * @generated
-	 */
-	class2table createclass2table();
 
 	/**
 	 * Returns the package supported by this factory.

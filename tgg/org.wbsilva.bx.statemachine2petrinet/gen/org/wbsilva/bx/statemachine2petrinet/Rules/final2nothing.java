@@ -95,8 +95,8 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, PNGraph png, S2P s2p, Place p,
-			SM sm, State s);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, PNGraph png, S2P s2p, SM2PN sm2pn, SM sm,
+			State s, Place p);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject sm2pn, EObject png, EObject s2p, EObject p,
-			EObject sm, EObject s);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject png, EObject s2p, EObject sm2pn, EObject sm,
+			EObject s, EObject p);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,7 +193,7 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_113(EMoflonEdge _edge_final);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_119(EMoflonEdge _edge_final);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,7 +225,7 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(PNGraph png, Place p, SM sm, State s, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(PNGraph png, SM sm, State s, Place p, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,7 +257,7 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, SM2PN sm2pnParameter);
+	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer, S2P s2pParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -265,8 +265,8 @@ public interface final2nothing extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, SM2PN sm2pn, PNGraph png, S2P s2p, Place p,
-			SM sm, State s, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, PNGraph png, S2P s2p, SM2PN sm2pn, SM sm,
+			State s, Place p, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

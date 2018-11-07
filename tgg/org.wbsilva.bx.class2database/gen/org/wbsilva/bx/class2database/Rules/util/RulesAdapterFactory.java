@@ -69,6 +69,21 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected RulesSwitch<Adapter> modelSwitch = new RulesSwitch<Adapter>() {
 		@Override
+		public Adapter casecd2db(cd2db object) {
+			return createcd2dbAdapter();
+		}
+
+		@Override
+		public Adapter caseclass2table(class2table object) {
+			return createclass2tableAdapter();
+		}
+
+		@Override
+		public Adapter casesuper2table(super2table object) {
+			return createsuper2tableAdapter();
+		}
+
+		@Override
 		public Adapter caseselfassoc2column(selfassoc2column object) {
 			return createselfassoc2columnAdapter();
 		}
@@ -81,21 +96,6 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseassociation2column(association2column object) {
 			return createassociation2columnAdapter();
-		}
-
-		@Override
-		public Adapter casecd2db(cd2db object) {
-			return createcd2dbAdapter();
-		}
-
-		@Override
-		public Adapter casesuper2table(super2table object) {
-			return createsuper2tableAdapter();
-		}
-
-		@Override
-		public Adapter caseclass2table(class2table object) {
-			return createclass2tableAdapter();
 		}
 
 		@Override
@@ -120,6 +120,48 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.class2database.Rules.cd2db <em>cd2db</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.class2database.Rules.cd2db
+	 * @generated
+	 */
+	public Adapter createcd2dbAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.class2database.Rules.class2table <em>class2table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.class2database.Rules.class2table
+	 * @generated
+	 */
+	public Adapter createclass2tableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.class2database.Rules.super2table <em>super2table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.class2database.Rules.super2table
+	 * @generated
+	 */
+	public Adapter createsuper2tableAdapter() {
+		return null;
 	}
 
 	/**
@@ -161,48 +203,6 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createassociation2columnAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.class2database.Rules.cd2db <em>cd2db</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.class2database.Rules.cd2db
-	 * @generated
-	 */
-	public Adapter createcd2dbAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.class2database.Rules.super2table <em>super2table</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.class2database.Rules.super2table
-	 * @generated
-	 */
-	public Adapter createsuper2tableAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.class2database.Rules.class2table <em>class2table</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.class2database.Rules.class2table
-	 * @generated
-	 */
-	public Adapter createclass2tableAdapter() {
 		return null;
 	}
 

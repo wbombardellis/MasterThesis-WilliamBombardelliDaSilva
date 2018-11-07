@@ -68,15 +68,6 @@ public class Class2databaseSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case Class2databasePackage.A2C: {
-			A2C a2C = (A2C) theEObject;
-			T result = caseA2C(a2C);
-			if (result == null)
-				result = caseAbstractCorrespondence(a2C);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case Class2databasePackage.CD2D: {
 			CD2D cd2D = (CD2D) theEObject;
 			T result = caseCD2D(cd2D);
@@ -95,6 +86,15 @@ public class Class2databaseSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case Class2databasePackage.A2C: {
+			A2C a2C = (A2C) theEObject;
+			T result = caseA2C(a2C);
+			if (result == null)
+				result = caseAbstractCorrespondence(a2C);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case Class2databasePackage.C2T: {
 			C2T c2T = (C2T) theEObject;
 			T result = caseC2T(c2T);
@@ -107,21 +107,6 @@ public class Class2databaseSwitch<T> extends Switch<T> {
 		default:
 			return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>A2C</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>A2C</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseA2C(A2C object) {
-		return null;
 	}
 
 	/**
@@ -151,6 +136,21 @@ public class Class2databaseSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAS2C(AS2C object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>A2C</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>A2C</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseA2C(A2C object) {
 		return null;
 	}
 

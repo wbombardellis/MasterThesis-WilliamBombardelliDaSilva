@@ -32,15 +32,6 @@ public interface Sourcecode2controlflowFactory extends EFactory {
 	S2B createS2B();
 
 	/**
-	 * Returns a new object of class '<em>S2N</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>S2N</em>'.
-	 * @generated
-	 */
-	S2N createS2N();
-
-	/**
 	 * Returns a new object of class '<em>P2G</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -48,6 +39,15 @@ public interface Sourcecode2controlflowFactory extends EFactory {
 	 * @generated
 	 */
 	P2G createP2G();
+
+	/**
+	 * Returns a new object of class '<em>S2N</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>S2N</em>'.
+	 * @generated
+	 */
+	S2N createS2N();
 
 	/**
 	 * Returns the package supported by this factory.

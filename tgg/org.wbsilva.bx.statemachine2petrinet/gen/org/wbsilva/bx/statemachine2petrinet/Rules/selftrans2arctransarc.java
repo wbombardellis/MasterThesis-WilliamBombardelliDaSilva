@@ -97,8 +97,8 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, S2P s12p1, PNGraph png, SM2PN sm2pn, Place p1,
-			State s1, SM sm, Transition st);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, State s1, SM2PN sm2pn, PNGraph png, SM sm,
+			Transition st, Place p1, S2P s12p1);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,9 +114,9 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject pt, EObject s12p1, EObject a1, EObject st2a1,
-			EObject png, EObject sm2pn, EObject p1, EObject st2pt, EObject s1, EObject sm, EObject st2a2, EObject a2,
-			EObject st);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject pt, EObject s1, EObject sm2pn, EObject png,
+			EObject a1, EObject st2pt, EObject st2a2, EObject sm, EObject st, EObject a2, EObject p1, EObject st2a1,
+			EObject s12p1);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,7 +132,7 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2);
+	boolean isAppropriate_BWD(Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,7 +156,7 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2);
+	void registerObjectsToMatch_BWD(Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,7 +164,7 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2);
+	CSP isAppropriate_solveCsp_BWD(Match match, petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,8 +180,8 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, petrinet.Transition pt, S2P s12p1, Arc a1,
-			PNGraph png, SM2PN sm2pn, Place p1, State s1, SM sm, Arc a2);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, petrinet.Transition pt, State s1, SM2PN sm2pn,
+			PNGraph png, Arc a1, SM sm, Arc a2, Place p1, S2P s12p1);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,9 +197,9 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject pt, EObject s12p1, EObject a1, EObject st2a1,
-			EObject png, EObject sm2pn, EObject p1, EObject st2pt, EObject s1, EObject sm, EObject st2a2, EObject a2,
-			EObject st);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject pt, EObject s1, EObject sm2pn, EObject png,
+			EObject a1, EObject st2pt, EObject st2a2, EObject sm, EObject st, EObject a2, EObject p1, EObject st2a1,
+			EObject s12p1);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_108(EMoflonEdge _edge_to);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_111(EMoflonEdge _edge_arcs);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_115(EMoflonEdge _edge_transitions);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_118(EMoflonEdge _edge_transitions);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,8 +255,8 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(petrinet.Transition pt, Arc a1, PNGraph png, Place p1, State s1, SM sm, Arc a2,
-			Transition st, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(petrinet.Transition pt, State s1, PNGraph png, Arc a1, SM sm, Transition st, Arc a2,
+			Place p1, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,7 +280,7 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(petrinet.Transition pt, Arc a1, PNGraph png, Place p1, Arc a2);
+	boolean checkDEC_BWD(petrinet.Transition pt, PNGraph png, Arc a1, Arc a2, Place p1);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -297,8 +297,8 @@ public interface selftrans2arctransarc extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, S2P s12p1, PNGraph png, SM2PN sm2pn, Place p1,
-			State s1, SM sm, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, State s1, SM2PN sm2pn, PNGraph png, SM sm,
+			Place p1, S2P s12p1, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

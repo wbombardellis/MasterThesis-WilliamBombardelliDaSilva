@@ -101,45 +101,45 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, While a, Statement s, Assignment b) {
+	public boolean isAppropriate_FWD(Match match, Assignment b, While a, Statement s) {
 
-		Object[] result1_black = while2branchImpl.pattern_while2branch_0_1_initialbindings_blackBBBBB(this, match, a, s,
-				b);
+		Object[] result1_black = while2branchImpl.pattern_while2branch_0_1_initialbindings_blackBBBBB(this, match, b, a,
+				s);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[a] = " + a + ", " + "[s] = " + s + ", " + "[b] = " + b + ".");
+					+ "[match] = " + match + ", " + "[b] = " + b + ", " + "[a] = " + a + ", " + "[s] = " + s + ".");
 		}
 
 		Object[] result2_bindingAndBlack = while2branchImpl
-				.pattern_while2branch_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, a, s, b);
+				.pattern_while2branch_0_2_SolveCSP_bindingAndBlackFBBBBB(this, match, b, a, s);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[a] = " + a + ", " + "[s] = " + s + ", " + "[b] = " + b + ".");
+					+ "[match] = " + match + ", " + "[b] = " + b + ", " + "[a] = " + a + ", " + "[s] = " + s + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (while2branchImpl.pattern_while2branch_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = while2branchImpl
-					.pattern_while2branch_0_4_collectelementstobetranslated_blackBBBB(match, a, s, b);
+					.pattern_while2branch_0_4_collectelementstobetranslated_blackBBBB(match, b, a, s);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[a] = " + a + ", " + "[s] = " + s + ", " + "[b] = " + b + ".");
+						+ "[b] = " + b + ", " + "[a] = " + a + ", " + "[s] = " + s + ".");
 			}
-			while2branchImpl.pattern_while2branch_0_4_collectelementstobetranslated_greenBBBBFF(match, a, s, b);
+			while2branchImpl.pattern_while2branch_0_4_collectelementstobetranslated_greenBBBBFF(match, b, a, s);
 			//nothing EMoflonEdge a__b____last = (EMoflonEdge) result4_green[4];
 			//nothing EMoflonEdge s__a____next = (EMoflonEdge) result4_green[5];
 
 			Object[] result5_black = while2branchImpl.pattern_while2branch_0_5_collectcontextelements_blackBBBB(match,
-					a, s, b);
+					b, a, s);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[a] = " + a + ", " + "[s] = " + s + ", " + "[b] = " + b + ".");
+						+ "[b] = " + b + ", " + "[a] = " + a + ", " + "[s] = " + s + ".");
 			}
 			while2branchImpl.pattern_while2branch_0_5_collectcontextelements_greenBB(match, s);
 
 			// 
-			while2branchImpl.pattern_while2branch_0_6_registerobjectstomatch_expressionBBBBB(this, match, a, s, b);
+			while2branchImpl.pattern_while2branch_0_6_registerobjectstomatch_expressionBBBBB(this, match, b, a, s);
 			return while2branchImpl.pattern_while2branch_0_7_expressionF();
 		} else {
 			return while2branchImpl.pattern_while2branch_0_8_expressionF();
@@ -160,52 +160,52 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		S2N s2n = (S2N) result1_bindingAndBlack[0];
+		Assignment b = (Assignment) result1_bindingAndBlack[0];
 		While a = (While) result1_bindingAndBlack[1];
-		Statement s = (Statement) result1_bindingAndBlack[2];
-		Node n = (Node) result1_bindingAndBlack[3];
-		Assignment b = (Assignment) result1_bindingAndBlack[4];
+		S2N s2n = (S2N) result1_bindingAndBlack[2];
+		Statement s = (Statement) result1_bindingAndBlack[3];
+		Node n = (Node) result1_bindingAndBlack[4];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[5];
-		Object[] result1_green = while2branchImpl.pattern_while2branch_1_1_performtransformation_greenFFFBBFB(a, n, b);
-		S2N b2d = (S2N) result1_green[0];
-		Command d = (Command) result1_green[1];
-		Branch c = (Branch) result1_green[2];
-		S2B a2c = (S2B) result1_green[5];
+		Object[] result1_green = while2branchImpl.pattern_while2branch_1_1_performtransformation_greenFFFBFBB(b, a, n);
+		Branch c = (Branch) result1_green[0];
+		S2B a2c = (S2B) result1_green[1];
+		Command d = (Command) result1_green[2];
+		S2N b2d = (S2N) result1_green[4];
 
-		Object[] result2_black = while2branchImpl.pattern_while2branch_1_2_collecttranslatedelements_blackBBBBBB(b2d, d,
-				c, a, a2c, b);
+		Object[] result2_black = while2branchImpl.pattern_while2branch_1_2_collecttranslatedelements_blackBBBBBB(c, a2c,
+				d, b, b2d, a);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[b2d] = " + b2d + ", " + "[d] = " + d + ", "
-							+ "[c] = " + c + ", " + "[a] = " + a + ", " + "[a2c] = " + a2c + ", " + "[b] = " + b + ".");
+					"Pattern matching failed." + " Variables: " + "[c] = " + c + ", " + "[a2c] = " + a2c + ", "
+							+ "[d] = " + d + ", " + "[b] = " + b + ", " + "[b2d] = " + b2d + ", " + "[a] = " + a + ".");
 		}
-		Object[] result2_green = while2branchImpl.pattern_while2branch_1_2_collecttranslatedelements_greenFBBBBBB(b2d,
-				d, c, a, a2c, b);
+		Object[] result2_green = while2branchImpl.pattern_while2branch_1_2_collecttranslatedelements_greenFBBBBBB(c,
+				a2c, d, b, b2d, a);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = while2branchImpl.pattern_while2branch_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-				ruleresult, b2d, d, c, s2n, a, s, n, a2c, b);
+				ruleresult, c, a2c, d, b, b2d, a, s2n, s, n);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2d] = " + b2d + ", " + "[d] = " + d + ", " + "[c] = " + c + ", " + "[s2n] = " + s2n
-					+ ", " + "[a] = " + a + ", " + "[s] = " + s + ", " + "[n] = " + n + ", " + "[a2c] = " + a2c + ", "
-					+ "[b] = " + b + ".");
+					+ ", " + "[c] = " + c + ", " + "[a2c] = " + a2c + ", " + "[d] = " + d + ", " + "[b] = " + b + ", "
+					+ "[b2d] = " + b2d + ", " + "[a] = " + a + ", " + "[s2n] = " + s2n + ", " + "[s] = " + s + ", "
+					+ "[n] = " + n + ".");
 		}
-		while2branchImpl.pattern_while2branch_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFF(ruleresult, b2d, d, c, a,
-				s, n, a2c, b);
-		//nothing EMoflonEdge d__c____next = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge b2d__d____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge a__b____last = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge s__a____next = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge n__c____next = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge a2c__c____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge a2c__a____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge b2d__b____source = (EMoflonEdge) result3_green[16];
+		while2branchImpl.pattern_while2branch_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFF(ruleresult, c, a2c, d, b,
+				b2d, a, s, n);
+		//nothing EMoflonEdge a2c__c____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge d__c____next = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge b2d__d____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge a2c__a____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge a__b____last = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge b2d__b____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge s__a____next = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge n__c____next = (EMoflonEdge) result3_green[16];
 
 		// 
 		// 
-		while2branchImpl.pattern_while2branch_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult, b2d, d, c,
-				s2n, a, s, n, a2c, b);
+		while2branchImpl.pattern_while2branch_1_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult, c, a2c, d, b,
+				b2d, a, s2n, s, n);
 		return while2branchImpl.pattern_while2branch_1_6_expressionFB(ruleresult);
 	}
 
@@ -232,30 +232,30 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		While a = (While) result2_binding[0];
-		Statement s = (Statement) result2_binding[1];
-		Assignment b = (Assignment) result2_binding[2];
-		for (Object[] result2_black : while2branchImpl.pattern_while2branch_2_2_corematch_blackFBBFBB(a, s, b, match)) {
-			S2N s2n = (S2N) result2_black[0];
-			Node n = (Node) result2_black[3];
+		Assignment b = (Assignment) result2_binding[0];
+		While a = (While) result2_binding[1];
+		Statement s = (Statement) result2_binding[2];
+		for (Object[] result2_black : while2branchImpl.pattern_while2branch_2_2_corematch_blackBBFBFB(b, a, s, match)) {
+			S2N s2n = (S2N) result2_black[2];
+			Node n = (Node) result2_black[4];
 			// ForEach 
-			for (Object[] result3_black : while2branchImpl.pattern_while2branch_2_3_findcontext_blackBBBBB(s2n, a, s, n,
-					b)) {
-				Object[] result3_green = while2branchImpl.pattern_while2branch_2_3_findcontext_greenBBBBBFFFFF(s2n, a,
-						s, n, b);
+			for (Object[] result3_black : while2branchImpl.pattern_while2branch_2_3_findcontext_blackBBBBB(b, a, s2n, s,
+					n)) {
+				Object[] result3_green = while2branchImpl.pattern_while2branch_2_3_findcontext_greenBBBBBFFFFF(b, a,
+						s2n, s, n);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
-				//nothing EMoflonEdge s2n__s____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge a__b____last = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge a__b____last = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge s2n__s____source = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge s__a____next = (EMoflonEdge) result3_green[8];
 				//nothing EMoflonEdge s2n__n____target = (EMoflonEdge) result3_green[9];
 
 				Object[] result4_bindingAndBlack = while2branchImpl
-						.pattern_while2branch_2_4_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch, s2n, a, s,
-								n, b);
+						.pattern_while2branch_2_4_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch, b, a, s2n,
+								s, n);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[s2n] = " + s2n + ", " + "[a] = "
-							+ a + ", " + "[s] = " + s + ", " + "[n] = " + n + ", " + "[b] = " + b + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[b] = " + b + ", " + "[a] = " + a
+							+ ", " + "[s2n] = " + s2n + ", " + "[s] = " + s + ", " + "[n] = " + n + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -284,10 +284,10 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, While a, Statement s, Assignment b) {
+	public void registerObjectsToMatch_FWD(Match match, Assignment b, While a, Statement s) {
+		match.registerObject("b", b);
 		match.registerObject("a", a);
 		match.registerObject("s", s);
-		match.registerObject("b", b);
 
 	}
 
@@ -296,7 +296,7 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, While a, Statement s, Assignment b) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, Assignment b, While a, Statement s) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -325,8 +325,8 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, S2N s2n, While a, Statement s, Node n,
-			Assignment b) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Assignment b, While a, S2N s2n,
+			Statement s, Node n) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -341,11 +341,11 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("s2n", s2n);
+		isApplicableMatch.registerObject("b", b);
 		isApplicableMatch.registerObject("a", a);
+		isApplicableMatch.registerObject("s2n", s2n);
 		isApplicableMatch.registerObject("s", s);
 		isApplicableMatch.registerObject("n", n);
-		isApplicableMatch.registerObject("b", b);
 		return csp;
 	}
 
@@ -363,17 +363,17 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2d, EObject d, EObject c, EObject s2n,
-			EObject a, EObject s, EObject n, EObject a2c, EObject b) {
-		ruleresult.registerObject("b2d", b2d);
-		ruleresult.registerObject("d", d);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject c, EObject a2c, EObject d, EObject b,
+			EObject b2d, EObject a, EObject s2n, EObject s, EObject n) {
 		ruleresult.registerObject("c", c);
-		ruleresult.registerObject("s2n", s2n);
+		ruleresult.registerObject("a2c", a2c);
+		ruleresult.registerObject("d", d);
+		ruleresult.registerObject("b", b);
+		ruleresult.registerObject("b2d", b2d);
 		ruleresult.registerObject("a", a);
+		ruleresult.registerObject("s2n", s2n);
 		ruleresult.registerObject("s", s);
 		ruleresult.registerObject("n", n);
-		ruleresult.registerObject("a2c", a2c);
-		ruleresult.registerObject("b", b);
 
 	}
 
@@ -383,9 +383,9 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * @generated
 	 */
 	public boolean checkTypes_FWD(Match match) {
-		return true && org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("a").eClass()).equals("sourcecode.While.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("b").eClass())
-						.equals("sourcecode.Assignment.");
+		return true
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("b").eClass()).equals("sourcecode.Assignment.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("a").eClass()).equals("sourcecode.While.");
 	}
 
 	/**
@@ -393,45 +393,45 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Command d, Branch c, Node n) {
+	public boolean isAppropriate_BWD(Match match, Branch c, Command d, Node n) {
 
-		Object[] result1_black = while2branchImpl.pattern_while2branch_10_1_initialbindings_blackBBBBB(this, match, d,
-				c, n);
+		Object[] result1_black = while2branchImpl.pattern_while2branch_10_1_initialbindings_blackBBBBB(this, match, c,
+				d, n);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[d] = " + d + ", " + "[c] = " + c + ", " + "[n] = " + n + ".");
+					+ "[match] = " + match + ", " + "[c] = " + c + ", " + "[d] = " + d + ", " + "[n] = " + n + ".");
 		}
 
 		Object[] result2_bindingAndBlack = while2branchImpl
-				.pattern_while2branch_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, d, c, n);
+				.pattern_while2branch_10_2_SolveCSP_bindingAndBlackFBBBBB(this, match, c, d, n);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[d] = " + d + ", " + "[c] = " + c + ", " + "[n] = " + n + ".");
+					+ "[match] = " + match + ", " + "[c] = " + c + ", " + "[d] = " + d + ", " + "[n] = " + n + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (while2branchImpl.pattern_while2branch_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = while2branchImpl
-					.pattern_while2branch_10_4_collectelementstobetranslated_blackBBBB(match, d, c, n);
+					.pattern_while2branch_10_4_collectelementstobetranslated_blackBBBB(match, c, d, n);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[d] = " + d + ", " + "[c] = " + c + ", " + "[n] = " + n + ".");
+						+ "[c] = " + c + ", " + "[d] = " + d + ", " + "[n] = " + n + ".");
 			}
-			while2branchImpl.pattern_while2branch_10_4_collectelementstobetranslated_greenBBBBFF(match, d, c, n);
+			while2branchImpl.pattern_while2branch_10_4_collectelementstobetranslated_greenBBBBFF(match, c, d, n);
 			//nothing EMoflonEdge d__c____next = (EMoflonEdge) result4_green[4];
 			//nothing EMoflonEdge n__c____next = (EMoflonEdge) result4_green[5];
 
 			Object[] result5_black = while2branchImpl.pattern_while2branch_10_5_collectcontextelements_blackBBBB(match,
-					d, c, n);
+					c, d, n);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[d] = " + d + ", " + "[c] = " + c + ", " + "[n] = " + n + ".");
+						+ "[c] = " + c + ", " + "[d] = " + d + ", " + "[n] = " + n + ".");
 			}
 			while2branchImpl.pattern_while2branch_10_5_collectcontextelements_greenBB(match, n);
 
 			// 
-			while2branchImpl.pattern_while2branch_10_6_registerobjectstomatch_expressionBBBBB(this, match, d, c, n);
+			while2branchImpl.pattern_while2branch_10_6_registerobjectstomatch_expressionBBBBB(this, match, c, d, n);
 			return while2branchImpl.pattern_while2branch_10_7_expressionF();
 		} else {
 			return while2branchImpl.pattern_while2branch_10_8_expressionF();
@@ -452,52 +452,52 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		Command d = (Command) result1_bindingAndBlack[0];
-		Branch c = (Branch) result1_bindingAndBlack[1];
+		Branch c = (Branch) result1_bindingAndBlack[0];
+		Command d = (Command) result1_bindingAndBlack[1];
 		S2N s2n = (S2N) result1_bindingAndBlack[2];
 		Statement s = (Statement) result1_bindingAndBlack[3];
 		Node n = (Node) result1_bindingAndBlack[4];
 		//nothing CSP csp = (CSP) result1_bindingAndBlack[5];
-		Object[] result1_green = while2branchImpl.pattern_while2branch_11_1_performtransformation_greenFBBFBFF(d, c, s);
-		S2N b2d = (S2N) result1_green[0];
-		While a = (While) result1_green[3];
-		S2B a2c = (S2B) result1_green[5];
-		Assignment b = (Assignment) result1_green[6];
+		Object[] result1_green = while2branchImpl.pattern_while2branch_11_1_performtransformation_greenBFBFFFB(c, d, s);
+		S2B a2c = (S2B) result1_green[1];
+		Assignment b = (Assignment) result1_green[3];
+		S2N b2d = (S2N) result1_green[4];
+		While a = (While) result1_green[5];
 
-		Object[] result2_black = while2branchImpl.pattern_while2branch_11_2_collecttranslatedelements_blackBBBBBB(b2d,
-				d, c, a, a2c, b);
+		Object[] result2_black = while2branchImpl.pattern_while2branch_11_2_collecttranslatedelements_blackBBBBBB(c,
+				a2c, d, b, b2d, a);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[b2d] = " + b2d + ", " + "[d] = " + d + ", "
-							+ "[c] = " + c + ", " + "[a] = " + a + ", " + "[a2c] = " + a2c + ", " + "[b] = " + b + ".");
+					"Pattern matching failed." + " Variables: " + "[c] = " + c + ", " + "[a2c] = " + a2c + ", "
+							+ "[d] = " + d + ", " + "[b] = " + b + ", " + "[b2d] = " + b2d + ", " + "[a] = " + a + ".");
 		}
-		Object[] result2_green = while2branchImpl.pattern_while2branch_11_2_collecttranslatedelements_greenFBBBBBB(b2d,
-				d, c, a, a2c, b);
+		Object[] result2_green = while2branchImpl.pattern_while2branch_11_2_collecttranslatedelements_greenFBBBBBB(c,
+				a2c, d, b, b2d, a);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = while2branchImpl.pattern_while2branch_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-				ruleresult, b2d, d, c, s2n, a, s, n, a2c, b);
+				ruleresult, c, a2c, d, b, b2d, a, s2n, s, n);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2d] = " + b2d + ", " + "[d] = " + d + ", " + "[c] = " + c + ", " + "[s2n] = " + s2n
-					+ ", " + "[a] = " + a + ", " + "[s] = " + s + ", " + "[n] = " + n + ", " + "[a2c] = " + a2c + ", "
-					+ "[b] = " + b + ".");
+					+ ", " + "[c] = " + c + ", " + "[a2c] = " + a2c + ", " + "[d] = " + d + ", " + "[b] = " + b + ", "
+					+ "[b2d] = " + b2d + ", " + "[a] = " + a + ", " + "[s2n] = " + s2n + ", " + "[s] = " + s + ", "
+					+ "[n] = " + n + ".");
 		}
-		while2branchImpl.pattern_while2branch_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFF(ruleresult, b2d, d, c, a,
-				s, n, a2c, b);
-		//nothing EMoflonEdge d__c____next = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge b2d__d____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge a__b____last = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge s__a____next = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge n__c____next = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge a2c__c____target = (EMoflonEdge) result3_green[14];
-		//nothing EMoflonEdge a2c__a____source = (EMoflonEdge) result3_green[15];
-		//nothing EMoflonEdge b2d__b____source = (EMoflonEdge) result3_green[16];
+		while2branchImpl.pattern_while2branch_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFF(ruleresult, c, a2c, d, b,
+				b2d, a, s, n);
+		//nothing EMoflonEdge a2c__c____target = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge d__c____next = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge b2d__d____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge a2c__a____source = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge a__b____last = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge b2d__b____source = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge s__a____next = (EMoflonEdge) result3_green[15];
+		//nothing EMoflonEdge n__c____next = (EMoflonEdge) result3_green[16];
 
 		// 
 		// 
-		while2branchImpl.pattern_while2branch_11_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult, b2d, d, c,
-				s2n, a, s, n, a2c, b);
+		while2branchImpl.pattern_while2branch_11_5_registerobjects_expressionBBBBBBBBBBB(this, ruleresult, c, a2c, d, b,
+				b2d, a, s2n, s, n);
 		return while2branchImpl.pattern_while2branch_11_6_expressionFB(ruleresult);
 	}
 
@@ -525,17 +525,17 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Command d = (Command) result2_binding[0];
-		Branch c = (Branch) result2_binding[1];
+		Branch c = (Branch) result2_binding[0];
+		Command d = (Command) result2_binding[1];
 		Node n = (Node) result2_binding[2];
-		for (Object[] result2_black : while2branchImpl.pattern_while2branch_12_2_corematch_blackBBFFBB(d, c, n,
+		for (Object[] result2_black : while2branchImpl.pattern_while2branch_12_2_corematch_blackBBFFBB(c, d, n,
 				match)) {
 			S2N s2n = (S2N) result2_black[2];
 			Statement s = (Statement) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : while2branchImpl.pattern_while2branch_12_3_findcontext_blackBBBBB(d, c, s2n,
+			for (Object[] result3_black : while2branchImpl.pattern_while2branch_12_3_findcontext_blackBBBBB(c, d, s2n,
 					s, n)) {
-				Object[] result3_green = while2branchImpl.pattern_while2branch_12_3_findcontext_greenBBBBBFFFFF(d, c,
+				Object[] result3_green = while2branchImpl.pattern_while2branch_12_3_findcontext_greenBBBBBFFFFF(c, d,
 						s2n, s, n);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
 				//nothing EMoflonEdge d__c____next = (EMoflonEdge) result3_green[6];
@@ -544,11 +544,11 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 				//nothing EMoflonEdge s2n__n____target = (EMoflonEdge) result3_green[9];
 
 				Object[] result4_bindingAndBlack = while2branchImpl
-						.pattern_while2branch_12_4_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch, d, c, s2n,
+						.pattern_while2branch_12_4_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch, c, d, s2n,
 								s, n);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[d] = " + d + ", " + "[c] = " + c
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[c] = " + c + ", " + "[d] = " + d
 							+ ", " + "[s2n] = " + s2n + ", " + "[s] = " + s + ", " + "[n] = " + n + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -578,9 +578,9 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Command d, Branch c, Node n) {
-		match.registerObject("d", d);
+	public void registerObjectsToMatch_BWD(Match match, Branch c, Command d, Node n) {
 		match.registerObject("c", c);
+		match.registerObject("d", d);
 		match.registerObject("n", n);
 
 	}
@@ -590,7 +590,7 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Command d, Branch c, Node n) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, Branch c, Command d, Node n) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -619,7 +619,7 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Command d, Branch c, S2N s2n, Statement s,
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Branch c, Command d, S2N s2n, Statement s,
 			Node n) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -635,8 +635,8 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		// Solve CSP
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("d", d);
 		isApplicableMatch.registerObject("c", c);
+		isApplicableMatch.registerObject("d", d);
 		isApplicableMatch.registerObject("s2n", s2n);
 		isApplicableMatch.registerObject("s", s);
 		isApplicableMatch.registerObject("n", n);
@@ -657,17 +657,17 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2d, EObject d, EObject c, EObject s2n,
-			EObject a, EObject s, EObject n, EObject a2c, EObject b) {
-		ruleresult.registerObject("b2d", b2d);
-		ruleresult.registerObject("d", d);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject c, EObject a2c, EObject d, EObject b,
+			EObject b2d, EObject a, EObject s2n, EObject s, EObject n) {
 		ruleresult.registerObject("c", c);
-		ruleresult.registerObject("s2n", s2n);
+		ruleresult.registerObject("a2c", a2c);
+		ruleresult.registerObject("d", d);
+		ruleresult.registerObject("b", b);
+		ruleresult.registerObject("b2d", b2d);
 		ruleresult.registerObject("a", a);
+		ruleresult.registerObject("s2n", s2n);
 		ruleresult.registerObject("s", s);
 		ruleresult.registerObject("n", n);
-		ruleresult.registerObject("a2c", a2c);
-		ruleresult.registerObject("b", b);
 
 	}
 
@@ -678,8 +678,8 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 */
 	public boolean checkTypes_BWD(Match match) {
 		return true
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("d").eClass()).equals("controlflow.Command.")
-				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("c").eClass()).equals("controlflow.Branch.");
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("c").eClass()).equals("controlflow.Branch.")
+				&& org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject("d").eClass()).equals("controlflow.Command.");
 	}
 
 	/**
@@ -687,7 +687,7 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_284(EMoflonEdge _edge_next) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_66(EMoflonEdge _edge_next) {
 
 		Object[] result1_bindingAndBlack = while2branchImpl
 				.pattern_while2branch_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -703,15 +703,15 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		// ForEach 
 		for (Object[] result2_black : while2branchImpl
 				.pattern_while2branch_20_2_testcorematchandDECs_blackFFFB(_edge_next)) {
-			Command d = (Command) result2_black[0];
-			Branch c = (Branch) result2_black[1];
+			Branch c = (Branch) result2_black[0];
+			Command d = (Command) result2_black[1];
 			Node n = (Node) result2_black[2];
 			Object[] result2_green = while2branchImpl.pattern_while2branch_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (while2branchImpl.pattern_while2branch_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-					this, match, d, c, n)) {
+					this, match, c, d, n)) {
 				// 
 				if (while2branchImpl
 						.pattern_while2branch_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -742,7 +742,7 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_292(EMoflonEdge _edge_last) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_72(EMoflonEdge _edge_last) {
 
 		Object[] result1_bindingAndBlack = while2branchImpl
 				.pattern_while2branch_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -758,15 +758,15 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		// ForEach 
 		for (Object[] result2_black : while2branchImpl
 				.pattern_while2branch_21_2_testcorematchandDECs_blackFFFB(_edge_last)) {
-			While a = (While) result2_black[0];
-			Statement s = (Statement) result2_black[1];
-			Assignment b = (Assignment) result2_black[2];
+			Assignment b = (Assignment) result2_black[0];
+			While a = (While) result2_black[1];
+			Statement s = (Statement) result2_black[2];
 			Object[] result2_green = while2branchImpl.pattern_while2branch_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
 
 			// 
 			if (while2branchImpl.pattern_while2branch_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-					this, match, a, s, b)) {
+					this, match, b, a, s)) {
 				// 
 				if (while2branchImpl
 						.pattern_while2branch_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(this,
@@ -872,20 +872,20 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Command d = (Command) result2_bindingAndBlack[0];
-		Branch c = (Branch) result2_bindingAndBlack[1];
-		While a = (While) result2_bindingAndBlack[2];
-		Statement s = (Statement) result2_bindingAndBlack[3];
-		Node n = (Node) result2_bindingAndBlack[4];
-		Assignment b = (Assignment) result2_bindingAndBlack[5];
+		Branch c = (Branch) result2_bindingAndBlack[0];
+		Command d = (Command) result2_bindingAndBlack[1];
+		Assignment b = (Assignment) result2_bindingAndBlack[2];
+		While a = (While) result2_bindingAndBlack[3];
+		Statement s = (Statement) result2_bindingAndBlack[4];
+		Node n = (Node) result2_bindingAndBlack[5];
 
 		Object[] result3_bindingAndBlack = while2branchImpl
-				.pattern_while2branch_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, d, c, a, s, n, b, sourceMatch,
+				.pattern_while2branch_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(this, c, d, b, a, s, n, sourceMatch,
 						targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[d] = " + d + ", " + "[c] = " + c + ", " + "[a] = " + a + ", " + "[s] = " + s + ", " + "[n] = "
-					+ n + ", " + "[b] = " + b + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
+					+ "[c] = " + c + ", " + "[d] = " + d + ", " + "[b] = " + b + ", " + "[a] = " + a + ", " + "[s] = "
+					+ s + ", " + "[n] = " + n + ", " + "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = "
 					+ targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -899,16 +899,16 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 						sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
-				Object[] result6_black = while2branchImpl.pattern_while2branch_24_6_createcorrespondence_blackBBBBBBB(d,
-						c, a, s, n, b, ccMatch);
+				Object[] result6_black = while2branchImpl.pattern_while2branch_24_6_createcorrespondence_blackBBBBBBB(c,
+						d, b, a, s, n, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[d] = " + d + ", "
-							+ "[c] = " + c + ", " + "[a] = " + a + ", " + "[s] = " + s + ", " + "[n] = " + n + ", "
-							+ "[b] = " + b + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[c] = " + c + ", "
+							+ "[d] = " + d + ", " + "[b] = " + b + ", " + "[a] = " + a + ", " + "[s] = " + s + ", "
+							+ "[n] = " + n + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				while2branchImpl.pattern_while2branch_24_6_createcorrespondence_greenFBBBFBB(d, c, a, b, ccMatch);
-				//nothing S2N b2d = (S2N) result6_green[0];
-				//nothing S2B a2c = (S2B) result6_green[4];
+				while2branchImpl.pattern_while2branch_24_6_createcorrespondence_greenBFBBFBB(c, d, b, a, ccMatch);
+				//nothing S2B a2c = (S2B) result6_green[1];
+				//nothing S2N b2d = (S2N) result6_green[4];
 
 				Object[] result7_black = while2branchImpl.pattern_while2branch_24_7_addtoreturnedresult_blackBB(result,
 						ccMatch);
@@ -930,7 +930,7 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(Command d, Branch c, While a, Statement s, Node n, Assignment b,
+	public CSP isApplicable_solveCsp_CC(Branch c, Command d, Assignment b, While a, Statement s, Node n,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
@@ -960,8 +960,8 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(While a, Statement s, Assignment b) {// 
-		Object[] result1_black = while2branchImpl.pattern_while2branch_27_1_matchtggpattern_blackBBB(a, s, b);
+	public boolean checkDEC_FWD(Assignment b, While a, Statement s) {// 
+		Object[] result1_black = while2branchImpl.pattern_while2branch_27_1_matchtggpattern_blackBBB(b, a, s);
 		if (result1_black != null) {
 			return while2branchImpl.pattern_while2branch_27_2_expressionF();
 		} else {
@@ -975,8 +975,8 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Command d, Branch c, Node n) {// 
-		Object[] result1_black = while2branchImpl.pattern_while2branch_28_1_matchtggpattern_blackBBB(d, c, n);
+	public boolean checkDEC_BWD(Branch c, Command d, Node n) {// 
+		Object[] result1_black = while2branchImpl.pattern_while2branch_28_1_matchtggpattern_blackBBB(c, d, n);
 		if (result1_black != null) {
 			return while2branchImpl.pattern_while2branch_28_2_expressionF();
 		} else {
@@ -1029,13 +1029,13 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[s2n] = " + s2n + ", "
 								+ "[s] = " + s + ", " + "[n] = " + n + ", " + "[ruleResult] = " + ruleResult + ".");
 					}
-					while2branchImpl.pattern_while2branch_29_6_perform_greenFFFFBBFFB(s, n, ruleResult);
-					//nothing S2N b2d = (S2N) result6_green[0];
-					//nothing Command d = (Command) result6_green[1];
-					//nothing Branch c = (Branch) result6_green[2];
-					//nothing While a = (While) result6_green[3];
-					//nothing S2B a2c = (S2B) result6_green[6];
-					//nothing Assignment b = (Assignment) result6_green[7];
+					while2branchImpl.pattern_while2branch_29_6_perform_greenFFFFFFBBB(s, n, ruleResult);
+					//nothing Branch c = (Branch) result6_green[0];
+					//nothing S2B a2c = (S2B) result6_green[1];
+					//nothing Command d = (Command) result6_green[2];
+					//nothing Assignment b = (Assignment) result6_green[3];
+					//nothing S2N b2d = (S2N) result6_green[4];
+					//nothing While a = (While) result6_green[5];
 
 				} else {
 				}
@@ -1091,26 +1091,26 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_FWD__MATCH_WHILE_STATEMENT_ASSIGNMENT:
-			return isAppropriate_FWD((Match) arguments.get(0), (While) arguments.get(1), (Statement) arguments.get(2),
-					(Assignment) arguments.get(3));
+		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_FWD__MATCH_ASSIGNMENT_WHILE_STATEMENT:
+			return isAppropriate_FWD((Match) arguments.get(0), (Assignment) arguments.get(1), (While) arguments.get(2),
+					(Statement) arguments.get(3));
 		case RulesPackage.WHILE2BRANCH___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.WHILE2BRANCH___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_WHILE_STATEMENT_ASSIGNMENT:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (While) arguments.get(1), (Statement) arguments.get(2),
-					(Assignment) arguments.get(3));
+		case RulesPackage.WHILE2BRANCH___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_ASSIGNMENT_WHILE_STATEMENT:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (Assignment) arguments.get(1),
+					(While) arguments.get(2), (Statement) arguments.get(3));
 			return null;
-		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_WHILE_STATEMENT_ASSIGNMENT:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (While) arguments.get(1),
-					(Statement) arguments.get(2), (Assignment) arguments.get(3));
+		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_ASSIGNMENT_WHILE_STATEMENT:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (Assignment) arguments.get(1),
+					(While) arguments.get(2), (Statement) arguments.get(3));
 		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_S2N_WHILE_STATEMENT_NODE_ASSIGNMENT:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (S2N) arguments.get(1),
-					(While) arguments.get(2), (Statement) arguments.get(3), (Node) arguments.get(4),
-					(Assignment) arguments.get(5));
+		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ASSIGNMENT_WHILE_S2N_STATEMENT_NODE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (Assignment) arguments.get(1),
+					(While) arguments.get(2), (S2N) arguments.get(3), (Statement) arguments.get(4),
+					(Node) arguments.get(5));
 		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.WHILE2BRANCH___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1121,25 +1121,25 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 			return null;
 		case RulesPackage.WHILE2BRANCH___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_BWD__MATCH_COMMAND_BRANCH_NODE:
-			return isAppropriate_BWD((Match) arguments.get(0), (Command) arguments.get(1), (Branch) arguments.get(2),
+		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_BWD__MATCH_BRANCH_COMMAND_NODE:
+			return isAppropriate_BWD((Match) arguments.get(0), (Branch) arguments.get(1), (Command) arguments.get(2),
 					(Node) arguments.get(3));
 		case RulesPackage.WHILE2BRANCH___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.WHILE2BRANCH___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_COMMAND_BRANCH_NODE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Command) arguments.get(1), (Branch) arguments.get(2),
+		case RulesPackage.WHILE2BRANCH___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_BRANCH_COMMAND_NODE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (Branch) arguments.get(1), (Command) arguments.get(2),
 					(Node) arguments.get(3));
 			return null;
-		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_COMMAND_BRANCH_NODE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Command) arguments.get(1),
-					(Branch) arguments.get(2), (Node) arguments.get(3));
+		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_BRANCH_COMMAND_NODE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Branch) arguments.get(1),
+					(Command) arguments.get(2), (Node) arguments.get(3));
 		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_COMMAND_BRANCH_S2N_STATEMENT_NODE:
-			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Command) arguments.get(1),
-					(Branch) arguments.get(2), (S2N) arguments.get(3), (Statement) arguments.get(4),
+		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_BRANCH_COMMAND_S2N_STATEMENT_NODE:
+			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0), (Branch) arguments.get(1),
+					(Command) arguments.get(2), (S2N) arguments.get(3), (Statement) arguments.get(4),
 					(Node) arguments.get(5));
 		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
@@ -1151,26 +1151,26 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 			return null;
 		case RulesPackage.WHILE2BRANCH___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_BWD_EMOFLON_EDGE_284__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_284((EMoflonEdge) arguments.get(0));
-		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_292__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_292((EMoflonEdge) arguments.get(0));
+		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_BWD_EMOFLON_EDGE_66__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_66((EMoflonEdge) arguments.get(0));
+		case RulesPackage.WHILE2BRANCH___IS_APPROPRIATE_FWD_EMOFLON_EDGE_72__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_72((EMoflonEdge) arguments.get(0));
 		case RulesPackage.WHILE2BRANCH___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.WHILE2BRANCH___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_SOLVE_CSP_CC__COMMAND_BRANCH_WHILE_STATEMENT_NODE_ASSIGNMENT_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((Command) arguments.get(0), (Branch) arguments.get(1),
-					(While) arguments.get(2), (Statement) arguments.get(3), (Node) arguments.get(4),
-					(Assignment) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
+		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_SOLVE_CSP_CC__BRANCH_COMMAND_ASSIGNMENT_WHILE_STATEMENT_NODE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Branch) arguments.get(0), (Command) arguments.get(1),
+					(Assignment) arguments.get(2), (While) arguments.get(3), (Statement) arguments.get(4),
+					(Node) arguments.get(5), (Match) arguments.get(6), (Match) arguments.get(7));
 		case RulesPackage.WHILE2BRANCH___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.WHILE2BRANCH___CHECK_DEC_FWD__WHILE_STATEMENT_ASSIGNMENT:
-			return checkDEC_FWD((While) arguments.get(0), (Statement) arguments.get(1), (Assignment) arguments.get(2));
-		case RulesPackage.WHILE2BRANCH___CHECK_DEC_BWD__COMMAND_BRANCH_NODE:
-			return checkDEC_BWD((Command) arguments.get(0), (Branch) arguments.get(1), (Node) arguments.get(2));
+		case RulesPackage.WHILE2BRANCH___CHECK_DEC_FWD__ASSIGNMENT_WHILE_STATEMENT:
+			return checkDEC_FWD((Assignment) arguments.get(0), (While) arguments.get(1), (Statement) arguments.get(2));
+		case RulesPackage.WHILE2BRANCH___CHECK_DEC_BWD__BRANCH_COMMAND_NODE:
+			return checkDEC_BWD((Branch) arguments.get(0), (Command) arguments.get(1), (Node) arguments.get(2));
 		case RulesPackage.WHILE2BRANCH___GENERATE_MODEL__RULEENTRYCONTAINER_S2N:
 			return generateModel((RuleEntryContainer) arguments.get(0), (S2N) arguments.get(1));
 		case RulesPackage.WHILE2BRANCH___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_S2N_STATEMENT_NODE_MODELGENERATORRULERESULT:
@@ -1183,21 +1183,21 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_0_1_initialbindings_blackBBBBB(while2branch _this, Match match,
-			While a, Statement s, Assignment b) {
-		if (!a.equals(s)) {
-			if (!b.equals(s)) {
-				return new Object[] { _this, match, a, s, b };
+			Assignment b, While a, Statement s) {
+		if (!b.equals(s)) {
+			if (!a.equals(s)) {
+				return new Object[] { _this, match, b, a, s };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_while2branch_0_2_SolveCSP_bindingFBBBBB(while2branch _this, Match match,
-			While a, Statement s, Assignment b) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, a, s, b);
+			Assignment b, While a, Statement s) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, b, a, s);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, a, s, b };
+			return new Object[] { csp, _this, match, b, a, s };
 		}
 		return null;
 	}
@@ -1207,16 +1207,16 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_0_2_SolveCSP_bindingAndBlackFBBBBB(while2branch _this,
-			Match match, While a, Statement s, Assignment b) {
+			Match match, Assignment b, While a, Statement s) {
 		Object[] result_pattern_while2branch_0_2_SolveCSP_binding = pattern_while2branch_0_2_SolveCSP_bindingFBBBBB(
-				_this, match, a, s, b);
+				_this, match, b, a, s);
 		if (result_pattern_while2branch_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_while2branch_0_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_while2branch_0_2_SolveCSP_black = pattern_while2branch_0_2_SolveCSP_blackB(csp);
 			if (result_pattern_while2branch_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, a, s, b };
+				return new Object[] { csp, _this, match, b, a, s };
 			}
 		}
 		return null;
@@ -1228,22 +1228,22 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return _result;
 	}
 
-	public static final Object[] pattern_while2branch_0_4_collectelementstobetranslated_blackBBBB(Match match, While a,
-			Statement s, Assignment b) {
-		if (!a.equals(s)) {
-			if (!b.equals(s)) {
-				return new Object[] { match, a, s, b };
+	public static final Object[] pattern_while2branch_0_4_collectelementstobetranslated_blackBBBB(Match match,
+			Assignment b, While a, Statement s) {
+		if (!b.equals(s)) {
+			if (!a.equals(s)) {
+				return new Object[] { match, b, a, s };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_while2branch_0_4_collectelementstobetranslated_greenBBBBFF(Match match,
-			While a, Statement s, Assignment b) {
+			Assignment b, While a, Statement s) {
 		EMoflonEdge a__b____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge s__a____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(a);
 		match.getToBeTranslatedNodes().add(b);
+		match.getToBeTranslatedNodes().add(a);
 		String a__b____last_name_prime = "last";
 		String s__a____next_name_prime = "next";
 		a__b____last.setSrc(a);
@@ -1254,14 +1254,14 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		match.getToBeTranslatedEdges().add(s__a____next);
 		a__b____last.setName(a__b____last_name_prime);
 		s__a____next.setName(s__a____next_name_prime);
-		return new Object[] { match, a, s, b, a__b____last, s__a____next };
+		return new Object[] { match, b, a, s, a__b____last, s__a____next };
 	}
 
-	public static final Object[] pattern_while2branch_0_5_collectcontextelements_blackBBBB(Match match, While a,
-			Statement s, Assignment b) {
-		if (!a.equals(s)) {
-			if (!b.equals(s)) {
-				return new Object[] { match, a, s, b };
+	public static final Object[] pattern_while2branch_0_5_collectcontextelements_blackBBBB(Match match, Assignment b,
+			While a, Statement s) {
+		if (!b.equals(s)) {
+			if (!a.equals(s)) {
+				return new Object[] { match, b, a, s };
 			}
 		}
 		return null;
@@ -1273,8 +1273,8 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final void pattern_while2branch_0_6_registerobjectstomatch_expressionBBBBB(while2branch _this,
-			Match match, While a, Statement s, Assignment b) {
-		_this.registerObjectsToMatch_FWD(match, a, s, b);
+			Match match, Assignment b, While a, Statement s) {
+		_this.registerObjectsToMatch_FWD(match, b, a, s);
 
 	}
 
@@ -1290,27 +1290,27 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 
 	public static final Object[] pattern_while2branch_1_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("s2n");
+		EObject _localVariable_0 = isApplicableMatch.getObject("b");
 		EObject _localVariable_1 = isApplicableMatch.getObject("a");
-		EObject _localVariable_2 = isApplicableMatch.getObject("s");
-		EObject _localVariable_3 = isApplicableMatch.getObject("n");
-		EObject _localVariable_4 = isApplicableMatch.getObject("b");
-		EObject tmpS2n = _localVariable_0;
+		EObject _localVariable_2 = isApplicableMatch.getObject("s2n");
+		EObject _localVariable_3 = isApplicableMatch.getObject("s");
+		EObject _localVariable_4 = isApplicableMatch.getObject("n");
+		EObject tmpB = _localVariable_0;
 		EObject tmpA = _localVariable_1;
-		EObject tmpS = _localVariable_2;
-		EObject tmpN = _localVariable_3;
-		EObject tmpB = _localVariable_4;
-		if (tmpS2n instanceof S2N) {
-			S2N s2n = (S2N) tmpS2n;
+		EObject tmpS2n = _localVariable_2;
+		EObject tmpS = _localVariable_3;
+		EObject tmpN = _localVariable_4;
+		if (tmpB instanceof Assignment) {
+			Assignment b = (Assignment) tmpB;
 			if (tmpA instanceof While) {
 				While a = (While) tmpA;
-				if (tmpS instanceof Statement) {
-					Statement s = (Statement) tmpS;
-					if (tmpN instanceof Node) {
-						Node n = (Node) tmpN;
-						if (tmpB instanceof Assignment) {
-							Assignment b = (Assignment) tmpB;
-							return new Object[] { s2n, a, s, n, b, isApplicableMatch };
+				if (tmpS2n instanceof S2N) {
+					S2N s2n = (S2N) tmpS2n;
+					if (tmpS instanceof Statement) {
+						Statement s = (Statement) tmpS;
+						if (tmpN instanceof Node) {
+							Node n = (Node) tmpN;
+							return new Object[] { b, a, s2n, s, n, isApplicableMatch };
 						}
 					}
 				}
@@ -1319,14 +1319,14 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_1_1_performtransformation_blackBBBBBFBB(S2N s2n, While a,
-			Statement s, Node n, Assignment b, while2branch _this, IsApplicableMatch isApplicableMatch) {
-		if (!a.equals(s)) {
-			if (!b.equals(s)) {
+	public static final Object[] pattern_while2branch_1_1_performtransformation_blackBBBBBFBB(Assignment b, While a,
+			S2N s2n, Statement s, Node n, while2branch _this, IsApplicableMatch isApplicableMatch) {
+		if (!b.equals(s)) {
+			if (!a.equals(s)) {
 				for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 					if (tmpCsp instanceof CSP) {
 						CSP csp = (CSP) tmpCsp;
-						return new Object[] { s2n, a, s, n, b, csp, _this, isApplicableMatch };
+						return new Object[] { b, a, s2n, s, n, csp, _this, isApplicableMatch };
 					}
 				}
 			}
@@ -1339,118 +1339,118 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		Object[] result_pattern_while2branch_1_1_performtransformation_binding = pattern_while2branch_1_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_while2branch_1_1_performtransformation_binding != null) {
-			S2N s2n = (S2N) result_pattern_while2branch_1_1_performtransformation_binding[0];
+			Assignment b = (Assignment) result_pattern_while2branch_1_1_performtransformation_binding[0];
 			While a = (While) result_pattern_while2branch_1_1_performtransformation_binding[1];
-			Statement s = (Statement) result_pattern_while2branch_1_1_performtransformation_binding[2];
-			Node n = (Node) result_pattern_while2branch_1_1_performtransformation_binding[3];
-			Assignment b = (Assignment) result_pattern_while2branch_1_1_performtransformation_binding[4];
+			S2N s2n = (S2N) result_pattern_while2branch_1_1_performtransformation_binding[2];
+			Statement s = (Statement) result_pattern_while2branch_1_1_performtransformation_binding[3];
+			Node n = (Node) result_pattern_while2branch_1_1_performtransformation_binding[4];
 
 			Object[] result_pattern_while2branch_1_1_performtransformation_black = pattern_while2branch_1_1_performtransformation_blackBBBBBFBB(
-					s2n, a, s, n, b, _this, isApplicableMatch);
+					b, a, s2n, s, n, _this, isApplicableMatch);
 			if (result_pattern_while2branch_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_while2branch_1_1_performtransformation_black[5];
 
-				return new Object[] { s2n, a, s, n, b, csp, _this, isApplicableMatch };
+				return new Object[] { b, a, s2n, s, n, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_1_1_performtransformation_greenFFFBBFB(While a, Node n,
-			Assignment b) {
-		S2N b2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
-		Command d = ControlflowFactory.eINSTANCE.createCommand();
+	public static final Object[] pattern_while2branch_1_1_performtransformation_greenFFFBFBB(Assignment b, While a,
+			Node n) {
 		Branch c = ControlflowFactory.eINSTANCE.createBranch();
 		S2B a2c = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
-		b2d.setSource(b);
-		b2d.setTarget(d);
-		d.setNext(c);
+		Command d = ControlflowFactory.eINSTANCE.createCommand();
+		S2N b2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		n.setNext(c);
 		a2c.setTarget(c);
 		a2c.setSource(a);
-		return new Object[] { b2d, d, c, a, n, a2c, b };
+		d.setNext(c);
+		b2d.setTarget(d);
+		b2d.setSource(b);
+		return new Object[] { c, a2c, d, b, b2d, a, n };
 	}
 
-	public static final Object[] pattern_while2branch_1_2_collecttranslatedelements_blackBBBBBB(S2N b2d, Command d,
-			Branch c, While a, S2B a2c, Assignment b) {
-		return new Object[] { b2d, d, c, a, a2c, b };
+	public static final Object[] pattern_while2branch_1_2_collecttranslatedelements_blackBBBBBB(Branch c, S2B a2c,
+			Command d, Assignment b, S2N b2d, While a) {
+		return new Object[] { c, a2c, d, b, b2d, a };
 	}
 
-	public static final Object[] pattern_while2branch_1_2_collecttranslatedelements_greenFBBBBBB(S2N b2d, Command d,
-			Branch c, While a, S2B a2c, Assignment b) {
+	public static final Object[] pattern_while2branch_1_2_collecttranslatedelements_greenFBBBBBB(Branch c, S2B a2c,
+			Command d, Assignment b, S2N b2d, While a) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2d);
-		ruleresult.getCreatedElements().add(d);
 		ruleresult.getCreatedElements().add(c);
-		ruleresult.getTranslatedElements().add(a);
 		ruleresult.getCreatedLinkElements().add(a2c);
+		ruleresult.getCreatedElements().add(d);
 		ruleresult.getTranslatedElements().add(b);
-		return new Object[] { ruleresult, b2d, d, c, a, a2c, b };
+		ruleresult.getCreatedLinkElements().add(b2d);
+		ruleresult.getTranslatedElements().add(a);
+		return new Object[] { ruleresult, c, a2c, d, b, b2d, a };
 	}
 
 	public static final Object[] pattern_while2branch_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject b2d, EObject d, EObject c, EObject s2n, EObject a, EObject s,
-			EObject n, EObject a2c, EObject b) {
-		if (!b2d.equals(d)) {
-			if (!b2d.equals(c)) {
-				if (!b2d.equals(s2n)) {
-					if (!b2d.equals(s)) {
-						if (!b2d.equals(n)) {
-							if (!d.equals(s2n)) {
-								if (!d.equals(s)) {
-									if (!d.equals(n)) {
-										if (!c.equals(d)) {
-											if (!c.equals(s2n)) {
-												if (!c.equals(s)) {
-													if (!c.equals(n)) {
-														if (!a.equals(b2d)) {
-															if (!a.equals(d)) {
-																if (!a.equals(c)) {
-																	if (!a.equals(s2n)) {
-																		if (!a.equals(s)) {
-																			if (!a.equals(n)) {
-																				if (!a.equals(a2c)) {
-																					if (!a.equals(b)) {
-																						if (!s.equals(s2n)) {
-																							if (!n.equals(s2n)) {
-																								if (!n.equals(s)) {
-																									if (!a2c.equals(
-																											b2d)) {
-																										if (!a2c.equals(
-																												d)) {
-																											if (!a2c.equals(
+			PerformRuleResult ruleresult, EObject c, EObject a2c, EObject d, EObject b, EObject b2d, EObject a,
+			EObject s2n, EObject s, EObject n) {
+		if (!c.equals(d)) {
+			if (!c.equals(s2n)) {
+				if (!c.equals(s)) {
+					if (!c.equals(n)) {
+						if (!a2c.equals(c)) {
+							if (!a2c.equals(d)) {
+								if (!a2c.equals(b)) {
+									if (!a2c.equals(b2d)) {
+										if (!a2c.equals(s2n)) {
+											if (!a2c.equals(s)) {
+												if (!a2c.equals(n)) {
+													if (!d.equals(s2n)) {
+														if (!d.equals(s)) {
+															if (!d.equals(n)) {
+																if (!b.equals(c)) {
+																	if (!b.equals(d)) {
+																		if (!b.equals(b2d)) {
+																			if (!b.equals(s2n)) {
+																				if (!b.equals(s)) {
+																					if (!b.equals(n)) {
+																						if (!b2d.equals(c)) {
+																							if (!b2d.equals(d)) {
+																								if (!b2d.equals(s2n)) {
+																									if (!b2d.equals(
+																											s)) {
+																										if (!b2d.equals(
+																												n)) {
+																											if (!a.equals(
 																													c)) {
-																												if (!a2c.equals(
-																														s2n)) {
-																													if (!a2c.equals(
-																															s)) {
-																														if (!a2c.equals(
-																																n)) {
-																															if (!a2c.equals(
-																																	b)) {
-																																if (!b.equals(
-																																		b2d)) {
-																																	if (!b.equals(
-																																			d)) {
-																																		if (!b.equals(
-																																				c)) {
-																																			if (!b.equals(
+																												if (!a.equals(
+																														a2c)) {
+																													if (!a.equals(
+																															d)) {
+																														if (!a.equals(
+																																b)) {
+																															if (!a.equals(
+																																	b2d)) {
+																																if (!a.equals(
+																																		s2n)) {
+																																	if (!a.equals(
+																																			s)) {
+																																		if (!a.equals(
+																																				n)) {
+																																			if (!s.equals(
 																																					s2n)) {
-																																				if (!b.equals(
-																																						s)) {
-																																					if (!b.equals(
-																																							n)) {
+																																				if (!n.equals(
+																																						s2n)) {
+																																					if (!n.equals(
+																																							s)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								b2d,
-																																								d,
 																																								c,
-																																								s2n,
-																																								a,
-																																								s,
-																																								n,
 																																								a2c,
-																																								b };
+																																								d,
+																																								b,
+																																								b2d,
+																																								a,
+																																								s2n,
+																																								s,
+																																								n };
 																																					}
 																																				}
 																																			}
@@ -1491,66 +1491,66 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFF(
-			PerformRuleResult ruleresult, EObject b2d, EObject d, EObject c, EObject a, EObject s, EObject n,
-			EObject a2c, EObject b) {
+			PerformRuleResult ruleresult, EObject c, EObject a2c, EObject d, EObject b, EObject b2d, EObject a,
+			EObject s, EObject n) {
+		EMoflonEdge a2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge d__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2d__d____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2c__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a__b____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2d__b____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge s__a____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge n__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2c__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2d__b____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "while2branch";
+		String a2c__c____target_name_prime = "target";
 		String d__c____next_name_prime = "next";
 		String b2d__d____target_name_prime = "target";
+		String a2c__a____source_name_prime = "source";
 		String a__b____last_name_prime = "last";
+		String b2d__b____source_name_prime = "source";
 		String s__a____next_name_prime = "next";
 		String n__c____next_name_prime = "next";
-		String a2c__c____target_name_prime = "target";
-		String a2c__a____source_name_prime = "source";
-		String b2d__b____source_name_prime = "source";
+		a2c__c____target.setSrc(a2c);
+		a2c__c____target.setTrg(c);
+		ruleresult.getCreatedEdges().add(a2c__c____target);
 		d__c____next.setSrc(d);
 		d__c____next.setTrg(c);
 		ruleresult.getCreatedEdges().add(d__c____next);
 		b2d__d____target.setSrc(b2d);
 		b2d__d____target.setTrg(d);
 		ruleresult.getCreatedEdges().add(b2d__d____target);
+		a2c__a____source.setSrc(a2c);
+		a2c__a____source.setTrg(a);
+		ruleresult.getCreatedEdges().add(a2c__a____source);
 		a__b____last.setSrc(a);
 		a__b____last.setTrg(b);
 		ruleresult.getTranslatedEdges().add(a__b____last);
+		b2d__b____source.setSrc(b2d);
+		b2d__b____source.setTrg(b);
+		ruleresult.getCreatedEdges().add(b2d__b____source);
 		s__a____next.setSrc(s);
 		s__a____next.setTrg(a);
 		ruleresult.getTranslatedEdges().add(s__a____next);
 		n__c____next.setSrc(n);
 		n__c____next.setTrg(c);
 		ruleresult.getCreatedEdges().add(n__c____next);
-		a2c__c____target.setSrc(a2c);
-		a2c__c____target.setTrg(c);
-		ruleresult.getCreatedEdges().add(a2c__c____target);
-		a2c__a____source.setSrc(a2c);
-		a2c__a____source.setTrg(a);
-		ruleresult.getCreatedEdges().add(a2c__a____source);
-		b2d__b____source.setSrc(b2d);
-		b2d__b____source.setTrg(b);
-		ruleresult.getCreatedEdges().add(b2d__b____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		a2c__c____target.setName(a2c__c____target_name_prime);
 		d__c____next.setName(d__c____next_name_prime);
 		b2d__d____target.setName(b2d__d____target_name_prime);
+		a2c__a____source.setName(a2c__a____source_name_prime);
 		a__b____last.setName(a__b____last_name_prime);
+		b2d__b____source.setName(b2d__b____source_name_prime);
 		s__a____next.setName(s__a____next_name_prime);
 		n__c____next.setName(n__c____next_name_prime);
-		a2c__c____target.setName(a2c__c____target_name_prime);
-		a2c__a____source.setName(a2c__a____source_name_prime);
-		b2d__b____source.setName(b2d__b____source_name_prime);
-		return new Object[] { ruleresult, b2d, d, c, a, s, n, a2c, b, d__c____next, b2d__d____target, a__b____last,
-				s__a____next, n__c____next, a2c__c____target, a2c__a____source, b2d__b____source };
+		return new Object[] { ruleresult, c, a2c, d, b, b2d, a, s, n, a2c__c____target, d__c____next, b2d__d____target,
+				a2c__a____source, a__b____last, b2d__b____source, s__a____next, n__c____next };
 	}
 
 	public static final void pattern_while2branch_1_5_registerobjects_expressionBBBBBBBBBBB(while2branch _this,
-			PerformRuleResult ruleresult, EObject b2d, EObject d, EObject c, EObject s2n, EObject a, EObject s,
-			EObject n, EObject a2c, EObject b) {
-		_this.registerObjects_FWD(ruleresult, b2d, d, c, s2n, a, s, n, a2c, b);
+			PerformRuleResult ruleresult, EObject c, EObject a2c, EObject d, EObject b, EObject b2d, EObject a,
+			EObject s2n, EObject s, EObject n) {
+		_this.registerObjects_FWD(ruleresult, c, a2c, d, b, b2d, a, s2n, s, n);
 
 	}
 
@@ -1608,35 +1608,35 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_2_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("a");
-		EObject _localVariable_1 = match.getObject("s");
-		EObject _localVariable_2 = match.getObject("b");
-		EObject tmpA = _localVariable_0;
-		EObject tmpS = _localVariable_1;
-		EObject tmpB = _localVariable_2;
-		if (tmpA instanceof While) {
-			While a = (While) tmpA;
-			if (tmpS instanceof Statement) {
-				Statement s = (Statement) tmpS;
-				if (tmpB instanceof Assignment) {
-					Assignment b = (Assignment) tmpB;
-					return new Object[] { a, s, b, match };
+		EObject _localVariable_0 = match.getObject("b");
+		EObject _localVariable_1 = match.getObject("a");
+		EObject _localVariable_2 = match.getObject("s");
+		EObject tmpB = _localVariable_0;
+		EObject tmpA = _localVariable_1;
+		EObject tmpS = _localVariable_2;
+		if (tmpB instanceof Assignment) {
+			Assignment b = (Assignment) tmpB;
+			if (tmpA instanceof While) {
+				While a = (While) tmpA;
+				if (tmpS instanceof Statement) {
+					Statement s = (Statement) tmpS;
+					return new Object[] { b, a, s, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_while2branch_2_2_corematch_blackFBBFBB(While a, Statement s,
-			Assignment b, Match match) {
+	public static final Iterable<Object[]> pattern_while2branch_2_2_corematch_blackBBFBFB(Assignment b, While a,
+			Statement s, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!a.equals(s)) {
-			if (!b.equals(s)) {
+		if (!b.equals(s)) {
+			if (!a.equals(s)) {
 				for (S2N s2n : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(s, S2N.class,
 						"source")) {
 					Node n = s2n.getTarget();
 					if (n != null) {
-						_result.add(new Object[] { s2n, a, s, n, b, match });
+						_result.add(new Object[] { b, a, s2n, s, n, match });
 					}
 
 				}
@@ -1645,16 +1645,16 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_while2branch_2_3_findcontext_blackBBBBB(S2N s2n, While a,
-			Statement s, Node n, Assignment b) {
+	public static final Iterable<Object[]> pattern_while2branch_2_3_findcontext_blackBBBBB(Assignment b, While a,
+			S2N s2n, Statement s, Node n) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!a.equals(s)) {
-			if (!b.equals(s)) {
-				if (s.equals(s2n.getSource())) {
-					if (b.equals(a.getLast())) {
+		if (!b.equals(s)) {
+			if (!a.equals(s)) {
+				if (b.equals(a.getLast())) {
+					if (s.equals(s2n.getSource())) {
 						if (a.equals(s.getNext())) {
 							if (n.equals(s2n.getTarget())) {
-								_result.add(new Object[] { s2n, a, s, n, b });
+								_result.add(new Object[] { b, a, s2n, s, n });
 							}
 						}
 					}
@@ -1664,48 +1664,48 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return _result;
 	}
 
-	public static final Object[] pattern_while2branch_2_3_findcontext_greenBBBBBFFFFF(S2N s2n, While a, Statement s,
-			Node n, Assignment b) {
+	public static final Object[] pattern_while2branch_2_3_findcontext_greenBBBBBFFFFF(Assignment b, While a, S2N s2n,
+			Statement s, Node n) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge s2n__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a__b____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge s2n__s____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge s__a____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge s2n__n____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String s2n__s____source_name_prime = "source";
 		String a__b____last_name_prime = "last";
+		String s2n__s____source_name_prime = "source";
 		String s__a____next_name_prime = "next";
 		String s2n__n____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(s2n);
+		isApplicableMatch.getAllContextElements().add(b);
 		isApplicableMatch.getAllContextElements().add(a);
+		isApplicableMatch.getAllContextElements().add(s2n);
 		isApplicableMatch.getAllContextElements().add(s);
 		isApplicableMatch.getAllContextElements().add(n);
-		isApplicableMatch.getAllContextElements().add(b);
-		s2n__s____source.setSrc(s2n);
-		s2n__s____source.setTrg(s);
-		isApplicableMatch.getAllContextElements().add(s2n__s____source);
 		a__b____last.setSrc(a);
 		a__b____last.setTrg(b);
 		isApplicableMatch.getAllContextElements().add(a__b____last);
+		s2n__s____source.setSrc(s2n);
+		s2n__s____source.setTrg(s);
+		isApplicableMatch.getAllContextElements().add(s2n__s____source);
 		s__a____next.setSrc(s);
 		s__a____next.setTrg(a);
 		isApplicableMatch.getAllContextElements().add(s__a____next);
 		s2n__n____target.setSrc(s2n);
 		s2n__n____target.setTrg(n);
 		isApplicableMatch.getAllContextElements().add(s2n__n____target);
-		s2n__s____source.setName(s2n__s____source_name_prime);
 		a__b____last.setName(a__b____last_name_prime);
+		s2n__s____source.setName(s2n__s____source_name_prime);
 		s__a____next.setName(s__a____next_name_prime);
 		s2n__n____target.setName(s2n__n____target_name_prime);
-		return new Object[] { s2n, a, s, n, b, isApplicableMatch, s2n__s____source, a__b____last, s__a____next,
+		return new Object[] { b, a, s2n, s, n, isApplicableMatch, a__b____last, s2n__s____source, s__a____next,
 				s2n__n____target };
 	}
 
 	public static final Object[] pattern_while2branch_2_4_solveCSP_bindingFBBBBBBB(while2branch _this,
-			IsApplicableMatch isApplicableMatch, S2N s2n, While a, Statement s, Node n, Assignment b) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, s2n, a, s, n, b);
+			IsApplicableMatch isApplicableMatch, Assignment b, While a, S2N s2n, Statement s, Node n) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, b, a, s2n, s, n);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, s2n, a, s, n, b };
+			return new Object[] { csp, _this, isApplicableMatch, b, a, s2n, s, n };
 		}
 		return null;
 	}
@@ -1715,16 +1715,16 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_2_4_solveCSP_bindingAndBlackFBBBBBBB(while2branch _this,
-			IsApplicableMatch isApplicableMatch, S2N s2n, While a, Statement s, Node n, Assignment b) {
+			IsApplicableMatch isApplicableMatch, Assignment b, While a, S2N s2n, Statement s, Node n) {
 		Object[] result_pattern_while2branch_2_4_solveCSP_binding = pattern_while2branch_2_4_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, s2n, a, s, n, b);
+				_this, isApplicableMatch, b, a, s2n, s, n);
 		if (result_pattern_while2branch_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_while2branch_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_while2branch_2_4_solveCSP_black = pattern_while2branch_2_4_solveCSP_blackB(csp);
 			if (result_pattern_while2branch_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, s2n, a, s, n, b };
+				return new Object[] { csp, _this, isApplicableMatch, b, a, s2n, s, n };
 			}
 		}
 		return null;
@@ -1758,21 +1758,21 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_10_1_initialbindings_blackBBBBB(while2branch _this, Match match,
-			Command d, Branch c, Node n) {
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
-				return new Object[] { _this, match, d, c, n };
+			Branch c, Command d, Node n) {
+		if (!c.equals(n)) {
+			if (!d.equals(n)) {
+				return new Object[] { _this, match, c, d, n };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_while2branch_10_2_SolveCSP_bindingFBBBBB(while2branch _this, Match match,
-			Command d, Branch c, Node n) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, d, c, n);
+			Branch c, Command d, Node n) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, c, d, n);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, d, c, n };
+			return new Object[] { csp, _this, match, c, d, n };
 		}
 		return null;
 	}
@@ -1782,16 +1782,16 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_10_2_SolveCSP_bindingAndBlackFBBBBB(while2branch _this,
-			Match match, Command d, Branch c, Node n) {
+			Match match, Branch c, Command d, Node n) {
 		Object[] result_pattern_while2branch_10_2_SolveCSP_binding = pattern_while2branch_10_2_SolveCSP_bindingFBBBBB(
-				_this, match, d, c, n);
+				_this, match, c, d, n);
 		if (result_pattern_while2branch_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_while2branch_10_2_SolveCSP_binding[0];
 
 			Object[] result_pattern_while2branch_10_2_SolveCSP_black = pattern_while2branch_10_2_SolveCSP_blackB(csp);
 			if (result_pattern_while2branch_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, d, c, n };
+				return new Object[] { csp, _this, match, c, d, n };
 			}
 		}
 		return null;
@@ -1804,21 +1804,21 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_10_4_collectelementstobetranslated_blackBBBB(Match match,
-			Command d, Branch c, Node n) {
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
-				return new Object[] { match, d, c, n };
+			Branch c, Command d, Node n) {
+		if (!c.equals(n)) {
+			if (!d.equals(n)) {
+				return new Object[] { match, c, d, n };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_while2branch_10_4_collectelementstobetranslated_greenBBBBFF(Match match,
-			Command d, Branch c, Node n) {
+			Branch c, Command d, Node n) {
 		EMoflonEdge d__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge n__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		match.getToBeTranslatedNodes().add(d);
 		match.getToBeTranslatedNodes().add(c);
+		match.getToBeTranslatedNodes().add(d);
 		String d__c____next_name_prime = "next";
 		String n__c____next_name_prime = "next";
 		d__c____next.setSrc(d);
@@ -1829,14 +1829,14 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		match.getToBeTranslatedEdges().add(n__c____next);
 		d__c____next.setName(d__c____next_name_prime);
 		n__c____next.setName(n__c____next_name_prime);
-		return new Object[] { match, d, c, n, d__c____next, n__c____next };
+		return new Object[] { match, c, d, n, d__c____next, n__c____next };
 	}
 
-	public static final Object[] pattern_while2branch_10_5_collectcontextelements_blackBBBB(Match match, Command d,
-			Branch c, Node n) {
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
-				return new Object[] { match, d, c, n };
+	public static final Object[] pattern_while2branch_10_5_collectcontextelements_blackBBBB(Match match, Branch c,
+			Command d, Node n) {
+		if (!c.equals(n)) {
+			if (!d.equals(n)) {
+				return new Object[] { match, c, d, n };
 			}
 		}
 		return null;
@@ -1848,8 +1848,8 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final void pattern_while2branch_10_6_registerobjectstomatch_expressionBBBBB(while2branch _this,
-			Match match, Command d, Branch c, Node n) {
-		_this.registerObjectsToMatch_BWD(match, d, c, n);
+			Match match, Branch c, Command d, Node n) {
+		_this.registerObjectsToMatch_BWD(match, c, d, n);
 
 	}
 
@@ -1865,27 +1865,27 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 
 	public static final Object[] pattern_while2branch_11_1_performtransformation_bindingFFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("d");
-		EObject _localVariable_1 = isApplicableMatch.getObject("c");
+		EObject _localVariable_0 = isApplicableMatch.getObject("c");
+		EObject _localVariable_1 = isApplicableMatch.getObject("d");
 		EObject _localVariable_2 = isApplicableMatch.getObject("s2n");
 		EObject _localVariable_3 = isApplicableMatch.getObject("s");
 		EObject _localVariable_4 = isApplicableMatch.getObject("n");
-		EObject tmpD = _localVariable_0;
-		EObject tmpC = _localVariable_1;
+		EObject tmpC = _localVariable_0;
+		EObject tmpD = _localVariable_1;
 		EObject tmpS2n = _localVariable_2;
 		EObject tmpS = _localVariable_3;
 		EObject tmpN = _localVariable_4;
-		if (tmpD instanceof Command) {
-			Command d = (Command) tmpD;
-			if (tmpC instanceof Branch) {
-				Branch c = (Branch) tmpC;
+		if (tmpC instanceof Branch) {
+			Branch c = (Branch) tmpC;
+			if (tmpD instanceof Command) {
+				Command d = (Command) tmpD;
 				if (tmpS2n instanceof S2N) {
 					S2N s2n = (S2N) tmpS2n;
 					if (tmpS instanceof Statement) {
 						Statement s = (Statement) tmpS;
 						if (tmpN instanceof Node) {
 							Node n = (Node) tmpN;
-							return new Object[] { d, c, s2n, s, n, isApplicableMatch };
+							return new Object[] { c, d, s2n, s, n, isApplicableMatch };
 						}
 					}
 				}
@@ -1894,14 +1894,14 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_11_1_performtransformation_blackBBBBBFBB(Command d, Branch c,
+	public static final Object[] pattern_while2branch_11_1_performtransformation_blackBBBBBFBB(Branch c, Command d,
 			S2N s2n, Statement s, Node n, while2branch _this, IsApplicableMatch isApplicableMatch) {
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
+		if (!c.equals(n)) {
+			if (!d.equals(n)) {
 				for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 					if (tmpCsp instanceof CSP) {
 						CSP csp = (CSP) tmpCsp;
-						return new Object[] { d, c, s2n, s, n, csp, _this, isApplicableMatch };
+						return new Object[] { c, d, s2n, s, n, csp, _this, isApplicableMatch };
 					}
 				}
 			}
@@ -1914,118 +1914,118 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		Object[] result_pattern_while2branch_11_1_performtransformation_binding = pattern_while2branch_11_1_performtransformation_bindingFFFFFB(
 				isApplicableMatch);
 		if (result_pattern_while2branch_11_1_performtransformation_binding != null) {
-			Command d = (Command) result_pattern_while2branch_11_1_performtransformation_binding[0];
-			Branch c = (Branch) result_pattern_while2branch_11_1_performtransformation_binding[1];
+			Branch c = (Branch) result_pattern_while2branch_11_1_performtransformation_binding[0];
+			Command d = (Command) result_pattern_while2branch_11_1_performtransformation_binding[1];
 			S2N s2n = (S2N) result_pattern_while2branch_11_1_performtransformation_binding[2];
 			Statement s = (Statement) result_pattern_while2branch_11_1_performtransformation_binding[3];
 			Node n = (Node) result_pattern_while2branch_11_1_performtransformation_binding[4];
 
 			Object[] result_pattern_while2branch_11_1_performtransformation_black = pattern_while2branch_11_1_performtransformation_blackBBBBBFBB(
-					d, c, s2n, s, n, _this, isApplicableMatch);
+					c, d, s2n, s, n, _this, isApplicableMatch);
 			if (result_pattern_while2branch_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_while2branch_11_1_performtransformation_black[5];
 
-				return new Object[] { d, c, s2n, s, n, csp, _this, isApplicableMatch };
+				return new Object[] { c, d, s2n, s, n, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_11_1_performtransformation_greenFBBFBFF(Command d, Branch c,
+	public static final Object[] pattern_while2branch_11_1_performtransformation_greenBFBFFFB(Branch c, Command d,
 			Statement s) {
-		S2N b2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
-		While a = SourcecodeFactory.eINSTANCE.createWhile();
 		S2B a2c = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
 		Assignment b = SourcecodeFactory.eINSTANCE.createAssignment();
-		b2d.setTarget(d);
-		s.setNext(a);
+		S2N b2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
+		While a = SourcecodeFactory.eINSTANCE.createWhile();
 		a2c.setTarget(c);
+		b2d.setTarget(d);
+		b2d.setSource(b);
 		a2c.setSource(a);
 		a.setLast(b);
-		b2d.setSource(b);
-		return new Object[] { b2d, d, c, a, s, a2c, b };
+		s.setNext(a);
+		return new Object[] { c, a2c, d, b, b2d, a, s };
 	}
 
-	public static final Object[] pattern_while2branch_11_2_collecttranslatedelements_blackBBBBBB(S2N b2d, Command d,
-			Branch c, While a, S2B a2c, Assignment b) {
-		return new Object[] { b2d, d, c, a, a2c, b };
+	public static final Object[] pattern_while2branch_11_2_collecttranslatedelements_blackBBBBBB(Branch c, S2B a2c,
+			Command d, Assignment b, S2N b2d, While a) {
+		return new Object[] { c, a2c, d, b, b2d, a };
 	}
 
-	public static final Object[] pattern_while2branch_11_2_collecttranslatedelements_greenFBBBBBB(S2N b2d, Command d,
-			Branch c, While a, S2B a2c, Assignment b) {
+	public static final Object[] pattern_while2branch_11_2_collecttranslatedelements_greenFBBBBBB(Branch c, S2B a2c,
+			Command d, Assignment b, S2N b2d, While a) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2d);
-		ruleresult.getTranslatedElements().add(d);
 		ruleresult.getTranslatedElements().add(c);
-		ruleresult.getCreatedElements().add(a);
 		ruleresult.getCreatedLinkElements().add(a2c);
+		ruleresult.getTranslatedElements().add(d);
 		ruleresult.getCreatedElements().add(b);
-		return new Object[] { ruleresult, b2d, d, c, a, a2c, b };
+		ruleresult.getCreatedLinkElements().add(b2d);
+		ruleresult.getCreatedElements().add(a);
+		return new Object[] { ruleresult, c, a2c, d, b, b2d, a };
 	}
 
 	public static final Object[] pattern_while2branch_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject b2d, EObject d, EObject c, EObject s2n, EObject a, EObject s,
-			EObject n, EObject a2c, EObject b) {
-		if (!b2d.equals(d)) {
-			if (!b2d.equals(c)) {
-				if (!b2d.equals(s2n)) {
-					if (!b2d.equals(s)) {
-						if (!b2d.equals(n)) {
-							if (!d.equals(s2n)) {
-								if (!d.equals(s)) {
-									if (!d.equals(n)) {
-										if (!c.equals(d)) {
-											if (!c.equals(s2n)) {
-												if (!c.equals(s)) {
-													if (!c.equals(n)) {
-														if (!a.equals(b2d)) {
-															if (!a.equals(d)) {
-																if (!a.equals(c)) {
-																	if (!a.equals(s2n)) {
-																		if (!a.equals(s)) {
-																			if (!a.equals(n)) {
-																				if (!a.equals(a2c)) {
-																					if (!a.equals(b)) {
-																						if (!s.equals(s2n)) {
-																							if (!n.equals(s2n)) {
-																								if (!n.equals(s)) {
-																									if (!a2c.equals(
-																											b2d)) {
-																										if (!a2c.equals(
-																												d)) {
-																											if (!a2c.equals(
+			PerformRuleResult ruleresult, EObject c, EObject a2c, EObject d, EObject b, EObject b2d, EObject a,
+			EObject s2n, EObject s, EObject n) {
+		if (!c.equals(d)) {
+			if (!c.equals(s2n)) {
+				if (!c.equals(s)) {
+					if (!c.equals(n)) {
+						if (!a2c.equals(c)) {
+							if (!a2c.equals(d)) {
+								if (!a2c.equals(b)) {
+									if (!a2c.equals(b2d)) {
+										if (!a2c.equals(s2n)) {
+											if (!a2c.equals(s)) {
+												if (!a2c.equals(n)) {
+													if (!d.equals(s2n)) {
+														if (!d.equals(s)) {
+															if (!d.equals(n)) {
+																if (!b.equals(c)) {
+																	if (!b.equals(d)) {
+																		if (!b.equals(b2d)) {
+																			if (!b.equals(s2n)) {
+																				if (!b.equals(s)) {
+																					if (!b.equals(n)) {
+																						if (!b2d.equals(c)) {
+																							if (!b2d.equals(d)) {
+																								if (!b2d.equals(s2n)) {
+																									if (!b2d.equals(
+																											s)) {
+																										if (!b2d.equals(
+																												n)) {
+																											if (!a.equals(
 																													c)) {
-																												if (!a2c.equals(
-																														s2n)) {
-																													if (!a2c.equals(
-																															s)) {
-																														if (!a2c.equals(
-																																n)) {
-																															if (!a2c.equals(
-																																	b)) {
-																																if (!b.equals(
-																																		b2d)) {
-																																	if (!b.equals(
-																																			d)) {
-																																		if (!b.equals(
-																																				c)) {
-																																			if (!b.equals(
+																												if (!a.equals(
+																														a2c)) {
+																													if (!a.equals(
+																															d)) {
+																														if (!a.equals(
+																																b)) {
+																															if (!a.equals(
+																																	b2d)) {
+																																if (!a.equals(
+																																		s2n)) {
+																																	if (!a.equals(
+																																			s)) {
+																																		if (!a.equals(
+																																				n)) {
+																																			if (!s.equals(
 																																					s2n)) {
-																																				if (!b.equals(
-																																						s)) {
-																																					if (!b.equals(
-																																							n)) {
+																																				if (!n.equals(
+																																						s2n)) {
+																																					if (!n.equals(
+																																							s)) {
 																																						return new Object[] {
 																																								ruleresult,
-																																								b2d,
-																																								d,
 																																								c,
-																																								s2n,
-																																								a,
-																																								s,
-																																								n,
 																																								a2c,
-																																								b };
+																																								d,
+																																								b,
+																																								b2d,
+																																								a,
+																																								s2n,
+																																								s,
+																																								n };
 																																					}
 																																				}
 																																			}
@@ -2066,66 +2066,66 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFF(
-			PerformRuleResult ruleresult, EObject b2d, EObject d, EObject c, EObject a, EObject s, EObject n,
-			EObject a2c, EObject b) {
+			PerformRuleResult ruleresult, EObject c, EObject a2c, EObject d, EObject b, EObject b2d, EObject a,
+			EObject s, EObject n) {
+		EMoflonEdge a2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge d__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2d__d____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge a2c__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge a__b____last = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2d__b____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge s__a____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge n__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2c__c____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge a2c__a____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2d__b____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "while2branch";
+		String a2c__c____target_name_prime = "target";
 		String d__c____next_name_prime = "next";
 		String b2d__d____target_name_prime = "target";
+		String a2c__a____source_name_prime = "source";
 		String a__b____last_name_prime = "last";
+		String b2d__b____source_name_prime = "source";
 		String s__a____next_name_prime = "next";
 		String n__c____next_name_prime = "next";
-		String a2c__c____target_name_prime = "target";
-		String a2c__a____source_name_prime = "source";
-		String b2d__b____source_name_prime = "source";
+		a2c__c____target.setSrc(a2c);
+		a2c__c____target.setTrg(c);
+		ruleresult.getCreatedEdges().add(a2c__c____target);
 		d__c____next.setSrc(d);
 		d__c____next.setTrg(c);
 		ruleresult.getTranslatedEdges().add(d__c____next);
 		b2d__d____target.setSrc(b2d);
 		b2d__d____target.setTrg(d);
 		ruleresult.getCreatedEdges().add(b2d__d____target);
+		a2c__a____source.setSrc(a2c);
+		a2c__a____source.setTrg(a);
+		ruleresult.getCreatedEdges().add(a2c__a____source);
 		a__b____last.setSrc(a);
 		a__b____last.setTrg(b);
 		ruleresult.getCreatedEdges().add(a__b____last);
+		b2d__b____source.setSrc(b2d);
+		b2d__b____source.setTrg(b);
+		ruleresult.getCreatedEdges().add(b2d__b____source);
 		s__a____next.setSrc(s);
 		s__a____next.setTrg(a);
 		ruleresult.getCreatedEdges().add(s__a____next);
 		n__c____next.setSrc(n);
 		n__c____next.setTrg(c);
 		ruleresult.getTranslatedEdges().add(n__c____next);
-		a2c__c____target.setSrc(a2c);
-		a2c__c____target.setTrg(c);
-		ruleresult.getCreatedEdges().add(a2c__c____target);
-		a2c__a____source.setSrc(a2c);
-		a2c__a____source.setTrg(a);
-		ruleresult.getCreatedEdges().add(a2c__a____source);
-		b2d__b____source.setSrc(b2d);
-		b2d__b____source.setTrg(b);
-		ruleresult.getCreatedEdges().add(b2d__b____source);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
+		a2c__c____target.setName(a2c__c____target_name_prime);
 		d__c____next.setName(d__c____next_name_prime);
 		b2d__d____target.setName(b2d__d____target_name_prime);
+		a2c__a____source.setName(a2c__a____source_name_prime);
 		a__b____last.setName(a__b____last_name_prime);
+		b2d__b____source.setName(b2d__b____source_name_prime);
 		s__a____next.setName(s__a____next_name_prime);
 		n__c____next.setName(n__c____next_name_prime);
-		a2c__c____target.setName(a2c__c____target_name_prime);
-		a2c__a____source.setName(a2c__a____source_name_prime);
-		b2d__b____source.setName(b2d__b____source_name_prime);
-		return new Object[] { ruleresult, b2d, d, c, a, s, n, a2c, b, d__c____next, b2d__d____target, a__b____last,
-				s__a____next, n__c____next, a2c__c____target, a2c__a____source, b2d__b____source };
+		return new Object[] { ruleresult, c, a2c, d, b, b2d, a, s, n, a2c__c____target, d__c____next, b2d__d____target,
+				a2c__a____source, a__b____last, b2d__b____source, s__a____next, n__c____next };
 	}
 
 	public static final void pattern_while2branch_11_5_registerobjects_expressionBBBBBBBBBBB(while2branch _this,
-			PerformRuleResult ruleresult, EObject b2d, EObject d, EObject c, EObject s2n, EObject a, EObject s,
-			EObject n, EObject a2c, EObject b) {
-		_this.registerObjects_BWD(ruleresult, b2d, d, c, s2n, a, s, n, a2c, b);
+			PerformRuleResult ruleresult, EObject c, EObject a2c, EObject d, EObject b, EObject b2d, EObject a,
+			EObject s2n, EObject s, EObject n) {
+		_this.registerObjects_BWD(ruleresult, c, a2c, d, b, b2d, a, s2n, s, n);
 
 	}
 
@@ -2183,35 +2183,35 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_12_2_corematch_bindingFFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("d");
-		EObject _localVariable_1 = match.getObject("c");
+		EObject _localVariable_0 = match.getObject("c");
+		EObject _localVariable_1 = match.getObject("d");
 		EObject _localVariable_2 = match.getObject("n");
-		EObject tmpD = _localVariable_0;
-		EObject tmpC = _localVariable_1;
+		EObject tmpC = _localVariable_0;
+		EObject tmpD = _localVariable_1;
 		EObject tmpN = _localVariable_2;
-		if (tmpD instanceof Command) {
-			Command d = (Command) tmpD;
-			if (tmpC instanceof Branch) {
-				Branch c = (Branch) tmpC;
+		if (tmpC instanceof Branch) {
+			Branch c = (Branch) tmpC;
+			if (tmpD instanceof Command) {
+				Command d = (Command) tmpD;
 				if (tmpN instanceof Node) {
 					Node n = (Node) tmpN;
-					return new Object[] { d, c, n, match };
+					return new Object[] { c, d, n, match };
 				}
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_while2branch_12_2_corematch_blackBBFFBB(Command d, Branch c, Node n,
+	public static final Iterable<Object[]> pattern_while2branch_12_2_corematch_blackBBFFBB(Branch c, Command d, Node n,
 			Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
+		if (!c.equals(n)) {
+			if (!d.equals(n)) {
 				for (S2N s2n : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(n, S2N.class,
 						"target")) {
 					Statement s = s2n.getSource();
 					if (s != null) {
-						_result.add(new Object[] { d, c, s2n, s, n, match });
+						_result.add(new Object[] { c, d, s2n, s, n, match });
 					}
 
 				}
@@ -2220,16 +2220,16 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_while2branch_12_3_findcontext_blackBBBBB(Command d, Branch c,
+	public static final Iterable<Object[]> pattern_while2branch_12_3_findcontext_blackBBBBB(Branch c, Command d,
 			S2N s2n, Statement s, Node n) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
+		if (!c.equals(n)) {
+			if (!d.equals(n)) {
 				if (c.equals(d.getNext())) {
 					if (s.equals(s2n.getSource())) {
 						if (c.equals(n.getNext())) {
 							if (n.equals(s2n.getTarget())) {
-								_result.add(new Object[] { d, c, s2n, s, n });
+								_result.add(new Object[] { c, d, s2n, s, n });
 							}
 						}
 					}
@@ -2239,7 +2239,7 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return _result;
 	}
 
-	public static final Object[] pattern_while2branch_12_3_findcontext_greenBBBBBFFFFF(Command d, Branch c, S2N s2n,
+	public static final Object[] pattern_while2branch_12_3_findcontext_greenBBBBBFFFFF(Branch c, Command d, S2N s2n,
 			Statement s, Node n) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge d__c____next = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2250,8 +2250,8 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		String s2n__s____source_name_prime = "source";
 		String n__c____next_name_prime = "next";
 		String s2n__n____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(d);
 		isApplicableMatch.getAllContextElements().add(c);
+		isApplicableMatch.getAllContextElements().add(d);
 		isApplicableMatch.getAllContextElements().add(s2n);
 		isApplicableMatch.getAllContextElements().add(s);
 		isApplicableMatch.getAllContextElements().add(n);
@@ -2271,16 +2271,16 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		s2n__s____source.setName(s2n__s____source_name_prime);
 		n__c____next.setName(n__c____next_name_prime);
 		s2n__n____target.setName(s2n__n____target_name_prime);
-		return new Object[] { d, c, s2n, s, n, isApplicableMatch, d__c____next, s2n__s____source, n__c____next,
+		return new Object[] { c, d, s2n, s, n, isApplicableMatch, d__c____next, s2n__s____source, n__c____next,
 				s2n__n____target };
 	}
 
 	public static final Object[] pattern_while2branch_12_4_solveCSP_bindingFBBBBBBB(while2branch _this,
-			IsApplicableMatch isApplicableMatch, Command d, Branch c, S2N s2n, Statement s, Node n) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, d, c, s2n, s, n);
+			IsApplicableMatch isApplicableMatch, Branch c, Command d, S2N s2n, Statement s, Node n) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, c, d, s2n, s, n);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, d, c, s2n, s, n };
+			return new Object[] { csp, _this, isApplicableMatch, c, d, s2n, s, n };
 		}
 		return null;
 	}
@@ -2290,16 +2290,16 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_12_4_solveCSP_bindingAndBlackFBBBBBBB(while2branch _this,
-			IsApplicableMatch isApplicableMatch, Command d, Branch c, S2N s2n, Statement s, Node n) {
+			IsApplicableMatch isApplicableMatch, Branch c, Command d, S2N s2n, Statement s, Node n) {
 		Object[] result_pattern_while2branch_12_4_solveCSP_binding = pattern_while2branch_12_4_solveCSP_bindingFBBBBBBB(
-				_this, isApplicableMatch, d, c, s2n, s, n);
+				_this, isApplicableMatch, c, d, s2n, s, n);
 		if (result_pattern_while2branch_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_while2branch_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_while2branch_12_4_solveCSP_black = pattern_while2branch_12_4_solveCSP_blackB(csp);
 			if (result_pattern_while2branch_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, d, c, s2n, s, n };
+				return new Object[] { csp, _this, isApplicableMatch, c, d, s2n, s, n };
 			}
 		}
 		return null;
@@ -2384,62 +2384,20 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return new Object[] { __result };
 	}
 
-	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_0B(Command d) {
-		for (Graph __DEC_d_root_114691 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
-				Graph.class, "root")) {
-			return new Object[] { d };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_1BBB(Command d, Branch c,
-			Node n) {
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
-				for (Branch __DEC_d_positive_334698 : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(d, Branch.class, "positive")) {
-					if (!c.equals(__DEC_d_positive_334698)) {
-						if (!n.equals(__DEC_d_positive_334698)) {
-							return new Object[] { d, c, n };
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_2BBB(Command d, Branch c,
-			Node n) {
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
-				for (Branch __DEC_d_negative_381969 : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(d, Branch.class, "negative")) {
-					if (!c.equals(__DEC_d_negative_381969)) {
-						if (!n.equals(__DEC_d_negative_381969)) {
-							return new Object[] { d, c, n };
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_3B(Branch c) {
-		for (Graph __DEC_c_root_270686 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_0B(Branch c) {
+		for (Graph __DEC_c_root_845256 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 				Graph.class, "root")) {
 			return new Object[] { c };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_4BB(Branch c, Node n) {
+	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_1BB(Branch c, Node n) {
 		if (!c.equals(n)) {
-			for (Branch __DEC_c_positive_725272 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+			for (Branch __DEC_c_positive_592791 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 					Branch.class, "positive")) {
-				if (!c.equals(__DEC_c_positive_725272)) {
-					if (!n.equals(__DEC_c_positive_725272)) {
+				if (!c.equals(__DEC_c_positive_592791)) {
+					if (!n.equals(__DEC_c_positive_592791)) {
 						return new Object[] { c, n };
 					}
 				}
@@ -2448,13 +2406,55 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_5BB(Branch c, Node n) {
+	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_2BB(Branch c, Node n) {
 		if (!c.equals(n)) {
-			for (Branch __DEC_c_negative_703726 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+			for (Branch __DEC_c_negative_644606 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 					Branch.class, "negative")) {
-				if (!c.equals(__DEC_c_negative_703726)) {
-					if (!n.equals(__DEC_c_negative_703726)) {
+				if (!c.equals(__DEC_c_negative_644606)) {
+					if (!n.equals(__DEC_c_negative_644606)) {
 						return new Object[] { c, n };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_3B(Command d) {
+		for (Graph __DEC_d_root_410386 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
+				Graph.class, "root")) {
+			return new Object[] { d };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_4BBB(Command d, Branch c,
+			Node n) {
+		if (!d.equals(n)) {
+			if (!c.equals(n)) {
+				for (Branch __DEC_d_positive_312548 : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(d, Branch.class, "positive")) {
+					if (!c.equals(__DEC_d_positive_312548)) {
+						if (!n.equals(__DEC_d_positive_312548)) {
+							return new Object[] { d, c, n };
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_20_2_testcorematchandDECs_black_nac_5BBB(Command d, Branch c,
+			Node n) {
+		if (!d.equals(n)) {
+			if (!c.equals(n)) {
+				for (Branch __DEC_d_negative_580631 : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(d, Branch.class, "negative")) {
+					if (!c.equals(__DEC_d_negative_580631)) {
+						if (!n.equals(__DEC_d_negative_580631)) {
+							return new Object[] { d, c, n };
+						}
 					}
 				}
 			}
@@ -2486,23 +2486,23 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 			if (tmpC instanceof Branch) {
 				Branch c = (Branch) tmpC;
 				if (c.equals(d.getNext())) {
-					if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_0B(d) == null) {
-						if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_3B(c) == null) {
+					if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_3B(d) == null) {
+						if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_0B(c) == null) {
 							if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_6BB(c, d) == null) {
 								if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_7BB(c, d) == null) {
 									for (Node n : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 											Node.class, "next")) {
-										if (!d.equals(n)) {
-											if (!c.equals(n)) {
-												if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_1BBB(d, c,
+										if (!c.equals(n)) {
+											if (!d.equals(n)) {
+												if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_1BB(c,
 														n) == null) {
-													if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_2BBB(d,
-															c, n) == null) {
-														if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_4BB(
-																c, n) == null) {
-															if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_5BB(
-																	c, n) == null) {
-																_result.add(new Object[] { d, c, n, _edge_next });
+													if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_2BB(c,
+															n) == null) {
+														if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_4BBB(
+																d, c, n) == null) {
+															if (pattern_while2branch_20_2_testcorematchandDECs_black_nac_5BBB(
+																	d, c, n) == null) {
+																_result.add(new Object[] { c, d, n, _edge_next });
 															}
 														}
 													}
@@ -2532,8 +2532,8 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final boolean pattern_while2branch_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			while2branch _this, Match match, Command d, Branch c, Node n) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, d, c, n);
+			while2branch _this, Match match, Branch c, Command d, Node n) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, c, d, n);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2618,72 +2618,12 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return new Object[] { __result };
 	}
 
-	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_0BB(While a, Statement s) {
-		if (!a.equals(s)) {
-			for (Decision __DEC_a_positive_103318 : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(a, Decision.class, "positive")) {
-				if (!s.equals(__DEC_a_positive_103318)) {
-					return new Object[] { a, s };
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_1BB(While a, Statement s) {
-		if (!a.equals(s)) {
-			for (Decision __DEC_a_negative_988889 : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(a, Decision.class, "negative")) {
-				if (!s.equals(__DEC_a_negative_988889)) {
-					return new Object[] { a, s };
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_2BB(While a, Statement s) {
-		if (!a.equals(s)) {
-			for (While __DEC_a_first_740112 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
-					While.class, "first")) {
-				if (!a.equals(__DEC_a_first_740112)) {
-					if (!s.equals(__DEC_a_first_740112)) {
-						return new Object[] { a, s };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_3BB(While a, Statement s) {
-		if (!a.equals(s)) {
-			for (While __DEC_a_last_630682 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
-					While.class, "last")) {
-				if (!a.equals(__DEC_a_last_630682)) {
-					if (!s.equals(__DEC_a_last_630682)) {
-						return new Object[] { a, s };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_4B(While a) {
-		for (Program __DEC_a_first_650972 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
-				Program.class, "first")) {
-			return new Object[] { a };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_5BB(Assignment b,
+	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_0BB(Assignment b,
 			Statement s) {
 		if (!b.equals(s)) {
-			for (Decision __DEC_b_positive_605661 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (Decision __DEC_b_positive_759026 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(b, Decision.class, "positive")) {
-				if (!s.equals(__DEC_b_positive_605661)) {
+				if (!s.equals(__DEC_b_positive_759026)) {
 					return new Object[] { b, s };
 				}
 			}
@@ -2691,12 +2631,12 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_6BB(Assignment b,
+	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_1BB(Assignment b,
 			Statement s) {
 		if (!b.equals(s)) {
-			for (Decision __DEC_b_negative_493546 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (Decision __DEC_b_negative_697545 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(b, Decision.class, "negative")) {
-				if (!s.equals(__DEC_b_negative_493546)) {
+				if (!s.equals(__DEC_b_negative_697545)) {
 					return new Object[] { b, s };
 				}
 			}
@@ -2704,14 +2644,14 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_7BBB(Assignment b, While a,
+	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_2BBB(Assignment b, While a,
 			Statement s) {
 		if (!b.equals(s)) {
 			if (!a.equals(s)) {
-				for (While __DEC_b_first_897232 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+				for (While __DEC_b_first_300946 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 						While.class, "first")) {
-					if (!a.equals(__DEC_b_first_897232)) {
-						if (!s.equals(__DEC_b_first_897232)) {
+					if (!a.equals(__DEC_b_first_300946)) {
+						if (!s.equals(__DEC_b_first_300946)) {
 							return new Object[] { b, a, s };
 						}
 					}
@@ -2721,14 +2661,14 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_8BBB(Assignment b, While a,
+	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_3BBB(Assignment b, While a,
 			Statement s) {
 		if (!b.equals(s)) {
 			if (!a.equals(s)) {
-				for (While __DEC_b_last_294104 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+				for (While __DEC_b_last_948004 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 						While.class, "last")) {
-					if (!a.equals(__DEC_b_last_294104)) {
-						if (!s.equals(__DEC_b_last_294104)) {
+					if (!a.equals(__DEC_b_last_948004)) {
+						if (!s.equals(__DEC_b_last_948004)) {
 							return new Object[] { b, a, s };
 						}
 					}
@@ -2738,10 +2678,70 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_9B(Assignment b) {
-		for (Program __DEC_b_first_723028 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_4B(Assignment b) {
+		for (Program __DEC_b_first_245977 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Program.class, "first")) {
 			return new Object[] { b };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_5BB(While a, Statement s) {
+		if (!a.equals(s)) {
+			for (Decision __DEC_a_positive_424259 : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(a, Decision.class, "positive")) {
+				if (!s.equals(__DEC_a_positive_424259)) {
+					return new Object[] { a, s };
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_6BB(While a, Statement s) {
+		if (!a.equals(s)) {
+			for (Decision __DEC_a_negative_831390 : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(a, Decision.class, "negative")) {
+				if (!s.equals(__DEC_a_negative_831390)) {
+					return new Object[] { a, s };
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_7BB(While a, Statement s) {
+		if (!a.equals(s)) {
+			for (While __DEC_a_first_761023 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+					While.class, "first")) {
+				if (!a.equals(__DEC_a_first_761023)) {
+					if (!s.equals(__DEC_a_first_761023)) {
+						return new Object[] { a, s };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_8BB(While a, Statement s) {
+		if (!a.equals(s)) {
+			for (While __DEC_a_last_532177 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+					While.class, "last")) {
+				if (!a.equals(__DEC_a_last_532177)) {
+					if (!s.equals(__DEC_a_last_532177)) {
+						return new Object[] { a, s };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_21_2_testcorematchandDECs_black_nac_9B(While a) {
+		for (Program __DEC_a_first_908401 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+				Program.class, "first")) {
+			return new Object[] { a };
 		}
 		return null;
 	}
@@ -2763,30 +2763,30 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 			if (tmpB instanceof Assignment) {
 				Assignment b = (Assignment) tmpB;
 				if (b.equals(a.getLast())) {
-					if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_4B(a) == null) {
-						if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_9B(b) == null) {
+					if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_9B(a) == null) {
+						if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_4B(b) == null) {
 							if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_10BB(a, b) == null) {
 								for (Statement s : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
 										Statement.class, "next")) {
-									if (!a.equals(s)) {
-										if (!b.equals(s)) {
-											if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_0BB(a,
+									if (!b.equals(s)) {
+										if (!a.equals(s)) {
+											if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_0BB(b,
 													s) == null) {
-												if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_1BB(a,
+												if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_1BB(b,
 														s) == null) {
-													if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_2BB(a,
-															s) == null) {
-														if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_3BB(
-																a, s) == null) {
+													if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_2BBB(b,
+															a, s) == null) {
+														if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_3BBB(
+																b, a, s) == null) {
 															if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_5BB(
-																	b, s) == null) {
+																	a, s) == null) {
 																if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_6BB(
-																		b, s) == null) {
-																	if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_7BBB(
-																			b, a, s) == null) {
-																		if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_8BBB(
-																				b, a, s) == null) {
-																			_result.add(new Object[] { a, s, b,
+																		a, s) == null) {
+																	if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_7BB(
+																			a, s) == null) {
+																		if (pattern_while2branch_21_2_testcorematchandDECs_black_nac_8BB(
+																				a, s) == null) {
+																			_result.add(new Object[] { b, a, s,
 																					_edge_last });
 																		}
 																	}
@@ -2820,8 +2820,8 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final boolean pattern_while2branch_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBBB(
-			while2branch _this, Match match, While a, Statement s, Assignment b) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, a, s, b);
+			while2branch _this, Match match, Assignment b, While a, Statement s) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, b, a, s);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2865,31 +2865,31 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 
 	public static final Object[] pattern_while2branch_24_2_matchsrctrgcontext_bindingFFFFFFBB(Match targetMatch,
 			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("d");
-		EObject _localVariable_1 = targetMatch.getObject("c");
-		EObject _localVariable_2 = sourceMatch.getObject("a");
-		EObject _localVariable_3 = sourceMatch.getObject("s");
-		EObject _localVariable_4 = targetMatch.getObject("n");
-		EObject _localVariable_5 = sourceMatch.getObject("b");
-		EObject tmpD = _localVariable_0;
-		EObject tmpC = _localVariable_1;
-		EObject tmpA = _localVariable_2;
-		EObject tmpS = _localVariable_3;
-		EObject tmpN = _localVariable_4;
-		EObject tmpB = _localVariable_5;
-		if (tmpD instanceof Command) {
-			Command d = (Command) tmpD;
-			if (tmpC instanceof Branch) {
-				Branch c = (Branch) tmpC;
-				if (tmpA instanceof While) {
-					While a = (While) tmpA;
-					if (tmpS instanceof Statement) {
-						Statement s = (Statement) tmpS;
-						if (tmpN instanceof Node) {
-							Node n = (Node) tmpN;
-							if (tmpB instanceof Assignment) {
-								Assignment b = (Assignment) tmpB;
-								return new Object[] { d, c, a, s, n, b, targetMatch, sourceMatch };
+		EObject _localVariable_0 = targetMatch.getObject("c");
+		EObject _localVariable_1 = targetMatch.getObject("d");
+		EObject _localVariable_2 = sourceMatch.getObject("b");
+		EObject _localVariable_3 = sourceMatch.getObject("a");
+		EObject _localVariable_4 = sourceMatch.getObject("s");
+		EObject _localVariable_5 = targetMatch.getObject("n");
+		EObject tmpC = _localVariable_0;
+		EObject tmpD = _localVariable_1;
+		EObject tmpB = _localVariable_2;
+		EObject tmpA = _localVariable_3;
+		EObject tmpS = _localVariable_4;
+		EObject tmpN = _localVariable_5;
+		if (tmpC instanceof Branch) {
+			Branch c = (Branch) tmpC;
+			if (tmpD instanceof Command) {
+				Command d = (Command) tmpD;
+				if (tmpB instanceof Assignment) {
+					Assignment b = (Assignment) tmpB;
+					if (tmpA instanceof While) {
+						While a = (While) tmpA;
+						if (tmpS instanceof Statement) {
+							Statement s = (Statement) tmpS;
+							if (tmpN instanceof Node) {
+								Node n = (Node) tmpN;
+								return new Object[] { c, d, b, a, s, n, targetMatch, sourceMatch };
 							}
 						}
 					}
@@ -2899,14 +2899,14 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_24_2_matchsrctrgcontext_blackBBBBBBBB(Command d, Branch c,
-			While a, Statement s, Node n, Assignment b, Match sourceMatch, Match targetMatch) {
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
-				if (!a.equals(s)) {
-					if (!b.equals(s)) {
+	public static final Object[] pattern_while2branch_24_2_matchsrctrgcontext_blackBBBBBBBB(Branch c, Command d,
+			Assignment b, While a, Statement s, Node n, Match sourceMatch, Match targetMatch) {
+		if (!c.equals(n)) {
+			if (!d.equals(n)) {
+				if (!b.equals(s)) {
+					if (!a.equals(s)) {
 						if (!sourceMatch.equals(targetMatch)) {
-							return new Object[] { d, c, a, s, n, b, sourceMatch, targetMatch };
+							return new Object[] { c, d, b, a, s, n, sourceMatch, targetMatch };
 						}
 					}
 				}
@@ -2920,29 +2920,29 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		Object[] result_pattern_while2branch_24_2_matchsrctrgcontext_binding = pattern_while2branch_24_2_matchsrctrgcontext_bindingFFFFFFBB(
 				targetMatch, sourceMatch);
 		if (result_pattern_while2branch_24_2_matchsrctrgcontext_binding != null) {
-			Command d = (Command) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[0];
-			Branch c = (Branch) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[1];
-			While a = (While) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[2];
-			Statement s = (Statement) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[3];
-			Node n = (Node) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[4];
-			Assignment b = (Assignment) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[5];
+			Branch c = (Branch) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[0];
+			Command d = (Command) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[1];
+			Assignment b = (Assignment) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[2];
+			While a = (While) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[3];
+			Statement s = (Statement) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[4];
+			Node n = (Node) result_pattern_while2branch_24_2_matchsrctrgcontext_binding[5];
 
 			Object[] result_pattern_while2branch_24_2_matchsrctrgcontext_black = pattern_while2branch_24_2_matchsrctrgcontext_blackBBBBBBBB(
-					d, c, a, s, n, b, sourceMatch, targetMatch);
+					c, d, b, a, s, n, sourceMatch, targetMatch);
 			if (result_pattern_while2branch_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { d, c, a, s, n, b, sourceMatch, targetMatch };
+				return new Object[] { c, d, b, a, s, n, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_24_3_solvecsp_bindingFBBBBBBBBB(while2branch _this, Command d,
-			Branch c, While a, Statement s, Node n, Assignment b, Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(d, c, a, s, n, b, sourceMatch, targetMatch);
+	public static final Object[] pattern_while2branch_24_3_solvecsp_bindingFBBBBBBBBB(while2branch _this, Branch c,
+			Command d, Assignment b, While a, Statement s, Node n, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_6 = _this.isApplicable_solveCsp_CC(c, d, b, a, s, n, sourceMatch, targetMatch);
 		CSP csp = _localVariable_6;
 		if (csp != null) {
-			return new Object[] { csp, _this, d, c, a, s, n, b, sourceMatch, targetMatch };
+			return new Object[] { csp, _this, c, d, b, a, s, n, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2952,16 +2952,16 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 	}
 
 	public static final Object[] pattern_while2branch_24_3_solvecsp_bindingAndBlackFBBBBBBBBB(while2branch _this,
-			Command d, Branch c, While a, Statement s, Node n, Assignment b, Match sourceMatch, Match targetMatch) {
+			Branch c, Command d, Assignment b, While a, Statement s, Node n, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_while2branch_24_3_solvecsp_binding = pattern_while2branch_24_3_solvecsp_bindingFBBBBBBBBB(
-				_this, d, c, a, s, n, b, sourceMatch, targetMatch);
+				_this, c, d, b, a, s, n, sourceMatch, targetMatch);
 		if (result_pattern_while2branch_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_while2branch_24_3_solvecsp_binding[0];
 
 			Object[] result_pattern_while2branch_24_3_solvecsp_black = pattern_while2branch_24_3_solvecsp_blackB(csp);
 			if (result_pattern_while2branch_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, d, c, a, s, n, b, sourceMatch, targetMatch };
+				return new Object[] { csp, _this, c, d, b, a, s, n, sourceMatch, targetMatch };
 			}
 		}
 		return null;
@@ -2997,13 +2997,13 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return new Object[] { s2n, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_while2branch_24_6_createcorrespondence_blackBBBBBBB(Command d, Branch c,
-			While a, Statement s, Node n, Assignment b, CCMatch ccMatch) {
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
-				if (!a.equals(s)) {
-					if (!b.equals(s)) {
-						return new Object[] { d, c, a, s, n, b, ccMatch };
+	public static final Object[] pattern_while2branch_24_6_createcorrespondence_blackBBBBBBB(Branch c, Command d,
+			Assignment b, While a, Statement s, Node n, CCMatch ccMatch) {
+		if (!c.equals(n)) {
+			if (!d.equals(n)) {
+				if (!b.equals(s)) {
+					if (!a.equals(s)) {
+						return new Object[] { c, d, b, a, s, n, ccMatch };
 					}
 				}
 			}
@@ -3011,17 +3011,17 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_24_6_createcorrespondence_greenFBBBFBB(Command d, Branch c,
-			While a, Assignment b, CCMatch ccMatch) {
-		S2N b2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
+	public static final Object[] pattern_while2branch_24_6_createcorrespondence_greenBFBBFBB(Branch c, Command d,
+			Assignment b, While a, CCMatch ccMatch) {
 		S2B a2c = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
-		b2d.setTarget(d);
-		b2d.setSource(b);
-		ccMatch.getCreateCorr().add(b2d);
+		S2N b2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
 		a2c.setTarget(c);
 		a2c.setSource(a);
 		ccMatch.getCreateCorr().add(a2c);
-		return new Object[] { b2d, d, c, a, a2c, b, ccMatch };
+		b2d.setTarget(d);
+		b2d.setSource(b);
+		ccMatch.getCreateCorr().add(b2d);
+		return new Object[] { c, a2c, d, b, b2d, a, ccMatch };
 	}
 
 	public static final Object[] pattern_while2branch_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -3044,71 +3044,11 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return _result;
 	}
 
-	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_0BB(While a, Statement s) {
-		if (!a.equals(s)) {
-			for (Decision __DEC_a_positive_801068 : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(a, Decision.class, "positive")) {
-				if (!s.equals(__DEC_a_positive_801068)) {
-					return new Object[] { a, s };
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_1BB(While a, Statement s) {
-		if (!a.equals(s)) {
-			for (Decision __DEC_a_negative_812981 : org.moflon.core.utilities.eMoflonEMFUtil
-					.getOppositeReferenceTyped(a, Decision.class, "negative")) {
-				if (!s.equals(__DEC_a_negative_812981)) {
-					return new Object[] { a, s };
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_2BB(While a, Statement s) {
-		if (!a.equals(s)) {
-			for (While __DEC_a_first_614953 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
-					While.class, "first")) {
-				if (!a.equals(__DEC_a_first_614953)) {
-					if (!s.equals(__DEC_a_first_614953)) {
-						return new Object[] { a, s };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_3BB(While a, Statement s) {
-		if (!a.equals(s)) {
-			for (While __DEC_a_last_472093 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
-					While.class, "last")) {
-				if (!a.equals(__DEC_a_last_472093)) {
-					if (!s.equals(__DEC_a_last_472093)) {
-						return new Object[] { a, s };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_4B(While a) {
-		for (Program __DEC_a_first_823100 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
-				Program.class, "first")) {
-			return new Object[] { a };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_5BB(Assignment b, Statement s) {
+	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_0BB(Assignment b, Statement s) {
 		if (!b.equals(s)) {
-			for (Decision __DEC_b_positive_326566 : org.moflon.core.utilities.eMoflonEMFUtil
+			for (Decision __DEC_b_positive_733640 : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(b, Decision.class, "positive")) {
-				if (!s.equals(__DEC_b_positive_326566)) {
+				if (!s.equals(__DEC_b_positive_733640)) {
 					return new Object[] { b, s };
 				}
 			}
@@ -3116,11 +3056,11 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_6BB(Assignment b, Statement s) {
+	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_1BB(Assignment b, Statement s) {
 		if (!b.equals(s)) {
-			for (Decision __DEC_b_negative_34229 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
-					Decision.class, "negative")) {
-				if (!s.equals(__DEC_b_negative_34229)) {
+			for (Decision __DEC_b_negative_821056 : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(b, Decision.class, "negative")) {
+				if (!s.equals(__DEC_b_negative_821056)) {
 					return new Object[] { b, s };
 				}
 			}
@@ -3128,14 +3068,14 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_7BBB(Assignment b, While a,
+	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_2BBB(Assignment b, While a,
 			Statement s) {
 		if (!b.equals(s)) {
 			if (!a.equals(s)) {
-				for (While __DEC_b_first_425001 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+				for (While __DEC_b_first_773088 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 						While.class, "first")) {
-					if (!a.equals(__DEC_b_first_425001)) {
-						if (!s.equals(__DEC_b_first_425001)) {
+					if (!a.equals(__DEC_b_first_773088)) {
+						if (!s.equals(__DEC_b_first_773088)) {
 							return new Object[] { b, a, s };
 						}
 					}
@@ -3145,14 +3085,14 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_8BBB(Assignment b, While a,
+	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_3BBB(Assignment b, While a,
 			Statement s) {
 		if (!b.equals(s)) {
 			if (!a.equals(s)) {
-				for (While __DEC_b_last_616679 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+				for (While __DEC_b_last_624035 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 						While.class, "last")) {
-					if (!a.equals(__DEC_b_last_616679)) {
-						if (!s.equals(__DEC_b_last_616679)) {
+					if (!a.equals(__DEC_b_last_624035)) {
+						if (!s.equals(__DEC_b_last_624035)) {
 							return new Object[] { b, a, s };
 						}
 					}
@@ -3162,10 +3102,70 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_9B(Assignment b) {
-		for (Program __DEC_b_first_380603 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
+	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_4B(Assignment b) {
+		for (Program __DEC_b_first_514051 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(b,
 				Program.class, "first")) {
 			return new Object[] { b };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_5BB(While a, Statement s) {
+		if (!a.equals(s)) {
+			for (Decision __DEC_a_positive_124587 : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(a, Decision.class, "positive")) {
+				if (!s.equals(__DEC_a_positive_124587)) {
+					return new Object[] { a, s };
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_6BB(While a, Statement s) {
+		if (!a.equals(s)) {
+			for (Decision __DEC_a_negative_237684 : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(a, Decision.class, "negative")) {
+				if (!s.equals(__DEC_a_negative_237684)) {
+					return new Object[] { a, s };
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_7BB(While a, Statement s) {
+		if (!a.equals(s)) {
+			for (While __DEC_a_first_172911 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+					While.class, "first")) {
+				if (!a.equals(__DEC_a_first_172911)) {
+					if (!s.equals(__DEC_a_first_172911)) {
+						return new Object[] { a, s };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_8BB(While a, Statement s) {
+		if (!a.equals(s)) {
+			for (While __DEC_a_last_528516 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+					While.class, "last")) {
+				if (!a.equals(__DEC_a_last_528516)) {
+					if (!s.equals(__DEC_a_last_528516)) {
+						return new Object[] { a, s };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_27_1_matchtggpattern_black_nac_9B(While a) {
+		for (Program __DEC_a_first_979773 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(a,
+				Program.class, "first")) {
+			return new Object[] { a };
 		}
 		return null;
 	}
@@ -3177,29 +3177,29 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_27_1_matchtggpattern_blackBBB(While a, Statement s,
-			Assignment b) {
-		if (!a.equals(s)) {
-			if (!b.equals(s)) {
+	public static final Object[] pattern_while2branch_27_1_matchtggpattern_blackBBB(Assignment b, While a,
+			Statement s) {
+		if (!b.equals(s)) {
+			if (!a.equals(s)) {
 				if (b.equals(a.getLast())) {
 					if (a.equals(s.getNext())) {
-						if (pattern_while2branch_27_1_matchtggpattern_black_nac_0BB(a, s) == null) {
-							if (pattern_while2branch_27_1_matchtggpattern_black_nac_1BB(a, s) == null) {
-								if (pattern_while2branch_27_1_matchtggpattern_black_nac_2BB(a, s) == null) {
-									if (pattern_while2branch_27_1_matchtggpattern_black_nac_3BB(a, s) == null) {
-										if (pattern_while2branch_27_1_matchtggpattern_black_nac_4B(a) == null) {
-											if (pattern_while2branch_27_1_matchtggpattern_black_nac_5BB(b, s) == null) {
-												if (pattern_while2branch_27_1_matchtggpattern_black_nac_6BB(b,
+						if (pattern_while2branch_27_1_matchtggpattern_black_nac_0BB(b, s) == null) {
+							if (pattern_while2branch_27_1_matchtggpattern_black_nac_1BB(b, s) == null) {
+								if (pattern_while2branch_27_1_matchtggpattern_black_nac_2BBB(b, a, s) == null) {
+									if (pattern_while2branch_27_1_matchtggpattern_black_nac_3BBB(b, a, s) == null) {
+										if (pattern_while2branch_27_1_matchtggpattern_black_nac_4B(b) == null) {
+											if (pattern_while2branch_27_1_matchtggpattern_black_nac_5BB(a, s) == null) {
+												if (pattern_while2branch_27_1_matchtggpattern_black_nac_6BB(a,
 														s) == null) {
-													if (pattern_while2branch_27_1_matchtggpattern_black_nac_7BBB(b, a,
+													if (pattern_while2branch_27_1_matchtggpattern_black_nac_7BB(a,
 															s) == null) {
-														if (pattern_while2branch_27_1_matchtggpattern_black_nac_8BBB(b,
-																a, s) == null) {
+														if (pattern_while2branch_27_1_matchtggpattern_black_nac_8BB(a,
+																s) == null) {
 															if (pattern_while2branch_27_1_matchtggpattern_black_nac_9B(
-																	b) == null) {
+																	a) == null) {
 																if (pattern_while2branch_27_1_matchtggpattern_black_nac_10BB(
 																		a, b) == null) {
-																	return new Object[] { a, s, b };
+																	return new Object[] { b, a, s };
 																}
 															}
 														}
@@ -3228,60 +3228,20 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return _result;
 	}
 
-	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_0B(Command d) {
-		for (Graph __DEC_d_root_466910 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
-				Graph.class, "root")) {
-			return new Object[] { d };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_1BBB(Command d, Branch c, Node n) {
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
-				for (Branch __DEC_d_positive_57286 : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(d, Branch.class, "positive")) {
-					if (!c.equals(__DEC_d_positive_57286)) {
-						if (!n.equals(__DEC_d_positive_57286)) {
-							return new Object[] { d, c, n };
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_2BBB(Command d, Branch c, Node n) {
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
-				for (Branch __DEC_d_negative_76558 : org.moflon.core.utilities.eMoflonEMFUtil
-						.getOppositeReferenceTyped(d, Branch.class, "negative")) {
-					if (!c.equals(__DEC_d_negative_76558)) {
-						if (!n.equals(__DEC_d_negative_76558)) {
-							return new Object[] { d, c, n };
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_3B(Branch c) {
-		for (Graph __DEC_c_root_213740 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_0B(Branch c) {
+		for (Graph __DEC_c_root_877454 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 				Graph.class, "root")) {
 			return new Object[] { c };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_4BB(Branch c, Node n) {
+	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_1BB(Branch c, Node n) {
 		if (!c.equals(n)) {
-			for (Branch __DEC_c_positive_663366 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+			for (Branch __DEC_c_positive_396036 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 					Branch.class, "positive")) {
-				if (!c.equals(__DEC_c_positive_663366)) {
-					if (!n.equals(__DEC_c_positive_663366)) {
+				if (!c.equals(__DEC_c_positive_396036)) {
+					if (!n.equals(__DEC_c_positive_396036)) {
 						return new Object[] { c, n };
 					}
 				}
@@ -3290,13 +3250,53 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_5BB(Branch c, Node n) {
+	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_2BB(Branch c, Node n) {
 		if (!c.equals(n)) {
-			for (Branch __DEC_c_negative_249508 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
+			for (Branch __DEC_c_negative_414759 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(c,
 					Branch.class, "negative")) {
-				if (!c.equals(__DEC_c_negative_249508)) {
-					if (!n.equals(__DEC_c_negative_249508)) {
+				if (!c.equals(__DEC_c_negative_414759)) {
+					if (!n.equals(__DEC_c_negative_414759)) {
 						return new Object[] { c, n };
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_3B(Command d) {
+		for (Graph __DEC_d_root_959283 : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(d,
+				Graph.class, "root")) {
+			return new Object[] { d };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_4BBB(Command d, Branch c, Node n) {
+		if (!d.equals(n)) {
+			if (!c.equals(n)) {
+				for (Branch __DEC_d_positive_33798 : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(d, Branch.class, "positive")) {
+					if (!c.equals(__DEC_d_positive_33798)) {
+						if (!n.equals(__DEC_d_positive_33798)) {
+							return new Object[] { d, c, n };
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_while2branch_28_1_matchtggpattern_black_nac_5BBB(Command d, Branch c, Node n) {
+		if (!d.equals(n)) {
+			if (!c.equals(n)) {
+				for (Branch __DEC_d_negative_172499 : org.moflon.core.utilities.eMoflonEMFUtil
+						.getOppositeReferenceTyped(d, Branch.class, "negative")) {
+					if (!c.equals(__DEC_d_negative_172499)) {
+						if (!n.equals(__DEC_d_negative_172499)) {
+							return new Object[] { d, c, n };
+						}
 					}
 				}
 			}
@@ -3318,22 +3318,23 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return null;
 	}
 
-	public static final Object[] pattern_while2branch_28_1_matchtggpattern_blackBBB(Command d, Branch c, Node n) {
-		if (!d.equals(n)) {
-			if (!c.equals(n)) {
+	public static final Object[] pattern_while2branch_28_1_matchtggpattern_blackBBB(Branch c, Command d, Node n) {
+		if (!c.equals(n)) {
+			if (!d.equals(n)) {
 				if (c.equals(d.getNext())) {
 					if (c.equals(n.getNext())) {
-						if (pattern_while2branch_28_1_matchtggpattern_black_nac_0B(d) == null) {
-							if (pattern_while2branch_28_1_matchtggpattern_black_nac_1BBB(d, c, n) == null) {
-								if (pattern_while2branch_28_1_matchtggpattern_black_nac_2BBB(d, c, n) == null) {
-									if (pattern_while2branch_28_1_matchtggpattern_black_nac_3B(c) == null) {
-										if (pattern_while2branch_28_1_matchtggpattern_black_nac_4BB(c, n) == null) {
-											if (pattern_while2branch_28_1_matchtggpattern_black_nac_5BB(c, n) == null) {
+						if (pattern_while2branch_28_1_matchtggpattern_black_nac_0B(c) == null) {
+							if (pattern_while2branch_28_1_matchtggpattern_black_nac_1BB(c, n) == null) {
+								if (pattern_while2branch_28_1_matchtggpattern_black_nac_2BB(c, n) == null) {
+									if (pattern_while2branch_28_1_matchtggpattern_black_nac_3B(d) == null) {
+										if (pattern_while2branch_28_1_matchtggpattern_black_nac_4BBB(d, c, n) == null) {
+											if (pattern_while2branch_28_1_matchtggpattern_black_nac_5BBB(d, c,
+													n) == null) {
 												if (pattern_while2branch_28_1_matchtggpattern_black_nac_6BB(c,
 														d) == null) {
 													if (pattern_while2branch_28_1_matchtggpattern_black_nac_7BB(c,
 															d) == null) {
-														return new Object[] { d, c, n };
+														return new Object[] { c, d, n };
 													}
 												}
 											}
@@ -3470,34 +3471,34 @@ public class while2branchImpl extends AbstractRuleImpl implements while2branch {
 		return new Object[] { s2n, s, n, ruleResult };
 	}
 
-	public static final Object[] pattern_while2branch_29_6_perform_greenFFFFBBFFB(Statement s, Node n,
+	public static final Object[] pattern_while2branch_29_6_perform_greenFFFFFFBBB(Statement s, Node n,
 			ModelgeneratorRuleResult ruleResult) {
-		S2N b2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
-		Command d = ControlflowFactory.eINSTANCE.createCommand();
 		Branch c = ControlflowFactory.eINSTANCE.createBranch();
-		While a = SourcecodeFactory.eINSTANCE.createWhile();
 		S2B a2c = Sourcecode2controlflowFactory.eINSTANCE.createS2B();
+		Command d = ControlflowFactory.eINSTANCE.createCommand();
 		Assignment b = SourcecodeFactory.eINSTANCE.createAssignment();
+		S2N b2d = Sourcecode2controlflowFactory.eINSTANCE.createS2N();
+		While a = SourcecodeFactory.eINSTANCE.createWhile();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(b2d);
-		b2d.setTarget(d);
-		ruleResult.getTargetObjects().add(d);
-		d.setNext(c);
 		n.setNext(c);
 		ruleResult.getTargetObjects().add(c);
+		a2c.setTarget(c);
+		ruleResult.getCorrObjects().add(a2c);
+		d.setNext(c);
+		ruleResult.getTargetObjects().add(d);
+		ruleResult.getSourceObjects().add(b);
+		b2d.setTarget(d);
+		b2d.setSource(b);
+		ruleResult.getCorrObjects().add(b2d);
+		a2c.setSource(a);
+		a.setLast(b);
 		s.setNext(a);
 		ruleResult.getSourceObjects().add(a);
-		a2c.setTarget(c);
-		a2c.setSource(a);
-		ruleResult.getCorrObjects().add(a2c);
-		a.setLast(b);
-		b2d.setSource(b);
-		ruleResult.getSourceObjects().add(b);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { b2d, d, c, a, s, n, a2c, b, ruleResult };
+		return new Object[] { c, a2c, d, b, b2d, a, s, n, ruleResult };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_while2branch_29_7_expressionFB(

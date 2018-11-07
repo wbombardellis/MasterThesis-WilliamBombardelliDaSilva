@@ -47,7 +47,7 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, ClassDiagram cd, Clazz c, Clazz p);
+	boolean isAppropriate_FWD(Match match, Clazz p, Clazz c, ClassDiagram cd);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, ClassDiagram cd, Clazz c, Clazz p);
+	void registerObjectsToMatch_FWD(Match match, Clazz p, Clazz c, ClassDiagram cd);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, ClassDiagram cd, Clazz c, Clazz p);
+	CSP isAppropriate_solveCsp_FWD(Match match, Clazz p, Clazz c, ClassDiagram cd);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,8 +95,8 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Table t, C2T p2t, CD2D cd2db, ClassDiagram cd,
-			DB db, Clazz c, Clazz p);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, DB db, C2T p2t, Table t, Clazz p, CD2D cd2db,
+			Clazz c, ClassDiagram cd);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject t, EObject p2t, EObject c2t, EObject cd2db,
-			EObject cd, EObject db, EObject c, EObject p);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject db, EObject p2t, EObject t, EObject p, EObject cd2db,
+			EObject c, EObject c2t, EObject cd);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, Table t, DB db);
+	boolean isAppropriate_BWD(Match match, DB db, Table t);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +153,7 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, Table t, DB db);
+	void registerObjectsToMatch_BWD(Match match, DB db, Table t);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,7 +161,7 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, Table t, DB db);
+	CSP isAppropriate_solveCsp_BWD(Match match, DB db, Table t);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,7 +185,7 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Table_1(Table t);
+	EObjectContainer isAppropriate_BWD_DB_2(DB db);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,7 +193,7 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_66(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_65(EMoflonEdge _edge_super);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,7 +225,7 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Table t, ClassDiagram cd, DB db, Clazz c, Clazz p, Match sourceMatch,
+	CSP isApplicable_solveCsp_CC(DB db, Table t, Clazz p, Clazz c, ClassDiagram cd, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -242,7 +242,7 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(ClassDiagram cd, Clazz c, Clazz p);
+	boolean checkDEC_FWD(Clazz p, Clazz c, ClassDiagram cd);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,7 +250,7 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(Table t, DB db);
+	boolean checkDEC_BWD(DB db, Table t);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -266,8 +266,8 @@ public interface super2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, Table t, C2T p2t, CD2D cd2db, ClassDiagram cd,
-			DB db, Clazz p, ModelgeneratorRuleResult ruleResult);
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, DB db, C2T p2t, Table t, Clazz p, CD2D cd2db,
+			ClassDiagram cd, ModelgeneratorRuleResult ruleResult);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -58,13 +58,6 @@ public class Class2databasePackageImpl extends EPackageImpl implements Class2dat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass a2CEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass cd2DEClass = null;
 
 	/**
@@ -73,6 +66,13 @@ public class Class2databasePackageImpl extends EPackageImpl implements Class2dat
 	 * @generated
 	 */
 	private EClass as2CEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass a2CEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,41 +162,10 @@ public class Class2databasePackageImpl extends EPackageImpl implements Class2dat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getA2C() {
-		if (a2CEClass == null) {
-			a2CEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Class2databasePackage.eNS_URI).getEClassifiers()
-					.get(0);
-		}
-		return a2CEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getA2C_Source() {
-		return (EReference) getA2C().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getA2C_Target() {
-		return (EReference) getA2C().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getCD2D() {
 		if (cd2DEClass == null) {
 			cd2DEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Class2databasePackage.eNS_URI)
-					.getEClassifiers().get(1);
+					.getEClassifiers().get(0);
 		}
 		return cd2DEClass;
 	}
@@ -227,7 +196,7 @@ public class Class2databasePackageImpl extends EPackageImpl implements Class2dat
 	public EClass getAS2C() {
 		if (as2CEClass == null) {
 			as2CEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Class2databasePackage.eNS_URI)
-					.getEClassifiers().get(2);
+					.getEClassifiers().get(1);
 		}
 		return as2CEClass;
 	}
@@ -248,6 +217,37 @@ public class Class2databasePackageImpl extends EPackageImpl implements Class2dat
 	 */
 	public EReference getAS2C_Target() {
 		return (EReference) getAS2C().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getA2C() {
+		if (a2CEClass == null) {
+			a2CEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Class2databasePackage.eNS_URI).getEClassifiers()
+					.get(2);
+		}
+		return a2CEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getA2C_Source() {
+		return (EReference) getA2C().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getA2C_Target() {
+		return (EReference) getA2C().getEStructuralFeatures().get(1);
 	}
 
 	/**

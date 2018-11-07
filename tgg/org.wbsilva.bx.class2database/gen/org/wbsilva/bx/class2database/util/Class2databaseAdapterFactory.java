@@ -69,11 +69,6 @@ public class Class2databaseAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected Class2databaseSwitch<Adapter> modelSwitch = new Class2databaseSwitch<Adapter>() {
 		@Override
-		public Adapter caseA2C(A2C object) {
-			return createA2CAdapter();
-		}
-
-		@Override
 		public Adapter caseCD2D(CD2D object) {
 			return createCD2DAdapter();
 		}
@@ -81,6 +76,11 @@ public class Class2databaseAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseAS2C(AS2C object) {
 			return createAS2CAdapter();
+		}
+
+		@Override
+		public Adapter caseA2C(A2C object) {
+			return createA2CAdapter();
 		}
 
 		@Override
@@ -113,20 +113,6 @@ public class Class2databaseAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.class2database.A2C <em>A2C</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.class2database.A2C
-	 * @generated
-	 */
-	public Adapter createA2CAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.class2database.CD2D <em>CD2D</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -151,6 +137,20 @@ public class Class2databaseAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAS2CAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.class2database.A2C <em>A2C</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.class2database.A2C
+	 * @generated
+	 */
+	public Adapter createA2CAdapter() {
 		return null;
 	}
 

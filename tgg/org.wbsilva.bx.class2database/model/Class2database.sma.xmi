@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="ASCII"?>
 <analysis:StaticAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:analysis="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//analysis">
   <sourceRules>
-    <rules ruleName="selfassoc2column">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD_EMoflonEdge_63"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="attribute2column">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_FWD_EMoflonEdge_64"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkDEC_FWD"/>
-    </rules>
-    <rules ruleName="association2column">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD_EMoflonEdge_65"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD"/>
-    </rules>
     <rules ruleName="cd2db">
       <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isAppropriate_FWD_ClassDiagram_1"/>
       <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/checkDEC_FWD"/>
     </rules>
+    <rules ruleName="class2table">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_FWD_EMoflonEdge_64"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkDEC_FWD"/>
+    </rules>
     <rules ruleName="super2table">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD_EMoflonEdge_66"/>
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_FWD_EMoflonEdge_65"/>
       <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="class2table">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_FWD_EMoflonEdge_67"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkDEC_FWD"/>
+    <rules ruleName="selfassoc2column">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_FWD_EMoflonEdge_66"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="attribute2column">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_FWD_EMoflonEdge_67"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkDEC_FWD"/>
+    </rules>
+    <rules ruleName="association2column">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_FWD_EMoflonEdge_68"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_FWD"/>
     </rules>
   </sourceRules>
   <targetRules>
-    <rules ruleName="selfassoc2column">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD_EMoflonEdge_58"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="attribute2column">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_BWD_EMoflonEdge_59"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="association2column">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD_EMoflonEdge_60"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD"/>
-    </rules>
     <rules ruleName="cd2db">
       <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isAppropriate_BWD_DB_1"/>
       <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/checkDEC_BWD"/>
     </rules>
+    <rules ruleName="class2table">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_BWD_EMoflonEdge_59"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkDEC_BWD"/>
+    </rules>
     <rules ruleName="super2table" ignore="true">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_BWD_Table_1"/>
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_BWD_DB_2"/>
       <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkDEC_BWD"/>
     </rules>
-    <rules ruleName="class2table">
-      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_BWD_EMoflonEdge_61"/>
-      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkDEC_BWD"/>
+    <rules ruleName="selfassoc2column">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_BWD_EMoflonEdge_60"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="attribute2column">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_BWD_EMoflonEdge_61"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="association2column">
+      <isAppropriateMethods href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_BWD_EMoflonEdge_62"/>
+      <checkDECMethod href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkDEC_BWD"/>
     </rules>
   </targetRules>
 </analysis:StaticAnalysis>

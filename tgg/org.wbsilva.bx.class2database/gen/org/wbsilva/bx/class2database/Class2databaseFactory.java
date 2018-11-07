@@ -22,15 +22,6 @@ public interface Class2databaseFactory extends EFactory {
 	Class2databaseFactory eINSTANCE = org.wbsilva.bx.class2database.impl.Class2databaseFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>A2C</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>A2C</em>'.
-	 * @generated
-	 */
-	A2C createA2C();
-
-	/**
 	 * Returns a new object of class '<em>CD2D</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,6 +38,15 @@ public interface Class2databaseFactory extends EFactory {
 	 * @generated
 	 */
 	AS2C createAS2C();
+
+	/**
+	 * Returns a new object of class '<em>A2C</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>A2C</em>'.
+	 * @generated
+	 */
+	A2C createA2C();
 
 	/**
 	 * Returns a new object of class '<em>C2T</em>'.

@@ -46,7 +46,7 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Clazz c, ClassDiagram cd);
+	boolean isAppropriate_FWD(Match match, ClassDiagram cd, Clazz c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Clazz c, ClassDiagram cd);
+	void registerObjectsToMatch_FWD(Match match, ClassDiagram cd, Clazz c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Clazz c, ClassDiagram cd);
+	CSP isAppropriate_solveCsp_FWD(Match match, ClassDiagram cd, Clazz c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,7 +94,7 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, DB db, CD2D cd2db, Clazz c, ClassDiagram cd);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, DB db, ClassDiagram cd, CD2D cd2db, Clazz c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,8 +110,8 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject db, EObject t, EObject cd2db, EObject c2t, EObject c,
-			EObject cd);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject c2t, EObject db, EObject t, EObject cd,
+			EObject cd2db, EObject c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,7 +175,7 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, DB db, Table t, CD2D cd2db, ClassDiagram cd);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, DB db, Table t, ClassDiagram cd, CD2D cd2db);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,8 +191,8 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject db, EObject t, EObject cd2db, EObject c2t, EObject c,
-			EObject cd);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject c2t, EObject db, EObject t, EObject cd,
+			EObject cd2db, EObject c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_61(EMoflonEdge _edge_table);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_59(EMoflonEdge _edge_table);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +216,7 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_67(EMoflonEdge _edge_classes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_64(EMoflonEdge _edge_classes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +248,7 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(DB db, Table t, Clazz c, ClassDiagram cd, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(DB db, Table t, ClassDiagram cd, Clazz c, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,7 +264,7 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Clazz c, ClassDiagram cd);
+	boolean checkDEC_FWD(ClassDiagram cd, Clazz c);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,7 +288,7 @@ public interface class2table extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, DB db, CD2D cd2db, ClassDiagram cd,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, DB db, ClassDiagram cd, CD2D cd2db,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

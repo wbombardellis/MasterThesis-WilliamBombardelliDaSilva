@@ -106,52 +106,6 @@ public interface Sourcecode2controlflowPackage extends EPackage {
 	int S2B_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.wbsilva.bx.sourcecode2controlflow.impl.S2NImpl <em>S2N</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.wbsilva.bx.sourcecode2controlflow.impl.S2NImpl
-	 * @see org.wbsilva.bx.sourcecode2controlflow.impl.Sourcecode2controlflowPackageImpl#getS2N()
-	 * @generated
-	 */
-	int S2N = 1;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int S2N__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int S2N__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>S2N</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int S2N_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>S2N</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int S2N_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.wbsilva.bx.sourcecode2controlflow.impl.P2GImpl <em>P2G</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -159,7 +113,7 @@ public interface Sourcecode2controlflowPackage extends EPackage {
 	 * @see org.wbsilva.bx.sourcecode2controlflow.impl.Sourcecode2controlflowPackageImpl#getP2G()
 	 * @generated
 	 */
-	int P2G = 2;
+	int P2G = 1;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -198,6 +152,52 @@ public interface Sourcecode2controlflowPackage extends EPackage {
 	int P2G_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.wbsilva.bx.sourcecode2controlflow.impl.S2NImpl <em>S2N</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.wbsilva.bx.sourcecode2controlflow.impl.S2NImpl
+	 * @see org.wbsilva.bx.sourcecode2controlflow.impl.Sourcecode2controlflowPackageImpl#getS2N()
+	 * @generated
+	 */
+	int S2N = 2;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int S2N__SOURCE = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int S2N__TARGET = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>S2N</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int S2N_FEATURE_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>S2N</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int S2N_OPERATION_COUNT = RuntimePackage.ABSTRACT_CORRESPONDENCE_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bx.sourcecode2controlflow.S2B <em>S2B</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -230,38 +230,6 @@ public interface Sourcecode2controlflowPackage extends EPackage {
 	EReference getS2B_Target();
 
 	/**
-	 * Returns the meta object for class '{@link org.wbsilva.bx.sourcecode2controlflow.S2N <em>S2N</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>S2N</em>'.
-	 * @see org.wbsilva.bx.sourcecode2controlflow.S2N
-	 * @generated
-	 */
-	EClass getS2N();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.wbsilva.bx.sourcecode2controlflow.S2N#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.wbsilva.bx.sourcecode2controlflow.S2N#getSource()
-	 * @see #getS2N()
-	 * @generated
-	 */
-	EReference getS2N_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.wbsilva.bx.sourcecode2controlflow.S2N#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.wbsilva.bx.sourcecode2controlflow.S2N#getTarget()
-	 * @see #getS2N()
-	 * @generated
-	 */
-	EReference getS2N_Target();
-
-	/**
 	 * Returns the meta object for class '{@link org.wbsilva.bx.sourcecode2controlflow.P2G <em>P2G</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -292,6 +260,38 @@ public interface Sourcecode2controlflowPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getP2G_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.wbsilva.bx.sourcecode2controlflow.S2N <em>S2N</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>S2N</em>'.
+	 * @see org.wbsilva.bx.sourcecode2controlflow.S2N
+	 * @generated
+	 */
+	EClass getS2N();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.wbsilva.bx.sourcecode2controlflow.S2N#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.wbsilva.bx.sourcecode2controlflow.S2N#getSource()
+	 * @see #getS2N()
+	 * @generated
+	 */
+	EReference getS2N_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.wbsilva.bx.sourcecode2controlflow.S2N#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.wbsilva.bx.sourcecode2controlflow.S2N#getTarget()
+	 * @see #getS2N()
+	 * @generated
+	 */
+	EReference getS2N_Target();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -343,32 +343,6 @@ public interface Sourcecode2controlflowPackage extends EPackage {
 		EReference S2B__TARGET = eINSTANCE.getS2B_Target();
 
 		/**
-		 * The meta object literal for the '{@link org.wbsilva.bx.sourcecode2controlflow.impl.S2NImpl <em>S2N</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.wbsilva.bx.sourcecode2controlflow.impl.S2NImpl
-		 * @see org.wbsilva.bx.sourcecode2controlflow.impl.Sourcecode2controlflowPackageImpl#getS2N()
-		 * @generated
-		 */
-		EClass S2N = eINSTANCE.getS2N();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference S2N__SOURCE = eINSTANCE.getS2N_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference S2N__TARGET = eINSTANCE.getS2N_Target();
-
-		/**
 		 * The meta object literal for the '{@link org.wbsilva.bx.sourcecode2controlflow.impl.P2GImpl <em>P2G</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -393,6 +367,32 @@ public interface Sourcecode2controlflowPackage extends EPackage {
 		 * @generated
 		 */
 		EReference P2G__TARGET = eINSTANCE.getP2G_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.wbsilva.bx.sourcecode2controlflow.impl.S2NImpl <em>S2N</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.wbsilva.bx.sourcecode2controlflow.impl.S2NImpl
+		 * @see org.wbsilva.bx.sourcecode2controlflow.impl.Sourcecode2controlflowPackageImpl#getS2N()
+		 * @generated
+		 */
+		EClass S2N = eINSTANCE.getS2N();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference S2N__SOURCE = eINSTANCE.getS2N_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference S2N__TARGET = eINSTANCE.getS2N_Target();
 
 	}
 

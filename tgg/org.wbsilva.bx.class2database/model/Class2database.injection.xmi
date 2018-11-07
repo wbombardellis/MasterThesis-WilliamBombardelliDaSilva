@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sdmUtil:CompilerInjection xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sdmUtil="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//sdmUtil">
   <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.class2database.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.class2database.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.wbsilva.bx.class2database.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.csp.*">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.wbsilva.bx.class2database.csp.constraints.*">
@@ -36,41 +72,77 @@
   <importInjectionEntries content="org.moflon.tgg.language.csp.*">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.*">
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.wbsilva.bx.class2database.csp.constraints.*">
+  <importInjectionEntries content="java.util.Optional">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.wbsilva.bx.class2database.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.*">
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.wbsilva.bx.class2database.csp.constraints.*">
+  <importInjectionEntries content="java.util.Optional">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.csp.constraints.*">
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column"/>
@@ -144,204 +216,6 @@
   <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
     <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table"/>
-  </importInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;c&quot;, c);&#xA;match.registerObject(&quot;sas&quot;, sas);&#xA;match.registerObject(&quot;cd&quot;, cd);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sas&quot;,sas);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;sas2fk&quot;, sas2fk);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;sas&quot;, sas);&#xA;ruleresult.registerObject(&quot;fk&quot;, fk);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;sas&quot;).eClass()).equals(&quot;class.Association.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;t&quot;, t);&#xA;match.registerObject(&quot;fk&quot;, fk);&#xA;match.registerObject(&quot;db&quot;, db);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;fk&quot;,fk);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;sas2fk&quot;, sas2fk);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;sas&quot;, sas);&#xA;ruleresult.registerObject(&quot;fk&quot;, fk);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;fk&quot;).eClass()).equals(&quot;database.Column.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;a&quot;, a);&#xA;match.registerObject(&quot;c&quot;, c);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;a&quot;, a);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;co&quot;, co);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;a2co&quot;, a2co);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a&quot;).eClass()).equals(&quot;class.Attribute.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;t&quot;, t);&#xA;match.registerObject(&quot;co&quot;, co);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;co&quot;,co);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;a&quot;, a);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;co&quot;, co);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;a2co&quot;, a2co);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;co&quot;).eClass()).equals(&quot;database.Column.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkTypes_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;cd&quot;, cd);&#xA;match.registerObject(&quot;b&quot;, b);&#xA;match.registerObject(&quot;as&quot;, as);&#xA;match.registerObject(&quot;c&quot;, c);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;b2u&quot;,b2u);&#xD;&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;as&quot;,as);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;u&quot;,u);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;b2u&quot;, b2u);&#xA;ruleresult.registerObject(&quot;as2fk&quot;, as2fk);&#xA;ruleresult.registerObject(&quot;b&quot;, b);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;ruleresult.registerObject(&quot;fk&quot;, fk);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;as&quot;, as);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;u&quot;, u);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;as&quot;).eClass()).equals(&quot;class.Association.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;t&quot;, t);&#xA;match.registerObject(&quot;fk&quot;, fk);&#xA;match.registerObject(&quot;db&quot;, db);&#xA;match.registerObject(&quot;u&quot;, u);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;b2u&quot;,b2u);&#xD;&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;fk&quot;,fk);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;u&quot;,u);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;b2u&quot;, b2u);&#xA;ruleresult.registerObject(&quot;as2fk&quot;, as2fk);&#xA;ruleresult.registerObject(&quot;b&quot;, b);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;ruleresult.registerObject(&quot;fk&quot;, fk);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;as&quot;, as);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;u&quot;, u);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;fk&quot;).eClass()).equals(&quot;database.Column.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_BWD"/>
-  </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isAppropriate_solveCsp_FWD"/>
   </compilerInjectionEntries>
@@ -385,54 +259,21 @@
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/checkTypes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;cd&quot;, cd);&#xA;match.registerObject(&quot;c&quot;, c);&#xA;match.registerObject(&quot;p&quot;, p);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2t&quot;,p2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;p2t&quot;, p2t);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;p&quot;, p);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;c&quot;).eClass()).equals(&quot;class.Clazz.&quot;);">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;t&quot;, t);&#xA;match.registerObject(&quot;db&quot;, db);&#xA;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkTypes_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_solveCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;c&quot;, c);&#xA;match.registerObject(&quot;cd&quot;, cd);&#xA;">
+  <compilerInjectionEntries content="match.registerObject(&quot;cd&quot;, cd);&#xA;match.registerObject(&quot;c&quot;, c);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjectsToMatch_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;c&quot;).eClass()).equals(&quot;class.Clazz.&quot;);">
@@ -447,17 +288,194 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isAppropriate_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/registerObjects_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;t&quot;).eClass()).equals(&quot;database.Table.&quot;);">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;p&quot;, p);&#xA;match.registerObject(&quot;c&quot;, c);&#xA;match.registerObject(&quot;cd&quot;, cd);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2t&quot;,p2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;p2t&quot;, p2t);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;p&quot;, p);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;c&quot;).eClass()).equals(&quot;class.Clazz.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;db&quot;, db);&#xA;match.registerObject(&quot;t&quot;, t);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;c&quot;, c);&#xA;match.registerObject(&quot;sas&quot;, sas);&#xA;match.registerObject(&quot;cd&quot;, cd);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;sas&quot;,sas);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;fk&quot;, fk);&#xA;ruleresult.registerObject(&quot;sas2fk&quot;, sas2fk);&#xA;ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;sas&quot;, sas);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;sas&quot;).eClass()).equals(&quot;class.Association.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;fk&quot;, fk);&#xA;match.registerObject(&quot;db&quot;, db);&#xA;match.registerObject(&quot;t&quot;, t);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;fk&quot;,fk);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;fk&quot;, fk);&#xA;ruleresult.registerObject(&quot;sas2fk&quot;, sas2fk);&#xA;ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;sas&quot;, sas);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;fk&quot;).eClass()).equals(&quot;database.Column.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;c&quot;, c);&#xA;match.registerObject(&quot;a&quot;, a);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;a&quot;,a);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;co&quot;, co);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;a2co&quot;, a2co);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;a&quot;, a);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;a&quot;).eClass()).equals(&quot;class.Attribute.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;co&quot;, co);&#xA;match.registerObject(&quot;t&quot;, t);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;co&quot;,co);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;co&quot;, co);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;a2co&quot;, a2co);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;a&quot;, a);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;co&quot;).eClass()).equals(&quot;database.Column.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;as&quot;, as);&#xA;match.registerObject(&quot;b&quot;, b);&#xA;match.registerObject(&quot;cd&quot;, cd);&#xA;match.registerObject(&quot;c&quot;, c);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;b2u&quot;,b2u);&#xD;&#xA;isApplicableMatch.registerObject(&quot;as&quot;,as);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;u&quot;,u);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;b2u&quot;, b2u);&#xA;ruleresult.registerObject(&quot;as&quot;, as);&#xA;ruleresult.registerObject(&quot;fk&quot;, fk);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;as2fk&quot;, as2fk);&#xA;ruleresult.registerObject(&quot;b&quot;, b);&#xA;ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;u&quot;, u);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;as&quot;).eClass()).equals(&quot;class.Association.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;fk&quot;, fk);&#xA;match.registerObject(&quot;db&quot;, db);&#xA;match.registerObject(&quot;u&quot;, u);&#xA;match.registerObject(&quot;t&quot;, t);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;b2u&quot;,b2u);&#xD;&#xA;isApplicableMatch.registerObject(&quot;fk&quot;,fk);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;u&quot;,u);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;b2u&quot;, b2u);&#xA;ruleresult.registerObject(&quot;as&quot;, as);&#xA;ruleresult.registerObject(&quot;fk&quot;, fk);&#xA;ruleresult.registerObject(&quot;c2t&quot;, c2t);&#xA;ruleresult.registerObject(&quot;as2fk&quot;, as2fk);&#xA;ruleresult.registerObject(&quot;b&quot;, b);&#xA;ruleresult.registerObject(&quot;db&quot;, db);&#xA;ruleresult.registerObject(&quot;u&quot;, u);&#xA;ruleresult.registerObject(&quot;cd&quot;, cd);&#xA;ruleresult.registerObject(&quot;t&quot;, t);&#xA;ruleresult.registerObject(&quot;c&quot;, c);&#xA;ruleresult.registerObject(&quot;cd2db&quot;, cd2db);&#xA;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;fk&quot;).eClass()).equals(&quot;database.Column.&quot;);">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;cd2db&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;cd2db&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/checkAttributes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;class2table&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;class2table&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkAttributes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;super2table&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;super2table&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkAttributes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;selfassoc2column&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/checkAttributes_FWD"/>
@@ -477,23 +495,23 @@
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;association2column&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/checkAttributes_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;cd2db&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/checkAttributes_FWD"/>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isApplicable_solveCsp_CC"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;cd2db&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/checkAttributes_BWD"/>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;super2table&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkAttributes_FWD"/>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_CC"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;super2table&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/checkAttributes_BWD"/>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;class2table&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkAttributes_FWD"/>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;class2table&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/checkAttributes_BWD"/>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/isApplicable_solveCsp_CC"/>
@@ -513,58 +531,40 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isApplicable_solveCsp_CC"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/isApplicable_checkCsp_CC"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_solveCsp_CC"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/isApplicable_checkCsp_CC"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_solveCsp_CC"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/isApplicable_checkCsp_CC"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;b2u&quot;,b2u);&#xD;&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;u&quot;,u);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_checkCsp_BWD"/>
-  </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/generateModel_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/cd2db/generateModel_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2t&quot;,p2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2t&quot;,p2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p&quot;,p);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/super2table/generateModel_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_solveCsp_BWD"/>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/class2table/generateModel_checkCsp_BWD"/>
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/selfassoc2column/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/attribute2column/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;b2u&quot;,b2u);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c2t&quot;,c2t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;b&quot;,b);&#xD;&#xA;isApplicableMatch.registerObject(&quot;db&quot;,db);&#xD;&#xA;isApplicableMatch.registerObject(&quot;u&quot;,u);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd&quot;,cd);&#xD;&#xA;isApplicableMatch.registerObject(&quot;t&quot;,t);&#xD;&#xA;isApplicableMatch.registerObject(&quot;c&quot;,c);&#xD;&#xA;isApplicableMatch.registerObject(&quot;cd2db&quot;,cd2db);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/org.wbsilva.bx.class2database/model/Class2database.ecore#//Rules/association2column/generateModel_checkCsp_BWD"/>
   </compilerInjectionEntries>
 </sdmUtil:CompilerInjection>

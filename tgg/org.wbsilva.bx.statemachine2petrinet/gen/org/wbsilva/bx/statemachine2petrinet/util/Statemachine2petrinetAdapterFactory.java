@@ -69,6 +69,11 @@ public class Statemachine2petrinetAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected Statemachine2petrinetSwitch<Adapter> modelSwitch = new Statemachine2petrinetSwitch<Adapter>() {
 		@Override
+		public Adapter caseT2T(T2T object) {
+			return createT2TAdapter();
+		}
+
+		@Override
 		public Adapter caseT2A(T2A object) {
 			return createT2AAdapter();
 		}
@@ -81,11 +86,6 @@ public class Statemachine2petrinetAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseSM2PN(SM2PN object) {
 			return createSM2PNAdapter();
-		}
-
-		@Override
-		public Adapter caseT2T(T2T object) {
-			return createT2TAdapter();
 		}
 
 		@Override
@@ -110,6 +110,20 @@ public class Statemachine2petrinetAdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.statemachine2petrinet.T2T <em>T2T</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.wbsilva.bx.statemachine2petrinet.T2T
+	 * @generated
+	 */
+	public Adapter createT2TAdapter() {
+		return null;
 	}
 
 	/**
@@ -151,20 +165,6 @@ public class Statemachine2petrinetAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSM2PNAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.wbsilva.bx.statemachine2petrinet.T2T <em>T2T</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.wbsilva.bx.statemachine2petrinet.T2T
-	 * @generated
-	 */
-	public Adapter createT2TAdapter() {
 		return null;
 	}
 

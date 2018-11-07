@@ -23,6 +23,15 @@ public interface Statemachine2petrinetFactory extends EFactory {
 			.init();
 
 	/**
+	 * Returns a new object of class '<em>T2T</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>T2T</em>'.
+	 * @generated
+	 */
+	T2T createT2T();
+
+	/**
 	 * Returns a new object of class '<em>T2A</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -48,15 +57,6 @@ public interface Statemachine2petrinetFactory extends EFactory {
 	 * @generated
 	 */
 	SM2PN createSM2PN();
-
-	/**
-	 * Returns a new object of class '<em>T2T</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>T2T</em>'.
-	 * @generated
-	 */
-	T2T createT2T();
 
 	/**
 	 * Returns the package supported by this factory.
