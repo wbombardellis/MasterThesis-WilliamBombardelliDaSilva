@@ -10,20 +10,5 @@
   <states id="s2"/>
   <transitions
       from="s0"
-      to="s2"/>
-  <transitions
-      from="s0"
-      to="s1"/>
-  <transitions
-      from="s1"
       to="s0"/>
-  <transitions
-      from="s1"
-      to="s2"/>
-  <transitions
-      from="s2"
-      to="s0"/>
-  <transitions
-      from="s2"
-      to="s2"/>
 </org.wbsilva.mm.statemachine:SM>

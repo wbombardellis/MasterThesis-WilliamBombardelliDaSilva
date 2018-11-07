@@ -5,25 +5,18 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:org.wbsilva.mm.statemachine="platform:/plugin/org.wbsilva.mm.statemachine/model/Statemachine.ecore"
     xsi:schemaLocation="platform:/plugin/org.wbsilva.mm.statemachine/model/Statemachine.ecore ../../../../../org.wbsilva.mm.statemachine/model/Statemachine.ecore">
-  <states id="s0"/>
-  <states id="s1"/>
-  <states id="s2"/>
-  <transitions
-      from="s0"
-      to="s2"/>
-  <transitions
-      from="s0"
-      to="s1"/>
-  <transitions
-      from="s1"
-      to="s0"/>
-  <transitions
-      from="s1"
-      to="s2"/>
-  <transitions
-      from="s2"
-      to="s0"/>
-  <transitions
-      from="s2"
-      to="s2"/>
+  <states/>
+  <states/>
+  <states/>
+  <states/>
+  <states/>
+  <states/>
+  <states/>
+  <states/>
+  <states/>
+  <states/>
+  <states/>
+  <states/>
+  <states/>
+  <states/>
 </org.wbsilva.mm.statemachine:SM>

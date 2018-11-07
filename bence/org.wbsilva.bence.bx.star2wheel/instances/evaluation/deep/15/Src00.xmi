@@ -6,7 +6,7 @@
     xmlns:org.wbsilva.mm.graph="platform:/plugin/org.wbsilva.mm.graph/model/Graph.ecore"
     xsi:schemaLocation="platform:/plugin/org.wbsilva.mm.graph/model/Graph.ecore ../../../../../org.wbsilva.mm.graph/model/Graph.ecore">
   <node xsi:type="org.wbsilva.mm.graph:Center"
-      out="b0 b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 b11 b12 b13 b14 b15 b16 b17"
+      out="b0 b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 b11 b12"
       id="c0"/>
   <node xsi:type="org.wbsilva.mm.graph:Boundary"
       id="b0"/>
@@ -34,14 +34,4 @@
       id="b11"/>
   <node xsi:type="org.wbsilva.mm.graph:Boundary"
       id="b12"/>
-  <node xsi:type="org.wbsilva.mm.graph:Boundary"
-      id="b13"/>
-  <node xsi:type="org.wbsilva.mm.graph:Boundary"
-      id="b14"/>
-  <node xsi:type="org.wbsilva.mm.graph:Boundary"
-      id="b15"/>
-  <node xsi:type="org.wbsilva.mm.graph:Boundary"
-      id="b16"/>
-  <node xsi:type="org.wbsilva.mm.graph:Boundary"
-      id="b17"/>
 </org.wbsilva.mm.graph:G>

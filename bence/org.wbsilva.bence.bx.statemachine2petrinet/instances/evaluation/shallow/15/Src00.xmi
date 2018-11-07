@@ -8,9 +8,20 @@
   <states id="s0"/>
   <states id="s1"/>
   <states id="s2"/>
+  <states id="s3"/>
+  <states id="s4"/>
+  <transitions
+      from="s2"
+      to="s2"/>
   <transitions
       from="s0"
       to="s2"/>
+  <transitions
+      from="s0"
+      to="s0"/>
+  <transitions
+      from="s1"
+      to="s1"/>
   <transitions
       from="s0"
       to="s1"/>
@@ -18,12 +29,12 @@
       from="s1"
       to="s0"/>
   <transitions
-      from="s1"
+      from="s0"
       to="s2"/>
   <transitions
-      from="s2"
-      to="s0"/>
+      from="s3"
+      to="s3"/>
   <transitions
-      from="s2"
-      to="s2"/>
+      from="s4"
+      to="s4"/>
 </org.wbsilva.mm.statemachine:SM>
