@@ -17,9 +17,13 @@
 
 package org.wbsilva.bence.evaluation;
 
+import java.util.AbstractMap;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
@@ -65,7 +69,7 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
-		Map<TGGSpecification, IInputSpecification> workLoad = new HashMap<>();
+		List<SimpleEntry<TGGSpecification, IInputSpecification>> workLoad = new ArrayList<>();
 		
 		//Bureaucratic tasks of initialization
 		TransformerUtil.registerFactories();
@@ -73,16 +77,7 @@ public class Main {
 		try {
 			TransformerUtil.registerPackages(resSet);
 			
-			workLoad.put(new TGGSpecification(GraphPackage.eINSTANCE, GraphPackage.eINSTANCE,
-						"../../bence/org.wbsilva.bence.bx.star2wheel/model/Star2wheel.xmi",
-						null, null, true),
-						new StaticInputSpecification(resSet, Arrays.asList( "../../bence/org.wbsilva.bence.bx.star2wheel/instances/evaluation/deep/05/Src00.xmi",
-																			"../../bence/org.wbsilva.bence.bx.star2wheel/instances/evaluation/deep/10/Src00.xmi",
-																			"../../bence/org.wbsilva.bence.bx.star2wheel/instances/evaluation/deep/15/Src00.xmi",
-																			"../../bence/org.wbsilva.bence.bx.star2wheel/instances/evaluation/deep/20/Src00.xmi"
-																			)));
-			
-			workLoad.put(new TGGSpecification(SourcecodePackage.eINSTANCE, ControlflowPackage.eINSTANCE,
+			workLoad.add(new AbstractMap.SimpleEntry<>(new TGGSpecification(SourcecodePackage.eINSTANCE, ControlflowPackage.eINSTANCE,
 							"../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/model/Sourcecode2controlflow.xmi",
 							Sourcecode2controlflowPackage.eINSTANCE, "../../tgg/org.wbsilva.bx.sourcecode2controlflow", true),
 						new StaticInputSpecification(resSet, Arrays.asList("../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/deep/05/Src00.xmi",
@@ -101,9 +96,9 @@ public class Main {
 																		   "../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/shallow/15/Src01.xmi",
 																		   "../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/shallow/20/Src00.xmi",
 																		   "../../bence/org.wbsilva.bence.bx.sourcecode2controlflow/instances/evaluation/shallow/20/Src01.xmi"
-																		   )));
+																		   ))));
 			
-			workLoad.put(new TGGSpecification(BtreePackage.eINSTANCE, XbtreePackage.eINSTANCE,
+			workLoad.add(new AbstractMap.SimpleEntry<>(new TGGSpecification(BtreePackage.eINSTANCE, XbtreePackage.eINSTANCE,
 						"../../bence/org.wbsilva.bence.bx.btree2xbtree/model/Btree2xbtree.xmi",
 						Btree2xbtreePackage.eINSTANCE, "../../tgg/org.wbsilva.bx.btree2xbtree", true),
 						new StaticInputSpecification(resSet, Arrays.asList( "../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/deep/05/Src00.xmi",
@@ -121,9 +116,10 @@ public class Main {
 																			"../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/shallow/15/Src00.xmi",
 																			"../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/shallow/15/Src01.xmi",
 																			"../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/shallow/20/Src00.xmi",
-																	   		"../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/shallow/20/Src01.xmi")));
+																	   		"../../bence/org.wbsilva.bence.bx.btree2xbtree/instances/evaluation/shallow/20/Src01.xmi"
+																			))));
 			
-			workLoad.put(new TGGSpecification(ClassPackage.eINSTANCE, DatabasePackage.eINSTANCE,
+			workLoad.add(new AbstractMap.SimpleEntry<>(new TGGSpecification(ClassPackage.eINSTANCE, DatabasePackage.eINSTANCE,
 					"../../bence/org.wbsilva.bence.bx.class2database/model/Class2database.xmi",
 					Class2databasePackage.eINSTANCE, "../../tgg/org.wbsilva.bx.class2database", true),
 				new StaticInputSpecification(resSet, Arrays.asList( "../../bence/org.wbsilva.bence.bx.class2database/instances/evaluation/deep/05/Src00.xmi",
@@ -142,9 +138,9 @@ public class Main {
 																	"../../bence/org.wbsilva.bence.bx.class2database/instances/evaluation/shallow/15/Src01.xmi",
 																	"../../bence/org.wbsilva.bence.bx.class2database/instances/evaluation/shallow/20/Src00.xmi",
 																	"../../bence/org.wbsilva.bence.bx.class2database/instances/evaluation/shallow/20/Src01.xmi"
-																	)));
+																	))));
 			
-			workLoad.put(new TGGSpecification(StatemachinePackage.eINSTANCE, PetrinetPackage.eINSTANCE,
+			workLoad.add(new AbstractMap.SimpleEntry<>(new TGGSpecification(StatemachinePackage.eINSTANCE, PetrinetPackage.eINSTANCE,
 					"../../bence/org.wbsilva.bence.bx.statemachine2petrinet/model/Statemachine2petrinet.xmi",
 					Statemachine2petrinetPackage.eINSTANCE, "../../tgg/org.wbsilva.bx.statemachine2petrinet", true),
 				new StaticInputSpecification(resSet, Arrays.asList( "../../bence/org.wbsilva.bence.bx.statemachine2petrinet/instances/evaluation/deep/05/Src00.xmi",
@@ -163,7 +159,17 @@ public class Main {
 																	"../../bence/org.wbsilva.bence.bx.statemachine2petrinet/instances/evaluation/shallow/15/Src01.xmi",
 																	"../../bence/org.wbsilva.bence.bx.statemachine2petrinet/instances/evaluation/shallow/20/Src00.xmi",
 																	"../../bence/org.wbsilva.bence.bx.statemachine2petrinet/instances/evaluation/shallow/20/Src01.xmi"
-																	)));
+																	))));
+			
+			workLoad.add(new AbstractMap.SimpleEntry<>(new TGGSpecification(GraphPackage.eINSTANCE, GraphPackage.eINSTANCE,
+					"../../bence/org.wbsilva.bence.bx.star2wheel/model/Star2wheel.xmi",
+					null, null, true),
+					new StaticInputSpecification(resSet, Arrays.asList( "../../bence/org.wbsilva.bence.bx.star2wheel/instances/evaluation/deep/05/Src00.xmi",
+																		"../../bence/org.wbsilva.bence.bx.star2wheel/instances/evaluation/deep/10/Src00.xmi",
+																		"../../bence/org.wbsilva.bence.bx.star2wheel/instances/evaluation/deep/15/Src00.xmi",
+																		"../../bence/org.wbsilva.bence.bx.star2wheel/instances/evaluation/deep/20/Src00.xmi"
+																		))));
+			
 		} catch (Exception e) {
 			workLoad = null;
 		}
@@ -190,7 +196,7 @@ public class Main {
 			logger.debug(String.format("-------------------- Repetition %d --------------------", i));
 			
 			//For each transformation job
-			for (Entry<TGGSpecification, IInputSpecification> job : workLoad.entrySet()) {
+			for (Entry<TGGSpecification, IInputSpecification> job : workLoad) {
 				try {
 					logger.debug("================ Begin Job ================");
 					final TGGSpecification tggSpec = job.getKey();
