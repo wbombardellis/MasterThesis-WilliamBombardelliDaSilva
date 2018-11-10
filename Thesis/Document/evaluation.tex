@@ -7,9 +7,10 @@ In this chapter, we present the results of the experimental evaluation of our wo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% USABILITY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%==================================================================%%%
 \section{Usability}
+\label{sec:eval-usability}
 In order to evaluate the usability of the proposed BNCE TGG formalism, we compare the amount of rules and elements (vertices, edges and mappings) we needed to describe some typical model transformations in BNCE TGG and in standard TGG without application conditions. Table \ref{tab:formalism-eval} presents these results. Each line displays the results for one different transformation, the first and second columns provide the amount of rules and elements of the standard TGG specifications and the third and forth columns the amount of rules and elements of the BNCE TGG specifications, respectively. The size of the smaller specification for each transformation is printed in bold. If a transformation could not be specified with a formalism, the respective cells are marked with a dash (-). The three last lines indicate the sum, the arithmetic average and the median of the amount of rules and elements of each formalism for the compared transformations, respectively.
 
-In general, we judge that the smaller a grammar is, the better its usability is. In this sense, our approach outperforms the baseline in one transformation case and can specify another case, that we could not specify with standard TGG at all. In addition, judging by the measures of total and average, BNCE TGG perform significantly better than the considered baseline. This observation is though not conclusive, because the negative result of the standard TGG is strongly influenced by one studied case in which it performs specially worse, this is made clear by the median of the grammar sizes. Insofar, we cannot claim that our evaluation has a strong statistical validity, for the studied transformations are not very representative in general and we cannot guarantee that these are the smallest grammars that describe the desired transformations. Nonetheless, this results should demonstrate the potential of our approach.
+In general, we judge that the smaller a grammar is, the better its usability is. In this sense, our approach outperforms the baseline in one transformation case and can specify another case, that we could not specify with standard TGG at all. In addition, judging by the measurements of total and average, BNCE TGG perform significantly better than the considered baseline. This observation is though not conclusive, because the negative result of the standard TGG is strongly influenced by one studied case in which it performs specially worse, this is made clear by the median of the grammar sizes. Insofar, we cannot claim that our evaluation has a strong statistical validity, for the studied transformations are not very representative in general and we cannot guarantee that these are the smallest grammars that describe the desired transformations. Nonetheless, this results should demonstrate the potential of our approach.
 
 %TODO: Make clear that two last transformations were written with PAC BNCE TGG
 \begin{table}[h]
@@ -54,31 +55,68 @@ Negatively, the lack of context imposed by the pure BNCE TGG demand the use of P
 %%%==================================================================%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% PERFORMANCE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%==================================================================%%%
+%TODO: Write Captions of Figures
 \section{Performance}
-%TODO: Cite eMoflon
-%TODO: Change X and Y by real references
-For the purpose of evaluating the performance of our implemented transformation algorithm, we measure the runtime taken by it to transform various input graph of various sizes for the same five example transformations from the previous section. We provide the average runtime of our implementation in comparison with the standard TGG transformer \emph{eMoflon}. Thereby, we discriminate inputs that generate a deeper or a shallower parsing tree and depict these results in Figures X to Y, the x-axis represents the size of the inputs, the y-axis the runtime in seconds and the various lines the arithmetic average runtime for the two classes of inputs (Deep and Shallow) on the two transformer implementations (BNCE and eMoflon).
+For the purpose of evaluating the performance of our implemented transformation algorithm, we measure the runtime taken by it to forward-transform various input graphs of various sizes for the same five example transformations from the previous section. We provide the comparison between the average runtime of our implementation and of the \emph{eMoflon}\footnote{emoflon.org} standard TGG transformer \cite{leblebici2014developing} discriminated by the whether the input graph generates a deeper or a shallower parsing tree. The results are depicted in Figures \ref{fig:performance-star2wheel} to \ref{fig:performance-class2database}, whereby the x-axis represents the size of the inputs, the y-axis represents the runtime in seconds and the lines display the arithmetic average of the runtimes for the two classes of inputs---\emph{Deep} and \emph{Shallow}---on the two transformer implementations---our \emph{BNCE} and the \emph{eMoflon} implementations. We advise that the scale on the y-axis vary for each chart.
 
-%TODO: Talk more about configuration. Talk about eMoflon...
+%TODO: Check PC configuration
+We execute the transformations on a Intel Core i7 2.3GHz 4x 64bit with 8GB RAM. The runtime measurement consists of the difference between the system time after and before the transformation of a each input graph, whereby both input graph and grammar are lazily load in memory beforehand. We transform, in total, 16 graphs, separated in four different sizes (graphs with 5, 10, 15, and 20 vertices) and two different classes (graphs whose parsing trees are either deep or shallow), for the four comparable transformations \emph{Pseudocode2Controlflow}, \emph{BTree2XBTree}, \emph{Class2Database}, and \emph{Statemachine2Petrinet} on both evaluated implementations and more 4 graphs for the \emph{Star2Wheel} transformation on our BNCE implementation, one after another, and repeat it for 5 times, what culminates in 680 runs. For our BNCE TGG transformer, we set a runtime limit of 120s and configure the parsing procedure with 4 threads and the greedy aware strategy.
+
+eMoflon is a very efficient tool that supports model transformation with TGG \cite{leblebici2014developing}. Differently from our approach, eMoflon does not interpret an input grammar to perform transformation. Instead, it first compiles the input grammar to Java, generating an application that is able to transform input models for that specific grammar. We picked eMoflon as baseline implementation because latest reports evinces its advantage over other TGG tools, like \emph{MoTE}\footnote{www.hpi.uni-potsdam.de/giese/public/mdelab/mdelab-projects/mote-a-tgg-based-model-transformation-engine} or \emph{TGG Interpreter}\footnote{jgreen.de/tools/tgg-interprete}, when the task to be solved is batch forward transformation \cite{hildebrandt2013survey, leblebici2014comparison}.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=.5\textwidth]{figures/performance/star2wheel}
+	\includegraphics[width=.45\textwidth]{figures/performance/star2wheel}
 	\caption{...}
 	\label{fig:performance-star2wheel}
 \end{figure}
 
+Figure \ref{fig:performance-star2wheel} displays the result of the performance evaluation for the transformation \emph{Star2Wheel}. For this transformation, we cannot discriminate between star graphs with a certain size $n$ that generate a deep or a shallow parsing tree, because there exists only one such star graph with size $n$ (up to isomorphism). Furthermore, as stated in Section \ref{sec:eval-usability}, we could not model this transformation in standard TGG. Thus, the only line in Figure \ref{fig:performance-star2wheel} refers to the BNCE implementation and evinces the already expected polynomial behavior of the algorithm.
+
 \begin{figure}
 	\centering
-	\includegraphics{figures/performance/pseudocode2controlflow}
+	\includegraphics[width=.6\textwidth]{figures/performance/pseudocode2controlflow}
 	\caption{...}
 	\label{fig:performance-pseudocode2controlflow}
 \end{figure}
 
-%TODO: Positive and negative aspects of the proposed approach. Cases where it specially works good and bad. Best case. Worst case in regard to parsing tree structure. Average case
+Figure \ref{fig:performance-pseudocode2controlflow} reports on the average runtimes for the \emph{Pseudocode2Controlflow} transformation. For input graphs that generate a deep parsing tree, we perform only slightly worse than eMoflon. However, for the case of shallow parsing trees, the computation time for our implementation grows fast with the inputs' sizes. We think that the good performance of the former case is due to our greedy heuristic that prioritizes the exploration of deeper trees, what enhances the probability of finding the complete parsing tree for these graphs first.
 
-Furthermore, we also report on the runtime for forward and backward batch transformations in a Intel Core i3 2.3GHz 4x 64bit with 4GB RAM. The standard TGG version of the transformations were executed using the eMoflon Tool %\cite{leblebici2014developing}.
-%TODO: Which implementation details: threads, strategy, etc
+\begin{figure}
+	\begin{subfigure}[t]{0.44\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/performance/btree2xbtree-deep}
+		\caption{...}
+		\label{fig:performance-btree2xbtree-deep}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.55\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/performance/btree2xbtree}
+		\caption{...}
+		\label{fig:performance-btree2xbtree}
+	\end{subfigure}
+	\caption{...}
+\end{figure}
+
+Figure \ref{fig:performance-btree2xbtree} depicts the runtimes for the two classes of input of the \emph{BTree2XBTree} transformation on the eMoflon implementation and for the class of deep parsing trees on our BNCE implementation. Thereby, it is made clear how the BNCE's curve grows faster than the eMoflon's with greater inputs. Indeed, eMoflon's curve seems to be characterized by a polynomial with a much smaller degree than the BNCE's.
+
+%TODO: Go on from here
+
+\begin{figure}
+	\centering
+	\includegraphics[width=.6\textwidth]{figures/performance/statemachine2petrinet}
+	\caption{...}
+	\label{fig:performance-statemachine2petrinet}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=.6\textwidth]{figures/performance/class2database}
+	\caption{...}
+	\label{fig:performance-class2database}
+\end{figure}
+
+%TODO: Positive and negative aspects of the proposed approach. Cases where it specially works good and bad. Best case. Worst case in regard to parsing tree structure. Average case
 
 Regarding the worst-case time complexity of our model transformer, it is clear that it is linear on the size of the source model for the step \emph{Ecore to Graph} and it is polynomial in the size of the TGG model for the step \emph{NP Normalization}. For the step \emph{Production}, the time complexity is linear on the length of the derivation, which in turn is linear on the size of the source graph. And, ultimately, \cite[p. 160]{rozenberg1986boundary} demonstrates that the parser finishes in polynomial time for degree-bounded connected source graphs. Thus, the worst-case time complexity of the model transformer is also polynomial for this case.
 
