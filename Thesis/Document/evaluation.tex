@@ -55,7 +55,7 @@ Negatively, the lack of context imposed by the pure BNCE TGG demand the use of P
 %%%==================================================================%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% PERFORMANCE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%==================================================================%%%
-%TODO: Write Captions of Figures
+%TODO: fix clipped chart (i.e. shallo instead of shallow) -> Regenerate PDFs
 \section{Performance}
 For the purpose of evaluating the performance of our implemented transformation algorithm, we measure the runtime taken by it to forward-transform various input graphs of various sizes for the same five example transformations from the previous section. We provide the comparison between the average runtime of our implementation and of the \emph{eMoflon}\footnote{emoflon.org} standard TGG transformer \cite{leblebici2014developing} discriminated by the whether the input graph generates a deeper or a shallower parsing tree. The results are depicted in Figures \ref{fig:performance-star2wheel} to \ref{fig:performance-class2database}, whereby the x-axis represents the size of the inputs, the y-axis represents the runtime in seconds and the lines display the arithmetic average of the runtimes for the two classes of inputs---\emph{Deep} and \emph{Shallow}---on the two transformer implementations---our \emph{BNCE} and the \emph{eMoflon} implementations. We advise that the scale on the y-axis vary for each chart.
 
@@ -67,7 +67,7 @@ eMoflon is a very efficient tool that supports model transformation with TGG \ci
 \begin{figure}
 	\centering
 	\includegraphics[width=.45\textwidth]{figures/performance/star2wheel}
-	\caption{...}
+	\caption{The arithmetic average of the execution times of several runs of \emph{Star2Wheel} transformations with example input graphs whose sizes range from 5 to 20 on the BNCE transformer}
 	\label{fig:performance-star2wheel}
 \end{figure}
 
@@ -76,7 +76,7 @@ Figure \ref{fig:performance-star2wheel} displays the result of the performance e
 \begin{figure}
 	\centering
 	\includegraphics[width=.6\textwidth]{figures/performance/pseudocode2controlflow}
-	\caption{...}
+	\caption{The arithmetic average of the execution times of several runs of \emph{Pseudocode2Controlflow} transformations with example input graphs whose sizes range from 5 to 20 and that are discriminated by their parsing trees (\emph{Deep} or \emph{Shallow}) on both implementations (\emph{BNCE} and \emph{eMoflon})}
 	\label{fig:performance-pseudocode2controlflow}
 \end{figure}
 
@@ -86,48 +86,47 @@ Figure \ref{fig:performance-pseudocode2controlflow} reports on the average runti
 	\begin{subfigure}[t]{0.44\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/performance/btree2xbtree-deep}
-		\caption{...}
+		\caption{Runtimes only for the class \emph{Deep}}
 		\label{fig:performance-btree2xbtree-deep}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.55\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/performance/btree2xbtree}
-		\caption{...}
+		\caption{Runtimes for all four classes}
 		\label{fig:performance-btree2xbtree}
 	\end{subfigure}
-	\caption{...}
+	\caption{The arithmetic average of the execution times of several runs of \emph{BTree2XBTree} transformations with example input graphs whose sizes range from 5 to 20 and that are discriminated by their parsing trees (\emph{Deep} or \emph{Shallow}) on both implementations (\emph{BNCE} and \emph{eMoflon})}
 \end{figure}
 
-Figure \ref{fig:performance-btree2xbtree} depicts the runtimes for the two classes of input of the \emph{BTree2XBTree} transformation on the eMoflon implementation and for the class of deep parsing trees on our BNCE implementation. Thereby, it is made clear how the BNCE's curve grows faster than the eMoflon's with greater inputs. Indeed, eMoflon's curve seems to be characterized by a polynomial with a much smaller degree than the BNCE's.
+%TODO: Remove eMoflon Shallow from deep chart
+Figure \ref{fig:performance-btree2xbtree-deep} depicts the runtimes for the \emph{BTree2XBTree} transformation for the inputs that generate deep parsing trees on both implementations. Thereby, it is made clear how the BNCE's curve grows faster than the eMoflon's with greater inputs. Indeed, eMoflon's curve seems to be characterized by a polynomial with a much smaller degree than the BNCE's.
 
-%TODO: Go on from here
+Figure \ref{fig:performance-btree2xbtree} depicts the runtimes also for the \emph{BTree2XBTree} case where the two classes of inputs on both implementations are evaluated. This result demonstrates how our implementation performs bad for the class of shallow parsing tree. In particular, the runtime function grows vertiginously for input sizes greater than 10. Notice that, the runtimes are limited by 120s, as we set this timeout in our configuration. Therefore, it is fair to assume, that the real runtime for this class is even worse.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=.6\textwidth]{figures/performance/statemachine2petrinet}
-	\caption{...}
+	\caption{The arithmetic average of the execution times of several runs of \emph{Statemachine2Petrinet} transformations with example input graphs whose sizes range from 5 to 20 and that are discriminated by their parsing trees (\emph{Deep} or \emph{Shallow}) on both implementations (\emph{BNCE} and \emph{eMoflon})}
 	\label{fig:performance-statemachine2petrinet}
 \end{figure}
+
+Figure \ref{fig:performance-statemachine2petrinet} reports on the runtime evaluation of the \emph{Statemachine2Petrinet} transformation for the two classes of inputs on both evaluated implementations and shows again the disadvantage of our BNCE TGG implementation against eMoflon, specially for the shallow parsing tree case.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=.6\textwidth]{figures/performance/class2database}
-	\caption{...}
+	\caption{The arithmetic average of the execution times of several runs of \emph{Class2Database} transformations with example input graphs whose sizes range from 5 to 20 and that are discriminated by their parsing trees (\emph{Deep} or \emph{Shallow}) on both implementations (\emph{BNCE} and \emph{eMoflon})}
 	\label{fig:performance-class2database}
 \end{figure}
 
-%TODO: Positive and negative aspects of the proposed approach. Cases where it specially works good and bad. Best case. Worst case in regard to parsing tree structure. Average case
+Lastly, Figure \ref{fig:performance-class2database} presents the worst performance result of our approach, which is the one for the \emph{Class2Database} transformation. For this case, our solution is impracticable even for inputs of size 10 that generate deep parsing trees, whereas eMoflon presents a very good performance for both classes of inputs. We cannot explain this phenomenon exactly, but the following reasoning about the time complexity of the BNCE TGG transformer may shed a light on it.
 
-Regarding the worst-case time complexity of our model transformer, it is clear that it is linear on the size of the source model for the step \emph{Ecore to Graph} and it is polynomial in the size of the TGG model for the step \emph{NP Normalization}. For the step \emph{Production}, the time complexity is linear on the length of the derivation, which in turn is linear on the size of the source graph. And, ultimately, \cite[p. 160]{rozenberg1986boundary} demonstrates that the parser finishes in polynomial time for degree-bounded connected source graphs. Thus, the worst-case time complexity of the model transformer is also polynomial for this case.
+The worst-case time complexity of the BNCE TGG transformer is polynomial in the size of the input graphs, for degree-bounded connected graphs, but the degree of this polynomial is unknown, as far as our knowledge goes. For the general case, the problem of transforming an input graph with a BNCE TGG is NP-complete. This diagnose is valid because the BNCE TGG transformer's complexity is dominated by the parser's, which is proven to be polynomial for the connected case with bounded degree and NP-complete for the general case, according to Rozenberg et al. \cite[p. 160]{rozenberg1986boundary}. That the total algorithm's complexity is dominated by the parser is easy to see in Figure \ref{fig:implementation-scheme}, because the step \emph{Ecore to Graph}'s computational effort is linear on the size of the input model and the step \emph{NP Normalization} is dependent only on the grammar's size (what is considered to be constant) and, finally, the step \emph{Production}'s effort is is linear on the length of the derivation, which in turn is also linear on the size of the input graph.
 
 %TODO: Maybe need to explain better these factors, special the fact that bup the internal complexity is fast because the subsets are bounded by maxr(G)
-In particular, the parser's complexity dominates the total complexity and can be roughly described by the multiplication of two factors: the number of loop iterations executed until the desired final zone vertex is found (Lines 4 to 14 in Algorithm \ref{alg:parsepac}) and the number of operations necessary to find the derivations for a handle (Lines 5 to 13 in Algorithm \ref{alg:parsepac}). The latter is clearly a function on the size of the grammar, that is the number of rules and the right-hand sides' sizes, that are considered to be fixed, for handles bounded by the greatest right-hand side. The former is the size of the $bup$ set, which in turn is polynomial in the size of the source graph, for a degree-bounded connected graph \cite[p. 161]{rozenberg1986boundary}.
+More detailed, the parser's complexity can be roughly described as the multiplication of two factors: the number of loop iterations executed until the desired final zone vertex is found (Lines 4 to 14 in Algorithm \ref{alg:parsepac}) and the number of operations necessary to find the derivations for a handle (Lines 5 to 13 in Algorithm \ref{alg:parsepac}). The latter is clearly a function on the size of the grammar, that is defined through the number of rules and the sizes of right-hand sides and are considered to be constant. The former corresponds to the size of the $bup$ set, which, in turn, is polynomial in the size of the source graph, for a degree-bounded connected graph \cite[p. 161]{rozenberg1986boundary}, but not polynomial in the general case (unless $P=NP$).
 
-%TODO: Space complexity. NLOG? Look in paper about efficiency and complexity of Kim.. Say also that much memory is used by us in the practice; search space with parsing trees and bup sets. space complexity for production is linear on source graph size
+%TODO: Check the definition of PSPACE-complete
+Concerning worst-case space complexity, the BNCE parsing problem is NLOG for degree-bound connected graphs \cite{kim2001efficient} and PSPACE-complete for the general case \cite{rozenberg1986boundary}, what means that the parsing algorithm runs in log-space for the former case and in polynomial-space for the latter. It is also clear that the space complexity of the BNCE transformer is dominated by the parser. In practice, our implementation consumes more space than the necessary, since we keep in memory copies of input's subgraphs that correspond to parsing trees found through the exploration of the parsing tree space. In this sense, our memory consumption could be lessened.
 
-
-%TODO: Which is the averga, best and worst case
-%TODO: Write about top-down alternative
-%TODO: Say that embeddings are complicated
-%TODO: "Generating Efficient Parsers for HR grammars", Cite s_78 for evaluation of HRGs
-%TODO: HR are too few expressive
+In summary, our approach's performance is not sufficiently good for the general case and is clearly outperformed by eMoflon, specially when the parser generates a shallow parsing tree for the input. One could argue that our transformer is still applicable for the case of deep parsing trees, but, in the practice, this would imply in a too strong restriction. As a solution for this issue, we believe that a top-down parser could enhance our transformer's performance considerably, in spite of the probably necessary backtracking. Indeed, eMoflon applies a top-down parser that do not need to backtrack, what guarantees it the good performance.
