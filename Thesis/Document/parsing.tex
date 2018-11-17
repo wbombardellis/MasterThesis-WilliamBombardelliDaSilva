@@ -85,11 +85,6 @@ The variable $h$ stands for handle and is any subset from $bup$ chosen to be eva
 
 If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that the whole graph $G$ can be produced through the application of a derivation starting from the start graph $\startG{GG}$ and thus $G \in L(GG)$. This derivation is, namely, the result of a depth-first walk in the parsing tree whose root is $(S, V_G)$. If, otherwise, all possibilities for $h$ were exhausted without inferring such zone vertex, then $\Nothing$ is returned, what means that $G$ cannot de parsed with $GG$ and therefore $G \notin L(GG)$.
 
-%TODO: Talk about the empty productions, that are allowed
 %TODO: Talk about the isomorphism in the reduction test
 
-%TODO: We beleieve this imperative view is also a contribution of our work
-
-%TODO: Comment on correctness and completeness
-%TODO: Comment on termination and spatial and time complexity
-%TODO: Nevertheless, the grammar's ambiguity does not compromise the correctness of our algorithms presented in the following.
+This parsing algorithm supports ambiguous grammars, in which case, there exists more than one derivation for at least one graph in the grammar's language. The output derivation is, in this case, non-deterministic, because of the non-deterministic selection of the handles by $\Select$ in Line 5.
