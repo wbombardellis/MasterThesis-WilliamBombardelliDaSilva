@@ -89,9 +89,9 @@ Finally, the following result gives us an equivalence between a derivation in $T
 
 Therefore, by Theorem \ref{thm:one_d_enough}, the problem of finding a derivation $D = \startTG{TGG} \tderivtr{TGG} G \ms{} C \mt{} T$ is reduced to finding a derivation $\overline{D} = \startG{S(TGG)} \deriv{}{}{S(TGG)} G$, what can be done with the already presented parsing algorithm \ref{alg:parse}. The final construction of the triple graph $G \ms{} C \mt{} T$ becomes then just a matter of creating $D$ out of $\overline{D}$.
 
-%TODO: Comment about the backward case, should be trivial
-
 The complete transformation procedure is presented in the Algorithm \ref{alg:transform}. Thereby it is required that the TGG be neighborhood preserving (NP), what poses no problem to our procedure, once any TGG can be transformed into the neighborhood preserving normal form.  Notice that this algorithm always terminates. A more elaborated discussion on its complexity is given in Section \ref{sec:eval-performance}.
+
+%TODO: Maybe talk more about the normalization for TGG
 
 \begin{algorithm}[!h]
 	\caption{Transformation Algorithm for NP NTC BNCE TGG}

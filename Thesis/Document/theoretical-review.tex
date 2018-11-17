@@ -48,7 +48,6 @@ We use graphs to represent models, first because of the extensive theory behind 
 	%TODO: notation for the componenents? set of all grammars?
 	%TODO: Comment notation: e.g. do not separate edge vertex labels
 	%TODO: also say something about more general grammars (e.g. context-free)
-	%TODO: Extend here with look-ahead
 	%TODO: discuss empty productions
 	
 	Vertices from the right-hand sides of rules labeled by non-terminal (terminal) symbols are said to be non-terminal (terminal) vertices.
@@ -59,8 +58,6 @@ Notice that, in the original definition of NCE grammars \cite{janssens1982graph}
 \begin{definition}
 	A \emph{boundary graph grammar with neighborhood-controlled embedding} (BNCE graph grammar) $GG$ is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the graph grammar $GG$ is boundary if, and only if,all its rules' right-hand sides are $\Gamma\text{-boundary}$ graphs.
 \end{definition}
-
-%TODO: Explain why BNCE (HRG parsers were for classes too restricted), why grammars.
 
 %%%%%% Concrete Syntax %%%%%%
 In the following, we present our concrete syntax inspired by the well-known Backus-naur form to denote NCE graph grammar rules. Let $GG = (\{A, B, a, b,$ $ c, l, m\},$ $\{a, b, c, l, m\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\},$ $\{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$, we denote $p$ and $q$ together as
@@ -185,8 +182,7 @@ Building upon the concepts of graphs and graph grammars, we present, in the foll
 	A $\mathit{\Gamma\textit{-boundary}}$ triple graph $TG = G_s \ms{} G_c \mt{} G_t$ is such that $G_s$, $G_c$ and $G_t$ are $\Gamma\text{-boundary}$ graphs.
 \end{definition}
 
-%TODO: Make sure introduction says something about triple graphs
-As stated before, triple graphs are for us a good tool to express relations between the vertices of two graphs. In the context of model transformation, where graphs represent models, a triple graph holds, for example, a source model and a target model generated from the source, together with the relationship between their vertices. We also advise that in literature, TGG are often modeled as typed graphs, but we judge that for our circumstance labeled graphs fit better and we are convinced that such divergence does not threat the validity of our approach.
+As stated in Chapter \ref{ch:Introduction}, triple graphs are for us a good tool to express relations between the vertices of two graphs. In the context of model transformation, where graphs represent models, a triple graph holds, for example, a source model and a target model generated from the source, together with the relationship between their vertices. We also advise that in literature, TGG are often modeled as typed graphs, but we judge that for our circumstance labeled graphs fit better and we are convinced that such divergence does not threat the validity of our approach.
 
 Below we start introducing the standard definition of TGG of the current research's literature. As the reader should notice, this definition of TGG does not fit our needs optimally, because it defines a context-sensitive graph grammar whilst we wish a context-free graph grammar to use together with the NCE graph grammar formalism. Hence, after presenting the conventional TGG definition, we refine it to create a NCE TGG, that fits our context best.
 
@@ -200,9 +196,9 @@ Below we start introducing the standard definition of TGG of the current researc
 	A \emph{triple graph grammar with neighborhood-controlled embedding} (NCE TGG) $TGG = (\Sigma, \Delta \subseteq \Sigma, S \in \Sigma, P)$ consists of, an alphabet $\Sigma$, a set of terminal symbols $\Delta$ (also define $\Gamma := \Sigma \setminus \Delta$), a start symbol $S$ and a set of production rules $P$ of the form $(A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t)$ with $A \in \Gamma$ being the left-hand side, $(R_s \ms{} R_c \mt{} R_t) \in \alltgraphs{\Sigma}$ the right-hand side and $\omega_s : V_{R_s} \pto 2^{\Sigma \times \Sigma}$ and $\omega_t : V_{R_t} \pto 2^{\Sigma \times \Sigma}$ the partial embedding functions from the right-hand side's vertices to pairs of edge and vertex labels. We might refer to the complete embedding function by $\omega:= \omega_s \cup \omega_t$.
 	
 	For convenience, define the start triple graph of $TGG$ as $\startTG{TGG} := Z_s \ms{ms} Z_c \mt{mt} Z_t$ where $Z_s = (\{s_0\},\emptyset,\{s_0 \mapsto S\})$, $Z_c = (\{c_0\},\emptyset,\{c_0 \mapsto S\})$, $Z_t = (\{t_0\},\emptyset,\{t_0 \mapsto S\})$, $ms = \{c_0 \mapsto s_0 \}$ and $mt = \{c_0 \mapsto t_0 \}$. Production rules of triple graph grammars are also called triple rules.
-	
-	%TODO: discuss empty productions(?)
 \end{definition}
+
+%TODO: Enhancement: left hand side more flexible with three different symbols (e.g. A-B-C -> ...)
 
 \begin{definition}
 	A \emph{boundary triple graph grammar with neighborhood-controlled embedding} (BNCE TGG) is such that non-terminal vertices of the right-hand sides of rules are not neighbors. That is, the triple graph grammar $TGG$ is boundary if, and only if,all its rules' right-hand sides are $\Gamma\text{-boundary}$ triple graphs.
@@ -213,8 +209,9 @@ The most important difference between the traditional TGG and the NCE TGG, is th
 %%%%%% Semantics %%%%%%
 In the following, the semantics for NCE TGG is presented analogously to the semantics for NCE graph grammars.
 
+
+%TODO: IMPORTANT: ADD CONDITION FOR TRIPLE RULE APPLICATION - THREE VERTICES NEED TO BE CONNECTED BY THE MORPHISM - Does not change transformer, but it is important for transformer's completeness
 \begin{definition}
-	%TODO: Maybe define dstep more formally
 	\label{def:tgg_dstep}
 	Let $TGG = (\Sigma, \Delta, S, P)$ be a NCE TGG and $G = G_s \ms{gs} G_c \mt{gt} G_t$ and $H = H_s \ms{hs} H_c \mt{ht} H_t$ be two triple graphs over $\Sigma$ disjoint from any right-hand side from $P$, $G$ \emph{concretely derives in one step into} $H$ with rule $r$ and distinct vertices $v_s, v_c, v_t$, we write $G \tcderiv{r}{v_s,v_c,v_t}{TGG} H$ if, and only if, the following holds:
 	\begin{align*}
