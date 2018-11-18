@@ -1,7 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% IMPLEMENTATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%TODO: Change refs from algorithm 1 to the algorithm with PAC
 In this chapter, we present in details our implementation for the model transformer that we exposed in the previous chapters. As programming language and runtime platform we use Java. As modeling and code generation tool we use Eclipse Modeling Framework (EMF).
 
 %TODO: Maybe explain the TGG and TG metamodels (with image maybe)
@@ -27,8 +26,6 @@ The NP Normalization starts by looking for non-NP rules. For each of these rules
 The parsing procedure can be seen as a search algorithm that explores systematically the search space of all parsing trees for the TGG until it finds the parsing tree for the input graph. It is easy to see that such search space is huge (and potentially infinite) for any practical TGG. The parser starts from the trivial parsing trees, each one containing only one zone vertex of the source graph (see Line 3 in Algorithm \ref{alg:parsepac}). Then, at every time that it finds a new derivation (see Line 9), it augments its search space with a new parsing tree for the just found derivation (see Line 11). Additionally, the parser also holds the so-called $bup$ set with the zone vertices found by derivations assembled from other zone vertices in $bup$, which also grows at each time a derivation is found (see Line 10).
 
 Notice, thus, that the direction to where the search space grows depends on the choice of which subset of zone vertices are picked from $bup$ (see Line 5) as a handle to find new derivations and that the number of possibilities for such choice explodes as the size of $bup$ grows. Indeed, the function that describes this growth, despite its importance in the complexity analysis of the parsing algorithm, is not known, as far as we know, but it is a polynomial on the size of the source graph \cite[p. 160]{rozenberg1986boundary}.
-
-%TODO: By now it should be clear that bups are chose to match with RHSs
 
 Therefore, we implemented three different strategies to query the $bup$ set: The \emph{naive}, the \emph{greedy} and the \emph{greedy aware}. In the \emph{naive} strategy, the selection of subsets from $bup$ are performed from the smaller to the bigger ones, without any other criterion. In the \emph{greedy} strategy, subsets containing zone vertices added after the initialization get higher priority. Moreover, from those subsets, the ones with the greater amount of vertices (i.e. the greatest) get an even higher priority and are served first. Finally, the \emph{greedy aware} strategy extends the \emph{greedy} strategy, by using information about the graph being parsed and the grammar being utilized.
 

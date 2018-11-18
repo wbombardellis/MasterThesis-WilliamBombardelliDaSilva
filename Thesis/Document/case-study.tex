@@ -17,7 +17,6 @@ Through $r_1$ can an $A$ be transformed into an $a$ (i.e. an action) in the \emp
 
 \paragraph*{Derivation. } In order to obtain a more concrete understanding on how the rules in $P$ work, we provide in the following the only derivation in $TGG$ for the triple graph $TG$ from Example \ref{ex:pseudocode2controlflow}. By investigating this derivation, it should be clear how the BNCE TGG mechanism works. It starts by the start triple graph $\startTG{TGG}$ and apply consecutively rules from $P$ to produce finally the goal triple graph.
 
-%TODO: remove pacs
 \input{examples/pseudocode2controlflow-der}
 
 \paragraph*{Transformation. } The transformation procedure consists, as already expound in Chapters \ref{ch:ModelTransformation}, \ref{ch:PacExtension} and \ref{ch:Implementation}, of the parsing of the input graph and the production of the triple graph. The goal of the parsing is to find the parsing tree correspondent to a derivation $D$ for the input as fast as possible. This search is efficiently performed when the set of found derivation steps contains only the ones in $D$. In Algorithm \ref{alg:parse} this is achieved when the set $bup$ grows minimally, that is, it is enlarged only with the zone vertices corresponding to the derivation steps in $D$.
