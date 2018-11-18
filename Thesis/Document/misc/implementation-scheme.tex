@@ -1,22 +1,22 @@
 \noindent
 \begin{tikzpicture}[scheme]
-\draw (3.1,0) node[metaobject, text width=45pt] (TGGMM) {$TGG$ $Metamodel$};
-\draw (1,0) node[metaobject, text width=45pt] (sourceMM) {$Source$ $Metamodel$};
+%\draw (3.1,0) node[metaobject, text width=45pt] (TGGMM) {$TGG$ $Metamodel$};
+%\draw (1,0) node[metaobject, text width=45pt] (sourceMM) {$Source$ $Metamodel$};
 
-\draw (3.1,-1.75) node[object, text width=48pt] (inputTGG) {TGG Model};
+\draw (3.1,-1.75) node[object, text width=48pt] (inputTGG) {BNCE TGG};
 \draw (1,-1) node[object, text width=54pt] (source) {Source Model};
 
 \draw (6,-1) node[activity, text width=65pt] (e2g) {ECore to Graph};
 \draw (6,-1.75) node[activity, text width=70pt] (np) {NP Normalization};
 \draw (8.75,-1.4) node[activity, text width=30pt] (p) {Parsing};
 \draw (11,-1.4) node[activity, text width=40pt] (prod) {Production};
-\draw (13.6,-1.4) node[object, text width=55pt] (output) {Output Model};
+\draw (13.6,-1.4) node[object, text width=55pt] (output) {Triple Graph};
 
-\draw (13.6,0) node[metaobject, text width=45pt] (TGMM) {$TG$ $Metamodel$};
+%\draw (13.6,0) node[metaobject, text width=45pt] (TGMM) {$TG$ $Metamodel$};
 
-\draw[edge, dashed] (inputTGG) -- (TGGMM) node [edgeLabel] {};
-\draw[edge, dashed] (source) -- (sourceMM) node [edgeLabel] {};
-\draw[edge, dashed] (output) -- (TGMM) node [edgeLabel] {};
+%\draw[edge, dashed] (inputTGG) -- (TGGMM) node [edgeLabel] {};
+%\draw[edge, dashed] (source) -- (sourceMM) node [edgeLabel] {};
+%\draw[edge, dashed] (output) -- (TGMM) node [edgeLabel] {};
 \draw[edge] (inputTGG) -- (np) node [edgeLabel] {};
 \draw[edge] (source) -- (e2g) node [edgeLabel] {};
 \draw[edge] (e2g) -- (p) node [edgeLabel] {};

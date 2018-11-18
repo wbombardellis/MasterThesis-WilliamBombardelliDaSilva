@@ -89,7 +89,9 @@ Below, we demonstrate that the graph from Figure \ref{fig:classdiagram-g} is in 
 
 In this production, the rule $r_2$ creates, through two applications, two PAC vertices $p_0$ and $p_1$, which are then removed and have their adjacent vertices moved to the vertices $v_2$ and $v_1$, respectively, through the last two resolution steps. The resolution steps have thus the power of connecting vertices that could not be connected otherwise.
 
-%TODO: Explain the name PAC by means of interpretation of its effects in a rule
+Although it is difficult to interpret PAC vertices as application conditions under this semantics of production and resolution steps, we still maintain this nomenclature, for we think that our PAC mechanism ensembles quite nearly positive application conditions of standard TGG, except that it does not require the condition to hold at the moment of the rule application, instead it can hold later on in the derivation, whereas the PAC of standard TGG requires the PAC vertex to be matched at the moment of a rule application. In other words, a PAC vertex in a rule of a NCE TGG can be understood as a condition that requires the creation of such a vertex before or after the application of the rule.
+
+To finish, consider these two following remarks.
 
 \begin{remark}
 	If, for all rules $(A \pro R,\omega,U)$ in a grammar $GG$ have $U = \emptyset$, then the $GG$ degrades to a normal NCE grammar without PAC and the resolution steps have no effect in $L(GG)$.
