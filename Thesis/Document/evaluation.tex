@@ -46,15 +46,13 @@ In summary, our experimental usability evaluation does not allow the drawing of 
 
 Positively, we highlight the capacity of BNCE TGG to specify very compactly transformations between graphs for whose label sets there exists some kind of inheritance relation. In other words, models in which element types' undergo a hierarchical structure fit BNCE TGG well. That is particularly common for behavioral models of software systems, therefore, we claim that our approach suits well, for example, the automatic generation of source-code out of graphic models.
 
-%TODO: Add citation for TGG with AC: Scholar -> Completeness and Correctness of Model Transformations Based on Triple Graph Grammars with Negative Application Conditions.
-Regarding the \emph{Star2Wheel} transformation, we believe that it could be written with standard TGG augmented with application conditions (AC). In which case, BNCE TGG can be seen as an alternative to TGG with AC, what makes it, in circumstances where AC are not wished, specially applicable.
+Regarding the \emph{Star2Wheel} transformation, we believe that it could be written with standard TGG augmented with application conditions (AC) \cite{ehrig2009completeness}. In which case, BNCE TGG can be seen as an alternative to TGG with AC, what makes it, in circumstances where AC are not wished, specially applicable.
 
 Negatively, the lack of context imposed by the pure BNCE TGG demand the use of PAC for some transformations. Although we prove in Theorem \ref{thm:one_d_enough_pac} that the PAC mechanism can be used safely for the solving of the model transformation problem, we suppose that its application can be perceived as cumbersome in some situations, especially with the occurrence of multiple PAC, that we did not include in our evaluation.
 
 %%%==================================================================%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% PERFORMANCE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%==================================================================%%%
-%TODO: fix clipped chart (i.e. shallo instead of shallow) -> Regenerate PDFs
 \section{Performance}
 \label{sec:eval-performance}
 For the purpose of evaluating the performance of our implemented transformation algorithm, we measure the runtime taken by it to forward-transform various input graphs of various sizes for the same five example transformations from the previous section. We provide the comparison between the average runtime of our implementation and of the \emph{eMoflon}\footnote{emoflon.org} standard TGG transformer \cite{leblebici2014developing} discriminated by the whether the input graph generates a deeper or a shallower parsing tree. The results are depicted in Figures \ref{fig:performance-star2wheel} to \ref{fig:performance-class2database}, whereby the x-axis represents the size of the inputs, the y-axis represents the runtime in seconds and the lines display the arithmetic average of the runtimes for the two classes of inputs---\emph{Deep} and \emph{Shallow}---on the two transformer implementations---our \emph{BNCE} and the \emph{eMoflon} implementations. We advise that the scale on the y-axis vary for each chart.
@@ -98,7 +96,6 @@ Figure \ref{fig:performance-pseudocode2controlflow} reports on the average runti
 	\caption{The arithmetic average of the execution times of several runs of \emph{BTree2XBTree} transformations with example input graphs whose sizes range from 5 to 20 and that are discriminated by their parsing trees (\emph{Deep} or \emph{Shallow}) on both implementations (\emph{BNCE} and \emph{eMoflon})}
 \end{figure}
 
-%TODO: Remove eMoflon Shallow from deep chart
 Figure \ref{fig:performance-btree2xbtree-deep} depicts the runtimes for the \emph{BTree2XBTree} transformation for the inputs that generate deep parsing trees on both implementations. Thereby, it is made clear how the BNCE's curve grows faster than the eMoflon's with greater inputs. Indeed, eMoflon's curve seems to be characterized by a polynomial with a much smaller degree than the BNCE's.
 
 Figure \ref{fig:performance-btree2xbtree} depicts the runtimes also for the \emph{BTree2XBTree} case where the two classes of inputs on both implementations are evaluated. This result demonstrates how our implementation performs bad for the class of shallow parsing tree. In particular, the runtime function grows vertiginously for input sizes greater than 10. Notice that, the runtimes are limited by 120s, as we set this timeout in our configuration. Therefore, it is fair to assume, that the real runtime for this class is even worse.
@@ -110,7 +107,7 @@ Figure \ref{fig:performance-btree2xbtree} depicts the runtimes also for the \emp
 	\label{fig:performance-statemachine2petrinet}
 \end{figure}
 
-Figure \ref{fig:performance-statemachine2petrinet} reports on the runtime evaluation of the \emph{Statemachine2Petrinet} transformation for the two classes of inputs on both evaluated implementations and shows again the disadvantage of our BNCE TGG implementation against eMoflon, specially for the shallow parsing tree case.
+Figure \ref{fig:performance-statemachine2petrinet} reports on the runtime evaluation of the \emph{Statemachine2Petrinet} transformation for the two classes of inputs on both evaluated implementations and shows again the disadvantage of our BNCE TGG implementation against eMoflon, specially for the shallow parsing tree case. The performance evaluation of our implementation at this case resembles very strongly the evaluation of a CYK graph grammar parser presented by \citep[p. 83-90]{hoffmann2017generating}.
 
 \begin{figure}
 	\centering
