@@ -99,7 +99,7 @@ It is clear that, for every graph $G \in L(GG)$, there is at least one finite de
 
 %%%%%% Concrete Syntax %%%%%%
 In the following, we present our concrete syntax inspired by the well-known Backus-naur form to denote NCE graph grammar rules. Let $GG = (\{A, B, a, b,$ $ c, l, m\},$ $\{a, b, c, l, m\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\},$ $\{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$, we denote $p$ and $q$, together, as
-	
+%
 \input{misc/concrete-syntax}
 
 Observe that we use rectangles for non-terminal vertices and circles for terminal vertices; moreover, we position the respective label inside the shape and the (possibly omitted) identifier near it. Near each edge its respective label is positioned. The embedding function is not included in the notation, so it is expressed separately, if necessary.
@@ -109,7 +109,7 @@ Below, we give one example of a NCE graph grammar whose language consists of all
 %Examples (chains)
 \begin{example}{Chains of a's and b's.}
 	$GG = (\{S,A,B,a,b,c\}, \{a,b,c\}, S, P)$, where $P = \{r_0, r_1, r_2, r_3, r_4, $ $r_5\}$ is denoted by
-	
+	%
 	\input{examples/abchains-gg}
 	
 	with $\omega_0 = \omega_1 = \emptyset$, $\omega_2(u_{21}) = \omega_3(u_{31}) = \{(c,b)\}$ and $\omega_4(u_{41}) = \omega_5(u_{51}) = \{(c,a)\}$ being the complete definition of the embedding functions of the rules, $r_0, r_1, r_2, r_3, r_4, r_5$ respectively.
@@ -209,10 +209,10 @@ In the following, the semantics for NCE TGG is presented analogously to the sema
 		v_s & = gs(v_c) \text{ and } v_t = gt(v_c) \text{ and}\\
 		A & = \phi_{G_s}(v_s) = \phi_{G_c}(v_c) = \phi_{G_t}(v_t) \text{ and} \\
 		V_{H_s}  & = (V_{G_s} \setminus \{v_s\}) \cup V_{R_s} \text{ and}\\
-		V_{H_c}  & = (V_{G_c} \setminus \{v_c\}) \cup V_{R_c} \text{ and}
-	\end{align*}
-	\begin{align*}
-		V_{H_t}  & = (V_{G_t} \setminus \{v_t\}) \cup V_{R_t} \text{ and}\\
+		V_{H_c}  & = (V_{G_c} \setminus \{v_c\}) \cup V_{R_c} \text{ and} \\
+		V_{H_t}  & = (V_{G_t} \setminus \{v_t\}) \cup V_{R_t} \text{ and}
+		\end{align*}
+		\begin{align*}
 		E_{H_s} & = (E_{G_s} \setminus (\{(v_s,l,w) \st (v_s,l,w) \in E_{G_s}\} \cup \{(w,l,v_s) \st (w,l,v_s) \in E_{G_s}\})) \\
 		& \cup E_{R_s} \\
 		& \cup \{(w,l,t) \st (w,l,v_s) \in E_{G_s} \land (l,\phi_{G_s}(w)) \in \omega_{s}(t)\} \\
@@ -260,13 +260,13 @@ Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and
 	This example illustrates the definition of a NCE TGG that characterizes the language of all \emph{Pseudocode} graphs together with their respective \emph{Controlflow} graphs. A \emph{Pseudocode} graph is an abstract representation of a program written in a pseudo-code where vertices refer to \emph{actions}, \emph{ifs} or \emph{whiles} and edges connect these items together according to how they appear in the program. A \emph{Controlflow} graph is a more abstract representation of a program, where vertices can only be either a \emph{command} or a \emph{branch}.
 	
 	Consider, for instance, the program \emph{main}, written in a pseudo-code, and the triple graph $TG$ in Figure \ref{fig:p2c-tg}. The triple graph $TG$ consists of the \emph{Pseudocode} graph of $main$ connected to the \emph{Controlflow} graph of the same program through the correspondence graph in the middle of them. In such graph, the vertex labels of the \emph{Pseudocode} graph $p, i, a, w$ correspond to the concepts of \emph{program}, \emph{if}, \emph{action} and \emph{while}, respectively. The edge label $f$ is given to the edge from the vertex $p$ to the program's first statement; $x$ stands for \emph{next} and indicates that a statement is followed by another statement; $p$ and $n$ stand for \emph{positive} and \emph{negative} and indicate which assignments correspond to the positive of negative case of the \emph{if}'s evaluation; finally, $l$ stands for \emph{last} and indicates the last action of a loop. In the \emph{Controlflow} graph, the vertex labels $g, b, c$ stand for the concepts of \emph{graph}, \emph{branch} and \emph{command}, respectively. The edge label $r$ is given to the edge from the vertex $g$ to the first program's statement; $x, p$ and $n$ mean, analogous to the former graph, \emph{next}, \emph{positive} and \emph{negative}. In the correspondence graph, the labels $pg, ib, ac, wb$ serve to indicate which labels in the source and target graphs are being connected through the triple graph's morphism.
-	
+	%
 	\input{examples/pseudocode2controlflow-tg}
 	
 	The main difference between the two graphs is the absence of the $w$ label in the \emph{Controlflow} graph, what makes it encode loops through the combination of $b$-labeled vertices and $x$-labeled edges.
 	
 	The TGG that specifies the relation between these two types of graphs is $TGG = (\{S, A, p, a, i, w, g, b, c, f, x, n, l, r, pg, ac, ib, wb\}, \{p, a, i, w, g, b, c, f, x,$ $ n, l, r, pg, ac, ib, wb\}, S, P)$, where $P = \{r_i \st 0 \le i \le 6\}$ is denoted by
-	
+	%
 	\input{examples/pseudocode2controlflow-tgg}
 	
 	with $\sigma_0 = \emptyset$, $\sigma_1(s_{11}) = \sigma_2(s_{21}) = \sigma_3(s_{31}) = \sigma_4(s_{41}) = \sigma_5(s_{51}) = \{ (f,p), (x,a), $ $(x,i), (x,w), (p,i), (n,i), (l,w), (f,w) \}$, $\sigma_6 = \emptyset$ and $\tau_1(t_{11}) = \tau_2(t_{21}) = \tau_3(t_{31}) = \tau_4(t_{41}) $ $= \tau_5(t_{51}) = \{ (r,g), (x,c), (x,b), (p,b), (n,b)\}$, $\tau_6 = \emptyset$ being the complete definition of the source and target embedding functions of the rules $r_0$ to $r_6$, respectively.

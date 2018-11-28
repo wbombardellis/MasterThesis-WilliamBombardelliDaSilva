@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% PAC EXTENTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\label{ch:pac-extension}
 The NCE graph grammar formalism from \cite{janssens1982graph} can define with very few rules the languages of several classes of labeled graphs, including trees, path graphs, star graphs, control-flow graphs, edgeless graphs, complete graphs, and others. However, it is at least difficult to define the languages of some other classes, like the class-diagram graphs, with NCE graph grammars. In this chapter, we approach the problem of defining a NCE graph grammar for these classes of graphs and propose a solution for that by means of an extension of NCE that includes application conditions.
 
 Class diagrams are commonly used to model object-oriented software artifact that are composed of several classes related by associations. For the sake of demonstrating the problem of NCE with class diagrams, consider a simplified view of the class-diagrams graphs, in which a vertex has either label $c$ or $a$, respectively representing a class or an association, and an edge between an association and a class with label $s$ ($t$) signalizes that the class is the source (target) of the association. In Figure \ref{fig:classdiagram-g}, a class-diagram graph with two classes connected by two associations is depicted. An attempt of a NCE graph grammar that would describe the language of all class-diagram graphs is $GG = (\{K,a,c,s,t\}, \{a,c,s,t\}, K, \{r_0, r_1, r_2\})$, with $r_0$, $r_1$, and $r_2$ depicted in Figure \ref{fig:classdiagram-gg} and $\omega_0(c_0) = \omega_1(c_1) = \{(t,a)\}$ and $\omega_0 = \emptyset$ being the complete embedding definition of the rules $r_0$, $r_1$, and $r_2$, respectively.
@@ -23,12 +23,12 @@ Class diagrams are commonly used to model object-oriented software artifact that
 \end{figure}
 
 The problem with the graph grammar $GG$ is that it does not define the complete language of the class-diagram graph. In fact, the graph in Figure \ref{fig:classdiagram-g} is not in $L(GG)$. To see this, consider the following derivation in $GG$
-
+%
 \input{examples/classdiagram-der}
 
 This is the closest we get to deriving the graph in Figure \ref{fig:classdiagram-g} using GG. Thereby, we would like to connect the association $v_2$ to the class $v_1$ but it is not possible, because $v_1$ was not a neighbor of the vertex $K_0$ that preceded $v_2$. Notice that a vertex in any sentential form can only be either connected to vertices that stem from the same rule application or to neighbors of its precedent vertex. In fact, this seems to be a general characteristic for context-free grammars, where the information about elements in the context of the precedents are not available for descendant elements. In order to overcome it, one could potentially elaborate an alternative grammar that defines the desired language completely and concisely, but we believe that such ad-hoc solution would include a bigger number of rules and add complexity to the grammar. With that in mind, we propose in the sequel an extension of the NCE grammar formalism with positive application conditions (PAC) that solves this issue. 
 
-In NCE graph grammars with PAC, rules' right-hand sides are equipped with application conditions in form of special vertices that are produced by derivation steps and removed by so-called resolution steps. A resolution step is responsible for removing such special vertices and moving their adjacent edges to other vertices. This resolution mechanism allows that the vertex $v_2$ from the previous example be connected to $v_1$. 
+In NCE graph grammars with PAC (PAC NCE graph grammars), rules' right-hand sides are equipped with application conditions in form of special vertices that are produced by derivation steps and removed by so-called resolution steps. A resolution step is responsible for removing such special vertices and moving their adjacent edges to other vertices. This resolution mechanism allows that the vertex $v_2$ from the previous example be connected to $v_1$. 
 
 In order to define the PAC mechanism in detail, the definitions of rule and derivation step are augmented as follows.
 
@@ -80,11 +80,11 @@ It is clear that, the mapping $m$ of the previous definition exists and is bijec
 \end{definition}
 
 Ultimately, we put forward a NCE graph grammar with PAC whose language is the set of all class-diagram graphs. This grammar is $GG = (\{K, A, a, c, s, t\}, \{a, c, s, t\}, K, \{r_0, r_1, r_2, r_3\})$ with $\omega_0(c_0) = \{(t,a)\}$, $\omega_2(a_2) = \{(s,c)\}$, $\omega_2(c_2) = \{(s,a),(t,a)\}$, $\omega_1 = \omega_3 = \emptyset$ being the complete characterization of the embedding functions of the respective rules, and the rules being denoted as below. We advise that PAC vertices and their adjacent edges are depicted with dotted lines.
-
+%
 \input{examples/classdiagram-pacgg}
 
 Below, we demonstrate that the graph from Figure \ref{fig:classdiagram-g} is in $L(GG)$, by means of a production in $GG$.
-
+%
 \input{examples/classdiagram-pacder}
 
 In this production, the rule $r_2$ creates, through two applications, two PAC vertices $p_0$ and $p_1$, which are then removed and have their adjacent vertices moved to the vertices $v_2$ and $v_1$, respectively, through the last two resolution steps. The resolution steps have thus the power of connecting vertices that could not be connected otherwise.
@@ -105,7 +105,8 @@ To finish, consider these two following remarks.
 %%%%%%%%%%%%%%%%%%%%%%%%%%% PARSING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%==================================================================%%%
 \section{Parsing of Graphs with Application Conditions}
-Regarding the parsing procedure for PAC NCE TGG, the Algorithm \ref{alg:parse} can be slightly modified to support PAC, by augmenting the zone vertices with PAC vertices, changing the way how zone graphs are constructed and how zone vertices are added to $bup$ and to the parsing forest. The details of these changes are described in the sequel.
+\label{sec:pac-parsing}
+Regarding the parsing procedure for PAC NCE graph grammars, the Algorithm \ref{alg:parse} can be slightly modified to support PAC, by augmenting the zone vertices with PAC vertices, changing the way how zone graphs are constructed and how zone vertices are added to $bup$ and to the parsing forest. The details of these changes are described in the sequel.
 
 \begin{definition}
 	A \emph{zone vertex with PAC} of a graph $G$ is a triple $(\sigma, U, W)$, with $\sigma$ and $U$ being as explained in Definition \ref{def:zv} and $W \in V_G$ being the set of PAC vertices disjunct from $U$.
@@ -124,9 +125,9 @@ Regarding the parsing procedure for PAC NCE TGG, the Algorithm \ref{alg:parse} c
 The Algorithm \ref{alg:parsepac} is a parsing method that returns a valid production if, and only if, the input graph $G$ is in the language of the graph grammar $GG$ with PAC. Notice that, this procedure does not return a derivation, but a production, that is built by the function $Q$, which performs, analogously to $D$ in Algorithm \ref{alg:parse}, a depth-first walk in the parsing tree.
 
 \begin{algorithm}[!h]
-	\caption{Parsing Algorithm for NP BNCE Graph Grammars with PAC}
+	\caption{Parsing Algorithm for NP PAC BNCE Graph Grammars}
 	\begin{algorithmic}[1]
-		\Require $GG \text{ is a valid NP BNCE graph grammar with PAC}$
+		\Require $GG \text{ is a valid NP PAC BNCE graph grammar}$
 		\Require $G \text{ is a valid graph over } \Delta$
 		\Function{$parse$}{$GG=(\Sigma, \Delta, S, P), G=(V_G,E_G,\phi_G)$}{$:Production$}
 		\State $bup \gets \{(\phi_G(x),\{x\},\emptyset) \st x \in V_G\}$
@@ -156,7 +157,7 @@ The most important difference between Algorithm \ref{alg:parse} and \ref{alg:par
 %%%%%%%%%%%%%%%%%%%%%% MODEL TRANSFORMATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%==================================================================%%%
 \section{Model Transformation with Application Conditions}
-In regard to the application of NCE graph grammars with PAC to the problem of model transformation, the extension is also possible, as shown in the next argumentation. First, consider the extension of NCE TGG to support PAC. 
+In regard to the application of NCE graph grammars with PAC to the problem of model transformation, the extension is also possible, as shown in the next argumentation. First, consider the extension of NCE TGG to support PAC (PAC NCE TGG). 
 
 \begin{definition}
 	A \emph{triple rule with PAC} is of the form $(A \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t, U_s, U_t)$ with $A \pro (R_s \ms{} R_c \mt{} R_t)$, $\omega_s$, and $\omega_t$ as defined in Definition \ref{def:tgg} and $U_s \subseteq \{v \in V_{R_s} \st \phi_{R_s}(v) \in \Delta\}$ the set of PAC vertices of $R_s$ and $U_t \subseteq \{v \in V_{R_t} \st \phi_{R_t}(v) \in \Delta\}$ the set of PAC vertices of $R_t$.
@@ -194,11 +195,11 @@ Similarly to the case of simple graphs, a resolution step for TGG can be interpr
 	E_{H_s} & = (E_{G_s} \setminus (\{(u,l,t) \st u \in \dom \rho_s, (u,l,t) \in E_{G_s}\} \\
 			&\hspace{3.5em} \cup \{(t,l,u) \st u \in \dom \rho_s, (t,l,u) \in E_{G_s}\}))\\
 	& \cup \{(\rho_s(u),l,t) \st u \in \dom \rho_s, (u,l,t) \in E_{G_s}\} \\
-	& \cup \{(t,l,\rho_s(u)) \st u \in \dom \rho_s, (t,l,u) \in E_{G_s}\}
+	& \cup \{(t,l,\rho_s(u)) \st u \in \dom \rho_s, (t,l,u) \in E_{G_s}\} \\
+	E_{H_c} & = E_{G_c} \setminus (\{(u,l,t) \st u \in gs^{-1}(\dom \rho_s), (u,l,t) \in E_{G_c}\} \\
+	&\hspace{3.5em} \cup \{(t,l,u) \st u \in gs^{-1}(\dom \rho_s), (t,l,u) \in E_{G_c}\})
 	\end{align*}
 	\begin{align*}
-	E_{H_c} & = E_{G_c} \setminus (\{(u,l,t) \st u \in gs^{-1}(\dom \rho_s), (u,l,t) \in E_{G_c}\} \\
-	&\hspace{3.5em} \cup \{(t,l,u) \st u \in gs^{-1}(\dom \rho_s), (t,l,u) \in E_{G_c}\}) \\
 	E_{H_t} & = (E_{G_t} \setminus (\{(u,l,t) \st u \in \dom \rho_t, (u,l,t) \in E_{G_t}\} \\
 	&\hspace{3.5em} \cup \{(t,l,u) \st u \in \dom \rho_t, (t,l,u) \in E_{G_t}\}))\\
 	& \cup \{(\rho_t(u),l,t) \st u \in \dom \rho_t, (u,l,t) \in E_{G_t}\} \\
@@ -236,7 +237,7 @@ Finally, Theorem \ref{thm:one_d_enough_pac} is, analogously to Theorem \ref{thm:
 
 \begin{theorem}
 	\label{thm:one_d_enough_pac}
-	Let $TGG = (\Sigma, \Delta, S, P)$ be a NTC PC NCE TGG and $k \ge 1$,
+	Let $TGG = (\Sigma, \Delta, S, P)$ be a NTC PC PAC NCE TGG and $k \ge 1$,
 	\begin{align*}
 		Q & = (\startTG{TGG} \tderivpac{r_0}{s_0,c_0,t_0}{W_0,Y_0}{} G^1 \tderivpac{r_1}{s_1,c_1,t_1}{W_1,Y_1}{} \dots \tderivpac{r_{k-1}}{s_{k-1},c_{k-1},t_{k-1}}{W_{k-1},Y_{k-1}}{} G^k \\
 		& \tresolv{\rho_0,\tau_0} H^1 \tresolv{\rho_1,\tau_1} \dots \tresolv{\rho_{k-1},\tau_{k-1}} H^k)
@@ -259,23 +260,25 @@ Finally, Theorem \ref{thm:one_d_enough_pac} is, analogously to Theorem \ref{thm:
 	So, in the one direction, if $H^i \tresolv{\rho_{i},\tau_{i}} H^{i+1}$, then, trivially, $H^i_s \tresolv{\rho_{i}} H^{i+1}_s$, by Definition \ref{def:resolv} and \ref{def:tresolv}.
 	
 	In the other direction, we want to show that if $H^i_s \tresolv{\rho_{i}} H^{i+1}_s$ then $(H^i_s \ms{ms} H^i_c \mt{mt} H^i_t) \tresolv{\rho_i,\tau_i} (H^{i+1}_s \ms{} H^{i+1}_c \mt{} H^{i+1}_t)$. For that regard, we set 
-	\[
+	\begin{equation*}
 		\tau_i = \{mt(ms^{-1}(v)) \mapsto mt(ms^{-1}(\rho_i(v))) \st v \in \dom \rho_i \}
-	\]
+	\end{equation*}
 	
 	Because $TGG$ is PC, it holds that $mt(ms^{-1}(v)) \in H^i_t$ and $mt(ms^{-1}(\rho_i(v))) \in H^i_t$ for all $v$ in $\dom \rho_i$, thus $\tau_i$ is well defined. Moreover, the induction hypothesis supports that
-	\[
+	\begin{equation*}
 		\forall v \in \dom \rho_i \. \rho_i(v) \notin \dom \rho_i \text{ and } \phi_{H^i_s}(\rho_i(v)) = \phi_{H^i_s}(v)
-	\]
+	\end{equation*}
+	
 	Hence, by $mt$ and $ms$ bijectivity and by the PC property, it is clear that
-	\[
+	\begin{equation*}
 		\forall v \in \dom \tau_i \. \tau_i(v) \notin \dom \tau_i \text{ and } \phi_{H^i_t}(\tau_i(v)) = \phi_{H^i_t}(v)
-	\]
+	\end{equation*}
+	
 	Thus, choosing $V_{H_t}$ and $E_{H_t}$ according to Definition \ref{def:tresolv} and $\tau_i$, we have that if $H^i_s \tresolv{\rho_{i}} H^{i+1}_s$ then $(H^i_s \ms{ms} H^i_c \mt{mt} H^i_t) \tresolv{\rho_i,\tau_i} (H^{i+1}_s \ms{} H^{i+1}_c \mt{} H^{i+1}_t)$.
 	
 	This finishes the proof.
 \end{proof}
 
-The effective transformation procedure for TGG with PAC is essentially the same as the one in Algorithm \ref{alg:transform}, with the additional requirement of TGG being PC and the use of Theorem \ref{thm:one_d_enough_pac} to derive and resolve PAC vertices for the produced triple graph.
+The effective transformation procedure for PAC BNCE TGG is essentially the same as the one in Algorithm \ref{alg:transform}, with the additional requirement of TGG being PC, the use of the parser given by Algorithm \ref{alg:parsepac}, and the use of Theorem \ref{thm:one_d_enough_pac} to derive and resolve PAC vertices for the produced triple graph. We also claim that the transformation of PAC BNCE TGG is robust enough to support ambiguous grammars and non-functional transformations \cite{Hermann2010}, for the same reasons as for the BNCE TGG case, and that it is correct and complete in the TGG sense \cite{Hermann2013}.
 
-This chapter closes the presentation of our contributions concerning the NCE TGG and the PAC NCE TGG formalisms. In the next chapters, we discuss and evaluate both practical and theoretical aspects of it.
+This chapter closes the presentation of our contributions concerning the NCE TGG and the PAC NCE TGG formalisms. In the next chapters, we study both practical and theoretical aspects of it by means of a discussion about the implementation of our model transformer, a case study on the use of this formalisms as transformation specifiers, and an experimental evaluation that assesses their usability and performance.
