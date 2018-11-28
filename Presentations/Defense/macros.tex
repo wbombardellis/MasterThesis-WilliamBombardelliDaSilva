@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%% GENERAL %%%%%%%%%%%%%%
+\newcommand{\ct}{\sim}
+
+\newcommand{\ms}[1]{\overset{#1}{\leftarrow}}
+\newcommand{\mt}[1]{\overset{#1}{\rightarrow}}
+\newcommand{\emptyTG}{\varepsilon}
+\newcommand{\tderiv}[3]{
+	\ifx\relax#2\relax
+	\overset{#1}{\Rightarrow}_{#3}
+	\else
+	\overset{#1,#2}{\Rightarrow}_{#3}
+	\fi
+}
+\newcommand{\startTG}[1]{Z_{#1}}
+
+%%%%%%%%%%%%%% ALGORITHM %%%%%%%%%%%%%%
+\newcommand{\Program}{\textbf{program}\;}
+\newcommand{\Just}{\operatorname{\text{Just}}\;}
+\newcommand{\Nothing}{\operatorname{\text{Nothing}}\;}
+
+%%%%%%%%%%%%%% TIKZ %%%%%%%%%%%%%%
+\tikzstyle{grammar}=[shorten >= 1pt, ->, draw=black!50, framed, background rectangle/.style={draw, rounded corners}, font=\scriptsize ]
+\tikzstyle{graph}=[shorten >= 1pt, ->, draw=black!50, font=\tiny]
+\tikzstyle{rid} = [inner sep=3pt, align=left, anchor=east]
+\tikzstyle{nont}=[rectangle, inner sep=3pt, draw, fill=white, minimum width=5pt]
+\tikzstyle{t}=[circle, inner sep=1pt, draw, fill=white, minimum width=5pt]
+\tikzstyle{pac}=[circle, inner sep=1pt, draw, dotted, fill=white, minimum width=5pt]
+\tikzstyle{empty}=[font=\Large, fill=white]
+\tikzstyle{g}=[inner sep=3pt, fill=white]
+\tikzstyle{lhs}=[inner sep=1pt, fill=white]
+\tikzstyle{w}=[circle, inner sep=1pt, below=8pt, draw, fill=white, font=\tiny]
+\tikzstyle{uw}=[circle, inner sep=1pt, above=8pt, draw, fill=white, font=\tiny]
+\tikzstyle{edge}=[->, thin, -latex]
+\tikzstyle{pacedge}=[->, thin, -latex, dotted]
+\tikzstyle{edgeLabel}=[midway, above]
+\tikzstyle{vledgeLabel}=[midway, left]
+\tikzstyle{vredgeLabel}=[midway, right]
+\tikzstyle{vbedgeLabel}=[above=3pt]
+\tikzstyle{wedge}=[-, thin]
+\tikzstyle{biedge}=[-, thin]
+\tikzstyle{pipe}=[-, thick]
+\tikzstyle{morph}=[-, thin, dashed, -latex]
+
+\newcommand{\ridX}{-0.3}
+\newcommand{\ridY}{0.5}
+\newcommand{\lhsX}{-0.3}
+\newcommand{\pipeUY}{-0.5}
+\newcommand{\pipeBY}{0.5}

@@ -1,0 +1,267 @@
+\documentclass[usenames,dvipsnames]{beamer}
+
+%\usepackage{default}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{algorithmicx}
+
+\usetheme{Berlin}
+
+\input{macros}
+
+\usepackage{appendixnumberbeamer}
+
+%Header Settings
+\setbeamertemplate{headline}{}
+
+%Footer Settings
+\setbeamertemplate{navigation symbols}{
+	\usebeamerfont{footline}%
+	\usebeamercolor[fg]{footline}%
+	\hspace{1em}%
+	\insertframenumber/\inserttotalframenumber
+}
+
+\title[Model Transformation with TGG and Non-terminal Symbols]{Model Transformation with Triple Graph Grammars and Non-terminal Symbols}
+\author[W. da Silva et al.]{William da Silva, Max Bureck, Ina Schieferdecker, and Christian Hein}
+\institute[Fraunhofer Fokus]
+{
+	\vskip 12pt
+	Fraunhofer Fokus, Berlin, Germany \\
+	\texttt{william.bombardelli.da.silva@fokus.fraunhofer.de}\\
+	Technische Universit\"{a}t Berlin, Berlin, Germany
+}
+\date{November 2, 2018}
+
+\makeatletter
+\hypersetup{
+	pdftitle = {\@title}, pdfkeywords = {Model Transformation}, pdfauthor = {\@author}
+} 
+\makeatother
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Organization}
+		\tableofcontents
+	\end{frame}
+	
+	%-------------------
+	% Introcudtion
+	%-------------------
+	\section{Introduction}
+	\begin{frame}
+		\frametitle{Introduction}
+		\tableofcontents[currentsection, currentsubsection] 
+	\end{frame}
+	
+	\begin{frame}{Background}
+		\begin{itemize}
+			\item Model-driven software development as a technique to enhance quality of software
+			\pause
+			\item Models as formal specifications of safety-critical systems
+			\pause
+			\item Transformation between models (e.g. from a formal specification to high-level source-code and vice-versa)
+			\pause
+			\medskip
+			\item \textbf{Goal:} Comprehensible and reliable transformations
+			\begin{itemize}
+				\item Efficient representation of abstract concepts
+				\item Small size
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{The Model Transformation Problem}
+		\centering{
+		\includegraphics[width=.7\textwidth]{misc/model-transformation}
+		}
+		\begin{itemize}
+			\item $G \ct T$ iff $G$ is correctly transformed into $T$
+			\item $\ct$ is the \emph{correctly-transformed relation} between source and target models
+			\item \textbf{Batch forward transformation:} \\
+			Given $G$, find a $T$, such that $G \ct T$
+		\end{itemize}
+		
+	\end{frame}
+	
+	\begin{frame}{The Triple Graph Grammar Approach}
+		\begin{itemize}
+			\item Models are graphs
+			\pause
+			\item Two correctly-transformed graphs $G$ and $T$ are in a triple graph $G \ms{} C \mt{} T$\\
+			\input{examples/class2database-tg}
+			\pause
+			\item A triple graph grammar $TGG$ is a generator of a set of triple graphs $L(TGG)$
+			\pause
+			\item The correctly-transformed relation $\ct$ between graphs is described in terms of a triple graph grammar $TGG$
+			\begin{itemize}
+				\item $G \ct T $ iff $(G \ms{} C \mt{} T) \in L(TGG)$
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{TGG -- An Example}
+		\begin{itemize}
+			\item \emph{Pseudocode} to \emph{Controlflow}
+		\end{itemize}
+		
+		\input{examples/pseudocode2controlflow-tg}
+	\end{frame}
+	
+	\begin{frame}{TGG - An Example}
+		\begin{itemize}
+			\item \emph{Pseudocode} to \emph{Controlflow}
+		\end{itemize}
+			
+		\input{examples/pseudocode2controlflow-stgg}
+	\end{frame}
+	
+	%-------------------
+	%  TGG With Non-terminals
+	%-------------------
+	\section{Triple Graph Grammars with Non-terminal Symbols}
+	\begin{frame}
+		\frametitle{Triple Graph Grammars with Non-terminal Symbols}
+		\tableofcontents[currentsection, currentsubsection] 
+	\end{frame}
+	
+	\begin{frame}{Our Contribution -- NCE TGG}
+		\begin{itemize}
+			\item New formalism: NCE TGG
+			\begin{itemize}
+				\item \emph{Graph Grammar with Neighborhood-controlled Embedding} (NCE) \cite{janssens1982graph}
+				\item \emph{Triple Graph Grammar} (TGG) \cite{schurr1994specification}
+			\end{itemize}
+			\item Non-terminal symbols
+			\item Context-free
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{NCE TGG -- An Example}
+		\begin{itemize}
+			\item \emph{Pseudocode} to \emph{Controlflow}
+		\end{itemize}
+		
+		\input{examples/pseudocode2controlflow-tgg}
+	\end{frame}
+	
+	\begin{frame}{Transformation}
+		\begin{itemize}
+			%\item Parsing and production
+			\item Bottom-up parser, analogous to CYK, from \cite{rozenberg1986boundary}
+			\item Polynomial worst-case time complexity, but not linear
+			\item Performance not practicable (yet)
+		\end{itemize}
+	\end{frame}
+	
+	%-------------------
+	%  Evaluation
+	%-------------------
+	\section{Evaluation}
+	\begin{frame}
+		\frametitle{Evaluation}
+		\tableofcontents[currentsection, currentsubsection] 
+	\end{frame}
+	
+	\begin{frame}{Usability Evaluation}
+		\footnotesize 
+		\begin{table}[h]
+			\centering
+			\begin{tabular}{l r r r r }
+				\hline
+				& \multicolumn{2}{c}{Standard TGG} & \multicolumn{2}{c}{BNCE TGG}\\
+				Transformation 			& Rules & Elements 	& Rules & Elements\\
+				\hline
+				Pseudocode2Controlflow	& 47			& 1085	& \textbf{7}	& \textbf{185} \\
+				BTree2XBTree			& \textbf{4}	& \textbf{50}	& 5		& 80 \\
+				Star2Wheel				& -				& -		& \textbf{6}	& \textbf{89} \\
+				Class2Database			& \textbf{5}	& \textbf{80}	& - 	& -  \\
+				\hline
+			\end{tabular}
+			\caption{Results of the usability evaluation of the BNCE TGG formalism in comparison with the standard TGG for the model transformation problem}
+		\end{table}
+	\end{frame}
+	
+	%-------------------
+	%  Conclusion
+	%-------------------
+	\section{Conclusion}
+	\begin{frame}
+		\frametitle{Conclusion}
+		\tableofcontents[currentsection, currentsubsection] 
+	\end{frame}
+	
+	\begin{frame}{Conclusion}
+		\begin{itemize}
+			\item New context-free TGG formalism
+			\begin{itemize}
+				%\item Used to specify model transformations
+				%\item Outperforms standard TGG in 2 evaluated cases
+				\item Special potential for code-generation
+				\item Cannot model important transformations (e.g. Class Diagrams)
+			\end{itemize}
+			\pause
+			\item Future Work
+			\begin{itemize}
+				\item Application conditions: Positive experimental results
+				\item Efficient transformer: Top-down parser
+				%\item Broader evaluation including empirical assessment with engineers and performance reports
+				%\item Model synchronization
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	%-------------------
+	% References
+	%-------------------
+	\section{References}
+	\begin{frame}
+		\frametitle{References}
+		\tableofcontents[currentsection, currentsubsection] 
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{References}
+		\tiny
+		\bibliographystyle{plainnat}
+		\bibliography{bibliography}
+	\end{frame}
+
+	%------------------------------------------------
+	% Appendix
+	%------------------------------------------------
+	\appendix
+	
+	\begin{frame}{Appendix}
+		\begin{center}
+			{\LARGE \textbf{Appendix}}
+		\end{center}
+	\end{frame}
+
+	\begin{frame}{Pseudocode to Controlflow -- Full}
+		\begin{columns}
+			\column{\dimexpr\paperwidth-20pt}
+			\input{examples/pseudocode2controlflow-tgg-full-00}
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}{Pseudocode to Controlflow -- Full}
+		\input{examples/pseudocode2controlflow-tgg-full-01}
+	\end{frame}
+
+	\begin{frame}{Pseudocode to Controlflow -- Derivation}
+		\begin{columns}
+			\column{\dimexpr\paperwidth-30pt}
+			\input{examples/pseudocode2controlflow-der}
+		\end{columns}
+	\end{frame}
+
+\end{document}
