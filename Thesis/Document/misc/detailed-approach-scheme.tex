@@ -1,0 +1,13 @@
+\centering
+\begin{tikzpicture}[scheme]
+	\draw (0,0) node[borderless] (G) {$\mathcal{G}$};
+	\draw (2,0) node[borderless] (T) {$\mathcal{T}$};
+	\draw (0,-1.5) node[borderless] (g) {$G$};
+	\draw (1,-1.5) node[borderless] (tg) {$\ms{} C \mt{}$};
+	\draw (2,-1.5) node[borderless] (t) {$T$};
+	\draw (1,-3.3) node[borderless] (tgg) {$L(TGG)$};
+	
+	\draw[edge] (g) -- (G) node [vredgeLabel] {$\in$};
+	\draw[edge] (t) -- (T) node [vredgeLabel] {$\in$};
+	\draw[edge] (tg) -- (tgg) node [vredgeLabel] {$\in$};
+\end{tikzpicture}

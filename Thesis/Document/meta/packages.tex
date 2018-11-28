@@ -57,6 +57,9 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{algorithmicx}
-\renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}} 
+\makeatletter 
+\renewcommand\thealgorithm{\thechapter.\arabic{algorithm}} 
+\@addtoreset{algorithm}{chapter} 
+\makeatother
 
 \usepackage{subcaption}

@@ -1,54 +1,55 @@
 \section{Parsing of Graphs with Graph Grammars}
 \label{sec:parsing}
-In the last section we cleared how the concepts of graphs and languages fit together. In this section we are interested in the problem of deciding, given a BNCE graph grammar $GG$ and a graph $G$, whether $G \in L(GG)$. This is sometimes called the \textit{membership} problem and can be solved through a recognizer algorithm that always finishes answering yes if and only if $G \in L(GG)$ and no otherwise. A slight extension of this problem is the \textit{parsing} problem, which consists of deciding if $G \in L(GG)$ and finding a derivation $\startG{GG} \derivtr{} G$.
+In the previous section, we cleared how the concepts of graphs and languages fit together. In this section, we are interested in the problem of deciding, given a BNCE graph grammar $GG$ and a graph $G$, whether $G \in L(GG)$. This is sometimes called the \textit{membership} problem and can be solved through a recognizer algorithm that always finishes answering yes if, and only if, $G \in L(GG)$ and no otherwise. A slight extension of this problem is the \textit{parsing} problem, which consists of deciding if $G \in L(GG)$ and finding a derivation $\startG{GG} \derivtr{} G$.
 
-%TODO: The practical use of it: model checking... model validation
-
-The parsing algorithm posed in this section is an imperative view of the method proposed by ()%TODO: cite 27
-, which is basically a version fro graphs of the well-known CYK (Cocke-Young-Kassami) algorithm for parsing of strings with a context-free (string) grammar. Preliminarily to the actual algorithm's presentation, we introduce some necessary concepts that are used by it. The first of them is the neighborhood preserving normal form.
+We restrict the grammars to be boundary, i.e. BNCE graph grammars, because the parsing algorithm used by us imposes such restriction. This parsing algorithm is the one proposed by \citep{rozenberg1986boundary}. We present, thus, in this section, an imperative view of this method, which is basically an adapted version for graphs of the well-known CYK (Cocke-Young-Kassami) algorithm for parsing of strings with a context-free (string) grammar. Preliminarily to the actual algorithm's presentation, we introduce some necessary concepts that are used by it. The first of them is the neighborhood preserving normal form.
 
 \begin{definition}
 	\label{def:np}
-	A BNCE graph grammar $GG = (\Sigma, \Delta, S, P)$ is \emph{neighborhood preserving} (NP), if and only if, the embedding of each rule with left-hand side $A$ is greater or equal than the context of each $A$-labeled vertex in the grammar. That is, let 
-	\[\cont{(A \pro R,\omega)}{v} =\{(l,\phi_{R}(w)) \st (v,l,w) \in E_R \text { or } (w,l,v) \in E_R \} \cup \omega(v) \]
+	A BNCE graph grammar $GG = (\Sigma, \Delta, S, P)$ is \emph{neighborhood preserving} (NP) if, and only if, the embedding of each rule with left-hand side $A$ is greater or equal than the context of each $A$-labeled vertex in the grammar. That is, let 
+	\begin{equation*}
+		\cont{(A \pro R,\omega)}{v} =\{(l,\phi_{R}(w)) \st (v,l,w) \in E_R \text { or } (w,l,v) \in E_R \} \cup \omega(v)
+	\end{equation*}
 	be the context of $v$ in the rule $(A \pro R,\omega)$ and
-	\[\scont{GG}{A} = \bigcup_{(B \pro Q,\zeta) \in P, v \in V_Q, \phi_Q(v) = A} \cont{B \pro Q,\zeta}{v} \] 
-	be the context of the symbol $A$ in the grammar $GG$, then $GG$ is a NP BNCE graph grammar, if and only if,
-	\[ \forall r = (A \pro R,\omega) \in P \. \scont{GG}{A} \subseteq \bigcup_{v \ in V_R} \omega(v) \]
+	\begin{equation*}
+		\scont{GG}{A} = \bigcup_{(B \pro Q,\zeta) \in P, v \in V_Q, \phi_Q(v) = A} \cont{B \pro Q,\zeta}{v}
+	\end{equation*}
+	be the context of the symbol $A$ in the grammar $GG$, then $GG$ is a NP BNCE graph grammar if, and only if,
+	\begin{equation*}
+		\forall r = (A \pro R,\omega) \in P \. \scont{GG}{A} \subseteq \bigcup_{v \in V_R} \omega(v)
+	\end{equation*}
 	If this property holds for a rule $r$, we say $r$ is NP. Otherwise it is non-NP.
 \end{definition}
 
-The NP property is important to the correctness of the parsing algorithm. Furthermore, it is guaranteed that any BNCE graph grammar can be transformed in an equivalent NP BNCE graph grammar in polynomial time. More details in \cite{rozenberg1986boundary} and in \cite{skodinis1998neighborhood}.
+The NP property is important to the correctness of the parsing algorithm. Furthermore, it is guaranteed that any BNCE graph grammar can be transformed into an equivalent NP BNCE graph grammar in polynomial time \cite{rozenberg1986boundary, skodinis1998neighborhood}.
 
-The next paragraphs present zone vertices and zone graphs, that are our understanding of the concepts also from %TODO: cite 27
+The next paragraphs present zone vertices and zone graphs, which are concepts that we create for a clearer presentation of the parsing method of \citep{rozenberg1986boundary}.
 
 \begin{definition}
 	\label{def:zv}
 	A \emph{zone vertex} $h$ of a graph $G$ over $\Sigma$ is a pair $(\sigma \in \Sigma, U \subseteq V_G)$, that is, a symbol from $\Sigma$ and a subset of the vertices of $G$.
-	
-	A zone vertex can be understood as a contraction of a subgraph of $G$ defined by the vertices $U$ into one vertex with symbol $\sigma$.
 \end{definition}
+
+A zone vertex can be understood as a contraction of a subgraph of $G$ defined by the vertices $U$ into one vertex with symbol $\sigma$.
 
 \begin{definition}
 	\label{def:z}
-	Let $H = \{(\sigma_0,U_0),(\sigma_1,U_1),\dots,(\sigma_m,U_m)\}$ be a set of zone vertices of a graph $G$ over $\Sigma$ with disjoint vertices (i.e. $U_i \cap U_j = \emptyset$ for all $0 \leq i,j \leq m \text{ and } i \neq j$) and $V(H) = \bigcup_{0 \leq i \leq m}{U_i}$. A \emph{zone graph} $Z(H)$ for $H$ is $Z(H) = (V, E, \phi)$ with $V$ being the zone vertices, $E \subseteq V \times \Sigma \times V$ the edges between zone vertices and $\phi: V \to \Sigma$ the labeling function, determined by
+	Let $H = \{(\sigma_0,U_0),(\sigma_1,U_1),\dots,(\sigma_m,U_m)\}$ be a set of zone vertices of a graph $G$ over $\Sigma$ with disjoint vertices (i.e. $U_i \cap U_j = \emptyset$ for all $0 \leq i,j \leq m \text{ and } i \neq j$) and $V(H) = \bigcup_{0 \leq i \leq m}{U_i}$. A \emph{zone graph} $Z(H) = (V, E, \phi)$ where $V$ is the set of zone vertices, $E \subseteq V \times \Sigma \times V$ the set of edges between zone vertices and $\phi: V \to \Sigma$ the labeling function is determined by
 	\begin{align*}
 		V & = H \cup \{(\phi_G(x),\{x\}) \st x \in \neigh{G}(V(H)) \}\\
 		E & = \{((\sigma,U),l,(\eta,T)) \st (\sigma,U),(\eta,T) \in V \text{ and } U \neq T \text{ and } \\
 		& (u,l,t) \in E_G \text{ and } u \in U \text{ and } t \in T\} \\
-		\phi & = \{(\sigma,U) \mapsto \sigma  \st (\sigma,U,W) \in V\}
+		\phi & = \{(\sigma,U) \mapsto \sigma  \st (\sigma,U) \in V\}
 	\end{align*}
-	The zone graph $Z(H)$ can be intuitively understood as a subgraph of $G$, where each zone vertex in $V_{Z(H)}$ is either a $(\sigma_i,U_i)$ of $H$, which is a contraction of the vertices $U_i$ of $G$, or a $(\phi_G(x),\{x\})$, which stems from $x$ being a neighbor of some vertex in $V_i$.
-	
-	For convenience, define $Y(H)$ as the subgraph of $Z(H)$ induced by H.
-	%TODO: maybe write more about induction
-	%TODO: comment about information duplication of labels
 \end{definition}
 
+The zone graph $Z(H)$ can be intuitively understood as a morphed subgraph of $G$, where each zone vertex in $V_{Z(H)}$ is either a $(\sigma_i,U_i)$ of $H$, which is a contraction of the vertices $U_i$ of $G$, or a $(\phi_G(x),\{x\})$, which stems from $x$ of $G$ being a neighbor of some vertex in $V(H)$. For convenience, we define $Y(H)$ as the subgraph of $Z(H)$ induced by H, that is the subgraph containing only the zone vertices in $H$---without further neighbors.
+
 \begin{definition}
-	Let $h$ be a zone vertex, $r$ a production rule and $X$ a (potentially empty) set of parsing trees, $\ptree{h}{r}{X}$ is a \emph{parsing tree}, whereby $h$ is called the root node and $X$ the children and $r$ is optional. $D(pt)$ gives a derivation for the parsing tree $pt$, which can be calculated by performing a depth-first walk on $pt$, starting from its root node, producing as result a sequence of derivation steps that correspond to each visited node and its respective rule. Additionally, a set of parsing trees is called a parsing forest.
-	%TODO: Write D(pt) more formally. Explain the assembly of the effective derivation out of the sequence of sub derivation steps of the parsing tree nodes and explain how the isomorphims looks like. Because at the end, the derivation goes to a G', with G' in [G]
+	Let $h$ be a zone vertex, $r$ a production rule and $X$ a (potentially empty) set of parsing trees, $\ptree{h}{r}{X}$ is a \emph{parsing tree}, whereby $h$ is called the root node and $X$ the children and $r$ is optional. A set of parsing trees is called a \emph{parsing forest}.
 \end{definition}
+
+$D(pt)$ gives a derivation for the parsing tree $pt$, which can be calculated by performing a depth-first walk on $pt$, starting from its root node, producing as result a sequence of derivation steps that correspond to each visited node and its respective rule.
 
 Finally, the Algorithm \ref{alg:parse} displays the parsing algorithm of graphs with a NP BNCE graph grammar. Informally, the procedure follows a bottom-up strategy that tries to find production rules in $GG$ that generate zone graphs of $G$ until it finds a rule that generates a zone graph containing all vertices of $G$ and finishes answering yes and returning a valid derivation for $G$ or it exhausts all the possibilities and finishes answering no.
 
@@ -63,28 +64,28 @@ Finally, the Algorithm \ref{alg:parse} displays the parsing algorithm of graphs 
 			\Repeat
 				\State $h \gets \text{\Select } \{X \subseteq bup \st\text{for all } U_i, U_j \in X \text{ with } i \neq j \. U_i \cap U_j = \emptyset \}$
 				\ForAll{$d \in \Gamma$} \Comment{for each non-terminal symbol}
-					\State $r \gets \text{any } \{(d \pro R,\omega) \in P \st R \isomorph Y(h) \}$
-					\State $l \gets (d,V(h))$
-					\If{$Z(\{l\}) \deriv{r}{l}{} Z(h)$}
-						\State $bup \gets bup \cup \{l\}$ \Comment{new zone vertex found}
-						\State $pf \gets pf \cup \{ \ptree{l}{r}{\{\ptree{z}{y}{X} \st \ptree{z}{y}{X} \in pf, z \in h \}} \}$
-					\EndIf
+					\ForAll{$r \in \{(d \pro R,\omega) \in P \st R \isomorph Y(h) \}$}
+						\State $l \gets (d,V(h))$
+						\If{$Z(\{l\}) \deriv{r}{l}{} Z(h)$}
+							\State $bup \gets bup \cup \{l\}$ \Comment{new zone vertex found}
+							\State $pf \gets pf \cup \{ \ptree{l}{r}{\{\ptree{z}{y}{X} \st \ptree{z}{y}{X} \in pf, z \in h \}} \}$
+						\EndIf
+					\EndFor
 				\EndFor
 			\Until{$(S, V_G) \in bup$} \Comment{if found the root, stop}
 			\State \Return $(S, V_G) \in bup \? \Just D(\ptree{(S,V_G)}{y}{X} \in pf) \: \Nothing $
 		\EndFunction
-		\Ensure $return \text{ is either } \Nothing \text{ or of the form } \Just \startG{GG} \derivtr{} G$
+		\Ensure $return \text{ is either } \Nothing \text{or of the form } \Just \startG{GG} \derivtr{} G'  \text{, with } G' \in [G]$
 	\end{algorithmic}
 	\label{alg:parse}
 \end{algorithm}
 
-The variable $bup$ ($bup$ stands for bottom-up parsing set, see ())%TODO: cite
-is started with the trivial zone vertices of $G$, each containing only one vertex of $V_G$, and grows iteratively with bigger zone vertices that can be inferred using the grammar's rules and the elements of $bup$.
+The variable $bup$ ($bup$ stands for bottom-up parsing set \cite{rozenberg1986boundary}) is started with the trivial zone vertices of $G$, each containing only one vertex of $V_G$, and grows iteratively with bigger zone vertices that can be inferred using the grammar's rules and the elements of $bup$.
 
-The variable $h$ stands for handle and is any subset from $bup$ chosen to be evaluated for the search of new zone vertices to insert in $bup$. The procedure $\Select$ gives one yet not chosen handle or an empty set and cares for the termination of the execution. Then, for the chosen $h$, rules $r$ with left-hand side $d$ and right-hand side isomorphic to $Y(h)$ that produce $Z(h)$ from $Z(\{l\})$ are searched. If any is found, then $l = (d,V(h))$ is inserted into $bup$. This basically means that it found a zone vertex that encompasses the vertices $V(h)$ (a possibly bigger subset than other elements in $bup$), from which, through the application of a sequence of rules, we can produce the subgraph of G induced by $V(h)$. This information is saved in the parsing forest $pf$ in form of a parsing tree with node $l$ and children $\ptree{z}{y}{X}$, already in the parsing forest $pf$, for all $z \in h$.
+The variable $h$ stands for handle and is any subset of $bup$ chosen to be evaluated for the search of new zone vertices to be inserted in $bup$. The procedure $select$ gives one yet not chosen handle or an empty set and cares for the termination of the execution. Then, for the chosen $h$, rules $r$ with left-hand side $d$ and right-hand side isomorphic to $Y(h)$ that produce $Z(h)$ from $Z(\{l\})$ are searched. If any is found, then $l = (d,V(h))$ is inserted into $bup$. This basically means that it found a zone vertex that encompasses the vertices $V(h)$ (a possibly bigger subset than other elements in $bup$), from which, through the application of a sequence of rules, we can produce the morphed subgraph of G induced by $V(h)$. This information is saved in the parsing forest $pf$ in form of a parsing tree with node $l$ and children $\ptree{z}{y}{X}$, already in the parsing forest $pf$, for all $z \in h$.
 
-If, in some iteration the zone vertex $(S, V_G)$ is inferred, then it means that the whole graph $G$ can be produced through the application of a derivation starting from the start graph $\startG{GG}$ and thus $G \in L(GG)$. This derivation is, namely, the result of a depth-first walk in the parsing tree whose root is $(S, V_G)$. If, otherwise, all possibilities for $h$ were exhausted without inferring such zone vertex, then $\Nothing$ is returned, what means that $G$ cannot de parsed with $GG$ and therefore $G \notin L(GG)$.
+If, in some iteration, the zone vertex $(S, V_G)$ is inferred, then it means that an isomorphism of the whole graph $G$ can be produced through the application of a derivation starting from the start graph $\startG{GG}$ and thus $G \in L(GG)$. This derivation is, namely, the result of a depth-first walk in the parsing tree whose root is $(S, V_G)$ and the isomorphism consists of mapping from all zone vertices $(\phi_G(x),\{x\})$ to $x$, for all $x \in V_G$. If, otherwise, all possibilities for $h$ were exhausted without inferring such zone vertex, then $\Nothing$ is returned, what means that $G$ cannot de parsed with $GG$ and therefore $G \notin L(GG)$.
 
-%TODO: Talk about the isomorphism in the reduction test
+This parsing algorithm supports ambiguous grammars, in which case, there exists more than one derivation for at least one graph in the grammar's language. The output derivation is, in this case, non-deterministic due to the non-deterministic selection of the handles by $select$ in Line 5.
 
-This parsing algorithm supports ambiguous grammars, in which case, there exists more than one derivation for at least one graph in the grammar's language. The output derivation is, in this case, non-deterministic, because of the non-deterministic selection of the handles by $\Select$ in Line 5.
+The discussion of the parsing algorithm for BNCE graph grammars closes our theoretical review and provides the necessary tools for the construction of our method for model transformation with BNCE TGG, expounded in the next chapter.
