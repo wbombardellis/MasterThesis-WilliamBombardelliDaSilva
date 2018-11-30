@@ -2,7 +2,7 @@
 \label{sec:parsing}
 In the previous section, we cleared how the concepts of graphs and languages fit together. In this section, we are interested in the problem of deciding, given a BNCE graph grammar $GG$ and a graph $G$, whether $G \in L(GG)$. This is sometimes called the \textit{membership} problem and can be solved through a recognizer algorithm that always finishes answering yes if, and only if, $G \in L(GG)$ and no otherwise. A slight extension of this problem is the \textit{parsing} problem, which consists of deciding if $G \in L(GG)$ and finding a derivation $\startG{GG} \derivtr{} G$.
 
-We restrict the grammars to be boundary, i.e. BNCE graph grammars, because the parsing algorithm used by us imposes such restriction. This parsing algorithm is the one proposed by \citep{rozenberg1986boundary}. We present, thus, in this section, an imperative view of this method, which is basically an adapted version for graphs of the well-known CYK (Cocke-Young-Kassami) algorithm for parsing of strings with a context-free (string) grammar. Preliminarily to the actual algorithm's presentation, we introduce some necessary concepts that are used by it. The first of them is the neighborhood preserving normal form.
+We restrict the grammars to be boundary, i.e. BNCE graph grammars, because the parsing algorithm used by us imposes such restriction. This parsing algorithm is the one proposed by Rozenberg et al. \citep{rozenberg1986boundary}. We present, thus, in this section, an imperative view of this method, which is basically an adapted version for graphs of the well-known CYK (Cocke-Younger-Kassami) algorithm for parsing of strings with a context-free (string) grammar. Preliminarily to the actual algorithm's presentation, we introduce some necessary concepts that are used by it. The first of them is the neighborhood preserving normal form.
 
 \begin{definition}
 	\label{def:np}
@@ -23,7 +23,7 @@ We restrict the grammars to be boundary, i.e. BNCE graph grammars, because the p
 
 The NP property is important to the correctness of the parsing algorithm. Furthermore, it is guaranteed that any BNCE graph grammar can be transformed into an equivalent NP BNCE graph grammar in polynomial time \cite{rozenberg1986boundary, skodinis1998neighborhood}.
 
-The next paragraphs present zone vertices and zone graphs, which are concepts that we create for a clearer presentation of the parsing method of \citep{rozenberg1986boundary}.
+The next paragraphs present zone vertices and zone graphs, which are concepts that we create for a clearer presentation of the parsing method of Rozenberg et al. \citep{rozenberg1986boundary}.
 
 \begin{definition}
 	\label{def:zv}

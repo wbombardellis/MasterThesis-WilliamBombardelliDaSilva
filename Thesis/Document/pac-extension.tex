@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%% PAC EXTENTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% PAC EXTENSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{ch:pac-extension}
-The NCE graph grammar formalism from \cite{janssens1982graph} can define with very few rules the languages of several classes of labeled graphs, including trees, path graphs, star graphs, control-flow graphs, edgeless graphs, complete graphs, and others. However, it is at least difficult to define the languages of some other classes, like the class-diagram graphs, with NCE graph grammars. In this chapter, we approach the problem of defining a NCE graph grammar for these classes of graphs and propose a solution for that by means of an extension of NCE that includes application conditions.
+The NCE graph grammar formalism from Janssens and Rozenberg \cite{janssens1982graph} can define with very few rules the languages of several classes of labeled graphs, including trees, path graphs, star graphs, control-flow graphs, edgeless graphs, complete graphs, and others. However, it is at least difficult to define the languages of some other classes, like the class-diagram graphs, with NCE graph grammars. In this chapter, we approach the problem of defining a NCE graph grammar for these classes of graphs and propose a solution for that by means of an extension of NCE that includes application conditions.
 
 Class diagrams are commonly used to model object-oriented software artifact that are composed of several classes related by associations. For the sake of demonstrating the problem of NCE with class diagrams, consider a simplified view of the class-diagrams graphs, in which a vertex has either label $c$ or $a$, respectively representing a class or an association, and an edge between an association and a class with label $s$ ($t$) signalizes that the class is the source (target) of the association. In Figure \ref{fig:classdiagram-g}, a class-diagram graph with two classes connected by two associations is depicted. An attempt of a NCE graph grammar that would describe the language of all class-diagram graphs is $GG = (\{K,a,c,s,t\}, \{a,c,s,t\}, K, \{r_0, r_1, r_2\})$, with $r_0$, $r_1$, and $r_2$ depicted in Figure \ref{fig:classdiagram-gg} and $\omega_0(c_0) = \omega_1(c_1) = \{(t,a)\}$ and $\omega_0 = \emptyset$ being the complete embedding definition of the rules $r_0$, $r_1$, and $r_2$, respectively.
 
@@ -57,7 +57,7 @@ So far, PAC vertices do not change anything in the behavior of a derivation step
 	\end{align*}
 \end{definition}
 
-A resolution step can be informally understood as the removal of the PAC vertices of $G$--- that are in the domain of the resolution function $\rho$ ---followed by the redirection of the edges adjacent to the PAC vertices to other vertices of $G$.
+A resolution step can be informally understood as the removal of the PAC vertices of $G$---that are in the domain of the resolution function $\rho$---followed by the redirection of the edges adjacent to the PAC vertices to other vertices of $G$.
 
 For the PAC mechanism to work, it is still necessary to combine derivation and resolution steps and define the language of a grammar with PAC, what we do in the following.
 
