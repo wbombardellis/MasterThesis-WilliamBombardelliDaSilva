@@ -7,9 +7,45 @@
 # Running Example
 1. Follow the instruction in the handbook
 	* Maybe it is necessary to add the dependencies manually to the MANIFEST.MF of the plug-in (All moflon and the metamodels' packages, including SDMLanguage)
-	* Maybe it is necessaru to add the properties "Meta Model Project" manually to the moflon.properties.xmi file with the same name of the one in the metamodels' properties file
+	* Maybe it is necessary to add the properties "Meta Model Project" manually to the moflon.properties.xmi file with the same name of the one in the metamodels' properties file
 
-#Reasons to use eMoflon
+# Creating new eMoflon Transformation
+1. Use eMoflon perspective on Eclipse
+2. Create new project for the metamodel
+	1. Create new `eMoflon EMF Project` (at eMoflon toolbar)
+	2. Create the elements of the metamodel
+		* No element can have the a name that occur in EPackage
+		* Elements' names must begin with capital letters
+	3. Build projects fully (at eMoflon toolbar)
+3. Create new project for the TGG
+	1. Create new `Integration Project` (at eMoflon toolbar)
+	2. Open `...org.moflon.tgg.mosl/Schema.tgg` file and edit it by
+		1. Adding the imports
+		2. Declaring source, target and correspondence metamodels
+	3. Build projects fully (at eMoflon toolbar)
+	4. In the package `...org.moflon.tgg.mosl.rules`, create a new TGG rules (at eMoflon tollbar)
+	5. Add metamodel(s) and eMoflon plugins to dependencies of `META-INF/MANIFEST.MF`
+4. Create a new instance model for testing
+	1. On the root metamodel element, right-click, then `Create Dynamic Instance`
+	2. Save this file in `instances/fwd.src.xmi` inside the eMoflon integration project
+5. Run eMoflon transformer
+	1. Right-click on `... org.emoflon.tie/Trafo.java`, then `Run as Java Application`
+	2. Refresh `instances` folder and check the `fwd.trg.xmi` file
+
+# Troubleshooting
+* `Schema.tgg` cannot find schemata
+	* Rebuild all without errors
+* After building all, source code shows some errors by not being able to find packages
+	* Add dependencies to MANIFEST.md, inclusive `org.eclipse.core.*`
+* eMoflon excpetion NullPointer
+	* Add a metamodel project name in `moflon.properties.xmi`
+* New Rule is not generated in the ECore models of the TGG, or this model is not created at all
+	* Some rule may be wrong so that it blocks the generation of ECore models. Possible cause: NACs
+	* Clean project, remove all generated files, remove rules and recreate them, restart eclipse and build all again
+* Code generation stops at 72%
+	* Some rules might be wrong. Verify them carefully and try to make them simpler or smaller by removing elements
+
+# Reasons to use eMoflon
 * Works with a more recent version of eclipse (Oxygen)
 * Extensive and up-to-date documentation (2017)
 * A lot of publication reporting the workings of the tool
