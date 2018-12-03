@@ -1,4 +1,4 @@
-# Model Transformation with Triple Graph Grammars and Non-terminal Symbols
+# Transformations with Triple Graph Grammars with Non-terminal Symbols
 This repository holds a master thesis about model transformation with triple graph grammars
 
 ## General Information
