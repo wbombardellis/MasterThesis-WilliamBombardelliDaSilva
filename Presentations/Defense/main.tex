@@ -26,7 +26,7 @@
 	\insertframenumber/\inserttotalframenumber
 }
 
-\title[Model Transformation with TGG and Non-terminal Symbols]{Model Transformation with Triple Graph Grammars and Non-terminal Symbols}
+\title[Transformations with TGG with Non-terminal Symbols]{Transformations with Triple Graph Grammars with Non-terminal Symbols}
 \author[W. da Silva et al.]{William da Silva, Max Bureck, Ina Schieferdecker, and Christian Hein}
 \institute[Fraunhofer Fokus]
 {
@@ -35,7 +35,7 @@
 	\texttt{william.bombardelli.da.silva@fokus.fraunhofer.de}\\
 	Technische Universit\"{a}t Berlin, Berlin, Germany
 }
-\date{November 2, 2018}
+\date{December 5, 2018}
 
 \makeatletter
 \hypersetup{
@@ -54,7 +54,7 @@
 	\end{frame}
 	
 	%-------------------
-	% Introcudtion
+	% Introduction
 	%-------------------
 	\section{Introduction}
 	\begin{frame}
@@ -89,7 +89,6 @@
 			\item \textbf{Batch forward transformation:} \\
 			Given $G$, find a $T$, such that $G \ct T$
 		\end{itemize}
-		
 	\end{frame}
 	
 	\begin{frame}{The Triple Graph Grammar Approach}
@@ -116,12 +115,16 @@
 		\input{examples/pseudocode2controlflow-tg}
 	\end{frame}
 	
-	\begin{frame}{TGG - An Example}
+	\begin{frame}{TGG -- An Example}
 		\begin{itemize}
 			\item \emph{Pseudocode} to \emph{Controlflow}
 		\end{itemize}
 			
 		\input{examples/pseudocode2controlflow-stgg}
+	\end{frame}
+	
+	\begin{frame}{TGG -- Derivation}
+		\input{examples/pseudocode2controlflow-sder}
 	\end{frame}
 	
 	%-------------------
@@ -153,15 +156,52 @@
 		\input{examples/pseudocode2controlflow-tgg}
 	\end{frame}
 	
+	\begin{frame}{Pseudocode to Controlflow -- Derivation}
+		\begin{columns}
+			\column{\dimexpr\paperwidth-30pt}
+			\input{examples/pseudocode2controlflow-der}
+		\end{columns}
+	\end{frame}
+	
 	\begin{frame}{Transformation}
+		\input{misc/implementation-scheme}
+		\vskip 10pt
+		\pause
 		\begin{itemize}
-			%\item Parsing and production
 			\item Bottom-up parser, analogous to CYK, from \cite{rozenberg1986boundary}
 			\item Polynomial worst-case time complexity, but not linear
 			\item Performance not practicable (yet)
 		\end{itemize}
 	\end{frame}
 	
+	%-------------------
+	%  PAC TGG
+	%-------------------
+	\section{Triple Graph Grammars with Application Conditions}
+	\begin{frame}
+		\frametitle{Triple Graph Grammars with Application Conditions}
+		\tableofcontents[currentsection, currentsubsection] 
+	\end{frame}
+	
+	\begin{frame}{PAC NCE TGG}
+		\begin{itemize}
+			\item New formalism: NCE TGG with Positive Application Conditions (PAC NCE TGG)
+			\begin{itemize}
+				\item PAC vertices are created with \emph{rule applications}.
+				\item PAC vertices are removed with \emph{resolutions}.
+				\item Allows some sort of context
+				\item Enhances grammar's generative power
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{PAC NCE TGG -- An example}
+		\begin{itemize}
+			\item \emph{Class} to \emph{Database}
+		\end{itemize}
+		\input{examples/class2database-tgg}
+	\end{frame}
+
 	%-------------------
 	%  Evaluation
 	%-------------------
@@ -183,11 +223,26 @@
 				Pseudocode2Controlflow	& 47			& 1085	& \textbf{7}	& \textbf{185} \\
 				BTree2XBTree			& \textbf{4}	& \textbf{50}	& 5		& 80 \\
 				Star2Wheel				& -				& -		& \textbf{6}	& \textbf{89} \\
-				Class2Database			& \textbf{5}	& \textbf{80}	& - 	& -  \\
+				\emph{Class2Database}	& \textbf{5}	& \textbf{80}	& 9 	& 117 \\
+				\emph{Statemachine2Petrinet}& \textbf{5}& \textbf{114}	& 7		& 131 \\
+				\hline
+				Total					& 61 			& 1329	& \textbf{28}	& \textbf{513} \\
+				Average					& 15.25 		& 332.25& \textbf{7}	& \textbf{128.25}\\
+				Median					& \textbf{5}	& \textbf{97}	& 7		& 124 \\
 				\hline
 			\end{tabular}
 			\caption{Results of the usability evaluation of the BNCE TGG formalism in comparison with the standard TGG for the model transformation problem}
 		\end{table}
+	\end{frame}
+	
+	\begin{frame}{Performance Evaluation}
+		\begin{itemize}
+			\item \emph{Pseudocode} to \emph{Controlflow}
+		\end{itemize}
+		\begin{figure}
+			\centering
+			\includegraphics[width=\textwidth]{figures/performance/pseudocode2controlflow}
+		\end{figure}
 	\end{frame}
 	
 	%-------------------
@@ -203,18 +258,16 @@
 		\begin{itemize}
 			\item New context-free TGG formalism
 			\begin{itemize}
-				%\item Used to specify model transformations
-				%\item Outperforms standard TGG in 2 evaluated cases
+				\item Outperforms standard TGG in 2 evaluated cases and in average
 				\item Special potential for code-generation
-				\item Cannot model important transformations (e.g. Class Diagrams)
+				\item Extension with positive application conditions
 			\end{itemize}
 			\pause
 			\item Future Work
 			\begin{itemize}
-				\item Application conditions: Positive experimental results
 				\item Efficient transformer: Top-down parser
-				%\item Broader evaluation including empirical assessment with engineers and performance reports
-				%\item Model synchronization
+				\item Broader evaluation including empirical assessment with engineers and performance reports
+				\item Model synchronization
 			\end{itemize}
 		\end{itemize}
 	\end{frame}
@@ -256,12 +309,56 @@
 	\begin{frame}{Pseudocode to Controlflow -- Full}
 		\input{examples/pseudocode2controlflow-tgg-full-01}
 	\end{frame}
-
-	\begin{frame}{Pseudocode to Controlflow -- Derivation}
+	
+	\begin{frame}{Class to Database -- Full}
 		\begin{columns}
-			\column{\dimexpr\paperwidth-30pt}
-			\input{examples/pseudocode2controlflow-der}
+			\column{\dimexpr\paperwidth-20pt}
+			\input{examples/class2database-tgg-full-00}
 		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{Class to Database -- Full}
+		\input{examples/class2database-tgg-full-01}
+	\end{frame}
+
+	\begin{frame}{Performance Evaluation}
+		\begin{itemize}
+			\item \emph{Star} to \emph{Wheel}
+		\end{itemize}
+		\begin{figure}
+			\centering
+			\includegraphics[width=\textwidth]{figures/performance/star2wheel}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Performance Evaluation}
+		\begin{itemize}
+			\item \emph{BTree} to \emph{XBTree}
+		\end{itemize}
+		\begin{figure}
+			\centering
+			\includegraphics[width=\textwidth]{figures/performance/btree2xbtree}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Performance Evaluation}
+		\begin{itemize}
+			\item \emph{StateMachine} to \emph{PetriNet}
+		\end{itemize}
+		\begin{figure}
+			\centering
+			\includegraphics[width=\textwidth]{figures/performance/statemachine2petrinet}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Performance Evaluation}
+		\begin{itemize}
+			\item \emph{Class} to \emph{Database}
+		\end{itemize}
+		\begin{figure}
+			\centering
+			\includegraphics[width=\textwidth]{figures/performance/class2database}
+		\end{figure}
 	\end{frame}
 
 \end{document}

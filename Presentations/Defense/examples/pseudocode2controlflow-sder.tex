@@ -1,34 +1,16 @@
-	\centering
-	\begin{tikzpicture}[grammar]
-	\node[rid] at (\ridX,\ridY) {$r_0:$};
-	\draw (\lhsX,0) node[lhs] (lhs) {::=};
-	
+\centering
+	$\tderiv{r_0}{}{}$
+	\begin{tikzpicture}[graph]
 	\draw (0.5,0) node[t] (s1) {p};
-	%%
 	\draw (1.5,0) node[t] (c1) {pg};
-	%%
 	\draw (2.5,0) node[t] (t1) {g};
 	%%
 	\draw[morph] (c1) -- (s1);
 	\draw[morph] (c1) -- (t1);
 	\end{tikzpicture}
-		
-	\vskip 5pt
-		
-	\begin{tikzpicture}[grammar]
-	\node[rid] at (\ridX,\ridY) {$r_1:$};
-	
-	\draw (0,0) node[t] (s1) {p};
-	%%
-	\draw (1,0) node[t] (c1) {pg};
-	%%
-	\draw (2,0) node[t] (t1) {g};
-	%%
-	\draw[morph] (c1) -- (s1);
-	\draw[morph] (c1) -- (t1);
-	%%%%%%
-	\draw (3,0) node[lhs] (lhs) {::=};
-	%%%%%%	
+	\pause
+	$\tderiv{r_1}{}{}$
+	\begin{tikzpicture}[graph]
 	\draw (4,0) node[t] (s2) {p};
 	\draw (4,-1) node[t] (s3) {i};
 	\draw[edge] (s2) -- (s3) node [vledgeLabel] {$f$};
@@ -40,47 +22,39 @@
 	\draw (6,-1) node[t] (t3) {b};
 	\draw[edge] (t2) -- (t3) node [vledgeLabel] {$r$};
 	%%
-	\draw[morph] (c1) -- (s1);
-	\draw[morph] (c1) -- (t1);
 	\draw[morph] (c2) -- (s2);
 	\draw[morph] (c2) -- (t2);
 	\draw[morph] (c3) -- (s3);
 	\draw[morph] (c3) -- (t3);
 	\end{tikzpicture}
+	\pause
 	
-	\vskip 5pt
+	\vskip 20pt
 	
-	\begin{tikzpicture}[grammar]
-	\node[rid] at (\ridX,\ridY) {$r_2:$};
-	
-	\draw (0,0) node[t] (s1) {i};
-	%%
-	\draw (1,0) node[t] (c1) {ib};
-	%%
-	\draw (2,0) node[t] (t1) {b};
-	%%
-	\draw[morph] (c1) -- (s1);
-	\draw[morph] (c1) -- (t1);
-	%%%%%%
-	\draw (3,0) node[lhs] (lhs) {::=};
-	%%%%%%
+	$\tderiv{r_2}{}{}$
+	\begin{tikzpicture}[graph]
+	\draw (5,1) node[t] (s1) {p};
 	\draw (5,0) node[t] (s2) {i};
 	\draw (4,-1) node[t] (s3) {a};
 	\draw (5,-1.2) node[t] (s4) {a};
 	\draw (6,-1) node[t] (s5) {a};
+	\draw[edge] (s1) -- (s2) node [vledgeLabel] {$f$};
 	\draw[edge] (s2) -- (s3) node [vledgeLabel] {$x$};
 	\draw[edge] (s2) -- (s4) node [vledgeLabel] {$p$};
 	\draw[edge] (s2) -- (s5) node [vredgeLabel] {$n$};
 	%%
+	\draw (7,1) node[t] (c1) {pg};
 	\draw (7,0) node[t] (c2) {ib};
 	\draw (7,-0.5) node[t] (c3) {ac};
 	\draw (7,-1.5) node[t] (c4) {ac};
 	\draw (7,-1) node[t] (c5) {ac};
 	%%
+	\draw (9,1) node[t] (t1) {g};
 	\draw (9,0) node[t] (t2) {b};
 	\draw (10,-1) node[t] (t3) {c};
 	\draw (9,-1.2) node[t] (t4) {c};
 	\draw (8,-1) node[t] (t5) {c};
+	\draw[edge] (t1) -- (t2) node [vledgeLabel] {$r$};
 	\draw[edge] (t2) -- (t3) node [vledgeLabel] {$x$};
 	\draw[edge] (t2) -- (t4) node [vledgeLabel] {$p$};
 	\draw[edge] (t2) -- (t5) node [vledgeLabel] {$n$};

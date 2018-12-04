@@ -1,0 +1,26 @@
+\noindent
+\begin{tikzpicture}[scheme]
+%\draw (3.1,0) node[metaobject, text width=45pt] (TGGMM) {$TGG$ $Metamodel$};
+%\draw (1,0) node[metaobject, text width=45pt] (sourceMM) {$Source$ $Metamodel$};
+
+\draw (1,-2) node[object, text width=30pt] (inputTGG) {BNCE TGG};
+\draw (1,-1) node[object, text width=30pt] (source) {Source Model};
+
+\draw (3,-1) node[activity, text width=50pt] (e2g) {EMF to Graph};
+\draw (3,-2) node[activity, text width=50pt] (np) {NP $\text{Normalization}$};
+\draw (5,-1.4) node[activity, text width=30pt] (p) {Parsing};
+\draw (7,-1.4) node[activity, text width=40pt] (prod) {Production};
+\draw (9.5,-1.4) node[object, text width=50pt] (output) {Triple Graph};
+
+%\draw (13.6,0) node[metaobject, text width=45pt] (TGMM) {$TG$ $Metamodel$};
+
+%\draw[edge, dashed] (inputTGG) -- (TGGMM) node [edgeLabel] {};
+%\draw[edge, dashed] (source) -- (sourceMM) node [edgeLabel] {};
+%\draw[edge, dashed] (output) -- (TGMM) node [edgeLabel] {};
+\draw[edge] (inputTGG) -- (np) node [edgeLabel] {};
+\draw[edge] (source) -- (e2g) node [edgeLabel] {};
+\draw[edge] (e2g) -- (p) node [edgeLabel] {};
+\draw[edge] (np) -- (p) node [edgeLabel] {};
+\draw[edge] (p) -- (prod) node [edgeLabel] {};
+\draw[edge] (prod) -- (output) node [edgeLabel] {};
+\end{tikzpicture}

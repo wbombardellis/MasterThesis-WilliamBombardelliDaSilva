@@ -1,0 +1,57 @@
+\centering	
+	\begin{tikzpicture}[grammar]
+		\node[rid] at (\ridX,\ridY) {$r_5:$};
+		\draw (\lhsX,0) node[lhs] (lhs) {SA ::=};
+		%%
+		\draw (0.5,0) node[t, label=90:$s_{50}$] (s1) {a};
+		\draw (0.5,-1) node[nont, label=90:$s_{51}$] (s2) {SA};
+		%%
+		\draw (2,0) node[t] (c1) {ac};
+		\draw (2,-1) node[nont] (c2) {SA};
+		%%
+		\draw (3.5,0) node[t, label=90:$t_{50}$] (t1) {co};
+		\draw (3.5,-1) node[nont, label=90:$t_{51}$] (t2) {SA};
+		%%
+		\draw[morph] (c1) -- (s1);
+		\draw[morph] (c1) -- (t1);
+		\draw[morph] (c2) -- (s2);
+		\draw[morph] (c2) -- (t2);
+		%%%%
+		\draw[pipe] (4,\pipeBY) -- (4,-1);
+		%%
+		\node[rid] at (4.7,\ridY) {$r_6:$};
+		\draw (4.5,0) node[empty] (s3) {$\emptyTG$};
+	\end{tikzpicture}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\vskip 5pt
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{tikzpicture}[grammar]
+		\node[rid] at (\ridX,\ridY) {$r_7:$};
+		\draw (\lhsX,0) node[lhs] (lhs) {A ::=};
+		%%
+		\draw (0.5,0) node[t, label=90:$s_{70}$] (s1) {a};
+		\draw (0.2,-1) node[nont, label=90:$s_{71}$] (s2) {A};
+		\draw (1,-0.7) node[pac, label=45:$s_{72}$] (s3) {c};
+		\draw[pacedge] (s1) -- (s3) node [vredgeLabel] {$\psi$};
+		%%
+		\draw (2,0) node[t] (c1) {ac};
+		\draw (2,-1) node[nont] (c2) {SA};
+		\draw (2,-0.5) node[pac] (c3) {ct};
+		%%
+		\draw (3.5,0) node[t, label=90:$t_{70}$] (t1) {co};
+		\draw (3.8,-1) node[nont, label=90:$t_{71}$] (t2) {A};
+		\draw (3,-0.7) node[pac, label=135:$t_{72}$] (t3) {t};
+		\draw[pacedge] (t1) -- (t3) node [vledgeLabel] {$\delta$};
+		%%
+		\draw[morph] (c1) -- (s1);
+		\draw[morph] (c1) -- (t1);
+		\draw[morph] (c2) -- (s2);
+		\draw[morph] (c2) -- (t2);
+		\draw[morph] (c3) -- (s3);
+		\draw[morph] (c3) -- (t3);
+		%%%%
+		\draw[pipe] (4.4,\pipeBY) -- (4.4,-1);
+		%%
+		\node[rid] at (5.1,\ridY) {$r_8:$};
+		\draw (5,0) node[empty] (s3) {$\emptyTG$};
+	\end{tikzpicture}
