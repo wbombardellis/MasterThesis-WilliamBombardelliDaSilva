@@ -25,8 +25,7 @@
 %
 \author{William {da Silva}\inst{1,2}$^{(\text{\Letter})}$ \and
 Max {Bureck}\inst{1} \and
-Ina {Schieferdecker}\inst{1,2} \and
-Christian {Hein}\inst{1}}
+Ina {Schieferdecker}\inst{1,2} \and Christian {Hein}\inst{1}}
 %
 \authorrunning{W. da Silva et al.}
 % First names are abbreviated in the running head.
@@ -143,7 +142,8 @@ Finally, we define, for convenience, the start graph of $\mathit{GG}$ as $\start
 
 Notice that, in the original definition of NCE graph grammars \cite{janssens1982graph}, the left-hand sides of the productions were allowed to contain any connected graph. Moreover, only undirected graphs without edge labels were allowed. So, strictly speaking, our definitions characterize actually a 1-edNCE graph grammar, that contains only one element in the left-hand side and a directed edge-labeled graph in the right-hand side. Nevertheless, for simplicity, we use the denomination NCE graph grammar, or simply graph grammar, to refer to a 1-edNCE graph grammar along this paper. Moreover, vertices from the right-hand sides of rules labeled by non-terminal (terminal) symbols are said to be non-terminal (terminal) vertices.
 
-In the following, we present our concrete syntax inspired by the well-known Backus-Naur form to denote NCE graph grammar rules. Let $\mathit{GG} = (\{A, B, a, b,$ $ c, l, m\},$ $\{a, b, c, l, m\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\},$ $\{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$, we denote $p$ and $q$ together as\\
+In the following, we present our concrete syntax inspired by the well-known Backus-Naur form to denote NCE graph grammar rules. Let $\mathit{GG} = (\{A, B, a, b,$ $ c, l, m\},$ $\{a, b, c, l, m\}, A, \{p,q\})$ be a graph grammar with production rules $p = (A \pro G,\omega)$ and $q = (A \pro H,\zeta)$ where $G = (\{v_1, v_2, v_3\}, \{(v_1,l,v_2), (v_2,m,v_3)\},$ $\{v_1 \mapsto B, v_2 \mapsto b, v_3 \mapsto c \})$, and $H = (\{u_1\}, \emptyset, \{u_1 \mapsto a\})$, we denote $p$ and $q$ together as
+
 \input{misc/concrete-syntax}
 
 Observe that, we use squares for non-terminal vertices, circles for terminal vertices, position the respective label inside the shape and the (possibly omitted) identifier over it. Near each edge is positioned its respective label. The embedding function is not included in the notation, so it is expressed separately, if necessary.
@@ -155,6 +155,8 @@ Below, we give one example of a grammar whose language consists of all chains of
 	$GG = (\{S,A,B,a,b,c\}, \{a,b,c\}, S, P)$, where $P = \{r_0, r_1, r_2, r_3, r_4, $ $r_5\}$ is denoted by
 	
 	\input{examples/abchains-gg}
+	
+	\noindent
 	with $\omega_0 = \omega_1 = \emptyset$, $\omega_2(u_{21}) = \omega_3(u_{31}) = \{(c,b)\}$ and $\omega_4(u_{41}) = \omega_5(u_{51}) = \{(c,a)\}$ being the complete definition of the embedding functions of the rules, $r_0, r_1, r_2, r_3, r_4, r_5$ respectively.
 	
 	The graph $G=$
@@ -286,13 +288,18 @@ Our concrete syntax for NCE TGG is similar to the one for NCE graph grammars and
 	\label{ex:pseudocode2controlflow}
 	This example illustrates the definition of a NCE TGG that characterizes the language of all \emph{Pseudocode} graphs together with their respective \emph{Controlflow} graphs. A \emph{Pseudocode} graph is an abstract representation of a program written in a pseudo-code where vertices refer to \textit{actions}, \textit{ifs} or \textit{whiles} and edges connect these items together according to how they appear in the program. A \emph{Controlflow} graph is a more abstract representation of a program, where vertices can only be either a \textit{command} or a \textit{branch}.
 	
-	Consider, for instance, the program $\mathit{main}$, written in a pseudo-code, and the triple graph $\mathit{TG}$ in Figure \ref{fig:p2c-tg}. The triple graph $\mathit{TG}$ consists of the \emph{Pseudocode} graph of $\mathit{main}$ connected to the \emph{Controlflow} graph of the same program through the correspondence graph in the middle of them. In such graph, the vertex labels of the \emph{Pseudocode} graph $p, i, a, w$ correspond to the concepts of \textit{program}, \textit{if}, \textit{action} and \textit{while}, respectively. The edge label $f$ is given to the edge from the vertex $p$ to the program's first statement, $x$ stands for \textit{next} and indicates that a statement is followed by another statement, $p$ and $n$ stand for \textit{positive} and \textit{negative} and indicate which assignments correspond to the positive of negative case of the \textit{if}'s evaluation, finally $l$ stands for \textit{last} and indicates the last action of a loop. In the \emph{Controlflow} graph, the vertex labels $g, b, c$ stand for the concepts of \textit{graph}, \textit{branch} and \textit{command}, respectively. The edge label $r$ is given to the edge from the vertex $g$ to the first program's statement, $x, p$ and $n$ mean, analogous to the former graph, \textit{next}, \textit{positive} and \textit{negative}. In the correspondence graph, the labels $\mathit{pg}, \mathit{ib}, \mathit{ac}, \mathit{wb}$ serve to indicate which labels in the source and target graphs are being connected through the triple graph's morphism.
+	Consider, for instance, the program $\mathit{main}$, written in a pseudo-code, and the triple graph $\mathit{TG}$ in Figure \ref{fig:p2c-tg}. The triple graph $\mathit{TG}$ consists of the \emph{Pseudocode} graph of $\mathit{main}$ connected to the \emph{Controlflow} graph of the same program through the correspondence graph in the middle of them. In such graph, the vertex labels of the \emph{Pseudocode} graph $p, i, a, w$ correspond to the concepts of \textit{program}, \textit{if}, \textit{action} and \textit{while}, respectively. The edge label $f$ is given to the edge from the vertex $p$ to the program's first statement, $x$ stands for \textit{next} and indicates that a statement is followed by another statement, $p$ and $n$ stand for \textit{positive} and \textit{negative} and indicate which assignments correspond to the positive of negative case of the \textit{if}'s evaluation, finally $l$ stands for \textit{last} and indicates the last action of a loop.
 	
-	The main difference between the two graphs is the absence of the $w$ label in the \emph{Controlflow} graph, what makes it encode loops through the combination of $b$-labeled vertices and $x$-labeled edges.
+	In the \emph{Controlflow} graph, the vertex labels $g, b, c$ stand for the concepts of \textit{graph}, \textit{branch} and \textit{command}, respectively. The edge label $r$ is given to the edge from the vertex $g$ to the first program's statement, $x, p$ and $n$ mean, analogous to the former graph, \textit{next}, \textit{positive} and \textit{negative}.
+	
+	In the correspondence graph, the labels $\mathit{pg}, \mathit{ib}, \mathit{ac}, \mathit{wb}$ serve to indicate which labels in the source and target graphs are being connected through the triple graph's morphism.
+	
+	%The main difference between the two graphs is the absence of the $w$ label in the \emph{Controlflow} graph, what makes it encode loops through the combination of $b$-labeled vertices and $x$-labeled edges.
 	
 	\input{examples/pseudocode2controlflow-tg}
 	
-	The TGG that specifies the relation between these two types of graphs is $\mathit{TGG} = (\{S, A, p, a, i, w, g, b, c, f, x, n, l, r, \mathit{pg}, \mathit{ac}, \mathit{ib}, \mathit{wb}\}, \{p, a, i, w, g, b, c, f, x,$ $ n, l, r, \mathit{pg}, \mathit{ac}, \mathit{ib}, \mathit{wb}\}, S, P)$, where $P = \{r_i \st 0 \le i \le 5\}$ is denoted by\\
+	The TGG that specifies the relation between these two types of graphs is $\mathit{TGG} = (\{S, A, p, a, i, w, g, b, c, f, x, n, l, r, \mathit{pg}, \mathit{ac}, \mathit{ib}, \mathit{wb}\}, \{p, a, i, w, g, b, c, f, x,$ $ n, l, r, \mathit{pg}, \mathit{ac}, \mathit{ib}, \mathit{wb}\}, S, P)$, where $P = \{r_i \st 0 \le i \le 5\}$ is denoted by
+	
 	\input{examples/pseudocode2controlflow-tgg}
 	
 	\noindent
@@ -380,7 +387,7 @@ Finally, the following result gives us an equivalence between a derivation in $\
 	
 	So, since, $G^i \tderiv{r_{i}}{s_{i},c_{i},t_{i}}{TGG} G^{i+1}$, that is
 	\begin{align*}
-		& G^i_s \ms{ms_i} G^i_c \mt{mt_i} G^i_t \tderiv{r_i}{s_i,c_i,t_i}{TGG} G^{i+1}_s \ms{} G^{i+1}_c \mt{} G^{i+1}_t \text{, then, by Definition \ref{def:tgg_dstep},}\\
+		& G^i_s \ms{ms_i} G^i_c \mt{mt_i} G^i_t \tderiv{r_i}{s_i,c_i,t_i}{TGG} G^{i+1}_s \ms{} G^{i+1}_c \mt{} G^{i+1}_t \text{, then, by Definition \ref{def:tgg_dstep}}\\
 		& r_i = (S \pro (R_s \ms{} R_c \mt{} R_t), \omega_s, \omega_t) \in P \text{, and by Definition \ref{def:source},}\\
 		& \source(r_i) = (S \pro R_s, \omega_s) \in \mathit{SP}
 	\end{align*}
@@ -407,9 +414,9 @@ Finally, the following result gives us an equivalence between a derivation in $\
 Therefore, the problem of finding a derivation $D = \startTG{TGG} \tderivtr{} G \ms{} C \mt{} T$ in $\mathit{TGG}$ is reduced to finding a derivation $\overline{D} = \startG{S(TGG)} \derivtr{} G$ in $S(TGG)$, what can be done with the procedure from Rozenberg and Welzl \cite{rozenberg1986boundary}. The final construction of the triple graph $G \ms{} C \mt{} T$ becomes then just a matter of creating $D$ out of $\overline{D}$.
 
 The complete transformation procedure is presented in the Algorithm \ref{alg:transform}. Thereby, it is required that the TGG be a BNCE TGG (see Definition \ref{def:bncetgg}) and be neighborhood preserving (NP) \cite{rozenberg1986boundary,skodinis1998neighborhood}, what poses no problem to our procedure, since any BNCE graph grammar can be transformed into the neighborhood preserving normal form. 
-\begin{algorithm}[h]
+\begin{algorithm}[ht]
 	\caption{Transformation Algorithm for NP NTC BNCE TGG}
-	\begin{algorithmic}[h]
+	\begin{algorithmic}[ht]
 		\Require $\mathit{TGG} \text{ is a valid NP NTC BNCE triple graph grammar}$
 		\Require $G \text{ is a valid graph over } \Sigma$
 		\Function{$\mathit{transform}$}{$\mathit{TGG}=(\Sigma, \Delta, S, P), \mathit{G}=(V_G,E_G,\phi_G)$}{$:\mathit{Graph}$}
@@ -474,5 +481,6 @@ As a future work, we intend to carry out a broader usability and performance eva
 % References will then be sorted and formatted in the correct style.
 %
 \bibliographystyle{splncs04}
+\renewcommand{\doi}[1]{\url{https://doi.org/#1}}
 \bibliography{bibliography}
 \end{document}

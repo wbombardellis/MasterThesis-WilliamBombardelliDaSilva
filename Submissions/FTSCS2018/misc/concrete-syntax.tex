@@ -1,25 +1,26 @@
-\noindent
-\begin{tikzpicture}[grammar]
-\node[rid] at (\ridX,\ridY) {$p:$};
-%The LHS
-\draw (\lhsX,0) node[lhs] (lhs) {$A$ ::=};
-
-%The RHS graph
-\draw (0.5,0) node[nont, label=90:$v_1$] (v1) {$B$};
-\draw (2,0) node[t, label=90:$v_2$] (v2) {$b$};
-\draw (3.5,0) node[t, label=90:$v_3$] (v3) {$c$};
-
-\draw[edge] (v1) -- (v2) node [edgeLabel] {$l$};
-\draw[edge] (v2) -- (v3) node [edgeLabel] {$m$};
-
-%The embedding
-%\draw node[w, label=0:$l;l;m$, label=-45:$a;b;c$] at (v1.south) (w-v1) {}
-%[wedge] (v1) -- (w-v1);
-
-%The next rule separator
-\draw[pipe] (4,\pipeBY) -- (4,\pipeUY);
-
-%The second RHS graph
-\node[rid] at (4.7,\ridY) {$q:$};
-\draw (4.5,0) node[t] (u1) {a};
-\end{tikzpicture}
+\begin{center}
+	\begin{tikzpicture}[grammar]
+	\node[rid] at (\ridX,\ridY) {$p:$};
+	%The LHS
+	\draw (\lhsX,0) node[lhs] (lhs) {$A$ ::=};
+	
+	%The RHS graph
+	\draw (0.5,0) node[nont, label=90:$v_1$] (v1) {$B$};
+	\draw (2,0) node[t, label=90:$v_2$] (v2) {$b$};
+	\draw (3.5,0) node[t, label=90:$v_3$] (v3) {$c$};
+	
+	\draw[edge] (v1) -- (v2) node [edgeLabel] {$l$};
+	\draw[edge] (v2) -- (v3) node [edgeLabel] {$m$};
+	
+	%The embedding
+	%\draw node[w, label=0:$l;l;m$, label=-45:$a;b;c$] at (v1.south) (w-v1) {}
+	%[wedge] (v1) -- (w-v1);
+	
+	%The next rule separator
+	\draw[pipe] (4,\pipeBY) -- (4,\pipeUY);
+	
+	%The second RHS graph
+	\node[rid] at (4.7,\ridY) {$q:$};
+	\draw (4.5,0) node[t] (u1) {a};
+	\end{tikzpicture}
+\end{center}
